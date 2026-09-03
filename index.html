@@ -1,22 +1,593 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Grace 365</title>
 <style>
-* { box-sizing:border-box; }
-html,body { width:100%; height:100%; margin:0; overflow:hidden; }
-body { display:flex; align-items:center; justify-content:center; cursor:pointer; background:linear-gradient(180deg,#dff2fb 0%,#c7e5f2 50%,#e5f5fb 100%); }
-img { display:block; width:auto; height:auto; max-width:100%; max-height:100%; object-fit:contain; }
+  :root {
+    --navy: #001b34;
+    --navy-2: #062944;
+    --gold: #c6922e;
+    --gold-light: #e1b65d;
+    --cream: #f3e7d2;
+    --cream-2: #fbf5e9;
+    --ink: #10253b;
+    --line: rgba(198,146,46,.65);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,.65), transparent 28%),
+      linear-gradient(135deg, #f7eddb, #eee0c7);
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .page {
+    max-width: 1500px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0,0,0,.12);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: clamp(420px, 58vw, 650px);
+    padding: 72px 7vw 85px;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(90deg, rgba(251,245,233,.92) 0%, rgba(251,245,233,.72) 48%, rgba(251,245,233,.22) 100%),
+      url("assets/hero.png") center 22% / cover no-repeat;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    border: 2px solid var(--gold);
+    opacity: .8;
+  }
+  .hero::before {
+    top: 24px; left: 24px;
+    border-right: 0; border-bottom: 0;
+    border-radius: 28px 0 0 0;
+  }
+  .hero::after {
+    right: 24px; bottom: 24px;
+    border-left: 0; border-top: 0;
+    border-radius: 0 0 28px 0;
+  }
+
+  .hero-art {
+    position: absolute;
+    right: -3%;
+    top: 0;
+    width: 52%;
+    height: 100%;
+    opacity: .16;
+    background:
+      radial-gradient(circle at 65% 43%, rgba(198,146,46,.55), transparent 4%),
+      linear-gradient(120deg, transparent 48%, rgba(0,27,52,.55) 49%, transparent 50%),
+      linear-gradient(90deg, transparent 47%, rgba(0,27,52,.35) 48%, transparent 49%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 820px);
+    max-width: 820px;
+  }
+
+  .eyebrow {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: .34em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    line-height: .82;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--navy);
+  }
+
+  h1 span { color: var(--gold); }
+
+  .ornament {
+    margin: 28px 0 24px;
+    color: var(--gold);
+    font-size: 2.2rem;
+    letter-spacing: .15em;
+  }
+
+  .tagline {
+    display: inline-block;
+    margin: 0;
+    padding: 15px 34px;
+    color: var(--gold-light);
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(0,27,52,.16);
+  }
+
+  /* MAIN 3-COLUMN AREA */
+  .daily-section {
+    padding: 70px 4.5vw 90px;
+    background:
+      linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)),
+      var(--cream);
+  }
+
+  .section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .section-heading .small {
+    color: var(--gold);
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    font-size: .9rem;
+  }
+
+  .section-heading h2 {
+    margin: 10px 0;
+    color: var(--navy);
+    font-size: clamp(2.1rem, 4vw, 3.6rem);
+    font-weight: 500;
+  }
+
+  .section-heading p {
+    margin: 0 auto;
+    max-width: 720px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .three-columns {
+    display: grid;
+    grid-template-columns: 1fr 1.22fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .card {
+    position: relative;
+    padding: 34px;
+    background: rgba(255,250,240,.82);
+    border: 1px solid var(--gold);
+    box-shadow: 0 12px 30px rgba(0,27,52,.09);
+  }
+
+  .card::before {
+    content: "✦";
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .card::after {
+    content: "✦";
+    position: absolute;
+    right: 16px;
+    bottom: 11px;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .card h3 {
+    margin: 0 0 22px;
+    color: var(--navy);
+    font-size: 1.65rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+  }
+
+  .verse-card {
+    background: var(--navy);
+    color: #f7eddb;
+    border: 2px solid var(--gold);
+  }
+
+  .verse-card h3 { color: var(--gold-light); }
+
+  .verse {
+    display: block;
+    width: 100%;
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    line-height: 1.65;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .reference {
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 1.15rem;
+    letter-spacing: .08em;
+  }
+
+  .poster-card {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .poster-card h3 {
+    padding: 15px 18px 8px;
+    margin-bottom: 5px;
+  }
+
+  .poster-wrap {
+    background: #fff;
+    border: 1px solid rgba(198,146,46,.65);
+    overflow: hidden;
+  }
+
+  .poster-wrap img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .reflection-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .reflection-card .icon {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--gold-light);
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    font-size: 2rem;
+  }
+
+  .reflection-title {
+    text-align: center;
+    color: var(--navy);
+    font-size: 2rem;
+    margin: 0 0 24px;
+  }
+
+  .reflection-card p {
+    font-size: 1.17rem;
+    line-height: 1.85;
+    margin: 0;
+  }
+
+  .reflection-card .closing {
+    margin-top: 25px;
+    color: var(--gold);
+    text-align: center;
+    font-style: italic;
+  }
+
+  .weekly-flipbook-link {
+    display: inline-block;
+    align-self: center;
+    margin-top: 32px;
+    padding: 15px 26px;
+    color: var(--gold-light);
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    border-radius: 999px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0,27,52,.18);
+    transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+
+  .weekly-flipbook-link:hover,
+  .weekly-flipbook-link:focus-visible {
+    color: var(--navy);
+    background: var(--gold-light);
+    box-shadow: 0 10px 22px rgba(0,27,52,.25);
+    transform: translateY(-2px);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: #f8edda;
+  }
+
+  .footer-main {
+    padding: 54px 5vw 45px;
+    border-top: 1px solid var(--gold);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 42px;
+    max-width: 1250px;
+    margin: 0 auto 42px;
+  }
+
+  .footer-item {
+    display: grid;
+    grid-template-columns: 86px 1fr;
+    gap: 22px;
+    align-items: center;
+  }
+
+  .footer-icon {
+    width: 78px;
+    height: 78px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    color: var(--gold-light);
+  }
+
+  .footer-item h4 {
+    margin: 0 0 7px;
+    color: var(--gold-light);
+    font-size: 1.3rem;
+    letter-spacing: .02em;
+  }
+
+  .footer-item p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  .cta {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 22px 28px;
+    text-align: center;
+    border: 2px solid var(--gold);
+    background: linear-gradient(180deg, #062944, #001b34);
+    position: relative;
+  }
+
+  .cta::before, .cta::after {
+    content: "✦";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 1.6rem;
+  }
+  .cta::before { left: -18px; }
+  .cta::after { right: -18px; }
+
+  .cta strong {
+    display: block;
+    color: var(--gold-light);
+    font-size: 1.45rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .cta span {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.05rem;
+  }
+
+  .footer-bottom {
+    padding: 23px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(198,146,46,.35);
+    color: var(--gold-light);
+    letter-spacing: .28em;
+    font-size: .95rem;
+    text-transform: uppercase;
+  }
+
+  .cross {
+    display: block;
+    margin-top: 12px;
+    font-size: 1.55rem;
+    letter-spacing: .35em;
+  }
+
+  @media (max-width: 1050px) {
+    .three-columns { grid-template-columns: 1fr; }
+    .poster-card, .verse-card, .reflection-card {
+      max-width: 700px;
+      width: 100%;
+      margin: auto;
+    }
+    .footer-grid { grid-template-columns: 1fr; max-width: 720px; }
+    .hero { min-height: 440px; }
+    .hero-art { width: 65%; }
+  }
+
+  @media (max-width: 650px) {
+    .hero {
+      height: 100svh;
+      min-height: 0;
+      padding: 48px 22px 58px;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(251,245,233,.72) 0%, rgba(251,245,233,.42) 58%, rgba(251,245,233,.12) 100%),
+        url("assets/hero.png") 76% center / cover no-repeat;
+    }
+    .hero-content { max-width: 100%; }
+    .eyebrow { font-size: .78rem; letter-spacing: .18em; }
+    h1 {
+      font-size: clamp(3.2rem, 16vw, 5.2rem);
+      line-height: .88;
+      text-shadow: 0 2px 12px rgba(251,245,233,.75);
+    }
+    .ornament { margin: 20px 0 18px; font-size: 1.45rem; letter-spacing: .08em; }
+    .tagline {
+      max-width: 100%;
+      padding: 11px 14px;
+      font-size: .78rem;
+      line-height: 1.35;
+      letter-spacing: .08em;
+    }
+    .daily-section { padding: 50px 18px 65px; }
+    .card { padding: 27px 23px; }
+    .footer-item { grid-template-columns: 68px 1fr; gap: 15px; }
+    .footer-icon { width: 62px; height: 62px; font-size: 1.5rem; }
+  }
 </style>
 </head>
+
 <body>
-<img src="index.png" alt="Daily Grace 365">
-<script>
-document.body.addEventListener('click', () => {
-	window.location.href = 'reader/flipbook-reader.html?september-week1.json';
-});
-</script>
+<div class="page">
+
+  <header class="hero">
+    <div class="hero-art"></div>
+    <div class="hero-content">
+      <div class="eyebrow">A year of grace • 365 days</div>
+      <h1>Daily<br><span>Grace</span> 365</h1>
+      <div class="ornament">❧ ───── ✦ ───── ❧</div>
+      <p class="tagline">Grace for today. Hope for tomorrow.</p>
+    </div>
+  </header>
+
+  <main class="daily-section">
+    <div class="section-heading">
+      <div class="small">Daily devotional</div>
+      <h2>Grace for Today</h2>
+      <p>A simple place to pause, read God's Word, and carry one encouraging thought into the day.</p>
+    </div>
+
+    <section class="three-columns">
+
+      <article class="card verse-card">
+        <h3>Bible Verse for Today</h3>
+        <div id="verse-text" class="verse"></div>
+        <div id="verse-reference" class="reference"></div>
+      </article>
+
+      <article class="card poster-card">
+        <h3>Daily Grace Poster</h3>
+        <div class="poster-wrap">
+          <img id="daily-poster" alt="Daily Grace 365 devotional poster">
+        </div>
+      </article>
+
+      <article class="card reflection-card">
+        <div class="icon">✝</div>
+        <h3 class="reflection-title">Reflection for the Day</h3>
+        <p id="reflection-text"></p>
+        <p class="closing">Pause. Trust. Take the next step.</p>
+        <a id="weekly-flipbook-link" class="weekly-flipbook-link" href="#">
+          Open this week's Flipbook
+        </a>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-grid">
+
+        <div class="footer-item">
+          <div class="footer-icon">▤</div>
+          <div>
+            <h4>Daily Inspiration</h4>
+            <p>A Bible verse and message to guide your heart and mind every day.</p>
+          </div>
+        </div>
+
+        <div class="footer-item">
+          <div class="footer-icon">♧</div>
+          <div>
+            <h4>Strength for Today</h4>
+            <p>Encouragement to face life's challenges with God's grace.</p>
+          </div>
+        </div>
+
+        <div class="footer-item">
+          <div class="footer-icon">✝</div>
+          <div>
+            <h4>Hope for Tomorrow</h4>
+            <p>A reminder that His grace is new every morning and enough for every day.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cta">
+        <strong>Start Your Year of Grace Today.</strong>
+        <span>Let God's grace be your strength, every day of the year.</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Grace for today. Hope for tomorrow.
+      <span class="cross">───── ✝ ─────</span>
+    </div>
+  </footer>
+
+</div>
+  <script>
+  const today = new Date();
+  const month = today.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+  const dateName = today.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+  const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
+  const weekNumber = Math.ceil((today.getDate() + firstDayOfMonth) / 7);
+
+  document.getElementById('daily-poster').src =
+    `reader/images/sources/${month}/${dateName}.png`;
+  document.getElementById('weekly-flipbook-link').href =
+    `reader/flipbook-reader.html?${month}-week${weekNumber}.json`;
+
+  fetch('assets/verses.json')
+    .then(response => {
+      if (!response.ok) throw new Error(`Unable to load assets/verses.json (${response.status})`);
+      return response.json();
+    })
+    .then(verses => {
+      const currentVerse = verses.find(item => item.id === dateName);
+      if (!currentVerse) throw new Error(`No verse found for ${dateName}`);
+
+      document.getElementById('verse-text').textContent = currentVerse.text;
+      document.getElementById('verse-reference').textContent = currentVerse.verse;
+      document.getElementById('reflection-text').textContent = currentVerse.reflection;
+    })
+    .catch(error => {
+      document.getElementById('verse-text').textContent = error.message;
+      document.getElementById('reflection-text').textContent = 'Please check the daily devotional data.';
+    });
+  </script>
 </body>
 </html>

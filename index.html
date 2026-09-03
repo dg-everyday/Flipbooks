@@ -492,7 +492,7 @@
         <div id="verse-reference" class="reference"></div>
       </article>
 
-      <article class="card poster-card">
+      <article class="card poster-card" id="poster-card" role="button" tabindex="0" aria-label="Show comic version of today's poster">
         <h3>Daily Grace Poster</h3>
         <div class="poster-wrap">
           <img id="daily-poster" alt="Daily Grace 365 devotional poster">
@@ -566,8 +566,28 @@
   const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
   const weekNumber = Math.ceil((today.getDate() + firstDayOfMonth) / 7);
 
-  document.getElementById('daily-poster').src =
-    `reader/images/sources/${month}/${dateName}.png`;
+  const posterCard = document.getElementById('poster-card');
+  const dailyPoster = document.getElementById('daily-poster');
+  const posterPath = `reader/images/sources/${month}/${dateName}`;
+  let showingComic = false;
+
+  function togglePoster() {
+    showingComic = !showingComic;
+    dailyPoster.src = `${posterPath}${showingComic ? ' - Comic' : ''}.png`;
+    posterCard.setAttribute(
+      'aria-label',
+      showingComic ? "Show today's regular poster" : "Show comic version of today's poster"
+    );
+  }
+
+  dailyPoster.src = `${posterPath}.png`;
+  posterCard.addEventListener('click', togglePoster);
+  posterCard.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      togglePoster();
+    }
+  });
   document.getElementById('weekly-flipbook-link').href =
     `reader/flipbook-reader.html?${month}-week${weekNumber}.json`;
 

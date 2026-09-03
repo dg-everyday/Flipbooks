@@ -259,6 +259,15 @@ function updateZoom() {
   book.style.transform = `translate3d(${panX}px,${panY}px,0) scale(${zoom})`;
 }
 
+function clampPan() {
+  const stageRect = stage.getBoundingClientRect();
+  const bookRect = book.getBoundingClientRect();
+  const maxX = Math.max(0, (bookRect.width - stageRect.width) / 2);
+  const maxY = Math.max(0, (bookRect.height - stageRect.height) / 2);
+  panX = Math.max(-maxX, Math.min(maxX, panX));
+  panY = Math.max(-maxY, Math.min(maxY, panY));
+}
+
 function setZoom(z, centerX=null, centerY=null) {
   const old = zoom;
   zoom = Math.max(1, Math.min(3.5, z));
@@ -269,6 +278,8 @@ function setZoom(z, centerX=null, centerY=null) {
     panY = centerY - (centerY - panY) * r;
   }
   if (zoom === 1) { panX = 0; panY = 0; }
+  updateZoom();
+  clampPan();
   updateZoom();
 }
 
@@ -298,14 +309,17 @@ stage.addEventListener('wheel', e => {
 // Pointer gestures: swipe to turn pages; drag when zoomed.
 stage.addEventListener('pointerdown', e => {
   stage.setPointerCapture(e.pointerId);
-  pointerStart = {x:e.clientX, y:e.clientY, t:performance.now()};
+  pointerStart = {x:e.clientX, y:e.clientY, lastX:e.clientX, lastY:e.clientY, t:performance.now()};
   stage.classList.add('dragging');
 });
 stage.addEventListener('pointermove', e => {
   if (!pointerStart) return;
-  if (zoom > 1 && e.pointerType === 'mouse') {
-    panX += e.movementX;
-    panY += e.movementY;
+  if (zoom > 1 && activePointers.size < 2) {
+    panX += e.clientX - pointerStart.lastX;
+    panY += e.clientY - pointerStart.lastY;
+    pointerStart.lastX = e.clientX;
+    pointerStart.lastY = e.clientY;
+    clampPan();
     updateZoom();
   }
 });
@@ -322,6 +336,10 @@ stage.addEventListener('pointerup', e => {
     // RTL flipbook behavior: swipe left = next page, swipe right = previous.
     if (dx < 0) goNext(); else goPrev();
   }
+});
+stage.addEventListener('pointercancel', e => {
+  stage.classList.remove('dragging');
+  pointerStart = null;
 });
 
 // Native pinch-to-zoom using Pointer Events.

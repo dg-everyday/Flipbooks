@@ -5,6 +5,7 @@ const dateName = today.toLocaleDateString('en-US', {
   day: 'numeric',
   year: 'numeric'
 });
+document.getElementById('current-date').textContent = dateName;
 const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
 const weekNumber = Math.ceil((today.getDate() + firstDayOfMonth) / 7);
 

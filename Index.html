@@ -347,6 +347,7 @@ function clearPointer(e) {
   activePointers.delete(e.pointerId);
   if (activePointers.size < 2) pinchStart=null;
 }
+
 stage.addEventListener('pointerup', clearPointer);
 stage.addEventListener('pointercancel', clearPointer);
 

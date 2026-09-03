@@ -387,16 +387,19 @@ stage.addEventListener('dblclick', e => {
 });
 
 async function loadFlipbook() {
+  const dataSource = window.location.search.slice(1) || 'data.json';
+  const dataPath = `images/${dataSource}`;
+
   try {
-    const response = await fetch('data.json');
-    if (!response.ok) throw new Error(`Unable to load data.json (${response.status})`);
+    const response = await fetch(dataPath);
+    if (!response.ok) throw new Error(`Unable to load ${dataPath} (${response.status})`);
 
     const data = await response.json();
     if (!Array.isArray(data) || data.length === 0 || data.some(src => typeof src !== 'string')) {
-      throw new Error('data.json must contain a non-empty array of image URLs');
+      throw new Error(`${dataPath} must contain a non-empty array of image URLs`);
     }
 
-    images = data;
+    images = data.map(src => new URL(src, response.url).href);
     buildPages();
     await Promise.all([...book.querySelectorAll('img')].map(img => new Promise(resolve => {
       if (img.complete) resolve(); else { img.onload=resolve; img.onerror=resolve; }

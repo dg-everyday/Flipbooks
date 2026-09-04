@@ -340,13 +340,13 @@ footer {
 .footer-item h4 {
   margin: 0 0 7px;
   color: var(--gold-light);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   letter-spacing: .02em;
 }
 .footer-item p {
   margin: 0;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .cta {
@@ -371,14 +371,14 @@ footer {
 .cta strong {
   display: block;
   color: var(--gold-light);
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
 .cta span {
   display: block;
   margin-top: 8px;
-  font-size: 1.05rem;
+  font-size: .95rem;
 }
 
 .footer-bottom {
@@ -387,13 +387,13 @@ footer {
   border-top: 1px solid rgba(198,146,46,.35);
   color: var(--gold-light);
   letter-spacing: .28em;
-  font-size: .95rem;
+  font-size: .8rem;
   text-transform: uppercase;
 }
 .cross {
   display: block;
   margin-top: 12px;
-  font-size: 1.55rem;
+  font-size: 1.3rem;
   letter-spacing: .35em;
 }
 

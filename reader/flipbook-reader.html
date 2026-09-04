@@ -12,7 +12,7 @@
   --shadow:rgba(0,0,0,.38);
 }
 * { box-sizing:border-box; }
-html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#081727; }
+html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#f7eddb; }
 body {
   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:white;
@@ -21,8 +21,8 @@ body {
 .app {
   width:100%; height:100%; display:flex; flex-direction:column;
   background:
-    radial-gradient(circle at 50% 30%, rgba(217,168,79,.09), transparent 35%),
-    linear-gradient(135deg,#071727,#102b46 50%,#061522);
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.65), transparent 28%),
+    linear-gradient(135deg, #f7eddb, #eee0c7);
 }
 .topbar {
   height:58px; flex:0 0 58px; display:flex; align-items:center;
@@ -43,7 +43,19 @@ button {
 }
 button:hover { background:#173956; }
 button:disabled { opacity:.38; cursor:default; }
-#zoomLabel { min-width:55px; text-align:center; font-variant-numeric:tabular-nums; }
+#home {
+  min-width:48px;
+  height:42px;
+  padding:0;
+  border-color:transparent;
+  background:transparent;
+  color:var(--gold);
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+  box-shadow:none;
+}
+#home:hover { background:transparent; color:#f0c66c; }
 .stage {
   flex:1; min-height:0; position:relative; overflow:hidden;
   display:flex; align-items:center; justify-content:center;
@@ -68,6 +80,7 @@ button:disabled { opacity:.38; cursor:default; }
   transition:transform .18s ease;
   will-change:transform;
 }
+.desktop-spread { display:none; }
 .page {
   position:absolute; inset:0; transform-style:preserve-3d;
   transform-origin:left center;
@@ -98,18 +111,6 @@ button:disabled { opacity:.38; cursor:default; }
 .page:nth-child(3) { z-index:2; }
 .page:nth-child(4) { z-index:1; }
 
-.bottom {
-  height:65px; flex:0 0 65px; display:flex; align-items:center;
-  justify-content:center; gap:13px; padding:8px 12px;
-  border-top:1px solid rgba(217,168,79,.3);
-  background:rgba(4,17,31,.9); backdrop-filter:blur(10px);
-  z-index:20;
-}
-.nav {
-  width:115px; height:42px; border-radius:11px;
-  font-size:14px;
-}
-.counter { min-width:72px; text-align:center; color:#ddd; font-size:14px; }
 .hint {
   position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
   color:rgba(255,255,255,.58); font-size:12px; pointer-events:none;
@@ -117,7 +118,7 @@ button:disabled { opacity:.38; cursor:default; }
 }
 .loading {
   position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-  background:#081727; z-index:50; font-size:16px;
+  background:#f7eddb; z-index:50; font-size:16px;
 }
 @media (max-width:600px) {
   .topbar { height:52px; flex-basis:52px; padding:0 9px; }
@@ -126,13 +127,33 @@ button:disabled { opacity:.38; cursor:default; }
   .stage { padding:3px; }
   .book {
     width:auto;
-    height:min(calc(100vh - 115px), 92vh);
+    height:min(calc(100vh - 52px), 92vh);
     aspect-ratio:9 / 16;
     max-width:calc(100vw - 8px);
-    max-height:calc(100vh - 115px);
+    max-height:calc(100vh - 52px);
   }
-  .bottom { display:none; }
   .hint { display:none; }
+}
+@media (min-width:601px) {
+  .book { display:none; }
+  .desktop-spread {
+    display:flex;
+    width:min(calc(100vw - 80px), 1120px);
+    height:min(calc(100vh - 58px), 92vh);
+    justify-content:center;
+    gap:16px;
+    padding:0 48px;
+    overflow:hidden;
+    border-radius:5px 9px 9px 5px;
+    box-shadow:8px 10px 25px var(--shadow);
+    background:#eee;
+  }
+  .desktop-spread img {
+    flex:1 1 0; min-width:0; width:0; height:100%; object-fit:contain;
+    background:#eee; user-select:none; -webkit-user-drag:none;
+  }
+  .desktop-spread img:first-child { cursor:w-resize; }
+  .desktop-spread img:last-child { cursor:e-resize; }
 }
 </style>
 </head>
@@ -141,10 +162,7 @@ button:disabled { opacity:.38; cursor:default; }
   <div class="topbar">
     <div class="brand">Daily <span>Grace</span> · Flipbook</div>
     <div class="tools">
-      <button id="zoomOut" aria-label="Zoom out">−</button>
-      <div id="zoomLabel">100%</div>
-      <button id="zoomIn" aria-label="Zoom in">+</button>
-      <button id="fit" aria-label="Fit page">Fit</button>
+      <button id="home" aria-label="Home" title="Home">&#8962;</button>
     </div>
   </div>
 
@@ -152,13 +170,9 @@ button:disabled { opacity:.38; cursor:default; }
     <div class="loading" id="loading">Preparing your Daily Grace flipbook…</div>
     <div class="book-shadow"></div>
     <div class="book" id="book" aria-label="Daily Grace flipbook"></div>
+    <div class="desktop-spread" id="desktopSpread" aria-label="Daily Grace flipbook spread"></div>
   </main>
 
-  <div class="bottom">
-    <button class="nav" id="prev">‹ Previous</button>
-    <div class="counter" id="counter">1 / 4</div>
-    <button class="nav" id="next">Next ›</button>
-  </div>
 </div>
 
 <script>
@@ -166,10 +180,7 @@ let images = [];
 const book = document.getElementById('book');
 const stage = document.getElementById('stage');
 const loading = document.getElementById('loading');
-const counter = document.getElementById('counter');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const zoomLabel = document.getElementById('zoomLabel');
+const desktopSpread = document.getElementById('desktopSpread');
 
 let current = 0;       // number of pages turned
 let zoom = 1;
@@ -177,6 +188,7 @@ let panX = 0, panY = 0;
 let pointerStart = null;
 let pinchStart = null;
 let animating = false;
+let suppressDesktopClick = false;
 
 
 function fitBookToViewport() {
@@ -231,10 +243,19 @@ function render() {
     // Turned pages sit above unturned pages.
     page.style.zIndex = i < current ? (20 + i) : (images.length - i);
   });
-  counter.textContent = `${current + 1 > images.length ? images.length : current + 1} / ${images.length}`;
-  prevBtn.disabled = current === 0;
-  nextBtn.disabled = current === images.length - 1;
+  renderDesktopSpread();
   updateZoom();
+}
+
+function renderDesktopSpread() {
+  desktopSpread.replaceChildren();
+  [images[current], images[current + 1]].filter(Boolean).forEach((src, offset) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `Daily Grace page ${current + offset + 1}`;
+    img.draggable = false;
+    desktopSpread.appendChild(img);
+  });
 }
 
 function goNext() {
@@ -253,7 +274,6 @@ function goPrev() {
 }
 
 function updateZoom() {
-  zoomLabel.textContent = Math.round(zoom * 100) + '%';
   book.style.transformOrigin = 'center center';
   book.style.transform = `translate3d(${panX}px,${panY}px,0) scale(${zoom})`;
 }
@@ -290,11 +310,16 @@ function resetFit() {
   updateZoom();
 }
 
-prevBtn.onclick = goPrev;
-nextBtn.onclick = goNext;
-document.getElementById('zoomIn').onclick = () => setZoom(zoom + .25);
-document.getElementById('zoomOut').onclick = () => setZoom(zoom - .25);
-document.getElementById('fit').onclick = resetFit;
+document.getElementById('home').onclick = () => { window.location.href = '../index.html'; };
+desktopSpread.addEventListener('click', e => {
+  if (!window.matchMedia('(min-width: 601px)').matches) return;
+  if (suppressDesktopClick) {
+    suppressDesktopClick = false;
+    return;
+  }
+  if (e.target === desktopSpread.firstElementChild) goPrev();
+  if (e.target === desktopSpread.lastElementChild) goNext();
+});
 
 // Mouse wheel zoom (trackpads and desktop mice).
 stage.addEventListener('wheel', e => {
@@ -330,6 +355,13 @@ stage.addEventListener('pointerup', e => {
   const dt = performance.now() - pointerStart.t;
   pointerStart = null;
 
+  if (window.matchMedia('(min-width: 601px)').matches) {
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.25 && dt < 700) {
+      suppressDesktopClick = true;
+      if (dx < 0) goNext(); else goPrev();
+    }
+    return;
+  }
   if (zoom > 1) return;
   if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.25 && dt < 700) {
     // RTL flipbook behavior: swipe left = next page, swipe right = previous.

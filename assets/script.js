@@ -12,7 +12,38 @@ const weekNumber = Math.ceil((today.getDate() + firstDayOfMonth) / 7);
 const posterCard = document.getElementById('poster-card');
 const dailyPoster = document.getElementById('daily-poster');
 const posterPath = `reader/images/sources/${month}/${dateName}`;
+const monthFolder = today.toLocaleString('en-US', { month: 'long' });
+const todayAudioUrl = `reader/audio/${monthFolder}/mp3/${dateName}.mp3`;
+const playIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
+const pauseIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+const verseAudioButton = document.getElementById('verse-audio-play');
+const verseAudio = new Audio(todayAudioUrl);
 let showingComic = false;
+
+function syncVerseAudioButton() {
+  const playing = !verseAudio.paused;
+  verseAudioButton.classList.toggle('is-playing', playing);
+  verseAudioButton.setAttribute('aria-pressed', playing ? 'true' : 'false');
+  verseAudioButton.setAttribute('aria-label', playing ? "Pause today's narration" : "Play today's narration");
+  verseAudioButton.title = playing ? "Pause today's narration" : "Play today's narration";
+  verseAudioButton.innerHTML = playing ? pauseIcon : playIcon;
+}
+
+verseAudioButton.addEventListener('click', event => {
+  event.stopPropagation();
+  if (verseAudio.paused) {
+    verseAudio.play().catch(() => {});
+  } else {
+    verseAudio.pause();
+    verseAudio.currentTime = 0;
+  }
+});
+verseAudio.addEventListener('play', syncVerseAudioButton);
+verseAudio.addEventListener('pause', syncVerseAudioButton);
+verseAudio.addEventListener('ended', () => {
+  verseAudio.currentTime = 0;
+  syncVerseAudioButton();
+});
 
 function togglePoster() {
   showingComic = !showingComic;
@@ -26,6 +57,7 @@ function togglePoster() {
 dailyPoster.src = `${posterPath}.webp`;
 posterCard.addEventListener('click', togglePoster);
 posterCard.addEventListener('keydown', event => {
+  if (event.target !== posterCard) return;
   if (event.key === 'Enter' || event.key === ' ') {
     event.preventDefault();
     togglePoster();

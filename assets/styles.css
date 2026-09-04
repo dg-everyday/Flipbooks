@@ -212,9 +212,9 @@ h1 span { color: var(--gold); }
 .verse {
   display: block;
   width: 100%;
-  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   line-height: 1.65;
-  font-style: italic;
+  font-style: normal;
   text-align: center;
 }
 .reference {
@@ -479,6 +479,7 @@ footer {
   }
   .daily-section { padding: 50px 18px 65px; }
   .card { padding: 27px 23px; }
+  .verse { font-size: 1.4rem; }
   .footer-item { grid-template-columns: 68px 1fr; gap: 15px; }
   .footer-icon { width: 62px; height: 62px; font-size: 1.5rem; }
 }

@@ -16,14 +16,14 @@ let showingComic = false;
 
 function togglePoster() {
   showingComic = !showingComic;
-  dailyPoster.src = `${posterPath}${showingComic ? ' - Comic' : ''}.png`;
+  dailyPoster.src = `${posterPath}${showingComic ? ' - Comic' : ''}.webp`;
   posterCard.setAttribute(
     'aria-label',
     showingComic ? "Show today's regular poster" : "Show comic version of today's poster"
   );
 }
 
-dailyPoster.src = `${posterPath}.png`;
+dailyPoster.src = `${posterPath}.webp`;
 posterCard.addEventListener('click', togglePoster);
 posterCard.addEventListener('keydown', event => {
   if (event.key === 'Enter' || event.key === ' ') {

@@ -148,12 +148,58 @@ button:disabled { opacity:.38; cursor:default; }
     box-shadow:8px 10px 25px var(--shadow);
     background:#eee;
   }
-  .desktop-spread img {
-    flex:1 1 0; min-width:0; width:0; height:100%; object-fit:contain;
+  .desktop-spread .spread-page {
+    position:relative;
+    flex:1 1 0; min-width:0; width:0; height:100%;
+  }
+  .desktop-spread .spread-page img {
+    width:100%; height:100%; object-fit:contain;
     background:#eee; user-select:none; -webkit-user-drag:none;
   }
-  .desktop-spread img:first-child { cursor:w-resize; }
-  .desktop-spread img:last-child { cursor:e-resize; }
+  .desktop-spread .spread-page:first-child { cursor:w-resize; }
+  .desktop-spread .spread-page:last-child { cursor:e-resize; }
+}
+.audio-play {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:6;
+  width:44px;
+  height:44px;
+  min-width:44px;
+  padding:0;
+  border-radius:50%;
+  border:2px solid rgba(217,168,79,.95);
+  background:rgba(7,29,53,.82);
+  color:#f7f0df;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);
+  cursor:pointer;
+  line-height:1;
+  touch-action:manipulation;
+  opacity:0;
+  pointer-events:none;
+}
+.audio-play.is-placed {
+  opacity:1;
+  pointer-events:auto;
+}
+.audio-play svg {
+  display:block;
+  width:18px;
+  height:18px;
+}
+.audio-play:hover,
+.audio-play:focus-visible {
+  background:rgba(16,43,70,.96);
+  color:#fff;
+}
+.audio-play.is-playing {
+  background:var(--gold);
+  color:var(--navy);
+  border-color:#f0c66c;
 }
 </style>
 </head>
@@ -189,6 +235,127 @@ let pointerStart = null;
 let pinchStart = null;
 let animating = false;
 let suppressDesktopClick = false;
+const pageAudio = new Audio();
+
+function imageFileName(src) {
+  try {
+    return decodeURIComponent(new URL(src, window.location.href).pathname.split('/').pop() || '');
+  } catch {
+    return decodeURIComponent((src.split('/').pop() || '').split('?')[0]);
+  }
+}
+
+function isComicImage(src) {
+  return / - Comic\.[^.]+$/i.test(imageFileName(src));
+}
+
+function audioUrlForImage(src) {
+  const fileName = imageFileName(src);
+  const baseName = fileName.replace(/\.[^.]+$/, '');
+  const month = (baseName.match(/^([A-Za-z]+)\b/) || [])[1]
+    || new Date().toLocaleString('en-US', { month: 'long' });
+  return new URL(`audio/${month}/mp3/${baseName}.mp3`, window.location.href).href;
+}
+
+const playIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
+const pauseIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+
+function sameAudioUrl(a, b) {
+  if (!a || !b) return false;
+  try { return decodeURI(a) === decodeURI(b); }
+  catch { return a === b; }
+}
+
+function playPageAudio(src) {
+  if (isComicImage(src)) return false;
+  const url = audioUrlForImage(src);
+  if (sameAudioUrl(pageAudio.src, url) && !pageAudio.paused) {
+    stopPageAudio();
+    return true;
+  }
+  pageAudio.src = url;
+  pageAudio.play().catch(() => {});
+  return true;
+}
+
+function stopPageAudio() {
+  pageAudio.pause();
+  pageAudio.currentTime = 0;
+  syncPlayButtons();
+}
+
+function syncPlayButtons() {
+  const playingUrl = !pageAudio.paused && pageAudio.src ? pageAudio.src : '';
+  document.querySelectorAll('.audio-play').forEach(btn => {
+    const on = playingUrl && sameAudioUrl(playingUrl, audioUrlForImage(btn.dataset.src));
+    btn.classList.toggle('is-playing', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.setAttribute('aria-label', on ? 'Pause narration' : 'Play narration');
+    btn.innerHTML = on ? pauseIcon : playIcon;
+  });
+}
+
+function createPlayButton(src) {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'audio-play';
+  btn.dataset.src = src;
+  btn.setAttribute('aria-label', 'Play narration');
+  btn.innerHTML = playIcon;
+  const stopStageGesture = e => e.stopPropagation();
+  btn.addEventListener('pointerdown', stopStageGesture);
+  btn.addEventListener('pointerup', stopStageGesture);
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    playPageAudio(src);
+  });
+  return btn;
+}
+
+function containedImageBox(img) {
+  const frameW = img.clientWidth;
+  const frameH = img.clientHeight;
+  const natW = img.naturalWidth;
+  const natH = img.naturalHeight;
+  if (!natW || !natH || !frameW || !frameH) {
+    return { left: 0, top: 0, width: frameW, height: frameH };
+  }
+  const scale = Math.min(frameW / natW, frameH / natH);
+  const width = natW * scale;
+  const height = natH * scale;
+  return {
+    left: (frameW - width) / 2,
+    top: (frameH - height) / 2,
+    width,
+    height
+  };
+}
+
+function positionPlayButton(btn) {
+  const img = btn.parentElement && btn.parentElement.querySelector('img');
+  if (!img || !img.naturalWidth) return;
+  const box = containedImageBox(img);
+  const size = btn.offsetWidth || 44;
+  const inset = 12;
+  btn.style.top = `${box.top + inset}px`;
+  btn.style.left = `${box.left + box.width - inset - size}px`;
+  btn.classList.add('is-placed');
+}
+
+function positionPlayButtons() {
+  document.querySelectorAll('.audio-play').forEach(positionPlayButton);
+}
+
+function handlePageTap(x, y) {
+  if (!window.matchMedia('(min-width: 601px)').matches) return;
+  const el = document.elementFromPoint(x, y);
+  if (!el || el.closest('.audio-play')) return;
+  const page = el.closest('.spread-page');
+  if (!page) return;
+  if (page === desktopSpread.firstElementChild) goPrev();
+  else if (page === desktopSpread.lastElementChild) goNext();
+}
 
 
 function fitBookToViewport() {
@@ -219,6 +386,7 @@ function fitBookToViewport() {
     panY = 0;
     updateZoom();
   }
+  requestAnimationFrame(positionPlayButtons);
 }
 
 function buildPages() {
@@ -233,6 +401,8 @@ function buildPages() {
     img.alt = `Daily Grace page ${i + 1}`;
     img.draggable = false;
     page.appendChild(img);
+    if (!isComicImage(src)) page.appendChild(createPlayButton(src));
+    img.addEventListener('load', positionPlayButtons);
     book.appendChild(page);
   });
 }
@@ -250,16 +420,24 @@ function render() {
 function renderDesktopSpread() {
   desktopSpread.replaceChildren();
   [images[current], images[current + 1]].filter(Boolean).forEach((src, offset) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'spread-page';
     const img = document.createElement('img');
     img.src = src;
     img.alt = `Daily Grace page ${current + offset + 1}`;
     img.draggable = false;
-    desktopSpread.appendChild(img);
+    wrap.appendChild(img);
+    if (!isComicImage(src)) wrap.appendChild(createPlayButton(src));
+    img.addEventListener('load', positionPlayButtons);
+    desktopSpread.appendChild(wrap);
   });
+  syncPlayButtons();
+  requestAnimationFrame(positionPlayButtons);
 }
 
 function goNext() {
   if (animating || current >= images.length - 1) return;
+  stopPageAudio();
   animating = true;
   current++;
   render();
@@ -267,6 +445,7 @@ function goNext() {
 }
 function goPrev() {
   if (animating || current <= 0) return;
+  stopPageAudio();
   animating = true;
   current--;
   render();
@@ -317,9 +496,15 @@ desktopSpread.addEventListener('click', e => {
     suppressDesktopClick = false;
     return;
   }
-  if (e.target === desktopSpread.firstElementChild) goPrev();
-  if (e.target === desktopSpread.lastElementChild) goNext();
+  if (e.target.closest('.audio-play')) return;
+  const page = e.target.closest('.spread-page');
+  if (!page) return;
+  if (page === desktopSpread.firstElementChild) goPrev();
+  if (page === desktopSpread.lastElementChild) goNext();
 });
+pageAudio.addEventListener('play', syncPlayButtons);
+pageAudio.addEventListener('pause', syncPlayButtons);
+pageAudio.addEventListener('ended', stopPageAudio);
 
 // Mouse wheel zoom (trackpads and desktop mice).
 stage.addEventListener('wheel', e => {
@@ -354,19 +539,15 @@ stage.addEventListener('pointerup', e => {
   const dy = e.clientY - pointerStart.y;
   const dt = performance.now() - pointerStart.t;
   pointerStart = null;
+  suppressDesktopClick = true;
 
-  if (window.matchMedia('(min-width: 601px)').matches) {
-    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.25 && dt < 700) {
-      suppressDesktopClick = true;
-      if (dx < 0) goNext(); else goPrev();
-    }
+  const isSwipe = Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.25 && dt < 700;
+  if (isSwipe) {
+    if (dx < 0) goNext(); else goPrev();
     return;
   }
   if (zoom > 1) return;
-  if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.25 && dt < 700) {
-    // RTL flipbook behavior: swipe left = next page, swipe right = previous.
-    if (dx < 0) goNext(); else goPrev();
-  }
+  handlePageTap(e.clientX, e.clientY);
 });
 stage.addEventListener('pointercancel', e => {
   stage.classList.remove('dragging');
@@ -439,6 +620,8 @@ async function loadFlipbook() {
     loading.style.display='none';
     resetFit();
     render();
+    requestAnimationFrame(positionPlayButtons);
+    window.addEventListener('resize', positionPlayButtons);
   } catch (error) {
     loading.textContent = `Unable to prepare flipbook: ${error.message}`;
   }

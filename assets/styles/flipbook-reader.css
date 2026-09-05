@@ -183,9 +183,9 @@ button:disabled { opacity:.38; cursor:default; }
 .book { max-width:none; max-height:none; flex-shrink:0; }
 .desktop-spread { flex-shrink:0; transform-origin:center; will-change:transform; }
 .stage { touch-action:none; }
-.topbar { height:auto; min-height:58px; flex:0 0 auto; flex-wrap:wrap; gap:6px; padding:8px 12px; }
-.tools { flex-wrap:wrap; }
+.topbar { height:auto; min-height:58px; flex:0 0 auto; flex-wrap:nowrap; gap:6px; padding:8px 12px; }
+.tools { margin-left:auto; flex-shrink:0; }
 @media (max-width:600px) {
   .brand { font-size:12px; }
-  .topbar { justify-content:center; }
+  .topbar { justify-content:space-between; }
 }

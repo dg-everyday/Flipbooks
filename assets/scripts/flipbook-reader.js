@@ -327,11 +327,6 @@ function resetFit() {
 document.getElementById('home').addEventListener('click', () => {
   window.location.href = '../index.html';
 });
-document.getElementById('zoomIn').addEventListener('click', () => setZoom(zoom + .25));
-document.getElementById('zoomOut').addEventListener('click', () => setZoom(zoom - .25));
-document.getElementById('fit').addEventListener('click', resetFit);
-document.getElementById('previous').addEventListener('click', goPrev);
-document.getElementById('next').addEventListener('click', goNext);
 pageAudio.addEventListener('play', syncPlayButtons);
 pageAudio.addEventListener('pause', syncPlayButtons);
 pageAudio.addEventListener('ended', stopPageAudio);

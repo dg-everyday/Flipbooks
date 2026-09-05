@@ -268,14 +268,54 @@ function renderDesktopSpread() {
   requestAnimationFrame(positionPlayButtons);
 }
 
-function turnPage(direction) {
+async function animateSpreadHalf(page, from, to, origin) {
+  if (!page) return;
+  const animation = page.animate([
+    { transform: `perspective(1600px) rotateY(${from}deg)`, filter: 'brightness(1)' },
+    { transform: `perspective(1600px) rotateY(${to}deg)`,
+      filter: to === 0 ? 'brightness(1)' : 'brightness(.65)' }
+  ], {
+    duration: 340,
+    easing: 'cubic-bezier(.4, 0, .2, 1)',
+    fill: 'forwards'
+  });
+  page.style.transformOrigin = origin;
+  page.style.zIndex = '2';
+  try {
+    await animation.finished;
+  } finally {
+    animation.cancel();
+    page.style.transformOrigin = '';
+    page.style.zIndex = '';
+  }
+}
+
+async function turnPage(direction) {
   const next = current + direction;
   if (animating || next < 0 || next >= images.length) return;
   stopPageAudio();
   animating = true;
-  current = next;
-  render();
-  setTimeout(() => { animating = false; }, 740);
+  const animateSpread = !isSinglePage()
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  try {
+    if (animateSpread) {
+      // Fold the outgoing page toward the spine, then unfold the new page away from it.
+      const outgoing = direction > 0 ? desktopSpread.lastElementChild : desktopSpread.firstElementChild;
+      await animateSpreadHalf(outgoing, 0, direction > 0 ? -90 : 90,
+        direction > 0 ? 'left center' : 'right center');
+    }
+    current = next;
+    render();
+    if (animateSpread && !isSinglePage()) {
+      const incoming = direction > 0 ? desktopSpread.firstElementChild : desktopSpread.lastElementChild;
+      await animateSpreadHalf(incoming, direction > 0 ? 90 : -90, 0,
+        direction > 0 ? 'right center' : 'left center');
+    } else if (!animateSpread) {
+      await new Promise(resolve => setTimeout(resolve, 740));
+    }
+  } finally {
+    animating = false;
+  }
 }
 
 function goNext() {

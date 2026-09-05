@@ -293,6 +293,7 @@ h1 span { color: var(--gold); }
 }
 
 .reflection-card {
+  background: var(--cream);
   display: flex;
   flex-direction: column;
   justify-content: center;

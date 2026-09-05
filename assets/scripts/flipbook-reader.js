@@ -10,12 +10,14 @@ let panX = 0, panY = 0;
 let pointerStart = null;
 let pinchStart = null;
 let animating = false;
-let suppressDesktopClick = false;
+let gesturePinched = false;
+const singlePageQuery = window.matchMedia("(max-width: 600px), (orientation: portrait)");
+const isSinglePage = () => singlePageQuery.matches;
+const visibleBook = () => isSinglePage() ? book : desktopSpread;
 const pageAudio = new Audio();
 
 
-function getCurrentWeekDates() {
-    const today = new Date();
+function getCurrentWeekDates(today = new Date()) {
 
     // Start of current week (Sunday)
     const startOfWeek = new Date(today);
@@ -42,6 +44,30 @@ function getCurrentWeekDates() {
     return dates;
 }
 
+
+// Sunday-based calendar weeks, matching getCurrentWeekDates(). UTC arithmetic avoids DST shifts.
+function coverPaths(today = new Date()) {
+  const year = today.getFullYear();
+  const start = new Date(Date.UTC(year, 0, 1));
+  const day = Date.UTC(year, today.getMonth(), today.getDate());
+  const week = Math.floor(((day - start.getTime()) / 86400000 + start.getUTCDay()) / 7) + 1;
+  return [`images/coverpages/${year}/${year}-WEEK${week}.webp`,
+    `images/coverpages/${year}/${year}-404.webp`];
+}
+
+function loadImage(path) {
+  const src = new URL(path, window.location.href).href;
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
+}
+
+function hasNarration(src) {
+  return !isComicImage(src) && !/\/coverpages\//.test(src);
+}
 
 function imageFileName(src) {
   try {
@@ -73,7 +99,7 @@ function sameAudioUrl(a, b) {
 }
 
 function playPageAudio(src) {
-  if (isComicImage(src)) return false;
+  if (!hasNarration(src)) return false;
   const url = audioUrlForImage(src);
   if (sameAudioUrl(pageAudio.src, url) && !pageAudio.paused) {
     stopPageAudio();
@@ -154,13 +180,11 @@ function positionPlayButtons() {
 }
 
 function handlePageTap(x, y) {
-  if (!window.matchMedia('(min-width: 601px)').matches) return;
   const el = document.elementFromPoint(x, y);
   if (!el || el.closest('.audio-play')) return;
-  const page = el.closest('.spread-page');
-  if (!page) return;
-  if (page === desktopSpread.firstElementChild) goPrev();
-  else if (page === desktopSpread.lastElementChild) goNext();
+  if (!el.closest('.page, .spread-page')) return;
+  const rect = visibleBook().getBoundingClientRect();
+  if (x < rect.left + rect.width / 2) goPrev(); else goNext();
 }
 
 
@@ -186,6 +210,10 @@ function fitBookToViewport() {
   book.style.width = `${Math.floor(w)}px`;
   book.style.height = `${Math.floor(h)}px`;
 
+  const spreadH = Math.min(availableH, (availableW - 16) / (2 * ratio));
+  desktopSpread.style.width = `${Math.floor(spreadH * ratio * 2 + 16)}px`;
+  desktopSpread.style.height = `${Math.floor(spreadH)}px`;
+
   // Keep zoom/pan independent of the fit calculation.
   if (zoom === 1) {
     panX = 0;
@@ -206,7 +234,7 @@ function buildPages() {
     img.alt = `Daily Grace page ${i + 1}`;
     img.draggable = false;
     page.appendChild(img);
-    if (!isComicImage(src)) page.appendChild(createPlayButton(src));
+    if (hasNarration(src)) page.appendChild(createPlayButton(src));
     img.addEventListener('load', positionPlayButtons);
     book.appendChild(page);
   });
@@ -232,7 +260,7 @@ function renderDesktopSpread() {
     img.alt = `Daily Grace page ${current + offset + 1}`;
     img.draggable = false;
     wrap.appendChild(img);
-    if (!isComicImage(src)) wrap.appendChild(createPlayButton(src));
+    if (hasNarration(src)) wrap.appendChild(createPlayButton(src));
     img.addEventListener('load', positionPlayButtons);
     desktopSpread.appendChild(wrap);
   });
@@ -259,13 +287,14 @@ function goPrev() {
 }
 
 function updateZoom() {
-  book.style.transformOrigin = 'center center';
-  book.style.transform = `translate3d(${panX}px,${panY}px,0) scale(${zoom})`;
+  const target = visibleBook();
+  target.style.transformOrigin = 'center center';
+  target.style.transform = `translate3d(${panX}px,${panY}px,0) scale(${zoom})`;
 }
 
 function clampPan() {
   const stageRect = stage.getBoundingClientRect();
-  const bookRect = book.getBoundingClientRect();
+  const bookRect = visibleBook().getBoundingClientRect();
   const maxX = Math.max(0, (bookRect.width - stageRect.width) / 2);
   const maxY = Math.max(0, (bookRect.height - stageRect.height) / 2);
   panX = Math.max(-maxX, Math.min(maxX, panX));
@@ -298,18 +327,11 @@ function resetFit() {
 document.getElementById('home').addEventListener('click', () => {
   window.location.href = '../index.html';
 });
-desktopSpread.addEventListener('click', e => {
-  if (!window.matchMedia('(min-width: 601px)').matches) return;
-  if (suppressDesktopClick) {
-    suppressDesktopClick = false;
-    return;
-  }
-  if (e.target.closest('.audio-play')) return;
-  const page = e.target.closest('.spread-page');
-  if (!page) return;
-  if (page === desktopSpread.firstElementChild) goPrev();
-  if (page === desktopSpread.lastElementChild) goNext();
-});
+document.getElementById('zoomIn').addEventListener('click', () => setZoom(zoom + .25));
+document.getElementById('zoomOut').addEventListener('click', () => setZoom(zoom - .25));
+document.getElementById('fit').addEventListener('click', resetFit);
+document.getElementById('previous').addEventListener('click', goPrev);
+document.getElementById('next').addEventListener('click', goNext);
 pageAudio.addEventListener('play', syncPlayButtons);
 pageAudio.addEventListener('pause', syncPlayButtons);
 pageAudio.addEventListener('ended', stopPageAudio);
@@ -325,6 +347,7 @@ stage.addEventListener('wheel', e => {
 
 // Pointer gestures: swipe to turn pages; drag when zoomed.
 stage.addEventListener('pointerdown', e => {
+  if (activePointers.size === 0) gesturePinched = false;
   stage.setPointerCapture(e.pointerId);
   pointerStart = {x:e.clientX, y:e.clientY, lastX:e.clientX, lastY:e.clientY, t:performance.now()};
   stage.classList.add('dragging');
@@ -347,9 +370,9 @@ stage.addEventListener('pointerup', e => {
   const dy = e.clientY - pointerStart.y;
   const dt = performance.now() - pointerStart.t;
   pointerStart = null;
-  suppressDesktopClick = true;
 
   const isSwipe = Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.25 && dt < 700;
+  if (gesturePinched || zoom > 1) return;
   if (isSwipe) {
     if (dx < 0) goNext(); else goPrev();
     return;
@@ -367,6 +390,7 @@ const activePointers = new Map();
 stage.addEventListener('pointerdown', e => {
   activePointers.set(e.pointerId, {x:e.clientX,y:e.clientY});
   if (activePointers.size === 2) {
+    gesturePinched = true;
     const a=[...activePointers.values()];
     pinchStart = Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);
   }
@@ -375,6 +399,7 @@ stage.addEventListener('pointermove', e => {
   if (!activePointers.has(e.pointerId)) return;
   activePointers.set(e.pointerId, {x:e.clientX,y:e.clientY});
   if (activePointers.size === 2) {
+    gesturePinched = true;
     const a=[...activePointers.values()];
     const d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);
     if (pinchStart) setZoom(zoom * d/pinchStart);
@@ -391,35 +416,27 @@ stage.addEventListener('pointercancel', clearPointer);
 
 // Keyboard controls.
 window.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft') goNext();
-  if (e.key === 'ArrowRight') goPrev();
+  if (e.key === 'ArrowLeft') goPrev();
+  if (e.key === 'ArrowRight') goNext();
   if (e.key === '+' || e.key === '=') setZoom(zoom + .25);
   if (e.key === '-') setZoom(zoom - .25);
   if (e.key === '0') resetFit();
 });
 
-// Double click/tap toggles a comfortable reading zoom.
-stage.addEventListener('dblclick', e => {
-  const rect=stage.getBoundingClientRect();
-  const x=e.clientX-rect.left-rect.width/2, y=e.clientY-rect.top-rect.height/2;
-  setZoom(zoom > 1 ? 1 : 1.8, x, y);
-});
-
 async function loadFlipbook() {
   try {
-    const dates = getCurrentWeekDates();
-    // Check each image before creating pages, keeping the week's original order.
-    const availableImages = await Promise.all(dates.map(fileName => {
-      const month = fileName.split(' ')[0].toLowerCase();
-      const src = new URL(`images/sources/${month}/${fileName}`, window.location.href).href;
-      return new Promise(resolve => {
-        const img = new Image();
-        img.onload = () => resolve(src);
-        img.onerror = () => resolve(null);
-        img.src = src;
-      });
-    }));
-    images = availableImages.filter(Boolean);
+    const today = new Date();
+    const dates = getCurrentWeekDates(today);
+    const [cover, fallback] = coverPaths(today);
+    const coverPromise = loadImage(cover).then(src => src || loadImage(fallback));
+    const [coverImage, availableImages] = await Promise.all([
+      coverPromise,
+      Promise.all(dates.map(fileName => {
+        const month = fileName.split(' ')[0].toLowerCase();
+        return loadImage(`images/sources/${month}/${fileName}`);
+      }))
+    ]);
+    images = [coverImage, ...availableImages].filter(Boolean);
     if (images.length === 0) {
       loading.textContent = 'No pages are available for this week yet.';
       return;
@@ -434,7 +451,8 @@ async function loadFlipbook() {
     resetFit();
     render();
     requestAnimationFrame(positionPlayButtons);
-    window.addEventListener('resize', positionPlayButtons);
+    new ResizeObserver(resetFit).observe(stage);
+    singlePageQuery.addEventListener("change", resetFit);
   } catch (error) {
     loading.textContent = `Unable to prepare flipbook: ${error.message}`;
   }

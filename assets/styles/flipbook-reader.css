@@ -11,7 +11,7 @@ body {
   touch-action:none;
 }
 .app {
-  width:100%; height:100%; display:flex; flex-direction:column;
+  width:100%; height:100%; height:100dvh; display:flex; flex-direction:column;
   background:
     radial-gradient(circle at 20% 10%, rgba(255,255,255,.65), transparent 28%),
     linear-gradient(135deg, #f7eddb, #eee0c7);
@@ -98,7 +98,7 @@ button:disabled { opacity:.38; cursor:default; }
   position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   background:#f7eddb; color:var(--navy); z-index:50; font-size:16px;
 }
-@media (max-width:600px) {
+@media (max-width:600px), (orientation:portrait) {
   .topbar { height:52px; flex-basis:52px; padding:0 9px; }
   .brand { font-size:14px; }
   button { min-width:35px; height:34px; padding:0 8px; }
@@ -111,7 +111,7 @@ button:disabled { opacity:.38; cursor:default; }
     max-height:calc(100vh - 52px);
   }
 }
-@media (min-width:601px) {
+@media (min-width:601px) and (orientation:landscape) {
   .book { display:none; }
   .desktop-spread {
     display:flex;
@@ -119,7 +119,7 @@ button:disabled { opacity:.38; cursor:default; }
     height:min(calc(100vh - 58px), 92vh);
     justify-content:center;
     gap:16px;
-    padding:0 48px;
+    padding:0;
     overflow:hidden;
     border-radius:5px 9px 9px 5px;
     box-shadow:8px 10px 25px var(--shadow);
@@ -177,4 +177,15 @@ button:disabled { opacity:.38; cursor:default; }
   background:var(--gold);
   color:var(--navy);
   border-color:#f0c66c;
+}
+
+/* Fit dimensions use the stage remaining below the toolbar. */
+.book { max-width:none; max-height:none; flex-shrink:0; }
+.desktop-spread { flex-shrink:0; transform-origin:center; will-change:transform; }
+.stage { touch-action:none; }
+.topbar { height:auto; min-height:58px; flex:0 0 auto; flex-wrap:wrap; gap:6px; padding:8px 12px; }
+.tools { flex-wrap:wrap; }
+@media (max-width:600px) {
+  .brand { font-size:12px; }
+  .topbar { justify-content:center; }
 }

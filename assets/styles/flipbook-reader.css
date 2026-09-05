@@ -123,7 +123,13 @@ button:disabled { opacity:.38; cursor:default; }
     overflow:hidden;
     border-radius:5px 9px 9px 5px;
     box-shadow:8px 10px 25px var(--shadow);
-    background:#eee;
+    /* Warm paper edges fall into a narrow, dark crease at the spine. */
+    background:
+      linear-gradient(to right,
+        #eee4d2 0%, #d0bfa3 18%, #95816a 38%,
+        #514337 49%, #44382e 51%, #8c7862 64%,
+        #cbbb9f 82%, #eee4d2 100%) center / 16px 100% no-repeat,
+      #eee;
   }
   .desktop-spread .spread-page {
     position:relative;

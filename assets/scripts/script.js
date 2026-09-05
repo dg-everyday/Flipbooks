@@ -1,18 +1,16 @@
 const today = new Date();
-const month = today.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+const monthFolder = today.toLocaleString('en-US', { month: 'long' });
+const month = monthFolder.toLowerCase();
 const dateName = today.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
   year: 'numeric'
 });
 document.getElementById('current-date').textContent = dateName;
-const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
-const weekNumber = Math.ceil((today.getDate() + firstDayOfMonth) / 7);
 
 const posterCard = document.getElementById('poster-card');
 const dailyPoster = document.getElementById('daily-poster');
 const posterPath = `reader/images/sources/${month}/${dateName}`;
-const monthFolder = today.toLocaleString('en-US', { month: 'long' });
 const todayAudioUrl = `reader/audio/${monthFolder}/mp3/${dateName}.mp3`;
 const playIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
 const pauseIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
@@ -22,10 +20,11 @@ let showingComic = false;
 
 function syncVerseAudioButton() {
   const playing = !verseAudio.paused;
+  const label = playing ? "Pause today's narration" : "Play today's narration";
   verseAudioButton.classList.toggle('is-playing', playing);
-  verseAudioButton.setAttribute('aria-pressed', playing ? 'true' : 'false');
-  verseAudioButton.setAttribute('aria-label', playing ? "Pause today's narration" : "Play today's narration");
-  verseAudioButton.title = playing ? "Pause today's narration" : "Play today's narration";
+  verseAudioButton.setAttribute('aria-pressed', String(playing));
+  verseAudioButton.setAttribute('aria-label', label);
+  verseAudioButton.title = label;
   verseAudioButton.innerHTML = playing ? pauseIcon : playIcon;
 }
 
@@ -63,11 +62,6 @@ posterCard.addEventListener('keydown', event => {
     togglePoster();
   }
 });
-document.getElementById('weekly-flipbook-link').href =
-  `reader/flipbook-reader.html?${month}-week${weekNumber}.json`;
-document.getElementById('hero-weekly-flipbook-link').href =
-  `reader/flipbook-reader.html?${month}-week${weekNumber}.json`;
-
 fetch('assets/verses.json')
   .then(response => {
     if (!response.ok) throw new Error(`Unable to load assets/verses.json (${response.status})`);

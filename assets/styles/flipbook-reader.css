@@ -68,13 +68,13 @@ button:disabled { opacity:.38; cursor:default; }
   aspect-ratio:9 / 16;
   max-width:calc(100vw - 24px);
   max-height:calc(100vh - 123px);
-  transform-style:preserve-3d;
-  transition:transform .18s ease;
+  transform-style:flat;
+  isolation:isolate;
   will-change:transform;
 }
 .desktop-spread { display:none; }
 .page {
-  position:absolute; inset:0; transform-style:preserve-3d;
+  position:absolute; inset:0; transform-style:flat;
   transform-origin:left center;
   border-radius:5px 9px 9px 5px;
   overflow:hidden;
@@ -88,12 +88,7 @@ button:disabled { opacity:.38; cursor:default; }
   background:#eee;
   user-select:none; -webkit-user-drag:none;
 }
-.flip {
-  transition:transform .72s cubic-bezier(.22,.7,.18,1);
-}
-.flipped {
-  transform:rotateY(-180deg);
-}
+.page[hidden] { display:none; }
 .loading {
   position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   background:#f7eddb; color:var(--navy); z-index:50; font-size:16px;
@@ -108,7 +103,6 @@ button:disabled { opacity:.38; cursor:default; }
     width:40px;
     background:url('../images/wire-binding.svg?v=2') center top / 40px 28px repeat-y;
     pointer-events:none;
-    transform:translateZ(1px);
     z-index:100;
   }
   .topbar { height:52px; flex-basis:52px; padding:0 9px; }

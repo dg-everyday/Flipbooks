@@ -227,7 +227,8 @@ function fitBookToViewport() {
 function buildPages() {
   images.forEach((src, i) => {
     const page = document.createElement('div');
-    page.className = 'page flip';
+    page.className = 'page';
+    page.hidden = true;
     page.style.zIndex = String(images.length - i);
 
     const img = document.createElement('img');
@@ -245,9 +246,8 @@ function render() {
   // Pair the opening blank with page 1, then pages 2–3, 4–5, etc.
   current = isSinglePage() ? Math.max(0, current) : spreadStart(current);
   [...book.children].forEach((page, i) => {
-    page.classList.toggle('flipped', i < current);
-    // Turned pages sit above unturned pages.
-    page.style.zIndex = i < current ? (20 + i) : (images.length - i);
+    page.hidden = i !== Math.max(0, current);
+    page.style.zIndex = '1';
   });
   renderDesktopSpread();
   updateZoom();
@@ -313,7 +313,13 @@ async function turnPage(direction) {
   animating = true;
   const animateSpread = !isSinglePage()
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const animateSingle = isSinglePage()
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   try {
+    if (animateSingle) {
+      await animateSpreadHalf(book.children[current], 0, direction > 0 ? -90 : 90,
+        'left center');
+    }
     if (animateSpread) {
       // Fold the outgoing page toward the spine, then unfold the new page away from it.
       const outgoing = direction > 0 ? desktopSpread.lastElementChild : desktopSpread.firstElementChild;
@@ -326,8 +332,9 @@ async function turnPage(direction) {
       const incoming = direction > 0 ? desktopSpread.firstElementChild : desktopSpread.lastElementChild;
       await animateSpreadHalf(incoming, direction > 0 ? 90 : -90, 0,
         direction > 0 ? 'right center' : 'left center');
-    } else if (!animateSpread) {
-      await new Promise(resolve => setTimeout(resolve, 740));
+    } else if (animateSingle && isSinglePage()) {
+      await animateSpreadHalf(book.children[current], direction > 0 ? 90 : -90, 0,
+        'left center');
     }
   } finally {
     animating = false;
@@ -353,7 +360,9 @@ function clampPan() {
   const bookRect = visibleBook().getBoundingClientRect();
   const maxX = Math.max(0, (bookRect.width - stageRect.width) / 2);
   const maxY = Math.max(0, (bookRect.height - stageRect.height) / 2);
-  panX = Math.max(-maxX, Math.min(maxX, panX));
+  const binderWidth = isSinglePage() ? 28 * zoom : 0;
+  const maxRight = Math.max(0, (bookRect.width - stageRect.width) / 2 + binderWidth);
+  panX = Math.max(-maxX, Math.min(maxRight, panX));
   panY = Math.max(-maxY, Math.min(maxY, panY));
 }
 

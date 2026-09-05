@@ -4,7 +4,7 @@ const stage = document.getElementById('stage');
 const loading = document.getElementById('loading');
 const desktopSpread = document.getElementById('desktopSpread');
 
-let current = 0;       // number of pages turned
+let current = 0;       // image index; -1 represents the opening blank in spread mode
 let zoom = 1;
 let panX = 0, panY = 0;
 let pointerStart = null;
@@ -190,7 +190,8 @@ function handlePageTap(x, y) {
 
 function fitBookToViewport() {
   const stageRect = stage.getBoundingClientRect();
-  const availableW = Math.max(1, stageRect.width - 16);
+  // Leave room for the spring extending beyond the left edge in single-page mode.
+  const availableW = Math.max(1, stageRect.width - (isSinglePage() ? 64 : 16));
   const availableH = Math.max(1, stageRect.height - 16);
 
   // Daily Grace artwork is portrait. Use the actual first image ratio when loaded.
@@ -241,6 +242,8 @@ function buildPages() {
 }
 
 function render() {
+  // Pair the opening blank with page 1, then pages 2–3, 4–5, etc.
+  current = isSinglePage() ? Math.max(0, current) : spreadStart(current);
   [...book.children].forEach((page, i) => {
     page.classList.toggle('flipped', i < current);
     // Turned pages sit above unturned pages.
@@ -250,19 +253,30 @@ function render() {
   updateZoom();
 }
 
+function spreadStart(index) {
+  return Math.floor((index + 1) / 2) * 2 - 1;
+}
+
 function renderDesktopSpread() {
   desktopSpread.replaceChildren();
-  [images[current], images[current + 1]].filter(Boolean).forEach((src, offset) => {
+  const start = spreadStart(current);
+  [start, start + 1].forEach(index => {
+    const src = images[index];
     const wrap = document.createElement('div');
     wrap.className = 'spread-page';
+    desktopSpread.appendChild(wrap);
+    if (!src) {
+      wrap.classList.add('blank-page');
+      wrap.setAttribute('aria-label', 'Blank page');
+      return;
+    }
     const img = document.createElement('img');
     img.src = src;
-    img.alt = `Daily Grace page ${current + offset + 1}`;
+    img.alt = `Daily Grace page ${index + 1}`;
     img.draggable = false;
     wrap.appendChild(img);
     if (hasNarration(src)) wrap.appendChild(createPlayButton(src));
     img.addEventListener('load', positionPlayButtons);
-    desktopSpread.appendChild(wrap);
   });
   syncPlayButtons();
   requestAnimationFrame(positionPlayButtons);
@@ -291,8 +305,10 @@ async function animateSpreadHalf(page, from, to, origin) {
 }
 
 async function turnPage(direction) {
-  const next = current + direction;
-  if (animating || next < 0 || next >= images.length) return;
+  const step = isSinglePage() ? 1 : 2;
+  const next = current + direction * step;
+  const first = isSinglePage() ? 0 : -1;
+  if (animating || next < first || next >= images.length) return;
   stopPageAudio();
   animating = true;
   const animateSpread = !isSinglePage()
@@ -487,7 +503,10 @@ async function loadFlipbook() {
     render();
     requestAnimationFrame(positionPlayButtons);
     new ResizeObserver(resetFit).observe(stage);
-    singlePageQuery.addEventListener("change", resetFit);
+    singlePageQuery.addEventListener("change", () => {
+      render();
+      resetFit();
+    });
   } catch (error) {
     loading.textContent = `Unable to prepare flipbook: ${error.message}`;
   }

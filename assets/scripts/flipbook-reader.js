@@ -317,8 +317,22 @@ async function turnPage(direction) {
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   try {
     if (animateSingle) {
-      await animateSpreadHalf(book.children[current], 0, direction > 0 ? -90 : 90,
-        'left center');
+      const outgoing = book.children[current];
+      const incoming = book.children[next];
+      // Keep the destination underneath a forward turn. On a backward turn,
+      // the previous page swings over the current page from the left.
+      incoming.hidden = false;
+      try {
+        if (direction > 0) {
+          await animateSpreadHalf(outgoing, 0, -90, 'left center');
+        } else {
+          await animateSpreadHalf(incoming, -90, 0, 'left center');
+        }
+        current = next;
+      } finally {
+        render();
+      }
+      return;
     }
     if (animateSpread) {
       // Fold the outgoing page toward the spine, then unfold the new page away from it.
@@ -332,9 +346,6 @@ async function turnPage(direction) {
       const incoming = direction > 0 ? desktopSpread.firstElementChild : desktopSpread.lastElementChild;
       await animateSpreadHalf(incoming, direction > 0 ? 90 : -90, 0,
         direction > 0 ? 'right center' : 'left center');
-    } else if (animateSingle && isSinglePage()) {
-      await animateSpreadHalf(book.children[current], direction > 0 ? 90 : -90, 0,
-        'left center');
     }
   } finally {
     animating = false;

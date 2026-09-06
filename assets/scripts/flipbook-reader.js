@@ -1,4 +1,5 @@
 let images = [];
+let versesByDate = new Map();
 const book = document.getElementById('book');
 const stage = document.getElementById('stage');
 const loading = document.getElementById('loading');
@@ -79,6 +80,79 @@ function imageFileName(src) {
 
 function isComicImage(src) {
   return / - Comic\.[^.]+$/i.test(imageFileName(src));
+}
+
+function isFuturePage(src, today = new Date()) {
+  if (!src) return false;
+  const match = imageFileName(src).match(/^([A-Za-z]+) (\d{1,2}), (\d{4})(?: - Comic)?\.webp$/i);
+  if (!match) return false;
+  const months = ['january', 'february', 'march', 'april', 'may', 'june',
+    'july', 'august', 'september', 'october', 'november', 'december'];
+  const month = months.indexOf(match[1].toLowerCase());
+  if (month < 0) return false;
+  const pageDate = new Date(Number(match[3]), month, Number(match[2]));
+  const currentDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  return pageDate > currentDate;
+}
+
+async function loadVersesByDate() {
+  try {
+    const response = await fetch(new URL('../assets/verses.json', window.location.href));
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const verses = await response.json();
+    return new Map(verses
+      .filter(item => typeof item?.id === 'string' && typeof item.verse === 'string')
+      .map(item => [item.id, item.verse]));
+  } catch (error) {
+    console.warn('Unable to load verses:', error);
+    return new Map();
+  }
+}
+
+function updateFuturePage(page, src) {
+  const future = isFuturePage(src);
+  page.classList.toggle('future-page', future);
+  const existing = page.querySelector('.availability-message');
+  if (!future) {
+    if (existing) existing.remove();
+    return;
+  }
+  if (existing) return;
+  const date = imageFileName(src).match(/^([A-Za-z]+ \d{1,2}, \d{4})/)[1];
+  const message = document.createElement('div');
+  message.className = 'availability-message';
+  const logo = document.createElement('span');
+  logo.className = 'availability-logo';
+  logo.setAttribute('aria-hidden', 'true');
+  message.appendChild(logo);
+  const title = document.createElement('div');
+  title.className = 'availability-title';
+  title.textContent = 'DAILY GRACE';
+  message.appendChild(title);
+  if (isComicImage(src)) {
+    const comic = document.createElement('div');
+    comic.className = 'availability-comic';
+    comic.textContent = 'COMIC';
+    message.appendChild(comic);
+  }
+  const detail = document.createElement('div');
+  detail.className = 'availability-detail';
+  const label = document.createElement('div');
+  label.className = 'availability-label';
+  label.textContent = 'WILL BE AVAILABLE IN';
+  const releaseDate = document.createElement('div');
+  releaseDate.className = 'availability-date';
+  releaseDate.textContent = date;
+  detail.append(label, releaseDate);
+  const pageVerse = versesByDate.get(date);
+  if (pageVerse) {
+    const verse = document.createElement('div');
+    verse.className = 'availability-verse';
+    verse.textContent = pageVerse;
+    detail.appendChild(verse);
+  }
+  message.appendChild(detail);
+  page.appendChild(message);
 }
 
 function audioUrlForImage(src) {
@@ -231,6 +305,13 @@ function buildPages() {
     page.hidden = true;
     page.style.zIndex = String(images.length - i);
 
+    if (!src) {
+      page.classList.add('end-page');
+      page.setAttribute('aria-label', 'Blank end page');
+      book.appendChild(page);
+      return;
+    }
+
     const img = document.createElement('img');
     img.src = src;
     img.alt = `Daily Grace page ${i + 1}`;
@@ -248,6 +329,7 @@ function render() {
   [...book.children].forEach((page, i) => {
     page.hidden = i !== Math.max(0, current);
     page.style.zIndex = '1';
+      updateFuturePage(page, images[i]);
   });
   renderDesktopSpread();
   updateZoom();
@@ -264,10 +346,12 @@ function renderDesktopSpread() {
     const src = images[index];
     const wrap = document.createElement('div');
     wrap.className = 'spread-page';
+    updateFuturePage(wrap, src);
     desktopSpread.appendChild(wrap);
     if (!src) {
-      wrap.classList.add('blank-page');
-      wrap.setAttribute('aria-label', 'Blank page');
+      const isEndPage = index >= 0;
+      wrap.classList.add(isEndPage ? 'end-page' : 'blank-page');
+      wrap.setAttribute('aria-label', isEndPage ? 'Blank end page' : 'Blank page');
       return;
     }
     const img = document.createElement('img');
@@ -500,19 +584,23 @@ async function loadFlipbook() {
     const dates = getCurrentWeekDates(today);
     const [cover, fallback] = coverPaths(today);
     const coverPromise = loadImage(cover).then(src => src || loadImage(fallback));
-    const [coverImage, availableImages] = await Promise.all([
+    const [coverImage, availableImages, verses] = await Promise.all([
       coverPromise,
       Promise.all(dates.map(fileName => {
         const month = fileName.split(' ')[0].toLowerCase();
         return loadImage(`images/sources/${month}/${fileName}`);
-      }))
+      })),
+      loadVersesByDate()
     ]);
+    versesByDate = verses;
     images = [coverImage, ...availableImages].filter(Boolean);
     if (images.length === 0) {
       loading.textContent = 'No pages are available for this week yet.';
       return;
     }
 
+    // A real final page keeps the blank reachable in both single and spread modes.
+    images.push(null);
     buildPages();
     await Promise.all([...book.querySelectorAll('img')].map(img => new Promise(resolve => {
       if (img.complete) resolve(); else { img.onload=resolve; img.onerror=resolve; }

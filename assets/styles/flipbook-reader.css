@@ -91,7 +91,7 @@ button:disabled { opacity:.38; cursor:default; }
 .page[hidden] { display:none; }
 .page.future-page,
 .desktop-spread .future-page {
-  background:#f3ead7 url('../images/specialty-paper.svg') repeat;
+  background:#f3ead7 url('https://dailygrace.faith/media/assets/images/specialty-paper.svg') repeat;
   box-shadow:inset 0 0 32px rgba(126, 103, 65, .12);
   overflow:hidden;
   container-type:inline-size;
@@ -126,7 +126,7 @@ button:disabled { opacity:.38; cursor:default; }
   border:3px solid #fff;
   border-radius:50%;
   margin-bottom:2%;
-  background:url('../images/dg-icon-5.png') center / contain no-repeat;
+  background:url('https://dailygrace.faith/media/assets/images/dg-icon-5.png') center / contain no-repeat;
 }
 .availability-title,
 .availability-comic {
@@ -160,7 +160,7 @@ button:disabled { opacity:.38; cursor:default; }
 .page.end-page,
 .desktop-spread .blank-page,
 .desktop-spread .end-page {
-  background:#d6b995 url('../images/end-paper.svg') repeat;
+  background:#d6b995 url('https://dailygrace.faith/media/assets/images/end-paper.svg') repeat;
   box-shadow:inset 0 0 32px rgba(112, 78, 43, .14);
 }
 .loading {
@@ -175,7 +175,9 @@ button:disabled { opacity:.38; cursor:default; }
     bottom:0;
     left:-28px;
     width:40px;
-    background:url('../images/wire-binding.svg?v=2') center top / 40px 28px repeat-y;
+    background:
+      url('https://dailygrace.faith/media/assets/images/wire-binding.svg?v=3') center top / 40px 28px repeat-y,
+      url('../images/wire-binding.svg?v=3') center top / 40px 28px repeat-y;
     pointer-events:none;
     z-index:100;
   }
@@ -225,7 +227,9 @@ button:disabled { opacity:.38; cursor:default; }
     left:50%;
     width:40px;
     transform:translateX(-50%);
-    background:url('../images/wire-binding.svg?v=2') center top / 40px 28px repeat-y;
+    background:
+      url('https://dailygrace.faith/media/assets/images/wire-binding.svg?v=3') center top / 40px 28px repeat-y,
+      url('../images/wire-binding.svg?v=3') center top / 40px 28px repeat-y;
     pointer-events:none;
     z-index:3;
   }

@@ -1,3 +1,4 @@
+const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
 const today = new Date();
 const monthFolder = today.toLocaleString('en-US', { month: 'long' });
 const month = monthFolder.toLowerCase();
@@ -10,8 +11,8 @@ document.getElementById('current-date').textContent = dateName;
 
 const posterCard = document.getElementById('poster-card');
 const dailyPoster = document.getElementById('daily-poster');
-const posterPath = `reader/images/sources/${month}/${dateName}`;
-const todayAudioUrl = `reader/audio/${monthFolder}/mp3/${dateName}.mp3`;
+const posterPath = `${MEDIA_BASE_URL}images/sources/${month}/${dateName}`;
+const todayAudioUrl = `${MEDIA_BASE_URL}audio/${monthFolder}/mp3/${dateName}.mp3`;
 const playIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
 const pauseIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
 const verseAudioButton = document.getElementById('verse-audio-play');

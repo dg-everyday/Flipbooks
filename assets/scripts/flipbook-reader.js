@@ -1,3 +1,4 @@
+const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
 let images = [];
 let versesByDate = new Map();
 const book = document.getElementById('book');
@@ -57,7 +58,7 @@ function coverPaths(today = new Date()) {
 }
 
 function loadImage(path) {
-  const src = new URL(path, window.location.href).href;
+  const src = new URL(path, MEDIA_BASE_URL).href;
   return new Promise(resolve => {
     const img = new Image();
     img.onload = () => resolve(src);
@@ -160,7 +161,7 @@ function audioUrlForImage(src) {
   const baseName = fileName.replace(/\.[^.]+$/, '');
   const month = (baseName.match(/^([A-Za-z]+)\b/) || [])[1]
     || new Date().toLocaleString('en-US', { month: 'long' });
-  return new URL(`audio/${month}/mp3/${baseName}.mp3`, window.location.href).href;
+  return new URL(`audio/${month}/mp3/${baseName}.mp3`, MEDIA_BASE_URL).href;
 }
 
 const playIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';

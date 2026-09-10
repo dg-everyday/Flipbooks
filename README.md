@@ -13,3 +13,5 @@ so it remains visible if the R2 object is unavailable.
 The reader continues to load scripts, styles, and verse data from `/assets/`.
 
 Changing these source URLs does not upload files to R2 or configure Cloudflare routing.
+
+See [Cloudflare R2 setup](docs/r2-setup.md) for Worker code, DNS configuration, and troubleshooting.

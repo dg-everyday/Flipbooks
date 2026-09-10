@@ -126,7 +126,7 @@ button:disabled { opacity:.38; cursor:default; }
   border:3px solid #fff;
   border-radius:50%;
   margin-bottom:2%;
-  background:url('https://dailygrace.faith/media/assets/images/dg-icon-5.png') center / contain no-repeat;
+  background:url('../images/dg-icon-5.png') center / contain no-repeat;
 }
 .availability-title,
 .availability-comic {

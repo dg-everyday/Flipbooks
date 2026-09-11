@@ -37,7 +37,7 @@ body {
   align-items: center;
   background:
     linear-gradient(90deg, rgba(251,245,233,.92) 0%, rgba(251,245,233,.72) 48%, rgba(251,245,233,.22) 100%),
-    url("../images/hero.png") center 22% / cover no-repeat;
+    url("../images/hero.png?v=22437f8d40b3") center 22% / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 
@@ -471,7 +471,7 @@ footer {
     overflow: hidden;
     background:
       linear-gradient(90deg, rgba(251,245,233,.72) 0%, rgba(251,245,233,.42) 58%, rgba(251,245,233,.12) 100%),
-      url("../images/hero.png") 76% center / cover no-repeat;
+      url("../images/hero.png?v=22437f8d40b3") 76% center / cover no-repeat;
   }
   .hero-overlay {
     position: static;

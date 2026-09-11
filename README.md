@@ -1,5 +1,21 @@
 # Daily Grace Flipbooks
 
+## Daily social preview image
+
+The Pages workflow (`.github/workflows/pages.yml`) generates the `og:image` URL
+directly in the published HTML using the current date in `Asia/Manila`.
+It runs on pushes to `main`, manually, and daily at 00:07 Philippine time.
+GitHub can delay scheduled runs, so the change is not guaranteed at midnight.
+
+In GitHub repository Settings → Pages → Build and deployment, select
+**GitHub Actions** as the source, then push this workflow to `main`.
+Keep the custom domain set to `dailygrace.faith` in Pages settings.
+The generated HTML is deployed as an artifact; it is not committed back to Git.
+Social platforms may cache previously fetched previews.
+
+For local previews, run `node scripts/update-social-image.mjs` before starting
+the local server. A plain static local server does not regenerate the date.
+
 Runtime media is served from `https://dailygrace.faith/media/` (Cloudflare R2).
 
 Publish the contents of `reader/images/` under `/media/images/` and

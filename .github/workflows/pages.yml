@@ -1,0 +1,44 @@
+name: Deploy Daily Grace
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 00:07 Philippine time (UTC+8). Scheduled runs can be delayed by GitHub.
+    - cron: '7 16 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate today's social image metadata
+        run: node scripts/update-social-image.mjs
+      - uses: actions/configure-pages@v5
+      - name: Prepare website
+        run: |
+          mkdir _site
+          cp index.html CNAME favicon.ico _site/
+          cp -R assets reader _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4

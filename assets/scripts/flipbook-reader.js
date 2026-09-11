@@ -98,7 +98,7 @@ function isFuturePage(src, today = new Date()) {
 
 async function loadVersesByDate() {
   try {
-    const response = await fetch(new URL('../assets/verses.json', window.location.href));
+    const response = await fetch(new URL('../../assets/verses.json', window.location.href));
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const verses = await response.json();
     return new Map(verses
@@ -486,7 +486,7 @@ function resetFit() {
 }
 
 document.getElementById('home').addEventListener('click', () => {
-  window.location.href = '../index.html';
+  window.location.href = '../../index.html';
 });
 pageAudio.addEventListener('play', syncPlayButtons);
 pageAudio.addEventListener('pause', syncPlayButtons);

@@ -13,7 +13,7 @@ Keep the custom domain set to `dailygrace.faith` in Pages settings.
 The generated HTML is deployed as an artifact; it is not committed back to Git.
 Social platforms may cache previously fetched previews.
 
-For local previews, run `node scripts/update-social-image.mjs` before starting
+For local previews, run `node assets/scripts/update-social-image.mjs` before starting
 the local server. A plain static local server does not regenerate the date.
 
 Runtime media is served from `https://dailygrace.faith/media/` (Cloudflare R2).

@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: '22'
       - name: Generate today's social image metadata
-        run: node scripts/update-social-image.mjs
+        run: node assets/scripts/update-social-image.mjs
       - uses: actions/configure-pages@v5
       - name: Prepare website
         run: |

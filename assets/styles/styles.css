@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   --navy: #001b34;
   --navy-2: #062944;
@@ -21,10 +29,17 @@ body {
 }
 
 .page {
+  --content-gutter: 4.5vw;
   max-width: 1500px;
   margin: 0 auto;
   overflow: hidden;
   box-shadow: 0 0 50px rgba(0,0,0,.12);
+}
+
+.hero,
+.page > footer {
+  width: calc(100% - 2 * var(--content-gutter));
+  margin-inline: auto;
 }
 
 .hero {
@@ -32,7 +47,7 @@ body {
   --logo-inset: clamp(16px, 3vw, 40px);
   position: relative;
   min-height: clamp(420px, 58vw, 650px);
-  padding: calc(var(--logo-inset) + var(--logo-size) + 24px) 7vw 85px;
+  padding: 64px 32px;
   display: flex;
   align-items: center;
   background:
@@ -124,6 +139,17 @@ h1 {
 
 h1 span { color: var(--gold); }
 
+.hero-title {
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+
+.hero-title img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+}
+
 .ornament {
   margin: 28px 0 24px;
   color: var(--gold);
@@ -147,7 +173,7 @@ h1 span { color: var(--gold); }
 }
 
 .daily-section {
-  padding: 70px 4.5vw 90px;
+  padding: 70px var(--content-gutter) 90px;
   background:
     linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)),
     var(--cream);
@@ -364,7 +390,7 @@ footer {
   color: #f8edda;
 }
 .footer-main {
-  padding: 54px 5vw 45px;
+  padding: 40px 32px;
   border-top: 1px solid var(--gold);
 }
 .footer-grid {
@@ -451,6 +477,7 @@ footer {
 }
 
 @media (max-width: 1050px) {
+  .hero, .page > footer { max-width: 700px; }
   .three-columns { grid-template-columns: 1fr; }
   .poster-card, .verse-card, .reflection-card {
     max-width: 700px;
@@ -463,9 +490,10 @@ footer {
 }
 
 @media (max-width: 650px) {
+  .page { --content-gutter: 18px; }
   .hero {
     min-height: 100svh;
-    padding: calc(var(--logo-inset) + var(--logo-size) + 24px) 22px 58px;
+    padding: 48px 22px;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -477,13 +505,13 @@ footer {
     position: static;
     z-index: 3;
     display: block;
-    width: 66.666vw;
-    max-width: 66.666vw;
+    width: 100%;
+    max-width: 100%;
     margin-top: 24px;
     padding: 0;
     color: #000;
     background: transparent;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     text-align: left;
   }
   .hero-overlay .overlay-verse {
@@ -493,8 +521,8 @@ footer {
     background: transparent;
     border: 0;
     border-radius: 0;
-    font-size: .9rem;
-    line-height: 1.45;
+    font-size: clamp(1.125rem, 3.5vw, 1.375rem);
+    line-height: 1.6;
     font-style: normal;
     font-weight: 400;
     color: var(--navy);
@@ -503,7 +531,7 @@ footer {
   .hero-overlay .overlay-reference {
     margin: 0;
     color: #8a5a00;
-    font-size: .9rem;
+    font-size: inherit;
     letter-spacing: .06em;
     font-style: normal;
     font-weight: 600;
@@ -533,5 +561,6 @@ footer {
   .card { padding: 27px 23px; }
   .verse { font-size: 1.4rem; }
   .footer-item { grid-template-columns: 68px 1fr; gap: 15px; }
+  .footer-main { padding: 32px 22px; }
   .footer-icon { width: 62px; height: 62px; font-size: 1.5rem; }
 }

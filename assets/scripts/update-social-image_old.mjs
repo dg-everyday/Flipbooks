@@ -20,20 +20,14 @@ const month = new Intl.DateTimeFormat("en-US", {
     .format(now)
     .toLowerCase();
 const url = `https://dailygrace.faith/media/banner/${month}/daily-grace-${parts.year}-${parts.month}-${parts.day}.webp`;
-const targets = [
-    "../../index.html", 
-    "../../apps/pages/flipbook.html"
-];
+const path = fileURLToPath(new URL("../../index.html", import.meta.url));
+const html = readFileSync(path, "utf8");
 const tag = /<meta property="og:image" content="[^"]*"\s*\/>/g;
-for (const target of targets) {
-    const path = fileURLToPath(new URL(target, import.meta.url));
-    const html = readFileSync(path, "utf8");
-    if ([...html.matchAll(tag)].length !== 1) {
-        throw new Error(`Expected exactly one og:image meta tag in ${target}`);
-    }
-    writeFileSync(
-        path,
-        html.replace(tag, `<meta property="og:image" content="${url}" />`),
-    );
+if ([...html.matchAll(tag)].length !== 1) {
+    throw new Error("Expected exactly one og:image meta tag in index.html");
 }
+writeFileSync(
+    path,
+    html.replace(tag, `<meta property="og:image" content="${url}" />`),
+);
 console.log(`og:image: ${url}`);

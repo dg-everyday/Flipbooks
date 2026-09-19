@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630" />
 
 <title>Daily Grace — Flipbook</title>
-<link rel="stylesheet" href="../../assets/styles/flipbook-reader.css?v=20260910-3">
+<link rel="stylesheet" href="../../assets/styles/flipbook-page.css?v=20260919-1">
 </head>
 <body>
 <div class="app">
@@ -27,15 +27,14 @@
     </div>
   </div>
 
-  <main class="stage" id="stage">
-    <div class="loading" id="loading">Preparing your Daily Grace flipbook…</div>
-    <div class="book-shadow"></div>
-    <div class="book" id="book" aria-label="Daily Grace flipbook"></div>
-    <div class="desktop-spread" id="desktopSpread" aria-label="Daily Grace flipbook spread"></div>
-  </main>
-
+  <flip-book id="reader"></flip-book>
 </div>
 
-<script src="../../assets/scripts/flipbook-reader.js?v=20260911-1"></script>
+<script type="module" src="../../apps/components/flip-book.js?v=20260919-1"></script>
+<script>
+  document.getElementById('home').addEventListener('click', () => {
+    window.location.href = '../../index.html';
+  });
+</script>
 </body>
 </html>

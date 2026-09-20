@@ -36,7 +36,8 @@
  *   --flipbook-logo           url() for the logo on future pages
  */
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+// const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_VERSES_SRC = '../../assets/verses.json';
 
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
@@ -53,7 +54,7 @@ const STYLES = /* css */ `
     --flipbook-future-paper: url('../../assets/images/specialty-paper.svg');
     --flipbook-end-paper: url('../../assets/images/end-paper.svg');
     --flipbook-wire: url('../../assets/images/wire-binding.svg?v=3');
-    --flipbook-logo: url('../../assets/images/dg-icon-5.webp');
+    --flipbook-logo: url('../../assets/images/dg-icon-02-flat.webp');
 
 
     display: block;

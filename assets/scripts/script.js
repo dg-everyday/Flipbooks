@@ -1,4 +1,5 @@
-const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
+// const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
+const MEDIA_BASE_URL = 'http://localhost:9001/media/';
 const today = new Date();
 const monthFolder = today.toLocaleString('en-US', { month: 'long' });
 const month = monthFolder.toLowerCase();

@@ -83,3 +83,33 @@ fetch('assets/verses.json')
     document.getElementById('verse-text').textContent = error.message;
     document.getElementById('reflection-text').textContent = 'Please check the daily devotional data.';
   });
+
+function getSvgMetadata(svgString) {
+  const doc = new DOMParser().parseFromString(svgString, "image/svg+xml");
+
+  if (doc.querySelector("parsererror")) {
+    throw new Error("Invalid SVG: could not be parsed");
+  }
+
+  const getText = (selector) => {
+    const el = doc.querySelector(selector);
+    return el ? el.textContent.trim() : null;
+  };
+
+  return {
+    title: getText('title[id="title"]'),
+    description: getText('desc[id="description"]'),
+  };
+}
+
+async function getSvgMetadataFromUrl(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Failed to fetch SVG: ${response.status}`);
+  return getSvgMetadata(await response.text());
+}
+
+async function getSvgMetadataFromFile(file) {
+  return getSvgMetadata(await file.text());
+}
+
+

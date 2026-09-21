@@ -1,0 +1,266 @@
+{
+  "Genesis": {
+    "title": "Genesis — Tree of Life and Globe — בראשית",
+    "description": "God creates the world, establishes humanity, and begins His covenant relationship with His people."
+  },
+  "Exodus": {
+    "title": "Exodus — The Burning Bush — שמות",
+    "description": "God reveals His holy presence, delivers His people from bondage, and leads them toward freedom."
+  },
+  "Leviticus": {
+    "title": "Leviticus — Altar of Incense — ויקרא",
+    "description": "God calls His people to holiness through purity, worship, sacrifice, and faithful priestly mediation."
+  },
+  "Numbers": {
+    "title": "Numbers — Pillar of Cloud and Fire — במדבר",
+    "description": "God faithfully guides His people through wilderness challenges, revealing His presence and sustaining their journey."
+  },
+  "Deuteronomy": {
+    "title": "Deuteronomy — Scroll over Stone Tablets — דברים",
+    "description": "God renews His covenant, calling His people to remember His law and live faithfully."
+  },
+  "Joshua": {
+    "title": "Joshua — Ram's Horn and Crumbling Wall — יהושע",
+    "description": "God brings victory through obedient faith, overcoming formidable barriers and fulfilling promises to His people."
+  },
+  "Judges": {
+    "title": "Judges — Sword and Broken Pitcher — שופטים",
+    "description": "God delivers His people through unexpected leaders and unconventional victories amid recurring disobedience and repentance."
+  },
+  "Ruth": {
+    "title": "Ruth — Sheaf of Wheat — רות",
+    "description": "Faithful love and loyalty reveal God's provision, bringing redemption and hope through ordinary human relationships."
+  },
+  "1 Samuel": {
+    "title": "1 Samuel — Anointing Oil Horn and Crown — שמואל א׳",
+    "description": "God chooses and anoints a king, revealing His authority over leadership and His people's future."
+  },
+  "2 Samuel": {
+    "title": "2 Samuel — David's Harp — שמואל ב׳",
+    "description": "David's reign unites royal authority and heartfelt worship, revealing the responsibilities of leadership before God."
+  },
+  "1 Kings": {
+    "title": "1 Kings — Temple Facade — מלכים א׳",
+    "description": "Solomon's temple reflects divine glory, inviting God's people into reverent worship and faithful covenant devotion."
+  },
+  "2 Kings": {
+    "title": "2 Kings — Chariot of Fire — מלכים ב׳",
+    "description": "Elijah's heavenly departure reveals God's extraordinary power and the continuing importance of His prophetic word."
+  },
+  "1 Chronicles": {
+    "title": "1 Chronicles — Ark of the Covenant — דברי הימים א׳",
+    "description": "The covenant ark represents God's holy presence, calling His people to reverent worship and remembrance."
+  },
+  "2 Chronicles": {
+    "title": "2 Chronicles — Altar of Sacrifice — דברי הימים ב׳",
+    "description": "Repentance and renewed worship restore spiritual life as God's people turn back to Him together."
+  },
+  "Ezra": {
+    "title": "Ezra — Trowel and Scroll — עזרא",
+    "description": "Rebuilding the temple accompanies renewed obedience to God's law, restoring worship and the community's faith."
+  },
+  "Nehemiah": {
+    "title": "Nehemiah — City Gate and Wall — נחמיה",
+    "description": "Restored walls and gates embody protection, renewed community, and faithful rebuilding after devastation and exile."
+  },
+  "Esther": {
+    "title": "Esther — Golden Scepter — אסתר",
+    "description": "Divine providence works through courage and royal favor to protect God's people from threatened destruction."
+  },
+  "Job": {
+    "title": "Job — Whirlwind and Ashes — איוב",
+    "description": "Amid profound suffering, God's voice reveals divine wisdom beyond human understanding and invites humble trust."
+  },
+  "Psalms": {
+    "title": "Psalms — Lyre and Notes — תהילים",
+    "description": "Songs of praise, worship, and prayer express heartfelt devotion to God through life's changing circumstances."
+  },
+  "Proverbs": {
+    "title": "Proverbs — Glowing Lamp — משלי",
+    "description": "Divine wisdom illuminates life's decisions, guiding people toward understanding, integrity, and faithful daily living."
+  },
+  "Ecclesiastes": {
+    "title": "Ecclesiastes — Hourglass and Sun — קהלת",
+    "description": "Passing time reveals life's fleeting nature, inviting reflection on meaning, purpose, and reverence for God."
+  },
+  "Song of Solomon": {
+    "title": "Song of Solomon — Lily Among Thorns — שיר השירים",
+    "description": "Pure love blossoms with beauty and tenderness, celebrating devoted affection that flourishes amid life's difficulties."
+  },
+  "Isaiah": {
+    "title": "Isaiah — Burning Coal and Tongs — ישעיהו",
+    "description": "God purifies His servant and calls him to proclaim divine truth with courage and faithfulness."
+  },
+  "Jeremiah": {
+    "title": "Jeremiah — Shattered Clay Jar — ירמיהו",
+    "description": "A shattered vessel portrays approaching judgment, warning a rebellious nation of the consequences of unfaithfulness."
+  },
+  "Lamentations": {
+    "title": "Lamentations — Tears over Ruins — איכה",
+    "description": "Tears over Jerusalem's ruins express profound grief, mourning destruction while seeking God's mercy amid suffering."
+  },
+  "Ezekiel": {
+    "title": "Ezekiel — Wheels Within Wheels — יחזקאל",
+    "description": "Interlocking heavenly wheels reveal God's encompassing presence and sovereign movement beyond human boundaries and understanding."
+  },
+  "Daniel": {
+    "title": "Daniel — Lion with Closed Mouth — דניאל",
+    "description": "God protects His faithful servant amid mortal danger, demonstrating divine power over seemingly overwhelming threats."
+  },
+  "Hosea": {
+    "title": "Hosea — Mended Heart and Wedding Ring — הושע",
+    "description": "God answers human unfaithfulness with relentless covenant love, pursuing reconciliation and healing despite repeated betrayal."
+  },
+  "Joel": {
+    "title": "Joel — Locust Swarm — יואל",
+    "description": "Devastating locusts warn of coming judgment and the Lord's day, urging repentance and spiritual awakening."
+  },
+  "Amos": {
+    "title": "Amos — Plumb Line — עמוס",
+    "description": "God's unwavering standard of justice exposes crooked conduct and calls His people to righteous living."
+  },
+  "Obadiah": {
+    "title": "Obadiah — Eagle on a Crag — עובדיה",
+    "description": "Pride in seemingly impregnable strength leads toward downfall, revealing the futility of arrogance before God."
+  },
+  "Jonah": {
+    "title": "Jonah — Great Fish and Ship — יונה",
+    "description": "God's mercy pursues a reluctant prophet, bringing deliverance and extending the call to repentance outward."
+  },
+  "Micah": {
+    "title": "Micah — Sword Beaten to Plowshare — מיכה",
+    "description": "Weapons transformed into farming tools portray God's promised peace, replacing violence with cultivation and flourishing."
+  },
+  "Nahum": {
+    "title": "Nahum — Broken Yoke — נחום",
+    "description": "God breaks oppressive power, bringing liberation to the afflicted and decisive judgment upon Nineveh."
+  },
+  "Habakkuk": {
+    "title": "Habakkuk — Watchtower at Sunrise — חבקוק",
+    "description": "A watchman awaits the dawn, embodying patient faith and steadfast trust while seeking God's response."
+  },
+  "Zephaniah": {
+    "title": "Zephaniah — Searching Lantern — צפניה",
+    "description": "God searches hidden darkness, exposing wrongdoing and announcing judgment that calls His people to repentance."
+  },
+  "Haggai": {
+    "title": "Haggai — Rebuilt Foundation — חגי",
+    "description": "Rebuilding the temple's foundations expresses renewed devotion, restored priorities, and commitment to God's dwelling place."
+  },
+  "Zechariah": {
+    "title": "Zechariah — Lampstand and Olive Trees — זכריה",
+    "description": "Continually supplied lamps portray God's sustaining Spirit, bringing light and strength for His people's restoration."
+  },
+  "Malachi": {
+    "title": "Malachi — Sun of Righteousness — מלאכי",
+    "description": "The rising sun of righteousness brings healing and hope, announcing God's promised light and revelation."
+  },
+  "Matthew": {
+    "title": "Matthew — Crowned Lion — מתי",
+    "description": "Christ reigns as the King of the Jews, revealing royal authority and fulfilling God's promises."
+  },
+  "Mark": {
+    "title": "Mark — Ox and Servant's Towel — מרקוס",
+    "description": "Christ serves tirelessly with humility and compassion, demonstrating greatness through sacrificial service to others."
+  },
+  "Luke": {
+    "title": "Luke — Healing Hands and the Son of Man — לוקס",
+    "description": "Christ's perfect humanity reveals compassionate healing, welcoming the vulnerable as the merciful Great Physician."
+  },
+  "John": {
+    "title": "John — Soaring Eagle — יוחנן",
+    "description": "The Son of God's transcendent divine nature reveals heavenly glory beyond the limits of humanity."
+  },
+  "Acts": {
+    "title": "Acts — Descending Dove and Fire — מעשי השליחים",
+    "description": "The Holy Spirit descends with divine power, equipping believers for faithful witness and shared mission."
+  },
+  "Romans": {
+    "title": "Romans — Scales of Justice and Cross — רומים",
+    "description": "The cross reveals God's justice and mercy, establishing justification through faith rather than human achievement."
+  },
+  "1 Corinthians": {
+    "title": "1 Corinthians — Broken Chain and Heart — קורינתים א׳",
+    "description": "Freedom in Christ breaks spiritual bondage, while love remains the highest calling of Christian life."
+  },
+  "2 Corinthians": {
+    "title": "2 Corinthians — Treasure in a Clay Jar — קורינתים ב׳",
+    "description": "God places spiritual treasure within fragile human lives, revealing His surpassing power through human weakness."
+  },
+  "Galatians": {
+    "title": "Galatians — Broken Yoke of Slavery — גלטים",
+    "description": "Christ breaks the yoke of legalism, bringing true liberty through faith and freedom in grace."
+  },
+  "Ephesians": {
+    "title": "Ephesians — Armor of God — אפסים",
+    "description": "Faith and the Spirit's word equip believers to stand ready against spiritual opposition with perseverance."
+  },
+  "Philippians": {
+    "title": "Philippians — Rejoicing in Chains — פיליפים",
+    "description": "Joy and praise endure even in captivity, revealing hope in Christ beyond difficult outward circumstances."
+  },
+  "Colossians": {
+    "title": "Colossians — The Supreme Crown — קולוסים",
+    "description": "Christ reigns supreme over all creation, fully sufficient to sustain faith and complete spiritual life."
+  },
+  "1 Thessalonians": {
+    "title": "1 Thessalonians — Trumpet in the Clouds — תסלוניקים א׳",
+    "description": "The heavenly trumpet announces the Lord's return, inspiring hope in believers' gathering together with Christ."
+  },
+  "2 Thessalonians": {
+    "title": "2 Thessalonians — The Daystar — תסלוניקים ב׳",
+    "description": "A steadfast morning star symbolizes persevering faith while believers await the Lord amid uncertainty."
+  },
+  "1 Timothy": {
+    "title": "1 Timothy — Shepherd's Staff — טימותיאוס א׳",
+    "description": "Faithful church leadership provides pastoral care, protecting the community and guiding believers with sound teaching."
+  },
+  "2 Timothy": {
+    "title": "2 Timothy — Passed Baton and Scroll — טימותיאוס ב׳",
+    "description": "The faith is carefully guarded and passed onward, entrusting God's truth to another faithful generation."
+  },
+  "Titus": {
+    "title": "Titus — Anchor and Church — טיטוס",
+    "description": "Sound doctrine anchors the church, providing stability and guiding believers toward faithful, responsible Christian living."
+  },
+  "Philemon": {
+    "title": "Philemon — Joined Hands in Reconciliation — פילימון",
+    "description": "Reconciliation in Christ transforms broken relationships, uniting people in forgiveness, dignity, and genuine brotherly love."
+  },
+  "Hebrews": {
+    "title": "Hebrews — High Priest's Breastplate — עברים",
+    "description": "Christ serves as the ultimate mediator, bringing people into God's presence through His perfect priesthood."
+  },
+  "James": {
+    "title": "James — Ship's Rudder and Mirror — יעקב",
+    "description": "Genuine faith directs speech wisely and expresses itself through obedient action and honest personal reflection."
+  },
+  "1 Peter": {
+    "title": "1 Peter — Refining Fire — פטרוס א׳",
+    "description": "Trials refine faith like precious gold, strengthening believers through suffering and revealing lasting spiritual worth."
+  },
+  "2 Peter": {
+    "title": "2 Peter — Lighthouse and Dawn Star — פטרוס ב׳",
+    "description": "God's truth shines through spiritual darkness, guiding believers safely and exposing the dangers of deception."
+  },
+  "1 John": {
+    "title": "1 John — Heart of Light — יוחנן א׳",
+    "description": "God's nature as love and light transforms believers, calling them to truthful and loving relationships."
+  },
+  "2 John": {
+    "title": "2 John — Scroll of Truth — יוחנן ב׳",
+    "description": "Faithfulness to Christ's teaching preserves truth, guiding believers to walk in love without embracing deception."
+  },
+  "3 John": {
+    "title": "3 John — Open Door — יוחנן ג׳",
+    "description": "Welcoming hospitality supports faithful Christian workers, expressing love through practical generosity and partnership in truth."
+  },
+  "Jude": {
+    "title": "Jude — Flaming Sword — יהודה",
+    "description": "Believers must earnestly defend the original faith, resisting corruption and guarding the truth entrusted them."
+  },
+  "Revelation": {
+    "title": "Revelation — The Lamb and the Scroll — התגלות",
+    "description": "The victorious Lamb reveals God's final purposes, proclaiming ultimate triumph and the fulfillment of history."
+  }
+}

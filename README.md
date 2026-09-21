@@ -1,5 +1,20 @@
 # Daily Grace Flipbooks
 
+## Bible search
+
+The homepage accepts a book, chapter, or verse selection (for example, `Genesis`,
+`Psalms 119`, or `Ephesians 2:8-10,15`). Results come from `assets/db/dailygrace.db`.
+The verse reader adds 24 cards at a time as its bottom approaches the viewport;
+the **Load more verses** button also supports keyboard access and browsers without
+IntersectionObserver.
+
+Book symbols use `MEDIA_BASE_URL + images/symbols/<book name>-symbol.svg`.
+The book overview reads the SVG's `title#title` and `desc#description`; the third
+em-dash-separated title segment supplies the Hebrew name. If that request fails
+or the media server blocks cross-origin reads, `assets/book-metadata.json` supplies
+a bundled snapshot extracted from the same 66 SVGs. Update that snapshot when
+changing the source SVG titles or descriptions.
+
 ## Daily social preview image
 
 The Pages workflow (`.github/workflows/pages.yml`) generates the `og:image` URL

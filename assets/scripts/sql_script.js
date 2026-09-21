@@ -69,7 +69,7 @@ function parseBibleReference(reference) {
         throw new Error("Bible reference is required.");
     }
 
-    reference = reference.trim();
+    reference = reference.trim().replace(/\s+/g, " ").replace(/[–—]/g, "-");
 
     // --------------------------------------------------------
     // Try to separate book, chapter and verses
@@ -80,7 +80,7 @@ function parseBibleReference(reference) {
     // group 2 = 2
     // group 3 = 8-9
     // --------------------------------------------------------
-    const match = reference.match(/^(.+?)\s+(\d+)(?::(.+))?$/);
+    const match = reference.match(/^(.+?)\s+(\d+)\s*(?::\s*(.*))?$/);
 
     // --------------------------------------------------------
     // Book only
@@ -100,7 +100,7 @@ function parseBibleReference(reference) {
     const versePart = match[3];
 
     // Validate chapter
-    if (!Number.isInteger(chapter) || chapter < 1) {
+    if (!Number.isSafeInteger(chapter) || chapter < 1) {
         throw new Error("Invalid chapter number.");
     }
 
@@ -109,7 +109,7 @@ function parseBibleReference(reference) {
     //
     // Ephesians 2
     // --------------------------------------------------------
-    if (versePart === undefined || versePart.trim() === "") {
+    if (versePart === undefined) {
         return {
             bookName,
             chapter,
@@ -123,11 +123,11 @@ function parseBibleReference(reference) {
     for (const part of parts) {
         const value = part.trim();
 
-        if (!value) {
-            continue;
+        if (!/^\d+(?:\s*-\s*\d+)?$/.test(value)) {
+            throw new Error("Use verse numbers separated by commas or a range such as 8-9.");
         }
 
-        // Range (8,9)
+        // Range (8-9)
         if (value.includes("-")) {
             const range = value.split("-");
 
@@ -138,12 +138,17 @@ function parseBibleReference(reference) {
             const start = Number(range[0].trim());
             const end = Number(range[1].trim());
 
-            if (!Number.isInteger(start) 
-                    || !Number.isInteger(end) 
+            if (!Number.isSafeInteger(start)
+                    || !Number.isSafeInteger(end)
                     || start < 1 
                     || end < start) 
             {
                 throw new Error(`Invalid verse range: ${value}`);
+            }
+
+            // No Bible chapter has a range this large; avoid blocking the UI.
+            if (end - start > 1000) {
+                throw new Error("Verse range is too large. Try a book or chapter instead.");
             }
 
             for (let verse = start; verse <= end; verse++) {
@@ -154,7 +159,7 @@ function parseBibleReference(reference) {
 
             // Single verse
             const verse = Number(value);
-            if (!Number.isInteger(verse) || verse < 1) {
+            if (!Number.isSafeInteger(verse) || verse < 1) {
                 throw new Error(`Invalid verse number: ${value}`);
             }
 

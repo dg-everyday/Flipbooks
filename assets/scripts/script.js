@@ -41,12 +41,11 @@ dailyBanner.alt = `Daily Grace devotional for ${today.toLocaleDateString(
     },
 )}`;
 
-let devotionalEntries = null;
-let devotionalLoadFailed = false;
 const searchForm = document.getElementById("devotional-search");
 const searchQuery = document.getElementById("search-query");
 const searchClear = document.getElementById("search-clear");
 const searchResults = document.getElementById("search-results");
+const searchStatus = document.getElementById("search-status");
 const bibleBookSuggestions = document.getElementById("bible-books");
 let bibleBooksLoading = null;
 let bibleBooks = [];
@@ -79,6 +78,7 @@ function renderBookSuggestions() {
 }
 
 function selectBook(option) {
+    resetBibleSearch();
     searchQuery.value = option.textContent;
     searchClear.hidden = false;
     closeBookSuggestions();
@@ -90,19 +90,21 @@ function loadBibleBookSuggestions() {
     bibleBooksLoading = initDatabase()
         .then(() => {
             bibleBooks = getBooks();
-            renderBookSuggestions();
+            return bibleBooks;
         })
         .catch((error) => {
             // Keep manual search available and retry on the next focus.
             bibleBooksLoading = null;
-            console.warn("Bible book suggestions could not be loaded:", error);
+            throw error;
         });
     return bibleBooksLoading;
 }
 
 searchQuery.addEventListener("focus", () => {
     renderBookSuggestions();
-    loadBibleBookSuggestions();
+    loadBibleBookSuggestions().then(renderBookSuggestions).catch((error) => {
+        console.warn("Bible book suggestions could not be loaded:", error);
+    });
 });
 searchQuery.addEventListener("click", renderBookSuggestions);
 searchQuery.addEventListener("blur", closeBookSuggestions);
@@ -138,63 +140,264 @@ searchQuery.addEventListener("keydown", (event) => {
     }
 });
 
-function searchDevotionals() {
-    const query = searchQuery.value.trim().toLocaleLowerCase();
-    searchResults.replaceChildren();
-    searchResults.hidden = !query;
-    if (!query) return;
+const VERSE_BATCH_SIZE = 24;
+let searchGeneration = 0;
+let verseObserver = null;
+const bookMetadataCache = new Map();
+let bundledBookMetadata = null;
 
-    const status = document.createElement("p");
-    status.setAttribute("role", "status");
-    searchResults.append(status);
-    if (!devotionalEntries) {
-        status.textContent = devotionalLoadFailed
-            ? "Devotionals could not be loaded. Please refresh the page to try again."
-            : "Loading devotionals…";
-        return;
+function resetBibleSearch() {
+    searchGeneration++;
+    verseObserver?.disconnect();
+    verseObserver = null;
+    searchResults.replaceChildren();
+    searchResults.hidden = true;
+    searchResults.removeAttribute("aria-busy");
+    searchStatus.textContent = "";
+}
+
+function showSearchMessage(message) {
+    const paragraph = document.createElement("p");
+    paragraph.className = "search-message";
+    paragraph.textContent = message;
+    searchResults.replaceChildren(paragraph);
+    searchStatus.textContent = message;
+}
+
+function loadBundledBookMetadata() {
+    if (!bundledBookMetadata) {
+        bundledBookMetadata = fetch("assets/book-metadata.json")
+            .then((response) => {
+                if (!response.ok) throw new Error("Book metadata could not be loaded.");
+                return response.json();
+            })
+            .catch((error) => {
+                bundledBookMetadata = null;
+                throw error;
+            });
+    }
+    return bundledBookMetadata;
+}
+
+function loadBookMetadata(bookName, url) {
+    if (!bookMetadataCache.has(url)) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        const request = getSvgMetadataFromUrl(url, controller.signal)
+            .then((metadata) => {
+                if (!metadata.title || !metadata.description) throw new Error("Incomplete SVG metadata.");
+                return metadata;
+            })
+            // This snapshot comes from the same SVGs and also works when the media
+            // host permits <img> display but blocks cross-origin fetch requests.
+            .catch(async () => {
+                const metadata = (await loadBundledBookMetadata())[bookName];
+                if (!metadata) throw new Error(`No book overview found for ${bookName}.`);
+                return metadata;
+            })
+            .catch((error) => {
+                bookMetadataCache.delete(url);
+                throw error;
+            })
+            .finally(() => clearTimeout(timeout));
+        bookMetadataCache.set(url, request);
+    }
+    return bookMetadataCache.get(url);
+}
+
+function createBookHeader(bookName, generation) {
+    const header = document.createElement("header");
+    header.className = "search-book-header";
+    const symbol = document.createElement("img");
+    symbol.className = "search-book-symbol";
+    symbol.width = 64;
+    symbol.height = 64;
+    symbol.alt = "";
+    const symbolUrl = `${MEDIA_BASE_URL}images/symbols/${encodeURIComponent(bookName)}-symbol.svg`;
+    symbol.onerror = () => { symbol.hidden = true; };
+    symbol.src = symbolUrl;
+
+    const details = document.createElement("div");
+    details.className = "search-book-details";
+    const title = document.createElement("h2");
+    title.id = "search-book-title";
+    const englishName = document.createElement("span");
+    englishName.textContent = bookName;
+    title.append(englishName);
+    details.append(title);
+    header.append(symbol, details);
+
+    // The verse text remains available even if the optional SVG metadata fails.
+    loadBookMetadata(bookName, symbolUrl).then((metadata) => {
+        if (generation !== searchGeneration) return;
+        const hebrewName = metadata.title?.split("—")[2]?.trim();
+        if (hebrewName) {
+            const hebrew = document.createElement("bdi");
+            hebrew.className = "search-book-hebrew";
+            hebrew.lang = "he";
+            hebrew.dir = "rtl";
+            hebrew.textContent = hebrewName;
+            title.append(hebrew);
+        }
+        if (metadata.description) {
+            const description = document.createElement("p");
+            description.className = "search-book-description";
+            description.textContent = metadata.description;
+            details.append(description);
+        }
+    }).catch((error) => {
+        console.warn(`Book overview unavailable for ${bookName}:`, error);
+    });
+    return header;
+}
+
+function renderVerseResults(rows, generation) {
+    const bookName = rows[0].book_name;
+    const header = createBookHeader(bookName, generation);
+    const summary = document.createElement("p");
+    summary.className = "search-summary";
+
+    const reader = document.createElement("div");
+    reader.className = "search-verse-reader";
+    reader.tabIndex = 0;
+    reader.setAttribute("role", "region");
+    reader.setAttribute("aria-label", `${bookName} verses, scroll to read more`);
+    const list = document.createElement("div");
+    list.className = "search-verse-list";
+    list.setAttribute("role", "list");
+    list.setAttribute("aria-labelledby", "search-book-title");
+    const more = document.createElement("button");
+    more.type = "button";
+    more.className = "search-load-more";
+    more.textContent = "Load more verses";
+    const end = document.createElement("p");
+    end.className = "search-end";
+    end.textContent = "End of results";
+    end.hidden = true;
+    reader.append(list, more, end);
+    searchResults.replaceChildren(header, summary, reader);
+
+    let shown = 0;
+    function appendBatch() {
+        if (generation !== searchGeneration || shown >= rows.length) return;
+        const fragment = document.createDocumentFragment();
+        const next = Math.min(shown + VERSE_BATCH_SIZE, rows.length);
+        for (let index = shown; index < next; index++) {
+            const row = rows[index];
+            const item = document.createElement("div");
+            item.setAttribute("role", "listitem");
+            const card = document.createElement("article");
+            card.className = "search-verse-card";
+            const reference = document.createElement("h3");
+            reference.className = "search-verse-reference";
+            const accessibleReference = document.createElement("span");
+            accessibleReference.className = "visually-hidden";
+            accessibleReference.textContent = `${bookName}, chapter ${row.chapter}, verse ${row.verse}`;
+            const numbers = document.createElement("span");
+            numbers.className = "search-verse-numbers";
+            numbers.setAttribute("aria-hidden", "true");
+            const chapter = document.createElement("span");
+            chapter.className = "search-chapter-number";
+            chapter.textContent = `${row.chapter}:`;
+            const verse = document.createElement("span");
+            verse.className = "search-verse-number";
+            verse.textContent = row.verse;
+            numbers.append(chapter, verse);
+            reference.append(accessibleReference, numbers);
+            const text = document.createElement("p");
+            text.className = "search-verse-text";
+            text.textContent = row.text;
+            card.append(reference, text);
+            item.append(card);
+            fragment.append(item);
+        }
+        list.append(fragment);
+        shown = next;
+        summary.textContent = `${rows.length.toLocaleString()} verse${rows.length === 1 ? "" : "s"} found · ${shown.toLocaleString()} shown`;
+        searchStatus.textContent = `${bookName}. ${summary.textContent}`;
+        if (shown === rows.length) {
+            verseObserver?.disconnect();
+            end.hidden = false;
+            // Preserve focus when the final batch is requested from the keyboard.
+            if (document.activeElement === more) {
+                more.textContent = "All verses loaded";
+                more.setAttribute("aria-disabled", "true");
+                more.addEventListener("blur", () => { more.hidden = true; }, { once: true });
+            } else {
+                more.hidden = true;
+            }
+        } else if (verseObserver) {
+            // Re-observe after layout so a very tall viewport can fill another batch.
+            verseObserver.unobserve(more);
+            verseObserver.observe(more);
+        }
     }
 
-    const matches = devotionalEntries.filter((entry) =>
-        [entry.id, entry.verse, entry.text, entry.reflection].some((value) =>
-            String(value || "")
-                .toLocaleLowerCase()
-                .includes(query),
-        ),
-    );
-    status.textContent = matches.length
-        ? `${matches.length} devotional${matches.length === 1 ? "" : "s"} found.`
-        : "No devotionals found. Try a date, Bible reference, or keyword.";
-    for (const entry of matches) {
-        const article = document.createElement("article");
-        const heading = document.createElement("h2");
-        heading.textContent = `${entry.verse} · ${entry.id}`;
-        const verse = document.createElement("p");
-        verse.textContent = entry.text;
-        const reflection = document.createElement("p");
-        reflection.textContent = entry.reflection;
-        article.append(heading, verse, reflection);
-        searchResults.append(article);
+    more.addEventListener("click", appendBatch);
+    appendBatch();
+    if (shown < rows.length && "IntersectionObserver" in window) {
+        verseObserver = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) appendBatch();
+        }, { root: reader, rootMargin: "0px 0px 240px 0px" });
+        verseObserver.observe(more);
+    }
+}
+
+async function searchBibleVerses() {
+    const query = searchQuery.value.trim();
+    resetBibleSearch();
+    closeBookSuggestions();
+    if (!query) return;
+    const generation = searchGeneration;
+    searchResults.hidden = false;
+    searchResults.setAttribute("aria-busy", "true");
+    showSearchMessage("Loading Bible verses…");
+    try {
+        let reference;
+        try {
+            reference = parseBibleReference(query);
+        } catch (error) {
+            showSearchMessage(`${error.message} Try Ephesians 2:8-9.`);
+            return;
+        }
+        await loadBibleBookSuggestions();
+        if (generation !== searchGeneration) return;
+        closeBookSuggestions();
+        const bookName = bibleBooks.find((book) =>
+            book.toLocaleLowerCase() === reference.bookName.toLocaleLowerCase(),
+        );
+        if (!bookName) {
+            showSearchMessage("Book not found. Choose a Bible book from the suggestions, or try Ephesians 2:8-9.");
+            return;
+        }
+        const rows = getVerses(bookName, reference.chapter, reference.verses);
+        if (!rows.length) {
+            showSearchMessage("No verses found. Check the chapter and verse numbers and try again.");
+            return;
+        }
+        renderVerseResults(rows, generation);
+    } catch (error) {
+        if (generation !== searchGeneration) return;
+        console.warn("Bible search failed:", error);
+        showSearchMessage("Bible verses could not be loaded. Please search again to retry.");
+    } finally {
+        if (generation === searchGeneration) searchResults.removeAttribute("aria-busy");
     }
 }
 
 searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    closeBookSuggestions();
-    searchDevotionals();
+    searchBibleVerses();
 });
 searchQuery.addEventListener("input", () => {
+    resetBibleSearch();
     renderBookSuggestions();
     searchClear.hidden = !searchQuery.value;
-    if (!searchQuery.value.trim()) {
-        searchResults.replaceChildren();
-        searchResults.hidden = true;
-    }
 });
 searchClear.addEventListener("click", () => {
     searchQuery.value = "";
     searchClear.hidden = true;
-    searchResults.replaceChildren();
-    searchResults.hidden = true;
+    resetBibleSearch();
     searchQuery.focus();
     renderBookSuggestions();
 });
@@ -277,8 +480,6 @@ fetch("assets/verses.json")
         return response.json();
     })
     .then((verses) => {
-        devotionalEntries = verses;
-        if (!searchResults.hidden) searchDevotionals();
         const currentVerse = verses.find((item) => item.id === dateName);
         if (!currentVerse) throw new Error(`No verse found for ${dateName}`);
 
@@ -297,8 +498,6 @@ fetch("assets/verses.json")
         dailyReflectionToggle.disabled = false;
     })
     .catch((error) => {
-        devotionalLoadFailed = true;
-        if (!searchResults.hidden) searchDevotionals();
         document.getElementById("verse-text").textContent = error.message;
         document.getElementById("reflection-text").textContent =
             "Please check the daily devotional data.";
@@ -324,8 +523,8 @@ function getSvgMetadata(svgString) {
     };
 }
 
-async function getSvgMetadataFromUrl(url) {
-    const response = await fetch(url);
+async function getSvgMetadataFromUrl(url, signal) {
+    const response = await fetch(url, { signal });
     if (!response.ok)
         throw new Error(`Failed to fetch SVG: ${response.status}`);
     return getSvgMetadata(await response.text());

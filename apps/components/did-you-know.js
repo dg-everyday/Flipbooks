@@ -22,12 +22,14 @@
  *              error      detail: { message }
  *
  * Fonts: Germania One (titles) and Strait (text) are registered on the
- * document from ../../assets/fonts, because browsers do not reliably load
- * @font-face rules declared inside a shadow root.
+ * document by assets/scripts/fonts.js, because browsers do not reliably load @font-face
+ * rules declared inside a shadow root.
  *
  * CSS custom properties
  *   --dyk-navy, --dyk-ink, --dyk-reference, --dyk-symbol-size
  */
+
+import { registerFonts } from '../../assets/scripts/fonts.js';
 
 // const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
@@ -38,24 +40,6 @@ const asset = (path) => new URL(path, import.meta.url).href;
 const BANNER_URL = asset('../../assets/images/did-you-know.webp');
 const REFRESH_URL = asset('../../assets/images/refresh.webp');
 const DEFAULT_SRC = asset('../../assets/did-you-know.json');
-
-function registerFonts() {
-  if (document.getElementById('did-you-know-fonts')) return;
-  const style = document.createElement('style');
-  style.id = 'did-you-know-fonts';
-  style.textContent = `
-    @font-face {
-      font-family: 'Germania One';
-      src: url('${asset('../../assets/fonts/GermaniaOne-Regular.ttf')}') format('truetype');
-      font-weight: 400; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Strait';
-      src: url('${asset('../../assets/fonts/Strait-Regular.ttf')}') format('truetype');
-      font-weight: 400; font-style: normal; font-display: swap;
-    }`;
-  document.head.append(style);
-}
 
 const STYLES = /* css */ `
   :host {

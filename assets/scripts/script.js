@@ -45,7 +45,7 @@ const searchForm = document.getElementById("devotional-search");
 const searchQuery = document.getElementById("search-query");
 const searchClear = document.getElementById("search-clear");
 const searchResults = document.getElementById("search-results");
-const searchStatus = document.getElementById("search-status");
+searchResults.setAttribute("media-base", MEDIA_BASE_URL);
 const bibleBookSuggestions = document.getElementById("bible-books");
 let bibleBooksLoading = null;
 let bibleBooks = [];
@@ -140,207 +140,11 @@ searchQuery.addEventListener("keydown", (event) => {
     }
 });
 
-const VERSE_BATCH_SIZE = 24;
 let searchGeneration = 0;
-let verseObserver = null;
-const bookMetadataCache = new Map();
-let bundledBookMetadata = null;
 
 function resetBibleSearch() {
     searchGeneration++;
-    verseObserver?.disconnect();
-    verseObserver = null;
-    searchResults.replaceChildren();
-    searchResults.hidden = true;
-    searchResults.removeAttribute("aria-busy");
-    searchStatus.textContent = "";
-}
-
-function showSearchMessage(message) {
-    const paragraph = document.createElement("p");
-    paragraph.className = "search-message";
-    paragraph.textContent = message;
-    searchResults.replaceChildren(paragraph);
-    searchStatus.textContent = message;
-}
-
-function loadBundledBookMetadata() {
-    if (!bundledBookMetadata) {
-        bundledBookMetadata = fetch("assets/book-metadata.json")
-            .then((response) => {
-                if (!response.ok) throw new Error("Book metadata could not be loaded.");
-                return response.json();
-            })
-            .catch((error) => {
-                bundledBookMetadata = null;
-                throw error;
-            });
-    }
-    return bundledBookMetadata;
-}
-
-function loadBookMetadata(bookName, url) {
-    if (!bookMetadataCache.has(url)) {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 5000);
-        const request = getSvgMetadataFromUrl(url, controller.signal)
-            .then((metadata) => {
-                if (!metadata.title || !metadata.description) throw new Error("Incomplete SVG metadata.");
-                return metadata;
-            })
-            // This snapshot comes from the same SVGs and also works when the media
-            // host permits <img> display but blocks cross-origin fetch requests.
-            .catch(async () => {
-                const metadata = (await loadBundledBookMetadata())[bookName];
-                if (!metadata) throw new Error(`No book overview found for ${bookName}.`);
-                return metadata;
-            })
-            .catch((error) => {
-                bookMetadataCache.delete(url);
-                throw error;
-            })
-            .finally(() => clearTimeout(timeout));
-        bookMetadataCache.set(url, request);
-    }
-    return bookMetadataCache.get(url);
-}
-
-function createBookHeader(bookName, generation) {
-    const header = document.createElement("header");
-    header.className = "search-book-header";
-    const symbol = document.createElement("img");
-    symbol.className = "search-book-symbol";
-    symbol.width = 64;
-    symbol.height = 64;
-    symbol.alt = "";
-    const symbolUrl = `${MEDIA_BASE_URL}images/symbols/${encodeURIComponent(bookName)}-symbol.svg`;
-    symbol.onerror = () => { symbol.hidden = true; };
-    symbol.src = symbolUrl;
-
-    const details = document.createElement("div");
-    details.className = "search-book-details";
-    const title = document.createElement("h2");
-    title.id = "search-book-title";
-    const englishName = document.createElement("span");
-    englishName.textContent = bookName;
-    title.append(englishName);
-    details.append(title);
-    header.append(symbol, details);
-
-    // The verse text remains available even if the optional SVG metadata fails.
-    loadBookMetadata(bookName, symbolUrl).then((metadata) => {
-        if (generation !== searchGeneration) return;
-        const hebrewName = metadata.title?.split("—")[2]?.trim();
-        if (hebrewName) {
-            const hebrew = document.createElement("bdi");
-            hebrew.className = "search-book-hebrew";
-            hebrew.lang = "he";
-            hebrew.dir = "rtl";
-            hebrew.textContent = hebrewName;
-            title.append(hebrew);
-        }
-        if (metadata.description) {
-            const description = document.createElement("p");
-            description.className = "search-book-description";
-            description.textContent = metadata.description;
-            details.append(description);
-        }
-    }).catch((error) => {
-        console.warn(`Book overview unavailable for ${bookName}:`, error);
-    });
-    return header;
-}
-
-function renderVerseResults(rows, generation) {
-    const bookName = rows[0].book_name;
-    const header = createBookHeader(bookName, generation);
-    const summary = document.createElement("p");
-    summary.className = "search-summary";
-
-    const reader = document.createElement("div");
-    reader.className = "search-verse-reader";
-    reader.tabIndex = 0;
-    reader.setAttribute("role", "region");
-    reader.setAttribute("aria-label", `${bookName} verses, scroll to read more`);
-    const list = document.createElement("div");
-    list.className = "search-verse-list";
-    list.setAttribute("role", "list");
-    list.setAttribute("aria-labelledby", "search-book-title");
-    const more = document.createElement("button");
-    more.type = "button";
-    more.className = "search-load-more";
-    more.textContent = "Load more verses";
-    const end = document.createElement("p");
-    end.className = "search-end";
-    end.textContent = "End of results";
-    end.hidden = true;
-    reader.append(list, more, end);
-    searchResults.replaceChildren(header, summary, reader);
-
-    let shown = 0;
-    function appendBatch() {
-        if (generation !== searchGeneration || shown >= rows.length) return;
-        const fragment = document.createDocumentFragment();
-        const next = Math.min(shown + VERSE_BATCH_SIZE, rows.length);
-        for (let index = shown; index < next; index++) {
-            const row = rows[index];
-            const item = document.createElement("div");
-            item.setAttribute("role", "listitem");
-            const card = document.createElement("article");
-            card.className = "search-verse-card";
-            const reference = document.createElement("h3");
-            reference.className = "search-verse-reference";
-            const accessibleReference = document.createElement("span");
-            accessibleReference.className = "visually-hidden";
-            accessibleReference.textContent = `${bookName}, chapter ${row.chapter}, verse ${row.verse}`;
-            const numbers = document.createElement("span");
-            numbers.className = "search-verse-numbers";
-            numbers.setAttribute("aria-hidden", "true");
-            const chapter = document.createElement("span");
-            chapter.className = "search-chapter-number";
-            chapter.textContent = `${row.chapter}:`;
-            const verse = document.createElement("span");
-            verse.className = "search-verse-number";
-            verse.textContent = row.verse;
-            numbers.append(chapter, verse);
-            reference.append(accessibleReference, numbers);
-            const text = document.createElement("p");
-            text.className = "search-verse-text";
-            text.textContent = row.text;
-            card.append(reference, text);
-            item.append(card);
-            fragment.append(item);
-        }
-        list.append(fragment);
-        shown = next;
-        summary.textContent = `${rows.length.toLocaleString()} verse${rows.length === 1 ? "" : "s"} found · ${shown.toLocaleString()} shown`;
-        searchStatus.textContent = `${bookName}. ${summary.textContent}`;
-        if (shown === rows.length) {
-            verseObserver?.disconnect();
-            end.hidden = false;
-            // Preserve focus when the final batch is requested from the keyboard.
-            if (document.activeElement === more) {
-                more.textContent = "All verses loaded";
-                more.setAttribute("aria-disabled", "true");
-                more.addEventListener("blur", () => { more.hidden = true; }, { once: true });
-            } else {
-                more.hidden = true;
-            }
-        } else if (verseObserver) {
-            // Re-observe after layout so a very tall viewport can fill another batch.
-            verseObserver.unobserve(more);
-            verseObserver.observe(more);
-        }
-    }
-
-    more.addEventListener("click", appendBatch);
-    appendBatch();
-    if (shown < rows.length && "IntersectionObserver" in window) {
-        verseObserver = new IntersectionObserver((entries) => {
-            if (entries.some((entry) => entry.isIntersecting)) appendBatch();
-        }, { root: reader, rootMargin: "0px 0px 240px 0px" });
-        verseObserver.observe(more);
-    }
+    searchResults.reset();
 }
 
 async function searchBibleVerses() {
@@ -349,15 +153,13 @@ async function searchBibleVerses() {
     closeBookSuggestions();
     if (!query) return;
     const generation = searchGeneration;
-    searchResults.hidden = false;
-    searchResults.setAttribute("aria-busy", "true");
-    showSearchMessage("Loading Bible verses…");
+    searchResults.loading("Loading Bible verses…");
     try {
         let reference;
         try {
             reference = parseBibleReference(query);
         } catch (error) {
-            showSearchMessage(`${error.message} Try Ephesians 2:8-9.`);
+            searchResults.showMessage(`${error.message} Try Ephesians 2:8-9.`);
             return;
         }
         await loadBibleBookSuggestions();
@@ -367,21 +169,19 @@ async function searchBibleVerses() {
             book.toLocaleLowerCase() === reference.bookName.toLocaleLowerCase(),
         );
         if (!bookName) {
-            showSearchMessage("Book not found. Choose a Bible book from the suggestions, or try Ephesians 2:8-9.");
+            searchResults.showMessage("Book not found. Choose a Bible book from the suggestions, or try Ephesians 2:8-9.");
             return;
         }
         const rows = getVerses(bookName, reference.chapter, reference.verses);
         if (!rows.length) {
-            showSearchMessage("No verses found. Check the chapter and verse numbers and try again.");
+            searchResults.showMessage("No verses found. Check the chapter and verse numbers and try again.");
             return;
         }
-        renderVerseResults(rows, generation);
+        searchResults.showVerses(rows);
     } catch (error) {
         if (generation !== searchGeneration) return;
         console.warn("Bible search failed:", error);
-        showSearchMessage("Bible verses could not be loaded. Please search again to retry.");
-    } finally {
-        if (generation === searchGeneration) searchResults.removeAttribute("aria-busy");
+        searchResults.showMessage("Bible verses could not be loaded. Please search again to retry.");
     }
 }
 
@@ -452,15 +252,55 @@ verseAudio.addEventListener("ended", () => {
     syncVerseAudioButton();
 });
 
-function togglePoster() {
+let posterFlipId = 0;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+// Turn the poster like a page: it swings edge-on, the image swaps while it is
+// invisible, then the other side swings back in.
+async function togglePoster() {
     showingComic = !showingComic;
-    dailyPoster.src = `${posterPath}${showingComic ? " - Comic" : ""}.webp`;
     posterCard.setAttribute(
         "aria-label",
         showingComic
             ? "Show today's regular poster"
             : "Show comic version of today's poster",
     );
+
+    const flipId = ++posterFlipId;
+    const nextSrc = `${posterPath}${showingComic ? " - Comic" : ""}.webp`;
+    // Start loading now so the swap does not show a half-loaded image.
+    const preload = new Image();
+    preload.src = nextSrc;
+    const ready = preload.decode().catch(() => {});
+
+    if (reducedMotion.matches || !dailyPoster.animate) {
+        await ready;
+        if (flipId === posterFlipId) dailyPoster.src = nextSrc;
+        return;
+    }
+
+    dailyPoster.getAnimations().forEach((animation) => animation.cancel());
+    const turn = (angle) => `perspective(1400px) rotateY(${angle}deg)`;
+    const out = dailyPoster.animate(
+        [
+            { transform: turn(0), opacity: 1 },
+            { transform: turn(-90), opacity: 0.55 },
+        ],
+        { duration: 240, easing: "ease-in", fill: "forwards" },
+    );
+    await Promise.all([out.finished.catch(() => {}), ready]);
+    // A newer click owns the image now; it has already cancelled this flip.
+    if (flipId !== posterFlipId) return;
+
+    dailyPoster.src = nextSrc;
+    dailyPoster.animate(
+        [
+            { transform: turn(90), opacity: 0.55 },
+            { transform: turn(0), opacity: 1 },
+        ],
+        { duration: 300, easing: "ease-out" },
+    );
+    out.cancel();
 }
 
 dailyPoster.src = `${posterPath}.webp`;
@@ -505,32 +345,3 @@ fetch("assets/verses.json")
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
-
-function getSvgMetadata(svgString) {
-    const doc = new DOMParser().parseFromString(svgString, "image/svg+xml");
-
-    if (doc.querySelector("parsererror")) {
-        throw new Error("Invalid SVG: could not be parsed");
-    }
-
-    const getText = (selector) => {
-        const el = doc.querySelector(selector);
-        return el ? el.textContent.trim() : null;
-    };
-
-    return {
-        title: getText('title[id="title"]'),
-        description: getText('desc[id="description"]'),
-    };
-}
-
-async function getSvgMetadataFromUrl(url, signal) {
-    const response = await fetch(url, { signal });
-    if (!response.ok)
-        throw new Error(`Failed to fetch SVG: ${response.status}`);
-    return getSvgMetadata(await response.text());
-}
-
-async function getSvgMetadataFromFile(file) {
-    return getSvgMetadata(await file.text());
-}

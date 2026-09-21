@@ -23,7 +23,7 @@
 
         <title>Daily Grace 365</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260922-2" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260922-5" />
     </head>
 
     <body>
@@ -89,13 +89,11 @@
                         </svg>
                     </button>
                 </div>
-                <p id="search-status" class="visually-hidden" role="status" aria-atomic="true"></p>
-                <section
+                <bible-search-results
                     id="search-results"
                     class="search-results"
-                    aria-label="Bible verse search results"
                     hidden
-                ></section>
+                ></bible-search-results>
                 <h1 class="daily-heading">
                     <img
                         id="daily-book-symbol"
@@ -228,8 +226,9 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
         <script src="assets/scripts/sql_script.js?v=20260921-1"></script>
-        <script src="assets/scripts/script.js?v=20260922-2"></script>
-        <script type="module" src="apps/components/did-you-know.js?v=20260922-1"></script>
+        <script src="assets/scripts/script.js?v=20260922-4"></script>
+        <script type="module" src="apps/components/did-you-know.js?v=20260922-2"></script>
+        <script type="module" src="apps/components/bible-search-results.js?v=20260922-1"></script>
 
         <!-- <script>
             getSvgMetadataFromUrl(`${MEDIA_BASE_URL}images/symbols/Revelation-symbol.svg`)

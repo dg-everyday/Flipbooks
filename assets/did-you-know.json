@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "Title": "Light comes first",
     "Fact": "In Genesis 1, light appears before the sun, moon, and stars are described on the fourth day. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -8,6 +9,7 @@
     }
   },
   {
+    "id": 2,
     "Title": "Humans bear God's image",
     "Fact": "Genesis says human beings are created in the image and likeness of God. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -16,6 +18,7 @@
     }
   },
   {
+    "id": 3,
     "Title": "Humanity is created male and female",
     "Fact": "Genesis 1:27 describes humanity as created male and female. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -24,6 +27,7 @@
     }
   },
   {
+    "id": 4,
     "Title": "Work predates the Fall",
     "Fact": "God gives Adam work in the garden before sin enters the story. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -32,6 +36,7 @@
     }
   },
   {
+    "id": 5,
     "Title": "Marriage appears in Genesis",
     "Fact": "Genesis presents marriage as a union in which a man and woman become 'one flesh'. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -40,6 +45,7 @@
     }
   },
   {
+    "id": 6,
     "Title": "The seventh day is blessed",
     "Fact": "Genesis 2:2-3 describes God resting on the seventh day and blessing it. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -48,6 +54,7 @@
     }
   },
   {
+    "id": 7,
     "Title": "The serpent appears in Genesis 3",
     "Fact": "The serpent tempts Eve in the account of humanity's fall. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -56,6 +63,7 @@
     }
   },
   {
+    "id": 8,
     "Title": "Sin affects human relationships",
     "Fact": "After the Fall, Genesis records shame, blame, fear, and broken relationships. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -64,6 +72,7 @@
     }
   },
   {
+    "id": 9,
     "Title": "Cain and Abel bring offerings",
     "Fact": "Genesis 4 records the offerings brought by Cain and Abel. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -72,6 +81,7 @@
     }
   },
   {
+    "id": 10,
     "Title": "The first murder is recorded early",
     "Fact": "Genesis 4 describes Cain killing his brother Abel. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -80,6 +90,7 @@
     }
   },
   {
+    "id": 11,
     "Title": "Noah is called righteous",
     "Fact": "Genesis describes Noah as righteous and says he walked with God. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -88,6 +99,7 @@
     }
   },
   {
+    "id": 12,
     "Title": "The ark is commanded by God",
     "Fact": "Genesis 6 records God's instructions to Noah to build the ark. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -96,6 +108,7 @@
     }
   },
   {
+    "id": 13,
     "Title": "The rainbow becomes a covenant sign",
     "Fact": "After the flood, God gives the rainbow as a sign of his covenant with Noah and creation. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -104,6 +117,7 @@
     }
   },
   {
+    "id": 14,
     "Title": "Babel is linked with scattered languages",
     "Fact": "Genesis 11 connects the Tower of Babel story with the diversification of human languages and scattering. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -112,6 +126,7 @@
     }
   },
   {
+    "id": 15,
     "Title": "Abram is called to leave his homeland",
     "Fact": "God calls Abram to leave his country and promises to bless him. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -120,6 +135,7 @@
     }
   },
   {
+    "id": 16,
     "Title": "Abraham becomes a covenant name",
     "Fact": "God changes Abram's name to Abraham as part of the covenant narrative. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -128,6 +144,7 @@
     }
   },
   {
+    "id": 17,
     "Title": "Sarah receives a new name",
     "Fact": "Sarai's name is changed to Sarah in Genesis 17:15. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -136,6 +153,7 @@
     }
   },
   {
+    "id": 18,
     "Title": "Circumcision becomes a covenant sign",
     "Fact": "God gives Abraham circumcision as a sign of the covenant. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -144,6 +162,7 @@
     }
   },
   {
+    "id": 19,
     "Title": "Isaac is the promised son",
     "Fact": "Genesis presents Isaac as the son God promised to Abraham and Sarah. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -152,6 +171,7 @@
     }
   },
   {
+    "id": 20,
     "Title": "Abraham practices hospitality",
     "Fact": "Genesis 18 describes Abraham welcoming three visitors and providing food and rest. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -160,6 +180,7 @@
     }
   },
   {
+    "id": 21,
     "Title": "Jacob's name is changed",
     "Fact": "Genesis 32 records Jacob receiving the name Israel after wrestling through the night. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -168,6 +189,7 @@
     }
   },
   {
+    "id": 22,
     "Title": "The twelve tribes trace to Jacob's sons",
     "Fact": "Israel's twelve tribes are traditionally traced to the twelve sons of Jacob. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -176,6 +198,7 @@
     }
   },
   {
+    "id": 23,
     "Title": "Joseph's coat is connected with family conflict",
     "Fact": "Genesis 37 describes Joseph's brothers reacting with jealousy to their father's special treatment of him. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -184,6 +207,7 @@
     }
   },
   {
+    "id": 24,
     "Title": "Joseph is sold into Egypt",
     "Fact": "Joseph's brothers sell him, beginning his unexpected journey into Egypt. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -192,6 +216,7 @@
     }
   },
   {
+    "id": 25,
     "Title": "Joseph interprets dreams",
     "Fact": "Genesis records Joseph interpreting dreams for Pharaoh and others. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -200,6 +225,7 @@
     }
   },
   {
+    "id": 26,
     "Title": "Joseph stores grain during abundance",
     "Fact": "Joseph proposes storing grain during seven abundant years in preparation for famine. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -208,6 +234,7 @@
     }
   },
   {
+    "id": 27,
     "Title": "Forgiveness becomes central to Joseph's story",
     "Fact": "Joseph eventually tells his brothers that God used their actions within a larger providential purpose. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -216,6 +243,7 @@
     }
   },
   {
+    "id": 28,
     "Title": "Genesis ends with Joseph in Egypt",
     "Fact": "The book of Genesis ends with Joseph dying in Egypt and his family established there. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -224,6 +252,7 @@
     }
   },
   {
+    "id": 29,
     "Title": "God's covenant with Abraham includes blessing nations",
     "Fact": "Genesis 12:3 connects Abraham's calling with blessing for the families of the earth. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -232,6 +261,7 @@
     }
   },
   {
+    "id": 30,
     "Title": "Melchizedek appears in Genesis",
     "Fact": "Genesis 14 introduces Melchizedek as king of Salem and priest of God Most High. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -240,6 +270,7 @@
     }
   },
   {
+    "id": 31,
     "Title": "Abraham gives a tenth to Melchizedek",
     "Fact": "Genesis 14:20 says Abram gave Melchizedek a tenth of everything. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -248,6 +279,7 @@
     }
   },
   {
+    "id": 32,
     "Title": "God gives Abraham a covenant promise",
     "Fact": "Genesis 15 records a covenant ceremony centered on God's promises to Abram. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -256,6 +288,7 @@
     }
   },
   {
+    "id": 33,
     "Title": "Hagar encounters God",
     "Fact": "Genesis 16 describes Hagar encountering the angel of the LORD and naming God who sees her. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -264,6 +297,7 @@
     }
   },
   {
+    "id": 34,
     "Title": "Isaac means laughter",
     "Fact": "The name Isaac is associated with laughter, reflecting Abraham and Sarah's response to God's promise. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -272,6 +306,7 @@
     }
   },
   {
+    "id": 35,
     "Title": "Sodom and Gomorrah are judged",
     "Fact": "Genesis 19 records the destruction of Sodom and Gomorrah after the story of Abraham's intercession. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -280,6 +315,7 @@
     }
   },
   {
+    "id": 36,
     "Title": "Lot's wife becomes a warning",
     "Fact": "Genesis 19 records Lot's wife looking back and becoming a pillar of salt. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -288,6 +324,7 @@
     }
   },
   {
+    "id": 37,
     "Title": "Jacob dreams of a ladder or stairway",
     "Fact": "Genesis 28 records Jacob's dream of a stairway between earth and heaven. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -296,6 +333,7 @@
     }
   },
   {
+    "id": 38,
     "Title": "Rachel and Leah are central to Jacob's family",
     "Fact": "Genesis describes Jacob's marriages to Rachel and Leah and the growth of his family. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -304,6 +342,7 @@
     }
   },
   {
+    "id": 39,
     "Title": "Benjamin is Jacob's youngest son",
     "Fact": "Genesis identifies Benjamin as Rachel's younger son and Jacob's youngest child. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -312,6 +351,7 @@
     }
   },
   {
+    "id": 40,
     "Title": "Joseph forgives rather than retaliates",
     "Fact": "Joseph's reconciliation with his brothers becomes one of Genesis's major examples of providence and forgiveness. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -320,6 +360,7 @@
     }
   },
   {
+    "id": 41,
     "Title": "Genesis contains two creation accounts or perspectives",
     "Fact": "Genesis 1-2 presents creation in two complementary narrative perspectives, with Genesis 2 focusing more closely on humanity and the garden. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -328,6 +369,7 @@
     }
   },
   {
+    "id": 42,
     "Title": "The name Israel becomes national identity",
     "Fact": "The name given to Jacob becomes the name associated with his descendants and nation. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -336,6 +378,7 @@
     }
   },
   {
+    "id": 43,
     "Title": "The patriarchal narratives include travel and migration",
     "Fact": "Abraham, Isaac, Jacob, and Joseph's stories repeatedly involve migration, famine, family relocation, and pilgrimage. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -344,6 +387,7 @@
     }
   },
   {
+    "id": 44,
     "Title": "Altars are important in Genesis",
     "Fact": "Abraham and other patriarchs repeatedly build altars as places associated with worship and calling on God. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -352,6 +396,7 @@
     }
   },
   {
+    "id": 45,
     "Title": "Genesis emphasizes blessing through families",
     "Fact": "Many of Genesis's covenant promises are expressed through descendants and family lines. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -360,6 +405,7 @@
     }
   },
   {
+    "id": 46,
     "Title": "Genesis closes with hope beyond Egypt",
     "Fact": "Joseph asks that his bones eventually be carried up from Egypt, pointing toward the future exodus. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -368,6 +414,7 @@
     }
   },
   {
+    "id": 47,
     "Title": "Moses is raised in Pharaoh's household",
     "Fact": "Exodus says Moses is adopted and raised by Pharaoh's daughter after being placed in a basket among the reeds. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -376,6 +423,7 @@
     }
   },
   {
+    "id": 48,
     "Title": "The burning bush marks Moses' call",
     "Fact": "God speaks to Moses from a bush that burns without being consumed. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -384,6 +432,7 @@
     }
   },
   {
+    "id": 49,
     "Title": "God reveals his name to Moses",
     "Fact": "Exodus 3 records God's self-identification as 'I AM' in Moses' encounter at the bush. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -392,6 +441,7 @@
     }
   },
   {
+    "id": 50,
     "Title": "The Passover protects Israelite households",
     "Fact": "Exodus 12 describes the Passover meal and the blood-marked doorposts during the final plague. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -400,6 +450,7 @@
     }
   },
   {
+    "id": 51,
     "Title": "Passover becomes a memorial",
     "Fact": "Israel is commanded to remember the Passover as a lasting memorial. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -408,6 +459,7 @@
     }
   },
   {
+    "id": 52,
     "Title": "Unleavened bread is tied to the Exodus",
     "Fact": "The Feast of Unleavened Bread commemorates Israel's departure from Egypt. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -416,6 +468,7 @@
     }
   },
   {
+    "id": 53,
     "Title": "The Red Sea crossing becomes a defining event",
     "Fact": "Exodus 14 describes Israel crossing the sea while escaping Pharaoh's army. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -424,6 +477,7 @@
     }
   },
   {
+    "id": 54,
     "Title": "Manna feeds Israel in the wilderness",
     "Fact": "Exodus 16 describes God providing manna for Israel in the wilderness. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -432,6 +486,7 @@
     }
   },
   {
+    "id": 55,
     "Title": "Sabbath rest is commanded",
     "Fact": "The Sabbath is established as a regular day of rest in Israel's covenant life. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -440,6 +495,7 @@
     }
   },
   {
+    "id": 56,
     "Title": "The Ten Commandments begin with God",
     "Fact": "The first commandment begins by identifying the LORD as the God who brought Israel out of Egypt. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -448,6 +504,7 @@
     }
   },
   {
+    "id": 57,
     "Title": "Israel is warned against idols",
     "Fact": "The Ten Commandments prohibit making and worshiping idols. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -456,6 +513,7 @@
     }
   },
   {
+    "id": 58,
     "Title": "The command against murder is explicit",
     "Fact": "Exodus 20:13 records the command, 'You shall not murder.' For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -464,6 +522,7 @@
     }
   },
   {
+    "id": 59,
     "Title": "The command against stealing is explicit",
     "Fact": "Exodus 20:15 records the command, 'You shall not steal.' For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -472,6 +531,7 @@
     }
   },
   {
+    "id": 60,
     "Title": "False witness is prohibited",
     "Fact": "Exodus 20:16 prohibits bearing false witness against a neighbor. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -480,6 +540,7 @@
     }
   },
   {
+    "id": 61,
     "Title": "Coveting is addressed",
     "Fact": "The final commandment addresses coveting a neighbor's household and possessions. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -488,6 +549,7 @@
     }
   },
   {
+    "id": 62,
     "Title": "The tabernacle is a portable sanctuary",
     "Fact": "The tabernacle served as Israel's portable worship sanctuary during the wilderness period. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -496,6 +558,7 @@
     }
   },
   {
+    "id": 63,
     "Title": "The Ark of the Covenant is kept in the sanctuary",
     "Fact": "The ark is a central sacred object associated with God's covenant with Israel. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -504,6 +567,7 @@
     }
   },
   {
+    "id": 64,
     "Title": "The mercy seat is associated with the ark",
     "Fact": "Exodus describes a cover for the ark often called the mercy seat or atonement cover. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -512,6 +576,7 @@
     }
   },
   {
+    "id": 65,
     "Title": "Aaron becomes Israel's first high priest",
     "Fact": "Aaron is appointed as high priest in the priestly instructions of Exodus. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -520,6 +585,7 @@
     }
   },
   {
+    "id": 66,
     "Title": "Priestly garments had symbolic detail",
     "Fact": "Exodus 28 gives detailed instructions for priestly garments, including the breastpiece, ephod, robe, and turban. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -528,6 +594,7 @@
     }
   },
   {
+    "id": 67,
     "Title": "The menorah belongs to the tabernacle",
     "Fact": "Exodus 25 describes a seven-branched lampstand for the sanctuary. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -536,6 +603,7 @@
     }
   },
   {
+    "id": 68,
     "Title": "Incense is part of sanctuary worship",
     "Fact": "Exodus gives instructions for a special incense associated with the tabernacle. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -544,6 +612,7 @@
     }
   },
   {
+    "id": 69,
     "Title": "The Day of Atonement is established in Leviticus",
     "Fact": "Leviticus 16 describes the annual Day of Atonement and the high priest's special rites. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -552,6 +621,7 @@
     }
   },
   {
+    "id": 70,
     "Title": "Leviticus emphasizes holiness",
     "Fact": "A repeated theme in Leviticus is God's call for Israel to be holy. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -560,6 +630,7 @@
     }
   },
   {
+    "id": 71,
     "Title": "Love of neighbor appears in Leviticus",
     "Fact": "Leviticus 19:18 commands Israel to love the neighbor as oneself. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -568,6 +639,7 @@
     }
   },
   {
+    "id": 72,
     "Title": "Care for the poor is included in Israel's law",
     "Fact": "Leviticus 19 instructs landowners to leave portions of the harvest for the poor and foreigner. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -576,6 +648,7 @@
     }
   },
   {
+    "id": 73,
     "Title": "Honest weights are commanded",
     "Fact": "Leviticus 19 prohibits dishonest scales and measures. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -584,6 +657,7 @@
     }
   },
   {
+    "id": 74,
     "Title": "The Jubilee is described in Leviticus",
     "Fact": "Leviticus 25 describes a Jubilee year associated with release, restoration, and return of ancestral property. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -592,6 +666,7 @@
     }
   },
   {
+    "id": 75,
     "Title": "The Feast of Weeks is an Israelite festival",
     "Fact": "Leviticus 23 lists the Feast of Weeks among Israel's appointed festivals. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -600,6 +675,7 @@
     }
   },
   {
+    "id": 76,
     "Title": "The Feast of Booths remembers wilderness living",
     "Fact": "Leviticus 23 connects the Feast of Booths with Israel's time dwelling in temporary shelters. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -608,6 +684,7 @@
     }
   },
   {
+    "id": 77,
     "Title": "The Day of Atonement involves fasting",
     "Fact": "Leviticus 16 and 23 associate the Day of Atonement with self-denial, traditionally understood as fasting. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -616,6 +693,7 @@
     }
   },
   {
+    "id": 78,
     "Title": "Numbers records Israel's wilderness journey",
     "Fact": "The book of Numbers follows Israel through major stages of its wilderness journey. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -624,6 +702,7 @@
     }
   },
   {
+    "id": 79,
     "Title": "The bronze serpent becomes a wilderness sign",
     "Fact": "Numbers 21 records Moses lifting up a bronze serpent after a plague of venomous snakes. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -632,6 +711,7 @@
     }
   },
   {
+    "id": 80,
     "Title": "Deuteronomy means a second giving of the law",
     "Fact": "The title is traditionally understood as referring to a repeated or restated giving of the law. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -640,6 +720,7 @@
     }
   },
   {
+    "id": 81,
     "Title": "The Shema begins with 'Hear, O Israel'",
     "Fact": "Deuteronomy 6 begins the famous declaration of Israel's devotion to the LORD. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -648,6 +729,7 @@
     }
   },
   {
+    "id": 82,
     "Title": "Parents are told to teach God's words to children",
     "Fact": "Deuteronomy 6:6-7 commands Israel to teach God's words diligently to children. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -656,6 +738,7 @@
     }
   },
   {
+    "id": 83,
     "Title": "Israel is told to remember its past",
     "Fact": "Deuteronomy repeatedly calls Israel to remember God's deliverance and provision. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -664,6 +747,7 @@
     }
   },
   {
+    "id": 84,
     "Title": "The law protects the vulnerable",
     "Fact": "Deuteronomy contains laws addressing widows, orphans, foreigners, debtors, and the poor. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -672,6 +756,7 @@
     }
   },
   {
+    "id": 85,
     "Title": "Tithing appears in Israel's law",
     "Fact": "Deuteronomy includes instructions concerning tithes and their use in Israel's covenant life. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -680,6 +765,7 @@
     }
   },
   {
+    "id": 86,
     "Title": "Cities of refuge are established",
     "Fact": "Numbers 35 describes cities where those responsible for accidental death could seek protection pending judgment. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -688,6 +774,7 @@
     }
   },
   {
+    "id": 87,
     "Title": "The priestly blessing is in Numbers",
     "Fact": "Numbers 6:24-26 records the blessing beginning, 'The LORD bless you and keep you.' The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -696,6 +783,7 @@
     }
   },
   {
+    "id": 88,
     "Title": "The wilderness generation learns dependence",
     "Fact": "Israel's wilderness stories repeatedly connect daily provision with trust and obedience. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -704,6 +792,7 @@
     }
   },
   {
+    "id": 89,
     "Title": "The tabernacle represents God's dwelling among Israel",
     "Fact": "The sanctuary is described as the place where God would dwell among his people in a special covenant sense. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -712,6 +801,7 @@
     }
   },
   {
+    "id": 90,
     "Title": "Sacrifice is regulated rather than left arbitrary",
     "Fact": "Leviticus provides detailed instructions for Israel's sacrificial system. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -720,6 +810,7 @@
     }
   },
   {
+    "id": 91,
     "Title": "Blood has special sacrificial significance",
     "Fact": "Leviticus repeatedly connects blood with life and atonement. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -728,6 +819,7 @@
     }
   },
   {
+    "id": 92,
     "Title": "Clean and unclean categories appear in Torah",
     "Fact": "Leviticus and Numbers contain extensive rules distinguishing clean and unclean people, animals, and situations. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -736,6 +828,7 @@
     }
   },
   {
+    "id": 93,
     "Title": "The law includes hospitality toward foreigners",
     "Fact": "Israel is repeatedly commanded not to mistreat the resident foreigner because Israel itself had lived as foreigners in Egypt. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -744,6 +837,7 @@
     }
   },
   {
+    "id": 94,
     "Title": "Worship and ethics are connected",
     "Fact": "Israel's law combines ritual worship with commands concerning justice, honesty, mercy, and neighbor-love. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -752,6 +846,7 @@
     }
   },
   {
+    "id": 95,
     "Title": "Joshua succeeds Moses",
     "Fact": "Joshua is commissioned to lead Israel after Moses' death. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -760,6 +855,7 @@
     }
   },
   {
+    "id": 96,
     "Title": "Jericho's walls are central to Joshua's conquest narrative",
     "Fact": "Joshua 6 describes Israel's unusual march around Jericho before the city's fall. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -768,6 +864,7 @@
     }
   },
   {
+    "id": 97,
     "Title": "Rahab protects Israelite spies",
     "Fact": "Rahab hides the spies and helps them escape in Joshua 2. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -776,6 +873,7 @@
     }
   },
   {
+    "id": 98,
     "Title": "Rahab becomes part of Israel's story",
     "Fact": "Rahab is named in Matthew's genealogy of Jesus. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -784,6 +882,7 @@
     }
   },
   {
+    "id": 99,
     "Title": "The Jordan is crossed on dry ground",
     "Fact": "Joshua 3-4 describes Israel crossing the Jordan as the waters stop. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -792,6 +891,7 @@
     }
   },
   {
+    "id": 100,
     "Title": "Memorial stones are set up",
     "Fact": "Joshua 4 records twelve stones taken from the Jordan as a memorial. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -800,6 +900,7 @@
     }
   },
   {
+    "id": 101,
     "Title": "Joshua calls Israel to choose whom to serve",
     "Fact": "Joshua 24:15 presents a famous call to covenant faithfulness. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -808,6 +909,7 @@
     }
   },
   {
+    "id": 102,
     "Title": "Judges describes a recurring cycle",
     "Fact": "Judges repeatedly depicts Israel turning away, suffering oppression, crying out, and receiving deliverance. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -816,6 +918,7 @@
     }
   },
   {
+    "id": 103,
     "Title": "Deborah serves as judge",
     "Fact": "Judges 4-5 describes Deborah as a prophet and judge in Israel. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -824,6 +927,7 @@
     }
   },
   {
+    "id": 104,
     "Title": "Gideon's army is reduced",
     "Fact": "Judges 7 describes God reducing Gideon's army to 300 men. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -832,6 +936,7 @@
     }
   },
   {
+    "id": 105,
     "Title": "Samson is dedicated as a Nazirite",
     "Fact": "Judges presents Samson as set apart under a Nazirite vow from birth. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -840,6 +945,7 @@
     }
   },
   {
+    "id": 106,
     "Title": "Ruth is a Moabite",
     "Fact": "The book of Ruth identifies Ruth as a woman from Moab who joins herself to Naomi and Israel. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -848,6 +954,7 @@
     }
   },
   {
+    "id": 107,
     "Title": "Ruth chooses loyalty to Naomi",
     "Fact": "Ruth 1 records Ruth's famous commitment to remain with Naomi. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -856,6 +963,7 @@
     }
   },
   {
+    "id": 108,
     "Title": "Boaz acts as a redeemer",
     "Fact": "Boaz performs the role of family redeemer in the story of Ruth. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -864,6 +972,7 @@
     }
   },
   {
+    "id": 109,
     "Title": "Ruth becomes an ancestor of David",
     "Fact": "Ruth is listed in the genealogy leading to King David. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -872,6 +981,7 @@
     }
   },
   {
+    "id": 110,
     "Title": "Samuel serves as prophet and judge",
     "Fact": "Samuel plays a major role in Israel's transition to monarchy. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -880,6 +990,7 @@
     }
   },
   {
+    "id": 111,
     "Title": "Hannah prays for a child",
     "Fact": "1 Samuel records Hannah's prayer and vow before Samuel's birth. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -888,6 +999,7 @@
     }
   },
   {
+    "id": 112,
     "Title": "Samuel is dedicated to God",
     "Fact": "Hannah brings Samuel to serve at the sanctuary after he is weaned. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -896,6 +1008,7 @@
     }
   },
   {
+    "id": 113,
     "Title": "Saul is Israel's first king in the narrative",
     "Fact": "1 Samuel presents Saul as Israel's first king. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -904,6 +1017,7 @@
     }
   },
   {
+    "id": 114,
     "Title": "David is anointed while still young",
     "Fact": "Samuel anoints David after God directs him to Jesse's family. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -912,6 +1026,7 @@
     }
   },
   {
+    "id": 115,
     "Title": "David defeats Goliath",
     "Fact": "1 Samuel 17 records David defeating Goliath with a sling and stone. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -920,6 +1035,7 @@
     }
   },
   {
+    "id": 116,
     "Title": "David refuses to kill Saul",
     "Fact": "On multiple occasions David refuses to take Saul's life despite having opportunities. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -928,6 +1044,7 @@
     }
   },
   {
+    "id": 117,
     "Title": "Jonathan and David form a covenant friendship",
     "Fact": "1 Samuel describes a deep covenant friendship between Jonathan and David. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -936,6 +1053,7 @@
     }
   },
   {
+    "id": 118,
     "Title": "David becomes king over Israel",
     "Fact": "2 Samuel records David's establishment as king over Israel. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -944,6 +1062,7 @@
     }
   },
   {
+    "id": 119,
     "Title": "Jerusalem becomes David's royal city",
     "Fact": "David captures Jerusalem and establishes it as his capital. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -952,6 +1071,7 @@
     }
   },
   {
+    "id": 120,
     "Title": "The Davidic covenant promises an enduring dynasty",
     "Fact": "2 Samuel 7 records God's covenant promise concerning David's house and throne. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -960,6 +1080,7 @@
     }
   },
   {
+    "id": 121,
     "Title": "David's psalms include lament",
     "Fact": "The Psalms traditionally associated with David include many prayers of grief, fear, confession, and trust. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -968,6 +1089,7 @@
     }
   },
   {
+    "id": 122,
     "Title": "Solomon asks for wisdom",
     "Fact": "1 Kings 3 records Solomon asking God for wisdom to govern the people. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -976,6 +1098,7 @@
     }
   },
   {
+    "id": 123,
     "Title": "Solomon builds the temple",
     "Fact": "1 Kings 6-8 describes Solomon's construction and dedication of the Jerusalem temple. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -984,6 +1107,7 @@
     }
   },
   {
+    "id": 124,
     "Title": "The temple dedication includes prayer",
     "Fact": "Solomon offers a lengthy prayer at the temple dedication. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -992,6 +1116,7 @@
     }
   },
   {
+    "id": 125,
     "Title": "The Queen of Sheba visits Solomon",
     "Fact": "1 Kings 10 describes the Queen of Sheba testing Solomon with difficult questions. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1000,6 +1125,7 @@
     }
   },
   {
+    "id": 126,
     "Title": "Elijah confronts the prophets of Baal",
     "Fact": "1 Kings 18 records Elijah's contest on Mount Carmel. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1008,6 +1134,7 @@
     }
   },
   {
+    "id": 127,
     "Title": "Elijah hears God in a gentle sound",
     "Fact": "1 Kings 19 describes Elijah encountering God not in wind, earthquake, or fire, but in a quiet sound. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1016,6 +1143,7 @@
     }
   },
   {
+    "id": 128,
     "Title": "Elisha succeeds Elijah",
     "Fact": "2 Kings records Elijah's departure and Elisha's continuation of the prophetic ministry. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1024,6 +1152,7 @@
     }
   },
   {
+    "id": 129,
     "Title": "Naaman is healed of leprosy",
     "Fact": "2 Kings 5 describes Naaman washing in the Jordan and being healed. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1032,6 +1161,7 @@
     }
   },
   {
+    "id": 130,
     "Title": "Hezekiah prays during crisis",
     "Fact": "2 Kings 19 records Hezekiah praying when Jerusalem is threatened. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1040,6 +1170,7 @@
     }
   },
   {
+    "id": 131,
     "Title": "Josiah's reign includes a law-book discovery",
     "Fact": "2 Kings 22 describes the discovery of a book of the law during temple repairs. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1048,6 +1179,7 @@
     }
   },
   {
+    "id": 132,
     "Title": "The temple is destroyed by Babylon",
     "Fact": "2 Kings 25 records Jerusalem's destruction and the temple's burning. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1056,6 +1188,7 @@
     }
   },
   {
+    "id": 133,
     "Title": "Exile becomes a major biblical theme",
     "Fact": "The Babylonian exile profoundly shapes Israel's later history, worship, and writings. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1064,6 +1197,7 @@
     }
   },
   {
+    "id": 134,
     "Title": "Ezra is described as a scribe skilled in the law",
     "Fact": "Ezra 7:6 identifies Ezra as a skilled scribe in the law of Moses. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1072,6 +1206,7 @@
     }
   },
   {
+    "id": 135,
     "Title": "Ezra emphasizes teaching",
     "Fact": "Ezra 7:10 describes Ezra's commitment to study, practice, and teach God's law. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1080,6 +1215,7 @@
     }
   },
   {
+    "id": 136,
     "Title": "Nehemiah rebuilds Jerusalem's wall",
     "Fact": "Nehemiah leads the rebuilding of Jerusalem's walls after the exile. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1088,6 +1224,7 @@
     }
   },
   {
+    "id": 137,
     "Title": "Nehemiah combines prayer and practical action",
     "Fact": "Nehemiah repeatedly prays while also organizing people, materials, and defenses. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1096,6 +1233,7 @@
     }
   },
   {
+    "id": 138,
     "Title": "Esther becomes queen",
     "Fact": "The book of Esther tells how Esther becomes queen of the Persian king. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1104,6 +1242,7 @@
     }
   },
   {
+    "id": 139,
     "Title": "Esther risks approaching the king",
     "Fact": "Esther approaches the king despite the danger of doing so without being summoned. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1112,6 +1251,7 @@
     }
   },
   {
+    "id": 140,
     "Title": "Mordecai urges Esther to act",
     "Fact": "Esther 4 records Mordecai's challenge to Esther concerning her position and responsibility. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1120,6 +1260,7 @@
     }
   },
   {
+    "id": 141,
     "Title": "Purim remembers deliverance",
     "Fact": "The book of Esther establishes Purim as a Jewish festival remembering deliverance from a planned massacre. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1128,6 +1269,7 @@
     }
   },
   {
+    "id": 142,
     "Title": "Esther never explicitly names God",
     "Fact": "The book of Esther is distinctive because God's name does not appear explicitly in its Hebrew text. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1136,6 +1278,7 @@
     }
   },
   {
+    "id": 143,
     "Title": "The Old Testament contains many forms of prayer",
     "Fact": "Its books include laments, praise, confession, thanksgiving, intercession, vows, and communal prayers. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1144,6 +1287,7 @@
     }
   },
   {
+    "id": 144,
     "Title": "The Psalms are a prayer book",
     "Fact": "The Psalter contains prayers and songs of praise, lament, thanksgiving, confession, and trust. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1152,6 +1296,7 @@
     }
   },
   {
+    "id": 145,
     "Title": "Psalm 1 contrasts two ways",
     "Fact": "Psalm 1 contrasts the way of the righteous with the way of the wicked. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1160,6 +1305,7 @@
     }
   },
   {
+    "id": 146,
     "Title": "Psalm 23 uses shepherd imagery",
     "Fact": "Psalm 23 portrays God as a shepherd who guides and cares for the believer. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1168,6 +1314,7 @@
     }
   },
   {
+    "id": 147,
     "Title": "Psalm 51 is a penitential prayer",
     "Fact": "Psalm 51 is a well-known prayer of repentance traditionally associated with David. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1176,6 +1323,7 @@
     }
   },
   {
+    "id": 148,
     "Title": "Psalm 119 celebrates God's word",
     "Fact": "Psalm 119 repeatedly praises God's law, statutes, commands, and word. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -1184,6 +1332,7 @@
     }
   },
   {
+    "id": 149,
     "Title": "Psalm 150 calls for praise",
     "Fact": "Psalm 150 closes the Psalter with a sweeping call to praise God. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1192,6 +1341,7 @@
     }
   },
   {
+    "id": 150,
     "Title": "Proverbs emphasizes wisdom",
     "Fact": "The book of Proverbs repeatedly contrasts wisdom with folly and connects wisdom with righteous living. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1200,6 +1350,7 @@
     }
   },
   {
+    "id": 151,
     "Title": "Proverbs values teachability",
     "Fact": "Proverbs repeatedly presents willingness to receive correction as a mark of wisdom. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1208,6 +1359,7 @@
     }
   },
   {
+    "id": 152,
     "Title": "Proverbs warns against dishonest business",
     "Fact": "Proverbs condemns dishonest scales and unjust commercial practices. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1216,6 +1368,7 @@
     }
   },
   {
+    "id": 153,
     "Title": "Proverbs teaches care with speech",
     "Fact": "Many proverbs warn about gossip, anger, rash words, and destructive speech. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -1224,6 +1377,7 @@
     }
   },
   {
+    "id": 154,
     "Title": "Ecclesiastes reflects on life's brevity",
     "Fact": "Ecclesiastes repeatedly reflects on the temporary nature of human achievement and earthly life. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1232,6 +1386,7 @@
     }
   },
   {
+    "id": 155,
     "Title": "Ecclesiastes includes a time-for-everything poem",
     "Fact": "Ecclesiastes 3 contains the famous poem about different seasons and times. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1240,6 +1395,7 @@
     }
   },
   {
+    "id": 156,
     "Title": "Job asks hard questions about suffering",
     "Fact": "The book of Job explores suffering, human limitations, and trust in God. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1248,6 +1404,7 @@
     }
   },
   {
+    "id": 157,
     "Title": "Job's friends offer incomplete explanations",
     "Fact": "Job's friends insist on simple explanations for his suffering, but the book challenges their assumptions. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -1256,6 +1413,7 @@
     }
   },
   {
+    "id": 158,
     "Title": "Isaiah contains a vision of God's holiness",
     "Fact": "Isaiah 6 records Isaiah's vision of the LORD and the seraphim crying 'Holy, holy, holy.' The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -1264,6 +1422,7 @@
     }
   },
   {
+    "id": 159,
     "Title": "Isaiah includes a call to care for the oppressed",
     "Fact": "Isaiah repeatedly connects true devotion to justice, mercy, and care for the vulnerable. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -1272,6 +1431,7 @@
     }
   },
   {
+    "id": 160,
     "Title": "Isaiah speaks of a suffering servant",
     "Fact": "Several passages in Isaiah describe a servant who suffers and bears the burdens of others. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1280,6 +1440,7 @@
     }
   },
   {
+    "id": 161,
     "Title": "Jeremiah is called before birth",
     "Fact": "Jeremiah 1 describes God appointing Jeremiah before his birth and calling him as a prophet. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1288,6 +1449,7 @@
     }
   },
   {
+    "id": 162,
     "Title": "Jeremiah weeps over Jerusalem",
     "Fact": "Jeremiah's writings contain repeated expressions of grief over Judah's sin and coming judgment. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1296,6 +1458,7 @@
     }
   },
   {
+    "id": 163,
     "Title": "The new covenant is promised in Jeremiah",
     "Fact": "Jeremiah 31:31-34 speaks of a new covenant with God's law written on the heart. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1304,6 +1467,7 @@
     }
   },
   {
+    "id": 164,
     "Title": "Lamentations mourns Jerusalem",
     "Fact": "Lamentations is a collection of poems grieving Jerusalem's destruction. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1312,6 +1476,7 @@
     }
   },
   {
+    "id": 165,
     "Title": "Ezekiel sees a valley of dry bones",
     "Fact": "Ezekiel 37 uses dry bones as a prophetic vision of restoration and renewed life. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1320,6 +1485,7 @@
     }
   },
   {
+    "id": 166,
     "Title": "Ezekiel sees God's glory depart and return",
     "Fact": "Ezekiel contains visions concerning God's glory, judgment, and eventual restoration. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1328,6 +1494,7 @@
     }
   },
   {
+    "id": 167,
     "Title": "Daniel serves in a foreign empire",
     "Fact": "The book of Daniel portrays faithful Jewish service within Babylonian and later imperial settings. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1336,6 +1503,7 @@
     }
   },
   {
+    "id": 168,
     "Title": "Daniel prays regularly",
     "Fact": "Daniel 6 describes Daniel continuing his regular practice of prayer despite a royal prohibition. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1344,6 +1512,7 @@
     }
   },
   {
+    "id": 169,
     "Title": "Daniel is placed in a lions' den",
     "Fact": "Daniel 6 records Daniel's deliverance from the lions. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1352,6 +1521,7 @@
     }
   },
   {
+    "id": 170,
     "Title": "Hosea uses marriage imagery",
     "Fact": "Hosea uses the prophet's marriage as a symbolic picture of Israel's unfaithfulness and God's persistent concern. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -1360,6 +1530,7 @@
     }
   },
   {
+    "id": 171,
     "Title": "Joel calls for return to God",
     "Fact": "Joel 2 contains a communal call to return to God with fasting, weeping, and repentance. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1368,6 +1539,7 @@
     }
   },
   {
+    "id": 172,
     "Title": "Amos speaks strongly about justice",
     "Fact": "Amos condemns exploitation and insists that worship cannot substitute for justice. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1376,6 +1548,7 @@
     }
   },
   {
+    "id": 173,
     "Title": "Obadiah addresses Edom",
     "Fact": "Obadiah is focused on judgment against Edom for its conduct toward Judah. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1384,6 +1557,7 @@
     }
   },
   {
+    "id": 174,
     "Title": "Jonah is sent to Nineveh",
     "Fact": "Jonah is commanded to preach to Nineveh, a major Assyrian city. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1392,6 +1566,7 @@
     }
   },
   {
+    "id": 175,
     "Title": "Jonah resists God's mercy",
     "Fact": "Jonah's story ends with him questioning God's compassion toward Nineveh. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -1400,6 +1575,7 @@
     }
   },
   {
+    "id": 176,
     "Title": "Micah combines justice, mercy, and humility",
     "Fact": "Micah 6:8 famously calls for justice, faithful love, and humble walking with God. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -1408,6 +1584,7 @@
     }
   },
   {
+    "id": 177,
     "Title": "Nahum announces Nineveh's fall",
     "Fact": "Nahum's prophecy centers on the downfall of Nineveh. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1416,6 +1593,7 @@
     }
   },
   {
+    "id": 178,
     "Title": "Habakkuk brings questions to God",
     "Fact": "Habakkuk openly asks God how long injustice will continue. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1424,6 +1602,7 @@
     }
   },
   {
+    "id": 179,
     "Title": "Habakkuk ends with trust",
     "Fact": "Habakkuk 3 concludes with rejoicing in God even when crops and herds fail. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1432,6 +1611,7 @@
     }
   },
   {
+    "id": 180,
     "Title": "Zephaniah calls for humility",
     "Fact": "Zephaniah urges people to seek the LORD, righteousness, and humility. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1440,6 +1620,7 @@
     }
   },
   {
+    "id": 181,
     "Title": "Haggai encourages temple rebuilding",
     "Fact": "Haggai calls the returned exiles to reconsider their priorities and rebuild the temple. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1448,6 +1629,7 @@
     }
   },
   {
+    "id": 182,
     "Title": "Zechariah contains symbolic visions",
     "Fact": "Zechariah's early chapters contain a series of symbolic night visions. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1456,6 +1638,7 @@
     }
   },
   {
+    "id": 183,
     "Title": "Malachi addresses worship and faithfulness",
     "Fact": "Malachi challenges careless worship and calls God's people back to covenant faithfulness. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -1464,6 +1647,7 @@
     }
   },
   {
+    "id": 184,
     "Title": "Prophets addressed both worship and public life",
     "Fact": "The prophets repeatedly connect devotion to God with justice, honesty, mercy, and treatment of the vulnerable. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -1472,6 +1656,7 @@
     }
   },
   {
+    "id": 185,
     "Title": "Biblical prophecy can include hope",
     "Fact": "Prophetic books often combine warnings of judgment with promises of restoration. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1480,6 +1665,7 @@
     }
   },
   {
+    "id": 186,
     "Title": "Lament is a biblical form of faith",
     "Fact": "Many biblical prayers bring grief and questions directly to God rather than hiding them. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1488,6 +1674,7 @@
     }
   },
   {
+    "id": 187,
     "Title": "Wisdom literature values disciplined living",
     "Fact": "Proverbs, Job, and Ecclesiastes all explore how people should live wisely before God. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1496,6 +1683,7 @@
     }
   },
   {
+    "id": 188,
     "Title": "Biblical songs use many instruments",
     "Fact": "Psalms mention instruments including harp, lyre, trumpet, tambourine, strings, and cymbals. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1504,6 +1692,7 @@
     }
   },
   {
+    "id": 189,
     "Title": "Psalm titles sometimes preserve musical or historical notes",
     "Fact": "Many psalms include superscriptions connecting them with authors, events, or musical directions. Such passages show that biblical faith includes both devotion to God and honest reflection on ordinary human experience.",
     "verse": {
@@ -1512,6 +1701,7 @@
     }
   },
   {
+    "id": 190,
     "Title": "The Psalms include communal prayers",
     "Fact": "Not every psalm is private; many are written for the worshiping community. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1520,6 +1710,7 @@
     }
   },
   {
+    "id": 191,
     "Title": "The Old Testament ends with hope in many Christian arrangements",
     "Fact": "In the Hebrew Bible the ordering differs, while Christian Old Testaments generally conclude with the Prophets and themes of expectation. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1528,6 +1719,7 @@
     }
   },
   {
+    "id": 192,
     "Title": "Jesus was born in Bethlehem",
     "Fact": "Matthew and Luke identify Bethlehem as Jesus' birthplace. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1536,6 +1728,7 @@
     }
   },
   {
+    "id": 193,
     "Title": "Jesus grew up in Nazareth",
     "Fact": "The Gospels identify Nazareth as the town where Jesus was raised. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1544,6 +1737,7 @@
     }
   },
   {
+    "id": 194,
     "Title": "Jesus' mother was Mary",
     "Fact": "All four Gospels identify Mary as Jesus' mother. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1552,6 +1746,7 @@
     }
   },
   {
+    "id": 195,
     "Title": "Joseph is described as Mary's husband",
     "Fact": "Matthew and Luke present Joseph as Mary's husband and Jesus' legal/family guardian in the infancy narratives. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1560,6 +1755,7 @@
     }
   },
   {
+    "id": 196,
     "Title": "Jesus was circumcised as an infant",
     "Fact": "Luke 2:21 records Jesus' circumcision and naming on the eighth day. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1568,6 +1764,7 @@
     }
   },
   {
+    "id": 197,
     "Title": "Jesus was presented at the temple",
     "Fact": "Luke 2:22-24 describes Mary and Joseph presenting Jesus at the temple. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1576,6 +1773,7 @@
     }
   },
   {
+    "id": 198,
     "Title": "Simeon recognizes Jesus",
     "Fact": "Luke 2:25-35 records Simeon blessing God after seeing the infant Jesus. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1584,6 +1782,7 @@
     }
   },
   {
+    "id": 199,
     "Title": "Anna speaks about the child",
     "Fact": "Luke 2:36-38 describes the prophet Anna giving thanks and speaking about Jesus. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1592,6 +1791,7 @@
     }
   },
   {
+    "id": 200,
     "Title": "Jesus' childhood includes a temple visit",
     "Fact": "Luke 2:41-52 records Jesus at the temple at age twelve. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1600,6 +1800,7 @@
     }
   },
   {
+    "id": 201,
     "Title": "John the Baptist prepares the way",
     "Fact": "The Gospels present John as the forerunner who calls people to repentance. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1608,6 +1809,7 @@
     }
   },
   {
+    "id": 202,
     "Title": "Jesus is baptized by John",
     "Fact": "All four Gospels connect Jesus' public ministry with baptism by John. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1616,6 +1818,7 @@
     }
   },
   {
+    "id": 203,
     "Title": "Jesus spends forty days in the wilderness",
     "Fact": "The Synoptic Gospels describe Jesus fasting and being tempted for forty days. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1624,6 +1827,7 @@
     }
   },
   {
+    "id": 204,
     "Title": "Jesus calls disciples",
     "Fact": "The Gospels describe Jesus calling ordinary people to follow him as disciples. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1632,6 +1836,7 @@
     }
   },
   {
+    "id": 205,
     "Title": "The Twelve are specifically named",
     "Fact": "The Synoptic Gospels provide lists of Jesus' Twelve apostles. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1640,6 +1845,7 @@
     }
   },
   {
+    "id": 206,
     "Title": "Jesus teaches in parables",
     "Fact": "Jesus frequently uses short stories and images to communicate truths about God's kingdom. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1648,6 +1854,7 @@
     }
   },
   {
+    "id": 207,
     "Title": "The Good Samaritan challenges prejudice",
     "Fact": "Luke 10 uses a Samaritan as the compassionate neighbor in Jesus' parable. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1656,6 +1863,7 @@
     }
   },
   {
+    "id": 208,
     "Title": "The Prodigal Son emphasizes restoration",
     "Fact": "Luke 15 tells a parable about a lost son welcomed home by his father. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1664,6 +1872,7 @@
     }
   },
   {
+    "id": 209,
     "Title": "The Good Shepherd is a major Johannine image",
     "Fact": "John 10 portrays Jesus as the good shepherd who knows his sheep. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1672,6 +1881,7 @@
     }
   },
   {
+    "id": 210,
     "Title": "Jesus washes his disciples' feet",
     "Fact": "John 13 records Jesus washing the disciples' feet as an example of humble service. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1680,6 +1890,7 @@
     }
   },
   {
+    "id": 211,
     "Title": "Jesus teaches love of enemies",
     "Fact": "In the Sermon on the Mount, Jesus commands love for enemies and prayer for persecutors. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -1688,6 +1899,7 @@
     }
   },
   {
+    "id": 212,
     "Title": "Jesus teaches secret giving",
     "Fact": "Matthew 6 instructs disciples to give without seeking public applause. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1696,6 +1908,7 @@
     }
   },
   {
+    "id": 213,
     "Title": "Jesus teaches secret prayer",
     "Fact": "Matthew 6 presents prayer as something that should not be performed merely for public recognition. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1704,6 +1917,7 @@
     }
   },
   {
+    "id": 214,
     "Title": "Jesus gives the Lord's Prayer",
     "Fact": "Matthew 6 and Luke 11 preserve forms of the prayer Jesus taught his disciples. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1712,6 +1926,7 @@
     }
   },
   {
+    "id": 215,
     "Title": "Jesus teaches forgiveness",
     "Fact": "Jesus repeatedly teaches his followers to forgive others. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -1720,6 +1935,7 @@
     }
   },
   {
+    "id": 216,
     "Title": "Jesus welcomes children",
     "Fact": "The Gospels record Jesus welcoming children and using them in his teaching. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1728,6 +1944,7 @@
     }
   },
   {
+    "id": 217,
     "Title": "Jesus touches lepers",
     "Fact": "The Gospels record Jesus healing people with leprosy and crossing social boundaries of purity and exclusion. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1736,6 +1953,7 @@
     }
   },
   {
+    "id": 218,
     "Title": "Jesus heals the sick",
     "Fact": "Healing accounts are prominent throughout the Gospel narratives. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1744,6 +1962,7 @@
     }
   },
   {
+    "id": 219,
     "Title": "Jesus calms a storm",
     "Fact": "The Synoptic Gospels describe Jesus calming a storm on the Sea of Galilee. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1752,6 +1971,7 @@
     }
   },
   {
+    "id": 220,
     "Title": "Jesus feeds five thousand",
     "Fact": "All four Gospels record the feeding of the five thousand. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1760,6 +1980,7 @@
     }
   },
   {
+    "id": 221,
     "Title": "Jesus walks on water",
     "Fact": "Matthew, Mark, and John record Jesus walking on the sea. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1768,6 +1989,7 @@
     }
   },
   {
+    "id": 222,
     "Title": "Peter confesses Jesus as the Christ",
     "Fact": "Matthew, Mark, and Luke record Peter's confession of Jesus as the Messiah/Christ. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1776,6 +1998,7 @@
     }
   },
   {
+    "id": 223,
     "Title": "Jesus predicts his death",
     "Fact": "The Synoptic Gospels record Jesus repeatedly teaching his disciples about his coming suffering and death. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1784,6 +2007,7 @@
     }
   },
   {
+    "id": 224,
     "Title": "Jesus enters Jerusalem publicly",
     "Fact": "The Gospels describe Jesus entering Jerusalem amid public acclamation shortly before his death. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1792,6 +2016,7 @@
     }
   },
   {
+    "id": 225,
     "Title": "The Last Supper is connected with Passover",
     "Fact": "The Synoptic Gospels present the Last Supper in a Passover setting; John presents the chronology differently. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1800,6 +2025,7 @@
     }
   },
   {
+    "id": 226,
     "Title": "Jesus institutes bread and cup remembrance",
     "Fact": "The Synoptic accounts and 1 Corinthians connect Jesus' final meal with bread and cup given special covenant meaning. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1808,6 +2034,7 @@
     }
   },
   {
+    "id": 227,
     "Title": "Gethsemane is a place of prayer",
     "Fact": "The Gospels describe Jesus praying in Gethsemane before his arrest. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -1816,6 +2043,7 @@
     }
   },
   {
+    "id": 228,
     "Title": "Jesus is betrayed by Judas",
     "Fact": "The Gospels identify Judas Iscariot as the disciple who betrays Jesus. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1824,6 +2052,7 @@
     }
   },
   {
+    "id": 229,
     "Title": "Peter denies Jesus three times",
     "Fact": "All four Gospels record Peter's denial of Jesus, with variations in details. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1832,6 +2061,7 @@
     }
   },
   {
+    "id": 230,
     "Title": "Jesus is crucified",
     "Fact": "All four Gospels narrate Jesus' crucifixion. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1840,6 +2070,7 @@
     }
   },
   {
+    "id": 231,
     "Title": "Jesus' crucifixion is associated with Golgotha",
     "Fact": "The Gospels identify Golgotha, meaning 'Place of a Skull,' as the site of the crucifixion. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1848,6 +2079,7 @@
     }
   },
   {
+    "id": 232,
     "Title": "Jesus is buried in a tomb",
     "Fact": "The Gospels say Joseph of Arimathea arranged for Jesus' burial in a tomb. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1856,6 +2088,7 @@
     }
   },
   {
+    "id": 233,
     "Title": "Women are first witnesses to the empty tomb",
     "Fact": "The Gospel accounts prominently feature women discovering the empty tomb. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1864,6 +2097,7 @@
     }
   },
   {
+    "id": 234,
     "Title": "The resurrection is central to Christian faith",
     "Fact": "Paul states that if Christ has not been raised, Christian faith is futile. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1872,6 +2106,7 @@
     }
   },
   {
+    "id": 235,
     "Title": "Jesus appears to disciples after resurrection",
     "Fact": "The New Testament records multiple resurrection appearances to individuals and groups. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1880,6 +2115,7 @@
     }
   },
   {
+    "id": 236,
     "Title": "Thomas asks to see Jesus' wounds",
     "Fact": "John 20 records Thomas asking for tangible evidence and then confessing Jesus as Lord and God. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1888,6 +2124,7 @@
     }
   },
   {
+    "id": 237,
     "Title": "Jesus commissions his followers",
     "Fact": "Matthew 28 records Jesus commanding his disciples to make disciples of all nations. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -1896,6 +2133,7 @@
     }
   },
   {
+    "id": 238,
     "Title": "The Great Commission includes baptism",
     "Fact": "Matthew 28:19 connects disciple-making with baptism in the name of the Father, Son, and Holy Spirit. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -1904,6 +2142,7 @@
     }
   },
   {
+    "id": 239,
     "Title": "The Gospels were written for communities as well as individuals",
     "Fact": "Each Gospel presents Jesus' story with particular emphases and audiences while contributing to the shared Christian witness. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -1912,6 +2151,7 @@
     }
   },
   {
+    "id": 240,
     "Title": "Acts begins after the resurrection",
     "Fact": "Acts opens by referring to Jesus' resurrection appearances and ascension. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1920,6 +2160,7 @@
     }
   },
   {
+    "id": 241,
     "Title": "Jesus' ascension is recorded in Acts 1",
     "Fact": "Acts 1 describes Jesus being taken up and the disciples receiving a mission. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1928,6 +2169,7 @@
     }
   },
   {
+    "id": 242,
     "Title": "The disciples wait in Jerusalem",
     "Fact": "Jesus instructs the disciples to remain in Jerusalem until they receive power from the Holy Spirit. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1936,6 +2178,7 @@
     }
   },
   {
+    "id": 243,
     "Title": "Pentecost occurs in Acts 2",
     "Fact": "Acts 2 describes the Holy Spirit coming upon the disciples during the Jewish festival of Pentecost. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1944,6 +2187,7 @@
     }
   },
   {
+    "id": 244,
     "Title": "Pentecost includes many languages",
     "Fact": "Acts 2 says the disciples speak in other languages understood by people from many regions. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1952,6 +2196,7 @@
     }
   },
   {
+    "id": 245,
     "Title": "Peter preaches at Pentecost",
     "Fact": "Peter gives a major public sermon interpreting the events through Scripture. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1960,6 +2205,7 @@
     }
   },
   {
+    "id": 246,
     "Title": "About three thousand are baptized",
     "Fact": "Acts 2:41 reports that about three thousand people were baptized after Peter's preaching. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -1968,6 +2214,7 @@
     }
   },
   {
+    "id": 247,
     "Title": "Early Christians share resources",
     "Fact": "Acts 2 and 4 describe believers sharing possessions and caring for one another. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1976,6 +2223,7 @@
     }
   },
   {
+    "id": 248,
     "Title": "The early church gathers for teaching and fellowship",
     "Fact": "Acts 2:42 highlights teaching, fellowship, breaking of bread, and prayers. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -1984,6 +2232,7 @@
     }
   },
   {
+    "id": 249,
     "Title": "Stephen is the first named Christian martyr in Acts",
     "Fact": "Acts 7 records Stephen's death after his testimony before the council. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -1992,6 +2241,7 @@
     }
   },
   {
+    "id": 250,
     "Title": "Philip evangelizes an Ethiopian official",
     "Fact": "Acts 8 describes Philip explaining Isaiah to an Ethiopian traveler and baptizing him. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -2000,6 +2250,7 @@
     }
   },
   {
+    "id": 251,
     "Title": "Saul persecutes the church",
     "Fact": "Acts 8-9 describes Saul's persecution of Christians before his conversion. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2008,6 +2259,7 @@
     }
   },
   {
+    "id": 252,
     "Title": "Paul's conversion occurs on the road to Damascus",
     "Fact": "Acts 9 describes Saul encountering the risen Jesus while traveling to Damascus. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2016,6 +2268,7 @@
     }
   },
   {
+    "id": 253,
     "Title": "Paul is also called Saul",
     "Fact": "Acts uses both names for the apostle commonly known as Paul. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2024,6 +2277,7 @@
     }
   },
   {
+    "id": 254,
     "Title": "Peter receives a vision about Gentiles",
     "Fact": "Acts 10 records Peter's vision and his subsequent visit to Cornelius. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2032,6 +2286,7 @@
     }
   },
   {
+    "id": 255,
     "Title": "Cornelius is a Roman centurion",
     "Fact": "Acts 10 identifies Cornelius as a Roman centurion who feared God. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2040,6 +2295,7 @@
     }
   },
   {
+    "id": 256,
     "Title": "Gentiles receive the Holy Spirit",
     "Fact": "Acts 10 describes the Holy Spirit coming upon Gentiles in Cornelius's household. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2048,6 +2304,7 @@
     }
   },
   {
+    "id": 257,
     "Title": "The Jerusalem Council addresses Gentile believers",
     "Fact": "Acts 15 records a major discussion about requirements for Gentile Christians. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -2056,6 +2313,7 @@
     }
   },
   {
+    "id": 258,
     "Title": "The church sends missionaries",
     "Fact": "Acts repeatedly describes believers commissioning people for missionary work. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2064,6 +2322,7 @@
     }
   },
   {
+    "id": 259,
     "Title": "Paul and Barnabas serve as missionaries",
     "Fact": "Acts 13-14 describes their missionary journey through parts of the eastern Roman world. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -2072,6 +2331,7 @@
     }
   },
   {
+    "id": 260,
     "Title": "Paul and Silas sing in prison",
     "Fact": "Acts 16 records them praying and singing hymns while imprisoned. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -2080,6 +2340,7 @@
     }
   },
   {
+    "id": 261,
     "Title": "The Philippian jailer asks how to be saved",
     "Fact": "Acts 16 records the jailer's question after an earthquake opens the prison. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2088,6 +2349,7 @@
     }
   },
   {
+    "id": 262,
     "Title": "Paul works as a tentmaker",
     "Fact": "Acts 18 identifies Paul's trade as tentmaking or leatherworking alongside ministry. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -2096,6 +2358,7 @@
     }
   },
   {
+    "id": 263,
     "Title": "Paul reasons in synagogues",
     "Fact": "Acts frequently describes Paul beginning his teaching in Jewish synagogues. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2104,6 +2367,7 @@
     }
   },
   {
+    "id": 264,
     "Title": "Acts ends with Paul in Rome",
     "Fact": "The book concludes with Paul living in Rome under guard and preaching about God's kingdom. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2112,6 +2376,7 @@
     }
   },
   {
+    "id": 265,
     "Title": "The church spreads beyond Jerusalem",
     "Fact": "Acts portrays Christianity spreading through Judea, Samaria, and the wider Roman world. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2120,6 +2385,7 @@
     }
   },
   {
+    "id": 266,
     "Title": "Christianity develops in a multilingual world",
     "Fact": "Acts reflects interaction among Hebrew/Aramaic, Greek, Latin, and other linguistic communities. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2128,6 +2394,7 @@
     }
   },
   {
+    "id": 267,
     "Title": "Household gatherings were important",
     "Fact": "The New Testament refers to churches meeting in homes, such as the household of Prisca and Aquila. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2136,6 +2403,7 @@
     }
   },
   {
+    "id": 268,
     "Title": "Women played active roles in early Christian communities",
     "Fact": "The New Testament names women such as Lydia, Priscilla, Phoebe, and Junia in significant ministry contexts. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2144,6 +2412,7 @@
     }
   },
   {
+    "id": 269,
     "Title": "Phoebe is commended as a servant of the church",
     "Fact": "Romans 16:1-2 commends Phoebe to the Roman Christians. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2152,6 +2421,7 @@
     }
   },
   {
+    "id": 270,
     "Title": "Priscilla teaches Apollos with Aquila",
     "Fact": "Acts 18 says Priscilla and Aquila explain God's way more accurately to Apollos. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2160,6 +2430,7 @@
     }
   },
   {
+    "id": 271,
     "Title": "Apollos is a learned Christian teacher",
     "Fact": "Acts 18 describes Apollos as eloquent and knowledgeable in the Scriptures. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2168,6 +2439,7 @@
     }
   },
   {
+    "id": 272,
     "Title": "Barnabas is known for encouragement",
     "Fact": "Acts 4 gives Barnabas the nickname associated with encouragement. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2176,6 +2448,7 @@
     }
   },
   {
+    "id": 273,
     "Title": "Antioch becomes an important Christian center",
     "Fact": "Acts 11 portrays Antioch as a major early Christian community. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2184,6 +2457,7 @@
     }
   },
   {
+    "id": 274,
     "Title": "Believers are first called Christians at Antioch",
     "Fact": "Acts 11:26 says the disciples were first called Christians at Antioch. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2192,6 +2466,7 @@
     }
   },
   {
+    "id": 275,
     "Title": "Fasting appears in missionary commissioning",
     "Fact": "Acts 13 records fasting and prayer before Paul and Barnabas are sent out. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2200,6 +2475,7 @@
     }
   },
   {
+    "id": 276,
     "Title": "Prayer accompanies major decisions",
     "Fact": "Acts repeatedly depicts the early church praying before important actions. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -2208,6 +2484,7 @@
     }
   },
   {
+    "id": 277,
     "Title": "Baptism follows Christian confession",
     "Fact": "Acts regularly portrays baptism as a response to faith and reception of the Christian message. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2216,6 +2493,7 @@
     }
   },
   {
+    "id": 278,
     "Title": "The early church faced internal disputes",
     "Fact": "Acts 6 and 15 show believers addressing practical and theological conflicts. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2224,6 +2502,7 @@
     }
   },
   {
+    "id": 279,
     "Title": "Care for widows becomes an organized concern",
     "Fact": "Acts 6 describes the appointment of servants/leaders to address the distribution of food to widows. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2232,6 +2511,7 @@
     }
   },
   {
+    "id": 280,
     "Title": "Persecution contributed to geographical spread",
     "Fact": "Acts 8 describes believers scattering because of persecution while continuing to preach. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -2240,6 +2520,7 @@
     }
   },
   {
+    "id": 281,
     "Title": "Paul's letters arose from real communities",
     "Fact": "The New Testament letters address concrete questions, conflicts, needs, and pastoral situations. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2248,6 +2529,7 @@
     }
   },
   {
+    "id": 282,
     "Title": "The Jerusalem church collected aid",
     "Fact": "Paul's letters describe collections for believers in Jerusalem suffering hardship. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2256,6 +2538,7 @@
     }
   },
   {
+    "id": 283,
     "Title": "Early Christian worship included singing",
     "Fact": "New Testament passages such as Ephesians 5:19 and Colossians 3:16 refer to psalms, hymns, and spiritual songs. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2264,6 +2547,7 @@
     }
   },
   {
+    "id": 284,
     "Title": "The early church practiced communal meals",
     "Fact": "Acts and 1 Corinthians refer to shared meals associated with Christian gatherings. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2272,6 +2556,7 @@
     }
   },
   {
+    "id": 285,
     "Title": "The Lord's Supper was practiced by early Christians",
     "Fact": "1 Corinthians 11 provides instructions concerning the communal meal centered on bread and cup. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2280,6 +2565,7 @@
     }
   },
   {
+    "id": 286,
     "Title": "The church used letters as teaching documents",
     "Fact": "Paul and other New Testament writers sent letters to churches and individuals for instruction and encouragement. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2288,6 +2574,7 @@
     }
   },
   {
+    "id": 287,
     "Title": "The New Testament presents the church as one body",
     "Fact": "Paul repeatedly uses the image of one body with many members to describe Christian community. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2296,6 +2583,7 @@
     }
   },
   {
+    "id": 288,
     "Title": "Christianity crossed ethnic boundaries early",
     "Fact": "Acts presents Jewish, Samaritan, Greek, Roman, and other people entering the Christian movement. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2304,6 +2592,7 @@
     }
   },
   {
+    "id": 289,
     "Title": "Faith is described as trust in God",
     "Fact": "Hebrews 11:1 famously connects faith with confidence in what is hoped for and assurance about what is not seen. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2312,6 +2601,7 @@
     }
   },
   {
+    "id": 290,
     "Title": "Grace is a major New Testament theme",
     "Fact": "Paul repeatedly describes salvation in terms of God's grace rather than human boasting. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2320,6 +2610,7 @@
     }
   },
   {
+    "id": 291,
     "Title": "Christians are called to love one another",
     "Fact": "Jesus gives mutual love as a defining command for his disciples. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2328,6 +2619,7 @@
     }
   },
   {
+    "id": 292,
     "Title": "Love is described in 1 Corinthians 13",
     "Fact": "1 Corinthians 13 describes love through patience, kindness, humility, endurance, and perseverance. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2336,6 +2628,7 @@
     }
   },
   {
+    "id": 293,
     "Title": "The fruit of the Spirit is listed in Galatians",
     "Fact": "Galatians 5:22-23 lists love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2344,6 +2637,7 @@
     }
   },
   {
+    "id": 294,
     "Title": "Self-control is part of Christian character",
     "Fact": "Galatians includes self-control among the fruit produced by the Spirit. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2352,6 +2646,7 @@
     }
   },
   {
+    "id": 295,
     "Title": "Christians are told to forgive",
     "Fact": "Ephesians 4:32 connects forgiveness with God's forgiveness in Christ. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2360,6 +2655,7 @@
     }
   },
   {
+    "id": 296,
     "Title": "Christians are told to speak truthfully",
     "Fact": "Ephesians 4:25 tells believers to put away falsehood and speak truth to one another. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2368,6 +2664,7 @@
     }
   },
   {
+    "id": 297,
     "Title": "Christians are told to avoid destructive speech",
     "Fact": "Ephesians 4:29 urges speech that builds others up. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2376,6 +2673,7 @@
     }
   },
   {
+    "id": 298,
     "Title": "Generosity is encouraged",
     "Fact": "2 Corinthians 9 teaches Christians to give willingly and cheerfully. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2384,6 +2682,7 @@
     }
   },
   {
+    "id": 299,
     "Title": "Paul links giving with concern for others",
     "Fact": "2 Corinthians 8-9 describes Christian generosity as care for believers in need. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2392,6 +2691,7 @@
     }
   },
   {
+    "id": 300,
     "Title": "Work is given moral purpose",
     "Fact": "Colossians 3:23 tells believers to work wholeheartedly as serving the Lord. The theme connects faith with everyday life, reminding believers that devotion to God includes how they understand themselves, their responsibilities, and their relationships.",
     "verse": {
@@ -2400,6 +2700,7 @@
     }
   },
   {
+    "id": 301,
     "Title": "Christians are urged to pray continually",
     "Fact": "1 Thessalonians 5:17 gives the short command to pray without ceasing. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -2408,6 +2709,7 @@
     }
   },
   {
+    "id": 302,
     "Title": "Thanksgiving is repeatedly encouraged",
     "Fact": "New Testament writers repeatedly connect prayer with thanksgiving. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2416,6 +2718,7 @@
     }
   },
   {
+    "id": 303,
     "Title": "Christians are told to rejoice",
     "Fact": "Paul repeatedly urges rejoicing even in difficult circumstances. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2424,6 +2727,7 @@
     }
   },
   {
+    "id": 304,
     "Title": "Christians are told to care for enemies",
     "Fact": "Romans 12 instructs believers to feed an enemy who is hungry and give drink to one who is thirsty. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2432,6 +2736,7 @@
     }
   },
   {
+    "id": 305,
     "Title": "Romans 12 emphasizes transformed thinking",
     "Fact": "Romans 12:2 connects Christian transformation with the renewing of the mind. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2440,6 +2745,7 @@
     }
   },
   {
+    "id": 306,
     "Title": "The body is called a temple of the Holy Spirit",
     "Fact": "1 Corinthians 6:19 uses this image when teaching about bodily holiness. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2448,6 +2754,7 @@
     }
   },
   {
+    "id": 307,
     "Title": "Christians are urged to flee sexual immorality",
     "Fact": "1 Corinthians 6:18 gives this direct instruction. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2456,6 +2763,7 @@
     }
   },
   {
+    "id": 308,
     "Title": "Christian freedom is linked with responsibility",
     "Fact": "Paul teaches that freedom should not become an occasion for harming another believer. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2464,6 +2772,7 @@
     }
   },
   {
+    "id": 309,
     "Title": "Food and conscience are discussed in Romans",
     "Fact": "Romans 14 teaches Christians to handle disputed practices with consideration for one another. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2472,6 +2781,7 @@
     }
   },
   {
+    "id": 310,
     "Title": "James connects faith and action",
     "Fact": "James 2 argues that genuine faith is demonstrated through works. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2480,6 +2790,7 @@
     }
   },
   {
+    "id": 311,
     "Title": "James warns about the tongue",
     "Fact": "James 3 emphasizes the disproportionate power of speech to bless or harm. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2488,6 +2799,7 @@
     }
   },
   {
+    "id": 312,
     "Title": "James calls for care of vulnerable people",
     "Fact": "James 1:27 connects pure religion with care for orphans and widows and moral integrity. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2496,6 +2808,7 @@
     }
   },
   {
+    "id": 313,
     "Title": "Peter encourages hospitality",
     "Fact": "1 Peter 4:9 tells believers to practice hospitality without grumbling. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2504,6 +2817,7 @@
     }
   },
   {
+    "id": 314,
     "Title": "Peter calls Christians a holy people",
     "Fact": "1 Peter uses Israel-like covenant language to describe the church as a people belonging to God. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2512,6 +2826,7 @@
     }
   },
   {
+    "id": 315,
     "Title": "John connects love with knowledge of God",
     "Fact": "1 John teaches that love for others is inseparable from knowing God. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2520,6 +2835,7 @@
     }
   },
   {
+    "id": 316,
     "Title": "John warns against loving the world in a destructive sense",
     "Fact": "1 John 2:15-17 warns against a pattern of desire and pride opposed to God's will. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2528,6 +2844,7 @@
     }
   },
   {
+    "id": 317,
     "Title": "The book of Hebrews encourages perseverance",
     "Fact": "Hebrews repeatedly urges believers not to abandon confidence and faithful endurance. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2536,6 +2853,7 @@
     }
   },
   {
+    "id": 318,
     "Title": "Hebrews presents Jesus as high priest",
     "Fact": "Hebrews develops a distinctive theology of Jesus as the great high priest. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2544,6 +2862,7 @@
     }
   },
   {
+    "id": 319,
     "Title": "Revelation uses symbolic imagery",
     "Fact": "Revelation contains beasts, lampstands, seals, trumpets, bowls, numbers, and other symbolic images. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2552,6 +2871,7 @@
     }
   },
   {
+    "id": 320,
     "Title": "Revelation includes letters to seven churches",
     "Fact": "Revelation 2-3 contains messages addressed to seven churches in Asia Minor. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2560,6 +2880,7 @@
     }
   },
   {
+    "id": 321,
     "Title": "Revelation ends with hope",
     "Fact": "The book closes with imagery of God's presence, the tree of life, and the renewal of creation. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2568,6 +2889,7 @@
     }
   },
   {
+    "id": 322,
     "Title": "The New Testament calls Christians ambassadors",
     "Fact": "2 Corinthians 5:20 describes believers as ambassadors for Christ. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2576,6 +2898,7 @@
     }
   },
   {
+    "id": 323,
     "Title": "Christians are described as salt and light",
     "Fact": "Jesus uses salt and light imagery for his disciples in Matthew 5. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2584,6 +2907,7 @@
     }
   },
   {
+    "id": 324,
     "Title": "Jesus teaches the Golden Rule",
     "Fact": "Matthew 7:12 tells disciples to treat others as they would want to be treated. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2592,6 +2916,7 @@
     }
   },
   {
+    "id": 325,
     "Title": "Jesus teaches reconciliation",
     "Fact": "Matthew 5:23-24 places reconciliation with a brother or sister alongside worship concerns. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2600,6 +2925,7 @@
     }
   },
   {
+    "id": 326,
     "Title": "Jesus warns against judging hypocritically",
     "Fact": "Matthew 7:1-5 uses the image of a speck and a log to teach self-examination. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2608,6 +2934,7 @@
     }
   },
   {
+    "id": 327,
     "Title": "Jesus teaches secret fasting",
     "Fact": "Matthew 6:16-18 tells disciples not to make fasting a public performance. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2616,6 +2943,7 @@
     }
   },
   {
+    "id": 328,
     "Title": "Jesus teaches that treasures shape the heart",
     "Fact": "Matthew 6:19-21 connects one's treasure with one's heart. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2624,6 +2952,7 @@
     }
   },
   {
+    "id": 329,
     "Title": "Jesus warns about serving wealth",
     "Fact": "Matthew 6:24 says a person cannot serve both God and money. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2632,6 +2961,7 @@
     }
   },
   {
+    "id": 330,
     "Title": "Jesus tells disciples not to be consumed by anxiety",
     "Fact": "Matthew 6:25-34 teaches trust in God's provision while addressing worry. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2640,6 +2970,7 @@
     }
   },
   {
+    "id": 331,
     "Title": "Jesus commands reconciliation before offering",
     "Fact": "Matthew 5:23-24 connects relational reconciliation with approaching the altar. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2648,6 +2979,7 @@
     }
   },
   {
+    "id": 332,
     "Title": "Jesus calls disciples to take up the cross",
     "Fact": "The Synoptic Gospels record Jesus teaching disciples to deny themselves and take up their cross. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2656,6 +2988,7 @@
     }
   },
   {
+    "id": 333,
     "Title": "Humility is repeatedly praised",
     "Fact": "Jesus uses children and servants as examples when teaching about greatness in God's kingdom. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2664,6 +2997,7 @@
     }
   },
   {
+    "id": 334,
     "Title": "The greatest commandment centers on love",
     "Fact": "Jesus identifies love for God and neighbor as central to the law. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2672,6 +3006,7 @@
     }
   },
   {
+    "id": 335,
     "Title": "Mercy is valued over empty ritual",
     "Fact": "Jesus quotes Hosea 6:6 about mercy when challenging religious practices divorced from compassion. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -2680,6 +3015,7 @@
     }
   },
   {
+    "id": 336,
     "Title": "Christian hope includes resurrection",
     "Fact": "The New Testament consistently teaches resurrection as part of Christian hope. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2688,6 +3024,7 @@
     }
   },
   {
+    "id": 337,
     "Title": "Christian life is portrayed as pilgrimage",
     "Fact": "Hebrews and 1 Peter use language that portrays believers as travelers or resident foreigners in the world. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2696,6 +3033,7 @@
     }
   },
   {
+    "id": 338,
     "Title": "The Didache is an early Christian text",
     "Fact": "The Didache is an early Christian teaching document generally dated to the late first or early second century. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2704,6 +3042,7 @@
     }
   },
   {
+    "id": 339,
     "Title": "Early Christians used the fish symbol",
     "Fact": "The fish became an early Christian symbol; the Greek word ichthys was associated with a Christian confession. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2712,6 +3051,7 @@
     }
   },
   {
+    "id": 340,
     "Title": "The fish symbol is not a biblical command",
     "Fact": "Although ancient Christians used the fish symbol, the New Testament does not command Christians to use it. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2720,6 +3060,7 @@
     }
   },
   {
+    "id": 341,
     "Title": "The chi-rho is an ancient Christian monogram",
     "Fact": "The Chi-Rho combines the Greek letters chi and rho and became a prominent Christian symbol. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2728,6 +3069,7 @@
     }
   },
   {
+    "id": 342,
     "Title": "The cross became a central Christian symbol",
     "Fact": "The cross developed into the most recognizable symbol of Christianity because of Jesus' crucifixion. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2736,6 +3078,7 @@
     }
   },
   {
+    "id": 343,
     "Title": "Early Christians gathered on the first day of the week",
     "Fact": "Acts 20:7 describes believers gathering to break bread on the first day of the week. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2744,6 +3087,7 @@
     }
   },
   {
+    "id": 344,
     "Title": "Sunday became associated with Christian worship",
     "Fact": "Early Christian sources associate the first day of the week with resurrection remembrance and communal worship. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2752,6 +3096,7 @@
     }
   },
   {
+    "id": 345,
     "Title": "Easter is connected to Passover historically",
     "Fact": "The Christian celebration of Jesus' resurrection developed in relation to the Jewish Passover season. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2760,6 +3105,7 @@
     }
   },
   {
+    "id": 346,
     "Title": "The date of Easter became a major early church issue",
     "Fact": "Early Christians debated how to calculate the annual celebration of Jesus' resurrection. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2768,6 +3114,7 @@
     }
   },
   {
+    "id": 347,
     "Title": "Christmas was not described as a biblical command",
     "Fact": "The New Testament does not give a command to celebrate Jesus' birth on a particular annual date. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2776,6 +3123,7 @@
     }
   },
   {
+    "id": 348,
     "Title": "December 25 became a traditional Christmas date",
     "Fact": "December 25 became an established Christmas celebration date in parts of the Christian world by late antiquity. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2784,6 +3132,7 @@
     }
   },
   {
+    "id": 349,
     "Title": "Epiphany became a major Christian feast",
     "Fact": "Epiphany developed as a feast associated especially with Christ's manifestation; traditions differ by region. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2792,6 +3141,7 @@
     }
   },
   {
+    "id": 350,
     "Title": "Lent developed as a season of preparation",
     "Fact": "Lent gradually developed into a period of fasting and preparation before Easter. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2800,6 +3150,7 @@
     }
   },
   {
+    "id": 351,
     "Title": "Ash Wednesday belongs to Western Christian practice",
     "Fact": "Ash Wednesday marks the beginning of Lent in many Western Christian traditions. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2808,6 +3159,7 @@
     }
   },
   {
+    "id": 352,
     "Title": "Palm Sunday remembers Jesus' entry into Jerusalem",
     "Fact": "Many Christians use Palm Sunday to commemorate the Gospel accounts of Jesus entering Jerusalem. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2816,6 +3168,7 @@
     }
   },
   {
+    "id": 353,
     "Title": "Holy Week follows Jesus' final days",
     "Fact": "Holy Week is the Christian observance period leading from Palm Sunday through Easter. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2824,6 +3177,7 @@
     }
   },
   {
+    "id": 354,
     "Title": "Good Friday remembers the crucifixion",
     "Fact": "Good Friday is the traditional Christian day for commemorating Jesus' crucifixion. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2832,6 +3186,7 @@
     }
   },
   {
+    "id": 355,
     "Title": "Maundy Thursday remembers the Last Supper",
     "Fact": "Many churches use Maundy Thursday to commemorate Jesus' final meal and his command to love and serve. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2840,6 +3195,7 @@
     }
   },
   {
+    "id": 356,
     "Title": "Pentecost is fifty days after Easter in traditional counting",
     "Fact": "The Christian feast of Pentecost is traditionally celebrated fifty days after Easter Sunday. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2848,6 +3204,7 @@
     }
   },
   {
+    "id": 357,
     "Title": "Advent is a season of expectation",
     "Fact": "Advent is observed in many Western traditions as a period of preparation for Christmas and reflection on Christ's coming. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2856,6 +3213,7 @@
     }
   },
   {
+    "id": 358,
     "Title": "The liturgical calendar varies by tradition",
     "Fact": "Catholic, Orthodox, Anglican, Lutheran, Reformed, and other traditions organize feast days differently. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2864,6 +3222,7 @@
     }
   },
   {
+    "id": 359,
     "Title": "Baptism became a universal Christian initiation practice",
     "Fact": "The New Testament and early Christian writings consistently associate baptism with entry into Christian community. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2872,6 +3231,7 @@
     }
   },
   {
+    "id": 360,
     "Title": "Infant baptism developed early",
     "Fact": "Historical evidence shows infant baptism was practiced in some Christian communities by the early centuries, though traditions differ over its theology. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2880,6 +3240,7 @@
     }
   },
   {
+    "id": 361,
     "Title": "Believers' baptism is emphasized by Baptist traditions",
     "Fact": "Many Baptist and evangelical churches practice baptism of people who personally profess faith. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2888,6 +3249,7 @@
     }
   },
   {
+    "id": 362,
     "Title": "Immersion is one historical baptismal mode",
     "Fact": "Early Christian evidence includes baptism by immersion, while other Christian traditions also use pouring or sprinkling. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2896,6 +3258,7 @@
     }
   },
   {
+    "id": 363,
     "Title": "The Eucharist has several names",
     "Fact": "Christians call the central bread-and-cup rite the Eucharist, Holy Communion, the Lord's Supper, and other names. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2904,6 +3267,7 @@
     }
   },
   {
+    "id": 364,
     "Title": "Eucharist means thanksgiving",
     "Fact": "The English word Eucharist comes from Greek eucharistia, meaning thanksgiving. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2912,6 +3276,7 @@
     }
   },
   {
+    "id": 365,
     "Title": "Communion emphasizes fellowship",
     "Fact": "The term Communion highlights participation and fellowship among believers and with Christ. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -2920,6 +3285,7 @@
     }
   },
   {
+    "id": 366,
     "Title": "Creeds helped summarize Christian belief",
     "Fact": "Early Christian creeds developed to express core teachings about God, Christ, the Holy Spirit, and salvation. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -2928,6 +3294,7 @@
     }
   },
   {
+    "id": 367,
     "Title": "The Apostles' Creed developed over time",
     "Fact": "The Apostles' Creed has roots in early baptismal confessions and reached its later form gradually. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -2936,6 +3303,7 @@
     }
   },
   {
+    "id": 368,
     "Title": "The Nicene Creed addresses Christ's identity",
     "Fact": "The Nicene tradition strongly affirms the full divinity of the Son in response to fourth-century controversy. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -2944,6 +3312,7 @@
     }
   },
   {
+    "id": 369,
     "Title": "The Council of Nicaea met in 325",
     "Fact": "The Council of Nicaea was convened in 325 and addressed major disputes concerning Christian doctrine. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -2952,6 +3321,7 @@
     }
   },
   {
+    "id": 370,
     "Title": "Constantine supported Christianity after conversion",
     "Fact": "Emperor Constantine became a major patron of Christianity in the fourth century. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2960,6 +3330,7 @@
     }
   },
   {
+    "id": 371,
     "Title": "The Edict of Milan dates to 313",
     "Fact": "The agreement commonly called the Edict of Milan in 313 established toleration for Christianity within the Roman Empire. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2968,6 +3339,7 @@
     }
   },
   {
+    "id": 372,
     "Title": "Christianity later became favored by the Roman state",
     "Fact": "Under later emperors, Christianity moved from tolerated religion to a strongly favored imperial faith. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -2976,6 +3348,7 @@
     }
   },
   {
+    "id": 373,
     "Title": "Monasticism developed in late antiquity",
     "Fact": "Christian monastic movements developed especially in Egypt, Syria, and other regions as people pursued disciplined prayer and ascetic life. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -2984,6 +3357,7 @@
     }
   },
   {
+    "id": 374,
     "Title": "Desert monastics emphasized prayer and simplicity",
     "Fact": "Early desert Christians often withdrew from cities to pursue prayer, fasting, work, and spiritual discipline. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -2992,6 +3366,7 @@
     }
   },
   {
+    "id": 375,
     "Title": "Benedict wrote a famous monastic rule",
     "Fact": "The Rule of Benedict became highly influential in Western monasticism. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3000,6 +3375,7 @@
     }
   },
   {
+    "id": 376,
     "Title": "Christian hospitals have ancient roots",
     "Fact": "Christian communities historically established institutions for caring for the sick, poor, pilgrims, and vulnerable people. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3008,6 +3384,7 @@
     }
   },
   {
+    "id": 377,
     "Title": "Christian charity was organized early",
     "Fact": "Acts and later Christian sources show structured care for widows, the poor, and other people in need. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3016,6 +3393,7 @@
     }
   },
   {
+    "id": 378,
     "Title": "Martyrs were remembered by early Christians",
     "Fact": "Early Christian communities preserved accounts of martyrs and often commemorated their deaths. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3024,6 +3402,7 @@
     }
   },
   {
+    "id": 379,
     "Title": "Persecution varied across the Roman Empire",
     "Fact": "Christian persecution in the Roman Empire was not constant everywhere; it varied by time, place, and imperial policy. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -3032,6 +3411,7 @@
     }
   },
   {
+    "id": 380,
     "Title": "Polycarp is an early Christian martyr",
     "Fact": "The Martyrdom of Polycarp is an early Christian account associated with Polycarp of Smyrna. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3040,6 +3420,7 @@
     }
   },
   {
+    "id": 381,
     "Title": "Ignatius of Antioch wrote letters on the way to execution",
     "Fact": "Ignatius wrote several letters while being transported to Rome, probably in the early second century. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3048,6 +3429,7 @@
     }
   },
   {
+    "id": 382,
     "Title": "Justin Martyr defended Christianity publicly",
     "Fact": "Justin wrote apologies explaining and defending Christian beliefs to Roman audiences. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3056,6 +3438,7 @@
     }
   },
   {
+    "id": 383,
     "Title": "Irenaeus emphasized apostolic teaching",
     "Fact": "Irenaeus of Lyons wrote against teachings he regarded as contrary to the apostolic faith. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3064,6 +3447,7 @@
     }
   },
   {
+    "id": 384,
     "Title": "Early Christians used Scripture in worship",
     "Fact": "Early Christian writings repeatedly show the reading, interpretation, singing, and teaching of Scripture. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3072,6 +3456,7 @@
     }
   },
   {
+    "id": 385,
     "Title": "The Reformation challenged church structures and teachings",
     "Fact": "Sixteenth-century reform movements questioned aspects of Western church doctrine, authority, and practice. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3080,6 +3465,7 @@
     }
   },
   {
+    "id": 386,
     "Title": "Martin Luther published the Ninety-Five Theses",
     "Fact": "Luther's Ninety-Five Theses were published in 1517 in the context of debate over indulgences and church reform. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3088,6 +3474,7 @@
     }
   },
   {
+    "id": 387,
     "Title": "Luther translated the Bible into German",
     "Fact": "Luther's German Bible helped make Scripture more accessible to German-speaking readers. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3096,6 +3483,7 @@
     }
   },
   {
+    "id": 388,
     "Title": "The printing press accelerated Bible distribution",
     "Fact": "Movable-type printing made producing and distributing books, including Bibles, far faster than manuscript copying. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3104,6 +3492,7 @@
     }
   },
   {
+    "id": 389,
     "Title": "Tyndale worked to make Scripture available in English",
     "Fact": "William Tyndale translated much of the Bible into English and his work influenced later English translations. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3112,6 +3501,7 @@
     }
   },
   {
+    "id": 390,
     "Title": "Tyndale's New Testament was printed in 1526",
     "Fact": "A complete edition of Tyndale's English New Testament appeared in 1526. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3120,6 +3510,7 @@
     }
   },
   {
+    "id": 391,
     "Title": "The Geneva Bible influenced English Christianity",
     "Fact": "The Geneva Bible became influential among English-speaking Protestants in the sixteenth and seventeenth centuries. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3128,6 +3519,7 @@
     }
   },
   {
+    "id": 392,
     "Title": "The King James Bible was published in 1611",
     "Fact": "The King James Version was first published in 1611 after a major English translation project. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3136,6 +3528,7 @@
     }
   },
   {
+    "id": 393,
     "Title": "The King James Bible was not the first English Bible",
     "Fact": "English translations existed centuries before the 1611 King James Version. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3144,6 +3537,7 @@
     }
   },
   {
+    "id": 394,
     "Title": "The Reformation produced multiple traditions",
     "Fact": "The Reformation led to Lutheran, Reformed, Anglican, Anabaptist, and other movements with distinct histories. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -3152,6 +3546,7 @@
     }
   },
   {
+    "id": 395,
     "Title": "Anabaptists emphasized believer's baptism",
     "Fact": "Many Anabaptist traditions rejected infant baptism and emphasized baptism upon personal confession of faith. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3160,6 +3555,7 @@
     }
   },
   {
+    "id": 396,
     "Title": "Anglicanism developed from the English Reformation",
     "Fact": "The Church of England's institutional history was reshaped dramatically during the sixteenth-century English Reformation. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -3168,6 +3564,7 @@
     }
   },
   {
+    "id": 397,
     "Title": "The Counter-Reformation included Catholic reform",
     "Fact": "Catholic renewal included doctrinal clarification, clerical reform, new religious orders, education, and missionary expansion. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -3176,6 +3573,7 @@
     }
   },
   {
+    "id": 398,
     "Title": "The Council of Trent met in the sixteenth century",
     "Fact": "The Council of Trent addressed doctrine and reform in the Roman Catholic Church between 1545 and 1563. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -3184,6 +3582,7 @@
     }
   },
   {
+    "id": 399,
     "Title": "Jesuits became major missionaries and educators",
     "Fact": "The Society of Jesus, founded in the sixteenth century, became influential in education and global missions. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -3192,6 +3591,7 @@
     }
   },
   {
+    "id": 400,
     "Title": "Francis Xavier served in Asia",
     "Fact": "Francis Xavier was a major sixteenth-century Catholic missionary who worked in India, Southeast Asia, and Japan. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3200,6 +3600,7 @@
     }
   },
   {
+    "id": 401,
     "Title": "Christian missions expanded globally",
     "Fact": "From the early modern period onward, Catholic, Orthodox, Protestant, and other Christian missions expanded across many regions. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -3208,6 +3609,7 @@
     }
   },
   {
+    "id": 402,
     "Title": "The Moravian movement emphasized missions",
     "Fact": "The Moravian Church became known for an extensive missionary movement beginning in the eighteenth century. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -3216,6 +3618,7 @@
     }
   },
   {
+    "id": 403,
     "Title": "John Wesley helped shape Methodism",
     "Fact": "Wesley's preaching and organization were central to the development of the Methodist movement. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3224,6 +3627,7 @@
     }
   },
   {
+    "id": 404,
     "Title": "George Whitefield preached during the Great Awakening",
     "Fact": "Whitefield was a major eighteenth-century evangelist associated with revival movements in Britain and North America. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3232,6 +3636,7 @@
     }
   },
   {
+    "id": 405,
     "Title": "The Sunday school movement expanded Christian education",
     "Fact": "Eighteenth- and nineteenth-century Sunday schools provided religious and literacy education, especially for children. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3240,6 +3645,7 @@
     }
   },
   {
+    "id": 406,
     "Title": "Bible societies helped distribute Scripture",
     "Fact": "Bible societies developed to translate, print, and distribute Bibles widely. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3248,6 +3654,7 @@
     }
   },
   {
+    "id": 407,
     "Title": "The British and Foreign Bible Society was founded in 1804",
     "Fact": "It was established to promote wider distribution of Scripture. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3256,6 +3663,7 @@
     }
   },
   {
+    "id": 408,
     "Title": "The American Bible Society was founded in 1816",
     "Fact": "It was established to promote Bible distribution in the United States and beyond. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3264,6 +3672,7 @@
     }
   },
   {
+    "id": 409,
     "Title": "Modern missions increasingly used indigenous leadership",
     "Fact": "Mission history includes a gradual and uneven shift toward local leadership rather than permanent foreign control. This reflects the Christian calling to make the message of Christ known while serving people and forming communities of faith.",
     "verse": {
@@ -3272,6 +3681,7 @@
     }
   },
   {
+    "id": 410,
     "Title": "Christianity became deeply rooted in Africa",
     "Fact": "Christian communities existed in Africa from antiquity, and Christianity later expanded dramatically in many regions. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3280,6 +3690,7 @@
     }
   },
   {
+    "id": 411,
     "Title": "Ethiopian Christianity has ancient roots",
     "Fact": "Christianity became established in the Kingdom of Aksum in the fourth century. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3288,6 +3699,7 @@
     }
   },
   {
+    "id": 412,
     "Title": "Egypt has an ancient Christian tradition",
     "Fact": "Egypt is home to one of the world's oldest continuous Christian traditions, associated especially with the Coptic Church. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3296,6 +3708,7 @@
     }
   },
   {
+    "id": 413,
     "Title": "Armenia has an ancient Christian tradition",
     "Fact": "Armenia traditionally traces its adoption of Christianity as a state religion to the early fourth century. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3304,6 +3717,7 @@
     }
   },
   {
+    "id": 414,
     "Title": "Georgia has an ancient Christian tradition",
     "Fact": "Christianity became established in ancient Georgia during late antiquity. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3312,6 +3726,7 @@
     }
   },
   {
+    "id": 415,
     "Title": "India has an ancient Christian tradition",
     "Fact": "Indian Christian traditions include communities that trace their origins to ancient apostolic missions and later arrivals. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3320,6 +3735,7 @@
     }
   },
   {
+    "id": 416,
     "Title": "The Church of the East spread deeply into Asia",
     "Fact": "Historical Christian communities associated with the Church of the East reached Persia, Central Asia, India, and China. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3328,6 +3744,7 @@
     }
   },
   {
+    "id": 417,
     "Title": "The Nestorian Stele records Christianity in Tang China",
     "Fact": "The Xi'an or Nestorian Stele, erected in 781, documents a Christian presence in Tang-era China. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3336,6 +3753,7 @@
     }
   },
   {
+    "id": 418,
     "Title": "Korean Christianity grew rapidly in modern history",
     "Fact": "Christianity expanded significantly in Korea from the late nineteenth century onward through multiple Protestant and Catholic movements. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3344,6 +3762,7 @@
     }
   },
   {
+    "id": 419,
     "Title": "Christianity became a major presence in the Philippines",
     "Fact": "Spanish-era Catholic missions established Christianity deeply in the Philippines, while Protestant traditions expanded later. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3352,6 +3771,7 @@
     }
   },
   {
+    "id": 420,
     "Title": "Christianity is globally diverse",
     "Fact": "Today Christianity includes numerous families and traditions with different forms of worship, governance, theology, and culture. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3360,6 +3780,7 @@
     }
   },
   {
+    "id": 421,
     "Title": "The Bible has been translated into thousands of languages",
     "Fact": "Modern Bible translation has made Scripture available in thousands of languages, with varying levels of completeness. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3368,6 +3789,7 @@
     }
   },
   {
+    "id": 422,
     "Title": "Bible translation is an ongoing process",
     "Fact": "New translations and revisions continue because languages change and scholarship develops. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3376,6 +3798,7 @@
     }
   },
   {
+    "id": 423,
     "Title": "Ancient manuscripts help textual scholars",
     "Fact": "Manuscripts, quotations, lectionaries, and early translations are used to study the transmission of biblical texts. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3384,6 +3807,7 @@
     }
   },
   {
+    "id": 424,
     "Title": "The Dead Sea Scrolls include biblical manuscripts",
     "Fact": "The Dead Sea Scrolls contain ancient copies or fragments of many books of the Hebrew Bible. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3392,6 +3816,7 @@
     }
   },
   {
+    "id": 425,
     "Title": "The Dead Sea Scrolls predate Christianity's later centuries",
     "Fact": "Many Dead Sea Scrolls date from the centuries before and around the beginning of the Christian era. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3400,6 +3825,7 @@
     }
   },
   {
+    "id": 426,
     "Title": "Codex Sinaiticus is an important biblical manuscript",
     "Fact": "Codex Sinaiticus is a fourth-century manuscript containing much of the Christian Bible. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3408,6 +3834,7 @@
     }
   },
   {
+    "id": 427,
     "Title": "Codex Vaticanus is another major early manuscript",
     "Fact": "Codex Vaticanus is a major fourth-century Greek biblical manuscript. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3416,6 +3843,7 @@
     }
   },
   {
+    "id": 428,
     "Title": "The Bible was originally written in several languages",
     "Fact": "The Old Testament is primarily Hebrew with some Aramaic, while the New Testament is written in Greek. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3424,6 +3852,7 @@
     }
   },
   {
+    "id": 429,
     "Title": "Koine Greek was widely used in the Roman eastern Mediterranean",
     "Fact": "The New Testament's Greek reflects the common Greek language used across much of the eastern Roman world. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3432,6 +3861,7 @@
     }
   },
   {
+    "id": 430,
     "Title": "Aramaic was widely spoken in first-century Palestine",
     "Fact": "Aramaic was a major language of Jewish life in the region during the period of Jesus. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3440,6 +3870,7 @@
     }
   },
   {
+    "id": 431,
     "Title": "Latin became important in Western Christianity",
     "Fact": "Latin became a major language of theology, worship, administration, and biblical translation in Western Christianity. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3448,6 +3879,7 @@
     }
   },
   {
+    "id": 432,
     "Title": "Church buildings are not the church itself",
     "Fact": "The New Testament uses 'church' primarily for the gathered people of God, not merely a building. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3456,6 +3888,7 @@
     }
   },
   {
+    "id": 433,
     "Title": "Early Christians met in homes",
     "Fact": "New Testament references show some Christian communities gathering in private homes. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3464,6 +3897,7 @@
     }
   },
   {
+    "id": 434,
     "Title": "A church can be called a congregation",
     "Fact": "The term congregation emphasizes the gathered community of believers. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3472,6 +3906,7 @@
     }
   },
   {
+    "id": 435,
     "Title": "The word 'Christian' began as an external label",
     "Fact": "Acts 11:26 records that disciples were first called Christians at Antioch. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3480,6 +3915,7 @@
     }
   },
   {
+    "id": 436,
     "Title": "Christian worship can include singing",
     "Fact": "The New Testament encourages psalms, hymns, and spiritual songs. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3488,6 +3924,7 @@
     }
   },
   {
+    "id": 437,
     "Title": "Prayer can be communal or private",
     "Fact": "Jesus teaches private prayer, while Acts and the letters also describe Christians praying together. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -3496,6 +3933,7 @@
     }
   },
   {
+    "id": 438,
     "Title": "Fasting is a Christian practice with biblical roots",
     "Fact": "Jesus assumes his disciples will fast and gives guidance on how to do it without seeking attention. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3504,6 +3942,7 @@
     }
   },
   {
+    "id": 439,
     "Title": "Almsgiving is an ancient Christian practice",
     "Fact": "Giving to people in need is repeatedly taught in Scripture and practiced by early Christians. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3512,6 +3951,7 @@
     }
   },
   {
+    "id": 440,
     "Title": "Hospitality is a Christian discipline",
     "Fact": "Romans 12:13 and 1 Peter 4:9 explicitly encourage Christians to practice hospitality. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -3520,6 +3960,7 @@
     }
   },
   {
+    "id": 441,
     "Title": "Visiting the sick is a Christian work of mercy",
     "Fact": "Matthew 25 includes visiting the sick among acts of care associated with serving Christ. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -3528,6 +3969,7 @@
     }
   },
   {
+    "id": 442,
     "Title": "Visiting prisoners is commended",
     "Fact": "Hebrews 13:3 urges believers to remember prisoners as though sharing their situation. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3536,6 +3978,7 @@
     }
   },
   {
+    "id": 443,
     "Title": "Caring for strangers is encouraged",
     "Fact": "Hebrews 13:2 tells believers not to neglect hospitality to strangers. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -3544,6 +3987,7 @@
     }
   },
   {
+    "id": 444,
     "Title": "Christian marriage traditions vary",
     "Fact": "Wedding customs such as rings, veils, candles, and ceremonies vary by culture and denomination and are not all biblical commands. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3552,6 +3996,7 @@
     }
   },
   {
+    "id": 445,
     "Title": "Wedding rings are a later Christian custom",
     "Fact": "Rings became widespread in Christian wedding traditions over centuries; Scripture does not command wedding rings. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3560,6 +4005,7 @@
     }
   },
   {
+    "id": 446,
     "Title": "White wedding dresses are cultural rather than biblical",
     "Fact": "The modern white wedding dress is a cultural tradition, not a biblical requirement. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3568,6 +4014,7 @@
     }
   },
   {
+    "id": 447,
     "Title": "Church bells are a historical custom",
     "Fact": "Bells became widely used in Christian communities to call people to worship and mark communal time. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3576,6 +4023,7 @@
     }
   },
   {
+    "id": 448,
     "Title": "Candles are used symbolically in many churches",
     "Fact": "Candles can symbolize light, prayer, Christ, remembrance, or celebration, depending on tradition. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3584,6 +4032,7 @@
     }
   },
   {
+    "id": 449,
     "Title": "Incense is used in several Christian traditions",
     "Fact": "Incense remains part of worship in Roman Catholic, Eastern Orthodox, Oriental Orthodox, and some Anglican traditions. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3592,6 +4041,7 @@
     }
   },
   {
+    "id": 450,
     "Title": "Crosses may be worn as symbols of faith",
     "Fact": "Wearing a cross is a Christian cultural practice, not a universal biblical command. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3600,6 +4050,7 @@
     }
   },
   {
+    "id": 451,
     "Title": "The empty cross is used in some Protestant traditions",
     "Fact": "Some churches use an empty cross to emphasize resurrection, while others retain a crucifix. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3608,6 +4059,7 @@
     }
   },
   {
+    "id": 452,
     "Title": "Crucifixes depict the crucified Christ",
     "Fact": "A crucifix is a cross bearing a representation of Jesus' crucified body and is especially common in Catholic and some other traditions. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3616,6 +4068,7 @@
     }
   },
   {
+    "id": 453,
     "Title": "Icons are important in Eastern Christianity",
     "Fact": "Eastern Orthodox and Oriental Orthodox traditions use icons extensively in worship and devotion. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3624,6 +4077,7 @@
     }
   },
   {
+    "id": 454,
     "Title": "Icons are not treated identically in every Christian tradition",
     "Fact": "Some traditions venerate icons, while many Protestant communities avoid religious images in worship. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3632,6 +4086,7 @@
     }
   },
   {
+    "id": 455,
     "Title": "The sign of the cross is an ancient Christian gesture",
     "Fact": "Making the sign of the cross developed early in Christian tradition and remains common in several churches. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3640,6 +4095,7 @@
     }
   },
   {
+    "id": 456,
     "Title": "Genuflection is a Christian gesture of reverence",
     "Fact": "Genuflection is practiced especially in traditions that emphasize reverence toward the Eucharistic presence. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3648,6 +4104,7 @@
     }
   },
   {
+    "id": 457,
     "Title": "Kneeling is a biblical posture of prayer",
     "Fact": "The New Testament includes examples of Christians kneeling in prayer, including Jesus and Paul. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -3656,6 +4113,7 @@
     }
   },
   {
+    "id": 458,
     "Title": "Standing is also an ancient prayer posture",
     "Fact": "Standing in prayer is common in biblical and early Christian practice, especially in Eastern traditions. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -3664,6 +4122,7 @@
     }
   },
   {
+    "id": 459,
     "Title": "Fasting rules differ among churches",
     "Fact": "Catholic, Orthodox, Protestant, and other Christian traditions have different approaches to fasting. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3672,6 +4131,7 @@
     }
   },
   {
+    "id": 460,
     "Title": "Sunday worship is widespread among Christians",
     "Fact": "Most Christian traditions gather for worship on Sunday because of its association with Jesus' resurrection. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3680,6 +4140,7 @@
     }
   },
   {
+    "id": 461,
     "Title": "Saturday worship remains important in some Christian communities",
     "Fact": "Seventh-day Adventists and some other Christians observe the seventh day as a Sabbath in distinctive ways. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3688,6 +4149,7 @@
     }
   },
   {
+    "id": 462,
     "Title": "The Bible encourages regular gathering",
     "Fact": "Hebrews 10:24-25 urges believers not to neglect meeting together. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3696,6 +4158,7 @@
     }
   },
   {
+    "id": 463,
     "Title": "Christian discipleship includes learning",
     "Fact": "Jesus commands his followers to teach disciples to observe everything he commanded. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3704,6 +4167,7 @@
     }
   },
   {
+    "id": 464,
     "Title": "Christian discipleship includes obedience",
     "Fact": "The New Testament repeatedly connects faith with a transformed life and obedience to Christ. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3712,6 +4176,7 @@
     }
   },
   {
+    "id": 465,
     "Title": "Christian service is presented as ministry",
     "Fact": "The New Testament describes different gifts and forms of service within the body of Christ. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3720,6 +4185,7 @@
     }
   },
   {
+    "id": 466,
     "Title": "Spiritual gifts are diverse",
     "Fact": "Romans 12, 1 Corinthians 12, and Ephesians 4 list different gifts and roles in Christian community. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3728,6 +4194,7 @@
     }
   },
   {
+    "id": 467,
     "Title": "No single Christian gift is presented as sufficient for the whole church",
     "Fact": "Paul uses the body metaphor to show that different members and gifts are needed. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3736,6 +4203,7 @@
     }
   },
   {
+    "id": 468,
     "Title": "Christian leadership is described as service",
     "Fact": "Jesus contrasts servant leadership with status-seeking among his disciples. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3744,6 +4212,7 @@
     }
   },
   {
+    "id": 469,
     "Title": "Church discipline appears in the New Testament",
     "Fact": "Matthew 18 and several Pauline letters address ways communities should respond to serious wrongdoing. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3752,6 +4221,7 @@
     }
   },
   {
+    "id": 470,
     "Title": "Reconciliation is a recurring Christian goal",
     "Fact": "New Testament correction is repeatedly connected with restoration, forgiveness, and peace. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3760,6 +4230,7 @@
     }
   },
   {
+    "id": 471,
     "Title": "Christians are called to care for creation",
     "Fact": "Genesis gives humanity responsibility over creation, while later biblical teaching repeatedly values God's created world. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -3768,6 +4239,7 @@
     }
   },
   {
+    "id": 472,
     "Title": "Honest work is part of Christian witness",
     "Fact": "Paul encourages believers to work honestly and quietly so they can provide for themselves and have something to share with others. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3776,6 +4248,7 @@
     }
   },
   {
+    "id": 473,
     "Title": "Christians are encouraged to pay what they owe",
     "Fact": "Romans 13:7-8 teaches responsible fulfillment of obligations while emphasizing ongoing love. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3784,6 +4257,7 @@
     }
   },
   {
+    "id": 474,
     "Title": "Prayer for authorities appears in the New Testament",
     "Fact": "1 Timothy 2:1-2 urges prayers for kings and those in authority. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -3792,6 +4266,7 @@
     }
   },
   {
+    "id": 475,
     "Title": "Christians are instructed to live peaceably where possible",
     "Fact": "Romans 12:18 encourages believers, as far as it depends on them, to live at peace with everyone. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3800,6 +4275,7 @@
     }
   },
   {
+    "id": 476,
     "Title": "Hospitality can cross social boundaries",
     "Fact": "Jesus' teachings and New Testament practice repeatedly encourage welcoming people outside one's immediate circle. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -3808,6 +4284,7 @@
     }
   },
   {
+    "id": 477,
     "Title": "Christianity contains many cultures",
     "Fact": "Christian worship and practice have developed in African, Asian, European, Middle Eastern, Pacific, and American contexts. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3816,6 +4293,7 @@
     }
   },
   {
+    "id": 478,
     "Title": "The Lord's Prayer has multiple Gospel forms",
     "Fact": "Matthew 6 and Luke 11 preserve forms of Jesus' teaching on prayer, with wording that differs between the accounts. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {
@@ -3824,6 +4302,7 @@
     }
   },
   {
+    "id": 479,
     "Title": "The central Christian message is centered on Jesus Christ",
     "Fact": "Across the New Testament, Jesus' life, death, resurrection, lordship, and call to discipleship stand at the center of Christian faith. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3832,6 +4311,7 @@
     }
   },
   {
+    "id": 480,
     "Title": "Jesus taught by asking questions",
     "Fact": "The Gospels record Jesus frequently answering people with questions that exposed assumptions and invited reflection. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3840,6 +4320,7 @@
     }
   },
   {
+    "id": 481,
     "Title": "Jesus ate with socially excluded people",
     "Fact": "The Gospels repeatedly describe Jesus sharing meals with tax collectors and others regarded as sinners. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3848,6 +4329,7 @@
     }
   },
   {
+    "id": 482,
     "Title": "Zacchaeus was a tax collector",
     "Fact": "Luke 19 identifies Zacchaeus as a chief tax collector who welcomed Jesus into his home. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3856,6 +4338,7 @@
     }
   },
   {
+    "id": 483,
     "Title": "Zacchaeus responds with restitution",
     "Fact": "After meeting Jesus, Zacchaeus promises generous giving and repayment to people he has wronged. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3864,6 +4347,7 @@
     }
   },
   {
+    "id": 484,
     "Title": "Mary of Bethany sits at Jesus' feet",
     "Fact": "Luke 10 presents Mary listening to Jesus while Martha is occupied with serving. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3872,6 +4356,7 @@
     }
   },
   {
+    "id": 485,
     "Title": "Martha serves Jesus' household",
     "Fact": "Martha's story shows that practical service can become anxious when it loses sight of the person being served. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3880,6 +4365,7 @@
     }
   },
   {
+    "id": 486,
     "Title": "Jesus praises the poor widow's offering",
     "Fact": "Mark 12 and Luke 21 describe Jesus observing a poor widow giving two small coins. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -3888,6 +4374,7 @@
     }
   },
   {
+    "id": 487,
     "Title": "The widow's offering becomes a lesson about sacrificial giving",
     "Fact": "Jesus highlights the proportion and sacrifice of the widow's gift rather than its monetary size. For Christian life, this turns faith into something visible: the way believers treat other people becomes part of their witness.",
     "verse": {
@@ -3896,6 +4383,7 @@
     }
   },
   {
+    "id": 488,
     "Title": "Jesus heals on the Sabbath",
     "Fact": "The Gospels record several Sabbath healings and controversies surrounding them. Practices can differ among Christian traditions, but the underlying purpose is to direct believers toward remembrance, worship, repentance, fellowship, and faithfulness to Christ.",
     "verse": {
@@ -3904,6 +4392,7 @@
     }
   },
   {
+    "id": 489,
     "Title": "Jesus attends Jewish festivals",
     "Fact": "John's Gospel repeatedly places Jesus in Jerusalem during major Jewish festivals. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3912,6 +4401,7 @@
     }
   },
   {
+    "id": 490,
     "Title": "Jesus reads Scripture publicly",
     "Fact": "Luke 4 describes Jesus reading from Isaiah in the synagogue at Nazareth. Christians therefore have a long tradition of reading, teaching, preserving, translating, and applying Scripture within the life of the church.",
     "verse": {
@@ -3920,6 +4410,7 @@
     }
   },
   {
+    "id": 491,
     "Title": "Synagogues were important settings for Jesus' teaching",
     "Fact": "The Gospels frequently describe Jesus teaching in synagogues. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3928,6 +4419,7 @@
     }
   },
   {
+    "id": 492,
     "Title": "Jesus' disciples were sent in pairs",
     "Fact": "Mark 6 describes Jesus sending the Twelve out two by two. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3936,6 +4428,7 @@
     }
   },
   {
+    "id": 493,
     "Title": "The number twelve recalls Israel's tribes",
     "Fact": "Jesus' choice of twelve apostles is commonly understood in relation to the twelve tribes of Israel. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3944,6 +4437,7 @@
     }
   },
   {
+    "id": 494,
     "Title": "Jesus calls fishermen among his first disciples",
     "Fact": "Peter, Andrew, James, and John are called from fishing in the Gospel narratives. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3952,6 +4446,7 @@
     }
   },
   {
+    "id": 495,
     "Title": "Matthew is also called Levi",
     "Fact": "Matthew's Gospel calls the tax collector Matthew, while Mark and Luke use the name Levi. For Christians today, it offers a useful reminder that biblical faith is meant to shape both belief and everyday life.",
     "verse": {
@@ -3960,6 +4455,7 @@
     }
   },
   {
+    "id": 496,
     "Title": "Mary Magdalene is a resurrection witness",
     "Fact": "All four Gospels place Mary Magdalene prominently among the witnesses connected with the empty tomb. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3968,6 +4464,7 @@
     }
   },
   {
+    "id": 497,
     "Title": "Nicodemus visits Jesus at night",
     "Fact": "John 3 introduces Nicodemus as a Pharisee who comes to Jesus by night. The account is important because Christian discipleship is centered on the person, teaching, death, and resurrection of Jesus Christ.",
     "verse": {
@@ -3976,6 +4473,7 @@
     }
   },
   {
+    "id": 498,
     "Title": "Joseph of Arimathea was a council member",
     "Fact": "The Gospels identify Joseph of Arimathea as a respected member of the council who arranged Jesus' burial. It also shows how Christian belief and practice developed within particular historical cultures, conflicts, communities, and circumstances.",
     "verse": {
@@ -3984,6 +4482,7 @@
     }
   },
   {
+    "id": 499,
     "Title": "Jesus teaches persistent prayer",
     "Fact": "Luke 18 uses the parable of a persistent widow to encourage disciples to pray continually and not lose heart. This reminds Christians that prayer is not only for emergencies; it is a continuing way of bringing praise, questions, needs, and thanksgiving before God.",
     "verse": {

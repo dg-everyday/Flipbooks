@@ -414,7 +414,8 @@ dailyReflectionToggle.addEventListener("click", () => {
 const posterCard = document.getElementById("poster-card");
 const dailyPoster = document.getElementById("daily-poster");
 const posterPath = `${MEDIA_BASE_URL}images/sources/${month}/${dateName}`;
-const todayAudioUrl = `${MEDIA_BASE_URL}audio/${monthFolder}/mp3/${dateName}.mp3`;
+const todayAudioUrl = `${MEDIA_BASE_URL}audio/${today.getFullYear()}/${monthFolder}/webm/${dateName}.webm`;
+
 const playIcon =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
 const pauseIcon =

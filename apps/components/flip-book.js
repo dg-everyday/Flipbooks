@@ -598,10 +598,11 @@ export class Flipbook extends HTMLElement {
   /* ----- Audio ----- */
 
   #audioUrlForImage(src) {
+    const today = new Date();
     const baseName = imageFileName(src).replace(/\.[^.]+$/, '');
     const month = (baseName.match(/^([A-Za-z]+)\b/) || [])[1]
       || new Date().toLocaleString('en-US', { month: 'long' });
-    return new URL(`audio/${month}/mp3/${baseName}.mp3`, this.#mediaBase).href;
+    return new URL(`audio/${today.getFullYear()}/${month}/webm/${baseName}.webm`, this.#mediaBase).href;
   }
 
   #playPageAudio(src) {

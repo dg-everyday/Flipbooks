@@ -244,3 +244,62 @@ fetch("assets/verses.json")
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
 // <poster-card> resolves the poster and narration files for the date itself.
 document.getElementById("poster-card").setAttribute("media-base", MEDIA_BASE_URL);
+
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+// Footer QR code: enlarge it in a modal that grows out of the small code and
+// shrinks back into it when closed.
+const qrDialog = document.getElementById("qr-dialog");
+const qrOpen = document.getElementById("qr-open");
+let qrClosing = false;
+
+function qrThumbTransform() {
+    const from = qrOpen.getBoundingClientRect();
+    const to = qrDialog.getBoundingClientRect();
+    const dx = from.left + from.width / 2 - (to.left + to.width / 2);
+    const dy = from.top + from.height / 2 - (to.top + to.height / 2);
+    return `translate(${dx}px, ${dy}px) scale(${from.width / to.width})`;
+}
+
+function animateQr(direction) {
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 380 : 240,
+        easing: opening ? "cubic-bezier(.2, .9, .25, 1)" : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    const shrunk = { transform: qrThumbTransform(), opacity: 0 };
+    const full = { transform: "none", opacity: 1 };
+    qrDialog.animate(opening ? [shrunk, full] : [full, shrunk], options);
+    const backdrop = qrDialog.animate(
+        opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
+}
+
+qrOpen.addEventListener("click", () => {
+    if (qrDialog.open) return;
+    qrDialog.showModal();
+    if (!reducedMotionQuery.matches) animateQr("open");
+});
+
+async function closeQr() {
+    if (!qrDialog.open || qrClosing) return;
+    qrClosing = true;
+    if (!reducedMotionQuery.matches) await animateQr("close");
+    qrDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    qrDialog.close();
+    qrClosing = false;
+}
+
+document.getElementById("qr-close").addEventListener("click", closeQr);
+// Escape would close instantly; route it through the closing animation instead.
+qrDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeQr();
+});
+// The dialog has no padding of its own, so a click on it directly is a click on the backdrop.
+qrDialog.addEventListener("click", (event) => {
+    if (event.target === qrDialog) closeQr();
+});

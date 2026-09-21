@@ -18,6 +18,8 @@
  *                Default: https://dailygrace.faith/media/
  *   verses-src   URL of verses.json (resolved against the page).
  *                Default: ../../assets/verses.json
+ *   flip-sound   Page-turn sound. A URL (resolved against the page) replaces the
+ *                default ../../assets/audio/page_flip.webm; "off" disables it.
  *
  * Methods      next(), prev(), zoomIn(), zoomOut(), resetZoom()
  * Properties   page (read-only, current index), pageCount (read-only),
@@ -39,6 +41,7 @@
 // const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_VERSES_SRC = '../../assets/verses.json';
+const DEFAULT_FLIP_SOUND = new URL('../../assets/audio/page_flip.webm', import.meta.url).href;
 
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
   'august', 'september', 'october', 'november', 'december'];
@@ -402,6 +405,7 @@ export class Flipbook extends HTMLElement {
   #lastReported = null;
 
   #audio = new Audio();
+  #flipSound = new Audio(DEFAULT_FLIP_SOUND);
   #singlePageQuery = window.matchMedia('(max-width: 600px), (orientation: portrait)');
   #abort = null;
   #resizeObserver = null;
@@ -429,6 +433,7 @@ export class Flipbook extends HTMLElement {
     this.#resizeObserver?.disconnect();
     this.#resizeObserver = null;
     this.#stopAudio();
+    this.#flipSound.pause();
   }
 
   /* ----- Public API ----- */
@@ -616,6 +621,15 @@ export class Flipbook extends HTMLElement {
     this.#audio.play().catch(() => {});
   }
 
+  #playFlipSound() {
+    const setting = this.getAttribute('flip-sound');
+    if (setting === 'off') return;
+    const url = setting ? new URL(setting, document.baseURI).href : DEFAULT_FLIP_SOUND;
+    if (!sameAudioUrl(this.#flipSound.src, url)) this.#flipSound.src = url;
+    this.#flipSound.currentTime = 0;
+    this.#flipSound.play().catch(() => {});
+  }
+
   #stopAudio() {
     this.#audio.pause();
     this.#audio.currentTime = 0;
@@ -780,6 +794,7 @@ export class Flipbook extends HTMLElement {
     if (this.#animating || next < first || next >= this.#images.length) return;
 
     this.#stopAudio();
+    this.#playFlipSound();
     this.#animating = true;
     const animate = !this.#prefersReducedMotion();
 

@@ -171,7 +171,7 @@ body {
   gap: 4px;
   margin: 18px 8px 6px;
   color: #111;
-  font: 500 clamp(.9375rem, .825rem + .5vw, 1.0625rem)/1.3 'Roboto', Arial, sans-serif;
+  font: 400 clamp(1.0625rem, .95rem + .5vw, 1.25rem)/1.3 'Strait', 'Roboto', Arial, sans-serif;
 }
 .daily-book-symbol {
   flex: 0 0 auto;
@@ -197,6 +197,19 @@ body {
   box-shadow: 0 2px 8px rgb(0 27 52 / 15%);
 }
 .banner-flipbook-link img { width: 34px; height: 34px; object-fit: contain; }
+/* Scale the button with the banner it sits on, so it stays in proportion from
+   phone to desktop. Browsers without container queries keep the fixed size above. */
+@supports (container-type: inline-size) {
+  .hero-banner { container-type: inline-size; }
+  .banner-flipbook-link {
+    top: 2.5cqw;
+    right: calc(10px + 2.5cqw);
+    width: clamp(40px, 8cqw, 64px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .banner-flipbook-link img { width: 66%; height: 66%; }
+}
 .banner-flipbook-link:hover { background: #edc879; }
 .banner-flipbook-link:focus-visible,
 .daily-reflection:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
@@ -209,7 +222,7 @@ body {
   background: transparent;
   color: #222;
   text-align: left;
-  font: clamp(.9375rem, .875rem + .25vw, 1rem)/1.3 'Roboto', Arial, sans-serif;
+  font: clamp(1rem, .95rem + .3vw, 1.125rem)/1.4 'Strait', 'Roboto', Arial, sans-serif;
   cursor: pointer;
 }
 .daily-reflection:disabled { cursor: default; }
@@ -310,6 +323,12 @@ button:focus-visible { filter: brightness(1.2); }
 did-you-know.card::before, did-you-know.card::after { content: none; }
 did-you-know.card { padding-inline: 10px; }
 
+/* A faint gold hairline, fading out at both ends, separates the devotional sections. */
+.devotional-stack > * + * {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent) 1;
+}
+
 .reflection-card {
   background: transparent;
   font-family: 'Roboto', Arial, sans-serif;
@@ -384,8 +403,93 @@ did-you-know.card { padding-inline: 10px; }
   border-top: 1px solid rgba(0,27,52,.1);
   font-family: 'Roboto', Arial, sans-serif;
 }
-.footer-main { padding: 28px 28px 24px; }
-.footer-message { max-width: 330px; }
+.footer-main {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 28px 24px;
+}
+.footer-message { flex: 1 1 auto; min-width: 0; max-width: 330px; }
+/* White tile keeps the code scannable over the footer photo. */
+.footer-qr {
+  display: grid;
+  flex: 0 0 auto;
+  justify-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 8px 6px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,27,52,.18);
+}
+.footer-qr-button {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  cursor: zoom-in;
+  transition: transform .2s ease;
+}
+.footer-qr-button:hover { transform: scale(1.05); }
+.footer-qr-button:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.footer-qr img { display: block; width: 88px; height: 88px; }
+
+.qr-dialog {
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 24px 60px rgba(0,27,52,.4);
+  max-width: calc(100vw - 32px);
+  overflow: visible;
+}
+.qr-dialog::backdrop {
+  background: rgb(0 27 52 / 60%);
+  backdrop-filter: blur(3px);
+}
+.qr-dialog-body {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 26px 26px 20px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.qr-dialog img { display: block; width: min(72vw, 340px); height: auto; }
+.qr-dialog p { margin: 0; font-size: .9375rem; font-weight: 600; letter-spacing: .04em; }
+.qr-dialog-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,27,52,.35);
+  cursor: pointer;
+}
+.qr-dialog-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; }
+.qr-dialog-close:hover { background: #0a3357; }
+.qr-dialog-close:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
+html:has(.qr-dialog[open]) { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .footer-qr-button { transition: none; }
+}
+.footer-qr figcaption {
+  color: var(--navy);
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1;
+}
 .footer-message h2 {
   margin: 0;
   font: 500 clamp(1.4rem, 1.15rem + 1vw, 1.75rem)/1.25 Georgia, 'Times New Roman', serif;
@@ -443,6 +547,7 @@ did-you-know.card { padding-inline: 10px; }
   .daily-section { padding: 0 0 65px; }
   .card { padding: 27px 23px; }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
-  .footer-main { padding: 24px 20px 18px; }
+  .footer-main { padding: 24px 20px 18px; gap: 12px; }
+  .footer-qr img { width: 76px; height: 76px; }
   .footer-bottom { padding: 8px 20px; }
 }

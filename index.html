@@ -23,7 +23,7 @@
 
         <title>Daily Grace 365</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260922-6" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260922-12" />
     </head>
 
     <body>
@@ -185,6 +185,25 @@
                             <span aria-hidden="true">→</span></a
                         >
                     </div>
+                    <figure class="footer-qr">
+                        <button
+                            id="qr-open"
+                            class="footer-qr-button"
+                            type="button"
+                            aria-haspopup="dialog"
+                            aria-label="Enlarge QR code"
+                            title="Enlarge QR code"
+                        >
+                            <img
+                                src="assets/images/qr.png"
+                                alt="QR code to email Daily Grace"
+                                width="88"
+                                height="88"
+                                loading="lazy"
+                            />
+                        </button>
+                        <figcaption>Scan to contact</figcaption>
+                    </figure>
                 </div>
                 <div class="footer-bottom">
                     <a class="footer-brand" href="./"
@@ -194,9 +213,31 @@
                 </div>
             </footer>
         </div>
+        <dialog id="qr-dialog" class="qr-dialog" aria-label="QR code">
+            <div class="qr-dialog-body">
+                <button
+                    id="qr-close"
+                    class="qr-dialog-close"
+                    type="button"
+                    aria-label="Close"
+                    title="Close"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m6 6 12 12M18 6 6 18" />
+                    </svg>
+                </button>
+                <img
+                    src="assets/images/qr.png"
+                    alt="QR code to email Daily Grace"
+                    width="656"
+                    height="656"
+                />
+                <p>Scan to contact</p>
+            </div>
+        </dialog>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
         <script src="assets/scripts/sql_script.js?v=20260921-1"></script>
-        <script src="assets/scripts/script.js?v=20260922-5"></script>
+        <script src="assets/scripts/script.js?v=20260922-6"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20260922-2"></script>
         <script type="module" src="apps/components/bible-search-results.js?v=20260922-1"></script>
         <script type="module" src="apps/components/poster-card.js?v=20260922-1"></script>

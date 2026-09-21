@@ -27,13 +27,22 @@
         <title>Daily Grace — Flipbook</title>
         <link
             rel="stylesheet"
-            href="../../assets/styles/flipbook-page.css?v=20260919-1"
+            href="../../assets/styles/flipbook-page.css?v=20260922-2"
         />
     </head>
     <body>
         <div class="app">
             <div class="topbar">
-                <div class="brand">Daily <span>Grace</span> · Flipbook</div>
+                <div class="brand">
+                    <img
+                        class="brand-logo"
+                        src="../../assets/images/daily-grace-white.webp"
+                        alt="Daily Grace"
+                        width="2172"
+                        height="724"
+                    />
+                    <span class="brand-pill">Flipbook</span>
+                </div>
                 <div class="tools">
                     <button id="home" aria-label="Home" title="Home">
                         <svg
@@ -58,7 +67,7 @@
 
         <script
             type="module"
-            src="../../apps/components/flip-book.js?v=20260919-1"
+            src="../../apps/components/flip-book.js?v=20260922-1"
         ></script>
         <script>
             document.getElementById("home").addEventListener("click", () => {

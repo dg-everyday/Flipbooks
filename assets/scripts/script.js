@@ -1,9 +1,10 @@
 // const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
 const MEDIA_BASE_URL = "http://localhost:9001/media/";
 const today = new Date();
-const monthFolder = today.toLocaleString("en-US", { month: "long" });
+const monthFolder = today.toLocaleString("en-US", { timeZone: "Asia/Manila", month: "long" });
 const month = monthFolder.toLowerCase();
 const dateName = today.toLocaleDateString("en-US", {
+    timeZone: "Asia/Manila",
     month: "long",
     day: "numeric",
     year: "numeric",
@@ -48,18 +49,48 @@ const searchClear = document.getElementById("search-clear");
 const searchResults = document.getElementById("search-results");
 const bibleBookSuggestions = document.getElementById("bible-books");
 let bibleBooksLoading = null;
+let bibleBooks = [];
+let activeBookIndex = -1;
+
+function closeBookSuggestions() {
+    bibleBookSuggestions.hidden = true;
+    searchQuery.setAttribute("aria-expanded", "false");
+    searchQuery.removeAttribute("aria-activedescendant");
+    activeBookIndex = -1;
+}
+
+function renderBookSuggestions() {
+    const query = searchQuery.value.trim().toLocaleLowerCase();
+    const matches = bibleBooks.filter((book) => book.toLocaleLowerCase().includes(query));
+    const options = matches.map((book, index) => {
+        const option = document.createElement("li");
+        option.id = `bible-book-${index}`;
+        option.setAttribute("role", "option");
+        option.setAttribute("aria-selected", "false");
+        option.textContent = book;
+        return option;
+    });
+    bibleBookSuggestions.replaceChildren(...options);
+    activeBookIndex = -1;
+    searchQuery.removeAttribute("aria-activedescendant");
+    const open = document.activeElement === searchQuery && options.length > 0;
+    bibleBookSuggestions.hidden = !open;
+    searchQuery.setAttribute("aria-expanded", String(open));
+}
+
+function selectBook(option) {
+    searchQuery.value = option.textContent;
+    searchClear.hidden = false;
+    closeBookSuggestions();
+}
 
 function loadBibleBookSuggestions() {
     // Load the SQLite database only when the search field is first used.
     if (bibleBooksLoading) return bibleBooksLoading;
     bibleBooksLoading = initDatabase()
         .then(() => {
-            const options = getBooks().map((book) => {
-                const option = document.createElement("option");
-                option.value = book;
-                return option;
-            });
-            bibleBookSuggestions.replaceChildren(...options);
+            bibleBooks = getBooks();
+            renderBookSuggestions();
         })
         .catch((error) => {
             // Keep manual search available and retry on the next focus.
@@ -69,7 +100,43 @@ function loadBibleBookSuggestions() {
     return bibleBooksLoading;
 }
 
-searchQuery.addEventListener("focus", loadBibleBookSuggestions);
+searchQuery.addEventListener("focus", () => {
+    renderBookSuggestions();
+    loadBibleBookSuggestions();
+});
+searchQuery.addEventListener("click", renderBookSuggestions);
+searchQuery.addEventListener("blur", closeBookSuggestions);
+bibleBookSuggestions.addEventListener("pointerdown", (event) => {
+    // Keep input focus while choosing with a mouse or touch screen.
+    if (event.target.closest('[role="option"]')) event.preventDefault();
+});
+bibleBookSuggestions.addEventListener("click", (event) => {
+    const option = event.target.closest('[role="option"]');
+    if (option) selectBook(option);
+});
+searchQuery.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        if (!bibleBookSuggestions.hidden) event.preventDefault();
+        closeBookSuggestions();
+        return;
+    }
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        if (bibleBookSuggestions.hidden) renderBookSuggestions();
+        const options = [...bibleBookSuggestions.children];
+        if (!options.length) return;
+        event.preventDefault();
+        activeBookIndex = activeBookIndex < 0
+            ? (event.key === "ArrowDown" ? 0 : options.length - 1)
+            : (activeBookIndex + (event.key === "ArrowDown" ? 1 : -1) + options.length) % options.length;
+        options.forEach((option, index) => option.setAttribute("aria-selected", String(index === activeBookIndex)));
+        const activeOption = options[activeBookIndex];
+        searchQuery.setAttribute("aria-activedescendant", activeOption.id);
+        activeOption.scrollIntoView({ block: "nearest" });
+    } else if (event.key === "Enter" && !bibleBookSuggestions.hidden && activeBookIndex >= 0) {
+        event.preventDefault();
+        selectBook(bibleBookSuggestions.children[activeBookIndex]);
+    }
+});
 
 function searchDevotionals() {
     const query = searchQuery.value.trim().toLocaleLowerCase();
@@ -112,9 +179,11 @@ function searchDevotionals() {
 
 searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    closeBookSuggestions();
     searchDevotionals();
 });
 searchQuery.addEventListener("input", () => {
+    renderBookSuggestions();
     searchClear.hidden = !searchQuery.value;
     if (!searchQuery.value.trim()) {
         searchResults.replaceChildren();
@@ -127,6 +196,16 @@ searchClear.addEventListener("click", () => {
     searchResults.replaceChildren();
     searchResults.hidden = true;
     searchQuery.focus();
+    renderBookSuggestions();
+});
+
+const dailyReflectionToggle = document.getElementById("daily-reflection-toggle");
+const dailyReflectionText = document.getElementById("daily-reflection-text");
+const dailyReflectionAction = document.getElementById("daily-reflection-action");
+dailyReflectionToggle.addEventListener("click", () => {
+    const expanded = dailyReflectionToggle.getAttribute("aria-expanded") !== "true";
+    dailyReflectionToggle.setAttribute("aria-expanded", String(expanded));
+    dailyReflectionAction.textContent = expanded ? "Collapse reflection" : "Expand reflection";
 });
 
 const posterCard = document.getElementById("poster-card");
@@ -203,11 +282,19 @@ fetch("assets/verses.json")
         const currentVerse = verses.find((item) => item.id === dateName);
         if (!currentVerse) throw new Error(`No verse found for ${dateName}`);
 
+        const book = currentVerse.verse.replace(/\s+\d.*$/, "").trim();
+        const dailyBookSymbol = document.getElementById("daily-book-symbol");
+        dailyBookSymbol.onload = () => { dailyBookSymbol.hidden = false; };
+        dailyBookSymbol.onerror = () => { dailyBookSymbol.hidden = true; };
+        dailyBookSymbol.src = `${MEDIA_BASE_URL}images/symbols/${encodeURIComponent(book)}-symbol.svg`;
+
         document.getElementById("verse-text").textContent = currentVerse.text;
         document.getElementById("verse-reference").textContent =
             currentVerse.verse;
         document.getElementById("reflection-text").textContent =
             currentVerse.reflection;
+        dailyReflectionText.textContent = currentVerse.reflection;
+        dailyReflectionToggle.disabled = false;
     })
     .catch((error) => {
         devotionalLoadFailed = true;
@@ -215,6 +302,8 @@ fetch("assets/verses.json")
         document.getElementById("verse-text").textContent = error.message;
         document.getElementById("reflection-text").textContent =
             "Please check the daily devotional data.";
+        dailyReflectionText.textContent = "Today's reflection is unavailable. Please try again later.";
+        dailyReflectionAction.textContent = "";
     });
 
 function getSvgMetadata(svgString) {

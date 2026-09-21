@@ -18,7 +18,7 @@
 
 <title>Daily Grace 365</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="assets/styles/styles.css?v=20260921-3">
+<link rel="stylesheet" href="assets/styles/styles.css?v=20260921-12">
 </head>
 
 <body>
@@ -30,16 +30,27 @@
       <img class="hero-icon" src="assets/images/dg-icon-gold.webp" alt="" width="48" height="48">
       <form class="hero-search" role="search" id="devotional-search">
         <label class="visually-hidden" for="search-query">Search bible verse</label>
-        <input id="search-query" name="q" type="search" placeholder="Search bible verse" autocomplete="off" list="bible-books" aria-controls="search-results">
-        <datalist id="bible-books"></datalist>
+        <input id="search-query" name="q" type="search" placeholder="Search bible verse" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bible-books">
+        <ul id="bible-books" class="bible-book-list" role="listbox" aria-label="Bible books" hidden></ul>
         <button id="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 8 8 8m0-8-8 8"/></svg></button>
       </form>
       <button class="hero-search-submit" type="submit" form="devotional-search" aria-label="Search bible verse" title="Search bible verse"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
     </div>
     <section id="search-results" class="search-results" aria-label="Devotional search results" hidden></section>
-    <a class="hero-banner-link" href="apps/pages/flipbook.html" aria-label="Open this week's Flipbook">
+    <h1 class="daily-heading">
+      <img id="daily-book-symbol" class="daily-book-symbol" alt="" width="36" height="36" hidden>
+      <span>Your Daily Grace Today</span>
+    </h1>
+    <div class="hero-banner">
       <img id="daily-banner" class="daily-banner" src="https://dailygrace.faith/media/banner/september/daily-grace-2026-09-21.webp" alt="Today's Daily Grace devotional" width="1920" height="1024" fetchpriority="high">
-    </a>
+      <a class="banner-flipbook-link" href="apps/pages/flipbook.html" aria-label="Open this week's Flipbook" title="Open this week's Flipbook">
+        <img src="assets/images/book.webp" alt="" width="34" height="34">
+      </a>
+    </div>
+    <button id="daily-reflection-toggle" class="daily-reflection" type="button" aria-expanded="false" aria-controls="daily-reflection-text" disabled>
+      <span id="daily-reflection-text">Loading today's reflection…</span>
+      <span id="daily-reflection-action" class="visually-hidden">Expand reflection</span>
+    </button>
   </header>
 
   <main class="daily-section" id="daily-devotional">
@@ -80,52 +91,24 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="footer-main">
-      <div class="footer-grid">
-
-        <div class="footer-item">
-          <div class="footer-icon">▤</div>
-          <div>
-            <h4>Daily Inspiration</h4>
-            <p>A Bible verse and message to guide your heart and mind every day.</p>
-          </div>
-        </div>
-
-        <div class="footer-item">
-          <div class="footer-icon">♧</div>
-          <div>
-            <h4>Strength for Today</h4>
-            <p>Encouragement to face life's challenges with God's grace.</p>
-          </div>
-        </div>
-
-        <div class="footer-item">
-          <div class="footer-icon">✝</div>
-          <div>
-            <h4>Hope for Tomorrow</h4>
-            <p>A reminder that His grace is new every morning and enough for every day.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="cta">
-        <strong>Start Your Year of Grace Today.</strong>
-        <span>Let God's grace be your strength, every day of the year.</span>
+      <div class="footer-message">
+        <h2>Grace for today.<br>Hope for tomorrow.</h2>
+        <p>A quiet moment in God's Word.<br>Fresh strength for every day.</p>
+        <a class="footer-link" href="apps/pages/flipbook.html">Explore the weekly Flipbook <span aria-hidden="true">→</span></a>
       </div>
     </div>
-
     <div class="footer-bottom">
-      Grace for today. Hope for tomorrow.
-      <span class="cross">───── ✝ ─────</span>
+      <a class="footer-brand" href="./">Daily Grace <span>365</span></a>
+      <span>A year of grace · One day at a time</span>
     </div>
   </footer>
 
 </div>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
  <script src="assets/scripts/sql_script.js"></script>
- <script src="assets/scripts/script.js?v=20260921-4"></script>
+ <script src="assets/scripts/script.js?v=20260921-6"></script>
 
  <!-- <script>
     getSvgMetadataFromUrl('assets/images/symbols/Revelation-symbol.svg')

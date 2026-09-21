@@ -1,120 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Primary Open Graph Meta Tags -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://dailygrace.faith" />
-<meta property="og:title" content="A year of grace • 365 days" />
-<meta property="og:description" content="A simple place to pause, reflect, and draw closer to God each day. Each day brings a Bible verse, a short reflection, and an encouraging message to remind us that God's grace is sufficient for today and that there is always hope for tomorrow." />
+        <!-- Primary Open Graph Meta Tags -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dailygrace.faith" />
+        <meta property="og:title" content="A year of grace • 365 days" />
+        <meta
+            property="og:description"
+            content="A simple place to pause, reflect, and draw closer to God each day. Each day brings a Bible verse, a short reflection, and an encouraging message to remind us that God's grace is sufficient for today and that there is always hope for tomorrow."
+        />
 
-<!-- Image Meta Tags -->
-<meta property="og:image" content="https://dailygrace.faith/media/banner/september/daily-grace-2026-09-21.webp" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+        <!-- Image Meta Tags -->
+        <meta
+            property="og:image"
+            content="https://dailygrace.faith/media/banner/september/daily-grace-2026-09-21.webp"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
+        <title>Daily Grace 365</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260921-12" />
+    </head>
 
-<title>Daily Grace 365</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="assets/styles/styles.css?v=20260921-12">
-</head>
+    <body>
+        <div class="page">
+            <header class="hero">
+                <div class="hero-toolbar">
+                    <img
+                        class="hero-icon"
+                        src="assets/images/dg-icon-gold.webp"
+                        alt=""
+                        width="48"
+                        height="48"
+                    />
+                    <form
+                        class="hero-search"
+                        role="search"
+                        id="devotional-search"
+                    >
+                        <label class="visually-hidden" for="search-query"
+                            >Search bible verse</label
+                        >
+                        <input
+                            id="search-query"
+                            name="q"
+                            type="search"
+                            placeholder="Ephesians 2:8-9"
+                            autocomplete="off"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-expanded="false"
+                            aria-controls="bible-books"
+                        />
+                        <ul
+                            id="bible-books"
+                            class="bible-book-list"
+                            role="listbox"
+                            aria-label="Bible books"
+                            hidden
+                        ></ul>
+                        <button
+                            id="search-clear"
+                            type="button"
+                            aria-label="Clear search"
+                            title="Clear search"
+                            hidden
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="m8 8 8 8m0-8-8 8" />
+                            </svg>
+                        </button>
+                    </form>
+                    <button
+                        class="hero-search-submit"
+                        type="submit"
+                        form="devotional-search"
+                        aria-label="Search bible verse"
+                        title="Search bible verse"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="10.5" cy="10.5" r="6.5" />
+                            <path d="m16 16 5 5" />
+                        </svg>
+                    </button>
+                </div>
+                <section
+                    id="search-results"
+                    class="search-results"
+                    aria-label="Devotional search results"
+                    hidden
+                ></section>
+                <h1 class="daily-heading">
+                    <img
+                        id="daily-book-symbol"
+                        class="daily-book-symbol"
+                        alt=""
+                        width="36"
+                        height="36"
+                        hidden
+                    />
+                    <span>Your Daily Grace Today</span>
+                </h1>
+                <div class="hero-banner">
+                    <img
+                        id="daily-banner"
+                        class="daily-banner"
+                        src="https://dailygrace.faith/media/banner/september/daily-grace-2026-09-21.webp"
+                        alt="Today's Daily Grace devotional"
+                        width="1920"
+                        height="1024"
+                        fetchpriority="high"
+                    />
+                    <a
+                        class="banner-flipbook-link"
+                        href="apps/pages/flipbook.html"
+                        aria-label="Open this week's Flipbook"
+                        title="Open this week's Flipbook"
+                    >
+                        <img
+                            src="assets/images/book.webp"
+                            alt=""
+                            width="34"
+                            height="34"
+                        />
+                    </a>
+                </div>
+                <button
+                    id="daily-reflection-toggle"
+                    class="daily-reflection"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="daily-reflection-text"
+                    disabled
+                >
+                    <span id="daily-reflection-text"
+                        >Loading today's reflection…</span
+                    >
+                    <span id="daily-reflection-action" class="visually-hidden"
+                        >Expand reflection</span
+                    >
+                </button>
+            </header>
 
-<body>
-<div class="page">
+            <main class="daily-section" id="daily-devotional">
+                <section class="devotional-stack">
+                    <article
+                        class="card poster-card"
+                        id="poster-card"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Show comic version of today's poster"
+                    >
+                        <div class="poster-wrap">
+                            <img
+                                id="daily-poster"
+                                alt="Daily Grace 365 devotional poster"
+                            />
+                            <button
+                                id="verse-audio-play"
+                                class="audio-play"
+                                type="button"
+                                aria-label="Play today's narration"
+                                aria-pressed="false"
+                                title="Play today's narration"
+                            >
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        fill="currentColor"
+                                        d="M8 5v14l11-7z"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
 
-  <header class="hero">
-    <!-- <h1 class="hero-title"><a href="./"><img src="assets/images/daily_grace-banner-01.webp" alt="Daily Grace 365" width="2172" height="724"></a></h1> -->
-    <div class="hero-toolbar">
-      <img class="hero-icon" src="assets/images/dg-icon-gold.webp" alt="" width="48" height="48">
-      <form class="hero-search" role="search" id="devotional-search">
-        <label class="visually-hidden" for="search-query">Search bible verse</label>
-        <input id="search-query" name="q" type="search" placeholder="Search bible verse" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bible-books">
-        <ul id="bible-books" class="bible-book-list" role="listbox" aria-label="Bible books" hidden></ul>
-        <button id="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 8 8 8m0-8-8 8"/></svg></button>
-      </form>
-      <button class="hero-search-submit" type="submit" form="devotional-search" aria-label="Search bible verse" title="Search bible verse"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
-    </div>
-    <section id="search-results" class="search-results" aria-label="Devotional search results" hidden></section>
-    <h1 class="daily-heading">
-      <img id="daily-book-symbol" class="daily-book-symbol" alt="" width="36" height="36" hidden>
-      <span>Your Daily Grace Today</span>
-    </h1>
-    <div class="hero-banner">
-      <img id="daily-banner" class="daily-banner" src="https://dailygrace.faith/media/banner/september/daily-grace-2026-09-21.webp" alt="Today's Daily Grace devotional" width="1920" height="1024" fetchpriority="high">
-      <a class="banner-flipbook-link" href="apps/pages/flipbook.html" aria-label="Open this week's Flipbook" title="Open this week's Flipbook">
-        <img src="assets/images/book.webp" alt="" width="34" height="34">
-      </a>
-    </div>
-    <button id="daily-reflection-toggle" class="daily-reflection" type="button" aria-expanded="false" aria-controls="daily-reflection-text" disabled>
-      <span id="daily-reflection-text">Loading today's reflection…</span>
-      <span id="daily-reflection-action" class="visually-hidden">Expand reflection</span>
-    </button>
-  </header>
+                    <article class="card verse-card">
+                        <h3>Bible Verse for Today</h3>
+                        <div id="verse-text" class="verse"></div>
+                        <div id="verse-reference" class="reference"></div>
+                    </article>
 
-  <main class="daily-section" id="daily-devotional">
-    <section class="devotional-stack">
+                    <article class="card reflection-card">
+                        <div class="icon">
+                            <img
+                                src="assets/images/dg-icon-02-flat.webp"
+                                alt="Daily Grace"
+                                width="78"
+                                height="78"
+                            />
+                        </div>
+                        <h3 class="reflection-title">Reflection for the Day</h3>
+                        <p id="reflection-text"></p>
+                        <p class="closing">Pause. Trust. Take the next step.</p>
+                        <a
+                            id="weekly-flipbook-link"
+                            class="weekly-flipbook-link"
+                            href="apps/pages/flipbook.html"
+                            >Open this week's Flipbook</a
+                        >
+                    </article>
+                </section>
+            </main>
 
-      <article class="card poster-card" id="poster-card" role="button" tabindex="0" aria-label="Show comic version of today's poster">
-        <div class="poster-wrap">
-          <img id="daily-poster" alt="Daily Grace 365 devotional poster">
-          <button
-            id="verse-audio-play"
-            class="audio-play"
-            type="button"
-            aria-label="Play today's narration"
-            aria-pressed="false"
-            title="Play today's narration"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-          </button>
+            <footer class="site-footer">
+                <div class="footer-main">
+                    <div class="footer-message">
+                        <h2>Grace for today.<br />Hope for tomorrow.</h2>
+                        <p>
+                            A quiet moment in God's Word.<br />Fresh strength
+                            for every day.
+                        </p>
+                        <a class="footer-link" href="apps/pages/flipbook.html"
+                            >Explore the weekly Flipbook
+                            <span aria-hidden="true">→</span></a
+                        >
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <a class="footer-brand" href="./"
+                        >Daily Grace <span>365</span></a
+                    >
+                    <span>A year of grace · One day at a time</span>
+                </div>
+            </footer>
         </div>
-      </article>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
+        <script src="assets/scripts/sql_script.js"></script>
+        <script src="assets/scripts/script.js?v=20260921-6"></script>
 
-      <article class="card verse-card">
-        <h3>Bible Verse for Today</h3>
-        <div id="verse-text" class="verse"></div>
-        <div id="verse-reference" class="reference"></div>
-      </article>
-
-      
-
-      <article class="card reflection-card">
-        <div class="icon"><img src="assets/images/dg-icon-02-flat.webp" alt="Daily Grace" width="78" height="78"></div>
-        <h3 class="reflection-title">Reflection for the Day</h3>
-        <p id="reflection-text"></p>
-        <p class="closing">Pause. Trust. Take the next step.</p>
-        <a id="weekly-flipbook-link" class="weekly-flipbook-link" href="apps/pages/flipbook.html">Open this week's Flipbook</a>
-      </article>
-
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-main">
-      <div class="footer-message">
-        <h2>Grace for today.<br>Hope for tomorrow.</h2>
-        <p>A quiet moment in God's Word.<br>Fresh strength for every day.</p>
-        <a class="footer-link" href="apps/pages/flipbook.html">Explore the weekly Flipbook <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <a class="footer-brand" href="./">Daily Grace <span>365</span></a>
-      <span>A year of grace · One day at a time</span>
-    </div>
-  </footer>
-
-</div>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
- <script src="assets/scripts/sql_script.js"></script>
- <script src="assets/scripts/script.js?v=20260921-6"></script>
-
- <!-- <script>
-    getSvgMetadataFromUrl('assets/images/symbols/Revelation-symbol.svg')
-      .then(metadata => console.log(metadata))
-      .catch(error => console.error(error));
- </script> -->
- 
-</body>
+        <!-- <script>
+            getSvgMetadataFromUrl(`${MEDIA_BASE_URL}images/symbols/Revelation-symbol.svg`)
+              .then(metadata => console.log(metadata))
+              .catch(error => console.error(error));
+        </script> -->
+    </body>
 </html>

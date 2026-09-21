@@ -23,7 +23,7 @@
 
         <title>Daily Grace 365</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260921-14" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260922-1" />
     </head>
 
     <body>
@@ -180,10 +180,48 @@
                         </div>
                     </article>
 
-                    <article class="card verse-card">
-                        <h3>Bible Verse for Today</h3>
-                        <div id="verse-text" class="verse"></div>
-                        <div id="verse-reference" class="reference"></div>
+                    <article
+                        class="card facts-card"
+                        aria-labelledby="bible-facts-title"
+                    >
+                        <h3 id="bible-facts-title" class="visually-hidden">
+                            Did you know? Essential Bible Facts
+                        </h3>
+                        <div class="facts-banner">
+                            <img
+                                class="facts-banner-image"
+                                src="assets/images/did-you-know.webp"
+                                alt=""
+                                width="2560"
+                                height="640"
+                                loading="lazy"
+                            />
+                            <button
+                                id="facts-refresh"
+                                class="facts-refresh"
+                                type="button"
+                                aria-controls="facts-list"
+                                aria-label="Show five more Bible facts"
+                                title="Show five more Bible facts"
+                                disabled
+                            >
+                                <img
+                                    src="assets/images/refresh.webp"
+                                    alt=""
+                                    width="34"
+                                    height="34"
+                                />
+                            </button>
+                        </div>
+                        <div id="facts-list" class="facts-list">
+                            <p class="facts-message">Loading Bible facts…</p>
+                        </div>
+                        <p
+                            id="facts-status"
+                            class="visually-hidden"
+                            role="status"
+                            aria-atomic="true"
+                        ></p>
                     </article>
 
                     <article class="card reflection-card">
@@ -232,7 +270,7 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
         <script src="assets/scripts/sql_script.js?v=20260921-1"></script>
-        <script src="assets/scripts/script.js?v=20260921-7"></script>
+        <script src="assets/scripts/script.js?v=20260922-1"></script>
 
         <!-- <script>
             getSvgMetadataFromUrl(`${MEDIA_BASE_URL}images/symbols/Revelation-symbol.svg`)

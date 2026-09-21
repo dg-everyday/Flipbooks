@@ -490,20 +490,121 @@ fetch("assets/verses.json")
         dailyBookSymbol.onerror = () => { dailyBookSymbol.hidden = true; };
         dailyBookSymbol.src = `${MEDIA_BASE_URL}images/symbols/${encodeURIComponent(book)}-symbol.svg`;
 
-        document.getElementById("verse-text").textContent = currentVerse.text;
-        document.getElementById("verse-reference").textContent =
-            currentVerse.verse;
         document.getElementById("reflection-text").textContent =
             currentVerse.reflection;
         dailyReflectionText.textContent = currentVerse.reflection;
         dailyReflectionToggle.disabled = false;
     })
     .catch((error) => {
-        document.getElementById("verse-text").textContent = error.message;
+        console.warn("Today's devotional could not be loaded:", error);
         document.getElementById("reflection-text").textContent =
             "Please check the daily devotional data.";
         dailyReflectionText.textContent = "Today's reflection is unavailable. Please try again later.";
         dailyReflectionAction.textContent = "";
+    });
+
+const FACTS_PER_REFRESH = 5;
+const factsList = document.getElementById("facts-list");
+const factsRefresh = document.getElementById("facts-refresh");
+const factsStatus = document.getElementById("facts-status");
+let bibleFacts = [];
+let shownFactIds = new Set();
+
+function showFactsMessage(message) {
+    const paragraph = document.createElement("p");
+    paragraph.className = "facts-message";
+    paragraph.textContent = message;
+    factsList.replaceChildren(paragraph);
+}
+
+function pickBibleFacts(count) {
+    // Draw from the facts left over after the previous batch so a refresh never repeats itself.
+    const unseen = bibleFacts.filter((fact) => !shownFactIds.has(fact.id));
+    const pool = unseen.length >= count ? unseen : bibleFacts.slice();
+    for (let index = pool.length - 1; index > 0; index--) {
+        const swap = Math.floor(Math.random() * (index + 1));
+        [pool[index], pool[swap]] = [pool[swap], pool[index]];
+    }
+    return pool.slice(0, Math.min(count, pool.length));
+}
+
+function createFactCard(fact) {
+    const card = document.createElement("article");
+    card.className = "fact-card";
+
+    const bookName = fact.verse?.Book;
+    const symbol = document.createElement("img");
+    symbol.className = "fact-symbol";
+    symbol.width = 64;
+    symbol.height = 64;
+    symbol.alt = "";
+    symbol.loading = "lazy";
+    // The column keeps its width so every fact stays aligned when a symbol is missing.
+    symbol.onerror = () => { symbol.style.visibility = "hidden"; };
+    symbol.src = bookName
+        ? `${MEDIA_BASE_URL}images/symbols/${encodeURIComponent(bookName)}-symbol.svg`
+        : "";
+
+    const body = document.createElement("div");
+    body.className = "fact-body";
+    const title = document.createElement("h4");
+    title.className = "fact-title";
+    title.textContent = fact.Title;
+    const text = document.createElement("p");
+    text.className = "fact-text";
+    text.textContent = fact.Fact;
+    body.append(title, text);
+
+    const reference = fact.verse?.Reference;
+    if (reference) {
+        const cite = document.createElement("p");
+        cite.className = "fact-reference";
+        cite.textContent = `(${reference})`;
+        body.append(cite);
+    }
+
+    card.append(symbol, body);
+    return card;
+}
+
+function renderBibleFacts() {
+    const facts = pickBibleFacts(FACTS_PER_REFRESH);
+    shownFactIds = new Set(facts.map((fact) => fact.id));
+    factsList.replaceChildren(...facts.map(createFactCard));
+    // Name the first fact so repeat refreshes read as a new announcement.
+    factsStatus.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].Title}.`;
+}
+
+factsRefresh.addEventListener("click", () => {
+    if (!bibleFacts.length) return;
+    renderBibleFacts();
+    factsRefresh.classList.remove("is-spinning");
+    void factsRefresh.offsetWidth; // Restart the spin when the button is clicked again.
+    factsRefresh.classList.add("is-spinning");
+});
+factsRefresh.addEventListener("animationend", () => {
+    factsRefresh.classList.remove("is-spinning");
+});
+
+fetch("assets/did-you-know.json")
+    .then((response) => {
+        if (!response.ok)
+            throw new Error(
+                `Unable to load assets/did-you-know.json (${response.status})`,
+            );
+        return response.json();
+    })
+    .then((facts) => {
+        bibleFacts = facts.filter((fact) => fact?.Title && fact?.Fact);
+        if (!bibleFacts.length) throw new Error("No Bible facts are available.");
+        factsRefresh.disabled = false;
+        renderBibleFacts();
+    })
+    .catch((error) => {
+        console.warn("Bible facts could not be loaded:", error);
+        showFactsMessage(
+            "Bible facts could not be loaded. Please reload the page to try again.",
+        );
     });
 
 function getSvgMetadata(svgString) {

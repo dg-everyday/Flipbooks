@@ -1,8 +1,6 @@
 // const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
 const MEDIA_BASE_URL = "http://localhost:9001/media/";
 const today = new Date();
-const monthFolder = today.toLocaleString("en-US", { timeZone: "Asia/Manila", month: "long" });
-const month = monthFolder.toLowerCase();
 const dateName = today.toLocaleDateString("en-US", {
     timeZone: "Asia/Manila",
     month: "long",
@@ -211,107 +209,6 @@ dailyReflectionToggle.addEventListener("click", () => {
     dailyReflectionAction.textContent = expanded ? "Collapse reflection" : "Expand reflection";
 });
 
-const posterCard = document.getElementById("poster-card");
-const dailyPoster = document.getElementById("daily-poster");
-const posterPath = `${MEDIA_BASE_URL}images/sources/${month}/${dateName}`;
-const todayAudioUrl = `${MEDIA_BASE_URL}audio/${today.getFullYear()}/${monthFolder}/webm/${dateName}.webm`;
-
-const playIcon =
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
-const pauseIcon =
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
-const verseAudioButton = document.getElementById("verse-audio-play");
-const verseAudio = new Audio(todayAudioUrl);
-let showingComic = false;
-
-function syncVerseAudioButton() {
-    const playing = !verseAudio.paused;
-    const label = playing
-        ? "Pause today's narration"
-        : "Play today's narration";
-    verseAudioButton.classList.toggle("is-playing", playing);
-    verseAudioButton.setAttribute("aria-pressed", String(playing));
-    verseAudioButton.setAttribute("aria-label", label);
-    verseAudioButton.title = label;
-    verseAudioButton.innerHTML = playing ? pauseIcon : playIcon;
-}
-
-verseAudioButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    if (verseAudio.paused) {
-        verseAudio.play().catch(() => {});
-    } else {
-        verseAudio.pause();
-        verseAudio.currentTime = 0;
-    }
-});
-verseAudio.addEventListener("play", syncVerseAudioButton);
-verseAudio.addEventListener("pause", syncVerseAudioButton);
-verseAudio.addEventListener("ended", () => {
-    verseAudio.currentTime = 0;
-    syncVerseAudioButton();
-});
-
-let posterFlipId = 0;
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-// Turn the poster like a page: it swings edge-on, the image swaps while it is
-// invisible, then the other side swings back in.
-async function togglePoster() {
-    showingComic = !showingComic;
-    posterCard.setAttribute(
-        "aria-label",
-        showingComic
-            ? "Show today's regular poster"
-            : "Show comic version of today's poster",
-    );
-
-    const flipId = ++posterFlipId;
-    const nextSrc = `${posterPath}${showingComic ? " - Comic" : ""}.webp`;
-    // Start loading now so the swap does not show a half-loaded image.
-    const preload = new Image();
-    preload.src = nextSrc;
-    const ready = preload.decode().catch(() => {});
-
-    if (reducedMotion.matches || !dailyPoster.animate) {
-        await ready;
-        if (flipId === posterFlipId) dailyPoster.src = nextSrc;
-        return;
-    }
-
-    dailyPoster.getAnimations().forEach((animation) => animation.cancel());
-    const turn = (angle) => `perspective(1400px) rotateY(${angle}deg)`;
-    const out = dailyPoster.animate(
-        [
-            { transform: turn(0), opacity: 1 },
-            { transform: turn(-90), opacity: 0.55 },
-        ],
-        { duration: 240, easing: "ease-in", fill: "forwards" },
-    );
-    await Promise.all([out.finished.catch(() => {}), ready]);
-    // A newer click owns the image now; it has already cancelled this flip.
-    if (flipId !== posterFlipId) return;
-
-    dailyPoster.src = nextSrc;
-    dailyPoster.animate(
-        [
-            { transform: turn(90), opacity: 0.55 },
-            { transform: turn(0), opacity: 1 },
-        ],
-        { duration: 300, easing: "ease-out" },
-    );
-    out.cancel();
-}
-
-dailyPoster.src = `${posterPath}.webp`;
-posterCard.addEventListener("click", togglePoster);
-posterCard.addEventListener("keydown", (event) => {
-    if (event.target !== posterCard) return;
-    if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        togglePoster();
-    }
-});
 fetch("assets/verses.json")
     .then((response) => {
         if (!response.ok)
@@ -345,3 +242,5 @@ fetch("assets/verses.json")
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
+// <poster-card> resolves the poster and narration files for the date itself.
+document.getElementById("poster-card").setAttribute("media-base", MEDIA_BASE_URL);

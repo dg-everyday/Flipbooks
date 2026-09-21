@@ -307,63 +307,8 @@ button:focus-visible { filter: brightness(1.2); }
   letter-spacing: .02em;
 }
 
-.audio-play {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 20;
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  padding: 0;
-  border-radius: 50%;
-  border: 0;
-  background: #c62828;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  visibility: visible;
-  cursor: pointer;
-  box-shadow: 0 5px 14px rgba(0,0,0,.35);
-  line-height: 1;
-}
-.audio-play svg {
-  display: block;
-  width: 17px;
-  height: 17px;
-}
-.audio-play:hover,
-.audio-play:focus-visible {
-  background: #a91f1f;
-  color: #fff;
-}
-.audio-play.is-playing {
-  background: #c62828;
-  color: #fff;
-}
-.poster-card {
-  padding: 8px;
-  background: #f2f2f2;
-  display: flex;
-  flex-direction: column;
-}
-.poster-card::before, .poster-card::after,
 did-you-know.card::before, did-you-know.card::after { content: none; }
 did-you-know.card { padding-inline: 10px; }
-.poster-wrap {
-  position: relative;
-  isolation: isolate;
-  background: #fff;
-  border: 0;
-  overflow: hidden;
-}
-.poster-wrap img {
-  width: 100%;
-  display: block;
-  height: auto;
-}
 
 .reflection-card {
   background: transparent;
@@ -497,7 +442,6 @@ did-you-know.card { padding-inline: 10px; }
   .hero-icon { width: 40px; height: 40px; }
   .daily-section { padding: 0 0 65px; }
   .card { padding: 27px 23px; }
-  .poster-card { padding: 8px; }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
   .footer-main { padding: 24px 20px 18px; }
   .footer-bottom { padding: 8px 20px; }

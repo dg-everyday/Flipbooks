@@ -23,7 +23,7 @@
 
         <title>Daily Grace 365</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260922-5" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260922-6" />
     </head>
 
     <body>
@@ -148,38 +148,8 @@
 
             <main class="daily-section" id="daily-devotional">
                 <section class="devotional-stack">
-                    <article
-                        class="card poster-card"
-                        id="poster-card"
-                        role="button"
-                        tabindex="0"
-                        aria-label="Show comic version of today's poster"
-                    >
-                        <div class="poster-wrap">
-                            <img
-                                id="daily-poster"
-                                alt="Daily Grace 365 devotional poster"
-                            />
-                            <button
-                                id="verse-audio-play"
-                                class="audio-play"
-                                type="button"
-                                aria-label="Play today's narration"
-                                aria-pressed="false"
-                                title="Play today's narration"
-                            >
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        fill="currentColor"
-                                        d="M8 5v14l11-7z"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                    </article>
-
+                    <poster-card id="poster-card"></poster-card>
                     <did-you-know id="did-you-know" class="card"></did-you-know>
-
                     <article class="card reflection-card">
                         <div class="icon">
                             <img
@@ -226,9 +196,10 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
         <script src="assets/scripts/sql_script.js?v=20260921-1"></script>
-        <script src="assets/scripts/script.js?v=20260922-4"></script>
+        <script src="assets/scripts/script.js?v=20260922-5"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20260922-2"></script>
         <script type="module" src="apps/components/bible-search-results.js?v=20260922-1"></script>
+        <script type="module" src="apps/components/poster-card.js?v=20260922-1"></script>
 
         <!-- <script>
             getSvgMetadataFromUrl(`${MEDIA_BASE_URL}images/symbols/Revelation-symbol.svg`)

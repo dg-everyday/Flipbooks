@@ -1,0 +1,319 @@
+/**
+ * <did-you-know> — "Did you know? Essential Bible Facts" as a web component.
+ *
+ * Shows a banner with a refresh button and a list of random facts. Each fact
+ * has the book symbol, a title, the fact text and its Bible reference. The
+ * refresh button draws a new batch that never repeats the previous one.
+ *
+ * Usage
+ *   <did-you-know></did-you-know>
+ *   <script type="module" src="./apps/components/did-you-know.js"></script>
+ *
+ * Attributes
+ *   media-base   Base URL for book symbols (images/symbols/<Book>-symbol.svg).
+ *                Default: http://localhost:9001/media/
+ *   src          URL of did-you-know.json (resolved against the page).
+ *                Default: ../../assets/did-you-know.json (relative to this file)
+ *   count        Facts per batch. Default: 5
+ *
+ * Methods      refresh()  show a new batch
+ * Events       ready      fired once facts are loaded, detail: { total }
+ *              refresh    fired after each batch, detail: { ids }
+ *              error      detail: { message }
+ *
+ * Fonts: Germania One (titles) and Strait (text) are registered on the
+ * document from ../../assets/fonts, because browsers do not reliably load
+ * @font-face rules declared inside a shadow root.
+ *
+ * CSS custom properties
+ *   --dyk-navy, --dyk-ink, --dyk-reference, --dyk-symbol-size
+ */
+
+// const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_COUNT = 5;
+
+const asset = (path) => new URL(path, import.meta.url).href;
+
+const BANNER_URL = asset('../../assets/images/did-you-know.webp');
+const REFRESH_URL = asset('../../assets/images/refresh.webp');
+const DEFAULT_SRC = asset('../../assets/did-you-know.json');
+
+function registerFonts() {
+  if (document.getElementById('did-you-know-fonts')) return;
+  const style = document.createElement('style');
+  style.id = 'did-you-know-fonts';
+  style.textContent = `
+    @font-face {
+      font-family: 'Germania One';
+      src: url('${asset('../../assets/fonts/GermaniaOne-Regular.ttf')}') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Strait';
+      src: url('${asset('../../assets/fonts/Strait-Regular.ttf')}') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }`;
+  document.head.append(style);
+}
+
+const STYLES = /* css */ `
+  :host {
+    --dyk-navy: #001b34;
+    --dyk-ink: #10253b;
+    --dyk-reference: #c62828;
+    --dyk-symbol-size: 64px;
+    --symbol-column: 6.25rem;
+
+    display: block;
+    color: var(--dyk-ink);
+  }
+  section { display: grid; gap: 18px; }
+  :host([hidden]) { display: none; }
+  * { box-sizing: border-box; }
+
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
+
+  .banner { position: relative; line-height: 0; }
+  .banner-image {
+    display: block; width: 100%; height: auto; border-radius: 6px;
+  }
+  .refresh {
+    position: absolute; top: 6px; right: 6px;
+    display: grid; place-items: center;
+    width: 44px; height: 44px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: transparent; cursor: pointer;
+  }
+  .refresh img {
+    display: block; width: 34px; height: 34px;
+    filter: drop-shadow(0 2px 6px rgb(0 27 52 / 35%));
+    transition: transform .2s ease;
+  }
+  .refresh:hover img,
+  .refresh:focus-visible img { transform: scale(1.08); }
+  .refresh:focus-visible { outline: 2px solid var(--dyk-navy); outline-offset: 2px; }
+  .refresh:disabled { cursor: default; }
+  .refresh:disabled img { opacity: .5; }
+  .refresh.is-spinning img { animation: spin .6s ease; }
+  @keyframes spin { from { rotate: 0deg; } to { rotate: 360deg; } }
+
+  .list { display: grid; gap: 14px; }
+  .message {
+    margin: 0; padding: 16px 4px; color: #4f5c65;
+    font: 1rem/1.5 'Roboto', Arial, sans-serif;
+  }
+
+  .fact {
+    display: grid;
+    grid-template-columns: var(--symbol-column) minmax(0, 1fr);
+    align-items: start;
+    padding: 18px 0;
+    border: 1px solid rgb(0 27 52 / 16%);
+    border-radius: 6px;
+    background: rgb(255 255 255 / 16%);
+  }
+  .symbol {
+    width: var(--dyk-symbol-size); height: var(--dyk-symbol-size);
+    justify-self: center; object-fit: contain;
+  }
+  .body {
+    min-width: 0; padding: 0 18px;
+    border-left: 1px solid rgb(128 91 24 / 35%);
+  }
+  .title {
+    margin: 0 0 8px; color: var(--dyk-navy); overflow-wrap: anywhere;
+    font: 400 clamp(1.25rem, 1.1rem + .6vw, 1.5rem)/1.2 'Germania One', Georgia, serif;
+  }
+  .text {
+    margin: 0;
+    font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
+  }
+  .reference {
+    margin: 12px 0 0; color: var(--dyk-reference);
+    font: 400 clamp(.9375rem, .9rem + .2vw, 1rem)/1.4 'Strait', 'Roboto', sans-serif;
+  }
+
+  @media (max-width: 650px) {
+    :host { --symbol-column: 5.25rem; --dyk-symbol-size: 52px; }
+    .refresh { top: 2px; right: 2px; }
+    .refresh img { width: 28px; height: 28px; }
+    .body { padding-inline: 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .refresh img, .refresh.is-spinning img { transition: none; animation: none; }
+  }
+`;
+
+export class DidYouKnow extends HTMLElement {
+  static observedAttributes = ['media-base', 'src', 'count'];
+
+  #root;
+  #list;
+  #refreshButton;
+  #status;
+  #facts = [];
+  #shownIds = new Set();
+  #loading = null;
+
+  constructor() {
+    super();
+    this.#root = this.attachShadow({ mode: 'open' });
+    this.#root.innerHTML = `
+      <style>${STYLES}</style>
+      <section role="region" aria-label="Did you know? Essential Bible Facts">
+        <div class="banner">
+          <img class="banner-image" src="${BANNER_URL}" alt="" width="2560" height="640" loading="lazy" />
+          <button class="refresh" type="button" aria-label="Show more Bible facts"
+                  title="Show more Bible facts" disabled>
+            <img src="${REFRESH_URL}" alt="" width="34" height="34" />
+          </button>
+        </div>
+        <div class="list"><p class="message">Loading Bible facts…</p></div>
+        <p class="visually-hidden" role="status" aria-atomic="true"></p>
+      </section>`;
+    this.#list = this.#root.querySelector('.list');
+    this.#refreshButton = this.#root.querySelector('.refresh');
+    this.#status = this.#root.querySelector('[role="status"]');
+
+    this.#refreshButton.addEventListener('click', () => {
+      this.refresh();
+      this.#refreshButton.classList.remove('is-spinning');
+      void this.#refreshButton.offsetWidth; // restart the spin on repeat clicks
+      this.#refreshButton.classList.add('is-spinning');
+    });
+    this.#refreshButton.addEventListener('animationend', () => {
+      this.#refreshButton.classList.remove('is-spinning');
+    });
+  }
+
+  connectedCallback() {
+    registerFonts();
+    if (!this.#facts.length) this.#load();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue === newValue || !this.isConnected) return;
+    if (name === 'src') {
+      this.#facts = [];
+      this.#shownIds = new Set();
+      this.#load();
+    } else if (this.#facts.length) {
+      // media-base changes symbol URLs; count changes the batch size.
+      this.#render(this.#currentFacts());
+    }
+  }
+
+  get #mediaBase() {
+    const base = this.getAttribute('media-base') || DEFAULT_MEDIA_BASE;
+    return base.endsWith('/') ? base : `${base}/`;
+  }
+
+  get #count() {
+    const count = Number.parseInt(this.getAttribute('count'), 10);
+    return count > 0 ? count : DEFAULT_COUNT;
+  }
+
+  #currentFacts() {
+    const shown = this.#facts.filter((fact) => this.#shownIds.has(fact.id));
+    return shown.length ? shown : this.#pick();
+  }
+
+  #load() {
+    const src = this.getAttribute('src') || DEFAULT_SRC;
+    const loading = (this.#loading = fetch(new URL(src, document.baseURI))
+      .then((response) => {
+        if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
+        return response.json();
+      })
+      .then((facts) => {
+        if (loading !== this.#loading) return; // superseded by a newer src
+        this.#facts = facts.filter((fact) => fact?.Title && fact?.Fact);
+        if (!this.#facts.length) throw new Error('No Bible facts are available.');
+        this.#refreshButton.disabled = false;
+        this.refresh();
+        this.dispatchEvent(new CustomEvent('ready', { detail: { total: this.#facts.length } }));
+      })
+      .catch((error) => {
+        if (loading !== this.#loading) return;
+        console.warn('Bible facts could not be loaded:', error);
+        const message = document.createElement('p');
+        message.className = 'message';
+        message.textContent = 'Bible facts could not be loaded. Please reload the page to try again.';
+        this.#list.replaceChildren(message);
+        this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
+      }));
+  }
+
+  /** Draws from facts not in the previous batch, so a refresh never repeats. */
+  #pick() {
+    const count = this.#count;
+    const unseen = this.#facts.filter((fact) => !this.#shownIds.has(fact.id));
+    const pool = unseen.length >= count ? unseen : this.#facts.slice();
+    for (let index = pool.length - 1; index > 0; index--) {
+      const swap = Math.floor(Math.random() * (index + 1));
+      [pool[index], pool[swap]] = [pool[swap], pool[index]];
+    }
+    return pool.slice(0, Math.min(count, pool.length));
+  }
+
+  #createFact(fact) {
+    const card = document.createElement('article');
+    card.className = 'fact';
+
+    const symbol = document.createElement('img');
+    symbol.className = 'symbol';
+    symbol.width = 64;
+    symbol.height = 64;
+    symbol.alt = '';
+    symbol.loading = 'lazy';
+    // Keep the column width so facts stay aligned when a symbol is missing.
+    symbol.onerror = () => { symbol.style.visibility = 'hidden'; };
+    if (fact.verse?.Book) {
+      symbol.src = `${this.#mediaBase}images/symbols/${encodeURIComponent(fact.verse.Book)}-symbol.svg`;
+    } else {
+      symbol.style.visibility = 'hidden';
+    }
+
+    const body = document.createElement('div');
+    body.className = 'body';
+    const title = document.createElement('h4');
+    title.className = 'title';
+    title.textContent = fact.Title;
+    const text = document.createElement('p');
+    text.className = 'text';
+    text.textContent = fact.Fact;
+    body.append(title, text);
+
+    if (fact.verse?.Reference) {
+      const reference = document.createElement('p');
+      reference.className = 'reference';
+      reference.textContent = `(${fact.verse.Reference})`;
+      body.append(reference);
+    }
+
+    card.append(symbol, body);
+    return card;
+  }
+
+  #render(facts) {
+    this.#shownIds = new Set(facts.map((fact) => fact.id));
+    this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact)));
+    this.#status.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].Title}.`;
+  }
+
+  /** Show a new batch of facts, none repeated from the previous batch. */
+  refresh() {
+    if (!this.#facts.length) return;
+    const facts = this.#pick();
+    this.#render(facts);
+    this.dispatchEvent(new CustomEvent('refresh', { detail: { ids: facts.map((fact) => fact.id) } }));
+  }
+}
+
+if (!customElements.get('did-you-know')) {
+  customElements.define('did-you-know', DidYouKnow);
+}

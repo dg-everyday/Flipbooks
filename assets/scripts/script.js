@@ -1,4 +1,11 @@
 const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
+
+// Citations use "Psalm"; the symbol library files that book under its plural name.
+const SYMBOL_BOOK_NAMES = { Psalm: "Psalms" };
+function bookSymbolUrl(mediaBase, book) {
+    const name = SYMBOL_BOOK_NAMES[book] ?? book;
+    return `${mediaBase}images/symbols/${encodeURIComponent(name)}-symbol.svg`;
+}
 // const MEDIA_BASE_URL = "http://localhost:9001/media/";
 const today = new Date();
 const dateName = today.toLocaleDateString("en-US", {
@@ -231,7 +238,7 @@ fetch("assets/verses.json")
         const dailyBookSymbol = document.getElementById("daily-book-symbol");
         dailyBookSymbol.onload = () => { dailyBookSymbol.hidden = false; };
         dailyBookSymbol.onerror = () => { dailyBookSymbol.hidden = true; };
-        dailyBookSymbol.src = `${MEDIA_BASE_URL}images/symbols/${encodeURIComponent(book)}-symbol.svg`;
+        dailyBookSymbol.src = bookSymbolUrl(MEDIA_BASE_URL, book);
 
         document.getElementById("reflection-text").textContent =
             currentVerse.reflection;

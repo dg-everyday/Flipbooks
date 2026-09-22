@@ -40,6 +40,11 @@
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
 
+// Citations use "Psalm"; the symbol library files that book under its plural name.
+const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
+const bookSymbolUrl = (mediaBase, book) =>
+  `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
+
 // const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_BATCH_SIZE = 24;
@@ -337,7 +342,7 @@ export class BibleSearchResults extends HTMLElement {
     symbol.width = 64;
     symbol.height = 64;
     symbol.alt = '';
-    const symbolUrl = `${this.#mediaBase}images/symbols/${encodeURIComponent(bookName)}-symbol.svg`;
+    const symbolUrl = bookSymbolUrl(this.#mediaBase, bookName);
     symbol.onerror = () => { symbol.hidden = true; };
     symbol.src = symbolUrl;
 

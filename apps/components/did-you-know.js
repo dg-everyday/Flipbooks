@@ -42,6 +42,11 @@
 import { registerFonts } from '../../assets/scripts/fonts.js';
 import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
 
+// Citations use "Psalm"; the symbol library files that book under its plural name.
+const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
+const bookSymbolUrl = (mediaBase, book) =>
+  `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
+
 // const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_COUNT = 5;
@@ -298,7 +303,7 @@ export class DidYouKnow extends HTMLElement {
     // Keep the column width so facts stay aligned when a symbol is missing.
     symbol.onerror = () => { symbol.style.visibility = 'hidden'; };
     if (fact.book) {
-      symbol.src = `${this.#mediaBase}images/symbols/${encodeURIComponent(fact.book)}-symbol.svg`;
+      symbol.src = bookSymbolUrl(this.#mediaBase, fact.book);
     } else {
       symbol.style.visibility = 'hidden';
     }

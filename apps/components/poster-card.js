@@ -28,7 +28,9 @@
  *
  * CSS custom properties
  *   --poster-card-padding, --poster-card-bg, --poster-audio-bg,
- *   --poster-audio-bg-hover
+ *   --poster-audio-bg-hover, --poster-audio-ink, --poster-audio-shadow
+ * The audio button falls back to --action / --action-hover / --action-ink /
+ * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
 // const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
@@ -42,8 +44,10 @@ const STYLES = /* css */ `
   :host {
     --poster-card-padding: 8px;
     --poster-card-bg: #f2f2f2;
-    --poster-audio-bg: #c62828;
-    --poster-audio-bg-hover: #a91f1f;
+    --poster-audio-bg: var(--action, #c62828);
+    --poster-audio-bg-hover: var(--action-hover, #a91f1f);
+    --poster-audio-ink: var(--action-ink, #fff);
+    --poster-audio-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
 
     display: block;
     padding: var(--poster-card-padding);
@@ -75,11 +79,11 @@ const STYLES = /* css */ `
     display: flex; align-items: center; justify-content: center;
     width: 42px; height: 42px; min-width: 42px; padding: 0;
     border: 0; border-radius: 50%;
-    background: var(--poster-audio-bg); color: #fff;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, .35);
+    background: var(--poster-audio-bg); color: var(--poster-audio-ink);
+    box-shadow: var(--poster-audio-shadow);
     line-height: 1; cursor: pointer;
   }
-  .audio svg { display: block; width: 17px; height: 17px; }
+  .audio svg { display: block; width: 18px; height: 18px; }
   .audio:hover,
   .audio:focus-visible { background: var(--poster-audio-bg-hover); }
   .audio:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }

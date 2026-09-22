@@ -28,7 +28,10 @@
  * rules declared inside a shadow root.
  *
  * CSS custom properties
- *   --dyk-navy, --dyk-ink, --dyk-reference, --dyk-symbol-size
+ *   --dyk-navy, --dyk-ink, --dyk-reference, --dyk-symbol-size,
+ *   --dyk-action, --dyk-action-hover, --dyk-action-ink, --dyk-action-shadow
+ * The refresh button falls back to --action / --action-hover / --action-ink /
+ * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
@@ -40,7 +43,7 @@ const DEFAULT_COUNT = 5;
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const BANNER_URL = asset('../../assets/images/did-you-know.webp');
-const REFRESH_URL = asset('../../assets/images/refresh.webp');
+const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
 const DEFAULT_SRC = asset('../../assets/did-you-know.json');
 
 const STYLES = /* css */ `
@@ -48,6 +51,10 @@ const STYLES = /* css */ `
     --dyk-navy: #001b34;
     --dyk-ink: #10253b;
     --dyk-reference: #c62828;
+    --dyk-action: var(--action, #c62828);
+    --dyk-action-hover: var(--action-hover, #a91f1f);
+    --dyk-action-ink: var(--action-ink, #fff);
+    --dyk-action-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
     --dyk-symbol-size: 64px;
     --symbol-column: 6.25rem;
 
@@ -68,23 +75,25 @@ const STYLES = /* css */ `
     display: block; width: 100%; height: auto; border-radius: 6px;
   }
   .refresh {
-    position: absolute; top: 6px; right: 6px;
+    position: absolute; top: 8px; right: 8px;
     display: grid; place-items: center;
-    width: 44px; height: 44px; padding: 0;
+    width: 42px; height: 42px; padding: 0;
     border: 0; border-radius: 50%;
-    background: transparent; cursor: pointer;
+    background: var(--dyk-action); color: var(--dyk-action-ink);
+    box-shadow: var(--dyk-action-shadow);
+    cursor: pointer;
   }
-  .refresh img {
-    display: block; width: 34px; height: 34px;
-    filter: drop-shadow(0 2px 6px rgb(0 27 52 / 35%));
+  .refresh svg {
+    display: block; width: 18px; height: 18px;
     transition: transform .2s ease;
   }
-  .refresh:hover img,
-  .refresh:focus-visible img { transform: scale(1.08); }
-  .refresh:focus-visible { outline: 2px solid var(--dyk-navy); outline-offset: 2px; }
-  .refresh:disabled { cursor: default; }
-  .refresh:disabled img { opacity: .5; }
-  .refresh.is-spinning img { animation: spin .6s ease; }
+  .refresh:hover,
+  .refresh:focus-visible { background: var(--dyk-action-hover); }
+  .refresh:hover svg,
+  .refresh:focus-visible svg { transform: scale(1.08); }
+  .refresh:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+  .refresh:disabled { cursor: default; opacity: .55; }
+  .refresh.is-spinning svg { animation: spin .6s ease; }
   @keyframes spin { from { rotate: 0deg; } to { rotate: 360deg; } }
 
   .list { display: grid; gap: 14px; }
@@ -135,12 +144,12 @@ const STYLES = /* css */ `
 
   @media (max-width: 650px) {
     :host { --symbol-column: 5.25rem; --dyk-symbol-size: 52px; }
-    .refresh { top: 2px; right: 2px; }
-    .refresh img { width: 28px; height: 28px; }
+    .refresh { top: 4px; right: 4px; width: 36px; height: 36px; }
+    .refresh svg { width: 16px; height: 16px; }
     .body { padding-inline: 12px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .refresh img, .refresh.is-spinning img { transition: none; animation: none; }
+    .refresh svg, .refresh.is-spinning svg { transition: none; animation: none; }
   }
 `;
 
@@ -165,7 +174,7 @@ export class DidYouKnow extends HTMLElement {
           <img class="banner-image" src="${BANNER_URL}" alt="" width="2560" height="640" loading="lazy" />
           <button class="refresh" type="button" aria-label="Show more Bible facts"
                   title="Show more Bible facts" disabled>
-            <img src="${REFRESH_URL}" alt="" width="34" height="34" />
+            ${REFRESH_ICON}
           </button>
         </div>
         <div class="list"><p class="message">Loading Bible facts…</p></div>

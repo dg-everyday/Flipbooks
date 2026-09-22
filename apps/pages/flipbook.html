@@ -71,7 +71,22 @@
         ></script>
         <script>
             document.getElementById("home").addEventListener("click", () => {
-                window.location.href = "../../index.html";
+                // Stepping back lets the browser hand the main page over just
+                // as the reader left it, scroll position and all. A fresh load
+                // is the fallback for a Flipbook opened straight from a link;
+                // the main page then restores the position it saved itself.
+                let cameFromMain = false;
+                try {
+                    const from = new URL(document.referrer);
+                    cameFromMain =
+                        from.origin === window.location.origin &&
+                        /(^|\/)(index\.html)?$/.test(from.pathname);
+                } catch {}
+                if (cameFromMain && window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = "../../index.html";
+                }
             });
         </script>
     </body>

@@ -307,6 +307,107 @@ qrDialog.addEventListener("cancel", (event) => {
 // A click or tap anywhere closes it: on the code, its caption or the backdrop.
 qrDialog.addEventListener("click", closeQr);
 
+// Leaving for another page and coming back — the Flipbook's home button, the
+// back button, a reload — should land the reader where they left off rather
+// than at the top. The poster and the fact cards arrive after load, so the
+// document starts too short to hold the old position: keep asking for it as the
+// page grows, and stop the moment the reader takes over.
+// The ways a reader takes the page over from a script.
+const GESTURES = ["wheel", "touchmove", "keydown", "pointerdown"];
+
+const SCROLL_KEY = "dailygrace:main-scroll";
+// Long enough for the cards to land on a slow connection, short enough that a
+// late jump never surprises someone who has started reading.
+const RESTORE_TIMEOUT = 4000;
+// How long the page height has to hold still before a restore counts as done.
+const SETTLE_DELAY = 500;
+
+function readSavedScroll() {
+    try {
+        return Number(sessionStorage.getItem(SCROLL_KEY)) || 0;
+    } catch {
+        return 0; // Private browsing can refuse storage; the page still works.
+    }
+}
+
+function writeScroll() {
+    try {
+        sessionStorage.setItem(SCROLL_KEY, String(Math.round(scrollY)));
+    } catch {}
+}
+
+let scrollSaveQueued = false;
+addEventListener("scroll", () => {
+    if (scrollSaveQueued) return;
+    scrollSaveQueued = true;
+    requestAnimationFrame(() => {
+        scrollSaveQueued = false;
+        writeScroll();
+    });
+}, { passive: true });
+// A frame callback may never run once the page is going away, so take the
+// closing position straight away. pagehide covers both leaving and the phone
+// putting the tab to sleep.
+addEventListener("pagehide", writeScroll);
+addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") writeScroll();
+});
+
+function restoreScroll(target) {
+    const root = document.documentElement;
+    // Two of the page's habits get in the way of a restore and are put back as
+    // soon as it is over: html scrolls smoothly, which would turn the jump into
+    // a long ride down the page, and scroll anchoring nudges the position
+    // whenever a card loads in above, which would walk us off the mark.
+    const smooth = root.style.scrollBehavior;
+    const anchor = root.style.overflowAnchor;
+    root.style.scrollBehavior = "auto";
+    root.style.overflowAnchor = "none";
+
+    let observer;
+    let settled;
+    let deadline;
+    let done = false;
+    const finish = () => {
+        if (done) return;
+        done = true;
+        observer?.disconnect();
+        clearTimeout(settled);
+        clearTimeout(deadline);
+        root.style.scrollBehavior = smooth;
+        root.style.overflowAnchor = anchor;
+        for (const gesture of GESTURES) removeEventListener(gesture, finish);
+    };
+    const attempt = () => {
+        if (done) return;
+        const reach = document.scrollingElement.scrollHeight - innerHeight;
+        scrollTo(0, Math.min(target, Math.max(reach, 0)));
+        // The page is tall enough to hold the real position, but a card may
+        // still be on its way: wait for the height to hold still before
+        // calling it, rather than stopping at the first card that fits.
+        clearTimeout(settled);
+        if (reach >= target) settled = setTimeout(finish, SETTLE_DELAY);
+    };
+
+    // The reader wins: any scrolling of their own ends the restore where it is.
+    for (const gesture of GESTURES) addEventListener(gesture, finish, { passive: true });
+    observer = new ResizeObserver(attempt);
+    observer.observe(root);
+    deadline = setTimeout(finish, RESTORE_TIMEOUT);
+    attempt();
+}
+
+// A link to a particular section is a destination of its own; leave it alone.
+if (!location.hash) {
+    const savedScroll = readSavedScroll();
+    // Ours is the position that knows the full page height, so keep the browser
+    // from also restoring a stale one and landing the reader between the two.
+    if (savedScroll > 0 && "scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+        restoreScroll(savedScroll);
+    }
+}
+
 // Both the splash and the verse popup grow in with the same little overshoot.
 // End-of-page splash: a thank-you poster that pops up once the reader has
 // browsed all the way to the bottom, and closes on any tap. Shown once a visit.
@@ -317,7 +418,7 @@ let browsed = false;
 
 // Reaching the end only counts when the reader took themselves there. A restored
 // scroll position on reload fires a scroll event but no input, so it never counts.
-for (const gesture of ["wheel", "touchmove", "keydown", "pointerdown"]) {
+for (const gesture of GESTURES) {
     addEventListener(gesture, () => { browsed = true; }, { passive: true, once: true });
 }
 

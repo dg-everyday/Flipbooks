@@ -29,6 +29,13 @@
   --gold-light: #e1b65d;
   --cream: #f3e7d2;
   --ink: #10253b;
+  /* One look for every round action button that sits on a banner: the poster
+     play button, the Flipbook link and the "Did you know?" refresh. Custom
+     properties inherit into the shadow DOM, so the components pick these up. */
+  --action: #c62828;
+  --action-hover: #a91f1f;
+  --action-ink: #fff;
+  --action-shadow: 0 5px 14px rgb(0 0 0 / 35%);
 }
 
 * { box-sizing: border-box; }
@@ -195,13 +202,14 @@ body {
   right: 19px;
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: #e1b65d;
-  box-shadow: 0 2px 8px rgb(0 27 52 / 15%);
+  background: var(--action);
+  color: var(--action-ink);
+  box-shadow: var(--action-shadow);
 }
-.banner-flipbook-link img { width: 34px; height: 34px; object-fit: contain; }
+.banner-flipbook-link svg { display: block; width: 42%; height: 42%; }
 /* Scale the button with the banner it sits on, so it stays in proportion from
    phone to desktop. Browsers without container queries keep the fixed size above. */
 @supports (container-type: inline-size) {
@@ -209,14 +217,17 @@ body {
   .banner-flipbook-link {
     top: 2.5cqw;
     right: calc(10px + 2.5cqw);
-    width: clamp(40px, 8cqw, 64px);
+    width: clamp(38px, 7cqw, 56px);
     height: auto;
     aspect-ratio: 1;
   }
-  .banner-flipbook-link img { width: 66%; height: 66%; }
 }
-.banner-flipbook-link:hover { background: #edc879; }
-.banner-flipbook-link:focus-visible,
+.banner-flipbook-link:hover { background: var(--action-hover); }
+.banner-flipbook-link:focus-visible {
+  background: var(--action-hover);
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
 .daily-reflection:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
 .daily-reflection {
   display: block;

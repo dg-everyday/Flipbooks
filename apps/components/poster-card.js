@@ -37,8 +37,10 @@
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const TIME_ZONE = 'Asia/Manila';
 
-const PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
-const PAUSE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+// Line-art icons, matching the stroked look of the other round banner buttons.
+const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
+const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
 
 const STYLES = /* css */ `
   :host {
@@ -76,17 +78,31 @@ const STYLES = /* css */ `
 
   .audio {
     position: absolute; top: 12px; right: 12px; z-index: 20;
-    display: flex; align-items: center; justify-content: center;
-    width: 42px; height: 42px; min-width: 42px; padding: 0;
+    display: grid; place-items: center;
+    width: 42px; height: 42px; padding: 0;
     border: 0; border-radius: 50%;
     background: var(--poster-audio-bg); color: var(--poster-audio-ink);
     box-shadow: var(--poster-audio-shadow);
-    line-height: 1; cursor: pointer;
+    cursor: pointer;
   }
-  .audio svg { display: block; width: 18px; height: 18px; }
+  .audio svg {
+    display: block; width: 18px; height: 18px;
+    transition: transform .2s ease;
+  }
   .audio:hover,
   .audio:focus-visible { background: var(--poster-audio-bg-hover); }
+  .audio:hover svg,
+  .audio:focus-visible svg { transform: scale(1.08); }
   .audio:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+  .audio:disabled { cursor: default; opacity: .55; }
+
+  @media (max-width: 650px) {
+    .audio { top: 8px; right: 8px; width: 36px; height: 36px; }
+    .audio svg { width: 16px; height: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .audio svg { transition: none; }
+  }
 `;
 
 /** Month and date names for the poster files, in Asia/Manila unless a date is given. */

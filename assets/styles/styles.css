@@ -478,6 +478,43 @@ did-you-know.card { padding-inline: 10px; }
 .qr-dialog img { display: block; width: min(72vw, 340px); height: auto; }
 .qr-dialog p { margin: 0; font-size: .9375rem; font-weight: 600; letter-spacing: .04em; }
 html:has(.qr-dialog[open]) { overflow: hidden; }
+
+/* End-of-page splash: the thank-you poster that pops up once the reader
+   reaches the very bottom. The dialog shrink-wraps the poster, so the box is
+   the artwork itself with the hint sitting on the backdrop below it. */
+.splash-dialog {
+  padding: 0;
+  border: 0;
+  max-width: none;
+  background: transparent;
+  overflow: visible;
+  cursor: zoom-out;
+}
+.splash-dialog::backdrop {
+  background: rgb(0 27 52 / 62%);
+  backdrop-filter: blur(3px);
+}
+.splash-dialog img {
+  display: block;
+  width: auto;
+  height: auto;
+  /* 75% of the viewport on whichever side runs out first, aspect kept. */
+  max-width: 75vw;
+  max-height: 75vh;
+  max-width: 75dvw;
+  max-height: 75dvh;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgb(0 27 52 / 45%);
+}
+.splash-hint {
+  margin: 14px 0 0;
+  color: rgb(255 255 255 / 82%);
+  text-align: center;
+  font: 600 .6875rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+html:has(.splash-dialog[open]) { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
 }

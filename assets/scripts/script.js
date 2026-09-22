@@ -300,3 +300,70 @@ qrDialog.addEventListener("cancel", (event) => {
 });
 // A click or tap anywhere closes it: on the code, its caption or the backdrop.
 qrDialog.addEventListener("click", closeQr);
+
+// End-of-page splash: a thank-you poster that pops up once the reader has
+// browsed all the way to the bottom, and closes on any tap. Shown once a visit.
+const splashDialog = document.getElementById("splash-dialog");
+let splashShown = false;
+let splashClosing = false;
+let browsed = false;
+
+// Reaching the end only counts when the reader took themselves there. A restored
+// scroll position on reload fires a scroll event but no input, so it never counts.
+for (const gesture of ["wheel", "touchmove", "keydown", "pointerdown"]) {
+    addEventListener(gesture, () => { browsed = true; }, { passive: true, once: true });
+}
+
+function animateSplash(direction) {
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 460 : 220,
+        // A little overshoot on the way in gives the poster its pop.
+        easing: opening ? "cubic-bezier(.2, .9, .25, 1.2)" : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    const entering = { transform: "scale(.82) translateY(28px)", opacity: 0 };
+    const full = { transform: "none", opacity: 1 };
+    const leaving = { transform: "scale(.94)", opacity: 0 };
+    splashDialog.animate(opening ? [entering, full] : [full, leaving], options);
+    const backdrop = splashDialog.animate(
+        opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
+}
+
+function openSplash() {
+    if (splashShown || splashDialog.open) return;
+    splashShown = true;
+    splashDialog.showModal();
+    if (!reducedMotionQuery.matches) animateSplash("open");
+}
+
+async function closeSplash() {
+    if (!splashDialog.open || splashClosing) return;
+    splashClosing = true;
+    if (!reducedMotionQuery.matches) await animateSplash("close");
+    splashDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    splashDialog.close();
+    splashClosing = false;
+}
+
+// Escape would close instantly; route it through the closing animation instead.
+splashDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeSplash();
+});
+// A click or tap anywhere closes it: on the poster, the hint or the backdrop.
+splashDialog.addEventListener("click", closeSplash);
+
+// The last row of the footer ends up flush with the viewport edge, so ask the
+// scroll position directly rather than watching an element cross a threshold.
+function checkPageEnd() {
+    const remaining = document.scrollingElement.scrollHeight - scrollY - innerHeight;
+    if (!browsed || remaining > 2) return;
+    removeEventListener("scroll", checkPageEnd);
+    openSplash();
+}
+
+addEventListener("scroll", checkPageEnd, { passive: true });

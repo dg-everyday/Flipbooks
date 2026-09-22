@@ -40,6 +40,7 @@
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
+import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
 
 // const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
@@ -50,21 +51,7 @@ const asset = (path) => new URL(path, import.meta.url).href;
 const BANNER_URL = asset('../../assets/images/did-you-know.webp');
 const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
 const DEFAULT_SRC = asset('../../assets/db/didyouknow.db');
-const SQL_JS_BASE_URL = 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/';
 const FACTS_QUERY = 'SELECT id, Title, Fact, Reference_verse, Book FROM did_you_know';
-
-/**
- * sql.js is started once per page. assets/scripts/sql_script.js shares its
- * instance through window.loadSqlJs; start our own when the component is used
- * on a page that does not include that script.
- */
-function getSqlJs() {
-  if (typeof window.loadSqlJs === 'function') return window.loadSqlJs();
-  if (typeof window.initSqlJs !== 'function') {
-    return Promise.reject(new Error('sql.js was not loaded. Check the sql-wasm.js script on the page.'));
-  }
-  return window.initSqlJs({ locateFile: (file) => SQL_JS_BASE_URL + file });
-}
 
 const STYLES = /* css */ `
   :host {
@@ -249,34 +236,15 @@ export class DidYouKnow extends HTMLElement {
 
   /** Reads every fact out of the database, then closes it again. */
   async #read(src) {
-    const [SQL, response] = await Promise.all([
-      getSqlJs(),
-      fetch(new URL(src, document.baseURI), { cache: 'force-cache' }),
-    ]);
-    if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
-
-    const bytes = new Uint8Array(await response.arrayBuffer());
-    const header = new TextDecoder().decode(bytes.subarray(0, 15));
-    if (!header.startsWith('SQLite format 3')) {
-      throw new Error(`${src} is not a valid SQLite database.`);
-    }
-
-    const database = new SQL.Database(bytes);
+    const database = await openDatabase(new URL(src, document.baseURI));
     try {
-      const statement = database.prepare(FACTS_QUERY);
-      const facts = [];
-      while (statement.step()) {
-        const row = statement.getAsObject();
-        facts.push({
-          id: row.id,
-          title: row.Title,
-          text: row.Fact,
-          reference: row.Reference_verse,
-          book: row.Book,
-        });
-      }
-      statement.free();
-      return facts;
+      return query(database, FACTS_QUERY).map((row) => ({
+        id: row.id,
+        title: row.Title,
+        text: row.Fact,
+        reference: row.Reference_verse,
+        book: row.Book,
+      }));
     } finally {
       // The rows are kept in memory; the database file itself is not needed.
       database.close();

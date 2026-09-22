@@ -23,6 +23,8 @@ few images that must work even when the media host does not.
   press the red button for narration.
 - **`<did-you-know>`** — five random Bible facts, reshuffled by the refresh
   button. Tapping a reference opens that passage in a popup.
+- **`<bible-trivia>`** — a modal quiz that pops up once the page has loaded,
+  asking which book a fact came from. Up to three a day, an hour apart.
 - **Reflection card**, footer with a QR code that enlarges on click, and a
   thank-you splash that appears once you scroll to the very bottom.
 
@@ -38,6 +40,7 @@ documented in a header comment at the top of its file.
 | --- | --- | --- |
 | `<bible-search-results>` | `apps/components/bible-search-results.js` | Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. |
 | `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. |
+| `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
 | `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
 
@@ -58,6 +61,9 @@ declared inside a shadow root.
   Bible database, and exposes `initDatabase()`, `parseBibleReference()`,
   `getVerses()`, and `getBooks()`. The database is fetched lazily, the first
   time the search field is focused, not on page load.
+- **`assets/scripts/sqlite-db.js`** — shared sql.js access for the components:
+  `getSqlJs()`, `openDatabase()` and `query()`. It reuses `sql_script.js`'s
+  instance so the wasm runtime starts once for both databases.
 - **`assets/scripts/update-social-image.mjs`** — build-time only; see
   [Deployment](#deployment).
 
@@ -67,7 +73,7 @@ declared inside a shadow root.
 | --- | --- |
 | `assets/db/dailygrace.db` | The complete KJV: 66 books, 1,189 chapters, 31,102 verses (4.7 MB). Tables: `books(book_number, book_id, book_name)` and `verses(docid, book, chapter, verse, text)`, joined on `verses.book = books.book_id`. |
 | `assets/verses.json` | Daily verse, text, and reflection, keyed by date string (`"September 1, 2026"`). Also supplies the verse shown on not-yet-released flipbook pages. |
-| `assets/db/didyouknow.db` | 1,021 Bible facts in one table, `did_you_know(id, Title, Fact, Reference_verse, Book, Similar_books)`. `Reference_verse` must parse and exist in `dailygrace.db`, since tapping it opens the passage. `Similar_books` holds four books that are never the row's own `Book`, kept for trivia questions where `Book` is the answer. Add rows with `tools/didyouknow/add_rows.py`. |
+| `assets/db/didyouknow.db` | 1,021 Bible facts in one table, `did_you_know(id, Title, Fact, Reference_verse, Book, Similar_books)`. `Reference_verse` must parse and exist in `dailygrace.db`, since tapping it opens the passage. `Similar_books` holds four books that are never the row's own `Book`; `<bible-trivia>` draws two of them as wrong answers. Add rows with `tools/didyouknow/add_rows.py`. |
 | `assets/did-you-know.json` | The original 501 facts, superseded by `didyouknow.db` and no longer read by anything. |
 | `assets/book-metadata.json` | Fallback `title` / `description` for all 66 books — see below. |
 
@@ -88,6 +94,7 @@ banner/<month>/daily-grace-<YYYY>-<MM>-<DD>.webp   daily social/hero banner
 images/sources/<month>/<Month D, YYYY>.webp        daily poster
 images/sources/<month>/<Month D, YYYY> - Comic.webp
 images/symbols/<Book name>-symbol.svg              66 book symbols
+images/thumbnails/<Book name>_square.webp          66 book tiles, for the trivia
 images/coverpages/<YYYY>/<YYYY>-WEEK<n>.webp       flipbook cover, per week
 images/coverpages/<YYYY>/<YYYY>-404.webp           cover fallback
 audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm     narration

@@ -250,6 +250,8 @@ fetch("assets/verses.json")
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
 // <poster-card> resolves the poster and narration files for the date itself.
 document.getElementById("poster-card").setAttribute("media-base", MEDIA_BASE_URL);
+// <bible-trivia> pops itself up after the page loads; it needs the book thumbnails.
+document.getElementById("bible-trivia").setAttribute("media-base", MEDIA_BASE_URL);
 
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 

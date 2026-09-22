@@ -126,13 +126,14 @@ const shuffle = (items) => {
 
 const STYLES = /* css */ `
   :host {
-    --trivia-paper: #f2e8d5;
+    /* The page's own paper and ink, so the popup belongs to the site. */
+    --trivia-paper: var(--cream, #f3e7d2);
     --trivia-card: #fbf6ea;
     --trivia-edge: rgb(128 91 24 / 35%);
-    --trivia-navy: #001b34;
-    --trivia-ink: #10253b;
+    --trivia-navy: var(--navy, #001b34);
+    --trivia-ink: var(--ink, #10253b);
     --trivia-green: #1f7a44;
-    --trivia-red: #c62828;
+    --trivia-red: var(--action, #c62828);
     --trivia-idle-glow: rgb(16 37 59 / 32%);
 
     display: contents;
@@ -293,7 +294,8 @@ export class BibleTrivia extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue || !this.#fact) return;
+    // Re-rendering reshuffles the choices, so never do it mid-answer.
+    if (oldValue === newValue || !this.#fact || this.#answered) return;
     if (name === 'media-base') this.#renderQuiz(this.#fact);
   }
 

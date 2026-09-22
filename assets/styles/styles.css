@@ -479,6 +479,28 @@ did-you-know.card { padding-inline: 10px; }
 .qr-dialog p { margin: 0; font-size: .9375rem; font-weight: 600; letter-spacing: .04em; }
 html:has(.qr-dialog[open]) { overflow: hidden; }
 
+/* Verse popup: a Bible reference in a Did You Know card opens the passage in
+   the same panel the search uses, on the page's own paper colour. */
+.verse-dialog {
+  width: min(600px, 92vw);
+  max-height: 88vh;
+  max-height: 88dvh;
+  padding: 14px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
+  overflow: auto;
+  overscroll-behavior: contain;
+  cursor: zoom-out;
+}
+.verse-dialog::backdrop {
+  background: rgb(0 27 52 / 60%);
+  backdrop-filter: blur(3px);
+}
+html:has(.verse-dialog[open]) { overflow: hidden; }
+
 /* End-of-page splash: the thank-you poster that pops up once the reader
    reaches the very bottom. The dialog shrink-wraps the poster, so the box is
    the artwork itself with the hint sitting on the backdrop below it. */

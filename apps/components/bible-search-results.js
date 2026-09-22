@@ -25,6 +25,8 @@
  *                   cannot be read cross-origin (resolved against the page).
  *                   Default: ../../assets/book-metadata.json (relative to this file)
  *   batch-size      Verses added per batch. Default: 24
+ *   compact         Present: hide the "N verses found" summary and the
+ *                   end-of-results note. For popups showing one passage.
  *
  * Methods      reset(), loading(message), showMessage(message), showVerses(rows)
  * Properties   busy (read-only)
@@ -101,6 +103,9 @@ const STYLES = /* css */ `
     color: #4f5c65;
   }
   .summary { margin: 10px 2px; }
+  /* In a popup the passage speaks for itself: no counts, no end-of-list note. */
+  :host([compact]) .summary,
+  :host([compact]) .end { display: none; }
   .message { margin: 0; padding: 16px; font-size: 1rem; }
 
   .reader {

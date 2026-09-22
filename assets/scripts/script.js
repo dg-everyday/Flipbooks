@@ -301,6 +301,7 @@ qrDialog.addEventListener("cancel", (event) => {
 // A click or tap anywhere closes it: on the code, its caption or the backdrop.
 qrDialog.addEventListener("click", closeQr);
 
+// Both the splash and the verse popup grow in with the same little overshoot.
 // End-of-page splash: a thank-you poster that pops up once the reader has
 // browsed all the way to the bottom, and closes on any tap. Shown once a visit.
 const splashDialog = document.getElementById("splash-dialog");
@@ -314,7 +315,7 @@ for (const gesture of ["wheel", "touchmove", "keydown", "pointerdown"]) {
     addEventListener(gesture, () => { browsed = true; }, { passive: true, once: true });
 }
 
-function animateSplash(direction) {
+function popDialog(dialog, direction) {
     const opening = direction === "open";
     const options = {
         duration: opening ? 460 : 220,
@@ -325,8 +326,8 @@ function animateSplash(direction) {
     const entering = { transform: "scale(.82) translateY(28px)", opacity: 0 };
     const full = { transform: "none", opacity: 1 };
     const leaving = { transform: "scale(.94)", opacity: 0 };
-    splashDialog.animate(opening ? [entering, full] : [full, leaving], options);
-    const backdrop = splashDialog.animate(
+    dialog.animate(opening ? [entering, full] : [full, leaving], options);
+    const backdrop = dialog.animate(
         opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
         { ...options, easing: "ease", pseudoElement: "::backdrop" },
     );
@@ -337,13 +338,13 @@ function openSplash() {
     if (splashShown || splashDialog.open) return;
     splashShown = true;
     splashDialog.showModal();
-    if (!reducedMotionQuery.matches) animateSplash("open");
+    if (!reducedMotionQuery.matches) popDialog(splashDialog, "open");
 }
 
 async function closeSplash() {
     if (!splashDialog.open || splashClosing) return;
     splashClosing = true;
-    if (!reducedMotionQuery.matches) await animateSplash("close");
+    if (!reducedMotionQuery.matches) await popDialog(splashDialog, "close");
     splashDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     splashDialog.close();
     splashClosing = false;
@@ -367,3 +368,69 @@ function checkPageEnd() {
 }
 
 addEventListener("scroll", checkPageEnd, { passive: true });
+
+// Verse popup: a Bible reference in a Did You Know card opens that passage in
+// the search results panel, shown as a modal that any tap closes.
+const didYouKnow = document.getElementById("did-you-know");
+const verseDialog = document.getElementById("verse-dialog");
+const verseResults = document.getElementById("verse-results");
+verseResults.setAttribute("media-base", MEDIA_BASE_URL);
+let verseClosing = false;
+let verseGeneration = 0;
+
+async function showVerse(reference) {
+    const generation = ++verseGeneration;
+    if (!verseDialog.open) {
+        verseDialog.showModal();
+        if (!reducedMotionQuery.matches) popDialog(verseDialog, "open");
+    }
+    verseResults.loading("Loading Bible verses…");
+    try {
+        const parsed = parseBibleReference(reference);
+        await loadBibleBookSuggestions();
+        if (generation !== verseGeneration || !verseDialog.open) return;
+        const bookName = bibleBooks.find((book) =>
+            book.toLocaleLowerCase() === parsed.bookName.toLocaleLowerCase(),
+        );
+        if (!bookName) {
+            verseResults.showMessage(`${reference} could not be found in this Bible.`);
+            return;
+        }
+        const rows = getVerses(bookName, parsed.chapter, parsed.verses);
+        if (!rows.length) {
+            verseResults.showMessage(`No verses found for ${reference}.`);
+            return;
+        }
+        verseResults.showVerses(rows);
+    } catch (error) {
+        if (generation !== verseGeneration) return;
+        console.warn(`Verse lookup failed for ${reference}:`, error);
+        verseResults.showMessage("Bible verses could not be loaded. Please try again.");
+    }
+}
+
+async function closeVerse() {
+    if (!verseDialog.open || verseClosing) return;
+    verseClosing = true;
+    verseGeneration++;
+    if (!reducedMotionQuery.matches) await popDialog(verseDialog, "close");
+    verseDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    verseDialog.close();
+    verseResults.reset();
+    verseClosing = false;
+}
+
+didYouKnow.addEventListener("verse-request", (event) => {
+    showVerse(event.detail.reference);
+});
+
+// Escape would close instantly; route it through the closing animation instead.
+verseDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeVerse();
+});
+// A click or tap anywhere closes it, except on the panel's own buttons.
+verseDialog.addEventListener("click", (event) => {
+    if (event.composedPath().some((node) => node.nodeName === "BUTTON")) return;
+    closeVerse();
+});

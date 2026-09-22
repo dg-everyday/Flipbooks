@@ -17,9 +17,11 @@
  *   count        Facts per batch. Default: 5
  *
  * Methods      refresh()  show a new batch
- * Events       ready      fired once facts are loaded, detail: { total }
- *              refresh    fired after each batch, detail: { ids }
- *              error      detail: { message }
+ * Events       ready         fired once facts are loaded, detail: { total }
+ *              refresh       fired after each batch, detail: { ids }
+ *              error         detail: { message }
+ *              verse-request a reference was clicked, detail: { reference, book }
+ *                            (bubbles and crosses the shadow boundary)
  *
  * Fonts: Germania One (titles) and Strait (text) are registered on the
  * document by assets/scripts/fonts.js, because browsers do not reliably load @font-face
@@ -117,8 +119,18 @@ const STYLES = /* css */ `
     font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
   }
   .reference {
-    margin: 12px 0 0; color: var(--dyk-reference);
+    display: inline-block;
+    margin: 12px 0 0; padding: 4px 0;
+    border: 0; background: none;
+    color: var(--dyk-reference); cursor: pointer;
     font: 400 clamp(.9375rem, .9rem + .2vw, 1rem)/1.4 'Strait', 'Roboto', sans-serif;
+    text-decoration: underline;
+    text-decoration-color: rgb(198 40 40 / 35%);
+    text-underline-offset: 3px;
+  }
+  .reference:hover { text-decoration-color: currentColor; }
+  .reference:focus-visible {
+    outline: 2px solid var(--dyk-reference); outline-offset: 3px; border-radius: 3px;
   }
 
   @media (max-width: 650px) {
@@ -273,9 +285,19 @@ export class DidYouKnow extends HTMLElement {
     body.append(title, text);
 
     if (fact.verse?.Reference) {
-      const reference = document.createElement('p');
+      // The reference opens the passage itself; the page decides how to show it.
+      const reference = document.createElement('button');
+      reference.type = 'button';
       reference.className = 'reference';
       reference.textContent = `(${fact.verse.Reference})`;
+      reference.setAttribute('aria-label', `Read ${fact.verse.Reference}`);
+      reference.addEventListener('click', () => {
+        this.dispatchEvent(new CustomEvent('verse-request', {
+          bubbles: true,
+          composed: true,
+          detail: { reference: fact.verse.Reference, book: fact.verse.Book ?? null },
+        }));
+      });
       body.append(reference);
     }
 

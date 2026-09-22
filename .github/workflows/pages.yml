@@ -28,6 +28,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      # Broken references are silent at runtime, so catch them before publishing.
+      # Remote misses only warn: a media-host blip must not block the daily deploy.
+      - name: Check asset references
+        run: node assets/scripts/check-assets.mjs --warn-remote
       - name: Generate today's social image metadata
         run: node assets/scripts/update-social-image.mjs
       - uses: actions/configure-pages@v5

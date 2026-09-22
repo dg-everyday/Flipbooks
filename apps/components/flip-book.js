@@ -46,6 +46,14 @@ const DEFAULT_FLIP_SOUND = new URL('../../assets/audio/page_flip.webm', import.m
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
   'august', 'september', 'october', 'november', 'december'];
 
+// Single-page (portrait) geometry. The book sits against the left edge with the
+// spring touching it, so the stage reserves the spring's overhang on the left
+// and a gutter on the right; the page takes everything in between.
+const WIRE_WIDTH = 40;      // drawn width of the spring
+const WIRE_OVERHANG = 28;   // how far it reaches past the page edge
+const STAGE_PAD = 3;        // .stage padding on every side but the left
+const RIGHT_GUTTER = 14;    // paper showing to the right of the page
+
 const PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
 const PAUSE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
 
@@ -176,14 +184,28 @@ const STYLES = /* css */ `
 
   /* Single page (portrait / narrow) */
   @media (max-width: 600px), (orientation: portrait) {
-    .stage { padding: 3px; }
+    /* No padding on the left: the spring is meant to touch that edge. */
+    .stage {
+      padding: ${STAGE_PAD}px ${STAGE_PAD}px ${STAGE_PAD}px 0;
+      justify-content: flex-start;
+    }
+    /* The margin is the spring's overhang, so the page starts just far enough
+       in for the spring to land flush against the left edge of the stage. Any
+       width the page cannot use then shows as paper on the right. */
+    .book { margin-left: ${WIRE_OVERHANG}px; }
+    /* Pin the drop shadow to the same span instead of letting it follow the
+       flex alignment out to the left edge. */
+    .book-shadow {
+      left: ${WIRE_OVERHANG}px; right: ${RIGHT_GUTTER}px; width: auto;
+      transform: translateY(20px) scale(.96);
+    }
     .book::after {
       content: "";
-      position: absolute; top: 0; bottom: 0; left: -28px;
-      width: 40px;
+      position: absolute; top: 0; bottom: 0; left: -${WIRE_OVERHANG}px;
+      width: ${WIRE_WIDTH}px;
       background-image: var(--flipbook-wire);
       background-position: center top;
-      background-size: 40px 28px;
+      background-size: ${WIRE_WIDTH}px 28px;
       background-repeat: repeat-y;
       pointer-events: none;
       z-index: 100;
@@ -683,9 +705,12 @@ export class Flipbook extends HTMLElement {
 
   #fitBookToViewport() {
     const stageRect = this.#stage.getBoundingClientRect();
-    // Leave room for the spring extending beyond the left edge in single-page mode.
-    const availableW = Math.max(1, stageRect.width - (this.#isSinglePage() ? 64 : 16));
-    const availableH = Math.max(1, stageRect.height - 16);
+    // In single-page mode the page gives up the spring's overhang on the left
+    // and the gutter on the right, and keeps the rest of the viewport width.
+    const single = this.#isSinglePage();
+    const availableW = Math.max(1, stageRect.width
+      - (single ? WIRE_OVERHANG + RIGHT_GUTTER + STAGE_PAD : 16));
+    const availableH = Math.max(1, stageRect.height - (single ? STAGE_PAD * 2 + 6 : 16));
 
     // Artwork is portrait. Use the actual first image ratio when loaded.
     const firstImg = this.#book.querySelector('img');
@@ -853,7 +878,7 @@ export class Flipbook extends HTMLElement {
     const bookRect = this.#visibleBook().getBoundingClientRect();
     const maxX = Math.max(0, (bookRect.width - stageRect.width) / 2);
     const maxY = Math.max(0, (bookRect.height - stageRect.height) / 2);
-    const binderWidth = this.#isSinglePage() ? 28 * this.#zoom : 0;
+    const binderWidth = this.#isSinglePage() ? WIRE_OVERHANG * this.#zoom : 0;
     const maxRight = Math.max(0, (bookRect.width - stageRect.width) / 2 + binderWidth);
     this.#panX = Math.max(-maxX, Math.min(maxRight, this.#panX));
     this.#panY = Math.max(-maxY, Math.min(maxY, this.#panY));

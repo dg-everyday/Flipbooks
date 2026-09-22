@@ -32,7 +32,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* No rubber-band stretch past the footer on touch scrolling, which shows blank background. */
+  overscroll-behavior-y: none;
+}
 
 body {
   margin: 0;

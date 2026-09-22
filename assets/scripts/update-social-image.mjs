@@ -24,7 +24,8 @@ const targets = [
     "../../index.html", 
     "../../apps/pages/flipbook.html"
 ];
-const tag = /<meta property="og:image" content="[^"]*"\s*\/>/g;
+// The formatter wraps long meta tags across lines, so allow newlines between attributes.
+const tag = /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/g;
 for (const target of targets) {
     const path = fileURLToPath(new URL(target, import.meta.url));
     const html = readFileSync(path, "utf8");
@@ -33,7 +34,8 @@ for (const target of targets) {
     }
     writeFileSync(
         path,
-        html.replace(tag, `<meta property="og:image" content="${url}" />`),
+        // Swap only the URL so the surrounding formatting survives untouched.
+        html.replace(tag, (meta) => meta.replace(/content="[^"]*"/, `content="${url}"`)),
     );
 }
 console.log(`og:image: ${url}`);

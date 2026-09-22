@@ -41,14 +41,6 @@ async function initDatabase() {
     // Open database
     db = new SQL.Database(bytes);
 
-    // Check tables
-    const tables = db.exec(`
-            SELECT name
-            FROM sqlite_master
-            WHERE type = 'table'
-            ORDER BY name
-        `);
-
     return db;
 }
 

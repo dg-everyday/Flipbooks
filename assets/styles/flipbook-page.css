@@ -3,7 +3,6 @@
    future/end pages) now lives in the <flip-book> component. */
 
 :root {
-  --navy:#071d35;
   --gold:#d9a84f;
 }
 * { box-sizing:border-box; }

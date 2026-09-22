@@ -31,7 +31,7 @@
  * Sizing: the host fills its parent (flex: 1 in a column flex container).
  *
  * CSS custom properties
- *   --flipbook-navy, --flipbook-gold, --flipbook-shadow
+ *   --flipbook-navy, --flipbook-shadow
  *   --flipbook-future-paper   url() for not-yet-available pages
  *   --flipbook-end-paper      url() for blank/end pages
  *   --flipbook-wire           url() list for the wire binding (later entries are fallbacks)
@@ -52,7 +52,6 @@ const PAUSE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="curr
 const STYLES = /* css */ `
   :host {
     --flipbook-navy: #071d35;
-    --flipbook-gold: #d9a84f;
     --flipbook-shadow: rgba(0, 0, 0, .38);
     --flipbook-future-paper: url('../../assets/images/specialty-paper.svg');
     --flipbook-end-paper: url('../../assets/images/end-paper.svg');

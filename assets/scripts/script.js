@@ -1,5 +1,5 @@
-// const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
-const MEDIA_BASE_URL = "http://localhost:9001/media/";
+const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
+// const MEDIA_BASE_URL = "http://localhost:9001/media/";
 const today = new Date();
 const dateName = today.toLocaleDateString("en-US", {
     timeZone: "Asia/Manila",

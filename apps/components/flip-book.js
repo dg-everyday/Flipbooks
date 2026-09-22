@@ -38,8 +38,8 @@
  *   --flipbook-logo           url() for the logo on future pages
  */
 
-// const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_VERSES_SRC = '../../assets/verses.json';
 const DEFAULT_FLIP_SOUND = new URL('../../assets/audio/page_flip.webm', import.meta.url).href;
 

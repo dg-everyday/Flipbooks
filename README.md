@@ -100,6 +100,13 @@ images/coverpages/<YYYY>/<YYYY>-404.webp           cover fallback
 audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm     narration
 ```
 
+The gold frame inside each thumbnail is not the same size or quite in the same
+place from one file to the next, and a few carry a shadow, a halo or a stray
+checkerboard around it. `apps/components/book-thumb-bounds.js` holds the
+measured bounds of each frame so the trivia can draw all three tiles alike;
+regenerate it with `python tools/thumbnails/measure_bounds.py` whenever the
+thumbnails change.
+
 The flipbook builds the current week Sunday through Saturday, requesting the
 poster and comic for each day; files that are missing are simply skipped. A page
 whose date has not arrived yet is covered with a "will be available in"

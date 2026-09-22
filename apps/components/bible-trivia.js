@@ -43,6 +43,9 @@
  *              error     detail: { message }
  *
  * Book thumbnails come from <media-base>images/thumbnails/<Book>_square.webp.
+ * The gold frame inside those files is not the same size from one book to the
+ * next, so each tile is scaled by the bounds in book-thumb-bounds.js; regenerate
+ * that with tools/thumbnails/measure_bounds.py when the artwork changes.
  *
  * Fonts: Germania One (title) and Strait (text) are registered on the document
  * by assets/scripts/fonts.js, because browsers do not reliably load @font-face
@@ -51,6 +54,7 @@
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
 import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
+import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
 
 // const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
@@ -63,6 +67,9 @@ const VERDICT_MS = 3000;
 const STORAGE_KEY = 'dailygrace.trivia';
 // The thumbnails are .webp on the media host; .svg is not published.
 const THUMBNAIL_SUFFIX = '_square.webp';
+// Shave the outermost hair off each tile: a couple of the files carry a fringe
+// right against the frame, and losing a fraction of the gold costs nothing.
+const THUMBNAIL_TRIM = 0.985;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -199,20 +206,25 @@ const STYLES = /* css */ `
     font: 400 clamp(.75rem, .7rem + .25vw, .875rem)/1.2 'Strait', 'Roboto', sans-serif;
   }
   .choice:disabled { cursor: default; }
+  /* A white card with a margin of its own, so the tiles read as one set. */
   .thumb {
-    display: block; overflow: hidden;
+    position: relative; display: block;
     width: 100%; max-width: 118px; aspect-ratio: 1;
-    border-radius: 18%;
-    background: var(--trivia-card);
-    box-shadow: 0 0 15px 4px var(--trivia-idle-glow);
+    padding: 9%;
+    border-radius: 22%;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgb(0 27 52 / 8%), 0 0 15px 4px var(--trivia-idle-glow);
     transition: box-shadow .25s ease, transform .2s ease;
   }
-  .thumb img {
-    /* The artwork sits inside a transparent margin of about 5%; crop to the
-       gold frame so the glow hugs the tile rather than floating away from it. */
-    display: block; width: 112%; height: 112%; margin: -6%;
-    object-fit: contain;
+  /* The gold frame is a different size and a little off centre in every file,
+     which is glaring with three side by side. Each image is scaled and shifted
+     by its measured bounds so every frame ends up exactly this box, and the box
+     is clipped to that frame's own corner radius. */
+  .art {
+    position: relative; display: block;
+    width: 100%; height: 100%; overflow: hidden;
   }
+  .art img { position: absolute; display: block; }
   .choice:not(:disabled):hover .thumb,
   .choice:focus-visible .thumb { transform: translateY(-2px); }
   .choice:focus-visible { outline: none; }
@@ -492,14 +504,28 @@ export class BibleTrivia extends HTMLElement {
 
     const thumb = document.createElement('span');
     thumb.className = 'thumb';
+    const art = document.createElement('span');
+    art.className = 'art';
+
     const image = document.createElement('img');
     image.alt = '';
-    image.width = 118;
-    image.height = 118;
     image.src = `${this.#mediaBase}images/thumbnails/${encodeURIComponent(book)}${THUMBNAIL_SUFFIX}`;
-    // A missing thumbnail leaves the framed tile and its label in place.
+    // Blow the file up until its gold frame alone fills the tile.
+    const [x, y, size, radius] = BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
+    const side = size * THUMBNAIL_TRIM;
+    const inset = (size - side) / 2;
+    image.style.width = `${100 / side}%`;
+    image.style.height = `${100 / side}%`;
+    image.style.left = `${(-(x + inset) / side) * 100}%`;
+    image.style.top = `${(-(y + inset) / side) * 100}%`;
+    // Clip to the frame's own corner, which hides whatever a file carries
+    // outside it: a shadow, a halo, or a stray checkerboard.
+    art.style.borderRadius = `${radius * 100}%`;
+    // A missing thumbnail leaves the white card and its label in place.
     image.onerror = () => { image.style.visibility = 'hidden'; };
-    thumb.append(image);
+
+    art.append(image);
+    thumb.append(art);
 
     const label = document.createElement('span');
     label.className = 'label';

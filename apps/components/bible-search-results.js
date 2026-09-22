@@ -48,6 +48,7 @@ const STYLES = /* css */ `
     --search-navy: #001b34;
     --search-ink: #10253b;
     --search-hebrew: #963d32;
+    --search-gold: #a8810c;
     --reference-width: 6.25rem;
 
     display: block;
@@ -105,6 +106,10 @@ const STYLES = /* css */ `
   .reader {
     max-height: min(65vh, 640px);
     overflow-y: auto;
+    /* Keep the batches loaded by the infinite scroll inside this box: without
+       paint containment their height leaks into the document's scroll height
+       and leaves blank background below the footer. */
+    contain: paint;
     scrollbar-gutter: stable;
     scrollbar-width: thin;
     scrollbar-color: #a2957a transparent;
@@ -129,6 +134,18 @@ const STYLES = /* css */ `
   }
   .chapter-number { font: 500 .9375rem/1.5 'Roboto', Arial, sans-serif; }
   .verse-number { font: 400 2.25rem/1 Georgia, 'Times New Roman', serif; }
+  /* Verse 1 opens a chapter, so its numbers become a gold marker you can find
+     at a glance while scrolling a long book. */
+  .chapter-start .verse-numbers {
+    margin-inline: 12px;
+    padding: 8px 6px 10px;
+    border-radius: 6px;
+    background: var(--search-gold);
+    color: #fff;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%), 0 1px 3px rgb(0 27 52 / 22%);
+  }
+  .chapter-start .chapter-number { color: rgb(255 255 255 / 85%); }
+  .chapter-start .verse-text { border-left-color: rgb(168 129 12 / 55%); }
   .verse-text {
     min-height: 2.5rem; margin: 0; padding: 0 18px;
     border-left: 1px solid rgb(128 91 24 / 35%);
@@ -155,6 +172,7 @@ const STYLES = /* css */ `
     .book-hebrew { font-size: 1.125rem; }
     .chapter-number { font-size: .8125rem; }
     .verse-number { font-size: 1.875rem; }
+    .chapter-start .verse-numbers { margin-inline: 8px; padding: 7px 4px 9px; }
   }
 `;
 
@@ -356,12 +374,15 @@ export class BibleSearchResults extends HTMLElement {
     const item = document.createElement('div');
     item.setAttribute('role', 'listitem');
     const card = document.createElement('article');
-    card.className = 'verse-card';
+    const chapterStart = Number(row.verse) === 1;
+    card.className = chapterStart ? 'verse-card chapter-start' : 'verse-card';
     const reference = document.createElement('h3');
     reference.className = 'verse-reference';
     const accessibleReference = document.createElement('span');
     accessibleReference.className = 'visually-hidden';
-    accessibleReference.textContent = `${bookName}, chapter ${row.chapter}, verse ${row.verse}`;
+    accessibleReference.textContent = chapterStart
+      ? `${bookName}, start of chapter ${row.chapter}, verse ${row.verse}`
+      : `${bookName}, chapter ${row.chapter}, verse ${row.verse}`;
     const numbers = document.createElement('span');
     numbers.className = 'verse-numbers';
     numbers.setAttribute('aria-hidden', 'true');

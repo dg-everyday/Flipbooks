@@ -148,6 +148,7 @@ const STYLES = /* css */ `
   }
   * { box-sizing: border-box; }
 
+  dialog:focus { outline: none; }
   dialog {
     width: min(92vw, 620px);
     max-height: 92dvh;
@@ -202,14 +203,17 @@ const STYLES = /* css */ `
   .choice {
     display: grid; gap: 8px; justify-items: center;
     width: 100%; padding: 0; border: 0; background: none;
-    color: var(--trivia-ink); cursor: pointer;
+    color: var(--trivia-ink); cursor: pointer; text-align: center;
     font: 400 clamp(.75rem, .7rem + .25vw, .875rem)/1.2 'Strait', 'Roboto', sans-serif;
   }
   .choice:disabled { cursor: default; }
-  /* A white card with a margin of its own, so the tiles read as one set. */
+  /* A white card with a margin of its own, so the tiles read as one set. The
+     size is stated outright: the artwork inside is positioned absolutely, so a
+     card sized as a percentage would have nothing in flow to measure and would
+     collapse to the width of the book's name. */
   .thumb {
     position: relative; display: block;
-    width: 100%; max-width: 118px; aspect-ratio: 1;
+    width: clamp(78px, 21vw, 118px); aspect-ratio: 1;
     padding: 9%;
     border-radius: 22%;
     background: #fff;
@@ -277,7 +281,7 @@ export class BibleTrivia extends HTMLElement {
     this.#root = this.attachShadow({ mode: 'open' });
     this.#root.innerHTML = `
       <style>${STYLES}</style>
-      <dialog aria-label="Did you know? Bible Trivia Quiz">
+      <dialog aria-label="Did you know? Bible Trivia Quiz" tabindex="-1">
         <img class="banner" src="${BANNER_URL}" alt="Did you know? Bible Trivia Quiz"
              width="2170" height="725" />
         <div class="content"><p class="message">Loading a question…</p></div>
@@ -401,6 +405,9 @@ export class BibleTrivia extends HTMLElement {
     this.#previousOverflow = document.documentElement.style.overflow;
     document.documentElement.style.overflow = 'hidden';
     this.#dialog.showModal();
+    // showModal would otherwise focus the first choice, ringing one tile as
+    // though it were special. The dialog itself takes the focus instead.
+    this.#dialog.focus();
     this.#pop('open');
 
     // Only a quiz actually put on screen counts against the daily quota.

@@ -143,6 +143,19 @@ body {
 .hero-search-submit:hover,
 .hero-search-submit:focus-visible { color: var(--navy); }
 .hero-search-submit svg { width: 32px; height: 32px; stroke-width: 3; }
+/* Clear button: a solid round chip with a white x. The 40px button keeps the tap target large. */
+#search-clear { margin-right: 4px; color: #74889b; transition: color .15s ease, transform .15s ease; }
+#search-clear svg { width: 22px; height: 22px; border-radius: 50%; stroke: none; }
+#search-clear svg circle { fill: currentColor; stroke: none; }
+#search-clear svg path { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; }
+#search-clear:hover { color: #4f6478; }
+#search-clear:active { color: #3b4f61; transform: scale(.92); }
+#search-clear:focus-visible svg { outline: 2px solid var(--navy); outline-offset: 2px; }
+#search-clear:not([hidden]) svg { animation: search-clear-pop .18s ease-out; }
+@keyframes search-clear-pop { from { opacity: 0; scale: .6; } to { opacity: 1; scale: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  #search-clear, #search-clear:not([hidden]) svg { transition: none; animation: none; }
+}
 .bible-book-list {
   position: absolute;
   z-index: 30;

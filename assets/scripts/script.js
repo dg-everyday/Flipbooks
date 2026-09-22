@@ -286,8 +286,13 @@ function animateQr(direction) {
     return backdrop.finished.catch(() => {});
 }
 
+// When the code was enlarged, so a quick second tap can be told from a later
+// one. See the secret gesture below.
+let qrShownAt = 0;
+
 qrOpen.addEventListener("click", () => {
     if (qrDialog.open) return;
+    qrShownAt = Date.now();
     qrDialog.showModal();
     if (!reducedMotionQuery.matches) animateQr("open");
 });
@@ -308,6 +313,24 @@ qrDialog.addEventListener("cancel", (event) => {
 });
 // A click or tap anywhere closes it: on the code, its caption or the backdrop.
 qrDialog.addEventListener("click", closeQr);
+
+// Secret: double click or double tap the footer QR code to forget the trivia's
+// daily tally and play a round on the spot. The first tap enlarges the code, so
+// the second lands on the open dialog, where it would otherwise just close it
+// again — catching it there is what makes the gesture feel like a double tap.
+// It listens on pointerup, because iOS can swallow the click of a double tap,
+// and pointerup runs first, so the closing below finds the work already done.
+const DOUBLE_TAP_MS = 450;
+const bibleTrivia = document.getElementById("bible-trivia");
+
+qrDialog.addEventListener("pointerup", async () => {
+    if (!qrShownAt || Date.now() - qrShownAt > DOUBLE_TAP_MS) return;
+    qrShownAt = 0;
+    bibleTrivia.reset();
+    // Shrink the code back into the footer before the quiz takes the screen.
+    await closeQr();
+    bibleTrivia.open({ force: true });
+});
 
 // Leaving for another page and coming back — the Flipbook's home button, the
 // back button, a reload — should land the reader where they left off rather

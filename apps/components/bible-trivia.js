@@ -35,6 +35,7 @@
  * Methods      open({ force })  show the quiz; force skips the quota checks.
  *                               Resolves true when it opened.
  *              close()          close it, whether or not it was answered.
+ *              reset()          forget today's tally.
  * Events       ready     the quiz is on screen, detail: { id, book }
  *              answered  detail: { id, book, chosen, correct }
  *              closed    detail: { answered }
@@ -398,6 +399,18 @@ export class BibleTrivia extends HTMLElement {
 
     this.dispatchEvent(new CustomEvent('ready', { detail: { id: fact.id, book: fact.book } }));
     return true;
+  }
+
+  /**
+   * Forgets today's tally, so the quiz is free to appear again. The footer's
+   * secret double tap uses this; nothing else needs it.
+   */
+  reset() {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // Blocked storage had nothing to forget.
+    }
   }
 
   close() {

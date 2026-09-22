@@ -329,24 +329,34 @@ did-you-know.card { padding-inline: 10px; }
   border-image: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent) 1;
 }
 
+/* Reflection: a navy panel with gold accents, set apart from the cream page. */
 .reflection-card {
-  background: transparent;
-  font-family: 'Roboto', Arial, sans-serif;
+  --panel-cream: #f3e7d2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  margin-inline: 10px;
+  padding: 38px 30px 32px;
+  border: 1px solid rgb(225 182 93 / 40%);
+  border-radius: 18px;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgb(225 182 93 / 16%) 0%, transparent 60%),
+    linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%);
+  color: var(--panel-cream);
+  box-shadow: 0 12px 30px rgb(0 27 52 / 28%), inset 0 1px 0 rgb(255 255 255 / 8%);
+  text-align: center;
 }
+.reflection-card::before,
+.reflection-card::after { color: var(--gold-light); opacity: .8; }
 .reflection-card .icon {
   width: 78px;
   height: 78px;
-  margin: 0 auto 26px;
+  margin: 0 auto 22px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: var(--gold-light);
   background: var(--navy);
-  border: 0;
-  font-size: 2rem;
+  box-shadow: 0 0 0 2px var(--gold-light), 0 0 0 8px rgb(225 182 93 / 16%), 0 8px 20px rgb(0 0 0 / 35%);
 }
 .reflection-card .icon img {
   display: block;
@@ -354,48 +364,38 @@ did-you-know.card { padding-inline: 10px; }
   height: 100%;
   object-fit: contain;
 }
-.reflection-title {
-  text-align: center;
-  color: var(--navy);
-  font-size: 2rem;
-  margin: 0 0 24px;
+.reflection-card .reflection-title {
+  margin: 0 0 26px;
+  color: #fff;
+  font: 400 clamp(1.5rem, 1.3rem + .9vw, 1.875rem)/1.2 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+/* Short gold rule under the title. */
+.reflection-card .reflection-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin: 14px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
 }
 .reflection-card p {
-  font-size: 1.17rem;
-  line-height: 1.5;
   margin: 0;
+  max-width: 34em;
+  font: 400 clamp(1.125rem, 1.05rem + .35vw, 1.3rem)/1.6 'Strait', 'Roboto', sans-serif;
+  text-wrap: pretty;
 }
 .reflection-card .closing {
-  margin-top: 25px;
-  color: var(--gold);
-  text-align: center;
-  font-style: italic;
-}
-
-.weekly-flipbook-link {
-  display: inline-block;
-  align-self: center;
-  margin-top: 32px;
-  padding: 15px 26px;
+  width: min(280px, 80%);
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(225 182 93 / 35%);
   color: var(--gold-light);
-  background: var(--navy);
-  border: 0;
-  border-radius: 999px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 8px 18px rgba(0,27,52,.18);
-  transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+  font: 400 clamp(1.0625rem, 1rem + .3vw, 1.1875rem)/1.4 Georgia, 'Times New Roman', serif;
 }
-.weekly-flipbook-link:hover,
-.weekly-flipbook-link:focus-visible {
-  color: var(--navy);
-  background: var(--gold-light);
-  box-shadow: 0 10px 22px rgba(0,27,52,.25);
-  transform: translateY(-2px);
-}
+/* The panel is its own block, so it does not need the section divider above it. */
+.devotional-stack > .reflection-card { border-top: 1px solid rgb(225 182 93 / 40%); border-image: none; }
 
 .site-footer {
   color: var(--navy);
@@ -444,7 +444,7 @@ did-you-know.card { padding-inline: 10px; }
   color: var(--navy);
   box-shadow: 0 24px 60px rgba(0,27,52,.4);
   max-width: calc(100vw - 32px);
-  overflow: visible;
+  cursor: zoom-out;
 }
 .qr-dialog::backdrop {
   background: rgb(0 27 52 / 60%);
@@ -460,25 +460,6 @@ did-you-know.card { padding-inline: 10px; }
 }
 .qr-dialog img { display: block; width: min(72vw, 340px); height: auto; }
 .qr-dialog p { margin: 0; font-size: .9375rem; font-weight: 600; letter-spacing: .04em; }
-.qr-dialog-close {
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0,27,52,.35);
-  cursor: pointer;
-}
-.qr-dialog-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; }
-.qr-dialog-close:hover { background: #0a3357; }
-.qr-dialog-close:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
 html:has(.qr-dialog[open]) { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }

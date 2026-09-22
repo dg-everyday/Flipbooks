@@ -293,13 +293,10 @@ async function closeQr() {
     qrClosing = false;
 }
 
-document.getElementById("qr-close").addEventListener("click", closeQr);
 // Escape would close instantly; route it through the closing animation instead.
 qrDialog.addEventListener("cancel", (event) => {
     event.preventDefault();
     closeQr();
 });
-// The dialog has no padding of its own, so a click on it directly is a click on the backdrop.
-qrDialog.addEventListener("click", (event) => {
-    if (event.target === qrDialog) closeQr();
-});
+// A click or tap anywhere closes it: on the code, its caption or the backdrop.
+qrDialog.addEventListener("click", closeQr);

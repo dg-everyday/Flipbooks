@@ -58,6 +58,12 @@ function closeBookSuggestions() {
 
 function renderBookSuggestions() {
     const query = searchQuery.value.trim().toLocaleLowerCase();
+    // Only suggest books once something has been typed, so clearing the field hides the list.
+    if (!query) {
+        bibleBookSuggestions.replaceChildren();
+        closeBookSuggestions();
+        return;
+    }
     const matches = bibleBooks.filter((book) => book.toLocaleLowerCase().includes(query));
     const options = matches.map((book, index) => {
         const option = document.createElement("li");

@@ -37,7 +37,7 @@ documented in a header comment at the top of its file.
 | Element | File | Notes |
 | --- | --- | --- |
 | `<bible-search-results>` | `apps/components/bible-search-results.js` | Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. |
-| `<did-you-know>` | `apps/components/did-you-know.js` | Loads `assets/did-you-know.json`; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. |
+| `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. |
 | `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
 
@@ -67,7 +67,8 @@ declared inside a shadow root.
 | --- | --- |
 | `assets/db/dailygrace.db` | The complete KJV: 66 books, 1,189 chapters, 31,102 verses (4.7 MB). Tables: `books(book_number, book_id, book_name)` and `verses(docid, book, chapter, verse, text)`, joined on `verses.book = books.book_id`. |
 | `assets/verses.json` | Daily verse, text, and reflection, keyed by date string (`"September 1, 2026"`). Also supplies the verse shown on not-yet-released flipbook pages. |
-| `assets/did-you-know.json` | 501 facts: `id`, `Title`, `Fact`, and `verse { Reference, Book }`. `Reference` must parse and exist in the database, since tapping it opens the passage. |
+| `assets/db/didyouknow.db` | 1,021 Bible facts in one table, `did_you_know(id, Title, Fact, Reference_verse, Book, Similar_books)`. `Reference_verse` must parse and exist in `dailygrace.db`, since tapping it opens the passage. `Similar_books` holds four books that are never the row's own `Book`, kept for trivia questions where `Book` is the answer. Add rows with `tools/didyouknow/add_rows.py`. |
+| `assets/did-you-know.json` | The original 501 facts, superseded by `didyouknow.db` and no longer read by anything. |
 | `assets/book-metadata.json` | Fallback `title` / `description` for all 66 books — see below. |
 
 Book symbols load from `<media-base>images/symbols/<Book name>-symbol.svg`. The

@@ -12,8 +12,9 @@
  * Attributes
  *   media-base   Base URL for book symbols (images/symbols/<Book>-symbol.svg).
  *                Default: http://localhost:9001/media/
- *   src          URL of did-you-know.json (resolved against the page).
- *                Default: ../../assets/did-you-know.json (relative to this file)
+ *   src          URL of the SQLite database holding the did_you_know table,
+ *                resolved against the page.
+ *                Default: ../../assets/db/didyouknow.db (relative to this file)
  *   count        Facts per batch. Default: 5
  *
  * Methods      refresh()  show a new batch
@@ -22,6 +23,10 @@
  *              error         detail: { message }
  *              verse-request a reference was clicked, detail: { reference, book }
  *                            (bubbles and crosses the shadow boundary)
+ *
+ * Data: the facts come from the did_you_know table (id, Title, Fact,
+ * Reference_verse, Book, Similar_books) in assets/db/didyouknow.db, read once
+ * through sql.js. Only the columns shown on a card are selected.
  *
  * Fonts: Germania One (titles) and Strait (text) are registered on the
  * document by assets/scripts/fonts.js, because browsers do not reliably load @font-face
@@ -44,7 +49,22 @@ const asset = (path) => new URL(path, import.meta.url).href;
 
 const BANNER_URL = asset('../../assets/images/did-you-know.webp');
 const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
-const DEFAULT_SRC = asset('../../assets/did-you-know.json');
+const DEFAULT_SRC = asset('../../assets/db/didyouknow.db');
+const SQL_JS_BASE_URL = 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/';
+const FACTS_QUERY = 'SELECT id, Title, Fact, Reference_verse, Book FROM did_you_know';
+
+/**
+ * sql.js is started once per page. assets/scripts/sql_script.js shares its
+ * instance through window.loadSqlJs; start our own when the component is used
+ * on a page that does not include that script.
+ */
+function getSqlJs() {
+  if (typeof window.loadSqlJs === 'function') return window.loadSqlJs();
+  if (typeof window.initSqlJs !== 'function') {
+    return Promise.reject(new Error('sql.js was not loaded. Check the sql-wasm.js script on the page.'));
+  }
+  return window.initSqlJs({ locateFile: (file) => SQL_JS_BASE_URL + file });
+}
 
 const STYLES = /* css */ `
   :host {
@@ -227,16 +247,48 @@ export class DidYouKnow extends HTMLElement {
     return shown.length ? shown : this.#pick();
   }
 
+  /** Reads every fact out of the database, then closes it again. */
+  async #read(src) {
+    const [SQL, response] = await Promise.all([
+      getSqlJs(),
+      fetch(new URL(src, document.baseURI), { cache: 'force-cache' }),
+    ]);
+    if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
+
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    const header = new TextDecoder().decode(bytes.subarray(0, 15));
+    if (!header.startsWith('SQLite format 3')) {
+      throw new Error(`${src} is not a valid SQLite database.`);
+    }
+
+    const database = new SQL.Database(bytes);
+    try {
+      const statement = database.prepare(FACTS_QUERY);
+      const facts = [];
+      while (statement.step()) {
+        const row = statement.getAsObject();
+        facts.push({
+          id: row.id,
+          title: row.Title,
+          text: row.Fact,
+          reference: row.Reference_verse,
+          book: row.Book,
+        });
+      }
+      statement.free();
+      return facts;
+    } finally {
+      // The rows are kept in memory; the database file itself is not needed.
+      database.close();
+    }
+  }
+
   #load() {
     const src = this.getAttribute('src') || DEFAULT_SRC;
-    const loading = (this.#loading = fetch(new URL(src, document.baseURI))
-      .then((response) => {
-        if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
-        return response.json();
-      })
+    const loading = (this.#loading = this.#read(src)
       .then((facts) => {
         if (loading !== this.#loading) return; // superseded by a newer src
-        this.#facts = facts.filter((fact) => fact?.Title && fact?.Fact);
+        this.#facts = facts.filter((fact) => fact.title && fact.text);
         if (!this.#facts.length) throw new Error('No Bible facts are available.');
         this.#refreshButton.disabled = false;
         this.refresh();
@@ -277,8 +329,8 @@ export class DidYouKnow extends HTMLElement {
     symbol.loading = 'lazy';
     // Keep the column width so facts stay aligned when a symbol is missing.
     symbol.onerror = () => { symbol.style.visibility = 'hidden'; };
-    if (fact.verse?.Book) {
-      symbol.src = `${this.#mediaBase}images/symbols/${encodeURIComponent(fact.verse.Book)}-symbol.svg`;
+    if (fact.book) {
+      symbol.src = `${this.#mediaBase}images/symbols/${encodeURIComponent(fact.book)}-symbol.svg`;
     } else {
       symbol.style.visibility = 'hidden';
     }
@@ -287,24 +339,24 @@ export class DidYouKnow extends HTMLElement {
     body.className = 'body';
     const title = document.createElement('h4');
     title.className = 'title';
-    title.textContent = fact.Title;
+    title.textContent = fact.title;
     const text = document.createElement('p');
     text.className = 'text';
-    text.textContent = fact.Fact;
+    text.textContent = fact.text;
     body.append(title, text);
 
-    if (fact.verse?.Reference) {
+    if (fact.reference) {
       // The reference opens the passage itself; the page decides how to show it.
       const reference = document.createElement('button');
       reference.type = 'button';
       reference.className = 'reference';
-      reference.textContent = `(${fact.verse.Reference})`;
-      reference.setAttribute('aria-label', `Read ${fact.verse.Reference}`);
+      reference.textContent = `(${fact.reference})`;
+      reference.setAttribute('aria-label', `Read ${fact.reference}`);
       reference.addEventListener('click', () => {
         this.dispatchEvent(new CustomEvent('verse-request', {
           bubbles: true,
           composed: true,
-          detail: { reference: fact.verse.Reference, book: fact.verse.Book ?? null },
+          detail: { reference: fact.reference, book: fact.book ?? null },
         }));
       });
       body.append(reference);
@@ -317,7 +369,7 @@ export class DidYouKnow extends HTMLElement {
   #render(facts) {
     this.#shownIds = new Set(facts.map((fact) => fact.id));
     this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact)));
-    this.#status.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].Title}.`;
+    this.#status.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].title}.`;
   }
 
   /** Show a new batch of facts, none repeated from the previous batch. */

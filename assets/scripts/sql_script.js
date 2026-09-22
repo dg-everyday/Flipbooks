@@ -1,22 +1,42 @@
 let db = null;
+let sqlJsLoading = null;
 
-async function initDatabase() {
+const SQL_JS_BASE_URL = "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/";
+
+// ============================================================
+// Initialize sql.js
+//
+// Every database on the page shares one instance, so the wasm
+// runtime is only downloaded and started once. <did-you-know>
+// uses this too, for assets/db/didyouknow.db.
+// ============================================================
+
+function loadSqlJs() {
+    if (sqlJsLoading) return sqlJsLoading;
 
     // SQL.js must already be loaded by index.html
     if (typeof initSqlJs !== "function") {
-        throw new Error(
+        return Promise.reject(new Error(
             "sql.js was not loaded. Check the sql-wasm.js script in index.html.",
-        );
+        ));
     }
 
-    // Initialize sql.js
-    const SQL = await initSqlJs({
+    sqlJsLoading = initSqlJs({
         locateFile: function (file) {
-            return (
-                "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/" + file
-            );
+            return SQL_JS_BASE_URL + file;
         },
+    }).catch(function (error) {
+        // Allow a later call to try again.
+        sqlJsLoading = null;
+        throw error;
     });
+
+    return sqlJsLoading;
+}
+
+async function initDatabase() {
+
+    const SQL = await loadSqlJs();
 
     // Load database
 

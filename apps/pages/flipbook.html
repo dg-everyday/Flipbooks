@@ -1,41 +1,93 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
 
-<!-- Primary Open Graph Meta Tags -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://dailygrace.faith" />
-<meta property="og:title" content="A year of grace • 365 days" />
-<meta property="og:description" content="A simple place to pause, reflect, and draw closer to God each day. Each day brings a Bible verse, a short reflection, and an encouraging message to remind us that God's grace is sufficient for today and that there is always hope for tomorrow." />
+        <!-- Primary Open Graph Meta Tags -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dailygrace.faith" />
+        <meta property="og:title" content="A year of grace • 365 days" />
+        <meta
+            property="og:description"
+            content="A simple place to pause, reflect, and draw closer to God each day. Each day brings a Bible verse, a short reflection, and an encouraging message to remind us that God's grace is sufficient for today and that there is always hope for tomorrow."
+        />
 
-<!-- Image Meta Tags -->
-<meta property="og:image" content="https://dailygrace.faith/media/banner/september/daily-grace-2026-09-19.webp" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+        <!-- Image Meta Tags -->
+        <meta
+            property="og:image"
+            content="https://dailygrace.faith/media/banner/september/daily-grace-2026-09-23.webp"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
-<title>Daily Grace — Flipbook</title>
-<link rel="stylesheet" href="../../assets/styles/flipbook-reader.css?v=20260910-3">
-</head>
-<body>
-<div class="app">
-  <div class="topbar">
-    <div class="brand">Daily <span>Grace</span> · Flipbook</div>
-    <div class="tools">
-      <button id="home" aria-label="Home" title="Home">&#8962;</button>
-    </div>
-  </div>
+        <title>Daily Grace — Flipbook</title>
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/flipbook-page.css?v=20260923-2"
+        />
+    </head>
+    <body>
+        <div class="app">
+            <div class="topbar">
+                <div class="brand">
+                    <img
+                        class="brand-logo"
+                        src="../../assets/images/daily-grace-white.webp"
+                        alt="Daily Grace"
+                        width="2172"
+                        height="724"
+                    />
+                    <span class="brand-pill">Flipbook</span>
+                </div>
+                <div class="tools">
+                    <button id="home" aria-label="Home" title="Home">
+                        <svg
+                            width="30"
+                            height="30"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="m3 10 9-7 9 7"></path>
+                            <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-  <main class="stage" id="stage">
-    <div class="loading" id="loading">Preparing your Daily Grace flipbook…</div>
-    <div class="book-shadow"></div>
-    <div class="book" id="book" aria-label="Daily Grace flipbook"></div>
-    <div class="desktop-spread" id="desktopSpread" aria-label="Daily Grace flipbook spread"></div>
-  </main>
+            <flip-book id="reader"></flip-book>
+        </div>
 
-</div>
-
-<script src="../../assets/scripts/flipbook-reader.js?v=20260911-1"></script>
-</body>
+        <script
+            type="module"
+            src="../../apps/components/flip-book.js?v=20260923-2"
+        ></script>
+        <script>
+            document.getElementById("home").addEventListener("click", () => {
+                // Stepping back lets the browser hand the main page over just
+                // as the reader left it, scroll position and all. A fresh load
+                // is the fallback for a Flipbook opened straight from a link;
+                // the main page then restores the position it saved itself.
+                let cameFromMain = false;
+                try {
+                    const from = new URL(document.referrer);
+                    cameFromMain =
+                        from.origin === window.location.origin &&
+                        /(^|\/)(index\.html)?$/.test(from.pathname);
+                } catch {}
+                if (cameFromMain && window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = "../../index.html";
+                }
+            });
+        </script>
+    </body>
 </html>

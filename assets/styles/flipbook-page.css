@@ -1,0 +1,75 @@
+/* Page-level styles for flipbook.html.
+   Everything inside the stage (book, spread, pages, narration buttons,
+   future/end pages) now lives in the <flip-book> component. */
+
+:root {
+  --gold:#d9a84f;
+}
+* { box-sizing:border-box; }
+html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#f7eddb; }
+body {
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:white;
+  touch-action:none;
+}
+.app {
+  width:100%; height:100%; height:100dvh; display:flex; flex-direction:column;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.65), transparent 28%),
+    linear-gradient(135deg, #f7eddb, #eee0c7);
+}
+.topbar {
+  min-height:58px; flex:0 0 auto; display:flex; align-items:center;
+  justify-content:space-between; flex-wrap:nowrap; gap:6px; padding:8px 12px;
+  border-bottom:1px solid rgba(217,168,79,.35);
+  background:rgba(4,17,31,.88); backdrop-filter:blur(10px);
+  z-index:20;
+}
+.brand { display:flex; align-items:center; gap:10px; min-width:0; font-weight:700; letter-spacing:.04em; }
+.brand-logo { display:block; flex:0 0 auto; width:auto; height:44px; }
+.brand-pill {
+  flex:0 0 auto; padding:4px 12px; border-radius:999px;
+  background:#d9a020; color:#fff; font-size:13px; line-height:1.2;
+  text-shadow:0 1px 1px rgba(0,0,0,.28);
+}
+.tools { display:flex; gap:7px; align-items:center; margin-left:auto; flex-shrink:0; }
+button {
+  appearance:none; border:1px solid rgba(217,168,79,.55);
+  background:#102b46; color:#fff; border-radius:9px;
+  min-width:38px; height:36px; padding:0 11px;
+  font-size:15px; font-weight:650; cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,.18);
+}
+button:hover { background:#173956; }
+button:disabled { opacity:.38; cursor:default; }
+#home {
+  min-width:48px;
+  height:42px;
+  padding:0;
+  border-color:transparent;
+  background:transparent;
+  color:var(--gold);
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+  box-shadow:none;
+}
+#home:hover { background:transparent; color:#f0c66c; }
+
+/* Wire binding: remote first, local copy as fallback. Root-relative so the
+   URL resolves the same way wherever it is used. */
+flip-book {
+  --flipbook-wire:
+    url('/assets/images/wire-binding.svg?v=3');
+}
+
+@media (max-width:600px), (orientation:portrait) {
+  .topbar { min-height:52px; padding:0 9px; }
+  .brand { gap:8px; }
+  .brand-logo { height:38px; }
+  button { min-width:35px; height:34px; padding:0 8px; }
+}
+@media (max-width:600px) {
+  .brand-logo { height:32px; }
+  .brand-pill { padding:3px 10px; font-size:11px; }
+}

@@ -114,7 +114,7 @@ body {
 .hero-search input {
   width: 100%;
   min-width: 0;
-  padding: 10px 12px 10px 20px;
+  padding: 10px 12px 10px 4px;
   border: 0;
   border-radius: 999px;
   background: transparent;
@@ -150,6 +150,21 @@ body {
 @keyframes search-clear-pop { from { opacity: 0; scale: .6; } to { opacity: 1; scale: 1; } }
 @media (prefers-reduced-motion: reduce) {
   #search-clear, #search-clear:not([hidden]) svg { transition: none; animation: none; }
+}
+/* Search mode toggle: the padlock is locked for Bible reference search (the
+   default) and opens for keyword search. */
+#search-mode { margin-left: 4px; color: #4f6478; transition: color .15s ease, transform .15s ease; }
+#search-mode svg { width: 24px; height: 24px; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+#search-mode .lock-letter { stroke-width: 1.5; }
+#search-mode .shackle-open,
+#search-mode[aria-pressed="true"] .shackle-closed { display: none; }
+#search-mode[aria-pressed="true"] .shackle-open { display: inline; }
+#search-mode[aria-pressed="true"] { color: var(--navy); }
+#search-mode:hover { color: var(--navy); }
+#search-mode:active { transform: scale(.92); }
+#search-mode:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
+@media (prefers-reduced-motion: reduce) {
+  #search-mode { transition: none; }
 }
 .bible-book-list {
   position: absolute;

@@ -15,6 +15,7 @@
  *
  *   results.loading('Loading Bible verses…');
  *   results.showVerses(rows);   // rows: [{ book_name, book_id, chapter, verse, text }]
+ *   results.showKeywordResults(rows, ['grace', 'faith']);  // rows from any books
  *   results.showMessage('No verses found.');
  *   results.reset();            // clear and hide
  *
@@ -36,7 +37,8 @@
  *   explaining      Set by the component while the explanation popup is open,
  *                   so the page can lock its own scrolling.
  *
- * Methods      reset(), loading(message), showMessage(message), showVerses(rows)
+ * Methods      reset(), loading(message), showMessage(message), showVerses(rows),
+ *              showKeywordResults(rows, words)
  * Properties   busy (read-only)
  *
  * CSS custom properties
@@ -186,6 +188,33 @@ const STYLES = /* css */ `
   .explain:focus-visible::before {
     background: linear-gradient(135deg, #fffaf1 0%, #e9dcc0 30%, var(--search-navy) 50%);
   }
+  /* Keyword results: a header for the search itself, the book named on each
+     card, and the matched words marked in the text. */
+  .keyword-header { grid-template-columns: minmax(0, 1fr); }
+  .keyword-header .book-details { grid-column: 1; border-left: 0; }
+  .keyword-header h2 { font: 400 1.375rem/1.3 'Strait', 'Roboto', sans-serif; }
+  .verse-book-symbol {
+    display: block;
+    width: 32px; height: 32px;
+    margin: 0 auto 2px;
+    object-fit: contain;
+  }
+  /* Sized so the longest single words (Thessalonians, Ecclesiastes) still fit
+     the narrow phone column; longer names wrap only between words. */
+  .verse-book {
+    display: block;
+    padding: 0 2px 4px;
+    text-align: center;
+    color: var(--search-hebrew);
+    overflow-wrap: break-word;
+    font: 400 .875rem/1.2 'Strait', 'Roboto', sans-serif;
+  }
+  .verse-text mark {
+    padding: 0 .08em;
+    border-radius: 3px;
+    background: rgb(168 129 12 / 24%);
+    color: inherit;
+  }
   .verse-reference { margin: 0; font-weight: 400; }
   .verse-numbers {
     display: flex; align-items: flex-start; justify-content: center;
@@ -292,6 +321,7 @@ const STYLES = /* css */ `
     .chapter-number { font-size: .8125rem; }
     .verse-number { font-size: 1.875rem; }
     .chapter-start .verse-numbers { margin-inline: 8px; padding: 7px 4px 9px; }
+    .verse-book { font-size: .8125rem; }
   }
 `;
 
@@ -356,6 +386,23 @@ function explanationParagraph(block, verseText) {
     paragraph.textContent = block.replace(/--/g, '—');
   }
   return paragraph;
+}
+
+const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/** Split text into strings and <mark>s around each match of a global pattern. */
+function highlightedText(text, pattern) {
+  const parts = [];
+  let last = 0;
+  for (const match of text.matchAll(pattern)) {
+    if (match.index > last) parts.push(text.slice(last, match.index));
+    const mark = document.createElement('mark');
+    mark.textContent = match[0];
+    parts.push(mark);
+    last = match.index + match[0].length;
+  }
+  parts.push(text.slice(last));
+  return parts;
 }
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -510,6 +557,23 @@ export class BibleSearchResults extends HTMLElement {
     this.#renderVerses(rows, this.#generation);
   }
 
+  /**
+   * Results of a keyword search. rows: [{ book_name, book_id, chapter, verse, text }]
+   * from any number of books; words: the keywords, highlighted in each verse.
+   */
+  showKeywordResults(rows, words) {
+    if (!rows?.length) {
+      this.showMessage('No verses found.');
+      return;
+    }
+    this.#generation++;
+    this.#observer?.disconnect();
+    this.#observer = null;
+    this.#content.removeAttribute('aria-busy');
+    this.hidden = false;
+    this.#renderVerses(rows, this.#generation, words);
+  }
+
   #loadBundledBookMetadata() {
     if (!bundledBookMetadata) {
       const src = this.getAttribute('metadata-src') || DEFAULT_METADATA_SRC;
@@ -598,11 +662,31 @@ export class BibleSearchResults extends HTMLElement {
     return header;
   }
 
-  #createVerseCard(bookName, row) {
+  #createKeywordHeader(rows, words) {
+    const header = document.createElement('header');
+    header.className = 'book-header keyword-header';
+    const details = document.createElement('div');
+    details.className = 'book-details';
+    const title = document.createElement('h2');
+    title.id = 'book-title';
+    title.textContent = words.map((word) => `“${word}”`).join(' ');
+    const books = new Set(rows.map((row) => row.book_name)).size;
+    const description = document.createElement('p');
+    description.className = 'book-description';
+    description.textContent = `Verses containing ${words.length === 1 ? 'this word' : 'all of these words'}, ${
+      books === 1 ? 'in one book' : `across ${books} books`}.`;
+    details.append(title, description);
+    header.append(details);
+    return header;
+  }
+
+  /** highlight: a global pattern of keywords to mark in the text, for keyword results. */
+  #createVerseCard(bookName, row, highlight = null) {
     const item = document.createElement('div');
     item.setAttribute('role', 'listitem');
     const card = document.createElement('article');
-    const chapterStart = Number(row.verse) === 1;
+    // Chapter openings only mark the way while reading one book in order.
+    const chapterStart = !highlight && Number(row.verse) === 1;
     card.className = chapterStart ? 'verse-card chapter-start' : 'verse-card';
     const reference = document.createElement('h3');
     reference.className = 'verse-reference';
@@ -621,10 +705,29 @@ export class BibleSearchResults extends HTMLElement {
     verse.className = 'verse-number';
     verse.textContent = row.verse;
     numbers.append(chapter, verse);
-    reference.append(accessibleReference, numbers);
+    reference.append(accessibleReference);
+    // Keyword results span books, so each card shows its own book: symbol and
+    // name. Screen readers already get the name from the hidden reference.
+    if (highlight) {
+      const symbol = document.createElement('img');
+      symbol.className = 'verse-book-symbol';
+      symbol.width = 32;
+      symbol.height = 32;
+      symbol.alt = '';
+      symbol.loading = 'lazy';
+      symbol.onerror = () => symbol.remove();
+      symbol.src = bookSymbolUrl(this.#mediaBase, bookName);
+      const book = document.createElement('span');
+      book.className = 'verse-book';
+      book.setAttribute('aria-hidden', 'true');
+      book.textContent = bookName;
+      reference.append(symbol, book);
+    }
+    reference.append(numbers);
     const text = document.createElement('p');
     text.className = 'verse-text';
-    text.textContent = row.text;
+    if (highlight) text.append(...highlightedText(row.text, highlight));
+    else text.textContent = row.text;
     card.append(reference, text);
     if (row.book_id) {
       card.classList.add('explainable');
@@ -708,10 +811,18 @@ export class BibleSearchResults extends HTMLElement {
     this.#explanationClosing = false;
   }
 
-  #renderVerses(rows, generation) {
+  /** words: present for keyword results, which may span many books. */
+  #renderVerses(rows, generation, words = null) {
+    const keywords = words?.length ? words : null;
     const bookName = rows[0].book_name;
     const batchSize = this.#batchSize;
-    const header = this.#createBookHeader(bookName, generation);
+    const header = keywords
+      ? this.#createKeywordHeader(rows, keywords)
+      : this.#createBookHeader(bookName, generation);
+    // Keywords carry a straight apostrophe; the KJV text a curly one (brother’s).
+    const highlight = keywords && new RegExp(
+      `\\b(${keywords.map((word) => escapeRegExp(word).replace(/'/g, "['’]")).join('|')})\\b`, 'gi');
+    const heading = keywords ? `Verses with ${keywords.join(', ')}` : bookName;
     const summary = document.createElement('p');
     summary.className = 'summary';
 
@@ -719,7 +830,7 @@ export class BibleSearchResults extends HTMLElement {
     reader.className = 'reader';
     reader.tabIndex = 0;
     reader.setAttribute('role', 'region');
-    reader.setAttribute('aria-label', `${bookName} verses, scroll to read more`);
+    reader.setAttribute('aria-label', `${keywords ? heading : `${bookName} verses`}, scroll to read more`);
     const list = document.createElement('div');
     list.className = 'verse-list';
     list.setAttribute('role', 'list');
@@ -741,12 +852,12 @@ export class BibleSearchResults extends HTMLElement {
       const fragment = document.createDocumentFragment();
       const next = Math.min(shown + batchSize, rows.length);
       for (let index = shown; index < next; index++) {
-        fragment.append(this.#createVerseCard(bookName, rows[index]));
+        fragment.append(this.#createVerseCard(rows[index].book_name, rows[index], highlight));
       }
       list.append(fragment);
       shown = next;
       summary.textContent = `${rows.length.toLocaleString()} verse${rows.length === 1 ? '' : 's'} found · ${shown.toLocaleString()} shown`;
-      this.#status.textContent = `${bookName}. ${summary.textContent}`;
+      this.#status.textContent = `${heading}. ${summary.textContent}`;
       if (shown === rows.length) {
         this.#observer?.disconnect();
         end.hidden = false;

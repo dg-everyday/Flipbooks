@@ -247,6 +247,73 @@ function getVerses(bookName, chapter = null, verses = null) {
     return results;
 }
 
+// ============================================================
+// Search by keywords
+//
+// parseSearchKeywords("Grace,  faith grace")  -> ["grace", "faith"]
+// searchVersesByKeywords(["grace", "faith"])
+//
+// Every word must appear as a whole word in the book name or
+// the verse text, so "love" does not match "loved" or "glove",
+// and "1 john love" finds the verses of 1 John that say love.
+// Results run in Bible order.
+// ============================================================
+
+function parseSearchKeywords(query) {
+    const words = String(query ?? "")
+        .toLowerCase()
+        .replace(/[’‘]/g, "'")
+        .match(/[a-z0-9']+/g) ?? [];
+
+    // Drop apostrophes left at the edges by quoting, as in 'grace'
+    const cleaned = words
+        .map((word) => word.replace(/^'+|'+$/g, ""))
+        .filter(Boolean);
+
+    return [...new Set(cleaned)];
+}
+
+function searchVersesByKeywords(words) {
+    if (!db) {
+        throw new Error("Database has not been initialized.");
+    }
+
+    if (!Array.isArray(words) || words.length === 0) {
+        throw new Error("At least one keyword is required.");
+    }
+
+    // LIKE narrows the rows cheaply (case-insensitive for ASCII);
+    // the whole-word check below then drops partial matches.
+    // Keywords are only letters, digits and apostrophes, so the
+    // only wildcard is the _ that stands in for an apostrophe:
+    // the text uses a curly one (brother’s), keywords a straight one.
+    const conditions = words.map(() => "(b.book_name || ' ' || v.text) LIKE ?");
+    const params = words.map((word) => `%${word.replace(/'/g, "_")}%`);
+
+    const query = `
+        SELECT b.book_name, b.book_id, v.chapter, v.verse, v.text
+        FROM verses AS v
+        INNER JOIN books AS b ON v.book = b.book_id
+        WHERE ${conditions.join("\n AND ")}
+        ORDER BY b.book_number, v.chapter, v.verse
+    `;
+
+    const stmt = db.prepare(query);
+    stmt.bind(params);
+    const rows = [];
+    while (stmt.step()) {
+        rows.push(stmt.getAsObject());
+    }
+
+    stmt.free();
+
+    const patterns = words.map((word) => new RegExp(`\\b${word.replace(/'/g, "['’]")}\\b`, "i"));
+    return rows.filter((row) => {
+        const haystack = `${row.book_name} ${row.text}`;
+        return patterns.every((pattern) => pattern.test(haystack));
+    });
+}
+
 function getBooks(asJsonString = false) {
     if (!db) {
         throw new Error("Database has not been initialized.");

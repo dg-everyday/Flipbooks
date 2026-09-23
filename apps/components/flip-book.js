@@ -1,50 +1,74 @@
 /**
- * <flip-book> — the Daily Grace weekly flipbook reader as a web component.
+ * <flip-book> — a page-turning reader as a web component.
  *
  * Custom element names must contain a hyphen, so the tag is <flip-book>
  * (the class is exported as `Flipbook`).
  *
  * The component owns the stage: loading message, book shadow, single-page
  * book (portrait / narrow screens) and two-page spread (landscape desktop).
- * The toolbar (home, prev/next, zoom buttons) lives in your page and drives
- * the component through its public methods.
+ * It renders whatever page list it is handed and knows nothing about where
+ * those pages came from — the calling page decides that. The toolbar (home,
+ * prev/next, zoom buttons) also lives in your page and drives the component
+ * through its public methods.
  *
  * Usage
  *   <flip-book id="reader"></flip-book>
- *   <script type="module" src="./flip-book.js"></script>
+ *   <script type="module">
+ *     import './flip-book.js';
+ *     document.getElementById('reader').pages = [ ... ];
+ *   </script>
+ *
+ * The `pages` property is the whole input. Each entry is either a plain image
+ * URL string or a descriptor:
+ *
+ *   @typedef {Object} FlipPage
+ *   @property {string}  [src]          Image URL, already resolved. Omit for a blank leaf.
+ *   @property {string}  [alt]          Alt text. Falls back to `Page {n}`.
+ *   @property {string}  [audio]        Narration URL. Present → a play button is drawn.
+ *   @property {string}  [id]           Opaque caller key, echoed back on `pagechange`.
+ *   @property {FlipPlaceholder} [placeholder]  Render this instead of the image.
+ *
+ *   @typedef {Object} FlipPlaceholder
+ *   @property {boolean} [logo]         Show the circular logo mark.
+ *   @property {string}  [title]        Large bold line.
+ *   @property {string}  [badge]        Accent line beneath the title.
+ *   @property {string}  [label]        Small caps line.
+ *   @property {string}  [headline]     Emphasised line (a date, a number).
+ *   @property {string}  [body]         Small closing line.
+ *
+ * Resolution order per page: `placeholder` wins, else `src`, else a blank leaf.
+ * Every feature is opt-in by presence, so `pages = ['a.webp', 'b.webp']` is a
+ * complete, valid call.
  *
  * Attributes
- *   media-base   Base URL for images and audio.
- *                Default: https://dailygrace.faith/media/
- *   verses-src   URL of verses.json (resolved against the page).
- *                Default: ../../assets/verses.json
+ *   aspect       Page aspect ratio as "W/H" or a decimal. Default 9/16. Used
+ *                until the first image reports its own natural size.
+ *   label        Accessible name for the stage, and the noun in the loading
+ *                message. Default "flipbook".
+ *   empty-text   Message shown when `pages` is set to an empty list.
+ *   end-page     "off" suppresses the trailing blank endpaper. Default on.
  *   flip-sound   Page-turn sound. A URL (resolved against the page) replaces the
  *                default ../../assets/audio/page_flip.webm; "off" disables it.
  *
  * Methods      next(), prev(), zoomIn(), zoomOut(), resetZoom()
- * Properties   page (read-only, current index), pageCount (read-only),
- *              zoom (get/set, 1–3.5)
- * Events       ready       fired once pages are loaded
- *              pagechange  detail: { index, pageCount }
+ * Properties   pages (get/set), page (read-only, current index),
+ *              pageCount (read-only), zoom (get/set, 1–3.5)
+ * Events       ready       detail: { pageCount }
+ *              pagechange  detail: { index, pageCount, id }
  *              error       detail: { message }
  *
  * Sizing: the host fills its parent (flex: 1 in a column flex container).
  *
  * CSS custom properties
  *   --flipbook-navy, --flipbook-shadow
- *   --flipbook-future-paper   url() for not-yet-available pages
+ *   --flipbook-future-paper   url() for placeholder pages
  *   --flipbook-end-paper      url() for blank/end pages
  *   --flipbook-wire           url() list for the wire binding (later entries are fallbacks)
- *   --flipbook-logo           url() for the logo on future pages
+ *   --flipbook-logo           url() for the logo on placeholder pages
  */
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
-const DEFAULT_VERSES_SRC = '../../assets/verses.json';
 const DEFAULT_FLIP_SOUND = new URL('../../assets/audio/page_flip.webm', import.meta.url).href;
-
-const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
-  'august', 'september', 'october', 'november', 'december'];
+const DEFAULT_ASPECT = 9 / 16;
 
 // Single-page (portrait) geometry. The book sits against the left edge with the
 // spring touching it, so the stage reserves the spring's overhang on the left
@@ -99,7 +123,7 @@ const STYLES = /* css */ `
     position: relative;
     flex-shrink: 0;
     height: 100%;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: var(--flipbook-aspect, 9 / 16);
     transform-style: flat;
     isolation: isolate;
     will-change: transform;
@@ -286,72 +310,60 @@ const STYLES = /* css */ `
 
 const TEMPLATE = /* html */ `
   <style>${STYLES}</style>
-  <div class="stage" id="stage" role="region" aria-label="Daily Grace flipbook">
-    <div class="loading" id="loading" role="status">Preparing your Daily Grace flipbook…</div>
+  <div class="stage" id="stage" role="region" aria-label="flipbook">
+    <div class="loading" id="loading" role="status">Preparing your flipbook…</div>
     <div class="book-shadow"></div>
-    <div class="book" id="book" role="group" aria-label="Daily Grace flipbook"></div>
-    <div class="desktop-spread" id="desktopSpread" role="group" aria-label="Daily Grace flipbook spread"></div>
+    <div class="book" id="book" role="group" aria-label="flipbook"></div>
+    <div class="desktop-spread" id="desktopSpread" role="group" aria-label="flipbook spread"></div>
   </div>
 `;
 
 /* ---------- Pure helpers ---------- */
 
-function getCurrentWeekDates(today = new Date()) {
-  // Start of current week (Sunday)
-  const startOfWeek = new Date(today);
-  startOfWeek.setDate(today.getDate() - today.getDay());
-  startOfWeek.setHours(0, 0, 0, 0);
-
-  const dates = [];
-  for (let i = 0; i < 7; i++) {
-    const date = new Date(startOfWeek);
-    date.setDate(startOfWeek.getDate() + i);
-    const formatted = date.toLocaleDateString('en-US', {
-      month: 'long', day: 'numeric', year: 'numeric'
-    });
-    dates.push(`${formatted}.webp`);
-    dates.push(`${formatted} - Comic.webp`);
+// A page entry may be a bare image URL or a full descriptor; both become the
+// same shape so nothing downstream has to re-check. Unknown keys are dropped
+// rather than carried, so a typo fails loudly instead of silently doing nothing.
+function normalizePage(entry) {
+  if (entry == null) return { src: null, alt: '', audio: null, id: null, placeholder: null };
+  if (typeof entry === 'string') {
+    return { src: entry || null, alt: '', audio: null, id: null, placeholder: null };
   }
-  return dates;
+  const placeholder = entry.placeholder && typeof entry.placeholder === 'object'
+    ? {
+      logo: !!entry.placeholder.logo,
+      title: entry.placeholder.title || '',
+      badge: entry.placeholder.badge || '',
+      label: entry.placeholder.label || '',
+      headline: entry.placeholder.headline || '',
+      body: entry.placeholder.body || ''
+    }
+    : null;
+  return {
+    src: entry.src || null,
+    alt: typeof entry.alt === 'string' ? entry.alt : '',
+    audio: entry.audio || null,
+    id: entry.id ?? null,
+    placeholder
+  };
 }
 
-// Sunday-based calendar weeks, matching getCurrentWeekDates(). UTC arithmetic avoids DST shifts.
-function coverPaths(today = new Date()) {
-  const year = today.getFullYear();
-  const start = new Date(Date.UTC(year, 0, 1));
-  const day = Date.UTC(year, today.getMonth(), today.getDate());
-  const week = Math.floor(((day - start.getTime()) / 86400000 + start.getUTCDay()) / 7) + 1;
-  return [
-    `images/coverpages/${year}/${year}-WEEK${week}.webp`,
-    `images/coverpages/${year}/${year}-404.webp`
-  ];
+function normalizePages(list) {
+  return Array.isArray(list) ? list.map(normalizePage) : [];
 }
 
-function imageFileName(src) {
-  try {
-    return decodeURIComponent(new URL(src, window.location.href).pathname.split('/').pop() || '');
-  } catch {
-    return decodeURIComponent((src.split('/').pop() || '').split('?')[0]);
-  }
+// A page shows its placeholder if it has one, otherwise its image, otherwise
+// nothing at all — which is how a blank leaf is expressed.
+function isBlank(page) {
+  return !page || (!page.src && !page.placeholder);
 }
 
-function isComicImage(src) {
-  return / - Comic\.[^.]+$/i.test(imageFileName(src));
-}
-
-function hasNarration(src) {
-  return !isComicImage(src) && !/\/coverpages\//.test(src);
-}
-
-function isFuturePage(src, today = new Date()) {
-  if (!src) return false;
-  const match = imageFileName(src).match(/^([A-Za-z]+) (\d{1,2}), (\d{4})(?: - Comic)?\.webp$/i);
-  if (!match) return false;
-  const month = MONTHS.indexOf(match[1].toLowerCase());
-  if (month < 0) return false;
-  const pageDate = new Date(Number(match[3]), month, Number(match[2]));
-  const currentDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  return pageDate > currentDate;
+function parseAspect(value) {
+  if (!value) return DEFAULT_ASPECT;
+  const parts = String(value).split('/');
+  const ratio = parts.length === 2
+    ? Number(parts[0]) / Number(parts[1])
+    : Number(value);
+  return Number.isFinite(ratio) && ratio > 0 ? ratio : DEFAULT_ASPECT;
 }
 
 function sameAudioUrl(a, b) {
@@ -410,11 +422,10 @@ export class Flipbook extends HTMLElement {
   #loading;
   #desktopSpread;
 
-  #images = [];
-  #verses = new Map();
-  #mediaBase = DEFAULT_MEDIA_BASE;
+  #pages = [];
+  #endLeaves = 0; // blank leaves this component appended, not the caller
 
-  #current = 0;   // image index; -1 is the opening blank in spread mode
+  #current = 0;   // page index; -1 is the opening blank in spread mode
   #zoom = 1;
   #panX = 0;
   #panY = 0;
@@ -445,7 +456,19 @@ export class Flipbook extends HTMLElement {
   connectedCallback() {
     this.#abort = new AbortController();
     this.#bindEvents(this.#abort.signal);
-    this.#load();
+    this.#applyAttributes();
+
+    // If the page assigned `pages` before this module finished loading, the
+    // assignment landed on the instance as a plain own property and is now
+    // shadowing the accessor. Re-run it through the setter and delete the
+    // shadow, or the value would sit there unread forever.
+    if (Object.prototype.hasOwnProperty.call(this, 'pages')) {
+      const pending = this.pages;
+      delete this.pages;
+      this.pages = pending;
+      return;
+    }
+    if (this.#pages.length) this.#renderPages();
   }
 
   disconnectedCallback() {
@@ -465,8 +488,19 @@ export class Flipbook extends HTMLElement {
   zoomOut() { this.#setZoom(this.#zoom - 0.25); }
   resetZoom() { this.#resetFit(); }
 
+  // Returns what the caller set, without the end leaf the component adds.
+  get pages() { return this.#pages.slice(0, this.#pages.length - this.#endLeaves); }
+  set pages(value) {
+    this.#pages = normalizePages(value);
+    // A trailing blank leaf keeps the last real page reachable in both single
+    // and spread modes. It is binding, not content, so the component adds it.
+    this.#endLeaves = this.getAttribute('end-page') !== 'off' && this.#pages.length ? 1 : 0;
+    if (this.#endLeaves) this.#pages.push(normalizePage(null));
+    if (this.isConnected) this.#renderPages();
+  }
+
   get page() { return this.#current; }
-  get pageCount() { return this.#images.length; }
+  get pageCount() { return this.#pages.length; }
   get zoom() { return this.#zoom; }
   set zoom(value) { this.#setZoom(Number(value) || 1); }
 
@@ -483,70 +517,41 @@ export class Flipbook extends HTMLElement {
 
   /* ----- Loading ----- */
 
-  #loadImage(path) {
-    const src = new URL(path, this.#mediaBase).href;
-    return new Promise(resolve => {
-      const img = new Image();
-      img.onload = () => resolve(src);
-      img.onerror = () => resolve(null);
-      img.src = src;
-    });
+  #applyAttributes() {
+    const label = this.getAttribute('label') || 'flipbook';
+    this.#stage.setAttribute('aria-label', label);
+    this.#book.setAttribute('aria-label', label);
+    this.#desktopSpread.setAttribute('aria-label', `${label} spread`);
+    this.#loading.textContent = `Preparing your ${label}…`;
+
+    const aspect = this.getAttribute('aspect');
+    if (aspect) this.style.setProperty('--flipbook-aspect', aspect.replace('/', ' / '));
   }
 
-  async #loadVerses() {
-    try {
-      const url = this.getAttribute('verses-src') || DEFAULT_VERSES_SRC;
-      const response = await fetch(new URL(url, window.location.href));
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const verses = await response.json();
-      return new Map(verses
-        .filter(item => typeof item?.id === 'string' && typeof item.verse === 'string')
-        .map(item => [item.id, item.verse]));
-    } catch (error) {
-      console.warn('Unable to load verses:', error);
-      return new Map();
-    }
-  }
-
-  async #load() {
+  async #renderPages() {
     const run = ++this.#loadId;
 
-    this.#mediaBase = this.getAttribute('media-base') || DEFAULT_MEDIA_BASE;
-    this.#images = [];
     this.#current = 0;
     this.#lastReported = null;
     this.#book.replaceChildren();
     this.#desktopSpread.replaceChildren();
+    this.#resizeObserver?.disconnect();
+    this.#resizeObserver = null;
+    this.#stopAudio();
     this.#loading.hidden = false;
     this.#loading.style.display = '';
-    this.#loading.textContent = 'Preparing your Daily Grace flipbook…';
+    this.#applyAttributes();
 
     try {
-      const today = new Date();
-      const dates = getCurrentWeekDates(today);
-      const [cover, fallback] = coverPaths(today);
-      const coverPromise = this.#loadImage(cover).then(src => src || this.#loadImage(fallback));
-
-      const [coverImage, availableImages, verses] = await Promise.all([
-        coverPromise,
-        Promise.all(dates.map(fileName => {
-          const month = fileName.split(' ')[0].toLowerCase();
-          return this.#loadImage(`images/sources/${month}/${fileName}`);
-        })),
-        this.#loadVerses()
-      ]);
-      if (run !== this.#loadId) return;
-
-      this.#verses = verses;
-      this.#images = [coverImage, ...availableImages].filter(Boolean);
-      if (this.#images.length === 0) {
-        this.#loading.textContent = 'No pages are available for this week yet.';
+      if (this.#pages.length === 0) {
+        this.#loading.textContent =
+          this.getAttribute('empty-text') || 'No pages available yet.';
         return;
       }
 
-      // A real final page keeps the blank reachable in both single and spread modes.
-      this.#images.push(null);
       this.#buildPages();
+      // Hold the overlay until the artwork has decoded, so the first page does
+      // not flash in at the wrong size before #resetFit measures it.
       await Promise.all([...this.#book.querySelectorAll('img')].map(img => new Promise(resolve => {
         if (img.complete) resolve(); else { img.onload = resolve; img.onerror = resolve; }
       })));
@@ -559,81 +564,80 @@ export class Flipbook extends HTMLElement {
 
       this.#resizeObserver = new ResizeObserver(() => this.#resetFit());
       this.#resizeObserver.observe(this.#stage);
-      this.#emit('ready', { pageCount: this.#images.length });
+      this.#emit('ready', { pageCount: this.#pages.length });
     } catch (error) {
       if (run !== this.#loadId) return;
-      this.#loading.textContent = `Unable to prepare flipbook: ${error.message}`;
+      this.#loading.textContent = `Unable to prepare pages: ${error.message}`;
       this.#emit('error', { message: error.message });
     }
   }
 
-  /* ----- Future-page placeholder ----- */
+  /* ----- Placeholder pages ----- */
 
-  #updateFuturePage(page, src) {
-    const future = isFuturePage(src);
-    page.classList.toggle('future-page', future);
-    const existing = page.querySelector('.availability-message');
-    if (!future) {
+  #updatePlaceholder(el, page) {
+    const spec = page && page.placeholder;
+    el.classList.toggle('future-page', !!spec);
+    const existing = el.querySelector('.availability-message');
+    if (!spec) {
       if (existing) existing.remove();
       return;
     }
     if (existing) return;
 
-    const date = imageFileName(src).match(/^([A-Za-z]+ \d{1,2}, \d{4})/)[1];
     const message = document.createElement('div');
     message.className = 'availability-message';
 
-    const logo = document.createElement('span');
-    logo.className = 'availability-logo';
-    logo.setAttribute('aria-hidden', 'true');
-    message.appendChild(logo);
-
-    const title = document.createElement('div');
-    title.className = 'availability-title';
-    title.textContent = 'DAILY GRACE';
-    message.appendChild(title);
-
-    if (isComicImage(src)) {
-      const comic = document.createElement('div');
-      comic.className = 'availability-comic';
-      comic.textContent = 'COMIC';
-      message.appendChild(comic);
+    if (spec.logo) {
+      const logo = document.createElement('span');
+      logo.className = 'availability-logo';
+      logo.setAttribute('aria-hidden', 'true');
+      message.appendChild(logo);
     }
 
-    const detail = document.createElement('div');
-    detail.className = 'availability-detail';
-    const label = document.createElement('div');
-    label.className = 'availability-label';
-    label.textContent = 'WILL BE AVAILABLE IN';
-    const releaseDate = document.createElement('div');
-    releaseDate.className = 'availability-date';
-    releaseDate.textContent = date;
-    detail.append(label, releaseDate);
-
-    const pageVerse = this.#verses.get(date);
-    if (pageVerse) {
-      const verse = document.createElement('div');
-      verse.className = 'availability-verse';
-      verse.textContent = pageVerse;
-      detail.appendChild(verse);
+    if (spec.title) {
+      const title = document.createElement('div');
+      title.className = 'availability-title';
+      title.textContent = spec.title;
+      message.appendChild(title);
     }
-    message.appendChild(detail);
-    page.appendChild(message);
+
+    if (spec.badge) {
+      const badge = document.createElement('div');
+      badge.className = 'availability-comic';
+      badge.textContent = spec.badge;
+      message.appendChild(badge);
+    }
+
+    if (spec.label || spec.headline || spec.body) {
+      const detail = document.createElement('div');
+      detail.className = 'availability-detail';
+      if (spec.label) {
+        const label = document.createElement('div');
+        label.className = 'availability-label';
+        label.textContent = spec.label;
+        detail.appendChild(label);
+      }
+      if (spec.headline) {
+        const headline = document.createElement('div');
+        headline.className = 'availability-date';
+        headline.textContent = spec.headline;
+        detail.appendChild(headline);
+      }
+      if (spec.body) {
+        const body = document.createElement('div');
+        body.className = 'availability-verse';
+        body.textContent = spec.body;
+        detail.appendChild(body);
+      }
+      message.appendChild(detail);
+    }
+    el.appendChild(message);
   }
 
   /* ----- Audio ----- */
 
-  #audioUrlForImage(src) {
-    const today = new Date();
-    const baseName = imageFileName(src).replace(/\.[^.]+$/, '');
-    const month = (baseName.match(/^([A-Za-z]+)\b/) || [])[1]
-      || new Date().toLocaleString('en-US', { month: 'long' });
-    return new URL(`audio/${today.getFullYear()}/${month}/webm/${baseName}.webm`, this.#mediaBase).href;
-  }
-
-  #playPageAudio(src) {
-    if (!hasNarration(src)) return;
-    const url = this.#audioUrlForImage(src);
+  #playPageAudio(url) {
+    if (!url) return;
     if (sameAudioUrl(this.#audio.src, url) && !this.#audio.paused) {
       this.#stopAudio();
       return;
@@ -660,7 +664,7 @@ export class Flipbook extends HTMLElement {
   #syncPlayButtons() {
     const playingUrl = !this.#audio.paused && this.#audio.src ? this.#audio.src : '';
     this.#root.querySelectorAll('.audio-play').forEach(btn => {
-      const on = playingUrl && sameAudioUrl(playingUrl, this.#audioUrlForImage(btn.dataset.src));
+      const on = playingUrl && sameAudioUrl(playingUrl, btn.dataset.audio);
       btn.classList.toggle('is-playing', !!on);
       btn.setAttribute('aria-pressed', on ? 'true' : 'false');
       btn.setAttribute('aria-label', on ? 'Pause narration' : 'Play narration');
@@ -668,11 +672,11 @@ export class Flipbook extends HTMLElement {
     });
   }
 
-  #createPlayButton(src) {
+  #createPlayButton(url) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'audio-play';
-    btn.dataset.src = src;
+    btn.dataset.audio = url;
     btn.setAttribute('aria-label', 'Play narration');
     btn.innerHTML = PLAY_ICON;
     const stopStageGesture = e => e.stopPropagation();
@@ -681,7 +685,7 @@ export class Flipbook extends HTMLElement {
     btn.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
-      this.#playPageAudio(src);
+      this.#playPageAudio(url);
     });
     return btn;
   }
@@ -712,11 +716,12 @@ export class Flipbook extends HTMLElement {
       - (single ? WIRE_OVERHANG + RIGHT_GUTTER + STAGE_PAD : 16));
     const availableH = Math.max(1, stageRect.height - (single ? STAGE_PAD * 2 + 6 : 16));
 
-    // Artwork is portrait. Use the actual first image ratio when loaded.
+    // Use the actual first image ratio once loaded; the attribute is the
+    // stand-in that keeps the first paint from jumping.
     const firstImg = this.#book.querySelector('img');
     const ratio = firstImg && firstImg.naturalWidth && firstImg.naturalHeight
       ? firstImg.naturalWidth / firstImg.naturalHeight
-      : 9 / 16;
+      : parseAspect(this.getAttribute('aspect'));
 
     let h = availableH;
     let w = h * ratio;
@@ -741,25 +746,27 @@ export class Flipbook extends HTMLElement {
   }
 
   #buildPages() {
-    this.#images.forEach((src, i) => {
+    this.#pages.forEach((entry, i) => {
       const page = document.createElement('div');
       page.className = 'page';
       page.hidden = true;
-      page.style.zIndex = String(this.#images.length - i);
+      page.style.zIndex = String(this.#pages.length - i);
 
-      if (!src) {
+      if (isBlank(entry)) {
         page.classList.add('end-page');
         page.setAttribute('aria-label', 'Blank end page');
         this.#book.appendChild(page);
         return;
       }
 
+      // A placeholder page still carries the image element so the two modes
+      // share one layout; .future-page just hides it behind the paper.
       const img = document.createElement('img');
-      img.src = src;
-      img.alt = `Daily Grace page ${i + 1}`;
+      if (entry.src) img.src = entry.src;
+      img.alt = entry.alt || `Page ${i + 1}`;
       img.draggable = false;
       page.appendChild(img);
-      if (hasNarration(src)) page.appendChild(this.#createPlayButton(src));
+      if (entry.audio) page.appendChild(this.#createPlayButton(entry.audio));
       img.addEventListener('load', () => this.#positionPlayButtons());
       this.#book.appendChild(page);
     });
@@ -770,14 +777,18 @@ export class Flipbook extends HTMLElement {
     [...this.#book.children].forEach((page, i) => {
       page.hidden = i !== Math.max(0, this.#current);
       page.style.zIndex = '1';
-      this.#updateFuturePage(page, this.#images[i]);
+      this.#updatePlaceholder(page, this.#pages[i]);
     });
     this.#renderDesktopSpread();
     this.#updateZoom();
 
     if (this.#lastReported !== this.#current) {
       this.#lastReported = this.#current;
-      this.#emit('pagechange', { index: this.#current, pageCount: this.#images.length });
+      this.#emit('pagechange', {
+        index: this.#current,
+        pageCount: this.#pages.length,
+        id: this.#pages[this.#current]?.id ?? null
+      });
     }
   }
 
@@ -785,23 +796,25 @@ export class Flipbook extends HTMLElement {
     this.#desktopSpread.replaceChildren();
     const start = spreadStart(this.#current);
     [start, start + 1].forEach(index => {
-      const src = this.#images[index];
+      const entry = this.#pages[index];
       const wrap = document.createElement('div');
       wrap.className = 'spread-page';
-      this.#updateFuturePage(wrap, src);
+      this.#updatePlaceholder(wrap, entry);
       this.#desktopSpread.appendChild(wrap);
-      if (!src) {
+      if (isBlank(entry)) {
+        // Index -1 is the opening leaf, which exists only in spread mode and
+        // has no descriptor behind it; anything else is a real blank page.
         const isEndPage = index >= 0;
         wrap.classList.add(isEndPage ? 'end-page' : 'blank-page');
         wrap.setAttribute('aria-label', isEndPage ? 'Blank end page' : 'Blank page');
         return;
       }
       const img = document.createElement('img');
-      img.src = src;
-      img.alt = `Daily Grace page ${index + 1}`;
+      if (entry.src) img.src = entry.src;
+      img.alt = entry.alt || `Page ${index + 1}`;
       img.draggable = false;
       wrap.appendChild(img);
-      if (hasNarration(src)) wrap.appendChild(this.#createPlayButton(src));
+      if (entry.audio) wrap.appendChild(this.#createPlayButton(entry.audio));
       img.addEventListener('load', () => this.#positionPlayButtons());
     });
     this.#syncPlayButtons();
@@ -815,7 +828,7 @@ export class Flipbook extends HTMLElement {
     const step = single ? 1 : 2;
     const next = this.#current + direction * step;
     const first = single ? 0 : -1;
-    if (this.#animating || next < first || next >= this.#images.length) return;
+    if (this.#animating || next < first || next >= this.#pages.length) return;
 
     this.#stopAudio();
     this.#playFlipSound();
@@ -927,7 +940,7 @@ export class Flipbook extends HTMLElement {
     this.#audio.addEventListener('ended', () => this.#stopAudio(), { signal });
 
     this.#singlePageQuery.addEventListener('change', () => {
-      if (this.#images.length === 0) return;
+      if (this.#pages.length === 0) return;
       this.#render();
       this.#resetFit();
     }, { signal });

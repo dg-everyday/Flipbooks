@@ -1,0 +1,32 @@
+{
+    "title": "Daniel 3 — The Fiery Furnace",
+    "aspect": "9/16",
+    "pages": [
+        {
+            "id": "statue",
+            "image": "assets/images/hero.webp",
+            "caption": "King Nebuchadnezzar raises a golden statue and commands everyone to bow before it.",
+            "audio": "assets/audio/correct.webm"
+        },
+        {
+            "id": "refusal",
+            "image": "assets/images/book.webp",
+            "caption": "Shadrach, Meshach and Abednego refuse to bow to anyone but God."
+        },
+        {
+            "id": "furnace",
+            "image": "assets/images/splash.webp",
+            "caption": "The king orders the furnace heated seven times hotter than usual."
+        },
+        {
+            "id": "fourth-man",
+            "image": "assets/images/did-you-know.webp",
+            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+        },
+        {
+            "id": "deliverance",
+            "image": "assets/images/trivia.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+
+        <title>Daily Grace — Stories</title>
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/flipbook-page.css?v=20260923-2"
+        />
+    </head>
+    <body>
+        <div class="app">
+            <div class="topbar">
+                <div class="brand">
+                    <img
+                        class="brand-logo"
+                        src="../../assets/images/daily-grace-white.webp"
+                        alt="Daily Grace"
+                        width="2172"
+                        height="724"
+                    />
+                    <span class="brand-pill" id="storyName">Stories</span>
+                </div>
+                <div class="tools">
+                    <button id="home" aria-label="Home" title="Home">
+                        <svg
+                            width="30"
+                            height="30"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="m3 10 9-7 9 7"></path>
+                            <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <flip-book
+                id="reader"
+                aspect="9/16"
+                label="Daily Grace story"
+            ></flip-book>
+        </div>
+
+        <script type="module">
+            // Same component as the flipbook, different content entirely. Which
+            // story to show comes from the query string: ?story=daniel3 reads
+            // assets/stories/daniel3.json.
+            import "../../apps/components/flip-book.js?v=20260923-2";
+            import {
+                storySlug,
+                loadStory,
+                toFlipPages,
+            } from "./scripts/stories.js?v=20260923-2";
+
+            const reader = document.getElementById("reader");
+            const storyName = document.getElementById("storyName");
+
+            // empty-text is read when the list is applied, so it is set first.
+            function showNothing(message) {
+                reader.setAttribute("empty-text", message);
+                reader.pages = [];
+            }
+
+            const { slug, reason } = storySlug();
+
+            if (reason === "missing") {
+                showNothing("No story chosen. Try stories.html?story=daniel3");
+            } else if (reason === "invalid") {
+                showNothing("That story name is not a valid one.");
+            } else {
+                try {
+                    const story = await loadStory(slug);
+
+                    if (story.title) {
+                        document.title = `Daily Grace — ${story.title}`;
+                        storyName.textContent = story.title;
+                        reader.setAttribute("label", story.title);
+                    }
+                    if (story.aspect) reader.setAttribute("aspect", story.aspect);
+
+                    if (story.pages.length === 0) {
+                        showNothing("That story has no pages yet.");
+                    } else {
+                        reader.pages = toFlipPages(story);
+                    }
+                } catch (error) {
+                    console.error(`Unable to load story "${slug}":`, error);
+                    showNothing(`Could not find a story called “${slug}”.`);
+                }
+            }
+        </script>
+        <script>
+            document.getElementById("home").addEventListener("click", () => {
+                window.location.href = "../../index.html";
+            });
+        </script>
+    </body>
+</html>

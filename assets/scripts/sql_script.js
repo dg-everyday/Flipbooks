@@ -228,7 +228,7 @@ function getVerses(bookName, chapter = null, verses = null) {
 
     // Build SQL
     const query = `
-        SELECT b.book_name, v.chapter, v.verse, v.text 
+        SELECT b.book_name, b.book_id, v.chapter, v.verse, v.text
         FROM verses AS v
         INNER JOIN books AS b ON v.book = b.book_id
         WHERE ${conditions.join("\n AND ")}

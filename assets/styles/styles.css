@@ -488,6 +488,9 @@ html:has(.qr-dialog[open]) { overflow: hidden; }
   backdrop-filter: blur(3px);
 }
 html:has(.verse-dialog[open]) { overflow: hidden; }
+/* The explanation popup lives in the results panel's shadow root, out of reach
+   of :has(), so the panel flags itself while the popup is open. */
+html:has(bible-search-results[explaining]) { overflow: hidden; }
 
 /* End-of-page splash: the thank-you poster that pops up once the reader
    reaches the very bottom. The dialog shrink-wraps the poster, so the box is

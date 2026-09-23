@@ -5,14 +5,16 @@
  * reference parsing and the database, and drives the component through its
  * methods. It renders the book header (symbol, name, Hebrew name, overview),
  * a "N verses found" summary and a scrolling reader that loads verses in
- * batches as you scroll or press "Load more verses".
+ * batches as you scroll or press "Load more verses". Each verse card has a
+ * dog-eared corner that opens the verse's explanation in a popup; the
+ * explanations are fetched one chapter at a time from explanations-base.
  *
  * Usage
  *   <bible-search-results id="results" media-base="https://.../media/"></bible-search-results>
  *   <script type="module" src="./apps/components/bible-search-results.js"></script>
  *
  *   results.loading('Loading Bible verses…');
- *   results.showVerses(rows);   // rows: [{ book_name, chapter, verse, text }]
+ *   results.showVerses(rows);   // rows: [{ book_name, book_id, chapter, verse, text }]
  *   results.showMessage('No verses found.');
  *   results.reset();            // clear and hide
  *
@@ -27,12 +29,19 @@
  *   batch-size      Verses added per batch. Default: 24
  *   compact         Present: hide the "N verses found" summary and the
  *                   end-of-results note. For popups showing one passage.
+ *   explanations-base  Folder of <book_id>/<chapter>.json explanation files
+ *                   (resolved against the page). Rows without a book_id get
+ *                   no explanation corner.
+ *                   Default: ../../assets/explanations/ (relative to this file)
+ *   explaining      Set by the component while the explanation popup is open,
+ *                   so the page can lock its own scrolling.
  *
  * Methods      reset(), loading(message), showMessage(message), showVerses(rows)
  * Properties   busy (read-only)
  *
  * CSS custom properties
- *   --search-navy, --search-ink, --search-hebrew, --reference-width
+ *   --search-navy, --search-ink, --search-hebrew, --search-paper,
+ *   --reference-width
  *
  * Fonts: Germania One, Strait and Roboto are registered on the document by
  * assets/scripts/fonts.js.
@@ -49,6 +58,13 @@ const bookSymbolUrl = (mediaBase, book) =>
 const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_BATCH_SIZE = 24;
 const DEFAULT_METADATA_SRC = new URL('../../assets/book-metadata.json', import.meta.url).href;
+const DEFAULT_EXPLANATIONS_BASE = new URL('../../assets/explanations/', import.meta.url).href;
+
+// The "source" of each entry in an explanation file (see tools/explanations).
+const EXPLANATION_SOURCES = {
+  jfb: 'Jamieson-Fausset-Brown Bible Commentary (1871)',
+  gill: 'John Gill, Exposition of the Entire Bible (1746–63)',
+};
 
 const STYLES = /* css */ `
   :host {
@@ -56,6 +72,7 @@ const STYLES = /* css */ `
     --search-ink: #10253b;
     --search-hebrew: #963d32;
     --search-gold: #a8810c;
+    --search-paper: #f3e7d2;
     --reference-width: 6.25rem;
 
     display: block;
@@ -127,6 +144,7 @@ const STYLES = /* css */ `
   }
   .verse-list { display: grid; gap: 8px; }
   .verse-card {
+    position: relative;
     display: grid;
     grid-template-columns: var(--reference-width) minmax(0, 1fr);
     align-items: start;
@@ -134,6 +152,39 @@ const STYLES = /* css */ `
     border: 1px solid rgb(0 27 52 / 16%);
     border-radius: 6px;
     background: rgb(255 255 255 / 16%);
+  }
+  /* The dog-eared corner opens the verse's explanation. The card's corner is
+     cut away so the panel shows through, and the flap is the back of the
+     paper folded up over the card, creased along the cut. It stays small
+     enough to clear the text above the card's bottom padding. */
+  .verse-card.explainable {
+    --fold: 24px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--fold)),
+      calc(100% - var(--fold)) 100%, 0 100%);
+    transition: clip-path .15s ease;
+  }
+  .verse-card.explainable:has(.explain:hover, .explain:focus-visible) { --fold: 30px; }
+  /* A full 44px tap target on the card's outer corner, over its border. */
+  .explain {
+    position: absolute; right: -1px; bottom: -1px;
+    width: 44px; height: 44px; padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    filter: drop-shadow(-1px -1px 1.5px rgb(0 27 52 / 28%));
+  }
+  .explain::before {
+    content: '';
+    position: absolute; right: 0; bottom: 0;
+    width: var(--fold); height: var(--fold);
+    border-top-left-radius: 3px;
+    background: linear-gradient(135deg, #fffaf1 0%, #f1e5cd 34%, #dcc9a6 50%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    transition: width .15s ease, height .15s ease;
+  }
+  .explain:focus-visible { outline: none; }
+  .explain:focus-visible::before {
+    background: linear-gradient(135deg, #fffaf1 0%, #e9dcc0 30%, var(--search-navy) 50%);
   }
   .verse-reference { margin: 0; font-weight: 400; }
   .verse-numbers {
@@ -175,6 +226,64 @@ const STYLES = /* css */ `
   .load-more:focus-visible { outline: 2px solid var(--search-navy); outline-offset: -2px; }
   .end { margin: 16px 0 6px; text-align: center; }
 
+  /* Explanation popup: the book header's layout, with the reference as the
+     title and the commentary where the overview would be. */
+  .explanation {
+    width: min(640px, 92vw);
+    max-height: 88vh;
+    max-height: 88dvh;
+    padding: 14px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--search-paper);
+    color: var(--search-ink);
+    box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
+    overflow: auto;
+    overscroll-behavior: contain;
+    /* Not the zoom-out cursor of a verse popup this panel may sit in. */
+    cursor: auto;
+  }
+  .explanation::backdrop {
+    background: rgb(0 27 52 / 60%);
+    backdrop-filter: blur(3px);
+  }
+  .explanation-card { position: relative; align-items: start; }
+  .explanation-card .book-symbol { margin-top: 4px; }
+  .explanation-card h2 { padding-right: 32px; }
+  .explanation-card .verse-numbers { padding: 0; }
+  .explanation-body {
+    margin-top: 10px;
+    font: 400 1.0625rem/1.5 'Strait', 'Roboto', sans-serif;
+  }
+  .explanation-body p { margin: 0 0 .75em; }
+  .explanation-body p:last-child { margin-bottom: 0; }
+  .explanation-body strong { color: var(--search-navy); font-weight: 700; }
+  .explanation-body .message { padding: 0; }
+  .explanation-source {
+    margin: 14px 0 0; padding-top: 10px;
+    border-top: 1px solid rgb(128 91 24 / 25%);
+    font: .8125rem/1.5 'Roboto', Arial, sans-serif;
+    color: #4f5c65;
+  }
+  .explanation-close {
+    position: absolute; top: 6px; right: 6px;
+    width: 36px; height: 36px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: transparent; color: var(--search-navy);
+    font: 400 1.5rem/1 'Roboto', Arial, sans-serif;
+    cursor: pointer;
+  }
+  .explanation-close:hover { background: rgb(0 27 52 / 8%); }
+  .explanation-close:focus-visible { outline: 2px solid var(--search-navy); outline-offset: 2px; }
+
+  @media (max-width: 420px) {
+    /* Too narrow for the symbol column: give the commentary the full width. */
+    .explanation { padding: 10px; }
+    .explanation-card { grid-template-columns: minmax(0, 1fr); padding: 14px 0; }
+    .explanation-card .book-symbol { display: none; }
+    .explanation-card .book-details { grid-column: 1; border-left: 0; }
+  }
+
   @media (max-width: 420px) {
     :host { --reference-width: 5.25rem; }
     .book-symbol { width: 52px; height: 52px; }
@@ -206,12 +315,79 @@ async function getSvgMetadataFromUrl(url, signal) {
   return getSvgMetadata(await response.text());
 }
 
+// Explanations are shared by every instance: one fetch per chapter file.
+const explanationCache = new Map();
+
+function loadChapterExplanations(url) {
+  if (!explanationCache.has(url)) {
+    const request = fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Failed to fetch explanations: ${response.status}`);
+        return response.json();
+      })
+      .catch((error) => {
+        explanationCache.delete(url);
+        throw error;
+      });
+    explanationCache.set(url, request);
+  }
+  return explanationCache.get(url);
+}
+
+const comparable = (text) =>
+  text.toLowerCase().replace(/&c\.?/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+
+// Both commentaries open a paragraph with the words of the verse it explains:
+// JFB as "words--note", Gill as "words,.... note". Those words are set in bold,
+// but only when they really are in the verse, so a dash in ordinary prose is
+// left alone.
+const LEAD_WORDS = /^([^\n]{1,200}?)(?:--|,?\.{4})\s*/;
+
+function explanationParagraph(block, verseText) {
+  const paragraph = document.createElement('p');
+  const match = block.match(LEAD_WORDS);
+  const lead = match && comparable(match[1]);
+  if (lead && comparable(verseText).includes(lead)) {
+    const words = document.createElement('strong');
+    words.textContent = match[1].trim();
+    const rest = block.slice(match[0].length).replace(/--/g, '—');
+    paragraph.append(words, rest ? ` — ${rest}` : '');
+  } else {
+    paragraph.textContent = block.replace(/--/g, '—');
+  }
+  return paragraph;
+}
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+// The same pop the page's own popups use (assets/scripts/script.js).
+function popDialog(dialog, direction) {
+  const opening = direction === 'open';
+  const options = {
+    duration: opening ? 460 : 220,
+    easing: opening ? 'cubic-bezier(.2, .9, .25, 1.2)' : 'cubic-bezier(.4, 0, 1, 1)',
+    fill: 'forwards',
+  };
+  const entering = { transform: 'scale(.82) translateY(28px)', opacity: 0 };
+  const full = { transform: 'none', opacity: 1 };
+  const leaving = { transform: 'scale(.94)', opacity: 0 };
+  dialog.animate(opening ? [entering, full] : [full, leaving], options);
+  const backdrop = dialog.animate(
+    opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+    { ...options, easing: 'ease', pseudoElement: '::backdrop' },
+  );
+  return backdrop.finished.catch(() => {});
+}
+
 export class BibleSearchResults extends HTMLElement {
   #root;
   #content;
   #status;
   #generation = 0;
   #observer = null;
+  #explanation;
+  #explanationRequest = 0;
+  #explanationClosing = false;
 
   constructor() {
     super();
@@ -219,9 +395,43 @@ export class BibleSearchResults extends HTMLElement {
     this.#root.innerHTML = `
       <style>${STYLES}</style>
       <section aria-label="Bible verse search results"></section>
-      <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
+      <p class="visually-hidden" role="status" aria-atomic="true"></p>
+      <dialog class="explanation" aria-labelledby="explanation-title">
+        <article class="book-header explanation-card">
+          <img class="book-symbol" width="64" height="64" alt="">
+          <div class="book-details">
+            <h2 id="explanation-title">
+              <span class="visually-hidden"></span>
+              <span class="explanation-book" aria-hidden="true"></span>
+              <span class="verse-numbers" aria-hidden="true">
+                <span class="chapter-number"></span><span class="verse-number"></span>
+              </span>
+            </h2>
+            <div class="explanation-body"></div>
+            <p class="explanation-source" hidden></p>
+          </div>
+          <button type="button" class="explanation-close" aria-label="Close explanation">×</button>
+        </article>
+      </dialog>`;
     this.#content = this.#root.querySelector('section');
     this.#status = this.#root.querySelector('[role="status"]');
+
+    const dialog = this.#root.querySelector('.explanation');
+    this.#explanation = dialog;
+    dialog.querySelector('.book-symbol').onerror = (event) => { event.target.hidden = true; };
+    // Only the close button closes the popup: not Escape, not a tap outside.
+    // Stopping Escape at keydown also keeps Chrome from forcing the dialog shut
+    // on a repeated press, which it does when only cancel is prevented.
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') event.preventDefault();
+    });
+    dialog.addEventListener('cancel', (event) => event.preventDefault());
+    dialog.addEventListener('click', (event) => {
+      // This panel may itself sit in a popup that closes on any tap.
+      event.stopPropagation();
+      if (event.target.closest('.explanation-close')) this.#closeExplanation();
+    });
+    dialog.addEventListener('close', () => this.removeAttribute('explaining'));
   }
 
   connectedCallback() {
@@ -244,9 +454,17 @@ export class BibleSearchResults extends HTMLElement {
     return size > 0 ? size : DEFAULT_BATCH_SIZE;
   }
 
+  get #explanationsBase() {
+    const base = this.getAttribute('explanations-base');
+    if (!base) return DEFAULT_EXPLANATIONS_BASE;
+    return new URL(base.endsWith('/') ? base : `${base}/`, document.baseURI).href;
+  }
+
   /** Clear the panel and hide it. Also cancels any pending overview lookups. */
   reset() {
     this.#generation++;
+    this.#explanationRequest++;
+    if (this.#explanation.open) this.#explanation.close();
     this.#observer?.disconnect();
     this.#observer = null;
     this.#content.replaceChildren();
@@ -408,8 +626,86 @@ export class BibleSearchResults extends HTMLElement {
     text.className = 'verse-text';
     text.textContent = row.text;
     card.append(reference, text);
+    if (row.book_id) {
+      card.classList.add('explainable');
+      card.append(this.#createExplainButton(bookName, row));
+    }
     item.append(card);
     return item;
+  }
+
+  #createExplainButton(bookName, row) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'explain';
+    button.title = 'Explanation';
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.setAttribute('aria-label', `Explanation of ${bookName} ${row.chapter}:${row.verse}`);
+    button.addEventListener('click', () => this.#openExplanation(bookName, row));
+    return button;
+  }
+
+  #showExplanationMessage(message) {
+    const paragraph = document.createElement('p');
+    paragraph.className = 'message';
+    paragraph.textContent = message;
+    this.#explanation.querySelector('.explanation-body').replaceChildren(paragraph);
+    this.#explanation.querySelector('.explanation-source').hidden = true;
+  }
+
+  async #openExplanation(bookName, row) {
+    const request = ++this.#explanationRequest;
+    const dialog = this.#explanation;
+    const symbol = dialog.querySelector('.book-symbol');
+    symbol.hidden = false;
+    symbol.src = bookSymbolUrl(this.#mediaBase, bookName);
+    dialog.querySelector('#explanation-title .visually-hidden').textContent =
+      `Explanation of ${bookName} ${row.chapter}:${row.verse}`;
+    dialog.querySelector('.explanation-book').textContent = bookName;
+    dialog.querySelector('.chapter-number').textContent = `${row.chapter}:`;
+    dialog.querySelector('.verse-number').textContent = row.verse;
+    this.#showExplanationMessage('Loading explanation…');
+
+    if (!dialog.open) {
+      dialog.showModal();
+      this.setAttribute('explaining', '');
+      if (!reducedMotion.matches) popDialog(dialog, 'open');
+    }
+    dialog.scrollTop = 0;
+
+    try {
+      const url = new URL(
+        `${encodeURIComponent(row.book_id)}/${Number(row.chapter)}.json`,
+        this.#explanationsBase,
+      ).href;
+      const entry = (await loadChapterExplanations(url))[String(row.verse)];
+      if (request !== this.#explanationRequest) return;
+      if (!entry?.text) {
+        this.#showExplanationMessage('There is no explanation for this verse yet.');
+        return;
+      }
+      const paragraphs = entry.text.split(/\n{2,}/)
+        .map((block) => explanationParagraph(block, row.text));
+      dialog.querySelector('.explanation-body').replaceChildren(...paragraphs);
+      const source = dialog.querySelector('.explanation-source');
+      source.textContent = `From ${EXPLANATION_SOURCES[entry.source] ?? entry.source}`;
+      source.hidden = false;
+    } catch (error) {
+      if (request !== this.#explanationRequest) return;
+      console.warn(`Explanation unavailable for ${bookName} ${row.chapter}:${row.verse}:`, error);
+      this.#showExplanationMessage('The explanation could not be loaded. Please try again.');
+    }
+  }
+
+  async #closeExplanation() {
+    const dialog = this.#explanation;
+    if (!dialog.open || this.#explanationClosing) return;
+    this.#explanationClosing = true;
+    this.#explanationRequest++;
+    if (!reducedMotion.matches) await popDialog(dialog, 'close');
+    dialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    dialog.close();
+    this.#explanationClosing = false;
   }
 
   #renderVerses(rows, generation) {

@@ -72,6 +72,7 @@ declared inside a shadow root.
 | File | Contents |
 | --- | --- |
 | `assets/db/dailygrace.db` | The complete KJV: 66 books, 1,189 chapters, 31,102 verses (4.7 MB). Tables: `books(book_number, book_id, book_name)` and `verses(docid, book, chapter, verse, text)`, joined on `verses.book = books.book_id`. |
+| `assets/explanations/<book_id>/<chapter>.json` | A commentary note per verse (Jamieson-Fausset-Brown, or John Gill where JFB is silent), keyed by verse number. Kept out of `dailygrace.db` so the search download stays small; `<bible-search-results>` fetches one chapter when a verse's folded corner is tapped. Rebuild with `tools/explanations/`. |
 | `assets/verses.json` | Daily verse, text, and reflection, keyed by date string (`"September 1, 2026"`). Also supplies the verse shown on not-yet-released flipbook pages. |
 | `assets/db/didyouknow.db` | 1,021 Bible facts in one table, `did_you_know(id, Title, Fact, Reference_verse, Book, Similar_books)`. `Reference_verse` must parse and exist in `dailygrace.db`, since tapping it opens the passage. `Similar_books` holds four books that are never the row's own `Book`; `<bible-trivia>` draws two of them as wrong answers. Add rows with `tools/didyouknow/add_rows.py`. |
 | `assets/did-you-know.json` | The original 501 facts, superseded by `didyouknow.db` and no longer read by anything. |

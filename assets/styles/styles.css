@@ -321,6 +321,8 @@ did-you-know.card { padding-inline: 10px; }
   border-top: 1px solid transparent;
   border-image: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent) 1;
 }
+/* The stories row closes the stack, so it also takes the hairline beneath it. */
+.devotional-stack > story-carousel:last-child { border-bottom: 1px solid transparent; }
 
 /* Reflection: a navy panel with gold accents, set apart from the cream page. */
 .reflection-card {
@@ -389,6 +391,16 @@ did-you-know.card { padding-inline: 10px; }
 }
 /* The panel is its own block, so it does not need the section divider above it. */
 .devotional-stack > .reflection-card { border-top: 1px solid rgb(225 182 93 / 40%); border-image: none; }
+/* Still mark the break before it: the usual hairline, centred in the visible
+   gap, which is the card's bottom padding plus the 28px stack gap. */
+.devotional-stack > :has(+ .reflection-card) { position: relative; }
+.devotional-stack > :has(+ .reflection-card)::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 calc((34px - 28px) / 2 - .5px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent);
+}
 
 .site-footer {
   color: var(--navy);
@@ -579,6 +591,7 @@ html:has(.splash-dialog[open]) { overflow: hidden; }
   .hero-icon { width: 40px; height: 40px; }
   .daily-section { padding: 0 0 65px; }
   .card { padding: 27px 23px; }
+  .devotional-stack > :has(+ .reflection-card)::after { bottom: calc((27px - 28px) / 2 - .5px); }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }

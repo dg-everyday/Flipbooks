@@ -40,6 +40,15 @@ jobs:
           mkdir _site
           cp index.html CNAME favicon.ico _site/
           cp -R assets apps _site/
+          # Stamp every ?v=... in the shipped HTML with this commit. Pages
+          # serves HTML for 10 minutes but scripts for 4 hours, so without
+          # this a deploy can hand a visitor fresh HTML calling into a stale
+          # cached script. Only the copy in _site is rewritten; the tokens in
+          # the repo stay put and serve as the fallback for local viewing.
+          VERSION="${GITHUB_SHA::7}"
+          find _site -name '*.html' \
+            -exec sed -i -E "s/\?v=[A-Za-z0-9._-]+/?v=$VERSION/g" {} +
+          echo "Stamped asset URLs with $VERSION"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

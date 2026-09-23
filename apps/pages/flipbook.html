@@ -27,7 +27,7 @@
         <title>Daily Grace — Flipbook</title>
         <link
             rel="stylesheet"
-            href="../../assets/styles/flipbook-page.css?v=20260923-2"
+            href="../../assets/styles/flipbook-page.css?v=20260923-3"
         />
     </head>
     <body>
@@ -62,13 +62,30 @@
                 </div>
             </div>
 
-            <flip-book id="reader"></flip-book>
+            <flip-book
+                id="reader"
+                aspect="9/16"
+                label="Daily Grace flipbook"
+                empty-text="No pages are available for this week yet."
+            ></flip-book>
         </div>
 
-        <script
-            type="module"
-            src="../../apps/components/flip-book.js?v=20260923-2"
-        ></script>
+        <script type="module">
+            // Importing the component first guarantees the custom element is
+            // upgraded before `pages` is assigned; setting it on a plain
+            // HTMLElement would shadow the accessor and the list would never
+            // reach the component.
+            import "../../apps/components/flip-book.js?v=20260923-3";
+            import { buildWeekPages } from "./scripts/daily-grace-week.js?v=20260923-3";
+
+            const reader = document.getElementById("reader");
+            try {
+                reader.pages = await buildWeekPages();
+            } catch (error) {
+                console.error("Unable to build this week's pages:", error);
+                reader.pages = [];
+            }
+        </script>
         <script>
             document.getElementById("home").addEventListener("click", () => {
                 // Stepping back lets the browser hand the main page over just

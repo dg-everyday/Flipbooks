@@ -7,7 +7,7 @@
 //   node assets/scripts/check-assets.mjs                 local + remote
 //   node assets/scripts/check-assets.mjs --skip-remote   local only (offline)
 //   node assets/scripts/check-assets.mjs --warn-remote   remote misses warn, never fail
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,9 +25,12 @@ const fail = (msg) => failures.push(msg);
 const SOURCES = [
     "index.html",
     "apps/pages/flipbook.html",
+    "apps/pages/stories.html",
     "assets/styles/styles.css",
     "assets/styles/flipbook-page.css",
     "apps/components/flip-book.js",
+    "apps/pages/scripts/daily-grace-week.js",
+    "apps/pages/scripts/stories.js",
 ];
 const REFERENCE = /(?:src|href)="([^"]+)"|url\(\s*['"]?([^'")]+?)['"]?\s*\)/g;
 const EXTERNAL = /^(?:[a-z][a-z0-9+.-]*:|\/\/|#|\?)/i;
@@ -51,6 +54,42 @@ for (const source of SOURCES) {
             : resolve(dirname(path), ref);
         checked += 1;
         if (!existsSync(target)) fail(`${source} -> ${raw} (no such file)`);
+    }
+}
+
+// --- Pass 1b: story manifests point at files we ship ------------------------
+
+// Story images live in JSON, not in src/href, so pass 1 cannot see them. A bad
+// path here shows as a blank page rather than an error, so it is checked too.
+// Manifest paths are written relative to the site root; absolute URLs are the
+// media host's problem, not ours.
+const STORY_DIR = resolve(ROOT, "assets/stories");
+if (existsSync(STORY_DIR)) {
+    for (const file of readdirSync(STORY_DIR)) {
+        if (!file.endsWith(".json")) continue;
+        const source = `assets/stories/${file}`;
+        let manifest;
+        try {
+            manifest = JSON.parse(readFileSync(resolve(STORY_DIR, file), "utf8"));
+        } catch (error) {
+            fail(`${source} is not valid JSON (${error.message})`);
+            continue;
+        }
+        const pages = Array.isArray(manifest) ? manifest : manifest?.pages;
+        if (!Array.isArray(pages)) {
+            fail(`${source} has no pages array`);
+            continue;
+        }
+        for (const [i, page] of pages.entries()) {
+            for (const key of ["image", "audio"]) {
+                const raw = page?.[key];
+                if (!raw || EXTERNAL.test(raw)) continue;
+                checked += 1;
+                if (!existsSync(resolve(ROOT, `.${raw.startsWith("/") ? "" : "/"}${raw}`))) {
+                    fail(`${source} page ${i + 1} ${key} -> ${raw} (no such file)`);
+                }
+            }
+        }
     }
 }
 

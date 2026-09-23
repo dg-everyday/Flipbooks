@@ -11,7 +11,7 @@
  *
  * Attributes
  *   media-base   Base URL for images and audio.
- *                Default: http://localhost:9001/media/
+ *                Default: https://dailygrace.faith/media/
  *   date         Day to show as YYYY-MM-DD. Default: today in Asia/Manila.
  *
  * Files are resolved from the date:
@@ -33,8 +33,8 @@
  * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
-// const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const TIME_ZONE = 'Asia/Manila';
 
 // Line-art icons, matching the stroked look of the other round banner buttons.

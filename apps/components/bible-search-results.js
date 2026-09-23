@@ -23,7 +23,7 @@
  *
  * Attributes
  *   media-base      Base URL for book symbols (images/symbols/<Book>-symbol.svg).
- *                   Default: http://localhost:9001/media/
+ *                   Default: https://dailygrace.faith/media/
  *   metadata-src    URL of the bundled book metadata used when the symbol SVG
  *                   cannot be read cross-origin (resolved against the page).
  *                   Default: ../../assets/book-metadata.json (relative to this file)
@@ -56,8 +56,8 @@ const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
 const bookSymbolUrl = (mediaBase, book) =>
   `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
 
-// const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+//const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_BATCH_SIZE = 24;
 const DEFAULT_METADATA_SRC = new URL('../../assets/book-metadata.json', import.meta.url).href;
 const DEFAULT_EXPLANATIONS_BASE = new URL('../../assets/explanations/', import.meta.url).href;

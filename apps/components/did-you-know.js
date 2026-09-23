@@ -11,7 +11,7 @@
  *
  * Attributes
  *   media-base   Base URL for book symbols (images/symbols/<Book>-symbol.svg).
- *                Default: http://localhost:9001/media/
+ *                Default: https://dailygrace.faith/media/
  *   src          URL of the SQLite database holding the did_you_know table,
  *                resolved against the page.
  *                Default: ../../assets/db/didyouknow.db (relative to this file)
@@ -47,8 +47,8 @@ const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
 const bookSymbolUrl = (mediaBase, book) =>
   `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
 
-// const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+//const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_COUNT = 5;
 
 const asset = (path) => new URL(path, import.meta.url).href;

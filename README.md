@@ -45,8 +45,10 @@ documented in a header comment at the top of its file.
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
 
 Components take a `media-base` attribute; `assets/scripts/script.js` passes the
-production host to each one on the homepage. Their built-in default is
-`http://localhost:9001/media/` (`<flip-book>` defaults to production instead).
+production host to each one on the homepage. Their built-in default is the
+production host too, `https://dailygrace.faith/media/`. To test against a local
+media server, switch the commented-out `http://localhost:9001/media/` line at
+the top of the component (or of `script.js`).
 
 Germania One, Strait, and Roboto are registered on the *document* by
 `assets/scripts/fonts.js`, because browsers do not reliably load `@font-face`

@@ -23,7 +23,7 @@
 
         <title>Grace for Today • Our Faith for Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260923-3" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260923-4" />
     </head>
 
     <body>
@@ -42,6 +42,20 @@
                         role="search"
                         id="devotional-search"
                     >
+                        <button
+                            id="search-mode"
+                            type="button"
+                            aria-pressed="false"
+                            aria-label="Keyword search"
+                            title="Locked: search by Bible reference. Tap to search by keywords."
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path class="shackle-closed" d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
+                                <path class="shackle-open" d="M8 10.5V5.5a4 4 0 0 1 8 0v1" />
+                                <rect x="4.5" y="10.5" width="15" height="11" rx="2.5" />
+                                <path class="lock-letter" d="M10 13v6m0-6h2.25a1.5 1.5 0 0 1 0 3H10m0 0h2.75a1.5 1.5 0 0 1 0 3H10" />
+                            </svg>
+                        </button>
                         <label class="visually-hidden" for="search-query"
                             >Search bible verse</label
                         >
@@ -169,13 +183,16 @@
                         <p id="reflection-text"></p>
                         <p class="closing">Pause. Trust. Take the next step.</p>
                     </article>
+
+                    <!-- <story-carousel id="story-carousel"></story-carousel> -->
+
                 </section>
             </main>
 
             <footer class="site-footer">
                 <div class="footer-main">
                     <div class="footer-message">
-                        <h2>Grace for today.<br />Hope for tomorrow.</h2>
+                        <h2>Grace for today.<br />Our faith for tomorrow.</h2>
                         <p>
                             A quiet moment in God's Word.<br />Fresh strength
                             for every day.
@@ -206,10 +223,32 @@
                     </figure>
                 </div>
                 <div class="footer-bottom">
-                    <a class="footer-brand" href="./"
-                        >Daily Grace <span>Faith</span></a
-                    >
-                    <span>A year of grace · One day at a time</span>
+                    <div class="footer-sign">
+                        <a class="footer-brand" href="./"
+                            >Daily Grace <span>Faith</span></a
+                        >
+                        <span class="footer-tagline"
+                            >A year of grace · One day at a time</span
+                        >
+                    </div>
+                    <!-- TODO: replace each # with the Daily Grace account URL. -->
+                    <nav class="footer-social" aria-label="Daily Grace on social media">
+                        <a href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8A26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="X" title="X">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z"/></svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.4H7.7V14h2.7v8h3.1Z"/></svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2-2.8V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.9 7.9 0 0 0 4.4 1.3V6.6A4.6 4.6 0 0 1 16.6 2Z"/></svg>
+                        </a>
+                    </nav>
                 </div>
             </footer>
         </div>
@@ -246,11 +285,12 @@
         </dialog>
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
-        <script src="assets/scripts/sql_script.js?v=20260923-3"></script>
-        <script src="assets/scripts/script.js?v=20260923-3"></script>
+        <script src="assets/scripts/sql_script.js?v=20260923-4"></script>
+        <script src="assets/scripts/script.js?v=20260923-5"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20260923-3"></script>
-        <script type="module" src="apps/components/bible-search-results.js?v=20260923-3"></script>
+        <script type="module" src="apps/components/bible-search-results.js?v=20260923-6"></script>
         <script type="module" src="apps/components/poster-card.js?v=20260923-3"></script>
         <script type="module" src="apps/components/bible-trivia.js?v=20260923-3"></script>
+        <script type="module" src="apps/components/story-carousel.js?v=20260923-3"></script>
     </body>
 </html>

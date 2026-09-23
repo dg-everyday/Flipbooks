@@ -52,9 +52,47 @@ const searchClear = document.getElementById("search-clear");
 const searchResults = document.getElementById("search-results");
 searchResults.setAttribute("media-base", MEDIA_BASE_URL);
 const bibleBookSuggestions = document.getElementById("bible-books");
+const searchMode = document.getElementById("search-mode");
+const searchQueryLabel = document.querySelector('label[for="search-query"]');
 let bibleBooksLoading = null;
 let bibleBooks = [];
 let activeBookIndex = -1;
+
+// The padlock beside the search field switches between the two searches.
+// Locked (the default) finds a Bible reference; unlocked finds verses that
+// contain every word typed, with no book suggestions.
+const SEARCH_MODES = {
+    reference: {
+        placeholder: "Ephesians 2:8-9",
+        label: "Search bible verse",
+        title: "Locked: search by Bible reference. Tap to search by keywords.",
+    },
+    keywords: {
+        placeholder: "Words, e.g. grace faith",
+        label: "Search bible by keywords",
+        title: "Unlocked: search by keywords. Tap to search by Bible reference.",
+    },
+};
+let keywordSearch = false;
+
+function setSearchMode(keywords) {
+    keywordSearch = keywords;
+    const mode = SEARCH_MODES[keywords ? "keywords" : "reference"];
+    searchMode.setAttribute("aria-pressed", String(keywords));
+    searchMode.title = mode.title;
+    searchQuery.placeholder = mode.placeholder;
+    searchQueryLabel.textContent = mode.label;
+    // A reference makes a poor keyword search and vice versa, so start fresh.
+    searchQuery.value = "";
+    searchClear.hidden = true;
+    resetBibleSearch();
+    renderBookSuggestions();
+}
+
+searchMode.addEventListener("click", () => {
+    setSearchMode(!keywordSearch);
+    searchQuery.focus();
+});
 
 function closeBookSuggestions() {
     bibleBookSuggestions.hidden = true;
@@ -65,8 +103,9 @@ function closeBookSuggestions() {
 
 function renderBookSuggestions() {
     const query = searchQuery.value.trim().toLocaleLowerCase();
-    // Only suggest books once something has been typed, so clearing the field hides the list.
-    if (!query) {
+    // Only suggest books once something has been typed, so clearing the field
+    // hides the list. Keyword search has no book suggestions at all.
+    if (!query || keywordSearch) {
         bibleBookSuggestions.replaceChildren();
         closeBookSuggestions();
         return;
@@ -166,6 +205,10 @@ async function searchBibleVerses() {
     const generation = searchGeneration;
     searchResults.loading("Loading Bible verses…");
     try {
+        if (keywordSearch) {
+            await searchBibleKeywords(query, generation);
+            return;
+        }
         let reference;
         try {
             reference = parseBibleReference(query);
@@ -194,6 +237,23 @@ async function searchBibleVerses() {
         console.warn("Bible search failed:", error);
         searchResults.showMessage("Bible verses could not be loaded. Please search again to retry.");
     }
+}
+
+async function searchBibleKeywords(query, generation) {
+    const words = parseSearchKeywords(query);
+    if (!words.length) {
+        searchResults.showMessage("Type one or more whole words, such as grace faith.");
+        return;
+    }
+    await loadBibleBookSuggestions();
+    if (generation !== searchGeneration) return;
+    const rows = searchVersesByKeywords(words);
+    if (!rows.length) {
+        const list = words.map((word) => `“${word}”`).join(", ");
+        searchResults.showMessage(`No verses contain all of ${list}. Try fewer or different words.`);
+        return;
+    }
+    searchResults.showKeywordResults(rows, words);
 }
 
 searchForm.addEventListener("submit", (event) => {

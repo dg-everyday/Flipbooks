@@ -114,7 +114,7 @@ body {
 .hero-search input {
   width: 100%;
   min-width: 0;
-  padding: 10px 12px 10px 20px;
+  padding: 10px 12px 10px 4px;
   border: 0;
   border-radius: 999px;
   background: transparent;
@@ -150,6 +150,21 @@ body {
 @keyframes search-clear-pop { from { opacity: 0; scale: .6; } to { opacity: 1; scale: 1; } }
 @media (prefers-reduced-motion: reduce) {
   #search-clear, #search-clear:not([hidden]) svg { transition: none; animation: none; }
+}
+/* Search mode toggle: the padlock is locked for Bible reference search (the
+   default) and opens for keyword search. */
+#search-mode { margin-left: 4px; color: #4f6478; transition: color .15s ease, transform .15s ease; }
+#search-mode svg { width: 24px; height: 24px; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+#search-mode .lock-letter { stroke-width: 1.5; }
+#search-mode .shackle-open,
+#search-mode[aria-pressed="true"] .shackle-closed { display: none; }
+#search-mode[aria-pressed="true"] .shackle-open { display: inline; }
+#search-mode[aria-pressed="true"] { color: var(--navy); }
+#search-mode:hover { color: var(--navy); }
+#search-mode:active { transform: scale(.92); }
+#search-mode:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
+@media (prefers-reduced-motion: reduce) {
+  #search-mode { transition: none; }
 }
 .bible-book-list {
   position: absolute;
@@ -321,6 +336,8 @@ did-you-know.card { padding-inline: 10px; }
   border-top: 1px solid transparent;
   border-image: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent) 1;
 }
+/* The stories row closes the stack, so it also takes the hairline beneath it. */
+.devotional-stack > story-carousel:last-child { border-bottom: 1px solid transparent; }
 
 /* Reflection: a navy panel with gold accents, set apart from the cream page. */
 .reflection-card {
@@ -389,6 +406,16 @@ did-you-know.card { padding-inline: 10px; }
 }
 /* The panel is its own block, so it does not need the section divider above it. */
 .devotional-stack > .reflection-card { border-top: 1px solid rgb(225 182 93 / 40%); border-image: none; }
+/* Still mark the break before it: the usual hairline, centred in the visible
+   gap, which is the card's bottom padding plus the 28px stack gap. */
+.devotional-stack > :has(+ .reflection-card) { position: relative; }
+.devotional-stack > :has(+ .reflection-card)::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 calc((34px - 28px) / 2 - .5px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent);
+}
 
 .site-footer {
   color: var(--navy);
@@ -476,6 +503,9 @@ html:has(.qr-dialog[open]) { overflow: hidden; }
   backdrop-filter: blur(3px);
 }
 html:has(.verse-dialog[open]) { overflow: hidden; }
+/* The explanation popup lives in the results panel's shadow root, out of reach
+   of :has(), so the panel flags itself while the popup is open. */
+html:has(bible-search-results[explaining]) { overflow: hidden; }
 
 /* End-of-page splash: the thank-you poster that pops up once the reader
    reaches the very bottom. The dialog shrink-wraps the poster, so the box is
@@ -556,7 +586,7 @@ html:has(.splash-dialog[open]) { overflow: hidden; }
   align-items: center;
   justify-content: space-between;
   gap: 4px 16px;
-  padding: 10px 28px;
+  padding: 10px 28px 28px;
   border-top: 1px solid rgba(0,27,52,.1);
   background: rgba(243,231,210,.94);
   font-size: .75rem;
@@ -573,14 +603,31 @@ html:has(.splash-dialog[open]) { overflow: hidden; }
   text-decoration: none;
 }
 .footer-brand span { color: #805b18; }
+/* Brand name with the tagline tucked under it. */
+.footer-sign { display: flex; flex-direction: column; align-items: flex-start; }
+.footer-sign .footer-brand { min-height: 0; }
+.footer-tagline { color: var(--ink); }
+.footer-social { display: flex; align-items: center; gap: 2px; margin-right: -10px; }
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #111;
+  transition: background-color .15s ease;
+}
+.footer-social a:hover { background: rgb(0 27 52 / 8%); }
+.footer-social svg { display: block; width: 18px; height: 18px; }
 @media (max-width: 650px) {
   .hero { padding: 10px 0 0; }
   .hero-toolbar { padding-inline: 8px; gap: 8px; }
   .hero-icon { width: 40px; height: 40px; }
   .daily-section { padding: 0 0 65px; }
   .card { padding: 27px 23px; }
+  .devotional-stack > :has(+ .reflection-card)::after { bottom: calc((27px - 28px) / 2 - .5px); }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }
-  .footer-bottom { padding: 8px 20px; }
+  .footer-bottom { padding: 8px 20px 24px; }
 }

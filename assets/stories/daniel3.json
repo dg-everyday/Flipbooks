@@ -4,28 +4,38 @@
     "pages": [
         {
             "id": "statue",
-            "image": "assets/images/hero.webp",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK1.webp",
             "caption": "King Nebuchadnezzar raises a golden statue and commands everyone to bow before it.",
             "audio": "assets/audio/correct.webm"
         },
         {
             "id": "refusal",
-            "image": "assets/images/book.webp",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK2.webp",
             "caption": "Shadrach, Meshach and Abednego refuse to bow to anyone but God."
         },
         {
             "id": "furnace",
-            "image": "assets/images/splash.webp",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK3.webp",
             "caption": "The king orders the furnace heated seven times hotter than usual."
         },
         {
             "id": "fourth-man",
-            "image": "assets/images/did-you-know.webp",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK4.webp",
             "caption": "In the flames a fourth figure walks with them, and they are unharmed."
         },
         {
             "id": "deliverance",
-            "image": "assets/images/trivia.webp",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK5.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        },
+        {
+            "id": "fourth-man-1",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK6.webp",
+            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+        },
+        {
+            "id": "deliverance-1",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK7.webp",
             "caption": "They step out untouched, and the king praises the God who rescued them."
         }
     ]

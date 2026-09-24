@@ -487,8 +487,163 @@ html:has(bible-search-results[explaining]) { overflow: hidden; }
   text-transform: uppercase;
 }
 html:has(.splash-dialog[open]) { overflow: hidden; }
+
+/* Help: the round "?" in the footer's top corner opens a guide to the
+   page's taps, holds and swipes. Its icons echo the real controls, red for
+   the round banner buttons, so they are easy to spot on the page. */
+.footer-main { position: relative; }
+.footer-help {
+  position: absolute;
+  /* The 44px target is larger than the icon; line the icon up with the QR tile. */
+  top: 18px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  /* A soft disc keeps the icon legible where it sits over the footer photo. */
+  background: radial-gradient(circle, rgb(243 231 210 / 85%) 0 15px, transparent 16px);
+  color: var(--navy);
+  cursor: pointer;
+  transition: background-color .15s ease, transform .2s ease;
+}
+.footer-help svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.footer-help .help-dot { fill: currentColor; stroke: none; }
+.footer-help:hover { background-color: rgb(243 231 210 / 70%); transform: scale(1.06); }
+.footer-help:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+
+.help-dialog {
+  width: min(560px, 92vw);
+  max-height: 88vh;
+  max-height: 88dvh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.help-dialog::backdrop {
+  background: rgb(0 27 52 / 60%);
+  backdrop-filter: blur(3px);
+}
+html:has(.help-dialog[open]) { overflow: hidden; }
+.help-body {
+  padding: 0 22px 22px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+/* The title stays put while the list scrolls under it. */
+.help-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 -22px;
+  padding: 16px 12px 12px 22px;
+  background: var(--cream);
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+}
+.help-header h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 500 1.375rem/1.25 Georgia, 'Times New Roman', serif;
+}
+.help-close {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--navy);
+  cursor: pointer;
+}
+.help-close:hover { background: rgb(0 27 52 / 8%); }
+.help-close:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.help-close svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.help-body h3 {
+  margin: 20px 0 4px;
+  color: #805b18;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.help-list { margin: 0; padding: 0; list-style: none; }
+.help-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 11px 0;
+}
+.help-list li + li { border-top: 1px solid rgb(0 27 52 / 8%); }
+.help-list p {
+  margin: 0;
+  font-size: .9375rem;
+  line-height: 1.5;
+}
+.help-list strong { color: var(--navy); }
+.help-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgb(0 27 52 / 22%);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy);
+}
+/* The round banner buttons: the Flipbook link, the poster's play, the refresh. */
+.help-icon.action {
+  border-color: transparent;
+  background: var(--action);
+  color: var(--action-ink);
+  box-shadow: 0 3px 8px rgb(0 0 0 / 22%);
+}
+/* A bookmarked verse's gold ribbon. */
+.help-icon.gold { border-color: var(--gold); color: var(--gold); }
+.help-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.help-icon.gold svg { fill: var(--gold-light); }
+.help-icon .help-fill { fill: currentColor; stroke: none; }
+
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
+  .footer-help { transition: none; }
 }
 .footer-qr figcaption {
   color: var(--navy);
@@ -573,6 +728,7 @@ html:has(.splash-dialog[open]) { overflow: hidden; }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }
+  .footer-help { top: 14px; right: 13px; }
   .footer-bottom { flex-direction: column; justify-content: center; padding: 8px 20px 24px; text-align: center; }
   .footer-sign { align-items: center; }
   .footer-social { margin-right: 0; }

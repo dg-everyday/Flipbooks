@@ -76,11 +76,25 @@
             // HTMLElement would shadow the accessor and the list would never
             // reach the component.
             import "../../apps/components/flip-book.js?v=20260923-3";
-            import { buildWeekPages } from "./scripts/daily-grace-week.js?v=20260923-3";
+            import { buildWeekPages } from "./scripts/daily-grace-week.js?v=20260924-1";
+
+            // The main page links here with ?date=YYYY-MM-DD while the reader
+            // is looking back at an earlier day, to open that day's week. A
+            // missing, malformed or future date falls back to this week.
+            function requestedDate() {
+                const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(
+                    new URLSearchParams(window.location.search).get("date") || "",
+                );
+                if (!match) return undefined;
+                const [, year, month, day] = match.map(Number);
+                const date = new Date(year, month - 1, day);
+                if (date.getMonth() !== month - 1 || date > new Date()) return undefined;
+                return date;
+            }
 
             const reader = document.getElementById("reader");
             try {
-                reader.pages = await buildWeekPages();
+                reader.pages = await buildWeekPages({ date: requestedDate() });
             } catch (error) {
                 console.error("Unable to build this week's pages:", error);
                 reader.pages = [];

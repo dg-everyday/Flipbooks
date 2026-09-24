@@ -228,7 +228,7 @@ function getVerses(bookName, chapter = null, verses = null) {
 
     // Build SQL
     const query = `
-        SELECT b.book_name, b.book_id, v.chapter, v.verse, v.text
+        SELECT v.docid, b.book_name, b.book_id, v.chapter, v.verse, v.text
         FROM verses AS v
         INNER JOIN books AS b ON v.book = b.book_id
         WHERE ${conditions.join("\n AND ")}
@@ -245,6 +245,44 @@ function getVerses(bookName, chapter = null, verses = null) {
 
     stmt.free();
     return results;
+}
+
+// ============================================================
+// Get verses by id
+//
+// getVersesByIds([49, 29155])
+//
+// The ids are verse docids, as saved by the bookmarks. Rows come
+// back in the order of the ids given; an id with no verse is
+// skipped.
+// ============================================================
+
+function getVersesByIds(ids) {
+    if (!db) {
+        throw new Error("Database has not been initialized.");
+    }
+
+    const docids = [...new Set((ids ?? []).map(Number))].filter(Number.isSafeInteger);
+    if (docids.length === 0) return [];
+
+    const placeholders = docids.map(() => "?").join(",");
+    const query = `
+        SELECT v.docid, b.book_name, b.book_id, v.chapter, v.verse, v.text
+        FROM verses AS v
+        INNER JOIN books AS b ON v.book = b.book_id
+        WHERE v.docid IN (${placeholders})
+    `;
+
+    const stmt = db.prepare(query);
+    stmt.bind(docids);
+    const byId = new Map();
+    while (stmt.step()) {
+        const row = stmt.getAsObject();
+        byId.set(row.docid, row);
+    }
+
+    stmt.free();
+    return docids.map((id) => byId.get(id)).filter(Boolean);
 }
 
 // ============================================================
@@ -291,7 +329,7 @@ function searchVersesByKeywords(words) {
     const params = words.map((word) => `%${word.replace(/'/g, "_")}%`);
 
     const query = `
-        SELECT b.book_name, b.book_id, v.chapter, v.verse, v.text
+        SELECT v.docid, b.book_name, b.book_id, v.chapter, v.verse, v.text
         FROM verses AS v
         INNER JOIN books AS b ON v.book = b.book_id
         WHERE ${conditions.join("\n AND ")}

@@ -1,50 +1,5 @@
 const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
-
-// Citations use "Psalm"; the symbol library files that book under its plural name.
-const SYMBOL_BOOK_NAMES = { Psalm: "Psalms" };
-function bookSymbolUrl(mediaBase, book) {
-    const name = SYMBOL_BOOK_NAMES[book] ?? book;
-    return `${mediaBase}images/symbols/${encodeURIComponent(name)}-symbol.svg`;
-}
 // const MEDIA_BASE_URL = "http://localhost:9001/media/";
-const today = new Date();
-const dateName = today.toLocaleDateString("en-US", {
-    timeZone: "Asia/Manila",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-});
-
-// Build today's existing banner URL here using Asia/Manila dates.
-// URL pattern adapted from update-social-image.mjs, which remains metadata-only.
-const bannerParts = Object.fromEntries(
-    new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Manila",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-    })
-    .formatToParts(today)
-    .map(({ type, value }) => [type, value]),
-);
-
-const bannerMonth = today
-    .toLocaleString("en-US", {
-        timeZone: "Asia/Manila",
-        month: "long",
-    })
-    .toLowerCase();
-const dailyBanner = document.getElementById("daily-banner");
-dailyBanner.src = `${MEDIA_BASE_URL}banner/${bannerMonth}/daily-grace-${bannerParts.year}-${bannerParts.month}-${bannerParts.day}.webp`;
-dailyBanner.alt = `Daily Grace devotional for ${today.toLocaleDateString(
-    "en-US",
-    {
-        timeZone: "Asia/Manila",
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-    },
-)}`;
 
 const searchForm = document.getElementById("devotional-search");
 const searchQuery = document.getElementById("search-query");
@@ -273,13 +228,15 @@ searchClear.addEventListener("click", () => {
     renderBookSuggestions();
 });
 
-const dailyReflectionToggle = document.getElementById("daily-reflection-toggle");
-const dailyReflectionText = document.getElementById("daily-reflection-text");
-const dailyReflectionAction = document.getElementById("daily-reflection-action");
-dailyReflectionToggle.addEventListener("click", () => {
-    const expanded = dailyReflectionToggle.getAttribute("aria-expanded") !== "true";
-    dailyReflectionToggle.setAttribute("aria-expanded", String(expanded));
-    dailyReflectionAction.textContent = expanded ? "Collapse reflection" : "Expand reflection";
+// <banner-slider> shows the day's heading, banner and reflection, and lets the
+// reader swipe back through the past week; the rest of the page stays on today.
+document.getElementById("banner-slider").setAttribute("media-base", MEDIA_BASE_URL);
+
+const todayName = new Date().toLocaleDateString("en-US", {
+    timeZone: "Asia/Manila",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
 });
 
 fetch("assets/verses.json")
@@ -291,26 +248,15 @@ fetch("assets/verses.json")
         return response.json();
     })
     .then((verses) => {
-        const currentVerse = verses.find((item) => item.id === dateName);
-        if (!currentVerse) throw new Error(`No verse found for ${dateName}`);
-
-        const book = currentVerse.verse.replace(/\s+\d.*$/, "").trim();
-        const dailyBookSymbol = document.getElementById("daily-book-symbol");
-        dailyBookSymbol.onload = () => { dailyBookSymbol.hidden = false; };
-        dailyBookSymbol.onerror = () => { dailyBookSymbol.hidden = true; };
-        dailyBookSymbol.src = bookSymbolUrl(MEDIA_BASE_URL, book);
-
+        const currentVerse = verses.find((item) => item.id === todayName);
+        if (!currentVerse) throw new Error(`No verse found for ${todayName}`);
         document.getElementById("reflection-text").textContent =
             currentVerse.reflection;
-        dailyReflectionText.textContent = currentVerse.reflection;
-        dailyReflectionToggle.disabled = false;
     })
     .catch((error) => {
         console.warn("Today's devotional could not be loaded:", error);
         document.getElementById("reflection-text").textContent =
             "Please check the daily devotional data.";
-        dailyReflectionText.textContent = "Today's reflection is unavailable. Please try again later.";
-        dailyReflectionAction.textContent = "";
     });
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
@@ -577,12 +523,15 @@ verseResults.setAttribute("media-base", MEDIA_BASE_URL);
 let verseClosing = false;
 let verseGeneration = 0;
 
+function openVerseDialog() {
+    if (verseDialog.open) return;
+    verseDialog.showModal();
+    if (!reducedMotionQuery.matches) popDialog(verseDialog, "open");
+}
+
 async function showVerse(reference) {
     const generation = ++verseGeneration;
-    if (!verseDialog.open) {
-        verseDialog.showModal();
-        if (!reducedMotionQuery.matches) popDialog(verseDialog, "open");
-    }
+    openVerseDialog();
     verseResults.loading("Loading Bible verses…");
     try {
         const parsed = parseBibleReference(reference);
@@ -607,6 +556,79 @@ async function showVerse(reference) {
         verseResults.showMessage("Bible verses could not be loaded. Please try again.");
     }
 }
+
+// Bookmarks: holding a verse in the results saves it (the results panel keeps
+// the list), and holding the search field shows them all in the verse popup.
+async function showBookmarks() {
+    const generation = ++verseGeneration;
+    openVerseDialog();
+    const ids = verseResults.bookmarks;
+    if (!ids.length) {
+        verseResults.showBookmarks([]);
+        return;
+    }
+    verseResults.loading("Loading your bookmarks…");
+    try {
+        await loadBibleBookSuggestions();
+        if (generation !== verseGeneration || !verseDialog.open) return;
+        verseResults.showBookmarks(getVersesByIds(ids));
+    } catch (error) {
+        if (generation !== verseGeneration) return;
+        console.warn("Bookmarks could not be loaded:", error);
+        verseResults.showMessage("Your bookmarks could not be loaded. Please try again.");
+    }
+}
+
+// The same half-second hold the verse cards use, with the search pill glowing
+// gold while it builds.
+const HOLD_MS = 500;
+const HOLD_SLOP = 10;
+let searchHold = null;
+// The hold ends with the finger lifting, and the click that follows would
+// land on the popup that has just opened and close it again.
+let swallowClick = false;
+
+function cancelSearchHold() {
+    if (!searchHold) return;
+    clearTimeout(searchHold.timer);
+    searchHold = null;
+    searchForm.classList.remove("holding");
+}
+
+searchQuery.addEventListener("pointerdown", (event) => {
+    if (!event.isPrimary || event.button !== 0) return;
+    cancelSearchHold();
+    searchForm.classList.add("holding");
+    searchHold = {
+        x: event.clientX,
+        y: event.clientY,
+        timer: setTimeout(() => {
+            cancelSearchHold();
+            swallowClick = true;
+            navigator.vibrate?.(15);
+            showBookmarks();
+        }, HOLD_MS),
+    };
+});
+searchQuery.addEventListener("pointermove", (event) => {
+    if (searchHold && Math.hypot(event.clientX - searchHold.x, event.clientY - searchHold.y) > HOLD_SLOP) {
+        cancelSearchHold();
+    }
+});
+for (const type of ["pointerup", "pointercancel", "pointerleave"]) {
+    searchQuery.addEventListener(type, cancelSearchHold);
+}
+// A long press would otherwise open the phone's paste menu.
+searchQuery.addEventListener("contextmenu", (event) => {
+    if (searchHold || swallowClick) event.preventDefault();
+});
+addEventListener("pointerdown", () => { swallowClick = false; }, true);
+addEventListener("click", (event) => {
+    if (!swallowClick) return;
+    swallowClick = false;
+    event.preventDefault();
+    event.stopPropagation();
+}, true);
 
 async function closeVerse() {
     if (!verseDialog.open || verseClosing) return;

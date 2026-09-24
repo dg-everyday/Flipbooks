@@ -1,49 +1,5 @@
 const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
-
-// Citations use "Psalm"; the symbol library files that book under its plural name.
-const SYMBOL_BOOK_NAMES = { Psalm: "Psalms" };
-function bookSymbolUrl(mediaBase, book) {
-    const name = SYMBOL_BOOK_NAMES[book] ?? book;
-    return `${mediaBase}images/symbols/${encodeURIComponent(name)}-symbol.svg`;
-}
 // const MEDIA_BASE_URL = "http://localhost:9001/media/";
-// Each day's devotional goes live on the Asia/Manila calendar, so "today" is
-// Manila's date wherever the reader is.
-const manilaToday = Object.fromEntries(
-    new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Manila",
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-    })
-    .formatToParts(new Date())
-    .map(({ type, value }) => [type, Number(value)]),
-);
-
-// How many earlier days the banner can be swiped back to.
-const PAST_DAYS = 7;
-
-// Everything the page needs to name and fetch the devotional `daysAgo` days
-// before today. The date is built at UTC midnight and formatted in UTC, so the
-// day arithmetic never trips over a clock change.
-// URL pattern adapted from update-social-image.mjs, which remains metadata-only.
-function devotionalDay(daysAgo) {
-    const date = new Date(Date.UTC(manilaToday.year, manilaToday.month - 1, manilaToday.day - daysAgo));
-    const format = (options) => date.toLocaleDateString("en-US", { timeZone: "UTC", ...options });
-    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
-    const day = String(date.getUTCDate()).padStart(2, "0");
-    const iso = `${date.getUTCFullYear()}-${month}-${day}`;
-    const name = format({ month: "long", day: "numeric", year: "numeric" });
-    return {
-        daysAgo,
-        iso,
-        // The key verses.json files each day under, e.g. "September 24, 2026".
-        name,
-        banner: `${MEDIA_BASE_URL}banner/${format({ month: "long" }).toLowerCase()}/daily-grace-${iso}.webp`,
-    };
-}
-
-const dailyBanner = document.getElementById("daily-banner");
 
 const searchForm = document.getElementById("devotional-search");
 const searchQuery = document.getElementById("search-query");
@@ -272,90 +228,16 @@ searchClear.addEventListener("click", () => {
     renderBookSuggestions();
 });
 
-const dailyReflectionToggle = document.getElementById("daily-reflection-toggle");
-const dailyReflectionText = document.getElementById("daily-reflection-text");
-const dailyReflectionAction = document.getElementById("daily-reflection-action");
+// <banner-slider> shows the day's heading, banner and reflection, and lets the
+// reader swipe back through the past week; the rest of the page stays on today.
+document.getElementById("banner-slider").setAttribute("media-base", MEDIA_BASE_URL);
 
-function setReflectionExpanded(expanded) {
-    dailyReflectionToggle.setAttribute("aria-expanded", String(expanded));
-    dailyReflectionAction.textContent = expanded ? "Collapse reflection" : "Expand reflection";
-}
-
-dailyReflectionToggle.addEventListener("click", () => {
-    setReflectionExpanded(dailyReflectionToggle.getAttribute("aria-expanded") !== "true");
+const todayName = new Date().toLocaleDateString("en-US", {
+    timeZone: "Asia/Manila",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
 });
-
-// The banner, its heading and the reflection beneath it follow the day being
-// shown, which the reader can swipe back through the past week. The rest of
-// the page stays on today.
-const heroBanner = document.querySelector(".hero-banner");
-const dailyHeading = document.getElementById("daily-heading-text");
-const dailyBookSymbol = document.getElementById("daily-book-symbol");
-const bannerFlipbookLink = document.querySelector(".banner-flipbook-link");
-dailyBookSymbol.onload = () => { dailyBookSymbol.hidden = false; };
-dailyBookSymbol.onerror = () => { dailyBookSymbol.hidden = true; };
-
-let shownDay = devotionalDay(0);
-// verses.json by day name, once it arrives; false if it could not be loaded.
-let versesByDay = null;
-
-function showDayVerse() {
-    if (!versesByDay) {
-        dailyReflectionToggle.disabled = true;
-        dailyReflectionAction.textContent = "";
-        dailyReflectionText.textContent = versesByDay === false
-            ? "Today's reflection is unavailable. Please try again later."
-            : "Loading today's reflection…";
-        return;
-    }
-    const verse = versesByDay.get(shownDay.name);
-    if (!verse) {
-        dailyBookSymbol.hidden = true;
-        dailyBookSymbol.removeAttribute("src");
-        dailyReflectionToggle.disabled = true;
-        dailyReflectionAction.textContent = "";
-        dailyReflectionText.textContent = "This day's reflection is unavailable.";
-        return;
-    }
-    const book = verse.verse.replace(/\s+\d.*$/, "").trim();
-    const symbol = bookSymbolUrl(MEDIA_BASE_URL, book);
-    if (dailyBookSymbol.getAttribute("src") !== symbol) dailyBookSymbol.src = symbol;
-    dailyReflectionText.textContent = verse.reflection;
-    dailyReflectionToggle.disabled = false;
-    setReflectionExpanded(false);
-}
-
-// Warm the cache for the banners one swipe away, so they are ready to slide in.
-const preloadedBanners = new Set();
-function preloadBanner(daysAgo) {
-    if (daysAgo < 0 || daysAgo > PAST_DAYS) return;
-    const { banner } = devotionalDay(daysAgo);
-    if (preloadedBanners.has(banner)) return;
-    preloadedBanners.add(banner);
-    new Image().src = banner;
-}
-
-function showDay(daysAgo) {
-    const day = devotionalDay(daysAgo);
-    shownDay = day;
-    dailyBanner.src = day.banner;
-    dailyBanner.alt = `Daily Grace devotional for ${day.name}`;
-    dailyHeading.textContent = daysAgo
-        ? `Your Daily Grace for ${day.name.replace(/, \d+$/, "")}`
-        : "Your Daily Grace Today";
-    // An earlier day opens the Flipbook on the week that day belongs to.
-    const flipbookLabel = daysAgo
-        ? `Open the Flipbook for the week of ${day.name}`
-        : "Open this week's Flipbook";
-    bannerFlipbookLink.href = daysAgo
-        ? `apps/pages/flipbook.html?date=${day.iso}`
-        : "apps/pages/flipbook.html";
-    bannerFlipbookLink.setAttribute("aria-label", flipbookLabel);
-    bannerFlipbookLink.title = flipbookLabel;
-    showDayVerse();
-    preloadBanner(daysAgo + 1);
-    preloadBanner(daysAgo - 1);
-}
 
 fetch("assets/verses.json")
     .then((response) => {
@@ -366,11 +248,8 @@ fetch("assets/verses.json")
         return response.json();
     })
     .then((verses) => {
-        versesByDay = new Map(verses.map((item) => [item.id, item]));
-        showDayVerse();
-        const today = devotionalDay(0).name;
-        const currentVerse = versesByDay.get(today);
-        if (!currentVerse) throw new Error(`No verse found for ${today}`);
+        const currentVerse = verses.find((item) => item.id === todayName);
+        if (!currentVerse) throw new Error(`No verse found for ${todayName}`);
         document.getElementById("reflection-text").textContent =
             currentVerse.reflection;
     })
@@ -378,145 +257,7 @@ fetch("assets/verses.json")
         console.warn("Today's devotional could not be loaded:", error);
         document.getElementById("reflection-text").textContent =
             "Please check the daily devotional data.";
-        if (!versesByDay) {
-            versesByDay = false;
-            showDayVerse();
-        }
     });
-
-// Swiping the banner to the right pulls in the day before, up to a week back,
-// like paging back through a book, and swiping left comes forward again. Today
-// is as far forward as it goes: tomorrow's devotional is not out yet. With the
-// banner focused, the arrow keys do the same.
-// The reader's finger is followed only once a press has clearly moved sideways;
-// an upward or downward one is left to scroll the page.
-const DRAG_SLOP = 8;
-// Share of the banner's width a swipe must travel to change the day.
-const SWIPE_SHARE = 0.18;
-// Longest a slide waits, in ms, for the next day's banner to finish loading.
-const BANNER_DECODE_WAIT = 300;
-let bannerDrag = null;
-let bannerSliding = false;
-let suppressBannerClick = false;
-
-// -1 steps back a day (a swipe to the right), +1 steps forward.
-function canStep(step) {
-    const target = shownDay.daysAgo - step;
-    return target >= 0 && target <= PAST_DAYS;
-}
-
-function setBannerOffset(px) {
-    dailyBanner.style.transform = px ? `translateX(${px}px)` : "";
-}
-
-async function stepDay(step, fromOffset = 0) {
-    if (bannerSliding || !canStep(step)) return;
-    const target = shownDay.daysAgo - step;
-    if (reducedMotionQuery.matches) {
-        setBannerOffset(0);
-        showDay(target);
-        return;
-    }
-    bannerSliding = true;
-    // Stepping back carries the old banner off to the right and brings the
-    // earlier day in from the left, the way a swipe to the right pulls it in.
-    const away = (step < 0 ? 1 : -1) * heroBanner.clientWidth;
-    const leaving = dailyBanner.animate(
-        [
-            { transform: `translateX(${fromOffset}px)`, opacity: 1 },
-            { transform: `translateX(${away}px)`, opacity: 0 },
-        ],
-        { duration: 180, easing: "cubic-bezier(.4, 0, 1, 1)", fill: "forwards" },
-    );
-    await leaving.finished.catch(() => {});
-    setBannerOffset(0);
-    showDay(target);
-    // Hold the new banner off stage until it can be drawn, so it never slides
-    // in half loaded, but only briefly: on a slow connection the reader keeps
-    // swiping and the banner fills in where it lands. A missing banner still
-    // comes in, showing its alt text.
-    await Promise.race([
-        dailyBanner.decode().catch(() => {}),
-        new Promise((resolve) => setTimeout(resolve, BANNER_DECODE_WAIT)),
-    ]);
-    leaving.cancel();
-    await dailyBanner.animate(
-        [
-            { transform: `translateX(${-away}px)`, opacity: 0 },
-            { transform: "none", opacity: 1 },
-        ],
-        { duration: 280, easing: "cubic-bezier(.2, .9, .25, 1)" },
-    ).finished.catch(() => {});
-    bannerSliding = false;
-}
-
-function snapBannerBack(fromOffset) {
-    setBannerOffset(0);
-    if (!fromOffset || reducedMotionQuery.matches) return;
-    dailyBanner.animate(
-        [{ transform: `translateX(${fromOffset}px)` }, { transform: "none" }],
-        { duration: 220, easing: "cubic-bezier(.2, .9, .25, 1)" },
-    );
-}
-
-heroBanner.addEventListener("pointerdown", (event) => {
-    if (bannerSliding || !event.isPrimary || event.button !== 0) return;
-    bannerDrag = { id: event.pointerId, x: event.clientX, y: event.clientY, offset: 0, active: false };
-});
-
-heroBanner.addEventListener("pointermove", (event) => {
-    if (!bannerDrag || event.pointerId !== bannerDrag.id) return;
-    const dx = event.clientX - bannerDrag.x;
-    const dy = event.clientY - bannerDrag.y;
-    if (!bannerDrag.active) {
-        if (Math.abs(dx) < DRAG_SLOP && Math.abs(dy) < DRAG_SLOP) return;
-        if (Math.abs(dy) >= Math.abs(dx)) {
-            bannerDrag = null;
-            return;
-        }
-        bannerDrag.active = true;
-        heroBanner.setPointerCapture(event.pointerId);
-        heroBanner.classList.add("dragging");
-    }
-    // Pulling toward a day that is not there gives a little, then resists.
-    const step = dx > 0 ? -1 : 1;
-    bannerDrag.offset = canStep(step) ? dx : dx / 4;
-    setBannerOffset(bannerDrag.offset);
-});
-
-function endBannerDrag(event) {
-    if (!bannerDrag || event.pointerId !== bannerDrag.id) return;
-    const { active, offset } = bannerDrag;
-    bannerDrag = null;
-    if (!active) return;
-    heroBanner.classList.remove("dragging");
-    // The press was a swipe, not a tap on the Flipbook button beneath it.
-    suppressBannerClick = true;
-    setTimeout(() => { suppressBannerClick = false; });
-    const step = offset > 0 ? -1 : 1;
-    const far = Math.abs(offset) >= heroBanner.clientWidth * SWIPE_SHARE;
-    if (event.type === "pointerup" && far && canStep(step)) {
-        stepDay(step, offset);
-    } else {
-        snapBannerBack(offset);
-    }
-}
-
-heroBanner.addEventListener("pointerup", endBannerDrag);
-heroBanner.addEventListener("pointercancel", endBannerDrag);
-heroBanner.addEventListener("click", (event) => {
-    if (!suppressBannerClick) return;
-    event.preventDefault();
-    event.stopPropagation();
-}, true);
-
-heroBanner.addEventListener("keydown", (event) => {
-    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-    event.preventDefault();
-    stepDay(event.key === "ArrowLeft" ? -1 : 1);
-});
-
-showDay(0);
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);

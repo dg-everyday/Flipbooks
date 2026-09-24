@@ -106,7 +106,7 @@ if (!mediaBase) fail("could not read MEDIA_BASE_URL from assets/scripts/script.j
 
 // The same map is inlined in three files; a mismatch is a bug waiting to ship.
 const MAP_HOLDERS = [
-    "assets/scripts/script.js",
+    "apps/components/banner-slider.js",
     "apps/components/bible-search-results.js",
     "apps/components/did-you-know.js",
 ];

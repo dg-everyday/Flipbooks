@@ -271,16 +271,17 @@ button:focus-visible { filter: brightness(1.2); }
   letter-spacing: .02em;
 }
 
-did-you-know.card::before, did-you-know.card::after { content: none; }
-did-you-know.card { padding-inline: 10px; }
+did-you-know.card::before, did-you-know.card::after,
+bible-sayings.card::before, bible-sayings.card::after { content: none; }
+did-you-know.card, bible-sayings.card { padding-inline: 10px; }
 
 /* A faint gold hairline, fading out at both ends, separates the devotional sections. */
 .devotional-stack > * + * {
   border-top: 1px solid transparent;
   border-image: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent) 1;
 }
-/* The stories row closes the stack, so it also takes the hairline beneath it. */
-.devotional-stack > story-carousel:last-child { border-bottom: 1px solid transparent; }
+/* Whichever section closes the stack (now the Bible sayings) also takes the hairline beneath it. */
+.devotional-stack > :last-child { border-bottom: 1px solid transparent; }
 
 /* Reflection: a navy panel with gold accents, set apart from the cream page. */
 .reflection-card {

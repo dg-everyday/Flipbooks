@@ -1,20 +1,25 @@
 # -*- coding: utf-8 -*-
 """
-Build assets/db/concordance.db, a word concordance of the KJV text in
-assets/db/dailygrace.db.
+Build a word concordance of the KJV text in assets/db/dailygrace.db.
 
     python tools/concordance/build_concordance.py
 
-The output is rebuilt from scratch on every run. See README.md for the schema.
+Writes two files, both rebuilt from scratch on every run:
+
+    assets/concordance.json              what the site loads: word -> verses
+    tools/concordance/concordance.db     the full index, with word positions
+
+See README.md for both formats.
 """
-import os, re, sqlite3, sys
+import json, os, re, sqlite3, sys
 from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 
 BIBLE_DB = os.path.join(ROOT, "assets", "db", "dailygrace.db")
-CONCORDANCE_DB = os.path.join(ROOT, "assets", "db", "concordance.db")
+CONCORDANCE_JSON = os.path.join(ROOT, "assets", "concordance.json")
+CONCORDANCE_DB = os.path.join(HERE, "concordance.db")
 
 # The source stores each psalm's superscription on the end of the previous
 # psalm's last verse, after a run of spaces: "...perish.     Psalm 3  A Psalm of David..."
@@ -118,11 +123,37 @@ def build():
     con.execute("VACUUM")
     con.close()
 
+    write_json(books, verses, occurrences)
+
     titles = sum(1 for v in verses if v[3] == 0)
     print("verses: %d (+%d psalm titles)" % (len(verses) - titles, titles))
     print("distinct words: %d" % len(word_id))
     print("occurrences: %d" % len(occurrences))
-    print("wrote %s" % os.path.relpath(CONCORDANCE_DB, ROOT))
+    for path in (CONCORDANCE_JSON, CONCORDANCE_DB):
+        print("wrote %s (%d KB)" % (os.path.relpath(path, ROOT), os.path.getsize(path) // 1024))
+
+
+def write_json(books, verses, occurrences):
+    """Write the site's copy: each word's verse ids, ascending and delta-encoded.
+
+    Psalm titles are not in dailygrace.db, so their text travels in the file.
+    """
+    verse_ids = {}
+    for word, verse_id, _ in occurrences:
+        ids = verse_ids.setdefault(word, [])
+        if not ids or ids[-1] != verse_id:
+            ids.append(verse_id)
+    words = {}
+    for word in sorted(verse_ids):
+        ids = sorted(verse_ids[word])
+        words[word] = ids[:1] + [b - a for a, b in zip(ids, ids[1:])]
+
+    book_id = {num: bid for num, bid, _ in books}
+    titles = {str(verse_id): [book_id[num], chapter, text]
+              for verse_id, num, chapter, verse, text in verses if verse == 0}
+
+    with open(CONCORDANCE_JSON, "w", encoding="utf-8", newline="\n") as f:
+        json.dump({"words": words, "titles": titles}, f, ensure_ascii=False, separators=(",", ":"))
 
 
 if __name__ == "__main__":

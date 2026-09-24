@@ -2,7 +2,7 @@
  * Builds the Daily Grace page list for <flip-book>.
  *
  * Everything that knows about Daily Grace's file naming lives here: which
- * seven days belong to this week, where the cover and artwork sit under the
+ * seven days belong to the week being shown, where the cover and artwork sit under the
  * media base, which files carry narration, and which are dated ahead of today
  * and so must show the "will be available" paper instead.
  *
@@ -104,15 +104,19 @@ async function loadVerses(versesSrc) {
 /* ---------- Public builder ---------- */
 
 /**
+ * @param {Object} [options]
+ * @param {Date} [options.date]   Any day in the week to show. Default: today.
+ * @param {Date} [options.today]  What counts as today: later pages stay covered.
  * @returns {Promise<Array>} FlipPage descriptors ready for <flip-book>.pages
  */
 export async function buildWeekPages({
   mediaBase = DEFAULT_MEDIA_BASE,
   versesSrc = DEFAULT_VERSES_SRC,
-  today = new Date()
+  today = new Date(),
+  date = today
 } = {}) {
-  const leaves = weekLeaves(today);
-  const [cover, fallbackCover] = coverPaths(today);
+  const leaves = weekLeaves(date);
+  const [cover, fallbackCover] = coverPaths(date);
 
   const [coverSrc, sources, verses] = await Promise.all([
     probe(cover, mediaBase).then(src => src || probe(fallbackCover, mediaBase)),

@@ -23,7 +23,7 @@
 
         <title>Grace for Today • Our Faith for Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260923-4" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260924-1" />
     </head>
 
     <body>
@@ -117,9 +117,17 @@
                         height="36"
                         hidden
                     />
-                    <span>Your Daily Grace Today</span>
+                    <span id="daily-heading-text" aria-live="polite"
+                        >Your Daily Grace Today</span
+                    >
                 </h1>
-                <div class="hero-banner">
+                <div
+                    class="hero-banner"
+                    role="group"
+                    aria-roledescription="carousel"
+                    aria-label="Daily Grace for the past week. Swipe, or use the arrow keys, to change the day."
+                    tabindex="0"
+                >
                     <img
                         id="daily-banner"
                         class="daily-banner"
@@ -128,6 +136,7 @@
                         width="1920"
                         height="1024"
                         fetchpriority="high"
+                        draggable="false"
                     />
                     <a
                         class="banner-flipbook-link"
@@ -286,7 +295,7 @@
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
         <script src="assets/scripts/sql_script.js?v=20260923-4"></script>
-        <script src="assets/scripts/script.js?v=20260923-5"></script>
+        <script src="assets/scripts/script.js?v=20260924-2"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20260924-1"></script>
         <script type="module" src="apps/components/bible-search-results.js?v=20260924-1"></script>
         <script type="module" src="apps/components/poster-card.js?v=20260924-1"></script>

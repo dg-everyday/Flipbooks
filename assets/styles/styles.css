@@ -209,8 +209,20 @@ body {
   background: #fff;
   object-fit: contain;
 }
-.hero-banner { position: relative; padding-inline: 10px; }
-.daily-banner { display: block; width: 100%; height: auto; }
+/* The banner swipes sideways between days, so it keeps vertical panning for
+   the page and hands horizontal drags to script.js. The day sliding out is
+   clipped at the banner's edges. */
+.hero-banner {
+  position: relative;
+  padding-inline: 10px;
+  overflow-x: clip;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.hero-banner.dragging { cursor: grabbing; }
+.hero-banner:focus-visible .daily-banner { outline: 2px solid var(--navy); outline-offset: -2px; }
+.daily-banner { display: block; width: 100%; height: auto; -webkit-user-drag: none; }
 .banner-flipbook-link {
   position: absolute;
   top: 14px;

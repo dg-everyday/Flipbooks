@@ -23,7 +23,7 @@
 
         <title>Grace for Today • Our Faith for Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260924-5" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260924-7" />
     </head>
 
     <body>
@@ -115,6 +115,7 @@
                     <banner-slider id="banner-slider"></banner-slider>
                     <poster-card id="poster-card"></poster-card>
                     <did-you-know id="did-you-know" class="card"></did-you-know>
+                    <!-- <story-carousel id="story-carousel"></story-carousel> -->
                     <article class="card reflection-card">
                         <div class="icon">
                             <img
@@ -128,14 +129,26 @@
                         <p id="reflection-text"></p>
                         <p class="closing">Pause. Trust. Take the next step.</p>
                     </article>
-
-                    <!-- <story-carousel id="story-carousel"></story-carousel> -->
-
+                    <bible-sayings id="bible-sayings" class="card"></bible-sayings>
                 </section>
             </main>
 
             <footer class="site-footer">
                 <div class="footer-main">
+                    <button
+                        id="help-open"
+                        class="footer-help"
+                        type="button"
+                        aria-haspopup="dialog"
+                        aria-label="How to use Daily Grace"
+                        title="How to use Daily Grace"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9.2 9.2a2.9 2.9 0 0 1 5.6 1c0 1.9-2.8 2.4-2.8 4.3" />
+                            <circle class="help-dot" cx="12" cy="17.6" r="1.15" />
+                        </svg>
+                    </button>
                     <div class="footer-message">
                         <h2>Grace for today.<br />Our faith for tomorrow.</h2>
                         <p>
@@ -143,7 +156,7 @@
                             for every day.
                         </p>
                         <a class="footer-link" href="apps/pages/flipbook.html"
-                            >Explore the weekly Flipbook
+                            >Explore this week's Flipbook
                             <span aria-hidden="true">→</span></a
                         >
                     </div>
@@ -208,6 +221,114 @@
                 <p>Scan to contact</p>
             </div>
         </dialog>
+        <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title">
+            <div class="help-body">
+                <header class="help-header">
+                    <h2 id="help-title">How to use Daily Grace</h2>
+                    <button
+                        id="help-close"
+                        class="help-close"
+                        type="button"
+                        aria-label="Close help"
+                        title="Close"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 6 12 12M18 6 6 18" />
+                        </svg>
+                    </button>
+                </header>
+
+                <h3>Today's devotional</h3>
+                <ul class="help-list">
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 2 12l5 5M17 7l5 5-5 5M2 12h20" /></svg>
+                        </span>
+                        <p><strong>Swipe through the week.</strong> Swipe the banner right to go back a day, up to a week. Swipe left to come forward again.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon action">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
+                        </span>
+                        <p><strong>Open the Flipbook.</strong> Tap the round book button at the top right of the banner. An earlier day opens on that day's week.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" /></svg>
+                        </span>
+                        <p><strong>Read the whole reflection.</strong> Tap the reflection under the banner to show all of it.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 12h18M12 3v9M9 12v9" /></svg>
+                        </span>
+                        <p><strong>See the comic strip.</strong> Tap the day's verse poster and it turns like a page to the comic. Tap it again to turn back.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon action">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l13 8-13 8z" /></svg>
+                        </span>
+                        <p><strong>Listen.</strong> Tap the play button on the poster to hear the day's narration.</p>
+                    </li>
+                </ul>
+
+                <h3>Bible search</h3>
+                <ul class="help-list">
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg>
+                        </span>
+                        <p><strong>Look up a passage.</strong> Type a reference such as <em>Ephesians 2:8-9</em> in the search box at the top.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="11" rx="2.5" /><path d="M8 10.5V5.5a4 4 0 0 1 8 0v1" /></svg>
+                        </span>
+                        <p><strong>Search by words.</strong> Tap the padlock to unlock it, then type words. You get every verse that has all of them.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon gold">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
+                        </span>
+                        <p><strong>Bookmark a verse.</strong> Press and hold a verse for half a second. It glows gold and gets a ribbon. Hold it again to remove the bookmark. You can keep up to 20.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5" /><circle class="help-fill" cx="8" cy="12" r="1.8" /></svg>
+                        </span>
+                        <p><strong>Show your bookmarks.</strong> Press and hold the search box. Bookmarks are saved on this device.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h11l5 5v13H4zM15 3v5h5" /></svg>
+                        </span>
+                        <p><strong>Understand a verse.</strong> Tap the folded corner of a verse to read its explanation. The words of Jesus are printed in red.</p>
+                    </li>
+                </ul>
+
+                <h3>More to explore</h3>
+                <ul class="help-list">
+                    <li>
+                        <span class="help-icon action">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3.5v5h-5M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5" /></svg>
+                        </span>
+                        <p><strong>Facts and sayings.</strong> Tap the refresh button on "Did you know?" or the Bible sayings for a new set. Tap a saying to see all of it, or a Bible reference to read the passage.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="18" rx="2" /><path d="M19 6v12M2 6v12" /></svg>
+                        </span>
+                        <p><strong>Stories.</strong> Swipe the row of covers and tap one to start reading.</p>
+                    </li>
+                    <li>
+                        <span class="help-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><path d="M14 14h3v3h-3zM21 14v.01M21 21h-4M14 21v.01" /></svg>
+                        </span>
+                        <p><strong>Get in touch.</strong> Tap the QR code to make it bigger and easier to scan.</p>
+                    </li>
+                </ul>
+            </div>
+        </dialog>
         <dialog id="verse-dialog" class="verse-dialog" aria-label="Bible passage">
             <bible-search-results
                 id="verse-results"
@@ -231,8 +352,9 @@
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
         <script src="assets/scripts/sql_script.js?v=20260924-4"></script>
-        <script src="assets/scripts/script.js?v=20260924-5"></script>
+        <script src="assets/scripts/script.js?v=20260924-6"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20260924-1"></script>
+        <script type="module" src="apps/components/bible-sayings.js?v=20260924-2"></script>
         <script type="module" src="apps/components/bible-search-results.js?v=20260924-8"></script>
         <script type="module" src="apps/components/poster-card.js?v=20260924-1"></script>
         <script type="module" src="apps/components/bible-trivia.js?v=20260924-1"></script>

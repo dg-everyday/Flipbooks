@@ -261,6 +261,8 @@ fetch("assets/verses.json")
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
+// <bible-sayings> loads its own sayings too; it shows the same book symbols.
+document.getElementById("bible-sayings").setAttribute("media-base", MEDIA_BASE_URL);
 // <poster-card> resolves the poster and narration files for the date itself.
 document.getElementById("poster-card").setAttribute("media-base", MEDIA_BASE_URL);
 // <bible-trivia> pops itself up after the page loads; it needs the book thumbnails.
@@ -514,9 +516,10 @@ function checkPageEnd() {
 
 addEventListener("scroll", checkPageEnd, { passive: true });
 
-// Verse popup: a Bible reference in a Did You Know card opens that passage in
-// the search results panel, shown as a modal that any tap closes.
+// Verse popup: a Bible reference in a Did You Know card or a Bible saying opens
+// that passage in the search results panel, shown as a modal that any tap closes.
 const didYouKnow = document.getElementById("did-you-know");
+const bibleSayings = document.getElementById("bible-sayings");
 const verseDialog = document.getElementById("verse-dialog");
 const verseResults = document.getElementById("verse-results");
 verseResults.setAttribute("media-base", MEDIA_BASE_URL);
@@ -644,6 +647,10 @@ async function closeVerse() {
 didYouKnow.addEventListener("verse-request", (event) => {
     showVerse(event.detail.reference);
 });
+// A saying's popup stays open underneath; closing the passage returns to it.
+bibleSayings.addEventListener("verse-request", (event) => {
+    showVerse(event.detail.reference);
+});
 
 // Escape would close instantly; route it through the closing animation instead.
 verseDialog.addEventListener("cancel", (event) => {
@@ -654,4 +661,40 @@ verseDialog.addEventListener("cancel", (event) => {
 verseDialog.addEventListener("click", (event) => {
     if (event.composedPath().some((node) => node.nodeName === "BUTTON")) return;
     closeVerse();
+});
+
+// Help: the "?" in the footer opens a guide to the page's gestures. Unlike the
+// other popups it is read, and scrolled, so only the close button, the
+// backdrop or Escape closes it.
+const helpDialog = document.getElementById("help-dialog");
+const helpOpen = document.getElementById("help-open");
+const helpClose = document.getElementById("help-close");
+let helpClosing = false;
+
+helpOpen.addEventListener("click", () => {
+    if (helpDialog.open) return;
+    helpDialog.showModal();
+    helpDialog.scrollTop = 0;
+    if (!reducedMotionQuery.matches) popDialog(helpDialog, "open");
+});
+
+async function closeHelp() {
+    if (!helpDialog.open || helpClosing) return;
+    helpClosing = true;
+    if (!reducedMotionQuery.matches) await popDialog(helpDialog, "close");
+    helpDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    helpDialog.close();
+    helpClosing = false;
+}
+
+// Escape would close instantly; route it through the closing animation instead.
+helpDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeHelp();
+});
+helpClose.addEventListener("click", closeHelp);
+// The dialog has no padding, so a click that lands on it rather than its
+// contents came from the backdrop.
+helpDialog.addEventListener("click", (event) => {
+    if (event.target === helpDialog) closeHelp();
 });

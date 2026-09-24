@@ -130,11 +130,17 @@ const STYLES = /* css */ `
   /* In a popup the passage speaks for itself: no counts, no end-of-list note. */
   :host([compact]) .summary,
   :host([compact]) .end { display: none; }
+  /* A short passage rarely scrolls, so reserving a scrollbar gutter would only
+     leave the verse cards narrower than the book header. */
+  :host([compact]) .reader { scrollbar-gutter: auto; }
   .message { margin: 0; padding: 16px; font-size: 1rem; }
 
   .reader {
     max-height: min(65vh, 640px);
     overflow-y: auto;
+    /* The explanation corner sits 1px past each card's edge to cover its
+       border; never let that sliver add a horizontal scrollbar. */
+    overflow-x: hidden;
     /* Keep the batches loaded by the infinite scroll inside this box: without
        paint containment their height leaks into the document's scroll height
        and leaves blank background below the footer. */
@@ -144,7 +150,9 @@ const STYLES = /* css */ `
     scrollbar-color: #a2957a transparent;
     scroll-behavior: auto;
   }
-  .verse-list { display: grid; gap: 8px; }
+  /* The bottom padding holds the last card's corner, which would otherwise
+     overflow by 1px and give a one-verse popup a scrollbar. */
+  .verse-list { display: grid; gap: 8px; padding-bottom: 1px; }
   .verse-card {
     position: relative;
     display: grid;

@@ -564,5 +564,7 @@ html:has(.splash-dialog[open]) { overflow: hidden; }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }
-  .footer-bottom { padding: 8px 20px 24px; }
+  .footer-bottom { flex-direction: column; justify-content: center; padding: 8px 20px 24px; text-align: center; }
+  .footer-sign { align-items: center; }
+  .footer-social { margin-right: 0; }
 }

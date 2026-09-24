@@ -523,12 +523,15 @@ verseResults.setAttribute("media-base", MEDIA_BASE_URL);
 let verseClosing = false;
 let verseGeneration = 0;
 
+function openVerseDialog() {
+    if (verseDialog.open) return;
+    verseDialog.showModal();
+    if (!reducedMotionQuery.matches) popDialog(verseDialog, "open");
+}
+
 async function showVerse(reference) {
     const generation = ++verseGeneration;
-    if (!verseDialog.open) {
-        verseDialog.showModal();
-        if (!reducedMotionQuery.matches) popDialog(verseDialog, "open");
-    }
+    openVerseDialog();
     verseResults.loading("Loading Bible verses…");
     try {
         const parsed = parseBibleReference(reference);
@@ -553,6 +556,79 @@ async function showVerse(reference) {
         verseResults.showMessage("Bible verses could not be loaded. Please try again.");
     }
 }
+
+// Bookmarks: holding a verse in the results saves it (the results panel keeps
+// the list), and holding the search field shows them all in the verse popup.
+async function showBookmarks() {
+    const generation = ++verseGeneration;
+    openVerseDialog();
+    const ids = verseResults.bookmarks;
+    if (!ids.length) {
+        verseResults.showBookmarks([]);
+        return;
+    }
+    verseResults.loading("Loading your bookmarks…");
+    try {
+        await loadBibleBookSuggestions();
+        if (generation !== verseGeneration || !verseDialog.open) return;
+        verseResults.showBookmarks(getVersesByIds(ids));
+    } catch (error) {
+        if (generation !== verseGeneration) return;
+        console.warn("Bookmarks could not be loaded:", error);
+        verseResults.showMessage("Your bookmarks could not be loaded. Please try again.");
+    }
+}
+
+// The same half-second hold the verse cards use, with the search pill glowing
+// gold while it builds.
+const HOLD_MS = 500;
+const HOLD_SLOP = 10;
+let searchHold = null;
+// The hold ends with the finger lifting, and the click that follows would
+// land on the popup that has just opened and close it again.
+let swallowClick = false;
+
+function cancelSearchHold() {
+    if (!searchHold) return;
+    clearTimeout(searchHold.timer);
+    searchHold = null;
+    searchForm.classList.remove("holding");
+}
+
+searchQuery.addEventListener("pointerdown", (event) => {
+    if (!event.isPrimary || event.button !== 0) return;
+    cancelSearchHold();
+    searchForm.classList.add("holding");
+    searchHold = {
+        x: event.clientX,
+        y: event.clientY,
+        timer: setTimeout(() => {
+            cancelSearchHold();
+            swallowClick = true;
+            navigator.vibrate?.(15);
+            showBookmarks();
+        }, HOLD_MS),
+    };
+});
+searchQuery.addEventListener("pointermove", (event) => {
+    if (searchHold && Math.hypot(event.clientX - searchHold.x, event.clientY - searchHold.y) > HOLD_SLOP) {
+        cancelSearchHold();
+    }
+});
+for (const type of ["pointerup", "pointercancel", "pointerleave"]) {
+    searchQuery.addEventListener(type, cancelSearchHold);
+}
+// A long press would otherwise open the phone's paste menu.
+searchQuery.addEventListener("contextmenu", (event) => {
+    if (searchHold || swallowClick) event.preventDefault();
+});
+addEventListener("pointerdown", () => { swallowClick = false; }, true);
+addEventListener("click", (event) => {
+    if (!swallowClick) return;
+    swallowClick = false;
+    event.preventDefault();
+    event.stopPropagation();
+}, true);
 
 async function closeVerse() {
     if (!verseDialog.open || verseClosing) return;

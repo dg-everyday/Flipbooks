@@ -204,6 +204,14 @@ a:focus-visible { text-decoration: underline; }
 button:focus-visible { filter: brightness(1.2); }
 .hero-search:focus-within { background: #e0eaf1; }
 .hero-search input:focus { outline: none; box-shadow: none; }
+/* Holding the search field opens the bookmarks: the pill glows gold as the
+   half-second hold builds (the timing lives in assets/scripts/script.js). */
+.hero-search { transition: box-shadow .25s ease; }
+.hero-search input { -webkit-touch-callout: none; }
+.hero-search.holding {
+  box-shadow: 0 0 0 3px rgb(168 129 12 / 60%), 0 0 22px 6px rgb(214 170 40 / 55%);
+  transition: box-shadow .5s cubic-bezier(.25, .7, .35, 1);
+}
 .visually-hidden {
   position: absolute;
   width: 1px;

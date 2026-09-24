@@ -38,7 +38,7 @@ documented in a header comment at the top of its file.
 
 | Element | File | Notes |
 | --- | --- | --- |
-| `<bible-search-results>` | `apps/components/bible-search-results.js` | Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. |
+| `<bible-search-results>` | `apps/components/bible-search-results.js` | Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. Holding a verse bookmarks it (up to 20 verse docids in `localStorage`); holding the search field opens them in the verse popup. |
 | `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. |
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
 | `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. |

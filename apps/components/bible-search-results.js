@@ -10,13 +10,19 @@
  * explanations are fetched one chapter at a time from explanations-base. The
  * words of Jesus are printed in red, from the ranges in red-letter-src.
  *
+ * Holding a verse card for half a second bookmarks it: a gold glow spreads
+ * from the finger and the card takes a ribbon. Holding it again removes the
+ * bookmark. Up to 20 verse docids are kept in localStorage, newest first, and
+ * are shared by every panel on the page. Rows without a docid cannot be held.
+ *
  * Usage
  *   <bible-search-results id="results" media-base="https://.../media/"></bible-search-results>
  *   <script type="module" src="./apps/components/bible-search-results.js"></script>
  *
  *   results.loading('Loading Bible verses…');
- *   results.showVerses(rows);   // rows: [{ book_name, book_id, chapter, verse, text }]
+ *   results.showVerses(rows);   // rows: [{ docid, book_name, book_id, chapter, verse, text }]
  *   results.showKeywordResults(rows, ['grace', 'faith']);  // rows from any books
+ *   results.showBookmarks(rows);  // rows for results.bookmarks, in that order
  *   results.showMessage('No verses found.');
  *   results.reset();            // clear and hide
  *
@@ -43,8 +49,9 @@
  *                   so the page can lock its own scrolling.
  *
  * Methods      reset(), loading(message), showMessage(message), showVerses(rows),
- *              showKeywordResults(rows, words)
+ *              showKeywordResults(rows, words), showBookmarks(rows)
  * Properties   busy (read-only)
+ *              bookmarks (read-only): the bookmarked verse docids, newest first
  *
  * CSS custom properties
  *   --search-navy, --search-ink, --search-hebrew, --search-paper,
@@ -67,6 +74,19 @@ const DEFAULT_BATCH_SIZE = 24;
 const DEFAULT_METADATA_SRC = new URL('../../assets/book-metadata.json', import.meta.url).href;
 const DEFAULT_EXPLANATIONS_BASE = new URL('../../assets/explanations/', import.meta.url).href;
 const DEFAULT_RED_LETTER_SRC = new URL('../../assets/red-letter.json', import.meta.url).href;
+
+const BOOKMARKS_KEY = 'dailygrace:bookmarks';
+const BOOKMARK_LIMIT = 20;
+// How long a verse card is held to bookmark it, and how far the finger may
+// drift before the hold counts as a scroll instead.
+const HOLD_MS = 500;
+const HOLD_SLOP = 10;
+const BOOKMARK_NOTES = {
+  added: 'Bookmarked',
+  removed: 'Bookmark removed',
+  full: `Bookmarks full (${BOOKMARK_LIMIT})`,
+  failed: 'Bookmark not saved',
+};
 
 // The "source" of each entry in an explanation file (see tools/explanations).
 const EXPLANATION_SOURCES = {
@@ -169,6 +189,8 @@ const STYLES = /* css */ `
     border: 1px solid rgb(0 27 52 / 16%);
     border-radius: 6px;
     background: rgb(255 255 255 / 16%);
+    /* Keeps the bookmark glow inside the card. */
+    overflow: hidden;
   }
   /* The dog-eared corner opens the verse's explanation. The card's corner is
      cut away so the panel shows through, and the flap is the back of the
@@ -202,6 +224,94 @@ const STYLES = /* css */ `
   .explain:focus-visible { outline: none; }
   .explain:focus-visible::before {
     background: linear-gradient(135deg, #fffaf1 0%, #e9dcc0 30%, var(--search-navy) 50%);
+  }
+
+  /* Bookmarks. Holding a card grows a glow out from the finger; it is gold
+     for a new bookmark and navy when the hold will remove one. */
+  .verse-card[data-docid] {
+    --glow: 214 170 40;
+    -webkit-touch-callout: none;
+  }
+  .verse-card.bookmarked { --glow: 0 27 52; }
+  /* On touch screens a long press would select the text instead. */
+  @media (pointer: coarse) {
+    .verse-card[data-docid] { -webkit-user-select: none; user-select: none; }
+  }
+  /* Positioned so the text paints over the glow. */
+  .verse-reference, .verse-text { position: relative; }
+  .verse-card[data-docid]::before {
+    content: '';
+    position: absolute;
+    left: var(--hold-x, 50%); top: var(--hold-y, 50%);
+    width: 640px; height: 640px;
+    margin: -320px 0 0 -320px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side,
+      rgb(var(--glow) / 40%), rgb(var(--glow) / 16%) 55%, transparent);
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+    transition: transform .3s ease, opacity .3s ease;
+  }
+  .verse-card.holding::before {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform ${HOLD_MS}ms cubic-bezier(.25, .7, .35, 1), opacity .15s ease;
+  }
+  /* The hold is done: the card flashes and the glow fades out. */
+  .verse-card[data-flash] {
+    --flash: 168 129 12;
+    --glow: var(--flash);
+    animation: bookmark-pulse .9s ease-out;
+  }
+  .verse-card[data-flash="removed"] { --flash: 0 27 52; }
+  .verse-card[data-flash="full"],
+  .verse-card[data-flash="failed"] { --flash: 179 38 30; }
+  .verse-card[data-flash]::before { animation: bookmark-glow .9s ease-out forwards; }
+  @keyframes bookmark-pulse {
+    from { box-shadow: inset 0 0 0 2px rgb(var(--flash)), inset 0 0 28px rgb(var(--flash) / 45%); }
+    to { box-shadow: inset 0 0 0 2px transparent, inset 0 0 28px transparent; }
+  }
+  @keyframes bookmark-glow {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(1.2); }
+  }
+  /* A bookmarked card carries a gold ribbon at its top edge. */
+  .verse-card.bookmarked::after {
+    content: '';
+    position: absolute; top: 0; right: 10px;
+    width: 12px; height: 17px;
+    background: var(--search-gold);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+    pointer-events: none;
+  }
+  .verse-card[data-flash="added"]::after { animation: ribbon-drop .35s ease-out; }
+  @keyframes ribbon-drop { from { transform: translateY(-100%); } }
+  .bookmark-note {
+    position: absolute; top: 6px; left: 50%;
+    padding: 3px 12px;
+    border-radius: 999px;
+    background: var(--search-navy);
+    color: #fff;
+    white-space: nowrap;
+    font: 500 .8125rem/1.4 'Roboto', Arial, sans-serif;
+    pointer-events: none;
+    animation: bookmark-note 1.6s ease forwards;
+  }
+  .bookmark-note.added { background: var(--search-gold); }
+  .bookmark-note.full, .bookmark-note.failed { background: var(--search-red-letter); }
+  @keyframes bookmark-note {
+    0% { opacity: 0; transform: translate(-50%, 4px); }
+    12%, 75% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .verse-card[data-docid]::before,
+    .verse-card.holding::before { transform: none; }
+    .verse-card.holding::before { transition: opacity ${HOLD_MS}ms linear; }
+    .verse-card[data-flash]::before { animation-name: bookmark-fade; }
+    .verse-card[data-flash="added"]::after { animation: none; }
+    @keyframes bookmark-fade { from { opacity: 1; } to { opacity: 0; } }
   }
   /* Keyword results: a header for the search itself, the book named on each
      card, and the matched words marked in the text. */
@@ -463,6 +573,38 @@ function verseTextNodes(text, ranges, highlight) {
   return nodes;
 }
 
+// Bookmarks are verse docids, newest first. Storage can be refused (private
+// browsing, a full quota), so reads fall back to none and writes report failure.
+function readBookmarks() {
+  try {
+    const ids = JSON.parse(localStorage.getItem(BOOKMARKS_KEY));
+    return Array.isArray(ids) ? ids.filter(Number.isSafeInteger).slice(0, BOOKMARK_LIMIT) : [];
+  } catch {
+    return [];
+  }
+}
+
+// Every panel on the page listens here to keep its ribbons in step.
+const bookmarkChanges = new EventTarget();
+window.addEventListener('storage', (event) => {
+  if (event.key === BOOKMARKS_KEY || event.key === null) bookmarkChanges.dispatchEvent(new Event('change'));
+});
+
+/** Adds or removes a bookmark. Returns 'added', 'removed', 'full' or 'failed'. */
+function toggleBookmark(docid) {
+  const ids = readBookmarks();
+  const removing = ids.includes(docid);
+  if (!removing && ids.length >= BOOKMARK_LIMIT) return 'full';
+  const next = removing ? ids.filter((id) => id !== docid) : [docid, ...ids];
+  try {
+    localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(next));
+  } catch {
+    return 'failed';
+  }
+  bookmarkChanges.dispatchEvent(new Event('change'));
+  return removing ? 'removed' : 'added';
+}
+
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // The same pop the page's own popups use (assets/scripts/script.js).
@@ -493,6 +635,10 @@ export class BibleSearchResults extends HTMLElement {
   #explanation;
   #explanationRequest = 0;
   #explanationClosing = false;
+  #hold = null;
+  // A hold ends with the finger lifting, and the click that follows must not
+  // reach the page: the verse popup closes on any click.
+  #swallowClick = false;
 
   constructor() {
     super();
@@ -537,18 +683,54 @@ export class BibleSearchResults extends HTMLElement {
       if (event.target.closest('.explanation-close')) this.#closeExplanation();
     });
     dialog.addEventListener('close', () => this.removeAttribute('explaining'));
+
+    const content = this.#content;
+    content.addEventListener('pointerdown', (event) => this.#startHold(event));
+    content.addEventListener('pointermove', (event) => {
+      const hold = this.#hold;
+      if (hold && event.pointerId === hold.pointerId
+          && Math.hypot(event.clientX - hold.x, event.clientY - hold.y) > HOLD_SLOP) {
+        this.#cancelHold();
+      }
+    });
+    content.addEventListener('pointerup', () => this.#cancelHold());
+    content.addEventListener('pointercancel', () => this.#cancelHold());
+    // Scroll events do not bubble; capture catches the reader's own.
+    content.addEventListener('scroll', () => this.#cancelHold(), true);
+    // A long press would otherwise open the phone's context menu.
+    content.addEventListener('contextmenu', (event) => {
+      if (this.#hold || this.#swallowClick) event.preventDefault();
+    });
+    content.addEventListener('click', (event) => {
+      if (!this.#swallowClick) return;
+      this.#swallowClick = false;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
   }
 
   connectedCallback() {
     registerFonts();
     // Small (about 35 KB): fetched now so the first results need not wait for it.
     loadRedLetters(this.#redLetterSrc);
+    bookmarkChanges.addEventListener('change', this.#syncBookmarks);
+    this.#syncBookmarks();
     // Attributes cannot be set in the constructor, so hide an empty panel here.
     if (!this.#content.hasChildNodes()) this.hidden = true;
   }
 
+  disconnectedCallback() {
+    bookmarkChanges.removeEventListener('change', this.#syncBookmarks);
+    this.#cancelHold();
+  }
+
   get busy() {
     return this.#content.getAttribute('aria-busy') === 'true';
+  }
+
+  /** The bookmarked verse docids, newest first. */
+  get bookmarks() {
+    return readBookmarks();
   }
 
   get #mediaBase() {
@@ -576,6 +758,7 @@ export class BibleSearchResults extends HTMLElement {
   reset() {
     this.#generation++;
     this.#explanationRequest++;
+    this.#cancelHold();
     if (this.#explanation.open) this.#explanation.close();
     this.#observer?.disconnect();
     this.#observer = null;
@@ -626,10 +809,23 @@ export class BibleSearchResults extends HTMLElement {
       this.showMessage('No verses found.');
       return;
     }
-    this.#showRows(rows, words);
+    this.#showRows(rows, { words });
   }
 
-  async #showRows(rows, words = null) {
+  /**
+   * The bookmarked verses. rows: [{ docid, book_name, book_id, chapter, verse, text }]
+   * from any number of books, in the order of the bookmarks property.
+   */
+  showBookmarks(rows) {
+    if (!rows?.length) {
+      this.showMessage('No bookmarks yet. Hold a verse in the search results to bookmark it.');
+      return;
+    }
+    this.#showRows(rows, { bookmarks: true });
+  }
+
+  /** view: { words } for keyword results, { bookmarks: true } for bookmarks. */
+  async #showRows(rows, view = {}) {
     const generation = ++this.#generation;
     this.#observer?.disconnect();
     this.#observer = null;
@@ -638,8 +834,64 @@ export class BibleSearchResults extends HTMLElement {
     if (generation !== this.#generation) return;
     this.#content.removeAttribute('aria-busy');
     this.hidden = false;
-    this.#renderVerses(rows, generation, words, redLetters);
+    this.#renderVerses(rows, generation, view, redLetters);
   }
+
+  #startHold(event) {
+    this.#swallowClick = false;
+    if (!event.isPrimary || event.button !== 0) return;
+    const card = event.target.closest('.verse-card[data-docid]');
+    // The explanation corner is a button of its own.
+    if (!card || event.target.closest('button')) return;
+    this.#cancelHold();
+    const box = card.getBoundingClientRect();
+    card.style.setProperty('--hold-x', `${event.clientX - box.left}px`);
+    card.style.setProperty('--hold-y', `${event.clientY - box.top}px`);
+    card.removeAttribute('data-flash');
+    card.classList.add('holding');
+    this.#hold = {
+      card,
+      pointerId: event.pointerId,
+      x: event.clientX,
+      y: event.clientY,
+      timer: setTimeout(() => this.#completeHold(card), HOLD_MS),
+    };
+  }
+
+  #cancelHold() {
+    if (!this.#hold) return;
+    clearTimeout(this.#hold.timer);
+    this.#hold.card.classList.remove('holding');
+    this.#hold = null;
+  }
+
+  #completeHold(card) {
+    this.#hold = null;
+    card.classList.remove('holding');
+    this.#swallowClick = true;
+    const result = toggleBookmark(Number(card.dataset.docid));
+    if (result === 'added' || result === 'removed') navigator.vibrate?.(15);
+
+    card.querySelector('.bookmark-note')?.remove();
+    const note = document.createElement('span');
+    note.className = `bookmark-note ${result}`;
+    note.setAttribute('aria-hidden', 'true');
+    note.textContent = BOOKMARK_NOTES[result];
+    note.addEventListener('animationend', () => note.remove(), { once: true });
+    card.append(note);
+    // Restart the flash when the same card is held twice in quick succession.
+    card.removeAttribute('data-flash');
+    void card.offsetWidth;
+    card.dataset.flash = result;
+    this.#status.textContent = `${card.dataset.reference}: ${BOOKMARK_NOTES[result]}.`;
+  }
+
+  #syncBookmarks = () => {
+    const saved = new Set(readBookmarks());
+    for (const card of this.#content.querySelectorAll('.verse-card[data-docid]')) {
+      card.classList.toggle('bookmarked', saved.has(Number(card.dataset.docid)));
+    }
+  };
 
   #loadBundledBookMetadata() {
     if (!bundledBookMetadata) {
@@ -747,16 +999,35 @@ export class BibleSearchResults extends HTMLElement {
     return header;
   }
 
+  #createBookmarksHeader(rows) {
+    const header = document.createElement('header');
+    header.className = 'book-header keyword-header';
+    const details = document.createElement('div');
+    details.className = 'book-details';
+    const title = document.createElement('h2');
+    title.id = 'book-title';
+    title.textContent = 'Bookmarks';
+    const description = document.createElement('p');
+    description.className = 'book-description';
+    description.textContent = `${rows.length} of ${BOOKMARK_LIMIT} saved verses, newest first. `
+      + 'Hold a verse to remove its bookmark.';
+    details.append(title, description);
+    header.append(details);
+    return header;
+  }
+
   /**
    * highlight: a global pattern of keywords to mark in the text, for keyword results.
+   * mixed: the rows may span books, so each card names its own.
    * redLetters: { book_id: { "chapter:verse": [[start, end], …] } }, the words of Jesus.
+   * saved: the bookmarked docids, which get a ribbon.
    */
-  #createVerseCard(bookName, row, highlight = null, redLetters = {}) {
+  #createVerseCard(bookName, row, { highlight = null, mixed = false, redLetters = {}, saved = new Set() } = {}) {
     const item = document.createElement('div');
     item.setAttribute('role', 'listitem');
     const card = document.createElement('article');
     // Chapter openings only mark the way while reading one book in order.
-    const chapterStart = !highlight && Number(row.verse) === 1;
+    const chapterStart = !mixed && Number(row.verse) === 1;
     card.className = chapterStart ? 'verse-card chapter-start' : 'verse-card';
     const reference = document.createElement('h3');
     reference.className = 'verse-reference';
@@ -776,9 +1047,10 @@ export class BibleSearchResults extends HTMLElement {
     verse.textContent = row.verse;
     numbers.append(chapter, verse);
     reference.append(accessibleReference);
-    // Keyword results span books, so each card shows its own book: symbol and
-    // name. Screen readers already get the name from the hidden reference.
-    if (highlight) {
+    // Keyword results and bookmarks span books, so each card shows its own
+    // book: symbol and name. Screen readers already get the name from the
+    // hidden reference.
+    if (mixed) {
       const symbol = document.createElement('img');
       symbol.className = 'verse-book-symbol';
       symbol.width = 32;
@@ -799,6 +1071,12 @@ export class BibleSearchResults extends HTMLElement {
     const ranges = row.book_id && redLetters[row.book_id]?.[`${row.chapter}:${row.verse}`];
     text.append(...verseTextNodes(row.text, ranges, highlight));
     card.append(reference, text);
+    const { docid } = row;
+    if (Number.isSafeInteger(docid)) {
+      card.dataset.docid = docid;
+      card.dataset.reference = `${bookName} ${row.chapter}:${row.verse}`;
+      card.classList.toggle('bookmarked', saved.has(docid));
+    }
     if (row.book_id) {
       card.classList.add('explainable');
       card.append(this.#createExplainButton(bookName, row));
@@ -881,18 +1159,21 @@ export class BibleSearchResults extends HTMLElement {
     this.#explanationClosing = false;
   }
 
-  /** words: present for keyword results, which may span many books. */
-  #renderVerses(rows, generation, words = null, redLetters = {}) {
-    const keywords = words?.length ? words : null;
+  /** view: { words } for keyword results and { bookmarks: true } for bookmarks, which may span many books. */
+  #renderVerses(rows, generation, view = {}, redLetters = {}) {
+    const keywords = view.words?.length ? view.words : null;
+    const mixed = Boolean(keywords || view.bookmarks);
     const bookName = rows[0].book_name;
     const batchSize = this.#batchSize;
-    const header = keywords
-      ? this.#createKeywordHeader(rows, keywords)
+    const header = view.bookmarks ? this.#createBookmarksHeader(rows)
+      : keywords ? this.#createKeywordHeader(rows, keywords)
       : this.#createBookHeader(bookName, generation);
     // Keywords carry a straight apostrophe; the KJV text a curly one (brother’s).
     const highlight = keywords && new RegExp(
       `\\b(${keywords.map((word) => escapeRegExp(word).replace(/'/g, "['’]")).join('|')})\\b`, 'gi');
-    const heading = keywords ? `Verses with ${keywords.join(', ')}` : bookName;
+    const heading = view.bookmarks ? 'Bookmarked verses'
+      : keywords ? `Verses with ${keywords.join(', ')}`
+      : bookName;
     const summary = document.createElement('p');
     summary.className = 'summary';
 
@@ -900,7 +1181,7 @@ export class BibleSearchResults extends HTMLElement {
     reader.className = 'reader';
     reader.tabIndex = 0;
     reader.setAttribute('role', 'region');
-    reader.setAttribute('aria-label', `${keywords ? heading : `${bookName} verses`}, scroll to read more`);
+    reader.setAttribute('aria-label', `${mixed ? heading : `${bookName} verses`}, scroll to read more`);
     const list = document.createElement('div');
     list.className = 'verse-list';
     list.setAttribute('role', 'list');
@@ -921,8 +1202,10 @@ export class BibleSearchResults extends HTMLElement {
       if (generation !== this.#generation || shown >= rows.length) return;
       const fragment = document.createDocumentFragment();
       const next = Math.min(shown + batchSize, rows.length);
+      const saved = new Set(readBookmarks());
       for (let index = shown; index < next; index++) {
-        fragment.append(this.#createVerseCard(rows[index].book_name, rows[index], highlight, redLetters));
+        fragment.append(this.#createVerseCard(rows[index].book_name, rows[index],
+          { highlight, mixed, redLetters, saved }));
       }
       list.append(fragment);
       shown = next;

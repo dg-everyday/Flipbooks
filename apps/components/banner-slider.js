@@ -40,7 +40,14 @@
  *                connect, on every change of day, and again for the day shown
  *                once verses.json arrives.
  *
- * The slide is skipped when the user prefers reduced motion.
+ * Swipe hint: about a second after today's banner is on screen, it nudges
+ * right to show the edge of yesterday's, then springs back, so readers learn
+ * it can be swiped. It waits while something covers the banner (the trivia
+ * quiz), plays at most once per visit, and stops for good once the reader has
+ * swiped or after three visits (localStorage "dailygrace.banner-hint"). A
+ * touch cuts it short.
+ *
+ * The slide and the hint are skipped when the user prefers reduced motion.
  *
  * CSS custom properties
  *   --banner-slider-gutter, --banner-slider-ink, --banner-slider-heading-ink,
@@ -69,6 +76,17 @@ const DRAG_SLOP = 8;
 const SWIPE_SHARE = 0.18;
 // Longest a slide waits, in ms, for the next day's banner to finish loading.
 const DECODE_WAIT = 300;
+
+// The swipe hint: once the banner has been on screen this long, in ms, it
+// nudges aside to show yesterday's, so readers learn they can swipe. It
+// stops for good once they have swiped, and after HINT_LIMIT visits.
+const HINT_DELAY = 1200;
+const HINT_LIMIT = 3;
+// While something covers the banner (the trivia quiz), check again this often.
+const HINT_RETRY = 1000;
+const HINT_STORAGE_KEY = 'dailygrace.banner-hint';
+// Space, in px, between yesterday's banner and today's while they slide.
+const PEEK_GAP = 12;
 
 const FLIPBOOK_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
   <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -132,6 +150,17 @@ const STYLES = /* css */ `
     height: auto;
     -webkit-user-drag: none;
   }
+  /* Yesterday's banner, just off the left edge, shown only during the swipe hint. */
+  .peek {
+    position: absolute;
+    top: 0;
+    left: var(--banner-slider-gutter);
+    width: calc(100% - 2 * var(--banner-slider-gutter));
+    height: auto;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .peek.showing { visibility: visible; }
 
   .flipbook {
     position: absolute;
@@ -229,6 +258,25 @@ function devotionalDay(today, daysAgo, mediaBase) {
   };
 }
 
+// Whether the reader has swiped, and how many visits have shown the hint.
+// Storage can be refused (private mode); the hint then shows once per visit.
+function readHintState() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(HINT_STORAGE_KEY));
+    return { swiped: stored?.swiped === true, shown: Number(stored?.shown) || 0 };
+  } catch {
+    return { swiped: false, shown: 0 };
+  }
+}
+
+function writeHintState(state) {
+  try {
+    localStorage.setItem(HINT_STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    // Unsaved, the hint may show again next visit.
+  }
+}
+
 export class BannerSlider extends HTMLElement {
   static observedAttributes = ['media-base', 'verses-src', 'flipbook-href', 'past-days'];
 
@@ -237,6 +285,7 @@ export class BannerSlider extends HTMLElement {
   #symbol;
   #stage;
   #banner;
+  #peek;
   #flipbook;
   #reflection;
   #reflectionText;
@@ -255,6 +304,13 @@ export class BannerSlider extends HTMLElement {
   #suppressClick = false;
   #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  // The swipe hint: 'idle' until connected, 'armed' while it waits to play,
+  // 'playing', then 'done' for the rest of the page's life.
+  #hint = 'idle';
+  #hintObserver = null;
+  #hintTimer = 0;
+  #hintAnimations = [];
+
   constructor() {
     super();
     this.#root = this.attachShadow({ mode: 'open' });
@@ -266,6 +322,7 @@ export class BannerSlider extends HTMLElement {
       </h1>
       <div class="stage" role="group" aria-roledescription="carousel" tabindex="0"
         aria-label="Daily Grace for the past week. Swipe, or use the arrow keys, to change the day.">
+        <img class="peek" alt="" width="1920" height="1024" draggable="false" />
         <img class="banner" alt="" width="1920" height="1024" fetchpriority="high" draggable="false" />
         <a class="flipbook">${FLIPBOOK_ICON}</a>
       </div>
@@ -277,6 +334,7 @@ export class BannerSlider extends HTMLElement {
     this.#symbol = this.#root.querySelector('.symbol');
     this.#stage = this.#root.querySelector('.stage');
     this.#banner = this.#root.querySelector('.banner');
+    this.#peek = this.#root.querySelector('.peek');
     this.#flipbook = this.#root.querySelector('.flipbook');
     this.#reflection = this.#root.querySelector('.reflection');
     this.#reflectionText = this.#root.querySelector('.reflection-text');
@@ -307,6 +365,11 @@ export class BannerSlider extends HTMLElement {
 
   connectedCallback() {
     this.#scheduleConfigure();
+    this.#armHint();
+  }
+
+  disconnectedCallback() {
+    this.#stopHint();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -334,6 +397,7 @@ export class BannerSlider extends HTMLElement {
   /** Show the day `daysAgo` days before today at once, clamped to the range. */
   goTo(daysAgo) {
     const target = Math.min(Math.max(Math.round(Number(daysAgo) || 0), 0), this.#pastDays);
+    this.#stopHint();
     this.#show(target);
   }
 
@@ -480,6 +544,10 @@ export class BannerSlider extends HTMLElement {
 
   async #step(step, fromOffset = 0) {
     if (this.#sliding || !this.#canStep(step)) return;
+    // The reader has found the swipe; the hint is not needed again.
+    this.#stopHint();
+    const hint = readHintState();
+    if (!hint.swiped) writeHintState({ ...hint, swiped: true });
     const target = this.daysAgo - step;
     if (this.#reducedMotion.matches) {
       this.#setOffset(0);
@@ -528,11 +596,96 @@ export class BannerSlider extends HTMLElement {
     );
   }
 
+  /* ----- Swipe hint ----- */
+
+  // Wait for the banner to be mostly on screen, then play the hint once.
+  #armHint() {
+    if (this.#hint !== 'idle' || this.#reducedMotion.matches || !this.#pastDays) return;
+    const { swiped, shown } = readHintState();
+    if (swiped || shown >= HINT_LIMIT) return;
+    this.#hint = 'armed';
+    // Scrolled away before the delay is up, it waits for the next time.
+    this.#hintObserver = new IntersectionObserver(([entry]) => {
+      clearTimeout(this.#hintTimer);
+      if (entry.isIntersecting) this.#hintTimer = setTimeout(() => this.#playHint(), HINT_DELAY);
+    }, { threshold: 0.6 });
+    this.#hintObserver.observe(this.#stage);
+  }
+
+  #stopHint() {
+    this.#hint = 'done';
+    this.#hintObserver?.disconnect();
+    this.#hintObserver = null;
+    clearTimeout(this.#hintTimer);
+    for (const animation of this.#hintAnimations) animation.cancel();
+    this.#hintAnimations = [];
+    this.#peek.classList.remove('showing');
+  }
+
+  // True while something else, such as the trivia quiz, sits over the banner.
+  // A dialog in another component's shadow root is found as that component.
+  #covered() {
+    const box = this.#stage.getBoundingClientRect();
+    return document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2) !== this;
+  }
+
+  // Today's banner nudges right, pulling yesterday's in from the left edge,
+  // and springs back: the first part of a swipe, played for the reader.
+  async #playHint() {
+    if (this.#hint !== 'armed') return;
+    // Only on today, and only while nothing else is moving the banner.
+    if (this.daysAgo !== 0 || this.#sliding || this.#drag) {
+      this.#stopHint();
+      return;
+    }
+    if (document.hidden || this.#covered()) {
+      this.#hintTimer = setTimeout(() => this.#playHint(), HINT_RETRY);
+      return;
+    }
+    this.#hint = 'playing';
+    this.#hintObserver.disconnect();
+    this.#hintObserver = null;
+
+    const yesterday = devotionalDay(this.#today, 1, this.#mediaBase).banner;
+    if (this.#peek.getAttribute('src') !== yesterday) this.#peek.src = yesterday;
+    const [today, peek] = await Promise.allSettled([this.#banner.decode(), this.#peek.decode()]);
+    // A touch while the banners decoded has already stopped the hint. With no
+    // banner for today there is nothing to nudge; with none for yesterday the
+    // nudge still shows that the banner moves.
+    if (this.#hint !== 'playing') return;
+    if (today.status === 'rejected') {
+      this.#stopHint();
+      return;
+    }
+
+    const width = this.#banner.offsetWidth;
+    const nudge = Math.round(Math.min(Math.max(width * 0.14, 48), 140));
+    const frames = (from) => [
+      { transform: `translateX(${from}px)`, easing: 'cubic-bezier(.3, 0, .2, 1)' },
+      { transform: `translateX(${from + nudge}px)`, offset: 0.4 },
+      { transform: `translateX(${from + nudge}px)`, offset: 0.55, easing: 'cubic-bezier(.34, 1.56, .64, 1)' },
+      { transform: `translateX(${from}px)` },
+    ];
+    const timing = { duration: 1400 };
+    this.#hintAnimations = [this.#banner.animate(frames(0), timing)];
+    if (peek.status === 'fulfilled') {
+      this.#peek.classList.add('showing');
+      this.#hintAnimations.push(this.#peek.animate(frames(-(width + PEEK_GAP)), timing));
+    }
+    const state = readHintState();
+    writeHintState({ ...state, shown: state.shown + 1 });
+
+    await Promise.all(this.#hintAnimations.map((animation) => animation.finished)).catch(() => {});
+    if (this.#hint === 'playing') this.#stopHint();
+  }
+
   /* ----- Swiping ----- */
 
   // The reader's finger is followed only once a press has clearly moved
   // sideways; an upward or downward one is left to scroll the page.
   #onPointerDown(event) {
+    // A touch mid-hint takes over from it.
+    this.#stopHint();
     if (this.#sliding || !event.isPrimary || event.button !== 0) return;
     this.#drag = { id: event.pointerId, x: event.clientX, y: event.clientY, offset: 0, active: false };
   }

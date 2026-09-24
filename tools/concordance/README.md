@@ -9,19 +9,21 @@ python tools/concordance/build_concordance.py
 
 | output | size | used by |
 | --- | --- | --- |
-| `assets/concordance.json` | ~1.7 MB (~640 KB gzipped) | the site |
+| `assets/concordance.json` | ~1.2 MB (~490 KB gzipped) | nothing yet: kept for a word browser (love, loved, loveth… with counts) |
 | `tools/concordance/concordance.db` | ~15 MB | offline queries; not committed, not deployed |
 
-The site loads the JSON rather than the database: sql.js downloads a whole
+A page would load the JSON rather than the database: sql.js downloads a whole
 `.db` file before it can query it, and most of the database's size is word
-positions a concordance page does not need.
+positions a concordance page does not need. The site's keyword search does not
+use either; it searches `dailygrace.db` directly.
 
 ## assets/concordance.json
 
 ```json
 {
   "words":  { "grace": [146, 331, ...], ... },
-  "titles": { "31103": ["Ps", 3, "A Psalm of David, when he fled from Absalom his son."], ... }
+  "titles": { "31103": ["Ps", 3, "A Psalm of David, when he fled from Absalom his son."], ... },
+  "omitted": ["a", "and", "an", ...]
 }
 ```
 
@@ -42,6 +44,8 @@ positions a concordance page does not need.
   real verse; values are `[book_id, chapter, text]`. Show them as
   "Psalm 3 (title)" and sort them before verse 1 of their psalm — sorting by
   verse id alone would put them after Revelation.
+- **`omitted`** lists the common words left out of `words` (see below), so a
+  search for one can say it is too common rather than not found.
 
 ## tools/concordance/concordance.db
 
@@ -65,9 +69,9 @@ ORDER BY v.book_number, v.chapter, v.verse;
 
 ## How the text is cleaned
 
-These fixes are applied before indexing. Only `concordance.db` stores the
-cleaned text; `dailygrace.db` is left as it is, so a page showing verses from it
-has to deal with the last two points itself.
+These fixes are applied before indexing. `dailygrace.db` is left as it is; the
+site applies the same fixes when it reads verses (`splitVerseText()` in
+`assets/scripts/sql_script.js`), so keep the two in step.
 
 - **Psalm titles.** The source stores each psalm's superscription ("A Psalm of
   David…") on the end of the previous psalm's last verse. The script moves it
@@ -82,4 +86,8 @@ has to deal with the last two points itself.
 - Hyphenated names stay whole (`beth-shemesh`, `abed-nego`).
 - Possessives are separate entries (`god's`, `sons'`). Curly apostrophes are
   stored as `'`, so match `’` and `'` alike when highlighting in verse text.
-- Every word is indexed, including common ones like `the` and `and`.
+- Like a printed concordance, `concordance.json` leaves out the small words
+  with no meaning of their own: articles, conjunctions, prepositions, pronouns,
+  helping verbs (`is`, `shall`, `hath`, …) and `O`. The list is `OMITTED` in
+  `build_concordance.py`. Common words that do carry meaning stay (`lord`,
+  `god`, `not`, `all`, `will`, `am`). `concordance.db` indexes every word.

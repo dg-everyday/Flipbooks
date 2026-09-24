@@ -16,7 +16,8 @@ few images that must work even when the media host does not.
 - **Search** (`hero-toolbar`) accepts a book, chapter, or verse range:
   `Genesis`, `Psalms 119`, `Ephesians 2:8-10,15`. Focusing the field loads the
   SQLite Bible and offers a filtered book list you can pick with the mouse or
-  arrow keys.
+  arrow keys. The padlock beside it switches to keyword search: verses that
+  contain every word typed, psalm titles included.
 - **Daily banner** for today's date, with a link to the flipbook.
 - **Reflection strip** — today's reflection, clamped to three lines until tapped.
 - **`<poster-card>`** — today's poster; tap it to flip to the comic version, or
@@ -61,7 +62,10 @@ declared inside a shadow root.
   open-close animations.
 - **`assets/scripts/sql_script.js`** — loads sql.js (1.14.2, from cdnjs) and the
   Bible database, and exposes `initDatabase()`, `parseBibleReference()`,
-  `getVerses()`, and `getBooks()`. The database is fetched lazily, the first
+  `getVerses()`, `getVersesByIds()`, `searchVersesByKeywords()` and
+  `getBooks()`. Verse text comes back cleaned: the psalm titles and Psalm 119
+  letters the database appends to verses are taken off, and names split at a
+  line break are rejoined. The database is fetched lazily, the first
   time the search field is focused, not on page load.
 - **`assets/scripts/sqlite-db.js`** — shared sql.js access for the components:
   `getSqlJs()`, `openDatabase()` and `query()`. It reuses `sql_script.js`'s

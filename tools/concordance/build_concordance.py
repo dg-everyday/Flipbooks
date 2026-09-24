@@ -6,7 +6,7 @@ Build a word concordance of the KJV text in assets/db/dailygrace.db.
 
 Writes two files, both rebuilt from scratch on every run:
 
-    assets/concordance.json              what the site loads: word -> verses
+    assets/concordance.json              compact web copy: word -> verses
     tools/concordance/concordance.db     the full index, with word positions
 
 See README.md for both formats.
@@ -34,6 +34,21 @@ BROKEN_HYPHEN = re.compile(r"(?<=[A-Za-z])-\s+(?=[a-z])")
 # A word is letters, optionally joined by apostrophes or hyphens (brother's,
 # Beth-el), plus the trailing apostrophe of a plural possessive (sons').
 WORD = re.compile(r"[A-Za-z]+(?:['’-][A-Za-z]+)*(?:(?<=s)['’](?![A-Za-z]))?")
+
+# Like a printed concordance, the JSON copy leaves out the small words that
+# carry no meaning of their own: articles, conjunctions, prepositions,
+# pronouns and helping verbs. Words that do mean something stay, however
+# common (lord, god, not, all, will, am). concordance.db still has them all.
+OMITTED = frozenset("""
+    a an the
+    and but or nor for that if as than then so
+    of to in into unto upon on at by with from
+    i me my mine thou thee thy thine he him his she her hers it its
+    we us our ours ye you your yours they them their theirs
+    this these those which who whom whose what
+    be is are was were been shall shalt hath hast have has had
+    o
+""".split())
 
 SCHEMA = """
 CREATE TABLE books (
@@ -134,12 +149,16 @@ def build():
 
 
 def write_json(books, verses, occurrences):
-    """Write the site's copy: each word's verse ids, ascending and delta-encoded.
+    """Write the web copy: each word's verse ids, ascending and delta-encoded.
 
     Psalm titles are not in dailygrace.db, so their text travels in the file.
+    The OMITTED words are listed, not indexed, so a page can say why they
+    find nothing.
     """
     verse_ids = {}
     for word, verse_id, _ in occurrences:
+        if word in OMITTED:
+            continue
         ids = verse_ids.setdefault(word, [])
         if not ids or ids[-1] != verse_id:
             ids.append(verse_id)
@@ -153,7 +172,8 @@ def write_json(books, verses, occurrences):
               for verse_id, num, chapter, verse, text in verses if verse == 0}
 
     with open(CONCORDANCE_JSON, "w", encoding="utf-8", newline="\n") as f:
-        json.dump({"words": words, "titles": titles}, f, ensure_ascii=False, separators=(",", ":"))
+        json.dump({"words": words, "titles": titles, "omitted": sorted(OMITTED)},
+                  f, ensure_ascii=False, separators=(",", ":"))
 
 
 if __name__ == "__main__":

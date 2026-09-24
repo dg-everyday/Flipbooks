@@ -190,6 +190,58 @@ function parseBibleReference(reference) {
 }
 
 // ============================================================
+// Clean verse text
+//
+// splitVerseText("Ps", "...trust in him.    Psalm 3  A Psalm of David...")
+//   -> { text: "...trust in him.",
+//        title: { chapter: 3, text: "A Psalm of David..." } }
+//
+// dailygrace.db stores each psalm's title on the end of the
+// previous psalm's last verse, after a run of spaces, and Psalm
+// 119's letters ("BETH.") after each section's last verse. Some
+// hyphenated names were split at a line break ("Beth- shemesh").
+// The functions below return verse text with these taken out or
+// rejoined, the way tools/concordance/build_concordance.py does.
+//
+// Only Psalms lose text, and only at the end of a verse, and the
+// split names are all in the Old Testament, so the red-letter
+// character ranges (New Testament) still line up.
+// ============================================================
+
+const PSALM_HEADING = /\s{3,}Psalm (\d+)\s*(.*?)\s*$/;
+const ACROSTIC = /(?:^|\s+)(?:ALEPH|BETH|GIMEL|DALETH|HE|VAU|ZAIN|CHETH|TETH|JOD|CAPH|LAMED|MEM|NUN|SAMECH|AIN|PE|TZADDI|KOPH|RESH|SCHIN|TAU)\.\s*$/;
+const BROKEN_HYPHEN = /(?<=[A-Za-z])-\s+(?=[a-z])/g;
+
+function splitVerseText(bookId, rawText) {
+    let text = String(rawText ?? "");
+    let title = null;
+
+    if (bookId === "Ps") {
+        const heading = text.match(PSALM_HEADING);
+        if (heading) {
+            text = text.slice(0, heading.index);
+            // Psalm 119 has no title, only its first letter.
+            const titleText = heading[2].replace(ACROSTIC, "").replace(/\s+/g, " ").trim();
+            if (titleText) title = { chapter: Number(heading[1]), text: titleText };
+        }
+        text = text.replace(ACROSTIC, "");
+    }
+
+    return { text: text.replace(BROKEN_HYPHEN, "-").trimEnd(), title };
+}
+
+function readVerseRows(stmt) {
+    const rows = [];
+    while (stmt.step()) {
+        const row = stmt.getAsObject();
+        row.text = splitVerseText(row.book_id, row.text).text;
+        rows.push(row);
+    }
+    stmt.free();
+    return rows;
+}
+
+// ============================================================
 // Get verses
 //
 // getVerses("Ephesians")
@@ -238,13 +290,7 @@ function getVerses(bookName, chapter = null, verses = null) {
     // Execute query
     const stmt = db.prepare(query);
     stmt.bind(params);
-    const results = [];
-    while (stmt.step()) {
-        results.push(stmt.getAsObject());
-    }
-
-    stmt.free();
-    return results;
+    return readVerseRows(stmt);
 }
 
 // ============================================================
@@ -275,13 +321,7 @@ function getVersesByIds(ids) {
 
     const stmt = db.prepare(query);
     stmt.bind(docids);
-    const byId = new Map();
-    while (stmt.step()) {
-        const row = stmt.getAsObject();
-        byId.set(row.docid, row);
-    }
-
-    stmt.free();
+    const byId = new Map(readVerseRows(stmt).map((row) => [row.docid, row]));
     return docids.map((id) => byId.get(id)).filter(Boolean);
 }
 
@@ -294,6 +334,7 @@ function getVersesByIds(ids) {
 // Every word must appear as a whole word in the book name or
 // the verse text, so "love" does not match "loved" or "glove",
 // and "1 john love" finds the verses of 1 John that say love.
+// A psalm's title is searched too, and comes back as verse 0.
 // Results run in Bible order.
 // ============================================================
 
@@ -346,10 +387,25 @@ function searchVersesByKeywords(words) {
     stmt.free();
 
     const patterns = words.map((word) => new RegExp(`\\b${word.replace(/'/g, "['’]")}\\b`, "i"));
-    return rows.filter((row) => {
-        const haystack = `${row.book_name} ${row.text}`;
-        return patterns.every((pattern) => pattern.test(haystack));
-    });
+    const matches = (bookName, text) => patterns.every((pattern) => pattern.test(`${bookName} ${text}`));
+    const results = [];
+    for (const row of rows) {
+        const { text, title } = splitVerseText(row.book_id, row.text);
+        if (matches(row.book_name, text)) results.push({ ...row, text });
+        // A psalm's title is stored on the verse before the psalm, so it
+        // comes right after that verse: ahead of the psalm's verse 1. It
+        // is verse 0, with no docid, so it cannot be bookmarked.
+        if (title && matches(row.book_name, title.text)) {
+            results.push({
+                book_name: row.book_name,
+                book_id: row.book_id,
+                chapter: title.chapter,
+                verse: 0,
+                text: title.text,
+            });
+        }
+    }
+    return results;
 }
 
 function getBooks(asJsonString = false) {

@@ -21,7 +21,8 @@
  *
  *   results.loading('Loading Bible verses…');
  *   results.showVerses(rows);   // rows: [{ docid, book_name, book_id, chapter, verse, text }]
- *   results.showKeywordResults(rows, ['grace', 'faith']);  // rows from any books
+ *   results.showKeywordResults(rows, ['grace', 'faith']);  // rows from any books;
+ *                               // a psalm's title is verse 0, with no docid
  *   results.showBookmarks(rows);  // rows for results.bookmarks, in that order
  *   results.showMessage('No verses found.');
  *   results.reset();            // clear and hide
@@ -351,6 +352,10 @@ const STYLES = /* css */ `
   }
   .chapter-number { font: 500 .9375rem/1.5 'Roboto', Arial, sans-serif; }
   .verse-number { font: 400 2.25rem/1 Georgia, 'Times New Roman', serif; }
+  /* A psalm's title in keyword results: "3:title", set in italics as printed
+     Bibles set the superscription. */
+  .verse-number.psalm-title { font: italic 400 1.125rem/1.35 Georgia, 'Times New Roman', serif; }
+  .title-card .verse-text { font-style: italic; }
   /* Verse 1 opens a chapter, so its numbers become a gold marker you can find
      at a glance while scrolling a long book. */
   .chapter-start .verse-numbers {
@@ -1028,13 +1033,18 @@ export class BibleSearchResults extends HTMLElement {
     const card = document.createElement('article');
     // Chapter openings only mark the way while reading one book in order.
     const chapterStart = !mixed && Number(row.verse) === 1;
-    card.className = chapterStart ? 'verse-card chapter-start' : 'verse-card';
+    // Keyword results give a psalm's title as verse 0.
+    const psalmTitle = row.verse === 0;
+    card.className = chapterStart ? 'verse-card chapter-start'
+      : psalmTitle ? 'verse-card title-card'
+      : 'verse-card';
     const reference = document.createElement('h3');
     reference.className = 'verse-reference';
     const accessibleReference = document.createElement('span');
     accessibleReference.className = 'visually-hidden';
     accessibleReference.textContent = chapterStart
       ? `${bookName}, start of chapter ${row.chapter}, verse ${row.verse}`
+      : psalmTitle ? `${bookName}, chapter ${row.chapter}, title`
       : `${bookName}, chapter ${row.chapter}, verse ${row.verse}`;
     const numbers = document.createElement('span');
     numbers.className = 'verse-numbers';
@@ -1043,8 +1053,8 @@ export class BibleSearchResults extends HTMLElement {
     chapter.className = 'chapter-number';
     chapter.textContent = `${row.chapter}:`;
     const verse = document.createElement('span');
-    verse.className = 'verse-number';
-    verse.textContent = row.verse;
+    verse.className = psalmTitle ? 'verse-number psalm-title' : 'verse-number';
+    verse.textContent = psalmTitle ? 'title' : row.verse;
     numbers.append(chapter, verse);
     reference.append(accessibleReference);
     // Keyword results and bookmarks span books, so each card shows its own
@@ -1077,7 +1087,8 @@ export class BibleSearchResults extends HTMLElement {
       card.dataset.reference = `${bookName} ${row.chapter}:${row.verse}`;
       card.classList.toggle('bookmarked', saved.has(docid));
     }
-    if (row.book_id) {
+    // The explanations cover numbered verses only.
+    if (row.book_id && !psalmTitle) {
       card.classList.add('explainable');
       card.append(this.#createExplainButton(bookName, row));
     }

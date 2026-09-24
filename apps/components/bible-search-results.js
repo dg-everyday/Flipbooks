@@ -7,7 +7,8 @@
  * a "N verses found" summary and a scrolling reader that loads verses in
  * batches as you scroll or press "Load more verses". Each verse card has a
  * dog-eared corner that opens the verse's explanation in a popup; the
- * explanations are fetched one chapter at a time from explanations-base.
+ * explanations are fetched one chapter at a time from explanations-base. The
+ * words of Jesus are printed in red, from the ranges in red-letter-src.
  *
  * Usage
  *   <bible-search-results id="results" media-base="https://.../media/"></bible-search-results>
@@ -34,7 +35,11 @@
  *                   (resolved against the page). Rows without a book_id get
  *                   no explanation corner.
  *                   Default: ../../assets/explanations/ (relative to this file)
- *   explaining      Set by the component while the explanation popup is open,
+ *   red-letter-src  JSON of where the words of Jesus fall in each verse, printed
+ *                   in red (see tools/red-letter). Rows without a book_id, or
+ *                   a file that fails to load, leave the text in black.
+ *                   Default: ../../assets/red-letter.json (relative to this file)
+ *   explaining     Set by the component while the explanation popup is open,
  *                   so the page can lock its own scrolling.
  *
  * Methods      reset(), loading(message), showMessage(message), showVerses(rows),
@@ -43,7 +48,7 @@
  *
  * CSS custom properties
  *   --search-navy, --search-ink, --search-hebrew, --search-paper,
- *   --reference-width
+ *   --search-red-letter, --reference-width
  *
  * Fonts: Germania One, Strait and Roboto are registered on the document by
  * assets/scripts/fonts.js.
@@ -61,6 +66,7 @@ const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_BATCH_SIZE = 24;
 const DEFAULT_METADATA_SRC = new URL('../../assets/book-metadata.json', import.meta.url).href;
 const DEFAULT_EXPLANATIONS_BASE = new URL('../../assets/explanations/', import.meta.url).href;
+const DEFAULT_RED_LETTER_SRC = new URL('../../assets/red-letter.json', import.meta.url).href;
 
 // The "source" of each entry in an explanation file (see tools/explanations).
 const EXPLANATION_SOURCES = {
@@ -75,6 +81,7 @@ const STYLES = /* css */ `
     --search-hebrew: #963d32;
     --search-gold: #a8810c;
     --search-paper: #f3e7d2;
+    --search-red-letter: #b3261e;
     --reference-width: 6.25rem;
 
     display: block;
@@ -223,6 +230,8 @@ const STYLES = /* css */ `
     background: rgb(168 129 12 / 24%);
     color: inherit;
   }
+  /* Red-letter text: the words of Jesus, as many printed Bibles set them. */
+  .red-letter { color: var(--search-red-letter); }
   .verse-reference { margin: 0; font-weight: 400; }
   .verse-numbers {
     display: flex; align-items: flex-start; justify-content: center;
@@ -413,6 +422,47 @@ function highlightedText(text, pattern) {
   return parts;
 }
 
+// Red-letter ranges are shared by every instance: one fetch per file. A file
+// that fails to load resolves to no ranges, so verses still show, in black.
+const redLetterCache = new Map();
+
+function loadRedLetters(url) {
+  if (!redLetterCache.has(url)) {
+    redLetterCache.set(url, fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Failed to fetch red letters: ${response.status}`);
+        return response.json();
+      })
+      .catch((error) => {
+        console.warn('Red-letter text unavailable:', error);
+        redLetterCache.delete(url);
+        return {};
+      }));
+  }
+  return redLetterCache.get(url);
+}
+
+/**
+ * The verse text as nodes: the words of Jesus (ranges: [[start, end], …]) in
+ * red spans, and keywords marked inside either when highlight is given.
+ */
+function verseTextNodes(text, ranges, highlight) {
+  const words = (part) => (highlight ? highlightedText(part, highlight) : [part]);
+  if (!ranges?.length) return words(text);
+  const nodes = [];
+  let last = 0;
+  for (const [start, end] of ranges) {
+    if (start > last) nodes.push(...words(text.slice(last, start)));
+    const red = document.createElement('span');
+    red.className = 'red-letter';
+    red.append(...words(text.slice(start, end)));
+    nodes.push(red);
+    last = end;
+  }
+  nodes.push(...words(text.slice(last)));
+  return nodes;
+}
+
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // The same pop the page's own popups use (assets/scripts/script.js).
@@ -491,6 +541,8 @@ export class BibleSearchResults extends HTMLElement {
 
   connectedCallback() {
     registerFonts();
+    // Small (about 35 KB): fetched now so the first results need not wait for it.
+    loadRedLetters(this.#redLetterSrc);
     // Attributes cannot be set in the constructor, so hide an empty panel here.
     if (!this.#content.hasChildNodes()) this.hidden = true;
   }
@@ -513,6 +565,11 @@ export class BibleSearchResults extends HTMLElement {
     const base = this.getAttribute('explanations-base');
     if (!base) return DEFAULT_EXPLANATIONS_BASE;
     return new URL(base.endsWith('/') ? base : `${base}/`, document.baseURI).href;
+  }
+
+  get #redLetterSrc() {
+    const src = this.getAttribute('red-letter-src');
+    return src ? new URL(src, document.baseURI).href : DEFAULT_RED_LETTER_SRC;
   }
 
   /** Clear the panel and hide it. Also cancels any pending overview lookups. */
@@ -557,12 +614,7 @@ export class BibleSearchResults extends HTMLElement {
       this.showMessage('No verses found.');
       return;
     }
-    this.#generation++;
-    this.#observer?.disconnect();
-    this.#observer = null;
-    this.#content.removeAttribute('aria-busy');
-    this.hidden = false;
-    this.#renderVerses(rows, this.#generation);
+    this.#showRows(rows);
   }
 
   /**
@@ -574,12 +626,19 @@ export class BibleSearchResults extends HTMLElement {
       this.showMessage('No verses found.');
       return;
     }
-    this.#generation++;
+    this.#showRows(rows, words);
+  }
+
+  async #showRows(rows, words = null) {
+    const generation = ++this.#generation;
     this.#observer?.disconnect();
     this.#observer = null;
+    // Normally already here: the file is requested when the panel connects.
+    const redLetters = await loadRedLetters(this.#redLetterSrc);
+    if (generation !== this.#generation) return;
     this.#content.removeAttribute('aria-busy');
     this.hidden = false;
-    this.#renderVerses(rows, this.#generation, words);
+    this.#renderVerses(rows, generation, words, redLetters);
   }
 
   #loadBundledBookMetadata() {
@@ -688,8 +747,11 @@ export class BibleSearchResults extends HTMLElement {
     return header;
   }
 
-  /** highlight: a global pattern of keywords to mark in the text, for keyword results. */
-  #createVerseCard(bookName, row, highlight = null) {
+  /**
+   * highlight: a global pattern of keywords to mark in the text, for keyword results.
+   * redLetters: { book_id: { "chapter:verse": [[start, end], …] } }, the words of Jesus.
+   */
+  #createVerseCard(bookName, row, highlight = null, redLetters = {}) {
     const item = document.createElement('div');
     item.setAttribute('role', 'listitem');
     const card = document.createElement('article');
@@ -734,8 +796,8 @@ export class BibleSearchResults extends HTMLElement {
     reference.append(numbers);
     const text = document.createElement('p');
     text.className = 'verse-text';
-    if (highlight) text.append(...highlightedText(row.text, highlight));
-    else text.textContent = row.text;
+    const ranges = row.book_id && redLetters[row.book_id]?.[`${row.chapter}:${row.verse}`];
+    text.append(...verseTextNodes(row.text, ranges, highlight));
     card.append(reference, text);
     if (row.book_id) {
       card.classList.add('explainable');
@@ -820,7 +882,7 @@ export class BibleSearchResults extends HTMLElement {
   }
 
   /** words: present for keyword results, which may span many books. */
-  #renderVerses(rows, generation, words = null) {
+  #renderVerses(rows, generation, words = null, redLetters = {}) {
     const keywords = words?.length ? words : null;
     const bookName = rows[0].book_name;
     const batchSize = this.#batchSize;
@@ -860,7 +922,7 @@ export class BibleSearchResults extends HTMLElement {
       const fragment = document.createDocumentFragment();
       const next = Math.min(shown + batchSize, rows.length);
       for (let index = shown; index < next; index++) {
-        fragment.append(this.#createVerseCard(rows[index].book_name, rows[index], highlight));
+        fragment.append(this.#createVerseCard(rows[index].book_name, rows[index], highlight, redLetters));
       }
       list.append(fragment);
       shown = next;

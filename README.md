@@ -134,7 +134,7 @@ placeholder carrying that day's verse.
 
 Decorative assets stay local, so the reader still looks right if R2 is
 unreachable: `end-paper.svg`, `specialty-paper.svg`, `wire-binding.svg`,
-`dg-icon-02-flat.webp` (the placeholder logo) and `audio/page_flip.webm` (the
+`dg-icon-02-flat-256.webp` (the placeholder logo) and `audio/page_flip.webm` (the
 page-turn sound), all under `assets/`.
 
 ## Local development

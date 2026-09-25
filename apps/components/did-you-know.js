@@ -4,6 +4,9 @@
  * Shows a banner with a refresh button and a list of random facts. Each fact
  * has the book symbol, a title, the fact text and its Bible reference. The
  * refresh button draws a new batch that never repeats the previous one.
+ * Pulling down (or tapping) the chevrons under the list adds another batch
+ * of facts not yet shown, up to 20 in all; then the chevrons fold away until
+ * the next refresh.
  *
  * Holding a fact for half a second bookmarks it: a gold glow spreads from the
  * finger and the card takes a ribbon. Holding it again removes the bookmark.
@@ -23,14 +26,17 @@
  *                resolved against the page.
  *                Default: ../../assets/db/didyouknow.db (relative to this file)
  *   count        Facts per batch. Default: 5
- *   bookmarks    Present: no banner; show the bookmarked facts, newest first.
- *                Call showBookmarks() to bring the list up to date.
+ *   bookmarks    Present: no banner and no pull tab; show the bookmarked
+ *                facts, newest first. Call showBookmarks() to bring the list
+ *                up to date.
  *
  * Methods      refresh()        show a new batch
+ *              more()           add a batch below the list, up to 20 facts
  *              showBookmarks()  show the bookmarked facts, newest first
  * Properties   bookmarks (read-only): the bookmarked fact ids, newest first
  * Events       ready         fired once facts are loaded, detail: { total }
  *              refresh       fired after each batch, detail: { ids }
+ *              more          fired after more() adds facts, detail: { ids }
  *              bookmarkchange  a hold added or removed a bookmark,
  *                            detail: { id, result: 'added' | 'removed' }
  *              error         detail: { message }
@@ -60,6 +66,7 @@ import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260925-1';
+import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
@@ -69,6 +76,8 @@ const bookSymbolUrl = (mediaBase, book) =>
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 //const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const DEFAULT_COUNT = 5;
+// Pulling for more stops once the list holds this many facts.
+const MAX_FACTS = 20;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -82,6 +91,14 @@ const bookmarks = bookmarkStore('dailygrace:bookmarks:facts', { isId: Number.isS
 // The facts are shared by every instance, so the page's list and its bookmarks
 // popup read the database once between them.
 const factsCache = new Map();
+
+function shuffle(items) {
+  for (let index = items.length - 1; index > 0; index--) {
+    const swap = Math.floor(Math.random() * (index + 1));
+    [items[index], items[swap]] = [items[swap], items[index]];
+  }
+  return items;
+}
 
 /** Reads every fact out of the database, then closes it again. */
 function readFacts(url) {
@@ -224,6 +241,10 @@ const STYLES = /* css */ `
     outline: 2px solid var(--dyk-reference); outline-offset: 3px; border-radius: 3px;
   }
 
+  /* The chevrons tuck up under the last fact rather than sit a full gap away. */
+  .pull-tab { margin-top: -14px; }
+  :host([bookmarks]) .pull-tab { display: none; }
+
   @media (max-width: 650px) {
     :host { --symbol-column: 5.25rem; --dyk-symbol-size: 52px; }
     .refresh { top: 4px; right: 4px; width: 36px; height: 36px; }
@@ -233,7 +254,8 @@ const STYLES = /* css */ `
   @media (prefers-reduced-motion: reduce) {
     .refresh svg, .refresh.is-spinning svg { transition: none; animation: none; }
   }
-${BOOKMARK_STYLES}`;
+${BOOKMARK_STYLES}
+${PULL_TAB_STYLES}`;
 
 export class DidYouKnow extends HTMLElement {
   static observedAttributes = ['media-base', 'src', 'count'];
@@ -248,6 +270,7 @@ export class DidYouKnow extends HTMLElement {
   #loading = null;
   #nearObserver = null;
   #hold;
+  #pullTab;
   #showingBookmarks = false;
 
   constructor() {
@@ -268,6 +291,10 @@ export class DidYouKnow extends HTMLElement {
           <p class="bookmarks-summary"></p>
         </header>
         <div class="list"><p class="message">Loading Bible facts…</p></div>
+        <button class="pull-tab" type="button" hidden aria-label="Show more Bible facts"
+                title="Pull down or tap for more facts">
+          ${PULL_TAB_ICON}
+        </button>
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>`;
     this.#list = this.#root.querySelector('.list');
@@ -284,6 +311,8 @@ export class DidYouKnow extends HTMLElement {
     this.#refreshButton.addEventListener('animationend', () => {
       this.#refreshButton.classList.remove('is-spinning');
     });
+
+    this.#pullTab = new PullTab(this.#root.querySelector('.pull-tab'), { onPull: () => this.more() });
 
     // The reference is a button of its own, so holding it does nothing.
     this.#hold = new CardHold(this.#list, {
@@ -390,6 +419,7 @@ export class DidYouKnow extends HTMLElement {
         message.className = 'message';
         message.textContent = 'Bible facts could not be loaded. Please reload the page to try again.';
         this.#list.replaceChildren(message);
+        this.#pullTab.hide();
         this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
       }));
   }
@@ -397,13 +427,19 @@ export class DidYouKnow extends HTMLElement {
   /** Draws from facts not in the previous batch, so a refresh never repeats. */
   #pick() {
     const count = this.#count;
-    const unseen = this.#facts.filter((fact) => !this.#shownIds.has(fact.id));
-    const pool = unseen.length >= count ? unseen : this.#facts.slice();
-    for (let index = pool.length - 1; index > 0; index--) {
-      const swap = Math.floor(Math.random() * (index + 1));
-      [pool[index], pool[swap]] = [pool[swap], pool[index]];
-    }
-    return pool.slice(0, Math.min(count, pool.length));
+    const unseen = this.#unseen();
+    return shuffle(unseen.length >= count ? unseen : this.#facts.slice()).slice(0, count);
+  }
+
+  #unseen() {
+    return this.#facts.filter((fact) => !this.#shownIds.has(fact.id));
+  }
+
+  // The tab shows while the list has room for more and there are more to draw.
+  #updatePullTab(options) {
+    const shown = this.#shownIds.size;
+    if (shown < MAX_FACTS && shown < this.#facts.length) this.#pullTab.show();
+    else this.#pullTab.hide(options);
   }
 
   #createFact(fact) {
@@ -462,6 +498,7 @@ export class DidYouKnow extends HTMLElement {
     this.#bookmarksHeader.hidden = true;
     this.#shownIds = new Set(facts.map((fact) => fact.id));
     this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact)));
+    this.#updatePullTab();
     this.#status.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].title}.`;
   }
 
@@ -481,6 +518,7 @@ export class DidYouKnow extends HTMLElement {
       return;
     }
     this.#showingBookmarks = true;
+    this.#pullTab.hide();
     const facts = bookmarks.read()
       .map((id) => this.#facts.find((fact) => fact.id === id))
       .filter(Boolean);
@@ -514,6 +552,21 @@ export class DidYouKnow extends HTMLElement {
     const facts = this.#pick();
     this.#render(facts);
     this.dispatchEvent(new CustomEvent('refresh', { detail: { ids: facts.map((fact) => fact.id) } }));
+  }
+
+  /** Add a batch of facts not yet shown below the list, up to 20 in all. */
+  more() {
+    if (this.#showingBookmarks || !this.#facts.length) return;
+    const room = MAX_FACTS - this.#shownIds.size;
+    const facts = shuffle(this.#unseen()).slice(0, Math.min(this.#count, room));
+    if (!facts.length) return;
+    for (const fact of facts) this.#shownIds.add(fact.id);
+    const cards = facts.map((fact) => this.#createFact(fact));
+    this.#list.append(...cards);
+    revealCards(cards);
+    this.#updatePullTab({ animate: true, focus: cards[0].querySelector('button') });
+    this.#status.textContent = `${facts.length} more Bible facts shown, starting with ${facts[0].title}.`;
+    this.dispatchEvent(new CustomEvent('more', { detail: { ids: facts.map((fact) => fact.id) } }));
   }
 }
 

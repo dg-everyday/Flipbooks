@@ -6,7 +6,9 @@
  * reference. Tapping a card pops up the whole entry: other wordings, where it
  * comes from, the KJV text and every reference; any tap outside a reference
  * closes it. The refresh button draws a new batch that never repeats the
- * previous one.
+ * previous one. Pulling down (or tapping) the chevrons under the list adds
+ * another batch of sayings not yet shown, up to 20 in all; then the chevrons
+ * fold away until the next refresh.
  *
  * Holding a saying for half a second bookmarks it: a gold glow spreads from
  * the finger and the card takes a ribbon. Holding it again removes the
@@ -25,17 +27,20 @@
  *   src          URL of the sayings JSON, resolved against the page.
  *                Default: ../../assets/bible-sayings.json (relative to this file)
  *   count        Sayings per batch. Default: 5
- *   bookmarks    Present: no banner; show the bookmarked sayings, newest first.
- *                Call showBookmarks() to bring the list up to date.
+ *   bookmarks    Present: no banner and no pull tab; show the bookmarked
+ *                sayings, newest first. Call showBookmarks() to bring the
+ *                list up to date.
  *
  * Methods      refresh()        show a new batch
+ *              more()           add a batch below the list, up to 20 sayings
  *              showBookmarks()  show the bookmarked sayings, newest first
  *              open(id)         pop up one saying
  *              close()          close the popup
  * Properties   bookmarks (read-only): the bookmarked saying ids, newest first
  * Events       ready         fired once sayings are loaded, detail: { total }
  *              refresh       fired after each batch, detail: { ids }
- *              open          a saying was popped up, detail: { id }
+ *              more          fired after more() adds sayings, detail: { ids }
+ *              open        a saying was popped up, detail: { id }
  *              bookmarkchange  a hold added or removed a bookmark,
  *                            detail: { id, result: 'added' | 'removed' }
  *              error         detail: { message }
@@ -70,6 +75,7 @@ import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js'
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260925-1';
+import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
 
 // The thumbnails are .webp on the media host; .svg is not published.
 const bookThumbnailUrl = (mediaBase, book) =>
@@ -80,6 +86,8 @@ const THUMBNAIL_TRIM = 0.985;
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_COUNT = 5;
+// Pulling for more stops once the list holds this many sayings.
+const MAX_SAYINGS = 20;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -110,6 +118,14 @@ function readSayings(url) {
     sayingsCache.set(url, request);
   }
   return sayingsCache.get(url);
+}
+
+function shuffle(items) {
+  for (let index = items.length - 1; index > 0; index--) {
+    const swap = Math.floor(Math.random() * (index + 1));
+    [items[index], items[swap]] = [items[swap], items[index]];
+  }
+  return items;
 }
 
 const WORDING_LABELS = {
@@ -252,6 +268,9 @@ const STYLES = /* css */ `
     font: 400 clamp(.9375rem, .9rem + .2vw, 1rem)/1.4 'Strait', 'Roboto', sans-serif;
   }
 
+  .pull-tab { margin-top: 2px; }
+  :host([bookmarks]) .pull-tab { display: none; }
+
   /* Popup */
   dialog:focus { outline: none; }
   dialog {
@@ -354,7 +373,8 @@ const STYLES = /* css */ `
     .round svg, .refresh.is-spinning svg { transition: none; animation: none; }
     .saying { transition: none; }
   }
-${BOOKMARK_STYLES}`;
+${BOOKMARK_STYLES}
+${PULL_TAB_STYLES}`;
 
 export class BibleSayings extends HTMLElement {
   static observedAttributes = ['media-base', 'src', 'count'];
@@ -371,6 +391,7 @@ export class BibleSayings extends HTMLElement {
   #loading = null;
   #nearObserver = null;
   #hold;
+  #pullTab;
   #showingBookmarks = false;
   #opener = null;
   #previousOverflow = '';
@@ -393,6 +414,10 @@ export class BibleSayings extends HTMLElement {
           <p class="bookmarks-summary"></p>
         </header>
         <div class="list"><p class="message">Loading Bible sayings…</p></div>
+        <button class="pull-tab" type="button" hidden aria-label="Show more Bible sayings"
+                title="Pull down or tap for more sayings">
+          ${PULL_TAB_ICON}
+        </button>
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>
       <dialog tabindex="-1" aria-labelledby="detail-title">
@@ -415,6 +440,8 @@ export class BibleSayings extends HTMLElement {
     this.#refreshButton.addEventListener('animationend', () => {
       this.#refreshButton.classList.remove('is-spinning');
     });
+
+    this.#pullTab = new PullTab(this.#root.querySelector('.pull-tab'), { onPull: () => this.more() });
 
     // The whole card opens the popup, and a hold must not: CardHold swallows
     // the click that ends it.
@@ -533,6 +560,7 @@ export class BibleSayings extends HTMLElement {
         message.className = 'message';
         message.textContent = 'Bible sayings could not be loaded. Please reload the page to try again.';
         this.#list.replaceChildren(message);
+        this.#pullTab.hide();
         this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
       }));
   }
@@ -540,13 +568,19 @@ export class BibleSayings extends HTMLElement {
   /** Draws from sayings not in the previous batch, so a refresh never repeats. */
   #pick() {
     const count = this.#count;
-    const unseen = this.#sayings.filter((saying) => !this.#shownIds.has(saying.id));
-    const pool = unseen.length >= count ? unseen : this.#sayings.slice();
-    for (let index = pool.length - 1; index > 0; index--) {
-      const swap = Math.floor(Math.random() * (index + 1));
-      [pool[index], pool[swap]] = [pool[swap], pool[index]];
-    }
-    return pool.slice(0, Math.min(count, pool.length));
+    const unseen = this.#unseen();
+    return shuffle(unseen.length >= count ? unseen : this.#sayings.slice()).slice(0, count);
+  }
+
+  #unseen() {
+    return this.#sayings.filter((saying) => !this.#shownIds.has(saying.id));
+  }
+
+  // The tab shows while the list has room for more and there are more to draw.
+  #updatePullTab(options) {
+    const shown = this.#shownIds.size;
+    if (shown < MAX_SAYINGS && shown < this.#sayings.length) this.#pullTab.show();
+    else this.#pullTab.hide(options);
   }
 
   #createSymbol(book) {
@@ -613,6 +647,7 @@ export class BibleSayings extends HTMLElement {
     this.#bookmarksHeader.hidden = true;
     this.#shownIds = new Set(sayings.map((saying) => saying.id));
     this.#list.replaceChildren(...sayings.map((saying) => this.#createSaying(saying)));
+    this.#updatePullTab();
     this.#status.textContent = `${sayings.length} Bible sayings shown, starting with ${sayings[0].saying}.`;
   }
 
@@ -783,6 +818,7 @@ export class BibleSayings extends HTMLElement {
       return;
     }
     this.#showingBookmarks = true;
+    this.#pullTab.hide();
     const sayings = bookmarks.read()
       .map((id) => this.#sayings.find((saying) => saying.id === id))
       .filter(Boolean);
@@ -816,6 +852,21 @@ export class BibleSayings extends HTMLElement {
     const sayings = this.#pick();
     this.#render(sayings);
     this.dispatchEvent(new CustomEvent('refresh', { detail: { ids: sayings.map((saying) => saying.id) } }));
+  }
+
+  /** Add a batch of sayings not yet shown below the list, up to 20 in all. */
+  more() {
+    if (this.#showingBookmarks || !this.#sayings.length) return;
+    const room = MAX_SAYINGS - this.#shownIds.size;
+    const sayings = shuffle(this.#unseen()).slice(0, Math.min(this.#count, room));
+    if (!sayings.length) return;
+    for (const saying of sayings) this.#shownIds.add(saying.id);
+    const cards = sayings.map((saying) => this.#createSaying(saying));
+    this.#list.append(...cards);
+    revealCards(cards);
+    this.#updatePullTab({ animate: true, focus: cards[0].querySelector('.open') });
+    this.#status.textContent = `${sayings.length} more Bible sayings shown, starting with ${sayings[0].saying}.`;
+    this.dispatchEvent(new CustomEvent('more', { detail: { ids: sayings.map((saying) => saying.id) } }));
   }
 }
 

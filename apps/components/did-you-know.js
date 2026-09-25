@@ -108,7 +108,7 @@ const STYLES = /* css */ `
   .refresh.is-spinning svg { animation: spin .6s ease; }
   @keyframes spin { from { rotate: 0deg; } to { rotate: 360deg; } }
 
-  .list { display: grid; gap: 14px; }
+  .list { display: grid; gap: 6px; }
   .message {
     margin: 0; padding: 16px 4px; color: #4f5c65;
     font: 1rem/1.5 'Roboto', Arial, sans-serif;

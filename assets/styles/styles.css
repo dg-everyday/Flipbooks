@@ -36,6 +36,9 @@
   --action-hover: #a91f1f;
   --action-ink: #fff;
   --action-shadow: 0 5px 14px rgb(0 0 0 / 35%);
+  /* Space between the devotional panels. Each panel is its own block (a banner,
+     a poster, a navy card), so the gap alone sets them apart. */
+  --panel-gap: 16px;
 }
 
 * { box-sizing: border-box; }
@@ -230,14 +233,14 @@ button:focus-visible { filter: brightness(1.2); }
 }
 
 .daily-section {
-  padding: 0 0 90px;
+  padding: 0 0 var(--panel-gap);
   background: transparent;
 }
 
 .devotional-stack {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 28px;
+  gap: var(--panel-gap);
   align-items: stretch;
 }
 
@@ -273,93 +276,8 @@ button:focus-visible { filter: brightness(1.2); }
 
 did-you-know.card::before, did-you-know.card::after,
 bible-sayings.card::before, bible-sayings.card::after { content: none; }
-did-you-know.card, bible-sayings.card { padding-inline: 10px; }
-
-/* A faint gold hairline, fading out at both ends, separates the devotional sections. */
-.devotional-stack > * + * {
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent) 1;
-}
-/* Whichever section closes the stack (now the Bible sayings) also takes the hairline beneath it. */
-.devotional-stack > :last-child { border-bottom: 1px solid transparent; }
-
-/* Reflection: a navy panel with gold accents, set apart from the cream page. */
-.reflection-card {
-  --panel-cream: #f3e7d2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-inline: 10px;
-  padding: 38px 30px 32px;
-  border: 1px solid rgb(225 182 93 / 40%);
-  border-radius: 18px;
-  background:
-    radial-gradient(120% 80% at 50% 0%, rgb(225 182 93 / 16%) 0%, transparent 60%),
-    linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%);
-  color: var(--panel-cream);
-  box-shadow: 0 12px 30px rgb(0 27 52 / 28%), inset 0 1px 0 rgb(255 255 255 / 8%);
-  text-align: center;
-}
-.reflection-card::before,
-.reflection-card::after { color: var(--gold-light); opacity: .8; }
-.reflection-card .icon {
-  width: 78px;
-  height: 78px;
-  margin: 0 auto 22px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--navy);
-  box-shadow: 0 0 0 2px var(--gold-light), 0 0 0 8px rgb(225 182 93 / 16%), 0 8px 20px rgb(0 0 0 / 35%);
-}
-.reflection-card .icon img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.reflection-card .reflection-title {
-  margin: 0 0 26px;
-  color: #fff;
-  font: 400 clamp(1.5rem, 1.3rem + .9vw, 1.875rem)/1.2 'Germania One', Georgia, serif;
-  letter-spacing: .02em;
-}
-/* Short gold rule under the title. */
-.reflection-card .reflection-title::after {
-  content: "";
-  display: block;
-  width: 56px;
-  height: 2px;
-  margin: 14px auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-}
-.reflection-card p {
-  margin: 0;
-  max-width: 34em;
-  font: 400 clamp(1.125rem, 1.05rem + .35vw, 1.3rem)/1.6 'Strait', 'Roboto', sans-serif;
-  text-wrap: pretty;
-}
-.reflection-card .closing {
-  width: min(280px, 80%);
-  margin-top: 26px;
-  padding-top: 20px;
-  border-top: 1px solid rgb(225 182 93 / 35%);
-  color: var(--gold-light);
-  font: 400 clamp(1.0625rem, 1rem + .3vw, 1.1875rem)/1.4 Georgia, 'Times New Roman', serif;
-}
-/* The panel is its own block, so it does not need the section divider above it. */
-.devotional-stack > .reflection-card { border-top: 1px solid rgb(225 182 93 / 40%); border-image: none; }
-/* Still mark the break before it: the usual hairline, centred in the visible
-   gap, which is the card's bottom padding plus the 28px stack gap. */
-.devotional-stack > :has(+ .reflection-card) { position: relative; }
-.devotional-stack > :has(+ .reflection-card)::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 calc((34px - 28px) / 2 - .5px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent);
-}
+/* These open with their own banner, so the stack gap is all the space they need above and below. */
+did-you-know.card, bible-sayings.card { padding: 0 10px; }
 
 .site-footer {
   color: var(--navy);
@@ -722,9 +640,7 @@ html:has(.help-dialog[open]) { overflow: hidden; }
   .hero { padding: 10px 0 0; }
   .hero-toolbar { padding-inline: 8px; gap: 8px; }
   .hero-icon { width: 40px; height: 40px; }
-  .daily-section { padding: 0 0 65px; }
   .card { padding: 27px 23px; }
-  .devotional-stack > :has(+ .reflection-card)::after { bottom: calc((27px - 28px) / 2 - .5px); }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }

@@ -2,7 +2,7 @@
  * <bible-sayings> — everyday sayings that come from the Bible, as a web component.
  *
  * Shows a banner with a refresh button and a list of random sayings. Each card
- * has the book symbol, the saying, what it means today and its Bible
+ * has the book thumbnail, the saying, what it means today and its Bible
  * reference. Tapping a card pops up the whole entry: other wordings, where it
  * comes from, the KJV text and every reference; any tap outside a reference
  * closes it. The refresh button draws a new batch that never repeats the
@@ -13,7 +13,7 @@
  *   <script type="module" src="./apps/components/bible-sayings.js"></script>
  *
  * Attributes
- *   media-base   Base URL for book symbols (images/symbols/<Book>-symbol.svg).
+ *   media-base   Base URL for book thumbnails (images/thumbnails/<Book>_square.webp).
  *                Default: https://dailygrace.faith/media/
  *   src          URL of the sayings JSON, resolved against the page.
  *                Default: ../../assets/bible-sayings.json (relative to this file)
@@ -34,6 +34,10 @@
  * Each entry has id, saying, variants, meaning, explanation, reference,
  * references, kjv_text, book, testament, wording and theme.
  *
+ * The gold frame inside the thumbnails is not the same size from one book to
+ * the next, so each one is scaled by the bounds in book-thumb-bounds.js, as
+ * <bible-trivia> does.
+ *
  * Fonts: Germania One (titles) and Strait (text) are registered on the
  * document by assets/scripts/fonts.js, because browsers do not reliably load @font-face
  * rules declared inside a shadow root.
@@ -46,11 +50,14 @@
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
+import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
 
-// Citations use "Psalm"; the symbol library files that book under its plural name.
-const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
-const bookSymbolUrl = (mediaBase, book) =>
-  `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
+// The thumbnails are .webp on the media host; .svg is not published.
+const bookThumbnailUrl = (mediaBase, book) =>
+  `${mediaBase}images/thumbnails/${encodeURIComponent(book)}_square.webp`;
+// Shave the outermost hair off each tile, as <bible-trivia> does: a couple of
+// the files carry a fringe right against the frame.
+const THUMBNAIL_TRIM = 0.985;
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_COUNT = 5;
@@ -78,13 +85,13 @@ const STYLES = /* css */ `
     --bs-action-hover: var(--action-hover, #a91f1f);
     --bs-action-ink: var(--action-ink, #fff);
     --bs-action-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
-    --bs-symbol-size: 64px;
-    --symbol-column: 6.25rem;
+    --bs-symbol-size: 84px;
+    --symbol-column: 7.5rem;
 
     display: block;
     color: var(--bs-ink);
   }
-  section { display: grid; gap: 18px; }
+  section { display: grid; }
   :host([hidden]) { display: none; }
   * { box-sizing: border-box; }
 
@@ -95,7 +102,7 @@ const STYLES = /* css */ `
 
   .banner { position: relative; line-height: 0; }
   .banner-image {
-    display: block; width: 100%; height: auto; border-radius: 6px;
+    display: block; width: 100%; height: auto; border-radius: 6px 6px 0 0;
   }
   .round {
     position: absolute; top: 8px; right: 8px;
@@ -119,7 +126,12 @@ const STYLES = /* css */ `
   .refresh.is-spinning svg { animation: spin .6s ease; }
   @keyframes spin { from { rotate: 0deg; } to { rotate: 360deg; } }
 
-  .list { display: grid; gap: 14px; }
+  /* The cards sit flush under the banner, one panel with square bottom corners. */
+  .list {
+    display: grid;
+    border: 1px solid rgb(0 27 52 / 16%);
+    border-top: 0;
+  }
   .message {
     margin: 0; padding: 16px 4px; color: #4f5c65;
     font: 1rem/1.5 'Roboto', Arial, sans-serif;
@@ -133,23 +145,23 @@ const STYLES = /* css */ `
     grid-template-columns: var(--symbol-column) minmax(0, 1fr);
     align-items: start;
     padding: 18px 0;
-    border: 1px solid rgb(0 27 52 / 16%);
-    border-radius: 6px;
-    background: rgb(255 255 255 / 16%);
-    transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+    background: rgb(255 255 255 / 34%);
+    transition: background-color .2s ease;
   }
-  .saying:hover {
-    border-color: rgb(198 146 46 / 70%);
-    background: rgb(255 255 255 / 38%);
-    transform: translateY(-1px);
-  }
+  .saying:nth-child(even) { background: rgb(198 146 46 / 12%); }
+  .saying:hover { background: rgb(255 255 255 / 62%); }
+  .saying:nth-child(even):hover { background: rgb(198 146 46 / 22%); }
   .saying:has(.open:focus-visible) {
-    outline: 2px solid var(--bs-reference); outline-offset: 2px;
+    outline: 2px solid var(--bs-reference); outline-offset: -2px;
   }
+  /* The book thumbnail, blown up until its gold frame alone fills the square
+     and clipped to the frame's own corner (set per book). */
   .symbol {
+    position: relative; display: block; overflow: hidden;
     width: var(--bs-symbol-size); height: var(--bs-symbol-size);
-    justify-self: center; object-fit: contain;
+    justify-self: center;
   }
+  .symbol img { position: absolute; display: block; }
   .body {
     min-width: 0; padding: 0 18px;
     border-left: 1px solid var(--bs-edge);
@@ -164,7 +176,7 @@ const STYLES = /* css */ `
     cursor: pointer;
   }
   .open:focus { outline: none; }
-  .open::after { content: ""; position: absolute; inset: 0; border-radius: 6px; }
+  .open::after { content: ""; position: absolute; inset: 0; }
   .text {
     margin: 0;
     font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
@@ -249,7 +261,7 @@ const STYLES = /* css */ `
   }
 
   @media (max-width: 650px) {
-    :host { --symbol-column: 5.25rem; --bs-symbol-size: 52px; }
+    :host { --symbol-column: 6.25rem; --bs-symbol-size: 68px; }
     .round { top: 4px; right: 4px; width: 36px; height: 36px; }
     .round svg { width: 16px; height: 16px; }
     .body { padding-inline: 12px; }
@@ -258,7 +270,7 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .round svg, .refresh.is-spinning svg { transition: none; animation: none; }
-    .saying, .saying:hover { transition: none; transform: none; }
+    .saying { transition: none; }
   }
 `;
 
@@ -404,19 +416,27 @@ export class BibleSayings extends HTMLElement {
   }
 
   #createSymbol(book) {
-    const symbol = document.createElement('img');
+    const symbol = document.createElement('span');
     symbol.className = 'symbol';
-    symbol.width = 64;
-    symbol.height = 64;
-    symbol.alt = '';
-    symbol.loading = 'lazy';
-    // Keep the column width so cards stay aligned when a symbol is missing.
-    symbol.onerror = () => { symbol.style.visibility = 'hidden'; };
-    if (book) {
-      symbol.src = bookSymbolUrl(this.#mediaBase, book);
-    } else {
+    // Keep the column width so cards stay aligned when a thumbnail is missing.
+    if (!book) {
       symbol.style.visibility = 'hidden';
+      return symbol;
     }
+    const image = document.createElement('img');
+    image.alt = '';
+    image.loading = 'lazy';
+    image.onerror = () => { symbol.style.visibility = 'hidden'; };
+    image.src = bookThumbnailUrl(this.#mediaBase, book);
+    const [x, y, size, radius] = BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
+    const side = size * THUMBNAIL_TRIM;
+    const inset = (size - side) / 2;
+    image.style.width = `${100 / side}%`;
+    image.style.height = `${100 / side}%`;
+    image.style.left = `${(-(x + inset) / side) * 100}%`;
+    image.style.top = `${(-(y + inset) / side) * 100}%`;
+    symbol.style.borderRadius = `${radius * 100}%`;
+    symbol.append(image);
     return symbol;
   }
 

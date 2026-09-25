@@ -232,32 +232,7 @@ searchClear.addEventListener("click", () => {
 // reader swipe back through the past week; the rest of the page stays on today.
 document.getElementById("banner-slider").setAttribute("media-base", MEDIA_BASE_URL);
 
-const todayName = new Date().toLocaleDateString("en-US", {
-    timeZone: "Asia/Manila",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-});
-
-fetch("assets/verses.json")
-    .then((response) => {
-        if (!response.ok)
-            throw new Error(
-                `Unable to load assets/verses.json (${response.status})`,
-            );
-        return response.json();
-    })
-    .then((verses) => {
-        const currentVerse = verses.find((item) => item.id === todayName);
-        if (!currentVerse) throw new Error(`No verse found for ${todayName}`);
-        document.getElementById("reflection-text").textContent =
-            currentVerse.reflection;
-    })
-    .catch((error) => {
-        console.warn("Today's devotional could not be loaded:", error);
-        document.getElementById("reflection-text").textContent =
-            "Please check the daily devotional data.";
-    });
+// <daily-strides> loads today's reflection from assets/verses.json itself.
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
@@ -481,6 +456,26 @@ function popDialog(dialog, direction) {
     return backdrop.finished.catch(() => {});
 }
 
+// The help guide slides in from the right edge, moving left into place, and
+// slides back out the way it came.
+function slideDialog(dialog, direction) {
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 420 : 260,
+        easing: opening ? "cubic-bezier(.22, 1, .36, 1)" : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    // Half the viewport plus half the dialog puts it just past the right edge.
+    const offscreen = { transform: "translateX(calc(50vw + 50%))", opacity: .6 };
+    const full = { transform: "none", opacity: 1 };
+    dialog.animate(opening ? [offscreen, full] : [full, offscreen], options);
+    const backdrop = dialog.animate(
+        opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
+}
+
 function openSplash() {
     if (splashShown || splashDialog.open) return;
     splashShown = true;
@@ -675,13 +670,13 @@ helpOpen.addEventListener("click", () => {
     if (helpDialog.open) return;
     helpDialog.showModal();
     helpDialog.scrollTop = 0;
-    if (!reducedMotionQuery.matches) popDialog(helpDialog, "open");
+    if (!reducedMotionQuery.matches) slideDialog(helpDialog, "open");
 });
 
 async function closeHelp() {
     if (!helpDialog.open || helpClosing) return;
     helpClosing = true;
-    if (!reducedMotionQuery.matches) await popDialog(helpDialog, "close");
+    if (!reducedMotionQuery.matches) await slideDialog(helpDialog, "close");
     helpDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     helpDialog.close();
     helpClosing = false;

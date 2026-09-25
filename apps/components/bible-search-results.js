@@ -12,7 +12,7 @@
  *
  * Holding a verse card for half a second bookmarks it: a gold glow spreads
  * from the finger and the card takes a ribbon. Holding it again removes the
- * bookmark. Up to 20 verse docids are kept in localStorage, newest first, and
+ * bookmark. Up to 100 verse docids are kept in localStorage, newest first, and
  * are shared by every panel on the page. Rows without a docid cannot be held.
  *
  * Usage
@@ -53,16 +53,21 @@
  *              showKeywordResults(rows, words), showBookmarks(rows)
  * Properties   busy (read-only)
  *              bookmarks (read-only): the bookmarked verse docids, newest first
+ * Events       bookmarkchange  a hold added or removed a bookmark,
+ *                              detail: { docid, result: 'added' | 'removed' }
  *
  * CSS custom properties
  *   --search-navy, --search-ink, --search-hebrew, --search-paper,
  *   --search-red-letter, --reference-width
+ *   --reader-max-height  Height at which the verses scroll in their own box.
+ *                        Default: min(65vh, 640px); none lets the page scroll them.
  *
  * Fonts: Germania One, Strait and Roboto are registered on the document by
  * assets/scripts/fonts.js.
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
+import { bookmarkNote, keepBookmarks } from './card-bookmarks.js?v=20260925-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
@@ -77,17 +82,11 @@ const DEFAULT_EXPLANATIONS_BASE = new URL('../../assets/explanations/', import.m
 const DEFAULT_RED_LETTER_SRC = new URL('../../assets/red-letter.json', import.meta.url).href;
 
 const BOOKMARKS_KEY = 'dailygrace:bookmarks';
-const BOOKMARK_LIMIT = 20;
+const BOOKMARK_LIMIT = 100;
 // How long a verse card is held to bookmark it, and how far the finger may
 // drift before the hold counts as a scroll instead.
 const HOLD_MS = 500;
 const HOLD_SLOP = 10;
-const BOOKMARK_NOTES = {
-  added: 'Bookmarked',
-  removed: 'Bookmark removed',
-  full: `Bookmarks full (${BOOKMARK_LIMIT})`,
-  failed: 'Bookmark not saved',
-};
 
 // The "source" of each entry in an explanation file (see tools/explanations).
 const EXPLANATION_SOURCES = {
@@ -164,7 +163,7 @@ const STYLES = /* css */ `
   .message { margin: 0; padding: 16px; font-size: 1rem; }
 
   .reader {
-    max-height: min(65vh, 640px);
+    max-height: var(--reader-max-height, min(65vh, 640px));
     overflow-y: auto;
     /* The explanation corner sits 1px past each card's edge to cover its
        border; never let that sliver add a horizontal scrollbar. */
@@ -288,19 +287,23 @@ const STYLES = /* css */ `
   }
   .verse-card[data-flash="added"]::after { animation: ribbon-drop .35s ease-out; }
   @keyframes ribbon-drop { from { transform: translateY(-100%); } }
+  /* The note wraps onto a second line on a narrow card rather than spill out
+     of it, and the longer "full" note stays up long enough to read. */
   .bookmark-note {
     position: absolute; top: 6px; left: 50%;
+    width: max-content; max-width: calc(100% - 24px);
     padding: 3px 12px;
-    border-radius: 999px;
+    border-radius: 14px;
     background: var(--search-navy);
     color: #fff;
-    white-space: nowrap;
+    text-align: center;
     font: 500 .8125rem/1.4 'Roboto', Arial, sans-serif;
     pointer-events: none;
     animation: bookmark-note 1.6s ease forwards;
   }
   .bookmark-note.added { background: var(--search-gold); }
   .bookmark-note.full, .bookmark-note.failed { background: var(--search-red-letter); }
+  .bookmark-note.full { animation-duration: 3.2s; }
   @keyframes bookmark-note {
     0% { opacity: 0; transform: translate(-50%, 4px); }
     12%, 75% { opacity: 1; transform: translate(-50%, 0); }
@@ -401,7 +404,8 @@ const STYLES = /* css */ `
     box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
     overflow: auto;
     overscroll-behavior: contain;
-    /* Not the zoom-out cursor of a verse popup this panel may sit in. */
+    /* The text cursor over the commentary, not the plain arrow of a verse
+       popup this panel may sit in. */
     cursor: auto;
   }
   .explanation::backdrop {
@@ -606,6 +610,7 @@ function toggleBookmark(docid) {
   } catch {
     return 'failed';
   }
+  if (!removing) keepBookmarks();
   bookmarkChanges.dispatchEvent(new Event('change'));
   return removing ? 'removed' : 'added';
 }
@@ -874,21 +879,25 @@ export class BibleSearchResults extends HTMLElement {
     this.#hold = null;
     card.classList.remove('holding');
     this.#swallowClick = true;
-    const result = toggleBookmark(Number(card.dataset.docid));
-    if (result === 'added' || result === 'removed') navigator.vibrate?.(15);
+    const docid = Number(card.dataset.docid);
+    const result = toggleBookmark(docid);
+    if (result === 'added' || result === 'removed') {
+      navigator.vibrate?.(15);
+      this.dispatchEvent(new CustomEvent('bookmarkchange', { detail: { docid, result } }));
+    }
 
     card.querySelector('.bookmark-note')?.remove();
     const note = document.createElement('span');
     note.className = `bookmark-note ${result}`;
     note.setAttribute('aria-hidden', 'true');
-    note.textContent = BOOKMARK_NOTES[result];
+    note.textContent = bookmarkNote(result, BOOKMARK_LIMIT);
     note.addEventListener('animationend', () => note.remove(), { once: true });
     card.append(note);
     // Restart the flash when the same card is held twice in quick succession.
     card.removeAttribute('data-flash');
     void card.offsetWidth;
     card.dataset.flash = result;
-    this.#status.textContent = `${card.dataset.reference}: ${BOOKMARK_NOTES[result]}.`;
+    this.#status.textContent = `${card.dataset.reference}: ${bookmarkNote(result, BOOKMARK_LIMIT)}`;
   }
 
   #syncBookmarks = () => {
@@ -1011,7 +1020,7 @@ export class BibleSearchResults extends HTMLElement {
     details.className = 'book-details';
     const title = document.createElement('h2');
     title.id = 'book-title';
-    title.textContent = 'Bookmarks';
+    title.textContent = 'Bookmarked verses';
     const description = document.createElement('p');
     description.className = 'book-description';
     description.textContent = `${rows.length} of ${BOOKMARK_LIMIT} saved verses, newest first. `

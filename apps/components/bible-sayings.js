@@ -2,37 +2,55 @@
  * <bible-sayings> — everyday sayings that come from the Bible, as a web component.
  *
  * Shows a banner with a refresh button and a list of random sayings. Each card
- * has the book symbol, the saying, what it means today and its Bible
+ * has the book thumbnail, the saying, what it means today and its Bible
  * reference. Tapping a card pops up the whole entry: other wordings, where it
  * comes from, the KJV text and every reference; any tap outside a reference
  * closes it. The refresh button draws a new batch that never repeats the
  * previous one.
+ *
+ * Holding a saying for half a second bookmarks it: a gold glow spreads from
+ * the finger and the card takes a ribbon. Holding it again removes the
+ * bookmark. Up to 50 saying ids are kept in localStorage, newest first (see
+ * card-bookmarks.js). With the bookmarks attribute the component shows only
+ * the bookmarked sayings, under a header and with no banner, which is how the
+ * page's bookmarks popup uses it.
  *
  * Usage
  *   <bible-sayings></bible-sayings>
  *   <script type="module" src="./apps/components/bible-sayings.js"></script>
  *
  * Attributes
- *   media-base   Base URL for book symbols (images/symbols/<Book>-symbol.svg).
+ *   media-base   Base URL for book thumbnails (images/thumbnails/<Book>_square.webp).
  *                Default: https://dailygrace.faith/media/
  *   src          URL of the sayings JSON, resolved against the page.
  *                Default: ../../assets/bible-sayings.json (relative to this file)
  *   count        Sayings per batch. Default: 5
+ *   bookmarks    Present: no banner; show the bookmarked sayings, newest first.
+ *                Call showBookmarks() to bring the list up to date.
  *
- * Methods      refresh()   show a new batch
- *              open(id)    pop up one saying
- *              close()     close the popup
+ * Methods      refresh()        show a new batch
+ *              showBookmarks()  show the bookmarked sayings, newest first
+ *              open(id)         pop up one saying
+ *              close()          close the popup
+ * Properties   bookmarks (read-only): the bookmarked saying ids, newest first
  * Events       ready         fired once sayings are loaded, detail: { total }
  *              refresh       fired after each batch, detail: { ids }
  *              open          a saying was popped up, detail: { id }
+ *              bookmarkchange  a hold added or removed a bookmark,
+ *                            detail: { id, result: 'added' | 'removed' }
  *              error         detail: { message }
  *              verse-request a reference in the popup was clicked,
  *                            detail: { reference, book }
  *                            (bubbles and crosses the shadow boundary)
  *
- * Data: assets/bible-sayings.json, built by tools/sayings/build_sayings.py.
+ * Data: assets/bible-sayings.json, built by tools/sayings/build_sayings.py,
+ * fetched once and shared by every instance on the page.
  * Each entry has id, saying, variants, meaning, explanation, reference,
  * references, kjv_text, book, testament, wording and theme.
+ *
+ * The gold frame inside the thumbnails is not the same size from one book to
+ * the next, so each one is scaled by the bounds in book-thumb-bounds.js, as
+ * <bible-trivia> does.
  *
  * Fonts: Germania One (titles) and Strait (text) are registered on the
  * document by assets/scripts/fonts.js, because browsers do not reliably load @font-face
@@ -46,11 +64,17 @@
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
+import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
+import {
+  BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
+} from './card-bookmarks.js?v=20260925-1';
 
-// Citations use "Psalm"; the symbol library files that book under its plural name.
-const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
-const bookSymbolUrl = (mediaBase, book) =>
-  `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
+// The thumbnails are .webp on the media host; .svg is not published.
+const bookThumbnailUrl = (mediaBase, book) =>
+  `${mediaBase}images/thumbnails/${encodeURIComponent(book)}_square.webp`;
+// Shave the outermost hair off each tile, as <bible-trivia> does: a couple of
+// the files carry a fringe right against the frame.
+const THUMBNAIL_TRIM = 0.985;
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 const DEFAULT_COUNT = 5;
@@ -60,6 +84,31 @@ const asset = (path) => new URL(path, import.meta.url).href;
 const BANNER_URL = asset('../../assets/images/sayings.webp');
 const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
 const DEFAULT_SRC = asset('../../assets/bible-sayings.json');
+
+const bookmarks = bookmarkStore('dailygrace:bookmarks:sayings',
+  { isId: (id) => typeof id === 'string' && id !== '', limit: 50 });
+
+// The sayings are shared by every instance, so the page's list and its
+// bookmarks popup fetch the file once between them.
+const sayingsCache = new Map();
+
+function readSayings(url) {
+  if (!sayingsCache.has(url)) {
+    const request = fetch(url)
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+        const sayings = await response.json();
+        if (!Array.isArray(sayings)) throw new Error('The sayings file is not a list.');
+        return sayings;
+      })
+      .catch((error) => {
+        sayingsCache.delete(url);
+        throw error;
+      });
+    sayingsCache.set(url, request);
+  }
+  return sayingsCache.get(url);
+}
 
 const WORDING_LABELS = {
   exact: 'Word for word in the KJV',
@@ -78,14 +127,35 @@ const STYLES = /* css */ `
     --bs-action-hover: var(--action-hover, #a91f1f);
     --bs-action-ink: var(--action-ink, #fff);
     --bs-action-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
-    --bs-symbol-size: 64px;
-    --symbol-column: 6.25rem;
+    --bs-symbol-size: 84px;
+    --symbol-column: 7.5rem;
 
     display: block;
     color: var(--bs-ink);
   }
-  section { display: grid; gap: 18px; }
+  section { display: grid; }
   :host([hidden]) { display: none; }
+  /* A list of bookmarks: a header in place of the banner, and the cards in a
+     panel of their own below it. */
+  :host([bookmarks]) section { gap: 10px; }
+  :host([bookmarks]) .banner { display: none; }
+  :host([bookmarks]) .list { border-top: 1px solid rgb(0 27 52 / 16%); border-radius: 6px; overflow: hidden; }
+  :host([bookmarks]) .list:has(> .message) { border: 0; }
+  :host([bookmarks]) .message { padding: 16px; }
+  .bookmarks-header {
+    padding: 18px;
+    border: 1px solid rgb(0 27 52 / 20%);
+    border-radius: 8px;
+    background: rgb(255 255 255 / 24%);
+  }
+  .bookmarks-title {
+    margin: 0; color: var(--bs-navy);
+    font: 400 1.375rem/1.3 'Strait', 'Roboto', sans-serif;
+  }
+  .bookmarks-summary {
+    margin: 8px 0 0;
+    font: 400 1.125rem/1.45 'Strait', 'Roboto', sans-serif;
+  }
   * { box-sizing: border-box; }
 
   .visually-hidden {
@@ -95,7 +165,7 @@ const STYLES = /* css */ `
 
   .banner { position: relative; line-height: 0; }
   .banner-image {
-    display: block; width: 100%; height: auto; border-radius: 6px;
+    display: block; width: 100%; height: auto; border-radius: 6px 6px 0 0;
   }
   .round {
     position: absolute; top: 8px; right: 8px;
@@ -119,7 +189,12 @@ const STYLES = /* css */ `
   .refresh.is-spinning svg { animation: spin .6s ease; }
   @keyframes spin { from { rotate: 0deg; } to { rotate: 360deg; } }
 
-  .list { display: grid; gap: 14px; }
+  /* The cards sit flush under the banner, one panel with square bottom corners. */
+  .list {
+    display: grid;
+    border: 1px solid rgb(0 27 52 / 16%);
+    border-top: 0;
+  }
   .message {
     margin: 0; padding: 16px 4px; color: #4f5c65;
     font: 1rem/1.5 'Roboto', Arial, sans-serif;
@@ -133,23 +208,23 @@ const STYLES = /* css */ `
     grid-template-columns: var(--symbol-column) minmax(0, 1fr);
     align-items: start;
     padding: 18px 0;
-    border: 1px solid rgb(0 27 52 / 16%);
-    border-radius: 6px;
-    background: rgb(255 255 255 / 16%);
-    transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+    background: rgb(255 255 255 / 34%);
+    transition: background-color .2s ease;
   }
-  .saying:hover {
-    border-color: rgb(198 146 46 / 70%);
-    background: rgb(255 255 255 / 38%);
-    transform: translateY(-1px);
-  }
+  .saying:nth-child(even) { background: rgb(198 146 46 / 12%); }
+  .saying:hover { background: rgb(255 255 255 / 62%); }
+  .saying:nth-child(even):hover { background: rgb(198 146 46 / 22%); }
   .saying:has(.open:focus-visible) {
-    outline: 2px solid var(--bs-reference); outline-offset: 2px;
+    outline: 2px solid var(--bs-reference); outline-offset: -2px;
   }
+  /* The book thumbnail, blown up until its gold frame alone fills the square
+     and clipped to the frame's own corner (set per book). */
   .symbol {
+    position: relative; display: block; overflow: hidden;
     width: var(--bs-symbol-size); height: var(--bs-symbol-size);
-    justify-self: center; object-fit: contain;
+    justify-self: center;
   }
+  .symbol img { position: absolute; display: block; }
   .body {
     min-width: 0; padding: 0 18px;
     border-left: 1px solid var(--bs-edge);
@@ -164,7 +239,7 @@ const STYLES = /* css */ `
     cursor: pointer;
   }
   .open:focus { outline: none; }
-  .open::after { content: ""; position: absolute; inset: 0; border-radius: 6px; }
+  .open::after { content: ""; position: absolute; inset: 0; }
   .text {
     margin: 0;
     font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
@@ -188,7 +263,9 @@ const STYLES = /* css */ `
     background: var(--bs-paper);
     color: var(--bs-ink);
     box-shadow: 0 24px 60px rgb(0 27 52 / 45%);
-    cursor: zoom-out;
+    /* A tap closes it, but it is read first: the plain arrow, with the hand
+       kept for the reference buttons. */
+    cursor: default;
   }
   dialog::backdrop {
     background: rgb(0 27 52 / 62%);
@@ -249,7 +326,7 @@ const STYLES = /* css */ `
   }
 
   @media (max-width: 650px) {
-    :host { --symbol-column: 5.25rem; --bs-symbol-size: 52px; }
+    :host { --symbol-column: 6.25rem; --bs-symbol-size: 68px; }
     .round { top: 4px; right: 4px; width: 36px; height: 36px; }
     .round svg { width: 16px; height: 16px; }
     .body { padding-inline: 12px; }
@@ -258,9 +335,9 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .round svg, .refresh.is-spinning svg { transition: none; animation: none; }
-    .saying, .saying:hover { transition: none; transform: none; }
+    .saying { transition: none; }
   }
-`;
+${BOOKMARK_STYLES}`;
 
 export class BibleSayings extends HTMLElement {
   static observedAttributes = ['media-base', 'src', 'count'];
@@ -271,9 +348,12 @@ export class BibleSayings extends HTMLElement {
   #status;
   #dialog;
   #detail;
+  #bookmarksHeader;
   #sayings = [];
   #shownIds = new Set();
   #loading = null;
+  #hold;
+  #showingBookmarks = false;
   #opener = null;
   #previousOverflow = '';
 
@@ -290,6 +370,10 @@ export class BibleSayings extends HTMLElement {
             ${REFRESH_ICON}
           </button>
         </div>
+        <header class="bookmarks-header" hidden>
+          <h3 class="bookmarks-title">Bookmarked sayings</h3>
+          <p class="bookmarks-summary"></p>
+        </header>
         <div class="list"><p class="message">Loading Bible sayings…</p></div>
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>
@@ -302,6 +386,7 @@ export class BibleSayings extends HTMLElement {
     this.#status = this.#root.querySelector('[role="status"]');
     this.#dialog = this.#root.querySelector('dialog');
     this.#detail = this.#root.querySelector('.detail');
+    this.#bookmarksHeader = this.#root.querySelector('.bookmarks-header');
 
     this.#refreshButton.addEventListener('click', () => {
       this.refresh();
@@ -311,6 +396,21 @@ export class BibleSayings extends HTMLElement {
     });
     this.#refreshButton.addEventListener('animationend', () => {
       this.#refreshButton.classList.remove('is-spinning');
+    });
+
+    // The whole card opens the popup, and a hold must not: CardHold swallows
+    // the click that ends it.
+    this.#hold = new CardHold(this.#list, {
+      selector: '.saying',
+      onHold: (card) => {
+        const { id } = card.dataset;
+        const result = bookmarks.toggle(id);
+        showBookmarkResult(card, result, bookmarks.limit);
+        this.#status.textContent = `${card.querySelector('.open').textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
+        if (result === 'added' || result === 'removed') {
+          this.dispatchEvent(new CustomEvent('bookmarkchange', { detail: { id, result } }));
+        }
+      },
     });
 
     // Escape would close instantly; route it through the closing animation instead.
@@ -327,10 +427,14 @@ export class BibleSayings extends HTMLElement {
 
   connectedCallback() {
     registerFonts();
+    bookmarks.addEventListener('change', this.#syncBookmarks);
+    this.#syncBookmarks();
     if (!this.#sayings.length) this.#load();
   }
 
   disconnectedCallback() {
+    bookmarks.removeEventListener('change', this.#syncBookmarks);
+    this.#hold.cancel();
     if (this.#dialog.open) this.#finishClose();
   }
 
@@ -340,10 +444,17 @@ export class BibleSayings extends HTMLElement {
       this.#sayings = [];
       this.#shownIds = new Set();
       this.#load();
+    } else if (this.#showingBookmarks) {
+      this.showBookmarks();
     } else if (this.#sayings.length) {
       // media-base changes symbol URLs; count changes the batch size.
       this.#render(this.#currentSayings());
     }
+  }
+
+  /** The bookmarked saying ids, newest first. */
+  get bookmarks() {
+    return bookmarks.read();
   }
 
   get #mediaBase() {
@@ -361,23 +472,16 @@ export class BibleSayings extends HTMLElement {
     return shown.length ? shown : this.#pick();
   }
 
-  async #read(src) {
-    const response = await fetch(new URL(src, document.baseURI));
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-    const sayings = await response.json();
-    if (!Array.isArray(sayings)) throw new Error('The sayings file is not a list.');
-    return sayings;
-  }
-
   #load() {
     const src = this.getAttribute('src') || DEFAULT_SRC;
-    const loading = (this.#loading = this.#read(src)
+    const loading = (this.#loading = readSayings(new URL(src, document.baseURI).href)
       .then((sayings) => {
         if (loading !== this.#loading) return; // superseded by a newer src
         this.#sayings = sayings.filter((saying) => saying.id && saying.saying && saying.meaning);
         if (!this.#sayings.length) throw new Error('No Bible sayings are available.');
         this.#refreshButton.disabled = false;
-        this.refresh();
+        if (this.hasAttribute('bookmarks')) this.showBookmarks();
+        else this.refresh();
         this.dispatchEvent(new CustomEvent('ready', { detail: { total: this.#sayings.length } }));
       })
       .catch((error) => {
@@ -404,25 +508,35 @@ export class BibleSayings extends HTMLElement {
   }
 
   #createSymbol(book) {
-    const symbol = document.createElement('img');
+    const symbol = document.createElement('span');
     symbol.className = 'symbol';
-    symbol.width = 64;
-    symbol.height = 64;
-    symbol.alt = '';
-    symbol.loading = 'lazy';
-    // Keep the column width so cards stay aligned when a symbol is missing.
-    symbol.onerror = () => { symbol.style.visibility = 'hidden'; };
-    if (book) {
-      symbol.src = bookSymbolUrl(this.#mediaBase, book);
-    } else {
+    // Keep the column width so cards stay aligned when a thumbnail is missing.
+    if (!book) {
       symbol.style.visibility = 'hidden';
+      return symbol;
     }
+    const image = document.createElement('img');
+    image.alt = '';
+    image.loading = 'lazy';
+    image.onerror = () => { symbol.style.visibility = 'hidden'; };
+    image.src = bookThumbnailUrl(this.#mediaBase, book);
+    const [x, y, size, radius] = BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
+    const side = size * THUMBNAIL_TRIM;
+    const inset = (size - side) / 2;
+    image.style.width = `${100 / side}%`;
+    image.style.height = `${100 / side}%`;
+    image.style.left = `${(-(x + inset) / side) * 100}%`;
+    image.style.top = `${(-(y + inset) / side) * 100}%`;
+    symbol.style.borderRadius = `${radius * 100}%`;
+    symbol.append(image);
     return symbol;
   }
 
   #createSaying(saying) {
     const card = document.createElement('article');
-    card.className = 'saying';
+    card.className = 'saying bookmarkable';
+    card.dataset.id = saying.id;
+    card.classList.toggle('bookmarked', bookmarks.has(saying.id));
 
     const body = document.createElement('div');
     body.className = 'body';
@@ -453,6 +567,8 @@ export class BibleSayings extends HTMLElement {
   }
 
   #render(sayings) {
+    this.#showingBookmarks = false;
+    this.#bookmarksHeader.hidden = true;
     this.#shownIds = new Set(sayings.map((saying) => saying.id));
     this.#list.replaceChildren(...sayings.map((saying) => this.#createSaying(saying)));
     this.#status.textContent = `${sayings.length} Bible sayings shown, starting with ${sayings[0].saying}.`;
@@ -608,6 +724,45 @@ export class BibleSayings extends HTMLElement {
     if (this.#opener?.isConnected) this.#opener.focus({ preventScroll: true });
     this.#opener = null;
   }
+
+  #bookmarksSummary() {
+    return `${bookmarks.read().length} of ${bookmarks.limit} saved sayings, newest first. `
+      + 'Hold a saying to remove its bookmark.';
+  }
+
+  /**
+   * Show the bookmarked sayings, newest first. A saying taken off here keeps
+   * its card, without the ribbon, so holding it again puts the bookmark back.
+   */
+  showBookmarks() {
+    if (!this.#sayings.length) return;
+    this.#showingBookmarks = true;
+    const sayings = bookmarks.read()
+      .map((id) => this.#sayings.find((saying) => saying.id === id))
+      .filter(Boolean);
+    this.#bookmarksHeader.hidden = !sayings.length;
+    if (!sayings.length) {
+      const message = document.createElement('p');
+      message.className = 'message';
+      message.textContent = 'No bookmarked sayings yet. Hold a saying in the Bible sayings for half a second to bookmark it.';
+      this.#list.replaceChildren(message);
+      this.#status.textContent = message.textContent;
+      return;
+    }
+    this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
+    this.#list.replaceChildren(...sayings.map((saying) => this.#createSaying(saying)));
+    this.#status.textContent = `Bookmarked sayings. ${this.#bookmarksSummary()}`;
+  }
+
+  #syncBookmarks = () => {
+    const saved = new Set(bookmarks.read());
+    for (const card of this.#list.querySelectorAll('.saying')) {
+      card.classList.toggle('bookmarked', saved.has(card.dataset.id));
+    }
+    if (this.#showingBookmarks) {
+      this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
+    }
+  };
 
   /** Show a new batch of sayings, none repeated from the previous batch. */
   refresh() {

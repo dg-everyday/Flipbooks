@@ -165,7 +165,7 @@ const STYLES = /* css */ `
     backdrop-filter: blur(3px);
   }
   /* Only the answered quiz invites a tap to dismiss. */
-  dialog[data-answered] { cursor: zoom-out; }
+  dialog[data-answered] { cursor: pointer; }
 
   .banner {
     display: block; width: 100%; height: auto;

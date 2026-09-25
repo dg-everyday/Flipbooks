@@ -36,6 +36,9 @@
   --action-hover: #a91f1f;
   --action-ink: #fff;
   --action-shadow: 0 5px 14px rgb(0 0 0 / 35%);
+  /* Space between the devotional panels. Each panel is its own block (a banner,
+     a poster, a navy card), so the gap alone sets them apart. */
+  --panel-gap: 16px;
 }
 
 * { box-sizing: border-box; }
@@ -230,14 +233,14 @@ button:focus-visible { filter: brightness(1.2); }
 }
 
 .daily-section {
-  padding: 0 0 90px;
+  padding: 0 0 var(--panel-gap);
   background: transparent;
 }
 
 .devotional-stack {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 28px;
+  gap: var(--panel-gap);
   align-items: stretch;
 }
 
@@ -273,93 +276,8 @@ button:focus-visible { filter: brightness(1.2); }
 
 did-you-know.card::before, did-you-know.card::after,
 bible-sayings.card::before, bible-sayings.card::after { content: none; }
-did-you-know.card, bible-sayings.card { padding-inline: 10px; }
-
-/* A faint gold hairline, fading out at both ends, separates the devotional sections. */
-.devotional-stack > * + * {
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent) 1;
-}
-/* Whichever section closes the stack (now the Bible sayings) also takes the hairline beneath it. */
-.devotional-stack > :last-child { border-bottom: 1px solid transparent; }
-
-/* Reflection: a navy panel with gold accents, set apart from the cream page. */
-.reflection-card {
-  --panel-cream: #f3e7d2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-inline: 10px;
-  padding: 38px 30px 32px;
-  border: 1px solid rgb(225 182 93 / 40%);
-  border-radius: 18px;
-  background:
-    radial-gradient(120% 80% at 50% 0%, rgb(225 182 93 / 16%) 0%, transparent 60%),
-    linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%);
-  color: var(--panel-cream);
-  box-shadow: 0 12px 30px rgb(0 27 52 / 28%), inset 0 1px 0 rgb(255 255 255 / 8%);
-  text-align: center;
-}
-.reflection-card::before,
-.reflection-card::after { color: var(--gold-light); opacity: .8; }
-.reflection-card .icon {
-  width: 78px;
-  height: 78px;
-  margin: 0 auto 22px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--navy);
-  box-shadow: 0 0 0 2px var(--gold-light), 0 0 0 8px rgb(225 182 93 / 16%), 0 8px 20px rgb(0 0 0 / 35%);
-}
-.reflection-card .icon img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.reflection-card .reflection-title {
-  margin: 0 0 26px;
-  color: #fff;
-  font: 400 clamp(1.5rem, 1.3rem + .9vw, 1.875rem)/1.2 'Germania One', Georgia, serif;
-  letter-spacing: .02em;
-}
-/* Short gold rule under the title. */
-.reflection-card .reflection-title::after {
-  content: "";
-  display: block;
-  width: 56px;
-  height: 2px;
-  margin: 14px auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-}
-.reflection-card p {
-  margin: 0;
-  max-width: 34em;
-  font: 400 clamp(1.125rem, 1.05rem + .35vw, 1.3rem)/1.6 'Strait', 'Roboto', sans-serif;
-  text-wrap: pretty;
-}
-.reflection-card .closing {
-  width: min(280px, 80%);
-  margin-top: 26px;
-  padding-top: 20px;
-  border-top: 1px solid rgb(225 182 93 / 35%);
-  color: var(--gold-light);
-  font: 400 clamp(1.0625rem, 1rem + .3vw, 1.1875rem)/1.4 Georgia, 'Times New Roman', serif;
-}
-/* The panel is its own block, so it does not need the section divider above it. */
-.devotional-stack > .reflection-card { border-top: 1px solid rgb(225 182 93 / 40%); border-image: none; }
-/* Still mark the break before it: the usual hairline, centred in the visible
-   gap, which is the card's bottom padding plus the 28px stack gap. */
-.devotional-stack > :has(+ .reflection-card) { position: relative; }
-.devotional-stack > :has(+ .reflection-card)::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 calc((34px - 28px) / 2 - .5px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgb(198 146 46 / 70%) 20%, rgb(198 146 46 / 70%) 80%, transparent);
-}
+/* These open with their own banner, so the stack gap is all the space they need above and below. */
+did-you-know.card, bible-sayings.card { padding: 0 10px; }
 
 .site-footer {
   color: var(--navy);
@@ -408,7 +326,8 @@ did-you-know.card, bible-sayings.card { padding-inline: 10px; }
   color: var(--navy);
   box-shadow: 0 24px 60px rgba(0,27,52,.4);
   max-width: calc(100vw - 32px);
-  cursor: zoom-out;
+  /* The whole card is one tap target: any tap closes it. */
+  cursor: pointer;
 }
 .qr-dialog::backdrop {
   background: rgb(0 27 52 / 60%);
@@ -440,7 +359,9 @@ html:has(.qr-dialog[open]) { overflow: hidden; }
   box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
   overflow: auto;
   overscroll-behavior: contain;
-  cursor: zoom-out;
+  /* A tap closes it, but it is read first: the plain arrow, with the hand
+     kept for the panel's own buttons. */
+  cursor: default;
 }
 .verse-dialog::backdrop {
   background: rgb(0 27 52 / 60%);
@@ -451,6 +372,107 @@ html:has(.verse-dialog[open]) { overflow: hidden; }
    of :has(), so the panel flags itself while the popup is open. */
 html:has(bible-search-results[explaining]) { overflow: hidden; }
 
+/* Bookmarks: holding the search field opens every bookmark, one kind at a
+   time: verses, "Did you know?" facts and sayings, picked with the segmented
+   switch. The title and the switch stay put while the list scrolls under
+   them. The dialog has no padding, so a click on it is a click on the
+   backdrop. */
+.bookmarks-dialog {
+  width: min(600px, 94vw);
+  /* One height for every segment, so switching does not make the popup jump. */
+  height: min(680px, 90vh);
+  height: min(680px, 90dvh);
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 28px 70px rgb(0 27 52 / 45%);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.bookmarks-dialog::backdrop {
+  background: rgb(0 27 52 / 62%);
+  backdrop-filter: blur(4px);
+}
+html:has(.bookmarks-dialog[open]) { overflow: hidden; }
+.bookmarks-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 14px 12px 18px;
+  background:
+    radial-gradient(90% 140% at 30% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+  box-shadow: 0 6px 12px -8px rgb(0 27 52 / 18%);
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.bookmarks-bar h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+/* A segmented switch: three equal segments on a sunken track, the chosen one
+   raised in white with its count in gold. */
+.bookmark-tabs {
+  display: grid;
+  flex: 1 0 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: 14px;
+  background: rgb(0 27 52 / 8%);
+  box-shadow: inset 0 1px 2px rgb(0 27 52 / 12%);
+}
+.bookmark-tabs [role="tab"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 6px;
+  min-height: 40px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #4f5c65;
+  font: 600 .8125rem/1.2 'Roboto', Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.bookmark-tabs [role="tab"]:hover { background: rgb(255 255 255 / 45%); color: var(--navy); }
+.bookmark-tabs [aria-selected="true"],
+.bookmark-tabs [aria-selected="true"]:hover {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 1px 4px rgb(0 27 52 / 18%);
+}
+.bookmark-tabs [role="tab"]:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
+.bookmark-count {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgb(0 27 52 / 10%);
+  font-size: .6875rem;
+  font-variant-numeric: tabular-nums;
+}
+.bookmark-count:empty { display: none; }
+.bookmark-tabs [aria-selected="true"] .bookmark-count { background: var(--gold); color: #fff; }
+.bookmarks-panel { padding: 14px; }
+/* The popup scrolls the verses itself, rather than in a box of their own. */
+#bookmark-verses { --reader-max-height: none; }
+@media (max-width: 420px) {
+  .bookmarks-panel { padding: 10px; }
+  .bookmark-tabs [role="tab"] { padding: 6px 4px; font-size: .75rem; }
+}
+
 /* End-of-page splash: the thank-you poster that pops up once the reader
    reaches the very bottom. The dialog shrink-wraps the poster, so the box is
    the artwork itself with the hint sitting on the backdrop below it. */
@@ -460,7 +482,8 @@ html:has(bible-search-results[explaining]) { overflow: hidden; }
   max-width: none;
   background: transparent;
   overflow: visible;
-  cursor: zoom-out;
+  /* The poster is one tap target: any tap closes it. */
+  cursor: pointer;
 }
 .splash-dialog::backdrop {
   background: rgb(0 27 52 / 62%);
@@ -524,76 +547,107 @@ html:has(.splash-dialog[open]) { overflow: hidden; }
 .footer-help:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 
 .help-dialog {
-  width: min(560px, 92vw);
-  max-height: 88vh;
-  max-height: 88dvh;
+  width: min(580px, 94vw);
+  max-height: 90vh;
+  max-height: 90dvh;
   padding: 0;
   border: 0;
-  border-radius: 16px;
+  border-radius: 20px;
   background: var(--cream);
   color: var(--ink);
-  box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
+  box-shadow: 0 28px 70px rgb(0 27 52 / 45%);
   overflow: auto;
   overscroll-behavior: contain;
 }
 .help-dialog::backdrop {
-  background: rgb(0 27 52 / 60%);
-  backdrop-filter: blur(3px);
+  background: rgb(0 27 52 / 62%);
+  backdrop-filter: blur(4px);
 }
 html:has(.help-dialog[open]) { overflow: hidden; }
 .help-body {
-  padding: 0 22px 22px;
+  padding: 0 22px 30px;
   font-family: 'Roboto', Arial, sans-serif;
 }
-/* The title stays put while the list scrolls under it. */
+/* The title stays put while the list scrolls under it. It wears the About
+   page's colours: the emblem on the same lit paper, the name in Germania One. */
 .help-header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
   margin: 0 -22px;
-  padding: 16px 12px 12px 22px;
-  background: var(--cream);
+  padding: 16px 12px 14px 20px;
+  background:
+    radial-gradient(90% 140% at 30% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
   border-bottom: 1px solid rgb(198 146 46 / 45%);
+  box-shadow: 0 6px 12px -8px rgb(0 27 52 / 18%);
+}
+.help-emblem {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgb(198 146 46 / 35%));
+}
+.help-heading { flex: 1; min-width: 0; }
+.help-eyebrow {
+  margin: 0 0 3px;
+  color: #805b18;
+  font: 700 .625rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .24em;
+  text-transform: uppercase;
 }
 .help-header h2 {
   margin: 0;
   color: var(--navy);
-  font: 500 1.375rem/1.25 Georgia, 'Times New Roman', serif;
+  font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
 }
 .help-close {
   display: grid;
   flex: 0 0 auto;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: none;
+  background: rgb(243 231 210 / 82%);
   color: var(--navy);
+  box-shadow: 0 2px 10px rgb(0 27 52 / 18%);
   cursor: pointer;
+  transition: background-color .15s ease, transform .2s ease;
 }
-.help-close:hover { background: rgb(0 27 52 / 8%); }
+.help-close:hover { background: #fff; transform: rotate(90deg); }
 .help-close:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 .help-close svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
 }
 .help-body h3 {
-  margin: 20px 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 4px;
   color: #805b18;
   font-size: .75rem;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .14em;
   text-transform: uppercase;
+}
+/* A gold rule trailing each heading out to the edge, as on the About page. */
+.help-body h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgb(198 146 46 / 65%), transparent);
 }
 .help-list { margin: 0; padding: 0; list-style: none; }
 .help-list li {
@@ -640,10 +694,460 @@ html:has(.help-dialog[open]) { overflow: hidden; }
 }
 .help-icon.gold svg { fill: var(--gold-light); }
 .help-icon .help-fill { fill: currentColor; stroke: none; }
+.help-icon img { width: 26px; height: 26px; object-fit: contain; }
+
+/* About: the DG icon at the top opens the story of Daily Grace. The dialog
+   grows out of the icon; its sections rise into view as they are scrolled to,
+   and a gold line along the top fills as the reader works down the page. */
+.hero-about {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .25s cubic-bezier(.2, .9, .25, 1.2);
+}
+.hero-about:hover { transform: scale(1.06); }
+.hero-about:active { transform: scale(.94); }
+.hero-about:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+/* A soft gold ring that ripples out twice after load, to say "tap me". */
+.hero-about::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-dialog {
+  width: min(600px, 94vw);
+  max-height: 90vh;
+  max-height: 90dvh;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 28px 70px rgb(0 27 52 / 45%);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.about-dialog::backdrop {
+  background: rgb(0 27 52 / 62%);
+  backdrop-filter: blur(4px);
+}
+html:has(.about-dialog[open]) { overflow: hidden; }
+/* The About, Help and Bookmarks dialogs are read and scrolled, and share their edges.
+   A slim gold scrollbar on a clear track, held off the rounded corners, in
+   place of the grey system bar that squared off the dialog's right edge. The
+   thumb's transparent border leaves a thin pill floating inside the gutter. */
+.about-dialog::-webkit-scrollbar,
+.help-dialog::-webkit-scrollbar,
+.bookmarks-dialog::-webkit-scrollbar { width: 10px; }
+.about-dialog::-webkit-scrollbar-track,
+.help-dialog::-webkit-scrollbar-track,
+.bookmarks-dialog::-webkit-scrollbar-track { margin-block: 20px; background: transparent; }
+.about-dialog::-webkit-scrollbar-thumb,
+.help-dialog::-webkit-scrollbar-thumb,
+.bookmarks-dialog::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: rgb(198 146 46 / 40%) padding-box;
+}
+.about-dialog::-webkit-scrollbar-thumb:hover,
+.help-dialog::-webkit-scrollbar-thumb:hover,
+.bookmarks-dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
+/* Firefox has no ::-webkit-scrollbar. Chrome would drop the rules above if it
+   saw these, so only browsers without them get the standard properties. */
+@supports not selector(::-webkit-scrollbar) {
+  .about-dialog,
+  .help-dialog,
+  .bookmarks-dialog {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(198 146 46 / 50%) transparent;
+  }
+}
+/* Text scrolling out of view fades into the paper a little short of the
+   rounded edge rather than running into it. The band sticks to the bottom and
+   its negative margin lays it over the closing padding, so it takes no room. */
+.about-dialog::after,
+.help-dialog::after,
+.bookmarks-dialog::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  height: 30px;
+  margin-top: -30px;
+  background: linear-gradient(rgb(243 231 210 / 0%), var(--cream) 70%);
+  pointer-events: none;
+}
+
+/* A zero-height bar that sticks to the top while the story scrolls under it,
+   carrying the compact header, the reading progress line and the close button. */
+.about-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 0;
+}
+/* Once the big title has scrolled away, a compact one slides down in its
+   place, laid out like the Help header, and the story scrolls beneath it. */
+.about-mini {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 64px 14px 20px;
+  background:
+    radial-gradient(90% 140% at 30% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+  box-shadow: 0 6px 12px -8px rgb(0 27 52 / 18%);
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform .4s cubic-bezier(.22, 1, .36, 1), opacity .25s ease;
+  pointer-events: none;
+}
+.about-dialog.condensed .about-mini {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.about-mini-title {
+  margin: 0;
+  color: var(--navy);
+  font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+.about-progress {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(var(--read, 0));
+  transform-origin: left;
+}
+.about-close {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(243 231 210 / 82%);
+  color: var(--navy);
+  box-shadow: 0 2px 10px rgb(0 27 52 / 18%);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: background-color .15s ease, transform .2s ease;
+}
+.about-close:hover { background: #fff; transform: rotate(90deg); }
+.about-close:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.about-close svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.about-hero {
+  display: grid;
+  justify-items: center;
+  padding: 40px 24px 18px;
+  background:
+    radial-gradient(90% 70% at 50% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+  text-align: center;
+}
+.about-hero img {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgb(198 146 46 / 35%));
+}
+.about-eyebrow {
+  margin: 14px 0 2px;
+  color: #805b18;
+  font: 700 .6875rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.about-hero h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 400 clamp(2.5rem, 2.1rem + 2vw, 3.25rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+.about-tagline {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font: italic 1.0625rem/1.4 Georgia, 'Times New Roman', serif;
+}
+
+.about-body {
+  padding: 6px 26px 34px;
+  font: 1.0625rem/1.75 Georgia, 'Times New Roman', serif;
+}
+.about-body p { margin: 0 0 14px; }
+.about-body strong { color: var(--navy); }
+.about-section { padding-top: 26px; }
+.about-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 12px;
+  color: var(--navy);
+  font: 500 1.375rem/1.25 Georgia, 'Times New Roman', serif;
+}
+/* A gold rule trailing each heading out to the edge. */
+.about-section h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgb(198 146 46 / 65%), transparent);
+}
+/* The one-line answer to "What is Daily Grace?" is the point of the whole
+   page, so it sits in a lit, gold-edged card of its own. Two classes, to win
+   over the plain paragraph margins of .about-body p. */
+.about-body .about-lead {
+  margin: 4px -6px 22px;
+  padding: 18px 20px;
+  border: 1.5px solid rgb(198 146 46 / 55%);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 90% at 0% 0%, #fffaf0 0%, transparent 65%),
+    linear-gradient(180deg, #fbf3e3, #f6ead3);
+  box-shadow: 0 12px 26px -14px rgb(0 27 52 / 35%), inset 0 1px 0 rgb(255 255 255 / 70%);
+  color: var(--navy);
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+.about-lead::first-letter {
+  float: left;
+  margin: 6px 10px 0 0;
+  color: var(--gold);
+  font: 400 3.9rem/.8 'Germania One', Georgia, serif;
+}
+
+/* The pocket Bible is the heart of the story, so it gets the navy card. */
+.about-pocket {
+  position: relative;
+  margin: 30px -6px 4px;
+  padding: 26px 22px 20px;
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgb(225 182 93 / 18%), transparent 60%),
+    var(--navy);
+  color: var(--cream);
+  box-shadow: 0 14px 30px rgb(0 27 52 / 28%);
+}
+.about-pocket h3 {
+  margin: 0 0 12px;
+  color: var(--gold-light);
+  font: 400 1.75rem/1.1 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+.about-pocket strong { color: var(--gold-light); }
+.about-pocket-icon {
+  position: absolute;
+  top: -20px;
+  right: 22px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 6px 14px rgb(0 0 0 / 30%);
+}
+.about-pocket-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Each point hangs from a gold bookmark ribbon. */
+.about-ribbons { margin: 4px 0 16px; padding: 0; list-style: none; }
+.about-ribbons li {
+  position: relative;
+  padding: 10px 0 10px 34px;
+}
+.about-ribbons li + li { border-top: 1px solid rgb(243 231 210 / 12%); }
+.about-ribbons li::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 4px;
+  width: 14px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+.about-ribbons strong { display: block; }
+.about-body .about-heirloom {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px dashed rgb(225 182 93 / 45%);
+  color: rgb(243 231 210 / 88%);
+  font-style: italic;
+}
+
+.about-list { margin: 0; padding: 0; list-style: none; }
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 0;
+}
+.about-list li + li { border-top: 1px solid rgb(0 27 52 / 8%); }
+.about-list p { margin: 0; }
+.about-list .help-icon { margin-top: 2px; }
+
+.about-steps {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.about-steps li {
+  position: relative;
+  margin-bottom: 18px;
+  padding-left: 52px;
+  counter-increment: step;
+}
+.about-steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  background: #fff;
+  color: #805b18;
+  font: 400 1.125rem/1 Georgia, 'Times New Roman', serif;
+}
+.about-steps strong { display: block; }
+
+.about-verse {
+  position: relative;
+  margin: 40px 0 8px;
+  padding: 30px 12px 22px;
+  border-block: 1px solid rgb(198 146 46 / 55%);
+  text-align: center;
+}
+.about-verse::before {
+  content: "\201C";
+  position: absolute;
+  top: -.55em;
+  left: 50%;
+  padding: 0 12px;
+  background: var(--cream);
+  color: var(--gold);
+  font: 4rem/1 Georgia, 'Times New Roman', serif;
+  transform: translateX(-50%);
+}
+.about-verse p {
+  margin: 0;
+  color: var(--navy);
+  font: italic 1.4375rem/1.45 Georgia, 'Times New Roman', serif;
+}
+.about-verse cite {
+  display: block;
+  margin-top: 12px;
+  color: #805b18;
+  font: normal 700 .75rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.about-closing { text-align: center; }
+.about-closing h3::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(270deg, rgb(198 146 46 / 65%), transparent);
+}
+.about-body .about-welcome {
+  text-wrap: balance;
+  margin: 20px 0 22px;
+  color: var(--gold);
+  font: 400 2.125rem/1.1 'Germania One', Georgia, serif;
+}
+.about-begin {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--gold-light);
+  box-shadow: 0 8px 18px rgb(0 27 52 / 28%);
+  font: 600 .9375rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.about-begin span { transition: transform .2s ease; }
+.about-begin:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgb(0 27 52 / 32%); }
+.about-begin:hover span { transform: translateX(4px); }
+.about-begin:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-about::after { animation: about-beckon 2.2s ease-out 1.6s 2; }
+  /* The title block settles in, one line after another, as the dialog opens. */
+  .about-dialog[open] .about-hero > * {
+    animation: about-rise .8s cubic-bezier(.22, 1, .36, 1) both;
+  }
+  .about-dialog[open] .about-hero > :nth-child(1) { animation-delay: .18s; }
+  .about-dialog[open] .about-hero > :nth-child(2) { animation-delay: .28s; }
+  .about-dialog[open] .about-hero > :nth-child(3) { animation-delay: .36s; }
+  .about-dialog[open] .about-hero > :nth-child(4) { animation-delay: .46s; }
+  /* The script adds .revealing; without it every section simply shows. */
+  .about-dialog.revealing .about-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.22, 1, .36, 1);
+  }
+  .about-dialog.revealing .about-reveal.is-visible { opacity: 1; transform: none; }
+}
+@keyframes about-beckon {
+  from { box-shadow: 0 0 0 0 rgb(198 146 46 / 55%); }
+  to { box-shadow: 0 0 0 12px rgb(198 146 46 / 0%); }
+}
+@keyframes about-rise {
+  from { opacity: 0; transform: translateY(14px); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
   .footer-help { transition: none; }
+  .hero-about, .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
+  .bookmark-tabs [role="tab"] { transition: none; }
 }
 .footer-qr figcaption {
   color: var(--navy);
@@ -722,13 +1226,13 @@ html:has(.help-dialog[open]) { overflow: hidden; }
   .hero { padding: 10px 0 0; }
   .hero-toolbar { padding-inline: 8px; gap: 8px; }
   .hero-icon { width: 40px; height: 40px; }
-  .daily-section { padding: 0 0 65px; }
   .card { padding: 27px 23px; }
-  .devotional-stack > :has(+ .reflection-card)::after { bottom: calc((27px - 28px) / 2 - .5px); }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero.webp'); }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }
   .footer-help { top: 14px; right: 13px; }
+  .about-body { padding-inline: 20px; }
+  .about-hero { padding-top: 34px; }
   .footer-bottom { flex-direction: column; justify-content: center; padding: 8px 20px 24px; text-align: center; }
   .footer-sign { align-items: center; }
   .footer-social { margin-right: 0; }

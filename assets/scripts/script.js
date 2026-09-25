@@ -232,32 +232,7 @@ searchClear.addEventListener("click", () => {
 // reader swipe back through the past week; the rest of the page stays on today.
 document.getElementById("banner-slider").setAttribute("media-base", MEDIA_BASE_URL);
 
-const todayName = new Date().toLocaleDateString("en-US", {
-    timeZone: "Asia/Manila",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-});
-
-fetch("assets/verses.json")
-    .then((response) => {
-        if (!response.ok)
-            throw new Error(
-                `Unable to load assets/verses.json (${response.status})`,
-            );
-        return response.json();
-    })
-    .then((verses) => {
-        const currentVerse = verses.find((item) => item.id === todayName);
-        if (!currentVerse) throw new Error(`No verse found for ${todayName}`);
-        document.getElementById("reflection-text").textContent =
-            currentVerse.reflection;
-    })
-    .catch((error) => {
-        console.warn("Today's devotional could not be loaded:", error);
-        document.getElementById("reflection-text").textContent =
-            "Please check the daily devotional data.";
-    });
+// <daily-strides> loads today's reflection from assets/verses.json itself.
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
@@ -276,25 +251,26 @@ const qrDialog = document.getElementById("qr-dialog");
 const qrOpen = document.getElementById("qr-open");
 let qrClosing = false;
 
-function qrThumbTransform() {
-    const from = qrOpen.getBoundingClientRect();
-    const to = qrDialog.getBoundingClientRect();
+function thumbTransform(thumb, dialog) {
+    const from = thumb.getBoundingClientRect();
+    const to = dialog.getBoundingClientRect();
     const dx = from.left + from.width / 2 - (to.left + to.width / 2);
     const dy = from.top + from.height / 2 - (to.top + to.height / 2);
     return `translate(${dx}px, ${dy}px) scale(${from.width / to.width})`;
 }
 
-function animateQr(direction) {
+// Grows a dialog out of the small control that opened it, or shrinks it back in.
+function growDialog(thumb, dialog, direction, { open = 380, close = 240 } = {}) {
     const opening = direction === "open";
     const options = {
-        duration: opening ? 380 : 240,
+        duration: opening ? open : close,
         easing: opening ? "cubic-bezier(.2, .9, .25, 1)" : "cubic-bezier(.4, 0, 1, 1)",
         fill: "forwards",
     };
-    const shrunk = { transform: qrThumbTransform(), opacity: 0 };
+    const shrunk = { transform: thumbTransform(thumb, dialog), opacity: 0 };
     const full = { transform: "none", opacity: 1 };
-    qrDialog.animate(opening ? [shrunk, full] : [full, shrunk], options);
-    const backdrop = qrDialog.animate(
+    dialog.animate(opening ? [shrunk, full] : [full, shrunk], options);
+    const backdrop = dialog.animate(
         opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
         { ...options, easing: "ease", pseudoElement: "::backdrop" },
     );
@@ -309,13 +285,13 @@ qrOpen.addEventListener("click", () => {
     if (qrDialog.open) return;
     qrShownAt = Date.now();
     qrDialog.showModal();
-    if (!reducedMotionQuery.matches) animateQr("open");
+    if (!reducedMotionQuery.matches) growDialog(qrOpen, qrDialog, "open");
 });
 
 async function closeQr() {
     if (!qrDialog.open || qrClosing) return;
     qrClosing = true;
-    if (!reducedMotionQuery.matches) await animateQr("close");
+    if (!reducedMotionQuery.matches) await growDialog(qrOpen, qrDialog, "close");
     qrDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     qrDialog.close();
     qrClosing = false;
@@ -481,6 +457,26 @@ function popDialog(dialog, direction) {
     return backdrop.finished.catch(() => {});
 }
 
+// The help guide slides in from the right edge, moving left into place, and
+// slides back out the way it came.
+function slideDialog(dialog, direction) {
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 420 : 260,
+        easing: opening ? "cubic-bezier(.22, 1, .36, 1)" : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    // Half the viewport plus half the dialog puts it just past the right edge.
+    const offscreen = { transform: "translateX(calc(50vw + 50%))", opacity: .6 };
+    const full = { transform: "none", opacity: 1 };
+    dialog.animate(opening ? [offscreen, full] : [full, offscreen], options);
+    const backdrop = dialog.animate(
+        opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
+}
+
 function openSplash() {
     if (splashShown || splashDialog.open) return;
     splashShown = true;
@@ -560,27 +556,116 @@ async function showVerse(reference) {
     }
 }
 
-// Bookmarks: holding a verse in the results saves it (the results panel keeps
-// the list), and holding the search field shows them all in the verse popup.
-async function showBookmarks() {
-    const generation = ++verseGeneration;
-    openVerseDialog();
-    const ids = verseResults.bookmarks;
-    if (!ids.length) {
-        verseResults.showBookmarks([]);
-        return;
-    }
-    verseResults.loading("Loading your bookmarks…");
-    try {
-        await loadBibleBookSuggestions();
-        if (generation !== verseGeneration || !verseDialog.open) return;
-        verseResults.showBookmarks(getVersesByIds(ids));
-    } catch (error) {
-        if (generation !== verseGeneration) return;
-        console.warn("Bookmarks could not be loaded:", error);
-        verseResults.showMessage("Your bookmarks could not be loaded. Please try again.");
+// Bookmarks: holding a verse, a fact or a saying saves it (each component keeps
+// its own list), and holding the search field opens them all in the bookmarks
+// popup, one kind at a time under a segmented switch. Unlike the verse popup
+// it is browsed, so a tap inside it does not close it: only the close button,
+// the backdrop or Escape do.
+const bookmarksDialog = document.getElementById("bookmarks-dialog");
+const bookmarksClose = document.getElementById("bookmarks-close");
+const bookmarkVerses = document.getElementById("bookmark-verses");
+const bookmarkFacts = document.getElementById("bookmark-facts");
+const bookmarkSayings = document.getElementById("bookmark-sayings");
+const bookmarkTabs = [...bookmarksDialog.querySelectorAll('[role="tab"]')];
+// The component behind each tab, whose bookmarks the tab counts.
+const bookmarkLists = new Map([
+    [bookmarkTabs[0], bookmarkVerses],
+    [bookmarkTabs[1], bookmarkFacts],
+    [bookmarkTabs[2], bookmarkSayings],
+]);
+for (const list of bookmarkLists.values()) list.setAttribute("media-base", MEDIA_BASE_URL);
+// The popup opens on the kind of bookmark looked at last.
+let bookmarkTab = bookmarkTabs[0];
+let bookmarksGeneration = 0;
+let bookmarksClosing = false;
+
+function updateBookmarkCounts() {
+    for (const [tab, list] of bookmarkLists) {
+        tab.querySelector(".bookmark-count").textContent = list.bookmarks.length || "";
     }
 }
+
+function selectBookmarkTab(tab, { focus = false } = {}) {
+    bookmarkTab = tab;
+    for (const other of bookmarkTabs) {
+        const selected = other === tab;
+        other.setAttribute("aria-selected", String(selected));
+        other.tabIndex = selected ? 0 : -1;
+        document.getElementById(other.getAttribute("aria-controls")).hidden = !selected;
+    }
+    bookmarksDialog.scrollTop = 0;
+    if (focus) tab.focus();
+}
+
+for (const tab of bookmarkTabs) {
+    tab.addEventListener("click", () => selectBookmarkTab(tab));
+}
+// The arrow keys move along the switch, as in any tab list.
+bookmarksDialog.querySelector('[role="tablist"]').addEventListener("keydown", (event) => {
+    const index = bookmarkTabs.indexOf(bookmarkTab);
+    const last = bookmarkTabs.length - 1;
+    const next = {
+        ArrowLeft: index === 0 ? last : index - 1,
+        ArrowRight: index === last ? 0 : index + 1,
+        Home: 0,
+        End: last,
+    }[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    selectBookmarkTab(bookmarkTabs[next], { focus: true });
+});
+for (const list of bookmarkLists.values()) {
+    list.addEventListener("bookmarkchange", updateBookmarkCounts);
+}
+
+async function showBookmarks() {
+    const generation = ++bookmarksGeneration;
+    if (!bookmarksDialog.open) {
+        bookmarksDialog.showModal();
+        if (!reducedMotionQuery.matches) popDialog(bookmarksDialog, "open");
+    }
+    selectBookmarkTab(bookmarkTab);
+    updateBookmarkCounts();
+    // Bookmarks may have been added on the page since the lists were last drawn.
+    bookmarkFacts.showBookmarks();
+    bookmarkSayings.showBookmarks();
+    const ids = bookmarkVerses.bookmarks;
+    if (!ids.length) {
+        bookmarkVerses.showBookmarks([]);
+        return;
+    }
+    bookmarkVerses.loading("Loading your bookmarks…");
+    try {
+        await loadBibleBookSuggestions();
+        if (generation !== bookmarksGeneration || !bookmarksDialog.open) return;
+        bookmarkVerses.showBookmarks(getVersesByIds(ids));
+    } catch (error) {
+        if (generation !== bookmarksGeneration) return;
+        console.warn("Bookmarks could not be loaded:", error);
+        bookmarkVerses.showMessage("Your bookmarks could not be loaded. Please try again.");
+    }
+}
+
+async function closeBookmarks() {
+    if (!bookmarksDialog.open || bookmarksClosing) return;
+    bookmarksClosing = true;
+    bookmarksGeneration++;
+    if (!reducedMotionQuery.matches) await popDialog(bookmarksDialog, "close");
+    bookmarksDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    bookmarksDialog.close();
+    bookmarkVerses.reset();
+    bookmarksClosing = false;
+}
+
+// Escape would close instantly; route it through the closing animation instead.
+bookmarksDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeBookmarks();
+});
+bookmarksClose.addEventListener("click", closeBookmarks);
+bookmarksDialog.addEventListener("click", (event) => {
+    if (event.target === bookmarksDialog) closeBookmarks();
+});
 
 // The same half-second hold the verse cards use, with the search pill glowing
 // gold while it builds.
@@ -644,13 +729,14 @@ async function closeVerse() {
     verseClosing = false;
 }
 
-didYouKnow.addEventListener("verse-request", (event) => {
-    showVerse(event.detail.reference);
-});
-// A saying's popup stays open underneath; closing the passage returns to it.
-bibleSayings.addEventListener("verse-request", (event) => {
-    showVerse(event.detail.reference);
-});
+// A reference in a fact or a saying, on the page or among the bookmarks, opens
+// the passage on top. A saying's popup, like the bookmarks popup, stays open
+// underneath; closing the passage returns to it.
+for (const source of [didYouKnow, bibleSayings, bookmarkFacts, bookmarkSayings]) {
+    source.addEventListener("verse-request", (event) => {
+        showVerse(event.detail.reference);
+    });
+}
 
 // Escape would close instantly; route it through the closing animation instead.
 verseDialog.addEventListener("cancel", (event) => {
@@ -675,13 +761,13 @@ helpOpen.addEventListener("click", () => {
     if (helpDialog.open) return;
     helpDialog.showModal();
     helpDialog.scrollTop = 0;
-    if (!reducedMotionQuery.matches) popDialog(helpDialog, "open");
+    if (!reducedMotionQuery.matches) slideDialog(helpDialog, "open");
 });
 
 async function closeHelp() {
     if (!helpDialog.open || helpClosing) return;
     helpClosing = true;
-    if (!reducedMotionQuery.matches) await popDialog(helpDialog, "close");
+    if (!reducedMotionQuery.matches) await slideDialog(helpDialog, "close");
     helpDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     helpDialog.close();
     helpClosing = false;
@@ -697,4 +783,81 @@ helpClose.addEventListener("click", closeHelp);
 // contents came from the backdrop.
 helpDialog.addEventListener("click", (event) => {
     if (event.target === helpDialog) closeHelp();
+});
+
+// About: the DG icon at the top opens the story of Daily Grace. It grows out of
+// the icon and shrinks back into it. Each section rises into view as it is
+// scrolled to, the gold line along the top fills as the reader goes, and a
+// compact header takes over from the big title, as the Help header does.
+const aboutDialog = document.getElementById("about-dialog");
+const aboutOpen = document.getElementById("about-open");
+const aboutClose = document.getElementById("about-close");
+const aboutBegin = document.getElementById("about-begin");
+const aboutSections = aboutDialog.querySelectorAll(".about-reveal");
+const ABOUT_TIMING = { open: 560, close: 300 };
+let aboutClosing = false;
+
+const aboutObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        aboutObserver.unobserve(entry.target);
+    }
+}, { root: aboutDialog, rootMargin: "0px 0px -10% 0px" });
+
+const aboutTitle = document.getElementById("about-title");
+const aboutMini = aboutDialog.querySelector(".about-mini");
+
+// Fills the progress line, and swaps in the compact header once the big
+// title has slid up under where it sits.
+function updateAboutScroll() {
+    const { scrollTop, scrollHeight, clientHeight } = aboutDialog;
+    const scrollable = scrollHeight - clientHeight;
+    const read = scrollable > 0 ? scrollTop / scrollable : 1;
+    aboutDialog.style.setProperty("--read", Math.min(1, read).toFixed(3));
+    const titleGone = aboutTitle.offsetTop + aboutTitle.offsetHeight - aboutMini.offsetHeight;
+    aboutDialog.classList.toggle("condensed", scrollTop > titleGone);
+}
+
+aboutOpen.addEventListener("click", () => {
+    if (aboutDialog.open) return;
+    aboutDialog.showModal();
+    aboutDialog.scrollTop = 0;
+    updateAboutScroll();
+    const animate = !reducedMotionQuery.matches;
+    // Hide the sections afresh each time, so the story unfolds again on every visit.
+    aboutDialog.classList.toggle("revealing", animate);
+    for (const section of aboutSections) {
+        section.classList.remove("is-visible");
+        if (animate) aboutObserver.observe(section);
+    }
+    if (animate) growDialog(aboutOpen, aboutDialog, "open", ABOUT_TIMING);
+});
+
+async function closeAbout() {
+    if (!aboutDialog.open || aboutClosing) return;
+    aboutClosing = true;
+    if (!reducedMotionQuery.matches) await growDialog(aboutOpen, aboutDialog, "close", ABOUT_TIMING);
+    aboutDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    aboutObserver.disconnect();
+    aboutDialog.close();
+    aboutClosing = false;
+}
+
+aboutDialog.addEventListener("scroll", updateAboutScroll, { passive: true });
+// Escape would close instantly; route it through the closing animation instead.
+aboutDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeAbout();
+});
+aboutClose.addEventListener("click", closeAbout);
+// The dialog has no padding, so a click that lands on it rather than its
+// contents came from the backdrop.
+aboutDialog.addEventListener("click", (event) => {
+    if (event.target === aboutDialog) closeAbout();
+});
+// The closing call to action: fold the story away and take the reader to today.
+aboutBegin.addEventListener("click", async () => {
+    await closeAbout();
+    document.getElementById("daily-devotional").scrollIntoView({ behavior: "smooth" });
 });

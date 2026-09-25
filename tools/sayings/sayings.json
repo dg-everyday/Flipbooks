@@ -5784,5 +5784,1650 @@
         "theme": "Faith & Spirit",
         "meaning": "Everything considered; or everything to someone.",
         "explanation": "At the end, the Son hands the kingdom to the Father, \"that God may be all in all.\""
+    },
+    {
+        "saying": "Seedtime and harvest",
+        "variants": [],
+        "references": [
+            "Genesis 8:22"
+        ],
+        "check": "seedtime and harvest",
+        "wording": "exact",
+        "theme": "Time & Mortality",
+        "meaning": "The dependable rhythm of the seasons; the idea that effort now brings results later.",
+        "explanation": "After the flood God promises that while the earth remains, seedtime and harvest, cold and heat, summer and winter shall not cease. The order of the seasons is presented as a sign of his faithfulness."
+    },
+    {
+        "saying": "Here comes the dreamer",
+        "variants": [
+            "Behold, this dreamer cometh"
+        ],
+        "references": [
+            "Genesis 37:19"
+        ],
+        "check": "Behold, this dreamer cometh",
+        "wording": "adapted",
+        "theme": "People & Stories",
+        "meaning": "A mocking remark about someone with big ideas or ambitions.",
+        "explanation": "Joseph's brothers sneer this as he approaches, resentful of his dreams that they would one day bow to him. They sell him into slavery, and the dreams come true anyway."
+    },
+    {
+        "saying": "Seven fat years and seven lean years",
+        "variants": [
+            "Lean years",
+            "Fat years and lean years"
+        ],
+        "references": [
+            "Genesis 41:29-30"
+        ],
+        "check": "seven years of great plenty",
+        "wording": "adapted",
+        "theme": "Work & Provision",
+        "meaning": "Good times followed by hard times, and the wisdom of saving in the first for the second.",
+        "explanation": "Joseph interprets Pharaoh's dream of fat and lean cows as seven years of plenty followed by seven years of famine. Egypt stores grain during the good years and survives the bad ones."
+    },
+    {
+        "saying": "Bring down my grey hairs with sorrow to the grave",
+        "variants": [
+            "You'll send me to an early grave"
+        ],
+        "references": [
+            "Genesis 42:38"
+        ],
+        "check": "bring down my gray hairs with sorrow to the grave",
+        "wording": "exact",
+        "theme": "Time & Mortality",
+        "meaning": "A parent's complaint that worry or grief will be the death of them.",
+        "explanation": "Jacob refuses to let Benjamin travel to Egypt, fearing that losing him after Joseph would kill him with grief. The KJV spells it gray."
+    },
+    {
+        "saying": "You meant it for evil, but God meant it for good",
+        "variants": [],
+        "references": [
+            "Genesis 50:20"
+        ],
+        "check": "ye thought evil against me; but God meant it unto good",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "Something intended to harm has been turned into a blessing.",
+        "explanation": "Joseph reassures the brothers who sold him that God used their cruelty to save many lives through the famine. It is the Bible's classic statement of providence working through wrongdoing."
+    },
+    {
+        "saying": "On holy ground",
+        "variants": [
+            "Standing on holy ground"
+        ],
+        "references": [
+            "Exodus 3:5"
+        ],
+        "check": "holy ground",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "In a place or moment that deserves reverence.",
+        "explanation": "At the burning bush God tells Moses to take off his shoes, because the place whereon thou standest is holy ground."
+    },
+    {
+        "saying": "Slow of speech",
+        "variants": [],
+        "references": [
+            "Exodus 4:10"
+        ],
+        "check": "slow of speech",
+        "wording": "exact",
+        "theme": "Speech & Relationships",
+        "meaning": "Not a fluent or confident speaker.",
+        "explanation": "Moses tries to excuse himself from confronting Pharaoh by saying he is slow of speech, and of a slow tongue. God answers by sending Aaron to speak alongside him."
+    },
+    {
+        "saying": "Hold up someone's hands",
+        "variants": [
+            "Hold up his arms"
+        ],
+        "references": [
+            "Exodus 17:12"
+        ],
+        "check": "Aaron and Hur stayed up his hands",
+        "wording": "allusion",
+        "theme": "Speech & Relationships",
+        "meaning": "To support and sustain a leader when they grow weary.",
+        "explanation": "While Moses held up his hands, Israel prevailed in battle against Amalek. When he tired, Aaron and Hur held up his hands, one on each side, until sunset."
+    },
+    {
+        "saying": "Proclaim liberty throughout the land",
+        "variants": [],
+        "references": [
+            "Leviticus 25:10"
+        ],
+        "check": "proclaim liberty throughout all the land",
+        "wording": "adapted",
+        "theme": "Peace & Conflict",
+        "meaning": "A call to announce freedom for everyone.",
+        "explanation": "In the year of jubilee, debts were released and land returned to its families. The KJV words are inscribed on the Liberty Bell in Philadelphia."
+    },
+    {
+        "saying": "Wandering in the wilderness",
+        "variants": [
+            "Forty years in the wilderness"
+        ],
+        "references": [
+            "Numbers 14:33"
+        ],
+        "check": "wander in the wilderness forty years",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "A long period without direction, influence or success.",
+        "explanation": "Because the people refused to enter Canaan, God said they would wander in the wilderness forty years until that generation had died. Politicians out of power are still said to be in the wilderness."
+    },
+    {
+        "saying": "A city of refuge",
+        "variants": [],
+        "references": [
+            "Numbers 35:11"
+        ],
+        "check": "cities of refuge",
+        "wording": "adapted",
+        "theme": "Peace & Conflict",
+        "meaning": "A place of safety and protection.",
+        "explanation": "Israel set aside six cities of refuge where someone who had killed another by accident could flee from revenge until the case was judged."
+    },
+    {
+        "saying": "The everlasting arms",
+        "variants": [
+            "Underneath are the everlasting arms"
+        ],
+        "references": [
+            "Deuteronomy 33:27"
+        ],
+        "check": "underneath are the everlasting arms",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "God's constant, unfailing support.",
+        "explanation": "In Moses' final blessing: The eternal God is thy refuge, and underneath are the everlasting arms. The line became a well-loved hymn."
+    },
+    {
+        "saying": "Thou shalt not muzzle the ox",
+        "variants": [
+            "Don't muzzle the ox that treads the grain"
+        ],
+        "references": [
+            "Deuteronomy 25:4"
+        ],
+        "check": "Thou shalt not muzzle the ox",
+        "wording": "exact",
+        "theme": "Work & Provision",
+        "meaning": "Workers should be allowed to benefit from what they produce.",
+        "explanation": "An animal treading out grain was to be allowed to eat as it worked. Paul quotes the law twice to argue that those who serve the church should be supported by it."
+    },
+    {
+        "saying": "Be strong and of a good courage",
+        "variants": [
+            "Be strong and courageous"
+        ],
+        "references": [
+            "Joshua 1:9"
+        ],
+        "check": "Be strong and of a good courage",
+        "wording": "exact",
+        "theme": "Hardship & Endurance",
+        "meaning": "Encouragement to face something daunting without fear.",
+        "explanation": "God's charge to Joshua as he takes over from Moses, repeated several times in the chapter, with the promise that the LORD thy God is with thee whithersoever thou goest."
+    },
+    {
+        "saying": "Cross the Jordan",
+        "variants": [
+            "Crossing over Jordan"
+        ],
+        "references": [
+            "Joshua 3:17"
+        ],
+        "check": "over Jordan",
+        "wording": "allusion",
+        "theme": "Time & Mortality",
+        "meaning": "To die, or to make a decisive, final crossing.",
+        "explanation": "Israel crossed the Jordan on dry ground to enter the promised land. Spirituals and hymns turned the crossing into a picture of passing through death into heaven."
+    },
+    {
+        "saying": "The walls came tumbling down",
+        "variants": [],
+        "references": [
+            "Joshua 6:20"
+        ],
+        "check": "the wall fell down flat",
+        "wording": "allusion",
+        "theme": "People & Stories",
+        "meaning": "A seemingly unbreakable barrier suddenly collapses.",
+        "explanation": "After Israel marched around Jericho for seven days, the priests blew the trumpets, the people shouted, and the wall fell down flat. The spiritual 'Joshua Fit the Battle of Jericho' made the tumbling famous."
+    },
+    {
+        "saying": "Hewers of wood and drawers of water",
+        "variants": [],
+        "references": [
+            "Joshua 9:21"
+        ],
+        "check": "hewers of wood and drawers of water",
+        "wording": "exact",
+        "theme": "Work & Provision",
+        "meaning": "People doing the most menial, unrewarded labour.",
+        "explanation": "The Gibeonites tricked Israel into a treaty, and as a consequence were made to cut wood and carry water for the community and the altar."
+    },
+    {
+        "saying": "The sun stood still",
+        "variants": [],
+        "references": [
+            "Joshua 10:13"
+        ],
+        "check": "the sun stood still",
+        "wording": "exact",
+        "theme": "People & Stories",
+        "meaning": "Time seemed to stop, or something extraordinary happened.",
+        "explanation": "During a battle at Gibeon, Joshua prayed and the sun stood still and the moon stayed until Israel had won. The text notes the story was also written in the book of Jasher."
+    },
+    {
+        "saying": "As for me and my house",
+        "variants": [
+            "Choose you this day whom ye will serve"
+        ],
+        "references": [
+            "Joshua 24:15"
+        ],
+        "check": "as for me and my house, we will serve the LORD",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "A firm declaration of a family's values, whatever others choose.",
+        "explanation": "In his farewell speech Joshua tells Israel to choose whom they will serve, then declares his own household's choice. The line is a favourite over doorways and in homes."
+    },
+    {
+        "saying": "Put out a fleece",
+        "variants": [
+            "Gideon's fleece"
+        ],
+        "references": [
+            "Judges 6:37"
+        ],
+        "check": "I will put a fleece of wool in the floor",
+        "wording": "adapted",
+        "theme": "Signs & Warnings",
+        "meaning": "To ask for a sign before making a decision.",
+        "explanation": "Gideon asked God to confirm his calling by making dew fall only on a fleece, then only on the ground around it. Both signs were given."
+    },
+    {
+        "saying": "As strong as Samson",
+        "variants": [
+            "A Samson"
+        ],
+        "references": [
+            "Judges 16:3"
+        ],
+        "check": "took the doors of the gate of the city",
+        "wording": "allusion",
+        "theme": "People & Stories",
+        "meaning": "Enormously strong.",
+        "explanation": "Samson tore the gates of Gaza from their posts and carried them to a hilltop, one of several feats of strength attributed to him before Delilah betrayed his secret."
+    },
+    {
+        "saying": "From Dan to Beersheba",
+        "variants": [],
+        "references": [
+            "Judges 20:1"
+        ],
+        "check": "from Dan even to Beer-sheba",
+        "wording": "adapted",
+        "theme": "People & Stories",
+        "meaning": "From one end of a place to the other; everywhere.",
+        "explanation": "Dan was Israel's northernmost city and Beersheba (Beer-sheba in the KJV) its southernmost, so the phrase meant the whole country, much like 'from coast to coast'."
+    },
+    {
+        "saying": "Speak, Lord, for thy servant heareth",
+        "variants": [
+            "Speak, for your servant is listening"
+        ],
+        "references": [
+            "1 Samuel 3:9"
+        ],
+        "check": "Speak, LORD; for thy servant heareth",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "An expression of readiness to listen and obey.",
+        "explanation": "The boy Samuel, hearing a voice in the night, is told by Eli to answer this way. It became the model prayer of someone waiting for guidance."
+    },
+    {
+        "saying": "Ichabod: the glory has departed",
+        "variants": [
+            "Ichabod"
+        ],
+        "references": [
+            "1 Samuel 4:21"
+        ],
+        "check": "The glory is departed from Israel",
+        "wording": "adapted",
+        "theme": "Signs & Warnings",
+        "meaning": "Said of a place or institution that has lost its former greatness.",
+        "explanation": "When the ark was captured and Eli's family died, a newborn grandson was named Ichabod, meaning no glory, because the glory is departed from Israel."
+    },
+    {
+        "saying": "Head and shoulders above the rest",
+        "variants": [],
+        "references": [
+            "1 Samuel 9:2"
+        ],
+        "check": "from his shoulders and upward he was higher than any of the people",
+        "wording": "adapted",
+        "theme": "People & Stories",
+        "meaning": "Far better than everyone else.",
+        "explanation": "Saul, Israel's first king, is introduced as a head taller than anyone else in the nation. The modern phrase describes excellence, not just height."
+    },
+    {
+        "saying": "Man looks on the outward appearance",
+        "variants": [
+            "The Lord looks on the heart"
+        ],
+        "references": [
+            "1 Samuel 16:7"
+        ],
+        "check": "man looketh on the outward appearance, but the LORD looketh on the heart",
+        "wording": "adapted",
+        "theme": "Character & Conduct",
+        "meaning": "Character matters more than looks, and people often judge the wrong thing.",
+        "explanation": "When Samuel is impressed by David's tall older brother, God tells him not to judge by stature. The youngest son, out with the sheep, is chosen."
+    },
+    {
+        "saying": "Thou art the man",
+        "variants": [
+            "You are the man"
+        ],
+        "references": [
+            "2 Samuel 12:7"
+        ],
+        "check": "Thou art the man",
+        "wording": "exact",
+        "theme": "Judgment & Consequences",
+        "meaning": "A sudden, direct accusation that exposes someone's guilt.",
+        "explanation": "Nathan tells David a story about a rich man who stole a poor man's only lamb. When David angrily condemns the rich man, Nathan springs the trap: thou art the man."
+    },
+    {
+        "saying": "Halt between two opinions",
+        "variants": [],
+        "references": [
+            "1 Kings 18:21"
+        ],
+        "check": "halt ye between two opinions",
+        "wording": "adapted",
+        "theme": "Wisdom & Folly",
+        "meaning": "To dither indecisively between two choices.",
+        "explanation": "On Mount Carmel Elijah challenges Israel to stop wavering between the LORD and Baal. Halt here means limp, as if hobbling back and forth between the two."
+    },
+    {
+        "saying": "A double portion",
+        "variants": [],
+        "references": [
+            "2 Kings 2:9"
+        ],
+        "check": "a double portion of thy spirit",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Twice the usual share, especially of a gift or blessing.",
+        "explanation": "Before Elijah is taken up, Elisha asks for a double portion of his spirit. In Israelite inheritance, the firstborn son received a double portion, so the request asked to be Elijah's true successor."
+    },
+    {
+        "saying": "Take up the mantle",
+        "variants": [
+            "The mantle passes",
+            "Inherit the mantle"
+        ],
+        "references": [
+            "2 Kings 2:13"
+        ],
+        "check": "the mantle of Elijah",
+        "wording": "allusion",
+        "theme": "People & Stories",
+        "meaning": "To take over someone's role or responsibility.",
+        "explanation": "When Elijah was taken up to heaven, his cloak fell and Elisha picked it up, carrying on his master's work as prophet."
+    },
+    {
+        "saying": "It is well",
+        "variants": [
+            "It is well with my soul"
+        ],
+        "references": [
+            "2 Kings 4:26"
+        ],
+        "check": "It is well",
+        "wording": "exact",
+        "theme": "Hardship & Endurance",
+        "meaning": "An expression of calm trust even in distress.",
+        "explanation": "The Shunammite woman, whose son had just died, answers it is well as she hurries to Elisha. Horatio Spafford's hymn It Is Well with My Soul, written after his daughters drowned at sea, is often linked to her answer."
+    },
+    {
+        "saying": "Death in the pot",
+        "variants": [],
+        "references": [
+            "2 Kings 4:40"
+        ],
+        "check": "there is death in the pot",
+        "wording": "exact",
+        "theme": "Signs & Warnings",
+        "meaning": "A hidden danger in something that looks harmless.",
+        "explanation": "During a famine, someone added wild gourds to the prophets' stew, and they cried out that there was death in the pot. Elisha made it safe with a handful of meal."
+    },
+    {
+        "saying": "Here am I; send me",
+        "variants": [
+            "Here I am, send me"
+        ],
+        "references": [
+            "Isaiah 6:8"
+        ],
+        "check": "Here am I; send me",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "An eager offer to volunteer.",
+        "explanation": "When Isaiah hears God asking whom shall I send, and who will go for us, he answers immediately. It became the classic response of someone accepting a calling."
+    },
+    {
+        "saying": "All flesh is grass",
+        "variants": [
+            "The grass withers, the flower fades"
+        ],
+        "references": [
+            "Isaiah 40:6",
+            "Isaiah 40:8",
+            "1 Peter 1:24"
+        ],
+        "check": "All flesh is grass",
+        "wording": "exact",
+        "theme": "Time & Mortality",
+        "meaning": "Human life is short and fragile.",
+        "explanation": "Isaiah contrasts fading human glory with the word of our God that shall stand for ever. Brahms set the words in his German Requiem."
+    },
+    {
+        "saying": "Like fire shut up in my bones",
+        "variants": [
+            "Fire in my bones"
+        ],
+        "references": [
+            "Jeremiah 20:9"
+        ],
+        "check": "a burning fire shut up in my bones",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "An urge or message so strong it cannot be held back.",
+        "explanation": "Jeremiah resolves to stop speaking God's word after being mocked, but finds he cannot: the message burns in him until he must speak."
+    },
+    {
+        "saying": "Peace, peace, when there is no peace",
+        "variants": [],
+        "references": [
+            "Jeremiah 6:14",
+            "Jeremiah 8:11"
+        ],
+        "check": "Peace, peace; when there is no peace",
+        "wording": "exact",
+        "theme": "Signs & Warnings",
+        "meaning": "False reassurance that ignores a real crisis.",
+        "explanation": "Jeremiah condemns prophets and priests who dressed the nation's wounds lightly, promising safety while judgment approached. Patrick Henry quoted it on the eve of the American Revolution."
+    },
+    {
+        "saying": "The harvest is past, the summer is ended",
+        "variants": [],
+        "references": [
+            "Jeremiah 8:20"
+        ],
+        "check": "The harvest is past, the summer is ended",
+        "wording": "exact",
+        "theme": "Time & Mortality",
+        "meaning": "The opportunity has gone and it is too late.",
+        "explanation": "Jeremiah's lament continues and we are not saved: the season for rescue has passed with no help arriving."
+    },
+    {
+        "saying": "A jeremiad",
+        "variants": [],
+        "references": [
+            "Jeremiah 9:1"
+        ],
+        "check": "a fountain of tears",
+        "wording": "allusion",
+        "theme": "People & Stories",
+        "meaning": "A long, mournful complaint or tirade.",
+        "explanation": "Named after Jeremiah, the weeping prophet, who wished his eyes were a fountain of tears to weep for his people. He was traditionally credited with Lamentations too."
+    },
+    {
+        "saying": "The heart is deceitful above all things",
+        "variants": [],
+        "references": [
+            "Jeremiah 17:9"
+        ],
+        "check": "The heart is deceitful above all things",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "People can fool themselves more easily than anyone else.",
+        "explanation": "Jeremiah adds, who can know it? The next verse answers that only the LORD searches the heart."
+    },
+    {
+        "saying": "Plans to prosper you",
+        "variants": [
+            "I know the plans I have for you"
+        ],
+        "references": [
+            "Jeremiah 29:11"
+        ],
+        "check": "I know the thoughts that I think toward you",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "Reassurance that the future is in good hands.",
+        "explanation": "Written to exiles in Babylon who faced seventy years away from home. Modern translations render it I know the plans I have for you, plans to prosper you; the KJV says thoughts of peace, and not of evil."
+    },
+    {
+        "saying": "Stand in the gap",
+        "variants": [],
+        "references": [
+            "Ezekiel 22:30"
+        ],
+        "check": "stand in the gap",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "To step in and defend or intercede for others at a point of danger.",
+        "explanation": "God looks for someone to make up the hedge, and stand in the gap before me for the land, like a soldier filling a breach in a wall, and finds no one."
+    },
+    {
+        "saying": "The just shall live by faith",
+        "variants": [
+            "The righteous shall live by faith"
+        ],
+        "references": [
+            "Habakkuk 2:4",
+            "Romans 1:17"
+        ],
+        "check": "the just shall live by his faith",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "A good life rests on trust in God rather than self-reliance.",
+        "explanation": "Habakkuk's answer while waiting for God to act. Paul quotes it in Romans, Galatians and Hebrews, and it became a watchword of the Reformation."
+    },
+    {
+        "saying": "Write the vision and make it plain",
+        "variants": [],
+        "references": [
+            "Habakkuk 2:2"
+        ],
+        "check": "Write the vision, and make it plain",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Set out your goal clearly so others can grasp it and act on it.",
+        "explanation": "God tells Habakkuk to write the revelation on tablets, that he may run that readeth it. It is now a favourite of planners and mission statements."
+    },
+    {
+        "saying": "Consider your ways",
+        "variants": [],
+        "references": [
+            "Haggai 1:5"
+        ],
+        "check": "Consider your ways",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Stop and think about how you are living.",
+        "explanation": "Haggai tells the returned exiles to look honestly at why their hard work wasn't prospering, while God's house still lay in ruins."
+    },
+    {
+        "saying": "Not by might, nor by power",
+        "variants": [],
+        "references": [
+            "Zechariah 4:6"
+        ],
+        "check": "Not by might, nor by power, but by my spirit",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Success comes from God's help, not human force.",
+        "explanation": "God's word to Zerubbabel, who faced the huge task of rebuilding the temple with few resources."
+    },
+    {
+        "saying": "Despise not the day of small things",
+        "variants": [
+            "Don't despise small beginnings"
+        ],
+        "references": [
+            "Zechariah 4:10"
+        ],
+        "check": "the day of small things",
+        "wording": "adapted",
+        "theme": "Work & Provision",
+        "meaning": "Humble beginnings should not be scorned.",
+        "explanation": "Zechariah asks, who hath despised the day of small things? The new temple's foundation looked unimpressive next to Solomon's, but God was in the work."
+    },
+    {
+        "saying": "Prisoners of hope",
+        "variants": [],
+        "references": [
+            "Zechariah 9:12"
+        ],
+        "check": "prisoners of hope",
+        "wording": "exact",
+        "theme": "Hardship & Endurance",
+        "meaning": "People who cannot give up hoping, even in hard circumstances.",
+        "explanation": "Zechariah calls the exiles to turn to the strong hold, ye prisoners of hope, with a promise of double restoration."
+    },
+    {
+        "saying": "Will a man rob God?",
+        "variants": [],
+        "references": [
+            "Malachi 3:8"
+        ],
+        "check": "Will a man rob God",
+        "wording": "exact",
+        "theme": "Work & Provision",
+        "meaning": "A challenge about failing to give what is owed, especially to God.",
+        "explanation": "Malachi accuses the people of robbing God in tithes and offerings, and follows it with the invitation to test him."
+    },
+    {
+        "saying": "Open the windows of heaven",
+        "variants": [],
+        "references": [
+            "Malachi 3:10"
+        ],
+        "check": "open you the windows of heaven",
+        "wording": "adapted",
+        "theme": "Work & Provision",
+        "meaning": "To pour out an overwhelming blessing.",
+        "explanation": "God promises that if the people bring the whole tithe, he will open the windows of heaven and pour out a blessing too big to contain."
+    },
+    {
+        "saying": "The heavens declare the glory of God",
+        "variants": [],
+        "references": [
+            "Psalms 19:1"
+        ],
+        "check": "The heavens declare the glory of God",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "The beauty of the natural world points to its Creator.",
+        "explanation": "Psalm 19 describes the sky as speaking day after day without words. Haydn set the line in The Creation."
+    },
+    {
+        "saying": "Joy comes in the morning",
+        "variants": [
+            "Weeping may endure for a night"
+        ],
+        "references": [
+            "Psalms 30:5"
+        ],
+        "check": "joy cometh in the morning",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "Sorrow is temporary and better days are coming.",
+        "explanation": "David writes that God's anger endureth but a moment, and that weeping may endure for a night, but joy cometh in the morning."
+    },
+    {
+        "saying": "Taste and see",
+        "variants": [],
+        "references": [
+            "Psalms 34:8"
+        ],
+        "check": "O taste and see that the LORD is good",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "Try it for yourself and discover how good it is.",
+        "explanation": "David invites others to experience God's goodness personally rather than hear about it second-hand."
+    },
+    {
+        "saying": "Wings like a dove",
+        "variants": [
+            "O for the wings of a dove"
+        ],
+        "references": [
+            "Psalms 55:6"
+        ],
+        "check": "Oh that I had wings like a dove",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "A longing to escape one's troubles.",
+        "explanation": "Betrayed by a close friend, the psalmist wishes he could fly away and be at rest. Mendelssohn's anthem made the line famous."
+    },
+    {
+        "saying": "Cast your burden on the Lord",
+        "variants": [
+            "Cast all your care upon him"
+        ],
+        "references": [
+            "Psalms 55:22",
+            "1 Peter 5:7"
+        ],
+        "check": "Cast thy burden upon the LORD",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "Hand your worries over to God.",
+        "explanation": "The psalmist adds that he shall sustain thee. Peter echoes it: casting all your care upon him; for he careth for you."
+    },
+    {
+        "saying": "The fool hath said in his heart",
+        "variants": [],
+        "references": [
+            "Psalms 14:1",
+            "Psalms 53:1"
+        ],
+        "check": "The fool hath said in his heart, There is no God",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Said of someone who ignores obvious truth.",
+        "explanation": "The line appears twice, in Psalms 14 and 53. The biblical fool is not unintelligent but morally careless, living as if no one will hold him to account."
+    },
+    {
+        "saying": "A lamp unto my feet",
+        "variants": [
+            "A light unto my path"
+        ],
+        "references": [
+            "Psalms 119:105"
+        ],
+        "check": "Thy word is a lamp unto my feet",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Guidance that shows the next step, even if not the whole road.",
+        "explanation": "The psalmist describes God's word as a lamp for the feet and a light for the path, just enough light to walk by at night."
+    },
+    {
+        "saying": "They that sow in tears shall reap in joy",
+        "variants": [
+            "Those who sow in tears"
+        ],
+        "references": [
+            "Psalms 126:5"
+        ],
+        "check": "They that sow in tears shall reap in joy",
+        "wording": "exact",
+        "theme": "Hardship & Endurance",
+        "meaning": "Painful effort now will lead to celebration later.",
+        "explanation": "A song of returning exiles. Sowing seed during famine meant planting food you could have eaten, a hard act of faith rewarded by harvest."
+    },
+    {
+        "saying": "Stolen waters are sweet",
+        "variants": [
+            "Forbidden pleasures are sweetest"
+        ],
+        "references": [
+            "Proverbs 9:17"
+        ],
+        "check": "Stolen waters are sweet",
+        "wording": "exact",
+        "theme": "Judgment & Consequences",
+        "meaning": "Things are more tempting when they are forbidden.",
+        "explanation": "Proverbs puts the line in the mouth of Folly, personified as a woman luring passers-by. The next verse warns that her guests end in the depths of hell."
+    },
+    {
+        "saying": "Better a dinner of herbs where love is",
+        "variants": [
+            "Better a dish of vegetables with love"
+        ],
+        "references": [
+            "Proverbs 15:17"
+        ],
+        "check": "Better is a dinner of herbs where love is",
+        "wording": "adapted",
+        "theme": "Speech & Relationships",
+        "meaning": "A simple life with love beats luxury with hatred.",
+        "explanation": "The proverb continues than a stalled ox and hatred therewith: a plain meal among friends is better than a feast among enemies."
+    },
+    {
+        "saying": "Man proposes, God disposes",
+        "variants": [],
+        "references": [
+            "Proverbs 16:9"
+        ],
+        "check": "the LORD directeth his steps",
+        "wording": "adapted",
+        "theme": "Wisdom & Folly",
+        "meaning": "People make plans, but the outcome is out of their hands.",
+        "explanation": "The Latin form comes from Thomas à Kempis, drawing on Proverbs: A man's heart deviseth his way: but the LORD directeth his steps."
+    },
+    {
+        "saying": "A merry heart doeth good like a medicine",
+        "variants": [
+            "Laughter is the best medicine"
+        ],
+        "references": [
+            "Proverbs 17:22"
+        ],
+        "check": "A merry heart doeth good like a medicine",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Cheerfulness helps healing.",
+        "explanation": "The proverb goes on: but a broken spirit drieth the bones. The modern saying about laughter is its descendant."
+    },
+    {
+        "saying": "Wine is a mocker",
+        "variants": [],
+        "references": [
+            "Proverbs 20:1"
+        ],
+        "check": "Wine is a mocker",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Alcohol makes fools of people.",
+        "explanation": "The verse continues strong drink is raging: and whosoever is deceived thereby is not wise."
+    },
+    {
+        "saying": "Remove not the ancient landmark",
+        "variants": [
+            "Don't move the boundary stones"
+        ],
+        "references": [
+            "Proverbs 22:28"
+        ],
+        "check": "Remove not the ancient landmark",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "Don't overturn long-established boundaries or traditions.",
+        "explanation": "Landmarks were boundary stones marking a family's land. Moving one secretly was a way to steal from neighbours, so the law and proverbs both forbid it."
+    },
+    {
+        "saying": "A word fitly spoken",
+        "variants": [
+            "Apples of gold in settings of silver"
+        ],
+        "references": [
+            "Proverbs 25:11"
+        ],
+        "check": "A word fitly spoken is like apples of gold in pictures of silver",
+        "wording": "exact",
+        "theme": "Speech & Relationships",
+        "meaning": "The right words at the right time are precious.",
+        "explanation": "Proverbs compares well-timed speech to golden fruit in a silver setting. Pictures here means carvings or ornaments."
+    },
+    {
+        "saying": "Answer a fool according to his folly",
+        "variants": [],
+        "references": [
+            "Proverbs 26:5",
+            "Proverbs 26:4"
+        ],
+        "check": "Answer a fool according to his folly",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Sometimes a foolish argument must be answered on its own terms.",
+        "explanation": "The verse before says answer not a fool according to his folly. The pair deliberately contradict each other: wisdom is knowing which one fits the moment."
+    },
+    {
+        "saying": "Where there is no wood, the fire goes out",
+        "variants": [
+            "Without gossip, quarrels die down"
+        ],
+        "references": [
+            "Proverbs 26:20"
+        ],
+        "check": "Where no wood is, there the fire goeth out",
+        "wording": "adapted",
+        "theme": "Speech & Relationships",
+        "meaning": "Stop feeding a conflict and it will die down.",
+        "explanation": "The proverb continues so where there is no talebearer, the strife ceaseth. Gossip is the fuel of quarrels."
+    },
+    {
+        "saying": "You know not what a day may bring forth",
+        "variants": [
+            "Boast not of tomorrow"
+        ],
+        "references": [
+            "Proverbs 27:1"
+        ],
+        "check": "thou knowest not what a day may bring forth",
+        "wording": "adapted",
+        "theme": "Time & Mortality",
+        "meaning": "Don't count on the future; anything can happen.",
+        "explanation": "The proverb begins Boast not thyself of to morrow. James makes a similar point: ye know not what shall be on the morrow."
+    },
+    {
+        "saying": "Faithful are the wounds of a friend",
+        "variants": [],
+        "references": [
+            "Proverbs 27:6"
+        ],
+        "check": "Faithful are the wounds of a friend",
+        "wording": "exact",
+        "theme": "Speech & Relationships",
+        "meaning": "Honest criticism from a friend is worth more than flattery.",
+        "explanation": "The contrast is with an enemy, whose kisses are deceitful. A true friend risks hurting you with the truth."
+    },
+    {
+        "saying": "Beauty is vain",
+        "variants": [
+            "Charm is deceptive and beauty fleeting"
+        ],
+        "references": [
+            "Proverbs 31:30"
+        ],
+        "check": "beauty is vain",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "Looks fade; character lasts.",
+        "explanation": "The closing poem of Proverbs says favour is deceitful, and beauty is vain, but a woman who fears the LORD shall be praised."
+    },
+    {
+        "saying": "Blessed are the pure in heart",
+        "variants": [
+            "Pure in heart"
+        ],
+        "references": [
+            "Matthew 5:8"
+        ],
+        "check": "Blessed are the pure in heart",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "Integrity and sincerity are true blessings.",
+        "explanation": "One of the Beatitudes, which promises that the pure in heart shall see God."
+    },
+    {
+        "saying": "The harvest is plenteous, but the labourers are few",
+        "variants": [
+            "The harvest is plentiful but the workers are few"
+        ],
+        "references": [
+            "Matthew 9:37",
+            "Luke 10:2"
+        ],
+        "check": "The harvest truly is plenteous, but the labourers are few",
+        "wording": "adapted",
+        "theme": "Work & Provision",
+        "meaning": "There is plenty to do and not enough people to do it.",
+        "explanation": "Jesus says it on seeing crowds like sheep without a shepherd, and tells his disciples to pray for more workers."
+    },
+    {
+        "saying": "Freely ye have received, freely give",
+        "variants": [
+            "Freely received, freely given"
+        ],
+        "references": [
+            "Matthew 10:8"
+        ],
+        "check": "freely ye have received, freely give",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "Share generously what you were given for nothing.",
+        "explanation": "Jesus sends out the twelve to heal and preach without charging, because they received their gifts without paying."
+    },
+    {
+        "saying": "A cup of cold water",
+        "variants": [],
+        "references": [
+            "Matthew 10:42"
+        ],
+        "check": "a cup of cold water",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "A small, simple kindness.",
+        "explanation": "Jesus promises that even giving a cup of cold water to one of his followers will not go unrewarded."
+    },
+    {
+        "saying": "My yoke is easy",
+        "variants": [
+            "My yoke is easy and my burden is light"
+        ],
+        "references": [
+            "Matthew 11:30"
+        ],
+        "check": "my yoke is easy, and my burden is light",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Following Jesus brings rest rather than heavy obligation.",
+        "explanation": "Jesus invites all that labour and are heavy laden to come to him. A yoke was a wooden frame fitted to share a load, and a well-made one did not chafe."
+    },
+    {
+        "saying": "Out of the abundance of the heart the mouth speaketh",
+        "variants": [],
+        "references": [
+            "Matthew 12:34",
+            "Luke 6:45"
+        ],
+        "check": "out of the abundance of the heart the mouth speaketh",
+        "wording": "exact",
+        "theme": "Speech & Relationships",
+        "meaning": "What people say reveals what they are really like inside.",
+        "explanation": "Jesus says it to Pharisees who had accused him of working by the devil's power: words show the tree by its fruit."
+    },
+    {
+        "saying": "Where two or three are gathered",
+        "variants": [],
+        "references": [
+            "Matthew 18:20"
+        ],
+        "check": "where two or three are gathered together in my name",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "Even a very small gathering matters.",
+        "explanation": "Jesus promises to be in the midst of even two or three who meet in his name. It is often quoted, sometimes wryly, when attendance is small."
+    },
+    {
+        "saying": "Drive out the moneychangers",
+        "variants": [
+            "Cleanse the temple"
+        ],
+        "references": [
+            "Matthew 21:12"
+        ],
+        "check": "overthrew the tables of the moneychangers",
+        "wording": "allusion",
+        "theme": "Judgment & Consequences",
+        "meaning": "To expel people who corrupt something sacred or public for profit.",
+        "explanation": "Jesus overturned the tables of those trading in the temple courts. Franklin Roosevelt's first inaugural address used the image against bankers during the Depression."
+    },
+    {
+        "saying": "Keep your lamps trimmed",
+        "variants": [
+            "Keep your lamp trimmed and burning"
+        ],
+        "references": [
+            "Matthew 25:7"
+        ],
+        "check": "trimmed their lamps",
+        "wording": "allusion",
+        "theme": "Signs & Warnings",
+        "meaning": "Stay prepared, because the moment may come unexpectedly.",
+        "explanation": "In the parable of the ten virgins, only those who brought enough oil were ready when the bridegroom arrived at midnight. A spiritual made the phrase famous."
+    },
+    {
+        "saying": "The least of these",
+        "variants": [],
+        "references": [
+            "Matthew 25:40"
+        ],
+        "check": "the least of these my brethren",
+        "wording": "adapted",
+        "theme": "Character & Conduct",
+        "meaning": "The poorest and most overlooked people.",
+        "explanation": "Jesus says that whatever is done for the hungry, the stranger and the prisoner is done for him."
+    },
+    {
+        "saying": "Watch and pray",
+        "variants": [],
+        "references": [
+            "Mark 13:33",
+            "Matthew 26:41"
+        ],
+        "check": "watch and pray",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Stay alert and prayerful.",
+        "explanation": "Jesus tells his disciples to watch and pray because they do not know when the time will come, and repeats it in Gethsemane when they fall asleep."
+    },
+    {
+        "saying": "Their name is legion",
+        "variants": [
+            "My name is Legion",
+            "Legion"
+        ],
+        "references": [
+            "Mark 5:9"
+        ],
+        "check": "My name is Legion: for we are many",
+        "wording": "adapted",
+        "theme": "People & Stories",
+        "meaning": "They are very numerous.",
+        "explanation": "A man possessed by many spirits gives his name as Legion, after the Roman army unit of several thousand soldiers."
+    },
+    {
+        "saying": "Go and do thou likewise",
+        "variants": [
+            "Go and do likewise"
+        ],
+        "references": [
+            "Luke 10:37"
+        ],
+        "check": "Go, and do thou likewise",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "Follow that good example.",
+        "explanation": "Jesus' closing word after the parable of the good Samaritan, turning the lawyer's question about who his neighbour is into a command to be one."
+    },
+    {
+        "saying": "To whom much is given, much is required",
+        "variants": [
+            "From everyone who has been given much, much will be demanded"
+        ],
+        "references": [
+            "Luke 12:48"
+        ],
+        "check": "unto whomsoever much is given, of him shall be much required",
+        "wording": "adapted",
+        "theme": "Character & Conduct",
+        "meaning": "Privilege and ability bring greater responsibility.",
+        "explanation": "Jesus ends a parable about faithful and unfaithful servants with this principle. John F. Kennedy quoted it in a 1961 speech."
+    },
+    {
+        "saying": "Faithful in little things",
+        "variants": [
+            "Faithful in small things"
+        ],
+        "references": [
+            "Luke 16:10"
+        ],
+        "check": "He that is faithful in that which is least is faithful also in much",
+        "wording": "adapted",
+        "theme": "Character & Conduct",
+        "meaning": "How people handle small responsibilities shows how they will handle big ones.",
+        "explanation": "Jesus adds that anyone dishonest in little is dishonest also in much."
+    },
+    {
+        "saying": "Maudlin",
+        "variants": [],
+        "references": [
+            "John 20:11"
+        ],
+        "check": "Mary stood without at the sepulchre weeping",
+        "wording": "allusion",
+        "theme": "People & Stories",
+        "meaning": "Tearfully, self-indulgently sentimental.",
+        "explanation": "The word comes from Magdalene, as in Mary Magdalene, pronounced Maudlin in older English. Paintings often showed her weeping, as she did at Jesus' empty tomb."
+    },
+    {
+        "saying": "The way, the truth and the life",
+        "variants": [],
+        "references": [
+            "John 14:6"
+        ],
+        "check": "I am the way, the truth, and the life",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "The one true path; used of anything someone treats as essential.",
+        "explanation": "Jesus answers Thomas, who had asked how they could know the way, by pointing to himself."
+    },
+    {
+        "saying": "It is finished",
+        "variants": [],
+        "references": [
+            "John 19:30"
+        ],
+        "check": "It is finished",
+        "wording": "exact",
+        "theme": "Time & Mortality",
+        "meaning": "The task is complete.",
+        "explanation": "Jesus' last words from the cross in John's Gospel. In Greek it is a single word, tetelestai, meaning it has been brought to completion."
+    },
+    {
+        "saying": "Feed my sheep",
+        "variants": [],
+        "references": [
+            "John 21:17"
+        ],
+        "check": "Feed my sheep",
+        "wording": "exact",
+        "theme": "Work & Provision",
+        "meaning": "Take care of those in your charge.",
+        "explanation": "The risen Jesus asks Peter three times whether he loves him, matching Peter's three denials, and each time gives him a charge to care for his flock."
+    },
+    {
+        "saying": "Silver and gold have I none",
+        "variants": [],
+        "references": [
+            "Acts 3:6"
+        ],
+        "check": "Silver and gold have I none",
+        "wording": "exact",
+        "theme": "Work & Provision",
+        "meaning": "I have no money, but I can offer something better.",
+        "explanation": "Peter says it to a lame beggar at the temple gate, then continues but such as I have give I thee, and heals him in Jesus' name."
+    },
+    {
+        "saying": "To an unknown god",
+        "variants": [
+            "The unknown god"
+        ],
+        "references": [
+            "Acts 17:23"
+        ],
+        "check": "TO THE UNKNOWN GOD",
+        "wording": "adapted",
+        "theme": "People & Stories",
+        "meaning": "Something honoured or feared without being understood.",
+        "explanation": "Paul noticed an Athenian altar inscribed TO THE UNKNOWN GOD and used it to introduce the God he preached."
+    },
+    {
+        "saying": "In him we live, and move, and have our being",
+        "variants": [],
+        "references": [
+            "Acts 17:28"
+        ],
+        "check": "in him we live, and move, and have our being",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "God is the source and setting of all life.",
+        "explanation": "Paul quotes Greek poets to the Athenians, borrowing their own words to point to the one God."
+    },
+    {
+        "saying": "Almost persuaded",
+        "variants": [],
+        "references": [
+            "Acts 26:28"
+        ],
+        "check": "Almost thou persuadest me to be a Christian",
+        "wording": "adapted",
+        "theme": "Speech & Relationships",
+        "meaning": "Nearly convinced, but not quite.",
+        "explanation": "King Agrippa's response to Paul's defence. The KJV reading inspired a nineteenth-century gospel hymn of the same name."
+    },
+    {
+        "saying": "Hope against hope",
+        "variants": [],
+        "references": [
+            "Romans 4:18"
+        ],
+        "check": "against hope believed in hope",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "To keep hoping when there seems no reason to.",
+        "explanation": "Paul describes Abraham, who against hope believed in hope that he would become the father of many nations, though he and Sarah were far past having children."
+    },
+    {
+        "saying": "Rejoice with them that rejoice",
+        "variants": [
+            "Weep with them that weep"
+        ],
+        "references": [
+            "Romans 12:15"
+        ],
+        "check": "Rejoice with them that do rejoice, and weep with them that weep",
+        "wording": "adapted",
+        "theme": "Speech & Relationships",
+        "meaning": "Share other people's joys and sorrows.",
+        "explanation": "Part of Paul's description of genuine love in the church: entering into what others are feeling rather than competing with it."
+    },
+    {
+        "saying": "Absent in body, present in spirit",
+        "variants": [],
+        "references": [
+            "1 Corinthians 5:3",
+            "Colossians 2:5"
+        ],
+        "check": "absent in body, but present in spirit",
+        "wording": "adapted",
+        "theme": "Speech & Relationships",
+        "meaning": "Unable to attend, but with you in thought.",
+        "explanation": "Paul uses it to tell churches he cannot visit that he is still with them. It remains a common line on cards and apologies."
+    },
+    {
+        "saying": "It is better to marry than to burn",
+        "variants": [
+            "Better to marry than to burn"
+        ],
+        "references": [
+            "1 Corinthians 7:9"
+        ],
+        "check": "it is better to marry than to burn",
+        "wording": "exact",
+        "theme": "Speech & Relationships",
+        "meaning": "Marriage is preferable to struggling with unfulfilled desire.",
+        "explanation": "Paul says he wishes the unmarried could stay single like him, but that if they cannot contain themselves, marriage is better than burning with passion."
+    },
+    {
+        "saying": "Put away childish things",
+        "variants": [
+            "When I became a man"
+        ],
+        "references": [
+            "1 Corinthians 13:11"
+        ],
+        "check": "I put away childish things",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "To grow up and leave immature habits behind.",
+        "explanation": "In the love chapter Paul compares present partial knowledge to childhood, which is outgrown when maturity comes."
+    },
+    {
+        "saying": "Evil communications corrupt good manners",
+        "variants": [
+            "Bad company corrupts good character"
+        ],
+        "references": [
+            "1 Corinthians 15:33"
+        ],
+        "check": "evil communications corrupt good manners",
+        "wording": "exact",
+        "theme": "Character & Conduct",
+        "meaning": "The company you keep shapes the person you become.",
+        "explanation": "Paul quotes the Greek poet Menander. In the KJV communications means companionship and manners means character."
+    },
+    {
+        "saying": "My grace is sufficient",
+        "variants": [
+            "My grace is sufficient for thee"
+        ],
+        "references": [
+            "2 Corinthians 12:9"
+        ],
+        "check": "My grace is sufficient for thee",
+        "wording": "exact",
+        "theme": "Hardship & Endurance",
+        "meaning": "God's help is enough, even when a burden is not removed.",
+        "explanation": "Paul asked three times for his thorn in the flesh to be taken away. This was the answer, with the promise that strength is made perfect in weakness."
+    },
+    {
+        "saying": "The fruit of the Spirit",
+        "variants": [],
+        "references": [
+            "Galatians 5:22"
+        ],
+        "check": "the fruit of the Spirit is love, joy, peace",
+        "wording": "adapted",
+        "theme": "Character & Conduct",
+        "meaning": "Good qualities that grow in a person's character.",
+        "explanation": "Paul lists love, joy, peace, longsuffering, gentleness, goodness, faith, meekness and temperance, contrasted with the works of the flesh."
+    },
+    {
+        "saying": "Speaking the truth in love",
+        "variants": [
+            "Speak the truth in love"
+        ],
+        "references": [
+            "Ephesians 4:15"
+        ],
+        "check": "speaking the truth in love",
+        "wording": "exact",
+        "theme": "Speech & Relationships",
+        "meaning": "Being honest in a way that is kind and constructive.",
+        "explanation": "Paul describes a mature church where people neither deceive nor wound one another but grow up together in Christ."
+    },
+    {
+        "saying": "I can do all things through Christ",
+        "variants": [
+            "I can do all things"
+        ],
+        "references": [
+            "Philippians 4:13"
+        ],
+        "check": "I can do all things through Christ which strengtheneth me",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "Confidence that God gives strength for whatever comes.",
+        "explanation": "Written from prison about contentment: Paul had learned to be content hungry or full because Christ strengthened him in both."
+    },
+    {
+        "saying": "Content in whatever state",
+        "variants": [
+            "Learn to be content"
+        ],
+        "references": [
+            "Philippians 4:11"
+        ],
+        "check": "in whatsoever state I am, therewith to be content",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "At peace regardless of circumstances.",
+        "explanation": "Paul says he has learned contentment, implying it was a skill acquired through both plenty and need."
+    },
+    {
+        "saying": "Think on these things",
+        "variants": [],
+        "references": [
+            "Philippians 4:8"
+        ],
+        "check": "think on these things",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Fill your mind with what is good.",
+        "explanation": "Paul lists whatsoever things are true, honest, just, pure, lovely and of good report, and tells the church to dwell on them."
+    },
+    {
+        "saying": "Seasoned with salt",
+        "variants": [
+            "Let your speech be seasoned with salt"
+        ],
+        "references": [
+            "Colossians 4:6"
+        ],
+        "check": "seasoned with salt",
+        "wording": "exact",
+        "theme": "Speech & Relationships",
+        "meaning": "Speech that is gracious yet has flavour and wisdom.",
+        "explanation": "Paul tells believers to let their speech be alway with grace, seasoned with salt, so they know how to answer everyone."
+    },
+    {
+        "saying": "Pray without ceasing",
+        "variants": [],
+        "references": [
+            "1 Thessalonians 5:17"
+        ],
+        "check": "Pray without ceasing",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Keep a continual attitude of prayer.",
+        "explanation": "One of Paul's shortest commands, set between rejoice evermore and in every thing give thanks."
+    },
+    {
+        "saying": "Prove all things; hold fast that which is good",
+        "variants": [
+            "Test everything, hold on to the good"
+        ],
+        "references": [
+            "1 Thessalonians 5:21"
+        ],
+        "check": "Prove all things; hold fast that which is good",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Examine ideas carefully and keep what is worthwhile.",
+        "explanation": "Paul warns against dismissing prophecy outright, but asks that everything be tested. Prove here means test."
+    },
+    {
+        "saying": "If any would not work, neither should he eat",
+        "variants": [
+            "He who does not work shall not eat",
+            "No work, no food"
+        ],
+        "references": [
+            "2 Thessalonians 3:10"
+        ],
+        "check": "if any would not work, neither should he eat",
+        "wording": "exact",
+        "theme": "Work & Provision",
+        "meaning": "Those able to work should support themselves.",
+        "explanation": "Paul targets church members who had stopped working and were living off others. The line was later adopted, stripped of context, in Soviet labour slogans."
+    },
+    {
+        "saying": "A little wine for thy stomach's sake",
+        "variants": [
+            "A little wine for the stomach"
+        ],
+        "references": [
+            "1 Timothy 5:23"
+        ],
+        "check": "use a little wine for thy stomach's sake",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "A modest drink justified as good for health.",
+        "explanation": "Paul advises Timothy, who seems to have drunk only water, to take a little wine for his frequent illnesses."
+    },
+    {
+        "saying": "Faith is the substance of things hoped for",
+        "variants": [],
+        "references": [
+            "Hebrews 11:1"
+        ],
+        "check": "Faith is the substance of things hoped for",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Faith gives reality and confidence to what is not yet seen.",
+        "explanation": "The opening line of Hebrews 11, which goes on to list examples from Abel to the prophets."
+    },
+    {
+        "saying": "The same yesterday, today and forever",
+        "variants": [],
+        "references": [
+            "Hebrews 13:8"
+        ],
+        "check": "the same yesterday, and to day, and for ever",
+        "wording": "adapted",
+        "theme": "Time & Mortality",
+        "meaning": "Utterly unchanging and dependable.",
+        "explanation": "Hebrews says it of Jesus Christ, then urges readers not to be carried about with divers and strange doctrines."
+    },
+    {
+        "saying": "Every good and perfect gift",
+        "variants": [],
+        "references": [
+            "James 1:17"
+        ],
+        "check": "Every good gift and every perfect gift is from above",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "All good things ultimately come from God.",
+        "explanation": "James describes God as the Father of lights, with whom is no variableness, neither shadow of turning."
+    },
+    {
+        "saying": "Doers of the word, not hearers only",
+        "variants": [
+            "Be doers of the word"
+        ],
+        "references": [
+            "James 1:22"
+        ],
+        "check": "be ye doers of the word, and not hearers only",
+        "wording": "adapted",
+        "theme": "Character & Conduct",
+        "meaning": "Put what you learn into practice.",
+        "explanation": "James compares someone who hears without acting to a man who looks in a mirror and immediately forgets what he looks like."
+    },
+    {
+        "saying": "A little fire kindleth a great matter",
+        "variants": [
+            "A small spark sets a forest ablaze"
+        ],
+        "references": [
+            "James 3:5"
+        ],
+        "check": "how great a matter a little fire kindleth",
+        "wording": "adapted",
+        "theme": "Speech & Relationships",
+        "meaning": "A few careless words can cause enormous damage.",
+        "explanation": "James compares the tongue to a small flame that sets a whole forest alight."
+    },
+    {
+        "saying": "Life is but a vapour",
+        "variants": [
+            "Life is a mist"
+        ],
+        "references": [
+            "James 4:14"
+        ],
+        "check": "It is even a vapour",
+        "wording": "adapted",
+        "theme": "Time & Mortality",
+        "meaning": "Life is short and uncertain.",
+        "explanation": "James warns merchants planning a year of trade that life appeareth for a little time, and then vanisheth away."
+    },
+    {
+        "saying": "Resist the devil, and he will flee",
+        "variants": [],
+        "references": [
+            "James 4:7"
+        ],
+        "check": "Resist the devil, and he will flee from you",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "Temptation loses power when firmly refused.",
+        "explanation": "James pairs the command with submit yourselves therefore to God, and draw nigh to God in the next verse."
+    },
+    {
+        "saying": "Like a roaring lion",
+        "variants": [],
+        "references": [
+            "1 Peter 5:8"
+        ],
+        "check": "as a roaring lion, walketh about",
+        "wording": "adapted",
+        "theme": "Signs & Warnings",
+        "meaning": "A fierce, prowling threat.",
+        "explanation": "Peter warns readers to be sober and vigilant, because their adversary the devil walks about seeking whom he may devour."
+    },
+    {
+        "saying": "A thousand years as one day",
+        "variants": [
+            "A day is like a thousand years"
+        ],
+        "references": [
+            "2 Peter 3:8",
+            "Psalms 90:4"
+        ],
+        "check": "one day is with the Lord as a thousand years",
+        "wording": "adapted",
+        "theme": "Time & Mortality",
+        "meaning": "God's sense of time is not like ours.",
+        "explanation": "Peter answers scoffers asking why Christ's return is delayed, echoing Psalm 90: a thousand years in thy sight are but as yesterday."
+    },
+    {
+        "saying": "Grow in grace",
+        "variants": [],
+        "references": [
+            "2 Peter 3:18"
+        ],
+        "check": "grow in grace",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Keep maturing spiritually.",
+        "explanation": "The final instruction of 2 Peter: grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ."
+    },
+    {
+        "saying": "Perfect love casteth out fear",
+        "variants": [
+            "Perfect love drives out fear"
+        ],
+        "references": [
+            "1 John 4:18"
+        ],
+        "check": "perfect love casteth out fear",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "Being truly loved removes fear.",
+        "explanation": "John writes that there is no fear in love, because fear hath torment, and those secure in God's love need not dread judgment."
+    },
+    {
+        "saying": "Behold, I stand at the door and knock",
+        "variants": [
+            "Knocking at the door"
+        ],
+        "references": [
+            "Revelation 3:20"
+        ],
+        "check": "Behold, I stand at the door, and knock",
+        "wording": "adapted",
+        "theme": "Faith & Spirit",
+        "meaning": "An invitation waiting to be accepted.",
+        "explanation": "Christ's words to the lukewarm church of Laodicea. Holman Hunt's painting The Light of the World shows the scene, with no handle on the outside of the door."
+    },
+    {
+        "saying": "Wipe away every tear",
+        "variants": [
+            "God shall wipe away all tears"
+        ],
+        "references": [
+            "Revelation 21:4"
+        ],
+        "check": "God shall wipe away all tears from their eyes",
+        "wording": "adapted",
+        "theme": "Hardship & Endurance",
+        "meaning": "The promise of an end to all sorrow.",
+        "explanation": "Revelation's vision of the new creation, where there shall be no more death, neither sorrow, nor crying."
+    },
+    {
+        "saying": "Behold, I make all things new",
+        "variants": [
+            "All things new"
+        ],
+        "references": [
+            "Revelation 21:5"
+        ],
+        "check": "Behold, I make all things new",
+        "wording": "exact",
+        "theme": "Faith & Spirit",
+        "meaning": "A complete fresh start.",
+        "explanation": "Spoken from the throne in John's vision of a new heaven and a new earth, where the old order has passed away."
+    },
+    {
+        "saying": "Clear as crystal",
+        "variants": [
+            "Crystal clear"
+        ],
+        "references": [
+            "Revelation 22:1",
+            "Revelation 21:11"
+        ],
+        "check": "clear as crystal",
+        "wording": "exact",
+        "theme": "Wisdom & Folly",
+        "meaning": "Perfectly clear or easy to understand.",
+        "explanation": "John sees a pure river of water of life, clear as crystal, flowing from the throne of God in the new Jerusalem."
     }
 ]

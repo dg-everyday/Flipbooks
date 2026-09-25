@@ -3,7 +3,9 @@
  *
  * Shows the poster for a day. Activating the poster (click, Enter or Space)
  * turns it like a page to the comic version, and back again. A round button
- * on the poster plays or pauses that day's narration.
+ * on the poster plays or pauses that day's narration. Pressing and holding
+ * the poster for half a second copies the link to the image on show, poster
+ * or comic, so it can be shared.
  *
  * Usage
  *   <poster-card media-base="https://dailygrace.faith/media/"></poster-card>
@@ -20,8 +22,10 @@
  *
  * Methods      toggle()  flip between poster and comic
  *              play(), pause()  control the narration
- * Properties   comic (read-only), playing (read-only)
+ * Properties   comic (read-only), playing (read-only),
+ *              imageUrl (read-only)  link to the image on show
  * Events       posterchange  detail: { comic }
+ *              copy          the image link was copied, detail: { url, comic }
  *
  * The audio file is only requested when the play button is first pressed.
  * The flip is skipped when the user prefers reduced motion.
@@ -36,6 +40,11 @@
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const TIME_ZONE = 'Asia/Manila';
+
+// The same half-second hold the verse cards and the search field use.
+const HOLD_MS = 500;
+const HOLD_SLOP = 10;
+const COPY_NOTES = { copied: 'Link copied', failed: "Couldn't copy the link" };
 
 // Line-art icons, matching the stroked look of the other round banner buttons.
 const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
@@ -74,7 +83,48 @@ const STYLES = /* css */ `
     cursor: pointer;
   }
   .toggle:focus-visible { outline: 2px solid #001b34; outline-offset: -2px; }
-  .poster { display: block; width: 100%; height: auto; }
+  .poster {
+    display: block; width: 100%; height: auto;
+    /* A long press copies the link; keep the phone's image menu out of it. */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* A gold glow builds around the poster's edge while it is held. */
+  .wrap::after {
+    content: "";
+    position: absolute; inset: 0; z-index: 10;
+    box-shadow: inset 0 0 0 0 rgb(214 170 40 / 0%);
+    pointer-events: none;
+    transition: box-shadow .25s ease;
+  }
+  .wrap.holding::after {
+    box-shadow: inset 0 0 0 4px rgb(214 170 40 / 85%), inset 0 0 44px 12px rgb(214 170 40 / 45%);
+    transition: box-shadow ${HOLD_MS}ms cubic-bezier(.25, .7, .35, 1);
+  }
+  .copy-note {
+    position: absolute; bottom: 18px; left: 50%; z-index: 30;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgb(0 27 52 / 90%);
+    color: #fff;
+    white-space: nowrap;
+    font: 500 .9375rem/1.4 'Roboto', Arial, sans-serif;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 30%);
+    pointer-events: none;
+    animation: copy-note 1.8s ease forwards;
+  }
+  .copy-note.failed { background: #c62828; }
+  @keyframes copy-note {
+    0% { opacity: 0; transform: translate(-50%, 6px); }
+    12%, 78% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 0); }
+  }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
 
   .audio {
     position: absolute; top: 12px; right: 12px; z-index: 20;
@@ -102,6 +152,8 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .audio svg { transition: none; }
+    .copy-note { animation-name: copy-note-fade; }
+    @keyframes copy-note-fade { 0%, 78% { opacity: 1; } 100% { opacity: 0; } }
   }
 `;
 
@@ -131,6 +183,15 @@ export class PosterCard extends HTMLElement {
   #toggleButton;
   #poster;
   #audioButton;
+  #wrap;
+  #status;
+  #hold = null;
+  #pressed = false;
+  // The hold ends with the finger lifting, and the click that follows would
+  // otherwise turn the poster.
+  #swallowClick = false;
+  // A copy the browser refused outside a gesture, retried when the finger lifts.
+  #pendingCopy = null;
   #posterPath = '';
   #audioUrl = '';
   #audio = null;
@@ -149,12 +210,24 @@ export class PosterCard extends HTMLElement {
           <img class="poster" alt="" />
         </button>
         <button class="audio" type="button" aria-pressed="false"></button>
-      </div>`;
+      </div>
+      <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
+    this.#wrap = this.#root.querySelector('.wrap');
+    this.#status = this.#root.querySelector('[role="status"]');
     this.#toggleButton = this.#root.querySelector('.toggle');
     this.#poster = this.#root.querySelector('.poster');
     this.#audioButton = this.#root.querySelector('.audio');
 
-    this.#toggleButton.addEventListener('click', () => this.toggle());
+    this.#toggleButton.addEventListener('click', (event) => {
+      if (this.#swallowClick) {
+        this.#swallowClick = false;
+        event.preventDefault();
+        return;
+      }
+      this.toggle();
+    });
+    this.#poster.draggable = false;
+    this.#listenForHold();
     this.#audioButton.addEventListener('click', () => {
       if (this.playing) this.stop();
       else this.play();
@@ -173,6 +246,116 @@ export class PosterCard extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue && this.isConnected) this.#scheduleConfigure();
+  }
+
+  #listenForHold() {
+    const toggle = this.#toggleButton;
+    toggle.addEventListener('pointerdown', (event) => {
+      this.#swallowClick = false;
+      this.#pendingCopy = null;
+      if (!event.isPrimary || event.button !== 0) return;
+      this.#pressed = true;
+      this.#cancelHold();
+      this.#wrap.classList.add('holding');
+      this.#hold = {
+        x: event.clientX,
+        y: event.clientY,
+        timer: setTimeout(() => this.#completeHold(), HOLD_MS),
+      };
+    });
+    toggle.addEventListener('pointermove', (event) => {
+      const hold = this.#hold;
+      if (hold && Math.hypot(event.clientX - hold.x, event.clientY - hold.y) > HOLD_SLOP) {
+        this.#cancelHold();
+      }
+    });
+    toggle.addEventListener('pointerup', () => {
+      this.#pressed = false;
+      this.#cancelHold();
+      // Lifting the finger is a fresh gesture, which a strict browser needs.
+      const url = this.#pendingCopy;
+      this.#pendingCopy = null;
+      if (url) this.#copy(url).then((copied) => this.#showCopyNote(copied, url));
+    });
+    for (const type of ['pointercancel', 'pointerleave']) {
+      toggle.addEventListener(type, () => {
+        this.#pressed = false;
+        this.#cancelHold();
+      });
+    }
+    // Enter and Space still turn the poster after a hold that never clicked.
+    toggle.addEventListener('keydown', () => { this.#swallowClick = false; });
+    // A long press would otherwise open the phone's image menu.
+    toggle.addEventListener('contextmenu', (event) => {
+      if (this.#hold || this.#swallowClick) event.preventDefault();
+    });
+  }
+
+  #cancelHold() {
+    if (!this.#hold) return;
+    clearTimeout(this.#hold.timer);
+    this.#hold = null;
+    this.#wrap.classList.remove('holding');
+  }
+
+  async #completeHold() {
+    this.#hold = null;
+    this.#wrap.classList.remove('holding');
+    this.#swallowClick = true;
+    navigator.vibrate?.(15);
+    const url = this.imageUrl;
+    if (await this.#copy(url)) {
+      this.#showCopyNote(true, url);
+    } else if (this.#pressed) {
+      // Safari only allows clipboard writes inside a gesture; try again on release.
+      this.#pendingCopy = url;
+    } else {
+      this.#showCopyNote(false, url);
+    }
+  }
+
+  async #copy(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      // No Clipboard API (an insecure origin) or the write was refused: fall
+      // back to the old selection copy.
+      const field = document.createElement('textarea');
+      field.value = text;
+      field.setAttribute('readonly', '');
+      field.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
+      document.body.append(field);
+      field.select();
+      let copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch {
+        copied = false;
+      }
+      field.remove();
+      return copied;
+    }
+  }
+
+  #showCopyNote(copied, url) {
+    const result = copied ? 'copied' : 'failed';
+    this.#wrap.querySelector('.copy-note')?.remove();
+    const note = document.createElement('span');
+    note.className = `copy-note ${result}`;
+    note.setAttribute('aria-hidden', 'true');
+    note.textContent = COPY_NOTES[result];
+    note.addEventListener('animationend', () => note.remove(), { once: true });
+    this.#wrap.append(note);
+    this.#status.textContent = `${COPY_NOTES[result]}.`;
+    if (copied) {
+      this.dispatchEvent(new CustomEvent('copy', { detail: { url, comic: this.#comic } }));
+    }
+  }
+
+  /** Link to the image on show: the poster, or the comic once turned. */
+  get imageUrl() {
+    return this.#poster.src;
   }
 
   get comic() {

@@ -245,12 +245,6 @@ document.getElementById("bible-trivia").setAttribute("media-base", MEDIA_BASE_UR
 
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-// Footer QR code: enlarge it in a modal that grows out of the small code and
-// shrinks back into it when closed.
-const qrDialog = document.getElementById("qr-dialog");
-const qrOpen = document.getElementById("qr-open");
-let qrClosing = false;
-
 function thumbTransform(thumb, dialog) {
     const from = thumb.getBoundingClientRect();
     const to = dialog.getBoundingClientRect();
@@ -276,52 +270,6 @@ function growDialog(thumb, dialog, direction, { open = 380, close = 240 } = {}) 
     );
     return backdrop.finished.catch(() => {});
 }
-
-// When the code was enlarged, so a quick second tap can be told from a later
-// one. See the secret gesture below.
-let qrShownAt = 0;
-
-qrOpen.addEventListener("click", () => {
-    if (qrDialog.open) return;
-    qrShownAt = Date.now();
-    qrDialog.showModal();
-    if (!reducedMotionQuery.matches) growDialog(qrOpen, qrDialog, "open");
-});
-
-async function closeQr() {
-    if (!qrDialog.open || qrClosing) return;
-    qrClosing = true;
-    if (!reducedMotionQuery.matches) await growDialog(qrOpen, qrDialog, "close");
-    qrDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-    qrDialog.close();
-    qrClosing = false;
-}
-
-// Escape would close instantly; route it through the closing animation instead.
-qrDialog.addEventListener("cancel", (event) => {
-    event.preventDefault();
-    closeQr();
-});
-// A click or tap anywhere closes it: on the code, its caption or the backdrop.
-qrDialog.addEventListener("click", closeQr);
-
-// Secret: double click or double tap the footer QR code to forget the trivia's
-// daily tally and play a round on the spot. The first tap enlarges the code, so
-// the second lands on the open dialog, where it would otherwise just close it
-// again — catching it there is what makes the gesture feel like a double tap.
-// It listens on pointerup, because iOS can swallow the click of a double tap,
-// and pointerup runs first, so the closing below finds the work already done.
-const DOUBLE_TAP_MS = 450;
-const bibleTrivia = document.getElementById("bible-trivia");
-
-qrDialog.addEventListener("pointerup", async () => {
-    if (!qrShownAt || Date.now() - qrShownAt > DOUBLE_TAP_MS) return;
-    qrShownAt = 0;
-    bibleTrivia.reset();
-    // Shrink the code back into the footer before the quiz takes the screen.
-    await closeQr();
-    bibleTrivia.open({ force: true });
-});
 
 // Leaving for another page and coming back — the Flipbook's home button, the
 // back button, a reload — should land the reader where they left off rather
@@ -425,18 +373,11 @@ if (!location.hash) {
 }
 
 // Both the splash and the verse popup grow in with the same little overshoot.
-// End-of-page splash: a thank-you poster that pops up once the reader has
-// browsed all the way to the bottom, and closes on any tap. Shown once a visit.
+// Sponsorship splash: the thank-you poster, with its sponsorships and donations
+// code, opens only when the reader taps the footer QR code, and closes on any tap.
 const splashDialog = document.getElementById("splash-dialog");
-let splashShown = false;
+const qrOpen = document.getElementById("qr-open");
 let splashClosing = false;
-let browsed = false;
-
-// Reaching the end only counts when the reader took themselves there. A restored
-// scroll position on reload fires a scroll event but no input, so it never counts.
-for (const gesture of GESTURES) {
-    addEventListener(gesture, () => { browsed = true; }, { passive: true, once: true });
-}
 
 function popDialog(dialog, direction) {
     const opening = direction === "open";
@@ -477,12 +418,18 @@ function slideDialog(dialog, direction) {
     return backdrop.finished.catch(() => {});
 }
 
+// When the splash was opened, so a quick second tap can be told from a later
+// one. See the secret gesture below.
+let splashShownAt = 0;
+
 function openSplash() {
-    if (splashShown || splashDialog.open) return;
-    splashShown = true;
+    if (splashDialog.open) return;
+    splashShownAt = Date.now();
     splashDialog.showModal();
     if (!reducedMotionQuery.matches) popDialog(splashDialog, "open");
 }
+
+qrOpen.addEventListener("click", openSplash);
 
 async function closeSplash() {
     if (!splashDialog.open || splashClosing) return;
@@ -501,16 +448,23 @@ splashDialog.addEventListener("cancel", (event) => {
 // A click or tap anywhere closes it: on the poster, the hint or the backdrop.
 splashDialog.addEventListener("click", closeSplash);
 
-// The last row of the footer ends up flush with the viewport edge, so ask the
-// scroll position directly rather than watching an element cross a threshold.
-function checkPageEnd() {
-    const remaining = document.scrollingElement.scrollHeight - scrollY - innerHeight;
-    if (!browsed || remaining > 2) return;
-    removeEventListener("scroll", checkPageEnd);
-    openSplash();
-}
+// Secret: double click or double tap the footer QR code to forget the trivia's
+// daily tally and play a round on the spot. The first tap opens the splash, so
+// the second lands on the open dialog, where it would otherwise just close it
+// again — catching it there is what makes the gesture feel like a double tap.
+// It listens on pointerup, because iOS can swallow the click of a double tap,
+// and pointerup runs first, so the closing below finds the work already done.
+const DOUBLE_TAP_MS = 450;
+const bibleTrivia = document.getElementById("bible-trivia");
 
-addEventListener("scroll", checkPageEnd, { passive: true });
+splashDialog.addEventListener("pointerup", async () => {
+    if (!splashShownAt || Date.now() - splashShownAt > DOUBLE_TAP_MS) return;
+    splashShownAt = 0;
+    bibleTrivia.reset();
+    // Close the splash before the quiz takes the screen.
+    await closeSplash();
+    bibleTrivia.open({ force: true });
+});
 
 // Verse popup: a Bible reference in a Did You Know card or a Bible saying opens
 // that passage in the search results panel, shown as a modal that any tap closes.

@@ -321,33 +321,6 @@ did-you-know.card, bible-sayings.card { padding: 0 10px; }
 .footer-qr-button:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 .footer-qr img { display: block; width: 88px; height: 88px; }
 
-.qr-dialog {
-  padding: 0;
-  border: 0;
-  border-radius: 18px;
-  background: #fff;
-  color: var(--navy);
-  box-shadow: 0 24px 60px rgba(0,27,52,.4);
-  max-width: calc(100vw - 32px);
-  /* The whole card is one tap target: any tap closes it. */
-  cursor: pointer;
-}
-.qr-dialog::backdrop {
-  background: rgb(0 27 52 / 60%);
-  backdrop-filter: blur(3px);
-}
-.qr-dialog-body {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  gap: 12px;
-  padding: 26px 26px 20px;
-  font-family: 'Roboto', Arial, sans-serif;
-}
-.qr-dialog img { display: block; width: min(72vw, 340px); height: auto; }
-.qr-dialog p { margin: 0; font-size: .9375rem; font-weight: 600; letter-spacing: .04em; }
-html:has(.qr-dialog[open]) { overflow: hidden; }
-
 /* Verse popup: a Bible reference in a Did You Know card opens the passage in
    the same panel the search uses, on the page's own paper colour. */
 .verse-dialog {
@@ -478,9 +451,9 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
   .bookmark-tabs [role="tab"] { padding: 6px 4px; font-size: .75rem; }
 }
 
-/* End-of-page splash: the thank-you poster that pops up once the reader
-   reaches the very bottom. The dialog shrink-wraps the poster, so the box is
-   the artwork itself with the hint sitting on the backdrop below it. */
+/* Sponsorship splash: the thank-you poster that pops up when the reader taps
+   the footer QR code. The dialog shrink-wraps the poster, so the box is the
+   artwork itself with the hint sitting on the backdrop below it. */
 .splash-dialog {
   padding: 0;
   border: 0;

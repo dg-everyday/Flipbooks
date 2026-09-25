@@ -23,7 +23,38 @@
 
         <title>Grace for Today • Our Faith for Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260925-12" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260925-14" />
+        <link rel="preload" href="assets/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="assets/fonts/Strait-Regular.woff2" as="font" type="font/woff2" crossorigin />
+        <script>
+            // Start today's banner and poster downloading now, instead of once
+            // <banner-slider> and <poster-card> have loaded and worked out
+            // their URLs. Keep these URLs in step with those components and
+            // with MEDIA_BASE_URL in assets/scripts/script.js; a mismatch
+            // costs a wasted download, never a broken page.
+            (() => {
+                const media = "https://dailygrace.faith/media/";
+                const parts = {};
+                for (const { type, value } of new Intl.DateTimeFormat("en-US", {
+                    timeZone: "Asia/Manila", year: "numeric", month: "numeric", day: "numeric",
+                }).formatToParts(new Date())) parts[type] = Number(value);
+                const date = new Date(Date.UTC(parts.year, parts.month - 1, parts.day));
+                const format = (options) => date.toLocaleDateString("en-US", { timeZone: "UTC", ...options });
+                const month = format({ month: "long" }).toLowerCase();
+                const iso = date.toISOString().slice(0, 10);
+                const dateName = format({ month: "long", day: "numeric", year: "numeric" });
+                const preload = (href, priority) => {
+                    const link = document.createElement("link");
+                    link.rel = "preload";
+                    link.as = "image";
+                    link.href = href;
+                    link.fetchPriority = priority;
+                    document.head.append(link);
+                };
+                preload(`${media}banner/${month}/daily-grace-${iso}.webp`, "high");
+                preload(`${media}images/sources/${month}/${dateName}.webp`, "auto");
+            })();
+        </script>
     </head>
 
     <body>
@@ -40,7 +71,7 @@
                     >
                         <img
                             class="hero-icon"
-                            src="assets/images/dg-icon-gold.webp"
+                            src="assets/images/dg-icon-gold-256.webp"
                             alt=""
                             width="48"
                             height="48"
@@ -223,7 +254,7 @@
                 <header class="help-header">
                     <img
                         class="help-emblem"
-                        src="assets/images/dg-icon-gold.webp"
+                        src="assets/images/dg-icon-gold-256.webp"
                         alt=""
                         width="40"
                         height="40"
@@ -329,7 +360,7 @@
                 <ul class="help-list">
                     <li>
                         <span class="help-icon">
-                            <img src="assets/images/dg-icon-gold.webp" alt="" width="26" height="26" />
+                            <img src="assets/images/dg-icon-gold-256.webp" alt="" width="26" height="26" />
                         </span>
                         <p><strong>About Daily Grace.</strong> Tap the DG emblem at the top left of the page to read what Daily Grace is and how it can help you each day.</p>
                     </li>
@@ -373,7 +404,7 @@
                 <div class="about-mini" aria-hidden="true">
                     <img
                         class="help-emblem"
-                        src="assets/images/dg-icon-gold.webp"
+                        src="assets/images/dg-icon-gold-256.webp"
                         alt=""
                         width="40"
                         height="40"
@@ -399,7 +430,7 @@
 
             <header class="about-hero">
                 <img
-                    src="assets/images/dg-icon-gold.webp"
+                    src="assets/images/dg-icon-gold-256.webp"
                     alt=""
                     width="84"
                     height="84"
@@ -586,7 +617,7 @@
             <header class="bookmarks-bar">
                 <img
                     class="help-emblem"
-                    src="assets/images/dg-icon-gold.webp"
+                    src="assets/images/dg-icon-gold-256.webp"
                     alt=""
                     width="40"
                     height="40"
@@ -649,16 +680,18 @@
             <p class="splash-hint">Tap anywhere to close</p>
         </dialog>
         <bible-trivia id="bible-trivia" auto></bible-trivia>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/sql-wasm.js"></script>
-        <script src="assets/scripts/sql_script.js?v=20260924-4"></script>
-        <script src="assets/scripts/script.js?v=20260925-6"></script>
-        <script type="module" src="apps/components/did-you-know.js?v=20260925-4"></script>
-        <script type="module" src="apps/components/daily-strides.js?v=20260925-1"></script>
-        <script type="module" src="apps/components/bible-sayings.js?v=20260925-6"></script>
-        <script type="module" src="apps/components/bible-search-results.js?v=20260925-3"></script>
-        <script type="module" src="apps/components/poster-card.js?v=20260925-1"></script>
-        <script type="module" src="apps/components/bible-trivia.js?v=20260925-1"></script>
+        <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
+        <script src="assets/scripts/sql_script.js?v=20260925-1" defer></script>
+        <script src="assets/scripts/script.js?v=20260925-7" defer></script>
+        <script type="module" src="apps/components/banner-slider.js?v=20260925-1"></script>
+        <script type="module" src="apps/components/poster-card.js?v=20260925-2"></script>
+        <script type="module" src="apps/components/did-you-know.js?v=20260925-5"></script>
+        <script type="module" src="apps/components/daily-strides.js?v=20260925-2"></script>
+        <script type="module" src="apps/components/bible-sayings.js?v=20260925-8"></script>
+        <script type="module" src="apps/components/bible-search-results.js?v=20260925-4"></script>
+        <script type="module" src="apps/components/bible-trivia.js?v=20260925-3"></script>
+        <!-- Stories are hidden on the homepage for now; bring this back with the carousel.
         <script type="module" src="apps/components/story-carousel.js?v=20260923-3"></script>
-        <script type="module" src="apps/components/banner-slider.js?v=20260924-3"></script>
+        -->
     </body>
 </html>

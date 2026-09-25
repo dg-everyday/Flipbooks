@@ -207,7 +207,9 @@ export class PosterCard extends HTMLElement {
       <style>${STYLES}</style>
       <div class="wrap">
         <button class="toggle" type="button">
-          <img class="poster" alt="" />
+          <!-- The posters' usual size, so the card holds its space while one
+               loads instead of pushing the page down when it lands. -->
+          <img class="poster" alt="" width="941" height="1672" />
         </button>
         <button class="audio" type="button" aria-pressed="false"></button>
       </div>

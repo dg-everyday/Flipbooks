@@ -44,7 +44,9 @@
  *                            (bubbles and crosses the shadow boundary)
  *
  * Data: assets/bible-sayings.json, built by tools/sayings/build_sayings.py,
- * fetched once and shared by every instance on the page.
+ * fetched once and shared by every instance on the page. Once the page has
+ * loaded, it is fetched when the card comes within a screen of view, or,
+ * with the bookmarks attribute, on the first showBookmarks().
  * Each entry has id, saying, variants, meaning, explanation, reference,
  * references, kjv_text, book, testament, wording and theme.
  *
@@ -81,7 +83,7 @@ const DEFAULT_COUNT = 5;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const BANNER_URL = asset('../../assets/images/sayings.webp');
+const BANNER_URL = asset('../../assets/images/sayings-1440.webp');
 const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
 const DEFAULT_SRC = asset('../../assets/bible-sayings.json');
 
@@ -267,6 +269,21 @@ const STYLES = /* css */ `
        kept for the reference buttons. */
     cursor: default;
   }
+  /* The page's popups share one scrollbar: a slim gold pill on a clear track,
+     held off the rounded corners, in place of the grey system bar that
+     squares off the right edge. Firefox has no ::-webkit-scrollbar, and
+     Chrome would drop these rules if it saw the standard properties. */
+  dialog::-webkit-scrollbar { width: 10px; }
+  dialog::-webkit-scrollbar-track { margin-block: 14px; background: transparent; }
+  dialog::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background: rgb(198 146 46 / 40%) padding-box;
+  }
+  dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
+  @supports not selector(::-webkit-scrollbar) {
+    dialog { scrollbar-width: thin; scrollbar-color: rgb(198 146 46 / 50%) transparent; }
+  }
   dialog::backdrop {
     background: rgb(0 27 52 / 62%);
     backdrop-filter: blur(3px);
@@ -352,6 +369,7 @@ export class BibleSayings extends HTMLElement {
   #sayings = [];
   #shownIds = new Set();
   #loading = null;
+  #nearObserver = null;
   #hold;
   #showingBookmarks = false;
   #opener = null;
@@ -364,7 +382,7 @@ export class BibleSayings extends HTMLElement {
       <style>${STYLES}</style>
       <section role="region" aria-label="Bible sayings in everyday English">
         <div class="banner">
-          <img class="banner-image" src="${BANNER_URL}" alt="" width="2560" height="640" loading="lazy" />
+          <img class="banner-image" src="${BANNER_URL}" alt="" width="1440" height="360" loading="lazy" />
           <button class="round refresh" type="button" aria-label="Show more Bible sayings"
                   title="Show more Bible sayings" disabled>
             ${REFRESH_ICON}
@@ -378,7 +396,7 @@ export class BibleSayings extends HTMLElement {
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>
       <dialog tabindex="-1" aria-labelledby="detail-title">
-        <img class="banner-image" src="${BANNER_URL}" alt="" width="2560" height="640" />
+        <img class="banner-image" src="${BANNER_URL}" alt="" width="1440" height="360" loading="lazy" />
         <div class="detail"></div>
       </dialog>`;
     this.#list = this.#root.querySelector('.list');
@@ -429,12 +447,14 @@ export class BibleSayings extends HTMLElement {
     registerFonts();
     bookmarks.addEventListener('change', this.#syncBookmarks);
     this.#syncBookmarks();
-    if (!this.#sayings.length) this.#load();
+    if (!this.#sayings.length) this.#loadWhenNear();
   }
 
   disconnectedCallback() {
     bookmarks.removeEventListener('change', this.#syncBookmarks);
     this.#hold.cancel();
+    this.#nearObserver?.disconnect();
+    this.#nearObserver = null;
     if (this.#dialog.open) this.#finishClose();
   }
 
@@ -470,6 +490,28 @@ export class BibleSayings extends HTMLElement {
   #currentSayings() {
     const shown = this.#sayings.filter((saying) => this.#shownIds.has(saying.id));
     return shown.length ? shown : this.#pick();
+  }
+
+  // The sayings file is a third of a megabyte and the card sits at the foot
+  // of the page: fetch it only as the card nears the screen, so it never
+  // competes with what is read first. A bookmarks list waits for
+  // showBookmarks() to ask for it.
+  #loadWhenNear() {
+    if (this.#loading || this.#nearObserver || this.hasAttribute('bookmarks')) return;
+    this.#nearObserver = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      this.#nearObserver.disconnect();
+      this.#nearObserver = null;
+      if (!this.#loading) this.#load();
+    }, { rootMargin: '100% 0px' });
+    // Until the rest of the page has arrived, every card is short, so even the
+    // last one can sit within a screen of view: wait for the load event first.
+    const observer = this.#nearObserver;
+    const observe = () => {
+      if (observer === this.#nearObserver) observer.observe(this);
+    };
+    if (document.readyState === 'complete') observe();
+    else window.addEventListener('load', observe, { once: true });
   }
 
   #load() {
@@ -735,7 +777,11 @@ export class BibleSayings extends HTMLElement {
    * its card, without the ribbon, so holding it again puts the bookmark back.
    */
   showBookmarks() {
-    if (!this.#sayings.length) return;
+    if (!this.#sayings.length) {
+      // Loaded on first use; the bookmarks show once the sayings arrive.
+      if (!this.#loading) this.#load();
+      return;
+    }
     this.#showingBookmarks = true;
     const sayings = bookmarks.read()
       .map((id) => this.#sayings.find((saying) => saying.id === id))

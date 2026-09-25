@@ -476,8 +476,7 @@ export class BannerSlider extends HTMLElement {
     this.#flipbook.title = label;
 
     this.#showVerse();
-    this.#preload(daysAgo + 1);
-    this.#preload(daysAgo - 1);
+    this.#preloadAround(day.banner, daysAgo);
     this.#emitDay();
   }
 
@@ -521,13 +520,25 @@ export class BannerSlider extends HTMLElement {
     }));
   }
 
-  // Warm the cache for the banners one swipe away, so they are ready to slide in.
+  // Warm the cache for the banners one swipe away, so they are ready to slide
+  // in. They wait for the banner on show, and then ask for little, so they
+  // never hold up the day being read or the poster below it.
+  #preloadAround(banner, daysAgo) {
+    this.#banner.decode().catch(() => {}).then(() => {
+      if (this.#day?.banner !== banner) return; // the reader has moved on
+      this.#preload(daysAgo + 1);
+      this.#preload(daysAgo - 1);
+    });
+  }
+
   #preload(daysAgo) {
     if (daysAgo < 0 || daysAgo > this.#pastDays) return;
     const { banner } = devotionalDay(this.#today, daysAgo, this.#mediaBase);
     if (this.#preloaded.has(banner)) return;
     this.#preloaded.add(banner);
-    new Image().src = banner;
+    const image = new Image();
+    image.fetchPriority = 'low';
+    image.src = banner;
   }
 
   /* ----- Sliding ----- */

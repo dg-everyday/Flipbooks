@@ -77,8 +77,16 @@ function audioUrl(leaf, mediaBase) {
 
 // Resolves to the absolute URL when the file exists, or null when it 404s.
 // The media server is the source of truth for which days have shipped.
+// On the site's own origin a HEAD request answers that without downloading
+// the artwork, which <flip-book> then fetches a few pages at a time. From
+// anywhere else (local development against the live media host) CORS hides
+// the status, so the image itself is loaded instead.
 function probe(path, mediaBase) {
   const src = new URL(path, mediaBase).href;
+  if (new URL(src).origin === window.location.origin) {
+    return fetch(src, { method: 'HEAD' })
+      .then(response => (response.ok ? src : null), () => null);
+  }
   return new Promise(resolve => {
     const img = new Image();
     img.onload = () => resolve(src);

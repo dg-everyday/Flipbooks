@@ -40,7 +40,9 @@
  * Data: the facts come from the did_you_know table (id, Title, Fact,
  * Reference_verse, Book, Similar_books) in assets/db/didyouknow.db, read once
  * through sql.js and shared by every instance on the page. Only the columns
- * shown on a card are selected.
+ * shown on a card are selected. Once the page has loaded, the database is
+ * fetched when the card comes within a screen of view, or, with the
+ * bookmarks attribute, on the first showBookmarks().
  *
  * Fonts: Germania One (titles) and Strait (text) are registered on the
  * document by assets/scripts/fonts.js, because browsers do not reliably load @font-face
@@ -70,7 +72,7 @@ const DEFAULT_COUNT = 5;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const BANNER_URL = asset('../../assets/images/did-you-know.webp');
+const BANNER_URL = asset('../../assets/images/did-you-know-1440.webp');
 const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
 const DEFAULT_SRC = asset('../../assets/db/didyouknow.db');
 const FACTS_QUERY = 'SELECT id, Title, Fact, Reference_verse, Book FROM did_you_know';
@@ -244,6 +246,7 @@ export class DidYouKnow extends HTMLElement {
   #facts = [];
   #shownIds = new Set();
   #loading = null;
+  #nearObserver = null;
   #hold;
   #showingBookmarks = false;
 
@@ -254,7 +257,7 @@ export class DidYouKnow extends HTMLElement {
       <style>${STYLES}</style>
       <section role="region" aria-label="Did you know? Essential Bible Facts">
         <div class="banner">
-          <img class="banner-image" src="${BANNER_URL}" alt="" width="2560" height="640" loading="lazy" />
+          <img class="banner-image" src="${BANNER_URL}" alt="" width="1440" height="360" loading="lazy" />
           <button class="refresh" type="button" aria-label="Show more Bible facts"
                   title="Show more Bible facts" disabled>
             ${REFRESH_ICON}
@@ -302,12 +305,14 @@ export class DidYouKnow extends HTMLElement {
     registerFonts();
     bookmarks.addEventListener('change', this.#syncBookmarks);
     this.#syncBookmarks();
-    if (!this.#facts.length) this.#load();
+    if (!this.#facts.length) this.#loadWhenNear();
   }
 
   disconnectedCallback() {
     bookmarks.removeEventListener('change', this.#syncBookmarks);
     this.#hold.cancel();
+    this.#nearObserver?.disconnect();
+    this.#nearObserver = null;
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -342,6 +347,28 @@ export class DidYouKnow extends HTMLElement {
   #currentFacts() {
     const shown = this.#facts.filter((fact) => this.#shownIds.has(fact.id));
     return shown.length ? shown : this.#pick();
+  }
+
+  // The database and the sql.js behind it come to over a megabyte, and the
+  // card sits well below the banner and the poster: fetch them only as the
+  // card nears the screen, so they never compete with what is read first. A
+  // bookmarks list waits for showBookmarks() to ask for it.
+  #loadWhenNear() {
+    if (this.#loading || this.#nearObserver || this.hasAttribute('bookmarks')) return;
+    this.#nearObserver = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      this.#nearObserver.disconnect();
+      this.#nearObserver = null;
+      if (!this.#loading) this.#load();
+    }, { rootMargin: '100% 0px' });
+    // Until the rest of the page has arrived, every card is short, so even the
+    // last one can sit within a screen of view: wait for the load event first.
+    const observer = this.#nearObserver;
+    const observe = () => {
+      if (observer === this.#nearObserver) observer.observe(this);
+    };
+    if (document.readyState === 'complete') observe();
+    else window.addEventListener('load', observe, { once: true });
   }
 
   #load() {
@@ -448,7 +475,11 @@ export class DidYouKnow extends HTMLElement {
    * card, without the ribbon, so holding it again puts the bookmark back.
    */
   showBookmarks() {
-    if (!this.#facts.length) return;
+    if (!this.#facts.length) {
+      // Loaded on first use; the bookmarks show once the facts arrive.
+      if (!this.#loading) this.#load();
+      return;
+    }
     this.#showingBookmarks = true;
     const facts = bookmarks.read()
       .map((id) => this.#facts.find((fact) => fact.id === id))

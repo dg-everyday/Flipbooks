@@ -326,7 +326,8 @@ did-you-know.card, bible-sayings.card { padding: 0 10px; }
   color: var(--navy);
   box-shadow: 0 24px 60px rgba(0,27,52,.4);
   max-width: calc(100vw - 32px);
-  cursor: zoom-out;
+  /* The whole card is one tap target: any tap closes it. */
+  cursor: pointer;
 }
 .qr-dialog::backdrop {
   background: rgb(0 27 52 / 60%);
@@ -358,7 +359,9 @@ html:has(.qr-dialog[open]) { overflow: hidden; }
   box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
   overflow: auto;
   overscroll-behavior: contain;
-  cursor: zoom-out;
+  /* A tap closes it, but it is read first: the plain arrow, with the hand
+     kept for the panel's own buttons. */
+  cursor: default;
 }
 .verse-dialog::backdrop {
   background: rgb(0 27 52 / 60%);
@@ -369,6 +372,107 @@ html:has(.verse-dialog[open]) { overflow: hidden; }
    of :has(), so the panel flags itself while the popup is open. */
 html:has(bible-search-results[explaining]) { overflow: hidden; }
 
+/* Bookmarks: holding the search field opens every bookmark, one kind at a
+   time: verses, "Did you know?" facts and sayings, picked with the segmented
+   switch. The title and the switch stay put while the list scrolls under
+   them. The dialog has no padding, so a click on it is a click on the
+   backdrop. */
+.bookmarks-dialog {
+  width: min(600px, 94vw);
+  /* One height for every segment, so switching does not make the popup jump. */
+  height: min(680px, 90vh);
+  height: min(680px, 90dvh);
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 28px 70px rgb(0 27 52 / 45%);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.bookmarks-dialog::backdrop {
+  background: rgb(0 27 52 / 62%);
+  backdrop-filter: blur(4px);
+}
+html:has(.bookmarks-dialog[open]) { overflow: hidden; }
+.bookmarks-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 14px 12px 18px;
+  background:
+    radial-gradient(90% 140% at 30% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+  box-shadow: 0 6px 12px -8px rgb(0 27 52 / 18%);
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.bookmarks-bar h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+/* A segmented switch: three equal segments on a sunken track, the chosen one
+   raised in white with its count in gold. */
+.bookmark-tabs {
+  display: grid;
+  flex: 1 0 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: 14px;
+  background: rgb(0 27 52 / 8%);
+  box-shadow: inset 0 1px 2px rgb(0 27 52 / 12%);
+}
+.bookmark-tabs [role="tab"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 6px;
+  min-height: 40px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #4f5c65;
+  font: 600 .8125rem/1.2 'Roboto', Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.bookmark-tabs [role="tab"]:hover { background: rgb(255 255 255 / 45%); color: var(--navy); }
+.bookmark-tabs [aria-selected="true"],
+.bookmark-tabs [aria-selected="true"]:hover {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 1px 4px rgb(0 27 52 / 18%);
+}
+.bookmark-tabs [role="tab"]:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
+.bookmark-count {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgb(0 27 52 / 10%);
+  font-size: .6875rem;
+  font-variant-numeric: tabular-nums;
+}
+.bookmark-count:empty { display: none; }
+.bookmark-tabs [aria-selected="true"] .bookmark-count { background: var(--gold); color: #fff; }
+.bookmarks-panel { padding: 14px; }
+/* The popup scrolls the verses itself, rather than in a box of their own. */
+#bookmark-verses { --reader-max-height: none; }
+@media (max-width: 420px) {
+  .bookmarks-panel { padding: 10px; }
+  .bookmark-tabs [role="tab"] { padding: 6px 4px; font-size: .75rem; }
+}
+
 /* End-of-page splash: the thank-you poster that pops up once the reader
    reaches the very bottom. The dialog shrink-wraps the poster, so the box is
    the artwork itself with the hint sitting on the backdrop below it. */
@@ -378,7 +482,8 @@ html:has(bible-search-results[explaining]) { overflow: hidden; }
   max-width: none;
   background: transparent;
   overflow: visible;
-  cursor: zoom-out;
+  /* The poster is one tap target: any tap closes it. */
+  cursor: pointer;
 }
 .splash-dialog::backdrop {
   background: rgb(0 27 52 / 62%);
@@ -637,27 +742,32 @@ html:has(.help-dialog[open]) { overflow: hidden; }
   backdrop-filter: blur(4px);
 }
 html:has(.about-dialog[open]) { overflow: hidden; }
-/* The About and Help dialogs are read and scrolled, and share their edges.
+/* The About, Help and Bookmarks dialogs are read and scrolled, and share their edges.
    A slim gold scrollbar on a clear track, held off the rounded corners, in
    place of the grey system bar that squared off the dialog's right edge. The
    thumb's transparent border leaves a thin pill floating inside the gutter. */
 .about-dialog::-webkit-scrollbar,
-.help-dialog::-webkit-scrollbar { width: 10px; }
+.help-dialog::-webkit-scrollbar,
+.bookmarks-dialog::-webkit-scrollbar { width: 10px; }
 .about-dialog::-webkit-scrollbar-track,
-.help-dialog::-webkit-scrollbar-track { margin-block: 20px; background: transparent; }
+.help-dialog::-webkit-scrollbar-track,
+.bookmarks-dialog::-webkit-scrollbar-track { margin-block: 20px; background: transparent; }
 .about-dialog::-webkit-scrollbar-thumb,
-.help-dialog::-webkit-scrollbar-thumb {
+.help-dialog::-webkit-scrollbar-thumb,
+.bookmarks-dialog::-webkit-scrollbar-thumb {
   border: 3px solid transparent;
   border-radius: 999px;
   background: rgb(198 146 46 / 40%) padding-box;
 }
 .about-dialog::-webkit-scrollbar-thumb:hover,
-.help-dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
+.help-dialog::-webkit-scrollbar-thumb:hover,
+.bookmarks-dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
 /* Firefox has no ::-webkit-scrollbar. Chrome would drop the rules above if it
    saw these, so only browsers without them get the standard properties. */
 @supports not selector(::-webkit-scrollbar) {
   .about-dialog,
-  .help-dialog {
+  .help-dialog,
+  .bookmarks-dialog {
     scrollbar-width: thin;
     scrollbar-color: rgb(198 146 46 / 50%) transparent;
   }
@@ -666,7 +776,8 @@ html:has(.about-dialog[open]) { overflow: hidden; }
    rounded edge rather than running into it. The band sticks to the bottom and
    its negative margin lays it over the closing padding, so it takes no room. */
 .about-dialog::after,
-.help-dialog::after {
+.help-dialog::after,
+.bookmarks-dialog::after {
   content: "";
   position: sticky;
   bottom: 0;
@@ -787,16 +898,6 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   color: var(--ink);
   font: italic 1.0625rem/1.4 Georgia, 'Times New Roman', serif;
 }
-.about-scroll-hint {
-  width: 26px;
-  height: 26px;
-  margin-top: 16px;
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 
 .about-body {
   padding: 6px 26px 34px;
@@ -820,7 +921,22 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   height: 1px;
   background: linear-gradient(90deg, rgb(198 146 46 / 65%), transparent);
 }
-.about-lead { font-size: 1.1875rem; line-height: 1.6; }
+/* The one-line answer to "What is Daily Grace?" is the point of the whole
+   page, so it sits in a lit, gold-edged card of its own. Two classes, to win
+   over the plain paragraph margins of .about-body p. */
+.about-body .about-lead {
+  margin: 4px -6px 22px;
+  padding: 18px 20px;
+  border: 1.5px solid rgb(198 146 46 / 55%);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 90% at 0% 0%, #fffaf0 0%, transparent 65%),
+    linear-gradient(180deg, #fbf3e3, #f6ead3);
+  box-shadow: 0 12px 26px -14px rgb(0 27 52 / 35%), inset 0 1px 0 rgb(255 255 255 / 70%);
+  color: var(--navy);
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
 .about-lead::first-letter {
   float: left;
   margin: 6px 10px 0 0;
@@ -1011,10 +1127,6 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   .about-dialog[open] .about-hero > :nth-child(2) { animation-delay: .28s; }
   .about-dialog[open] .about-hero > :nth-child(3) { animation-delay: .36s; }
   .about-dialog[open] .about-hero > :nth-child(4) { animation-delay: .46s; }
-  .about-dialog[open] .about-hero > .about-scroll-hint {
-    animation: about-rise .8s cubic-bezier(.22, 1, .36, 1) .7s both,
-      about-bob 2.4s ease-in-out 1.5s infinite;
-  }
   /* The script adds .revealing; without it every section simply shows. */
   .about-dialog.revealing .about-reveal {
     opacity: 0;
@@ -1030,15 +1142,12 @@ html:has(.about-dialog[open]) { overflow: hidden; }
 @keyframes about-rise {
   from { opacity: 0; transform: translateY(14px); }
 }
-@keyframes about-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
   .footer-help { transition: none; }
   .hero-about, .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
+  .bookmark-tabs [role="tab"] { transition: none; }
 }
 .footer-qr figcaption {
   color: var(--navy);

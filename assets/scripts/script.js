@@ -556,27 +556,116 @@ async function showVerse(reference) {
     }
 }
 
-// Bookmarks: holding a verse in the results saves it (the results panel keeps
-// the list), and holding the search field shows them all in the verse popup.
-async function showBookmarks() {
-    const generation = ++verseGeneration;
-    openVerseDialog();
-    const ids = verseResults.bookmarks;
-    if (!ids.length) {
-        verseResults.showBookmarks([]);
-        return;
-    }
-    verseResults.loading("Loading your bookmarks…");
-    try {
-        await loadBibleBookSuggestions();
-        if (generation !== verseGeneration || !verseDialog.open) return;
-        verseResults.showBookmarks(getVersesByIds(ids));
-    } catch (error) {
-        if (generation !== verseGeneration) return;
-        console.warn("Bookmarks could not be loaded:", error);
-        verseResults.showMessage("Your bookmarks could not be loaded. Please try again.");
+// Bookmarks: holding a verse, a fact or a saying saves it (each component keeps
+// its own list), and holding the search field opens them all in the bookmarks
+// popup, one kind at a time under a segmented switch. Unlike the verse popup
+// it is browsed, so a tap inside it does not close it: only the close button,
+// the backdrop or Escape do.
+const bookmarksDialog = document.getElementById("bookmarks-dialog");
+const bookmarksClose = document.getElementById("bookmarks-close");
+const bookmarkVerses = document.getElementById("bookmark-verses");
+const bookmarkFacts = document.getElementById("bookmark-facts");
+const bookmarkSayings = document.getElementById("bookmark-sayings");
+const bookmarkTabs = [...bookmarksDialog.querySelectorAll('[role="tab"]')];
+// The component behind each tab, whose bookmarks the tab counts.
+const bookmarkLists = new Map([
+    [bookmarkTabs[0], bookmarkVerses],
+    [bookmarkTabs[1], bookmarkFacts],
+    [bookmarkTabs[2], bookmarkSayings],
+]);
+for (const list of bookmarkLists.values()) list.setAttribute("media-base", MEDIA_BASE_URL);
+// The popup opens on the kind of bookmark looked at last.
+let bookmarkTab = bookmarkTabs[0];
+let bookmarksGeneration = 0;
+let bookmarksClosing = false;
+
+function updateBookmarkCounts() {
+    for (const [tab, list] of bookmarkLists) {
+        tab.querySelector(".bookmark-count").textContent = list.bookmarks.length || "";
     }
 }
+
+function selectBookmarkTab(tab, { focus = false } = {}) {
+    bookmarkTab = tab;
+    for (const other of bookmarkTabs) {
+        const selected = other === tab;
+        other.setAttribute("aria-selected", String(selected));
+        other.tabIndex = selected ? 0 : -1;
+        document.getElementById(other.getAttribute("aria-controls")).hidden = !selected;
+    }
+    bookmarksDialog.scrollTop = 0;
+    if (focus) tab.focus();
+}
+
+for (const tab of bookmarkTabs) {
+    tab.addEventListener("click", () => selectBookmarkTab(tab));
+}
+// The arrow keys move along the switch, as in any tab list.
+bookmarksDialog.querySelector('[role="tablist"]').addEventListener("keydown", (event) => {
+    const index = bookmarkTabs.indexOf(bookmarkTab);
+    const last = bookmarkTabs.length - 1;
+    const next = {
+        ArrowLeft: index === 0 ? last : index - 1,
+        ArrowRight: index === last ? 0 : index + 1,
+        Home: 0,
+        End: last,
+    }[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    selectBookmarkTab(bookmarkTabs[next], { focus: true });
+});
+for (const list of bookmarkLists.values()) {
+    list.addEventListener("bookmarkchange", updateBookmarkCounts);
+}
+
+async function showBookmarks() {
+    const generation = ++bookmarksGeneration;
+    if (!bookmarksDialog.open) {
+        bookmarksDialog.showModal();
+        if (!reducedMotionQuery.matches) popDialog(bookmarksDialog, "open");
+    }
+    selectBookmarkTab(bookmarkTab);
+    updateBookmarkCounts();
+    // Bookmarks may have been added on the page since the lists were last drawn.
+    bookmarkFacts.showBookmarks();
+    bookmarkSayings.showBookmarks();
+    const ids = bookmarkVerses.bookmarks;
+    if (!ids.length) {
+        bookmarkVerses.showBookmarks([]);
+        return;
+    }
+    bookmarkVerses.loading("Loading your bookmarks…");
+    try {
+        await loadBibleBookSuggestions();
+        if (generation !== bookmarksGeneration || !bookmarksDialog.open) return;
+        bookmarkVerses.showBookmarks(getVersesByIds(ids));
+    } catch (error) {
+        if (generation !== bookmarksGeneration) return;
+        console.warn("Bookmarks could not be loaded:", error);
+        bookmarkVerses.showMessage("Your bookmarks could not be loaded. Please try again.");
+    }
+}
+
+async function closeBookmarks() {
+    if (!bookmarksDialog.open || bookmarksClosing) return;
+    bookmarksClosing = true;
+    bookmarksGeneration++;
+    if (!reducedMotionQuery.matches) await popDialog(bookmarksDialog, "close");
+    bookmarksDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    bookmarksDialog.close();
+    bookmarkVerses.reset();
+    bookmarksClosing = false;
+}
+
+// Escape would close instantly; route it through the closing animation instead.
+bookmarksDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeBookmarks();
+});
+bookmarksClose.addEventListener("click", closeBookmarks);
+bookmarksDialog.addEventListener("click", (event) => {
+    if (event.target === bookmarksDialog) closeBookmarks();
+});
 
 // The same half-second hold the verse cards use, with the search pill glowing
 // gold while it builds.
@@ -640,13 +729,14 @@ async function closeVerse() {
     verseClosing = false;
 }
 
-didYouKnow.addEventListener("verse-request", (event) => {
-    showVerse(event.detail.reference);
-});
-// A saying's popup stays open underneath; closing the passage returns to it.
-bibleSayings.addEventListener("verse-request", (event) => {
-    showVerse(event.detail.reference);
-});
+// A reference in a fact or a saying, on the page or among the bookmarks, opens
+// the passage on top. A saying's popup, like the bookmarks popup, stays open
+// underneath; closing the passage returns to it.
+for (const source of [didYouKnow, bibleSayings, bookmarkFacts, bookmarkSayings]) {
+    source.addEventListener("verse-request", (event) => {
+        showVerse(event.detail.reference);
+    });
+}
 
 // Escape would close instantly; route it through the closing animation instead.
 verseDialog.addEventListener("cancel", (event) => {

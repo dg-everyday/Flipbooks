@@ -5,6 +5,13 @@
  * has the book symbol, a title, the fact text and its Bible reference. The
  * refresh button draws a new batch that never repeats the previous one.
  *
+ * Holding a fact for half a second bookmarks it: a gold glow spreads from the
+ * finger and the card takes a ribbon. Holding it again removes the bookmark.
+ * Up to 50 fact ids are kept in localStorage, newest first (see
+ * card-bookmarks.js). With the bookmarks attribute the component shows only
+ * the bookmarked facts, under a header and with no banner, which is how the
+ * page's bookmarks popup uses it.
+ *
  * Usage
  *   <did-you-know></did-you-know>
  *   <script type="module" src="./apps/components/did-you-know.js"></script>
@@ -16,17 +23,24 @@
  *                resolved against the page.
  *                Default: ../../assets/db/didyouknow.db (relative to this file)
  *   count        Facts per batch. Default: 5
+ *   bookmarks    Present: no banner; show the bookmarked facts, newest first.
+ *                Call showBookmarks() to bring the list up to date.
  *
- * Methods      refresh()  show a new batch
+ * Methods      refresh()        show a new batch
+ *              showBookmarks()  show the bookmarked facts, newest first
+ * Properties   bookmarks (read-only): the bookmarked fact ids, newest first
  * Events       ready         fired once facts are loaded, detail: { total }
  *              refresh       fired after each batch, detail: { ids }
+ *              bookmarkchange  a hold added or removed a bookmark,
+ *                            detail: { id, result: 'added' | 'removed' }
  *              error         detail: { message }
  *              verse-request a reference was clicked, detail: { reference, book }
  *                            (bubbles and crosses the shadow boundary)
  *
  * Data: the facts come from the did_you_know table (id, Title, Fact,
  * Reference_verse, Book, Similar_books) in assets/db/didyouknow.db, read once
- * through sql.js. Only the columns shown on a card are selected.
+ * through sql.js and shared by every instance on the page. Only the columns
+ * shown on a card are selected.
  *
  * Fonts: Germania One (titles) and Strait (text) are registered on the
  * document by assets/scripts/fonts.js, because browsers do not reliably load @font-face
@@ -41,6 +55,9 @@
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
 import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
+import {
+  BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
+} from './card-bookmarks.js?v=20260925-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
@@ -57,6 +74,39 @@ const BANNER_URL = asset('../../assets/images/did-you-know.webp');
 const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
 const DEFAULT_SRC = asset('../../assets/db/didyouknow.db');
 const FACTS_QUERY = 'SELECT id, Title, Fact, Reference_verse, Book FROM did_you_know';
+
+const bookmarks = bookmarkStore('dailygrace:bookmarks:facts', { isId: Number.isSafeInteger, limit: 50 });
+
+// The facts are shared by every instance, so the page's list and its bookmarks
+// popup read the database once between them.
+const factsCache = new Map();
+
+/** Reads every fact out of the database, then closes it again. */
+function readFacts(url) {
+  if (!factsCache.has(url)) {
+    const request = openDatabase(url)
+      .then((database) => {
+        try {
+          return query(database, FACTS_QUERY).map((row) => ({
+            id: row.id,
+            title: row.Title,
+            text: row.Fact,
+            reference: row.Reference_verse,
+            book: row.Book,
+          }));
+        } finally {
+          // The rows are kept in memory; the database file itself is not needed.
+          database.close();
+        }
+      })
+      .catch((error) => {
+        factsCache.delete(url);
+        throw error;
+      });
+    factsCache.set(url, request);
+  }
+  return factsCache.get(url);
+}
 
 const STYLES = /* css */ `
   :host {
@@ -75,6 +125,24 @@ const STYLES = /* css */ `
   }
   section { display: grid; gap: 18px; }
   :host([hidden]) { display: none; }
+  /* A list of bookmarks: a header in place of the banner. */
+  :host([bookmarks]) section { gap: 10px; }
+  :host([bookmarks]) .banner { display: none; }
+  :host([bookmarks]) .message { padding: 16px; }
+  .bookmarks-header {
+    padding: 18px;
+    border: 1px solid rgb(0 27 52 / 20%);
+    border-radius: 8px;
+    background: rgb(255 255 255 / 24%);
+  }
+  .bookmarks-title {
+    margin: 0; color: var(--dyk-navy);
+    font: 400 1.375rem/1.3 'Strait', 'Roboto', sans-serif;
+  }
+  .bookmarks-summary {
+    margin: 8px 0 0;
+    font: 400 1.125rem/1.45 'Strait', 'Roboto', sans-serif;
+  }
   * { box-sizing: border-box; }
 
   .visually-hidden {
@@ -163,7 +231,7 @@ const STYLES = /* css */ `
   @media (prefers-reduced-motion: reduce) {
     .refresh svg, .refresh.is-spinning svg { transition: none; animation: none; }
   }
-`;
+${BOOKMARK_STYLES}`;
 
 export class DidYouKnow extends HTMLElement {
   static observedAttributes = ['media-base', 'src', 'count'];
@@ -172,9 +240,12 @@ export class DidYouKnow extends HTMLElement {
   #list;
   #refreshButton;
   #status;
+  #bookmarksHeader;
   #facts = [];
   #shownIds = new Set();
   #loading = null;
+  #hold;
+  #showingBookmarks = false;
 
   constructor() {
     super();
@@ -189,12 +260,17 @@ export class DidYouKnow extends HTMLElement {
             ${REFRESH_ICON}
           </button>
         </div>
+        <header class="bookmarks-header" hidden>
+          <h3 class="bookmarks-title">Bookmarked facts</h3>
+          <p class="bookmarks-summary"></p>
+        </header>
         <div class="list"><p class="message">Loading Bible facts…</p></div>
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>`;
     this.#list = this.#root.querySelector('.list');
     this.#refreshButton = this.#root.querySelector('.refresh');
     this.#status = this.#root.querySelector('[role="status"]');
+    this.#bookmarksHeader = this.#root.querySelector('.bookmarks-header');
 
     this.#refreshButton.addEventListener('click', () => {
       this.refresh();
@@ -205,11 +281,33 @@ export class DidYouKnow extends HTMLElement {
     this.#refreshButton.addEventListener('animationend', () => {
       this.#refreshButton.classList.remove('is-spinning');
     });
+
+    // The reference is a button of its own, so holding it does nothing.
+    this.#hold = new CardHold(this.#list, {
+      selector: '.fact',
+      exclude: 'button',
+      onHold: (card) => {
+        const id = Number(card.dataset.id);
+        const result = bookmarks.toggle(id);
+        showBookmarkResult(card, result, bookmarks.limit);
+        this.#status.textContent = `${card.querySelector('.title').textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
+        if (result === 'added' || result === 'removed') {
+          this.dispatchEvent(new CustomEvent('bookmarkchange', { detail: { id, result } }));
+        }
+      },
+    });
   }
 
   connectedCallback() {
     registerFonts();
+    bookmarks.addEventListener('change', this.#syncBookmarks);
+    this.#syncBookmarks();
     if (!this.#facts.length) this.#load();
+  }
+
+  disconnectedCallback() {
+    bookmarks.removeEventListener('change', this.#syncBookmarks);
+    this.#hold.cancel();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -218,10 +316,17 @@ export class DidYouKnow extends HTMLElement {
       this.#facts = [];
       this.#shownIds = new Set();
       this.#load();
+    } else if (this.#showingBookmarks) {
+      this.showBookmarks();
     } else if (this.#facts.length) {
       // media-base changes symbol URLs; count changes the batch size.
       this.#render(this.#currentFacts());
     }
+  }
+
+  /** The bookmarked fact ids, newest first. */
+  get bookmarks() {
+    return bookmarks.read();
   }
 
   get #mediaBase() {
@@ -239,32 +344,16 @@ export class DidYouKnow extends HTMLElement {
     return shown.length ? shown : this.#pick();
   }
 
-  /** Reads every fact out of the database, then closes it again. */
-  async #read(src) {
-    const database = await openDatabase(new URL(src, document.baseURI));
-    try {
-      return query(database, FACTS_QUERY).map((row) => ({
-        id: row.id,
-        title: row.Title,
-        text: row.Fact,
-        reference: row.Reference_verse,
-        book: row.Book,
-      }));
-    } finally {
-      // The rows are kept in memory; the database file itself is not needed.
-      database.close();
-    }
-  }
-
   #load() {
     const src = this.getAttribute('src') || DEFAULT_SRC;
-    const loading = (this.#loading = this.#read(src)
+    const loading = (this.#loading = readFacts(new URL(src, document.baseURI).href)
       .then((facts) => {
         if (loading !== this.#loading) return; // superseded by a newer src
         this.#facts = facts.filter((fact) => fact.title && fact.text);
         if (!this.#facts.length) throw new Error('No Bible facts are available.');
         this.#refreshButton.disabled = false;
-        this.refresh();
+        if (this.hasAttribute('bookmarks')) this.showBookmarks();
+        else this.refresh();
         this.dispatchEvent(new CustomEvent('ready', { detail: { total: this.#facts.length } }));
       })
       .catch((error) => {
@@ -292,7 +381,9 @@ export class DidYouKnow extends HTMLElement {
 
   #createFact(fact) {
     const card = document.createElement('article');
-    card.className = 'fact';
+    card.className = 'fact bookmarkable';
+    card.dataset.id = fact.id;
+    card.classList.toggle('bookmarked', bookmarks.has(fact.id));
 
     const symbol = document.createElement('img');
     symbol.className = 'symbol';
@@ -340,10 +431,51 @@ export class DidYouKnow extends HTMLElement {
   }
 
   #render(facts) {
+    this.#showingBookmarks = false;
+    this.#bookmarksHeader.hidden = true;
     this.#shownIds = new Set(facts.map((fact) => fact.id));
     this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact)));
     this.#status.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].title}.`;
   }
+
+  #bookmarksSummary() {
+    return `${bookmarks.read().length} of ${bookmarks.limit} saved facts, newest first. `
+      + 'Hold a fact to remove its bookmark.';
+  }
+
+  /**
+   * Show the bookmarked facts, newest first. A fact taken off here keeps its
+   * card, without the ribbon, so holding it again puts the bookmark back.
+   */
+  showBookmarks() {
+    if (!this.#facts.length) return;
+    this.#showingBookmarks = true;
+    const facts = bookmarks.read()
+      .map((id) => this.#facts.find((fact) => fact.id === id))
+      .filter(Boolean);
+    this.#bookmarksHeader.hidden = !facts.length;
+    if (!facts.length) {
+      const message = document.createElement('p');
+      message.className = 'message';
+      message.textContent = 'No bookmarked facts yet. Hold a fact in “Did you know?” for half a second to bookmark it.';
+      this.#list.replaceChildren(message);
+      this.#status.textContent = message.textContent;
+      return;
+    }
+    this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
+    this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact)));
+    this.#status.textContent = `Bookmarked facts. ${this.#bookmarksSummary()}`;
+  }
+
+  #syncBookmarks = () => {
+    const saved = new Set(bookmarks.read());
+    for (const card of this.#list.querySelectorAll('.fact')) {
+      card.classList.toggle('bookmarked', saved.has(Number(card.dataset.id)));
+    }
+    if (this.#showingBookmarks) {
+      this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
+    }
+  };
 
   /** Show a new batch of facts, none repeated from the previous batch. */
   refresh() {

@@ -17,13 +17,18 @@ few images that must work even when the media host does not.
   `Genesis`, `Psalms 119`, `Ephesians 2:8-10,15`. Focusing the field loads the
   SQLite Bible and offers a filtered book list you can pick with the mouse or
   arrow keys. The padlock beside it switches to keyword search: verses that
-  contain every word typed, psalm titles included.
+  contain every word typed, psalm titles included. Holding the field for half
+  a second opens the bookmarks popup: bookmarked verses, facts and sayings,
+  one kind at a time under a segmented switch.
 - **Daily banner** for today's date, with a link to the flipbook.
 - **Reflection strip** — today's reflection, clamped to three lines until tapped.
 - **`<poster-card>`** — today's poster; tap it to flip to the comic version, or
   press the red button for narration.
 - **`<did-you-know>`** — five random Bible facts, reshuffled by the refresh
-  button. Tapping a reference opens that passage in a popup.
+  button. Tapping a reference opens that passage in a popup; holding a fact
+  bookmarks it.
+- **`<bible-sayings>`** — five everyday sayings that come from the Bible. Tap
+  one for the whole entry; hold one to bookmark it.
 - **`<bible-trivia>`** — a modal quiz that pops up once the page has loaded,
   asking which book a fact came from. Up to three a day, an hour apart.
 - **Reflection card**, footer with a QR code that enlarges on click, and a
@@ -39,11 +44,19 @@ documented in a header comment at the top of its file.
 
 | Element | File | Notes |
 | --- | --- | --- |
-| `<bible-search-results>` | `apps/components/bible-search-results.js` | Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. Holding a verse bookmarks it (up to 20 verse docids in `localStorage`); holding the search field opens them in the verse popup. |
-| `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. |
+| `<bible-search-results>` | `apps/components/bible-search-results.js` | Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. Holding a verse bookmarks it (up to 100 verse docids in `localStorage`); `showBookmarks(rows)` lists them. |
+| `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. Holding a fact bookmarks it (up to 50); with the `bookmarks` attribute it lists only those, with no banner. |
+| `<bible-sayings>` | `apps/components/bible-sayings.js` | Sayings from `assets/bible-sayings.json`; tapping one pops up the whole entry. Holding a saying bookmarks it (up to 50); `bookmarks` works as on `<did-you-know>`. |
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
 | `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
+
+The hold-to-bookmark gesture, glow and ribbon for facts and sayings live in
+`apps/components/card-bookmarks.js`, which also asks the browser to keep the
+bookmarks (persistent storage) the first time one is saved. The components
+import it with a `?v=` token; bump it in all three imports when it changes.
+The homepage's bookmarks popup (`#bookmarks-dialog`) holds a compact
+`<bible-search-results>` and a `bookmarks` copy of the other two.
 
 Components take a `media-base` attribute; `assets/scripts/script.js` passes the
 production host to each one on the homepage. Their built-in default is the

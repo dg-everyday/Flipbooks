@@ -9,22 +9,39 @@ const SQL_JS_BASE_URL = "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/";
 // Every database on the page shares one instance, so the wasm
 // runtime is only downloaded and started once. <did-you-know>
 // uses this too, for assets/db/didyouknow.db.
+//
+// sql.js is only needed once a database is opened (the first
+// search, the Did You Know card coming into view, the trivia
+// quiz), so its script is fetched then, not with the page.
 // ============================================================
+
+function loadSqlJsScript() {
+    if (typeof initSqlJs === "function") return Promise.resolve();
+
+    return new Promise(function (resolve, reject) {
+        const script = document.createElement("script");
+        script.src = SQL_JS_BASE_URL + "sql-wasm.js";
+        script.onload = function () {
+            resolve();
+        };
+        script.onerror = function () {
+            // Take the failed tag away so a retry adds a fresh one.
+            script.remove();
+            reject(new Error(`sql.js could not be loaded from ${script.src}`));
+        };
+        document.head.append(script);
+    });
+}
 
 function loadSqlJs() {
     if (sqlJsLoading) return sqlJsLoading;
 
-    // SQL.js must already be loaded by index.html
-    if (typeof initSqlJs !== "function") {
-        return Promise.reject(new Error(
-            "sql.js was not loaded. Check the sql-wasm.js script in index.html.",
-        ));
-    }
-
-    sqlJsLoading = initSqlJs({
-        locateFile: function (file) {
-            return SQL_JS_BASE_URL + file;
-        },
+    sqlJsLoading = loadSqlJsScript().then(function () {
+        return initSqlJs({
+            locateFile: function (file) {
+                return SQL_JS_BASE_URL + file;
+            },
+        });
     }).catch(function (error) {
         // Allow a later call to try again.
         sqlJsLoading = null;
@@ -36,13 +53,14 @@ function loadSqlJs() {
 
 async function initDatabase() {
 
-    const SQL = await loadSqlJs();
+    // Load sql.js and the database side by side
 
-    // Load database
-
-    const response = await fetch("assets/db/dailygrace.db", {
-        cache: "force-cache",
-    });
+    const [SQL, response] = await Promise.all([
+        loadSqlJs(),
+        fetch("assets/db/dailygrace.db", {
+            cache: "force-cache",
+        }),
+    ]);
 
     if (!response.ok) {
         throw new Error(`Unable to load dailygrace.db (${response.status})`);

@@ -78,6 +78,12 @@ const WIRE_OVERHANG = 28;   // how far it reaches past the page edge
 const STAGE_PAD = 3;        // .stage padding on every side but the left
 const RIGHT_GUTTER = 14;    // paper showing to the right of the page
 
+// Artwork is fetched for the pages around the one on show, not all at once,
+// so the first page is up as soon as its own image arrives and the rest
+// follow a few turns ahead of the reader.
+const LOAD_BEHIND = 2;
+const LOAD_AHEAD = 4;
+
 const PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
 const PAUSE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
 
@@ -88,7 +94,7 @@ const STYLES = /* css */ `
     --flipbook-future-paper: url('../../assets/images/specialty-paper.svg');
     --flipbook-end-paper: url('../../assets/images/end-paper.svg');
     --flipbook-wire: url('../../assets/images/wire-binding.svg?v=3');
-    --flipbook-logo: url('../../assets/images/dg-icon-02-flat.webp');
+    --flipbook-logo: url('../../assets/images/dg-icon-02-flat-256.webp');
 
 
     display: block;
@@ -550,11 +556,16 @@ export class Flipbook extends HTMLElement {
       }
 
       this.#buildPages();
-      // Hold the overlay until the artwork has decoded, so the first page does
-      // not flash in at the wrong size before #resetFit measures it.
-      await Promise.all([...this.#book.querySelectorAll('img')].map(img => new Promise(resolve => {
-        if (img.complete) resolve(); else { img.onload = resolve; img.onerror = resolve; }
-      })));
+      // Hold the overlay until the first page's artwork has arrived, so it does
+      // not flash in at the wrong size before #resetFit measures it. Page 0 is
+      // on show first in both modes, and has the connection to itself: the
+      // pages around it start once it is up (#render).
+      const first = this.#loadPage(0, 'high');
+      if (first) {
+        await new Promise(resolve => {
+          if (first.complete) resolve(); else { first.onload = resolve; first.onerror = resolve; }
+        });
+      }
       if (run !== this.#loadId) return;
 
       this.#loading.style.display = 'none';
@@ -760,9 +771,10 @@ export class Flipbook extends HTMLElement {
       }
 
       // A placeholder page still carries the image element so the two modes
-      // share one layout; .future-page just hides it behind the paper.
+      // share one layout; .future-page just hides it behind the paper, so its
+      // artwork is never fetched. The rest is fetched by #loadAround.
       const img = document.createElement('img');
-      if (entry.src) img.src = entry.src;
+      if (entry.src && !entry.placeholder) img.dataset.src = entry.src;
       img.alt = entry.alt || `Page ${i + 1}`;
       img.draggable = false;
       page.appendChild(img);
@@ -772,8 +784,32 @@ export class Flipbook extends HTMLElement {
     });
   }
 
+  // Starts page `index`'s artwork downloading, if it has any still to fetch,
+  // and returns its image once it has a source.
+  #loadPage(index, priority) {
+    const img = this.#book.children[index]?.querySelector('img');
+    if (img?.dataset.src) {
+      img.fetchPriority = priority;
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+    }
+    return img?.getAttribute('src') ? img : null;
+  }
+
+  // Starts the artwork downloading for the pages around `index`, the pages on
+  // show first. A spread shows two, so they are both on show.
+  #loadAround(index) {
+    const shown = this.#isSinglePage() ? 1 : 2;
+    const from = Math.max(0, index - LOAD_BEHIND);
+    const to = Math.min(this.#book.children.length - 1, index + LOAD_AHEAD);
+    for (let i = from; i <= to; i++) {
+      this.#loadPage(i, i >= index && i < index + shown ? 'high' : 'low');
+    }
+  }
+
   #render() {
     this.#current = this.#isSinglePage() ? Math.max(0, this.#current) : spreadStart(this.#current);
+    this.#loadAround(Math.max(0, this.#current));
     [...this.#book.children].forEach((page, i) => {
       page.hidden = i !== Math.max(0, this.#current);
       page.style.zIndex = '1';
@@ -810,7 +846,7 @@ export class Flipbook extends HTMLElement {
         return;
       }
       const img = document.createElement('img');
-      if (entry.src) img.src = entry.src;
+      if (entry.src && !entry.placeholder) img.src = entry.src;
       img.alt = entry.alt || `Page ${index + 1}`;
       img.draggable = false;
       wrap.appendChild(img);

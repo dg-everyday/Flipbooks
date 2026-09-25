@@ -412,6 +412,21 @@ const STYLES = /* css */ `
     background: rgb(0 27 52 / 60%);
     backdrop-filter: blur(3px);
   }
+  /* The page's popups share one scrollbar: a slim gold pill on a clear track,
+     held off the rounded corners, in place of the grey system bar that
+     squares off the right edge. Firefox has no ::-webkit-scrollbar, and
+     Chrome would drop these rules if it saw the standard properties. */
+  .explanation::-webkit-scrollbar { width: 10px; }
+  .explanation::-webkit-scrollbar-track { margin-block: 16px; background: transparent; }
+  .explanation::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background: rgb(198 146 46 / 40%) padding-box;
+  }
+  .explanation::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
+  @supports not selector(::-webkit-scrollbar) {
+    .explanation { scrollbar-width: thin; scrollbar-color: rgb(198 146 46 / 50%) transparent; }
+  }
   .explanation-card { position: relative; align-items: start; }
   .explanation-card .book-symbol { margin-top: 4px; }
   .explanation-card h2 { padding-right: 32px; }

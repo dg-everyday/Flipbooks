@@ -73,7 +73,7 @@ const THUMBNAIL_TRIM = 0.985;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const BANNER_URL = asset('../../assets/images/trivia.webp');
+const BANNER_URL = asset('../../assets/images/trivia-1440.webp');
 const DEFAULT_SRC = asset('../../assets/db/didyouknow.db');
 const CORRECT_SOUND = asset('../../assets/audio/correct.webm');
 const WRONG_SOUND = asset('../../assets/audio/wrong.webm');
@@ -159,6 +159,21 @@ const STYLES = /* css */ `
     background: var(--trivia-paper);
     color: var(--trivia-ink);
     box-shadow: 0 24px 60px rgb(0 27 52 / 45%);
+  }
+  /* The page's popups share one scrollbar: a slim gold pill on a clear track,
+     held off the rounded corners, in place of the grey system bar that
+     squares off the right edge. Firefox has no ::-webkit-scrollbar, and
+     Chrome would drop these rules if it saw the standard properties. */
+  dialog::-webkit-scrollbar { width: 10px; }
+  dialog::-webkit-scrollbar-track { margin-block: 14px; background: transparent; }
+  dialog::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background: rgb(198 146 46 / 40%) padding-box;
+  }
+  dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
+  @supports not selector(::-webkit-scrollbar) {
+    dialog { scrollbar-width: thin; scrollbar-color: rgb(198 146 46 / 50%) transparent; }
   }
   dialog::backdrop {
     background: rgb(0 27 52 / 62%);
@@ -283,7 +298,7 @@ export class BibleTrivia extends HTMLElement {
       <style>${STYLES}</style>
       <dialog aria-label="Did you know? Bible Trivia Quiz" tabindex="-1">
         <img class="banner" src="${BANNER_URL}" alt="Did you know? Bible Trivia Quiz"
-             width="2170" height="725" />
+             width="1440" height="481" loading="lazy" />
         <div class="content"><p class="message">Loading a question…</p></div>
       </dialog>`;
     this.#dialog = this.#root.querySelector('dialog');
@@ -385,6 +400,9 @@ export class BibleTrivia extends HTMLElement {
       }
     }
 
+    // The quiz is rarely shown, so its banner waits until now; start it while
+    // the question loads, so it is there when the quiz pops up.
+    this.#root.querySelector('.banner').loading = 'eager';
     const opening = (this.#opening = this.#readFact());
     let fact;
     try {

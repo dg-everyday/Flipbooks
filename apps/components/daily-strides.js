@@ -34,7 +34,7 @@ const TIME_ZONE = 'Asia/Manila';
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const EMBLEM_URL = asset('../../assets/images/dg-icon-02-flat.webp');
+const EMBLEM_URL = asset('../../assets/images/dg-icon-02-flat-256.webp');
 
 const STYLES = /* css */ `
   :host {

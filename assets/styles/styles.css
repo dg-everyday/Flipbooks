@@ -442,76 +442,107 @@ html:has(.splash-dialog[open]) { overflow: hidden; }
 .footer-help:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 
 .help-dialog {
-  width: min(560px, 92vw);
-  max-height: 88vh;
-  max-height: 88dvh;
+  width: min(580px, 94vw);
+  max-height: 90vh;
+  max-height: 90dvh;
   padding: 0;
   border: 0;
-  border-radius: 16px;
+  border-radius: 20px;
   background: var(--cream);
   color: var(--ink);
-  box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
+  box-shadow: 0 28px 70px rgb(0 27 52 / 45%);
   overflow: auto;
   overscroll-behavior: contain;
 }
 .help-dialog::backdrop {
-  background: rgb(0 27 52 / 60%);
-  backdrop-filter: blur(3px);
+  background: rgb(0 27 52 / 62%);
+  backdrop-filter: blur(4px);
 }
 html:has(.help-dialog[open]) { overflow: hidden; }
 .help-body {
-  padding: 0 22px 22px;
+  padding: 0 22px 30px;
   font-family: 'Roboto', Arial, sans-serif;
 }
-/* The title stays put while the list scrolls under it. */
+/* The title stays put while the list scrolls under it. It wears the About
+   page's colours: the emblem on the same lit paper, the name in Germania One. */
 .help-header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
   margin: 0 -22px;
-  padding: 16px 12px 12px 22px;
-  background: var(--cream);
+  padding: 16px 12px 14px 20px;
+  background:
+    radial-gradient(90% 140% at 30% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
   border-bottom: 1px solid rgb(198 146 46 / 45%);
+  box-shadow: 0 6px 12px -8px rgb(0 27 52 / 18%);
+}
+.help-emblem {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgb(198 146 46 / 35%));
+}
+.help-heading { flex: 1; min-width: 0; }
+.help-eyebrow {
+  margin: 0 0 3px;
+  color: #805b18;
+  font: 700 .625rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .24em;
+  text-transform: uppercase;
 }
 .help-header h2 {
   margin: 0;
   color: var(--navy);
-  font: 500 1.375rem/1.25 Georgia, 'Times New Roman', serif;
+  font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
 }
 .help-close {
   display: grid;
   flex: 0 0 auto;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: none;
+  background: rgb(243 231 210 / 82%);
   color: var(--navy);
+  box-shadow: 0 2px 10px rgb(0 27 52 / 18%);
   cursor: pointer;
+  transition: background-color .15s ease, transform .2s ease;
 }
-.help-close:hover { background: rgb(0 27 52 / 8%); }
+.help-close:hover { background: #fff; transform: rotate(90deg); }
 .help-close:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 .help-close svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
 }
 .help-body h3 {
-  margin: 20px 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 4px;
   color: #805b18;
   font-size: .75rem;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .14em;
   text-transform: uppercase;
+}
+/* A gold rule trailing each heading out to the edge, as on the About page. */
+.help-body h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgb(198 146 46 / 65%), transparent);
 }
 .help-list { margin: 0; padding: 0; list-style: none; }
 .help-list li {
@@ -558,10 +589,456 @@ html:has(.help-dialog[open]) { overflow: hidden; }
 }
 .help-icon.gold svg { fill: var(--gold-light); }
 .help-icon .help-fill { fill: currentColor; stroke: none; }
+.help-icon img { width: 26px; height: 26px; object-fit: contain; }
+
+/* About: the DG icon at the top opens the story of Daily Grace. The dialog
+   grows out of the icon; its sections rise into view as they are scrolled to,
+   and a gold line along the top fills as the reader works down the page. */
+.hero-about {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .25s cubic-bezier(.2, .9, .25, 1.2);
+}
+.hero-about:hover { transform: scale(1.06); }
+.hero-about:active { transform: scale(.94); }
+.hero-about:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+/* A soft gold ring that ripples out twice after load, to say "tap me". */
+.hero-about::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-dialog {
+  width: min(600px, 94vw);
+  max-height: 90vh;
+  max-height: 90dvh;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: 0 28px 70px rgb(0 27 52 / 45%);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.about-dialog::backdrop {
+  background: rgb(0 27 52 / 62%);
+  backdrop-filter: blur(4px);
+}
+html:has(.about-dialog[open]) { overflow: hidden; }
+/* The About and Help dialogs are read and scrolled, and share their edges.
+   A slim gold scrollbar on a clear track, held off the rounded corners, in
+   place of the grey system bar that squared off the dialog's right edge. The
+   thumb's transparent border leaves a thin pill floating inside the gutter. */
+.about-dialog::-webkit-scrollbar,
+.help-dialog::-webkit-scrollbar { width: 10px; }
+.about-dialog::-webkit-scrollbar-track,
+.help-dialog::-webkit-scrollbar-track { margin-block: 20px; background: transparent; }
+.about-dialog::-webkit-scrollbar-thumb,
+.help-dialog::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: rgb(198 146 46 / 40%) padding-box;
+}
+.about-dialog::-webkit-scrollbar-thumb:hover,
+.help-dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
+/* Firefox has no ::-webkit-scrollbar. Chrome would drop the rules above if it
+   saw these, so only browsers without them get the standard properties. */
+@supports not selector(::-webkit-scrollbar) {
+  .about-dialog,
+  .help-dialog {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(198 146 46 / 50%) transparent;
+  }
+}
+/* Text scrolling out of view fades into the paper a little short of the
+   rounded edge rather than running into it. The band sticks to the bottom and
+   its negative margin lays it over the closing padding, so it takes no room. */
+.about-dialog::after,
+.help-dialog::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  height: 30px;
+  margin-top: -30px;
+  background: linear-gradient(rgb(243 231 210 / 0%), var(--cream) 70%);
+  pointer-events: none;
+}
+
+/* A zero-height bar that sticks to the top while the story scrolls under it,
+   carrying the compact header, the reading progress line and the close button. */
+.about-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 0;
+}
+/* Once the big title has scrolled away, a compact one slides down in its
+   place, laid out like the Help header, and the story scrolls beneath it. */
+.about-mini {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 64px 14px 20px;
+  background:
+    radial-gradient(90% 140% at 30% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+  box-shadow: 0 6px 12px -8px rgb(0 27 52 / 18%);
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform .4s cubic-bezier(.22, 1, .36, 1), opacity .25s ease;
+  pointer-events: none;
+}
+.about-dialog.condensed .about-mini {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.about-mini-title {
+  margin: 0;
+  color: var(--navy);
+  font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+.about-progress {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(var(--read, 0));
+  transform-origin: left;
+}
+.about-close {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(243 231 210 / 82%);
+  color: var(--navy);
+  box-shadow: 0 2px 10px rgb(0 27 52 / 18%);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: background-color .15s ease, transform .2s ease;
+}
+.about-close:hover { background: #fff; transform: rotate(90deg); }
+.about-close:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.about-close svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.about-hero {
+  display: grid;
+  justify-items: center;
+  padding: 40px 24px 18px;
+  background:
+    radial-gradient(90% 70% at 50% 0%, #fffaf0 0%, transparent 70%),
+    linear-gradient(180deg, #f8efdd, var(--cream));
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+  text-align: center;
+}
+.about-hero img {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgb(198 146 46 / 35%));
+}
+.about-eyebrow {
+  margin: 14px 0 2px;
+  color: #805b18;
+  font: 700 .6875rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.about-hero h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 400 clamp(2.5rem, 2.1rem + 2vw, 3.25rem)/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+.about-tagline {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font: italic 1.0625rem/1.4 Georgia, 'Times New Roman', serif;
+}
+.about-scroll-hint {
+  width: 26px;
+  height: 26px;
+  margin-top: 16px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-body {
+  padding: 6px 26px 34px;
+  font: 1.0625rem/1.75 Georgia, 'Times New Roman', serif;
+}
+.about-body p { margin: 0 0 14px; }
+.about-body strong { color: var(--navy); }
+.about-section { padding-top: 26px; }
+.about-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 12px;
+  color: var(--navy);
+  font: 500 1.375rem/1.25 Georgia, 'Times New Roman', serif;
+}
+/* A gold rule trailing each heading out to the edge. */
+.about-section h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgb(198 146 46 / 65%), transparent);
+}
+.about-lead { font-size: 1.1875rem; line-height: 1.6; }
+.about-lead::first-letter {
+  float: left;
+  margin: 6px 10px 0 0;
+  color: var(--gold);
+  font: 400 3.9rem/.8 'Germania One', Georgia, serif;
+}
+
+/* The pocket Bible is the heart of the story, so it gets the navy card. */
+.about-pocket {
+  position: relative;
+  margin: 30px -6px 4px;
+  padding: 26px 22px 20px;
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgb(225 182 93 / 18%), transparent 60%),
+    var(--navy);
+  color: var(--cream);
+  box-shadow: 0 14px 30px rgb(0 27 52 / 28%);
+}
+.about-pocket h3 {
+  margin: 0 0 12px;
+  color: var(--gold-light);
+  font: 400 1.75rem/1.1 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+.about-pocket strong { color: var(--gold-light); }
+.about-pocket-icon {
+  position: absolute;
+  top: -20px;
+  right: 22px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 6px 14px rgb(0 0 0 / 30%);
+}
+.about-pocket-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Each point hangs from a gold bookmark ribbon. */
+.about-ribbons { margin: 4px 0 16px; padding: 0; list-style: none; }
+.about-ribbons li {
+  position: relative;
+  padding: 10px 0 10px 34px;
+}
+.about-ribbons li + li { border-top: 1px solid rgb(243 231 210 / 12%); }
+.about-ribbons li::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 4px;
+  width: 14px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+.about-ribbons strong { display: block; }
+.about-body .about-heirloom {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px dashed rgb(225 182 93 / 45%);
+  color: rgb(243 231 210 / 88%);
+  font-style: italic;
+}
+
+.about-list { margin: 0; padding: 0; list-style: none; }
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 0;
+}
+.about-list li + li { border-top: 1px solid rgb(0 27 52 / 8%); }
+.about-list p { margin: 0; }
+.about-list .help-icon { margin-top: 2px; }
+
+.about-steps {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.about-steps li {
+  position: relative;
+  margin-bottom: 18px;
+  padding-left: 52px;
+  counter-increment: step;
+}
+.about-steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  background: #fff;
+  color: #805b18;
+  font: 400 1.125rem/1 Georgia, 'Times New Roman', serif;
+}
+.about-steps strong { display: block; }
+
+.about-verse {
+  position: relative;
+  margin: 40px 0 8px;
+  padding: 30px 12px 22px;
+  border-block: 1px solid rgb(198 146 46 / 55%);
+  text-align: center;
+}
+.about-verse::before {
+  content: "\201C";
+  position: absolute;
+  top: -.55em;
+  left: 50%;
+  padding: 0 12px;
+  background: var(--cream);
+  color: var(--gold);
+  font: 4rem/1 Georgia, 'Times New Roman', serif;
+  transform: translateX(-50%);
+}
+.about-verse p {
+  margin: 0;
+  color: var(--navy);
+  font: italic 1.4375rem/1.45 Georgia, 'Times New Roman', serif;
+}
+.about-verse cite {
+  display: block;
+  margin-top: 12px;
+  color: #805b18;
+  font: normal 700 .75rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.about-closing { text-align: center; }
+.about-closing h3::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(270deg, rgb(198 146 46 / 65%), transparent);
+}
+.about-body .about-welcome {
+  text-wrap: balance;
+  margin: 20px 0 22px;
+  color: var(--gold);
+  font: 400 2.125rem/1.1 'Germania One', Georgia, serif;
+}
+.about-begin {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--gold-light);
+  box-shadow: 0 8px 18px rgb(0 27 52 / 28%);
+  font: 600 .9375rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.about-begin span { transition: transform .2s ease; }
+.about-begin:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgb(0 27 52 / 32%); }
+.about-begin:hover span { transform: translateX(4px); }
+.about-begin:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-about::after { animation: about-beckon 2.2s ease-out 1.6s 2; }
+  /* The title block settles in, one line after another, as the dialog opens. */
+  .about-dialog[open] .about-hero > * {
+    animation: about-rise .8s cubic-bezier(.22, 1, .36, 1) both;
+  }
+  .about-dialog[open] .about-hero > :nth-child(1) { animation-delay: .18s; }
+  .about-dialog[open] .about-hero > :nth-child(2) { animation-delay: .28s; }
+  .about-dialog[open] .about-hero > :nth-child(3) { animation-delay: .36s; }
+  .about-dialog[open] .about-hero > :nth-child(4) { animation-delay: .46s; }
+  .about-dialog[open] .about-hero > .about-scroll-hint {
+    animation: about-rise .8s cubic-bezier(.22, 1, .36, 1) .7s both,
+      about-bob 2.4s ease-in-out 1.5s infinite;
+  }
+  /* The script adds .revealing; without it every section simply shows. */
+  .about-dialog.revealing .about-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.22, 1, .36, 1);
+  }
+  .about-dialog.revealing .about-reveal.is-visible { opacity: 1; transform: none; }
+}
+@keyframes about-beckon {
+  from { box-shadow: 0 0 0 0 rgb(198 146 46 / 55%); }
+  to { box-shadow: 0 0 0 12px rgb(198 146 46 / 0%); }
+}
+@keyframes about-rise {
+  from { opacity: 0; transform: translateY(14px); }
+}
+@keyframes about-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
   .footer-help { transition: none; }
+  .hero-about, .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
 }
 .footer-qr figcaption {
   color: var(--navy);
@@ -645,6 +1122,8 @@ html:has(.help-dialog[open]) { overflow: hidden; }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }
   .footer-help { top: 14px; right: 13px; }
+  .about-body { padding-inline: 20px; }
+  .about-hero { padding-top: 34px; }
   .footer-bottom { flex-direction: column; justify-content: center; padding: 8px 20px 24px; text-align: center; }
   .footer-sign { align-items: center; }
   .footer-social { margin-right: 0; }

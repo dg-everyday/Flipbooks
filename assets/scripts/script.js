@@ -251,25 +251,26 @@ const qrDialog = document.getElementById("qr-dialog");
 const qrOpen = document.getElementById("qr-open");
 let qrClosing = false;
 
-function qrThumbTransform() {
-    const from = qrOpen.getBoundingClientRect();
-    const to = qrDialog.getBoundingClientRect();
+function thumbTransform(thumb, dialog) {
+    const from = thumb.getBoundingClientRect();
+    const to = dialog.getBoundingClientRect();
     const dx = from.left + from.width / 2 - (to.left + to.width / 2);
     const dy = from.top + from.height / 2 - (to.top + to.height / 2);
     return `translate(${dx}px, ${dy}px) scale(${from.width / to.width})`;
 }
 
-function animateQr(direction) {
+// Grows a dialog out of the small control that opened it, or shrinks it back in.
+function growDialog(thumb, dialog, direction, { open = 380, close = 240 } = {}) {
     const opening = direction === "open";
     const options = {
-        duration: opening ? 380 : 240,
+        duration: opening ? open : close,
         easing: opening ? "cubic-bezier(.2, .9, .25, 1)" : "cubic-bezier(.4, 0, 1, 1)",
         fill: "forwards",
     };
-    const shrunk = { transform: qrThumbTransform(), opacity: 0 };
+    const shrunk = { transform: thumbTransform(thumb, dialog), opacity: 0 };
     const full = { transform: "none", opacity: 1 };
-    qrDialog.animate(opening ? [shrunk, full] : [full, shrunk], options);
-    const backdrop = qrDialog.animate(
+    dialog.animate(opening ? [shrunk, full] : [full, shrunk], options);
+    const backdrop = dialog.animate(
         opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
         { ...options, easing: "ease", pseudoElement: "::backdrop" },
     );
@@ -284,13 +285,13 @@ qrOpen.addEventListener("click", () => {
     if (qrDialog.open) return;
     qrShownAt = Date.now();
     qrDialog.showModal();
-    if (!reducedMotionQuery.matches) animateQr("open");
+    if (!reducedMotionQuery.matches) growDialog(qrOpen, qrDialog, "open");
 });
 
 async function closeQr() {
     if (!qrDialog.open || qrClosing) return;
     qrClosing = true;
-    if (!reducedMotionQuery.matches) await animateQr("close");
+    if (!reducedMotionQuery.matches) await growDialog(qrOpen, qrDialog, "close");
     qrDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     qrDialog.close();
     qrClosing = false;
@@ -692,4 +693,81 @@ helpClose.addEventListener("click", closeHelp);
 // contents came from the backdrop.
 helpDialog.addEventListener("click", (event) => {
     if (event.target === helpDialog) closeHelp();
+});
+
+// About: the DG icon at the top opens the story of Daily Grace. It grows out of
+// the icon and shrinks back into it. Each section rises into view as it is
+// scrolled to, the gold line along the top fills as the reader goes, and a
+// compact header takes over from the big title, as the Help header does.
+const aboutDialog = document.getElementById("about-dialog");
+const aboutOpen = document.getElementById("about-open");
+const aboutClose = document.getElementById("about-close");
+const aboutBegin = document.getElementById("about-begin");
+const aboutSections = aboutDialog.querySelectorAll(".about-reveal");
+const ABOUT_TIMING = { open: 560, close: 300 };
+let aboutClosing = false;
+
+const aboutObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        aboutObserver.unobserve(entry.target);
+    }
+}, { root: aboutDialog, rootMargin: "0px 0px -10% 0px" });
+
+const aboutTitle = document.getElementById("about-title");
+const aboutMini = aboutDialog.querySelector(".about-mini");
+
+// Fills the progress line, and swaps in the compact header once the big
+// title has slid up under where it sits.
+function updateAboutScroll() {
+    const { scrollTop, scrollHeight, clientHeight } = aboutDialog;
+    const scrollable = scrollHeight - clientHeight;
+    const read = scrollable > 0 ? scrollTop / scrollable : 1;
+    aboutDialog.style.setProperty("--read", Math.min(1, read).toFixed(3));
+    const titleGone = aboutTitle.offsetTop + aboutTitle.offsetHeight - aboutMini.offsetHeight;
+    aboutDialog.classList.toggle("condensed", scrollTop > titleGone);
+}
+
+aboutOpen.addEventListener("click", () => {
+    if (aboutDialog.open) return;
+    aboutDialog.showModal();
+    aboutDialog.scrollTop = 0;
+    updateAboutScroll();
+    const animate = !reducedMotionQuery.matches;
+    // Hide the sections afresh each time, so the story unfolds again on every visit.
+    aboutDialog.classList.toggle("revealing", animate);
+    for (const section of aboutSections) {
+        section.classList.remove("is-visible");
+        if (animate) aboutObserver.observe(section);
+    }
+    if (animate) growDialog(aboutOpen, aboutDialog, "open", ABOUT_TIMING);
+});
+
+async function closeAbout() {
+    if (!aboutDialog.open || aboutClosing) return;
+    aboutClosing = true;
+    if (!reducedMotionQuery.matches) await growDialog(aboutOpen, aboutDialog, "close", ABOUT_TIMING);
+    aboutDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    aboutObserver.disconnect();
+    aboutDialog.close();
+    aboutClosing = false;
+}
+
+aboutDialog.addEventListener("scroll", updateAboutScroll, { passive: true });
+// Escape would close instantly; route it through the closing animation instead.
+aboutDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeAbout();
+});
+aboutClose.addEventListener("click", closeAbout);
+// The dialog has no padding, so a click that lands on it rather than its
+// contents came from the backdrop.
+aboutDialog.addEventListener("click", (event) => {
+    if (event.target === aboutDialog) closeAbout();
+});
+// The closing call to action: fold the story away and take the reader to today.
+aboutBegin.addEventListener("click", async () => {
+    await closeAbout();
+    document.getElementById("daily-devotional").scrollIntoView({ behavior: "smooth" });
 });

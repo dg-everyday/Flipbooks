@@ -65,7 +65,7 @@ import { registerFonts } from '../../assets/scripts/fonts.js';
 import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
-} from './card-bookmarks.js?v=20260925-1';
+} from './card-bookmarks.js?v=20260927-1';
 import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.

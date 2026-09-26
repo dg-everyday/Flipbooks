@@ -210,14 +210,6 @@ a:focus-visible { text-decoration: underline; }
 button:focus-visible { filter: brightness(1.2); }
 .hero-search:focus-within { background: #e0eaf1; }
 .hero-search input:focus { outline: none; box-shadow: none; }
-/* Holding the search field opens the bookmarks: the pill glows gold as the
-   half-second hold builds (the timing lives in assets/scripts/script.js). */
-.hero-search { transition: box-shadow .25s ease; }
-.hero-search input { -webkit-touch-callout: none; }
-.hero-search.holding {
-  box-shadow: 0 0 0 3px rgb(168 129 12 / 60%), 0 0 22px 6px rgb(214 170 40 / 55%);
-  transition: box-shadow .5s cubic-bezier(.25, .7, .35, 1);
-}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -348,7 +340,7 @@ html:has(.verse-dialog[open]) { overflow: hidden; }
    of :has(), so the panel flags itself while the popup is open. */
 html:has(bible-search-results[explaining]) { overflow: hidden; }
 
-/* Bookmarks: holding the search field opens every bookmark, one kind at a
+/* Bookmarks: holding the DG emblem opens every bookmark, one kind at a
    time: verses, "Did you know?" facts and sayings, picked with the segmented
    switch. The title and the switch stay put while the list scrolls under
    them. The dialog has no padding, so a click on it is a click on the
@@ -656,8 +648,20 @@ html:has(.help-dialog[open]) { overflow: hidden; }
   background: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  /* Holding the emblem opens the bookmarks: keep the phone's image menu and
+     text selection out of the way. */
+  -webkit-touch-callout: none;
+  user-select: none;
+  transition: box-shadow .25s ease;
 }
 .hero-about:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.hero-about img { -webkit-user-drag: none; }
+/* It glows gold as the half-second hold builds (the timing lives in
+   assets/scripts/script.js). */
+.hero-about.holding {
+  box-shadow: 0 0 0 3px rgb(168 129 12 / 60%), 0 0 22px 6px rgb(214 170 40 / 55%);
+  transition: box-shadow .5s cubic-bezier(.25, .7, .35, 1);
+}
 
 .about-dialog {
   width: min(600px, 94vw);

@@ -67,7 +67,7 @@
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
-import { bookmarkNote, keepBookmarks } from './card-bookmarks.js?v=20260925-1';
+import { bookmarkNote, keepBookmarks } from './card-bookmarks.js?v=20260927-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };

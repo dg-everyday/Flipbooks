@@ -7,7 +7,7 @@
  * removes the bookmark. Each kind of card keeps its ids in localStorage,
  * newest first, under its own key and up to its own limit, shared by every
  * instance on the page and kept in step across tabs. The page lists them all,
- * with the bookmarked verses, in the popup that holding the search field opens.
+ * with the bookmarked verses, in the popup that holding the DG emblem opens.
  *
  * Usage (inside a component)
  *   const bookmarks = bookmarkStore('dailygrace:bookmarks:facts',
@@ -38,7 +38,7 @@ export function bookmarkNote(result, limit) {
     added: 'Bookmarked',
     removed: 'Bookmark removed',
     // Say how to make room, since the list to tidy is somewhere else.
-    full: `Bookmarks full (${limit}). Hold the search box to remove some.`,
+    full: `Bookmarks full (${limit}). Hold the DG emblem to remove some.`,
     failed: 'Bookmark not saved',
   }[result];
 }

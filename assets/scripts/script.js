@@ -511,7 +511,7 @@ async function showVerse(reference) {
 }
 
 // Bookmarks: holding a verse, a fact or a saying saves it (each component keeps
-// its own list), and holding the search field opens them all in the bookmarks
+// its own list), and holding the DG emblem opens them all in the bookmarks
 // popup, one kind at a time under a segmented switch. Unlike the verse popup
 // it is browsed, so a tap inside it does not close it: only the close button,
 // the backdrop or Escape do.
@@ -621,57 +621,6 @@ bookmarksDialog.addEventListener("click", (event) => {
     if (event.target === bookmarksDialog) closeBookmarks();
 });
 
-// The same half-second hold the verse cards use, with the search pill glowing
-// gold while it builds.
-const HOLD_MS = 500;
-const HOLD_SLOP = 10;
-let searchHold = null;
-// The hold ends with the finger lifting, and the click that follows would
-// land on the popup that has just opened and close it again.
-let swallowClick = false;
-
-function cancelSearchHold() {
-    if (!searchHold) return;
-    clearTimeout(searchHold.timer);
-    searchHold = null;
-    searchForm.classList.remove("holding");
-}
-
-searchQuery.addEventListener("pointerdown", (event) => {
-    if (!event.isPrimary || event.button !== 0) return;
-    cancelSearchHold();
-    searchForm.classList.add("holding");
-    searchHold = {
-        x: event.clientX,
-        y: event.clientY,
-        timer: setTimeout(() => {
-            cancelSearchHold();
-            swallowClick = true;
-            navigator.vibrate?.(15);
-            showBookmarks();
-        }, HOLD_MS),
-    };
-});
-searchQuery.addEventListener("pointermove", (event) => {
-    if (searchHold && Math.hypot(event.clientX - searchHold.x, event.clientY - searchHold.y) > HOLD_SLOP) {
-        cancelSearchHold();
-    }
-});
-for (const type of ["pointerup", "pointercancel", "pointerleave"]) {
-    searchQuery.addEventListener(type, cancelSearchHold);
-}
-// A long press would otherwise open the phone's paste menu.
-searchQuery.addEventListener("contextmenu", (event) => {
-    if (searchHold || swallowClick) event.preventDefault();
-});
-addEventListener("pointerdown", () => { swallowClick = false; }, true);
-addEventListener("click", (event) => {
-    if (!swallowClick) return;
-    swallowClick = false;
-    event.preventDefault();
-    event.stopPropagation();
-}, true);
-
 async function closeVerse() {
     if (!verseDialog.open || verseClosing) return;
     verseClosing = true;
@@ -743,7 +692,8 @@ helpDialog.addEventListener("click", (event) => {
 // scrolled to, the gold line along the top fills as the reader goes, and a
 // compact header takes over from the big title, as the Help header does.
 const aboutDialog = document.getElementById("about-dialog");
-// The DG emblem: it opens the menu, and the About story grows out of it.
+// The DG emblem: a tap opens the menu, a hold opens the bookmarks, and the
+// About story grows out of it.
 const dgButton = document.getElementById("menu-open");
 const aboutClose = document.getElementById("about-close");
 const aboutBegin = document.getElementById("about-begin");
@@ -959,6 +909,60 @@ dgButton.addEventListener("click", (event) => {
     menuOpenedByKeyboard = event.detail === 0;
     openMenu();
 });
+
+// Holding the DG emblem for half a second opens the bookmarks instead of the
+// menu: the same half-second hold the verse cards use, with the emblem glowing
+// gold while it builds. (This used to be on the search field, but a long press
+// there belongs to the phone's own menu, so a verse copied elsewhere can be
+// pasted in.)
+const HOLD_MS = 500;
+const HOLD_SLOP = 10;
+let dgHold = null;
+// The hold ends with the finger lifting, and the click that follows would open
+// the menu, or land on the bookmarks popup that has just opened and close it.
+let swallowClick = false;
+
+function cancelDgHold() {
+    if (!dgHold) return;
+    clearTimeout(dgHold.timer);
+    dgHold = null;
+    dgButton.classList.remove("holding");
+}
+
+dgButton.addEventListener("pointerdown", (event) => {
+    if (!event.isPrimary || event.button !== 0) return;
+    cancelDgHold();
+    dgButton.classList.add("holding");
+    dgHold = {
+        x: event.clientX,
+        y: event.clientY,
+        timer: setTimeout(() => {
+            cancelDgHold();
+            swallowClick = true;
+            navigator.vibrate?.(15);
+            showBookmarks();
+        }, HOLD_MS),
+    };
+});
+dgButton.addEventListener("pointermove", (event) => {
+    if (dgHold && Math.hypot(event.clientX - dgHold.x, event.clientY - dgHold.y) > HOLD_SLOP) {
+        cancelDgHold();
+    }
+});
+for (const type of ["pointerup", "pointercancel", "pointerleave"]) {
+    dgButton.addEventListener(type, cancelDgHold);
+}
+// A long press would otherwise open the phone's menu for the emblem's image.
+dgButton.addEventListener("contextmenu", (event) => {
+    if (dgHold || swallowClick) event.preventDefault();
+});
+addEventListener("pointerdown", () => { swallowClick = false; }, true);
+addEventListener("click", (event) => {
+    if (!swallowClick) return;
+    swallowClick = false;
+    event.preventDefault();
+    event.stopPropagation();
+}, true);
 // Escape would close instantly; route it through the closing animation instead.
 menuDialog.addEventListener("cancel", (event) => {
     event.preventDefault();

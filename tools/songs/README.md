@@ -28,14 +28,15 @@ Quotes in the text are not affected, as long as the quoted words themselves are 
 
 ## How many songs are in the Bible?
 
-The page's introduction says: "By one count the Bible records at least 185 songs, 150 of them
-in the Psalms. Here are 53 of the best known." (The 53 comes from the data, so it stays right
-as songs are added.) This is a selection, not a complete list. Here is where the figure comes
-from, checked on 27 September 2026.
+The page's introduction says only: "Here are 53 of the best known." (The 53 comes from the
+data, so it stays right as songs are added.) It is a selection, not a complete list, and the
+page deliberately gives no total for the whole Bible.
 
-A red **Caveats** pill after that sentence opens a short version of these notes for readers,
-in place under the introduction (`caveats` in `apps/pages/scripts/songs-in-the-bible.js`).
-If the notes here change, change that text too.
+A total is often quoted: "at least 185 songs, 150 of them in the Psalms". An earlier version of
+the page said this, with a Caveats pill explaining the count, and both were taken out: the
+figure is an estimate that needs too many caveats to state in one line. The notes below,
+checked on 27 September 2026, are kept so the question does not have to be researched again.
+If a total ever goes back on the page, say "by one count" and name the source.
 
 **Source.** The figure comes from OverviewBible's infographic
 [All the songs in the Bible](https://overviewbible.com/bible-songs/), which other sites

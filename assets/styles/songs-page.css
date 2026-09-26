@@ -12,31 +12,6 @@
 
 .chip-rows { display: grid; gap: 8px; }
 
-/* ---------------------------------------------------------------- the count and its caveats */
-
-.caveats-pill {
-  display: inline-block; vertical-align: 2px;
-  margin-left: 4px; padding: 2px 9px;
-  border: 0; border-radius: 6px;
-  background: #b3261e; color: #fff;
-  font: 700 .78rem/1.5 var(--body); letter-spacing: .03em;
-  cursor: pointer;
-  transition: background-color .15s ease;
-}
-.caveats-pill:hover { background: #cf3328; }
-.caveats-pill[aria-expanded="true"] { background: #fff; color: #b3261e; }
-
-.count-caveats {
-  max-width: 62ch; margin: 12px 0 4px; padding: 14px 18px;
-  border-radius: 12px; border-left: 4px solid #b3261e;
-  background: rgb(255 255 255 / 7%);
-  color: rgb(243 231 210 / 90%);
-}
-.count-caveats h2 { margin: 0 0 8px; font-size: 1.3rem; color: var(--gold-light); }
-.count-caveats ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: .95rem; line-height: 1.5; }
-.count-caveats strong { color: #fff; }
-.count-caveats a { color: var(--gold-light); }
-
 /* ---------------------------------------------------------------- sections */
 
 .group-section { margin-top: 18px; padding-top: 0; overflow: hidden; }
@@ -156,6 +131,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sg-tile, .caveats-pill { transition: none; }
+  .sg-tile { transition: none; }
   .sg-tile:hover { transform: none; }
 }

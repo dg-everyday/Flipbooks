@@ -41,7 +41,7 @@ const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const TIME_ZONE = 'Asia/Manila';
 
-// The same half-second hold the verse cards and the search field use.
+// The same half-second hold the verse cards and the DG emblem use.
 const HOLD_MS = 500;
 const HOLD_SLOP = 10;
 const COPY_NOTES = { copied: 'Link copied', failed: "Couldn't copy the link" };

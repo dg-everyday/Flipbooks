@@ -74,7 +74,7 @@ import { registerFonts } from '../../assets/scripts/fonts.js';
 import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
-} from './card-bookmarks.js?v=20260925-1';
+} from './card-bookmarks.js?v=20260927-1';
 import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
 
 // The thumbnails are .webp on the media host; .svg is not published.

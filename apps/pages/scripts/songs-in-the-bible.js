@@ -252,40 +252,6 @@ export async function start(view) {
     apply();
   });
 
-  // The "Caveats" pill after the song count opens a note on how the 185 is
-  // counted, in place under the introduction. The same notes, with sources,
-  // are in tools/songs/README.md; keep the two in step.
-  const note = (title, ...text) => h('li', {}, h('strong', {}, title), ' ', text);
-  const caveats = h('div', { class: 'count-caveats', id: 'count-caveats', hidden: true },
-    h('h2', {}, 'About the count'),
-    h('ul', {},
-      note('It is one count.',
-        'The figure comes from OverviewBible\'s ',
-        h('a', { href: 'https://overviewbible.com/bible-songs/', target: '_blank', rel: 'noopener' },
-          'All the songs in the Bible'),
-        ': the 150 psalms, 6 songs in the Song of Solomon and Lamentations, and about 35 more ' +
-        'songs, chants, laments and hymns elsewhere in the Bible. It is one website\'s count, not ' +
-        'an official figure.'),
-      note('The 150 psalms are solid.',
-        'Protestant and Catholic Bibles have 150 psalms; Orthodox Bibles add a Psalm 151. A few ' +
-        'are headed “A Prayer”, and a few repeat others (Psalm 18 is 2 Samuel 22, and Psalm 53 ' +
-        'nearly repeats Psalm 14). But the Psalms were Israel\'s hymnbook, so counting all 150 as ' +
-        'songs is fair.'),
-      note('It depends on what counts as a song.',
-        'Is Lamentations one song or five? Is Lamech\'s boast in Genesis 4 a song? Is each ' +
-        'chorus in Revelation a song of its own? Different answers give anywhere from about 175 ' +
-        'to over 200.'),
-      note('Only songs whose words survive.',
-        'The Bible mentions many more songs than it records. Solomon alone wrote 1,005 ' +
-        '(1 Kings 4:32), and the book of Jasher and Jeremiah\'s laments for Josiah are lost.')));
-  const caveatsPill = h('button', {
-    type: 'button', class: 'caveats-pill', 'aria-expanded': 'false', 'aria-controls': 'count-caveats',
-    onclick: () => {
-      caveats.hidden = !caveats.hidden;
-      caveatsPill.setAttribute('aria-expanded', String(!caveats.hidden));
-    }
-  }, 'Caveats');
-
   const count = h('p', { class: 'result-count', 'aria-live': 'polite' });
   const empty = h('p', { class: 'status', hidden: true }, 'No song matches that search.');
 
@@ -310,12 +276,9 @@ export async function start(view) {
         'victory, worship and grief, the psalms they loved, and the hymns of the first ' +
         'Christians. Read the words, the story behind each song, and why it still matters. ' +
         'Tap any one to read it.'),
-      // How the 185 is counted, and why it is "by one count": tools/songs/README.md.
-      h('p', { class: 'lede' },
-        `By one count the Bible records at least 185 songs, 150 of them in the Psalms. ` +
-        `Here are ${t.entries} of the best known. `,
-        caveatsPill),
-      caveats,
+      // A selection, not every song: see "How many songs are in the Bible?" in
+      // tools/songs/README.md before adding a total here.
+      h('p', { class: 'lede' }, `Here are ${t.entries} of the best known.`),
       h('ul', { class: 'stats' },
         h('li', {}, h('b', {}, t.entries), 'songs'),
         h('li', {}, h('b', {}, t.old), 'Old Testament'),

@@ -1,0 +1,115 @@
+/* Styles for apps/pages/supernaturals.html, on top of study-page.css,
+   which holds the palette, topbar, hero, chips and the in-place .row-panel. */
+
+/* One colour per group; --g colours everything inside. */
+.g-nature  { --g: #2f5d8a; --g-soft: rgb(47 93 138 / 12%); }
+.g-plenty  { --g: #a8761a; --g-soft: rgb(168 118 26 / 13%); }
+.g-healing { --g: #2e7d6b; --g-soft: rgb(46 125 107 / 12%); }
+.g-raised  { --g: #6b4c9a; --g-soft: rgb(107 76 154 / 12%); }
+.g-demons  { --g: #9b2335; --g-soft: rgb(155 35 53 / 11%); }
+.g-magic   { --g: #4a4f57; --g-soft: rgb(74 79 87 / 12%); }
+.g-signs   { --g: #b5651d; --g-soft: rgb(181 101 29 / 12%); }
+
+.chip-rows { display: grid; gap: 8px; }
+
+/* ---------------------------------------------------------------- sections */
+
+.group-section { margin-top: 18px; padding-top: 0; overflow: hidden; }
+.group-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 16px;
+  margin: 0 -20px 18px; padding: 16px 20px 14px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
+    linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
+}
+.group-head h2 {
+  display: flex; align-items: center; gap: 10px;
+  font: 400 clamp(1.7rem, 1.4rem + 1.3vw, 2.3rem)/1.05 var(--display);
+}
+.group-icon { display: grid; flex: 0 0 auto; width: 30px; height: 30px; }
+.group-icon svg { width: 100%; height: 100%; }
+.group-count {
+  margin: 0; min-width: 34px; padding: 2px 10px; border-radius: 999px;
+  font-weight: 700; font-size: .9rem; text-align: center;
+  background: rgb(255 255 255 / 18%);
+}
+.group-intro { grid-column: 1 / -1; margin: 6px 0 0; max-width: 75ch; font-size: .96rem; opacity: .95; }
+
+/* ---------------------------------------------------------------- cards */
+
+.sn-grid {
+  position: relative;                 /* tiles' offsetLeft/Top are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.sn-tile {
+  display: flex; align-items: flex-start; gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--g);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.sn-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+.sn-mark {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  color: var(--g); background: var(--g-soft);
+  border: 1.5px solid var(--g);
+}
+.sn-mark svg { width: 24px; height: 24px; }
+.sn-text { display: grid; gap: 1px; min-width: 0; }
+.sn-name { font: 400 1.25rem/1.1 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.sn-epithet { font-size: .88rem; color: var(--ink); }
+.sn-meta { font-size: .74rem; color: var(--muted); margin-top: 2px; }
+
+.sn-tile.is-open { background: var(--g); border-color: var(--g); color: #fff; box-shadow: 0 8px 18px rgb(16 37 59 / 18%); }
+.sn-tile.is-open .sn-name,
+.sn-tile.is-open .sn-epithet,
+.sn-tile.is-open .sn-meta { color: #fff; }
+.sn-tile.is-open .sn-mark { color: var(--g); background: #fff; border-color: #fff; }
+
+/* ---------------------------------------------------------------- open card */
+
+.lesson { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); font-weight: 500; }
+
+.sn-people { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 2px 0 0; padding: 0; list-style: none; }
+.sn-people a, .sn-people span {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: .86rem; line-height: 1.5;
+  color: var(--navy-2); background: #fff; border: 1px solid var(--line);
+}
+.sn-people a { font-weight: 600; text-decoration: none; border-color: color-mix(in srgb, var(--g) 45%, transparent); }
+.sn-people a:hover { border-color: var(--g); color: var(--g); }
+
+.accounts-note { margin: 6px 0 0; font-size: .8rem; color: var(--muted); }
+
+.book-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.book-links a {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: .84rem; font-weight: 600; text-decoration: none;
+  color: var(--navy-2); background: #fff; border: 1px solid var(--line);
+}
+.book-links a:hover { border-color: var(--g); }
+
+.row-panel .verse { border-left-color: var(--g); }
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .group-head { margin: 0 -16px 14px; padding: 14px 16px; }
+  .sn-grid { grid-template-columns: 1fr; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sn-tile { transition: none; }
+  .sn-tile:hover { transform: none; }
+}

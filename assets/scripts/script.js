@@ -818,10 +818,14 @@ aboutBegin.addEventListener("click", async () => {
 
 // Menu: the DG emblem opens a drawer that slides in from the left, with the
 // study pages (Books and Peoples of the Bible) at the top and Help and About
-// at the foot. It has no close button: a tap on the page beside it, or
-// Escape, closes it.
+// at the foot. It has no close button: a swipe to the left, a tap on the page
+// beside it, or Escape closes it.
 const menuDialog = document.getElementById("site-menu");
 let menuClosing = false;
+// Closing the menu hands focus back to the DG emblem, and Chrome then draws its
+// focus ring. Keep the ring only when the menu was opened from the keyboard; a
+// menu opened by a click or tap leaves no ring, however it is closed.
+let menuOpenedByKeyboard = false;
 
 function drawerDialog(dialog, direction) {
     const opening = direction === "open";
@@ -851,13 +855,110 @@ async function closeMenu() {
     if (!menuDialog.open || menuClosing) return;
     menuClosing = true;
     if (!reducedMotionQuery.matches) await drawerDialog(menuDialog, "close");
+    finishCloseMenu();
+}
+
+function finishCloseMenu() {
     menuDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     menuDialog.close();
+    if (!menuOpenedByKeyboard) dgButton.blur();
     dgButton.setAttribute("aria-expanded", "false");
     menuClosing = false;
 }
 
-dgButton.addEventListener("click", openMenu);
+// Swipe left to close: once a touch moves mostly leftward, the drawer and its
+// backdrop follow the finger. On release it slides the rest of the way out if
+// it was dragged past a third of its width or flicked, and springs back
+// otherwise. Vertical moves are left to the browser so the menu still scrolls.
+const MENU_SWIPE_SLOP = 10;          // px before a touch counts as a swipe
+const MENU_SWIPE_DISTANCE = 1 / 3;   // of the drawer's width
+const MENU_SWIPE_FLICK = 0.5;        // px/ms leftward
+const MENU_SWIPE_SETTLE = 240;       // ms for a full width, as in drawerDialog
+let menuSwipe = null;
+let menuSwipeSwallowClick = false;
+
+function scrubMenu(keyframes, pseudoElement) {
+    const animation = menuDialog.animate(keyframes, {
+        duration: 1000, easing: "linear", fill: "forwards", pseudoElement,
+    });
+    animation.pause();
+    return animation;
+}
+
+menuDialog.addEventListener("pointerdown", (event) => {
+    menuSwipeSwallowClick = false;
+    if (event.pointerType === "mouse" || !event.isPrimary || menuClosing) return;
+    menuSwipe = { id: event.pointerId, x: event.clientX, y: event.clientY, dx: 0, t: event.timeStamp, v: 0 };
+});
+
+menuDialog.addEventListener("pointermove", (event) => {
+    const swipe = menuSwipe;
+    if (!swipe || event.pointerId !== swipe.id) return;
+    const dx = event.clientX - swipe.x;
+    const dy = event.clientY - swipe.y;
+    if (!swipe.animations) {
+        if (Math.abs(dx) < MENU_SWIPE_SLOP && Math.abs(dy) < MENU_SWIPE_SLOP) return;
+        if (dx >= 0 || Math.abs(dy) >= Math.abs(dx)) {
+            menuSwipe = null;
+            return;
+        }
+        menuDialog.setPointerCapture(swipe.id);
+        // The opening animation holds its end state; replace it with ones the
+        // finger can scrub.
+        menuDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+        swipe.width = menuDialog.getBoundingClientRect().width;
+        swipe.animations = [
+            scrubMenu([{ transform: "none" }, { transform: "translateX(-100%)" }]),
+            scrubMenu([{ opacity: 1 }, { opacity: 0 }], "::backdrop"),
+        ];
+    }
+    const elapsed = event.timeStamp - swipe.t;
+    if (elapsed > 0) swipe.v = (dx - swipe.dx) / elapsed;
+    swipe.dx = dx;
+    swipe.t = event.timeStamp;
+    const progress = Math.min(1, Math.max(0, -dx / swipe.width));
+    swipe.animations.forEach((animation) => { animation.currentTime = progress * 1000; });
+});
+
+async function endMenuSwipe(event) {
+    const swipe = menuSwipe;
+    if (!swipe || event.pointerId !== swipe.id) return;
+    menuSwipe = null;
+    if (!swipe.animations) return;
+    menuSwipeSwallowClick = true;
+    const progress = swipe.animations[0].currentTime / 1000;
+    const close = event.type === "pointerup"
+        && (progress > MENU_SWIPE_DISTANCE || swipe.v < -MENU_SWIPE_FLICK);
+    if (close) menuClosing = true;
+    if (close && reducedMotionQuery.matches) {
+        finishCloseMenu();
+        return;
+    }
+    const rate = 1000 / MENU_SWIPE_SETTLE;
+    swipe.animations.forEach((animation) => {
+        animation.playbackRate = close ? rate : -rate;
+        animation.play();
+    });
+    await Promise.all(swipe.animations.map((animation) => animation.finished.catch(() => {})));
+    if (close) finishCloseMenu();
+    else swipe.animations.forEach((animation) => animation.cancel());
+}
+
+menuDialog.addEventListener("pointerup", endMenuSwipe);
+menuDialog.addEventListener("pointercancel", endMenuSwipe);
+// A swipe that ends over a link or the backdrop must not also count as a tap.
+menuDialog.addEventListener("click", (event) => {
+    if (!menuSwipeSwallowClick) return;
+    menuSwipeSwallowClick = false;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+}, true);
+
+// A click from Enter or Space has no pointer behind it, so its detail is 0.
+dgButton.addEventListener("click", (event) => {
+    menuOpenedByKeyboard = event.detail === 0;
+    openMenu();
+});
 // Escape would close instantly; route it through the closing animation instead.
 menuDialog.addEventListener("cancel", (event) => {
     event.preventDefault();

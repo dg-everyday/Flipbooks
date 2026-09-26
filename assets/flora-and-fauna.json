@@ -1,0 +1,3919 @@
+{
+    "totals": {
+        "plants": 23,
+        "animals": 26,
+        "entries": 49
+    },
+    "groups": {
+        "plant": [
+            "Trees",
+            "Vines and crops",
+            "Herbs, flowers and spices",
+            "Wild plants"
+        ],
+        "animal": [
+            "Flocks and herds",
+            "Wild animals",
+            "Birds",
+            "Creatures of the water",
+            "Creeping things"
+        ]
+    },
+    "plants": [
+        {
+            "id": "olive",
+            "kind": "plant",
+            "name": "Olive",
+            "group": "Trees",
+            "epithet": "The tree of oil and peace",
+            "summary": "The most valuable tree in Israel. Its oil lit the lamps, cooked the food, healed wounds and anointed priests and kings.",
+            "uses": [
+                "Oil for cooking and baking bread",
+                "Fuel for lamps, including the lampstand in the tabernacle",
+                "Anointing priests, kings and the sick",
+                "Medicine poured on wounds",
+                "Olive wood for carving: the cherubim and doors of Solomon's temple"
+            ],
+            "why": "The olive stood for peace, blessing and God's rich provision. After the flood a dove brought Noah an olive leaf, the first sign that the earth was living again. The psalmist pictures the one who trusts God as 'a green olive tree in the house of God', and Paul uses the olive tree to show Gentiles grafted into God's people.",
+            "who": [
+                {
+                    "who": "Noah",
+                    "hero": "noah",
+                    "what": "saw the dove return with an olive leaf in her mouth",
+                    "reference": "Genesis 8:11"
+                },
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "commanded pure beaten olive oil so the lamp would burn always",
+                    "reference": "Exodus 27:20"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "prayed on the Mount of Olives the night he was betrayed",
+                    "reference": "Luke 22:39"
+                },
+                {
+                    "who": "Paul",
+                    "hero": "paul",
+                    "what": "pictured Gentile believers as wild olive branches grafted in",
+                    "reference": "Romans 11:17"
+                }
+            ],
+            "importance": "Olive oil was one of the three great harvests of the land ('thy corn, and thy wine, and thine oil') and a sign of God's blessing (Deuteronomy 7:13). The titles Messiah and Christ both mean 'anointed one', so the oil of the olive stands behind the very name we give Jesus.",
+            "lesson": "Like a tree that bears fruit for centuries, the one who trusts God's mercy stays green and fruitful (Psalm 52:8).",
+            "key_verses": [
+                {
+                    "reference": "Genesis 8:11",
+                    "text": "And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth."
+                },
+                {
+                    "reference": "Psalms 52:8",
+                    "text": "But I am like a green olive tree in the house of God: I trust in the mercy of God for ever and ever. "
+                },
+                {
+                    "reference": "Romans 11:17",
+                    "text": "And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree;"
+                }
+            ],
+            "mentions": {
+                "verses": 54,
+                "old": 39,
+                "new": 15,
+                "first": {
+                    "reference": "Genesis 8:11",
+                    "text": "And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth."
+                },
+                "books": [
+                    {
+                        "name": "Deuteronomy",
+                        "id": "deuteronomy",
+                        "verses": 4
+                    },
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Zechariah",
+                        "id": "zechariah",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 4
+                    }
+                ]
+            }
+        },
+        {
+            "id": "fig",
+            "kind": "plant",
+            "name": "Fig",
+            "group": "Trees",
+            "epithet": "Leaves, fruit and a lesson",
+            "summary": "A common fruit tree of Israel. Its sweet figs were eaten fresh, dried and pressed into cakes, and Adam and Eve sewed its broad leaves into aprons.",
+            "uses": [
+                "Fresh fruit in early summer",
+                "Dried and pressed into cakes for journeys",
+                "A poultice for boils",
+                "Shade: to sit under your own fig tree meant peace"
+            ],
+            "why": "Sitting 'every man under his vine and under his fig tree' was the Bible's picture of peace and safety. A fig tree full of leaves but with no fruit became Jesus' living parable of religion that looks alive but bears nothing.",
+            "who": [
+                {
+                    "who": "Adam and Eve",
+                    "what": "sewed fig leaves together to cover themselves",
+                    "reference": "Genesis 3:7"
+                },
+                {
+                    "who": "Abigail",
+                    "what": "brought two hundred cakes of figs to David and his men",
+                    "reference": "1 Samuel 25:18"
+                },
+                {
+                    "who": "Hezekiah",
+                    "hero": "hezekiah",
+                    "what": "recovered when Isaiah had a lump of figs laid on his boil",
+                    "reference": "2 Kings 20:7"
+                },
+                {
+                    "who": "Nathanael",
+                    "what": "was seen by Jesus under the fig tree before they met",
+                    "reference": "John 1:48"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "cursed a fig tree that had leaves but no fruit",
+                    "reference": "Mark 11:12-14"
+                }
+            ],
+            "importance": "Figs were a staple food and one of the seven blessings of the Promised Land: 'a land of wheat, and barley, and vines, and fig trees, and pomegranates; a land of oil olive, and honey' (Deuteronomy 8:8). The prophets used the fig tree to picture Israel, fruitful when faithful and withered when not.",
+            "lesson": "God looks for fruit, not just leaves. A life can look busy and green and still give him nothing (Luke 13:6-9).",
+            "key_verses": [
+                {
+                    "reference": "Genesis 3:7",
+                    "text": "And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons."
+                },
+                {
+                    "reference": "Micah 4:4",
+                    "text": "But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of the LORD of hosts hath spoken it. "
+                },
+                {
+                    "reference": "Mark 11:13",
+                    "text": "And seeing a fig tree afar off having leaves, he came, if haply he might find any thing thereon: and when he came to it, he found nothing but leaves; for the time of figs was not yet. "
+                }
+            ],
+            "mentions": {
+                "verses": 55,
+                "old": 38,
+                "new": 17,
+                "first": {
+                    "reference": "Genesis 3:7",
+                    "text": "And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons."
+                },
+                "books": [
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 8
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 5
+                    },
+                    {
+                        "name": "Mark",
+                        "id": "mark",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 4
+                    }
+                ]
+            }
+        },
+        {
+            "id": "cedar",
+            "kind": "plant",
+            "name": "Cedar",
+            "group": "Trees",
+            "epithet": "The king of trees",
+            "summary": "The tall, fragrant cedar of Lebanon: the finest building timber in the ancient world, used for David's palace and Solomon's temple.",
+            "uses": [
+                "Beams and panelling for palaces and the temple",
+                "Masts for ships",
+                "Cleansing rites: cedar wood was used for a healed leper and burned with the red heifer",
+                "A sign of wealth and royal power"
+            ],
+            "why": "The cedar's height, strength and resistance to rot made it the picture of greatness. The righteous 'shall grow like a cedar in Lebanon' (Psalm 92:12), while the prophets used felled cedars for proud kings brought low.",
+            "who": [
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "lived in a house of cedar and longed to build one for God",
+                    "reference": "2 Samuel 7:2"
+                },
+                {
+                    "who": "Hiram, king of Tyre",
+                    "what": "sent cedar from Lebanon for Solomon's temple",
+                    "reference": "1 Kings 5:6-10"
+                },
+                {
+                    "who": "Solomon",
+                    "what": "lined the temple with carved cedar, so that no stone was seen",
+                    "reference": "1 Kings 6:18"
+                },
+                {
+                    "who": "The returned exiles",
+                    "what": "brought cedar again from Lebanon to rebuild the temple",
+                    "reference": "Ezra 3:7"
+                }
+            ],
+            "importance": "Cedar built the house of God, and when Israel came home from exile the rebuilders sent for cedar again. The cedar's fall is also the Bible's picture of pride brought down: 'The voice of the LORD breaketh the cedars' (Psalm 29:5).",
+            "lesson": "Lasting strength comes from being planted in God's house, not from standing tall on your own (Psalm 92:12-13).",
+            "key_verses": [
+                {
+                    "reference": "2 Samuel 7:2",
+                    "text": "That the king said unto Nathan the prophet, See now, I dwell in an house of cedar, but the ark of God dwelleth within curtains."
+                },
+                {
+                    "reference": "1 Kings 6:18",
+                    "text": "And the cedar of the house within was carved with knops and open flowers: all was cedar; there was no stone seen."
+                },
+                {
+                    "reference": "Psalms 29:5",
+                    "text": "The voice of the LORD breaketh the cedars; yea, the LORD breaketh the cedars of Lebanon. "
+                }
+            ],
+            "mentions": {
+                "verses": 71,
+                "old": 71,
+                "new": 0,
+                "first": {
+                    "reference": "Leviticus 14:4",
+                    "text": "Then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop:"
+                },
+                "books": [
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 18
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 7
+                    },
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 5
+                    }
+                ]
+            }
+        },
+        {
+            "id": "palm",
+            "kind": "plant",
+            "name": "Palm",
+            "group": "Trees",
+            "epithet": "The tree of victory",
+            "summary": "The tall date palm of the oases and the Jordan valley (Jericho was 'the city of palm trees'), whose branches were waved in celebration.",
+            "uses": [
+                "Sweet dates for food",
+                "Branches for the booths of the Feast of Tabernacles",
+                "Branches waved to welcome a king",
+                "Carved on the walls and doors of the temple",
+                "A landmark for water in the desert"
+            ],
+            "why": "Straight and evergreen in a dry land, the palm stood for uprightness and victory. Palm branches greeted Jesus as king, and in Revelation a great multitude stands before the throne with palms in their hands.",
+            "who": [
+                {
+                    "who": "The Israelites",
+                    "what": "camped at Elim by twelve wells and seventy palm trees",
+                    "reference": "Exodus 15:27"
+                },
+                {
+                    "who": "Deborah",
+                    "hero": "deborah",
+                    "what": "judged Israel sitting under 'the palm tree of Deborah'",
+                    "reference": "Judges 4:5"
+                },
+                {
+                    "who": "The crowds in Jerusalem",
+                    "what": "took palm branches and went out to meet Jesus",
+                    "reference": "John 12:13"
+                },
+                {
+                    "who": "The redeemed",
+                    "what": "stand before the throne, clothed in white, with 'palms in their hands'",
+                    "reference": "Revelation 7:9"
+                }
+            ],
+            "importance": "Only John tells us the branches at Jesus' entry into Jerusalem were palms. For a Jewish crowd they were the branches of the Feast of Tabernacles and a sign of national victory. The same sign returns at the end of the Bible, carried by people from every nation.",
+            "lesson": "'The righteous shall flourish like the palm tree', rooted deep enough to stay green in a dry land (Psalm 92:12).",
+            "key_verses": [
+                {
+                    "reference": "Psalms 92:12",
+                    "text": "The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon. "
+                },
+                {
+                    "reference": "John 12:13",
+                    "text": "Took branches of palm trees, and went forth to meet him, and cried, Hosanna: Blessed is the King of Israel that cometh in the name of the Lord."
+                },
+                {
+                    "reference": "Revelation 7:9",
+                    "text": "After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands;"
+                }
+            ],
+            "mentions": {
+                "verses": 32,
+                "old": 30,
+                "new": 2,
+                "first": {
+                    "reference": "Exodus 15:27",
+                    "text": "And they came to Elim, where were twelve wells of water, and threescore and ten palm trees: and they encamped there by the waters."
+                },
+                "books": [
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 11
+                    },
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Judges",
+                        "id": "judges",
+                        "verses": 3
+                    },
+                    {
+                        "name": "2 Chronicles",
+                        "id": "2-chronicles",
+                        "verses": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "almond",
+            "kind": "plant",
+            "name": "Almond",
+            "group": "Trees",
+            "epithet": "The watchful tree",
+            "summary": "The first tree to blossom in late winter, its white flowers appearing before its leaves; its nuts were among the best gifts of the land.",
+            "uses": [
+                "Nuts for eating and for gifts",
+                "The pattern for the cups of the golden lampstand",
+                "A picture of old age: its white blossom like white hair"
+            ],
+            "why": "In Hebrew the almond is shaqed, “the wakeful one”, because it wakes first after winter. God showed Jeremiah an almond branch and said, 'I will hasten my word to perform it': a play on shoqed, “watching”.",
+            "who": [
+                {
+                    "who": "Jacob",
+                    "what": "sent almonds among the best fruits of the land to Egypt",
+                    "reference": "Genesis 43:11"
+                },
+                {
+                    "who": "Aaron",
+                    "what": "saw his rod bud, blossom and yield almonds overnight",
+                    "reference": "Numbers 17:8"
+                },
+                {
+                    "who": "Bezaleel",
+                    "what": "made the lampstand's cups in the shape of almond blossoms",
+                    "reference": "Exodus 37:19"
+                },
+                {
+                    "who": "Jeremiah",
+                    "what": "saw a rod of an almond tree when God called him",
+                    "reference": "Jeremiah 1:11"
+                }
+            ],
+            "importance": "Aaron's budding rod settled whom God had chosen to serve as priest, and it was kept before the ark as a sign (Numbers 17:10; Hebrews 9:4). The lampstand in the holy place was shaped like an almond tree in bloom: the light in God's house took the form of the tree that wakes first.",
+            "lesson": "God is awake over his word. What he has promised, he watches over to do (Jeremiah 1:12).",
+            "key_verses": [
+                {
+                    "reference": "Numbers 17:8",
+                    "text": "And it came to pass, that on the morrow Moses went into the tabernacle of witness; and, behold, the rod of Aaron for the house of Levi was budded, and brought forth buds, and bloomed blossoms, and yielded almonds."
+                },
+                {
+                    "reference": "Jeremiah 1:11-12",
+                    "text": "Moreover the word of the LORD came unto me, saying, Jeremiah, what seest thou? And I said, I see a rod of an almond tree. Then said the LORD unto me, Thou hast well seen: for I will hasten my word to perform it."
+                }
+            ],
+            "mentions": {
+                "verses": 8,
+                "old": 8,
+                "new": 0,
+                "first": {
+                    "reference": "Genesis 43:11",
+                    "text": "And their father Israel said unto them, If it must be so now, do this; take of the best fruits in the land in your vessels, and carry down the man a present, a little balm, and a little honey, spices, and myrrh, nuts, and almonds:"
+                },
+                "books": [
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Ecclesiastes",
+                        "id": "ecclesiastes",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "pomegranate",
+            "kind": "plant",
+            "name": "Pomegranate",
+            "group": "Trees",
+            "epithet": "The fruit on the priest's robe",
+            "summary": "A small tree whose red, many-seeded fruit was a sign of the fruitfulness of the Promised Land.",
+            "uses": [
+                "Fruit and juice for food and drink",
+                "Embroidered on the hem of the high priest's robe, between golden bells",
+                "Cast in bronze on the pillars of Solomon's temple"
+            ],
+            "why": "Its countless seeds made it a picture of fruitfulness and blessing, and it was one of the foods of the good land (Deuteronomy 8:8). Worked into the priest's robe and the temple pillars, it carried that promise into the place of worship.",
+            "who": [
+                {
+                    "who": "The twelve spies, among them Joshua",
+                    "hero": "joshua",
+                    "what": "brought back pomegranates and figs with a huge cluster of grapes",
+                    "reference": "Numbers 13:23"
+                },
+                {
+                    "who": "Aaron",
+                    "what": "wore a robe hemmed with pomegranates and golden bells",
+                    "reference": "Exodus 28:33-34"
+                },
+                {
+                    "who": "Hiram the craftsman",
+                    "what": "cast rows of bronze pomegranates for the temple pillars",
+                    "reference": "1 Kings 7:20"
+                },
+                {
+                    "who": "Saul",
+                    "hero": "saul",
+                    "what": "sat under a pomegranate tree at Migron with his men",
+                    "reference": "1 Samuel 14:2"
+                }
+            ],
+            "importance": "The pomegranates and bells on the high priest's robe meant the sound of him was heard when he went into the holy place (Exodus 28:35). When Babylon destroyed the temple, its bronze pomegranates were among the things broken up and carried away (Jeremiah 52:22-23).",
+            "lesson": "A life lived close to God is meant to be full of fruit, as full as a pomegranate is of seed.",
+            "key_verses": [
+                {
+                    "reference": "Deuteronomy 8:8",
+                    "text": "A land of wheat, and barley, and vines, and fig trees, and pomegranates; a land of oil olive, and honey;"
+                },
+                {
+                    "reference": "Exodus 28:33",
+                    "text": "And beneath upon the hem of it thou shalt make pomegranates of blue, and of purple, and of scarlet, round about the hem thereof; and bells of gold between them round about:"
+                }
+            ],
+            "mentions": {
+                "verses": 25,
+                "old": 25,
+                "new": 0,
+                "first": {
+                    "reference": "Exodus 28:33",
+                    "text": "And beneath upon the hem of it thou shalt make pomegranates of blue, and of purple, and of scarlet, round about the hem thereof; and bells of gold between them round about:"
+                },
+                "books": [
+                    {
+                        "name": "Song of Solomon",
+                        "id": "song-of-solomon",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 5
+                    },
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 3
+                    },
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "acacia",
+            "kind": "plant",
+            "name": "Acacia",
+            "group": "Trees",
+            "epithet": "The wood of the ark",
+            "summary": "A hardy, thorny desert tree whose dense, lasting wood the KJV calls 'shittim wood': the timber of the ark of the covenant and the tabernacle.",
+            "uses": [
+                "The ark of the covenant, overlaid with gold",
+                "The table of showbread, the altars and their carrying poles",
+                "The boards of the tabernacle",
+                "Firewood and shade in the wilderness"
+            ],
+            "why": "In the Sinai wilderness the acacia was almost the only tree big enough for timber, and its wood resists rot and insects. God built his dwelling among his people out of the tough, ordinary wood of the desert, and then covered it in gold.",
+            "who": [
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "was told to make the ark of shittim wood",
+                    "reference": "Exodus 25:10"
+                },
+                {
+                    "who": "Bezaleel",
+                    "what": "made the ark of shittim wood and overlaid it with gold",
+                    "reference": "Exodus 37:1-2"
+                },
+                {
+                    "who": "Joshua",
+                    "hero": "joshua",
+                    "what": "sent two spies out from Shittim, “the acacias”, Israel's last camp",
+                    "reference": "Joshua 2:1"
+                }
+            ],
+            "importance": "Every piece of furniture that carried God's presence (the ark, the table, the altars) was shittim wood covered with gold. Israel's last camp before crossing the Jordan was at Shittim, a place named after the tree (Joshua 3:1).",
+            "lesson": "God makes his dwelling out of plain, desert-hardened wood. He does not need fine material, only what is given to him willingly (Exodus 25:2).",
+            "key_verses": [
+                {
+                    "reference": "Exodus 25:10",
+                    "text": "And they shall make an ark of shittim wood: two cubits and a half shall be the length thereof, and a cubit and a half the breadth thereof, and a cubit and a half the height thereof."
+                },
+                {
+                    "reference": "Exodus 26:15",
+                    "text": "And thou shalt make boards for the tabernacle of shittim wood standing up."
+                }
+            ],
+            "mentions": {
+                "verses": 35,
+                "old": 35,
+                "new": 0,
+                "first": {
+                    "reference": "Exodus 25:5",
+                    "text": "And rams’ skins dyed red, and badgers’ skins, and shittim wood,"
+                },
+                "books": [
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 26
+                    },
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Joshua",
+                        "id": "joshua",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Deuteronomy",
+                        "id": "deuteronomy",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "sycomore",
+            "kind": "plant",
+            "name": "Sycomore",
+            "group": "Trees",
+            "epithet": "The tree Zacchaeus climbed",
+            "summary": "A broad, low-branched fig tree of the lowlands, whose cheap figs fed the poor and whose light wood was used for building.",
+            "uses": [
+                "Cheap figs for the poor",
+                "Everyday building timber",
+                "A tree low and wide enough to climb"
+            ],
+            "why": "The sycomore was the ordinary tree of the lowlands, as common as the cedar was grand: Solomon made cedars as plentiful 'as the sycomore trees that are in the vale'. Amos was 'a gatherer of sycomore fruit', a poor labourer's work, when God called him to prophesy.",
+            "who": [
+                {
+                    "who": "Solomon",
+                    "what": "made cedar as plentiful as the common sycomore",
+                    "reference": "1 Kings 10:27"
+                },
+                {
+                    "who": "Amos",
+                    "what": "was a herdsman and 'a gatherer of sycomore fruit'",
+                    "reference": "Amos 7:14"
+                },
+                {
+                    "who": "Zacchaeus",
+                    "what": "climbed a sycomore tree to see Jesus pass by",
+                    "reference": "Luke 19:4"
+                }
+            ],
+            "importance": "Two very different men meet God by this humble tree: Amos, called from tending sycomore figs to speak for God, and Zacchaeus, the rich tax collector who climbed one and heard Jesus call him by name (Luke 19:5).",
+            "lesson": "Jesus saw the man in the tree. No one is too small, too high up or too far out of the way for him to call by name.",
+            "key_verses": [
+                {
+                    "reference": "Luke 19:4",
+                    "text": "And he ran before, and climbed up into a sycomore tree to see him: for he was to pass that way. "
+                },
+                {
+                    "reference": "Amos 7:14",
+                    "text": "Then answered Amos, and said to Amaziah, I was no prophet, neither was I a prophet’s son; but I was an herdman, and a gatherer of sycomore fruit:"
+                }
+            ],
+            "mentions": {
+                "verses": 8,
+                "old": 7,
+                "new": 1,
+                "first": {
+                    "reference": "1 Kings 10:27",
+                    "text": "And the king made silver to be in Jerusalem as stones, and cedars made he to be as the sycomore trees that are in the vale, for abundance."
+                },
+                "books": [
+                    {
+                        "name": "2 Chronicles",
+                        "id": "2-chronicles",
+                        "verses": 2
+                    },
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 1
+                    },
+                    {
+                        "name": "1 Chronicles",
+                        "id": "1-chronicles",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "broom-tree",
+            "kind": "plant",
+            "name": "Broom tree",
+            "group": "Trees",
+            "epithet": "Shade for a worn-out prophet",
+            "summary": "The white broom of the desert (the KJV's 'juniper'): a bush big enough to lie under, with roots that burned into hot charcoal.",
+            "uses": [
+                "Shade in the desert",
+                "Roots burned as fuel and charcoal: 'coals of juniper'",
+                "Roots eaten by the desperately poor"
+            ],
+            "why": "It appears in one of the most human moments in Scripture. Elijah, exhausted and afraid after Mount Carmel, lay down under a juniper and asked to die. God answered not with a rebuke but with sleep, bread and water.",
+            "who": [
+                {
+                    "who": "Elijah",
+                    "hero": "elijah",
+                    "what": "sat under a juniper and asked to die, then was fed by an angel",
+                    "reference": "1 Kings 19:4-5"
+                },
+                {
+                    "who": "Job's mockers",
+                    "what": "were so poor they cut juniper roots for food",
+                    "reference": "Job 30:4"
+                }
+            ],
+            "importance": "The broom tree marks the place where God cared for a burned-out servant: 'Arise and eat; because the journey is too great for thee' (1 Kings 19:7). Before giving Elijah new work, God gave him rest.",
+            "lesson": "When you are at the end of your strength, God's first answer may be food and sleep. He knows the journey is too great for you.",
+            "key_verses": [
+                {
+                    "reference": "1 Kings 19:4",
+                    "text": "But he himself went a day’s journey into the wilderness, and came and sat down under a juniper tree: and he requested for himself that he might die; and said, It is enough; now, O LORD, take away my life; for I am not better than my fathers."
+                },
+                {
+                    "reference": "1 Kings 19:5",
+                    "text": "And as he lay and slept under a juniper tree, behold, then an angel touched him, and said unto him, Arise and eat."
+                }
+            ],
+            "mentions": {
+                "verses": 4,
+                "old": 4,
+                "new": 0,
+                "first": {
+                    "reference": "1 Kings 19:4",
+                    "text": "But he himself went a day’s journey into the wilderness, and came and sat down under a juniper tree: and he requested for himself that he might die; and said, It is enough; now, O LORD, take away my life; for I am not better than my fathers."
+                },
+                "books": [
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Job",
+                        "id": "job",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "grapevine",
+            "kind": "plant",
+            "name": "Grapevine",
+            "group": "Vines and crops",
+            "epithet": "The plant Jesus called himself",
+            "summary": "The grapevine, grown on terraced hillsides all over Israel for fresh grapes, raisins and wine.",
+            "uses": [
+                "Fresh grapes and dried raisins",
+                "Wine for meals, feasts, offerings and medicine",
+                "The Passover cup and the Lord's Supper"
+            ],
+            "why": "Israel itself was God's vine, brought out of Egypt and planted in the land (Psalm 80:8), and his vineyard that yielded wild grapes (Isaiah 5). Jesus took the picture for himself: 'I am the true vine'. Life and fruit come only from staying joined to him.",
+            "who": [
+                {
+                    "who": "Noah",
+                    "hero": "noah",
+                    "what": "planted a vineyard after the flood",
+                    "reference": "Genesis 9:20"
+                },
+                {
+                    "who": "The twelve spies, among them Joshua",
+                    "hero": "joshua",
+                    "what": "cut a cluster of grapes so big two men carried it on a staff",
+                    "reference": "Numbers 13:23"
+                },
+                {
+                    "who": "Naboth, Ahab and Jezebel",
+                    "hero": "ahab",
+                    "what": "Naboth was murdered so the king could have his vineyard",
+                    "reference": "1 Kings 21:1-16"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "said, 'I am the true vine, and my Father is the husbandman'",
+                    "reference": "John 15:1"
+                }
+            ],
+            "importance": "The vine runs through the whole Bible: Isaiah's song of the vineyard (Isaiah 5:1-7), Jesus' parable of the wicked tenants (Mark 12:1-9), and his words at the Last Supper about drinking 'this fruit of the vine' new in his Father's kingdom (Matthew 26:29).",
+            "lesson": "'Without me ye can do nothing.' Fruit does not come from effort but from abiding in Christ (John 15:5).",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 5:1-2",
+                    "text": "Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill: And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein: and he looked that it should bring forth grapes, and it brought forth wild grapes."
+                },
+                {
+                    "reference": "John 15:5",
+                    "text": "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing. "
+                }
+            ],
+            "mentions": {
+                "verses": 192,
+                "old": 159,
+                "new": 33,
+                "first": {
+                    "reference": "Genesis 9:20",
+                    "text": "And Noah began to be an husbandman, and he planted a vineyard:"
+                },
+                "books": [
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 24
+                    },
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 15
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 12
+                    },
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 10
+                    }
+                ]
+            }
+        },
+        {
+            "id": "wheat",
+            "kind": "plant",
+            "name": "Wheat",
+            "group": "Vines and crops",
+            "epithet": "The daily bread",
+            "summary": "The main grain of Israel, harvested in late spring and ground into flour for the daily bread of every household.",
+            "uses": [
+                "Flour for daily bread",
+                "Fine flour for the grain offerings",
+                "The firstfruits of the Feast of Weeks (Pentecost)",
+                "Payment and trade: Solomon paid Hiram in wheat"
+            ],
+            "why": "Wheat was life itself; a failed harvest meant famine. So wheat became a picture of God's people gathered in, and of a death that brings life when Jesus spoke of a grain of wheat falling into the ground.",
+            "who": [
+                {
+                    "who": "Gideon",
+                    "hero": "gideon",
+                    "what": "threshed wheat in a winepress to hide it from the Midianites",
+                    "reference": "Judges 6:11"
+                },
+                {
+                    "who": "Ruth",
+                    "hero": "ruth",
+                    "what": "gleaned through the barley and wheat harvests",
+                    "reference": "Ruth 2:23"
+                },
+                {
+                    "who": "Ornan (Araunah)",
+                    "hero": "david",
+                    "what": "was threshing wheat on the floor David bought, later the site of the temple",
+                    "reference": "1 Chronicles 21:20"
+                },
+                {
+                    "who": "Peter",
+                    "hero": "peter",
+                    "what": "was told Satan wanted to sift him as wheat",
+                    "reference": "Luke 22:31"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "said a grain of wheat must fall and die to bear fruit",
+                    "reference": "John 12:24"
+                }
+            ],
+            "importance": "The Feast of Weeks celebrated the wheat harvest, and on that feast, Pentecost, the Holy Spirit came and three thousand were gathered in (Acts 2:1, 41). Jesus' parable of the wheat and the tares describes the world until the final harvest (Matthew 13:24-30).",
+            "lesson": "'Except a corn of wheat fall into the ground and die, it abideth alone.' Jesus' death was the seed of a great harvest (John 12:24).",
+            "key_verses": [
+                {
+                    "reference": "John 12:24",
+                    "text": "Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit. "
+                },
+                {
+                    "reference": "Matthew 13:30",
+                    "text": "Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn. "
+                }
+            ],
+            "mentions": {
+                "verses": 52,
+                "old": 40,
+                "new": 12,
+                "first": {
+                    "reference": "Genesis 30:14",
+                    "text": "And Reuben went in the days of wheat harvest, and found mandrakes in the field, and brought them unto his mother Leah. Then Rachel said to Leah, Give me, I pray thee, of thy son’s mandrakes."
+                },
+                "books": [
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 3
+                    },
+                    {
+                        "name": "2 Chronicles",
+                        "id": "2-chronicles",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "barley",
+            "kind": "plant",
+            "name": "Barley",
+            "group": "Vines and crops",
+            "epithet": "The poor man's bread",
+            "summary": "The hardy grain that ripened first in spring, a few weeks before wheat: cheaper bread for the poor and fodder for horses.",
+            "uses": [
+                "Bread for ordinary and poor families",
+                "Fodder for horses",
+                "The first sheaf of the harvest, offered to God",
+                "A measure of price: Hosea bought back his wife with silver and barley"
+            ],
+            "why": "Because it was cheap, barley meant humble people. A Midianite dreamed of a barley loaf tumbling into the camp and flattening a tent, a picture of Gideon's small army. And a boy's five barley loaves fed five thousand.",
+            "who": [
+                {
+                    "who": "Ruth",
+                    "hero": "ruth",
+                    "what": "came to Bethlehem at the beginning of barley harvest",
+                    "reference": "Ruth 1:22"
+                },
+                {
+                    "who": "Gideon",
+                    "hero": "gideon",
+                    "what": "was pictured in an enemy's dream as a barley loaf rolling into the camp",
+                    "reference": "Judges 7:13"
+                },
+                {
+                    "who": "Elisha",
+                    "what": "fed a hundred men with twenty barley loaves, with some left over",
+                    "reference": "2 Kings 4:42-44"
+                },
+                {
+                    "who": "A boy in the crowd",
+                    "what": "gave the five barley loaves Jesus used to feed five thousand",
+                    "reference": "John 6:9"
+                }
+            ],
+            "importance": "The barley harvest began the harvest year; its first sheaf was waved before the LORD (Leviticus 23:10-11), and Paul calls the risen Christ 'the firstfruits of them that slept' (1 Corinthians 15:20). Again and again God uses the poor man's grain to do great things.",
+            "lesson": "God does not need much. Five barley loaves in his hands are enough for a multitude (John 6:9-11).",
+            "key_verses": [
+                {
+                    "reference": "Ruth 1:22",
+                    "text": "So Naomi returned, and Ruth the Moabitess, her daughter in law, with her, which returned out of the country of Moab: and they came to Bethlehem in the beginning of barley harvest."
+                },
+                {
+                    "reference": "John 6:9",
+                    "text": "There is a lad here, which hath five barley loaves, and two small fishes: but what are they among so many?"
+                }
+            ],
+            "mentions": {
+                "verses": 35,
+                "old": 32,
+                "new": 3,
+                "first": {
+                    "reference": "Exodus 9:31",
+                    "text": "And the flax and the barley was smitten: for the barley was in the ear, and the flax was bolled."
+                },
+                "books": [
+                    {
+                        "name": "Ruth",
+                        "id": "ruth",
+                        "verses": 6
+                    },
+                    {
+                        "name": "2 Kings",
+                        "id": "2-kings",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 4
+                    },
+                    {
+                        "name": "2 Samuel",
+                        "id": "2-samuel",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "flax",
+            "kind": "plant",
+            "name": "Flax",
+            "group": "Vines and crops",
+            "epithet": "The thread of priests' clothes",
+            "summary": "A tall, blue-flowered plant grown for its fibres, which were spun into linen: the cloth of priests, the tabernacle and burial.",
+            "uses": [
+                "Linen garments for priests",
+                "Curtains of the tabernacle",
+                "Lamp wicks: 'smoking flax'",
+                "Burial cloths",
+                "Spinning and trade: the good wife 'seeketh wool, and flax'"
+            ],
+            "why": "Linen was cool, clean and white, so it stood for purity. The priests served in linen, and in Revelation 'the fine linen is the righteousness of saints'.",
+            "who": [
+                {
+                    "who": "Rahab",
+                    "hero": "rahab",
+                    "what": "hid the spies under stalks of flax on her roof",
+                    "reference": "Joshua 2:6"
+                },
+                {
+                    "who": "Samuel",
+                    "hero": "samuel",
+                    "what": "served before the LORD as a boy, wearing a linen ephod",
+                    "reference": "1 Samuel 2:18"
+                },
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "danced before the LORD in a linen ephod",
+                    "reference": "2 Samuel 6:14"
+                },
+                {
+                    "who": "Joseph of Arimathaea",
+                    "what": "wrapped Jesus' body in clean linen",
+                    "reference": "Matthew 27:59"
+                }
+            ],
+            "importance": "Of Jesus it was promised, 'the smoking flax shall he not quench' (Isaiah 42:3; Matthew 12:20): he will not snuff out a faith that is barely smouldering. And the linen clothes left lying in the empty tomb were the first sign that he had risen (John 20:5-7).",
+            "lesson": "Jesus is gentle with a faint faith. He does not put out the smoking wick.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 42:3",
+                    "text": "A bruised reed shall he not break, and the smoking flax shall he not quench: he shall bring forth judgment unto truth."
+                },
+                {
+                    "reference": "Revelation 19:8",
+                    "text": "And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints."
+                }
+            ],
+            "mentions": {
+                "verses": 100,
+                "old": 83,
+                "new": 17,
+                "first": {
+                    "reference": "Genesis 41:42",
+                    "text": "And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck;"
+                },
+                "books": [
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 33
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 13
+                    },
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 9
+                    },
+                    {
+                        "name": "Revelation",
+                        "id": "revelation",
+                        "verses": 5
+                    }
+                ]
+            }
+        },
+        {
+            "id": "lentils",
+            "kind": "plant",
+            "name": "Lentils",
+            "group": "Vines and crops",
+            "epithet": "The meal that cost a birthright",
+            "summary": "A small, reddish-brown pulse cooked into thick stew: cheap, filling, everyday food.",
+            "uses": [
+                "Red stew (the KJV's 'pottage')",
+                "Mixed with grains for bread in hard times",
+                "Food for travellers and armies"
+            ],
+            "why": "Lentils are in the Bible because of one careless bargain. Esau came in from the field starving, smelled Jacob's red stew, and traded his birthright for a bowl of it: 'thus Esau despised his birthright'.",
+            "who": [
+                {
+                    "who": "Esau",
+                    "what": "sold his birthright to Jacob for bread and a stew of lentils",
+                    "reference": "Genesis 25:29-34"
+                },
+                {
+                    "who": "Barzillai and friends",
+                    "hero": "david",
+                    "what": "brought lentils and other food to David as he fled from Absalom",
+                    "reference": "2 Samuel 17:27-28"
+                },
+                {
+                    "who": "Shammah",
+                    "what": "stood in a field of lentils and held it against the Philistines",
+                    "reference": "2 Samuel 23:11-12"
+                },
+                {
+                    "who": "Ezekiel",
+                    "what": "baked siege bread of wheat, barley, beans, lentils, millet and fitches",
+                    "reference": "Ezekiel 4:9"
+                }
+            ],
+            "importance": "Esau's other name, Edom ('red'), came from that stew (Genesis 25:30), and Hebrews holds him up as a warning: he 'for one morsel of meat sold his birthright' (Hebrews 12:16). Yet one of David's mighty men won a great victory defending a plain field of lentils: ordinary food, but worth standing for.",
+            "lesson": "Don't trade what is eternal for what is immediate. Hunger passes; a birthright does not.",
+            "key_verses": [
+                {
+                    "reference": "Genesis 25:34",
+                    "text": "Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright."
+                }
+            ],
+            "mentions": {
+                "verses": 4,
+                "old": 4,
+                "new": 0,
+                "first": {
+                    "reference": "Genesis 25:34",
+                    "text": "Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright."
+                },
+                "books": [
+                    {
+                        "name": "2 Samuel",
+                        "id": "2-samuel",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "gourd",
+            "kind": "plant",
+            "name": "Gourd",
+            "group": "Vines and crops",
+            "epithet": "Jonah's shade",
+            "summary": "A fast-growing climbing plant (the KJV's 'gourd') that God raised overnight to shade Jonah, and then took away.",
+            "uses": [
+                "Shade over booths and rooftops",
+                "Wild gourds gathered for food, some of them poisonous"
+            ],
+            "why": "God used the gourd to teach an angry prophet. Jonah grieved over a plant he had not planted, yet begrudged God's pity on Nineveh, a city of more than a hundred and twenty thousand people 'that cannot discern between their right hand and their left hand'.",
+            "who": [
+                {
+                    "who": "Jonah",
+                    "what": "was glad of the gourd's shade, then angry when a worm killed it",
+                    "reference": "Jonah 4:6-8"
+                },
+                {
+                    "who": "Elisha",
+                    "what": "made a pot of stew poisoned by wild gourds safe to eat",
+                    "reference": "2 Kings 4:38-41"
+                }
+            ],
+            "importance": "The book of Jonah ends with God's question over the withered gourd: 'And should not I spare Nineveh, that great city?' (Jonah 4:11). The little plant shows how small our pity can be beside God's.",
+            "lesson": "We grieve easily over our own comforts. God asks us to care about what he cares about: people.",
+            "key_verses": [
+                {
+                    "reference": "Jonah 4:6",
+                    "text": "And the LORD God prepared a gourd, and made it to come up over Jonah, that it might be a shadow over his head, to deliver him from his grief. So Jonah was exceeding glad of the gourd."
+                },
+                {
+                    "reference": "Jonah 4:10",
+                    "text": "Then said the LORD, Thou hast had pity on the gourd, for the which thou hast not laboured, neither madest it grow; which came up in a night, and perished in a night:"
+                }
+            ],
+            "mentions": {
+                "verses": 5,
+                "old": 5,
+                "new": 0,
+                "first": {
+                    "reference": "2 Kings 4:39",
+                    "text": "And one went out into the field to gather herbs, and found a wild vine, and gathered thereof wild gourds his lap full, and came and shred them into the pot of pottage: for they knew them not."
+                },
+                "books": [
+                    {
+                        "name": "Jonah",
+                        "id": "jonah",
+                        "verses": 4
+                    },
+                    {
+                        "name": "2 Kings",
+                        "id": "2-kings",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "mustard",
+            "kind": "plant",
+            "name": "Mustard",
+            "group": "Herbs, flowers and spices",
+            "epithet": "The smallest seed",
+            "summary": "A fast-growing herb of Galilee whose tiny seed grows into a plant tall enough for birds to perch in.",
+            "uses": [
+                "Seeds for seasoning and oil",
+                "Leaves eaten as a vegetable",
+                "A garden plant that grows to the size of a small tree"
+            ],
+            "why": "Jesus chose the mustard seed because it was proverbially the smallest seed a farmer sowed. It became his picture of the kingdom of God (hidden, small beginnings and a great ending) and of faith.",
+            "who": [
+                {
+                    "who": "Jesus",
+                    "what": "compared the kingdom of heaven to a grain of mustard seed",
+                    "reference": "Matthew 13:31-32"
+                },
+                {
+                    "who": "The disciples",
+                    "what": "were told that faith as a grain of mustard seed could move a mountain",
+                    "reference": "Matthew 17:20"
+                }
+            ],
+            "importance": "The mustard seed appears only in the teaching of Jesus, yet it is one of the most remembered pictures in the Gospels. A small beginning is no measure of what God will make of it.",
+            "lesson": "You don't need great faith; you need faith in a great God. A seed-sized faith, planted, grows (Matthew 17:20).",
+            "key_verses": [
+                {
+                    "reference": "Matthew 13:31-32",
+                    "text": "Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field:  Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof. "
+                },
+                {
+                    "reference": "Matthew 17:20",
+                    "text": "And Jesus said unto them, Because of your unbelief: for verily I say unto you, If ye have faith as a grain of mustard seed, ye shall say unto this mountain, Remove hence to yonder place; and it shall remove; and nothing shall be impossible unto you. "
+                }
+            ],
+            "mentions": {
+                "verses": 5,
+                "old": 0,
+                "new": 5,
+                "first": {
+                    "reference": "Matthew 13:31",
+                    "text": "Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field: "
+                },
+                "books": [
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Mark",
+                        "id": "mark",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "hyssop",
+            "kind": "plant",
+            "name": "Hyssop",
+            "group": "Herbs, flowers and spices",
+            "epithet": "The brush of cleansing",
+            "summary": "A small, bushy, fragrant plant whose leafy stems were bound together and used like a brush to sprinkle blood and water.",
+            "uses": [
+                "Brushing the Passover blood on the doorposts",
+                "Sprinkling in the cleansing of lepers and the unclean",
+                "Lifting a sponge of vinegar to Jesus on the cross"
+            ],
+            "why": "Hyssop was humble (Solomon spoke of plants 'from the cedar tree that is in Lebanon even unto the hyssop that springeth out of the wall'), but it was the plant of cleansing. So David prayed, 'Purge me with hyssop, and I shall be clean'.",
+            "who": [
+                {
+                    "who": "Moses and Israel",
+                    "hero": "moses",
+                    "what": "struck the Passover blood on their doors with a bunch of hyssop",
+                    "reference": "Exodus 12:22"
+                },
+                {
+                    "who": "Solomon",
+                    "what": "spoke of every plant from the cedar to the hyssop on the wall",
+                    "reference": "1 Kings 4:33"
+                },
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "prayed 'Purge me with hyssop' after his sin with Bathsheba",
+                    "reference": "Psalms 51:7"
+                },
+                {
+                    "who": "The soldiers at the cross",
+                    "what": "lifted a sponge of vinegar to Jesus on hyssop",
+                    "reference": "John 19:29"
+                }
+            ],
+            "importance": "Hyssop links the first Passover to the cross. It brushed the blood of the lamb on Israel's doors in Egypt, and it lifted the last drink to Jesus, the Lamb of God, just before he said, 'It is finished' (John 19:29-30).",
+            "lesson": "Only God can make us clean. David did not ask to clean himself; he asked God to purge him (Psalm 51:7).",
+            "key_verses": [
+                {
+                    "reference": "Exodus 12:22",
+                    "text": "And ye shall take a bunch of hyssop, and dip it in the blood that is in the bason, and strike the lintel and the two side posts with the blood that is in the bason; and none of you shall go out at the door of his house until the morning."
+                },
+                {
+                    "reference": "Psalms 51:7",
+                    "text": "Purge me with hyssop, and I shall be clean: wash me, and I shall be whiter than snow. "
+                },
+                {
+                    "reference": "John 19:29",
+                    "text": "Now there was set a vessel full of vinegar: and they filled a spunge with vinegar, and put it upon hyssop, and put it to his mouth."
+                }
+            ],
+            "mentions": {
+                "verses": 12,
+                "old": 10,
+                "new": 2,
+                "first": {
+                    "reference": "Exodus 12:22",
+                    "text": "And ye shall take a bunch of hyssop, and dip it in the blood that is in the bason, and strike the lintel and the two side posts with the blood that is in the bason; and none of you shall go out at the door of his house until the morning."
+                },
+                "books": [
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 5
+                    },
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 1
+                    },
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "lily",
+            "kind": "plant",
+            "name": "Lily",
+            "group": "Herbs, flowers and spices",
+            "epithet": "Clothed by God",
+            "summary": "The wild flowers of Galilee's hills ('the lilies of the field'), and a flower shape carved on the temple pillars.",
+            "uses": [
+                "Wild flowers that brighten the fields in spring",
+                "Lily-work carved on the tops of the temple pillars and the rim of the great bronze basin",
+                "A love poem's picture of beauty"
+            ],
+            "why": "Jesus pointed to the lilies to cure worry. They do not toil or spin, yet 'even Solomon in all his glory was not arrayed like one of these'. If God clothes the grass of the field, he will clothe his children.",
+            "who": [
+                {
+                    "who": "Solomon",
+                    "what": "had lily-work carved on the tops of the temple pillars",
+                    "reference": "1 Kings 7:22"
+                },
+                {
+                    "who": "The bride in the Song",
+                    "what": "called herself 'the lily of the valleys'",
+                    "reference": "Song of Solomon 2:1"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "told his disciples to consider the lilies instead of worrying",
+                    "reference": "Matthew 6:28-29"
+                }
+            ],
+            "importance": "Wild flowers last only a few days, yet God dresses them more beautifully than a king. Jesus uses that to show how much more he cares for people: 'shall he not much more clothe you, O ye of little faith?' (Matthew 6:30).",
+            "lesson": "Worry cannot add a thing to your life. Consider the lilies, and trust the Father who clothes them.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 6:28-29",
+                    "text": "And why take ye thought for raiment? Consider the lilies of the field, how they grow; they toil not, neither do they spin:  And yet I say unto you, That even Solomon in all his glory was not arrayed like one of these. "
+                },
+                {
+                    "reference": "Song of Solomon 2:1",
+                    "text": "I am the rose of Sharon, and the lily of the valleys."
+                }
+            ],
+            "mentions": {
+                "verses": 15,
+                "old": 13,
+                "new": 2,
+                "first": {
+                    "reference": "1 Kings 7:19",
+                    "text": "And the chapiters that were upon the top of the pillars were of lily work in the porch, four cubits."
+                },
+                "books": [
+                    {
+                        "name": "Song of Solomon",
+                        "id": "song-of-solomon",
+                        "verses": 8
+                    },
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 3
+                    },
+                    {
+                        "name": "2 Chronicles",
+                        "id": "2-chronicles",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Hosea",
+                        "id": "hosea",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "myrrh",
+            "kind": "plant",
+            "name": "Myrrh",
+            "group": "Herbs, flowers and spices",
+            "epithet": "A gift for burial",
+            "summary": "A fragrant, bitter resin from a thorny shrub of Arabia and East Africa, precious as perfume, medicine and embalming spice.",
+            "uses": [
+                "An ingredient of the holy anointing oil",
+                "Perfume for clothes and beds",
+                "Beauty treatment: Esther's six months with oil of myrrh",
+                "Pain relief: wine mingled with myrrh",
+                "Preparing the dead for burial"
+            ],
+            "why": "Myrrh was costly, fragrant and bitter: fit for kings, for love, and for the dead. It follows Jesus from his cradle to his tomb.",
+            "who": [
+                {
+                    "who": "Joseph",
+                    "hero": "joseph",
+                    "what": "was sold to a caravan carrying spices, balm and myrrh to Egypt",
+                    "reference": "Genesis 37:25"
+                },
+                {
+                    "who": "Esther",
+                    "hero": "esther",
+                    "what": "was prepared for the king with six months of oil of myrrh",
+                    "reference": "Esther 2:12"
+                },
+                {
+                    "who": "The wise men",
+                    "what": "brought the child Jesus gold, frankincense and myrrh",
+                    "reference": "Matthew 2:11"
+                },
+                {
+                    "who": "Nicodemus",
+                    "what": "brought about a hundred pounds of myrrh and aloes to bury Jesus",
+                    "reference": "John 19:39"
+                }
+            ],
+            "importance": "The wise men's myrrh at his birth, the wine mingled with myrrh he refused on the cross (Mark 15:23), and the myrrh Nicodemus brought for his burial: this bitter perfume traces Jesus' whole road to the cross.",
+            "lesson": "Love gives its best even when it costs. Nicodemus came openly with a king's burial gift when it was most dangerous to do so.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 2:11",
+                    "text": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh."
+                },
+                {
+                    "reference": "John 19:39",
+                    "text": "And there came also Nicodemus, which at the first came to Jesus by night, and brought a mixture of myrrh and aloes, about an hundred pound weight. "
+                }
+            ],
+            "mentions": {
+                "verses": 16,
+                "old": 13,
+                "new": 3,
+                "first": {
+                    "reference": "Genesis 37:25",
+                    "text": "And they sat down to eat bread: and they lifted up their eyes and looked, and, behold, a company of Ishmeelites came from Gilead with their camels bearing spicery and balm and myrrh, going to carry it down to Egypt."
+                },
+                "books": [
+                    {
+                        "name": "Song of Solomon",
+                        "id": "song-of-solomon",
+                        "verses": 7
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Esther",
+                        "id": "esther",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "frankincense",
+            "kind": "plant",
+            "name": "Frankincense",
+            "group": "Herbs, flowers and spices",
+            "epithet": "The fragrance of prayer",
+            "summary": "A pale, fragrant resin from trees of southern Arabia, burned as incense and brought to Israel at great cost.",
+            "uses": [
+                "The holy incense burned in the tabernacle",
+                "Added to the grain offerings",
+                "Set beside the showbread every sabbath",
+                "A gift fit for a king"
+            ],
+            "why": "Its sweet smoke rising to God became a picture of prayer: 'Let my prayer be set forth before thee as incense' (Psalm 141:2). Given to the child Jesus, it honoured him as the one to whom worship belongs.",
+            "who": [
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "was given the recipe for the holy incense, with pure frankincense",
+                    "reference": "Exodus 30:34"
+                },
+                {
+                    "who": "The Levites",
+                    "what": "kept the frankincense and spices of the temple",
+                    "reference": "1 Chronicles 9:29"
+                },
+                {
+                    "who": "Nehemiah",
+                    "hero": "nehemiah",
+                    "what": "threw Tobiah out of the temple store-room that had held the frankincense",
+                    "reference": "Nehemiah 13:4-9"
+                },
+                {
+                    "who": "The wise men",
+                    "what": "brought frankincense to the child Jesus",
+                    "reference": "Matthew 2:11"
+                }
+            ],
+            "importance": "The holy incense belonged to God alone: anyone who made it for himself was to be cut off (Exodus 30:37-38). Every morning and evening its smoke rose in the holy place while the people prayed outside (Luke 1:9-10).",
+            "lesson": "Prayer rises to God like incense. It is an offering he delights in, not a burden to him (Revelation 5:8).",
+            "key_verses": [
+                {
+                    "reference": "Exodus 30:34",
+                    "text": "And the LORD said unto Moses, Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense: of each shall there be a like weight: "
+                },
+                {
+                    "reference": "Matthew 2:11",
+                    "text": "And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh."
+                }
+            ],
+            "mentions": {
+                "verses": 17,
+                "old": 15,
+                "new": 2,
+                "first": {
+                    "reference": "Exodus 30:34",
+                    "text": "And the LORD said unto Moses, Take unto thee sweet spices, stacte, and onycha, and galbanum; these sweet spices with pure frankincense: of each shall there be a like weight: "
+                },
+                "books": [
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 7
+                    },
+                    {
+                        "name": "Song of Solomon",
+                        "id": "song-of-solomon",
+                        "verses": 3
+                    },
+                    {
+                        "name": "Nehemiah",
+                        "id": "nehemiah",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "thorns-and-thistles",
+            "kind": "plant",
+            "name": "Thorns and thistles",
+            "group": "Wild plants",
+            "epithet": "The curse Jesus wore",
+            "summary": "The prickly weeds and bushes that choke fields across the land, first named as part of the curse on the ground.",
+            "uses": [
+                "Hedges to guard fields and flocks",
+                "Quick fuel: 'as the crackling of thorns under a pot'",
+                "Punishment: Gideon 'taught' the men of Succoth with thorns and briers"
+            ],
+            "why": "Thorns first appear when Adam sinned: 'Thorns also and thistles shall it bring forth to thee'. They became the Bible's picture of sin's curse, of worries that choke God's word, and at last of the crown the soldiers pressed on Jesus' head.",
+            "who": [
+                {
+                    "who": "Adam",
+                    "what": "was told the ground would bring forth thorns and thistles",
+                    "reference": "Genesis 3:17-18"
+                },
+                {
+                    "who": "Gideon",
+                    "hero": "gideon",
+                    "what": "punished the elders of Succoth with thorns and briers",
+                    "reference": "Judges 8:16"
+                },
+                {
+                    "who": "The soldiers",
+                    "what": "plaited a crown of thorns and put it on Jesus' head",
+                    "reference": "Matthew 27:29"
+                },
+                {
+                    "who": "Paul",
+                    "hero": "paul",
+                    "what": "was given 'a thorn in the flesh' to keep him humble",
+                    "reference": "2 Corinthians 12:7"
+                }
+            ],
+            "importance": "The curse began with thorns, and Jesus wore them as a crown when he took the curse on himself (Galatians 3:13). In the parable of the sower the thorns are 'the care of this world, and the deceitfulness of riches' that choke the word.",
+            "lesson": "Guard the soil of your heart. Worry and riches grow like thorns and choke what God has sown.",
+            "key_verses": [
+                {
+                    "reference": "Genesis 3:18",
+                    "text": "Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field;"
+                },
+                {
+                    "reference": "Matthew 13:22",
+                    "text": "He also that received seed among the thorns is he that heareth the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful. "
+                },
+                {
+                    "reference": "Matthew 27:29",
+                    "text": "And when they had platted a crown of thorns, they put it upon his head, and a reed in his right hand: and they bowed the knee before him, and mocked him, saying, Hail, King of the Jews!"
+                }
+            ],
+            "mentions": {
+                "verses": 57,
+                "old": 43,
+                "new": 14,
+                "first": {
+                    "reference": "Genesis 3:18",
+                    "text": "Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field;"
+                },
+                "books": [
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 12
+                    },
+                    {
+                        "name": "Proverbs",
+                        "id": "proverbs",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Judges",
+                        "id": "judges",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "reeds-and-bulrushes",
+            "kind": "plant",
+            "name": "Reeds and bulrushes",
+            "group": "Wild plants",
+            "epithet": "A baby's ark and a mock sceptre",
+            "summary": "The tall reeds and papyrus that grow thick along the Nile and the Jordan. Papyrus is the KJV's 'bulrushes'.",
+            "uses": [
+                "Woven into baskets and light boats",
+                "Measuring rods: 'a reed' was a measure of six cubits",
+                "Walking sticks"
+            ],
+            "why": "A reed bends in every wind, so it pictured weakness: Egypt was 'this broken reed' that pierces the hand of anyone who leans on it (Isaiah 36:6). Yet God promised that his servant would not break 'a bruised reed'.",
+            "who": [
+                {
+                    "who": "Moses' mother",
+                    "hero": "moses",
+                    "what": "hid her baby in an ark of bulrushes by the river's edge",
+                    "reference": "Exodus 2:3"
+                },
+                {
+                    "who": "John the Baptist",
+                    "hero": "john-the-baptist",
+                    "what": "was no 'reed shaken with the wind', Jesus said",
+                    "reference": "Matthew 11:7"
+                },
+                {
+                    "who": "The soldiers",
+                    "what": "put a reed in Jesus' hand as a mock sceptre, then struck him with it",
+                    "reference": "Matthew 27:29-30"
+                },
+                {
+                    "who": "John",
+                    "what": "was given a reed like a rod to measure the temple of God",
+                    "reference": "Revelation 11:1"
+                }
+            ],
+            "importance": "The same weak plant carries one of the Bible's most tender promises: 'A bruised reed shall he not break', fulfilled in Jesus (Matthew 12:20), the King who was himself mocked with a reed in his hand.",
+            "lesson": "Jesus does not snap what is bent and bruised. He is gentle with the weak.",
+            "key_verses": [
+                {
+                    "reference": "Exodus 2:3",
+                    "text": "And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river’s brink."
+                },
+                {
+                    "reference": "Isaiah 42:3",
+                    "text": "A bruised reed shall he not break, and the smoking flax shall he not quench: he shall bring forth judgment unto truth."
+                }
+            ],
+            "mentions": {
+                "verses": 39,
+                "old": 28,
+                "new": 11,
+                "first": {
+                    "reference": "Exodus 2:3",
+                    "text": "And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river’s brink."
+                },
+                "books": [
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 14
+                    },
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 8
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 5
+                    },
+                    {
+                        "name": "Revelation",
+                        "id": "revelation",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "grass",
+            "kind": "plant",
+            "name": "Grass",
+            "group": "Wild plants",
+            "epithet": "Here today, gone tomorrow",
+            "summary": "The green growth that covers the hills after the winter rains and withers fast in the summer heat.",
+            "uses": [
+                "Pasture for flocks and herds",
+                "Hay for the dry season",
+                "Fuel for the oven"
+            ],
+            "why": "Grass grows fast and dies fast, so it became the Bible's picture of how short human life is, and of how lasting God's word is by contrast.",
+            "who": [
+                {
+                    "who": "Nebuchadnezzar",
+                    "hero": "nebuchadnezzar",
+                    "what": "ate grass like an ox until he acknowledged God",
+                    "reference": "Daniel 4:33"
+                },
+                {
+                    "who": "Isaiah",
+                    "what": "cried, 'All flesh is grass'",
+                    "reference": "Isaiah 40:6-8"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "had the five thousand sit down on the green grass",
+                    "reference": "Mark 6:39"
+                },
+                {
+                    "who": "Peter",
+                    "hero": "peter",
+                    "what": "wrote that the grass withers but the word of the Lord endures",
+                    "reference": "1 Peter 1:24-25"
+                }
+            ],
+            "importance": "'The grass withereth, the flower fadeth: but the word of our God shall stand for ever' (Isaiah 40:8). Peter applied it to the gospel preached to his readers (1 Peter 1:25).",
+            "lesson": "Life is short, like grass. Build it on the word that lasts for ever.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 40:8",
+                    "text": "The grass withereth, the flower fadeth: but the word of our God shall stand for ever."
+                },
+                {
+                    "reference": "Psalms 103:15",
+                    "text": "As for man, his days are as grass: as a flower of the field, so he flourisheth. "
+                }
+            ],
+            "mentions": {
+                "verses": 56,
+                "old": 46,
+                "new": 10,
+                "first": {
+                    "reference": "Genesis 1:11",
+                    "text": "And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so."
+                },
+                "books": [
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 12
+                    },
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 8
+                    },
+                    {
+                        "name": "Daniel",
+                        "id": "daniel",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Deuteronomy",
+                        "id": "deuteronomy",
+                        "verses": 3
+                    }
+                ]
+            }
+        }
+    ],
+    "animals": [
+        {
+            "id": "sheep-and-lambs",
+            "kind": "animal",
+            "name": "Sheep and lambs",
+            "group": "Flocks and herds",
+            "epithet": "The flock of God",
+            "law": "Clean: it parts the hoof and chews the cud (Deuteronomy 14:4).",
+            "summary": "The most common animal in Israel, kept in flocks for wool, milk and meat, and led by a shepherd who knew each one.",
+            "uses": [
+                "Wool for clothing",
+                "Milk, cheese and meat",
+                "Rams' skins dyed red for the tabernacle's covering",
+                "Rams' horns for trumpets and for carrying oil",
+                "Sacrifices: the Passover lamb, burnt offerings and sin offerings"
+            ],
+            "why": "Sheep are helpless without a shepherd, so God describes his people as sheep and himself as their shepherd. And the lamb was the great animal of sacrifice, until John the Baptist pointed at Jesus and said, 'Behold the Lamb of God'.",
+            "who": [
+                {
+                    "who": "Abel",
+                    "what": "kept sheep and offered the firstlings of his flock",
+                    "reference": "Genesis 4:2-4"
+                },
+                {
+                    "who": "Abraham",
+                    "hero": "abraham",
+                    "what": "told Isaac, 'God will provide himself a lamb'",
+                    "reference": "Genesis 22:8"
+                },
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "commanded every household to take a lamb for the Passover",
+                    "reference": "Exodus 12:3"
+                },
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "kept his father's sheep and fought a lion and a bear for them",
+                    "reference": "1 Samuel 17:34-35"
+                },
+                {
+                    "who": "John the Baptist",
+                    "hero": "john-the-baptist",
+                    "what": "called Jesus 'the Lamb of God'",
+                    "reference": "John 1:29"
+                },
+                {
+                    "who": "Peter",
+                    "hero": "peter",
+                    "what": "was told by the risen Jesus, 'Feed my sheep'",
+                    "reference": "John 21:15-17"
+                }
+            ],
+            "importance": "From Abel's offering to the Passover to Isaiah's servant 'brought as a lamb to the slaughter' (Isaiah 53:7), the lamb points to Jesus. Revelation ends with the Lamb on the throne and the marriage supper of the Lamb (Revelation 19:9).",
+            "lesson": "'All we like sheep have gone astray', but the good shepherd gives his life for the sheep (Isaiah 53:6; John 10:11).",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 53:6",
+                    "text": "All we like sheep have gone astray; we have turned every one to his own way; and the LORD hath laid on him the iniquity of us all."
+                },
+                {
+                    "reference": "John 1:29",
+                    "text": "The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world."
+                },
+                {
+                    "reference": "John 10:11",
+                    "text": "I am the good shepherd: the good shepherd giveth his life for the sheep. "
+                }
+            ],
+            "mentions": {
+                "verses": 357,
+                "old": 285,
+                "new": 72,
+                "first": {
+                    "reference": "Genesis 4:2",
+                    "text": "And she again bare his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground."
+                },
+                "books": [
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 73
+                    },
+                    {
+                        "name": "Revelation",
+                        "id": "revelation",
+                        "verses": 28
+                    },
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 27
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 25
+                    }
+                ]
+            }
+        },
+        {
+            "id": "goat",
+            "kind": "animal",
+            "name": "Goat",
+            "group": "Flocks and herds",
+            "epithet": "The scapegoat",
+            "law": "Clean: it parts the hoof and chews the cud (Deuteronomy 14:4).",
+            "summary": "Hardy black goats grazed alongside the sheep, giving milk, meat and the long hair woven into tent cloth.",
+            "uses": [
+                "Milk: the main milking animal",
+                "Meat: a young kid for honoured guests",
+                "Goats' hair woven into tents and the tabernacle's curtains",
+                "Skins for water and wine bottles",
+                "Sin offerings, and the scapegoat on the Day of Atonement"
+            ],
+            "why": "On the Day of Atonement the high priest laid Israel's sins on the head of a live goat and sent it into the wilderness, carrying their sins away: the scapegoat. In Jesus' parable, the goats are those who never served him in 'the least of these'.",
+            "who": [
+                {
+                    "who": "Rebekah and Jacob",
+                    "what": "used two kids of the goats to trick blind Isaac",
+                    "reference": "Genesis 27:9-16"
+                },
+                {
+                    "who": "Joseph's brothers",
+                    "hero": "joseph",
+                    "what": "dipped his coat in the blood of a kid of the goats",
+                    "reference": "Genesis 37:31"
+                },
+                {
+                    "who": "Aaron",
+                    "what": "sent the scapegoat into the wilderness bearing Israel's sins",
+                    "reference": "Leviticus 16:21-22"
+                },
+                {
+                    "who": "Gideon",
+                    "hero": "gideon",
+                    "what": "prepared a kid for the angel of the LORD",
+                    "reference": "Judges 6:19"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "said he would separate the sheep from the goats",
+                    "reference": "Matthew 25:32-33"
+                }
+            ],
+            "importance": "The scapegoat is one of the clearest pictures of forgiveness in the Law: sin carried away 'unto a land not inhabited' (Leviticus 16:22). 'As far as the east is from the west, so far hath he removed our transgressions from us' (Psalm 103:12).",
+            "lesson": "God does not just cover sin; he carries it away.",
+            "key_verses": [
+                {
+                    "reference": "Leviticus 16:21-22",
+                    "text": "And Aaron shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Israel, and all their transgressions in all their sins, putting them upon the head of the goat, and shall send him away by the hand of a fit man into the wilderness: And the goat shall bear upon him all their iniquities unto a land not inhabited: and he shall let go the goat in the wilderness."
+                },
+                {
+                    "reference": "Matthew 25:32",
+                    "text": "And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats: "
+                }
+            ],
+            "mentions": {
+                "verses": 146,
+                "old": 139,
+                "new": 7,
+                "first": {
+                    "reference": "Genesis 15:9",
+                    "text": "And he said unto him, Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old, and a turtledove, and a young pigeon."
+                },
+                "books": [
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 44
+                    },
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 26
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 12
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 9
+                    }
+                ]
+            }
+        },
+        {
+            "id": "oxen-and-cattle",
+            "kind": "animal",
+            "name": "Oxen and cattle",
+            "group": "Flocks and herds",
+            "epithet": "The strength of the farm",
+            "law": "Clean: it parts the hoof and chews the cud (Deuteronomy 14:4).",
+            "summary": "Cattle were the farmer's engine and the family's wealth: oxen ploughed and threshed, cows gave milk, and a fatted calf meant a feast.",
+            "uses": [
+                "Ploughing and threshing grain",
+                "Pulling carts",
+                "Milk, butter and meat",
+                "Leather",
+                "Sacrifices: bullocks for burnt and sin offerings, and the red heifer"
+            ],
+            "why": "Oxen meant strength and wealth; Job's riches were counted in yoke of oxen. The Law cared for them: even a working ox was not to be muzzled. But a calf was also Israel's first idol, the golden calf at Sinai.",
+            "who": [
+                {
+                    "who": "Aaron and Israel",
+                    "what": "made a golden calf and worshipped it",
+                    "reference": "Exodus 32:4"
+                },
+                {
+                    "who": "Elisha",
+                    "hero": "elijah",
+                    "what": "was ploughing with twelve yoke of oxen when Elijah called him",
+                    "reference": "1 Kings 19:19"
+                },
+                {
+                    "who": "Job",
+                    "hero": "job",
+                    "what": "owned five hundred yoke of oxen before he lost everything",
+                    "reference": "Job 1:3"
+                },
+                {
+                    "who": "The prodigal's father",
+                    "what": "killed the fatted calf when his son came home",
+                    "reference": "Luke 15:23"
+                }
+            ],
+            "importance": "Paul read 'Thou shalt not muzzle the ox' as a principle for how God's people should care for those who serve them (1 Corinthians 9:9). And the fatted calf in Jesus' parable shows the joy of the Father over one sinner who comes home.",
+            "lesson": "God cares even for the working ox. How much more does he care for those who labour for him.",
+            "key_verses": [
+                {
+                    "reference": "Deuteronomy 25:4",
+                    "text": "Thou shalt not muzzle the ox when he treadeth out the corn."
+                },
+                {
+                    "reference": "Luke 15:23",
+                    "text": "And bring hither the fatted calf, and kill it; and let us eat, and be merry: "
+                }
+            ],
+            "mentions": {
+                "verses": 498,
+                "old": 478,
+                "new": 20,
+                "first": {
+                    "reference": "Genesis 1:24",
+                    "text": "And God said, Let the earth bring forth the living creature after his kind, cattle, and creeping thing, and beast of the earth after his kind: and it was so."
+                },
+                "books": [
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 92
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 60
+                    },
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 43
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 42
+                    }
+                ]
+            }
+        },
+        {
+            "id": "donkey",
+            "kind": "animal",
+            "name": "Donkey",
+            "group": "Flocks and herds",
+            "epithet": "The humble king's ride",
+            "law": "Unclean: it does not part the hoof. Its firstborn had to be redeemed with a lamb (Exodus 13:13).",
+            "summary": "The everyday beast of burden in Israel (the KJV's 'ass'): sure-footed, patient and strong, ridden by rich and poor alike.",
+            "uses": [
+                "Carrying loads and grain",
+                "Riding for travel, even for judges and kings",
+                "Ploughing, though never yoked with an ox"
+            ],
+            "why": "A king on a donkey came in peace, not war. Zechariah foretold, 'thy King cometh unto thee… lowly, and riding upon an ass', and Jesus fulfilled it when he rode into Jerusalem.",
+            "who": [
+                {
+                    "who": "Abraham",
+                    "hero": "abraham",
+                    "what": "saddled his ass to go to Mount Moriah",
+                    "reference": "Genesis 22:3"
+                },
+                {
+                    "who": "Balaam",
+                    "hero": "balaam",
+                    "what": "was rebuked by his donkey, which saw the angel he could not",
+                    "reference": "Numbers 22:28"
+                },
+                {
+                    "who": "Samson",
+                    "what": "killed a thousand men with the jawbone of an ass",
+                    "reference": "Judges 15:16"
+                },
+                {
+                    "who": "Saul",
+                    "hero": "saul",
+                    "what": "was out looking for his father's lost asses when he met Samuel",
+                    "reference": "1 Samuel 9:3"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "rode into Jerusalem on a colt, the foal of an ass",
+                    "reference": "Matthew 21:5"
+                }
+            ],
+            "importance": "Zechariah's prophecy (Zechariah 9:9) shaped how Jesus entered Jerusalem: not on a warhorse but on a borrowed colt, a King 'meek, and sitting upon an ass'.",
+            "lesson": "God's King comes in humility. Even a donkey could see what a proud prophet missed (Numbers 22:31).",
+            "key_verses": [
+                {
+                    "reference": "Zechariah 9:9",
+                    "text": "Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass."
+                },
+                {
+                    "reference": "Numbers 22:28",
+                    "text": "And the LORD opened the mouth of the ass, and she said unto Balaam, What have I done unto thee, that thou hast smitten me these three times?"
+                }
+            ],
+            "mentions": {
+                "verses": 147,
+                "old": 132,
+                "new": 15,
+                "first": {
+                    "reference": "Genesis 12:16",
+                    "text": "And he entreated Abram well for her sake: and he had sheep, and oxen, and he asses, and menservants, and maidservants, and she asses, and camels."
+                },
+                "books": [
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 19
+                    },
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 16
+                    },
+                    {
+                        "name": "1 Samuel",
+                        "id": "1-samuel",
+                        "verses": 16
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 12
+                    }
+                ]
+            }
+        },
+        {
+            "id": "camel",
+            "kind": "animal",
+            "name": "Camel",
+            "group": "Flocks and herds",
+            "epithet": "The ship of the desert",
+            "law": "Unclean: it chews the cud but does not divide the hoof (Leviticus 11:4).",
+            "summary": "The long-distance carrier of the East, able to go days without water, and a sign of great wealth.",
+            "uses": [
+                "Caravans and long-distance trade",
+                "Riding across the desert",
+                "Camel's hair woven into rough cloth",
+                "Wealth, and gifts for a bride's family"
+            ],
+            "why": "Camels carried the wealth of nations. They travel with the patriarchs and the Queen of Sheba, and Isaiah saw 'the multitude of camels' bringing gold and incense to Zion (Isaiah 60:6). Jesus used them for his famous picture of how hard it is for a rich man to enter the kingdom of God.",
+            "who": [
+                {
+                    "who": "Abraham's servant",
+                    "hero": "abraham",
+                    "what": "took ten camels to find a wife for Isaac",
+                    "reference": "Genesis 24:10"
+                },
+                {
+                    "who": "Rebekah",
+                    "what": "watered all ten camels, the sign the servant had prayed for",
+                    "reference": "Genesis 24:19-20"
+                },
+                {
+                    "who": "The Queen of Sheba",
+                    "what": "came to Solomon with camels loaded with spices and gold",
+                    "reference": "1 Kings 10:2"
+                },
+                {
+                    "who": "John the Baptist",
+                    "hero": "john-the-baptist",
+                    "what": "wore clothing of camel's hair",
+                    "reference": "Matthew 3:4"
+                }
+            ],
+            "importance": "Rebekah's kindness to a stranger's thirsty camels was the very sign Abraham's servant had asked God for (Genesis 24:14). And Jesus said it is 'easier for a camel to go through the eye of a needle' than for a rich man to enter the kingdom of God: impossible with men, but not with God (Mark 10:25-27).",
+            "lesson": "What is impossible for us is possible with God, even saving someone whose heart is tied to their wealth.",
+            "key_verses": [
+                {
+                    "reference": "Genesis 24:19",
+                    "text": "And when she had done giving him drink, she said, I will draw water for thy camels also, until they have done drinking."
+                },
+                {
+                    "reference": "Mark 10:25",
+                    "text": "It is easier for a camel to go through the eye of a needle, than for a rich man to enter into the kingdom of God. "
+                }
+            ],
+            "mentions": {
+                "verses": 59,
+                "old": 53,
+                "new": 6,
+                "first": {
+                    "reference": "Genesis 12:16",
+                    "text": "And he entreated Abram well for her sake: and he had sheep, and oxen, and he asses, and menservants, and maidservants, and she asses, and camels."
+                },
+                "books": [
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 22
+                    },
+                    {
+                        "name": "Judges",
+                        "id": "judges",
+                        "verses": 4
+                    },
+                    {
+                        "name": "1 Samuel",
+                        "id": "1-samuel",
+                        "verses": 3
+                    },
+                    {
+                        "name": "1 Chronicles",
+                        "id": "1-chronicles",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "horse",
+            "kind": "animal",
+            "name": "Horse",
+            "group": "Flocks and herds",
+            "epithet": "The warhorse",
+            "law": "Unclean: it does not part the hoof. Israel's kings were told not to 'multiply horses' (Deuteronomy 17:16).",
+            "summary": "In Bible times horses were animals of war, drawing chariots and carrying cavalry: the strength of Egypt and the great empires.",
+            "uses": [
+                "Pulling war chariots",
+                "Cavalry",
+                "Swift royal couriers",
+                "A show of a king's power"
+            ],
+            "why": "Because horses meant military power, God warned Israel's kings not to gather them or trust in them. 'Some trust in chariots, and some in horses: but we will remember the name of the LORD our God.'",
+            "who": [
+                {
+                    "who": "Pharaoh's army",
+                    "hero": "pharaoh",
+                    "what": "'the horse and his rider hath he thrown into the sea'",
+                    "reference": "Exodus 15:1"
+                },
+                {
+                    "who": "Solomon",
+                    "what": "gathered horses brought out of Egypt",
+                    "reference": "1 Kings 10:26-28"
+                },
+                {
+                    "who": "Elijah",
+                    "hero": "elijah",
+                    "what": "was parted from Elisha by a chariot and horses of fire",
+                    "reference": "2 Kings 2:11"
+                },
+                {
+                    "who": "Elisha's servant",
+                    "what": "saw the hills full of horses and chariots of fire",
+                    "reference": "2 Kings 6:17"
+                },
+                {
+                    "who": "Faithful and True",
+                    "what": "rides out on a white horse to judge and make war",
+                    "reference": "Revelation 19:11"
+                }
+            ],
+            "importance": "The horse is the Bible's test of where trust lies. Isaiah warned those who 'go down to Egypt for help; and stay on horses' (Isaiah 31:1). At the end, Christ himself rides the white horse to victory.",
+            "lesson": "Don't trust in the strongest thing you can see. 'An horse is a vain thing for safety' (Psalm 33:17).",
+            "key_verses": [
+                {
+                    "reference": "Psalms 20:7",
+                    "text": "Some trust in chariots, and some in horses: but we will remember the name of the LORD our God. "
+                },
+                {
+                    "reference": "Revelation 19:11",
+                    "text": "And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war."
+                }
+            ],
+            "mentions": {
+                "verses": 144,
+                "old": 129,
+                "new": 15,
+                "first": {
+                    "reference": "Genesis 47:17",
+                    "text": "And they brought their cattle unto Joseph: and Joseph gave them bread in exchange for horses, and for the flocks, and for the cattle of the herds, and for the asses: and he fed them with bread for all their cattle for that year."
+                },
+                "books": [
+                    {
+                        "name": "2 Kings",
+                        "id": "2-kings",
+                        "verses": 17
+                    },
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 16
+                    },
+                    {
+                        "name": "Revelation",
+                        "id": "revelation",
+                        "verses": 14
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 12
+                    }
+                ]
+            }
+        },
+        {
+            "id": "pig",
+            "kind": "animal",
+            "name": "Pig",
+            "group": "Flocks and herds",
+            "epithet": "The unclean animal",
+            "law": "Unclean: it divides the hoof but does not chew the cud (Leviticus 11:7).",
+            "summary": "Forbidden as food under the Law of Moses, pigs (the KJV's 'swine') were kept by Gentiles, which made herding them the lowest job a Jew could have.",
+            "uses": [
+                "Meat for Gentiles; forbidden to Israel",
+                "Herds kept in Gentile country east of the Sea of Galilee"
+            ],
+            "why": "Pigs do not chew the cud, so they were unclean. That is why the prodigal son feeding swine had hit bottom, and why a herd of about two thousand pigs shows Jesus crossing into Gentile country.",
+            "who": [
+                {
+                    "who": "The prodigal son",
+                    "what": "fed pigs and longed to eat their husks",
+                    "reference": "Luke 15:15-16"
+                },
+                {
+                    "who": "The man from the tombs",
+                    "what": "was set free as the unclean spirits went into a herd of swine",
+                    "reference": "Mark 5:11-13"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "warned not to cast pearls before swine",
+                    "reference": "Matthew 7:6"
+                }
+            ],
+            "importance": "The New Testament lifts the Law's line between clean and unclean food: Mark notes that Jesus' words meant 'purging all meats' (Mark 7:19), and Peter's vision taught him not to call any person common or unclean (Acts 10:15, 28).",
+            "lesson": "No one is too far gone. The son among the pigs was still a son, and his father ran to meet him (Luke 15:20).",
+            "key_verses": [
+                {
+                    "reference": "Leviticus 11:7",
+                    "text": "And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you."
+                },
+                {
+                    "reference": "Luke 15:15",
+                    "text": "And he went and joined himself to a citizen of that country; and he sent him into his fields to feed swine. "
+                }
+            ],
+            "mentions": {
+                "verses": 20,
+                "old": 7,
+                "new": 13,
+                "first": {
+                    "reference": "Leviticus 11:7",
+                    "text": "And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you."
+                },
+                "books": [
+                    {
+                        "name": "Mark",
+                        "id": "mark",
+                        "verses": 5
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "lion",
+            "kind": "animal",
+            "name": "Lion",
+            "group": "Wild animals",
+            "epithet": "The king of beasts",
+            "summary": "Lions roamed the thickets of the Jordan and the hills of Judah in Bible times, a real danger to shepherds and travellers.",
+            "uses": [
+                "A danger to flocks and people",
+                "A royal emblem: lions stood beside the steps of Solomon's throne"
+            ],
+            "why": "The lion stood for strength, courage and royal power, and for danger. Judah is 'a lion's whelp' (Genesis 49:9), the devil 'as a roaring lion' seeks whom he may devour, and Jesus is 'the Lion of the tribe of Juda'.",
+            "who": [
+                {
+                    "who": "Samson",
+                    "what": "tore a young lion apart with his bare hands",
+                    "reference": "Judges 14:5-6"
+                },
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "killed a lion that took a lamb from his flock",
+                    "reference": "1 Samuel 17:34-36"
+                },
+                {
+                    "who": "A disobedient prophet",
+                    "what": "was killed by a lion on the road home",
+                    "reference": "1 Kings 13:24"
+                },
+                {
+                    "who": "Daniel",
+                    "hero": "daniel",
+                    "what": "was thrown into the den of lions and came out unhurt",
+                    "reference": "Daniel 6:22"
+                }
+            ],
+            "importance": "The Bible's lions show both sides of power. God shut the lions' mouths for Daniel; Peter warns us to stay alert against the enemy who prowls like one; and the Lion of Judah turns out to be a Lamb that was slain (Revelation 5:5-6).",
+            "lesson": "'The righteous are bold as a lion' (Proverbs 28:1), not because they are strong but because the Lion of Judah has conquered.",
+            "key_verses": [
+                {
+                    "reference": "Daniel 6:22",
+                    "text": "My God hath sent his angel, and hath shut the lions mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt."
+                },
+                {
+                    "reference": "1 Peter 5:8",
+                    "text": "Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:"
+                },
+                {
+                    "reference": "Revelation 5:5",
+                    "text": "And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof."
+                }
+            ],
+            "mentions": {
+                "verses": 119,
+                "old": 110,
+                "new": 9,
+                "first": {
+                    "reference": "Genesis 49:9",
+                    "text": "Judah is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?"
+                },
+                "books": [
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 11
+                    },
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 10
+                    },
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 10
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 10
+                    }
+                ]
+            }
+        },
+        {
+            "id": "wolf",
+            "kind": "animal",
+            "name": "Wolf",
+            "group": "Wild animals",
+            "epithet": "The enemy of the flock",
+            "summary": "Wolves hunted the flocks of Israel at night, and a good shepherd had to stand between them and his sheep.",
+            "uses": [
+                "A constant danger to sheep and goats, especially at night"
+            ],
+            "why": "The wolf pictures those who harm God's people, above all false teachers who look harmless. Jesus warned of 'false prophets, which come to you in sheep's clothing, but inwardly they are ravening wolves'.",
+            "who": [
+                {
+                    "who": "Jacob",
+                    "what": "said in his blessing that Benjamin 'shall ravin as a wolf'",
+                    "reference": "Genesis 49:27"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "sent out his disciples 'as sheep in the midst of wolves'",
+                    "reference": "Matthew 10:16"
+                },
+                {
+                    "who": "The hired hand",
+                    "what": "runs when he sees the wolf coming; the good shepherd does not",
+                    "reference": "John 10:12"
+                },
+                {
+                    "who": "Paul",
+                    "hero": "paul",
+                    "what": "warned the Ephesian elders of 'grievous wolves'",
+                    "reference": "Acts 20:29"
+                }
+            ],
+            "importance": "Isaiah's picture of the coming kingdom begins with this old enemy at peace: 'The wolf also shall dwell with the lamb' (Isaiah 11:6).",
+            "lesson": "Watch for wolves in sheep's clothing, and trust the Shepherd who lays down his life rather than run (John 10:11-12).",
+            "key_verses": [
+                {
+                    "reference": "Matthew 7:15",
+                    "text": "Beware of false prophets, which come to you in sheep’s clothing, but inwardly they are ravening wolves. "
+                },
+                {
+                    "reference": "Isaiah 11:6",
+                    "text": "The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them."
+                }
+            ],
+            "mentions": {
+                "verses": 12,
+                "old": 7,
+                "new": 5,
+                "first": {
+                    "reference": "Genesis 49:27",
+                    "text": "Benjamin shall ravin as a wolf: in the morning he shall devour the prey, and at night he shall divide the spoil."
+                },
+                "books": [
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "bear",
+            "kind": "animal",
+            "name": "Bear",
+            "group": "Wild animals",
+            "epithet": "The robbed mother",
+            "summary": "The Syrian brown bear lived in the hills and forests of Israel in Bible times, dangerous to flocks and fierce in defending its cubs.",
+            "uses": [
+                "A danger to flocks and travellers"
+            ],
+            "why": "The bear stood for fierce, sudden danger. 'Let a bear robbed of her whelps meet a man, rather than a fool in his folly' (Proverbs 17:12).",
+            "who": [
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "killed a bear to save his father's sheep",
+                    "reference": "1 Samuel 17:34-36"
+                },
+                {
+                    "who": "Hushai",
+                    "hero": "absalom",
+                    "what": "warned Absalom that David was as fierce as a bear robbed of her cubs",
+                    "reference": "2 Samuel 17:8"
+                },
+                {
+                    "who": "Elisha",
+                    "what": "was mocked near Bethel, and two she bears came out of the wood",
+                    "reference": "2 Kings 2:23-24"
+                },
+                {
+                    "who": "Daniel",
+                    "hero": "daniel",
+                    "what": "saw a kingdom rise like a bear in his vision",
+                    "reference": "Daniel 7:5"
+                }
+            ],
+            "importance": "David's fights with the lion and the bear gave him courage to face Goliath: 'The LORD that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me out of the hand of this Philistine' (1 Samuel 17:37).",
+            "lesson": "Remember what God has already done. Past rescues build courage for today's giant.",
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 17:37",
+                    "text": "David said moreover, The LORD that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me out of the hand of this Philistine. And Saul said unto David, Go, and the LORD be with thee."
+                },
+                {
+                    "reference": "Proverbs 17:12",
+                    "text": "Let a bear robbed of her whelps meet a man, rather than a fool in his folly."
+                }
+            ],
+            "mentions": {
+                "verses": 13,
+                "old": 12,
+                "new": 1,
+                "first": {
+                    "reference": "1 Samuel 17:34",
+                    "text": "And David said unto Saul, Thy servant kept his father’s sheep, and there came a lion, and a bear, and took a lamb out of the flock:"
+                },
+                "books": [
+                    {
+                        "name": "1 Samuel",
+                        "id": "1-samuel",
+                        "verses": 3
+                    },
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 2
+                    },
+                    {
+                        "name": "2 Samuel",
+                        "id": "2-samuel",
+                        "verses": 1
+                    },
+                    {
+                        "name": "2 Kings",
+                        "id": "2-kings",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "fox",
+            "kind": "animal",
+            "name": "Fox",
+            "group": "Wild animals",
+            "epithet": "The little spoilers",
+            "summary": "Foxes and jackals prowled the ruins and vineyards of Israel: clever, destructive and at home in holes.",
+            "uses": [
+                "Pests in the vineyards",
+                "Scavengers of ruined places"
+            ],
+            "why": "Foxes stood for cunning and for the ruin of what once flourished. Jesus called Herod 'that fox', and said that foxes have holes while he had nowhere to lay his head.",
+            "who": [
+                {
+                    "who": "Samson",
+                    "what": "tied torches to three hundred foxes and burned the Philistines' fields",
+                    "reference": "Judges 15:4-5"
+                },
+                {
+                    "who": "Tobiah",
+                    "hero": "nehemiah",
+                    "what": "mocked that a fox would break down Nehemiah's wall",
+                    "reference": "Nehemiah 4:3"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "said the foxes have holes but he had nowhere to lay his head",
+                    "reference": "Matthew 8:20"
+                },
+                {
+                    "who": "Herod Antipas",
+                    "hero": "herod-antipas",
+                    "what": "was called 'that fox' by Jesus",
+                    "reference": "Luke 13:32"
+                }
+            ],
+            "importance": "'Take us the foxes, the little foxes, that spoil the vines' (Song of Solomon 2:15): small things left unchecked can ruin a whole vineyard.",
+            "lesson": "Watch for the little foxes: small compromises that quietly spoil what God is growing.",
+            "key_verses": [
+                {
+                    "reference": "Song of Solomon 2:15",
+                    "text": "Take us the foxes, the little foxes, that spoil the vines: for our vines have tender grapes."
+                },
+                {
+                    "reference": "Matthew 8:20",
+                    "text": "And Jesus saith unto him, The foxes have holes, and the birds of the air have nests; but the Son of man hath not where to lay his head. "
+                }
+            ],
+            "mentions": {
+                "verses": 9,
+                "old": 6,
+                "new": 3,
+                "first": {
+                    "reference": "Judges 15:4",
+                    "text": "And Samson went and caught three hundred foxes, and took firebrands, and turned tail to tail, and put a firebrand in the midst between two tails."
+                },
+                "books": [
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Judges",
+                        "id": "judges",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Nehemiah",
+                        "id": "nehemiah",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "deer",
+            "kind": "animal",
+            "name": "Deer",
+            "group": "Wild animals",
+            "epithet": "Thirsting for God",
+            "law": "Clean: the hart, the roebuck and the fallow deer could be eaten (Deuteronomy 14:5).",
+            "summary": "Gazelles and deer (the KJV's harts, hinds and roes) were swift, graceful animals of the hills, hunted for food.",
+            "uses": [
+                "Clean game meat, served daily at Solomon's table",
+                "Hunted in the hills"
+            ],
+            "why": "The deer's thirst and sure feet gave Scripture two of its loveliest pictures: 'As the hart panteth after the water brooks, so panteth my soul after thee, O God', and feet 'like hinds' feet' set on high places.",
+            "who": [
+                {
+                    "who": "Asahel",
+                    "what": "was 'as light of foot as a wild roe'",
+                    "reference": "2 Samuel 2:18"
+                },
+                {
+                    "who": "Solomon",
+                    "what": "had harts, roebucks and fallow deer on his table every day",
+                    "reference": "1 Kings 4:23"
+                },
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "sang that God made his feet like hinds' feet",
+                    "reference": "Psalms 18:33"
+                },
+                {
+                    "who": "Habakkuk",
+                    "what": "trusted God though the harvest failed, and walked the heights with hinds' feet",
+                    "reference": "Habakkuk 3:19"
+                }
+            ],
+            "importance": "Habakkuk's song begins with empty fields and bare fig trees and ends with feet like a deer's on the heights (Habakkuk 3:17-19). Joy in God does not depend on the harvest.",
+            "lesson": "Thirst for God as a deer thirsts for water, and trust him to keep your feet steady on hard ground.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 42:1",
+                    "text": "As the hart panteth after the water brooks, so panteth my soul after thee, O God. "
+                },
+                {
+                    "reference": "Habakkuk 3:19",
+                    "text": "The LORD God is my strength, and he will make my feet like hinds’ feet, and he will make me to walk upon mine high places. To the chief singer on my stringed instruments."
+                }
+            ],
+            "mentions": {
+                "verses": 27,
+                "old": 27,
+                "new": 0,
+                "first": {
+                    "reference": "Genesis 49:21",
+                    "text": "Naphtali is a hind let loose: he giveth goodly words."
+                },
+                "books": [
+                    {
+                        "name": "Song of Solomon",
+                        "id": "song-of-solomon",
+                        "verses": 7
+                    },
+                    {
+                        "name": "Deuteronomy",
+                        "id": "deuteronomy",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 3
+                    },
+                    {
+                        "name": "2 Samuel",
+                        "id": "2-samuel",
+                        "verses": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "dog",
+            "kind": "animal",
+            "name": "Dog",
+            "group": "Wild animals",
+            "epithet": "The scavenger at the gate",
+            "summary": "Most dogs in Bible times were half-wild scavengers roaming the streets and rubbish heaps; a few guarded the flocks.",
+            "uses": [
+                "Guarding flocks",
+                "Scavenging whatever was thrown out"
+            ],
+            "why": "Because they were unclean scavengers, 'dog' was an insult: Goliath sneered, 'Am I a dog?' Yet Jesus let a Gentile mother turn the word around: even the dogs eat the children's crumbs under the table.",
+            "who": [
+                {
+                    "who": "Goliath",
+                    "hero": "goliath",
+                    "what": "asked David, 'Am I a dog, that thou comest to me with staves?'",
+                    "reference": "1 Samuel 17:43"
+                },
+                {
+                    "who": "Mephibosheth",
+                    "hero": "david",
+                    "what": "called himself 'such a dead dog as I am' when David showed him kindness",
+                    "reference": "2 Samuel 9:8"
+                },
+                {
+                    "who": "Jezebel",
+                    "hero": "jezebel",
+                    "what": "was eaten by dogs, as Elijah had said",
+                    "reference": "2 Kings 9:36"
+                },
+                {
+                    "who": "Lazarus the beggar",
+                    "what": "had dogs lick his sores at the rich man's gate",
+                    "reference": "Luke 16:21"
+                },
+                {
+                    "who": "A Syrophenician mother",
+                    "what": "answered Jesus that even the dogs eat the children's crumbs",
+                    "reference": "Mark 7:28"
+                }
+            ],
+            "importance": "The Syrophenician mother's humble, quick answer won her daughter's healing (Mark 7:29). Faith does not argue its own worth; it clings to the Master's mercy.",
+            "lesson": "No one is too low for God's grace. David seated a man who called himself a dead dog at the king's table (2 Samuel 9:8-11).",
+            "key_verses": [
+                {
+                    "reference": "Mark 7:28",
+                    "text": "And she answered and said unto him, Yes, Lord: yet the dogs under the table eat of the children’s crumbs."
+                },
+                {
+                    "reference": "2 Samuel 9:8",
+                    "text": "And he bowed himself, and said, What is thy servant, that thou shouldest look upon such a dead dog as I am?"
+                }
+            ],
+            "mentions": {
+                "verses": 40,
+                "old": 31,
+                "new": 9,
+                "first": {
+                    "reference": "Exodus 11:7",
+                    "text": "But against any of the children of Israel shall not a dog move his tongue, against man or beast: that ye may know how that the LORD doth put a difference between the Egyptians and Israel."
+                },
+                "books": [
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 5
+                    },
+                    {
+                        "name": "2 Samuel",
+                        "id": "2-samuel",
+                        "verses": 3
+                    },
+                    {
+                        "name": "2 Kings",
+                        "id": "2-kings",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "dove",
+            "kind": "animal",
+            "name": "Dove",
+            "group": "Birds",
+            "epithet": "The bird of peace and the Spirit",
+            "law": "Clean: doves and pigeons were offered in sacrifice (Leviticus 1:14).",
+            "summary": "Doves and pigeons nested in the rocks and were the cheapest sacrifice: the offering of the poor.",
+            "uses": [
+                "Sacrifices for those who could not afford a lamb",
+                "Food",
+                "Sold in the temple courts for offerings"
+            ],
+            "why": "The dove carried the olive leaf to Noah, came down on Jesus at his baptism as the Holy Spirit, and was the sacrifice poor families brought. It stands for peace, gentleness and the Spirit of God.",
+            "who": [
+                {
+                    "who": "Noah",
+                    "hero": "noah",
+                    "what": "sent out a dove that came back with an olive leaf",
+                    "reference": "Genesis 8:8-11"
+                },
+                {
+                    "who": "Mary and Joseph",
+                    "hero": "mary-mother-of-jesus",
+                    "what": "offered two birds, the offering of the poor, when Jesus was presented",
+                    "reference": "Luke 2:24"
+                },
+                {
+                    "who": "John the Baptist",
+                    "hero": "john-the-baptist",
+                    "what": "saw the Spirit come down like a dove on Jesus",
+                    "reference": "John 1:32"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "drove out those who sold doves in the temple",
+                    "reference": "Matthew 21:12"
+                }
+            ],
+            "importance": "Mary's offering of birds shows that Jesus was born into a poor family (Luke 2:24; Leviticus 12:8). Jesus told his disciples to be 'wise as serpents, and harmless as doves' (Matthew 10:16).",
+            "lesson": "Be harmless as doves (gentle and pure) while being wise (Matthew 10:16).",
+            "key_verses": [
+                {
+                    "reference": "Genesis 8:11",
+                    "text": "And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth."
+                },
+                {
+                    "reference": "Matthew 3:16",
+                    "text": "And Jesus, when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of God descending like a dove, and lighting upon him:"
+                }
+            ],
+            "mentions": {
+                "verses": 46,
+                "old": 36,
+                "new": 10,
+                "first": {
+                    "reference": "Genesis 8:8",
+                    "text": "Also he sent forth a dove from him, to see if the waters were abated from off the face of the ground;"
+                },
+                "books": [
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 9
+                    },
+                    {
+                        "name": "Song of Solomon",
+                        "id": "song-of-solomon",
+                        "verses": 7
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "raven",
+            "kind": "animal",
+            "name": "Raven",
+            "group": "Birds",
+            "epithet": "The bird God feeds",
+            "law": "Unclean: 'every raven after his kind' (Leviticus 11:15).",
+            "summary": "Large black birds of the crow family: scavengers that eat almost anything, and unclean under the Law.",
+            "uses": [
+                "None to people: an unclean scavenger"
+            ],
+            "why": "An unclean bird became God's delivery service: ravens fed Elijah by the brook Cherith. Jesus pointed to them too: they neither sow nor reap, 'and God feedeth them'.",
+            "who": [
+                {
+                    "who": "Noah",
+                    "hero": "noah",
+                    "what": "sent out a raven first, which flew to and fro",
+                    "reference": "Genesis 8:7"
+                },
+                {
+                    "who": "Elijah",
+                    "hero": "elijah",
+                    "what": "was brought bread and meat by ravens morning and evening",
+                    "reference": "1 Kings 17:4-6"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "said, 'Consider the ravens… God feedeth them'",
+                    "reference": "Luke 12:24"
+                }
+            ],
+            "importance": "'Who provideth for the raven his food? when his young ones cry unto God' (Job 38:41). If God feeds the unclean scavenger, he will not forget his children.",
+            "lesson": "God can use anything, even an unclean bird, to provide for those who trust him.",
+            "key_verses": [
+                {
+                    "reference": "1 Kings 17:6",
+                    "text": "And the ravens brought him bread and flesh in the morning, and bread and flesh in the evening; and he drank of the brook."
+                },
+                {
+                    "reference": "Luke 12:24",
+                    "text": "Consider the ravens: for they neither sow nor reap; which neither have storehouse nor barn; and God feedeth them: how much more are ye better than the fowls? "
+                }
+            ],
+            "mentions": {
+                "verses": 11,
+                "old": 10,
+                "new": 1,
+                "first": {
+                    "reference": "Genesis 8:7",
+                    "text": "And he sent forth a raven, which went forth to and fro, until the waters were dried up from off the earth."
+                },
+                "books": [
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Leviticus",
+                        "id": "leviticus",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Deuteronomy",
+                        "id": "deuteronomy",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "eagle",
+            "kind": "animal",
+            "name": "Eagle",
+            "group": "Birds",
+            "epithet": "Mounting up with wings",
+            "law": "Unclean: the first bird named as forbidden (Leviticus 11:13).",
+            "summary": "The great birds of prey (eagles and vultures, both 'eagle' in the KJV) soaring high over the mountains and deserts.",
+            "uses": [
+                "None to people: an unclean bird of prey"
+            ],
+            "why": "The eagle's strength, speed and high flight made it a picture of God's care (he carried Israel 'on eagles' wings') and of new strength for those who wait on him.",
+            "who": [
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "heard God say he had carried Israel on eagles' wings",
+                    "reference": "Exodus 19:4"
+                },
+                {
+                    "who": "David",
+                    "hero": "david",
+                    "what": "mourned Saul and Jonathan as 'swifter than eagles'",
+                    "reference": "2 Samuel 1:23"
+                },
+                {
+                    "who": "Isaiah",
+                    "what": "promised that those who wait on the LORD will mount up with wings as eagles",
+                    "reference": "Isaiah 40:31"
+                },
+                {
+                    "who": "John",
+                    "what": "saw a living creature like a flying eagle around the throne",
+                    "reference": "Revelation 4:7"
+                }
+            ],
+            "importance": "Deuteronomy pictures God as an eagle that stirs up her nest and bears her young on her wings (Deuteronomy 32:11): pushing them to fly, but never letting them fall.",
+            "lesson": "'They that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles' (Isaiah 40:31).",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 40:31",
+                    "text": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."
+                },
+                {
+                    "reference": "Exodus 19:4",
+                    "text": "Ye have seen what I did unto the Egyptians, and how I bare you on eagles’ wings, and brought you unto myself."
+                }
+            ],
+            "mentions": {
+                "verses": 34,
+                "old": 30,
+                "new": 4,
+                "first": {
+                    "reference": "Exodus 19:4",
+                    "text": "Ye have seen what I did unto the Egyptians, and how I bare you on eagles’ wings, and brought you unto myself."
+                },
+                "books": [
+                    {
+                        "name": "Deuteronomy",
+                        "id": "deuteronomy",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Proverbs",
+                        "id": "proverbs",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "sparrow",
+            "kind": "animal",
+            "name": "Sparrow",
+            "group": "Birds",
+            "epithet": "Not forgotten",
+            "summary": "Small birds sold in the market for a copper coin or two: the cheapest meat there was.",
+            "uses": [
+                "Cheap food for the poor",
+                "Nesting around the house of God"
+            ],
+            "why": "Jesus chose the cheapest thing in the market to show the Father's care: not one sparrow falls to the ground without him. 'Fear ye not therefore, ye are of more value than many sparrows.'",
+            "who": [
+                {
+                    "who": "The psalmist",
+                    "what": "envied the sparrow that nested near God's altar",
+                    "reference": "Psalms 84:3"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "said not one sparrow falls without the Father",
+                    "reference": "Matthew 10:29-31"
+                }
+            ],
+            "importance": "Two sparrows sold for a farthing (Matthew 10:29); five for two farthings (Luke 12:6). The fifth seems to have been thrown in for nothing, and Luke adds, 'not one of them is forgotten before God'.",
+            "lesson": "You are not forgotten. If God watches every sparrow, he knows every hair on your head (Matthew 10:30).",
+            "key_verses": [
+                {
+                    "reference": "Matthew 10:29",
+                    "text": "Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father. "
+                },
+                {
+                    "reference": "Luke 12:6-7",
+                    "text": "Are not five sparrows sold for two farthings, and not one of them is forgotten before God?  But even the very hairs of your head are all numbered. Fear not therefore: ye are of more value than many sparrows. "
+                }
+            ],
+            "mentions": {
+                "verses": 6,
+                "old": 2,
+                "new": 4,
+                "first": {
+                    "reference": "Psalms 84:3",
+                    "text": "Yea, the sparrow hath found an house, and the swallow a nest for herself, where she may lay her young, even thine altars, O LORD of hosts, my King, and my God. "
+                },
+                "books": [
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "quail",
+            "kind": "animal",
+            "name": "Quail",
+            "group": "Birds",
+            "epithet": "Meat in the wilderness",
+            "summary": "Small birds that cross the Sinai in huge flocks each spring and autumn, flying low and landing exhausted.",
+            "uses": [
+                "Meat: God sent quail to feed Israel in the wilderness"
+            ],
+            "why": "Twice God sent quail to feed Israel in the desert. The first time it was simple provision. The second time, when they despised the manna and craved meat, it became a judgement.",
+            "who": [
+                {
+                    "who": "Moses and Israel",
+                    "hero": "moses",
+                    "what": "saw quails come up and cover the camp at evening",
+                    "reference": "Exodus 16:13"
+                },
+                {
+                    "who": "The people at Kibroth-hattaavah",
+                    "what": "gathered quail for two days and were struck by a plague",
+                    "reference": "Numbers 11:31-34"
+                }
+            ],
+            "importance": "'He gave them their request; but sent leanness into their soul' (Psalm 106:15). Numbers 11 is a warning about grumbling and craving: getting what we want is not the same as being blessed.",
+            "lesson": "Be thankful for God's daily provision. Craving more can leave the soul empty.",
+            "key_verses": [
+                {
+                    "reference": "Exodus 16:13",
+                    "text": "And it came to pass, that at even the quails came up, and covered the camp: and in the morning the dew lay round about the host."
+                },
+                {
+                    "reference": "Psalms 105:40",
+                    "text": "The people asked, and he brought quails, and satisfied them with the bread of heaven. "
+                }
+            ],
+            "mentions": {
+                "verses": 4,
+                "old": 4,
+                "new": 0,
+                "first": {
+                    "reference": "Exodus 16:13",
+                    "text": "And it came to pass, that at even the quails came up, and covered the camp: and in the morning the dew lay round about the host."
+                },
+                "books": [
+                    {
+                        "name": "Numbers",
+                        "id": "numbers",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 1
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "rooster",
+            "kind": "animal",
+            "name": "Rooster",
+            "group": "Birds",
+            "epithet": "The crow that woke Peter",
+            "summary": "In the KJV the rooster ('cock') appears only in the New Testament, its crow marking the last hours of the night.",
+            "uses": [
+                "Keeping time before dawn: 'cockcrowing' was a watch of the night",
+                "Eggs and meat"
+            ],
+            "why": "Jesus told Peter he would deny him three times before the cock crowed. When it crowed, Peter remembered and wept bitterly. And Jesus longed to gather Jerusalem 'as a hen gathereth her chickens under her wings'.",
+            "who": [
+                {
+                    "who": "Peter",
+                    "hero": "peter",
+                    "what": "denied Jesus three times, then heard the cock crow",
+                    "reference": "Luke 22:60-62"
+                },
+                {
+                    "who": "Jesus",
+                    "what": "longed to gather Jerusalem as a hen gathers her chicks",
+                    "reference": "Matthew 23:37"
+                }
+            ],
+            "importance": "The rooster's crow was not the end of Peter's story. After the resurrection Jesus asked him three times, 'Lovest thou me?', once for each denial, and gave him his sheep to feed (John 21:15-17).",
+            "lesson": "Failure is not final. The man who heard the cock crow became the one who fed Christ's sheep.",
+            "key_verses": [
+                {
+                    "reference": "Luke 22:61",
+                    "text": "And the Lord turned, and looked upon Peter. And Peter remembered the word of the Lord, how he had said unto him, Before the cock crow, thou shalt deny me thrice. "
+                },
+                {
+                    "reference": "Matthew 23:37",
+                    "text": "O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not! "
+                }
+            ],
+            "mentions": {
+                "verses": 14,
+                "old": 0,
+                "new": 14,
+                "first": {
+                    "reference": "Matthew 23:37",
+                    "text": "O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not! "
+                },
+                "books": [
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Mark",
+                        "id": "mark",
+                        "verses": 4
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 4
+                    },
+                    {
+                        "name": "John",
+                        "id": "john",
+                        "verses": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "fish",
+            "kind": "animal",
+            "name": "Fish",
+            "group": "Creatures of the water",
+            "epithet": "The food of Galilee",
+            "law": "Clean only if it has fins and scales (Leviticus 11:9-10).",
+            "summary": "The Sea of Galilee teemed with fish, and fishing was a major trade; fish were eaten fresh, dried and salted across the land.",
+            "uses": [
+                "Food: fresh, dried and salted",
+                "Trade: Jerusalem had a Fish Gate",
+                "A living for fishermen like Peter, Andrew, James and John"
+            ],
+            "why": "Jesus called fishermen and made them 'fishers of men'. He fed crowds with a few fish, filled nets after a fruitless night, and ate fish with his disciples after he rose from the dead.",
+            "who": [
+                {
+                    "who": "Jonah",
+                    "what": "was swallowed by a great fish and spent three days inside",
+                    "reference": "Jonah 1:17"
+                },
+                {
+                    "who": "Peter",
+                    "hero": "peter",
+                    "what": "let down his nets at Jesus' word and caught so many fish they broke",
+                    "reference": "Luke 5:4-6"
+                },
+                {
+                    "who": "A boy in the crowd",
+                    "what": "gave two small fishes with his five loaves",
+                    "reference": "John 6:9"
+                },
+                {
+                    "who": "Peter",
+                    "hero": "peter",
+                    "what": "found a coin in a fish's mouth to pay the temple tax",
+                    "reference": "Matthew 17:27"
+                },
+                {
+                    "who": "The risen Jesus",
+                    "what": "cooked fish on a fire for his disciples at dawn",
+                    "reference": "John 21:9-13"
+                }
+            ],
+            "importance": "After the resurrection Jesus ate broiled fish in front of his disciples to show he was not a ghost (Luke 24:42-43), and filled their nets with a hundred and fifty-three great fish (John 21:11).",
+            "lesson": "Jesus meets people at their work. Follow him, and he will make you fishers of men (Matthew 4:19).",
+            "key_verses": [
+                {
+                    "reference": "Jonah 1:17",
+                    "text": "Now the LORD had prepared a great fish to swallow up Jonah. And Jonah was in the belly of the fish three days and three nights."
+                },
+                {
+                    "reference": "Luke 5:6",
+                    "text": "And when they had this done, they inclosed a great multitude of fishes: and their net brake."
+                },
+                {
+                    "reference": "John 21:11",
+                    "text": "Simon Peter went up, and drew the net to land full of great fishes, and hundred and fifty and three: and for all there were so many, yet was not the net broken."
+                }
+            ],
+            "mentions": {
+                "verses": 58,
+                "old": 33,
+                "new": 25,
+                "first": {
+                    "reference": "Genesis 1:26",
+                    "text": "And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth."
+                },
+                "books": [
+                    {
+                        "name": "John",
+                        "id": "john",
+                        "verses": 8
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 5
+                    }
+                ]
+            }
+        },
+        {
+            "id": "frog",
+            "kind": "animal",
+            "name": "Frog",
+            "group": "Creatures of the water",
+            "epithet": "The second plague",
+            "summary": "The frogs of the Nile, which swarmed out of the river and into every house in the second plague on Egypt.",
+            "uses": [
+                "None: they appear as a plague"
+            ],
+            "why": "Egypt honoured the Nile and its life, but at God's word the river's frogs overran the land (ovens, beds and kneading troughs) until Pharaoh begged Moses to pray them away.",
+            "who": [
+                {
+                    "who": "Moses and Aaron",
+                    "hero": "moses",
+                    "what": "brought the plague of frogs on Egypt",
+                    "reference": "Exodus 8:5-6"
+                },
+                {
+                    "who": "Pharaoh",
+                    "hero": "pharaoh",
+                    "what": "begged for the frogs to go, then hardened his heart when they did",
+                    "reference": "Exodus 8:8-15"
+                },
+                {
+                    "who": "John",
+                    "what": "saw three unclean spirits like frogs in his vision",
+                    "reference": "Revelation 16:13"
+                }
+            ],
+            "importance": "Moses let Pharaoh choose when the frogs would go, 'that thou mayest know that there is none like unto the LORD our God' (Exodus 8:10). Each plague showed the LORD's power over what Egypt trusted.",
+            "lesson": "Don't make promises to God in trouble and forget them when relief comes (Exodus 8:15).",
+            "key_verses": [
+                {
+                    "reference": "Exodus 8:6",
+                    "text": "And Aaron stretched out his hand over the waters of Egypt; and the frogs came up, and covered the land of Egypt."
+                },
+                {
+                    "reference": "Psalms 78:45",
+                    "text": "He sent divers sorts of flies among them, which devoured them; and frogs, which destroyed them. "
+                }
+            ],
+            "mentions": {
+                "verses": 14,
+                "old": 13,
+                "new": 1,
+                "first": {
+                    "reference": "Exodus 8:2",
+                    "text": "And if thou refuse to let them go, behold, I will smite all thy borders with frogs:"
+                },
+                "books": [
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 11
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Revelation",
+                        "id": "revelation",
+                        "verses": 1
+                    }
+                ]
+            }
+        },
+        {
+            "id": "serpent",
+            "kind": "animal",
+            "name": "Serpent",
+            "group": "Creeping things",
+            "epithet": "The tempter and the bronze snake",
+            "summary": "Snakes, including deadly vipers, were common in the deserts and fields of Israel. In the Bible the serpent is both a real danger and a picture of the enemy.",
+            "uses": [
+                "A danger in the desert",
+                "The bronze serpent on a pole, which brought healing"
+            ],
+            "why": "The Bible's first enemy speaks through a serpent in Eden, and the devil is later called 'that old serpent'. Yet God also used a bronze serpent lifted on a pole to heal, and Jesus said he would be lifted up the same way.",
+            "who": [
+                {
+                    "who": "Eve",
+                    "what": "was deceived by the serpent in the garden",
+                    "reference": "Genesis 3:1-4"
+                },
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "made a serpent of brass; whoever looked at it lived",
+                    "reference": "Numbers 21:9"
+                },
+                {
+                    "who": "Hezekiah",
+                    "hero": "hezekiah",
+                    "what": "broke the bronze serpent in pieces when Israel began to worship it",
+                    "reference": "2 Kings 18:4"
+                },
+                {
+                    "who": "Paul",
+                    "hero": "paul",
+                    "what": "shook a viper off his hand into the fire on Malta",
+                    "reference": "Acts 28:3-5"
+                },
+                {
+                    "who": "Satan",
+                    "hero": "satan",
+                    "what": "is called 'that old serpent'",
+                    "reference": "Revelation 12:9"
+                }
+            ],
+            "importance": "The first promise of the gospel is spoken to the serpent: the woman's seed would bruise its head (Genesis 3:15). And Jesus used the bronze serpent to explain his cross: 'as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up'.",
+            "lesson": "Look and live. A bitten Israelite only had to look at the serpent God lifted up; we look to Christ (Numbers 21:8; John 3:14-15).",
+            "key_verses": [
+                {
+                    "reference": "Numbers 21:9",
+                    "text": "And Moses made a serpent of brass, and put it upon a pole, and it came to pass, that if a serpent had bitten any man, when he beheld the serpent of brass, he lived."
+                },
+                {
+                    "reference": "John 3:14",
+                    "text": "And as Moses lifted up the serpent in the wilderness, even so must the Son of man be lifted up: "
+                }
+            ],
+            "mentions": {
+                "verses": 60,
+                "old": 40,
+                "new": 20,
+                "first": {
+                    "reference": "Genesis 3:1",
+                    "text": "Now the serpent was more subtil than any beast of the field which the LORD God had made. And he said unto the woman, Yea, hath God said, Ye shall not eat of every tree of the garden?"
+                },
+                "books": [
+                    {
+                        "name": "Genesis",
+                        "id": "genesis",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Isaiah",
+                        "id": "isaiah",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 5
+                    },
+                    {
+                        "name": "Matthew",
+                        "id": "matthew",
+                        "verses": 5
+                    }
+                ]
+            }
+        },
+        {
+            "id": "locust",
+            "kind": "animal",
+            "name": "Locust",
+            "group": "Creeping things",
+            "epithet": "The army that eats everything",
+            "law": "Clean: one of the few insects Israel could eat (Leviticus 11:22).",
+            "summary": "Desert locusts swarm in their millions and strip every green thing; the Bible describes them like an invading army.",
+            "uses": [
+                "Food: locusts were among the insects the Law allowed",
+                "John the Baptist lived on locusts and wild honey"
+            ],
+            "why": "Locust swarms were one of the most feared disasters of the ancient world. They were the eighth plague on Egypt, and Joel saw a locust plague as a warning of the day of the LORD.",
+            "who": [
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "brought the plague of locusts on Egypt",
+                    "reference": "Exodus 10:12-15"
+                },
+                {
+                    "who": "The ten spies",
+                    "what": "said, 'we were in our own sight as grasshoppers'",
+                    "reference": "Numbers 13:33"
+                },
+                {
+                    "who": "Joel",
+                    "what": "saw the land stripped by locusts and called Israel back to God",
+                    "reference": "Joel 1:4"
+                },
+                {
+                    "who": "John the Baptist",
+                    "hero": "john-the-baptist",
+                    "what": "ate locusts and wild honey",
+                    "reference": "Matthew 3:4"
+                }
+            ],
+            "importance": "After the devastation, God made a promise through Joel: 'I will restore to you the years that the locust hath eaten' (Joel 2:25).",
+            "lesson": "God can restore what has been devoured. No loss is beyond his power to repay.",
+            "key_verses": [
+                {
+                    "reference": "Joel 2:25",
+                    "text": "And I will restore to you the years that the locust hath eaten, the cankerworm, and the caterpiller, and the palmerworm, my great army which I sent among you."
+                },
+                {
+                    "reference": "Matthew 3:4",
+                    "text": "And the same John had his raiment of camel’s hair, and a leathern girdle about his loins; and his meat was locusts and wild honey."
+                }
+            ],
+            "mentions": {
+                "verses": 36,
+                "old": 32,
+                "new": 4,
+                "first": {
+                    "reference": "Exodus 10:4",
+                    "text": "Else, if thou refuse to let my people go, behold, to morrow will I bring the locusts into thy coast:"
+                },
+                "books": [
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 5
+                    },
+                    {
+                        "name": "Psalms",
+                        "id": "psalms",
+                        "verses": 3
+                    },
+                    {
+                        "name": "Jeremiah",
+                        "id": "jeremiah",
+                        "verses": 3
+                    },
+                    {
+                        "name": "Nahum",
+                        "id": "nahum",
+                        "verses": 3
+                    }
+                ]
+            }
+        },
+        {
+            "id": "bees-and-honey",
+            "kind": "animal",
+            "name": "Bees and honey",
+            "group": "Creeping things",
+            "epithet": "Sweetness from the rock",
+            "summary": "Wild bees nested in rocks and trees, and their honey was the sweetest thing Israel knew: the land 'flowing with milk and honey'.",
+            "uses": [
+                "Honey for food and sweetening",
+                "A gift of the land's best",
+                "Kept out of offerings burned on the altar"
+            ],
+            "why": "Honey stood for the richness of the Promised Land and for the sweetness of God's word: 'sweeter also than honey and the honeycomb'. Swarming, stinging bees pictured enemies on the attack.",
+            "who": [
+                {
+                    "who": "Samson",
+                    "what": "found a swarm of bees and honey in the carcass of a lion",
+                    "reference": "Judges 14:8"
+                },
+                {
+                    "who": "Jonathan",
+                    "hero": "jonathan",
+                    "what": "tasted honey in the forest, not knowing Saul's rash oath",
+                    "reference": "1 Samuel 14:27"
+                },
+                {
+                    "who": "Ezekiel",
+                    "what": "ate a scroll that tasted as sweet as honey",
+                    "reference": "Ezekiel 3:3"
+                },
+                {
+                    "who": "John the Baptist",
+                    "hero": "john-the-baptist",
+                    "what": "ate locusts and wild honey",
+                    "reference": "Mark 1:6"
+                }
+            ],
+            "importance": "God described the Promised Land as 'a land flowing with milk and honey' (Exodus 3:8). The psalmist found God's word sweeter still (Psalm 19:10; 119:103).",
+            "lesson": "'How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!' (Psalm 119:103).",
+            "key_verses": [
+                {
+                    "reference": "Exodus 3:8",
+                    "text": "And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large, unto a land flowing with milk and honey; unto the place of the Canaanites, and the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites."
+                },
+                {
+                    "reference": "Psalms 119:103",
+                    "text": "How sweet are thy words unto my taste! yea, sweeter than honey to my mouth! "
+                }
+            ],
+            "mentions": {
+                "verses": 64,
+                "old": 59,
+                "new": 5,
+                "first": {
+                    "reference": "Genesis 43:11",
+                    "text": "And their father Israel said unto them, If it must be so now, do this; take of the best fruits in the land in your vessels, and carry down the man a present, a little balm, and a little honey, spices, and myrrh, nuts, and almonds:"
+                },
+                "books": [
+                    {
+                        "name": "Deuteronomy",
+                        "id": "deuteronomy",
+                        "verses": 9
+                    },
+                    {
+                        "name": "Proverbs",
+                        "id": "proverbs",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Ezekiel",
+                        "id": "ezekiel",
+                        "verses": 6
+                    },
+                    {
+                        "name": "Exodus",
+                        "id": "exodus",
+                        "verses": 5
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ant",
+            "kind": "animal",
+            "name": "Ant",
+            "group": "Creeping things",
+            "epithet": "The wise worker",
+            "summary": "The harvester ants of Israel gather seeds in summer and store them underground for the winter.",
+            "uses": [
+                "None to people, but a lesson for them"
+            ],
+            "why": "Solomon sent the lazy man to the ant: without any ruler over her, she lays up her food in summer. Small and weak, the ant is 'exceeding wise'.",
+            "who": [
+                {
+                    "who": "Solomon",
+                    "what": "told the sluggard, 'Go to the ant… consider her ways, and be wise'",
+                    "reference": "Proverbs 6:6-8"
+                },
+                {
+                    "who": "Agur",
+                    "what": "counted the ants among four small but wise creatures",
+                    "reference": "Proverbs 30:24-25"
+                }
+            ],
+            "importance": "The ant appears only twice, both times in Proverbs, but its lesson is plain: diligence and foresight, not size, make a creature wise.",
+            "lesson": "Do today's work while it is summer. Faithfulness in small things prepares for hard seasons.",
+            "key_verses": [
+                {
+                    "reference": "Proverbs 6:6-8",
+                    "text": "Go to the ant, thou sluggard; consider her ways, and be wise: Which having no guide, overseer, or ruler, Provideth her meat in the summer, and gathereth her food in the harvest."
+                },
+                {
+                    "reference": "Proverbs 30:25",
+                    "text": "The ants are a people not strong, yet they prepare their meat in the summer;"
+                }
+            ],
+            "mentions": {
+                "verses": 2,
+                "old": 2,
+                "new": 0,
+                "first": {
+                    "reference": "Proverbs 6:6",
+                    "text": "Go to the ant, thou sluggard; consider her ways, and be wise:"
+                },
+                "books": [
+                    {
+                        "name": "Proverbs",
+                        "id": "proverbs",
+                        "verses": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "scorpion",
+            "kind": "animal",
+            "name": "Scorpion",
+            "group": "Creeping things",
+            "epithet": "The sting in the wilderness",
+            "summary": "Scorpions hid under stones in the deserts of Sinai and Judea; their sting was painful and sometimes deadly.",
+            "uses": [
+                "None: a danger in the desert"
+            ],
+            "why": "Scorpions marked the wilderness as 'great and terrible'. Jesus used them to show the Father's goodness: no father gives his child a scorpion when he asks for an egg.",
+            "who": [
+                {
+                    "who": "Moses",
+                    "hero": "moses",
+                    "what": "reminded Israel how God led them through a land of serpents and scorpions",
+                    "reference": "Deuteronomy 8:15"
+                },
+                {
+                    "who": "Rehoboam",
+                    "what": "threatened to chastise Israel 'with scorpions'",
+                    "reference": "1 Kings 12:11"
+                },
+                {
+                    "who": "Ezekiel",
+                    "what": "was told not to fear though he lived among scorpions",
+                    "reference": "Ezekiel 2:6"
+                },
+                {
+                    "who": "The seventy",
+                    "what": "were given power to tread on serpents and scorpions",
+                    "reference": "Luke 10:19"
+                }
+            ],
+            "importance": "'If a son… shall ask an egg, will he offer him a scorpion? If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?' (Luke 11:11-13).",
+            "lesson": "Ask God boldly. He is a better Father than any on earth, and he gives good gifts.",
+            "key_verses": [
+                {
+                    "reference": "Luke 11:12",
+                    "text": "Or if he shall ask an egg, will he offer him a scorpion? "
+                },
+                {
+                    "reference": "Deuteronomy 8:15",
+                    "text": "Who led thee through that great and terrible wilderness, wherein were fiery serpents, and scorpions, and drought, where there was no water; who brought thee forth water out of the rock of flint;"
+                }
+            ],
+            "mentions": {
+                "verses": 11,
+                "old": 6,
+                "new": 5,
+                "first": {
+                    "reference": "Deuteronomy 8:15",
+                    "text": "Who led thee through that great and terrible wilderness, wherein were fiery serpents, and scorpions, and drought, where there was no water; who brought thee forth water out of the rock of flint;"
+                },
+                "books": [
+                    {
+                        "name": "Revelation",
+                        "id": "revelation",
+                        "verses": 3
+                    },
+                    {
+                        "name": "1 Kings",
+                        "id": "1-kings",
+                        "verses": 2
+                    },
+                    {
+                        "name": "2 Chronicles",
+                        "id": "2-chronicles",
+                        "verses": 2
+                    },
+                    {
+                        "name": "Luke",
+                        "id": "luke",
+                        "verses": 2
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1194,6 +1194,8 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   font-family: 'Roboto', Arial, sans-serif;
   overflow-y: auto;
   overscroll-behavior: contain;
+  /* Horizontal moves are the swipe that closes it (script.js). */
+  touch-action: pan-y;
 }
 .menu-dialog[open] { display: flex; flex-direction: column; }
 .menu-dialog::backdrop {
@@ -1229,7 +1231,8 @@ html:has(.menu-dialog[open]) { overflow: hidden; }
 }
 .menu-item {
   display: flex;
-  align-items: center;
+  /* The icon sits beside the title, not halfway down the description. */
+  align-items: flex-start;
   gap: 14px;
   width: 100%;
   padding: 10px 12px;
@@ -1243,6 +1246,8 @@ html:has(.menu-dialog[open]) { overflow: hidden; }
   cursor: pointer;
   transition: background-color .15s ease;
 }
+/* Help and About are a single line, so they stay centred on the icon. */
+.menu-foot .menu-item { align-items: center; }
 .menu-item:hover { background: rgb(255 255 255 / 70%); }
 .menu-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
 .menu-text { display: grid; gap: 2px; min-width: 0; }

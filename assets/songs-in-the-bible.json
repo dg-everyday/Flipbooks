@@ -1,0 +1,3383 @@
+{
+    "totals": {
+        "entries": 53,
+        "old": 39,
+        "new": 14,
+        "groups": {
+            "Songs of victory": 7,
+            "Worship and thanksgiving": 8,
+            "Laments": 7,
+            "Psalms and songs of wisdom": 12,
+            "Songs of the prophets": 7,
+            "Songs of the coming King": 5,
+            "Songs of the church and of heaven": 7
+        }
+    },
+    "groups": [
+        "Songs of victory",
+        "Worship and thanksgiving",
+        "Laments",
+        "Psalms and songs of wisdom",
+        "Songs of the prophets",
+        "Songs of the coming King",
+        "Songs of the church and of heaven"
+    ],
+    "entries": [
+        {
+            "id": "lamechs-song",
+            "name": "Lamech's song",
+            "group": "Songs of victory",
+            "testament": "Old",
+            "epithet": "Hear my voice, ye wives of Lamech",
+            "by": [
+                {
+                    "name": "Lamech, of Cain's family"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Adah and Zillah, his wives"
+                },
+                {
+                    "name": "Cain",
+                    "hero": "cain"
+                }
+            ],
+            "occasion": "Boasting to his wives of a killing",
+            "where": "Among Cain's descendants, east of Eden",
+            "told_in": "Genesis 4:19-24",
+            "also_in": [
+                "Matthew 18:21-22"
+            ],
+            "sung": [
+                {
+                    "reference": "Genesis 4:23-24",
+                    "lines": [
+                        "And Lamech said unto his wives, Adah and Zillah, Hear my voice; ye wives of Lamech, hearken unto my speech: for I have slain a man to my wounding, and a young man to my hurt.",
+                        "If Cain shall be avenged sevenfold, truly Lamech seventy and sevenfold."
+                    ]
+                }
+            ],
+            "summary": "The first song in the Bible is a boast. Lamech, of Cain's line, sang to his wives that he had killed a man, and would take revenge seventy-seven times over.",
+            "story": "Cain's family built the first city and began the first crafts. One of Lamech's sons, Jubal, was 'the father of all such as handle the harp and organ'. From the same family came the first poem in Scripture. Lamech, the first man said to take two wives, sang to them: 'I have slain a man to my wounding, and a young man to my hurt. If Cain shall be avenged sevenfold, truly Lamech seventy and sevenfold.'",
+            "meaning": "Music and poetry are God's gifts, but here they are put to work for pride and revenge. Jesus turned Lamech's number around: when Peter asked how often he should forgive, he answered, 'I say not unto thee, Until seven times: but, Until seventy times seven' (Matthew 18:22).",
+            "lesson": "A song can carry pride or praise. The gift that first boasted of revenge would one day sing of forgiveness.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 18:21-22",
+                    "text": "Then came Peter to him, and said, Lord, how oft shall my brother sin against me, and I forgive him? till seven times? Jesus saith unto him, I say not unto thee, Until seven times: but, Until seventy times seven."
+                }
+            ],
+            "accounts": [
+                "Genesis 4:19-24",
+                "Matthew 18:21-22"
+            ],
+            "books": [
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ]
+        },
+        {
+            "id": "the-song-of-the-sea",
+            "name": "The song of the sea",
+            "group": "Songs of victory",
+            "testament": "Old",
+            "epithet": "I will sing unto the LORD, for he hath triumphed gloriously",
+            "by": [
+                {
+                    "name": "Moses and the children of Israel",
+                    "hero": "moses"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Miriam"
+                },
+                {
+                    "name": "Pharaoh",
+                    "hero": "pharaoh"
+                }
+            ],
+            "occasion": "The morning after the Red Sea closed over Pharaoh's army",
+            "where": "The shore of the Red Sea",
+            "told_in": "Exodus 15:1-19",
+            "also_in": [
+                "Psalms 106:9-12",
+                "Revelation 15:2-4"
+            ],
+            "sung": [
+                {
+                    "reference": "Exodus 15:1",
+                    "lines": [
+                        "Then sang Moses and the children of Israel this song unto the LORD, and spake, saying, I will sing unto the LORD, for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea."
+                    ]
+                },
+                {
+                    "reference": "Exodus 15:11",
+                    "lines": [
+                        "Who is like unto thee, O LORD, among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?"
+                    ]
+                },
+                {
+                    "reference": "Exodus 15:18",
+                    "lines": [
+                        "The LORD shall reign for ever and ever."
+                    ]
+                }
+            ],
+            "summary": "The first great song of Scripture: Israel, safe on the far shore, sang of the God who threw horse and rider into the sea.",
+            "story": "Israel had walked through the sea on dry ground, and in the morning they saw the Egyptians dead on the shore. 'Then sang Moses and the children of Israel this song unto the LORD'. The song tells the night again: the blast of wind, the waters piled up, the enemy's boast, 'I will pursue, I will overtake', and the sea closing over them, 'they sank as lead in the mighty waters.' Then it looks ahead to the land where God would plant his people, and ends: 'The LORD shall reign for ever and ever.'",
+            "meaning": "Israel's first act as a free people was to sing. The song gave them words they would use for centuries, 'The LORD is my strength and song', which Isaiah and the psalmist sing again (Isaiah 12:2; Psalm 118:14). At the end of the Bible the redeemed stand beside another sea and sing 'the song of Moses the servant of God, and the song of the Lamb' (Revelation 15:3).",
+            "lesson": "Remember out loud what God has done. Praise after a rescue is how faith remembers.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 118:14",
+                    "text": "The LORD is my strength and song, and is become my salvation."
+                },
+                {
+                    "reference": "Revelation 15:3",
+                    "text": "And they sing the song of Moses the servant of God, and the song of the Lamb, saying, Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints."
+                }
+            ],
+            "accounts": [
+                "Exodus 15:1-19",
+                "Psalms 106:9-12",
+                "Revelation 15:2-4"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ]
+        },
+        {
+            "id": "miriams-song",
+            "name": "Miriam's song",
+            "group": "Songs of victory",
+            "testament": "Old",
+            "epithet": "Sing ye to the LORD",
+            "by": [
+                {
+                    "name": "Miriam the prophetess"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The women of Israel"
+                },
+                {
+                    "name": "Moses",
+                    "hero": "moses"
+                }
+            ],
+            "occasion": "The crossing of the Red Sea",
+            "where": "The shore of the Red Sea",
+            "told_in": "Exodus 15:20-21",
+            "also_in": [
+                "Micah 6:4"
+            ],
+            "sung": [
+                {
+                    "reference": "Exodus 15:21",
+                    "lines": [
+                        "And Miriam answered them, Sing ye to the LORD, for he hath triumphed gloriously; the horse and his rider hath he thrown into the sea."
+                    ]
+                }
+            ],
+            "summary": "Miriam took a timbrel and led the women of Israel in dancing, answering Moses' song with its opening line.",
+            "story": "'And Miriam the prophetess, the sister of Aaron, took a timbrel in her hand; and all the women went out after her with timbrels and with dances.' She answered the song with a chorus of her own, the same words turned into a call to everyone watching: 'Sing ye to the LORD, for he hath triumphed gloriously; the horse and his rider hath he thrown into the sea.'",
+            "meaning": "Miriam is the first woman the Bible calls a prophetess, and she is remembered beside her brothers as a leader of the exodus: 'I sent before thee Moses, Aaron, and Miriam' (Micah 6:4). Many scholars think her two-line chorus is among the oldest verse in Scripture.",
+            "lesson": "Praise is catching. One voice and a timbrel can set a whole people singing.",
+            "key_verses": [
+                {
+                    "reference": "Micah 6:4",
+                    "text": "For I brought thee up out of the land of Egypt, and redeemed thee out of the house of servants; and I sent before thee Moses, Aaron, and Miriam."
+                }
+            ],
+            "accounts": [
+                "Exodus 15:20-21",
+                "Micah 6:4"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Micah",
+                    "id": "micah"
+                }
+            ]
+        },
+        {
+            "id": "the-song-of-deborah",
+            "name": "The song of Deborah",
+            "group": "Songs of victory",
+            "testament": "Old",
+            "epithet": "I, even I, will sing unto the LORD",
+            "by": [
+                {
+                    "name": "Deborah",
+                    "hero": "deborah"
+                },
+                {
+                    "name": "Barak"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Jael"
+                },
+                {
+                    "name": "Sisera"
+                }
+            ],
+            "occasion": "The defeat of Sisera and the army of Jabin, king of Canaan",
+            "where": "Israel, after the battle by the river Kishon",
+            "told_in": "Judges 5:1-31",
+            "also_in": [
+                "Judges 4:1-24",
+                "Hebrews 11:32"
+            ],
+            "sung": [
+                {
+                    "reference": "Judges 5:3",
+                    "lines": [
+                        "Hear, O ye kings; give ear, O ye princes; I, even I, will sing unto the LORD; I will sing praise to the LORD God of Israel."
+                    ]
+                },
+                {
+                    "reference": "Judges 5:31",
+                    "lines": [
+                        "So let all thine enemies perish, O LORD: but let them that love him be as the sun when he goeth forth in his might. And the land had rest forty years."
+                    ]
+                }
+            ],
+            "summary": "After God routed Sisera's chariots at the river Kishon, Deborah and Barak sang of the tribes who came, the tribes who stayed home, and the stars that fought from heaven.",
+            "story": "For twenty years Jabin's nine hundred iron chariots had crushed Israel. Deborah, a prophetess who judged Israel under a palm tree, called Barak to fight; the LORD routed Sisera's army, and the fleeing captain died in Jael's tent. 'Then sang Deborah and Barak the son of Abinoam on that day'. The song praises the volunteers, 'when the people willingly offered themselves', and shames the tribes who stayed among their sheepfolds. It tells how 'the stars in their courses fought against Sisera' and 'The river of Kishon swept them away'. It ends with Sisera's mother at her window, waiting for a son who would never come home.",
+            "meaning": "It is among the oldest songs in the Bible, and it gives the glory to God, and honour to a woman: 'I Deborah arose, that I arose a mother in Israel' (Judges 5:7). The victory ends in peace: 'the land had rest forty years.'",
+            "lesson": "God notices who shows up. The song honours those who willingly offered themselves, and asks the rest where they were.",
+            "key_verses": [
+                {
+                    "reference": "Judges 5:7",
+                    "text": "The inhabitants of the villages ceased, they ceased in Israel, until that I Deborah arose, that I arose a mother in Israel."
+                },
+                {
+                    "reference": "Judges 5:20",
+                    "text": "They fought from heaven; the stars in their courses fought against Sisera."
+                }
+            ],
+            "accounts": [
+                "Judges 5:1-31",
+                "Judges 4:1-24",
+                "Hebrews 11:32"
+            ],
+            "books": [
+                {
+                    "name": "Judges",
+                    "id": "judges"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                }
+            ]
+        },
+        {
+            "id": "saul-hath-slain-his-thousands",
+            "name": "Saul hath slain his thousands",
+            "group": "Songs of victory",
+            "testament": "Old",
+            "epithet": "And David his ten thousands",
+            "by": [
+                {
+                    "name": "The women of Israel"
+                }
+            ],
+            "with": [
+                {
+                    "name": "David",
+                    "hero": "david"
+                },
+                {
+                    "name": "Saul",
+                    "hero": "saul"
+                }
+            ],
+            "occasion": "The army coming home after David killed Goliath",
+            "where": "The cities of Israel",
+            "told_in": "1 Samuel 18:6-9",
+            "also_in": [
+                "1 Samuel 21:10-12",
+                "1 Samuel 29:5"
+            ],
+            "sung": [
+                {
+                    "reference": "1 Samuel 18:7",
+                    "lines": [
+                        "And the women answered one another as they played, and said, Saul hath slain his thousands, and David his ten thousands."
+                    ]
+                }
+            ],
+            "summary": "The women sang to welcome the army home, and one line gave young David more praise than the king. Saul never forgave it.",
+            "story": "When David came back from killing Goliath, 'the women came out of all cities of Israel, singing and dancing, to meet king Saul'. As they played they answered one another: 'Saul hath slain his thousands, and David his ten thousands.' It was meant as a victory song. But 'Saul was very wroth, and the saying displeased him', and he asked, 'what can he have more but the kingdom?' 'And Saul eyed David from that day and forward.'",
+            "meaning": "A song of celebration became the start of years of jealousy and pursuit. The song spread so far that even the Philistines at Gath knew it, and quoted it about David (1 Samuel 21:11).",
+            "lesson": "Jealousy can turn someone else's blessing into our misery. Saul could have rejoiced in a victory that was his too.",
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 18:8-9",
+                    "text": "And Saul was very wroth, and the saying displeased him; and he said, They have ascribed unto David ten thousands, and to me they have ascribed but thousands: and what can he have more but the kingdom? And Saul eyed David from that day and forward."
+                }
+            ],
+            "accounts": [
+                "1 Samuel 18:6-9",
+                "1 Samuel 21:10-12",
+                "1 Samuel 29:5"
+            ],
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                }
+            ]
+        },
+        {
+            "id": "davids-song-of-deliverance",
+            "name": "David's song of deliverance",
+            "group": "Songs of victory",
+            "testament": "Old",
+            "epithet": "The LORD is my rock, and my fortress",
+            "by": [
+                {
+                    "name": "David",
+                    "hero": "david"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Saul",
+                    "hero": "saul"
+                }
+            ],
+            "occasion": "Looking back on a lifetime of rescue from his enemies and from Saul",
+            "where": "Jerusalem, late in David's reign",
+            "told_in": "2 Samuel 22:1-51",
+            "also_in": [
+                "Psalms 18:1-50",
+                "Romans 15:9"
+            ],
+            "sung": [
+                {
+                    "reference": "2 Samuel 22:2-3",
+                    "lines": [
+                        "And he said, The LORD is my rock, and my fortress, and my deliverer;",
+                        "The God of my rock; in him will I trust: he is my shield, and the horn of my salvation, my high tower, and my refuge, my saviour; thou savest me from violence."
+                    ]
+                }
+            ],
+            "summary": "Near the end of his life David sang of the God who had rescued him again and again: his rock, his fortress, his deliverer.",
+            "story": "David 'spake unto the LORD the words of this song in the day that the LORD had delivered him out of the hand of all his enemies, and out of the hand of Saul'. He remembers death closing over him like floods, crying out in his distress, and God coming down to answer: 'He sent from above, he took me; he drew me out of many waters'. It ends with thanks sung 'among the heathen', and mercy promised 'unto David, and to his seed for evermore.'",
+            "meaning": "The same song appears again as Psalm 18, so it was sung in worship as well as kept as history. Paul quotes it to show that God always meant the nations to praise him: 'For this cause I will confess to thee among the Gentiles' (Romans 15:9).",
+            "lesson": "Look back and count the rescues. The God who delivered you before is the rock you can stand on now.",
+            "key_verses": [
+                {
+                    "reference": "2 Samuel 22:17",
+                    "text": "He sent from above, he took me; he drew me out of many waters;"
+                },
+                {
+                    "reference": "2 Samuel 22:31",
+                    "text": "As for God, his way is perfect; the word of the LORD is tried: he is a buckler to all them that trust in him."
+                }
+            ],
+            "accounts": [
+                "2 Samuel 22:1-51",
+                "Psalms 18:1-50",
+                "Romans 15:9"
+            ],
+            "books": [
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                }
+            ]
+        },
+        {
+            "id": "the-singers-before-the-army",
+            "name": "The singers before the army",
+            "group": "Songs of victory",
+            "testament": "Old",
+            "epithet": "Praise the LORD; for his mercy endureth for ever",
+            "by": [
+                {
+                    "name": "The Levite singers"
+                }
+            ],
+            "with": [
+                {
+                    "name": "King Jehoshaphat"
+                },
+                {
+                    "name": "The army of Judah"
+                }
+            ],
+            "occasion": "A vast army of Moab, Ammon and mount Seir marching on Judah",
+            "where": "The wilderness of Tekoa",
+            "told_in": "2 Chronicles 20:1-30",
+            "also_in": [
+                "Psalms 136:1-3"
+            ],
+            "sung": [
+                {
+                    "reference": "2 Chronicles 20:21",
+                    "lines": [
+                        "And when he had consulted with the people, he appointed singers unto the LORD, and that should praise the beauty of holiness, as they went out before the army, and to say, Praise the LORD; for his mercy endureth for ever."
+                    ]
+                }
+            ],
+            "summary": "Facing an army far bigger than his own, King Jehoshaphat sent singers out in front of his soldiers. As they began to praise, the LORD routed the enemy.",
+            "story": "A great multitude was coming against Judah. Jehoshaphat proclaimed a fast and prayed, 'neither know we what to do: but our eyes are upon thee.' A Levite stood up with God's answer: 'Be not afraid nor dismayed by reason of this great multitude'. Next morning the king 'appointed singers unto the LORD, and that should praise the beauty of holiness, as they went out before the army'. 'And when they began to sing and to praise, the LORD set ambushments' against the invaders, and they turned on one another. Judah spent three days gathering the spoil, and came home to Jerusalem with psalteries, harps and trumpets.",
+            "meaning": "Judah went into battle with praise at the front, trusting God before they saw the victory. Their song, 'his mercy endureth for ever', is the refrain of Psalm 136, sung in every one of its twenty-six verses.",
+            "lesson": "When you do not know what to do, keep your eyes on God, and praise him before the answer comes.",
+            "key_verses": [
+                {
+                    "reference": "2 Chronicles 20:12",
+                    "text": "O our God, wilt thou not judge them? for we have no might against this great company that cometh against us; neither know we what to do: but our eyes are upon thee."
+                },
+                {
+                    "reference": "2 Chronicles 20:22",
+                    "text": "And when they began to sing and to praise, the LORD set ambushments against the children of Ammon, Moab, and mount Seir, which were come against Judah; and they were smitten."
+                }
+            ],
+            "accounts": [
+                "2 Chronicles 20:1-30",
+                "Psalms 136:1-3"
+            ],
+            "books": [
+                {
+                    "name": "2 Chronicles",
+                    "id": "2-chronicles"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "hannahs-song",
+            "name": "Hannah's song",
+            "group": "Worship and thanksgiving",
+            "testament": "Old",
+            "epithet": "My heart rejoiceth in the LORD",
+            "by": [
+                {
+                    "name": "Hannah",
+                    "hero": "hannah"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Samuel",
+                    "hero": "samuel"
+                },
+                {
+                    "name": "Eli the priest"
+                }
+            ],
+            "occasion": "Giving her young son Samuel to serve the LORD",
+            "where": "The house of the LORD at Shiloh",
+            "told_in": "1 Samuel 2:1-10",
+            "also_in": [
+                "1 Samuel 1:1-28",
+                "Luke 1:46-55"
+            ],
+            "sung": [
+                {
+                    "reference": "1 Samuel 2:1-2",
+                    "lines": [
+                        "And Hannah prayed, and said, My heart rejoiceth in the LORD, mine horn is exalted in the LORD: my mouth is enlarged over mine enemies; because I rejoice in thy salvation.",
+                        "There is none holy as the LORD: for there is none beside thee: neither is there any rock like our God."
+                    ]
+                }
+            ],
+            "summary": "Hannah, once mocked for having no children, brought her son Samuel to Shiloh and sang of the God who lifts up the poor and brings down the proud.",
+            "story": "Year after year Hannah wept at Shiloh because she had no child, while her rival provoked her. She prayed so hard that Eli the priest thought she was drunk. God gave her a son, and when Samuel was weaned she brought him to Eli, as she had vowed: 'For this child I prayed'. Then she sang: 'My heart rejoiceth in the LORD'. Her song reaches far beyond one family: the LORD 'bringeth low, and lifteth up', raises the poor from the dust, and will 'exalt the horn of his anointed.'",
+            "meaning": "Hannah sings of the LORD's king, his anointed, before Israel had any king at all. The word “anointed” becomes Messiah in Hebrew and Christ in Greek. A thousand years later Mary sang a song so like Hannah's that the two are always read together (Luke 1:46-55).",
+            "lesson": "God sees the one who weeps in the corner. He is the God who turns things upside down: the proud brought low, the humble lifted up.",
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 2:7",
+                    "text": "The LORD maketh poor, and maketh rich: he bringeth low, and lifteth up."
+                },
+                {
+                    "reference": "1 Samuel 2:10",
+                    "text": "The adversaries of the LORD shall be broken to pieces; out of heaven shall he thunder upon them: the LORD shall judge the ends of the earth; and he shall give strength unto his king, and exalt the horn of his anointed."
+                }
+            ],
+            "accounts": [
+                "1 Samuel 2:1-10",
+                "1 Samuel 1:1-28",
+                "Luke 1:46-55"
+            ],
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ]
+        },
+        {
+            "id": "the-song-of-the-well",
+            "name": "The song of the well",
+            "group": "Worship and thanksgiving",
+            "testament": "Old",
+            "epithet": "Spring up, O well",
+            "by": [
+                {
+                    "name": "The children of Israel"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Moses",
+                    "hero": "moses"
+                },
+                {
+                    "name": "The princes of Israel"
+                }
+            ],
+            "occasion": "God giving water in the wilderness",
+            "where": "Beer, on the way to the promised land",
+            "told_in": "Numbers 21:16-18",
+            "also_in": [
+                "Numbers 21:4-9"
+            ],
+            "sung": [
+                {
+                    "reference": "Numbers 21:17",
+                    "lines": [
+                        "Then Israel sang this song, Spring up, O well; sing ye unto it:"
+                    ]
+                }
+            ],
+            "summary": "In the wilderness God promised water, and as the leaders dug the well with their staffs, Israel sang to it.",
+            "story": "Near the end of the forty years, Israel came to a place called Beer, which means “well”. There the LORD said to Moses, 'Gather the people together, and I will give them water.' So the leaders dug, and the people sang: 'Spring up, O well; sing ye unto it: The princes digged the well, the nobles of the people digged it, by the direction of the lawgiver, with their staves.'",
+            "meaning": "Only a little earlier Israel had grumbled about water and been bitten by fiery serpents (Numbers 21:4-9). Now they sing instead of complain. It is a work song, sung with digging sticks in hand, and one of the few scraps of Israel's everyday songs to survive.",
+            "lesson": "Sing while you work for what God has promised. Thankfulness turns the same wilderness into a different journey.",
+            "key_verses": [
+                {
+                    "reference": "Numbers 21:16",
+                    "text": "And from thence they went to Beer: that is the well whereof the LORD spake unto Moses, Gather the people together, and I will give them water."
+                }
+            ],
+            "accounts": [
+                "Numbers 21:16-18",
+                "Numbers 21:4-9"
+            ],
+            "books": [
+                {
+                    "name": "Numbers",
+                    "id": "numbers"
+                }
+            ]
+        },
+        {
+            "id": "davids-psalm-for-the-ark",
+            "name": "David's psalm for the ark",
+            "group": "Worship and thanksgiving",
+            "testament": "Old",
+            "epithet": "Give thanks unto the LORD, call upon his name",
+            "by": [
+                {
+                    "name": "David",
+                    "hero": "david"
+                },
+                {
+                    "name": "Asaph and his brethren"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The Levite singers and musicians"
+                }
+            ],
+            "occasion": "The ark of God brought up to Jerusalem",
+            "where": "The tent David pitched for the ark in Jerusalem",
+            "told_in": "1 Chronicles 16:1-36",
+            "also_in": [
+                "1 Chronicles 15:16-28",
+                "2 Samuel 6:12-19",
+                "Psalms 105:1-15",
+                "Psalms 96:1-13"
+            ],
+            "sung": [
+                {
+                    "reference": "1 Chronicles 16:8",
+                    "lines": [
+                        "Give thanks unto the LORD, call upon his name, make known his deeds among the people."
+                    ]
+                },
+                {
+                    "reference": "1 Chronicles 16:34",
+                    "lines": [
+                        "O give thanks unto the LORD; for he is good; for his mercy endureth for ever."
+                    ]
+                }
+            ],
+            "summary": "When the ark came up to Jerusalem with shouting, trumpets and dancing, David gave Asaph a psalm of thanks for all the people to sing.",
+            "story": "The first attempt to move the ark ended in death, because it was carried the wrong way. The second time the Levites carried it, with singers, cymbals, harps and trumpets, and David danced before the LORD. When the ark was set in its tent, 'David delivered first this psalm to thank the LORD into the hand of Asaph and his brethren.' It calls Israel to remember God's covenant, calls the whole world to 'Sing unto the LORD, all the earth', and ends with a line Israel would sing for centuries: 'O give thanks unto the LORD; for he is good; for his mercy endureth for ever.'",
+            "meaning": "David left Asaph and his brethren 'to minister before the ark continually' (1 Chronicles 16:37). This was the beginning of the temple choirs, and parts of this very psalm are sung again in Psalms 96, 105 and 106.",
+            "lesson": "Joy in God is meant to be shared. David did not keep his thanks to himself; he gave it to a choir.",
+            "key_verses": [
+                {
+                    "reference": "1 Chronicles 16:23",
+                    "text": "Sing unto the LORD, all the earth; shew forth from day to day his salvation."
+                },
+                {
+                    "reference": "1 Chronicles 16:29",
+                    "text": "Give unto the LORD the glory due unto his name: bring an offering, and come before him: worship the LORD in the beauty of holiness."
+                }
+            ],
+            "accounts": [
+                "1 Chronicles 16:1-36",
+                "1 Chronicles 15:16-28",
+                "2 Samuel 6:12-19",
+                "Psalms 105:1-15",
+                "Psalms 96:1-13"
+            ],
+            "books": [
+                {
+                    "name": "1 Chronicles",
+                    "id": "1-chronicles"
+                },
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "the-glory-fills-the-temple",
+            "name": "The glory fills the temple",
+            "group": "Worship and thanksgiving",
+            "testament": "Old",
+            "epithet": "For he is good; for his mercy endureth for ever",
+            "by": [
+                {
+                    "name": "The Levite singers and the trumpeters"
+                }
+            ],
+            "with": [
+                {
+                    "name": "King Solomon"
+                },
+                {
+                    "name": "Asaph, Heman and Jeduthun"
+                }
+            ],
+            "occasion": "The ark brought into Solomon's new temple",
+            "where": "The temple in Jerusalem",
+            "told_in": "2 Chronicles 5:11-14",
+            "also_in": [
+                "1 Kings 8:10-11",
+                "2 Chronicles 7:1-3"
+            ],
+            "sung": [
+                {
+                    "reference": "2 Chronicles 5:13",
+                    "lines": [
+                        "It came even to pass, as the trumpeters and singers were as one, to make one sound to be heard in praising and thanking the LORD; and when they lifted up their voice with the trumpets and cymbals and instruments of musick, and praised the LORD, saying, For he is good; for his mercy endureth for ever: that then the house was filled with a cloud, even the house of the LORD;"
+                    ]
+                }
+            ],
+            "summary": "At the dedication of Solomon's temple, a hundred and twenty trumpeters and the singers made one sound, and the glory of the LORD filled the house as a cloud.",
+            "story": "When the ark was brought into Solomon's temple, the Levite singers stood at the east end of the altar in white linen with cymbals, psalteries and harps, and with them 'an hundred and twenty priests sounding with trumpets'. They sang together 'as one, to make one sound', praising the LORD: 'For he is good; for his mercy endureth for ever'. At that moment 'the house was filled with a cloud', and 'the priests could not stand to minister by reason of the cloud: for the glory of the LORD had filled the house of God.'",
+            "meaning": "God answered a song with his presence. The people sang the same words again when fire fell from heaven on Solomon's sacrifices (2 Chronicles 7:3).",
+            "lesson": "Worship that is united and wholehearted makes room for God. When his people sing as one, he draws near.",
+            "key_verses": [
+                {
+                    "reference": "2 Chronicles 5:14",
+                    "text": "So that the priests could not stand to minister by reason of the cloud: for the glory of the LORD had filled the house of God."
+                },
+                {
+                    "reference": "2 Chronicles 7:3",
+                    "text": "And when all the children of Israel saw how the fire came down, and the glory of the LORD upon the house, they bowed themselves with their faces to the ground upon the pavement, and worshipped, and praised the LORD, saying, For he is good; for his mercy endureth for ever."
+                }
+            ],
+            "accounts": [
+                "2 Chronicles 5:11-14",
+                "1 Kings 8:10-11",
+                "2 Chronicles 7:1-3"
+            ],
+            "books": [
+                {
+                    "name": "2 Chronicles",
+                    "id": "2-chronicles"
+                },
+                {
+                    "name": "1 Kings",
+                    "id": "1-kings"
+                }
+            ]
+        },
+        {
+            "id": "shouts-and-tears-at-the-foundation",
+            "name": "Shouts and tears at the foundation",
+            "group": "Worship and thanksgiving",
+            "testament": "Old",
+            "epithet": "Because he is good, for his mercy endureth for ever",
+            "by": [
+                {
+                    "name": "The priests and Levites"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Zerubbabel and Jeshua"
+                },
+                {
+                    "name": "The exiles home from Babylon"
+                }
+            ],
+            "occasion": "Laying the foundation of the second temple after the exile",
+            "where": "The ruins of the temple in Jerusalem",
+            "told_in": "Ezra 3:8-13",
+            "also_in": [
+                "Haggai 2:1-9"
+            ],
+            "sung": [
+                {
+                    "reference": "Ezra 3:11",
+                    "lines": [
+                        "And they sang together by course in praising and giving thanks unto the LORD; because he is good, for his mercy endureth for ever toward Israel. And all the people shouted with a great shout, when they praised the LORD, because the foundation of the house of the LORD was laid."
+                    ]
+                }
+            ],
+            "summary": "When the exiles home from Babylon laid the new temple's foundation, the young shouted for joy and the old wept, and no one could tell the two sounds apart.",
+            "story": "Back from Babylon, the builders laid the foundation of the LORD's house, and the priests with trumpets and the sons of Asaph with cymbals praised God 'after the ordinance of David king of Israel'. 'And they sang together by course in praising and giving thanks unto the LORD; because he is good, for his mercy endureth for ever toward Israel.' But the old men who had seen Solomon's temple 'wept with a loud voice', while many shouted for joy, 'So that the people could not discern the noise of the shout of joy from the noise of the weeping of the people'.",
+            "meaning": "The new foundation looked small beside the memory of the old. Through the prophet Haggai, God answered the weeping: 'The glory of this latter house shall be greater than of the former' (Haggai 2:9).",
+            "lesson": "Joy and grief can share one song. Do not despise small beginnings; God's best may still be ahead.",
+            "key_verses": [
+                {
+                    "reference": "Haggai 2:9",
+                    "text": "The glory of this latter house shall be greater than of the former, saith the LORD of hosts: and in this place will I give peace, saith the LORD of hosts."
+                }
+            ],
+            "accounts": [
+                "Ezra 3:8-13",
+                "Haggai 2:1-9"
+            ],
+            "books": [
+                {
+                    "name": "Ezra",
+                    "id": "ezra"
+                },
+                {
+                    "name": "Haggai",
+                    "id": "haggai"
+                }
+            ]
+        },
+        {
+            "id": "the-joy-of-jerusalem",
+            "name": "The joy of Jerusalem",
+            "group": "Worship and thanksgiving",
+            "testament": "Old",
+            "epithet": "The joy of Jerusalem was heard even afar off",
+            "by": [
+                {
+                    "name": "Two great choirs of the Levites"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Nehemiah",
+                    "hero": "nehemiah"
+                },
+                {
+                    "name": "Ezra the scribe"
+                }
+            ],
+            "occasion": "Dedicating the rebuilt wall of Jerusalem",
+            "where": "On top of the walls of Jerusalem",
+            "told_in": "Nehemiah 12:27-43",
+            "also_in": [
+                "Nehemiah 8:9-12"
+            ],
+            "summary": "When the broken walls were rebuilt, Nehemiah set two great choirs walking along the top of them in opposite directions, singing, until they met at the temple.",
+            "story": "The Levites were fetched from all their villages 'to keep the dedication with gladness, both with thanksgivings, and with singing, with cymbals, psalteries, and with harps.' Nehemiah divided the leaders and singers into two great companies. One went one way along the top of the wall, led by Ezra the scribe; the other went the other way, with Nehemiah behind it. They met at the house of God, where 'the singers sang loud'. 'God had made them rejoice with great joy: the wives also and the children rejoiced: so that the joy of Jerusalem was heard even afar off.'",
+            "meaning": "Enemies had jeered that if a fox climbed the wall it would fall down (Nehemiah 4:3). Now the finished wall carried a choir. Earlier Nehemiah had told the people, 'the joy of the LORD is your strength' (Nehemiah 8:10).",
+            "lesson": "Finish the work, then celebrate it with God. Joy that is shared carries a long way.",
+            "key_verses": [
+                {
+                    "reference": "Nehemiah 12:43",
+                    "text": "Also that day they offered great sacrifices, and rejoiced: for God had made them rejoice with great joy: the wives also and the children rejoiced: so that the joy of Jerusalem was heard even afar off."
+                },
+                {
+                    "reference": "Nehemiah 8:10",
+                    "text": "Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for this day is holy unto our Lord: neither be ye sorry; for the joy of the LORD is your strength."
+                }
+            ],
+            "accounts": [
+                "Nehemiah 12:27-43",
+                "Nehemiah 8:9-12"
+            ],
+            "books": [
+                {
+                    "name": "Nehemiah",
+                    "id": "nehemiah"
+                }
+            ],
+            "sung": []
+        },
+        {
+            "id": "a-hymn-after-the-last-supper",
+            "name": "A hymn after the Last Supper",
+            "group": "Worship and thanksgiving",
+            "testament": "New",
+            "epithet": "When they had sung an hymn",
+            "by": [
+                {
+                    "name": "Jesus and his disciples"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Peter",
+                    "hero": "peter"
+                }
+            ],
+            "occasion": "The end of the Passover meal on the night Jesus was betrayed",
+            "where": "The upper room in Jerusalem",
+            "told_in": "Matthew 26:26-30",
+            "also_in": [
+                "Mark 14:22-26",
+                "Psalms 118:19-29"
+            ],
+            "summary": "On the night he was betrayed, Jesus ended the Last Supper by singing with his disciples, then walked out to the mount of Olives.",
+            "story": "Jesus took bread and a cup and gave them to his disciples as his body and his blood. Then, 'when they had sung an hymn, they went out into the mount of Olives.' The Gospels do not give the words. At Passover, Jewish families sang the Hallel, Psalms 113 to 118, and many think this was the hymn. If so, among the last words Jesus sang before the cross were 'The stone which the builders refused is become the head stone of the corner' and 'This is the day which the LORD hath made; we will rejoice and be glad in it.'",
+            "meaning": "Jesus knew what the night held, and he sang anyway. If the hymn was Psalm 118, he went to Gethsemane singing that God's 'mercy endureth for ever'.",
+            "lesson": "Singing is not only for good days. Jesus sang on the darkest night of his life.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 26:30",
+                    "text": "And when they had sung an hymn, they went out into the mount of Olives."
+                },
+                {
+                    "reference": "Psalms 118:24",
+                    "text": "This is the day which the LORD hath made; we will rejoice and be glad in it."
+                }
+            ],
+            "accounts": [
+                "Matthew 26:26-30",
+                "Mark 14:22-26",
+                "Psalms 118:19-29"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ],
+            "sung": []
+        },
+        {
+            "id": "paul-and-silas-at-midnight",
+            "name": "Paul and Silas at midnight",
+            "group": "Worship and thanksgiving",
+            "testament": "New",
+            "epithet": "At midnight Paul and Silas prayed, and sang praises",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                },
+                {
+                    "name": "Silas"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The Philippian jailer"
+                },
+                {
+                    "name": "The other prisoners"
+                }
+            ],
+            "occasion": "Beaten and locked in the stocks for casting out a spirit",
+            "where": "The inner prison at Philippi",
+            "told_in": "Acts 16:22-34",
+            "also_in": [
+                "1 Thessalonians 2:2"
+            ],
+            "summary": "Beaten, bleeding and fastened in the stocks, Paul and Silas sang praises to God at midnight. An earthquake opened the doors, and the jailer came to faith.",
+            "story": "After Paul cast a spirit of divination out of a slave girl, her masters dragged him and Silas before the magistrates. They were beaten with many stripes and thrown into the inner prison, their feet 'fast in the stocks'. 'And at midnight Paul and Silas prayed, and sang praises unto God: and the prisoners heard them.' Suddenly an earthquake shook the prison, the doors flew open and every chain came loose. The jailer drew his sword to kill himself, but Paul cried out, 'Do thyself no harm: for we are all here.' Trembling, the jailer asked, 'Sirs, what must I do to be saved?' 'Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house.'",
+            "meaning": "Their song was sung in the dark, to God, and 'the prisoners heard them'. Praise in suffering became the jailer's doorway to faith, and his whole household was baptised that same night.",
+            "lesson": "Someone is listening when you praise God in hard places. A midnight song can open more than prison doors.",
+            "key_verses": [
+                {
+                    "reference": "Acts 16:25",
+                    "text": "And at midnight Paul and Silas prayed, and sang praises unto God: and the prisoners heard them."
+                },
+                {
+                    "reference": "Acts 16:31",
+                    "text": "And they said, Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house."
+                }
+            ],
+            "accounts": [
+                "Acts 16:22-34",
+                "1 Thessalonians 2:2"
+            ],
+            "books": [
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "1 Thessalonians",
+                    "id": "1-thessalonians"
+                }
+            ],
+            "sung": []
+        },
+        {
+            "id": "the-song-of-the-bow",
+            "name": "The song of the bow",
+            "group": "Laments",
+            "testament": "Old",
+            "epithet": "How are the mighty fallen!",
+            "by": [
+                {
+                    "name": "David",
+                    "hero": "david"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Saul",
+                    "hero": "saul"
+                },
+                {
+                    "name": "Jonathan",
+                    "hero": "jonathan"
+                }
+            ],
+            "occasion": "The deaths of Saul and Jonathan on mount Gilboa",
+            "where": "Ziklag, when the news came",
+            "told_in": "2 Samuel 1:17-27",
+            "also_in": [
+                "1 Samuel 31:1-6"
+            ],
+            "sung": [
+                {
+                    "reference": "2 Samuel 1:19",
+                    "lines": [
+                        "The beauty of Israel is slain upon thy high places: how are the mighty fallen!"
+                    ]
+                },
+                {
+                    "reference": "2 Samuel 1:23",
+                    "lines": [
+                        "Saul and Jonathan were lovely and pleasant in their lives, and in their death they were not divided: they were swifter than eagles, they were stronger than lions."
+                    ]
+                },
+                {
+                    "reference": "2 Samuel 1:26",
+                    "lines": [
+                        "I am distressed for thee, my brother Jonathan: very pleasant hast thou been unto me: thy love to me was wonderful, passing the love of women."
+                    ]
+                }
+            ],
+            "summary": "When Saul and his son Jonathan died in battle, David wrote a lament for them both: the king who had hunted him, and the friend who had loved him.",
+            "story": "A messenger brought David the news that Israel had fled before the Philistines and that Saul and Jonathan were dead. David tore his clothes, wept and fasted. Then he 'lamented with this lamentation over Saul and over Jonathan his son', and had it taught to the people of Judah; it was written in the book of Jasher. Three times it cries, 'How are the mighty fallen'. It praises Saul without a word of bitterness, and it grieves for Jonathan: 'thy love to me was wonderful, passing the love of women.'",
+            "meaning": "Saul had tried to kill David for years, yet David's song honours him: 'Saul and Jonathan were lovely and pleasant in their lives'. The book of Jasher is lost; this song survives because Scripture kept it.",
+            "lesson": "Grief can be honest and gracious at once. David mourned an enemy without gloating, and a friend without holding back.",
+            "key_verses": [
+                {
+                    "reference": "2 Samuel 1:25",
+                    "text": "How are the mighty fallen in the midst of the battle! O Jonathan, thou wast slain in thine high places."
+                }
+            ],
+            "accounts": [
+                "2 Samuel 1:17-27",
+                "1 Samuel 31:1-6"
+            ],
+            "books": [
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                },
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                }
+            ]
+        },
+        {
+            "id": "davids-lament-for-abner",
+            "name": "David's lament for Abner",
+            "group": "Laments",
+            "testament": "Old",
+            "epithet": "Died Abner as a fool dieth?",
+            "by": [
+                {
+                    "name": "King David",
+                    "hero": "david"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Abner, Saul's general"
+                },
+                {
+                    "name": "Joab"
+                }
+            ],
+            "occasion": "The murder of Abner by Joab",
+            "where": "Hebron",
+            "told_in": "2 Samuel 3:27-39",
+            "sung": [
+                {
+                    "reference": "2 Samuel 3:33-34",
+                    "lines": [
+                        "And the king lamented over Abner, and said, Died Abner as a fool dieth?",
+                        "Thy hands were not bound, nor thy feet put into fetters: as a man falleth before wicked men, so fellest thou. And all the people wept again over him."
+                    ]
+                }
+            ],
+            "summary": "When Joab murdered Abner in revenge, David walked behind the bier and sang a short lament, so all Israel would know the king had no part in it.",
+            "story": "Abner had led Saul's army against David, then came to Hebron to make peace and bring all Israel over to him. As he left, Joab, whose brother Abner had killed in battle, took him aside in the gate and stabbed him. David cursed the deed, ordered the people to mourn, and followed the bier himself. At the grave 'the king lifted up his voice, and wept', and sang: 'Died Abner as a fool dieth? Thy hands were not bound, nor thy feet put into fetters: as a man falleth before wicked men, so fellest thou.'",
+            "meaning": "The lament told everyone that Abner died by treachery, not in fair battle, and that David grieved for him. 'For all the people and all Israel understood that day that it was not of the king to slay Abner' (2 Samuel 3:37).",
+            "lesson": "Mourn injustice openly, even when it seems to help you. Honour belongs to the dead, whichever side they were on.",
+            "key_verses": [
+                {
+                    "reference": "2 Samuel 3:37",
+                    "text": "For all the people and all Israel understood that day that it was not of the king to slay Abner the son of Ner."
+                },
+                {
+                    "reference": "2 Samuel 3:38",
+                    "text": "And the king said unto his servants, Know ye not that there is a prince and a great man fallen this day in Israel?"
+                }
+            ],
+            "accounts": [
+                "2 Samuel 3:27-39"
+            ],
+            "books": [
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                }
+            ]
+        },
+        {
+            "id": "the-laments-for-josiah",
+            "name": "The laments for Josiah",
+            "group": "Laments",
+            "testament": "Old",
+            "epithet": "All Judah and Jerusalem mourned for Josiah",
+            "by": [
+                {
+                    "name": "Jeremiah"
+                },
+                {
+                    "name": "The singing men and singing women"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Josiah",
+                    "hero": "josiah"
+                }
+            ],
+            "occasion": "The death of good King Josiah in battle at Megiddo",
+            "where": "Jerusalem",
+            "told_in": "2 Chronicles 35:20-27",
+            "also_in": [
+                "2 Kings 23:29-30",
+                "Zechariah 12:10-11"
+            ],
+            "summary": "When Josiah, the best of Judah's later kings, was killed at Megiddo, Jeremiah wrote laments for him, and singers sang them for generations.",
+            "story": "Pharaoh Necho was marching north, and Josiah went out to fight him, though Necho warned him not to. Archers shot the king at Megiddo; his servants carried him back to Jerusalem in his second chariot, and he died. 'And all Judah and Jerusalem mourned for Josiah. And Jeremiah lamented for Josiah: and all the singing men and the singing women spake of Josiah in their lamentations to this day, and made them an ordinance in Israel'.",
+            "meaning": "The words of these laments are lost; they were 'written in the lamentations', a collection we no longer have. The grief was remembered for a long time: Zechariah speaks of a great mourning 'as the mourning of Hadadrimmon in the valley of Megiddon' (Zechariah 12:11), which many take to mean the mourning for Josiah.",
+            "lesson": "Good leaders are a gift, and it is right to grieve them. Laments help a whole people remember.",
+            "key_verses": [
+                {
+                    "reference": "2 Chronicles 35:25",
+                    "text": "And Jeremiah lamented for Josiah: and all the singing men and the singing women spake of Josiah in their lamentations to this day, and made them an ordinance in Israel: and, behold, they are written in the lamentations."
+                },
+                {
+                    "reference": "Zechariah 12:10",
+                    "text": "And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn."
+                }
+            ],
+            "accounts": [
+                "2 Chronicles 35:20-27",
+                "2 Kings 23:29-30",
+                "Zechariah 12:10-11"
+            ],
+            "books": [
+                {
+                    "name": "2 Chronicles",
+                    "id": "2-chronicles"
+                },
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "Zechariah",
+                    "id": "zechariah"
+                }
+            ],
+            "sung": []
+        },
+        {
+            "id": "by-the-rivers-of-babylon",
+            "name": "By the rivers of Babylon",
+            "group": "Laments",
+            "testament": "Old",
+            "epithet": "How shall we sing the LORD's song in a strange land?",
+            "by": [
+                {
+                    "name": "An exile in Babylon"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The Babylonian captors"
+                }
+            ],
+            "occasion": "Israel in exile after Jerusalem was destroyed",
+            "where": "By the rivers of Babylon",
+            "told_in": "Psalms 137:1-9",
+            "also_in": [
+                "2 Kings 25:8-11",
+                "Psalms 126:1-6"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 137:1-3",
+                    "lines": [
+                        "By the rivers of Babylon, there we sat down, yea, we wept, when we remembered Zion.",
+                        "We hanged our harps upon the willows in the midst thereof.",
+                        "For there they that carried us away captive required of us a song; and they that wasted us required of us mirth, saying, Sing us one of the songs of Zion."
+                    ]
+                },
+                {
+                    "reference": "Psalms 137:5",
+                    "lines": [
+                        "If I forget thee, O Jerusalem, let my right hand forget her cunning."
+                    ]
+                }
+            ],
+            "summary": "Captives in Babylon hung their harps on the willows when their captors demanded a cheerful song from Zion.",
+            "story": "Jerusalem and its temple had been burned, and the survivors carried off to Babylon. There, by the rivers and canals, 'we sat down, yea, we wept, when we remembered Zion.' Their captors mocked them: 'Sing us one of the songs of Zion.' They could not. They hung up their harps and swore never to forget Jerusalem: 'If I forget thee, O Jerusalem, let my right hand forget her cunning.' The psalm ends in raw anger, crying out for judgement on Edom and Babylon.",
+            "meaning": "The Bible makes room for grief that cannot sing. Its harsh last lines are a prayer, not an act: the psalmist hands his fury to God instead of taking revenge himself. Seventy years later God brought the exiles home, and 'then was our mouth filled with laughter, and our tongue with singing' (Psalm 126:2).",
+            "lesson": "You do not have to pretend in front of God. Bring him your tears, and even your anger; he knows how to answer them.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 126:1-2",
+                    "text": "When the LORD turned again the captivity of Zion, we were like them that dream. Then was our mouth filled with laughter, and our tongue with singing: then said they among the heathen, The LORD hath done great things for them."
+                }
+            ],
+            "accounts": [
+                "Psalms 137:1-9",
+                "2 Kings 25:8-11",
+                "Psalms 126:1-6"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                }
+            ]
+        },
+        {
+            "id": "great-is-thy-faithfulness",
+            "name": "Great is thy faithfulness",
+            "group": "Laments",
+            "testament": "Old",
+            "epithet": "They are new every morning",
+            "by": [
+                {
+                    "name": "Jeremiah, by tradition"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The survivors in Jerusalem"
+                }
+            ],
+            "occasion": "The fall of Jerusalem to Babylon",
+            "where": "The ruined city of Jerusalem",
+            "told_in": "Lamentations 3:1-33",
+            "also_in": [
+                "Lamentations 1:1-2"
+            ],
+            "sung": [
+                {
+                    "reference": "Lamentations 3:21",
+                    "lines": [
+                        "This I recall to my mind, therefore have I hope."
+                    ]
+                },
+                {
+                    "reference": "Lamentations 3:23-26",
+                    "lines": [
+                        "They are new every morning: great is thy faithfulness.",
+                        "The LORD is my portion, saith my soul; therefore will I hope in him.",
+                        "The LORD is good unto them that wait for him, to the soul that seeketh him.",
+                        "It is good that a man should both hope and quietly wait for the salvation of the LORD."
+                    ]
+                }
+            ],
+            "summary": "Lamentations is five poems of grief over fallen Jerusalem. At its very centre, in the darkest place, the poet remembers that God's mercies are new every morning.",
+            "story": "The book opens with the city sitting alone: 'How doth the city sit solitary, that was full of people!' Four of its five poems are acrostics, each verse or group of verses beginning with the next letter of the Hebrew alphabet, as if grief were being set in order from A to Z. In chapter 3 one man speaks of darkness, walls and chains, until he turns: 'This I recall to my mind, therefore have I hope.' His hope is God's compassion: 'They are new every morning: great is thy faithfulness.'",
+            "meaning": "The hope sits at the very middle of the book, with ruin on every side. Nothing has changed outside; what changes is what the poet calls to mind. The hymn “Great Is Thy Faithfulness” takes its words from here.",
+            "lesson": "On the worst morning of your life, God's mercy is new that morning too. Remember it on purpose.",
+            "key_verses": [
+                {
+                    "reference": "Lamentations 3:31-33",
+                    "text": "For the Lord will not cast off for ever: But though he cause grief, yet will he have compassion according to the multitude of his mercies. For he doth not afflict willingly nor grieve the children of men."
+                }
+            ],
+            "accounts": [
+                "Lamentations 3:1-33",
+                "Lamentations 1:1-2"
+            ],
+            "books": [
+                {
+                    "name": "Lamentations",
+                    "id": "lamentations"
+                }
+            ]
+        },
+        {
+            "id": "my-god-my-god",
+            "name": "My God, my God",
+            "group": "Laments",
+            "testament": "Old",
+            "epithet": "Why hast thou forsaken me?",
+            "by": [
+                {
+                    "name": "David",
+                    "hero": "david"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Jesus, who prayed it on the cross"
+                }
+            ],
+            "occasion": "A cry of abandonment, later prayed by Jesus on the cross",
+            "where": "Sung in Israel; cried out at Golgotha",
+            "told_in": "Psalms 22:1-31",
+            "also_in": [
+                "Matthew 27:35-46",
+                "John 19:23-24",
+                "Hebrews 2:12"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 22:1",
+                    "lines": [
+                        "My God, my God, why hast thou forsaken me? why art thou so far from helping me, and from the words of my roaring?"
+                    ]
+                },
+                {
+                    "reference": "Psalms 22:16-18",
+                    "lines": [
+                        "For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet.",
+                        "I may tell all my bones: they look and stare upon me.",
+                        "They part my garments among them, and cast lots upon my vesture."
+                    ]
+                }
+            ],
+            "summary": "David's psalm begins in utter abandonment and ends in praise that reaches the ends of the earth. Jesus prayed its first line from the cross.",
+            "story": "The psalm opens with a cry: 'My God, my God, why hast thou forsaken me?' The sufferer is mocked and surrounded, his strength poured out like water; 'they pierced my hands and my feet', and 'They part my garments among them, and cast lots upon my vesture.' Then it turns to praise: 'All the ends of the world shall remember and turn unto the LORD'. At the ninth hour on the cross Jesus 'cried with a loud voice, saying, Eli, Eli, lama sabachthani?' while below him the soldiers had cast lots for his clothes.",
+            "meaning": "John saw the psalm fulfilled word for word: the soldiers divided his garments and cast lots for his coat, 'that the scripture might be fulfilled' (John 19:24). By praying its first line, Jesus took the whole psalm on his lips, from its darkness to its hope.",
+            "lesson": "It is not unbelief to ask God “why?”. Jesus did, and the psalm he prayed ends in victory.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 27:46",
+                    "text": "And about the ninth hour Jesus cried with a loud voice, saying, Eli, Eli, lama sabachthani? that is to say, My God, my God, why hast thou forsaken me?"
+                },
+                {
+                    "reference": "John 19:24",
+                    "text": "They said therefore among themselves, Let us not rend it, but cast lots for it, whose it shall be: that the scripture might be fulfilled, which saith, They parted my raiment among them, and for my vesture they did cast lots. These things therefore the soldiers did."
+                }
+            ],
+            "accounts": [
+                "Psalms 22:1-31",
+                "Matthew 27:35-46",
+                "John 19:23-24",
+                "Hebrews 2:12"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                }
+            ]
+        },
+        {
+            "id": "out-of-the-depths",
+            "name": "Out of the depths",
+            "group": "Laments",
+            "testament": "Old",
+            "epithet": "Out of the depths have I cried unto thee, O LORD",
+            "by": [
+                {
+                    "name": "A pilgrim psalmist"
+                }
+            ],
+            "occasion": "A plea for forgiveness from the depths of guilt",
+            "where": "One of the Songs of degrees, sung on the way up to Jerusalem",
+            "told_in": "Psalms 130:1-8",
+            "sung": [
+                {
+                    "reference": "Psalms 130:1-5",
+                    "lines": [
+                        "Out of the depths have I cried unto thee, O LORD.",
+                        "Lord, hear my voice: let thine ears be attentive to the voice of my supplications.",
+                        "If thou, LORD, shouldest mark iniquities, O Lord, who shall stand?",
+                        "But there is forgiveness with thee, that thou mayest be feared.",
+                        "I wait for the LORD, my soul doth wait, and in his word do I hope."
+                    ]
+                }
+            ],
+            "summary": "Sung by pilgrims on the way up to Jerusalem, this psalm cries to God from the depths and waits for him as a watchman waits for the morning.",
+            "story": "The singer is in deep water, and the depths are not only trouble but sin: 'If thou, LORD, shouldest mark iniquities, O Lord, who shall stand? But there is forgiveness with thee'. So he waits, 'more than they that watch for the morning', and calls all Israel to hope, for 'with the LORD there is mercy, and with him is plenteous redemption.'",
+            "meaning": "Its answer to guilt is not denial but forgiveness. Martin Luther counted it among the psalms that teach the gospel most plainly, and it has comforted troubled consciences for centuries.",
+            "lesson": "No depth is too deep for prayer. God does not keep a record we cannot survive; with him there is forgiveness.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 130:7",
+                    "text": "Let Israel hope in the LORD: for with the LORD there is mercy, and with him is plenteous redemption."
+                }
+            ],
+            "accounts": [
+                "Psalms 130:1-8"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "the-two-ways",
+            "name": "The two ways",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "Blessed is the man",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "A psalmist whose name is not given"
+                }
+            ],
+            "occasion": "The doorway into the book of Psalms",
+            "where": "Psalm 1, Israel's songbook",
+            "told_in": "Psalms 1:1-6",
+            "also_in": [
+                "Jeremiah 17:7-8"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 1:1-3",
+                    "lines": [
+                        "Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.",
+                        "But his delight is in the law of the LORD; and in his law doth he meditate day and night.",
+                        "And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper."
+                    ]
+                }
+            ],
+            "summary": "The first psalm opens Israel's songbook with two roads: the blessed person rooted in God's word like a tree, and the ungodly blown away like chaff.",
+            "story": "The Psalms are 150 songs and prayers, gathered over about a thousand years into five books. The first sets the tone. Blessed is the one who does not walk with the ungodly, but whose 'delight is in the law of the LORD'. That person is 'like a tree planted by the rivers of water'. The ungodly 'are like the chaff which the wind driveth away.'",
+            "meaning": "Before Israel sang its praises and laments, it was shown where happiness is found: in God's word, taken in day and night. Jeremiah uses the same picture of a tree planted by the waters (Jeremiah 17:8).",
+            "lesson": "What you delight in is what you become. Put your roots down in God's word.",
+            "key_verses": [
+                {
+                    "reference": "Jeremiah 17:7-8",
+                    "text": "Blessed is the man that trusteth in the LORD, and whose hope the LORD is. For he shall be as a tree planted by the waters, and that spreadeth out her roots by the river, and shall not see when heat cometh, but her leaf shall be green; and shall not be careful in the year of drought, neither shall cease from yielding fruit."
+                }
+            ],
+            "accounts": [
+                "Psalms 1:1-6",
+                "Jeremiah 17:7-8"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Jeremiah",
+                    "id": "jeremiah"
+                }
+            ]
+        },
+        {
+            "id": "the-lord-is-my-shepherd",
+            "name": "The LORD is my shepherd",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "I shall not want",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "David",
+                    "hero": "david"
+                }
+            ],
+            "occasion": "A shepherd king's song of trust",
+            "where": "Psalm 23",
+            "told_in": "Psalms 23:1-6",
+            "also_in": [
+                "John 10:11-14",
+                "1 Peter 2:25",
+                "Revelation 7:17"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 23:1-2",
+                    "lines": [
+                        "The LORD is my shepherd; I shall not want.",
+                        "He maketh me to lie down in green pastures: he leadeth me beside the still waters."
+                    ]
+                },
+                {
+                    "reference": "Psalms 23:4",
+                    "lines": [
+                        "Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me."
+                    ]
+                }
+            ],
+            "summary": "The best-loved psalm of all: David, once a shepherd boy, sings of the LORD as his shepherd, through green pastures and the darkest valley to the house of the LORD.",
+            "story": "David had kept his father's sheep, fighting off a lion and a bear (1 Samuel 17:34-35). Here he pictures himself as the sheep: led to 'green pastures' and 'still waters', and through 'the valley of the shadow of death' without fear, 'for thou art with me'. Halfway through, the shepherd becomes a host who spreads a table in front of enemies, and the song ends with goodness and mercy following all the days of life.",
+            "meaning": "Jesus took the title for himself: 'I am the good shepherd: the good shepherd giveth his life for the sheep' (John 10:11). The psalm is read at countless bedsides and funerals, because it walks with us through the valley rather than around it.",
+            "lesson": "You are not alone in the valley. The Shepherd does not always lead us around the dark places, but he goes through them with us.",
+            "key_verses": [
+                {
+                    "reference": "John 10:11",
+                    "text": "I am the good shepherd: the good shepherd giveth his life for the sheep."
+                },
+                {
+                    "reference": "Revelation 7:17",
+                    "text": "For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and God shall wipe away all tears from their eyes."
+                }
+            ],
+            "accounts": [
+                "Psalms 23:1-6",
+                "John 10:11-14",
+                "1 Peter 2:25",
+                "Revelation 7:17"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ]
+        },
+        {
+            "id": "god-is-our-refuge",
+            "name": "God is our refuge",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "A very present help in trouble",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "The sons of Korah"
+                }
+            ],
+            "occasion": "Trust in God when the world is shaking",
+            "where": "Psalm 46",
+            "told_in": "Psalms 46:1-11",
+            "sung": [
+                {
+                    "reference": "Psalms 46:1-2",
+                    "lines": [
+                        "God is our refuge and strength, a very present help in trouble.",
+                        "Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea;"
+                    ]
+                },
+                {
+                    "reference": "Psalms 46:10",
+                    "lines": [
+                        "Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth."
+                    ]
+                }
+            ],
+            "summary": "Though the earth shakes and the nations rage, the city of God stands, because God is in the midst of her: 'Be still, and know that I am God'.",
+            "story": "The psalm pictures the worst: mountains falling into the sea, waters roaring, nations in uproar and kingdoms tottering. Against all that stands a quiet river, 'the streams whereof shall make glad the city of God'. God speaks once, and the earth melts. Then comes the command: 'Be still, and know that I am God'. Twice the refrain sounds: 'The LORD of hosts is with us; the God of Jacob is our refuge.'",
+            "meaning": "Martin Luther built his hymn “A Mighty Fortress Is Our God” on this psalm. “Be still” is not a call to relax but to stop struggling and see who is God.",
+            "lesson": "When everything shakes, stand still in God. He is not a distant help but a very present one.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 46:7",
+                    "text": "The LORD of hosts is with us; the God of Jacob is our refuge. Selah."
+                }
+            ],
+            "accounts": [
+                "Psalms 46:1-11"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "create-in-me-a-clean-heart",
+            "name": "Create in me a clean heart",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "Have mercy upon me, O God",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "David",
+                    "hero": "david"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Nathan the prophet"
+                },
+                {
+                    "name": "Bathsheba"
+                }
+            ],
+            "occasion": "After Nathan confronted David over Bathsheba and Uriah",
+            "where": "Psalm 51, written in Jerusalem",
+            "told_in": "Psalms 51:1-19",
+            "also_in": [
+                "2 Samuel 12:1-13"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 51:1-2",
+                    "lines": [
+                        "Have mercy upon me, O God, according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions.",
+                        "Wash me throughly from mine iniquity, and cleanse me from my sin."
+                    ]
+                },
+                {
+                    "reference": "Psalms 51:10-12",
+                    "lines": [
+                        "Create in me a clean heart, O God; and renew a right spirit within me.",
+                        "Cast me not away from thy presence; and take not thy holy spirit from me.",
+                        "Restore unto me the joy of thy salvation; and uphold me with thy free spirit."
+                    ]
+                }
+            ],
+            "summary": "David's prayer of repentance after he took Bathsheba and had her husband killed, written when the prophet Nathan confronted him.",
+            "story": "David took Bathsheba, then arranged for her husband Uriah to die in battle. The prophet Nathan told him a story about a rich man who stole a poor man's only lamb. David was furious, and Nathan said, 'Thou art the man.' David answered, 'I have sinned against the LORD.' The psalm is that confession set to music. It hides nothing: 'my sin is ever before me'. And it asks for more than pardon: 'Create in me a clean heart, O God; and renew a right spirit within me.'",
+            "meaning": "God wants a humble heart more than any offering: 'The sacrifices of God are a broken spirit: a broken and a contrite heart, O God, thou wilt not despise.' A king's public sin became a prayer that sinners have prayed ever since.",
+            "lesson": "No sin is too great to confess. God does not despise a broken heart; he makes it clean.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 51:17",
+                    "text": "The sacrifices of God are a broken spirit: a broken and a contrite heart, O God, thou wilt not despise."
+                },
+                {
+                    "reference": "2 Samuel 12:13",
+                    "text": "And David said unto Nathan, I have sinned against the LORD. And Nathan said unto David, The LORD also hath put away thy sin; thou shalt not die."
+                }
+            ],
+            "accounts": [
+                "Psalms 51:1-19",
+                "2 Samuel 12:1-13"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                }
+            ]
+        },
+        {
+            "id": "teach-us-to-number-our-days",
+            "name": "Teach us to number our days",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "LORD, thou hast been our dwelling place",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Moses",
+                    "hero": "moses"
+                }
+            ],
+            "occasion": "The shortness of life, seen from the wilderness years",
+            "where": "Psalm 90",
+            "told_in": "Psalms 90:1-17",
+            "also_in": [
+                "2 Peter 3:8"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 90:1-2",
+                    "lines": [
+                        "LORD, thou hast been our dwelling place in all generations.",
+                        "Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art God."
+                    ]
+                },
+                {
+                    "reference": "Psalms 90:12",
+                    "lines": [
+                        "So teach us to number our days, that we may apply our hearts unto wisdom."
+                    ]
+                }
+            ],
+            "summary": "Headed “A Prayer of Moses the man of God”, this psalm sets our short lives against God's eternity and asks for wisdom to use our days well.",
+            "story": "Moses had watched a whole generation die in the wilderness. He sings of a God who was there 'from everlasting to everlasting', for whom 'a thousand years in thy sight are but as yesterday when it is past'. Our lives are like grass, green in the morning and cut down by evening; 'we spend our years as a tale that is told.' So he prays: 'So teach us to number our days, that we may apply our hearts unto wisdom.'",
+            "meaning": "If its heading is right, it is the oldest song in the Psalms. Isaac Watts turned it into the hymn “O God, Our Help in Ages Past”. Peter echoes it: 'one day is with the Lord as a thousand years' (2 Peter 3:8).",
+            "lesson": "Life is short, and God is eternal. Count your days, not to fear them, but to spend them wisely.",
+            "key_verses": [
+                {
+                    "reference": "2 Peter 3:8",
+                    "text": "But, beloved, be not ignorant of this one thing, that one day is with the Lord as a thousand years, and a thousand years as one day."
+                }
+            ],
+            "accounts": [
+                "Psalms 90:1-17",
+                "2 Peter 3:8"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "2 Peter",
+                    "id": "2-peter"
+                }
+            ]
+        },
+        {
+            "id": "under-his-wings",
+            "name": "Under his wings",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "He that dwelleth in the secret place of the most High",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "A psalmist whose name is not given"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Satan, who quoted it to Jesus",
+                    "hero": "satan"
+                }
+            ],
+            "occasion": "A song of safety in God",
+            "where": "Psalm 91",
+            "told_in": "Psalms 91:1-16",
+            "also_in": [
+                "Matthew 4:5-7",
+                "Luke 4:9-12"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 91:1-2",
+                    "lines": [
+                        "He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty.",
+                        "I will say of the LORD, He is my refuge and my fortress: my God; in him will I trust."
+                    ]
+                },
+                {
+                    "reference": "Psalms 91:4",
+                    "lines": [
+                        "He shall cover thee with his feathers, and under his wings shalt thou trust: his truth shall be thy shield and buckler."
+                    ]
+                }
+            ],
+            "summary": "A song of shelter: whoever lives close to God is covered by his feathers, safe from the terror by night and the arrow by day.",
+            "story": "The psalm moves from the singer's trust, 'I will say of the LORD, He is my refuge', to God's own promise at the end: 'Because he hath set his love upon me, therefore will I deliver him'. Between them is every danger, 'the terror by night', 'the arrow that flieth by day', pestilence and plague, lions and serpents, and the promise that 'he shall give his angels charge over thee'.",
+            "meaning": "Satan quoted this psalm to Jesus in the wilderness, urging him to throw himself down from the temple. Jesus answered, 'It is written again, Thou shalt not tempt the Lord thy God' (Matthew 4:7). The psalm is a promise to trust, not a dare to test God.",
+            "lesson": "Shelter in God, but do not test him. His protection is for those who live close to him.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 91:11",
+                    "text": "For he shall give his angels charge over thee, to keep thee in all thy ways."
+                },
+                {
+                    "reference": "Matthew 4:7",
+                    "text": "Jesus said unto him, It is written again, Thou shalt not tempt the Lord thy God."
+                }
+            ],
+            "accounts": [
+                "Psalms 91:1-16",
+                "Matthew 4:5-7",
+                "Luke 4:9-12"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ]
+        },
+        {
+            "id": "make-a-joyful-noise",
+            "name": "Make a joyful noise",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "Serve the LORD with gladness",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "A psalmist whose name is not given"
+                }
+            ],
+            "occasion": "A call to come into God's courts with thanks",
+            "where": "Psalm 100",
+            "told_in": "Psalms 100:1-5",
+            "sung": [
+                {
+                    "reference": "Psalms 100:1-4",
+                    "lines": [
+                        "Make a joyful noise unto the LORD, all ye lands.",
+                        "Serve the LORD with gladness: come before his presence with singing.",
+                        "Know ye that the LORD he is God: it is he that hath made us, and not we ourselves; we are his people, and the sheep of his pasture.",
+                        "Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name."
+                    ]
+                }
+            ],
+            "summary": "Five verses calling all lands into God's presence with singing, because he made us and we are his sheep.",
+            "story": "Every line is an invitation: make a joyful noise, serve with gladness, come with singing, enter his gates with thanksgiving. The reason is simple: 'it is he that hath made us, and not we ourselves; we are his people, and the sheep of his pasture.' It was probably sung as worshippers came through the temple gates with their thank offerings.",
+            "meaning": "It calls 'all ye lands', not only Israel, to worship. William Kethe's “All People That on Earth Do Dwell”, sung to the tune Old Hundredth, has carried it into churches for more than four hundred years.",
+            "lesson": "Worship starts with knowing whose we are. We did not make ourselves; we belong to the Shepherd.",
+            "accounts": [
+                "Psalms 100:1-5"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ],
+            "key_verses": []
+        },
+        {
+            "id": "thy-word-is-a-lamp",
+            "name": "Thy word is a lamp",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "A lamp unto my feet, and a light unto my path",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "A psalmist whose name is not given"
+                }
+            ],
+            "occasion": "A long love song to God's word",
+            "where": "Psalm 119",
+            "told_in": "Psalms 119:1-176",
+            "sung": [
+                {
+                    "reference": "Psalms 119:11",
+                    "lines": [
+                        "Thy word have I hid in mine heart, that I might not sin against thee."
+                    ]
+                },
+                {
+                    "reference": "Psalms 119:105",
+                    "lines": [
+                        "Thy word is a lamp unto my feet, and a light unto my path."
+                    ]
+                }
+            ],
+            "summary": "The longest chapter in the Bible: 176 verses in 22 stanzas, one for each letter of the Hebrew alphabet, and almost every verse about God's word.",
+            "story": "Each stanza has eight verses, and every verse in a stanza begins with the same Hebrew letter, from aleph to tau; many Bibles print the letter names as headings. The singer has many words for God's word, his law, testimonies, precepts, statutes, commandments and judgments, and he loves them all: 'O how love I thy law! it is my meditation all the day.' He hides it in his heart to keep from sin, and walks by it in the dark: 'Thy word is a lamp unto my feet, and a light unto my path.'",
+            "meaning": "Psalm 119 shows that loving God's word is delight, not dry duty. It is honest too: the singer is afflicted and persecuted, 'like a bottle in the smoke' (Psalm 119:83), and God's word is what holds him.",
+            "lesson": "Take God's word in slowly, verse by verse. A lamp shows only the next step, and that is enough.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 119:97",
+                    "text": "O how love I thy law! it is my meditation all the day."
+                },
+                {
+                    "reference": "Psalms 119:130",
+                    "text": "The entrance of thy words giveth light; it giveth understanding unto the simple."
+                }
+            ],
+            "accounts": [
+                "Psalms 119:1-176"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "i-will-lift-up-mine-eyes",
+            "name": "I will lift up mine eyes",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "From whence cometh my help",
+            "by": [
+                {
+                    "name": "Pilgrims going up to Jerusalem"
+                }
+            ],
+            "occasion": "Setting out for the feasts at Jerusalem",
+            "where": "Psalm 121, one of the Songs of degrees",
+            "told_in": "Psalms 121:1-8",
+            "also_in": [
+                "Psalms 120:1-7",
+                "Psalms 134:1-3"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 121:1-3",
+                    "lines": [
+                        "I will lift up mine eyes unto the hills, from whence cometh my help.",
+                        "My help cometh from the LORD, which made heaven and earth.",
+                        "He will not suffer thy foot to be moved: he that keepeth thee will not slumber."
+                    ]
+                }
+            ],
+            "summary": "One of fifteen Songs of degrees (Psalms 120 to 134), sung by pilgrims climbing to Jerusalem, it promises that the LORD who made heaven and earth never sleeps.",
+            "story": "Three times a year Israelites went up to Jerusalem for the feasts, and the road climbed through hills where robbers could hide. 'I will lift up mine eyes unto the hills, from whence cometh my help. My help cometh from the LORD, which made heaven and earth.' The song answers every fear of the road: he will not let your foot slip, 'he that keepeth Israel shall neither slumber nor sleep', and neither sun by day nor moon by night shall strike you.",
+            "meaning": "In eight short verses the song says six times that God keeps or preserves. It ends with a blessing for every journey: 'The LORD shall preserve thy going out and thy coming in from this time forth, and even for evermore.'",
+            "lesson": "Look up, past the hills, to the One who made them. He watches your going out and coming in, and he never sleeps.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 121:4",
+                    "text": "Behold, he that keepeth Israel shall neither slumber nor sleep."
+                },
+                {
+                    "reference": "Psalms 121:7",
+                    "text": "The LORD shall preserve thee from all evil: he shall preserve thy soul."
+                }
+            ],
+            "accounts": [
+                "Psalms 121:1-8",
+                "Psalms 120:1-7",
+                "Psalms 134:1-3"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "let-every-thing-that-hath-breath",
+            "name": "Let every thing that hath breath",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "Praise ye the LORD",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "A psalmist whose name is not given"
+                }
+            ],
+            "occasion": "The great finale of the Psalms",
+            "where": "Psalm 150",
+            "told_in": "Psalms 150:1-6",
+            "also_in": [
+                "Revelation 19:1-6"
+            ],
+            "sung": [
+                {
+                    "reference": "Psalms 150:3-6",
+                    "lines": [
+                        "Praise him with the sound of the trumpet: praise him with the psaltery and harp.",
+                        "Praise him with the timbrel and dance: praise him with stringed instruments and organs.",
+                        "Praise him upon the loud cymbals: praise him upon the high sounding cymbals.",
+                        "Let every thing that hath breath praise the LORD. Praise ye the LORD."
+                    ]
+                }
+            ],
+            "summary": "The last psalm is pure praise: every instrument, every place and every living thing called to praise the LORD.",
+            "story": "The Psalms have travelled through tears, anger, confession and fear. They end with no complaint at all. Thirteen times in six verses comes the word praise: in his sanctuary and in the heavens, for his mighty acts, with trumpet, psaltery and harp, timbrel and dance, strings and organs, loud cymbals and high sounding cymbals. The last line calls on everything alive: 'Let every thing that hath breath praise the LORD. Praise ye the LORD.'",
+            "meaning": "“Praise ye the LORD” is Hallelujah in Hebrew. The Psalms, full of honest struggle, end in praise, and so does the story of the Bible (Revelation 19:6).",
+            "lesson": "If you have breath, you have both a reason and the means to praise. Whatever your song today, it is heading for hallelujah.",
+            "key_verses": [
+                {
+                    "reference": "Revelation 19:6",
+                    "text": "And I heard as it were the voice of a great multitude, and as the voice of many waters, and as the voice of mighty thunderings, saying, Alleluia: for the Lord God omnipotent reigneth."
+                }
+            ],
+            "accounts": [
+                "Psalms 150:1-6",
+                "Revelation 19:1-6"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ]
+        },
+        {
+            "id": "the-song-of-songs",
+            "name": "The Song of Songs",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "Love is strong as death",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Solomon, by its title"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The bride and her beloved"
+                },
+                {
+                    "name": "The daughters of Jerusalem"
+                }
+            ],
+            "occasion": "A love song between a bride and her beloved",
+            "where": "Vineyards, gardens and the hills of Israel",
+            "told_in": "Song of Solomon 2:8-17",
+            "also_in": [
+                "Song of Solomon 8:6-7",
+                "Ephesians 5:25-32"
+            ],
+            "sung": [
+                {
+                    "reference": "Song of Solomon 2:10-12",
+                    "lines": [
+                        "My beloved spake, and said unto me, Rise up, my love, my fair one, and come away.",
+                        "For, lo, the winter is past, the rain is over and gone;",
+                        "The flowers appear on the earth; the time of the singing of birds is come, and the voice of the turtle is heard in our land;"
+                    ]
+                },
+                {
+                    "reference": "Song of Solomon 8:7",
+                    "lines": [
+                        "Many waters cannot quench love, neither can the floods drown it: if a man would give all the substance of his house for love, it would utterly be contemned."
+                    ]
+                }
+            ],
+            "summary": "The Bible's own love song: a bride and her beloved delight in each other in poetry full of gardens, vineyards and springtime.",
+            "story": "'The song of songs' means the finest song of all. Its voices are a young woman, her beloved and a chorus of friends. He calls her out into the spring: 'Rise up, my love, my fair one, and come away. For, lo, the winter is past, the rain is over and gone'. Near the end she speaks the book's great line, 'love is strong as death', and adds, 'Many waters cannot quench love, neither can the floods drown it'.",
+            "meaning": "God made love between husband and wife, and the Bible celebrates it without embarrassment. Jews and Christians have also read the Song as a picture of God's love for his people, and Paul speaks of marriage as a picture of 'Christ and the church' (Ephesians 5:32).",
+            "lesson": "Love is God's gift, strong and faithful. Protect it, treasure it, and see in it a glimpse of how God loves.",
+            "key_verses": [
+                {
+                    "reference": "Song of Solomon 8:6",
+                    "text": "Set me as a seal upon thine heart, as a seal upon thine arm: for love is strong as death; jealousy is cruel as the grave: the coals thereof are coals of fire, which hath a most vehement flame."
+                },
+                {
+                    "reference": "Ephesians 5:25",
+                    "text": "Husbands, love your wives, even as Christ also loved the church, and gave himself for it;"
+                }
+            ],
+            "accounts": [
+                "Song of Solomon 2:8-17",
+                "Song of Solomon 8:6-7",
+                "Ephesians 5:25-32"
+            ],
+            "books": [
+                {
+                    "name": "Song of Solomon",
+                    "id": "song-of-solomon"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                }
+            ]
+        },
+        {
+            "id": "solomons-thousand-and-five-songs",
+            "name": "Solomon's thousand and five songs",
+            "group": "Psalms and songs of wisdom",
+            "testament": "Old",
+            "epithet": "His songs were a thousand and five",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Solomon"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Ethan, Heman, Chalcol and Darda, the famous wise men"
+                }
+            ],
+            "occasion": "The wisdom God gave Solomon",
+            "where": "Jerusalem",
+            "told_in": "1 Kings 4:29-34",
+            "also_in": [
+                "Psalms 72:1-19",
+                "Psalms 127:1-5"
+            ],
+            "summary": "Solomon wrote 1,005 songs and 3,000 proverbs. Almost all the songs are lost; a few survive in the Bible.",
+            "story": "God gave Solomon 'wisdom and understanding exceeding much, and largeness of heart, even as the sand that is on the sea shore.' He was wiser than the famous wise men of his day, 'And he spake three thousand proverbs: and his songs were a thousand and five.' He wrote about trees, from the cedar of Lebanon to the hyssop growing out of a wall, and about beasts, birds, creeping things and fish, and people came from every nation to hear him.",
+            "meaning": "Of the 1,005 songs, the Bible keeps only a few: the Song of Songs and the two psalms that carry his name, Psalm 72 and Psalm 127, which says, 'Except the LORD build the house, they labour in vain that build it'. Heman and Ethan, the wise men Solomon surpassed, have a psalm each too (Psalms 88 and 89).",
+            "lesson": "Even great gifts can be lost; what lasts is what God keeps. Build your life with the LORD, or the labour is in vain.",
+            "key_verses": [
+                {
+                    "reference": "1 Kings 4:32",
+                    "text": "And he spake three thousand proverbs: and his songs were a thousand and five."
+                },
+                {
+                    "reference": "Psalms 127:1",
+                    "text": "Except the LORD build the house, they labour in vain that build it: except the LORD keep the city, the watchman waketh but in vain."
+                }
+            ],
+            "accounts": [
+                "1 Kings 4:29-34",
+                "Psalms 72:1-19",
+                "Psalms 127:1-5"
+            ],
+            "books": [
+                {
+                    "name": "1 Kings",
+                    "id": "1-kings"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ],
+            "sung": []
+        },
+        {
+            "id": "the-song-of-moses",
+            "name": "The song of Moses",
+            "group": "Songs of the prophets",
+            "testament": "Old",
+            "epithet": "He is the Rock, his work is perfect",
+            "by": [
+                {
+                    "name": "Moses",
+                    "hero": "moses"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Joshua",
+                    "hero": "joshua"
+                },
+                {
+                    "name": "All the congregation of Israel"
+                }
+            ],
+            "occasion": "Moses' farewell, just before his death",
+            "where": "The plains of Moab, across the Jordan from the promised land",
+            "told_in": "Deuteronomy 31:30-32:47",
+            "also_in": [
+                "Deuteronomy 31:19-22",
+                "Romans 10:19",
+                "Revelation 15:3"
+            ],
+            "sung": [
+                {
+                    "reference": "Deuteronomy 32:1",
+                    "lines": [
+                        "Give ear, O ye heavens, and I will speak; and hear, O earth, the words of my mouth."
+                    ]
+                },
+                {
+                    "reference": "Deuteronomy 32:3-4",
+                    "lines": [
+                        "Because I will publish the name of the LORD: ascribe ye greatness unto our God.",
+                        "He is the Rock, his work is perfect: for all his ways are judgment: a God of truth and without iniquity, just and right is he."
+                    ]
+                }
+            ],
+            "summary": "Before he died, Moses taught Israel a song to carry into the promised land: a witness to God's faithfulness, and to their unfaithfulness.",
+            "story": "God told Moses his people would turn to other gods once they were settled, and gave him a song so they could not forget: 'write ye this song for you, and teach it the children of Israel: put it in their mouths'. Moses spoke it 'in the ears of all the congregation of Israel', with Joshua beside him. It praises God as the Rock, remembers how he found Israel 'in a desert land' and carried them as an eagle carries its young, warns of the judgement their idols would bring, and ends in mercy: God 'will be merciful unto his land, and to his people.'",
+            "meaning": "A song stays in the memory when laws are forgotten. Moses said of these words, 'it is not a vain thing for you; because it is your life' (Deuteronomy 32:47). Paul quotes it (Romans 10:19), and in Revelation the redeemed sing 'the song of Moses the servant of God, and the song of the Lamb'.",
+            "lesson": "What we sing, we remember. Fill your memory with songs that tell the truth about God.",
+            "key_verses": [
+                {
+                    "reference": "Deuteronomy 31:19",
+                    "text": "Now therefore write ye this song for you, and teach it the children of Israel: put it in their mouths, that this song may be a witness for me against the children of Israel."
+                },
+                {
+                    "reference": "Deuteronomy 32:47",
+                    "text": "For it is not a vain thing for you; because it is your life: and through this thing ye shall prolong your days in the land, whither ye go over Jordan to possess it."
+                }
+            ],
+            "accounts": [
+                "Deuteronomy 31:30-32:47",
+                "Deuteronomy 31:19-22",
+                "Romans 10:19",
+                "Revelation 15:3"
+            ],
+            "books": [
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ]
+        },
+        {
+            "id": "the-song-of-the-vineyard",
+            "name": "The song of the vineyard",
+            "group": "Songs of the prophets",
+            "testament": "Old",
+            "epithet": "A song of my beloved touching his vineyard",
+            "by": [
+                {
+                    "name": "Isaiah"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The people of Jerusalem and Judah"
+                }
+            ],
+            "occasion": "A love song that turns into a judgement on Israel",
+            "where": "Jerusalem",
+            "told_in": "Isaiah 5:1-7",
+            "also_in": [
+                "Matthew 21:33-44",
+                "John 15:1-8"
+            ],
+            "sung": [
+                {
+                    "reference": "Isaiah 5:1-2",
+                    "lines": [
+                        "Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:",
+                        "And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein: and he looked that it should bring forth grapes, and it brought forth wild grapes."
+                    ]
+                },
+                {
+                    "reference": "Isaiah 5:7",
+                    "lines": [
+                        "For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry."
+                    ]
+                }
+            ],
+            "summary": "Isaiah began like a wedding singer, with a love song about a friend's vineyard, then revealed that the vineyard was Israel and its wild grapes were injustice.",
+            "story": "'Now will I sing to my wellbeloved a song of my beloved touching his vineyard.' The friend cleared a fruitful hill, planted the choicest vine, built a tower and a winepress, and waited, but 'it brought forth wild grapes.' Then the singer turns to his listeners and asks them to judge: 'What could have been done more to my vineyard, that I have not done in it?' The owner will pull down its wall and let it be trampled. The last line names it: 'For the vineyard of the LORD of hosts is the house of Israel'. He looked for justice and found oppression; for righteousness, and heard a cry.",
+            "meaning": "The song works like Nathan's story to David: the listeners agree with the verdict before they know it is about them. Jesus retold it as the parable of the wicked husbandmen (Matthew 21:33-44), and called himself 'the true vine' (John 15:1).",
+            "lesson": "God has done everything for his people, and he looks for fruit: justice and righteousness. The question is not how well we are planted, but what we bear.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 5:4",
+                    "text": "What could have been done more to my vineyard, that I have not done in it? wherefore, when I looked that it should bring forth grapes, brought it forth wild grapes?"
+                },
+                {
+                    "reference": "John 15:1",
+                    "text": "I am the true vine, and my Father is the husbandman."
+                }
+            ],
+            "accounts": [
+                "Isaiah 5:1-7",
+                "Matthew 21:33-44",
+                "John 15:1-8"
+            ],
+            "books": [
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                }
+            ]
+        },
+        {
+            "id": "with-joy-shall-ye-draw-water",
+            "name": "With joy shall ye draw water",
+            "group": "Songs of the prophets",
+            "testament": "Old",
+            "epithet": "The LORD JEHOVAH is my strength and my song",
+            "by": [
+                {
+                    "name": "Isaiah"
+                }
+            ],
+            "occasion": "A song for the day of salvation",
+            "where": "Jerusalem",
+            "told_in": "Isaiah 12:1-6",
+            "also_in": [
+                "Exodus 15:2",
+                "John 7:37-39"
+            ],
+            "sung": [
+                {
+                    "reference": "Isaiah 12:1-3",
+                    "lines": [
+                        "And in that day thou shalt say, O LORD, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.",
+                        "Behold, God is my salvation; I will trust, and not be afraid: for the LORD JEHOVAH is my strength and my song; he also is become my salvation.",
+                        "Therefore with joy shall ye draw water out of the wells of salvation."
+                    ]
+                }
+            ],
+            "summary": "After chapters of warning, Isaiah gives a short song for the day God's anger turns to comfort, echoing the song at the Red Sea.",
+            "story": "Isaiah has just promised a king from the family of Jesse, on whom the Spirit of the LORD will rest. Then he gives the people the song they will sing that day: 'O LORD, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.' Its middle line repeats Moses at the sea: 'the LORD JEHOVAH is my strength and my song; he also is become my salvation.' And it promises: 'Therefore with joy shall ye draw water out of the wells of salvation.'",
+            "meaning": "The song ties the exodus to a greater salvation still to come. At the Feast of Tabernacles, a feast of water and harvest, Jesus stood and cried, 'If any man thirst, let him come unto me, and drink' (John 7:37).",
+            "lesson": "Salvation is a well, not a single cup. Keep drawing from it with joy.",
+            "key_verses": [
+                {
+                    "reference": "John 7:37-38",
+                    "text": "In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water."
+                }
+            ],
+            "accounts": [
+                "Isaiah 12:1-6",
+                "Exodus 15:2",
+                "John 7:37-39"
+            ],
+            "books": [
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                },
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                }
+            ]
+        },
+        {
+            "id": "hezekiahs-song",
+            "name": "Hezekiah's song",
+            "group": "Songs of the prophets",
+            "testament": "Old",
+            "epithet": "The living, the living, he shall praise thee",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "King Hezekiah",
+                    "hero": "hezekiah"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Isaiah"
+                }
+            ],
+            "occasion": "Healed of a deadly illness and given fifteen more years",
+            "where": "Jerusalem",
+            "told_in": "Isaiah 38:9-20",
+            "also_in": [
+                "Isaiah 38:1-8",
+                "2 Kings 20:1-11"
+            ],
+            "sung": [
+                {
+                    "reference": "Isaiah 38:17",
+                    "lines": [
+                        "Behold, for peace I had great bitterness: but thou hast in love to my soul delivered it from the pit of corruption: for thou hast cast all my sins behind thy back."
+                    ]
+                },
+                {
+                    "reference": "Isaiah 38:19-20",
+                    "lines": [
+                        "The living, the living, he shall praise thee, as I do this day: the father to the children shall make known thy truth.",
+                        "The LORD was ready to save me: therefore we will sing my songs to the stringed instruments all the days of our life in the house of the LORD."
+                    ]
+                }
+            ],
+            "summary": "When God healed King Hezekiah of a mortal illness, he wrote a song about the fear of dying and the joy of being spared.",
+            "story": "Isaiah had told Hezekiah, 'Set thine house in order: for thou shalt die, and not live.' The king turned his face to the wall and wept, and God sent word that he would add fifteen years to his life, with a sign: the shadow on the sundial went back ten degrees. Afterwards Hezekiah wrote this song. He remembers feeling his life taken down like a shepherd's tent and cut off like cloth from a loom, and chattering 'Like a crane or a swallow'. Then: 'thou hast cast all my sins behind thy back.' He ends, 'The LORD was ready to save me: therefore we will sing my songs to the stringed instruments all the days of our life in the house of the LORD.'",
+            "meaning": "Hezekiah treats life itself as a reason to praise: 'The living, the living, he shall praise thee, as I do this day'. Every extra day was a gift, and he meant to spend it singing.",
+            "lesson": "Each day of life is given. Use the breath you have to praise the One who gave it.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 38:5",
+                    "text": "Go, and say to Hezekiah, Thus saith the LORD, the God of David thy father, I have heard thy prayer, I have seen thy tears: behold, I will add unto thy days fifteen years."
+                }
+            ],
+            "accounts": [
+                "Isaiah 38:9-20",
+                "Isaiah 38:1-8",
+                "2 Kings 20:1-11"
+            ],
+            "books": [
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                },
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                }
+            ]
+        },
+        {
+            "id": "jonahs-prayer",
+            "name": "Jonah's prayer",
+            "group": "Songs of the prophets",
+            "testament": "Old",
+            "epithet": "Salvation is of the LORD",
+            "by": [
+                {
+                    "name": "Jonah"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The great fish"
+                }
+            ],
+            "occasion": "Swallowed by a great fish after running from God",
+            "where": "Inside the great fish",
+            "told_in": "Jonah 2:1-10",
+            "also_in": [
+                "Jonah 1:1-17",
+                "Matthew 12:39-41"
+            ],
+            "sung": [
+                {
+                    "reference": "Jonah 2:2",
+                    "lines": [
+                        "And said, I cried by reason of mine affliction unto the LORD, and he heard me; out of the belly of hell cried I, and thou heardest my voice."
+                    ]
+                },
+                {
+                    "reference": "Jonah 2:9",
+                    "lines": [
+                        "But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD."
+                    ]
+                }
+            ],
+            "summary": "From inside the fish, the runaway prophet prayed a psalm of thanks before he was even out, and ended, 'Salvation is of the LORD.'",
+            "story": "Jonah ran from God's call to Nineveh, was thrown overboard in a storm, and was swallowed by a great fish the LORD had prepared. 'Then Jonah prayed unto the LORD his God'. His prayer is a psalm, full of lines like those in the Psalms: the waters closing over him, weeds wrapped about his head, going down to the roots of the mountains. Yet it is a song of thanks: 'I cried by reason of mine affliction unto the LORD, and he heard me'. It ends with a vow and a confession, 'Salvation is of the LORD.' Then the LORD spoke to the fish, 'and it vomited out Jonah upon the dry land.'",
+            "meaning": "Jonah gave thanks before he was rescued, trusting what God would do. Jesus pointed to Jonah's three days and nights in the fish as the sign of his own three days in the grave (Matthew 12:40).",
+            "lesson": "You can pray from the bottom. God hears from the belly of the fish, even when we got ourselves there.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 12:40",
+                    "text": "For as Jonas was three days and three nights in the whale’s belly; so shall the Son of man be three days and three nights in the heart of the earth."
+                }
+            ],
+            "accounts": [
+                "Jonah 2:1-10",
+                "Jonah 1:1-17",
+                "Matthew 12:39-41"
+            ],
+            "books": [
+                {
+                    "name": "Jonah",
+                    "id": "jonah"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ]
+        },
+        {
+            "id": "habakkuks-prayer",
+            "name": "Habakkuk's prayer",
+            "group": "Songs of the prophets",
+            "testament": "Old",
+            "epithet": "Yet I will rejoice in the LORD",
+            "by": [
+                {
+                    "name": "Habakkuk the prophet"
+                }
+            ],
+            "occasion": "Waiting for a Babylonian invasion he knew was coming",
+            "where": "Judah",
+            "told_in": "Habakkuk 3:1-19",
+            "also_in": [
+                "Habakkuk 1:1-6",
+                "Habakkuk 2:1-4",
+                "Romans 1:17"
+            ],
+            "sung": [
+                {
+                    "reference": "Habakkuk 3:2",
+                    "lines": [
+                        "O LORD, I have heard thy speech, and was afraid: O LORD, revive thy work in the midst of the years, in the midst of the years make known; in wrath remember mercy."
+                    ]
+                },
+                {
+                    "reference": "Habakkuk 3:17-18",
+                    "lines": [
+                        "Although the fig tree shall not blossom, neither shall fruit be in the vines; the labour of the olive shall fail, and the fields shall yield no meat; the flock shall be cut off from the fold, and there shall be no herd in the stalls:",
+                        "Yet I will rejoice in the LORD, I will joy in the God of my salvation."
+                    ]
+                }
+            ],
+            "summary": "Habakkuk asked God why he allowed evil, heard that Babylon was coming, and ended with a song: though everything fails, I will rejoice in the LORD.",
+            "story": "The book begins with a complaint: 'O LORD, how long shall I cry, and thou wilt not hear!' God's answer was harder than the question: he was raising up the Chaldeans, the Babylonians, to punish Judah. Habakkuk waited on his watchtower, and God told him, 'the just shall live by his faith.' Chapter 3 is 'A prayer of Habakkuk the prophet upon Shigionoth', set to music, with a closing note, 'To the chief singer on my stringed instruments.' He recalls God's mighty acts of old and asks, 'in wrath remember mercy.' Then comes his great resolve: though the fig tree does not blossom, the vines are empty and the stalls are bare, 'Yet I will rejoice in the LORD, I will joy in the God of my salvation.'",
+            "meaning": "Habakkuk's joy does not depend on the harvest. Paul built his gospel on the line God gave him: 'The just shall live by faith' (Romans 1:17).",
+            "lesson": "Joy in God can outlast empty fields. Choose to rejoice in him, not in what you have.",
+            "key_verses": [
+                {
+                    "reference": "Habakkuk 2:4",
+                    "text": "Behold, his soul which is lifted up is not upright in him: but the just shall live by his faith."
+                },
+                {
+                    "reference": "Romans 1:17",
+                    "text": "For therein is the righteousness of God revealed from faith to faith: as it is written, The just shall live by faith."
+                }
+            ],
+            "accounts": [
+                "Habakkuk 3:1-19",
+                "Habakkuk 1:1-6",
+                "Habakkuk 2:1-4",
+                "Romans 1:17"
+            ],
+            "books": [
+                {
+                    "name": "Habakkuk",
+                    "id": "habakkuk"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                }
+            ]
+        },
+        {
+            "id": "he-will-joy-over-thee-with-singing",
+            "name": "He will joy over thee with singing",
+            "group": "Songs of the prophets",
+            "testament": "Old",
+            "epithet": "He will rest in his love",
+            "by": [
+                {
+                    "name": "Zephaniah"
+                }
+            ],
+            "occasion": "A promise of restoration after judgement",
+            "where": "Jerusalem, in the days of King Josiah",
+            "told_in": "Zephaniah 3:14-20",
+            "also_in": [
+                "Zephaniah 1:14-18"
+            ],
+            "sung": [
+                {
+                    "reference": "Zephaniah 3:14",
+                    "lines": [
+                        "Sing, O daughter of Zion; shout, O Israel; be glad and rejoice with all the heart, O daughter of Jerusalem."
+                    ]
+                },
+                {
+                    "reference": "Zephaniah 3:17",
+                    "lines": [
+                        "The LORD thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing."
+                    ]
+                }
+            ],
+            "summary": "Zephaniah's book of judgement ends with a surprise: Israel is told to sing, and God himself sings over his people.",
+            "story": "Zephaniah preached in the days of Josiah about 'the great day of the LORD', a day of wrath. But his last chapter changes key. The LORD will gather the scattered and leave a humble people who trust in him. Then: 'Sing, O daughter of Zion; shout, O Israel'. The reason is that the King is among them: 'he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing.'",
+            "meaning": "The Bible is full of people singing to God. Here God is the one singing, over the people he has saved.",
+            "lesson": "God does not merely put up with his people; he delights in them. Let that quiet your fears.",
+            "key_verses": [
+                {
+                    "reference": "Zephaniah 3:16",
+                    "text": "In that day it shall be said to Jerusalem, Fear thou not: and to Zion, Let not thine hands be slack."
+                }
+            ],
+            "accounts": [
+                "Zephaniah 3:14-20",
+                "Zephaniah 1:14-18"
+            ],
+            "books": [
+                {
+                    "name": "Zephaniah",
+                    "id": "zephaniah"
+                }
+            ]
+        },
+        {
+            "id": "marys-song",
+            "name": "Mary's song",
+            "group": "Songs of the coming King",
+            "testament": "New",
+            "epithet": "My soul doth magnify the Lord",
+            "by": [
+                {
+                    "name": "Mary",
+                    "hero": "mary-mother-of-jesus"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Elisabeth"
+                }
+            ],
+            "occasion": "Visiting Elisabeth after the angel's announcement",
+            "where": "A city in the hill country of Judah",
+            "told_in": "Luke 1:39-56",
+            "also_in": [
+                "1 Samuel 2:1-10"
+            ],
+            "sung": [
+                {
+                    "reference": "Luke 1:46-49",
+                    "lines": [
+                        "And Mary said, My soul doth magnify the Lord,",
+                        "And my spirit hath rejoiced in God my Saviour.",
+                        "For he hath regarded the low estate of his handmaiden: for, behold, from henceforth all generations shall call me blessed.",
+                        "For he that is mighty hath done to me great things; and holy is his name."
+                    ]
+                },
+                {
+                    "reference": "Luke 1:52-53",
+                    "lines": [
+                        "He hath put down the mighty from their seats, and exalted them of low degree.",
+                        "He hath filled the hungry with good things; and the rich he hath sent empty away."
+                    ]
+                }
+            ],
+            "summary": "Expecting Jesus, Mary visited her cousin Elisabeth and sang of the God who lifts up the humble and fills the hungry.",
+            "story": "After Gabriel's visit, Mary hurried to the hill country to see Elisabeth, who was expecting John. At Mary's greeting the baby leaped in Elisabeth's womb, and Elisabeth cried, 'Blessed art thou among women, and blessed is the fruit of thy womb.' Mary answered with a song: 'My soul doth magnify the Lord, And my spirit hath rejoiced in God my Saviour.' She sings of her own low estate, of God's mercy through every generation, and of a great reversal: 'He hath put down the mighty from their seats, and exalted them of low degree.'",
+            "meaning": "Its Latin name, the Magnificat, comes from its first word. Mary's song is soaked in the Old Testament, above all Hannah's song (1 Samuel 2:1-10), and it has been sung in evening prayer for centuries.",
+            "lesson": "God chooses the lowly and fills the hungry. Magnify him, and see yourself rightly: small, but noticed.",
+            "key_verses": [
+                {
+                    "reference": "Luke 1:42",
+                    "text": "And she spake out with a loud voice, and said, Blessed art thou among women, and blessed is the fruit of thy womb."
+                },
+                {
+                    "reference": "Luke 1:50",
+                    "text": "And his mercy is on them that fear him from generation to generation."
+                }
+            ],
+            "accounts": [
+                "Luke 1:39-56",
+                "1 Samuel 2:1-10"
+            ],
+            "books": [
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                }
+            ]
+        },
+        {
+            "id": "zacharias-song",
+            "name": "Zacharias' song",
+            "group": "Songs of the coming King",
+            "testament": "New",
+            "epithet": "Blessed be the Lord God of Israel",
+            "by": [
+                {
+                    "name": "Zacharias the priest"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Elisabeth"
+                },
+                {
+                    "name": "John the Baptist, newly born",
+                    "hero": "john-the-baptist"
+                }
+            ],
+            "occasion": "The naming of his son John",
+            "where": "The hill country of Judaea",
+            "told_in": "Luke 1:57-80",
+            "also_in": [
+                "Luke 1:5-25",
+                "Malachi 4:2"
+            ],
+            "sung": [
+                {
+                    "reference": "Luke 1:68-69",
+                    "lines": [
+                        "Blessed be the Lord God of Israel; for he hath visited and redeemed his people,",
+                        "And hath raised up an horn of salvation for us in the house of his servant David;"
+                    ]
+                },
+                {
+                    "reference": "Luke 1:78-79",
+                    "lines": [
+                        "Through the tender mercy of our God; whereby the dayspring from on high hath visited us,",
+                        "To give light to them that sit in darkness and in the shadow of death, to guide our feet into the way of peace."
+                    ]
+                }
+            ],
+            "summary": "Struck dumb for doubting the angel, Zacharias got his voice back at his son's naming, and used it to sing of the salvation his son would announce.",
+            "story": "When Gabriel promised the old priest a son, Zacharias doubted, and could not speak until it came to pass. At the child's circumcision the relatives wanted to call him Zacharias; his father asked for a writing tablet and wrote, 'His name is John.' At once his tongue was loosed and, 'filled with the Holy Ghost', he prophesied: 'Blessed be the Lord God of Israel; for he hath visited and redeemed his people'. Then he turned to the baby: 'And thou, child, shalt be called the prophet of the Highest: for thou shalt go before the face of the Lord to prepare his ways'.",
+            "meaning": "The Benedictus, named from its first Latin word, celebrates what God is about to do through someone else's son: Jesus, the 'horn of salvation' from David's house. It ends at dawn: 'the dayspring from on high hath visited us, To give light to them that sit in darkness'.",
+            "lesson": "Silence can prepare a better song. When God keeps his word, use your voice to point to Jesus.",
+            "key_verses": [
+                {
+                    "reference": "Luke 1:76",
+                    "text": "And thou, child, shalt be called the prophet of the Highest: for thou shalt go before the face of the Lord to prepare his ways;"
+                },
+                {
+                    "reference": "Malachi 4:2",
+                    "text": "But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall."
+                }
+            ],
+            "accounts": [
+                "Luke 1:57-80",
+                "Luke 1:5-25",
+                "Malachi 4:2"
+            ],
+            "books": [
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Malachi",
+                    "id": "malachi"
+                }
+            ]
+        },
+        {
+            "id": "glory-to-god-in-the-highest",
+            "name": "Glory to God in the highest",
+            "group": "Songs of the coming King",
+            "testament": "New",
+            "epithet": "On earth peace, good will toward men",
+            "by": [
+                {
+                    "name": "A multitude of the heavenly host"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The shepherds"
+                }
+            ],
+            "occasion": "The birth of Jesus in Bethlehem",
+            "where": "The fields near Bethlehem, at night",
+            "told_in": "Luke 2:8-20",
+            "also_in": [
+                "Job 38:4-7"
+            ],
+            "sung": [
+                {
+                    "reference": "Luke 2:13-14",
+                    "lines": [
+                        "And suddenly there was with the angel a multitude of the heavenly host praising God, and saying,",
+                        "Glory to God in the highest, and on earth peace, good will toward men."
+                    ]
+                }
+            ],
+            "summary": "The night Jesus was born, one angel told shepherds the news, and then a whole army of angels appeared praising God.",
+            "story": "Shepherds were keeping watch over their flock by night when the angel of the Lord stood by them and the glory of the Lord shone round about them. 'Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people.' A Saviour was born in the city of David, lying in a manger. 'And suddenly there was with the angel a multitude of the heavenly host praising God, and saying, Glory to God in the highest, and on earth peace, good will toward men.' The shepherds went with haste, found the baby, and returned 'glorifying and praising God'.",
+            "meaning": "Luke says the angels were saying these words, not singing them, but Christians have sung them ever since as the Gloria. The angels had sung before: at creation 'the morning stars sang together, and all the sons of God shouted for joy' (Job 38:7).",
+            "lesson": "Heaven could not keep quiet about the birth of Jesus. Neither need we: it is good news of great joy for all people.",
+            "key_verses": [
+                {
+                    "reference": "Luke 2:10-11",
+                    "text": "And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people. For unto you is born this day in the city of David a Saviour, which is Christ the Lord."
+                },
+                {
+                    "reference": "Job 38:7",
+                    "text": "When the morning stars sang together, and all the sons of God shouted for joy?"
+                }
+            ],
+            "accounts": [
+                "Luke 2:8-20",
+                "Job 38:4-7"
+            ],
+            "books": [
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Job",
+                    "id": "job"
+                }
+            ]
+        },
+        {
+            "id": "simeons-song",
+            "name": "Simeon's song",
+            "group": "Songs of the coming King",
+            "testament": "New",
+            "epithet": "Lord, now lettest thou thy servant depart in peace",
+            "by": [
+                {
+                    "name": "Simeon"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Mary and Joseph",
+                    "hero": "mary-mother-of-jesus"
+                },
+                {
+                    "name": "Anna the prophetess"
+                }
+            ],
+            "occasion": "Seeing the baby Jesus presented in the temple",
+            "where": "The temple in Jerusalem",
+            "told_in": "Luke 2:25-35",
+            "also_in": [
+                "Luke 2:36-38",
+                "Isaiah 49:6"
+            ],
+            "sung": [
+                {
+                    "reference": "Luke 2:29-32",
+                    "lines": [
+                        "Lord, now lettest thou thy servant depart in peace, according to thy word:",
+                        "For mine eyes have seen thy salvation,",
+                        "Which thou hast prepared before the face of all people;",
+                        "A light to lighten the Gentiles, and the glory of thy people Israel."
+                    ]
+                }
+            ],
+            "summary": "An old man who had been promised he would not die before seeing the Christ took the baby Jesus in his arms and sang that he could now die in peace.",
+            "story": "Simeon was 'just and devout, waiting for the consolation of Israel', and the Holy Ghost had shown him that he would not die before he had seen the Lord's Christ. When Mary and Joseph brought Jesus into the temple, Simeon 'took he him up in his arms, and blessed God'. His song is short: he can go now, 'For mine eyes have seen thy salvation', a light for the Gentiles and the glory of Israel. Then he warned Mary, 'a sword shall pierce through thy own soul also'.",
+            "meaning": "Named the Nunc dimittis from its Latin opening, it has been sung at the close of the day for centuries. Simeon saw what Isaiah had promised, that God's servant would be 'a light to the Gentiles' (Isaiah 49:6).",
+            "lesson": "A life of patient waiting is not wasted. When you have seen Jesus, you have seen God's salvation, and you can face the end in peace.",
+            "key_verses": [
+                {
+                    "reference": "Luke 2:25",
+                    "text": "And, behold, there was a man in Jerusalem, whose name was Simeon; and the same man was just and devout, waiting for the consolation of Israel: and the Holy Ghost was upon him."
+                },
+                {
+                    "reference": "Isaiah 49:6",
+                    "text": "And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Israel: I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth."
+                }
+            ],
+            "accounts": [
+                "Luke 2:25-35",
+                "Luke 2:36-38",
+                "Isaiah 49:6"
+            ],
+            "books": [
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                }
+            ]
+        },
+        {
+            "id": "hosanna",
+            "name": "Hosanna",
+            "group": "Songs of the coming King",
+            "testament": "New",
+            "epithet": "Blessed is he that cometh in the name of the Lord",
+            "by": [
+                {
+                    "name": "The crowds on the road"
+                },
+                {
+                    "name": "The children in the temple"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Jesus"
+                },
+                {
+                    "name": "The chief priests and scribes"
+                }
+            ],
+            "occasion": "Jesus riding into Jerusalem before the Passover",
+            "where": "The road down the mount of Olives, and the temple",
+            "told_in": "Matthew 21:1-17",
+            "also_in": [
+                "John 12:12-19",
+                "Psalms 118:25-26",
+                "Psalms 8:1-2"
+            ],
+            "sung": [
+                {
+                    "reference": "Matthew 21:9",
+                    "lines": [
+                        "And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: Blessed is he that cometh in the name of the Lord; Hosanna in the highest."
+                    ]
+                }
+            ],
+            "summary": "As Jesus rode into Jerusalem, the crowds sang words from Psalm 118, and children took up the cry of “Hosanna” in the temple.",
+            "story": "The crowds coming for the Passover spread their clothes and cut branches for the road, and those in front and behind cried, 'Hosanna to the Son of David: Blessed is he that cometh in the name of the Lord; Hosanna in the highest.' The words come from Psalm 118, a psalm sung at the feasts: 'Save now, I beseech thee, O LORD'. In the temple children took up the cry, and the chief priests were indignant. Jesus answered them from Psalm 8: 'Out of the mouth of babes and sucklings thou hast perfected praise'.",
+            "meaning": "“Hosanna” is Hebrew for “save now”. The crowd sang better than they knew: within the week the one they welcomed would save by dying.",
+            "lesson": "Praise Jesus as King, and mean it all week, not only on the day of the procession.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 118:25-26",
+                    "text": "Save now, I beseech thee, O LORD: O LORD, I beseech thee, send now prosperity. Blessed be he that cometh in the name of the LORD: we have blessed you out of the house of the LORD."
+                },
+                {
+                    "reference": "Matthew 21:16",
+                    "text": "And said unto him, Hearest thou what these say? And Jesus saith unto them, Yea; have ye never read, Out of the mouth of babes and sucklings thou hast perfected praise?"
+                }
+            ],
+            "accounts": [
+                "Matthew 21:1-17",
+                "John 12:12-19",
+                "Psalms 118:25-26",
+                "Psalms 8:1-2"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "psalms-hymns-and-spiritual-songs",
+            "name": "Psalms, hymns and spiritual songs",
+            "group": "Songs of the church and of heaven",
+            "testament": "New",
+            "epithet": "Singing and making melody in your heart",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                },
+                {
+                    "name": "James"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The churches at Ephesus and Colosse"
+                }
+            ],
+            "occasion": "Teaching the churches how to sing together",
+            "where": "Letters to the first churches",
+            "told_in": "Ephesians 5:18-20",
+            "also_in": [
+                "Colossians 3:16",
+                "1 Corinthians 14:15",
+                "James 5:13"
+            ],
+            "summary": "Paul told the first Christians to be filled with the Spirit and to speak to one another in psalms, hymns and spiritual songs.",
+            "story": "Paul contrasts two kinds of filling: 'be not drunk with wine, wherein is excess; but be filled with the Spirit'. A church filled with the Spirit sings, 'Speaking to yourselves in psalms and hymns and spiritual songs, singing and making melody in your heart to the Lord'. To the Colossians he adds that songs teach, 'teaching and admonishing one another in psalms and hymns and spiritual songs'. James gives the simplest rule of all: 'Is any merry? let him sing psalms.'",
+            "meaning": "The first Christians inherited Israel's psalms and added new songs about Christ. Singing was not a show put on for the church but something the church did together, to God and to one another, with heart and mind: 'I will sing with the spirit, and I will sing with the understanding also' (1 Corinthians 14:15).",
+            "lesson": "Sing with others, and mean it. Songs are one of the ways God's word dwells in us richly.",
+            "key_verses": [
+                {
+                    "reference": "Ephesians 5:19",
+                    "text": "Speaking to yourselves in psalms and hymns and spiritual songs, singing and making melody in your heart to the Lord;"
+                },
+                {
+                    "reference": "Colossians 3:16",
+                    "text": "Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord."
+                },
+                {
+                    "reference": "James 5:13",
+                    "text": "Is any among you afflicted? let him pray. Is any merry? let him sing psalms."
+                }
+            ],
+            "accounts": [
+                "Ephesians 5:18-20",
+                "Colossians 3:16",
+                "1 Corinthians 14:15",
+                "James 5:13"
+            ],
+            "books": [
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                }
+            ],
+            "sung": []
+        },
+        {
+            "id": "the-hymn-of-christs-humility",
+            "name": "The hymn of Christ's humility",
+            "group": "Songs of the church and of heaven",
+            "testament": "New",
+            "epithet": "He humbled himself, and became obedient unto death",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul, perhaps quoting an early hymn",
+                    "hero": "paul"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The church at Philippi"
+                }
+            ],
+            "occasion": "Urging a divided church to have the mind of Christ",
+            "where": "A letter from prison to Philippi",
+            "told_in": "Philippians 2:5-11",
+            "also_in": [
+                "Isaiah 45:22-23"
+            ],
+            "sung": [
+                {
+                    "reference": "Philippians 2:6-11",
+                    "lines": [
+                        "Who, being in the form of God, thought it not robbery to be equal with God:",
+                        "But made himself of no reputation, and took upon him the form of a servant, and was made in the likeness of men:",
+                        "And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross.",
+                        "Wherefore God also hath highly exalted him, and given him a name which is above every name:",
+                        "That at the name of Jesus every knee should bow, of things in heaven, and things in earth, and things under the earth;",
+                        "And that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father."
+                    ]
+                }
+            ],
+            "summary": "Many scholars think these verses were an early Christian hymn: Christ came down from equality with God to death on a cross, and God raised him to the highest place.",
+            "story": "Paul was urging a quarrelling church to be humble: 'Let this mind be in you, which was also in Christ Jesus'. What follows has the rhythm of a song in two halves. Down: being in the form of God, he 'made himself of no reputation', took the form of a servant, and 'became obedient unto death, even the death of the cross.' Up: 'Wherefore God also hath highly exalted him', so that every knee should bow and every tongue confess 'that Jesus Christ is Lord, to the glory of God the Father.'",
+            "meaning": "About thirty years after the cross, Christians were singing that Jesus is Lord, and giving him the honour Isaiah kept for God alone: 'unto me every knee shall bow, every tongue shall swear' (Isaiah 45:23).",
+            "lesson": "The way up is down. Take the humble road Jesus took, and trust God with the lifting up.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 45:23",
+                    "text": "I have sworn by myself, the word is gone out of my mouth in righteousness, and shall not return, That unto me every knee shall bow, every tongue shall swear."
+                }
+            ],
+            "accounts": [
+                "Philippians 2:5-11",
+                "Isaiah 45:22-23"
+            ],
+            "books": [
+                {
+                    "name": "Philippians",
+                    "id": "philippians"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                }
+            ]
+        },
+        {
+            "id": "great-is-the-mystery-of-godliness",
+            "name": "Great is the mystery of godliness",
+            "group": "Songs of the church and of heaven",
+            "testament": "New",
+            "epithet": "God was manifest in the flesh",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul, quoting what the church confessed",
+                    "hero": "paul"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Timothy"
+                }
+            ],
+            "occasion": "Instructions for the church at Ephesus",
+            "where": "A letter to Timothy at Ephesus",
+            "told_in": "1 Timothy 3:14-16",
+            "also_in": [
+                "John 1:14"
+            ],
+            "sung": [
+                {
+                    "reference": "1 Timothy 3:16",
+                    "lines": [
+                        "And without controversy great is the mystery of godliness: God was manifest in the flesh, justified in the Spirit, seen of angels, preached unto the Gentiles, believed on in the world, received up into glory."
+                    ]
+                }
+            ],
+            "summary": "In six short lines, probably from an early hymn or creed, Paul sums up the whole story of Christ from his coming to his ascension.",
+            "story": "Paul wrote so that Timothy would know how to behave 'in the house of God, which is the church of the living God, the pillar and ground of the truth.' Then he quotes what looks like a hymn: six short lines that end alike in Greek. God 'was manifest in the flesh, justified in the Spirit, seen of angels, preached unto the Gentiles, believed on in the world, received up into glory.'",
+            "meaning": "The early church put its faith into lines that could be sung and learned by heart. This mystery is not a puzzle but a secret now made known: God himself came in the flesh.",
+            "lesson": "Know the story of Jesus well enough to sing it. The heart of the faith fits in six lines.",
+            "key_verses": [
+                {
+                    "reference": "John 1:14",
+                    "text": "And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth."
+                }
+            ],
+            "accounts": [
+                "1 Timothy 3:14-16",
+                "John 1:14"
+            ],
+            "books": [
+                {
+                    "name": "1 Timothy",
+                    "id": "1-timothy"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                }
+            ]
+        },
+        {
+            "id": "holy-holy-holy",
+            "name": "Holy, holy, holy",
+            "group": "Songs of the church and of heaven",
+            "testament": "New",
+            "epithet": "Lord God Almighty, which was, and is, and is to come",
+            "by": [
+                {
+                    "name": "The four beasts and the twenty-four elders"
+                }
+            ],
+            "with": [
+                {
+                    "name": "John, who saw it"
+                }
+            ],
+            "occasion": "John's vision of the throne of God",
+            "where": "Heaven, in the vision John was given on Patmos",
+            "told_in": "Revelation 4:1-11",
+            "also_in": [
+                "Isaiah 6:1-4"
+            ],
+            "sung": [
+                {
+                    "reference": "Revelation 4:8",
+                    "lines": [
+                        "And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Lord God Almighty, which was, and is, and is to come."
+                    ]
+                },
+                {
+                    "reference": "Revelation 4:11",
+                    "lines": [
+                        "Thou art worthy, O Lord, to receive glory and honour and power: for thou hast created all things, and for thy pleasure they are and were created."
+                    ]
+                }
+            ],
+            "summary": "Around God's throne the living creatures never stop singing 'Holy, holy, holy', and the elders cast their crowns before the throne and worship the Creator.",
+            "story": "A door opened in heaven, and John saw a throne with a rainbow like an emerald around it. Four living creatures, full of eyes, 'rest not day and night, saying, Holy, holy, holy, Lord God Almighty, which was, and is, and is to come.' Each time they do, the twenty-four elders fall down, 'cast their crowns before the throne', and sing, 'Thou art worthy, O Lord, to receive glory and honour and power: for thou hast created all things'.",
+            "meaning": "Isaiah heard the seraphim sing the same words eight centuries earlier: 'Holy, holy, holy, is the LORD of hosts' (Isaiah 6:3). Reginald Heber's hymn “Holy, Holy, Holy! Lord God Almighty!” takes its words from here.",
+            "lesson": "Worship begins with who God is. Before we ask for anything, heaven reminds us that he is holy and worthy.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 6:3",
+                    "text": "And one cried unto another, and said, Holy, holy, holy, is the LORD of hosts: the whole earth is full of his glory."
+                }
+            ],
+            "accounts": [
+                "Revelation 4:1-11",
+                "Isaiah 6:1-4"
+            ],
+            "books": [
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                }
+            ]
+        },
+        {
+            "id": "the-new-song-of-the-lamb",
+            "name": "The new song of the Lamb",
+            "group": "Songs of the church and of heaven",
+            "testament": "New",
+            "epithet": "Worthy is the Lamb that was slain",
+            "by": [
+                {
+                    "name": "The four beasts, the elders, and countless angels"
+                }
+            ],
+            "with": [
+                {
+                    "name": "John, who saw it"
+                }
+            ],
+            "occasion": "The Lamb takes the sealed book from the throne",
+            "where": "Heaven, in John's vision",
+            "told_in": "Revelation 5:1-14",
+            "also_in": [
+                "Psalms 96:1",
+                "Isaiah 53:7"
+            ],
+            "sung": [
+                {
+                    "reference": "Revelation 5:9-10",
+                    "lines": [
+                        "And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to God by thy blood out of every kindred, and tongue, and people, and nation;",
+                        "And hast made us unto our God kings and priests: and we shall reign on the earth."
+                    ]
+                },
+                {
+                    "reference": "Revelation 5:12",
+                    "lines": [
+                        "Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing."
+                    ]
+                }
+            ],
+            "summary": "When no one could open God's sealed book, a Lamb that had been slain took it, and all heaven broke into a new song.",
+            "story": "John wept because no one was worthy to open the sealed book. An elder told him, 'Weep not: behold, the Lion of the tribe of Juda … hath prevailed'. John looked, and saw instead 'a Lamb as it had been slain'. When the Lamb took the book, 'they sung a new song, saying, Thou art worthy to take the book … for thou wast slain, and hast redeemed us to God by thy blood out of every kindred, and tongue, and people, and nation'. Then angels numbering 'ten thousand times ten thousand' joined in, and at last every creature in heaven, on earth, under the earth and in the sea.",
+            "meaning": "The song is new because the victory is new: a Lamb who conquered by being slain. It is sung for people from every nation and language. Handel's Messiah ends with its words, “Worthy is the Lamb”.",
+            "lesson": "Heaven's loudest song is about the cross, and every nation will be there to sing it.",
+            "key_verses": [
+                {
+                    "reference": "Revelation 5:13",
+                    "text": "And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever."
+                }
+            ],
+            "accounts": [
+                "Revelation 5:1-14",
+                "Psalms 96:1",
+                "Isaiah 53:7"
+            ],
+            "books": [
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                }
+            ]
+        },
+        {
+            "id": "the-song-of-moses-and-the-lamb",
+            "name": "The song of Moses and the Lamb",
+            "group": "Songs of the church and of heaven",
+            "testament": "New",
+            "epithet": "Great and marvellous are thy works",
+            "by": [
+                {
+                    "name": "Those who had overcome the beast"
+                }
+            ],
+            "with": [
+                {
+                    "name": "John, who saw it"
+                }
+            ],
+            "occasion": "The victors standing on the sea of glass",
+            "where": "Heaven, beside a sea of glass mingled with fire",
+            "told_in": "Revelation 15:1-4",
+            "also_in": [
+                "Exodus 15:1-18",
+                "Deuteronomy 32:3-4"
+            ],
+            "sung": [
+                {
+                    "reference": "Revelation 15:3-4",
+                    "lines": [
+                        "And they sing the song of Moses the servant of God, and the song of the Lamb, saying, Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints.",
+                        "Who shall not fear thee, O Lord, and glorify thy name? for thou only art holy: for all nations shall come and worship before thee; for thy judgments are made manifest."
+                    ]
+                }
+            ],
+            "summary": "Beside a sea of glass mingled with fire, those who overcame sing a song that joins Moses' song at the Red Sea with the song of the Lamb.",
+            "story": "John saw 'as it were a sea of glass mingled with fire', and standing on it, holding the harps of God, those who had overcome the beast. As Israel once stood beside the Red Sea and sang, 'they sing the song of Moses the servant of God, and the song of the Lamb, saying, Great and marvellous are thy works, Lord God Almighty; just and true are thy ways, thou King of saints.'",
+            "meaning": "The Bible's first great song and one of its last are joined into one. Every rescue God ever made, from Egypt to the cross, is one story, and it ends with 'all nations shall come and worship before thee'.",
+            "lesson": "Your rescue belongs to a much bigger song. The God who parted the sea finishes what he starts.",
+            "key_verses": [
+                {
+                    "reference": "Exodus 15:11",
+                    "text": "Who is like unto thee, O LORD, among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?"
+                }
+            ],
+            "accounts": [
+                "Revelation 15:1-4",
+                "Exodus 15:1-18",
+                "Deuteronomy 32:3-4"
+            ],
+            "books": [
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                }
+            ]
+        },
+        {
+            "id": "alleluia",
+            "name": "Alleluia",
+            "group": "Songs of the church and of heaven",
+            "testament": "New",
+            "epithet": "For the Lord God omnipotent reigneth",
+            "by": [
+                {
+                    "name": "A great multitude in heaven"
+                }
+            ],
+            "with": [
+                {
+                    "name": "The twenty-four elders and the four beasts"
+                }
+            ],
+            "occasion": "The fall of Babylon and the marriage supper of the Lamb",
+            "where": "Heaven, in John's vision",
+            "told_in": "Revelation 19:1-9",
+            "also_in": [
+                "Psalms 150:1-6"
+            ],
+            "sung": [
+                {
+                    "reference": "Revelation 19:1",
+                    "lines": [
+                        "And after these things I heard a great voice of much people in heaven, saying, Alleluia; Salvation, and glory, and honour, and power, unto the Lord our God:"
+                    ]
+                },
+                {
+                    "reference": "Revelation 19:6-7",
+                    "lines": [
+                        "And I heard as it were the voice of a great multitude, and as the voice of many waters, and as the voice of mighty thunderings, saying, Alleluia: for the Lord God omnipotent reigneth.",
+                        "Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready."
+                    ]
+                }
+            ],
+            "summary": "The only place in the New Testament where Alleluia is sung: a vast choir in heaven praises God because he reigns and the marriage of the Lamb has come.",
+            "story": "After the fall of Babylon, John heard 'a great voice of much people in heaven, saying, Alleluia; Salvation, and glory, and honour, and power, unto the Lord our God'. The elders and living creatures answered, 'Amen; Alleluia.' Then came a sound 'as the voice of many waters, and as the voice of mighty thunderings, saying, Alleluia: for the Lord God omnipotent reigneth.' And the reason for joy: 'the marriage of the Lamb is come, and his wife hath made herself ready.'",
+            "meaning": "Alleluia is the Greek spelling of the Hebrew Hallelujah, “Praise ye the LORD”, the word that closes the Psalms. Handel set these words in the Hallelujah Chorus. The Bible's story ends at a wedding, with singing.",
+            "lesson": "The last word belongs to God, and it is a song. Whatever happens now, the Lord God omnipotent reigns.",
+            "key_verses": [
+                {
+                    "reference": "Revelation 19:9",
+                    "text": "And he saith unto me, Write, Blessed are they which are called unto the marriage supper of the Lamb. And he saith unto me, These are the true sayings of God."
+                }
+            ],
+            "accounts": [
+                "Revelation 19:1-9",
+                "Psalms 150:1-6"
+            ],
+            "books": [
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        }
+    ]
+}

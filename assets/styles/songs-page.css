@@ -1,0 +1,161 @@
+/* Styles for apps/pages/songs-in-the-bible.html, on top of study-page.css,
+   which holds the palette, topbar, hero, chips and the in-place .row-panel. */
+
+/* One colour per group; --g colours everything inside. */
+.g-victory  { --g: #a8761a; --g-soft: rgb(168 118 26 / 13%); }
+.g-worship  { --g: #2e7d6b; --g-soft: rgb(46 125 107 / 12%); }
+.g-lament   { --g: #4a5a78; --g-soft: rgb(74 90 120 / 12%); }
+.g-psalms   { --g: #2f5d8a; --g-soft: rgb(47 93 138 / 12%); }
+.g-prophets { --g: #7a3b69; --g-soft: rgb(122 59 105 / 12%); }
+.g-advent   { --g: #9b2335; --g-soft: rgb(155 35 53 / 11%); }
+.g-heaven   { --g: #6b4c9a; --g-soft: rgb(107 76 154 / 12%); }
+
+.chip-rows { display: grid; gap: 8px; }
+
+/* ---------------------------------------------------------------- the count and its caveats */
+
+.caveats-pill {
+  display: inline-block; vertical-align: 2px;
+  margin-left: 4px; padding: 2px 9px;
+  border: 0; border-radius: 6px;
+  background: #b3261e; color: #fff;
+  font: 700 .78rem/1.5 var(--body); letter-spacing: .03em;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.caveats-pill:hover { background: #cf3328; }
+.caveats-pill[aria-expanded="true"] { background: #fff; color: #b3261e; }
+
+.count-caveats {
+  max-width: 62ch; margin: 12px 0 4px; padding: 14px 18px;
+  border-radius: 12px; border-left: 4px solid #b3261e;
+  background: rgb(255 255 255 / 7%);
+  color: rgb(243 231 210 / 90%);
+}
+.count-caveats h2 { margin: 0 0 8px; font-size: 1.3rem; color: var(--gold-light); }
+.count-caveats ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: .95rem; line-height: 1.5; }
+.count-caveats strong { color: #fff; }
+.count-caveats a { color: var(--gold-light); }
+
+/* ---------------------------------------------------------------- sections */
+
+.group-section { margin-top: 18px; padding-top: 0; overflow: hidden; }
+.group-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 16px;
+  margin: 0 -20px 18px; padding: 16px 20px 14px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
+    linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
+}
+.group-head h2 {
+  display: flex; align-items: center; gap: 10px;
+  font: 400 clamp(1.7rem, 1.4rem + 1.3vw, 2.3rem)/1.05 var(--display);
+}
+.group-icon { display: grid; flex: 0 0 auto; width: 30px; height: 30px; }
+.group-icon svg { width: 100%; height: 100%; }
+.group-count {
+  margin: 0; min-width: 34px; padding: 2px 10px; border-radius: 999px;
+  font-weight: 700; font-size: .9rem; text-align: center;
+  background: rgb(255 255 255 / 18%);
+}
+.group-intro { grid-column: 1 / -1; margin: 6px 0 0; max-width: 75ch; font-size: .96rem; opacity: .95; }
+
+/* ---------------------------------------------------------------- cards */
+
+.sg-grid {
+  position: relative;                 /* tiles' offsetLeft/Top are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.sg-tile {
+  display: flex; align-items: flex-start; gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--g);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.sg-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+.sg-mark {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  color: var(--g); background: var(--g-soft);
+  border: 1.5px solid var(--g);
+}
+.sg-mark svg { width: 24px; height: 24px; }
+.sg-text { display: grid; gap: 1px; min-width: 0; }
+.sg-name { font: 400 1.25rem/1.1 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.sg-epithet { font-size: .88rem; color: var(--ink); }
+.sg-meta { font-size: .74rem; color: var(--muted); margin-top: 2px; }
+
+.sg-tile.is-open { background: var(--g); border-color: var(--g); color: #fff; box-shadow: 0 8px 18px rgb(16 37 59 / 18%); }
+.sg-tile.is-open .sg-name,
+.sg-tile.is-open .sg-epithet,
+.sg-tile.is-open .sg-meta { color: #fff; }
+.sg-tile.is-open .sg-mark { color: var(--g); background: #fff; border-color: #fff; }
+
+/* ---------------------------------------------------------------- open card */
+
+/* The song's own words, set as verse: one line per Bible verse. */
+.song-words { display: grid; gap: 12px; }
+.song-passage {
+  margin: 0; padding: 14px 18px 12px 20px;
+  border-radius: 12px;
+  background: var(--g-soft);
+  border-left: 4px solid var(--g);
+}
+.song-passage blockquote { margin: 0; }
+.song-passage p {
+  margin: 0 0 6px; padding-left: 1.2em; text-indent: -1.2em;   /* wrapped lines hang under the first */
+  font: 400 1.12rem/1.5 var(--body);
+  color: var(--ink);
+}
+.song-passage p:last-child { margin-bottom: 0; }
+.song-passage figcaption {
+  margin-top: 8px;
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--g);
+}
+
+.lesson { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); font-weight: 500; }
+
+.sg-people { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 2px 0 0; padding: 0; list-style: none; }
+.sg-people a, .sg-people span {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: .86rem; line-height: 1.5;
+  color: var(--navy-2); background: #fff; border: 1px solid var(--line);
+}
+.sg-people a { font-weight: 600; text-decoration: none; border-color: color-mix(in srgb, var(--g) 45%, transparent); }
+.sg-people a:hover { border-color: var(--g); color: var(--g); }
+
+.accounts-note { margin: 6px 0 0; font-size: .8rem; color: var(--muted); }
+
+.book-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.book-links a {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: .84rem; font-weight: 600; text-decoration: none;
+  color: var(--navy-2); background: #fff; border: 1px solid var(--line);
+}
+.book-links a:hover { border-color: var(--g); }
+
+.row-panel .verse { border-left-color: var(--g); }
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .group-head { margin: 0 -16px 14px; padding: 14px 16px; }
+  .sg-grid { grid-template-columns: 1fr; gap: 8px; }
+  .song-passage p { font-size: 1.04rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sg-tile, .caveats-pill { transition: none; }
+  .sg-tile:hover { transform: none; }
+}

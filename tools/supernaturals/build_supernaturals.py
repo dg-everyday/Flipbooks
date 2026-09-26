@@ -1,7 +1,7 @@
 """Build assets/supernaturals.json for apps/pages/supernaturals.html.
 
-The hand-written entries live in tools/supernaturals/content/miracles.py and
-spirits.py. This script:
+The hand-written entries live in tools/supernaturals/content/miracles.py,
+spirits.py and prophecies.py. This script:
 
   * gives each entry an id (from its name) and checks ids are unique,
   * checks `group` and `testament`, and that `by` / `with` hero ids point at
@@ -31,6 +31,7 @@ from build_people import Bible, DB, REF  # noqa: E402  (reuse the verse resolver
 from kjv_quotes import Quotes  # noqa: E402
 from content.miracles import MIRACLES  # noqa: E402
 from content.spirits import SPIRITS  # noqa: E402
+from content.prophecies import PROPHECIES  # noqa: E402
 
 OUT = ROOT / "assets" / "supernaturals.json"
 HEROES = ROOT / "assets" / "heroes-and-villains.json"
@@ -43,6 +44,7 @@ GROUPS = [
     "Casting out demons",
     "Magic and sorcery",
     "Signs, wonders and angels",
+    "Prophecies",
 ]
 TESTAMENTS = {"Old", "New"}
 
@@ -65,7 +67,7 @@ def main():
             errors.append(f"{where}: {e}")
             return None
 
-    entries = [{"id": item.get("id") or slug(item["name"]), **item} for item in MIRACLES + SPIRITS]
+    entries = [{"id": item.get("id") or slug(item["name"]), **item} for item in MIRACLES + SPIRITS + PROPHECIES]
 
     ids = [e["id"] for e in entries]
     for i in set(ids):

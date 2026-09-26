@@ -3,8 +3,8 @@
 Builds `assets/supernaturals.json`, which `apps/pages/supernaturals.html` reads.
 
 1. Edit `content/miracles.py` (power over nature, food and plenty, healings, raised from the
-   dead) or `content/spirits.py` (casting out demons, magic and sorcery, signs, wonders and
-   angels).
+   dead), `content/spirits.py` (casting out demons, magic and sorcery, signs, wonders and
+   angels) or `content/prophecies.py` (prophecies).
 2. Run from the repo root:
 
    ```
@@ -24,12 +24,15 @@ phrases that are not Scripture in “double quotes”.
 Magic and sorcery entries report what the Bible tells and how it judges it. They never
 describe how anything was done.
 
+Prophecy entries give the prophecy in `told_in` and where it came true in `also_in`; `by` is who
+spoke it, `for` who it was spoken to, and `testament` the Testament it was spoken in.
+
 ## Entry fields
 
 | Field | Meaning |
 |---|---|
 | `name`, `epithet` | Name and a short title, usually a phrase from the passage. |
-| `group` | Power over nature, Food and plenty, Healings, Raised from the dead, Casting out demons, Magic and sorcery, Signs, wonders and angels. |
+| `group` | Power over nature, Food and plenty, Healings, Raised from the dead, Casting out demons, Magic and sorcery, Signs, wonders and angels, Prophecies. |
 | `testament` | `Old` or `New`. |
 | `by`, `with` | `[{name, hero?}]`: who did it (for magic, who was involved) and who else was there. `hero` is an id on heroes-and-villains.html. |
 | `for`, `where` | Who it was for; where it happened (optional). |

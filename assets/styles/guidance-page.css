@@ -1,0 +1,153 @@
+/* Styles for apps/pages/guidance-for-life.html, on top of study-page.css,
+   which holds the palette, topbar, hero, chips and the in-place .row-panel. */
+
+/* One colour per part of life; --g colours everything inside. */
+.s-heart  { --g: #2e7d6b; --g-soft: rgb(46 125 107 / 12%); }
+.s-people { --g: #a8445a; --g-soft: rgb(168 68 90 / 11%); }
+.s-work   { --g: #a8761a; --g-soft: rgb(168 118 26 / 13%); }
+.s-walk   { --g: #2f5d8a; --g-soft: rgb(47 93 138 / 12%); }
+.s-hard   { --g: #6b4c9a; --g-soft: rgb(107 76 154 / 12%); }
+.s-future { --g: #b5651d; --g-soft: rgb(181 101 29 / 12%); }
+
+/* One colour per voice of Scripture; --v colours its dot and quotes. Jesus in
+   red, as in a red-letter Bible. */
+.v-jesus    { --v: #b3261e; }
+.v-prophets { --v: #6b4c9a; }
+.v-apostles { --v: #2f5d8a; }
+.v-wisdom   { --v: #a8761a; }
+.v-law      { --v: #587a2a; }
+.chip.v-jesus::before, .chip.v-prophets::before, .chip.v-apostles::before,
+.chip.v-wisdom::before, .chip.v-law::before { background: var(--v); }
+
+.chip-rows { display: grid; gap: 8px; }
+
+/* ---------------------------------------------------------------- sections */
+
+.life-section { margin-top: 18px; padding-top: 0; overflow: hidden; }
+.life-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 16px;
+  margin: 0 -20px 18px; padding: 16px 20px 14px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
+    linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
+}
+.life-head h2 {
+  display: flex; align-items: center; gap: 10px;
+  font: 400 clamp(1.7rem, 1.4rem + 1.3vw, 2.3rem)/1.05 var(--display);
+}
+.life-icon { display: grid; flex: 0 0 auto; width: 30px; height: 30px; }
+.life-icon svg { width: 100%; height: 100%; }
+.life-count {
+  margin: 0; min-width: 34px; padding: 2px 10px; border-radius: 999px;
+  font-weight: 700; font-size: .9rem; text-align: center;
+  background: rgb(255 255 255 / 18%);
+}
+.life-intro { grid-column: 1 / -1; margin: 6px 0 0; max-width: 75ch; font-size: .96rem; opacity: .95; }
+
+/* ---------------------------------------------------------------- cards */
+
+.gl-grid {
+  position: relative;                 /* tiles' offsetLeft/Top are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+.gl-tile {
+  display: flex; align-items: flex-start; gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--g);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.gl-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+.gl-mark {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  color: var(--g); background: var(--g-soft);
+  border: 1.5px solid var(--g);
+}
+.gl-mark svg { width: 24px; height: 24px; }
+.gl-text { display: grid; gap: 2px; min-width: 0; }
+.gl-name { font: 400 1.25rem/1.1 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.gl-question { font-size: .9rem; line-height: 1.4; color: var(--ink); }
+.gl-meta { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: .74rem; color: var(--muted); }
+
+.voice-dots { display: inline-flex; gap: 3px; }
+.voice-dot {
+  display: inline-block; flex: 0 0 auto;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--v);
+}
+
+.gl-tile.is-open { background: var(--g); border-color: var(--g); color: #fff; box-shadow: 0 8px 18px rgb(16 37 59 / 18%); }
+.gl-tile.is-open .gl-name,
+.gl-tile.is-open .gl-question,
+.gl-tile.is-open .gl-meta { color: #fff; }
+.gl-tile.is-open .gl-mark { color: var(--g); background: #fff; border-color: #fff; }
+.gl-tile.is-open .voice-dot { box-shadow: 0 0 0 1.5px #fff; }
+
+/* ---------------------------------------------------------------- open card */
+
+.voices { display: grid; gap: 18px; }
+.voice-group { display: grid; gap: 10px; }
+.voice-title {
+  display: flex; align-items: center; gap: 8px; margin: 0;
+  font: 700 .78rem/1.2 var(--body); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--v);
+}
+.voice-title .voice-dot { width: 10px; height: 10px; }
+
+.teaching {
+  margin: 0; padding: 14px 16px 12px 18px;
+  border-radius: 12px; background: #fff;
+  border: 1px solid var(--line); border-left: 4px solid var(--v);
+}
+.teaching blockquote { margin: 0; font: 400 1.06rem/1.55 var(--body); color: var(--ink); }
+.v-jesus .teaching blockquote { color: #8f1d16; }
+.teaching figcaption { margin-top: 8px; font-size: .82rem; color: var(--muted); }
+.teaching-ref {
+  font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .76rem; color: var(--v);
+}
+.teaching figcaption a { color: var(--navy-2); font-weight: 600; text-underline-offset: 2px; }
+.teaching-example { font-style: normal; }
+.teaching-note {
+  margin: 8px 0 0; padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  font-size: .94rem; color: var(--ink);
+}
+.teaching-note::before { content: 'In plain words: '; font-weight: 700; color: var(--v); }
+
+.practice { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); font-weight: 500; }
+.prayer {
+  padding: 12px 14px; border-radius: 10px;
+  background: var(--paper); border: 1px solid var(--line);
+  font-size: 1.02rem; color: var(--navy-2);
+}
+
+.voice-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.voice-list li { display: flex; align-items: center; gap: 8px; font-size: .92rem; }
+.voice-list b {
+  margin-left: auto; min-width: 24px; padding: 0 7px; border-radius: 999px;
+  font-size: .76rem; text-align: center; color: #fff; background: var(--v);
+}
+.testament-note { margin: 8px 0 0; font-size: .8rem; color: var(--muted); }
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .life-head { margin: 0 -16px 14px; padding: 14px 16px; }
+  .gl-grid { grid-template-columns: 1fr; gap: 8px; }
+  .teaching { padding: 12px 12px 10px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-tile { transition: none; }
+  .gl-tile:hover { transform: none; }
+}

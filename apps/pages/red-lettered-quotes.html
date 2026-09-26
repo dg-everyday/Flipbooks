@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="The words of Jesus — the red letters of the Bible — gathered in one place: his best-known sayings explained in plain words, and every red-letter passage, book by book."
+        />
+
+        <title>Daily Grace — Red-Lettered Quotes</title>
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+        <link
+            rel="preload"
+            href="../../assets/fonts/GermaniaOne-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Strait-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/study-page.css?v=20260926-5"
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/red-letter-page.css?v=20260926-1"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="brand" href="red-lettered-quotes.html" aria-label="Red-Lettered Quotes">
+                <img
+                    class="brand-logo"
+                    src="../../assets/images/daily-grace-white-480.webp"
+                    alt="Daily Grace"
+                    width="480"
+                    height="160"
+                />
+                <span class="brand-pill">Red-Lettered Quotes</span>
+            </a>
+            <a class="home" href="../../index.html" aria-label="Home" title="Home">
+                <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m3 10 9-7 9 7"></path>
+                    <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- red-lettered-quotes.js renders both views into this element.
+             #i-am-the-bread-of-life opens a saying; #john-6-35-40 a passage. -->
+        <main id="view">
+            <p class="status">Loading the words of Jesus…</p>
+        </main>
+
+        <footer class="page-footer">
+            Scripture quotations from the King James Version, with the words of
+            Jesus as marked in the red-letter KJV. Older commentary is from
+            Jamieson, Fausset and Brown (1871) and John Gill (1746–63), both in
+            the public domain.
+        </footer>
+
+        <script type="module">
+            import { start } from "./scripts/red-lettered-quotes.js?v=20260926-2";
+            start(document.getElementById("view"));
+        </script>
+    </body>
+</html>

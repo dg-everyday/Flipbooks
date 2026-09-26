@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="The songs of the Bible, from Moses at the Red Sea to the new song of heaven — songs of victory, worship and grief, the best-loved psalms, and the hymns of the first Christians: the words, the story behind them, and why they matter."
+        />
+
+        <title>Daily Grace — Songs in the Bible</title>
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+        <link
+            rel="preload"
+            href="../../assets/fonts/GermaniaOne-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Strait-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/study-page.css?v=20260926-5"
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/songs-page.css?v=20260927-2"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="brand" href="songs-in-the-bible.html" aria-label="Songs in the Bible">
+                <img
+                    class="brand-logo"
+                    src="../../assets/images/daily-grace-white-480.webp"
+                    alt="Daily Grace"
+                    width="480"
+                    height="160"
+                />
+                <span class="brand-pill">Songs in the Bible</span>
+            </a>
+            <a class="home" href="../../index.html" aria-label="Home" title="Home">
+                <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m3 10 9-7 9 7"></path>
+                    <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- songs-in-the-bible.js renders the sections into this element. A
+             card opens in place below its row; #the-lord-is-my-shepherd opens
+             Psalm 23. -->
+        <main id="view">
+            <p class="status">Loading the songs of the Bible…</p>
+        </main>
+
+        <footer class="page-footer">
+            Scripture quotations from the King James Version.
+        </footer>
+
+        <script type="module">
+            import { start } from "./scripts/songs-in-the-bible.js?v=20260927-4";
+            start(document.getElementById("view"));
+        </script>
+    </body>
+</html>

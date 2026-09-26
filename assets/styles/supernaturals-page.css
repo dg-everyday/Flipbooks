@@ -9,6 +9,7 @@
 .g-demons  { --g: #9b2335; --g-soft: rgb(155 35 53 / 11%); }
 .g-magic   { --g: #4a4f57; --g-soft: rgb(74 79 87 / 12%); }
 .g-signs   { --g: #b5651d; --g-soft: rgb(181 101 29 / 12%); }
+.g-prophecy { --g: #7a3b69; --g-soft: rgb(122 59 105 / 12%); }
 
 .chip-rows { display: grid; gap: 8px; }
 

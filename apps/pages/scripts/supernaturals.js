@@ -1,9 +1,10 @@
 /**
- * Supernaturals of the Bible — drives supernaturals.html.
+ * Supernaturals and Prophecies of the Bible — drives supernaturals.html.
  *
  * Reads assets/supernaturals.json (built and verse-checked by
  * tools/supernaturals/build_supernaturals.py): miracles, healings, the dead
- * raised, demons cast out, magic and sorcery, and signs, wonders and angels.
+ * raised, demons cast out, magic and sorcery, signs, wonders and angels, and
+ * prophecies.
  * Each group is a section of cards; clicking one opens it in place, under the
  * row it sits in (rowExpander in study-utils.js). #lazarus-raised in the URL
  * opens Lazarus.
@@ -45,6 +46,13 @@ const GROUPS = {
     cls: 'g-signs',
     intro: 'A bush that would not burn, a hand writing on a wall, angels in prisons and lions\' dens: moments when heaven broke in.',
   },
+  'Prophecies': {
+    cls: 'g-prophecy',
+    intro: 'A king named before he was born, a Saviour\'s birthplace, his death, his rising and his return: words from God about what was still to come, and how they came true.',
+    by: 'Spoken by',
+    for: 'Spoken to',
+    story: 'Foretold and fulfilled',
+  },
 };
 
 // Line icons, one per group (24 × 24, drawn with the current colour).
@@ -56,6 +64,7 @@ const ICONS = {
   'Casting out demons': '<path d="M9.5 7H7a4.5 4.5 0 0 0 0 9h2.5M14.5 7H17a4.5 4.5 0 0 1 0 9h-2.5M11 3.5l.8 2.5M13 18l.8 2.5"/>',
   'Magic and sorcery': '<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="m9.5 6.5 5 5M14.5 6.5l-5 5"/>',
   'Signs, wonders and angels': '<path d="M12 22c3.9 0 6.5-2.8 6.5-6.5 0-3.4-2.3-5.4-3.5-8-1 1.8-1.8 2.6-2.8 2.8.2-2.4-.6-4.6-2.7-6.8-.8 3.1-4 5.9-4 10.2C5.5 19.2 8.1 22 12 22z"/>',
+  'Prophecies': '<path d="M7 3h11a2 2 0 0 1 2 2v12M7 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2H9v2a2 2 0 0 1-2 2"/><path d="M9 8h7M9 11.5h7"/>',
 };
 
 function icon(group, cls) {
@@ -98,7 +107,7 @@ function detail(item, onClose) {
   const facts = h('dl', { class: 'facts' },
     item.by?.length && [h('dt', {}, g.by || 'Done by'), h('dd', {}, people(item.by))],
     item.with?.length && [h('dt', {}, 'Also there'), h('dd', {}, people(item.with))],
-    item.for && [h('dt', {}, 'For'), h('dd', {}, item.for)],
+    item.for && [h('dt', {}, g.for || 'For'), h('dd', {}, item.for)],
     item.where && [h('dt', {}, 'Where'), h('dd', {}, item.where)],
     [h('dt', {}, 'Testament'), h('dd', {}, testamentLabel(item.testament))]);
 
@@ -125,7 +134,7 @@ function detail(item, onClose) {
       para(item.summary, 'detail-summary')),
     h('div', { class: 'detail-cols' },
       h('div', { class: 'detail-main' },
-        block('What happened', para(item.story)),
+        block(g.story || 'What happened', para(item.story)),
         item.meaning && block(g.meaning || 'Why it matters', para(item.meaning)),
         item.lesson && block('The lesson', para(item.lesson, 'lesson'))),
       h('div', { class: 'detail-side' },
@@ -142,9 +151,9 @@ export async function start(view) {
   try {
     data = await fetchJson(DATA);
   } catch (error) {
-    console.error('Unable to load the supernaturals:', error);
+    console.error('Unable to load the supernaturals and prophecies:', error);
     view.replaceChildren(h('p', { class: 'status' },
-      'The miracles and wonders could not be loaded. Please try again later.'));
+      'The miracles, wonders and prophecies could not be loaded. Please try again later.'));
     return;
   }
 
@@ -217,7 +226,7 @@ export async function start(view) {
 
   const search = h('input', {
     type: 'search', class: 'search', autocomplete: 'off',
-    placeholder: 'Search a miracle, person or place…', 'aria-label': 'Search the miracles and wonders'
+    placeholder: 'Search a miracle, prophecy, person or place…', 'aria-label': 'Search the miracles, wonders and prophecies'
   });
   search.addEventListener('input', () => { state.query = search.value; apply(); });
 
@@ -260,10 +269,11 @@ export async function start(view) {
 
   view.replaceChildren(
     h('section', { class: 'hero' },
-      h('h1', {}, 'Supernaturals'),
+      h('h1', {}, 'Supernaturals and Prophecies'),
       h('p', { class: 'lede' },
-        'Miracles, healings, the dead raised, demons cast out, and the magic and sorcery the Bible ' +
-        'warns against: what happened, why it matters, and what it teaches. Tap any one to read it.'),
+        'Miracles, healings, the dead raised, demons cast out, the magic and sorcery the Bible ' +
+        'warns against, and the prophecies God spoke and kept: what happened, why it matters, ' +
+        'and what it teaches. Tap any one to read it.'),
       h('ul', { class: 'stats' },
         h('li', {}, h('b', {}, t.entries), 'accounts'),
         h('li', {}, h('b', {}, t.old), 'Old Testament'),

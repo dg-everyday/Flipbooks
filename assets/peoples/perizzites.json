@@ -1,0 +1,225 @@
+{
+    "id": "perizzites",
+    "name": "Perizzites",
+    "kjv_names": [
+        "Perizzites",
+        "Perizzite"
+    ],
+    "also_known_as": [
+        "'Villagers' (a likely meaning of the name)"
+    ],
+    "category": "Canaanite nation",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "One of the seven nations of Canaan, living in the wooded hill country, probably in unwalled villages. They appear alongside the Canaanites in Abraham's day and are still named in Ezra's list of peoples Israel should not intermarry with.",
+    "name_meaning": "Probably from perazi, 'dweller in an open (unwalled) village' — describing a way of life more than a descent.",
+    "origin": {
+        "account": "The Perizzites are not in the Table of Nations. They first appear when Abram and Lot separate: 'the Canaanite and the Perizzite dwelled then in the land.' Their origin is unknown. Many scholars think the name describes rural villagers rather than a separate ancestry.",
+        "references": [
+            "Genesis 13:7",
+            "Genesis 15:20"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Unknown — not listed in Genesis 10",
+        "line": [],
+        "notes": "Always listed as one of the nations of the land, usually among the 'seven nations greater and mightier than thou'.",
+        "references": [
+            "Deuteronomy 7:1",
+            "Joshua 3:10"
+        ]
+    },
+    "homeland": {
+        "region": "The forested hill country of central Canaan",
+        "description": "The tribes of Joseph were told to clear the woods 'in the land of the Perizzites and of the giants' to make room. The Perizzites also lived near Bethel and Shechem and in Judah's territory at Bezek.",
+        "modern_location": "The central highlands of the West Bank and Israel.",
+        "modern_countries": [
+            "Palestinian territories",
+            "Israel"
+        ],
+        "center": {
+            "lat": 32.15,
+            "lon": 35.25
+        },
+        "places": [
+            {
+                "name": "Bethel–Ai area",
+                "modern_name": "Beitin area, West Bank",
+                "lat": 31.93,
+                "lon": 35.24,
+                "note": "Where Abram and Lot parted.",
+                "references": [
+                    "Genesis 13:3",
+                    "Genesis 13:7"
+                ]
+            },
+            {
+                "name": "Shechem region",
+                "modern_name": "Nablus area",
+                "lat": 32.21,
+                "lon": 35.28,
+                "note": "Jacob feared the Canaanites and Perizzites after Simeon and Levi's revenge.",
+                "references": [
+                    "Genesis 34:30"
+                ]
+            },
+            {
+                "name": "Wooded hills of Ephraim",
+                "modern_name": "Samaria highlands",
+                "lat": 32.2,
+                "lon": 35.15,
+                "note": "Land Joshua told Joseph to clear.",
+                "references": [
+                    "Joshua 17:15"
+                ]
+            },
+            {
+                "name": "Bezek",
+                "modern_name": "Khirbet Ibziq (probable)",
+                "lat": 32.37,
+                "lon": 35.37,
+                "note": "Judah and Simeon defeated Canaanites and Perizzites there.",
+                "references": [
+                    "Judges 1:4-5"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Living beside the Canaanites when Abram and Lot quarrel over pasture.",
+            "references": [
+                "Genesis 13:7"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Jacob fears the Perizzites will attack after the massacre at Shechem.",
+            "references": [
+                "Genesis 34:30"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "Among the kings who unite against Joshua; Joseph's tribes are told to clear their forests.",
+            "references": [
+                "Joshua 9:1-2",
+                "Joshua 17:15"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Defeated at Bezek; later Israel intermarries with them and serves their gods.",
+            "references": [
+                "Judges 1:4",
+                "Judges 3:5-6"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "Solomon's forced labour includes the Perizzites.",
+            "references": [
+                "1 Kings 9:20-21"
+            ]
+        },
+        {
+            "date": "c. 458 BC",
+            "event": "Ezra mourns that the returned exiles have married into the Perizzites and other peoples.",
+            "references": [
+                "Ezra 9:1-2"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Canaanite deities"
+        ],
+        "practices": "Shared the religion of the land; Israel's intermarriage with them led to serving 'Baalim and the groves'.",
+        "references": [
+            "Judges 3:5-7"
+        ]
+    },
+    "importance": "The Perizzites are a reminder that Israel's danger was more often assimilation than defeat. Judges records that Israel lived among them, married them and took up their gods, and Ezra faced the same problem centuries later.",
+    "impact": [
+        {
+            "who": "Abram and Lot",
+            "how": "Their presence made the herdsmen's quarrel more dangerous and prompted Abram's generosity.",
+            "references": [
+                "Genesis 13:7-9"
+            ]
+        },
+        {
+            "who": "Jacob",
+            "how": "Fear of them drove him to move to Bethel.",
+            "references": [
+                "Genesis 34:30",
+                "Genesis 35:1"
+            ]
+        },
+        {
+            "who": "Israel in the Judges era",
+            "how": "Intermarriage with them led to idolatry.",
+            "references": [
+                "Judges 3:6"
+            ]
+        }
+    ],
+    "notable_people": [],
+    "key_verses": [
+        {
+            "reference": "Genesis 13:7",
+            "text": "And there was a strife between the herdmen of Abram’s cattle and the herdmen of Lot’s cattle: and the Canaanite and the Perizzite dwelled then in the land."
+        },
+        {
+            "reference": "Joshua 17:15",
+            "text": "And Joshua answered them, If thou be a great people, then get thee up to the wood country, and cut down for thyself there in the land of the Perizzites and of the giants, if mount Ephraim be too narrow for thee."
+        },
+        {
+            "reference": "Judges 3:5-6",
+            "text": "And the children of Israel dwelt among the Canaanites, Hittites, and Amorites, and Perizzites, and Hivites, and Jebusites: And they took their daughters to be their wives, and gave their daughters to their sons, and served their gods."
+        },
+        {
+            "reference": "Ezra 9:1",
+            "text": "Now when these things were done, the princes came to me, saying, The people of Israel, and the priests, and the Levites, have not separated themselves from the people of the lands, doing according to their abominations, even of the Canaanites, the Hittites, the Perizzites, the Jebusites, the Ammonites, the Moabites, the Egyptians, and the Amorites."
+        }
+    ],
+    "fate": {
+        "summary": "Absorbed into Israel through subjection and intermarriage; the name survives only in the traditional lists.",
+        "references": [
+            "1 Kings 9:20-21"
+        ]
+    },
+    "today": {
+        "summary": "No Perizzite people exist today. They are known only from the Bible.",
+        "descendants": "Absorbed into the population of the central highlands.",
+        "modern_legacy": "None beyond the biblical text."
+    },
+    "archaeology": [],
+    "related_peoples": [
+        "canaanites",
+        "hivites",
+        "rephaim",
+        "israelites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "International Standard Bible Encyclopedia, 'Perizzite'",
+            "author": "James Orr, ed. (1915)",
+            "type": "dictionary"
+        },
+        {
+            "title": "Smith's Bible Dictionary, 'Perizzite'",
+            "author": "William Smith (1863)",
+            "type": "dictionary"
+        }
+    ]
+}

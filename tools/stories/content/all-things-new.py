@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Content for 'All Things New' — Revelation 21:1-22:21 (KJV)."""
+"""Content for 'When God Makes Everything New' — Revelation 21:1-22:21 (KJV)."""
 
-TITLE = "All Things New"
+TITLE = "When God Makes Everything New"
 SUBTITLE = ("A New Heaven and a New Earth, a City Coming Down from God, and a River That Runs from "
             "the Throne")
 REFERENCE = "Revelation 21:1–22:21 (King James Version)"
@@ -14,7 +14,7 @@ LOGLINE = (
     "ends with one word passed back and forth: Come."
 )
 
-HEADER_L = "ALL THINGS NEW"
+HEADER_L = "WHEN GOD MAKES EVERYTHING NEW"
 HEADER_R = "REVELATION 21:1-22:21  (KJV)"
 MOVEMENT_WORD = "Ten"
 PANEL_WORD = "sixty"
@@ -850,7 +850,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "in layout.” Aspect 3:2 landscape. Lettering-led panels — Page Two Panel 6, Page Three "
                "Panel 6, Page Eight Panel 6, Page Nine Panel 6 — need only a plain ground.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>All Things New</i> — story, characters and scripture fidelity check.")
+                 "volume: <i>When God Makes Everything New</i> — story, characters and scripture fidelity check.")
 
 BEATS = ["An island in the sea; a new heaven and earth, and no more sea; the city comes down",
          "The one on the throne speaks: “Behold, I make all things new”",

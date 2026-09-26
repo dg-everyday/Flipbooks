@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Content for 'While He Lingered' — Genesis 19:1-29 (KJV)."""
+"""Content for 'Pulled Out of Sodom' — Genesis 19:1-29 (KJV)."""
 
-TITLE = "While He Lingered"
-SUBTITLE = ("Two Strangers at the Gate of Sodom, a Door the Mob Could Not Find, and a Pillar of Salt on "
+TITLE = "Pulled Out of Sodom"
+SUBTITLE = ("Lot, Two Strangers at the Gate, a Door the Mob Could Not Find, and a Pillar of Salt on "
             "the Road to Zoar")
 REFERENCE = "Genesis 19:1–29 (King James Version)"
 
@@ -13,7 +13,7 @@ LOGLINE = (
     "unto him” — and brought him out."
 )
 
-HEADER_L = "WHILE HE LINGERED"
+HEADER_L = "PULLED OUT OF SODOM"
 HEADER_R = "GENESIS 19:1-29  (KJV)"
 MOVEMENT_WORD = "Eight"
 PANEL_WORD = "forty-eight"
@@ -679,7 +679,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "Panel 4, Page Six Panel 2, Page Seven Panel 6, Page Eight Panel 5 — need only a plain "
                "ground or the described object.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>While He Lingered</i> — story, characters and scripture fidelity check.")
+                 "volume: <i>Pulled Out of Sodom</i> — story, characters and scripture fidelity check.")
 
 BEATS = ["Two strangers at dusk; Lot presses them to come in",
          "The city at the door; Lot’s offer, recorded without comment",

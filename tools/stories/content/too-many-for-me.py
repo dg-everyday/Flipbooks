@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Content for 'Too Many for Me' — Judges 7:1-25 (KJV)."""
+"""Content for 'Gideon and the Army That Was Too Big' — Judges 7:1-25 (KJV)."""
 
-TITLE = "Too Many for Me"
+TITLE = "Gideon and the Army That Was Too Big"
 SUBTITLE = ("Three Hundred Men, a Loaf of Barley Bread in a Dream, and Hands Too Full to Hold a Sword")
 REFERENCE = "Judges 7:1–25 (King James Version)"
 
@@ -12,7 +12,7 @@ LOGLINE = (
     "hand hath saved me.”"
 )
 
-HEADER_L = "TOO MANY FOR ME"
+HEADER_L = "GIDEON AND THE ARMY THAT WAS TOO BIG"
 HEADER_R = "JUDGES 7:1-25  (KJV)"
 MOVEMENT_WORD = "Eight"
 PANEL_WORD = "forty-eight"
@@ -637,7 +637,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "in layout.” Aspect 3:2 landscape. Lettering-led panels — Page Four Panel 4, Page Five "
                "Panel 3, Page Six Panel 6, Page Seven Panel 3 — need only a plain ground.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>Too Many for Me</i> — story, characters and scripture fidelity check.")
+                 "volume: <i>Gideon and the Army That Was Too Big</i> — story, characters and scripture fidelity check.")
 
 BEATS = ["Too many; “Mine own hand hath saved me”; the fearful go home",
          "The test at the water; three hundred; victuals and trumpets",

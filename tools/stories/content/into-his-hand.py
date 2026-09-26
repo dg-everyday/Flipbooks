@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Content for 'Into His Hand' — Genesis 39:1-23 (KJV)."""
+"""Content for 'Trusted, Framed, and Trusted Again' — Genesis 39:1-23 (KJV)."""
 
-TITLE = "Into His Hand"
+TITLE = "Trusted, Framed, and Trusted Again"
 SUBTITLE = "Joseph in Potiphar's House, the Garment He Left Behind, and the Prison Where It Happened Again"
 REFERENCE = "Genesis 39:1&#8211;23 (King James Version)"
 
@@ -11,7 +11,7 @@ LOGLINE = (
     "He ends the chapter in prison &#8212; running the prison."
 )
 
-HEADER_L = "INTO HIS HAND"
+HEADER_L = "TRUSTED, FRAMED, AND TRUSTED AGAIN"
 HEADER_R = "GENESIS 39:1-23  (KJV)"
 MOVEMENT_WORD = "Eight"
 PANEL_WORD = "forty-eight"
@@ -695,7 +695,7 @@ PROMPT_TAIL = ("Append to every prompt: &#8220;No text, no speech balloons, no w
                "added in layout.&#8221; Aspect 3:2 landscape throughout; Page Four Panels 1&#8211;3 must be "
                "generated from one identical base composition with only the figures changed.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>Into His Hand</i> &#8212; story, characters and scripture fidelity check.")
+                 "volume: <i>Trusted, Framed, and Trusted Again</i> &#8212; story, characters and scripture fidelity check.")
 
 BEATS = ["Bought off a caravan, and running the house within a year",
          "Potiphar stops counting what he owns",

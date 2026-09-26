@@ -1,0 +1,279 @@
+{
+    "id": "elamites",
+    "name": "Elamites",
+    "kjv_names": [
+        "Elamites",
+        "Elam"
+    ],
+    "also_known_as": [
+        "Elam",
+        "Susians (Susanchites, Ezra 4:9)"
+    ],
+    "category": "Kingdom",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "One of the oldest civilisations in the world, centred on Susa (Shushan) in south-western Iran. Elam's king Chedorlaomer raided Canaan in Abraham's day. Later, Daniel saw a vision 'in Shushan the palace, which is in the province of Elam', and Elamites were in the Pentecost crowd.",
+    "name_meaning": "Probably from the Akkadian Elamtu, 'highland', for the Zagros uplands east of Mesopotamia.",
+    "origin": {
+        "account": "Elam is listed as the firstborn of Shem. Historically Elam was a civilisation of Susiana (the plain of Susa) and Anshan (in the Fars highlands) from before 3000 BC, with its own writing (Proto-Elamite, then Linear Elamite). Its language is unrelated to any known language.",
+        "references": [
+            "Genesis 10:22",
+            "1 Chronicles 1:17"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Elam, son of Shem",
+        "line": [
+            "Noah",
+            "Shem",
+            "Elam"
+        ],
+        "notes": "A Semite by Genesis's genealogy, though the Elamite language is not Semitic. The Table of Nations groups peoples by geography and politics as well as by language. Several Israelites in Ezra and Nehemiah also bear the name Elam.",
+        "references": [
+            "Genesis 10:22",
+            "Ezra 2:7"
+        ]
+    },
+    "homeland": {
+        "region": "Elam — Khuzestan plain and the south-western Zagros",
+        "description": "The low, river-watered plain of Susa (continuous with Mesopotamia) and the highland region of Anshan to the south-east. Elamites were famous archers: 'I will break the bow of Elam, the chief of their might.'",
+        "modern_location": "Khuzestan and Fars provinces, south-western Iran.",
+        "modern_countries": [
+            "Iran"
+        ],
+        "center": {
+            "lat": 32.19,
+            "lon": 48.26
+        },
+        "places": [
+            {
+                "name": "Shushan (Susa)",
+                "modern_name": "Shush, Iran",
+                "lat": 32.19,
+                "lon": 48.26,
+                "note": "Elam's capital; later Persian royal city.",
+                "references": [
+                    "Daniel 8:2",
+                    "Nehemiah 1:1"
+                ]
+            },
+            {
+                "name": "River Ulai",
+                "modern_name": "Karun/Karkheh river system near Shush",
+                "lat": 32.2,
+                "lon": 48.25,
+                "note": "Where Daniel saw the ram and goat.",
+                "references": [
+                    "Daniel 8:2",
+                    "Daniel 8:16"
+                ]
+            },
+            {
+                "name": "Anshan",
+                "modern_name": "Tal-e Malyan, Fars, Iran",
+                "lat": 30.01,
+                "lon": 52.41,
+                "note": "Highland capital; Cyrus' ancestors were 'kings of Anshan' (not named in the Bible).",
+                "references": []
+            },
+            {
+                "name": "Chogha Zanbil",
+                "modern_name": "Near Shush, Iran (UNESCO site)",
+                "lat": 32.01,
+                "lon": 48.52,
+                "note": "Elamite ziggurat of the 13th century BC (not named in the Bible).",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Before 3000 BC",
+            "event": "Susa is founded (c. 4000 BC) and Proto-Elamite writing appears.",
+            "references": []
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Chedorlaomer king of Elam leads four kings against the cities of the plain and takes Lot; Abram defeats him.",
+            "references": [
+                "Genesis 14:1-5",
+                "Genesis 14:14-17"
+            ]
+        },
+        {
+            "date": "c. 1158 BC",
+            "event": "Elamite king Shutruk-Nakhunte carries the Code of Hammurabi stele off to Susa (where it was found in 1901).",
+            "references": []
+        },
+        {
+            "date": "c. 700 BC",
+            "event": "Elamite archers are listed in Assyria's army against Jerusalem.",
+            "references": [
+                "Isaiah 22:6"
+            ]
+        },
+        {
+            "date": "c. 646 BC",
+            "event": "Ashurbanipal of Assyria sacks Susa; Elamites are deported to Samaria.",
+            "references": [
+                "Ezra 4:9-10"
+            ]
+        },
+        {
+            "date": "c. 597 BC",
+            "event": "Jeremiah prophesies against Elam: 'I will scatter them toward all those winds… But it shall come to pass in the latter days, that I will bring again the captivity of Elam.'",
+            "references": [
+                "Jeremiah 49:34-39"
+            ]
+        },
+        {
+            "date": "c. 550 BC onward",
+            "event": "Elam becomes the heart of the Persian empire; Susa is a royal capital.",
+            "references": [
+                "Daniel 8:2",
+                "Esther 1:2"
+            ]
+        },
+        {
+            "date": "c. AD 30",
+            "event": "Elamites among the crowd at Pentecost.",
+            "references": [
+                "Acts 2:9"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Inshushinak (lord of Susa)",
+            "Humban",
+            "Kiririsha"
+        ],
+        "practices": "Temple religion with ziggurats (such as Chogha Zanbil). The Bible records no Elamite religious practices.",
+        "references": []
+    },
+    "importance": "Elam spans the whole Bible story. It is the first foreign power to invade Canaan in Genesis (Chedorlaomer), and its people are among the first hearers of the gospel at Pentecost. Jeremiah's oracle ends with restoration: judgement is not God's last word even for distant nations. Its capital Susa is the setting of Daniel 8, Nehemiah 1 and the whole book of Esther.",
+    "impact": [
+        {
+            "who": "Lot",
+            "how": "Taken captive by Chedorlaomer's army.",
+            "references": [
+                "Genesis 14:12"
+            ]
+        },
+        {
+            "who": "Abram",
+            "how": "His rescue of Lot led to his meeting with Melchizedek.",
+            "references": [
+                "Genesis 14:17-20"
+            ]
+        },
+        {
+            "who": "Daniel",
+            "how": "Received the vision of the ram and the he-goat at Shushan by the Ulai.",
+            "references": [
+                "Daniel 8:1-2"
+            ]
+        },
+        {
+            "who": "Pentecost pilgrims",
+            "how": "Elamites heard 'the wonderful works of God' in their own language.",
+            "references": [
+                "Acts 2:8-11"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Elam",
+            "role": "Son of Shem",
+            "references": [
+                "Genesis 10:22"
+            ]
+        },
+        {
+            "name": "Chedorlaomer",
+            "role": "King of Elam in Abram's day",
+            "references": [
+                "Genesis 14:1"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 14:1",
+            "text": "And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations;"
+        },
+        {
+            "reference": "Jeremiah 49:39",
+            "text": "But it shall come to pass in the latter days, that I will bring again the captivity of Elam, saith the LORD."
+        },
+        {
+            "reference": "Daniel 8:2",
+            "text": "And I saw in a vision; and it came to pass, when I saw, that I was at Shushan in the palace, which is in the province of Elam; and I saw in a vision, and I was by the river of Ulai."
+        },
+        {
+            "reference": "Acts 2:9",
+            "text": "Parthians, and Medes, and Elamites, and the dwellers in Mesopotamia, and in Judaea, and Cappadocia, in Pontus, and Asia,"
+        }
+    ],
+    "fate": {
+        "summary": "Ashurbanipal's sack of Susa (c. 646 BC) broke Elam's independence. It was absorbed into the Persian empire, where Elamite remained an administrative language — most of the Persepolis tablets are in Elamite. Its speakers dwindled over later centuries.",
+        "references": [
+            "Jeremiah 49:35-38"
+        ]
+    },
+    "today": {
+        "summary": "There is no Elamite people or language today. Their land is Iran's Khuzestan and Fars provinces. Susa (Shush) is still inhabited and is a UNESCO World Heritage site; a shrine there is traditionally honoured as the Tomb of Daniel.",
+        "descendants": "Absorbed into Iranian populations (Persians, Lurs and others).",
+        "modern_legacy": "Linear Elamite script was largely deciphered in 2020–2022 by François Desset and colleagues."
+    },
+    "archaeology": [
+        {
+            "name": "Susa excavations",
+            "date": "c. 4000 BC – AD 1200",
+            "discovered": "French missions from 1884 (Dieulafoy) and 1897 (de Morgan)",
+            "location": "Louvre, Paris; National Museum of Iran",
+            "significance": "Five millennia of occupation; the Code of Hammurabi and the Persian palace were found here."
+        },
+        {
+            "name": "Chogha Zanbil ziggurat",
+            "date": "c. 1250 BC",
+            "discovered": "1935; excavated 1951–1962 by Roman Ghirshman",
+            "location": "Khuzestan, Iran",
+            "significance": "Best-preserved ziggurat in the world."
+        }
+    ],
+    "related_peoples": [
+        "persians",
+        "medes",
+        "babylonians",
+        "assyrians",
+        "samaritans"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Archaeology of Elam: Formation and Transformation of an Ancient Iranian State",
+            "author": "D. T. Potts (Cambridge University Press, 1999; 2nd ed. 2016)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The deciphering of Linear Elamite writing",
+            "author": "François Desset et al., Zeitschrift für Assyriologie 112 (2022)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Elam', 'Chedorlaomer'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

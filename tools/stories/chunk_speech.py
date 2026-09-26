@@ -1,11 +1,11 @@
-"""Split each spoken-story script into parts of about three minutes read aloud.
+"""Split each spoken-story script into parts of about four minutes read aloud.
 
 Reads stories/<slug>/<slug>-speech.txt and writes stories/<slug>/<slug>-speech-part-<n>.txt beside it.
 Parts break only between paragraphs, and are balanced so none is left as a short tail.
 
     python tools/stories/chunk_speech.py <slug>
     python tools/stories/chunk_speech.py --all
-    python tools/stories/chunk_speech.py --all --minutes 3 --wpm 140
+    python tools/stories/chunk_speech.py --all --minutes 4 --wpm 140
 """
 import argparse
 import re
@@ -55,7 +55,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("slug", nargs="?")
     ap.add_argument("--all", action="store_true")
-    ap.add_argument("--minutes", type=float, default=3)
+    ap.add_argument("--minutes", type=float, default=4)
     ap.add_argument("--wpm", type=float, default=140, help="speaking pace in words per minute")
     args = ap.parse_args()
     if args.all:

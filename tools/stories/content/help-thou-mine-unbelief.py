@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Content for 'Help Thou Mine Unbelief' — Mark 9:2-29 (KJV)."""
+"""Content for 'Help My Unbelief' — Mark 9:2-29 (KJV)."""
 
-TITLE = "Help Thou Mine Unbelief"
+TITLE = "Help My Unbelief"
 SUBTITLE = ("A Mountain Where His Raiment Shone, a Voice That Said “Hear Him,” and a Father in "
             "the Valley Below")
 REFERENCE = "Mark 9:2–29 (King James Version)"
@@ -13,7 +13,7 @@ LOGLINE = (
     "“I believe” and asks for help with his unbelief in the same breath."
 )
 
-HEADER_L = "HELP THOU MINE UNBELIEF"
+HEADER_L = "HELP MY UNBELIEF"
 HEADER_R = "MARK 9:2-29  (KJV)"
 MOVEMENT_WORD = "Eight"
 PANEL_WORD = "forty-eight"
@@ -655,7 +655,7 @@ VALIDATION_NOTES = [
      "as men, not glowing — “appeared in glory” is Luke 9:31 — and without identifying props, "
      "because Mark gives none."),
     ("Drawing Jesus, and not drawing the voice",
-     "This volume follows the decision recorded in <i>One Thing Thou Lackest</i>: Jesus is a man who "
+     "This volume follows the decision recorded in <i>The Rich Man Who Walked Away</i>: Jesus is a man who "
      "walks, talks, kneels and lifts a child, and he is drawn — without halo or glow. The voice "
      "out of the cloud is not drawn: the cloud is shown and the balloon comes from the cloud itself, "
      "as earlier volumes refused to depict the fourth man in the fire and the LORD in Ruth. The "
@@ -698,7 +698,7 @@ VALIDATION_NOTES = [
      "In v.13 Jesus says “Elias is indeed come, and they have done unto him whatsoever they listed.” "
      "Mark does not say who is meant, so no caption names him and no panel shows him. Matthew "
      "17:13 says the disciples understood him to mean John the Baptist — whose death is the "
-     "subject of the previous volume in this series, <i>For His Oath’s Sake</i> (Mark 6:14–29). "
+     "subject of the previous volume in this series, <i>The King Who Kept the Wrong Promise</i> (Mark 6:14–29). "
      "That link is noted here and nowhere in the script."),
     ("Dramatised, not stated",
      "The bare slope and the absence of any landmark; the order in which the four climb; the "
@@ -734,7 +734,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "which are 3:1 full width. Lettering-led panels — Page Three Panel 4, Page Six Panel 6, "
                "Page Seven Panels 2 and 5 — need only a plain ground.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>Help Thou Mine Unbelief</i> — story, characters and scripture fidelity "
+                 "volume: <i>Help My Unbelief</i> — story, characters and scripture fidelity "
                  "check.")
 
 BEATS = ["Three go up; his raiment whiter than any fuller could make it",

@@ -1,0 +1,422 @@
+{
+    "id": "edomites",
+    "name": "Edomites",
+    "kjv_names": [
+        "Edomites",
+        "Edom",
+        "children of Esau",
+        "Idumea",
+        "Idumaea"
+    ],
+    "also_known_as": [
+        "Idumeans",
+        "Seir / Mount Seir"
+    ],
+    "category": "Transjordan kingdom",
+    "group": "Neighbours & kin",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The descendants of Esau, Jacob's twin brother, who lived in the red mountains of Seir south of the Dead Sea. The twins' rivalry carried on between their nations for more than a thousand years, from Edom refusing Israel passage to Edom cheering Jerusalem's fall. It ended with an Idumean dynasty, the Herods, ruling Judea when Jesus was born.",
+    "name_meaning": "Edom means 'red' — from the red pottage for which Esau sold his birthright, from his ruddy appearance at birth, and fittingly from the red sandstone of their mountains.",
+    "origin": {
+        "account": "Rebekah bore twins to Isaac; the first came out red and hairy and was named Esau. Coming in faint from the field, Esau sold his birthright to Jacob for red lentil pottage, 'therefore was his name called Edom.' Esau married Canaanite and Ishmaelite wives and moved to Mount Seir, where his sons became the 'dukes' of Edom.",
+        "references": [
+            "Genesis 25:24-26",
+            "Genesis 25:29-34",
+            "Genesis 36:1-9"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Esau (Edom), son of Isaac",
+        "line": [
+            "Terah",
+            "Abraham",
+            "Isaac",
+            "Esau"
+        ],
+        "notes": "Esau's wives were Adah daughter of Elon the Hittite, Aholibamah daughter of Anah the Hivite, and Bashemath (Mahalath) daughter of Ishmael. So Edom mixed Abrahamic, Canaanite, Ishmaelite and Horite blood: Esau's line intermarried with the Horites of Seir, including Timna, mother of Amalek. Genesis 36 lists Edom's dukes and eight kings who 'reigned in the land of Edom, before there reigned any king over the children of Israel.'",
+        "references": [
+            "Genesis 36:2-3",
+            "Genesis 36:12",
+            "Genesis 36:20-22",
+            "Genesis 36:31"
+        ]
+    },
+    "homeland": {
+        "region": "Edom / Mount Seir — south and south-east of the Dead Sea",
+        "description": "A rugged highland of red sandstone and granite running from the Zered brook south to the Gulf of Aqaba, on both sides of the Arabah rift. Rich in copper (Faynan) and on the King's Highway trade route. Its cities were built on rock heights — 'thou that dwellest in the clefts of the rock'. After the 6th century BC Edomites moved into the southern Judean hills, which Greeks and Romans called Idumea.",
+        "modern_location": "Southern Jordan (Tafilah, Ma'an, Aqaba governorates) and, for later Idumea, the Negev and southern Hebron hills in Israel and the West Bank.",
+        "modern_countries": [
+            "Jordan",
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 30.6,
+            "lon": 35.55
+        },
+        "places": [
+            {
+                "name": "Bozrah",
+                "modern_name": "Buseira, Jordan",
+                "lat": 30.73,
+                "lon": 35.61,
+                "note": "Edom's chief city in the Iron Age.",
+                "references": [
+                    "Genesis 36:33",
+                    "Isaiah 34:6",
+                    "Isaiah 63:1"
+                ]
+            },
+            {
+                "name": "Sela",
+                "modern_name": "As-Sila' near Buseira (or traditionally Petra)",
+                "lat": 30.78,
+                "lon": 35.58,
+                "note": "'The rock' which Amaziah of Judah captured and renamed Joktheel.",
+                "references": [
+                    "2 Kings 14:7"
+                ]
+            },
+            {
+                "name": "Teman",
+                "modern_name": "Region of southern Edom",
+                "lat": 30.3,
+                "lon": 35.5,
+                "note": "Famed for wisdom; home of Job's friend Eliphaz.",
+                "references": [
+                    "Jeremiah 49:7",
+                    "Job 2:11"
+                ]
+            },
+            {
+                "name": "Ezion-geber / Elath",
+                "modern_name": "Aqaba / Eilat area",
+                "lat": 29.53,
+                "lon": 35.0,
+                "note": "Port 'in the land of Edom' where Solomon built ships.",
+                "references": [
+                    "1 Kings 9:26"
+                ]
+            },
+            {
+                "name": "Punon (copper mines)",
+                "modern_name": "Faynan, Jordan",
+                "lat": 30.63,
+                "lon": 35.49,
+                "note": "Israel's wilderness camp; major Iron Age copper production site.",
+                "references": [
+                    "Numbers 33:42"
+                ]
+            },
+            {
+                "name": "Petra",
+                "modern_name": "Petra, Jordan",
+                "lat": 30.33,
+                "lon": 35.44,
+                "note": "In Edomite territory; later the Nabataean capital.",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Jacob and Esau struggle in the womb: 'two nations are in thy womb… the elder shall serve the younger.'",
+            "references": [
+                "Genesis 25:22-23"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Esau loses the birthright and the blessing; he is told he will live by the sword and one day break Jacob's yoke. The brothers are later reconciled.",
+            "references": [
+                "Genesis 27:39-40",
+                "Genesis 33:4"
+            ]
+        },
+        {
+            "date": "Before Israel's arrival",
+            "event": "Esau's children destroy the Horites and take Seir.",
+            "references": [
+                "Deuteronomy 2:12",
+                "Deuteronomy 2:22"
+            ]
+        },
+        {
+            "date": "End of the wilderness period",
+            "event": "Edom refuses Israel passage on the King's Highway; Israel goes around. Moses commands, 'Thou shalt not abhor an Edomite; for he is thy brother.'",
+            "references": [
+                "Numbers 20:14-21",
+                "Deuteronomy 23:7"
+            ]
+        },
+        {
+            "date": "c. 1010–970 BC",
+            "event": "Doeg the Edomite massacres the priests of Nob for Saul. David later places garrisons throughout Edom; Hadad, an Edomite prince, escapes to Egypt and later troubles Solomon.",
+            "references": [
+                "1 Samuel 22:18",
+                "2 Samuel 8:14",
+                "1 Kings 11:14-22"
+            ]
+        },
+        {
+            "date": "c. 848 BC",
+            "event": "Edom revolts under Jehoram of Judah and makes its own king, fulfilling Isaac's word.",
+            "references": [
+                "2 Kings 8:20-22"
+            ]
+        },
+        {
+            "date": "c. 790 BC",
+            "event": "Amaziah of Judah kills ten thousand Edomites in the Valley of Salt and takes Sela.",
+            "references": [
+                "2 Kings 14:7"
+            ]
+        },
+        {
+            "date": "586 BC",
+            "event": "When Babylon destroys Jerusalem, Edom rejoices, blocks the escape routes and hands over survivors — the sin condemned by Obadiah and Psalm 137.",
+            "references": [
+                "Obadiah 1:10-14",
+                "Psalms 137:7",
+                "Ezekiel 25:12"
+            ]
+        },
+        {
+            "date": "5th–4th centuries BC",
+            "event": "Arab tribes and then the Nabataeans occupy Edom proper; Edomites settle southern Judah (Idumea).",
+            "references": [
+                "Malachi 1:3-4"
+            ]
+        },
+        {
+            "date": "c. 125 BC",
+            "event": "The Hasmonean ruler John Hyrcanus conquers Idumea and requires the Idumeans to be circumcised and keep the Jewish law (Josephus).",
+            "references": []
+        },
+        {
+            "date": "37–4 BC",
+            "event": "Herod the Great, of Idumean descent, rules Judea under Rome; he seeks to kill the infant Jesus.",
+            "references": [
+                "Matthew 2:1",
+                "Matthew 2:16"
+            ]
+        },
+        {
+            "date": "AD 30s",
+            "event": "Crowds from Idumea follow Jesus.",
+            "references": [
+                "Mark 3:8"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Qos (Qaus)"
+        ],
+        "practices": "The Bible names Edom's gods only in passing; Amaziah brought back 'the gods of the children of Seir' and worshipped them. Inscriptions and personal names show the chief Edomite god was Qos. Herod's family, and Idumea after Hyrcanus, were outwardly Jewish.",
+        "references": [
+            "2 Chronicles 25:14-15"
+        ]
+    },
+    "importance": "Edom embodies the story of two brothers. God chose Jacob over the older Esau before they were born, which Paul uses to show that election rests on God's mercy, not works. Yet Israel was told not to hate Edom 'for he is thy brother'. When Edom turned that brotherhood into betrayal at Jerusalem's fall, a whole prophetic book (Obadiah) was given against it. In the New Testament an Idumean king kills the children of Bethlehem, and Hebrews warns believers not to be like 'profane' Esau, who sold his birthright for one meal.",
+    "impact": [
+        {
+            "who": "Jacob",
+            "how": "His fear of Esau and their reconciliation shaped his return to Canaan; at Peniel, before meeting Esau, he became 'Israel'.",
+            "references": [
+                "Genesis 32:6-7",
+                "Genesis 32:28",
+                "Genesis 33:4"
+            ]
+        },
+        {
+            "who": "Moses and Israel",
+            "how": "Edom's refusal lengthened the journey and the people 'was much discouraged because of the way'.",
+            "references": [
+                "Numbers 20:21",
+                "Numbers 21:4"
+            ]
+        },
+        {
+            "who": "The priests of Nob",
+            "how": "Doeg the Edomite killed eighty-five priests.",
+            "references": [
+                "1 Samuel 22:18"
+            ]
+        },
+        {
+            "who": "The survivors of Jerusalem",
+            "how": "Edom cut off fleeing Judeans in 586 BC.",
+            "references": [
+                "Obadiah 1:14"
+            ]
+        },
+        {
+            "who": "The children of Bethlehem",
+            "how": "Herod the Idumean ordered their massacre.",
+            "references": [
+                "Matthew 2:16"
+            ]
+        },
+        {
+            "who": "Christian readers",
+            "how": "Esau is the New Testament example of trading lasting blessing for immediate appetite.",
+            "references": [
+                "Hebrews 12:16-17",
+                "Romans 9:10-13"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Esau (Edom)",
+            "role": "Founder of the nation",
+            "references": [
+                "Genesis 36:1"
+            ]
+        },
+        {
+            "name": "Eliphaz, Reuel and the dukes of Edom",
+            "role": "Esau's sons and clan chiefs",
+            "references": [
+                "Genesis 36:15-19"
+            ]
+        },
+        {
+            "name": "Doeg the Edomite",
+            "role": "Saul's chief herdsman who killed the priests",
+            "references": [
+                "1 Samuel 21:7",
+                "1 Samuel 22:18"
+            ]
+        },
+        {
+            "name": "Hadad the Edomite",
+            "role": "Adversary to Solomon",
+            "references": [
+                "1 Kings 11:14"
+            ]
+        },
+        {
+            "name": "Herod the Great",
+            "role": "Idumean king of Judea at Jesus' birth",
+            "references": [
+                "Matthew 2:1"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 25:23",
+            "text": "And the LORD said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger."
+        },
+        {
+            "reference": "Genesis 36:8",
+            "text": "Thus dwelt Esau in mount Seir: Esau is Edom."
+        },
+        {
+            "reference": "Deuteronomy 23:7",
+            "text": "Thou shalt not abhor an Edomite; for he is thy brother: thou shalt not abhor an Egyptian; because thou wast a stranger in his land."
+        },
+        {
+            "reference": "Obadiah 1:10",
+            "text": "For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever."
+        },
+        {
+            "reference": "Malachi 1:2-3",
+            "text": "I have loved you, saith the LORD. Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith the LORD: yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness."
+        }
+    ],
+    "fate": {
+        "summary": "Edom proper was lost to Arab tribes and the Nabataeans after the 6th century BC. The Edomites who moved into southern Judah were forcibly joined to the Jewish nation by John Hyrcanus. Idumean soldiers fought in the Jewish revolt against Rome (Josephus, Jewish War 4). After the destruction of Jerusalem in AD 70 the Idumeans disappear from history. Obadiah had said: 'there shall not be any remaining of the house of Esau.'",
+        "references": [
+            "Obadiah 1:18",
+            "Jeremiah 49:17",
+            "Ezekiel 35:15"
+        ]
+    },
+    "today": {
+        "summary": "No people today are identified as Edomites. Their land is southern Jordan, home to Petra and the copper valley of Faynan. In later Jewish writing 'Edom' became a code name for Rome and then for Christendom, so the name lived on as a symbol rather than a nation.",
+        "descendants": "Merged into the Jewish people (after Hyrcanus) and into the Arab populations of southern Jordan and the Negev.",
+        "modern_legacy": "Excavations at Buseira (Bozrah), Tawilan, Umm el-Biyara and Faynan have filled in Edom's Iron Age history; the copper mines at Khirbat en-Nahas are among the largest of the ancient Near East."
+    },
+    "archaeology": [
+        {
+            "name": "Khirbat en-Nahas copper works",
+            "date": "c. 11th–9th centuries BC",
+            "discovered": "Excavated 2002 onward by Thomas Levy and Mohammad Najjar",
+            "location": "Faynan, Jordan",
+            "significance": "Large-scale industrial copper production early in the Iron Age. It challenged the view that Edom only became organised in the 8th century BC."
+        },
+        {
+            "name": "Buseira (Bozrah) excavations",
+            "date": "8th–6th centuries BC",
+            "discovered": "Excavated by Crystal-M. Bennett, 1971–1980",
+            "location": "Jordan",
+            "significance": "Palace and temple complex of Edom's capital."
+        },
+        {
+            "name": "Horvat Qitmit shrine",
+            "date": "7th–6th centuries BC",
+            "discovered": "1984–1987, Negev",
+            "location": "Israel",
+            "significance": "Edomite shrine inside Judah's former territory, with Qos inscriptions — evidence of Edom's move west."
+        },
+        {
+            "name": "Papyrus Anastasi VI",
+            "date": "c. 1200 BC",
+            "discovered": "Egypt",
+            "location": "British Museum",
+            "significance": "Egyptian border official lets 'the Shasu tribes of Edom' water their flocks in the Delta — an early outside mention of Edom."
+        }
+    ],
+    "related_peoples": [
+        "israelites",
+        "horites",
+        "amalekites",
+        "ishmaelites",
+        "hittites",
+        "hivites",
+        "romans"
+    ],
+    "stories": [
+        "for-his-oaths-sake"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Antiquities of the Jews, 13.9.1 (13.257–258); 14.1.3; The Jewish War, book 4",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "Hyrcanus and the Idumeans; Herod's descent; Idumeans in the revolt."
+        },
+        {
+            "title": "Edom and the Edomites",
+            "author": "John R. Bartlett (JSOT Press / Sheffield, 1989)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Peoples of the Old Testament World",
+            "author": "Alfred J. Hoerth, Gerald L. Mattingly & Edwin M. Yamauchi, eds. (Baker, 1994) — chapter 'Edomites'",
+            "type": "scholarship"
+        },
+        {
+            "title": "High-precision radiocarbon dating and historical biblical archaeology in southern Jordan",
+            "author": "Thomas E. Levy et al., Proceedings of the National Academy of Sciences 105 (2008)",
+            "type": "archaeology"
+        },
+        {
+            "title": "Smith's Bible Dictionary, 'Edom, Idumaea'",
+            "author": "William Smith (1863)",
+            "type": "dictionary"
+        }
+    ]
+}

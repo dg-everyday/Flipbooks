@@ -20,7 +20,7 @@ python tools/stories/check.py --all && python tools/stories/build.py --all
 | `<slug>-cover-prompt.pdf` | one 9:16 cover image whose only text is the title |
 | `<slug>-storybook.pdf` | the story text set as an A4 reader's book on the site's end paper |
 | `<slug>-speech.txt` | the story as the author tells it aloud to an audience; plain text, written by hand from `NARRATIVE` |
-| `<slug>-speech-part-<n>.txt` | the speech cut at paragraph breaks into parts of about three minutes aloud (`chunk_speech.py <slug>` or `--all`) |
+| `<slug>-speech-part-<n>.txt` | the speech cut at paragraph breaks into parts of about four minutes aloud (`chunk_speech.py <slug>` or `--all`) |
 
 `stories/<slug>/PROMPT.md` records how each book was made (request, passage choice, title, art
 direction, validation). It is written by hand, not generated.
@@ -32,7 +32,7 @@ tools/stories/
   build.py              builds the PDFs
   check.py              checks quotations, balloons, verse coverage and length against the KJV
   check_speech.py       checks a speech's quotations against the KJV and flags time-of-day words
-  chunk_speech.py       splits each speech into parts of about three minutes read aloud (140 wpm)
+  chunk_speech.py       splits each speech into parts of about four minutes read aloud (140 wpm)
   content/<slug>.py     one story: the text, characters, pages, fidelity notes, style bible
   lib/bookgen.py        <slug>.pdf and <slug>-script.pdf
   lib/make_prompt_pdf.py    <slug>-image-prompts.pdf
@@ -49,7 +49,7 @@ Copy an existing file (`content/how-much-more.py` is a good model) and keep ever
 
 | Name | Holds |
 | --- | --- |
-| `TITLE`, `SUBTITLE`, `REFERENCE`, `LOGLINE` | the title names the passage's hinge; `REFERENCE` is `"Book c:v–v (King James Version)"` |
+| `TITLE`, `SUBTITLE`, `REFERENCE`, `LOGLINE` | the title says in plain modern English what happens (not a bare KJV phrase); the subtitle names the people and setting; `REFERENCE` is `"Book c:v–v (King James Version)"` |
 | `HEADER_L`, `HEADER_R` | running headers |
 | `MOVEMENT_WORD`, `PANEL_WORD`, `PAGE_WORDS` | "Six", "thirty-six", `["One", …]` |
 | `STORY` | `[(heading, [paragraph, …]), …]` — headings like `"VI. The Robe, the Ring, and the Shoes"` |

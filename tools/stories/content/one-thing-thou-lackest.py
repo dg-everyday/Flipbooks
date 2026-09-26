@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Content for 'One Thing Thou Lackest' — Mark 10:17-31 (KJV)."""
+"""Content for 'The Rich Man Who Walked Away' — Mark 10:17-31 (KJV)."""
 
-TITLE = "One Thing Thou Lackest"
-SUBTITLE = "The Man Who Ran, the Look That Loved Him, and the Only Man in Mark Who Was Called and Went Away"
+TITLE = "The Rich Man Who Walked Away"
+SUBTITLE = ("A Question About Eternal Life, the Look That Loved Him, and the One Thing He Could Not "
+            "Give Up")
 REFERENCE = "Mark 10:17&#8211;31 (King James Version)"
 
 LOGLINE = (
@@ -11,7 +12,7 @@ LOGLINE = (
     "that before the answer was given, Jesus looked at him and loved him."
 )
 
-HEADER_L = "ONE THING THOU LACKEST"
+HEADER_L = "THE RICH MAN WHO WALKED AWAY"
 HEADER_R = "MARK 10:17-31  (KJV)"
 MOVEMENT_WORD = "Six"
 PANEL_WORD = "thirty-six"
@@ -612,7 +613,7 @@ PROMPT_TAIL = ("Append to every prompt: &#8220;No text, no speech balloons, no w
                "Panels 4 and 6, Page Six Panels 2 and 3 &#8212; are lettering-led and need only their "
                "described objects on a plain ground.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>One Thing Thou Lackest</i> &#8212; story, characters and scripture fidelity "
+                 "volume: <i>The Rich Man Who Walked Away</i> &#8212; story, characters and scripture fidelity "
                  "check.")
 
 BEATS = ["A man runs, kneels, and asks a question with a fault line in it",

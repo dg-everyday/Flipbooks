@@ -21,7 +21,7 @@ COVERS = {
         "title_zone": "Top third, over the dark soot-smudged sky above the furnace.",
         "avoid": "No face, wings or halo on the fourth figure. No burning bodies. No modern dress.",
     },
-    "a-great-way-off": {  # A Great Way Off — Luke 15
+    "a-great-way-off": {  # The Father Who Ran — Luke 15
         "scene": "A long bleached dirt road running down from a hilltop farm with a lamp-lit doorway. Far "
                  "down the road, small and thin, a young man in ragged clothes walks home with his head "
                  "down. Running toward him down the road, robe hitched up, closing the distance, is his "
@@ -33,7 +33,7 @@ COVERS = {
         "title_zone": "Top third, over the pale sky above the farm.",
         "avoid": "No haloes. The father must be running, not waiting. No pigs, no far-country scenes.",
     },
-    "into-his-hand": {  # Into His Hand — Genesis 39
+    "into-his-hand": {  # Trusted, Framed, and Trusted Again — Genesis 39
         "scene": "Inside a cold grey stone Egyptian prison built with the same palm-column spacing and "
                  "doorway shape as a wealthy villa. A young Hebrew man in a plain undyed under-tunic stands "
                  "in the centre, holding the prison keeper's ring of keys in his open hand; a single warm "
@@ -47,7 +47,7 @@ COVERS = {
         "avoid": "No figure, light effect or symbol for the LORD. No Potiphar's wife on the cover. No "
                  "nudity.",
     },
-    "and-ruth-with-her": {  # And Ruth With Her — Ruth 1–2
+    "and-ruth-with-her": {  # Where You Go, I Will Go — Ruth 1–2
         "scene": "Two widows on a bleached stone road climbing toward a small walled hill town. The older "
                  "woman, Naomi, walks a little ahead, worn and grey. Beside her, not behind, walks the "
                  "young Moabite woman Ruth in Moabite dress and headcloth, carrying a bundle in her arms. "
@@ -59,7 +59,7 @@ COVERS = {
         "title_zone": "Top third, over the pale sky above the hill town.",
         "avoid": "No figure, light effect or symbol for the LORD. No men threatening Ruth. No haloes.",
     },
-    "one-thing-thou-lackest": {  # One Thing Thou Lackest — Mark 10
+    "one-thing-thou-lackest": {  # The Rich Man Who Walked Away — Mark 10
         "scene": "A dusty first-century road between dry-stone walls. In the centre, a man in fine "
                  "deep-blue dyed cloth kneels in the dust, looking up — the only saturated colour in the "
                  "picture. Standing before him, seen from behind so his face is not shown, is Jesus in "
@@ -70,7 +70,7 @@ COVERS = {
         "avoid": "No halo or glow. Jesus' face not shown. No treasure, servants or estate. No other "
                  "saturated colour.",
     },
-    "for-his-oaths-sake": {  # For His Oath's Sake — Mark 6
+    "for-his-oaths-sake": {  # The King Who Kept the Wrong Promise — Mark 6
         "scene": "A lamp-lit birthday supper in a Herodian hall, crowded with officials, officers and "
                  "wealthy guests on dining couches, every face turned toward the king. In the foreground, "
                  "King Herod's right hand — heavy gold signet ring — raised to swear an oath. At the far "
@@ -82,7 +82,7 @@ COVERS = {
         "title_zone": "Top third, over the dark rafters of the hall.",
         "avoid": "No dancing girl. No execution, no head, no charger. No blood. No Jesus.",
     },
-    "help-thou-mine-unbelief": {  # Help Thou Mine Unbelief — Mark 9
+    "help-thou-mine-unbelief": {  # Help My Unbelief — Mark 9
         "scene": "Lower half: a dusty valley crowd, and in its centre a worn father kneeling in the dust "
                  "beside his small son, face turned up. A hand reaches into the frame to take the boy's "
                  "hand. Upper half, far behind: a bare high mountain with a pale cloud resting on its "
@@ -94,7 +94,7 @@ COVERS = {
         "avoid": "No figure in the cloud. No spirit, creature or shadow-shape. No close-up of the boy in a "
                  "fit. No halo or glow.",
     },
-    "where-art-thou": {  # Where Art Thou? — Genesis 3
+    "where-art-thou": {  # Hiding in the Garden — Genesis 3
         "scene": "A garden-orchard at dusk, wind streaming through the trees. Half hidden among the tree "
                  "trunks, a man and a woman in aprons of sewn fig leaves look out toward an empty path, "
                  "afraid. On one branch in the middle distance, a large olive-and-bronze serpent lies "
@@ -107,7 +107,7 @@ COVERS = {
         "avoid": "No figure, silhouette or glow for the LORD God. No apple. Nothing explicit — the man and "
                  "woman are covered by their aprons and the foliage. No human face on the serpent.",
     },
-    "while-he-lingered": {  # While He Lingered — Genesis 19
+    "while-he-lingered": {  # Pulled Out of Sodom — Genesis 19
         "scene": "Cold grey dawn at the gate of a walled city on a plain. Two men in plain dusty cloaks "
                  "lead four people out through the gate by the hand: an anxious man in fine robes, his "
                  "wife in a head covering, and their two young daughters. The city behind them is still "
@@ -119,7 +119,7 @@ COVERS = {
         "avoid": "No wings, halo or glow on the two men. No crowd, no violence. No fire yet, no one "
                  "burning. No figure for the LORD. No pillar of salt on the cover.",
     },
-    "too-many-for-me": {  # Too Many for Me — Judges 7
+    "too-many-for-me": {  # Gideon and the Army That Was Too Big — Judges 7
         "scene": "Night. In the foreground, one Israelite farmer-soldier in plain wool faces us, holding a "
                  "small flaming clay lamp high in his left hand and a ram's-horn trumpet to his mouth in "
                  "his right. Behind him, a thin ring of three hundred such lamps encircles a vast dark "
@@ -131,7 +131,7 @@ COVERS = {
         "title_zone": "Top third, over the night sky above the ring of lamps.",
         "avoid": "No sword in any Israelite hand. No wounds, bodies or blood. No figure for the LORD.",
     },
-    "how-much-more": {  # How Much More — Luke 11
+    "how-much-more": {  # Teach Us to Pray — Luke 11
         "scene": "Early morning on a quiet hillside of olive trees above a road. Jesus kneels alone in "
                  "prayer among the olives; a little way off his disciples sit and wait, watching. Far "
                  "below, one village doorway glows with lamplight.",
@@ -142,7 +142,7 @@ COVERS = {
         "avoid": "No halo or glow. No figure, light from above or dove for the Father or the Holy Spirit. "
                  "No identifiable landmark.",
     },
-    "forbid-them-not": {  # Forbid Them Not — Mark 10
+    "forbid-them-not": {  # Let the Children Come — Mark 10
         "scene": "A sunlit village courtyard east of the Jordan, its plain wooden gate standing wide open "
                  "behind. Jesus crouches at a child's eye level with a small child lifted in one arm and "
                  "his other hand resting on the head cloth of a little girl of about four in a faded ochre "
@@ -156,7 +156,7 @@ COVERS = {
         "avoid": "No halo or glow. No sentimental, doll-like children. No image of the kingdom. No anger "
                  "on Jesus' face. No mothers-only crowd — fathers and older siblings too.",
     },
-    "all-things-new": {  # All Things New — Revelation 21–22
+    "all-things-new": {  # When God Makes Everything New — Revelation 21–22
         "scene": "From a bare mountain summit in the foreground, a weathered man in plain undyed wool, seen "
                  "from behind, looks out beside a tall figure in white linen with a golden girdle. Filling "
                  "the middle distance, a vast walled city descends out of the sky toward a new, green "

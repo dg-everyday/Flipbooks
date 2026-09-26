@@ -1,0 +1,380 @@
+{
+    "id": "romans",
+    "name": "Romans",
+    "kjv_names": [
+        "Romans",
+        "Roman",
+        "Rome",
+        "Caesar",
+        "Italy",
+        "Italian band"
+    ],
+    "also_known_as": [
+        "Latins",
+        "the Empire (Caesar)"
+    ],
+    "category": "Empire",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "New"
+    ],
+    "summary": "The empire that ruled the whole Mediterranean when Jesus was born. Roman governors sentenced Jesus to crucifixion. Rome's roads and peace carried the apostles, Paul claimed his Roman citizenship, and the letter to the Romans went to its capital. In AD 70 Roman legions destroyed Jerusalem and the Temple, as Jesus had foretold.",
+    "name_meaning": "From Roma, the city on the Tiber, traditionally named after its founder Romulus.",
+    "origin": {
+        "account": "Rome is not in the Table of Nations. Tradition dates its founding to 753 BC. It grew from a Latin city-state into a republic (509 BC) that conquered Italy, Carthage (146 BC), Greece (146 BC) and the East. Pompey took Jerusalem in 63 BC, and Augustus became the first emperor in 27 BC. Many interpreters see Rome in Daniel's fourth kingdom of iron and in 'the ships of Chittim' (Daniel 11:30), traditionally identified with the Roman fleet that turned Antiochus IV back from Egypt in 168 BC.",
+        "references": [
+            "Daniel 2:40",
+            "Daniel 7:7",
+            "Daniel 11:30"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Latin Italians (Japhethite peoples of Europe in the traditional scheme)",
+        "line": [
+            "Noah",
+            "Japheth"
+        ],
+        "notes": "Roman citizenship could be inherited or bought. Paul was 'free born'; the chief captain paid 'a great sum'.",
+        "references": [
+            "Acts 22:27-28"
+        ]
+    },
+    "homeland": {
+        "region": "Italy, ruling an empire around the Mediterranean",
+        "description": "The city of Rome and the Italian peninsula. By the 1st century AD the empire stretched from Britain to Syria and Egypt, with Judea governed by client kings (the Herods) or prefects and procurators such as Pontius Pilate.",
+        "modern_location": "Italy; the empire covered some 40 modern countries.",
+        "modern_countries": [
+            "Italy"
+        ],
+        "center": {
+            "lat": 41.89,
+            "lon": 12.49
+        },
+        "places": [
+            {
+                "name": "Rome",
+                "modern_name": "Rome, Italy",
+                "lat": 41.89,
+                "lon": 12.49,
+                "note": "Paul lived there two years under guard, preaching the kingdom.",
+                "references": [
+                    "Acts 28:16",
+                    "Acts 28:30-31"
+                ]
+            },
+            {
+                "name": "Caesarea",
+                "modern_name": "Caesarea Maritima, Israel",
+                "lat": 32.5,
+                "lon": 34.89,
+                "note": "Roman capital of Judea; Cornelius' home; Paul imprisoned two years.",
+                "references": [
+                    "Acts 10:1",
+                    "Acts 23:33",
+                    "Acts 24:27"
+                ]
+            },
+            {
+                "name": "Antonia fortress / Praetorium, Jerusalem",
+                "modern_name": "Old City, Jerusalem",
+                "lat": 31.78,
+                "lon": 35.232,
+                "note": "Where the Roman garrison was based and Jesus was tried before Pilate.",
+                "references": [
+                    "John 18:28",
+                    "Acts 21:31-34"
+                ]
+            },
+            {
+                "name": "Appii forum and The three taverns",
+                "modern_name": "On the Appian Way south of Rome",
+                "lat": 41.43,
+                "lon": 13.05,
+                "note": "Where believers came out to meet Paul.",
+                "references": [
+                    "Acts 28:15"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "63 BC",
+            "event": "Pompey captures Jerusalem; Judea comes under Roman control.",
+            "references": []
+        },
+        {
+            "date": "c. 5 BC",
+            "event": "Caesar Augustus decrees a census, bringing Joseph and Mary to Bethlehem.",
+            "references": [
+                "Luke 2:1-5"
+            ]
+        },
+        {
+            "date": "AD 26–36",
+            "event": "Pontius Pilate governs Judea; he sentences Jesus to be crucified. The inscription is written in Hebrew, Greek and Latin.",
+            "references": [
+                "Luke 3:1",
+                "John 19:16",
+                "John 19:19-20"
+            ]
+        },
+        {
+            "date": "c. AD 30",
+            "event": "A Roman centurion at the cross: 'Truly this man was the Son of God.'",
+            "references": [
+                "Mark 15:39"
+            ]
+        },
+        {
+            "date": "c. AD 37–40",
+            "event": "Peter preaches to Cornelius, a centurion of the Italian band; the Spirit falls on Gentiles.",
+            "references": [
+                "Acts 10:1-2",
+                "Acts 10:44-45"
+            ]
+        },
+        {
+            "date": "c. AD 49",
+            "event": "Claudius expels the Jews from Rome; Aquila and Priscilla move to Corinth.",
+            "references": [
+                "Acts 18:2"
+            ]
+        },
+        {
+            "date": "c. AD 57",
+            "event": "Paul writes his letter to the church at Rome.",
+            "references": [
+                "Romans 1:7",
+                "Romans 1:15"
+            ]
+        },
+        {
+            "date": "c. AD 59–62",
+            "event": "Paul appeals to Caesar, is shipwrecked on Malta, and reaches Rome.",
+            "references": [
+                "Acts 25:11",
+                "Acts 27:41-44",
+                "Acts 28:14"
+            ]
+        },
+        {
+            "date": "AD 64–68",
+            "event": "Nero persecutes Christians; by early tradition Peter and Paul are executed at Rome.",
+            "references": [
+                "2 Timothy 4:6"
+            ]
+        },
+        {
+            "date": "AD 70",
+            "event": "Titus destroys Jerusalem and the Temple, as Jesus had foretold.",
+            "references": [
+                "Luke 19:43-44",
+                "Luke 21:20",
+                "Matthew 24:1-2"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Jupiter",
+            "Mars",
+            "the deified emperors (imperial cult)"
+        ],
+        "practices": "Roman religion honoured the state gods and, increasingly, the emperor. Refusing that honour made Christians look disloyal, and 'Caesar is Lord' collided with 'Jesus is Lord'. Paul taught believers to be subject to the governing authorities and pray for them.",
+        "references": [
+            "Romans 13:1",
+            "1 Timothy 2:1-2",
+            "Matthew 22:21"
+        ]
+    },
+    "importance": "Paul says Christ came 'when the fulness of the time was come', and Rome provided that fullness in practice: one empire, roads, relative peace and a common Greek language, through which the gospel spread in a single generation. Roman power fulfilled prophecy at Jesus' birth (the census that brought Mary to Bethlehem) and at his death (crucifixion, a Roman punishment). Romans also appear as believers: centurions praised for faith, and Cornelius, the first Gentile convert.",
+    "impact": [
+        {
+            "who": "Jesus",
+            "how": "Born under Augustus's census, crucified under Pilate.",
+            "references": [
+                "Luke 2:1",
+                "Matthew 27:26"
+            ]
+        },
+        {
+            "who": "The centurion of Capernaum",
+            "how": "Jesus: 'I have not found so great faith, no, not in Israel.'",
+            "references": [
+                "Matthew 8:5-10"
+            ]
+        },
+        {
+            "who": "Cornelius",
+            "how": "The first Gentile household to receive the Spirit.",
+            "references": [
+                "Acts 10:47-48"
+            ]
+        },
+        {
+            "who": "Paul",
+            "how": "His Roman citizenship spared him scourging and took him to Rome, where he preached 'no man forbidding him'.",
+            "references": [
+                "Acts 16:37",
+                "Acts 22:25",
+                "Acts 28:31"
+            ]
+        },
+        {
+            "who": "Jerusalem",
+            "how": "Destroyed in AD 70; the Temple has never been rebuilt.",
+            "references": [
+                "Luke 21:24"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Caesar Augustus",
+            "role": "Emperor at Jesus' birth",
+            "references": [
+                "Luke 2:1"
+            ]
+        },
+        {
+            "name": "Tiberius Caesar",
+            "role": "Emperor during Jesus' ministry",
+            "references": [
+                "Luke 3:1"
+            ]
+        },
+        {
+            "name": "Pontius Pilate",
+            "role": "Governor who crucified Jesus",
+            "references": [
+                "Matthew 27:2"
+            ]
+        },
+        {
+            "name": "Cornelius",
+            "role": "Centurion; first Gentile convert",
+            "references": [
+                "Acts 10:1"
+            ]
+        },
+        {
+            "name": "Claudius",
+            "role": "Emperor who expelled the Jews from Rome",
+            "references": [
+                "Acts 18:2"
+            ]
+        },
+        {
+            "name": "Felix and Festus",
+            "role": "Governors who heard Paul",
+            "references": [
+                "Acts 24:24-25",
+                "Acts 25:12"
+            ]
+        },
+        {
+            "name": "Julius",
+            "role": "Centurion who treated Paul kindly on the voyage",
+            "references": [
+                "Acts 27:1",
+                "Acts 27:3"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Luke 2:1",
+            "text": "And it came to pass in those days, that there went out a decree from Caesar Augustus, that all the world should be taxed."
+        },
+        {
+            "reference": "John 19:10-11",
+            "text": "Then saith Pilate unto him, Speakest thou not unto me? knowest thou not that I have power to crucify thee, and have power to release thee? Jesus answered, Thou couldest have no power at all against me, except it were given thee from above: therefore he that delivered me unto thee hath the greater sin. "
+        },
+        {
+            "reference": "Mark 15:39",
+            "text": "And when the centurion, which stood over against him, saw that he so cried out, and gave up the ghost, he said, Truly this man was the Son of God."
+        },
+        {
+            "reference": "Acts 22:28",
+            "text": "And the chief captain answered, With a great sum obtained I this freedom. And Paul said, But I was free born."
+        },
+        {
+            "reference": "Romans 1:15-16",
+            "text": "So, as much as in me is, I am ready to preach the gospel to you that are at Rome also. For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek."
+        }
+    ],
+    "fate": {
+        "summary": "The Western Roman Empire fell in AD 476. The Eastern (Byzantine) Empire, by then Christian — Constantine legalised Christianity in AD 313 — lasted until 1453. The empire that crucified Jesus became the channel through which his church spread across Europe.",
+        "references": [
+            "Daniel 2:44"
+        ]
+    },
+    "today": {
+        "summary": "Modern Italians are the most direct heirs of the Romans. Rome, the capital of Italy, contains Vatican City, the seat of the Roman Catholic Church. The Latin language lives on in Italian, Spanish, French, Portuguese and Romanian.",
+        "descendants": "Italians, and more broadly the Latin-speaking peoples of the former empire.",
+        "modern_legacy": "Roman law, the Latin alphabet, the calendar (Julian/Gregorian), and the Latin Vulgate Bible."
+    },
+    "archaeology": [
+        {
+            "name": "Pilate Stone",
+            "date": "c. AD 26–36",
+            "discovered": "1961 at Caesarea Maritima",
+            "location": "Israel Museum, Jerusalem",
+            "significance": "Dedication naming '[Pon]tius Pilatus, [Praef]ectus Iudaeae' — the first inscription naming Pilate."
+        },
+        {
+            "name": "Arch of Titus",
+            "date": "c. AD 81",
+            "discovered": "Roman Forum",
+            "location": "Rome, Italy",
+            "significance": "Relief shows Roman soldiers carrying the Temple menorah and trumpets from Jerusalem."
+        },
+        {
+            "name": "Ossuary of Yehohanan",
+            "date": "1st century AD",
+            "discovered": "1968, Giv'at ha-Mivtar, Jerusalem",
+            "location": "Israel Museum",
+            "significance": "Heel bone pierced by a nail — physical evidence of Roman crucifixion in Jesus' time and place."
+        }
+    ],
+    "related_peoples": [
+        "greeks",
+        "israelites",
+        "edomites",
+        "samaritans"
+    ],
+    "stories": [
+        "for-his-oaths-sake"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Jewish War",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "Eyewitness account of the destruction of Jerusalem, AD 70."
+        },
+        {
+            "title": "Annals, 15.44",
+            "author": "Tacitus (c. AD 116)",
+            "type": "primary",
+            "note": "Christ executed under Pontius Pilate; Nero's persecution."
+        },
+        {
+            "title": "Life of Claudius, 25.4",
+            "author": "Suetonius (c. AD 121)",
+            "type": "primary",
+            "note": "Claudius expels the Jews from Rome (compare Acts 18:2)."
+        },
+        {
+            "title": "Roman Society and Roman Law in the New Testament",
+            "author": "A. N. Sherwin-White (Oxford, 1963)",
+            "type": "scholarship"
+        }
+    ]
+}

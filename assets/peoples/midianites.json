@@ -1,0 +1,353 @@
+{
+    "id": "midianites",
+    "name": "Midianites",
+    "kjv_names": [
+        "Midianites",
+        "Midianite",
+        "Midian",
+        "Madianites"
+    ],
+    "also_known_as": [
+        "Midian"
+    ],
+    "category": "Nomadic tribes",
+    "group": "Neighbours & kin",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "Descendants of Abraham through Keturah: caravan traders and camel-riding nomads of north-western Arabia. A Midianite caravan carried Joseph to Egypt, and Moses found refuge, a wife and a wise father-in-law among them. Later, Midianite hordes 'as grasshoppers for multitude' were routed by Gideon's three hundred.",
+    "name_meaning": "Midian, possibly 'strife' or 'place of judgement'.",
+    "origin": {
+        "account": "After Sarah's death Abraham married Keturah, who bore six sons including Midian. Abraham gave gifts to these sons and sent them 'eastward, unto the east country', away from Isaac.",
+        "references": [
+            "Genesis 25:1-6"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Midian, son of Abraham and Keturah",
+        "line": [
+            "Terah",
+            "Abraham",
+            "Midian"
+        ],
+        "notes": "Midian's sons were Ephah, Epher, Hanoch, Abida and Eldaah. The Kenites seem to have been a Midianite clan: Moses' father-in-law is 'the priest of Midian' and also 'the Kenite'. The Bible uses 'Midianites' and 'Ishmaelites' for the same traders in the Joseph story and in Judges 8:24.",
+        "references": [
+            "Genesis 25:4",
+            "Exodus 3:1",
+            "Judges 1:16",
+            "Genesis 37:28",
+            "Judges 8:24"
+        ]
+    },
+    "homeland": {
+        "region": "Midian — north-western Arabia, east of the Gulf of Aqaba",
+        "description": "Mountain and desert country in the northern Hejaz, with oases and trade routes, from where the Midianites ranged into Sinai, Moab and the Jordan valley. They were famed for camels and for wealth in gold ornaments.",
+        "modern_location": "North-western Saudi Arabia (Tabuk region), with ranges into southern Jordan and Sinai.",
+        "modern_countries": [
+            "Saudi Arabia",
+            "Jordan",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 28.4,
+            "lon": 35.5
+        },
+        "places": [
+            {
+                "name": "Land of Midian",
+                "modern_name": "Tabuk region / al-Bad', Saudi Arabia",
+                "lat": 28.49,
+                "lon": 35.02,
+                "note": "Where Moses kept Jethro's flock (al-Bad' has a traditional 'Wells of Moses').",
+                "references": [
+                    "Exodus 2:15",
+                    "Exodus 3:1"
+                ]
+            },
+            {
+                "name": "Qurayyah",
+                "modern_name": "Qurayyah, Saudi Arabia",
+                "lat": 28.77,
+                "lon": 36.02,
+                "note": "Walled oasis town that gives its name to 'Midianite' (Qurayyah) painted pottery.",
+                "references": []
+            },
+            {
+                "name": "Valley of Jezreel / hill of Moreh",
+                "modern_name": "Jezreel Valley, Israel",
+                "lat": 32.61,
+                "lon": 35.37,
+                "note": "Midianite camp routed by Gideon.",
+                "references": [
+                    "Judges 6:33",
+                    "Judges 7:1"
+                ]
+            },
+            {
+                "name": "Timna",
+                "modern_name": "Timna Valley, Israel",
+                "lat": 29.78,
+                "lon": 34.99,
+                "note": "Copper mining site with a Midianite-period tent shrine (not named in the Bible).",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Midian born to Abraham and Keturah; the family is sent east.",
+            "references": [
+                "Genesis 25:2",
+                "Genesis 25:6"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Midianite merchantmen draw Joseph out of the pit and sell him into Egypt.",
+            "references": [
+                "Genesis 37:28",
+                "Genesis 37:36"
+            ]
+        },
+        {
+            "date": "Before the Exodus",
+            "event": "Moses flees Pharaoh to Midian, marries Zipporah daughter of Reuel/Jethro, and meets God at the burning bush.",
+            "references": [
+                "Exodus 2:15-21",
+                "Exodus 3:1-2"
+            ]
+        },
+        {
+            "date": "Wilderness period",
+            "event": "Jethro visits Moses, rejoices at the Exodus, and advises him to appoint judges. Moses asks Hobab to be Israel's guide.",
+            "references": [
+                "Exodus 18:9-11",
+                "Exodus 18:17-24",
+                "Numbers 10:29-31"
+            ]
+        },
+        {
+            "date": "End of the wilderness period",
+            "event": "Midian's elders join Balak in hiring Balaam; Midianite women lead Israel into sin at Peor. Israel wars against Midian and Balaam is killed.",
+            "references": [
+                "Numbers 22:4-7",
+                "Numbers 25:6",
+                "Numbers 31:1-8"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Midian and the 'children of the east' plunder Israel for seven years. Gideon's 300 rout them with trumpets, pitchers and lamps; the princes Oreb and Zeeb and the kings Zebah and Zalmunna are killed.",
+            "references": [
+                "Judges 6:1-6",
+                "Judges 7:19-22",
+                "Judges 7:25",
+                "Judges 8:21"
+            ]
+        },
+        {
+            "date": "Later prophecy",
+            "event": "'The day of Midian' becomes the prophets' byword for God's sudden deliverance; Midian's camels are foreseen bringing gifts to Zion.",
+            "references": [
+                "Isaiah 9:4",
+                "Isaiah 10:26",
+                "Isaiah 60:6"
+            ]
+        },
+        {
+            "date": "c. AD 35",
+            "event": "Stephen recalls Moses as 'a stranger in the land of Madian'.",
+            "references": [
+                "Acts 7:29"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Baal-peor (in the Peor episode)"
+        ],
+        "practices": "The Bible shows two sides of Midian. Jethro, 'the priest of Midian', confessed 'Now I know that the LORD is greater than all gods' and offered sacrifices with Aaron and the elders. The Midianites who joined Moab worshipped Baal-peor. At Timna a Midianite-era tent shrine held a small copper serpent.",
+        "references": [
+            "Exodus 18:11-12",
+            "Numbers 25:1-6",
+            "Numbers 25:17-18"
+        ]
+    },
+    "importance": "Midian is where God prepared Moses. The prince of Egypt spent forty years there as a shepherd, and there God spoke from the burning bush and revealed His name, 'I AM THAT I AM'. A Midianite priest gave Israel its first system of judges. Later, Gideon's victory over Midian became Scripture's classic lesson that God saves 'not by many' but by His own power, so that Israel could not boast 'Mine own hand hath saved me.'",
+    "impact": [
+        {
+            "who": "Joseph",
+            "how": "Sold by his brothers to a Midianite caravan and carried to Egypt, the start of God's plan to 'save much people alive'.",
+            "references": [
+                "Genesis 37:28",
+                "Genesis 50:20"
+            ]
+        },
+        {
+            "who": "Moses",
+            "how": "Found refuge, family, a shepherd's training and his call in Midian.",
+            "references": [
+                "Exodus 2:21-22",
+                "Exodus 3:10"
+            ]
+        },
+        {
+            "who": "Israel's government",
+            "how": "Jethro's counsel created rulers of thousands, hundreds, fifties and tens.",
+            "references": [
+                "Exodus 18:21-26"
+            ]
+        },
+        {
+            "who": "Phinehas",
+            "how": "His zeal against Zimri and the Midianite Cozbi stopped the plague and won an everlasting priesthood.",
+            "references": [
+                "Numbers 25:7-13"
+            ]
+        },
+        {
+            "who": "Gideon",
+            "how": "The least in his father's house became Israel's deliverer through God's reduction of the army from 32,000 to 300.",
+            "references": [
+                "Judges 6:15",
+                "Judges 7:2-7"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Midian",
+            "role": "Son of Abraham and Keturah",
+            "references": [
+                "Genesis 25:2"
+            ]
+        },
+        {
+            "name": "Jethro (Reuel)",
+            "role": "Priest of Midian, Moses' father-in-law",
+            "references": [
+                "Exodus 2:18",
+                "Exodus 3:1"
+            ]
+        },
+        {
+            "name": "Zipporah",
+            "role": "Moses' wife",
+            "references": [
+                "Exodus 2:21"
+            ]
+        },
+        {
+            "name": "Hobab",
+            "role": "Moses' brother-in-law, invited to guide Israel",
+            "references": [
+                "Numbers 10:29"
+            ]
+        },
+        {
+            "name": "Cozbi",
+            "role": "Midianite princess slain at Peor",
+            "references": [
+                "Numbers 25:15"
+            ]
+        },
+        {
+            "name": "Oreb, Zeeb, Zebah and Zalmunna",
+            "role": "Princes and kings defeated by Gideon",
+            "references": [
+                "Judges 7:25",
+                "Judges 8:5"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 25:2",
+            "text": "And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah."
+        },
+        {
+            "reference": "Exodus 2:15",
+            "text": "Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well."
+        },
+        {
+            "reference": "Exodus 18:11",
+            "text": "Now I know that the LORD is greater than all gods: for in the thing wherein they dealt proudly he was above them."
+        },
+        {
+            "reference": "Judges 7:2",
+            "text": "And the LORD said unto Gideon, The people that are with thee are too many for me to give the Midianites into their hands, lest Israel vaunt themselves against me, saying, Mine own hand hath saved me."
+        },
+        {
+            "reference": "Isaiah 9:4",
+            "text": "For thou hast broken the yoke of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian."
+        }
+    ],
+    "fate": {
+        "summary": "After Gideon, Midian 'lifted up their heads no more'. The Midianites fade from history, absorbed into the Arab tribes of northern Arabia. Classical and early Islamic geographers still knew a town called Madyan on the Gulf of Aqaba coast.",
+        "references": [
+            "Judges 8:28"
+        ]
+    },
+    "today": {
+        "summary": "No Midianite people exist today. Their land is in Saudi Arabia's Tabuk province, where the town of al-Bad' has traditionally been identified with Madyan. The Quran knows the people of 'Madyan' and their prophet Shu'ayb, whom Muslim tradition often links with Jethro.",
+        "descendants": "Absorbed into the Arab tribes of northern Arabia.",
+        "modern_legacy": "The 'Midianite–Kenite hypothesis', which proposes that Israel's worship of YHWH had roots in Midian through Jethro, is widely discussed in biblical scholarship and disputed."
+    },
+    "archaeology": [
+        {
+            "name": "Qurayyah painted ware ('Midianite pottery')",
+            "date": "c. 13th–11th centuries BC",
+            "discovered": "Qurayyah and sites in the Arabah, Negev and southern Jordan",
+            "location": "Saudi and Israeli collections",
+            "significance": "Distinctive pottery tracing Midianite trade and presence."
+        },
+        {
+            "name": "Timna tent shrine and copper serpent",
+            "date": "12th century BC",
+            "discovered": "1969 by Beno Rothenberg",
+            "location": "Timna Valley; Eretz Israel Museum, Tel Aviv",
+            "significance": "A Midianite-period shrine in an Egyptian mining temple, with a small gilded copper snake — often compared to Moses' brazen serpent."
+        }
+    ],
+    "related_peoples": [
+        "ishmaelites",
+        "kenites",
+        "moabites",
+        "amalekites",
+        "israelites",
+        "sabeans"
+    ],
+    "stories": [
+        "into-his-hand",
+        "too-many-for-me"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Antiquities of the Jews, 2.11; 4.6–7; 5.6",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary"
+        },
+        {
+            "title": "The Midianite-Kenite Hypothesis Revisited and the Origins of Judah",
+            "author": "Joseph Blenkinsopp, Journal for the Study of the Old Testament 33.2 (2008)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The Egyptian Mining Temple at Timna",
+            "author": "Beno Rothenberg (Institute for Archaeo-Metallurgical Studies, 1988)",
+            "type": "archaeology"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Midian', 'Midianites'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

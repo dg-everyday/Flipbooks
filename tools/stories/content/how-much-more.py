@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Content for 'How Much More' — Luke 11:1-13 (KJV)."""
+"""Content for 'Teach Us to Pray' — Luke 11:1-13 (KJV)."""
 
-TITLE = "How Much More"
-SUBTITLE = ("A Disciple’s Request, a Prayer That Begins “Our Father,” and a Friend Knocking at "
-            "Midnight")
+TITLE = "Teach Us to Pray"
+SUBTITLE = ("The Prayer That Begins “Our Father,” a Friend Knocking at Midnight, and a Father Who "
+            "Gives Good Gifts")
 REFERENCE = "Luke 11:1–13 (King James Version)"
 
 LOGLINE = (
@@ -13,7 +13,7 @@ LOGLINE = (
     "much more will your heavenly Father give?"
 )
 
-HEADER_L = "HOW MUCH MORE"
+HEADER_L = "TEACH US TO PRAY"
 HEADER_R = "LUKE 11:1-13  (KJV)"
 MOVEMENT_WORD = "Six"
 PANEL_WORD = "thirty-six"
@@ -543,7 +543,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "6, Page Three Panels 4 and 6 — need only a plain ground. PARABLE panels use the parable "
                "treatment in the art direction.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>How Much More</i> — story, characters and scripture fidelity check.")
+                 "volume: <i>Teach Us to Pray</i> — story, characters and scripture fidelity check.")
 
 BEATS = ["Jesus prays; when he stops, one asks: “teach us to pray”",
          "“Our Father”; three petitions that say <i>thy</i>",

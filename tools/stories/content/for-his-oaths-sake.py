@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Content for 'For His Oath's Sake' — Mark 6:14-29 (KJV)."""
+"""Content for 'The King Who Kept the Wrong Promise' — Mark 6:14-29 (KJV)."""
 
-TITLE = "For His Oath’s Sake"
-SUBTITLE = ("A Birthday Supper, a Promise Made in Front of Everyone, and the King Who Heard "
-            "John Gladly")
+TITLE = "The King Who Kept the Wrong Promise"
+SUBTITLE = "A Birthday Supper, an Oath Sworn in Front of Everyone, and the Death of John the Baptist"
 REFERENCE = "Mark 6:14–29 (King James Version)"
 
 LOGLINE = (
@@ -12,7 +11,7 @@ LOGLINE = (
     "it — and when the request comes, he is exceeding sorry, and he keeps his word anyway."
 )
 
-HEADER_L = "FOR HIS OATH’S SAKE"
+HEADER_L = "THE KING WHO KEPT THE WRONG PROMISE"
 HEADER_R = "MARK 6:14-29  (KJV)"
 MOVEMENT_WORD = "Six"
 PANEL_WORD = "thirty-six"
@@ -634,7 +633,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "Lettering-led insert panels — Page One Panel 6, Page Two Panel 3, Page Three Panel 2, "
                "Page Six Panels 2 and 4 — need only their described objects on a plain ground.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>For His Oath’s Sake</i> — story, characters and scripture fidelity check.")
+                 "volume: <i>The King Who Kept the Wrong Promise</i> — story, characters and scripture fidelity check.")
 
 BEATS = ["News of Jesus, three explanations, and a king who says <i>I</i>",
          "Arrested for Herodias’ sake, for eleven words said to the king’s face",

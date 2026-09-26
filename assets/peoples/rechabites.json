@@ -1,0 +1,210 @@
+{
+    "id": "rechabites",
+    "name": "Rechabites",
+    "kjv_names": [
+        "Rechabites",
+        "house of the Rechabites",
+        "house of Rechab"
+    ],
+    "also_known_as": [
+        "Sons of Jonadab (Jehonadab)"
+    ],
+    "category": "Kenite clan",
+    "group": "Neighbours & kin",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "A Kenite family who, on their ancestor Jonadab's command, drank no wine, built no houses and lived in tents for some 250 years. God used their obedience to shame Jerusalem and promised they would never lack a man to stand before Him.",
+    "name_meaning": "From Rechab, 'rider' or 'charioteer'.",
+    "origin": {
+        "account": "The Rechabites were Kenites 'that came of Hemath, the father of the house of Rechab'. Their founder in practice was Jonadab (Jehonadab) son of Rechab, a zealous ally of Jehu in wiping out Baal worship in Israel. He commanded his descendants to live as tent-dwelling nomads for ever.",
+        "references": [
+            "1 Chronicles 2:55",
+            "2 Kings 10:15-16",
+            "2 Kings 10:23",
+            "Jeremiah 35:6-7"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Jonadab son of Rechab, of the Kenites",
+        "line": [
+            "Kenites",
+            "Hemath",
+            "Rechab",
+            "Jonadab (Jehonadab)",
+            "Rechabites"
+        ],
+        "notes": "Among them in Jeremiah's time were Jaazaniah son of Jeremiah (not the prophet), son of Habaziniah.",
+        "references": [
+            "1 Chronicles 2:55",
+            "Jeremiah 35:3"
+        ]
+    },
+    "homeland": {
+        "region": "Tents in the land of Judah (a nomadic life)",
+        "description": "They lived in tents wherever they pastured, and moved inside Jerusalem only 'for fear of the army of the Chaldeans' when Nebuchadnezzar invaded.",
+        "modern_location": "Judean hills and desert, Israel / West Bank.",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 31.6,
+            "lon": 35.2
+        },
+        "places": [
+            {
+                "name": "Jerusalem — chamber of the sons of Hanan in the Temple",
+                "modern_name": "Temple Mount, Jerusalem",
+                "lat": 31.778,
+                "lon": 35.235,
+                "note": "Where Jeremiah set wine before them and they refused it.",
+                "references": [
+                    "Jeremiah 35:2-4"
+                ]
+            },
+            {
+                "name": "Samaria",
+                "modern_name": "Sebastia",
+                "lat": 32.28,
+                "lon": 35.19,
+                "note": "Where Jonadab joined Jehu against Baal.",
+                "references": [
+                    "2 Kings 10:17"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "c. 841 BC",
+            "event": "Jonadab son of Rechab rides with Jehu to Samaria and helps purge Baal's worshippers.",
+            "references": [
+                "2 Kings 10:15-17",
+                "2 Kings 10:23-28"
+            ]
+        },
+        {
+            "date": "c. 600 BC",
+            "event": "During Nebuchadnezzar's invasion the Rechabites shelter in Jerusalem. Jeremiah tests them with wine and they refuse, keeping their father's command.",
+            "references": [
+                "Jeremiah 35:5-11"
+            ]
+        },
+        {
+            "date": "c. 600 BC",
+            "event": "God contrasts their obedience with Judah's disobedience and promises: 'Jonadab the son of Rechab shall not want a man to stand before me for ever.'",
+            "references": [
+                "Jeremiah 35:13-19"
+            ]
+        },
+        {
+            "date": "c. 445 BC",
+            "event": "Malchiah son of Rechab repairs the dung gate of Jerusalem.",
+            "references": [
+                "Nehemiah 3:14"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "The LORD"
+        ],
+        "practices": "Total abstinence from wine, no houses, no fields, vineyards or seed — a deliberately simple nomadic life. The discipline resembles the Nazirite vow but applied to a whole family for generations.",
+        "references": [
+            "Jeremiah 35:6-10",
+            "Numbers 6:2-3"
+        ]
+    },
+    "importance": "The Rechabites are God's object lesson in faithfulness. If a family could keep a human father's command for 250 years, Judah had no excuse for ignoring the commands God had repeated 'rising early and speaking'. They are among the few people in Jeremiah who receive only blessing.",
+    "impact": [
+        {
+            "who": "Jehu's reform",
+            "how": "Jonadab lent his authority to the purge of Baal worship.",
+            "references": [
+                "2 Kings 10:15-16"
+            ]
+        },
+        {
+            "who": "Judah and Jerusalem",
+            "how": "Their example became a public rebuke of the nation's disobedience.",
+            "references": [
+                "Jeremiah 35:14-16"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Jonadab (Jehonadab) son of Rechab",
+            "role": "Founder of the Rechabite rule",
+            "references": [
+                "2 Kings 10:15",
+                "Jeremiah 35:6"
+            ]
+        },
+        {
+            "name": "Jaazaniah",
+            "role": "Head of the Rechabites in Jeremiah's day",
+            "references": [
+                "Jeremiah 35:3"
+            ]
+        },
+        {
+            "name": "Malchiah son of Rechab",
+            "role": "Rebuilt the dung gate (probably of this family)",
+            "references": [
+                "Nehemiah 3:14"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Jeremiah 35:6",
+            "text": "But they said, We will drink no wine: for Jonadab the son of Rechab our father commanded us, saying, Ye shall drink no wine, neither ye, nor your sons for ever:"
+        },
+        {
+            "reference": "Jeremiah 35:14",
+            "text": "The words of Jonadab the son of Rechab, that he commanded his sons not to drink wine, are performed; for unto this day they drink none, but obey their father’s commandment: notwithstanding I have spoken unto you, rising early and speaking; but ye hearkened not unto me."
+        },
+        {
+            "reference": "Jeremiah 35:19",
+            "text": "Therefore thus saith the LORD of hosts, the God of Israel; Jonadab the son of Rechab shall not want a man to stand before me for ever."
+        }
+    ],
+    "fate": {
+        "summary": "The Rechabites survived the Babylonian invasion under God's promise, and a son of Rechab helped rebuild Jerusalem under Nehemiah. After that they fade from the record. The 4th-century church historian Eusebius (Ecclesiastical History 2.23) quotes Hegesippus as mentioning a 'priest of the sons of Rechab' at the martyrdom of James in Jerusalem.",
+        "references": [
+            "Jeremiah 35:19",
+            "Nehemiah 3:14"
+        ]
+    },
+    "today": {
+        "summary": "No Rechabite community exists today. The name was adopted by the 19th-century temperance movement: the Independent Order of Rechabites, founded in England in 1835, was a friendly society for total abstainers.",
+        "descendants": "Unknown.",
+        "modern_legacy": "A byword for abstinence and faithfulness to a family tradition."
+    },
+    "archaeology": [],
+    "related_peoples": [
+        "kenites",
+        "israelites",
+        "babylonians"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Ecclesiastical History, 2.23",
+            "author": "Eusebius of Caesarea (quoting Hegesippus)",
+            "type": "primary"
+        },
+        {
+            "title": "Smith's Bible Dictionary, 'Rechabites'",
+            "author": "William Smith (1863)",
+            "type": "dictionary"
+        }
+    ]
+}

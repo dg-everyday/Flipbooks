@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Content for 'And Ruth With Her' — Ruth 1:1-2:23 (KJV)."""
+"""Content for 'Where You Go, I Will Go' — Ruth 1:1-2:23 (KJV)."""
 
-TITLE = "And Ruth With Her"
+TITLE = "Where You Go, I Will Go"
 SUBTITLE = "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean"
 REFERENCE = "Ruth 1:1&#8211;2:23 (King James Version)"
 
@@ -11,7 +11,7 @@ LOGLINE = (
     "beside her. Then the barley harvest starts, and Ruth goes out to pick up what the reapers drop."
 )
 
-HEADER_L = "AND RUTH WITH HER"
+HEADER_L = "WHERE YOU GO, I WILL GO"
 HEADER_R = "RUTH 1:1-2:23  (KJV)"
 MOVEMENT_WORD = "Nine"
 PANEL_WORD = "fifty-four"
@@ -840,7 +840,7 @@ PROMPT_TAIL = ("Append to every prompt: &#8220;No text, no speech balloons, no w
                "added in layout.&#8221; Aspect 3:2 landscape throughout. Page Five Panels 5 and 6, and Page "
                "Nine Panel 6, may be generated at 2:1 if the layout gives them the full width.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>And Ruth With Her</i> &#8212; story, characters and scripture fidelity check.")
+                 "volume: <i>Where You Go, I Will Go</i> &#8212; story, characters and scripture fidelity check.")
 
 BEATS = ["A famine, an emigration, and three graves in five verses",
          "News of bread, a road west, and a blessing meant as a release",

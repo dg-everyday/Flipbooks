@@ -1,0 +1,261 @@
+{
+    "id": "jebusites",
+    "name": "Jebusites",
+    "kjv_names": [
+        "Jebusites",
+        "Jebusite",
+        "Jebusi",
+        "Jebus"
+    ],
+    "also_known_as": [
+        "Inhabitants of Jebus (Jerusalem)"
+    ],
+    "category": "Canaanite nation",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "The Canaanite people who held Jerusalem — then called Jebus — until David captured their stronghold of Zion and made it his capital. A Jebusite, Araunah, sold David the threshing floor on which Solomon's Temple was built.",
+    "name_meaning": "From Jebus, the old name of Jerusalem; perhaps 'trodden down' or 'threshing place'.",
+    "origin": {
+        "account": "The Jebusite is the third of Canaan's descendants. The Jebusites are always counted among the nations of the land, living 'in the mountains' of the central ridge.",
+        "references": [
+            "Genesis 10:16",
+            "Numbers 13:29"
+        ]
+    },
+    "lineage": {
+        "ancestor": "The Jebusite, descendant of Canaan",
+        "line": [
+            "Noah",
+            "Ham",
+            "Canaan",
+            "The Jebusite"
+        ],
+        "notes": "Jerusalem appears earlier as Salem, the city of Melchizedek. Its king at the conquest, Adonizedek, headed an Amorite alliance, suggesting a mixed Amorite–Jebusite population.",
+        "references": [
+            "Genesis 14:18",
+            "Joshua 10:1-5",
+            "Ezekiel 16:3"
+        ]
+    },
+    "homeland": {
+        "region": "Jebus (Jerusalem) and the surrounding hills",
+        "description": "A small, fortified city-state on the narrow south-eastern ridge of Jerusalem (the 'City of David'), above the Gihon spring. It sat on the border between Judah and Benjamin.",
+        "modern_location": "The City of David (Silwan) and Old City area of Jerusalem.",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 31.773,
+            "lon": 35.236
+        },
+        "places": [
+            {
+                "name": "Jebus / stronghold of Zion",
+                "modern_name": "City of David, Jerusalem",
+                "lat": 31.773,
+                "lon": 35.236,
+                "note": "Captured by David.",
+                "references": [
+                    "Judges 19:10",
+                    "2 Samuel 5:7"
+                ]
+            },
+            {
+                "name": "Threshing floor of Araunah (Ornan)",
+                "modern_name": "Temple Mount, Jerusalem",
+                "lat": 31.778,
+                "lon": 35.235,
+                "note": "Site of David's altar and Solomon's Temple.",
+                "references": [
+                    "2 Samuel 24:18",
+                    "2 Chronicles 3:1"
+                ]
+            },
+            {
+                "name": "Gihon spring",
+                "modern_name": "Gihon spring, Silwan",
+                "lat": 31.773,
+                "lon": 35.237,
+                "note": "The city's water source; Solomon was anointed there.",
+                "references": [
+                    "1 Kings 1:38-39"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "c. 1350 BC",
+            "event": "Abdi-Heba, king of Urusalim (Jerusalem), writes to Pharaoh in the Amarna letters asking for troops.",
+            "references": []
+        },
+        {
+            "date": "Conquest",
+            "event": "Adonizedek of Jerusalem is defeated, but the city is not held; Judah and Benjamin cannot drive out the Jebusites.",
+            "references": [
+                "Joshua 10:23-26",
+                "Joshua 15:63",
+                "Judges 1:21"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "A Levite refuses to lodge in Jebus, 'the city of a stranger'.",
+            "references": [
+                "Judges 19:10-12"
+            ]
+        },
+        {
+            "date": "c. 1003 BC",
+            "event": "The Jebusites taunt David that 'the blind and the lame' could keep him out. Joab goes up the 'gutter' (water shaft), and David takes Zion and makes it the City of David.",
+            "references": [
+                "2 Samuel 5:6-9",
+                "1 Chronicles 11:4-6"
+            ]
+        },
+        {
+            "date": "c. 970 BC",
+            "event": "To stop a plague, David buys Araunah's threshing floor and builds an altar; Solomon later builds the Temple there.",
+            "references": [
+                "2 Samuel 24:18-25",
+                "2 Chronicles 3:1"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "Remaining Jebusites are made forced labourers.",
+            "references": [
+                "1 Kings 9:20-21"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Canaanite deities (probably including Shalem / Zedek, reflected in the names Salem and Adonizedek)"
+        ],
+        "practices": "Little is recorded. Araunah offered David his oxen and threshing tools for sacrifice as a gift, but David insisted on paying.",
+        "references": [
+            "2 Samuel 24:22-24"
+        ]
+    },
+    "importance": "The Jebusites are remembered for the city they held. Jerusalem stayed in their hands for centuries until David took it, making a neutral capital between Judah and the northern tribes. The Temple site came from a Jebusite by honest purchase, at David's insistence: 'neither will I offer burnt offerings unto the LORD my God of that which doth cost me nothing.' Zechariah foresees even Israel's enemies incorporated 'as a Jebusite', just as Araunah's people were.",
+    "impact": [
+        {
+            "who": "David",
+            "how": "Capturing Jebus gave him his capital, 'the city of David'.",
+            "references": [
+                "2 Samuel 5:9"
+            ]
+        },
+        {
+            "who": "Israel's worship",
+            "how": "Araunah's threshing floor became the site of the Temple.",
+            "references": [
+                "1 Chronicles 21:28",
+                "1 Chronicles 22:1"
+            ]
+        },
+        {
+            "who": "Joab",
+            "how": "Became chief captain by leading the assault.",
+            "references": [
+                "1 Chronicles 11:6"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Adonizedek",
+            "role": "King of Jerusalem at the conquest",
+            "references": [
+                "Joshua 10:1"
+            ]
+        },
+        {
+            "name": "Araunah (Ornan) the Jebusite",
+            "role": "Sold the Temple site to David",
+            "references": [
+                "2 Samuel 24:16",
+                "1 Chronicles 21:15"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Joshua 15:63",
+            "text": "As for the Jebusites the inhabitants of Jerusalem, the children of Judah could not drive them out: but the Jebusites dwell with the children of Judah at Jerusalem unto this day."
+        },
+        {
+            "reference": "2 Samuel 5:6",
+            "text": "And the king and his men went to Jerusalem unto the Jebusites, the inhabitants of the land: which spake unto David, saying, Except thou take away the blind and the lame, thou shalt not come in hither: thinking, David cannot come in hither."
+        },
+        {
+            "reference": "2 Samuel 24:24",
+            "text": "And the king said unto Araunah, Nay; but I will surely buy it of thee at a price: neither will I offer burnt offerings unto the LORD my God of that which doth cost me nothing. So David bought the threshingfloor and the oxen for fifty shekels of silver."
+        },
+        {
+            "reference": "Zechariah 9:7",
+            "text": "And I will take away his blood out of his mouth, and his abominations from between his teeth: but he that remaineth, even he, shall be for our God, and he shall be as a governor in Judah, and Ekron as a Jebusite."
+        }
+    ],
+    "fate": {
+        "summary": "After David's conquest the Jebusites seem to have lived on peacefully in Jerusalem, as Araunah did, before being absorbed into Israel. By Ezra's time the name survives only in the traditional list of Canaanite nations.",
+        "references": [
+            "1 Kings 9:20-21",
+            "Ezra 9:1"
+        ]
+    },
+    "today": {
+        "summary": "No Jebusite people exist today. Their city is Jerusalem, holy to Jews, Christians and Muslims, and excavations in the City of David have uncovered Bronze Age fortifications from their era.",
+        "descendants": "Absorbed into Israel.",
+        "modern_legacy": "The Temple Mount / Haram al-Sharif, the site of the Jebusite threshing floor, is one of the most contested pieces of land in the world."
+    },
+    "archaeology": [
+        {
+            "name": "Abdi-Heba letters (EA 285–290)",
+            "date": "c. 1350 BC",
+            "discovered": "1887 at Tell el-Amarna",
+            "location": "Vorderasiatisches Museum Berlin and others",
+            "significance": "Six letters from Jerusalem's pre-Israelite king."
+        },
+        {
+            "name": "Gihon spring fortifications and Warren's Shaft",
+            "date": "Middle Bronze Age (c. 1800 BC)",
+            "discovered": "Charles Warren (1867); Ronny Reich & Eli Shukron (1995–2010)",
+            "location": "City of David, Jerusalem",
+            "significance": "Massive towers guarding the spring, and a water system some link to the 'gutter' of 2 Samuel 5:8."
+        }
+    ],
+    "related_peoples": [
+        "canaanites",
+        "amorites",
+        "hittites",
+        "israelites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Amarna Letters",
+            "author": "William L. Moran (Johns Hopkins University Press, 1992) — EA 285–290",
+            "type": "primary"
+        },
+        {
+            "title": "Excavating David's City",
+            "author": "Ronny Reich (Biblical Archaeology Society / Israel Exploration Society, 2011)",
+            "type": "archaeology"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Jebusites', 'Jebus'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

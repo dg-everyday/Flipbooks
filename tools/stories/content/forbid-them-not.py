@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Content for 'Forbid Them Not' — Mark 10:13-16 (KJV)."""
+"""Content for 'Let the Children Come' — Mark 10:13-16 (KJV)."""
 
-TITLE = "Forbid Them Not"
+TITLE = "Let the Children Come"
 SUBTITLE = "Jesus, His Disciples, and the Young Children Brought to Him"
 REFERENCE = "Mark 10:13–16 (King James Version)"
 
@@ -11,7 +11,7 @@ LOGLINE = (
     "come, says the kingdom of God belongs to such as these, and takes the children up in his arms."
 )
 
-HEADER_L = "FORBID THEM NOT"
+HEADER_L = "LET THE CHILDREN COME"
 HEADER_R = "MARK 10:13-16  (KJV)"
 MOVEMENT_WORD = "Seven"
 PANEL_WORD = "twenty-four"
@@ -166,7 +166,7 @@ STORY = [
         "Mark's next sentence begins, “And when he was gone forth into the way” (10:17). On that road, a "
         "man comes running and kneels to ask, “Good Master, what shall I do that I may inherit eternal "
         "life?” The children had done nothing at all. That story is told in this book's companion, "
-        "<i>One Thing Thou Lackest</i>."]),
+        "<i>The Rich Man Who Walked Away</i>."]),
 ]
 
 THEME = (
@@ -341,7 +341,7 @@ PAGES = [
          "From outside the gate: Jesus and the disciples leaving the courtyard for the road beyond the "
          "village, the children waving from the gate.",
          "CAPTION: On the road outside, a man is about to come running (10:17).\n"
-         "CAPTION (lower): His story is told in <i>One Thing Thou Lackest</i>."),
+         "CAPTION (lower): His story is told in <i>The Rich Man Who Walked Away</i>."),
     ]),
 ]
 
@@ -426,7 +426,7 @@ VALIDATION_NOTES = [
      "turned on a child."),
     ("What is outside the range",
      "Mark 10:1–12 (the question about divorce) is summarised as setting only. Mark 10:17–31 (the man "
-     "who ran) is the companion volume, <i>One Thing Thou Lackest</i>."),
+     "who ran) is the companion volume, <i>The Rich Man Who Walked Away</i>."),
 ]
 
 FOOTER_NOTE = (
@@ -439,7 +439,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "in layout.” Aspect 3:2 landscape. Lettering-led panels — Page One Panel 6, Page Two Panel "
                "6, Page Three Panel 6 — need only a plain ground or a soft background image.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>Forbid Them Not</i> — story, characters and scripture fidelity check.")
+                 "volume: <i>Let the Children Come</i> — story, characters and scripture fidelity check.")
 
 BEATS = ["Parents bring young children for a touch; the disciples turn them back at the gate",
          "Jesus sees it and is much displeased; “forbid them not: for of such is the kingdom of God”",

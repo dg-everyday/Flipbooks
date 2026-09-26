@@ -1,0 +1,385 @@
+{
+    "id": "persians",
+    "name": "Persians",
+    "kjv_names": [
+        "Persians",
+        "Persian",
+        "Persia",
+        "Media and Persia"
+    ],
+    "also_known_as": [
+        "Achaemenids (the ruling dynasty)",
+        "Parsa"
+    ],
+    "category": "Empire",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "The Iranian people whose king Cyrus the Great conquered Babylon in 539 BC and let the Jews go home to rebuild the Temple — a king Isaiah names as the LORD's 'anointed'. The Persian (Achaemenid) empire is the setting of Ezra, Nehemiah, Esther and the end of Daniel. It was the largest empire the world had yet seen, until Alexander the Great overthrew it.",
+    "name_meaning": "From Parsa (Greek Persis), their homeland in south-western Iran; modern Fars.",
+    "origin": {
+        "account": "The Persians do not appear in the Table of Nations by name. They were Indo-Iranian tribes related to the Medes (whose ancestor is Madai, son of Japheth), settled in Parsa by the 8th–7th centuries BC. Cyrus II, king of Anshan, overthrew his Median overlord Astyages about 550 BC, united Medes and Persians, took Lydia (546 BC) and Babylon (539 BC).",
+        "references": [
+            "Genesis 10:2",
+            "Daniel 8:20"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Japhethite Iranian peoples (closely linked with Madai / the Medes)",
+        "line": [
+            "Noah",
+            "Japheth",
+            "Madai (the Iranian peoples)"
+        ],
+        "notes": "The Bible treats Medes and Persians as partners in one kingdom: 'the law of the Medes and Persians, which altereth not'.",
+        "references": [
+            "Daniel 6:8",
+            "Esther 1:19"
+        ]
+    },
+    "homeland": {
+        "region": "Persis (Fars) in south-western Iran; an empire from the Indus to the Aegean and Egypt",
+        "description": "Highland valleys of south-western Iran. At its height the empire ran 'from India even unto Ethiopia, over an hundred and seven and twenty provinces', linked by the Royal Road and a famous courier system.",
+        "modern_location": "Iran, and at its height parts of 20+ modern countries from Pakistan to Libya.",
+        "modern_countries": [
+            "Iran",
+            "Iraq",
+            "Afghanistan",
+            "Turkey",
+            "Egypt",
+            "Pakistan"
+        ],
+        "center": {
+            "lat": 29.93,
+            "lon": 52.89
+        },
+        "places": [
+            {
+                "name": "Shushan (Susa)",
+                "modern_name": "Shush, Khuzestan, Iran",
+                "lat": 32.19,
+                "lon": 48.26,
+                "note": "Winter capital; setting of Esther and Nehemiah 1.",
+                "references": [
+                    "Esther 1:2",
+                    "Nehemiah 1:1"
+                ]
+            },
+            {
+                "name": "Achmetha (Ecbatana)",
+                "modern_name": "Hamadan, Iran",
+                "lat": 34.8,
+                "lon": 48.51,
+                "note": "Where Cyrus' decree for the Temple was found.",
+                "references": [
+                    "Ezra 6:2-3"
+                ]
+            },
+            {
+                "name": "Persepolis",
+                "modern_name": "Takht-e Jamshid, Iran",
+                "lat": 29.93,
+                "lon": 52.89,
+                "note": "Ceremonial capital built by Darius I (not named in the Bible).",
+                "references": []
+            },
+            {
+                "name": "Pasargadae",
+                "modern_name": "Pasargad, Iran",
+                "lat": 30.2,
+                "lon": 53.18,
+                "note": "Cyrus' capital and tomb (not named in the Bible).",
+                "references": []
+            },
+            {
+                "name": "Babylon",
+                "modern_name": "Near Hillah, Iraq",
+                "lat": 32.54,
+                "lon": 44.42,
+                "note": "Taken by Cyrus in 539 BC.",
+                "references": [
+                    "Daniel 5:30-31"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "c. 700 BC",
+            "event": "Isaiah names Cyrus as the shepherd who will say to Jerusalem 'Thou shalt be built', about 150 years before him.",
+            "references": [
+                "Isaiah 44:28",
+                "Isaiah 45:1"
+            ]
+        },
+        {
+            "date": "539 BC",
+            "event": "Cyrus conquers Babylon.",
+            "references": [
+                "Daniel 5:28",
+                "Daniel 5:30-31"
+            ]
+        },
+        {
+            "date": "538 BC",
+            "event": "Cyrus' decree: the Jews may return and rebuild the house of the LORD; he returns the Temple vessels. About 50,000 return under Zerubbabel.",
+            "references": [
+                "Ezra 1:1-4",
+                "Ezra 1:7-8",
+                "Ezra 2:64-65"
+            ]
+        },
+        {
+            "date": "c. 536 BC",
+            "event": "Daniel's last visions 'in the third year of Cyrus king of Persia'.",
+            "references": [
+                "Daniel 10:1"
+            ]
+        },
+        {
+            "date": "520–516 BC",
+            "event": "Under Darius I, prompted by Haggai and Zechariah, the Temple is finished after the archive at Achmetha confirms Cyrus' decree.",
+            "references": [
+                "Ezra 6:1-15",
+                "Haggai 1:1"
+            ]
+        },
+        {
+            "date": "c. 483–473 BC",
+            "event": "Ahasuerus (Xerxes I) makes Esther queen; Haman's plot is overturned and Purim established.",
+            "references": [
+                "Esther 2:17",
+                "Esther 8:11",
+                "Esther 9:26-28"
+            ]
+        },
+        {
+            "date": "458 BC",
+            "event": "Artaxerxes I sends Ezra the scribe to teach the Law in Judah.",
+            "references": [
+                "Ezra 7:11-13"
+            ]
+        },
+        {
+            "date": "445 BC",
+            "event": "Artaxerxes lets his cupbearer Nehemiah rebuild Jerusalem's walls.",
+            "references": [
+                "Nehemiah 2:1-8",
+                "Nehemiah 6:15"
+            ]
+        },
+        {
+            "date": "331 BC",
+            "event": "Alexander the Great defeats Darius III at Gaugamela, ending the empire — Daniel's ram broken by the he-goat.",
+            "references": [
+                "Daniel 8:5-7",
+                "Daniel 8:20-21"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Ahura Mazda (the 'Wise Lord' of Zoroastrianism)"
+        ],
+        "practices": "The Achaemenid kings honoured Ahura Mazda but generally tolerated and even funded their subjects' cults, returning captured gods and temples. The Cyrus Cylinder records this policy, and Ezra shows it applied to the Jews. Cyrus speaks of 'the LORD God of heaven' who charged him to build the house in Jerusalem.",
+        "references": [
+            "Ezra 1:2",
+            "Ezra 6:8-10",
+            "Ezra 7:21-23"
+        ]
+    },
+    "importance": "Persia is the empire of restoration. God 'stirred up the spirit of Cyrus' to end the exile, rebuild the Temple and later the walls. Isaiah's naming of Cyrus shows God as Lord of history, using a king who 'hast not known me'. Under Persian rule, Ezra re-established the Law as the centre of Jewish life. Esther shows God's hidden providence preserving His people when His name is never mentioned.",
+    "impact": [
+        {
+            "who": "Zerubbabel and Jeshua",
+            "how": "Led the first return and rebuilt the altar and the Temple.",
+            "references": [
+                "Ezra 3:2",
+                "Ezra 5:2"
+            ]
+        },
+        {
+            "who": "Daniel",
+            "how": "Served under Darius and Cyrus; survived the lions' den.",
+            "references": [
+                "Daniel 6:1-3",
+                "Daniel 6:28"
+            ]
+        },
+        {
+            "who": "Esther and Mordecai",
+            "how": "A Jewish orphan became queen and saved her people 'for such a time as this'.",
+            "references": [
+                "Esther 4:14",
+                "Esther 10:3"
+            ]
+        },
+        {
+            "who": "Ezra",
+            "how": "Given royal authority and funding to teach and enforce the Law.",
+            "references": [
+                "Ezra 7:25-26"
+            ]
+        },
+        {
+            "who": "Nehemiah",
+            "how": "Cupbearer turned governor who rebuilt Jerusalem's walls in 52 days.",
+            "references": [
+                "Nehemiah 1:11",
+                "Nehemiah 6:15"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Cyrus the Great",
+            "role": "Founder of the empire; decreed the return",
+            "references": [
+                "Ezra 1:1",
+                "Isaiah 45:1"
+            ]
+        },
+        {
+            "name": "Darius I (the Persian)",
+            "role": "Confirmed the Temple rebuilding",
+            "references": [
+                "Ezra 6:12"
+            ]
+        },
+        {
+            "name": "Ahasuerus (Xerxes I)",
+            "role": "Husband of Esther",
+            "references": [
+                "Esther 1:1"
+            ]
+        },
+        {
+            "name": "Artaxerxes I",
+            "role": "Sent Ezra and Nehemiah",
+            "references": [
+                "Ezra 7:1",
+                "Nehemiah 2:1"
+            ]
+        },
+        {
+            "name": "Vashti",
+            "role": "Deposed queen",
+            "references": [
+                "Esther 1:12"
+            ]
+        },
+        {
+            "name": "Haman",
+            "role": "Chief minister who plotted against the Jews",
+            "references": [
+                "Esther 3:1"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Isaiah 44:28",
+            "text": "That saith of Cyrus, He is my shepherd, and shall perform all my pleasure: even saying to Jerusalem, Thou shalt be built; and to the temple, Thy foundation shall be laid."
+        },
+        {
+            "reference": "Isaiah 45:1",
+            "text": "Thus saith the LORD to his anointed, to Cyrus, whose right hand I have holden, to subdue nations before him; and I will loose the loins of kings, to open before him the two leaved gates; and the gates shall not be shut;"
+        },
+        {
+            "reference": "Ezra 1:2",
+            "text": "Thus saith Cyrus king of Persia, The LORD God of heaven hath given me all the kingdoms of the earth; and he hath charged me to build him an house at Jerusalem, which is in Judah."
+        },
+        {
+            "reference": "Esther 4:14",
+            "text": "For if thou altogether holdest thy peace at this time, then shall there enlargement and deliverance arise to the Jews from another place; but thou and thy father’s house shall be destroyed: and who knoweth whether thou art come to the kingdom for such a time as this?"
+        },
+        {
+            "reference": "Daniel 8:20",
+            "text": "The ram which thou sawest having two horns are the kings of Media and Persia."
+        }
+    ],
+    "fate": {
+        "summary": "The Achaemenid empire fell to Alexander in 331–330 BC; Persepolis was burned. Persia rose again under the Parthians (247 BC – AD 224, the 'Parthians' of Acts 2:9) and the Sasanians (AD 224–651), then was conquered by the Arab Muslims. Persian language and identity survived throughout.",
+        "references": [
+            "Daniel 11:2-4",
+            "Acts 2:9"
+        ]
+    },
+    "today": {
+        "summary": "Persians are the largest ethnic group in modern Iran (about half the population of nearly 90 million), and Persian (Farsi) is spoken in Iran, Afghanistan (Dari) and Tajikistan (Tajik). Jews have lived in Iran continuously since the exile; the traditional tombs of Esther and Mordecai are in Hamadan and of Daniel in Shush.",
+        "descendants": "Iranians, especially ethnic Persians; the Persian-speaking peoples of Central Asia.",
+        "modern_legacy": "The Cyrus Cylinder is often called an early charter of rights; a replica is at the United Nations. Nowruz and Persian poetry carry the culture on."
+    },
+    "archaeology": [
+        {
+            "name": "Cyrus Cylinder",
+            "date": "c. 539 BC",
+            "discovered": "1879 at Babylon by Hormuzd Rassam",
+            "location": "British Museum (BM 90920)",
+            "significance": "Cyrus records his capture of Babylon and his policy of returning deported peoples and their gods — the policy of Ezra 1."
+        },
+        {
+            "name": "Behistun Inscription",
+            "date": "c. 520 BC",
+            "discovered": "Cliff at Bisotun, Iran; copied by Henry Rawlinson 1835–1847",
+            "location": "In situ, Iran (UNESCO site)",
+            "significance": "Darius I's trilingual record (Old Persian, Elamite, Babylonian) that unlocked cuneiform."
+        },
+        {
+            "name": "Persepolis Fortification Tablets",
+            "date": "c. 509–493 BC",
+            "discovered": "1933 at Persepolis",
+            "location": "Oriental Institute, Chicago / National Museum of Iran",
+            "significance": "Thousands of administrative tablets showing how the empire ran."
+        },
+        {
+            "name": "Palace of Darius at Susa",
+            "date": "c. 515 BC",
+            "discovered": "Marcel Dieulafoy, 1884–1886",
+            "location": "Louvre (glazed brick archers) and Shush, Iran",
+            "significance": "The palace world of Esther and Nehemiah."
+        }
+    ],
+    "related_peoples": [
+        "medes",
+        "elamites",
+        "babylonians",
+        "israelites",
+        "greeks",
+        "samaritans"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Persia and the Bible",
+            "author": "Edwin M. Yamauchi (Baker, 1990)",
+            "type": "scholarship"
+        },
+        {
+            "title": "From Cyrus to Alexander: A History of the Persian Empire",
+            "author": "Pierre Briant (Eisenbrauns, 2002)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The Persian Empire: A Corpus of Sources from the Achaemenid Period",
+            "author": "Amélie Kuhrt (Routledge, 2007)",
+            "type": "primary"
+        },
+        {
+            "title": "Histories, books 1, 3, 7–9",
+            "author": "Herodotus (5th century BC)",
+            "type": "primary"
+        },
+        {
+            "title": "Antiquities of the Jews, book 11",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary"
+        }
+    ]
+}

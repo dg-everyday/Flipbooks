@@ -1,0 +1,417 @@
+{
+    "id": "philistines",
+    "name": "Philistines",
+    "kjv_names": [
+        "Philistines",
+        "Philistim",
+        "Palestina"
+    ],
+    "also_known_as": [
+        "Peleset (in Egyptian records)",
+        "Caphtorim",
+        "Cherethites (probably)"
+    ],
+    "category": "Sea People / coastal city-states",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "A people from across the sea, from Caphtor, who settled five city-states on the southern coast of Canaan around 1175 BC. They were Israel's chief enemy from Samson to David — the people of Delilah, Dagon and Goliath — and their name survives in the word 'Palestine'.",
+    "name_meaning": "Pelishtim, possibly 'migrants' or 'invaders'; Egyptian texts call them Peleset.",
+    "origin": {
+        "account": "The Table of Nations lists the Philistines under Mizraim (Egypt), in a note on the Casluhim, 'out of whom came Philistim', beside the Caphtorim. The prophets say plainly that God brought 'the Philistines from Caphtor', and Jeremiah calls them 'the remnant of the country of Caphtor' — usually identified with Crete or the wider Aegean. Egyptian records of Ramesses III describe the Peleset among the 'Sea Peoples' who attacked Egypt about 1175 BC and then settled on the Canaanite coast. Pottery, architecture, diet and ancient DNA from Ashkelon all point to an Aegean origin.",
+        "references": [
+            "Genesis 10:13-14",
+            "Amos 9:7",
+            "Jeremiah 47:4",
+            "Deuteronomy 2:23"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Casluhim / Caphtorim, descendants of Mizraim son of Ham (Table of Nations)",
+        "line": [
+            "Noah",
+            "Ham",
+            "Mizraim",
+            "Casluhim / Caphtorim",
+            "Philistim"
+        ],
+        "notes": "The Bible links them to Egypt's family and to Caphtor, not to Canaan. Ancient DNA (Feldman et al., 2019) found a European-related genetic signal in early Iron Age Ashkelon that was diluted by local intermarriage within about two centuries — a newcomer group that quickly mixed with Canaanites.",
+        "references": [
+            "Genesis 10:6",
+            "Genesis 10:13-14"
+        ]
+    },
+    "homeland": {
+        "region": "Philistia — the southern coastal plain of Canaan",
+        "description": "A strip of fertile coastal plain from about Joppa south to Gaza, with the Shephelah foothills as the contested border with Judah. It was ruled as a pentapolis of five 'lords' (seranim): Gaza, Ashdod, Ashkelon, Gath and Ekron. Controlling the Way of the Sea trade road, the Philistines were skilled metalworkers and kept an iron monopoly over Israel for a time.",
+        "modern_location": "Israel's southern coast and the Gaza Strip.",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories (Gaza)"
+        ],
+        "center": {
+            "lat": 31.65,
+            "lon": 34.65
+        },
+        "places": [
+            {
+                "name": "Gaza",
+                "modern_name": "Gaza City",
+                "lat": 31.5,
+                "lon": 34.47,
+                "note": "Where Samson carried off the city gates and later died pulling down the house of Dagon.",
+                "references": [
+                    "Judges 16:3",
+                    "Judges 16:21-30"
+                ]
+            },
+            {
+                "name": "Ashdod",
+                "modern_name": "Tel Ashdod, Israel",
+                "lat": 31.75,
+                "lon": 34.68,
+                "note": "Dagon fell before the captured Ark here.",
+                "references": [
+                    "1 Samuel 5:1-4"
+                ]
+            },
+            {
+                "name": "Ashkelon",
+                "modern_name": "Tel Ashkelon, Israel",
+                "lat": 31.66,
+                "lon": 34.55,
+                "note": "Seaport; David's lament: 'publish it not in the streets of Askelon'.",
+                "references": [
+                    "2 Samuel 1:20"
+                ]
+            },
+            {
+                "name": "Gath",
+                "modern_name": "Tell es-Safi / Tel Tzafit, Israel",
+                "lat": 31.7,
+                "lon": 34.85,
+                "note": "Home of Goliath; David feigned madness before Achish here.",
+                "references": [
+                    "1 Samuel 17:4",
+                    "1 Samuel 21:10-13"
+                ]
+            },
+            {
+                "name": "Ekron",
+                "modern_name": "Tel Miqne, Israel",
+                "lat": 31.78,
+                "lon": 34.85,
+                "note": "Northernmost city; its god was Baal-zebub.",
+                "references": [
+                    "1 Samuel 5:10",
+                    "2 Kings 1:2"
+                ]
+            },
+            {
+                "name": "Ziklag",
+                "modern_name": "Probably Khirbet a-Ra'i or Tel Sera', Israel",
+                "lat": 31.5,
+                "lon": 34.87,
+                "note": "Given to David by Achish.",
+                "references": [
+                    "1 Samuel 27:6"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age (as named in Genesis)",
+            "event": "Abraham and Isaac deal with Abimelech of Gerar, 'king of the Philistines' — called by the name of the later inhabitants of the region, or an earlier Aegean group.",
+            "references": [
+                "Genesis 21:32",
+                "Genesis 26:1"
+            ]
+        },
+        {
+            "date": "c. 1175 BC",
+            "event": "Ramesses III defeats the Sea Peoples, including the Peleset (Medinet Habu reliefs); they settle on the southern Canaanite coast.",
+            "references": []
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Shamgar kills 600 Philistines with an ox goad. Samson, a Nazirite from Dan, fights the Philistines alone and dies destroying Dagon's temple at Gaza.",
+            "references": [
+                "Judges 3:31",
+                "Judges 13:1",
+                "Judges 16:30"
+            ]
+        },
+        {
+            "date": "c. 1050 BC",
+            "event": "The Philistines defeat Israel at Aphek, kill Eli's sons and capture the Ark. Plagued by God, they send it back on a cart.",
+            "references": [
+                "1 Samuel 4:10-11",
+                "1 Samuel 5:6",
+                "1 Samuel 6:10-12"
+            ]
+        },
+        {
+            "date": "c. 1050–1010 BC",
+            "event": "The Philistines hold an iron monopoly and garrisons in Israel. Jonathan's attack at Michmash; David kills Goliath; David takes refuge with Achish of Gath. Saul and his sons die fighting them on Mount Gilboa.",
+            "references": [
+                "1 Samuel 13:19-22",
+                "1 Samuel 14:13-14",
+                "1 Samuel 17:49-50",
+                "1 Samuel 27:2",
+                "1 Samuel 31:1-6"
+            ]
+        },
+        {
+            "date": "c. 1000 BC",
+            "event": "David defeats the Philistines decisively in the valley of Rephaim and subdues them; Philistine Cherethites and Pelethites and Ittai of Gath serve as his loyal troops.",
+            "references": [
+                "2 Samuel 5:17-25",
+                "2 Samuel 8:1",
+                "2 Samuel 15:18-22"
+            ]
+        },
+        {
+            "date": "9th–8th centuries BC",
+            "event": "Border wars with Judah under Jehoram and Uzziah; Hazael of Aram destroys Gath.",
+            "references": [
+                "2 Chronicles 21:16-17",
+                "2 Chronicles 26:6",
+                "2 Kings 12:17"
+            ]
+        },
+        {
+            "date": "734–701 BC",
+            "event": "The Philistine cities become Assyrian vassals; Sargon's general takes Ashdod (711 BC), and Sennacherib settles the affairs of Ekron.",
+            "references": [
+                "Isaiah 20:1"
+            ]
+        },
+        {
+            "date": "604 BC",
+            "event": "Nebuchadnezzar destroys Ashkelon and deports its people; the prophets pronounce the end of Philistia.",
+            "references": [
+                "Jeremiah 47:1-7",
+                "Zephaniah 2:4-5"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Dagon",
+            "Baal-zebub (of Ekron)",
+            "Ashtaroth"
+        ],
+        "practices": "Dagon had temples at Gaza and Ashdod. Baal-zebub was consulted as an oracle at Ekron; the New Testament name Beelzebub for the prince of devils derives from him. Saul's armour was hung in the house of Ashtaroth. Philistine diviners advised sending the Ark home with golden offerings. The Ekron inscription names the goddess 'Ptgyh'.",
+        "references": [
+            "Judges 16:23",
+            "1 Samuel 5:2",
+            "2 Kings 1:2-3",
+            "1 Samuel 31:10",
+            "1 Samuel 6:2-4",
+            "Matthew 12:24"
+        ]
+    },
+    "importance": "The Philistine threat drove Israel from loose tribal leadership to monarchy. It was under their oppression that Israel demanded a king, and the Philistine wars defined the reigns of Saul and David. Samson's life, the capture of the Ark, and David's victory over Goliath — the Bible's classic story of faith against impossible odds — all take place against them. The prophets also foresaw Philistine remnants being joined to God's people: Ekron 'as a Jebusite'.",
+    "impact": [
+        {
+            "who": "Samson",
+            "how": "His calling, his marriage to a Timnite woman, his downfall through Delilah and his death were all bound up with the Philistines.",
+            "references": [
+                "Judges 13:5",
+                "Judges 14:1-4",
+                "Judges 16:4-5"
+            ]
+        },
+        {
+            "who": "Eli and his house",
+            "how": "News of the Ark's capture and his sons' deaths killed Eli.",
+            "references": [
+                "1 Samuel 4:17-18"
+            ]
+        },
+        {
+            "who": "King Saul",
+            "how": "Fear of the Philistines drove his disobedience at Gilgal and ended in his death on Gilboa.",
+            "references": [
+                "1 Samuel 13:11-13",
+                "1 Samuel 31:4"
+            ]
+        },
+        {
+            "who": "David",
+            "how": "Killed Goliath, lived among Philistines as a fugitive, and later had Philistine bodyguards.",
+            "references": [
+                "1 Samuel 17:45",
+                "1 Samuel 27:1",
+                "2 Samuel 15:18"
+            ]
+        },
+        {
+            "who": "Israel's economy",
+            "how": "Israelites had to go to the Philistines to sharpen every tool.",
+            "references": [
+                "1 Samuel 13:19-20"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Abimelech of Gerar",
+            "role": "King who made covenants with Abraham and Isaac",
+            "references": [
+                "Genesis 26:26-28"
+            ]
+        },
+        {
+            "name": "Delilah",
+            "role": "Betrayed Samson (her people are not stated, but she worked for the Philistine lords)",
+            "references": [
+                "Judges 16:5"
+            ]
+        },
+        {
+            "name": "Goliath of Gath",
+            "role": "Champion killed by David",
+            "references": [
+                "1 Samuel 17:4"
+            ]
+        },
+        {
+            "name": "Achish king of Gath",
+            "role": "Sheltered David",
+            "references": [
+                "1 Samuel 27:2-3"
+            ]
+        },
+        {
+            "name": "Ittai the Gittite",
+            "role": "Loyal to David in Absalom's revolt",
+            "references": [
+                "2 Samuel 15:19-21"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Amos 9:7",
+            "text": "Are ye not as children of the Ethiopians unto me, O children of Israel? saith the LORD. Have not I brought up Israel out of the land of Egypt? and the Philistines from Caphtor, and the Syrians from Kir?"
+        },
+        {
+            "reference": "Judges 16:30",
+            "text": "And Samson said, Let me die with the Philistines. And he bowed himself with all his might; and the house fell upon the lords, and upon all the people that were therein. So the dead which he slew at his death were more than they which he slew in his life."
+        },
+        {
+            "reference": "1 Samuel 17:45",
+            "text": "Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of the LORD of hosts, the God of the armies of Israel, whom thou hast defied."
+        },
+        {
+            "reference": "1 Samuel 13:19",
+            "text": "Now there was no smith found throughout all the land of Israel: for the Philistines said, Lest the Hebrews make them swords or spears:"
+        },
+        {
+            "reference": "Zechariah 9:6-7",
+            "text": "And a bastard shall dwell in Ashdod, and I will cut off the pride of the Philistines. And I will take away his blood out of his mouth, and his abominations from between his teeth: but he that remaineth, even he, shall be for our God, and he shall be as a governor in Judah, and Ekron as a Jebusite."
+        }
+    ],
+    "fate": {
+        "summary": "Philistine culture had already largely merged with its Canaanite neighbours by the later Iron Age. Nebuchadnezzar's destruction of Ashkelon, Ekron and other cities about 604 BC and the deportations that followed ended the Philistines as a distinct people. Their cities were later repopulated by Phoenicians, Greeks and others.",
+        "references": [
+            "Jeremiah 47:4",
+            "Zephaniah 2:5",
+            "Ezekiel 25:15-16"
+        ]
+    },
+    "today": {
+        "summary": "The Philistines have no known living descendants as a people. Their name survives: Herodotus called the coastal region 'Palaistine', and after AD 135 the Romans renamed the province of Judea 'Syria Palaestina'. That is the origin of the modern word 'Palestine'. Modern Palestinian Arabs are not descended from the Philistines as a group.",
+        "descendants": "None identifiable; early Philistine ancestry merged into the local Levantine population within a few centuries (ancient DNA study, 2019).",
+        "modern_legacy": "'Philistine' in English came to mean a person hostile to culture (from 19th-century German student slang). 'Goliath' is a byword for an overwhelming opponent."
+    },
+    "archaeology": [
+        {
+            "name": "Medinet Habu reliefs",
+            "date": "c. 1175 BC",
+            "discovered": "Mortuary temple of Ramesses III, Thebes",
+            "location": "Luxor, Egypt",
+            "significance": "Depicts the land and sea battle with the Sea Peoples, including the Peleset in feathered headdresses."
+        },
+        {
+            "name": "Ekron Royal Dedicatory Inscription",
+            "date": "7th century BC",
+            "discovered": "1996 at Tel Miqne",
+            "location": "Israel Museum, Jerusalem",
+            "significance": "Names 'Achish son of Padi… ruler of Ekron', confirming the site as Ekron. Padi and Achish (Ikausu) also appear in Assyrian annals."
+        },
+        {
+            "name": "Tell es-Safi/Gath inscription",
+            "date": "10th–9th century BC",
+            "discovered": "2005 at Tell es-Safi",
+            "location": "Israel",
+            "significance": "Potsherd with two non-Semitic names (ALWT and WLT), similar in form to 'Goliath' — shows such names at Gath."
+        },
+        {
+            "name": "Ashkelon Philistine cemetery",
+            "date": "11th–8th centuries BC",
+            "discovered": "2013–2016, Leon Levy Expedition",
+            "location": "Ashkelon, Israel",
+            "significance": "First Philistine cemetery ever found; its bones supplied the 2019 ancient DNA study."
+        },
+        {
+            "name": "Philistine bichrome pottery",
+            "date": "12th–11th centuries BC",
+            "discovered": "Across Philistia",
+            "location": "Various museums",
+            "significance": "Red-and-black painted pottery descended from Mycenaean styles — the classic marker of Philistine settlement."
+        }
+    ],
+    "related_peoples": [
+        "canaanites",
+        "egyptians",
+        "israelites",
+        "anakim",
+        "assyrians",
+        "babylonians"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Histories, 1.105; 2.104; 3.5",
+            "author": "Herodotus (5th century BC)",
+            "type": "primary",
+            "note": "Earliest Greek use of 'Palaistine'."
+        },
+        {
+            "title": "Ancient DNA sheds light on the genetic origins of early Iron Age Philistines",
+            "author": "Michael Feldman, Daniel M. Master et al., Science Advances 5(7), 2019",
+            "type": "genetics",
+            "url": "https://www.science.org/doi/10.1126/sciadv.aax0061"
+        },
+        {
+            "title": "The Philistines and Their Material Culture",
+            "author": "Trude Dothan (Yale University Press, 1982)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Biblical Peoples and Ethnicity",
+            "author": "Ann E. Killebrew (Society of Biblical Literature, 2005)",
+            "type": "scholarship"
+        },
+        {
+            "title": "A Royal Dedicatory Inscription from Ekron",
+            "author": "Seymour Gitin, Trude Dothan & Joseph Naveh, Israel Exploration Journal 47 (1997)",
+            "type": "archaeology"
+        },
+        {
+            "title": "Ekron Royal Dedicatory Inscription",
+            "author": "Wikipedia",
+            "type": "reference",
+            "url": "https://en.wikipedia.org/wiki/Ekron_Royal_Dedicatory_Inscription"
+        }
+    ]
+}

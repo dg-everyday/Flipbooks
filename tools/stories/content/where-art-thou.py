@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Content for 'Where Art Thou?' — Genesis 2:25-3:24 (KJV)."""
+"""Content for 'Hiding in the Garden' — Genesis 2:25-3:24 (KJV)."""
 
-TITLE = "Where Art Thou?"
-SUBTITLE = ("Naked and Not Ashamed, Aprons of Fig Leaves, and the Coats the LORD God Made")
+TITLE = "Hiding in the Garden"
+SUBTITLE = "Adam and Eve, a Serpent’s Question, and the LORD God Calling “Where Art Thou?”"
 REFERENCE = "Genesis 2:25–3:24 (King James Version)"
 
 LOGLINE = (
@@ -12,7 +12,7 @@ LOGLINE = (
     "question: “Where art thou?”"
 )
 
-HEADER_L = "WHERE ART THOU?"
+HEADER_L = "HIDING IN THE GARDEN"
 HEADER_R = "GENESIS 2:25-3:24  (KJV)"
 MOVEMENT_WORD = "Eight"
 PANEL_WORD = "forty-eight"
@@ -209,7 +209,7 @@ CHARACTERS = [
      "Comes walking in the garden in the cool of the day (v.8); asks four questions (vv.9, 11, 13); "
      "passes sentence on the serpent, the woman and the man (vv.14–19); makes coats of skins and "
      "clothes them (v.21); sends the man forth and places the Cherubim (vv.22–24). Staging: "
-     "<b>never drawn</b>, as the LORD is not drawn in <i>And Ruth With Her</i>. His presence is "
+     "<b>never drawn</b>, as the LORD is not drawn in <i>Where You Go, I Will Go</i>. His presence is "
      "the evening wind moving through the trees, and his words come from off-panel.",
      "vv. 1, 3, 5, 8–24"),
 
@@ -614,7 +614,7 @@ VALIDATION_NOTES = [
      "“beguiled Eve through his subtilty” — and those references are noted here, not staged. The "
      "script draws a serpent, and never a man, an angel or a dragon."),
     ("The LORD God is not drawn",
-     "As in <i>And Ruth With Her</i>, the LORD is never depicted. His walking in the garden (v.8) is "
+     "As in <i>Where You Go, I Will Go</i>, the LORD is never depicted. His walking in the garden (v.8) is "
      "staged as evening wind moving the trees, and every word he speaks is lettered from off-panel. "
      "The coats of skins (v.21) are shown being settled on the couple from behind, with the hands "
      "that settle them out of frame."),
@@ -682,7 +682,7 @@ PROMPT_TAIL = ("Append to every prompt: “No text, no speech balloons, no water
                "Page Four Panel 5, Page Five Panel 6, Page Six Panels 4 and 6 — need only a plain "
                "ground or the described object.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>Where Art Thou?</i> — story, characters and scripture fidelity check.")
+                 "volume: <i>Hiding in the Garden</i> — story, characters and scripture fidelity check.")
 
 BEATS = ["Naked and not ashamed, and the first question in the Bible",
          "“Neither shall ye touch it,” and “ye shall not surely die”",

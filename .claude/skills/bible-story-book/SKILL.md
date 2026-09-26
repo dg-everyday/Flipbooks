@@ -28,8 +28,11 @@ commands. Use `tools/stories/content/how-much-more.py` as the model for a new fi
    the parallels and every cross-reference you mean to cite. Count before you write: repeated words,
    who speaks and who never does, names that stop being used, lists that differ, question marks.
    Countable facts become captions; every one must be checked.
-3. **Title.** A KJV phrase naming the hinge — the verse the passage turns on — not the subject.
-   The subtitle carries the setting and people. Record the reasoning in `PROMPT.md` §3.
+3. **Title.** Plain modern English that tells a stranger what happens — the person or the moment the
+   passage turns on — in a few words: *The Father Who Ran*, *Pulled Out of Sodom*. No archaic words
+   (thou, art, -est) and no bare KJV phrase that only makes sense once you know the verse; keep that
+   phrase for a movement heading inside the book. The subtitle names the people and the setting.
+   Record the reasoning in `PROMPT.md` §3.
 4. **Write the content file.** Story in 6–10 titled movements, 1,800–2,400 words, following the text
    verse by verse. Comic pages of exactly six panels, about 3–5 verses a page, in order, no verse
    skipped or repeated; the page the passage turns on may take one or two verses alone.

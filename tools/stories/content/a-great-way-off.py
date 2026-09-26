@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Content for 'A Great Way Off' — Luke 15:11-32 (KJV)."""
+"""Content for 'The Father Who Ran' — Luke 15:11-32 (KJV)."""
 
-TITLE = "A Great Way Off"
-SUBTITLE = "The Father Who Ran, the Son Who Came Home, and the Brother Who Stayed Outside"
+TITLE = "The Father Who Ran"
+SUBTITLE = "A Son Who Spent Everything, a Speech He Never Finished, and a Brother Who Stayed Outside"
 REFERENCE = "Luke 15:11&#8211;32 (King James Version)"
 
 LOGLINE = (
@@ -11,7 +11,7 @@ LOGLINE = (
     "his father sees him a great way off and runs. Then the elder brother refuses to come in."
 )
 
-HEADER_L = "A GREAT WAY OFF"
+HEADER_L = "THE FATHER WHO RAN"
 HEADER_R = "LUKE 15:11-32  (KJV)"
 MOVEMENT_WORD = "Eight"
 PANEL_WORD = "forty-eight"
@@ -709,7 +709,7 @@ PROMPT_TAIL = ("Append to every prompt: &#8220;No text, no speech balloons, no w
                "added in layout.&#8221; Aspect 3:2 landscape, except Page Five Panel 3, which is 3:1 full "
                "width.")
 SCRIPT_FOOTER = ("Scripture quotations are from the King James Version (public domain). Companion "
-                 "volume: <i>A Great Way Off</i> &#8212; story, characters and scripture fidelity check.")
+                 "volume: <i>The Father Who Ran</i> &#8212; story, characters and scripture fidelity check.")
 
 BEATS = ["A son asks for his inheritance early; the living is divided",
          "Everything sold, everything spent, in a far country",

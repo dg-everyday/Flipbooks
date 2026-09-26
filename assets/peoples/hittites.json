@@ -1,0 +1,348 @@
+{
+    "id": "hittites",
+    "name": "Hittites",
+    "kjv_names": [
+        "Hittites",
+        "Hittite",
+        "children of Heth",
+        "sons of Heth",
+        "daughters of Heth"
+    ],
+    "also_known_as": [
+        "Hatti",
+        "Neo-Hittites (the later Syrian kingdoms)"
+    ],
+    "category": "Canaanite nation / Anatolian empire",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "The 'children of Heth' who sold Abraham his family tomb, gave Esau wives, and produced Uriah, David's loyal soldier. The Bible also knows 'the kings of the Hittites' to the north. Sceptics once doubted the Hittites had existed. In the 20th century archaeology uncovered their empire in Anatolia, one of the great powers of the Bronze Age.",
+    "name_meaning": "From Heth (Het), son of Canaan; linked by scholars to Hatti, the Anatolian land and people whose name the Indo-European Hittites took over.",
+    "origin": {
+        "account": "Heth was the second son of Canaan, listed right after Sidon. In Genesis the 'sons of Heth' are a settled people around Hebron, dealing courteously with Abraham. Scholars debate how these Canaan-based Hethites relate to the Hittite empire of Anatolia (capital Hattusa) and to the Neo-Hittite kingdoms of northern Syria that followed it. The Bible uses the same name for both the local group and the northern kings.",
+        "references": [
+            "Genesis 10:15",
+            "Genesis 23:3-7",
+            "1 Kings 10:29",
+            "2 Kings 7:6"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Heth, son of Canaan",
+        "line": [
+            "Noah",
+            "Ham",
+            "Canaan",
+            "Heth"
+        ],
+        "notes": "Esau's first wives Judith and Bashemath were Hittites, and Adah was 'the daughter of Elon the Hittite' — so Hittite blood entered Edom. Ezekiel tells Jerusalem 'thy mother an Hittite', a rebuke about its pagan origins.",
+        "references": [
+            "Genesis 26:34",
+            "Genesis 36:2",
+            "Ezekiel 16:3"
+        ]
+    },
+    "homeland": {
+        "region": "The hills around Hebron (Genesis); central Anatolia and northern Syria (the empire and its successor kingdoms)",
+        "description": "In Canaan, the Hittites dwelt 'in the mountains' with the Jebusites and Amorites, and the promised land's northern reach was 'all the land of the Hittites'. The Hittite empire was centred on the Anatolian plateau at Hattusa. After its collapse about 1180 BC, Neo-Hittite kingdoms such as Carchemish and Hamath carried on in Syria until Assyria absorbed them.",
+        "modern_location": "Hebron area (West Bank); central Turkey; northern Syria.",
+        "modern_countries": [
+            "Turkey",
+            "Syria",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 40.02,
+            "lon": 34.62
+        },
+        "places": [
+            {
+                "name": "Hebron / Machpelah",
+                "modern_name": "Hebron (Cave of the Patriarchs)",
+                "lat": 31.52,
+                "lon": 35.11,
+                "note": "Abraham bought the cave from Ephron the Hittite for 400 shekels of silver.",
+                "references": [
+                    "Genesis 23:16-20"
+                ]
+            },
+            {
+                "name": "Hattusa",
+                "modern_name": "Boğazkale, Turkey",
+                "lat": 40.02,
+                "lon": 34.62,
+                "note": "Capital of the Hittite empire; UNESCO World Heritage site (not named in the Bible).",
+                "references": []
+            },
+            {
+                "name": "Carchemish",
+                "modern_name": "Karkamış, Turkey / Jarabulus, Syria",
+                "lat": 36.83,
+                "lon": 38.02,
+                "note": "Leading Neo-Hittite city; later the site of Babylon's victory over Egypt (605 BC).",
+                "references": [
+                    "Isaiah 10:9",
+                    "Jeremiah 46:2"
+                ]
+            },
+            {
+                "name": "Hamath",
+                "modern_name": "Hama, Syria",
+                "lat": 35.13,
+                "lon": 36.75,
+                "note": "Neo-Hittite/Aramean kingdom; Toi of Hamath sent gifts to David.",
+                "references": [
+                    "2 Samuel 8:9-10"
+                ]
+            },
+            {
+                "name": "Kadesh on the Orontes",
+                "modern_name": "Tell Nebi Mend, Syria",
+                "lat": 34.56,
+                "lon": 36.52,
+                "note": "Site of the great battle of Hittites and Egyptians, c. 1274 BC.",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Abraham buys the cave of Machpelah from Ephron the Hittite, the only land he ever owned in Canaan.",
+            "references": [
+                "Genesis 23:3-20",
+                "Genesis 49:29-32"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Esau's Hittite wives are 'a grief of mind unto Isaac and to Rebekah'.",
+            "references": [
+                "Genesis 26:34-35",
+                "Genesis 27:46"
+            ]
+        },
+        {
+            "date": "c. 1650–1180 BC",
+            "event": "Hittite empire in Anatolia. It sacks Babylon (c. 1595 BC), fights Ramesses II at Kadesh (c. 1274 BC), and signs the earliest surviving peace treaty with Egypt (c. 1259 BC).",
+            "references": []
+        },
+        {
+            "date": "Conquest",
+            "event": "The Hittites are listed among the nations of the land; their territory is the northern horizon of the promise.",
+            "references": [
+                "Joshua 1:4",
+                "Joshua 3:10"
+            ]
+        },
+        {
+            "date": "c. 1000 BC",
+            "event": "Ahimelech the Hittite follows David in the wilderness; Uriah the Hittite, one of David's mighty men, is murdered at David's order.",
+            "references": [
+                "1 Samuel 26:6",
+                "2 Samuel 11:14-17",
+                "2 Samuel 23:39"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "Solomon trades chariots and horses with 'the kings of the Hittites' and takes Hittite wives.",
+            "references": [
+                "1 Kings 10:29",
+                "1 Kings 11:1"
+            ]
+        },
+        {
+            "date": "c. 850 BC",
+            "event": "The Syrian army besieging Samaria flees, thinking Israel has hired 'the kings of the Hittites'.",
+            "references": [
+                "2 Kings 7:6-7"
+            ]
+        },
+        {
+            "date": "717 BC",
+            "event": "Sargon II of Assyria annexes Carchemish, ending the last Neo-Hittite kingdoms.",
+            "references": [
+                "Isaiah 10:9"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "The storm god Tarhunna/Teshub",
+            "the sun goddess of Arinna",
+            "the 'thousand gods of Hatti'"
+        ],
+        "practices": "The Hittites absorbed many gods from conquered peoples. Their treaties summoned these gods as witnesses. Scholars have long noted that the structure of Hittite vassal treaties resembles the covenant form in Exodus and Deuteronomy: historical prologue, stipulations, witnesses, blessings and curses.",
+        "references": [
+            "Deuteronomy 28:1-2",
+            "Deuteronomy 28:15"
+        ]
+    },
+    "importance": "The Hittites appear at key moments. Abraham's purchase from Ephron gave the patriarchs a legal foothold in the promised land and a family tomb, where Abraham, Isaac, Jacob, Sarah, Rebekah and Leah were buried. Uriah the Hittite is one of the Bible's most honourable soldiers: a foreigner more faithful than the king he served. Matthew names him in Jesus' genealogy ('her that had been the wife of Urias'). The rediscovery of the Hittite empire is a well-known case of archaeology confirming a people once known only from the Bible.",
+    "impact": [
+        {
+            "who": "Abraham and his family",
+            "how": "Received a burial place in Canaan as 'a possession', a pledge of the promise.",
+            "references": [
+                "Genesis 23:20",
+                "Genesis 50:13"
+            ]
+        },
+        {
+            "who": "Isaac and Rebekah",
+            "how": "Esau's Hittite marriages grieved them and pushed Jacob's journey to Laban for a wife.",
+            "references": [
+                "Genesis 27:46",
+                "Genesis 28:1-2"
+            ]
+        },
+        {
+            "who": "David and Bathsheba",
+            "how": "Uriah's faithfulness exposed David's sin; Nathan's rebuke followed.",
+            "references": [
+                "2 Samuel 11:11",
+                "2 Samuel 12:9"
+            ]
+        },
+        {
+            "who": "Solomon",
+            "how": "Hittite wives were among those who turned his heart.",
+            "references": [
+                "1 Kings 11:1-4"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Ephron the Hittite",
+            "role": "Sold Machpelah to Abraham",
+            "references": [
+                "Genesis 23:10"
+            ]
+        },
+        {
+            "name": "Judith and Bashemath",
+            "role": "Esau's Hittite wives",
+            "references": [
+                "Genesis 26:34"
+            ]
+        },
+        {
+            "name": "Ahimelech the Hittite",
+            "role": "Companion of David",
+            "references": [
+                "1 Samuel 26:6"
+            ]
+        },
+        {
+            "name": "Uriah the Hittite",
+            "role": "Mighty man of David; husband of Bathsheba",
+            "references": [
+                "2 Samuel 11:3",
+                "Matthew 1:6"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 23:3-4",
+            "text": "And Abraham stood up from before his dead, and spake unto the sons of Heth, saying, I am a stranger and a sojourner with you: give me a possession of a buryingplace with you, that I may bury my dead out of my sight."
+        },
+        {
+            "reference": "Genesis 23:20",
+            "text": "And the field, and the cave that is therein, were made sure unto Abraham for a possession of a buryingplace by the sons of Heth."
+        },
+        {
+            "reference": "Joshua 1:4",
+            "text": "From the wilderness and this Lebanon even unto the great river, the river Euphrates, all the land of the Hittites, and unto the great sea toward the going down of the sun, shall be your coast."
+        },
+        {
+            "reference": "2 Samuel 11:11",
+            "text": "And Uriah said unto David, The ark, and Israel, and Judah, abide in tents; and my lord Joab, and the servants of my lord, are encamped in the open fields; shall I then go into mine house, to eat and to drink, and to lie with my wife? as thou livest, and as thy soul liveth, I will not do this thing."
+        },
+        {
+            "reference": "2 Kings 7:6",
+            "text": "For the Lord had made the host of the Syrians to hear a noise of chariots, and a noise of horses, even the noise of a great host: and they said one to another, Lo, the king of Israel hath hired against us the kings of the Hittites, and the kings of the Egyptians, to come upon us."
+        }
+    ],
+    "fate": {
+        "summary": "The Hittite empire collapsed about 1180 BC in the Late Bronze Age collapse. The Neo-Hittite city-states were absorbed by Assyria by 717 BC, and the Hittites of Canaan merged into Israel and the surrounding population.",
+        "references": [
+            "1 Kings 9:20-21"
+        ]
+    },
+    "today": {
+        "summary": "No people today are identified as Hittite. Their capital Hattusa is a UNESCO World Heritage site in Turkey, and their language is the oldest recorded Indo-European language. The Egyptian–Hittite peace treaty is often called the world's oldest surviving peace treaty.",
+        "descendants": "Absorbed into later Anatolian, Syrian and Levantine populations.",
+        "modern_legacy": "The rediscovery of the Hittites (A. H. Sayce, 1880; Hugo Winckler at Boğazköy from 1906; Bedřich Hrozný's decipherment in 1915) overturned 19th-century claims that the Hittites were a biblical invention."
+    },
+    "archaeology": [
+        {
+            "name": "Boğazköy (Hattusa) archives",
+            "date": "c. 1650–1180 BC",
+            "discovered": "Excavated from 1906 by Hugo Winckler",
+            "location": "Museum of Anatolian Civilizations, Ankara, and Istanbul",
+            "significance": "Tens of thousands of cuneiform tablets — royal annals, treaties, law codes and rituals."
+        },
+        {
+            "name": "Egyptian–Hittite peace treaty (Treaty of Kadesh)",
+            "date": "c. 1259 BC",
+            "discovered": "Hittite copy at Hattusa; Egyptian copies at Karnak and the Ramesseum",
+            "location": "Istanbul Archaeology Museums (clay tablet)",
+            "significance": "Treaty between Hattusili III and Ramesses II; a copy is displayed at the United Nations in New York."
+        },
+        {
+            "name": "Carchemish Neo-Hittite reliefs",
+            "date": "10th–8th centuries BC",
+            "discovered": "British Museum excavations, 1911–1914, 1920",
+            "location": "Museum of Anatolian Civilizations, Ankara; British Museum",
+            "significance": "Sculpture and Luwian hieroglyphic inscriptions of the 'kings of the Hittites' known to Solomon and the prophets."
+        }
+    ],
+    "related_peoples": [
+        "canaanites",
+        "amorites",
+        "jebusites",
+        "edomites",
+        "israelites",
+        "arameans",
+        "assyrians"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Kingdom of the Hittites, new ed.",
+            "author": "Trevor Bryce (Oxford University Press, 2005)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The Hittites",
+            "author": "O. R. Gurney (Penguin, 1952; rev. 1990)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Peoples of the Old Testament World",
+            "author": "Alfred J. Hoerth, Gerald L. Mattingly & Edwin M. Yamauchi, eds. (Baker, 1994) — chapter 'Hittites'",
+            "type": "scholarship"
+        },
+        {
+            "title": "Law and Covenant in Israel and the Ancient Near East",
+            "author": "George E. Mendenhall (Biblical Colloquium, 1955)",
+            "type": "scholarship",
+            "note": "Hittite treaty form and the biblical covenant."
+        },
+        {
+            "title": "The Empire of the Hittites",
+            "author": "William Wright (1884)",
+            "type": "scholarship",
+            "note": "Early rediscovery, with A. H. Sayce."
+        }
+    ]
+}

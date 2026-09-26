@@ -1,0 +1,435 @@
+{
+    "id": "moabites",
+    "name": "Moabites",
+    "kjv_names": [
+        "Moabites",
+        "Moabitess",
+        "Moab",
+        "children of Moab"
+    ],
+    "also_known_as": [
+        "Moab",
+        "Emims (the earlier inhabitants of their land)"
+    ],
+    "category": "Transjordan kingdom",
+    "group": "Neighbours & kin",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "A kingdom east of the Dead Sea descended from Lot, Abraham's nephew. Moab was Israel's relative and frequent rival — the land of Balak and Balaam, of Eglon and Mesha — yet it also gave Israel Ruth, the great-grandmother of King David and an ancestor of Jesus.",
+    "name_meaning": "Popularly explained as 'from (my) father' (me-ab), echoing the account of Moab's birth in Genesis 19.",
+    "origin": {
+        "account": "After the destruction of Sodom, Lot and his two daughters lived in a cave in the hills above Zoar. Believing no man was left to give them children, the daughters made their father drunk and conceived by him. The elder bore a son named Moab, 'the father of the Moabites unto this day'; the younger bore Ben-ammi, father of the Ammonites.",
+        "references": [
+            "Genesis 19:30-38"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Moab, son of Lot",
+        "line": [
+            "Noah",
+            "Shem",
+            "Arphaxad",
+            "Salah",
+            "Eber",
+            "Peleg",
+            "Reu",
+            "Serug",
+            "Nahor",
+            "Terah",
+            "Haran",
+            "Lot",
+            "Moab"
+        ],
+        "notes": "Through Lot, son of Haran and nephew of Abraham, the Moabites were blood relatives of Israel. For that reason God told Israel not to attack them in the wilderness: He had given Ar to 'the children of Lot' for a possession. Their brother nation was Ammon.",
+        "references": [
+            "Genesis 11:27",
+            "Genesis 11:31",
+            "Genesis 19:37",
+            "Deuteronomy 2:9"
+        ]
+    },
+    "homeland": {
+        "region": "Moab — the tableland east of the Dead Sea",
+        "description": "A high, fertile plateau (the 'mishor') between the Dead Sea and the Arabian desert. Its heartland lay between the deep gorge of the Arnon (Wadi Mujib) and the Zered (Wadi al-Hasa); in strong periods Moab also held the land north of the Arnon up to Heshbon and the 'plains of Moab' opposite Jericho, where Israel camped before crossing the Jordan. Good grazing land: King Mesha paid Israel a tribute of lambs and rams' wool.",
+        "modern_location": "Central western Jordan — roughly the Karak and Madaba governorates.",
+        "modern_countries": [
+            "Jordan"
+        ],
+        "center": {
+            "lat": 31.35,
+            "lon": 35.75
+        },
+        "places": [
+            {
+                "name": "Dibon",
+                "modern_name": "Dhiban",
+                "lat": 31.5,
+                "lon": 35.78,
+                "note": "Mesha's royal city, where the Mesha Stele was found in 1868.",
+                "references": [
+                    "Numbers 21:30",
+                    "Isaiah 15:2"
+                ]
+            },
+            {
+                "name": "Kir-hareseth (Kir of Moab)",
+                "modern_name": "Al-Karak",
+                "lat": 31.18,
+                "lon": 35.7,
+                "note": "Fortress capital; besieged by Israel, Judah and Edom in Mesha's day.",
+                "references": [
+                    "2 Kings 3:25",
+                    "Isaiah 15:1"
+                ]
+            },
+            {
+                "name": "Heshbon",
+                "modern_name": "Tell Hisban",
+                "lat": 31.8,
+                "lon": 35.81,
+                "note": "Taken from Moab by the Amorite king Sihon; later a Moabite city again.",
+                "references": [
+                    "Numbers 21:26",
+                    "Jeremiah 48:2"
+                ]
+            },
+            {
+                "name": "Nebo / Mount Nebo",
+                "modern_name": "Jabal Nebo (near Madaba)",
+                "lat": 31.77,
+                "lon": 35.73,
+                "note": "Where Moses viewed the promised land and died, 'in the land of Moab'.",
+                "references": [
+                    "Deuteronomy 34:1-6"
+                ]
+            },
+            {
+                "name": "Plains of Moab",
+                "modern_name": "Jordan Valley east of Jericho",
+                "lat": 31.85,
+                "lon": 35.62,
+                "note": "Israel's last camp before the conquest.",
+                "references": [
+                    "Numbers 22:1",
+                    "Numbers 36:13"
+                ]
+            },
+            {
+                "name": "Zoar",
+                "modern_name": "Near Safi, south-east of the Dead Sea (probable)",
+                "lat": 31.03,
+                "lon": 35.47,
+                "note": "The little city Lot fled to; on Moab's southern edge.",
+                "references": [
+                    "Genesis 19:22-23",
+                    "Isaiah 15:5"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age (c. 2000–1800 BC traditionally)",
+            "event": "Moab born to Lot's elder daughter near Zoar.",
+            "references": [
+                "Genesis 19:37"
+            ]
+        },
+        {
+            "date": "Before Israel's arrival",
+            "event": "Moab displaces the giant Emims from the land.",
+            "references": [
+                "Deuteronomy 2:10-11"
+            ]
+        },
+        {
+            "date": "End of the wilderness period",
+            "event": "King Balak hires Balaam to curse Israel; Balaam blesses Israel instead. Moabite and Midianite women then draw Israel into the worship of Baal-peor.",
+            "references": [
+                "Numbers 22:1-6",
+                "Numbers 25:1-3"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Eglon king of Moab oppresses Israel for eighteen years until Ehud kills him and Israel has rest eighty years.",
+            "references": [
+                "Judges 3:12-30"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Elimelech's family flees famine to Moab; Ruth the Moabitess returns with Naomi and marries Boaz of Bethlehem.",
+            "references": [
+                "Ruth 1:1-4",
+                "Ruth 4:13-17"
+            ]
+        },
+        {
+            "date": "c. 1010–970 BC",
+            "event": "David shelters his parents with the king of Moab, but later subdues Moab and makes it tributary.",
+            "references": [
+                "1 Samuel 22:3-4",
+                "2 Samuel 8:2"
+            ]
+        },
+        {
+            "date": "c. 850 BC",
+            "event": "After Ahab's death Mesha king of Moab rebels against Israel. A coalition of Israel, Judah and Edom invades; Mesha sacrifices his eldest son on the wall and the invaders withdraw. Mesha's own account survives on the Mesha Stele.",
+            "references": [
+                "2 Kings 1:1",
+                "2 Kings 3:4-27"
+            ]
+        },
+        {
+            "date": "8th–6th centuries BC",
+            "event": "Moab becomes a vassal of Assyria and then Babylon; the prophets pronounce judgement on its pride.",
+            "references": [
+                "Isaiah 15:1",
+                "Isaiah 16:6",
+                "Jeremiah 48:1",
+                "Amos 2:1"
+            ]
+        },
+        {
+            "date": "c. 582 BC",
+            "event": "According to Josephus, Nebuchadnezzar campaigns against Ammon and Moab in his 23rd year; Moab ceases to be an independent kingdom.",
+            "references": []
+        },
+        {
+            "date": "c. 445 BC",
+            "event": "In Nehemiah's day the law excluding Moabites from the congregation is read, and Israel separates from the 'mixed multitude'.",
+            "references": [
+                "Nehemiah 13:1-3"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Chemosh"
+        ],
+        "practices": "Chemosh was Moab's national god ('the people of Chemosh'). Solomon built a high place for Chemosh on the hill before Jerusalem for his foreign wives; Josiah later defiled it. In crisis, Mesha offered his firstborn son as a burnt offering. Baal-peor was worshipped at Peor.",
+        "references": [
+            "Numbers 21:29",
+            "1 Kings 11:7",
+            "2 Kings 23:13",
+            "2 Kings 3:27",
+            "Numbers 25:3"
+        ]
+    },
+    "importance": "Moab shows how the Bible holds judgement and grace together. As a nation Moab opposed Israel — hiring Balaam, leading Israel into idolatry, oppressing it under Eglon — and the law barred a Moabite from the congregation 'to their tenth generation'. Yet the book of Ruth tells how one Moabite widow chose Israel's God ('thy people shall be my people, and thy God my God') and became great-grandmother of David. Matthew names her in the genealogy of Jesus, making a Moabite part of the Messiah's family line and an early picture of Gentiles being brought in.",
+    "impact": [
+        {
+            "who": "Israel in the wilderness",
+            "how": "Balak's fear of Israel produced Balaam's oracles, including the star prophecy 'there shall come a Star out of Jacob'. The sin at Baal-peor that followed cost 24,000 lives.",
+            "references": [
+                "Numbers 22:3-4",
+                "Numbers 24:17",
+                "Numbers 25:9"
+            ]
+        },
+        {
+            "who": "Naomi",
+            "how": "Moab was where she lost her husband and sons — and where she gained the daughter-in-law who was 'better to thee than seven sons'.",
+            "references": [
+                "Ruth 1:3-5",
+                "Ruth 4:15"
+            ]
+        },
+        {
+            "who": "King David",
+            "how": "Descended from Ruth; as a fugitive he trusted his parents to the king of Moab. Later he conquered Moab.",
+            "references": [
+                "Ruth 4:17",
+                "1 Samuel 22:3-4",
+                "2 Samuel 8:2"
+            ]
+        },
+        {
+            "who": "Solomon",
+            "how": "Took Moabite wives, who turned his heart to Chemosh.",
+            "references": [
+                "1 Kings 11:1",
+                "1 Kings 11:7"
+            ]
+        },
+        {
+            "who": "The Ahab dynasty (Israel)",
+            "how": "Mesha's revolt ended Israelite control of Moab and wrecked the Israel–Judah–Edom campaign.",
+            "references": [
+                "2 Kings 3:4-5",
+                "2 Kings 3:27"
+            ]
+        },
+        {
+            "who": "The line of the Messiah",
+            "how": "Ruth is one of the women named in Jesus' genealogy.",
+            "references": [
+                "Matthew 1:5"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Moab",
+            "role": "Ancestor of the nation, son of Lot",
+            "references": [
+                "Genesis 19:37"
+            ]
+        },
+        {
+            "name": "Balak son of Zippor",
+            "role": "King who hired Balaam to curse Israel",
+            "references": [
+                "Numbers 22:4"
+            ]
+        },
+        {
+            "name": "Eglon",
+            "role": "King who oppressed Israel eighteen years",
+            "references": [
+                "Judges 3:14"
+            ]
+        },
+        {
+            "name": "Ruth",
+            "role": "Moabite widow; ancestor of David and of Jesus",
+            "references": [
+                "Ruth 1:4",
+                "Ruth 1:16",
+                "Matthew 1:5"
+            ]
+        },
+        {
+            "name": "Orpah",
+            "role": "Ruth's sister-in-law, who returned to her people",
+            "references": [
+                "Ruth 1:14"
+            ]
+        },
+        {
+            "name": "Mesha",
+            "role": "Sheep-master king who rebelled against Israel",
+            "references": [
+                "2 Kings 3:4"
+            ]
+        },
+        {
+            "name": "Ithmah the Moabite",
+            "role": "One of David's mighty men",
+            "references": [
+                "1 Chronicles 11:46"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 19:37",
+            "text": "And the firstborn bare a son, and called his name Moab: the same is the father of the Moabites unto this day."
+        },
+        {
+            "reference": "Deuteronomy 2:9",
+            "text": "And the LORD said unto me, Distress not the Moabites, neither contend with them in battle: for I will not give thee of their land for a possession; because I have given Ar unto the children of Lot for a possession."
+        },
+        {
+            "reference": "Ruth 1:16",
+            "text": "And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God:"
+        },
+        {
+            "reference": "2 Kings 3:4",
+            "text": "And Mesha king of Moab was a sheepmaster, and rendered unto the king of Israel an hundred thousand lambs, and an hundred thousand rams, with the wool."
+        },
+        {
+            "reference": "Jeremiah 48:47",
+            "text": "Yet will I bring again the captivity of Moab in the latter days, saith the LORD. Thus far is the judgment of Moab."
+        }
+    ],
+    "fate": {
+        "summary": "Moab lost its independence under the Babylonians in the 6th century BC. Its territory later passed to Arab groups and the Nabataeans, and in Roman times formed part of the province of Arabia. The Moabites were gradually absorbed into the surrounding peoples. Jeremiah's prophecy ends with a promise: 'Yet will I bring again the captivity of Moab in the latter days.'",
+        "references": [
+            "Jeremiah 48:42",
+            "Jeremiah 48:47",
+            "Zephaniah 2:9"
+        ]
+    },
+    "today": {
+        "summary": "There is no Moabite people today. Their former land is central Jordan, and the old names survive in places such as Dhiban (Dibon), Hisban (Heshbon) and Madaba (Medeba). Modern Jordanians of the region are the heirs of the land, not an identified Moabite nation.",
+        "descendants": "Absorbed over centuries into Arab and other populations of Transjordan. Spiritually, Ruth's line continues through David to Jesus.",
+        "modern_legacy": "The Mesha Stele is one of the most important inscriptions from the biblical world. Ruth remains a model of loyalty and of conversion to the God of Israel; the book of Ruth is read at Shavuot (Pentecost) in synagogues."
+    },
+    "archaeology": [
+        {
+            "name": "Mesha Stele (Moabite Stone)",
+            "date": "c. 840 BC",
+            "discovered": "1868 at Dhiban, Jordan",
+            "location": "Musée du Louvre, Paris (AO 5066)",
+            "significance": "Mesha's own record of freeing Moab from Israel. It names Omri king of Israel, the god Chemosh and YHWH, and many towns from the Bible, and a damaged line is read by André Lemaire and many others as 'house of David'. It is the longest Iron Age inscription found in the region."
+        },
+        {
+            "name": "Balu'a Stele",
+            "date": "Late Bronze Age",
+            "discovered": "1930 at Khirbet al-Balu'a, Jordan",
+            "location": "Jordan Archaeological Museum, Amman",
+            "significance": "Carved relief of a ruler before deities, showing an early royal culture in Moab."
+        },
+        {
+            "name": "Dhiban and Karak excavations",
+            "date": "Iron Age",
+            "discovered": "20th century",
+            "location": "Jordan",
+            "significance": "Iron Age royal buildings, fortifications and pottery that match a centralised Moabite state in Mesha's time."
+        }
+    ],
+    "related_peoples": [
+        "ammonites",
+        "israelites",
+        "edomites",
+        "midianites",
+        "amorites",
+        "rephaim"
+    ],
+    "stories": [
+        "and-ruth-with-her",
+        "while-he-lingered"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Antiquities of the Jews, 10.9.7 (10.181–182)",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "Nebuchadnezzar's campaign against Ammon and Moab."
+        },
+        {
+            "title": "The Mesha Inscription",
+            "author": "trans. in James B. Pritchard (ed.), Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed. (Princeton, 1969)",
+            "type": "primary"
+        },
+        {
+            "title": "Moab in the Iron Age: Hegemony, Polity, Archaeology",
+            "author": "Bruce Routledge (University of Pennsylvania Press, 2004)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Peoples of the Old Testament World",
+            "author": "Alfred J. Hoerth, Gerald L. Mattingly & Edwin M. Yamauchi, eds. (Baker, 1994) — chapter 'Moabites'",
+            "type": "scholarship"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Moab', 'Moabite Stone'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        },
+        {
+            "title": "International Standard Bible Encyclopedia, 'Moab'",
+            "author": "James Orr, ed. (1915)",
+            "type": "dictionary"
+        }
+    ]
+}

@@ -1,0 +1,659 @@
+{
+    "id": "israelites",
+    "name": "Israelites",
+    "kjv_names": [
+        "Israelites",
+        "children of Israel",
+        "Hebrews",
+        "Jews",
+        "house of Israel",
+        "house of Jacob"
+    ],
+    "also_known_as": [
+        "Hebrews",
+        "Jews (from Judah)",
+        "the Jewish people"
+    ],
+    "category": "Covenant people",
+    "group": "Israel",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The descendants of Jacob, whom God renamed Israel: twelve tribes chosen to receive the covenant, the Law, the land of Canaan and the promise of the Messiah. Their story runs from Abraham's call through Egypt, the Exodus, the kingdoms of David and Solomon, exile and return, to Jesus of Nazareth and his Jewish apostles. The Jewish people today are their continuing descendants.",
+    "name_meaning": "Israel: 'he strives with God' or 'God strives', the name given to Jacob after he wrestled at Peniel. 'Hebrew' is linked to Eber, Abraham's ancestor, or to 'one from beyond (the river)'. 'Jew' comes from Judah.",
+    "origin": {
+        "account": "God called Abram out of Ur and Haran with the promise 'I will make of thee a great nation… and in thee shall all families of the earth be blessed.' The promise passed to Isaac and then Jacob. After Jacob wrestled with God at Peniel he was named Israel, and his twelve sons became the twelve tribes. Seventy of Jacob's household went down to Egypt, where they 'increased abundantly' into a nation before the Exodus.",
+        "references": [
+            "Genesis 12:1-3",
+            "Genesis 32:28",
+            "Genesis 35:10-12",
+            "Genesis 46:27",
+            "Exodus 1:7"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Jacob (Israel), son of Isaac, son of Abraham",
+        "line": [
+            "Adam",
+            "Seth",
+            "Noah",
+            "Shem",
+            "Arphaxad",
+            "Salah",
+            "Eber",
+            "Peleg",
+            "Reu",
+            "Serug",
+            "Nahor",
+            "Terah",
+            "Abraham",
+            "Isaac",
+            "Jacob (Israel)"
+        ],
+        "notes": "The twelve sons of Jacob by four mothers. Leah: Reuben, Simeon, Levi, Judah, Issachar, Zebulun. Rachel: Joseph, Benjamin. Bilhah: Dan, Naphtali. Zilpah: Gad, Asher. Joseph's two sons Ephraim and Manasseh were adopted by Jacob as tribes. Levi received no land but became the priestly tribe, so the land was still divided among twelve. A 'mixed multitude' left Egypt with them, and outsiders such as Rahab and Ruth were grafted in.",
+        "references": [
+            "Genesis 11:10-26",
+            "Genesis 35:22-26",
+            "Genesis 48:5",
+            "Numbers 18:20-24",
+            "Exodus 12:38"
+        ]
+    },
+    "tribes": [
+        {
+            "name": "Reuben",
+            "mother": "Leah",
+            "territory": "East of the Dead Sea, north of the Arnon",
+            "note": "Firstborn, lost pre-eminence.",
+            "references": [
+                "Genesis 49:3-4"
+            ]
+        },
+        {
+            "name": "Simeon",
+            "mother": "Leah",
+            "territory": "Within Judah, in the Negev",
+            "note": "Scattered in Israel as Jacob foretold.",
+            "references": [
+                "Genesis 49:5-7",
+                "Joshua 19:1"
+            ]
+        },
+        {
+            "name": "Levi",
+            "mother": "Leah",
+            "territory": "48 Levitical cities among all tribes",
+            "note": "Priests and Levites; tribe of Moses and Aaron.",
+            "references": [
+                "Numbers 35:7",
+                "Deuteronomy 10:8-9"
+            ]
+        },
+        {
+            "name": "Judah",
+            "mother": "Leah",
+            "territory": "Southern hill country including Bethlehem and Hebron",
+            "note": "Royal tribe of David and of Jesus.",
+            "references": [
+                "Genesis 49:10",
+                "Hebrews 7:14"
+            ]
+        },
+        {
+            "name": "Issachar",
+            "mother": "Leah",
+            "territory": "Jezreel Valley",
+            "note": "Men 'that had understanding of the times'.",
+            "references": [
+                "1 Chronicles 12:32"
+            ]
+        },
+        {
+            "name": "Zebulun",
+            "mother": "Leah",
+            "territory": "Lower Galilee",
+            "note": "Named in Isaiah's 'great light' prophecy fulfilled in Jesus' Galilean ministry.",
+            "references": [
+                "Isaiah 9:1-2",
+                "Matthew 4:13-16"
+            ]
+        },
+        {
+            "name": "Dan",
+            "mother": "Bilhah",
+            "territory": "First near Joppa, later at Laish/Dan in the far north",
+            "note": "Tribe of Samson; set up an idol at Dan.",
+            "references": [
+                "Judges 13:2",
+                "Judges 18:29-30"
+            ]
+        },
+        {
+            "name": "Naphtali",
+            "mother": "Bilhah",
+            "territory": "Upper Galilee, west of the Sea of Galilee",
+            "note": "Barak's tribe.",
+            "references": [
+                "Judges 4:6"
+            ]
+        },
+        {
+            "name": "Gad",
+            "mother": "Zilpah",
+            "territory": "Gilead, east of the Jordan",
+            "note": "Warrior tribe.",
+            "references": [
+                "1 Chronicles 12:8"
+            ]
+        },
+        {
+            "name": "Asher",
+            "mother": "Zilpah",
+            "territory": "Coastal Galilee north of Carmel",
+            "note": "Anna the prophetess was of Asher.",
+            "references": [
+                "Luke 2:36"
+            ]
+        },
+        {
+            "name": "Joseph — Ephraim",
+            "mother": "Rachel",
+            "territory": "Central hill country (Shechem, Shiloh)",
+            "note": "Leading northern tribe; its name often stands for the whole northern kingdom.",
+            "references": [
+                "Genesis 48:19-20",
+                "Hosea 11:8"
+            ]
+        },
+        {
+            "name": "Joseph — Manasseh",
+            "mother": "Rachel",
+            "territory": "Both sides of the Jordan",
+            "note": "Gideon's tribe.",
+            "references": [
+                "Judges 6:15"
+            ]
+        },
+        {
+            "name": "Benjamin",
+            "mother": "Rachel",
+            "territory": "Between Judah and Ephraim, including Jerusalem's northern edge",
+            "note": "Tribe of King Saul and of the apostle Paul.",
+            "references": [
+                "1 Samuel 9:1-2",
+                "Philippians 3:5"
+            ]
+        }
+    ],
+    "homeland": {
+        "region": "Canaan / the land of Israel — 'from Dan even to Beer-sheba'",
+        "description": "The land promised to Abraham's seed, between the Mediterranean and the Jordan, with the tribes of Reuben, Gad and half Manasseh east of the Jordan. Hill country along the centre, the coastal plain, the Jezreel Valley, Galilee in the north and the Negev in the south. Before that, Israel's ancestors came from Ur and Haran in Mesopotamia, and the nation formed in Goshen in Egypt.",
+        "modern_location": "Israel, the West Bank, and parts of western Jordan and southern Lebanon and Syria.",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories",
+            "Jordan"
+        ],
+        "center": {
+            "lat": 31.78,
+            "lon": 35.23
+        },
+        "places": [
+            {
+                "name": "Ur of the Chaldees",
+                "modern_name": "Tell el-Muqayyar, Iraq",
+                "lat": 30.96,
+                "lon": 46.1,
+                "note": "Abram's starting point.",
+                "references": [
+                    "Genesis 11:31"
+                ]
+            },
+            {
+                "name": "Haran",
+                "modern_name": "Harran, Turkey",
+                "lat": 36.86,
+                "lon": 39.03,
+                "note": "Where Terah died and where Jacob served Laban.",
+                "references": [
+                    "Genesis 11:32",
+                    "Genesis 29:4"
+                ]
+            },
+            {
+                "name": "Goshen",
+                "modern_name": "Eastern Nile Delta (Wadi Tumilat region), Egypt",
+                "lat": 30.55,
+                "lon": 31.95,
+                "note": "Where Israel lived and multiplied in Egypt.",
+                "references": [
+                    "Genesis 47:27"
+                ]
+            },
+            {
+                "name": "Mount Sinai (Horeb)",
+                "modern_name": "Traditionally Jebel Musa, Sinai (location debated)",
+                "lat": 28.54,
+                "lon": 33.97,
+                "note": "Where the covenant and Law were given.",
+                "references": [
+                    "Exodus 19:1-6"
+                ]
+            },
+            {
+                "name": "Shechem",
+                "modern_name": "Tell Balata, Nablus",
+                "lat": 32.21,
+                "lon": 35.28,
+                "note": "Covenant renewal under Joshua; first capital of the northern kingdom.",
+                "references": [
+                    "Joshua 24:1",
+                    "1 Kings 12:25"
+                ]
+            },
+            {
+                "name": "Shiloh",
+                "modern_name": "Khirbet Seilun",
+                "lat": 32.06,
+                "lon": 35.29,
+                "note": "Tabernacle site in the time of the Judges.",
+                "references": [
+                    "Joshua 18:1",
+                    "1 Samuel 1:3"
+                ]
+            },
+            {
+                "name": "Jerusalem",
+                "modern_name": "Jerusalem",
+                "lat": 31.778,
+                "lon": 35.235,
+                "note": "David's capital and site of the Temple.",
+                "references": [
+                    "2 Samuel 5:6-9",
+                    "1 Kings 6:1"
+                ]
+            },
+            {
+                "name": "Samaria",
+                "modern_name": "Sebastia",
+                "lat": 32.28,
+                "lon": 35.19,
+                "note": "Capital of the northern kingdom from Omri.",
+                "references": [
+                    "1 Kings 16:24"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "c. 2000 BC (traditional)",
+            "event": "Abram leaves Haran for Canaan at God's call.",
+            "references": [
+                "Genesis 12:4-5"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Jacob renamed Israel; his family moves to Egypt during famine through Joseph.",
+            "references": [
+                "Genesis 32:28",
+                "Genesis 46:1-7"
+            ]
+        },
+        {
+            "date": "Mid-15th or 13th century BC (debated)",
+            "event": "The Exodus from Egypt under Moses; the covenant at Sinai. 1 Kings 6:1 counts 480 years from the Exodus to Solomon's fourth year (c. 966 BC). Many scholars prefer a 13th-century date.",
+            "references": [
+                "Exodus 12:40-41",
+                "Exodus 20:1-17",
+                "1 Kings 6:1"
+            ]
+        },
+        {
+            "date": "Following 40 years",
+            "event": "Wilderness wandering, then conquest and settlement of Canaan under Joshua.",
+            "references": [
+                "Numbers 14:33-34",
+                "Joshua 21:43-45"
+            ]
+        },
+        {
+            "date": "c. 1208 BC",
+            "event": "Pharaoh Merneptah's victory stele names 'Israel' as a people in Canaan — the earliest mention of Israel outside the Bible.",
+            "references": []
+        },
+        {
+            "date": "c. 1200–1050 BC",
+            "event": "Period of the Judges: repeated cycles of apostasy, oppression and deliverance.",
+            "references": [
+                "Judges 2:16-19",
+                "Judges 21:25"
+            ]
+        },
+        {
+            "date": "c. 1050–931 BC",
+            "event": "United monarchy: Saul, David (who takes Jerusalem) and Solomon (who builds the Temple).",
+            "references": [
+                "1 Samuel 10:1",
+                "2 Samuel 7:12-16",
+                "1 Kings 6:1"
+            ]
+        },
+        {
+            "date": "c. 931 BC",
+            "event": "The kingdom divides: Israel (ten tribes, north) under Jeroboam and Judah (with Benjamin) under Rehoboam.",
+            "references": [
+                "1 Kings 12:16-20"
+            ]
+        },
+        {
+            "date": "722 BC",
+            "event": "Assyria takes Samaria and deports the northern tribes.",
+            "references": [
+                "2 Kings 17:5-6",
+                "2 Kings 17:22-23"
+            ]
+        },
+        {
+            "date": "605–586 BC",
+            "event": "Babylon deports Judah in stages and destroys Jerusalem and the Temple.",
+            "references": [
+                "2 Kings 24:14",
+                "2 Kings 25:8-11"
+            ]
+        },
+        {
+            "date": "538–516 BC",
+            "event": "Cyrus of Persia allows the return; the Second Temple is completed.",
+            "references": [
+                "Ezra 1:1-3",
+                "Ezra 6:15"
+            ]
+        },
+        {
+            "date": "c. 5 BC – AD 30",
+            "event": "Jesus of Nazareth, of the tribe of Judah and house of David, born, crucified and risen.",
+            "references": [
+                "Luke 2:4",
+                "Matthew 1:1",
+                "Hebrews 7:14"
+            ]
+        },
+        {
+            "date": "AD 70",
+            "event": "Rome destroys Jerusalem and the Second Temple, as Jesus foretold; the Jewish people are scattered further.",
+            "references": [
+                "Luke 19:43-44",
+                "Luke 21:20-24"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "The LORD (YHWH), the one God"
+        ],
+        "practices": "Worship of the one God who made heaven and earth and redeemed Israel from Egypt. Their life was shaped by the covenant Law: the Ten Commandments, sabbath, circumcision, feasts (Passover, Weeks, Tabernacles), the Tabernacle and later the Temple, priesthood and sacrifice. The prophets repeatedly called Israel back from Baal and other idols.",
+        "references": [
+            "Deuteronomy 6:4-5",
+            "Exodus 20:2-3",
+            "Leviticus 23:4-5",
+            "2 Kings 17:16"
+        ]
+    },
+    "importance": "Israel is the central people of the whole Bible. God chose them not for their size ('ye were the fewest of all people') but out of love and faithfulness to His oath. To them belong 'the adoption, and the glory, and the covenants, and the giving of the law, and the service of God, and the promises', and from them 'as concerning the flesh Christ came'. Jesus said 'salvation is of the Jews'. The apostles and the first church were Jewish, and Paul describes Gentile believers as grafted into Israel's olive tree.",
+    "impact": [
+        {
+            "who": "All nations",
+            "how": "Through Abraham's seed 'shall all the nations of the earth be blessed'; Paul applies this to the gospel going to the Gentiles.",
+            "references": [
+                "Genesis 22:18",
+                "Galatians 3:8"
+            ]
+        },
+        {
+            "who": "Egypt",
+            "how": "Israel's deliverance brought the ten plagues and the Red Sea on Pharaoh's army.",
+            "references": [
+                "Exodus 12:29-33",
+                "Exodus 14:27-28"
+            ]
+        },
+        {
+            "who": "The Canaanite nations",
+            "how": "Dispossessed in the conquest, a judgement the Bible ties to their own iniquity.",
+            "references": [
+                "Deuteronomy 9:4-5",
+                "Genesis 15:16"
+            ]
+        },
+        {
+            "who": "Rahab, Ruth, Naaman, the widow of Zarephath",
+            "how": "Outsiders who came to trust Israel's God through contact with Israel.",
+            "references": [
+                "Joshua 2:11",
+                "Ruth 1:16",
+                "2 Kings 5:15",
+                "Luke 4:25-27"
+            ]
+        },
+        {
+            "who": "The church",
+            "how": "Gentile believers are 'fellowcitizens with the saints' and heirs of Israel's promises; Paul writes that 'all Israel shall be saved'.",
+            "references": [
+                "Ephesians 2:12-19",
+                "Romans 11:17-18",
+                "Romans 11:26"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Abraham, Isaac and Jacob",
+            "role": "Patriarchs",
+            "references": [
+                "Exodus 3:6"
+            ]
+        },
+        {
+            "name": "Joseph",
+            "role": "Ruler in Egypt who preserved the family",
+            "references": [
+                "Genesis 45:5-7"
+            ]
+        },
+        {
+            "name": "Moses and Aaron",
+            "role": "Deliverer and lawgiver; first high priest",
+            "references": [
+                "Exodus 4:14-16"
+            ]
+        },
+        {
+            "name": "Joshua",
+            "role": "Led the conquest",
+            "references": [
+                "Joshua 1:1-2"
+            ]
+        },
+        {
+            "name": "Deborah, Gideon, Samson, Samuel",
+            "role": "Judges and prophet",
+            "references": [
+                "Judges 4:4",
+                "Judges 6:12",
+                "1 Samuel 3:20"
+            ]
+        },
+        {
+            "name": "David and Solomon",
+            "role": "Kings of the united kingdom",
+            "references": [
+                "2 Samuel 5:3",
+                "1 Kings 1:39"
+            ]
+        },
+        {
+            "name": "Elijah, Isaiah, Jeremiah, Daniel",
+            "role": "Prophets",
+            "references": [
+                "1 Kings 18:36",
+                "Isaiah 6:8",
+                "Jeremiah 1:5",
+                "Daniel 1:6"
+            ]
+        },
+        {
+            "name": "Ezra and Nehemiah",
+            "role": "Leaders of the return",
+            "references": [
+                "Ezra 7:6",
+                "Nehemiah 2:5"
+            ]
+        },
+        {
+            "name": "Mary, Joseph, John the Baptist, Peter, Paul",
+            "role": "New Testament Israelites",
+            "references": [
+                "Luke 1:27",
+                "Romans 11:1"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 12:2-3",
+            "text": "And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing: And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed."
+        },
+        {
+            "reference": "Genesis 32:28",
+            "text": "And he said, Thy name shall be called no more Jacob, but Israel: for as a prince hast thou power with God and with men, and hast prevailed."
+        },
+        {
+            "reference": "Deuteronomy 7:6-8",
+            "text": "For thou art an holy people unto the LORD thy God: the LORD thy God hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth. The LORD did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people: But because the LORD loved you, and because he would keep the oath which he had sworn unto your fathers, hath the LORD brought you out with a mighty hand, and redeemed you out of the house of bondmen, from the hand of Pharaoh king of Egypt."
+        },
+        {
+            "reference": "John 4:22",
+            "text": "Ye worship ye know not what: we know what we worship: for salvation is of the Jews. "
+        },
+        {
+            "reference": "Romans 9:4-5",
+            "text": "Who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of God, and the promises; Whose are the fathers, and of whom as concerning the flesh Christ came, who is over all, God blessed for ever. Amen."
+        }
+    ],
+    "fate": {
+        "summary": "Israel was never wiped out. The northern tribes were scattered by Assyria, though members of all tribes had earlier moved south to Judah (2 Chronicles 11:16; 15:9), and Anna of Asher was still identified by her tribe in Jesus' day. Judah returned from Babylon, lived under Persian, Greek and Roman rule, and was scattered again after AD 70 and AD 135. In AD 1948 the modern State of Israel was established.",
+        "references": [
+            "2 Chronicles 11:16",
+            "2 Chronicles 15:9",
+            "Luke 2:36",
+            "Jeremiah 31:35-36"
+        ]
+    },
+    "today": {
+        "summary": "The Jewish people are the living continuation of biblical Israel — about 15.8 million worldwide (2025 estimate, Sergio DellaPergola / Jewish Agency), roughly half in the State of Israel and most of the rest in the United States. Samaritans also claim descent from the northern tribes. Some other communities, such as Ethiopia's Beta Israel and India's Bnei Menashe, hold traditions of descent from the 'lost' tribes.",
+        "descendants": "Ashkenazi, Sephardi, Mizrahi and other Jewish communities worldwide; the Samaritans (see samaritans).",
+        "modern_legacy": "The Hebrew Bible (Christians' Old Testament), Hebrew as a living language, the synagogue, the sabbath, and the ethical monotheism shared by Judaism, Christianity and Islam."
+    },
+    "archaeology": [
+        {
+            "name": "Merneptah Stele",
+            "date": "c. 1208 BC",
+            "discovered": "1896 at Thebes by Flinders Petrie",
+            "location": "Egyptian Museum, Cairo (JE 31408)",
+            "significance": "'Israel is laid waste, his seed is not' — the earliest mention of Israel outside the Bible, as a people in Canaan."
+        },
+        {
+            "name": "Tel Dan Stele",
+            "date": "9th century BC",
+            "discovered": "1993–1994 at Tel Dan",
+            "location": "Israel Museum, Jerusalem",
+            "significance": "An Aramean king boasts of victory over the 'king of Israel' and the 'house of David' — the first certain mention of David outside the Bible."
+        },
+        {
+            "name": "Black Obelisk of Shalmaneser III",
+            "date": "c. 825 BC",
+            "discovered": "1846 at Nimrud",
+            "location": "British Museum (BM 118885)",
+            "significance": "Shows 'Jehu son of Omri' (or his envoy) bowing before the Assyrian king."
+        },
+        {
+            "name": "Siloam Tunnel inscription",
+            "date": "c. 700 BC",
+            "discovered": "1880 in Jerusalem",
+            "location": "Istanbul Archaeology Museums",
+            "significance": "Records the digging of Hezekiah's tunnel."
+        },
+        {
+            "name": "Ketef Hinnom silver scrolls",
+            "date": "c. 600 BC",
+            "discovered": "1979 in Jerusalem",
+            "location": "Israel Museum",
+            "significance": "Carry the priestly blessing — the oldest known text also found in the Bible."
+        }
+    ],
+    "related_peoples": [
+        "samaritans",
+        "edomites",
+        "moabites",
+        "ammonites",
+        "ishmaelites",
+        "midianites",
+        "egyptians",
+        "canaanites",
+        "babylonians"
+    ],
+    "stories": [
+        "and-ruth-with-her",
+        "into-his-hand",
+        "one-thing-thou-lackest",
+        "the-fourth-man-in-the-fire",
+        "too-many-for-me",
+        "a-great-way-off",
+        "for-his-oaths-sake",
+        "forbid-them-not",
+        "help-thou-mine-unbelief",
+        "how-much-more"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Antiquities of the Jews",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary"
+        },
+        {
+            "title": "Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed.",
+            "author": "James B. Pritchard, ed. (Princeton, 1969)",
+            "type": "primary",
+            "note": "Merneptah Stele, Black Obelisk and Siloam inscription translations."
+        },
+        {
+            "title": "On the Reliability of the Old Testament",
+            "author": "K. A. Kitchen (Eerdmans, 2003)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The Sacred Bridge: Carta's Atlas of the Biblical World",
+            "author": "Anson F. Rainey & R. Steven Notley (Carta, 2006)",
+            "type": "atlas"
+        },
+        {
+            "title": "World Jewish Population, 2024",
+            "author": "Sergio DellaPergola, American Jewish Year Book / Israel Central Bureau of Statistics",
+            "type": "demography",
+            "url": "https://www.cbs.gov.il/he/Documents/World%20DellaPergola%202024%20complete.pdf"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Israel', 'Hebrew', 'Jew'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

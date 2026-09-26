@@ -1,0 +1,259 @@
+{
+    "id": "sabeans",
+    "name": "Sabeans",
+    "kjv_names": [
+        "Sabeans",
+        "Sheba",
+        "Seba",
+        "queen of Sheba",
+        "queen of the south"
+    ],
+    "also_known_as": [
+        "The kingdom of Saba",
+        "Sheba"
+    ],
+    "category": "Kingdom",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The people of Sheba (Saba) in south-western Arabia, the rich incense kingdom of Yemen. Their queen came to test Solomon's wisdom with hard questions and camels laden with spices and gold. Jesus later held her up as a witness against his own generation.",
+    "name_meaning": "From Saba (Hebrew Sheba). The KJV spells the related Cushite Seba differently.",
+    "origin": {
+        "account": "Genesis names three men called Sheba: a son of Raamah son of Cush, a son of Joktan in Shem's line, and a son of Jokshan, Abraham's son by Keturah. The overlap probably reflects Sheba's links with African, Arabian and Abrahamic peoples along the incense trade. Historically the Sabaean kingdom arose in Yemen's highlands in the early 1st millennium BC, with its capital at Marib.",
+        "references": [
+            "Genesis 10:7",
+            "Genesis 10:26-28",
+            "Genesis 25:3"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Sheba, son of Joktan (and/or of Raamah; also a Sheba of Keturah's line)",
+        "line": [
+            "Noah",
+            "Shem",
+            "Arphaxad",
+            "Salah",
+            "Eber",
+            "Joktan",
+            "Sheba"
+        ],
+        "notes": "South Arabian tradition itself traced the Arabs of Yemen to Qahtan, often identified with Joktan.",
+        "references": [
+            "Genesis 10:25-26",
+            "Genesis 10:28"
+        ]
+    },
+    "homeland": {
+        "region": "Sheba (Saba) — south-western Arabia",
+        "description": "The mountain and desert-edge valleys of Yemen. The Marib dam watered a large oasis, and Sheba controlled the frankincense and myrrh trade that went north by camel to Gaza and Damascus. Isaiah says 'all they from Sheba shall come: they shall bring gold and incense.'",
+        "modern_location": "Yemen (Marib governorate), with influence across the Red Sea into Eritrea and northern Ethiopia.",
+        "modern_countries": [
+            "Yemen",
+            "Eritrea",
+            "Ethiopia"
+        ],
+        "center": {
+            "lat": 15.43,
+            "lon": 45.32
+        },
+        "places": [
+            {
+                "name": "Marib",
+                "modern_name": "Marib, Yemen",
+                "lat": 15.43,
+                "lon": 45.32,
+                "note": "Sabaean capital, site of the Great Dam and the temple of Almaqah (not named in the Bible).",
+                "references": []
+            },
+            {
+                "name": "Jerusalem",
+                "modern_name": "Jerusalem",
+                "lat": 31.778,
+                "lon": 35.235,
+                "note": "Where the queen of Sheba visited Solomon.",
+                "references": [
+                    "1 Kings 10:1-2"
+                ]
+            },
+            {
+                "name": "Yeha",
+                "modern_name": "Yeha, Tigray, Ethiopia",
+                "lat": 14.29,
+                "lon": 39.02,
+                "note": "Temple with Sabaean-style architecture, evidence of Sabaean presence in Africa (not named in the Bible).",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Sabean raiders take Job's oxen and asses and kill his servants.",
+            "references": [
+                "Job 1:14-15"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "The queen of Sheba visits Solomon, tests him with hard questions, blesses the LORD his God, and gives him 120 talents of gold and more spices than ever came again.",
+            "references": [
+                "1 Kings 10:1-10",
+                "2 Chronicles 9:1-12"
+            ]
+        },
+        {
+            "date": "c. 950 BC onward",
+            "event": "Psalm 72 foresees 'the kings of Sheba and Seba' bringing gifts to the ideal king.",
+            "references": [
+                "Psalms 72:10-11"
+            ]
+        },
+        {
+            "date": "8th–7th centuries BC",
+            "event": "Sabaean rulers send gifts to Assyrian kings (Tiglath-pileser III, Sargon II, Sennacherib), recorded in Assyrian annals.",
+            "references": []
+        },
+        {
+            "date": "6th century BC",
+            "event": "Ezekiel lists the merchants of Sheba trading spices, precious stones and gold with Tyre.",
+            "references": [
+                "Ezekiel 27:22"
+            ]
+        },
+        {
+            "date": "c. AD 29–30",
+            "event": "Jesus: 'The queen of the south shall rise up in the judgment with this generation… for she came from the uttermost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here.'",
+            "references": [
+                "Matthew 12:42",
+                "Luke 11:31"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Almaqah (the moon god and national god of Saba)",
+            "Athtar",
+            "Shams"
+        ],
+        "practices": "Temple religion centred on Almaqah at Marib (the 'Mahram Bilqis'). The queen blessed 'the LORD thy God' after seeing Solomon's wisdom, though Scripture does not say she converted.",
+        "references": [
+            "1 Kings 10:9"
+        ]
+    },
+    "importance": "The queen of Sheba is the Bible's model of the seeker who travels far to find wisdom and, finding it, gives glory to God. Her visit shows Solomon's kingdom at its height as a light to the nations. Jesus used her to rebuke those who ignored a greater wisdom right in front of them. Sheba's gold and incense feature in prophecies of the nations coming to Zion (Isaiah 60:6), which many readers connect with the gifts of the wise men.",
+    "impact": [
+        {
+            "who": "Job",
+            "how": "The Sabean raid was the first of the disasters in his trial.",
+            "references": [
+                "Job 1:15"
+            ]
+        },
+        {
+            "who": "Solomon",
+            "how": "The queen's testimony: 'the half was not told me'.",
+            "references": [
+                "1 Kings 10:6-7"
+            ]
+        },
+        {
+            "who": "Jesus' hearers",
+            "how": "The queen of the south became a witness against those who would not listen.",
+            "references": [
+                "Matthew 12:42"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "The queen of Sheba",
+            "role": "Visited Solomon (named Makeda in Ethiopian tradition and Bilqis in Arab tradition)",
+            "references": [
+                "1 Kings 10:1"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "1 Kings 10:1",
+            "text": "And when the queen of Sheba heard of the fame of Solomon concerning the name of the LORD, she came to prove him with hard questions."
+        },
+        {
+            "reference": "1 Kings 10:9",
+            "text": "Blessed be the LORD thy God, which delighted in thee, to set thee on the throne of Israel: because the LORD loved Israel for ever, therefore made he thee king, to do judgment and justice."
+        },
+        {
+            "reference": "Isaiah 60:6",
+            "text": "The multitude of camels shall cover thee, the dromedaries of Midian and Ephah; all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of the LORD."
+        },
+        {
+            "reference": "Matthew 12:42",
+            "text": "The queen of the south shall rise up in the judgment with this generation, and shall condemn it: for she came from the uttermost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here. "
+        }
+    ],
+    "fate": {
+        "summary": "Saba remained a leading South Arabian kingdom until it was absorbed by the Himyarites in the late 3rd century AD. The final collapse of the Marib dam (c. AD 570) became the symbol of the old civilisation's end and appears in the Quran (Sura 34, 'Saba').",
+        "references": [
+            "Joel 3:8"
+        ]
+    },
+    "today": {
+        "summary": "The Sabaeans are ancestors of the people of Yemen. Ethiopia's Kebra Nagast (14th century) tells that the queen of Sheba (Makeda) bore Solomon a son, Menelik I, founder of the Solomonic dynasty, which ruled Ethiopia until Haile Selassie was deposed in 1974. That is a national tradition, not something the Bible records.",
+        "descendants": "Yemenis; Sabaean cultural influence also reached Eritrea and northern Ethiopia.",
+        "modern_legacy": "The ruins of Marib (the Great Dam, the Bar'an and Awwam temples) are a UNESCO World Heritage site ('Landmarks of the Ancient Kingdom of Saba', 2023)."
+    },
+    "archaeology": [
+        {
+            "name": "Great Dam of Marib",
+            "date": "c. 8th century BC – 6th century AD",
+            "discovered": "Studied from the 19th century; excavated by the American Foundation for the Study of Man from 1951",
+            "location": "Marib, Yemen",
+            "significance": "One of the great engineering works of the ancient world, which made Saba's wealth possible."
+        },
+        {
+            "name": "Awwam temple (Mahram Bilqis)",
+            "date": "From c. 8th century BC",
+            "discovered": "1951–1952 (Wendell Phillips); resumed 1998",
+            "location": "Marib, Yemen",
+            "significance": "Sanctuary of Almaqah with hundreds of Sabaean inscriptions."
+        }
+    ],
+    "related_peoples": [
+        "cushites",
+        "ishmaelites",
+        "midianites",
+        "israelites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Documentation for Ancient Arabia, Part I",
+            "author": "K. A. Kitchen (Liverpool University Press, 1994)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Queen of Sheba: Treasures from Ancient Yemen",
+            "author": "St John Simpson, ed. (British Museum Press, 2002)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Kebra Nagast (The Glory of the Kings)",
+            "author": "trans. E. A. Wallis Budge (1922)",
+            "type": "tradition",
+            "note": "Ethiopian national epic of Makeda and Menelik."
+        },
+        {
+            "title": "Antiquities of the Jews, 8.6.5–6",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "Josephus makes her 'queen of Egypt and Ethiopia'."
+        }
+    ]
+}

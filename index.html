@@ -23,7 +23,7 @@
 
         <title>Grace for Today • Our Faith Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260925-15" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260926-3" />
         <link rel="preload" href="assets/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="preload" href="assets/fonts/Strait-Regular.woff2" as="font" type="font/woff2" crossorigin />
         <script>
@@ -62,12 +62,14 @@
             <header class="hero">
                 <div class="hero-toolbar">
                     <button
-                        id="about-open"
+                        id="menu-open"
                         class="hero-about"
                         type="button"
                         aria-haspopup="dialog"
-                        aria-label="About Daily Grace"
-                        title="About Daily Grace"
+                        aria-expanded="false"
+                        aria-controls="site-menu"
+                        aria-label="Open the Daily Grace menu"
+                        title="Menu"
                     >
                         <img
                             class="hero-icon"
@@ -114,7 +116,7 @@
                             id="bible-books"
                             class="bible-book-list"
                             role="listbox"
-                            aria-label="Bible books"
+                            aria-label="Books of the Bible"
                             hidden
                         ></ul>
                         <button
@@ -163,20 +165,6 @@
 
             <footer class="site-footer">
                 <div class="footer-main">
-                    <button
-                        id="help-open"
-                        class="footer-help"
-                        type="button"
-                        aria-haspopup="dialog"
-                        aria-label="How to use Daily Grace"
-                        title="How to use Daily Grace"
-                    >
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M9.2 9.2a2.9 2.9 0 0 1 5.6 1c0 1.9-2.8 2.4-2.8 4.3" />
-                            <circle class="help-dot" cx="12" cy="17.6" r="1.15" />
-                        </svg>
-                    </button>
                     <div class="footer-message">
                         <h2>Grace for today.<br />Our Faith Tomorrow.</h2>
                         <p>
@@ -238,6 +226,78 @@
                 </div>
             </footer>
         </div>
+        <!-- The DG emblem at the top opens this menu. It slides in from the
+             left; the study pages sit at the top, Help and About at the foot. -->
+        <dialog id="site-menu" class="menu-dialog" aria-labelledby="menu-title">
+            <header class="menu-header">
+                <img
+                    class="help-emblem"
+                    src="assets/images/dg-icon-gold-256.webp"
+                    alt=""
+                    width="40"
+                    height="40"
+                />
+                <div class="help-heading">
+                    <p class="help-eyebrow">Menu</p>
+                    <h2 id="menu-title">Daily Grace</h2>
+                </div>
+            </header>
+            <nav class="menu-nav" aria-label="Daily Grace">
+                <ul class="menu-list">
+                    <li>
+                        <a class="menu-item" href="apps/pages/bible-books.html">
+                            <span class="help-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
+                            </span>
+                            <span class="menu-text">
+                                <strong>Books of the Bible</strong>
+                                <small>All 66 books: who wrote them, when, and why</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-item" href="apps/pages/peoples.html">
+                            <span class="help-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+                            </span>
+                            <span class="menu-text">
+                                <strong>Peoples of the Bible</strong>
+                                <small>The nations of Scripture and where they lived</small>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-item" href="apps/pages/heroes-and-villains.html">
+                            <span class="help-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6z" /><path d="m9 12 2 2 4-4" /></svg>
+                            </span>
+                            <span class="menu-text">
+                                <strong>Heroes and Villains</strong>
+                                <small>The people who stood for God, and against him</small>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-list menu-foot">
+                    <li>
+                        <button id="menu-help" class="menu-item" type="button" aria-haspopup="dialog">
+                            <span class="help-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.7" /><circle class="help-fill" cx="12" cy="17" r="1.1" /></svg>
+                            </span>
+                            <span class="menu-text"><strong>Help</strong></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button id="menu-about" class="menu-item" type="button" aria-haspopup="dialog">
+                            <span class="help-icon">
+                                <img src="assets/images/dg-icon-gold-256.webp" alt="" width="26" height="26" />
+                            </span>
+                            <span class="menu-text"><strong>About</strong></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </dialog>
         <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title">
             <div class="help-body">
                 <header class="help-header">
@@ -351,7 +411,7 @@
                         <span class="help-icon">
                             <img src="assets/images/dg-icon-gold-256.webp" alt="" width="26" height="26" />
                         </span>
-                        <p><strong>About Daily Grace.</strong> Tap the DG emblem at the top left of the page to read what Daily Grace is and how it can help you each day.</p>
+                        <p><strong>The menu.</strong> Tap the DG emblem at the top left of the page to open the menu: the Books of the Bible, the Peoples of the Bible, Heroes and Villains, this guide, and About Daily Grace, which tells what Daily Grace is and how it can help you each day.</p>
                     </li>
                     <li>
                         <span class="help-icon action">
@@ -671,7 +731,7 @@
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
         <script src="assets/scripts/sql_script.js?v=20260925-1" defer></script>
-        <script src="assets/scripts/script.js?v=20260925-8" defer></script>
+        <script src="assets/scripts/script.js?v=20260926-2" defer></script>
         <script type="module" src="apps/components/banner-slider.js?v=20260925-1"></script>
         <script type="module" src="apps/components/poster-card.js?v=20260925-2"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20260925-6"></script>

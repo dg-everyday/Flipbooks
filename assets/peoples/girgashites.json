@@ -1,0 +1,161 @@
+{
+    "id": "girgashites",
+    "name": "Girgashites",
+    "kjv_names": [
+        "Girgashites",
+        "Girgasite",
+        "Girgashite"
+    ],
+    "also_known_as": [],
+    "category": "Canaanite nation",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "The least-known of the seven nations of Canaan. They are named in every major list of the land's peoples but are never described, never given a king or city, and never appear in any story.",
+    "name_meaning": "Uncertain. Some connect it to 'dwellers on clay soil'. Ugaritic personal names (grgš) and the Hittite name Karkisa have been proposed as parallels.",
+    "origin": {
+        "account": "The Girgasite is one of Canaan's descendants in the Table of Nations.",
+        "references": [
+            "Genesis 10:16",
+            "1 Chronicles 1:14"
+        ]
+    },
+    "lineage": {
+        "ancestor": "The Girgasite, descendant of Canaan",
+        "line": [
+            "Noah",
+            "Ham",
+            "Canaan",
+            "The Girgasite"
+        ],
+        "notes": "Listed with the other Canaanite nations in God's covenant promise to Abram and in Joshua's recap of the conquest.",
+        "references": [
+            "Genesis 15:21",
+            "Joshua 24:11"
+        ]
+    },
+    "homeland": {
+        "region": "Canaan (exact location unknown)",
+        "description": "Scripture gives no location. Later writers guessed at an area near the Sea of Galilee because of the 'country of the Gergesenes' (Matthew 8:28, KJV), but that link rests only on the similar name and is speculative.",
+        "modern_location": "Unknown — somewhere in Israel/Palestine.",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 32.0,
+            "lon": 35.2
+        },
+        "places": [
+            {
+                "name": "Country of the Gergesenes (speculative link only)",
+                "modern_name": "Eastern shore of the Sea of Galilee (Kursi)",
+                "lat": 32.83,
+                "lon": 35.65,
+                "note": "Where Jesus cast out the legion of devils; an ancient but unproven association with the Girgashites.",
+                "references": [
+                    "Matthew 8:28"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Named in God's covenant promise of the land to Abram.",
+            "references": [
+                "Genesis 15:18-21"
+            ]
+        },
+        {
+            "date": "Wilderness period",
+            "event": "Listed first among the 'seven nations greater and mightier than thou'.",
+            "references": [
+                "Deuteronomy 7:1"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "God promises to drive them out; Joshua later recalls that they fought at Jericho.",
+            "references": [
+                "Joshua 3:10",
+                "Joshua 24:11"
+            ]
+        },
+        {
+            "date": "c. 445 BC",
+            "event": "Remembered in the Levites' prayer of Nehemiah 9 as proof of God's faithfulness to Abraham.",
+            "references": [
+                "Nehemiah 9:7-8"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Canaanite deities"
+        ],
+        "practices": "Nothing specific is recorded.",
+        "references": []
+    },
+    "importance": "The Girgashites matter chiefly as part of the complete list. Nehemiah's prayer cites the giving of their land as proof that God 'hast performed thy words; for thou art righteous.'",
+    "impact": [
+        {
+            "who": "Israel",
+            "how": "Their land was part of the inheritance promised to Abraham and delivered under Joshua.",
+            "references": [
+                "Nehemiah 9:8"
+            ]
+        }
+    ],
+    "notable_people": [],
+    "key_verses": [
+        {
+            "reference": "Genesis 15:18-21",
+            "text": "In the same day the LORD made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates: The Kenites, and the Kenizzites, and the Kadmonites, And the Hittites, and the Perizzites, and the Rephaims, And the Amorites, and the Canaanites, and the Girgashites, and the Jebusites."
+        },
+        {
+            "reference": "Deuteronomy 7:1",
+            "text": "When the LORD thy God shall bring thee into the land whither thou goest to possess it, and hath cast out many nations before thee, the Hittites, and the Girgashites, and the Amorites, and the Canaanites, and the Perizzites, and the Hivites, and the Jebusites, seven nations greater and mightier than thou;"
+        },
+        {
+            "reference": "Nehemiah 9:8",
+            "text": "And foundest his heart faithful before thee, and madest a covenant with him to give the land of the Canaanites, the Hittites, the Amorites, and the Perizzites, and the Jebusites, and the Girgashites, to give it, I say, to his seed, and hast performed thy words; for thou art righteous:"
+        }
+    ],
+    "fate": {
+        "summary": "Absorbed or displaced during the conquest and settlement; never mentioned in any later narrative.",
+        "references": [
+            "Joshua 24:11"
+        ]
+    },
+    "today": {
+        "summary": "No Girgashite people exist today, and nothing is known of them outside the Bible. A Jewish legend (Jerusalem Talmud, Shevi'it 6:1) says they chose to emigrate to Africa rather than fight Joshua.",
+        "descendants": "Unknown.",
+        "modern_legacy": "None beyond the biblical text."
+    },
+    "archaeology": [],
+    "related_peoples": [
+        "canaanites",
+        "amorites",
+        "hivites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Jerusalem Talmud, Shevi'it 6:1",
+            "type": "primary",
+            "note": "Tradition that the Girgashites left for Africa."
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Girgashites'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

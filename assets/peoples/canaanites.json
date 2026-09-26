@@ -1,0 +1,393 @@
+{
+    "id": "canaanites",
+    "name": "Canaanites",
+    "kjv_names": [
+        "Canaanites",
+        "Canaanite",
+        "Canaanitess",
+        "Canaan",
+        "woman of Canaan"
+    ],
+    "also_known_as": [
+        "Kinahhu (Amarna letters)",
+        "Phoenicians (the coastal Canaanites of later times)"
+    ],
+    "category": "Canaanite nation",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The Bronze Age inhabitants of the land God promised to Abraham — a patchwork of city-states between the Jordan and the Mediterranean, worshipping Baal and Asherah. 'Canaanite' is both the name of one people and the umbrella term for all the nations of the land. Their descendants are part of the Levantine population today.",
+    "name_meaning": "Canaan (Kena'an) is of uncertain meaning. It may mean 'lowland', or it may come from a word for purple dye, the region's famous export; 'Canaanite' also came to mean 'merchant'.",
+    "origin": {
+        "account": "Canaan was the fourth son of Ham, son of Noah. After Ham saw his father's nakedness, Noah cursed Canaan to be a servant to his brethren. Canaan's sons became Sidon, Heth and the Jebusite, Amorite, Girgasite, Hivite, Arkite, Sinite, Arvadite, Zemarite and Hamathite peoples, 'and afterward were the families of the Canaanites spread abroad' from Sidon to Gaza and the Dead Sea cities.",
+        "references": [
+            "Genesis 9:18",
+            "Genesis 9:25-27",
+            "Genesis 10:6",
+            "Genesis 10:15-19"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Canaan, son of Ham",
+        "line": [
+            "Noah",
+            "Ham",
+            "Canaan"
+        ],
+        "notes": "Genesis 10 treats the Hittites, Jebusites, Amorites, Girgashites and Hivites as Canaan's children, alongside Sidon (the Phoenicians). The recurring list of 'seven nations' adds the Perizzites and the Canaanites proper — the lowland and coastal population.",
+        "references": [
+            "Genesis 10:15-18",
+            "Deuteronomy 7:1"
+        ]
+    },
+    "homeland": {
+        "region": "Canaan — from Sidon to Gaza and the Dead Sea",
+        "description": "The land west of the Jordan, stretching north to the Lebanon coast. Scripture calls it 'a land flowing with milk and honey'. The Canaanites proper lived especially 'by the sea, and by the coast of Jordan' — the plains and valleys where chariots could operate — while other groups held the hills.",
+        "modern_location": "Israel, the Palestinian territories, Lebanon, and western Syria and Jordan.",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories",
+            "Lebanon",
+            "Syria",
+            "Jordan"
+        ],
+        "center": {
+            "lat": 32.3,
+            "lon": 35.2
+        },
+        "places": [
+            {
+                "name": "Hazor",
+                "modern_name": "Tel Hazor, Israel",
+                "lat": 33.02,
+                "lon": 35.57,
+                "note": "'The head of all those kingdoms'; burned by Joshua, later ruled by Jabin king of Canaan.",
+                "references": [
+                    "Joshua 11:10-11",
+                    "Judges 4:2"
+                ]
+            },
+            {
+                "name": "Megiddo",
+                "modern_name": "Tel Megiddo, Israel",
+                "lat": 32.585,
+                "lon": 35.18,
+                "note": "Canaanite city the tribes did not at first capture.",
+                "references": [
+                    "Judges 1:27",
+                    "Judges 5:19"
+                ]
+            },
+            {
+                "name": "Jericho",
+                "modern_name": "Tell es-Sultan",
+                "lat": 31.87,
+                "lon": 35.44,
+                "note": "First city taken in the conquest; Rahab's home.",
+                "references": [
+                    "Joshua 6:20-25"
+                ]
+            },
+            {
+                "name": "Gezer",
+                "modern_name": "Tel Gezer, Israel",
+                "lat": 31.86,
+                "lon": 34.92,
+                "note": "Remained Canaanite until Pharaoh gave it to Solomon.",
+                "references": [
+                    "Joshua 16:10",
+                    "1 Kings 9:16"
+                ]
+            },
+            {
+                "name": "Sidon",
+                "modern_name": "Saida, Lebanon",
+                "lat": 33.56,
+                "lon": 35.37,
+                "note": "Canaan's firstborn city.",
+                "references": [
+                    "Genesis 10:15"
+                ]
+            },
+            {
+                "name": "Ugarit",
+                "modern_name": "Ras Shamra, Syria",
+                "lat": 35.6,
+                "lon": 35.78,
+                "note": "Northern city whose tablets preserve Canaanite myths of Baal, El and Asherah (not named in the Bible).",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Abram arrives at Shechem — 'and the Canaanite was then in the land' — and God promises the land to his seed.",
+            "references": [
+                "Genesis 12:6-7",
+                "Genesis 15:18-21"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Abraham buries Sarah in a field bought from Hittites; Judah marries a Canaanite and fathers Shelah and, through Tamar, Pharez.",
+            "references": [
+                "Genesis 23:19-20",
+                "Genesis 38:2"
+            ]
+        },
+        {
+            "date": "c. 1350 BC",
+            "event": "Rulers of Canaanite city-states write to Pharaoh in the Amarna letters, complaining of unrest and of the 'Habiru'.",
+            "references": []
+        },
+        {
+            "date": "Conquest",
+            "event": "Israel enters Canaan; Jericho, Ai and Hazor fall, but many Canaanites remain in the plains and cities.",
+            "references": [
+                "Joshua 6:20",
+                "Joshua 11:10-11",
+                "Judges 1:27-33"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Jabin king of Canaan, with 900 iron chariots under Sisera, oppresses Israel twenty years; Deborah and Barak defeat him.",
+            "references": [
+                "Judges 4:2-3",
+                "Judges 4:23-24"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "Solomon puts the surviving Canaanite populations to forced labour.",
+            "references": [
+                "1 Kings 9:20-21"
+            ]
+        },
+        {
+            "date": "Iron Age onward",
+            "event": "Coastal Canaanites continue as the Phoenicians of Tyre and Sidon; inland Canaanites merge with Israel.",
+            "references": [
+                "Isaiah 23:11"
+            ]
+        },
+        {
+            "date": "c. AD 29",
+            "event": "A Canaanite woman from the region of Tyre and Sidon begs Jesus to heal her daughter; he praises her great faith.",
+            "references": [
+                "Matthew 15:21-28"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Baal",
+            "Asherah (the 'grove')",
+            "Ashtoreth (Astarte)",
+            "El",
+            "Molech"
+        ],
+        "practices": "Fertility worship at high places, with standing pillars and Asherah poles. It involved cult prostitution and, at its extreme, child sacrifice. Israel was warned not to learn 'the abominations of those nations', and the prophets called the later Baal worship in Israel the root of its downfall.",
+        "references": [
+            "Deuteronomy 12:2-3",
+            "Deuteronomy 12:31",
+            "Deuteronomy 18:9-12",
+            "Judges 2:11-13",
+            "1 Kings 18:21"
+        ]
+    },
+    "importance": "Canaan is the stage of the Old Testament and the substance of God's land promise to Abraham. God delayed giving the land for four hundred years because 'the iniquity of the Amorites is not yet full'. The conquest is presented as judgement on persistent evil, not favouritism: Israel is told it was not given the land for its own righteousness, and would be expelled for the same sins. Canaanites like Rahab who turned to God were spared and even entered the Messiah's line. Canaanite religion was also Israel's great temptation for centuries.",
+    "impact": [
+        {
+            "who": "Abraham, Isaac and Jacob",
+            "how": "Lived as sojourners among the Canaanites, owning only a burial field.",
+            "references": [
+                "Genesis 17:8",
+                "Hebrews 11:9"
+            ]
+        },
+        {
+            "who": "Rahab",
+            "how": "A Canaanite of Jericho who hid the spies, was saved with her household, and became mother of Boaz.",
+            "references": [
+                "Joshua 2:9-11",
+                "Joshua 6:25",
+                "Matthew 1:5"
+            ]
+        },
+        {
+            "who": "Judah and Tamar",
+            "how": "Judah's Canaanite marriage and his dealings with Tamar produced the line of Pharez, ancestor of David.",
+            "references": [
+                "Genesis 38:2",
+                "Genesis 38:29",
+                "Ruth 4:18-22"
+            ]
+        },
+        {
+            "who": "Israel's faith",
+            "how": "Baal worship drew Israel away repeatedly, most dramatically under Ahab and Jezebel.",
+            "references": [
+                "Judges 2:13",
+                "1 Kings 16:31-33"
+            ]
+        },
+        {
+            "who": "A Canaanite mother",
+            "how": "Her persistent faith won healing for her daughter and became a sign of the gospel to the Gentiles.",
+            "references": [
+                "Matthew 15:28"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Canaan",
+            "role": "Son of Ham, ancestor of the nations",
+            "references": [
+                "Genesis 9:18"
+            ]
+        },
+        {
+            "name": "Melchizedek",
+            "role": "Priest-king of Salem, who blessed Abram (his people are not named)",
+            "references": [
+                "Genesis 14:18-20"
+            ]
+        },
+        {
+            "name": "Rahab",
+            "role": "Woman of Jericho saved by faith",
+            "references": [
+                "Hebrews 11:31"
+            ]
+        },
+        {
+            "name": "Shua's daughter",
+            "role": "Judah's Canaanite wife",
+            "references": [
+                "Genesis 38:2"
+            ]
+        },
+        {
+            "name": "Jabin and Sisera",
+            "role": "King of Canaan and his general",
+            "references": [
+                "Judges 4:2"
+            ]
+        },
+        {
+            "name": "The woman of Canaan",
+            "role": "Mother whose daughter Jesus healed",
+            "references": [
+                "Matthew 15:22"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 12:6",
+            "text": "And Abram passed through the land unto the place of Sichem, unto the plain of Moreh. And the Canaanite was then in the land."
+        },
+        {
+            "reference": "Genesis 15:16",
+            "text": "But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full."
+        },
+        {
+            "reference": "Deuteronomy 9:5",
+            "text": "Not for thy righteousness, or for the uprightness of thine heart, dost thou go to possess their land: but for the wickedness of these nations the LORD thy God doth drive them out from before thee, and that he may perform the word which the LORD sware unto thy fathers, Abraham, Isaac, and Jacob."
+        },
+        {
+            "reference": "Joshua 2:11",
+            "text": "And as soon as we had heard these things, our hearts did melt, neither did there remain any more courage in any man, because of you: for the LORD your God, he is God in heaven above, and in earth beneath."
+        },
+        {
+            "reference": "Matthew 15:28",
+            "text": "Then Jesus answered and said unto her, O woman, great is thy faith: be it unto thee even as thou wilt. And her daughter was made whole from that very hour. "
+        }
+    ],
+    "fate": {
+        "summary": "The Canaanites were not wiped out. Those who remained lived among Israel, were put to forced labour, intermarried and were absorbed over the centuries. On the coast they continued as the Phoenicians, whose colony Carthage in North Africa still called its people 'Chanani' in Augustine's day (5th century AD).",
+        "references": [
+            "Judges 1:27-33",
+            "Judges 3:5-6",
+            "1 Kings 9:20-21"
+        ]
+    },
+    "today": {
+        "summary": "Ancient DNA has shown that Canaanite ancestry never vanished. A 2017 study sequencing Bronze Age Canaanites from Sidon found that present-day Lebanese derive most of their ancestry (about 93%) from a Canaanite-related population. Other Levantine peoples — Jews, Palestinians, Jordanians, Syrians — also carry substantial Canaanite-related ancestry.",
+        "descendants": "Modern Levantine populations, especially the Lebanese.",
+        "modern_legacy": "The alphabet developed among Canaanite scribes (via Phoenician) and is the ancestor of Hebrew, Greek, Latin and Arabic scripts. Hebrew itself is a Canaanite language — Isaiah calls it 'the language of Canaan'."
+    },
+    "archaeology": [
+        {
+            "name": "Amarna letters",
+            "date": "c. 1360–1330 BC",
+            "discovered": "1887 at Tell el-Amarna, Egypt",
+            "location": "British Museum, Vorderasiatisches Museum Berlin, Egyptian Museum Cairo and others",
+            "significance": "Diplomatic tablets from Canaanite kings of Jerusalem, Shechem, Gezer, Megiddo and elsewhere to the Pharaoh — a snapshot of Canaan before Israel."
+        },
+        {
+            "name": "Ugarit (Ras Shamra) tablets",
+            "date": "c. 1400–1185 BC",
+            "discovered": "From 1928, Ras Shamra, Syria",
+            "location": "National Museum of Damascus, Louvre",
+            "significance": "The Baal Cycle and other myths explain the gods the Bible opposes: El, Baal, Asherah, Anat and Mot."
+        },
+        {
+            "name": "Hazor destruction layer",
+            "date": "13th century BC",
+            "discovered": "Yigael Yadin (1955–1958), Amnon Ben-Tor (1990–present)",
+            "location": "Tel Hazor, Israel",
+            "significance": "A massive fire destroyed the Canaanite palace, with Canaanite statues deliberately smashed; the excavators connect it to Joshua 11."
+        }
+    ],
+    "related_peoples": [
+        "phoenicians",
+        "hittites",
+        "amorites",
+        "jebusites",
+        "hivites",
+        "girgashites",
+        "perizzites",
+        "israelites",
+        "philistines"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Amarna Letters",
+            "author": "William L. Moran (Johns Hopkins University Press, 1992)",
+            "type": "primary"
+        },
+        {
+            "title": "Continuity and Admixture in the Last Five Millennia of Levantine History from Ancient Canaanite and Present-Day Lebanese Genome Sequences",
+            "author": "Marc Haber et al., American Journal of Human Genetics 101(2), 2017",
+            "type": "genetics",
+            "url": "https://www.cell.com/ajhg/fulltext/S0002-92971730276-8"
+        },
+        {
+            "title": "Canaanites",
+            "author": "Jonathan N. Tubb (British Museum Press, 1998)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The Early History of God: Yahweh and the Other Deities in Ancient Israel, 2nd ed.",
+            "author": "Mark S. Smith (Eerdmans, 2002)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Peoples of the Old Testament World",
+            "author": "Alfred J. Hoerth, Gerald L. Mattingly & Edwin M. Yamauchi, eds. (Baker, 1994) — chapter 'Canaanites and Amorites'",
+            "type": "scholarship"
+        }
+    ]
+}

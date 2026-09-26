@@ -3,19 +3,24 @@
         "id": "a-great-way-off",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK1.webp",
         "title": "A Great Way Off",
-        "description": "King Nebuchadnezzar raises a golden statue and commands everyone to bow before it."
+        "description": "The Father Who Ran, the Son Who Came Home, and the Brother Who Stayed.",
+        "audio": "https://dailygrace.faith/media/stories/a-great-way-off/a-great-way-off.webm",
+        "story-book": "https://dailygrace.faith/media/stories/a-great-way-off/a-great-way-off-storybook.pdf"
     },
     {
         "id": "and-ruth-with-her",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK2.webp",
         "title": "And Ruth With Her",
-        "description": "Shadrach, Meshach and Abednego refuse to bow to anyone but God."
+        "description": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean.",
+        "audio": "https://dailygrace.faith/media/stories/and-ruth-with-her/and-ruth-with-her.webm",
+        "story-book": "https://dailygrace.faith/media/stories/and-ruth-with-her/and-ruth-with-her-storybook.pdf"
     },
     {
         "id": "into-his-hand",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK3.webp",
         "title": "Into His Hand",
-        "description": "The king orders the furnace heated seven times hotter than usual."
+        "description": "The king orders the furnace heated seven times hotter than usual.",
+        "story-book": "https://dailygrace.faith/media/storybooks/2027/2027-WEEK1.pdf"
     },
     {
         "id": "one-thing-thou-lackest",

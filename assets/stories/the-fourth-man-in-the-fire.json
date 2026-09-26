@@ -1,0 +1,47 @@
+{
+    "title": "The Fourth Man in the Fire",
+    "aspect": "9/16",
+    "pages": [
+        {
+            "id": "id-01",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK5.webp",
+            "caption": "King Nebuchadnezzar raises a golden statue and commands everyone to bow before it.",
+            "audio": "assets/audio/correct.webm"
+        },
+        {
+            "id": "id-02",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 29, 2026 - Comic.webp",
+            "caption": "Shadrach, Meshach and Abednego refuse to bow to anyone but God."
+        },
+        {
+            "id": "id-03",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 30, 2026 - Comic.webp",
+            "caption": "The king orders the furnace heated seven times hotter than usual."
+        },
+        {
+            "id": "id-04",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 31, 2026 - Comic.webp",
+            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+        },
+        {
+            "id": "id-05",
+            "image": "https://dailygrace.faith/media/images/sources/november/November 1, 2026 - Comic.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        },
+        {
+            "id": "id-06",
+            "image": "https://dailygrace.faith/media/images/sources/november/November 2, 2026 - Comic.webp",
+            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+        },
+        {
+            "id": "id-07",
+            "image": "https://dailygrace.faith/media/images/sources/november/November 3, 2026 - Comic.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        },
+        {
+            "id": "id-08",
+            "image": "https://dailygrace.faith/media/images/sources/november/November 4, 2026 - Comic.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        }
+    ]
+}

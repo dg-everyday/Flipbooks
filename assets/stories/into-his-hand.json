@@ -1,0 +1,47 @@
+{
+    "title": "Into His Hand",
+    "aspect": "9/16",
+    "pages": [
+        {
+            "id": "id-01",
+            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK3.webp",
+            "caption": "King Nebuchadnezzar raises a golden statue and commands everyone to bow before it.",
+            "audio": "assets/audio/correct.webm"
+        },
+        {
+            "id": "id-02",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 15, 2026 - Comic.webp",
+            "caption": "Shadrach, Meshach and Abednego refuse to bow to anyone but God."
+        },
+        {
+            "id": "id-03",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 16, 2026 - Comic.webp",
+            "caption": "The king orders the furnace heated seven times hotter than usual."
+        },
+        {
+            "id": "id-04",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 17, 2026 - Comic.webp",
+            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+        },
+        {
+            "id": "id-05",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 18, 2026 - Comic.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        },
+        {
+            "id": "id-06",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 19, 2026 - Comic.webp",
+            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+        },
+        {
+            "id": "id-07",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 20, 2026 - Comic.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        },
+        {
+            "id": "id-08",
+            "image": "https://dailygrace.faith/media/images/sources/december/December 21, 2026 - Comic.webp",
+            "caption": "They step out untouched, and the king praises the God who rescued them."
+        }
+    ]
+}

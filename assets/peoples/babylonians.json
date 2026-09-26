@@ -1,0 +1,412 @@
+{
+    "id": "babylonians",
+    "name": "Babylonians",
+    "kjv_names": [
+        "Babylonians",
+        "Babylon",
+        "Chaldeans",
+        "Chaldees",
+        "land of Shinar"
+    ],
+    "also_known_as": [
+        "Chaldeans (the ruling tribe of the Neo-Babylonian empire)",
+        "Shinar"
+    ],
+    "category": "Empire",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The people of Babylon on the Euphrates, the city where humanity built the tower of Babel. Under Nebuchadnezzar and the Chaldean dynasty they destroyed Jerusalem and Solomon's Temple and carried Judah into seventy years of exile — the setting of Daniel's furnace and lions' den. In Revelation, 'Babylon' becomes the name for the whole proud world system set against God.",
+    "name_meaning": "Babylonian Bab-ili, 'gate of god'. Genesis plays on the Hebrew balal, 'to confuse': 'Therefore is the name of it called Babel; because the LORD did there confound the language.'",
+    "origin": {
+        "account": "Nimrod, son of Cush, 'a mighty hunter before the LORD', began his kingdom at 'Babel, and Erech, and Accad, and Calneh, in the land of Shinar'. There, after the flood, humanity built a city and tower 'whose top may reach unto heaven', and God scattered them by confusing their language. The Chaldeans (Kasdim) were Aramaic-related tribes of southern Mesopotamia. Abram's family came from 'Ur of the Chaldees', and a Chaldean dynasty ruled the Neo-Babylonian empire (626–539 BC).",
+        "references": [
+            "Genesis 10:8-10",
+            "Genesis 11:1-9",
+            "Genesis 11:31"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Nimrod (founder of Babel), son of Cush; Chaldeans possibly from Chesed, son of Nahor",
+        "line": [
+            "Noah",
+            "Ham",
+            "Cush",
+            "Nimrod"
+        ],
+        "notes": "Genesis links Babel's founding to Nimrod of Ham's line. The Chaldean name (Kasdim) is often linked to Chesed, a nephew of Abraham, and Abraham's own family came from 'Ur of the Chaldees'. The Babylonians were therefore a mixed Sumerian, Akkadian, Amorite, Kassite and Chaldean population.",
+        "references": [
+            "Genesis 10:8-10",
+            "Genesis 22:22"
+        ]
+    },
+    "homeland": {
+        "region": "Babylonia (Shinar, 'the land of the Chaldeans') — southern Mesopotamia",
+        "description": "The flat, irrigated alluvial plain between the lower Euphrates and Tigris, south of modern Baghdad down to the Persian Gulf marshes. It was intensely fertile when canals were maintained — 'by the rivers of Babylon'. The city of Babylon was rebuilt by Nebuchadnezzar with the Ishtar Gate, the Processional Way and the great ziggurat Etemenanki.",
+        "modern_location": "Central and southern Iraq.",
+        "modern_countries": [
+            "Iraq"
+        ],
+        "center": {
+            "lat": 32.54,
+            "lon": 44.42
+        },
+        "places": [
+            {
+                "name": "Babylon",
+                "modern_name": "Near Hillah, Iraq (UNESCO site)",
+                "lat": 32.54,
+                "lon": 44.42,
+                "note": "'Is not this great Babylon, that I have built?'",
+                "references": [
+                    "Daniel 4:30"
+                ]
+            },
+            {
+                "name": "Ur of the Chaldees",
+                "modern_name": "Tell el-Muqayyar, Iraq",
+                "lat": 30.96,
+                "lon": 46.1,
+                "note": "Abram's birthplace.",
+                "references": [
+                    "Genesis 11:28"
+                ]
+            },
+            {
+                "name": "Erech (Uruk)",
+                "modern_name": "Warka, Iraq",
+                "lat": 31.32,
+                "lon": 45.64,
+                "note": "One of Nimrod's first cities.",
+                "references": [
+                    "Genesis 10:10"
+                ]
+            },
+            {
+                "name": "Plain of Dura",
+                "modern_name": "Near Babylon (exact site unknown)",
+                "lat": 32.45,
+                "lon": 44.4,
+                "note": "Where Nebuchadnezzar's golden image stood.",
+                "references": [
+                    "Daniel 3:1"
+                ]
+            },
+            {
+                "name": "River Chebar",
+                "modern_name": "Kabaru canal near Nippur",
+                "lat": 32.13,
+                "lon": 45.23,
+                "note": "Where Ezekiel saw his visions among the exiles.",
+                "references": [
+                    "Ezekiel 1:1"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "After the flood",
+            "event": "The tower of Babel; languages confused and peoples scattered.",
+            "references": [
+                "Genesis 11:4-9"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Amraphel king of Shinar raids Canaan with Chedorlaomer; Abram rescues Lot.",
+            "references": [
+                "Genesis 14:1",
+                "Genesis 14:14-16"
+            ]
+        },
+        {
+            "date": "c. 1792–1750 BC",
+            "event": "Hammurabi makes Babylon a great power and issues his law code (Old Babylonian period).",
+            "references": []
+        },
+        {
+            "date": "c. 712 BC",
+            "event": "Merodach-baladan sends envoys to Hezekiah; Isaiah foretells the exile to Babylon.",
+            "references": [
+                "Isaiah 39:1-7"
+            ]
+        },
+        {
+            "date": "605 BC",
+            "event": "Nebuchadnezzar defeats Egypt at Carchemish and takes Daniel and other young nobles to Babylon.",
+            "references": [
+                "Jeremiah 46:2",
+                "Daniel 1:1-6"
+            ]
+        },
+        {
+            "date": "597 BC",
+            "event": "Nebuchadnezzar takes Jerusalem, deports King Jehoiachin, Ezekiel and 10,000 captives, and installs Zedekiah.",
+            "references": [
+                "2 Kings 24:10-17"
+            ]
+        },
+        {
+            "date": "586 BC",
+            "event": "After Zedekiah's revolt, Jerusalem and the Temple are burned; Judah is carried away.",
+            "references": [
+                "2 Kings 25:1-11",
+                "Jeremiah 52:12-14"
+            ]
+        },
+        {
+            "date": "c. 600–570 BC",
+            "event": "Shadrach, Meshach and Abednego survive the fiery furnace; Nebuchadnezzar is humbled by madness and praises the Most High.",
+            "references": [
+                "Daniel 3:19-28",
+                "Daniel 4:34-37"
+            ]
+        },
+        {
+            "date": "c. 561 BC",
+            "event": "Evil-merodach releases Jehoiachin from prison and gives him a place at the king's table.",
+            "references": [
+                "2 Kings 25:27-30"
+            ]
+        },
+        {
+            "date": "539 BC",
+            "event": "Belshazzar's feast; the writing on the wall; Babylon falls to the Medes and Persians that night.",
+            "references": [
+                "Daniel 5:25-31"
+            ]
+        },
+        {
+            "date": "c. AD 60–95",
+            "event": "Peter writes from 'Babylon' (probably a code name for Rome). Revelation describes the fall of 'Babylon the great'.",
+            "references": [
+                "1 Peter 5:13",
+                "Revelation 18:2"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Bel / Marduk (chief god of Babylon)",
+            "Nebo (Nabu)",
+            "Ishtar",
+            "Sin (the moon god)"
+        ],
+        "practices": "State religion centred on Marduk's temple Esagila and its ziggurat. It included astrology, divination and a class of 'magicians, astrologers, sorcerers, and Chaldeans', whom Daniel outshone. The prophets mocked idols carried on animals' backs.",
+        "references": [
+            "Isaiah 46:1",
+            "Jeremiah 50:2",
+            "Daniel 2:2",
+            "Daniel 2:27-28",
+            "Ezekiel 21:21"
+        ]
+    },
+    "importance": "Babylon is the other great pole of the Bible's geography after Jerusalem. Babel stands for human pride trying to reach heaven without God. The Babylonian exile was the great crisis of the Old Testament: the Temple destroyed and the Davidic throne vacant. It purged Judah of idolatry and produced Daniel, Ezekiel, Lamentations and the hope of return after seventy years. Jeremiah told the exiles to 'seek the peace of the city' where they were carried. In Revelation, Babylon becomes the city of man opposed to the city of God.",
+    "impact": [
+        {
+            "who": "Daniel, Hananiah, Mishael and Azariah",
+            "how": "Taken as youths, renamed Belteshazzar, Shadrach, Meshach and Abednego, and tested for their faith in the king's court.",
+            "references": [
+                "Daniel 1:6-7",
+                "Daniel 3:17-18",
+                "Daniel 6:10"
+            ]
+        },
+        {
+            "who": "Jeremiah",
+            "how": "Preached submission to Babylon, was accused of treason, and was freed by the Babylonians.",
+            "references": [
+                "Jeremiah 27:12",
+                "Jeremiah 38:4",
+                "Jeremiah 40:1-4"
+            ]
+        },
+        {
+            "who": "Ezekiel",
+            "how": "A priest in exile who received visions of God's glory leaving and returning to the Temple.",
+            "references": [
+                "Ezekiel 1:1-3",
+                "Ezekiel 43:4-5"
+            ]
+        },
+        {
+            "who": "King Zedekiah",
+            "how": "Saw his sons killed and was blinded and taken to Babylon.",
+            "references": [
+                "2 Kings 25:7"
+            ]
+        },
+        {
+            "who": "The exiles",
+            "how": "Wept by the rivers of Babylon, but were told to build, plant and pray for the city.",
+            "references": [
+                "Psalms 137:1",
+                "Jeremiah 29:4-7"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Nimrod",
+            "role": "Founder of Babel",
+            "references": [
+                "Genesis 10:9-10"
+            ]
+        },
+        {
+            "name": "Merodach-baladan",
+            "role": "King who courted Hezekiah",
+            "references": [
+                "2 Kings 20:12"
+            ]
+        },
+        {
+            "name": "Nebuchadnezzar",
+            "role": "Conqueror of Jerusalem (605–562 BC)",
+            "references": [
+                "2 Kings 25:1",
+                "Daniel 4:37"
+            ]
+        },
+        {
+            "name": "Nebuzar-adan",
+            "role": "Captain of the guard who burned Jerusalem",
+            "references": [
+                "2 Kings 25:8"
+            ]
+        },
+        {
+            "name": "Evil-merodach",
+            "role": "Released Jehoiachin",
+            "references": [
+                "2 Kings 25:27"
+            ]
+        },
+        {
+            "name": "Belshazzar",
+            "role": "Last ruler in Babylon, slain the night it fell",
+            "references": [
+                "Daniel 5:1",
+                "Daniel 5:30"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 11:9",
+            "text": "Therefore is the name of it called Babel; because the LORD did there confound the language of all the earth: and from thence did the LORD scatter them abroad upon the face of all the earth."
+        },
+        {
+            "reference": "2 Kings 25:9",
+            "text": "And he burnt the house of the LORD, and the king’s house, and all the houses of Jerusalem, and every great man’s house burnt he with fire."
+        },
+        {
+            "reference": "Psalms 137:1",
+            "text": "By the rivers of Babylon, there we sat down, yea, we wept, when we remembered Zion. "
+        },
+        {
+            "reference": "Jeremiah 29:7",
+            "text": "And seek the peace of the city whither I have caused you to be carried away captives, and pray unto the LORD for it: for in the peace thereof shall ye have peace."
+        },
+        {
+            "reference": "Jeremiah 29:10",
+            "text": "For thus saith the LORD, That after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place."
+        },
+        {
+            "reference": "Daniel 3:17",
+            "text": "If it be so, our God whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king."
+        }
+    ],
+    "fate": {
+        "summary": "Cyrus the Persian took Babylon in 539 BC, largely without a fight, as Isaiah had foretold by name. Babylon remained a major city under Persia and Alexander (who died there in 323 BC). It declined after the Seleucids founded Seleucia on the Tigris, and was largely deserted by the early centuries AD, as Isaiah and Jeremiah had said it would become 'desolations'.",
+        "references": [
+            "Isaiah 13:19-20",
+            "Isaiah 45:1",
+            "Jeremiah 51:37"
+        ]
+    },
+    "today": {
+        "summary": "No people today are called Babylonians; the population of the region is Iraqi. The ruins of Babylon, near Hillah, became a UNESCO World Heritage site in 2019. The name 'Chaldean' lives on in the Chaldean Catholic Church, whose Aramaic-speaking members take it as an ethnic identity. The Babylonian Jewish community, which stayed after the exile, produced the Babylonian Talmud and survived in Iraq for 2,600 years until most Iraqi Jews left in 1950–1951.",
+        "descendants": "Absorbed into the population of Iraq; Chaldean and Assyrian Christians and Iraqi Jews all have roots there.",
+        "modern_legacy": "The Ishtar Gate (reconstructed in Berlin's Pergamon Museum), the 60-minute hour and 360-degree circle from Babylonian mathematics, and 'Babel' and 'Babylon' as words for confusion and decadence."
+    },
+    "archaeology": [
+        {
+            "name": "Babylonian Chronicle ABC 5 ('Jerusalem Chronicle')",
+            "date": "6th century BC",
+            "discovered": "Babylon; published 1956",
+            "location": "British Museum (BM 21946)",
+            "significance": "Records Nebuchadnezzar capturing 'the city of Judah' on 2 Adar (16 March 597 BC) and appointing a king of his choice."
+        },
+        {
+            "name": "Jehoiachin ration tablets",
+            "date": "c. 592 BC",
+            "discovered": "Babylon, 1899–1917 excavations",
+            "location": "Vorderasiatisches Museum, Berlin",
+            "significance": "List oil rations for 'Ya'ukin king of the land of Yahud' and his sons."
+        },
+        {
+            "name": "Nabonidus Cylinder from Ur",
+            "date": "c. 540 BC",
+            "discovered": "Ur, 1854",
+            "location": "British Museum",
+            "significance": "Names Belshazzar as Nabonidus' eldest son — explaining why Daniel could only be 'third ruler' in the kingdom."
+        },
+        {
+            "name": "Ishtar Gate",
+            "date": "c. 575 BC",
+            "discovered": "Robert Koldewey, 1902–1914",
+            "location": "Pergamon Museum, Berlin",
+            "significance": "Blue-glazed gate of Nebuchadnezzar's Babylon."
+        }
+    ],
+    "related_peoples": [
+        "assyrians",
+        "persians",
+        "medes",
+        "elamites",
+        "arameans",
+        "israelites",
+        "amorites",
+        "egyptians"
+    ],
+    "stories": [
+        "the-fourth-man-in-the-fire"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Assyrian and Babylonian Chronicles",
+            "author": "A. Kirk Grayson (J. J. Augustin, 1975)",
+            "type": "primary"
+        },
+        {
+            "title": "A History of Babylon, 2200 BC – AD 75",
+            "author": "Paul-Alain Beaulieu (Wiley-Blackwell, 2018)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Nebuchadrezzar and Babylon",
+            "author": "D. J. Wiseman (Oxford University Press for the British Academy, 1985)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Antiquities of the Jews, book 10",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary"
+        },
+        {
+            "title": "Histories, 1.178–191",
+            "author": "Herodotus (5th century BC)",
+            "type": "primary",
+            "note": "Description of Babylon and its capture by Cyrus."
+        }
+    ]
+}

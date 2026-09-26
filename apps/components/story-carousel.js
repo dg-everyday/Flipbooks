@@ -4,8 +4,9 @@
  * Reads a list of stories and shows each as a tall cover with its title and
  * description underneath. One card fills most of the row and the next one
  * peeks in beside it. Swipe with a finger or drag with the mouse to move one
- * card at a time; the row wraps around endlessly in both directions. Each card
- * links to the story reader.
+ * card at a time; the row wraps around endlessly in both directions. A folded
+ * corner at the bottom right of each cover links to the story reader; the
+ * rest of the cover is not a link.
  *
  * Usage
  *   <story-carousel></story-carousel>
@@ -18,7 +19,11 @@
  *             added as ?story=<id>. Default: apps/pages/stories.html
  *   heading   Text beside the icon above the row. Default: Stories
  *
- * Each story in the list is { id, cover_page, title, description }.
+ * Each story in the list is { id, cover_page, title, description }, plus
+ * optional "audio" and "story-book" URLs. Each one given shows as a pill over
+ * the cover. AUDIO plays the story right here, turning into a pause button
+ * while it plays; moving on to another story stops it. PDF opens the book in a
+ * new tab.
  *
  * Methods      next(), previous()  scroll one card along
  * Properties   stories (read-only)
@@ -29,7 +34,10 @@
  * CSS custom properties
  *   --story-card-width   share of the row the current card takes. Default: 75%
  *   --story-card-gap, --story-carousel-gutter, --story-carousel-ink,
- *   --story-carousel-radius, --story-card-glow, --story-card-glow-hover
+ *   --story-carousel-radius
+ *   --story-card-glow, --story-card-glow-hover   drop-shadow() filters, so the
+ *                        glow follows the folded corner
+ *   --story-dog-ear      size of the folded corner. Default: 48px
  */
 
 const DEFAULT_SRC = 'assets/stories.json';
@@ -49,6 +57,12 @@ const STORIES_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentC
   <path fill-rule="evenodd" d="M6 2h12a4 4 0 0 1 4 4v1H2V6a4 4 0 0 1 4-4Zm1.2 1.6L9 6.4h2.4L9.6 3.6H7.2Zm5 0L14 6.4h2.4l-1.8-2.8h-2.4Zm5 0L19 6.4h1.3A2.5 2.5 0 0 0 18 3.6h-.8ZM2 8.6h20V18a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8.6Zm8 3.2v6.8l5.6-3.4L10 11.8Z"/>
 </svg>`;
 
+// The AUDIO pill carries both marks; CSS shows the one that fits.
+const PLAY_ICON = `<svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg>`;
+const PAUSE_ICON = `<svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1.2"/><rect x="14" y="4" width="5" height="16" rx="1.2"/></svg>`;
+// An arrow into a tray, for the PDF pill.
+const DOWNLOAD_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>`;
+
 const STYLES = /* css */ `
   :host {
     --story-card-width: 75%;
@@ -56,8 +70,9 @@ const STYLES = /* css */ `
     --story-carousel-gutter: 24px;
     --story-carousel-ink: var(--ink, #10253b);
     --story-carousel-radius: 18px;
-    --story-card-glow: 0 0 10px 2px rgb(198 146 46 / 55%), 0 2px 8px rgb(0 27 52 / 8%);
-    --story-card-glow-hover: 0 0 12px 3px rgb(198 146 46 / 70%), 0 3px 10px rgb(0 27 52 / 10%);
+    --story-card-glow: drop-shadow(0 0 6px rgb(198 146 46 / 85%)) drop-shadow(0 2px 4px rgb(0 27 52 / 10%));
+    --story-card-glow-hover: drop-shadow(0 0 8px rgb(198 146 46 / 100%)) drop-shadow(0 3px 5px rgb(0 27 52 / 12%));
+    --story-dog-ear: 48px;
     /* Room inside the scroller for the glow, which it would otherwise clip.
        Keep it narrower than the card gap so no neighbouring card reaches it. */
     --story-glow-room: 14px;
@@ -107,20 +122,21 @@ const STYLES = /* css */ `
   }
 
   .item {
+    position: relative;
     flex: 0 0 var(--story-card-width);
     scroll-snap-align: start;
     /* One card per swipe, however hard the flick. */
     scroll-snap-stop: always;
   }
 
-  .card {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    border-radius: var(--story-carousel-radius);
-    -webkit-user-drag: none;
+  /* The glow is a filter on the wrapper, not a box-shadow on the image, so
+     it traces the folded corner instead of the square it was cut from. */
+  .cover-wrap {
+    position: relative;
+    filter: var(--story-card-glow);
+    transition: filter .25s ease;
   }
-  .card:focus-visible { outline: 2px solid var(--story-carousel-ink); outline-offset: 4px; }
+  .cover-wrap:has(.dog-ear:hover, .dog-ear:focus-visible) { filter: var(--story-card-glow-hover); }
 
   .cover {
     display: block;
@@ -129,14 +145,67 @@ const STYLES = /* css */ `
     object-fit: cover;
     border-radius: var(--story-carousel-radius);
     background: rgb(0 0 0 / 8%);
-    box-shadow: var(--story-card-glow);
-    transition: box-shadow .25s ease;
+    /* Cut away the corner the dog-ear is folded from. */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--story-dog-ear)), calc(100% - var(--story-dog-ear)) 100%, 0 100%);
     pointer-events: none;
     -webkit-user-drag: none;
   }
 
-  .card:hover .cover,
-  .card:focus-visible .cover { box-shadow: var(--story-card-glow-hover); }
+  /* The corner of the cover folded back over it: the link to the flipbook.
+     The whole corner square takes taps; only its upper half is drawn. */
+  .dog-ear {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: var(--story-dog-ear);
+    height: var(--story-dog-ear);
+    cursor: pointer;
+    -webkit-user-drag: none;
+    filter: drop-shadow(-2px -2px 3px rgb(0 0 0 / 35%));
+  }
+  .dog-ear::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-top-left-radius: 6px;
+    background: linear-gradient(135deg, #fffaf0 0%, #efe3c8 60%, #d9c49b 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    transition: filter .25s ease;
+  }
+  .dog-ear:hover::before { filter: brightness(1.06); }
+  .dog-ear:focus-visible { outline: 2px solid var(--story-carousel-ink); outline-offset: 2px; border-radius: 4px; }
+
+  /* Links to the story's audio and book, over the cover's top-right corner.
+     They sit outside the cover's wrapper so its glow does not ring them. */
+  .pills {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 6px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #c8102e;
+    color: #fff;
+    font: 700 .8125rem/1.2 'Roboto', Arial, sans-serif;
+    letter-spacing: .06em;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
+    -webkit-user-drag: none;
+    cursor: pointer;
+  }
+  .pill svg { flex: none; width: 1em; height: 1em; }
+  .pill .icon-pause,
+  .pill.playing .icon-play { display: none; }
+  .pill.playing .icon-pause { display: block; }
+  .pill:hover { background: #a50d26; }
+  .pill:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
   .text {
     display: -webkit-box;
@@ -153,7 +222,7 @@ const STYLES = /* css */ `
     :host { --story-carousel-gutter: 16px; --story-card-gap: 16px; --story-glow-room: 12px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .cover { transition: none; }
+    .cover-wrap, .dog-ear::before { transition: none; }
   }
 `;
 
@@ -175,6 +244,8 @@ export class StoryCarousel extends HTMLElement {
   #drag = null;
   #settling = false;
   #suppressClick = false;
+  #audio = null;
+  #audioStory = -1;
   #resizeObserver = new ResizeObserver(() => this.#measure());
   #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -211,6 +282,10 @@ export class StoryCarousel extends HTMLElement {
       event.preventDefault();
       event.stopPropagation();
     }, true);
+    this.#track.addEventListener('click', (event) => {
+      const pill = event.target.closest('.pill-audio');
+      if (pill) this.#toggleAudio(Number(pill.dataset.story));
+    });
 
     this.#syncHeading();
   }
@@ -223,6 +298,7 @@ export class StoryCarousel extends HTMLElement {
   disconnectedCallback() {
     this.#resizeObserver.disconnect();
     clearTimeout(this.#scrollTimer);
+    this.#stopAudio();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -281,7 +357,7 @@ export class StoryCarousel extends HTMLElement {
     this.dispatchEvent(new CustomEvent('storiesload', { detail: { stories: this.stories } }));
   }
 
-  #cardHtml(story, isCopy) {
+  #cardHtml(story, index, isCopy) {
     const reader = new URL(this.getAttribute('reader') || DEFAULT_READER, document.baseURI);
     reader.searchParams.set('story', story.id);
     const title = escapeHtml(story.title);
@@ -289,22 +365,34 @@ export class StoryCarousel extends HTMLElement {
     // Copies exist only to make the loop seamless. They stay clickable, since
     // they are on screen near the wrap point, but are kept out of the tab order
     // and away from screen readers so each story is announced once.
+    const tabindex = isCopy ? ' tabindex="-1"' : '';
+    // Every copy of a story shares its index, so they all show the same state.
+    const audio = story.audio
+      ? `<button type="button" class="pill pill-audio" data-story="${index}" aria-pressed="false" aria-label="Listen to ${title}"${tabindex}>${PLAY_ICON}${PAUSE_ICON}AUDIO</button>`
+      : '';
+    const book = story['story-book']
+      ? `<a class="pill" href="${escapeHtml(story['story-book'])}" target="_blank" rel="noopener" draggable="false" aria-label="Read ${title} (PDF)"${tabindex}>${DOWNLOAD_ICON}PDF</a>`
+      : '';
+    const pills = audio + book;
     return `
       <li class="item"${isCopy ? ' aria-hidden="true"' : ''}>
-        <a class="card" href="${escapeHtml(reader.href)}" draggable="false"${isCopy ? ' tabindex="-1"' : ''}>
+        <div class="cover-wrap">
           <img class="cover" src="${escapeHtml(story.cover_page)}" alt="" loading="lazy" decoding="async" draggable="false" />
-          <p class="text"><span class="title">${title}</span>${description ? ` - ${description}` : ''}</p>
-        </a>
+          <a class="dog-ear" href="${escapeHtml(reader.href)}" draggable="false" aria-label="Open the ${title} flipbook" title="Open the flipbook"${tabindex}></a>
+        </div>
+        <p class="text"><span class="title">${title}</span>${description ? ` - ${description}` : ''}</p>${pills ? `
+        <div class="pills">${pills}</div>` : ''}
       </li>`;
   }
 
   #render() {
+    this.#stopAudio();
     const stories = this.#stories;
     const looping = stories.length > 1;
     this.toggleAttribute('looping', looping);
 
     if (!looping) {
-      this.#track.innerHTML = stories.map((story) => this.#cardHtml(story, false)).join('');
+      this.#track.innerHTML = stories.map((story, i) => this.#cardHtml(story, i, false)).join('');
       this.#lapWidth = 0;
       return;
     }
@@ -316,7 +404,7 @@ export class StoryCarousel extends HTMLElement {
     const lap = Array.from({ length: repeats }, () => stories).flat();
     const html = [];
     for (let l = 0; l < LAPS; l++) {
-      lap.forEach((story, i) => html.push(this.#cardHtml(story, !(l === 1 && i < stories.length))));
+      lap.forEach((story, i) => html.push(this.#cardHtml(story, i % stories.length, !(l === 1 && i < stories.length))));
     }
     this.#track.innerHTML = html.join('');
     this.#measure();
@@ -368,6 +456,61 @@ export class StoryCarousel extends HTMLElement {
       this.#track.classList.remove('dragging');
     }
     this.#wrap();
+    // Moving on to another story stops the one playing.
+    if (this.#audioStory >= 0 && this.#currentStory() !== this.#audioStory) this.#stopAudio();
+  }
+
+  /** The story whose card is snapped to the left edge. */
+  #currentStory() {
+    const count = this.#stories.length;
+    return count ? ((this.#index() % count) + count) % count : -1;
+  }
+
+  #toggleAudio(index) {
+    const url = this.#stories[index]?.audio;
+    if (!url) return;
+    if (!this.#audio) {
+      this.#audio = new Audio();
+      this.#audio.preload = 'none';
+      this.#audio.addEventListener('play', () => this.#syncAudioPills(true));
+      for (const type of ['pause', 'ended', 'error']) {
+        this.#audio.addEventListener(type, () => this.#syncAudioPills(false));
+      }
+    }
+    const audio = this.#audio;
+    if (index === this.#audioStory && !audio.paused) {
+      audio.pause();
+      return;
+    }
+    if (index !== this.#audioStory) {
+      this.#stopAudio();
+      this.#audioStory = index;
+      audio.src = url;
+    }
+    audio.play().catch((error) => {
+      // A newer tap or a stop cut this one short; nothing went wrong.
+      if (error.name === 'AbortError') return;
+      console.error(`Unable to play ${url}:`, error);
+      this.#syncAudioPills(false);
+    });
+  }
+
+  /** Stop and rewind, so the story starts over next time. */
+  #stopAudio() {
+    if (!this.#audio || this.#audioStory < 0) return;
+    this.#audio.pause();
+    this.#audio.removeAttribute('src');
+    this.#audio.load();
+    this.#audioStory = -1;
+    this.#syncAudioPills(false);
+  }
+
+  #syncAudioPills(playing) {
+    for (const pill of this.#track.querySelectorAll('.pill-audio')) {
+      const on = playing && Number(pill.dataset.story) === this.#audioStory;
+      pill.classList.toggle('playing', on);
+      pill.setAttribute('aria-pressed', String(on));
+    }
   }
 
   /** Keep the scroll inside the middle lap by jumping one lap, which looks identical. */
@@ -375,7 +518,7 @@ export class StoryCarousel extends HTMLElement {
     const lap = this.#lapWidth;
     if (!lap || this.#drag || this.#settling) return;
     // Jumping now would carry a keyboard-focused card out of view.
-    if (this.#root.activeElement?.matches('.card:focus-visible')) return;
+    if (this.#root.activeElement?.matches(':focus-visible')) return;
     const x = this.#track.scrollLeft;
     if (x < lap * 0.5) this.#track.scrollLeft = x + lap;
     else if (x >= lap * 1.5) this.#track.scrollLeft = x - lap;

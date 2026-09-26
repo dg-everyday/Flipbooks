@@ -1,0 +1,321 @@
+{
+    "id": "amorites",
+    "name": "Amorites",
+    "kjv_names": [
+        "Amorites",
+        "Amorite"
+    ],
+    "also_known_as": [
+        "Amurru / MAR.TU (Mesopotamian texts)",
+        "'Westerners'"
+    ],
+    "category": "Canaanite nation",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "A widespread Semitic people who spread across Mesopotamia and the Levant in the early 2nd millennium BC. In Canaan they held the hill country and the kingdoms of Sihon and Og east of the Jordan. Their defeat was Israel's first conquest. They are so typical of the land's inhabitants that 'Amorite' sometimes stands for them all.",
+    "name_meaning": "From Akkadian Amurru, 'the West' — the Mesopotamian name for them and their region.",
+    "origin": {
+        "account": "The Amorite is the fourth of Canaan's descendants in the Table of Nations. Outside the Bible, Mesopotamian texts from about 2400 BC onward describe semi-nomadic 'Martu/Amurru' from the Syrian steppe. Around 2000–1800 BC they founded ruling dynasties across Mesopotamia and Syria — Hammurabi of Babylon was of Amorite descent — and settled widely in Canaan.",
+        "references": [
+            "Genesis 10:16"
+        ]
+    },
+    "lineage": {
+        "ancestor": "The Amorite, descendant of Canaan",
+        "line": [
+            "Noah",
+            "Ham",
+            "Canaan",
+            "The Amorite"
+        ],
+        "notes": "Genesis names Abram's allies Mamre, Eshcol and Aner as Amorites. Ezekiel's taunt to Jerusalem — 'thy father was an Amorite' — reflects the city's pre-Israelite roots.",
+        "references": [
+            "Genesis 14:13",
+            "Ezekiel 16:3"
+        ]
+    },
+    "homeland": {
+        "region": "The hill country of Canaan and Transjordan (Gilead and Bashan)",
+        "description": "West of the Jordan the Amorites lived in the mountains ('the mount of the Amorites'). East of the Jordan Sihon ruled from Heshbon between the Arnon and the Jabbok, and Og, 'king of Bashan', ruled the Golan heights and the Hauran with sixty walled cities.",
+        "modern_location": "Central highlands of Israel/West Bank; northern Jordan; the Golan and south-western Syria.",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories",
+            "Jordan",
+            "Syria"
+        ],
+        "center": {
+            "lat": 32.1,
+            "lon": 35.8
+        },
+        "places": [
+            {
+                "name": "Heshbon",
+                "modern_name": "Tell Hisban, Jordan",
+                "lat": 31.8,
+                "lon": 35.81,
+                "note": "Royal city of Sihon.",
+                "references": [
+                    "Numbers 21:26"
+                ]
+            },
+            {
+                "name": "Edrei",
+                "modern_name": "Daraa, Syria",
+                "lat": 32.62,
+                "lon": 36.1,
+                "note": "Where Israel defeated Og.",
+                "references": [
+                    "Numbers 21:33"
+                ]
+            },
+            {
+                "name": "Bashan (Argob)",
+                "modern_name": "Golan and Hauran",
+                "lat": 32.8,
+                "lon": 36.1,
+                "note": "Og's kingdom of 'threescore cities'.",
+                "references": [
+                    "Deuteronomy 3:4-5"
+                ]
+            },
+            {
+                "name": "Gibeon and the valley of Ajalon",
+                "modern_name": "El-Jib and Ayalon Valley",
+                "lat": 31.85,
+                "lon": 35.18,
+                "note": "Where five Amorite kings were defeated as the sun stood still.",
+                "references": [
+                    "Joshua 10:5",
+                    "Joshua 10:12-13"
+                ]
+            },
+            {
+                "name": "Mari",
+                "modern_name": "Tell Hariri, Syria",
+                "lat": 34.55,
+                "lon": 40.89,
+                "note": "Amorite kingdom on the Euphrates whose archives illuminate the patriarchal era (not named in the Bible).",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "God tells Abram his descendants will return 'in the fourth generation: for the iniquity of the Amorites is not yet full'.",
+            "references": [
+                "Genesis 15:13-16"
+            ]
+        },
+        {
+            "date": "c. 1792–1750 BC",
+            "event": "Hammurabi, of an Amorite dynasty, rules Babylon and issues his law code.",
+            "references": []
+        },
+        {
+            "date": "End of the wilderness period",
+            "event": "Sihon refuses Israel passage and is defeated at Jahaz; Og of Bashan is defeated at Edrei. Their lands go to Reuben, Gad and half Manasseh.",
+            "references": [
+                "Numbers 21:21-35",
+                "Numbers 32:33"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "Five Amorite kings led by Adonizedek of Jerusalem attack Gibeon; Joshua defeats them in the day the sun stood still.",
+            "references": [
+                "Joshua 10:5-14"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "Joshua calls Israel to choose between the LORD and 'the gods of the Amorites, in whose land ye dwell'.",
+            "references": [
+                "Joshua 24:15"
+            ]
+        },
+        {
+            "date": "c. 1050 BC",
+            "event": "'There was peace between Israel and the Amorites' in Samuel's time.",
+            "references": [
+                "1 Samuel 7:14"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "Remaining Amorites are made forced labourers by Solomon.",
+            "references": [
+                "1 Kings 9:20-21"
+            ]
+        },
+        {
+            "date": "c. 697–642 BC",
+            "event": "Manasseh of Judah 'did wickedly above all that the Amorites did'.",
+            "references": [
+                "2 Kings 21:11"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Hadad (Baal)",
+            "Dagan",
+            "Amurru",
+            "local Canaanite gods"
+        ],
+        "practices": "In Canaan, Amorite religion was the Baal-and-Asherah cult of the land. Ahab 'did very abominably in following idols, according to all things as did the Amorites'. Their 'iniquity' became the Bible's standard for a culture ripe for judgement.",
+        "references": [
+            "1 Kings 21:26",
+            "Joshua 24:15"
+        ]
+    },
+    "importance": "The Amorites illustrate God's patience and justice. He delayed Israel's possession of the land for four centuries because Amorite iniquity was 'not yet full', so the conquest came as judgement when the time was complete. The victories over Sihon and Og became standard evidence of God's faithfulness in Israel's songs, and the day the sun stood still over the Amorite kings is one of Scripture's great miracles.",
+    "impact": [
+        {
+            "who": "Abraham",
+            "how": "Amorite allies Mamre, Eshcol and Aner helped him rescue Lot.",
+            "references": [
+                "Genesis 14:13-14",
+                "Genesis 14:24"
+            ]
+        },
+        {
+            "who": "Rahab and Jericho",
+            "how": "News of Sihon and Og's defeat melted the hearts of Jericho.",
+            "references": [
+                "Joshua 2:10-11"
+            ]
+        },
+        {
+            "who": "The Gibeonites",
+            "how": "Their treaty with Israel brought the Amorite coalition against them, and Joshua's rescue.",
+            "references": [
+                "Joshua 10:6"
+            ]
+        },
+        {
+            "who": "Israel's worship",
+            "how": "Sihon and Og are named in psalms of praise for God's everlasting mercy.",
+            "references": [
+                "Psalms 135:10-12",
+                "Psalms 136:17-20"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Mamre, Eshcol and Aner",
+            "role": "Abram's confederates",
+            "references": [
+                "Genesis 14:13"
+            ]
+        },
+        {
+            "name": "Sihon king of the Amorites",
+            "role": "Ruled from Heshbon",
+            "references": [
+                "Numbers 21:21"
+            ]
+        },
+        {
+            "name": "Og king of Bashan",
+            "role": "Amorite king, last of the Rephaim",
+            "references": [
+                "Deuteronomy 3:11",
+                "Deuteronomy 31:4"
+            ]
+        },
+        {
+            "name": "Adonizedek",
+            "role": "King of Jerusalem who led the five kings",
+            "references": [
+                "Joshua 10:1-5"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 15:16",
+            "text": "But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full."
+        },
+        {
+            "reference": "Numbers 21:24",
+            "text": "And Israel smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok, even unto the children of Ammon: for the border of the children of Ammon was strong."
+        },
+        {
+            "reference": "Joshua 10:12",
+            "text": "Then spake Joshua to the LORD in the day when the LORD delivered up the Amorites before the children of Israel, and he said in the sight of Israel, Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon."
+        },
+        {
+            "reference": "Joshua 24:15",
+            "text": "And if it seem evil unto you to serve the LORD, choose you this day whom ye will serve; whether the gods which your fathers served that were on the other side of the flood, or the gods of the Amorites, in whose land ye dwell: but as for me and my house, we will serve the LORD."
+        },
+        {
+            "reference": "Amos 2:9",
+            "text": "Yet destroyed I the Amorite before them, whose height was like the height of the cedars, and he was strong as the oaks; yet I destroyed his fruit from above, and his roots from beneath."
+        }
+    ],
+    "fate": {
+        "summary": "In Mesopotamia and Syria, Amorite dynasties blended into Babylonian and later populations. In Canaan the Amorites were defeated, subjected to labour and absorbed into Israel and neighbouring peoples. The name disappears after the monarchy except as a byword.",
+        "references": [
+            "1 Kings 9:20-21",
+            "Amos 2:10"
+        ]
+    },
+    "today": {
+        "summary": "There are no Amorites today. Their legacy lives mostly in Mesopotamian history: the Code of Hammurabi and the royal archives of Mari.",
+        "descendants": "Absorbed into the populations of Iraq, Syria and the Levant.",
+        "modern_legacy": "Personal names and customs in the Mari texts are widely used to set the patriarchal narratives in context."
+    },
+    "archaeology": [
+        {
+            "name": "Code of Hammurabi",
+            "date": "c. 1754 BC",
+            "discovered": "1901 at Susa, Iran",
+            "location": "Musée du Louvre, Paris",
+            "significance": "Law code of the best-known Amorite king."
+        },
+        {
+            "name": "Mari archives",
+            "date": "18th century BC",
+            "discovered": "From 1933, Tell Hariri, Syria",
+            "location": "National Museum of Aleppo / Louvre",
+            "significance": "About 20,000 tablets on Amorite tribes, prophets and customs."
+        }
+    ],
+    "related_peoples": [
+        "canaanites",
+        "hittites",
+        "jebusites",
+        "rephaim",
+        "moabites",
+        "ammonites",
+        "babylonians"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Amorites and the Bronze Age Near East",
+            "author": "Aaron A. Burke (Cambridge University Press, 2021)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Peoples of the Old Testament World",
+            "author": "Alfred J. Hoerth, Gerald L. Mattingly & Edwin M. Yamauchi, eds. (Baker, 1994) — chapter 'Canaanites and Amorites'",
+            "type": "scholarship"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Amorites'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

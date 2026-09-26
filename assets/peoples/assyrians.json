@@ -1,0 +1,402 @@
+{
+    "id": "assyrians",
+    "name": "Assyrians",
+    "kjv_names": [
+        "Assyrians",
+        "Assyrian",
+        "Assyria",
+        "Asshur",
+        "Assur"
+    ],
+    "also_known_as": [
+        "Asshur"
+    ],
+    "category": "Empire",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "The people of Asshur on the upper Tigris, who built the first great empire of the Iron Age and ruled it by terror. Assyria destroyed the northern kingdom of Israel in 722 BC and besieged Jerusalem under Hezekiah. It is also where Jonah preached and Nineveh repented. Modern Assyrian Christians see themselves as its descendants.",
+    "name_meaning": "From Asshur, the name of their first capital, of their national god, and of their ancestor in Genesis.",
+    "origin": {
+        "account": "Asshur was the second son of Shem. Genesis 10:11 also records that from the land of Shinar 'went forth Asshur, and builded Nineveh, and the city Rehoboth, and Calah'; many modern versions read the verse as saying Nimrod went out to Assyria. Historically the city of Assur was an independent trading city by about 2000 BC, and Assyria became a regional power under the Middle Assyrian kings (c. 1365–1050 BC).",
+        "references": [
+            "Genesis 10:22",
+            "Genesis 10:11-12"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Asshur, son of Shem",
+        "line": [
+            "Noah",
+            "Shem",
+            "Asshur"
+        ],
+        "notes": "Assyria belongs to Shem's line, like the Arameans, Elamites and Hebrews. Micah calls it 'the land of Nimrod'.",
+        "references": [
+            "Genesis 10:22",
+            "Micah 5:6"
+        ]
+    },
+    "homeland": {
+        "region": "Assyria — the upper Tigris valley in northern Mesopotamia",
+        "description": "The triangle of land between the Tigris and the Great and Little Zab rivers, with rain-fed farmland and the royal cities of Assur, Calah (Nimrud), Nineveh and Dur-Sharrukin. At its height (8th–7th centuries BC) the empire stretched from Iran to Egypt.",
+        "modern_location": "Northern Iraq (around Mosul), with the empire reaching into Syria, Turkey, Iran, the Levant and Egypt.",
+        "modern_countries": [
+            "Iraq",
+            "Syria",
+            "Turkey",
+            "Iran"
+        ],
+        "center": {
+            "lat": 36.36,
+            "lon": 43.15
+        },
+        "places": [
+            {
+                "name": "Nineveh",
+                "modern_name": "Kuyunjik and Nebi Yunus, Mosul, Iraq",
+                "lat": 36.36,
+                "lon": 43.15,
+                "note": "'That great city' of Jonah; Sennacherib's capital.",
+                "references": [
+                    "Jonah 3:3",
+                    "2 Kings 19:36"
+                ]
+            },
+            {
+                "name": "Calah",
+                "modern_name": "Nimrud, Iraq",
+                "lat": 36.1,
+                "lon": 43.33,
+                "note": "Royal city where the Black Obelisk was found.",
+                "references": [
+                    "Genesis 10:11"
+                ]
+            },
+            {
+                "name": "Assur",
+                "modern_name": "Qal'at Sherqat, Iraq",
+                "lat": 35.46,
+                "lon": 43.26,
+                "note": "The original capital and cult centre (UNESCO site).",
+                "references": []
+            },
+            {
+                "name": "Halah, Habor, the river of Gozan, cities of the Medes",
+                "modern_name": "Khabur river region, Syria; north-west Iran",
+                "lat": 36.5,
+                "lon": 40.75,
+                "note": "Where the northern Israelites were deported.",
+                "references": [
+                    "2 Kings 17:6"
+                ]
+            },
+            {
+                "name": "Lachish",
+                "modern_name": "Tel Lachish, Israel",
+                "lat": 31.56,
+                "lon": 34.85,
+                "note": "Judean city whose siege by Sennacherib is carved on the Nineveh palace walls.",
+                "references": [
+                    "2 Kings 18:14",
+                    "2 Chronicles 32:9"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "853 BC",
+            "event": "Shalmaneser III fights a western coalition including Ahab of Israel at Qarqar (recorded on his Kurkh Monolith; not mentioned in the Bible).",
+            "references": []
+        },
+        {
+            "date": "c. 841 BC",
+            "event": "Jehu of Israel pays tribute to Shalmaneser III (Black Obelisk).",
+            "references": [
+                "2 Kings 10:32"
+            ]
+        },
+        {
+            "date": "c. 780–760 BC",
+            "event": "Jonah preaches in Nineveh; the king and people repent and God spares the city.",
+            "references": [
+                "Jonah 3:4-10",
+                "Jonah 4:11"
+            ]
+        },
+        {
+            "date": "745–727 BC",
+            "event": "Tiglath-pileser III ('Pul') makes Israel tributary, deports Galilee and Gilead, and takes Damascus at Ahaz's invitation.",
+            "references": [
+                "2 Kings 15:19",
+                "2 Kings 15:29",
+                "2 Kings 16:7-9"
+            ]
+        },
+        {
+            "date": "722 BC",
+            "event": "Shalmaneser V besieges Samaria and it falls (Sargon II claims it). The ten tribes are deported and foreigners settled in their place.",
+            "references": [
+                "2 Kings 17:3-6",
+                "2 Kings 18:9-11"
+            ]
+        },
+        {
+            "date": "701 BC",
+            "event": "Sennacherib takes the fenced cities of Judah, including Lachish, and besieges Jerusalem. Hezekiah prays; the angel of the LORD strikes 185,000 Assyrians and Sennacherib goes home.",
+            "references": [
+                "2 Kings 18:13",
+                "2 Kings 19:14-19",
+                "2 Kings 19:35-36"
+            ]
+        },
+        {
+            "date": "681 BC",
+            "event": "Sennacherib is murdered by two of his sons in the temple of his god; Esarhaddon succeeds him.",
+            "references": [
+                "2 Kings 19:37"
+            ]
+        },
+        {
+            "date": "c. 680–669 BC",
+            "event": "Manasseh of Judah is taken in chains to Babylon by Assyrian commanders, repents and is restored.",
+            "references": [
+                "2 Chronicles 33:11-13"
+            ]
+        },
+        {
+            "date": "612 BC",
+            "event": "Nineveh falls to the Babylonians and Medes, as Nahum and Zephaniah foretold.",
+            "references": [
+                "Nahum 3:7",
+                "Zephaniah 2:13-15"
+            ]
+        },
+        {
+            "date": "609 BC",
+            "event": "The last Assyrian remnant is destroyed at Haran; Pharaoh Necho marches to help it and kills Josiah on the way.",
+            "references": [
+                "2 Kings 23:29"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Ashur (the national god)",
+            "Ishtar",
+            "Nisroch",
+            "Adrammelech and Anammelech (gods of settlers from Sepharvaim)"
+        ],
+        "practices": "The king ruled as the god Ashur's regent, and conquest was presented as religious duty. Assyrian envoys mocked the LORD as just another national god. The settlers Assyria placed in Samaria brought their own gods and burned children to some of them.",
+        "references": [
+            "2 Kings 19:37",
+            "2 Kings 17:31",
+            "2 Kings 18:33-35",
+            "Isaiah 36:18-20"
+        ]
+    },
+    "importance": "The prophets call Assyria 'the rod of mine anger' — the tool God used to judge the northern kingdom for idolatry — and then judge Assyria for its own pride. The empire's arrival ended the ten tribes' national history and set up the later Jew–Samaritan divide. Its defeat at Jerusalem is one of the Old Testament's great deliverances, answering Hezekiah's prayer. Jonah shows God's compassion even for Israel's most feared enemy, and Isaiah foresees a day when 'Assyria the work of my hands' worships alongside Israel.",
+    "impact": [
+        {
+            "who": "The northern kingdom of Israel",
+            "how": "Deported and scattered in 722 BC.",
+            "references": [
+                "2 Kings 17:6",
+                "2 Kings 17:18"
+            ]
+        },
+        {
+            "who": "Hezekiah and Isaiah",
+            "how": "The siege of 701 BC tested Hezekiah's trust; Isaiah's prophecies of deliverance came true.",
+            "references": [
+                "Isaiah 37:6-7",
+                "Isaiah 37:33-36"
+            ]
+        },
+        {
+            "who": "Jonah",
+            "how": "Resented God's mercy to Nineveh and was taught God's compassion.",
+            "references": [
+                "Jonah 4:2",
+                "Jonah 4:10-11"
+            ]
+        },
+        {
+            "who": "Jesus' generation",
+            "how": "Jesus cites Nineveh's repentance at Jonah's preaching as a rebuke to those who would not repent at his.",
+            "references": [
+                "Matthew 12:41",
+                "Luke 11:30"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Asshur",
+            "role": "Son of Shem",
+            "references": [
+                "Genesis 10:22"
+            ]
+        },
+        {
+            "name": "Pul (Tiglath-pileser III)",
+            "role": "Empire-builder",
+            "references": [
+                "1 Chronicles 5:26"
+            ]
+        },
+        {
+            "name": "Shalmaneser V",
+            "role": "Besieged Samaria",
+            "references": [
+                "2 Kings 17:3"
+            ]
+        },
+        {
+            "name": "Sargon II",
+            "role": "Took Ashdod",
+            "references": [
+                "Isaiah 20:1"
+            ]
+        },
+        {
+            "name": "Sennacherib",
+            "role": "Invaded Judah",
+            "references": [
+                "2 Kings 18:13"
+            ]
+        },
+        {
+            "name": "Rabshakeh",
+            "role": "Sennacherib's envoy who taunted Jerusalem",
+            "references": [
+                "2 Kings 18:17-19"
+            ]
+        },
+        {
+            "name": "Esarhaddon",
+            "role": "Sennacherib's son and successor",
+            "references": [
+                "2 Kings 19:37",
+                "Ezra 4:2"
+            ]
+        },
+        {
+            "name": "Asnapper (probably Ashurbanipal)",
+            "role": "Resettled peoples in Samaria",
+            "references": [
+                "Ezra 4:10"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Isaiah 10:5",
+            "text": "O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation."
+        },
+        {
+            "reference": "2 Kings 17:6",
+            "text": "In the ninth year of Hoshea the king of Assyria took Samaria, and carried Israel away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes."
+        },
+        {
+            "reference": "2 Kings 19:35",
+            "text": "And it came to pass that night, that the angel of the LORD went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses."
+        },
+        {
+            "reference": "Jonah 4:11",
+            "text": "And should not I spare Nineveh, that great city, wherein are more than sixscore thousand persons that cannot discern between their right hand and their left hand; and also much cattle?"
+        },
+        {
+            "reference": "Isaiah 19:24-25",
+            "text": "In that day shall Israel be the third with Egypt and with Assyria, even a blessing in the midst of the land: Whom the LORD of hosts shall bless, saying, Blessed be Egypt my people, and Assyria the work of my hands, and Israel mine inheritance."
+        }
+    ],
+    "fate": {
+        "summary": "Nineveh fell in 612 BC and the empire ended at Haran in 609 BC. Its cities were destroyed so thoroughly that by the time Xenophon passed Nimrud and Nineveh in 401 BC he did not recognise them. The Assyrian people and the Aramaic-speaking population of the region lived on under Babylon, Persia and later empires, and many became Christians in the first centuries AD.",
+        "references": [
+            "Nahum 1:1",
+            "Nahum 3:18-19"
+        ]
+    },
+    "today": {
+        "summary": "Modern Assyrians — Aramaic (Syriac)-speaking Christians of the Assyrian Church of the East, the Chaldean Catholic Church and the Syriac churches — regard themselves as descendants of ancient Assyria. Their homeland communities are in northern Iraq, north-eastern Syria, south-eastern Turkey and north-western Iran, with a large diaspora. They were severely persecuted in the 1915 Sayfo genocide and displaced again by ISIS (2014–2017).",
+        "descendants": "The modern Assyrian (and related Chaldean and Syriac) Christian communities.",
+        "modern_legacy": "Assyrian palace reliefs and the library of Ashurbanipal (the source of the Epic of Gilgamesh as we mostly know it) are among the treasures of the British Museum and the Louvre."
+    },
+    "archaeology": [
+        {
+            "name": "Black Obelisk of Shalmaneser III",
+            "date": "c. 825 BC",
+            "discovered": "1846 at Nimrud by Austen Henry Layard",
+            "location": "British Museum (BM 118885)",
+            "significance": "Only known image of an Israelite king (Jehu, or his envoy) bowing in tribute."
+        },
+        {
+            "name": "Taylor Prism (Sennacherib's annals)",
+            "date": "c. 690 BC",
+            "discovered": "Nineveh, 1830",
+            "location": "British Museum (BM 91032)",
+            "significance": "Sennacherib boasts he shut up Hezekiah 'like a bird in a cage' in Jerusalem — but claims no capture."
+        },
+        {
+            "name": "Lachish reliefs",
+            "date": "c. 700 BC",
+            "discovered": "1840s at Nineveh (Sennacherib's Southwest Palace)",
+            "location": "British Museum",
+            "significance": "Wall reliefs showing the siege and fall of Lachish and deportees from Judah."
+        },
+        {
+            "name": "Library of Ashurbanipal",
+            "date": "7th century BC",
+            "discovered": "1849–1854 at Nineveh",
+            "location": "British Museum",
+            "significance": "About 30,000 tablets, including the Gilgamesh flood story."
+        }
+    ],
+    "related_peoples": [
+        "babylonians",
+        "medes",
+        "arameans",
+        "samaritans",
+        "israelites",
+        "egyptians",
+        "elamites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Assyria: The Rise and Fall of the World's First Empire",
+            "author": "Eckart Frahm (Basic Books, 2023)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Assyrian and Babylonian Chronicles",
+            "author": "A. Kirk Grayson (J. J. Augustin, 1975)",
+            "type": "primary"
+        },
+        {
+            "title": "Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed.",
+            "author": "James B. Pritchard, ed. (Princeton, 1969)",
+            "type": "primary",
+            "note": "Sennacherib's annals; Black Obelisk."
+        },
+        {
+            "title": "Anabasis, 3.4",
+            "author": "Xenophon (4th century BC)",
+            "type": "primary",
+            "note": "Passing the ruined Assyrian cities."
+        },
+        {
+            "title": "Nineveh and Its Remains",
+            "author": "Austen Henry Layard (1849)",
+            "type": "archaeology"
+        }
+    ]
+}

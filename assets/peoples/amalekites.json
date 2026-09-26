@@ -1,0 +1,294 @@
+{
+    "id": "amalekites",
+    "name": "Amalekites",
+    "kjv_names": [
+        "Amalekites",
+        "Amalekite",
+        "Amalek"
+    ],
+    "also_known_as": [
+        "Amalek"
+    ],
+    "category": "Nomadic raiders",
+    "group": "Neighbours & kin",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "A nomadic raiding people of the Negev and Sinai, descended from Esau's grandson Amalek. They were the first nation to attack Israel after the Exodus, striking the weary stragglers. Their unending hostility made Amalek the archetype of the enemy of God's people, from Moses' raised hands to Saul's lost kingdom and, by tradition, to Haman in the book of Esther.",
+    "name_meaning": "Uncertain; possibly 'dweller in the valley'.",
+    "origin": {
+        "account": "Timna, concubine of Esau's son Eliphaz, bore him Amalek, who became a duke (chief) of Edom. Genesis 14:7 speaks of 'the country of the Amalekites' in Abraham's day, which most interpreters read as naming the region by its later inhabitants.",
+        "references": [
+            "Genesis 36:12",
+            "Genesis 36:16",
+            "Genesis 14:7"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Amalek, son of Eliphaz, son of Esau",
+        "line": [
+            "Abraham",
+            "Isaac",
+            "Esau",
+            "Eliphaz",
+            "Amalek"
+        ],
+        "notes": "Timna, Amalek's mother, was sister of the Horite chief Lotan. So the Amalekites were an Edomite–Horite branch that split off as a separate nomadic nation.",
+        "references": [
+            "Genesis 36:12",
+            "Genesis 36:22"
+        ]
+    },
+    "homeland": {
+        "region": "The Negev and northern Sinai — 'the land of the south'",
+        "description": "Desert nomads ranging from the Negev south of Judah into Sinai and 'from Havilah until thou comest to Shur, that is over against Egypt'. They moved with camels and flocks and raided settled lands.",
+        "modern_location": "Southern Israel (Negev) and the Sinai Peninsula of Egypt.",
+        "modern_countries": [
+            "Israel",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 30.6,
+            "lon": 34.5
+        },
+        "places": [
+            {
+                "name": "Rephidim",
+                "modern_name": "Sinai (probably Wadi Refayid or Wadi Feiran)",
+                "lat": 28.7,
+                "lon": 33.63,
+                "note": "Where Amalek attacked Israel and Moses held up his hands.",
+                "references": [
+                    "Exodus 17:8-13"
+                ]
+            },
+            {
+                "name": "The south (Negev)",
+                "modern_name": "Negev, Israel",
+                "lat": 30.9,
+                "lon": 34.8,
+                "note": "'The Amalekites dwell in the land of the south'.",
+                "references": [
+                    "Numbers 13:29"
+                ]
+            },
+            {
+                "name": "Ziklag",
+                "modern_name": "Probably Khirbet a-Ra'i or Tel Sera'",
+                "lat": 31.5,
+                "lon": 34.87,
+                "note": "David's town, burned by Amalekite raiders.",
+                "references": [
+                    "1 Samuel 30:1"
+                ]
+            },
+            {
+                "name": "Mount Seir",
+                "modern_name": "Southern Jordan",
+                "lat": 30.6,
+                "lon": 35.5,
+                "note": "Where the last Amalekites were destroyed in Hezekiah's day.",
+                "references": [
+                    "1 Chronicles 4:42-43"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Shortly after the Exodus",
+            "event": "Amalek attacks Israel at Rephidim. Israel prevails while Moses' hands are held up; Moses builds an altar, Jehovah-nissi, and God vows war on Amalek 'from generation to generation'.",
+            "references": [
+                "Exodus 17:8-16"
+            ]
+        },
+        {
+            "date": "Wilderness period",
+            "event": "Israel's unauthorised invasion of Canaan is crushed by the Amalekites and Canaanites at Hormah.",
+            "references": [
+                "Numbers 14:43-45"
+            ]
+        },
+        {
+            "date": "Wilderness period",
+            "event": "Balaam foretells Amalek's end: 'Amalek was the first of the nations; but his latter end shall be that he perish for ever.'",
+            "references": [
+                "Numbers 24:20"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Amalek joins Moab and later Midian in raiding Israel.",
+            "references": [
+                "Judges 3:13",
+                "Judges 6:3"
+            ]
+        },
+        {
+            "date": "c. 1030 BC",
+            "event": "Saul is commanded to destroy Amalek. He spares King Agag and the best livestock, and is told 'to obey is better than sacrifice'. God rejects him as king.",
+            "references": [
+                "1 Samuel 15:2-3",
+                "1 Samuel 15:9",
+                "1 Samuel 15:22-23"
+            ]
+        },
+        {
+            "date": "c. 1010 BC",
+            "event": "Amalekites burn Ziklag and take David's families captive. David recovers all. An Amalekite claims to have killed Saul and is executed.",
+            "references": [
+                "1 Samuel 30:1-19",
+                "2 Samuel 1:8-16"
+            ]
+        },
+        {
+            "date": "c. 715–686 BC",
+            "event": "Simeonites destroy 'the rest of the Amalekites that were escaped' at Mount Seir — the last historical mention.",
+            "references": [
+                "1 Chronicles 4:42-43"
+            ]
+        },
+        {
+            "date": "Persian period (c. 474 BC)",
+            "event": "Haman 'the Agagite' plots to destroy all Jews; Jewish tradition makes him a descendant of Agag the Amalekite.",
+            "references": [
+                "Esther 3:1",
+                "Esther 3:6"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Not recorded"
+        ],
+        "practices": "Scripture records nothing of their gods. It judges them for their conduct: they 'feared not God' and preyed on the weak.",
+        "references": [
+            "Deuteronomy 25:18"
+        ]
+    },
+    "importance": "Amalek stands for unprovoked cruelty against the weak and for opposition to God's purpose. They struck the faint stragglers at the rear, and Israel was commanded, 'Remember what Amalek did unto thee.' The battle at Rephidim is the Bible's first picture of intercession: victory came as Moses' hands were held up. Saul's failure against Amalek shows that partial obedience is disobedience, and it cost him his throne. In Esther the old conflict returns in Haman the Agagite.",
+    "impact": [
+        {
+            "who": "Moses, Aaron, Hur and Joshua",
+            "how": "The first battle after the Exodus; Joshua's first command and Moses' first recorded memorial.",
+            "references": [
+                "Exodus 17:9-14"
+            ]
+        },
+        {
+            "who": "Saul",
+            "how": "Sparing Agag cost him the kingdom.",
+            "references": [
+                "1 Samuel 15:26",
+                "1 Samuel 28:18"
+            ]
+        },
+        {
+            "who": "David",
+            "how": "At Ziklag, facing loss and mutiny, he 'encouraged himself in the LORD his God'.",
+            "references": [
+                "1 Samuel 30:6"
+            ]
+        },
+        {
+            "who": "Mordecai, Esther and the Jews of Persia",
+            "how": "Haman's genocide plot was overturned; the feast of Purim remembers it.",
+            "references": [
+                "Esther 9:24-26"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Amalek",
+            "role": "Ancestor, grandson of Esau",
+            "references": [
+                "Genesis 36:12"
+            ]
+        },
+        {
+            "name": "Agag",
+            "role": "King spared by Saul and killed by Samuel",
+            "references": [
+                "1 Samuel 15:8",
+                "1 Samuel 15:33"
+            ]
+        },
+        {
+            "name": "The Amalekite messenger",
+            "role": "Claimed to have killed Saul",
+            "references": [
+                "2 Samuel 1:13"
+            ]
+        },
+        {
+            "name": "Haman the Agagite",
+            "role": "Enemy of the Jews in Esther (tradition links him to Agag)",
+            "references": [
+                "Esther 3:10"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Exodus 17:11",
+            "text": "And it came to pass, when Moses held up his hand, that Israel prevailed: and when he let down his hand, Amalek prevailed."
+        },
+        {
+            "reference": "Exodus 17:16",
+            "text": "For he said, Because the LORD hath sworn that the LORD will have war with Amalek from generation to generation."
+        },
+        {
+            "reference": "Deuteronomy 25:17-19",
+            "text": "Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt; How he met thee by the way, and smote the hindmost of thee, even all that were feeble behind thee, when thou wast faint and weary; and he feared not God. Therefore it shall be, when the LORD thy God hath given thee rest from all thine enemies round about, in the land which the LORD thy God giveth thee for an inheritance to possess it, that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it."
+        },
+        {
+            "reference": "1 Samuel 15:22",
+            "text": "And Samuel said, Hath the LORD as great delight in burnt offerings and sacrifices, as in obeying the voice of the LORD? Behold, to obey is better than sacrifice, and to hearken than the fat of rams."
+        }
+    ],
+    "fate": {
+        "summary": "The last Amalekite remnant was destroyed by the tribe of Simeon at Mount Seir in Hezekiah's reign. After that the Bible knows them only through Haman's title 'the Agagite'.",
+        "references": [
+            "1 Chronicles 4:43",
+            "Numbers 24:20"
+        ]
+    },
+    "today": {
+        "summary": "No Amalekites exist today, and they are not identified in any known inscription outside the Bible. In Jewish tradition 'Amalek' is the symbol of irrational hatred of God's people. Deuteronomy 25:17-19 is read in synagogues on Shabbat Zachor, the sabbath before Purim.",
+        "descendants": "None.",
+        "modern_legacy": "The symbol of Amalek and the Purim festival."
+    },
+    "archaeology": [],
+    "related_peoples": [
+        "edomites",
+        "horites",
+        "kenites",
+        "israelites",
+        "midianites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Antiquities of the Jews, 3.2; 6.7; 11.6.5",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "Rephidim, Saul and Agag; Haman as an Amalekite."
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Amalekites'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        },
+        {
+            "title": "International Standard Bible Encyclopedia, 'Amalek; Amalekites'",
+            "author": "James Orr, ed. (1915)",
+            "type": "dictionary"
+        }
+    ]
+}

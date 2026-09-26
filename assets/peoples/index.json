@@ -1,0 +1,940 @@
+[
+    {
+        "id": "amalekites",
+        "name": "Amalekites",
+        "kjv_names": [
+            "Amalekites",
+            "Amalekite",
+            "Amalek"
+        ],
+        "category": "Nomadic raiders",
+        "group": "Neighbours & kin",
+        "summary": "A nomadic raiding people of the Negev and Sinai, descended from Esau's grandson Amalek. They were the first nation to attack Israel after the Exodus, striking the weary stragglers. Their unending hostility made Amalek the archetype of the enemy of God's people, from Moses' raised hands to Saul's lost kingdom and, by tradition, to Haman in the book of Esther.",
+        "ancestor": "Amalek, son of Eliphaz, son of Esau",
+        "region": "The Negev and northern Sinai — 'the land of the south'",
+        "modern_countries": [
+            "Israel",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 30.6,
+            "lon": 34.5
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/amalekites.json"
+    },
+    {
+        "id": "ammonites",
+        "name": "Ammonites",
+        "kjv_names": [
+            "Ammonites",
+            "Ammonitess",
+            "children of Ammon",
+            "Ammon"
+        ],
+        "category": "Transjordan kingdom",
+        "group": "Neighbours & kin",
+        "summary": "A kingdom on the upper Jabbok river, centred on Rabbah — today's Amman, capital of Jordan. The Ammonites came from Lot's younger daughter. They fought Israel under Jephthah, Saul and David, and gave Solomon a wife, Naamah, whose son Rehoboam stands in the royal line of Judah and in Jesus' genealogy.",
+        "ancestor": "Ben-ammi, son of Lot",
+        "region": "Ammon — the upper Jabbok, east of Gilead",
+        "modern_countries": [
+            "Jordan"
+        ],
+        "center": {
+            "lat": 31.95,
+            "lon": 35.93
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/ammonites.json"
+    },
+    {
+        "id": "amorites",
+        "name": "Amorites",
+        "kjv_names": [
+            "Amorites",
+            "Amorite"
+        ],
+        "category": "Canaanite nation",
+        "group": "Peoples of Canaan",
+        "summary": "A widespread Semitic people who spread across Mesopotamia and the Levant in the early 2nd millennium BC. In Canaan they held the hill country and the kingdoms of Sihon and Og east of the Jordan. Their defeat was Israel's first conquest. They are so typical of the land's inhabitants that 'Amorite' sometimes stands for them all.",
+        "ancestor": "The Amorite, descendant of Canaan",
+        "region": "The hill country of Canaan and Transjordan (Gilead and Bashan)",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories",
+            "Jordan",
+            "Syria"
+        ],
+        "center": {
+            "lat": 32.1,
+            "lon": 35.8
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/amorites.json"
+    },
+    {
+        "id": "anakim",
+        "name": "Anakim",
+        "kjv_names": [
+            "Anakims",
+            "sons of Anak",
+            "children of Anak",
+            "giants"
+        ],
+        "category": "Pre-Israelite giants",
+        "group": "Before Israel",
+        "summary": "A clan of unusually tall warriors around Hebron whose size terrified Israel's spies: 'we were in our own sight as grasshoppers'. Fear of them kept a whole generation out of the promised land. Forty-five years later the 85-year-old Caleb drove them out of Hebron, and their survivors retreated to Philistine Gath, Goliath's town.",
+        "ancestor": "Arba, father of Anak",
+        "region": "Hebron and the hill country of Judah",
+        "modern_countries": [
+            "Palestinian territories",
+            "Israel"
+        ],
+        "center": {
+            "lat": 31.53,
+            "lon": 35.1
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/anakim.json"
+    },
+    {
+        "id": "arameans",
+        "name": "Arameans",
+        "kjv_names": [
+            "Syrians",
+            "Syrian",
+            "Syria",
+            "Aram",
+            "Syriack"
+        ],
+        "category": "Kingdom",
+        "group": "Empires & kingdoms",
+        "summary": "A Semitic people of Syria and upper Mesopotamia, closely related to Israel's own ancestors — 'A Syrian ready to perish was my father'. Their kingdom at Damascus was Israel's great northern rival in the days of Elijah and Elisha. Their language, Aramaic, became the common tongue of the Near East. Parts of Ezra and Daniel are written in it, and Jesus spoke it.",
+        "ancestor": "Aram, son of Shem",
+        "region": "Aram — Syria and the upper Euphrates (Aram-Naharaim)",
+        "modern_countries": [
+            "Syria",
+            "Turkey",
+            "Iraq",
+            "Lebanon"
+        ],
+        "center": {
+            "lat": 33.51,
+            "lon": 36.29
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/arameans.json"
+    },
+    {
+        "id": "assyrians",
+        "name": "Assyrians",
+        "kjv_names": [
+            "Assyrians",
+            "Assyrian",
+            "Assyria",
+            "Asshur",
+            "Assur"
+        ],
+        "category": "Empire",
+        "group": "Empires & kingdoms",
+        "summary": "The people of Asshur on the upper Tigris, who built the first great empire of the Iron Age and ruled it by terror. Assyria destroyed the northern kingdom of Israel in 722 BC and besieged Jerusalem under Hezekiah. It is also where Jonah preached and Nineveh repented. Modern Assyrian Christians see themselves as its descendants.",
+        "ancestor": "Asshur, son of Shem",
+        "region": "Assyria — the upper Tigris valley in northern Mesopotamia",
+        "modern_countries": [
+            "Iraq",
+            "Syria",
+            "Turkey",
+            "Iran"
+        ],
+        "center": {
+            "lat": 36.36,
+            "lon": 43.15
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/assyrians.json"
+    },
+    {
+        "id": "babylonians",
+        "name": "Babylonians",
+        "kjv_names": [
+            "Babylonians",
+            "Babylon",
+            "Chaldeans",
+            "Chaldees",
+            "land of Shinar"
+        ],
+        "category": "Empire",
+        "group": "Empires & kingdoms",
+        "summary": "The people of Babylon on the Euphrates, the city where humanity built the tower of Babel. Under Nebuchadnezzar and the Chaldean dynasty they destroyed Jerusalem and Solomon's Temple and carried Judah into seventy years of exile — the setting of Daniel's furnace and lions' den. In Revelation, 'Babylon' becomes the name for the whole proud world system set against God.",
+        "ancestor": "Nimrod (founder of Babel), son of Cush; Chaldeans possibly from Chesed, son of Nahor",
+        "region": "Babylonia (Shinar, 'the land of the Chaldeans') — southern Mesopotamia",
+        "modern_countries": [
+            "Iraq"
+        ],
+        "center": {
+            "lat": 32.54,
+            "lon": 44.42
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/babylonians.json"
+    },
+    {
+        "id": "canaanites",
+        "name": "Canaanites",
+        "kjv_names": [
+            "Canaanites",
+            "Canaanite",
+            "Canaanitess",
+            "Canaan",
+            "woman of Canaan"
+        ],
+        "category": "Canaanite nation",
+        "group": "Peoples of Canaan",
+        "summary": "The Bronze Age inhabitants of the land God promised to Abraham — a patchwork of city-states between the Jordan and the Mediterranean, worshipping Baal and Asherah. 'Canaanite' is both the name of one people and the umbrella term for all the nations of the land. Their descendants are part of the Levantine population today.",
+        "ancestor": "Canaan, son of Ham",
+        "region": "Canaan — from Sidon to Gaza and the Dead Sea",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories",
+            "Lebanon",
+            "Syria",
+            "Jordan"
+        ],
+        "center": {
+            "lat": 32.3,
+            "lon": 35.2
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/canaanites.json"
+    },
+    {
+        "id": "cushites",
+        "name": "Cushites (Ethiopians)",
+        "kjv_names": [
+            "Ethiopians",
+            "Ethiopian",
+            "Ethiopia",
+            "Cush",
+            "Cushi"
+        ],
+        "category": "Kingdom",
+        "group": "Empires & kingdoms",
+        "summary": "The people of Cush — the Nile kingdom south of Egypt in what is now Sudan, which the KJV calls 'Ethiopia'. A Cushite dynasty ruled Egypt as the 25th Dynasty, and its king Tirhakah marched against Sennacherib. An Ethiopian official, Ebed-melech, rescued Jeremiah from a cistern. The Ethiopian eunuch, treasurer of Queen Candace, was among the first Gentiles baptised into Christ.",
+        "ancestor": "Cush, son of Ham",
+        "region": "Cush / Nubia — the Nile valley south of Aswan",
+        "modern_countries": [
+            "Sudan",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 18.53,
+            "lon": 31.82
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/cushites.json"
+    },
+    {
+        "id": "edomites",
+        "name": "Edomites",
+        "kjv_names": [
+            "Edomites",
+            "Edom",
+            "children of Esau",
+            "Idumea",
+            "Idumaea"
+        ],
+        "category": "Transjordan kingdom",
+        "group": "Neighbours & kin",
+        "summary": "The descendants of Esau, Jacob's twin brother, who lived in the red mountains of Seir south of the Dead Sea. The twins' rivalry carried on between their nations for more than a thousand years, from Edom refusing Israel passage to Edom cheering Jerusalem's fall. It ended with an Idumean dynasty, the Herods, ruling Judea when Jesus was born.",
+        "ancestor": "Esau (Edom), son of Isaac",
+        "region": "Edom / Mount Seir — south and south-east of the Dead Sea",
+        "modern_countries": [
+            "Jordan",
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 30.6,
+            "lon": 35.55
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/edomites.json"
+    },
+    {
+        "id": "egyptians",
+        "name": "Egyptians",
+        "kjv_names": [
+            "Egyptians",
+            "Egyptian",
+            "Egypt",
+            "Mizraim",
+            "land of Ham"
+        ],
+        "category": "Empire",
+        "group": "Empires & kingdoms",
+        "summary": "The people of the Nile, whose civilisation was already ancient when Abraham visited. Egypt was Israel's refuge in famine, its house of bondage, the stage of the Exodus, a tempting ally for Judah's kings, and a hiding place for the infant Jesus. The prophets foresaw a day when God would call Egypt 'my people'.",
+        "ancestor": "Mizraim, son of Ham",
+        "region": "Egypt — the Nile valley and Delta",
+        "modern_countries": [
+            "Egypt"
+        ],
+        "center": {
+            "lat": 29.85,
+            "lon": 31.25
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/egyptians.json"
+    },
+    {
+        "id": "elamites",
+        "name": "Elamites",
+        "kjv_names": [
+            "Elamites",
+            "Elam"
+        ],
+        "category": "Kingdom",
+        "group": "Empires & kingdoms",
+        "summary": "One of the oldest civilisations in the world, centred on Susa (Shushan) in south-western Iran. Elam's king Chedorlaomer raided Canaan in Abraham's day. Later, Daniel saw a vision 'in Shushan the palace, which is in the province of Elam', and Elamites were in the Pentecost crowd.",
+        "ancestor": "Elam, son of Shem",
+        "region": "Elam — Khuzestan plain and the south-western Zagros",
+        "modern_countries": [
+            "Iran"
+        ],
+        "center": {
+            "lat": 32.19,
+            "lon": 48.26
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/elamites.json"
+    },
+    {
+        "id": "girgashites",
+        "name": "Girgashites",
+        "kjv_names": [
+            "Girgashites",
+            "Girgasite",
+            "Girgashite"
+        ],
+        "category": "Canaanite nation",
+        "group": "Peoples of Canaan",
+        "summary": "The least-known of the seven nations of Canaan. They are named in every major list of the land's peoples but are never described, never given a king or city, and never appear in any story.",
+        "ancestor": "The Girgasite, descendant of Canaan",
+        "region": "Canaan (exact location unknown)",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 32.0,
+            "lon": 35.2
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/girgashites.json"
+    },
+    {
+        "id": "greeks",
+        "name": "Greeks",
+        "kjv_names": [
+            "Greeks",
+            "Greek",
+            "Grecians",
+            "Grecia",
+            "Greece",
+            "Javan"
+        ],
+        "category": "Nation / empire",
+        "group": "Empires & kingdoms",
+        "summary": "The descendants of Javan, son of Japheth, whose culture spread across the East after Alexander the Great. Greek became the common language of the Roman world, the Old Testament was translated into it, and the whole New Testament was written in it. In Paul's letters 'Jew and Greek' together stand for all humanity, one in Christ.",
+        "ancestor": "Javan, son of Japheth",
+        "region": "Greece, the Aegean islands and western Asia Minor ('the isles')",
+        "modern_countries": [
+            "Greece",
+            "Cyprus",
+            "Turkey"
+        ],
+        "center": {
+            "lat": 37.97,
+            "lon": 23.73
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/greeks.json"
+    },
+    {
+        "id": "hittites",
+        "name": "Hittites",
+        "kjv_names": [
+            "Hittites",
+            "Hittite",
+            "children of Heth",
+            "sons of Heth",
+            "daughters of Heth"
+        ],
+        "category": "Canaanite nation / Anatolian empire",
+        "group": "Peoples of Canaan",
+        "summary": "The 'children of Heth' who sold Abraham his family tomb, gave Esau wives, and produced Uriah, David's loyal soldier. The Bible also knows 'the kings of the Hittites' to the north. Sceptics once doubted the Hittites had existed. In the 20th century archaeology uncovered their empire in Anatolia, one of the great powers of the Bronze Age.",
+        "ancestor": "Heth, son of Canaan",
+        "region": "The hills around Hebron (Genesis); central Anatolia and northern Syria (the empire and its successor kingdoms)",
+        "modern_countries": [
+            "Turkey",
+            "Syria",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 40.02,
+            "lon": 34.62
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/hittites.json"
+    },
+    {
+        "id": "hivites",
+        "name": "Hivites",
+        "kjv_names": [
+            "Hivites",
+            "Hivite",
+            "Gibeonites"
+        ],
+        "category": "Canaanite nation",
+        "group": "Peoples of Canaan",
+        "summary": "A Canaanite people found from Shechem to the foot of Mount Hermon. They are best known through the Gibeonites, who tricked Joshua into a treaty with worn-out sandals and mouldy bread and then served at Israel's altar for generations.",
+        "ancestor": "The Hivite, descendant of Canaan",
+        "region": "Scattered: Shechem, the Gibeon tetrapolis, and the Lebanon–Hermon region",
+        "modern_countries": [
+            "Palestinian territories",
+            "Israel",
+            "Lebanon",
+            "Syria"
+        ],
+        "center": {
+            "lat": 31.85,
+            "lon": 35.18
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/hivites.json"
+    },
+    {
+        "id": "horites",
+        "name": "Horites",
+        "kjv_names": [
+            "Horites",
+            "Horims",
+            "Horite"
+        ],
+        "category": "Pre-Israelite inhabitants",
+        "group": "Before Israel",
+        "summary": "The original inhabitants of Mount Seir, displaced by Esau's descendants, who then married into them. Genesis 36 preserves their tribal genealogy. Many scholars identify them with the Hurrians, a major people of Syria and Mesopotamia in the 2nd millennium BC; others think the name means 'cave-dwellers'.",
+        "ancestor": "Seir the Horite",
+        "region": "Mount Seir — the highlands later called Edom",
+        "modern_countries": [
+            "Jordan"
+        ],
+        "center": {
+            "lat": 30.6,
+            "lon": 35.5
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/horites.json"
+    },
+    {
+        "id": "ishmaelites",
+        "name": "Ishmaelites",
+        "kjv_names": [
+            "Ishmaelites",
+            "Ishmeelites",
+            "Ishmaelite",
+            "Ishmeelite",
+            "Kedar",
+            "Nebajoth",
+            "Hagarenes",
+            "Hagarites"
+        ],
+        "category": "Nomadic tribes",
+        "group": "Neighbours & kin",
+        "summary": "The twelve tribes descended from Ishmael, Abraham's first son by Hagar the Egyptian, who lived as desert nomads and caravan traders across northern Arabia. It was an Ishmaelite caravan, loaded with spices for Egypt, that bought Joseph. Arab tradition has long counted Ishmael as a forefather of the northern Arabs.",
+        "ancestor": "Ishmael, son of Abraham and Hagar",
+        "region": "From Havilah to Shur — the deserts of northern Arabia and Sinai",
+        "modern_countries": [
+            "Saudi Arabia",
+            "Jordan",
+            "Syria",
+            "Iraq",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 28.5,
+            "lon": 38.5
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/ishmaelites.json"
+    },
+    {
+        "id": "israelites",
+        "name": "Israelites",
+        "kjv_names": [
+            "Israelites",
+            "children of Israel",
+            "Hebrews",
+            "Jews",
+            "house of Israel",
+            "house of Jacob"
+        ],
+        "category": "Covenant people",
+        "group": "Israel",
+        "summary": "The descendants of Jacob, whom God renamed Israel: twelve tribes chosen to receive the covenant, the Law, the land of Canaan and the promise of the Messiah. Their story runs from Abraham's call through Egypt, the Exodus, the kingdoms of David and Solomon, exile and return, to Jesus of Nazareth and his Jewish apostles. The Jewish people today are their continuing descendants.",
+        "ancestor": "Jacob (Israel), son of Isaac, son of Abraham",
+        "region": "Canaan / the land of Israel — 'from Dan even to Beer-sheba'",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories",
+            "Jordan"
+        ],
+        "center": {
+            "lat": 31.78,
+            "lon": 35.23
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/israelites.json"
+    },
+    {
+        "id": "jebusites",
+        "name": "Jebusites",
+        "kjv_names": [
+            "Jebusites",
+            "Jebusite",
+            "Jebusi",
+            "Jebus"
+        ],
+        "category": "Canaanite nation",
+        "group": "Peoples of Canaan",
+        "summary": "The Canaanite people who held Jerusalem — then called Jebus — until David captured their stronghold of Zion and made it his capital. A Jebusite, Araunah, sold David the threshing floor on which Solomon's Temple was built.",
+        "ancestor": "The Jebusite, descendant of Canaan",
+        "region": "Jebus (Jerusalem) and the surrounding hills",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 31.773,
+            "lon": 35.236
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/jebusites.json"
+    },
+    {
+        "id": "kenites",
+        "name": "Kenites",
+        "kjv_names": [
+            "Kenites",
+            "Kenite"
+        ],
+        "category": "Nomadic clan",
+        "group": "Neighbours & kin",
+        "summary": "A small clan of nomadic smiths related to Moses' father-in-law. They travelled with Israel into Canaan and lived peacefully among Judah. Their history is full of loyalty: Jael the Kenite killed Sisera, Saul spared the Kenites for their kindness in the wilderness, and the Rechabites came from them.",
+        "ancestor": "Hobab / Jethro's family; the house of Hemath",
+        "region": "The Negev around Arad, and scattered encampments in the north",
+        "modern_countries": [
+            "Israel"
+        ],
+        "center": {
+            "lat": 31.28,
+            "lon": 35.13
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/kenites.json"
+    },
+    {
+        "id": "medes",
+        "name": "Medes",
+        "kjv_names": [
+            "Medes",
+            "Mede",
+            "Media",
+            "Madai"
+        ],
+        "category": "Empire",
+        "group": "Empires & kingdoms",
+        "summary": "An Iranian people of the Zagros mountains, descended in Genesis from Madai son of Japheth. Israelite exiles were settled 'in the cities of the Medes'. With Babylon they destroyed Nineveh, and alongside the Persians they took Babylon itself. In the Bible they are the silver half of the 'Medes and Persians' kingdom, and at Pentecost Medes heard the gospel in their own tongue.",
+        "ancestor": "Madai, son of Japheth",
+        "region": "Media — the Zagros highlands of north-western Iran",
+        "modern_countries": [
+            "Iran"
+        ],
+        "center": {
+            "lat": 34.8,
+            "lon": 48.51
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/medes.json"
+    },
+    {
+        "id": "midianites",
+        "name": "Midianites",
+        "kjv_names": [
+            "Midianites",
+            "Midianite",
+            "Midian",
+            "Madianites"
+        ],
+        "category": "Nomadic tribes",
+        "group": "Neighbours & kin",
+        "summary": "Descendants of Abraham through Keturah: caravan traders and camel-riding nomads of north-western Arabia. A Midianite caravan carried Joseph to Egypt, and Moses found refuge, a wife and a wise father-in-law among them. Later, Midianite hordes 'as grasshoppers for multitude' were routed by Gideon's three hundred.",
+        "ancestor": "Midian, son of Abraham and Keturah",
+        "region": "Midian — north-western Arabia, east of the Gulf of Aqaba",
+        "modern_countries": [
+            "Saudi Arabia",
+            "Jordan",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 28.4,
+            "lon": 35.5
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/midianites.json"
+    },
+    {
+        "id": "moabites",
+        "name": "Moabites",
+        "kjv_names": [
+            "Moabites",
+            "Moabitess",
+            "Moab",
+            "children of Moab"
+        ],
+        "category": "Transjordan kingdom",
+        "group": "Neighbours & kin",
+        "summary": "A kingdom east of the Dead Sea descended from Lot, Abraham's nephew. Moab was Israel's relative and frequent rival — the land of Balak and Balaam, of Eglon and Mesha — yet it also gave Israel Ruth, the great-grandmother of King David and an ancestor of Jesus.",
+        "ancestor": "Moab, son of Lot",
+        "region": "Moab — the tableland east of the Dead Sea",
+        "modern_countries": [
+            "Jordan"
+        ],
+        "center": {
+            "lat": 31.35,
+            "lon": 35.75
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/moabites.json"
+    },
+    {
+        "id": "perizzites",
+        "name": "Perizzites",
+        "kjv_names": [
+            "Perizzites",
+            "Perizzite"
+        ],
+        "category": "Canaanite nation",
+        "group": "Peoples of Canaan",
+        "summary": "One of the seven nations of Canaan, living in the wooded hill country, probably in unwalled villages. They appear alongside the Canaanites in Abraham's day and are still named in Ezra's list of peoples Israel should not intermarry with.",
+        "ancestor": "Unknown — not listed in Genesis 10",
+        "region": "The forested hill country of central Canaan",
+        "modern_countries": [
+            "Palestinian territories",
+            "Israel"
+        ],
+        "center": {
+            "lat": 32.15,
+            "lon": 35.25
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/perizzites.json"
+    },
+    {
+        "id": "persians",
+        "name": "Persians",
+        "kjv_names": [
+            "Persians",
+            "Persian",
+            "Persia",
+            "Media and Persia"
+        ],
+        "category": "Empire",
+        "group": "Empires & kingdoms",
+        "summary": "The Iranian people whose king Cyrus the Great conquered Babylon in 539 BC and let the Jews go home to rebuild the Temple — a king Isaiah names as the LORD's 'anointed'. The Persian (Achaemenid) empire is the setting of Ezra, Nehemiah, Esther and the end of Daniel. It was the largest empire the world had yet seen, until Alexander the Great overthrew it.",
+        "ancestor": "Japhethite Iranian peoples (closely linked with Madai / the Medes)",
+        "region": "Persis (Fars) in south-western Iran; an empire from the Indus to the Aegean and Egypt",
+        "modern_countries": [
+            "Iran",
+            "Iraq",
+            "Afghanistan",
+            "Turkey",
+            "Egypt",
+            "Pakistan"
+        ],
+        "center": {
+            "lat": 29.93,
+            "lon": 52.89
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/persians.json"
+    },
+    {
+        "id": "philistines",
+        "name": "Philistines",
+        "kjv_names": [
+            "Philistines",
+            "Philistim",
+            "Palestina"
+        ],
+        "category": "Sea People / coastal city-states",
+        "group": "Peoples of Canaan",
+        "summary": "A people from across the sea, from Caphtor, who settled five city-states on the southern coast of Canaan around 1175 BC. They were Israel's chief enemy from Samson to David — the people of Delilah, Dagon and Goliath — and their name survives in the word 'Palestine'.",
+        "ancestor": "Casluhim / Caphtorim, descendants of Mizraim son of Ham (Table of Nations)",
+        "region": "Philistia — the southern coastal plain of Canaan",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories (Gaza)"
+        ],
+        "center": {
+            "lat": 31.65,
+            "lon": 34.65
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/philistines.json"
+    },
+    {
+        "id": "phoenicians",
+        "name": "Phoenicians",
+        "kjv_names": [
+            "Zidonians",
+            "Sidonians",
+            "Tyrians",
+            "Zidon",
+            "Sidon",
+            "Tyre",
+            "Tyrus",
+            "Syrophenician",
+            "Phenice",
+            "Phenicia"
+        ],
+        "category": "Maritime city-states",
+        "group": "Peoples of Canaan",
+        "summary": "The seafaring Canaanites of Tyre and Sidon on the Lebanese coast. They were traders and colonisers across the whole Mediterranean, spread the alphabet, and made the famous purple dye. Hiram of Tyre supplied cedar and craftsmen for Solomon's Temple. Jezebel of Sidon brought Baal worship into Israel. Jesus ministered in the region of Tyre and Sidon.",
+        "ancestor": "Sidon, firstborn of Canaan",
+        "region": "Phoenicia — the narrow coast of Lebanon between the mountains and the sea",
+        "modern_countries": [
+            "Lebanon",
+            "Syria",
+            "Israel",
+            "Tunisia",
+            "Cyprus"
+        ],
+        "center": {
+            "lat": 33.56,
+            "lon": 35.37
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/phoenicians.json"
+    },
+    {
+        "id": "rechabites",
+        "name": "Rechabites",
+        "kjv_names": [
+            "Rechabites",
+            "house of the Rechabites",
+            "house of Rechab"
+        ],
+        "category": "Kenite clan",
+        "group": "Neighbours & kin",
+        "summary": "A Kenite family who, on their ancestor Jonadab's command, drank no wine, built no houses and lived in tents for some 250 years. God used their obedience to shame Jerusalem and promised they would never lack a man to stand before Him.",
+        "ancestor": "Jonadab son of Rechab, of the Kenites",
+        "region": "Tents in the land of Judah (a nomadic life)",
+        "modern_countries": [
+            "Israel",
+            "Palestinian territories"
+        ],
+        "center": {
+            "lat": 31.6,
+            "lon": 35.2
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/rechabites.json"
+    },
+    {
+        "id": "rephaim",
+        "name": "Rephaim",
+        "kjv_names": [
+            "Rephaims",
+            "giants",
+            "Emims",
+            "Zamzummims",
+            "Zuzims",
+            "remnant of the giants"
+        ],
+        "category": "Pre-Israelite giants",
+        "group": "Before Israel",
+        "summary": "An ancient race of tall people who lived east of the Jordan and in parts of Canaan before Israel, Moab and Ammon. Each nation had its own name for them. The last of their kings was Og of Bashan, whose iron bedstead was nine cubits long. In poetic books the same word means the shades of the dead.",
+        "ancestor": "Unknown",
+        "region": "Bashan and Transjordan; also parts of Canaan",
+        "modern_countries": [
+            "Syria",
+            "Jordan",
+            "Israel"
+        ],
+        "center": {
+            "lat": 32.8,
+            "lon": 36.1
+        },
+        "testaments": [
+            "Old"
+        ],
+        "file": "assets/peoples/rephaim.json"
+    },
+    {
+        "id": "romans",
+        "name": "Romans",
+        "kjv_names": [
+            "Romans",
+            "Roman",
+            "Rome",
+            "Caesar",
+            "Italy",
+            "Italian band"
+        ],
+        "category": "Empire",
+        "group": "Empires & kingdoms",
+        "summary": "The empire that ruled the whole Mediterranean when Jesus was born. Roman governors sentenced Jesus to crucifixion. Rome's roads and peace carried the apostles, Paul claimed his Roman citizenship, and the letter to the Romans went to its capital. In AD 70 Roman legions destroyed Jerusalem and the Temple, as Jesus had foretold.",
+        "ancestor": "Latin Italians (Japhethite peoples of Europe in the traditional scheme)",
+        "region": "Italy, ruling an empire around the Mediterranean",
+        "modern_countries": [
+            "Italy"
+        ],
+        "center": {
+            "lat": 41.89,
+            "lon": 12.49
+        },
+        "testaments": [
+            "New"
+        ],
+        "file": "assets/peoples/romans.json"
+    },
+    {
+        "id": "sabeans",
+        "name": "Sabeans",
+        "kjv_names": [
+            "Sabeans",
+            "Sheba",
+            "Seba",
+            "queen of Sheba",
+            "queen of the south"
+        ],
+        "category": "Kingdom",
+        "group": "Empires & kingdoms",
+        "summary": "The people of Sheba (Saba) in south-western Arabia, the rich incense kingdom of Yemen. Their queen came to test Solomon's wisdom with hard questions and camels laden with spices and gold. Jesus later held her up as a witness against his own generation.",
+        "ancestor": "Sheba, son of Joktan (and/or of Raamah; also a Sheba of Keturah's line)",
+        "region": "Sheba (Saba) — south-western Arabia",
+        "modern_countries": [
+            "Yemen",
+            "Eritrea",
+            "Ethiopia"
+        ],
+        "center": {
+            "lat": 15.43,
+            "lon": 45.32
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/sabeans.json"
+    },
+    {
+        "id": "samaritans",
+        "name": "Samaritans",
+        "kjv_names": [
+            "Samaritans",
+            "Samaritan",
+            "Samaria"
+        ],
+        "category": "Israelite offshoot",
+        "group": "Israel",
+        "summary": "The people of the hill country of Samaria, who worshipped the God of Israel on Mount Gerizim rather than in Jerusalem. By Jesus' day Jews and Samaritans avoided each other, yet Jesus spoke with the woman at Jacob's well, made a Samaritan the hero of a parable, and sent his apostles to Samaria. A small Samaritan community survives today.",
+        "ancestor": "Joseph (Ephraim and Manasseh) and Levi, by Samaritan tradition; Assyrian-resettled peoples as well, by 2 Kings 17",
+        "region": "Samaria — the central hill country of the land of Israel",
+        "modern_countries": [
+            "Palestinian territories",
+            "Israel"
+        ],
+        "center": {
+            "lat": 32.21,
+            "lon": 35.27
+        },
+        "testaments": [
+            "Old",
+            "New"
+        ],
+        "file": "assets/peoples/samaritans.json"
+    }
+]

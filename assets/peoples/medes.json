@@ -1,0 +1,260 @@
+{
+    "id": "medes",
+    "name": "Medes",
+    "kjv_names": [
+        "Medes",
+        "Mede",
+        "Media",
+        "Madai"
+    ],
+    "also_known_as": [
+        "Madai"
+    ],
+    "category": "Empire",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "An Iranian people of the Zagros mountains, descended in Genesis from Madai son of Japheth. Israelite exiles were settled 'in the cities of the Medes'. With Babylon they destroyed Nineveh, and alongside the Persians they took Babylon itself. In the Bible they are the silver half of the 'Medes and Persians' kingdom, and at Pentecost Medes heard the gospel in their own tongue.",
+    "name_meaning": "From Madai; in Old Persian Mada.",
+    "origin": {
+        "account": "Madai was the third son of Japheth. Historically the Medes were Iranian tribes in north-western Iran, first recorded in Assyrian texts in the 9th century BC. They united into a kingdom centred on Ecbatana in the 7th century BC.",
+        "references": [
+            "Genesis 10:2"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Madai, son of Japheth",
+        "line": [
+            "Noah",
+            "Japheth",
+            "Madai"
+        ],
+        "notes": "Close kin of the Persians. Darius the Mede in Daniel is called 'the son of Ahasuerus, of the seed of the Medes'. His identity is debated: suggestions include Cyrus himself, Cyrus' general Gubaru/Ugbaru, or Cyaxares II.",
+        "references": [
+            "Daniel 9:1",
+            "Daniel 5:31"
+        ]
+    },
+    "homeland": {
+        "region": "Media — the Zagros highlands of north-western Iran",
+        "description": "Mountain valleys and plateaus between the Zagros range and the Caspian Sea, famous for horses. Its capital was Ecbatana (Achmetha).",
+        "modern_location": "North-western Iran (Hamadan, Kermanshah, Kurdistan and Zanjan provinces).",
+        "modern_countries": [
+            "Iran"
+        ],
+        "center": {
+            "lat": 34.8,
+            "lon": 48.51
+        },
+        "places": [
+            {
+                "name": "Achmetha (Ecbatana)",
+                "modern_name": "Hamadan, Iran",
+                "lat": 34.8,
+                "lon": 48.51,
+                "note": "Median capital; the palace archive held Cyrus' Temple decree.",
+                "references": [
+                    "Ezra 6:2"
+                ]
+            },
+            {
+                "name": "Cities of the Medes",
+                "modern_name": "North-western Iran",
+                "lat": 35.0,
+                "lon": 48.0,
+                "note": "Where Assyria deported Israelites.",
+                "references": [
+                    "2 Kings 17:6",
+                    "2 Kings 18:11"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "722 BC",
+            "event": "Deported Israelites are placed 'in the cities of the Medes'.",
+            "references": [
+                "2 Kings 17:6"
+            ]
+        },
+        {
+            "date": "c. 700 BC",
+            "event": "Isaiah foretells the Medes attacking Babylon: 'Behold, I will stir up the Medes against them.'",
+            "references": [
+                "Isaiah 13:17-19",
+                "Isaiah 21:2"
+            ]
+        },
+        {
+            "date": "612 BC",
+            "event": "Cyaxares the Mede, with Nabopolassar of Babylon, destroys Nineveh.",
+            "references": [
+                "Nahum 2:1"
+            ]
+        },
+        {
+            "date": "c. 550 BC",
+            "event": "Cyrus the Persian overthrows Astyages; Media becomes the partner province of the Persian empire.",
+            "references": []
+        },
+        {
+            "date": "539 BC",
+            "event": "'Thy kingdom is divided, and given to the Medes and Persians.' Darius the Mede takes the kingdom.",
+            "references": [
+                "Daniel 5:28",
+                "Daniel 5:31",
+                "Jeremiah 51:11"
+            ]
+        },
+        {
+            "date": "c. 539–537 BC",
+            "event": "Darius the Mede appoints Daniel over the satraps; Daniel is thrown to the lions and delivered.",
+            "references": [
+                "Daniel 6:1-3",
+                "Daniel 6:16-23"
+            ]
+        },
+        {
+            "date": "c. AD 30",
+            "event": "'Parthians, and Medes, and Elamites' hear the apostles speak at Pentecost.",
+            "references": [
+                "Acts 2:9"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Early Iranian religion; the Magi were a Median priestly tribe (Herodotus 1.101)"
+        ],
+        "practices": "Herodotus lists the Magi as one of the six Median tribes; they became the priestly caste of Persia. The 'wise men from the east' in Matthew are called magoi in Greek.",
+        "references": [
+            "Matthew 2:1"
+        ]
+    },
+    "importance": "The Medes were a named instrument of God's judgement on Babylon, identified by Isaiah and Jeremiah long before the event. The 'law of the Medes and Persians, which altereth not' is the unchangeable decree that sent Daniel to the lions. The Medes also represent the second empire in Daniel's visions (the silver chest, the bear, the two-horned ram).",
+    "impact": [
+        {
+            "who": "Israelite exiles",
+            "how": "Resettled in Median cities after 722 BC.",
+            "references": [
+                "2 Kings 17:6"
+            ]
+        },
+        {
+            "who": "Babylon",
+            "how": "Judged by the Medes as foretold.",
+            "references": [
+                "Jeremiah 51:28-29"
+            ]
+        },
+        {
+            "who": "Daniel",
+            "how": "Promoted by Darius the Mede, then condemned under an unalterable Median-Persian law, and saved by God.",
+            "references": [
+                "Daniel 6:15-16",
+                "Daniel 6:22"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Madai",
+            "role": "Son of Japheth",
+            "references": [
+                "Genesis 10:2"
+            ]
+        },
+        {
+            "name": "Darius the Mede",
+            "role": "Ruler of Babylon after its fall",
+            "references": [
+                "Daniel 5:31",
+                "Daniel 11:1"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Isaiah 13:17",
+            "text": "Behold, I will stir up the Medes against them, which shall not regard silver; and as for gold, they shall not delight in it."
+        },
+        {
+            "reference": "Daniel 5:28",
+            "text": "PERES; Thy kingdom is divided, and given to the Medes and Persians."
+        },
+        {
+            "reference": "Daniel 6:8",
+            "text": "Now, O king, establish the decree, and sign the writing, that it be not changed, according to the law of the Medes and Persians, which altereth not."
+        },
+        {
+            "reference": "Acts 2:9",
+            "text": "Parthians, and Medes, and Elamites, and the dwellers in Mesopotamia, and in Judaea, and Cappadocia, in Pontus, and Asia,"
+        }
+    ],
+    "fate": {
+        "summary": "The Medes merged into the Persian empire and later Iranian states. Media remained a distinct region into the Parthian period, and 'Medes' were still a recognised people in the 1st century AD.",
+        "references": [
+            "Esther 1:3",
+            "Acts 2:9"
+        ]
+    },
+    "today": {
+        "summary": "No modern nation is called Median. The Medes are ancestors of the Iranian peoples of north-western Iran. Some Kurds claim Median descent; linguists and historians treat that link as possible but unproven.",
+        "descendants": "Iranian peoples of north-western Iran; possibly in part the Kurds.",
+        "modern_legacy": "The word 'magic' comes, through Greek magikos, from the Median Magi."
+    },
+    "archaeology": [
+        {
+            "name": "Tepe Nush-i Jan and Godin Tepe",
+            "date": "8th–6th centuries BC",
+            "discovered": "1960s–1970s excavations in Hamadan province",
+            "location": "Iran",
+            "significance": "Median fortresses and a fire temple, among the few excavated Median sites."
+        },
+        {
+            "name": "Nabonidus Chronicle (ABC 7)",
+            "date": "6th century BC",
+            "discovered": "Babylon",
+            "location": "British Museum (BM 35382)",
+            "significance": "Records Astyages' army mutinying and handing him over to Cyrus, who took Ecbatana."
+        }
+    ],
+    "related_peoples": [
+        "persians",
+        "assyrians",
+        "babylonians",
+        "elamites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Histories, 1.95–130",
+            "author": "Herodotus (5th century BC)",
+            "type": "primary",
+            "note": "The rise and fall of the Median kingdom; the six tribes including the Magi."
+        },
+        {
+            "title": "Assyrian and Babylonian Chronicles",
+            "author": "A. Kirk Grayson (J. J. Augustin, 1975)",
+            "type": "primary"
+        },
+        {
+            "title": "Persia and the Bible",
+            "author": "Edwin M. Yamauchi (Baker, 1990)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Continuity of Empire (?): Assyria, Media, Persia",
+            "author": "Giovanni B. Lanfranchi, Michael Roaf & Robert Rollinger, eds. (S.a.r.g.o.n., 2003)",
+            "type": "scholarship"
+        }
+    ]
+}

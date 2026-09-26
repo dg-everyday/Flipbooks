@@ -1,0 +1,369 @@
+{
+    "id": "samaritans",
+    "name": "Samaritans",
+    "kjv_names": [
+        "Samaritans",
+        "Samaritan",
+        "Samaria"
+    ],
+    "also_known_as": [
+        "Israelite Samaritans",
+        "Shomrim ('keepers' — the community's own name)"
+    ],
+    "category": "Israelite offshoot",
+    "group": "Israel",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The people of the hill country of Samaria, who worshipped the God of Israel on Mount Gerizim rather than in Jerusalem. By Jesus' day Jews and Samaritans avoided each other, yet Jesus spoke with the woman at Jacob's well, made a Samaritan the hero of a parable, and sent his apostles to Samaria. A small Samaritan community survives today.",
+    "name_meaning": "From Samaria (Shomron), the capital Omri built on the hill of Shemer. The community itself explains the name as Shamerim, 'keepers' of the true Law.",
+    "origin": {
+        "account": "Two accounts exist. In 2 Kings 17, after Assyria took Samaria in 722 BC it deported Israelites and resettled the land with people from Babylon, Cuthah, Ava, Hamath and Sepharvaim. Attacked by lions, the settlers were taught by an Israelite priest to fear the LORD, 'and served their own gods' as well. Hence later Jews called Samaritans 'Cutheans'. The Samaritans' own tradition is that they descend from the northern tribes of Ephraim and Manasseh, with priests of Levi, who were never deported and kept the original faith at Gerizim. Most historians see a mixture of both: a remnant of northern Israelites joined by settlers.",
+        "references": [
+            "2 Kings 17:5-6",
+            "2 Kings 17:24-33",
+            "2 Kings 17:41"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Joseph (Ephraim and Manasseh) and Levi, by Samaritan tradition; Assyrian-resettled peoples as well, by 2 Kings 17",
+        "line": [
+            "Abraham",
+            "Isaac",
+            "Jacob",
+            "Joseph",
+            "Ephraim / Manasseh"
+        ],
+        "notes": "The Samaritan woman calls Jacob 'our father', and Jesus does not dispute it, though he calls a Samaritan leper 'this stranger' (allogenes, 'of another race').",
+        "references": [
+            "John 4:12",
+            "Luke 17:18"
+        ]
+    },
+    "homeland": {
+        "region": "Samaria — the central hill country of the land of Israel",
+        "description": "The heart of the old northern kingdom, between Judea to the south and Galilee to the north, around the twin mountains of Gerizim and Ebal and the city of Shechem. Travellers from Galilee to Jerusalem often avoided it by crossing the Jordan.",
+        "modern_location": "The northern West Bank around Nablus; a second community lives in Holon, Israel.",
+        "modern_countries": [
+            "Palestinian territories",
+            "Israel"
+        ],
+        "center": {
+            "lat": 32.21,
+            "lon": 35.27
+        },
+        "places": [
+            {
+                "name": "Mount Gerizim",
+                "modern_name": "Jabal al-Tur, above Nablus",
+                "lat": 32.2,
+                "lon": 35.27,
+                "note": "The mount of blessing and the Samaritans' holy mountain: 'Our fathers worshipped in this mountain'.",
+                "references": [
+                    "Deuteronomy 11:29",
+                    "John 4:20"
+                ]
+            },
+            {
+                "name": "Sychar and Jacob's well",
+                "modern_name": "Near Balata/Askar, Nablus",
+                "lat": 32.21,
+                "lon": 35.29,
+                "note": "Where Jesus met the Samaritan woman.",
+                "references": [
+                    "John 4:5-6"
+                ]
+            },
+            {
+                "name": "Samaria (city)",
+                "modern_name": "Sebastia",
+                "lat": 32.28,
+                "lon": 35.19,
+                "note": "Northern capital; Herod rebuilt it as Sebaste. Philip preached in 'the city of Samaria'.",
+                "references": [
+                    "1 Kings 16:24",
+                    "Acts 8:5"
+                ]
+            },
+            {
+                "name": "Shechem",
+                "modern_name": "Tell Balata, Nablus",
+                "lat": 32.21,
+                "lon": 35.28,
+                "note": "Ancient centre of the region.",
+                "references": [
+                    "Genesis 12:6",
+                    "Joshua 24:1"
+                ]
+            },
+            {
+                "name": "Kiryat Luza",
+                "modern_name": "Kiryat Luza, Mount Gerizim",
+                "lat": 32.2,
+                "lon": 35.27,
+                "note": "Modern Samaritan village.",
+                "references": []
+            },
+            {
+                "name": "Holon",
+                "modern_name": "Neve Pinchas quarter, Holon, Israel",
+                "lat": 32.01,
+                "lon": 34.78,
+                "note": "Second modern Samaritan community.",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "722 BC",
+            "event": "Assyria captures Samaria, deports Israelites and settles foreigners there.",
+            "references": [
+                "2 Kings 17:6",
+                "2 Kings 17:24"
+            ]
+        },
+        {
+            "date": "c. 622 BC",
+            "event": "Josiah extends his reform into the cities of Samaria.",
+            "references": [
+                "2 Kings 23:19"
+            ]
+        },
+        {
+            "date": "c. 536–515 BC",
+            "event": "The 'adversaries of Judah and Benjamin', who said they had sacrificed to God since Esarhaddon brought them there, are refused a share in rebuilding the Temple and oppose the work.",
+            "references": [
+                "Ezra 4:1-5"
+            ]
+        },
+        {
+            "date": "c. 445 BC",
+            "event": "Sanballat the Horonite, with 'the army of Samaria', mocks and opposes Nehemiah. The Elephantine papyri (407 BC) confirm Sanballat as governor of Samaria.",
+            "references": [
+                "Nehemiah 4:1-2",
+                "Nehemiah 13:28"
+            ]
+        },
+        {
+            "date": "5th–4th centuries BC",
+            "event": "A temple is built on Mount Gerizim; excavations date its first phase to the 5th century BC.",
+            "references": []
+        },
+        {
+            "date": "Late 2nd century BC",
+            "event": "The Hasmonean John Hyrcanus destroys the Gerizim temple, deepening the hostility (Josephus).",
+            "references": []
+        },
+        {
+            "date": "c. AD 28–30",
+            "event": "Jesus talks with the Samaritan woman; many of the town believe. He tells the parable of the Good Samaritan and heals a grateful Samaritan leper. Some Samaritan villages refuse him.",
+            "references": [
+                "John 4:39-42",
+                "Luke 10:33-37",
+                "Luke 17:15-16",
+                "Luke 9:52-56"
+            ]
+        },
+        {
+            "date": "c. AD 33–35",
+            "event": "Philip preaches in Samaria; Peter and John come, and the Samaritans receive the Holy Spirit.",
+            "references": [
+                "Acts 1:8",
+                "Acts 8:5-17"
+            ]
+        },
+        {
+            "date": "AD 484–529",
+            "event": "Samaritan revolts against the Byzantine Empire are crushed; the community declines sharply.",
+            "references": []
+        }
+    ],
+    "religion": {
+        "gods": [
+            "The LORD (YHWH), the God of Israel"
+        ],
+        "practices": "The Samaritans accept only the five books of Moses, in their own Samaritan Pentateuch, which names Gerizim as the chosen place. They await the Taheb, a prophet like Moses ('I know that Messias cometh'), keep the sabbath and the Mosaic feasts, and still sacrifice the Passover lambs on Mount Gerizim. Jesus told the Samaritan woman 'Ye worship ye know not what', and also that true worship would soon not depend on Gerizim or Jerusalem.",
+        "references": [
+            "Deuteronomy 18:15",
+            "John 4:21-25"
+        ]
+    },
+    "importance": "The Samaritans show the gospel crossing its first barrier. Jesus' longest recorded private conversation is with a Samaritan woman of broken reputation, and she becomes a witness to her town. His best-known parable makes the despised Samaritan the true neighbour. His plan in Acts 1:8 names 'Judaea, and in Samaria' as the step between Jerusalem and the ends of the earth. Luke highlights that of ten lepers only the Samaritan returned to give thanks.",
+    "impact": [
+        {
+            "who": "Returning exiles",
+            "how": "Opposition from the people of the land delayed the Temple and the walls of Jerusalem.",
+            "references": [
+                "Ezra 4:4-5",
+                "Nehemiah 4:7-8"
+            ]
+        },
+        {
+            "who": "The woman at the well",
+            "how": "Learned that Jesus was the Messiah and brought her town to him.",
+            "references": [
+                "John 4:25-26",
+                "John 4:28-30"
+            ]
+        },
+        {
+            "who": "The lawyer who asked 'who is my neighbour?'",
+            "how": "Was answered with a Samaritan's compassion.",
+            "references": [
+                "Luke 10:29",
+                "Luke 10:36-37"
+            ]
+        },
+        {
+            "who": "James and John",
+            "how": "Wanted to call fire on a Samaritan village and were rebuked.",
+            "references": [
+                "Luke 9:54-55"
+            ]
+        },
+        {
+            "who": "Simon the sorcerer",
+            "how": "A Samaritan magician who believed, then tried to buy the Spirit's power.",
+            "references": [
+                "Acts 8:9-13",
+                "Acts 8:18-20"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "The woman of Samaria",
+            "role": "Met Jesus at Jacob's well",
+            "references": [
+                "John 4:7"
+            ]
+        },
+        {
+            "name": "The Good Samaritan",
+            "role": "Figure in Jesus' parable",
+            "references": [
+                "Luke 10:33"
+            ]
+        },
+        {
+            "name": "The thankful leper",
+            "role": "The one of ten who returned",
+            "references": [
+                "Luke 17:16"
+            ]
+        },
+        {
+            "name": "Simon Magus",
+            "role": "Sorcerer of Samaria",
+            "references": [
+                "Acts 8:9"
+            ]
+        },
+        {
+            "name": "Sanballat",
+            "role": "Governor of Samaria who opposed Nehemiah",
+            "references": [
+                "Nehemiah 2:10"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "2 Kings 17:24",
+            "text": "And the king of Assyria brought men from Babylon, and from Cuthah, and from Ava, and from Hamath, and from Sepharvaim, and placed them in the cities of Samaria instead of the children of Israel: and they possessed Samaria, and dwelt in the cities thereof."
+        },
+        {
+            "reference": "John 4:9",
+            "text": "Then saith the woman of Samaria unto him, How is it that thou, being a Jew, askest drink of me, which am a woman of Samaria? for the Jews have no dealings with the Samaritans."
+        },
+        {
+            "reference": "John 4:23-24",
+            "text": "But the hour cometh, and now is, when the true worshippers shall worship the Father in spirit and in truth: for the Father seeketh such to worship him.  God is a Spirit: and they that worship him must worship him in spirit and in truth. "
+        },
+        {
+            "reference": "Luke 10:33",
+            "text": "But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him, "
+        },
+        {
+            "reference": "Acts 1:8",
+            "text": "But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth. "
+        }
+    ],
+    "fate": {
+        "summary": "The Samaritans were numerous in Roman times, with communities as far as Egypt and Rome. Revolts against Byzantium, forced conversions, and later pressure under Islamic rule reduced them. By the early 20th century fewer than 150 remained. The community has since recovered slowly.",
+        "references": []
+    },
+    "today": {
+        "summary": "About 830–900 Samaritans live today (2024–2025), split between Kiryat Luza on Mount Gerizim (about 380) and Holon near Tel Aviv (about 460). They are among the smallest ethnic-religious groups in the world. They still sacrifice the Passover lambs on Gerizim each year, led by their own high priest.",
+        "descendants": "The modern Israelite Samaritan community.",
+        "modern_legacy": "The Samaritan Pentateuch is an important witness for Old Testament textual study, and 'Good Samaritan' has entered many languages as a term for anyone who helps a stranger."
+    },
+    "archaeology": [
+        {
+            "name": "Mount Gerizim sacred precinct",
+            "date": "5th century BC – 2nd century BC",
+            "discovered": "Excavated 1983–2006 by Yitzhak Magen",
+            "location": "Mount Gerizim",
+            "significance": "Remains of the Samaritan temple city, with hundreds of inscriptions."
+        },
+        {
+            "name": "Elephantine papyri (TAD A4.7)",
+            "date": "407 BC",
+            "discovered": "Elephantine, Egypt",
+            "location": "Staatliche Museen zu Berlin",
+            "significance": "Jewish letter to the governor of Judah that names 'Delaiah and Shelemiah, the sons of Sanballat governor of Samaria'."
+        },
+        {
+            "name": "Wadi Daliyeh papyri",
+            "date": "4th century BC",
+            "discovered": "1962, caves north of Jericho",
+            "location": "Israel Museum / Rockefeller Museum",
+            "significance": "Legal documents of Samaria's elite who fled Alexander the Great."
+        }
+    ],
+    "related_peoples": [
+        "israelites",
+        "assyrians",
+        "babylonians",
+        "romans"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Antiquities of the Jews, 9.14.3; 11.8.2–4; 13.9.1",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "The 'Cutheans', the Gerizim temple and its destruction."
+        },
+        {
+            "title": "The Samaritans: A Profile",
+            "author": "Reinhard Pummer (Eerdmans, 2016)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Mount Gerizim Excavations",
+            "author": "Yitzhak Magen et al. (Israel Antiquities Authority / Staff Officer of Archaeology, 2004–2008)",
+            "type": "archaeology"
+        },
+        {
+            "title": "Population survey",
+            "author": "Israelite Samaritan Information Institute",
+            "type": "demography",
+            "url": "https://www.israelite-samaritans.com/about-israelite-samaritans/population-survey/"
+        },
+        {
+            "title": "Samaritans",
+            "author": "Wikipedia",
+            "type": "reference",
+            "url": "https://en.wikipedia.org/wiki/Samaritans",
+            "note": "Population figures (2024–2025)."
+        }
+    ]
+}

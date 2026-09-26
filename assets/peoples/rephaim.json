@@ -1,0 +1,272 @@
+{
+    "id": "rephaim",
+    "name": "Rephaim",
+    "kjv_names": [
+        "Rephaims",
+        "giants",
+        "Emims",
+        "Zamzummims",
+        "Zuzims",
+        "remnant of the giants"
+    ],
+    "also_known_as": [
+        "Emim (Moabite name)",
+        "Zamzummim (Ammonite name)",
+        "Zuzim"
+    ],
+    "category": "Pre-Israelite giants",
+    "group": "Before Israel",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "An ancient race of tall people who lived east of the Jordan and in parts of Canaan before Israel, Moab and Ammon. Each nation had its own name for them. The last of their kings was Og of Bashan, whose iron bedstead was nine cubits long. In poetic books the same word means the shades of the dead.",
+    "name_meaning": "Rephaim, possibly 'the weak ones' or 'healed ones'. The word also means the spirits of the dead (Isaiah 14:9, 'the dead'; Isaiah 26:14, 'deceased'). The KJV usually translates it 'giants'.",
+    "origin": {
+        "account": "Scripture does not give their descent. They first appear when Chedorlaomer 'smote the Rephaims in Ashteroth Karnaim'. Moses' historical notes say the Emims in Moab 'also were accounted giants, as the Anakims', and that the Ammonites 'call them Zamzummims'; God destroyed them before Moab and Ammon took their land. Some connect them with the Nephilim of Genesis 6:4, but the text does not say so directly.",
+        "references": [
+            "Genesis 14:5",
+            "Genesis 15:20",
+            "Deuteronomy 2:10-11",
+            "Deuteronomy 2:20-21",
+            "Genesis 6:4"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Unknown",
+        "line": [],
+        "notes": "Og 'remained of the remnant of the giants' (Rephaim). The later 'sons of the giant' (ha-rapha) at Gath are probably their descendants.",
+        "references": [
+            "Deuteronomy 3:11",
+            "2 Samuel 21:16-22"
+        ]
+    },
+    "homeland": {
+        "region": "Bashan and Transjordan; also parts of Canaan",
+        "description": "Bashan (the Golan and Hauran) was 'called the land of giants'. The Emims lived in Moab, the Zamzummims in Ammon. West of the Jordan they are linked with the forests of Ephraim and with the valley of Rephaim south-west of Jerusalem.",
+        "modern_location": "Golan and south-western Syria, western Jordan, and the Jerusalem hills.",
+        "modern_countries": [
+            "Syria",
+            "Jordan",
+            "Israel"
+        ],
+        "center": {
+            "lat": 32.8,
+            "lon": 36.1
+        },
+        "places": [
+            {
+                "name": "Ashteroth Karnaim",
+                "modern_name": "Tell Ashtara, Syria",
+                "lat": 32.81,
+                "lon": 36.01,
+                "note": "Where Chedorlaomer smote the Rephaims; later Og's city Ashtaroth.",
+                "references": [
+                    "Genesis 14:5",
+                    "Joshua 12:4"
+                ]
+            },
+            {
+                "name": "Bashan",
+                "modern_name": "Golan and Hauran",
+                "lat": 32.8,
+                "lon": 36.1,
+                "note": "'The land of giants'.",
+                "references": [
+                    "Deuteronomy 3:13"
+                ]
+            },
+            {
+                "name": "Rabbath (Amman)",
+                "modern_name": "Amman, Jordan",
+                "lat": 31.954,
+                "lon": 35.935,
+                "note": "Where Og's iron bedstead was displayed.",
+                "references": [
+                    "Deuteronomy 3:11"
+                ]
+            },
+            {
+                "name": "Valley of Rephaim",
+                "modern_name": "Emek Refaim, Jerusalem",
+                "lat": 31.75,
+                "lon": 35.21,
+                "note": "Where David twice defeated the Philistines.",
+                "references": [
+                    "Joshua 15:8",
+                    "2 Samuel 5:18-20"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Chedorlaomer defeats the Rephaims, Zuzims and Emims.",
+            "references": [
+                "Genesis 14:5"
+            ]
+        },
+        {
+            "date": "Before Israel's arrival",
+            "event": "Moab displaces the Emims; Ammon displaces the Zamzummims.",
+            "references": [
+                "Deuteronomy 2:10-11",
+                "Deuteronomy 2:20-21"
+            ]
+        },
+        {
+            "date": "End of the wilderness period",
+            "event": "Israel defeats Og, the last king of the Rephaim, at Edrei.",
+            "references": [
+                "Numbers 21:33-35",
+                "Deuteronomy 3:1-11"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "Joshua tells the tribes of Joseph to clear the woods in 'the land of the Perizzites and of the giants'.",
+            "references": [
+                "Joshua 17:15"
+            ]
+        },
+        {
+            "date": "c. 1000 BC",
+            "event": "David's men kill four 'sons of the giant' at Gath and Gob, including Goliath's brother and a man with six fingers on each hand.",
+            "references": [
+                "2 Samuel 21:18-22",
+                "1 Chronicles 20:4-8"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Not recorded"
+        ],
+        "practices": "In Ugaritic texts the rpum are deified royal ancestors, invoked in funerary rites. This matches the Hebrew poetic use of rephaim for the shades of the dead in Sheol.",
+        "references": [
+            "Isaiah 14:9",
+            "Isaiah 26:14",
+            "Proverbs 21:16"
+        ]
+    },
+    "importance": "The Rephaim show that God, not size or strength, gives land to nations. He removed the giants before Moab, Ammon and Edom as well as before Israel, and Moses points to this as encouragement for Israel. Og's defeat became one of Israel's standard memories of God's mercy. The double meaning of 'Rephaim' — ancient giants and the shades of the dead — adds weight to Isaiah's picture of fallen kings stirred in Sheol.",
+    "impact": [
+        {
+            "who": "Moab and Ammon",
+            "how": "Received land that God cleared of Rephaim.",
+            "references": [
+                "Deuteronomy 2:9",
+                "Deuteronomy 2:21"
+            ]
+        },
+        {
+            "who": "Israel under Moses",
+            "how": "Og's defeat opened Bashan to Manasseh.",
+            "references": [
+                "Deuteronomy 3:13"
+            ]
+        },
+        {
+            "who": "David's mighty men",
+            "how": "Abishai, Sibbechai, Elhanan and Jonathan each killed a giant.",
+            "references": [
+                "2 Samuel 21:17-21"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Og king of Bashan",
+            "role": "Last of the Rephaim, with a nine-cubit bed",
+            "references": [
+                "Deuteronomy 3:11"
+            ]
+        },
+        {
+            "name": "Ishbi-benob",
+            "role": "Giant who nearly killed David",
+            "references": [
+                "2 Samuel 21:16-17"
+            ]
+        },
+        {
+            "name": "Saph (Sippai) and Lahmi",
+            "role": "Sons of the giant",
+            "references": [
+                "2 Samuel 21:18",
+                "1 Chronicles 20:5"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Deuteronomy 2:20-21",
+            "text": "(That also was accounted a land of giants: giants dwelt therein in old time; and the Ammonites call them Zamzummims; A people great, and many, and tall, as the Anakims; but the LORD destroyed them before them; and they succeeded them, and dwelt in their stead:"
+        },
+        {
+            "reference": "Deuteronomy 3:11",
+            "text": "For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron; is it not in Rabbath of the children of Ammon? nine cubits was the length thereof, and four cubits the breadth of it, after the cubit of a man."
+        },
+        {
+            "reference": "2 Samuel 21:22",
+            "text": "These four were born to the giant in Gath, and fell by the hand of David, and by the hand of his servants."
+        }
+    ],
+    "fate": {
+        "summary": "Displaced and destroyed before Moab, Ammon and Israel; the last remnant (the 'sons of the giant' at Gath) fell to David's warriors.",
+        "references": [
+            "1 Chronicles 20:8"
+        ]
+    },
+    "today": {
+        "summary": "No Rephaim exist today. The name survives in Jerusalem's Emek Refaim ('Valley of Rephaim') neighbourhood.",
+        "descendants": "None.",
+        "modern_legacy": "The Ugaritic Rephaim texts are important for understanding ancient Near Eastern beliefs about the dead."
+    },
+    "archaeology": [
+        {
+            "name": "Ugaritic 'Rephaim texts' (KTU 1.20–1.22)",
+            "date": "c. 13th century BC",
+            "discovered": "Ras Shamra (Ugarit), Syria, from 1929",
+            "location": "National Museum of Damascus / Louvre",
+            "significance": "Describe the rpum as ancestral heroes and shades."
+        },
+        {
+            "name": "Dolmens of the Golan and Jordan",
+            "date": "c. 4th–3rd millennium BC",
+            "discovered": "Thousands across the Golan and western Jordan",
+            "location": "In situ",
+            "significance": "Megalithic tombs in Og's 'land of giants', which older writers connected with the Rephaim."
+        }
+    ],
+    "related_peoples": [
+        "anakim",
+        "amorites",
+        "moabites",
+        "ammonites",
+        "philistines"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Rephaim: Tales from Ugarit",
+            "author": "trans. in Simon B. Parker (ed.), Ugaritic Narrative Poetry (Scholars Press, 1997)",
+            "type": "primary"
+        },
+        {
+            "title": "International Standard Bible Encyclopedia, 'Rephaim'",
+            "author": "James Orr, ed. (1915)",
+            "type": "dictionary"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Rephaim', 'Emims', 'Zamzummims'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

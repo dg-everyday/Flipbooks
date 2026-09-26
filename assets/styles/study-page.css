@@ -1,0 +1,315 @@
+/* Shared styles for the Daily Grace study pages (peoples.html, bible-books.html,
+   heroes-and-villains.html). Same palette and topbar as the rest of Daily Grace:
+   navy, gold, cream paper; Germania One for every title and Strait for reading,
+   with no italics anywhere. Unlike flipbook-page.css
+   these pages scroll. Each page adds its own sheet on top of this one. */
+
+@font-face {
+  font-family: 'Strait';
+  src: url('../fonts/Strait-Regular.woff2') format('woff2'),
+       url('../fonts/Strait-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Germania One';
+  src: url('../fonts/GermaniaOne-Regular.woff2') format('woff2'),
+       url('../fonts/GermaniaOne-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --navy: #001b34;
+  --navy-2: #062944;
+  --gold: #c6922e;
+  --gold-light: #e1b65d;
+  --cream: #f3e7d2;
+  --paper: #fffaf1;
+  --ink: #10253b;
+  --muted: #5b6878;
+  --line: rgb(198 146 46 / 28%);
+  --shadow: 0 6px 20px rgb(16 37 59 / 8%);
+  --topbar: 60px;
+  --display: 'Germania One', Georgia, serif;
+  --body: 'Strait', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 0%, rgb(255 255 255 / 60%), transparent 32%),
+    linear-gradient(160deg, #f7eddb, #eee0c7) fixed;
+}
+a { color: var(--navy-2); }
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 2px;
+}
+/* Every title is Germania One; nothing is set in italics. */
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.15; margin: 0; }
+em, i, cite, blockquote { font-style: normal; }
+p { margin: 0 0 .8em; }
+p:last-child { margin-bottom: 0; }
+[hidden] { display: none !important; }
+
+/* ---------------------------------------------------------------- topbar */
+
+.topbar {
+  position: sticky; top: 0; z-index: 1000;
+  min-height: var(--topbar);
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 8px 14px;
+  background: rgb(0 27 52 / 94%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(217 168 79 / 35%);
+}
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; text-decoration: none; }
+.brand-logo { display: block; width: auto; height: 42px; }
+.brand-pill {
+  padding: 4px 12px; border-radius: 999px;
+  background: #d9a020; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .04em;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 28%);
+}
+.home { display: grid; place-items: center; width: 44px; height: 42px; color: #d9a84f; }
+.home:hover { color: #f0c66c; }
+
+/* ---------------------------------------------------------------- layout */
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 16px 32px;
+}
+.status { text-align: center; color: var(--muted); padding: 40px 0 0; }
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.panel > h2, .panel-head h2 {
+  font: 400 1.65rem/1.1 var(--display);
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.panel > h2::after {
+  content: ''; display: block; width: 44px; height: 3px; margin-top: 8px;
+  border-radius: 2px; background: var(--g, var(--gold));
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gold-light);
+}
+.lede { font-size: 1.08rem; max-width: 62ch; }
+
+/* ---------------------------------------------------------------- list view */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 24px 24px;
+  border-radius: 20px;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 90% -10%, rgb(225 182 93 / 28%), transparent 45%),
+    linear-gradient(135deg, var(--navy), var(--navy-2));
+  box-shadow: 0 10px 30px rgb(0 27 52 / 25%);
+}
+.hero h1 {
+  font: 400 clamp(2.4rem, 1.8rem + 3vw, 3.6rem)/1 var(--display);
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+.hero .lede { color: rgb(243 231 210 / 88%); }
+
+.finder { margin: 18px 0 14px; max-width: 560px; }
+.search {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid rgb(225 182 93 / 55%);
+  border-radius: 999px;
+  font: inherit;
+  color: var(--ink);
+  background: #fffdf8;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid rgb(225 182 93 / 45%);
+  border-radius: 999px;
+  font: 600 .88rem/1.2 var(--body);
+  color: var(--cream);
+  background: rgb(255 255 255 / 6%);
+  cursor: pointer;
+}
+.chip::before {
+  content: ''; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--g, var(--gold-light));
+}
+.chip:hover { background: rgb(255 255 255 / 12%); }
+.chip[aria-pressed="true"] { background: var(--gold-light); border-color: var(--gold-light); color: var(--navy); }
+.chip[aria-pressed="true"]::before { box-shadow: 0 0 0 2px #fff; }
+.chip-count {
+  min-width: 22px; padding: 0 6px; border-radius: 999px;
+  font-size: .75rem; text-align: center;
+  background: rgb(0 0 0 / 18%);
+}
+.chip[aria-pressed="true"] .chip-count { background: rgb(0 27 52 / 14%); }
+
+
+.result-count { margin: 22px 2px 10px; font-weight: 600; color: var(--muted); }
+
+/* scripture reference chips */
+.refs { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 0; padding: 0; list-style: none; }
+.refs li {
+  padding: 1px 8px; border-radius: 6px;
+  font-size: .74rem; font-weight: 600; letter-spacing: .01em;
+  color: #7a5a1c; background: rgb(198 146 46 / 10%); border: 1px solid rgb(198 146 46 / 25%);
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
+.tags li { padding: 3px 11px; border-radius: 999px; font-size: .84rem; font-weight: 600; background: var(--navy-2); color: var(--cream); }
+
+/* key verses */
+.verses { display: grid; gap: 14px; }
+.verse {
+  margin: 0; padding: 16px 18px 14px 22px;
+  border-radius: 12px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--gold);
+  position: relative;
+}
+.verse blockquote {
+  margin: 0;
+  font: 400 1.12rem/1.55 var(--body);
+  color: var(--ink);
+}
+.verse figcaption {
+  margin-top: 8px;
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold);
+}
+
+/* facts (at a glance, who they are today) */
+.facts { display: grid; gap: 4px 14px; margin: 12px 0 0; }
+.facts dt { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.facts dd { margin: 0 0 8px; font-size: .94rem; }
+
+.page-footer {
+  max-width: 1180px; margin: 0 auto; padding: 8px 16px 32px;
+  text-align: center; font-size: .8rem; color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- hero stats */
+
+.stats {
+  display: flex; flex-wrap: wrap; gap: 10px 28px;
+  margin: 16px 0 0; padding: 0; list-style: none;
+}
+.stats li { display: flex; align-items: baseline; gap: 8px; color: rgb(243 231 210 / 80%); font-size: .95rem; }
+.stats b { font: 400 2.1rem/1 var(--display); color: var(--gold-light); }
+
+/* ---------------------------------------------------------------- in-place detail panel
+   A panel that opens inside a grid, directly under the row of the tile that
+   was clicked (bible-books.html, heroes-and-villains.html). --g sets its colour;
+   --notch-x, set by rowExpander() in study-utils.js, aims its notch at the tile. */
+
+.row-panel {
+  --notch-x: 50%;
+  position: relative;
+  grid-column: 1 / -1;
+  margin: 6px 0 4px;
+  padding: 22px 22px 20px;
+  border: 1px solid var(--g);
+  border-top: 4px solid var(--g);
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: 0 12px 30px rgb(16 37 59 / 14%);
+  animation: open-in .18s ease-out;
+}
+/* Small triangle pointing up at the open tile. */
+.row-panel::before {
+  content: ''; position: absolute; top: -13px; left: var(--notch-x);
+  width: 18px; height: 18px; transform: translateX(-50%) rotate(45deg);
+  background: var(--g); border-radius: 3px 0 0 0;
+}
+.row-panel:focus { outline: none; }
+@keyframes open-in { from { opacity: 0; transform: translateY(-6px); } }
+
+.row-panel .panel-close {
+  position: absolute; top: 10px; right: 12px;
+  width: 36px; height: 36px; border: 0; border-radius: 50%;
+  font-size: 1.6rem; line-height: 1; color: var(--muted);
+  background: transparent; cursor: pointer;
+}
+.row-panel .panel-close:hover { background: rgb(16 37 59 / 7%); color: var(--ink); }
+
+.detail-head { padding-right: 40px; margin-bottom: 14px; }
+.detail-group { margin: 0 0 2px; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--g); }
+.detail-head h3 { font: 400 clamp(2rem, 1.6rem + 1.6vw, 2.7rem)/1 var(--display); color: var(--navy); margin-bottom: 6px; }
+.detail-meaning { font-size: .95rem; color: var(--muted); }
+.detail-summary { font-size: 1.08rem; font-weight: 500; max-width: 70ch; }
+
+.row-panel .detail-cols { display: grid; gap: 18px; }
+.row-panel .detail-main, .row-panel .detail-side { display: grid; gap: 16px; align-content: start; min-width: 0; }
+@media (min-width: 900px) {
+  .row-panel .detail-cols { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 28px; }
+}
+
+.detail-block h4 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  color: var(--g);
+}
+.detail-block p { margin: 0; }
+.christ { padding: 10px 14px; border-radius: 10px; background: rgb(198 146 46 / 9%); border-left: 3px solid var(--gold); }
+
+.row-panel .detail-side .facts { margin: 0; }
+.facts .note { display: block; margin-top: 4px; font-size: .8rem; line-height: 1.45; color: var(--muted); }
+
+.key-people { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.key-people li { padding: 3px 10px; border-radius: 999px; font-size: .84rem; background: #fff; border: 1px solid var(--line); }
+
+.people-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.people-links a {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: .84rem; font-weight: 600; text-decoration: none;
+  color: var(--navy-2); background: #fff; border: 1px solid var(--line);
+}
+.people-links a:hover { border-color: var(--gold); }
+
+.row-panel .detail-side .verses { gap: 10px; }
+.row-panel .detail-side .verse { padding: 12px 14px 10px 16px; }
+.row-panel .detail-side .verse blockquote { font-size: .98rem; }
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  :root { --topbar: 52px; }
+  .topbar { padding: 6px 10px; }
+  .brand-logo { height: 32px; }
+  .brand-pill { padding: 3px 10px; font-size: 11px; }
+  main { padding: 12px 12px 24px; }
+  .hero { padding: 22px 18px 18px; border-radius: 16px; }
+  .panel { padding: 16px; }
+  .row-panel { padding: 18px 14px 16px; }
+  .stats b { font-size: 1.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .row-panel { animation: none; }
+}

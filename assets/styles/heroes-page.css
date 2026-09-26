@@ -1,0 +1,120 @@
+/* Styles for apps/pages/heroes-and-villains.html, on top of study-page.css,
+   which holds the palette, topbar, hero, chips and the in-place .row-panel. */
+
+/* Heroes in gold, villains in deep crimson; --g colours everything inside. */
+.side-hero    { --g: #a8761a; --g-soft: rgb(198 146 46 / 14%); }
+.side-villain { --g: #9b2335; --g-soft: rgb(155 35 53 / 11%); }
+
+.chip-rows { display: grid; gap: 8px; }
+.chip.side-hero::before,
+.chip.side-villain::before {
+  content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--g);
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 70%);
+}
+
+/* ---------------------------------------------------------------- sections */
+
+.side-section { margin-top: 18px; padding-top: 0; overflow: hidden; }
+.side-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 16px;
+  margin: 0 -20px 18px; padding: 18px 20px 16px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
+    linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
+}
+.side-head h2 { font: 400 clamp(2rem, 1.6rem + 1.6vw, 2.6rem)/1 var(--display); }
+.side-count { margin: 0; font-weight: 700; font-size: .85rem; opacity: .9; }
+.side-intro { grid-column: 1 / -1; margin: 6px 0 0; max-width: 75ch; font-size: .96rem; opacity: .95; }
+
+/* ---------------------------------------------------------------- person cards */
+
+.person-grid {
+  position: relative;                 /* tiles' offsetLeft/Top are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+.person-tile {
+  display: flex; align-items: flex-start; gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--g);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.person-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+.person-mark {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  font: 400 1.15rem/1 var(--display); letter-spacing: .02em;
+  color: var(--g); background: var(--g-soft);
+  border: 1.5px solid var(--g);
+}
+.person-text { display: grid; gap: 1px; min-width: 0; }
+.person-name { font: 400 1.3rem/1.1 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.person-epithet { font-size: .88rem; color: var(--ink); }
+.person-meta { font-size: .74rem; color: var(--muted); margin-top: 2px; }
+.turned-badge { color: var(--g); font-weight: 700; }
+
+.person-tile.is-open { background: var(--g); border-color: var(--g); color: #fff; box-shadow: 0 8px 18px rgb(16 37 59 / 18%); }
+.person-tile.is-open .person-name,
+.person-tile.is-open .person-epithet,
+.person-tile.is-open .person-meta,
+.person-tile.is-open .turned-badge { color: #fff; }
+.person-tile.is-open .person-mark { color: var(--g); background: #fff; border-color: #fff; }
+
+/* ---------------------------------------------------------------- open person */
+
+.moment { display: grid; gap: 4px; margin: 0; }
+.moment strong { font-size: 1.05rem; color: var(--navy); }
+.moment-ref {
+  justify-self: start;
+  padding: 1px 8px; border-radius: 6px;
+  font-size: .76rem; font-weight: 600;
+  color: #7a5a1c; background: rgb(198 146 46 / 10%); border: 1px solid rgb(198 146 46 / 25%);
+}
+.row-panel .tags li { background: var(--g); }
+.lesson { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); font-weight: 500; }
+.turned { padding: 10px 14px; border-radius: 10px; background: rgb(95 122 46 / 12%); border-left: 3px solid #5f7a2e; }
+
+.book-links, .people-links, .faced { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.book-links a, .people-links a {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: .84rem; font-weight: 600; text-decoration: none;
+  color: var(--navy-2); background: #fff; border: 1px solid var(--line);
+}
+.book-links a:hover, .people-links a:hover { border-color: var(--gold); }
+
+.faced { flex-direction: column; }
+.faced button {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 6px 10px; border-radius: 10px;
+  font: inherit; text-align: left; color: var(--navy);
+  background: #fff; border: 1px solid var(--line); cursor: pointer;
+}
+.faced button:hover { border-color: var(--g); }
+.faced-mark {
+  display: grid; place-items: center; flex: 0 0 auto;
+  width: 30px; height: 30px; border-radius: 50%;
+  font: 400 .85rem/1 var(--display); color: var(--g); background: var(--g-soft); border: 1.5px solid var(--g);
+}
+.faced small { display: block; font-size: .72rem; color: var(--g); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .side-head { margin: 0 -16px 14px; padding: 16px; }
+  .person-grid { grid-template-columns: 1fr; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person-tile { transition: none; }
+  .person-tile:hover { transform: none; }
+}

@@ -1,0 +1,393 @@
+{
+    "id": "arameans",
+    "name": "Arameans",
+    "kjv_names": [
+        "Syrians",
+        "Syrian",
+        "Syria",
+        "Aram",
+        "Syriack"
+    ],
+    "also_known_as": [
+        "Syrians (the KJV's usual translation of Aram)",
+        "Aram-Damascus",
+        "Aram-Naharaim (Mesopotamia)",
+        "Padan-aram"
+    ],
+    "category": "Kingdom",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "A Semitic people of Syria and upper Mesopotamia, closely related to Israel's own ancestors — 'A Syrian ready to perish was my father'. Their kingdom at Damascus was Israel's great northern rival in the days of Elijah and Elisha. Their language, Aramaic, became the common tongue of the Near East. Parts of Ezra and Daniel are written in it, and Jesus spoke it.",
+    "name_meaning": "Aram, possibly 'highland'. The KJV follows the Greek Septuagint in translating Aram as 'Syria'.",
+    "origin": {
+        "account": "Aram was the fifth son of Shem. A second Aram appears as grandson of Nahor, Abraham's brother. Abraham's relatives in Haran — Bethuel, Laban, Rebekah, Rachel and Leah — are all called Syrians (Arameans). Historically the Arameans appear in Assyrian records from about 1100 BC, spreading across Syria and Mesopotamia and founding city-states such as Damascus, Zobah, Hamath and Bit-Adini.",
+        "references": [
+            "Genesis 10:22-23",
+            "Genesis 22:20-21",
+            "Genesis 25:20",
+            "Genesis 31:20"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Aram, son of Shem",
+        "line": [
+            "Noah",
+            "Shem",
+            "Aram"
+        ],
+        "notes": "Israel's closest relatives outside Abraham's own descendants. Isaac and Jacob both married Aramean women from Padan-aram, so Israel's twelve tribal fathers had Aramean mothers. Moses told each Israelite to confess at the altar, 'A Syrian ready to perish was my father'.",
+        "references": [
+            "Genesis 28:2",
+            "Genesis 29:16",
+            "Deuteronomy 26:5"
+        ]
+    },
+    "homeland": {
+        "region": "Aram — Syria and the upper Euphrates (Aram-Naharaim)",
+        "description": "From the Lebanon and Anti-Lebanon mountains eastward across the Syrian steppe to the Euphrates and the Habur. The Damascus oasis, watered by the Abana and Pharpar rivers, was the heart of the southern Aramean kingdom. 'Padan-aram', the plain of Aram around Haran, was the family homeland of the patriarchs.",
+        "modern_location": "Syria, south-eastern Turkey, northern Iraq and parts of Lebanon.",
+        "modern_countries": [
+            "Syria",
+            "Turkey",
+            "Iraq",
+            "Lebanon"
+        ],
+        "center": {
+            "lat": 33.51,
+            "lon": 36.29
+        },
+        "places": [
+            {
+                "name": "Damascus",
+                "modern_name": "Damascus, Syria",
+                "lat": 33.51,
+                "lon": 36.29,
+                "note": "Capital of Aram; where Saul of Tarsus was converted.",
+                "references": [
+                    "Isaiah 7:8",
+                    "Acts 9:3-8"
+                ]
+            },
+            {
+                "name": "Haran / Padan-aram",
+                "modern_name": "Harran, Turkey",
+                "lat": 36.86,
+                "lon": 39.03,
+                "note": "Home of Laban and Rebekah's family.",
+                "references": [
+                    "Genesis 28:5",
+                    "Genesis 29:4"
+                ]
+            },
+            {
+                "name": "Rivers Abana and Pharpar",
+                "modern_name": "Barada and A'waj rivers",
+                "lat": 33.51,
+                "lon": 36.2,
+                "note": "Naaman's pride: 'Are not Abana and Pharpar… better than all the waters of Israel?'",
+                "references": [
+                    "2 Kings 5:12"
+                ]
+            },
+            {
+                "name": "Zobah",
+                "modern_name": "Beqaa Valley region, Lebanon/Syria",
+                "lat": 33.8,
+                "lon": 36.0,
+                "note": "Kingdom of Hadadezer, defeated by David.",
+                "references": [
+                    "2 Samuel 8:3"
+                ]
+            },
+            {
+                "name": "Tel Dan",
+                "modern_name": "Tel Dan, Israel",
+                "lat": 33.25,
+                "lon": 35.65,
+                "note": "Where an Aramean king's victory stele mentioning the 'house of David' was found.",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Abraham's servant finds Rebekah among Nahor's family in Aram-Naharaim.",
+            "references": [
+                "Genesis 24:10",
+                "Genesis 24:15"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Jacob serves 'Laban the Syrian' twenty years; they part with a covenant heap named in both Aramaic (Jegar-sahadutha) and Hebrew (Galeed).",
+            "references": [
+                "Genesis 31:20",
+                "Genesis 31:47"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Chushan-rishathaim king of Mesopotamia (Aram-Naharaim) oppresses Israel; Othniel delivers them.",
+            "references": [
+                "Judges 3:8-10"
+            ]
+        },
+        {
+            "date": "c. 990 BC",
+            "event": "David defeats Hadadezer of Zobah and the Syrians of Damascus and puts garrisons in Damascus.",
+            "references": [
+                "2 Samuel 8:3-6"
+            ]
+        },
+        {
+            "date": "9th century BC",
+            "event": "Ben-hadad besieges Samaria. Elijah is told to anoint Hazael, Naaman is healed through Elisha, and the Syrian army is struck blind at Dothan.",
+            "references": [
+                "1 Kings 20:1",
+                "1 Kings 19:15",
+                "2 Kings 5:1-14",
+                "2 Kings 6:15-18"
+            ]
+        },
+        {
+            "date": "c. 842 BC",
+            "event": "Hazael murders Ben-hadad, becomes king, and brutally oppresses Israel, as Elisha wept to foresee.",
+            "references": [
+                "2 Kings 8:11-15",
+                "2 Kings 10:32",
+                "2 Kings 13:3"
+            ]
+        },
+        {
+            "date": "c. 734 BC",
+            "event": "Rezin of Syria and Pekah of Israel attack Ahaz. Isaiah gives the sign of Immanuel.",
+            "references": [
+                "Isaiah 7:1-2",
+                "Isaiah 7:14"
+            ]
+        },
+        {
+            "date": "732 BC",
+            "event": "Tiglath-pileser III takes Damascus, deports its people to Kir and kills Rezin.",
+            "references": [
+                "2 Kings 16:9"
+            ]
+        },
+        {
+            "date": "Persian period",
+            "event": "Aramaic is the empire's official language; letters in Ezra 4–7 and Daniel 2:4–7:28 are written in it.",
+            "references": [
+                "Ezra 4:7",
+                "Daniel 2:4"
+            ]
+        },
+        {
+            "date": "c. AD 34",
+            "event": "Saul is converted on the Damascus road and preaches in the synagogues of Damascus.",
+            "references": [
+                "Acts 9:3-6",
+                "Acts 9:20"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Hadad / Rimmon (storm god)",
+            "El",
+            "Baal-shamayin"
+        ],
+        "practices": "Naaman, after his healing, asked pardon for bowing in the house of Rimmon beside his master. The Syrians thought Israel's God was 'God of the hills' but not the valleys and were defeated to prove otherwise. Ahaz copied a Damascus altar for the Temple.",
+        "references": [
+            "2 Kings 5:18",
+            "1 Kings 20:23",
+            "1 Kings 20:28",
+            "2 Kings 16:10-11"
+        ]
+    },
+    "importance": "The Arameans are Israel's kin — the family of Rebekah, Rachel and Leah — and for two centuries its most dangerous neighbour. The Syrian wars are the background of Elijah's and Elisha's ministries, including Naaman's healing, which Jesus cites as God's grace to a Gentile. Aramaic, spread by Aramean scribes and merchants, became the everyday language of Jesus and the apostles: 'Talitha cumi', 'Ephphatha', 'Eloi, Eloi, lama sabachthani', 'Abba'.",
+    "impact": [
+        {
+            "who": "Jacob",
+            "how": "Built his family and fortune in Laban's house.",
+            "references": [
+                "Genesis 30:43",
+                "Genesis 31:41"
+            ]
+        },
+        {
+            "who": "Naaman and the little Israelite maid",
+            "how": "A captive girl's witness led a Syrian general to healing and faith in the one God.",
+            "references": [
+                "2 Kings 5:2-3",
+                "2 Kings 5:15",
+                "Luke 4:27"
+            ]
+        },
+        {
+            "who": "Elisha's servant",
+            "how": "Saw the hills full of fiery horses and chariots around the Syrian army.",
+            "references": [
+                "2 Kings 6:17"
+            ]
+        },
+        {
+            "who": "King Ahab",
+            "how": "Killed by a random arrow at Ramoth-gilead fighting Syria.",
+            "references": [
+                "1 Kings 22:34-35"
+            ]
+        },
+        {
+            "who": "Saul of Tarsus",
+            "how": "Converted near Damascus and baptised by Ananias there.",
+            "references": [
+                "Acts 9:17-18"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Bethuel and Laban",
+            "role": "Rebekah's father and brother",
+            "references": [
+                "Genesis 25:20"
+            ]
+        },
+        {
+            "name": "Rebekah, Leah and Rachel",
+            "role": "Aramean mothers of Israel",
+            "references": [
+                "Genesis 24:67",
+                "Genesis 29:28"
+            ]
+        },
+        {
+            "name": "Hadadezer",
+            "role": "King of Zobah",
+            "references": [
+                "2 Samuel 8:3"
+            ]
+        },
+        {
+            "name": "Ben-hadad",
+            "role": "Title/name of several kings of Damascus",
+            "references": [
+                "1 Kings 20:1"
+            ]
+        },
+        {
+            "name": "Naaman",
+            "role": "Captain of the Syrian host, healed of leprosy",
+            "references": [
+                "2 Kings 5:1"
+            ]
+        },
+        {
+            "name": "Hazael",
+            "role": "King of Syria who oppressed Israel",
+            "references": [
+                "2 Kings 8:15"
+            ]
+        },
+        {
+            "name": "Rezin",
+            "role": "Last king of Damascus",
+            "references": [
+                "2 Kings 16:5"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Deuteronomy 26:5",
+            "text": "And thou shalt speak and say before the LORD thy God, A Syrian ready to perish was my father, and he went down into Egypt, and sojourned there with a few, and became there a nation, great, mighty, and populous:"
+        },
+        {
+            "reference": "2 Kings 5:15",
+            "text": "And he returned to the man of God, he and all his company, and came, and stood before him: and he said, Behold, now I know that there is no God in all earth, but in Israel: now therefore, I pray thee, take a blessing of thy servant."
+        },
+        {
+            "reference": "2 Kings 6:16-17",
+            "text": "And he answered, Fear not: for they that be with us are more than they that be with them. And Elisha prayed, and said, LORD, I pray thee, open his eyes, that he may see. And the LORD opened the eyes of the young man; and he saw: and, behold, the mountain was full of horses and chariots of fire round about Elisha."
+        },
+        {
+            "reference": "Mark 5:41",
+            "text": "And he took the damsel by the hand, and said unto her, Talitha cumi; which is, being interpreted, Damsel, I say unto thee, arise. "
+        }
+    ],
+    "fate": {
+        "summary": "The Aramean states were annexed by Assyria in the 8th century BC, but Aramaic language and culture outlasted the kingdoms. It was the lingua franca from Egypt to India under the Persians, and in its Syriac form became the language of eastern Christianity.",
+        "references": [
+            "Amos 1:5",
+            "Isaiah 17:1-3"
+        ]
+    },
+    "today": {
+        "summary": "Aramaic is still spoken in several dialects: Western Neo-Aramaic in Maaloula, Syria, and Eastern dialects among Assyrian, Chaldean and Syriac Christians and some Jewish and Mandaean communities. Syriac Christians of the Syriac Orthodox and other churches often identify as Arameans. In September 2014 Israel became the first country to recognise 'Aramean' as a nationality.",
+        "descendants": "Aramaic-speaking and Syriac Christian communities of Syria, Iraq, Turkey, Lebanon, Israel and the diaspora.",
+        "modern_legacy": "Aramaic words in the Gospels; the Syriac Peshitta Bible; the 'square' script of modern Hebrew, which descends from the Aramaic alphabet."
+    },
+    "archaeology": [
+        {
+            "name": "Tel Dan Stele",
+            "date": "c. 840 BC",
+            "discovered": "1993–1994 at Tel Dan",
+            "location": "Israel Museum, Jerusalem",
+            "significance": "An Aramean king (probably Hazael) claims to have killed the king of Israel and the king of the 'house of David'."
+        },
+        {
+            "name": "Melqart Stele (Bar-Hadad inscription)",
+            "date": "c. 800 BC",
+            "discovered": "1939 near Aleppo",
+            "location": "National Museum of Aleppo",
+            "significance": "Dedication by 'Bar-Hadad' (Ben-hadad), king of Aram."
+        },
+        {
+            "name": "Hazael ivory and horse-blinkers",
+            "date": "c. 800 BC",
+            "discovered": "Arslan Tash, Syria and Samos/Eretria, Greece",
+            "location": "Louvre; Samos and Eretria museums",
+            "significance": "Objects inscribed as belonging to 'our lord Hazael'."
+        }
+    ],
+    "related_peoples": [
+        "israelites",
+        "assyrians",
+        "hittites",
+        "babylonians",
+        "phoenicians"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "A Political History of the Arameans",
+            "author": "K. Lawson Younger Jr. (SBL Press, 2016)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Ancient Damascus: A Historical Study of the Syrian City-State",
+            "author": "Wayne T. Pitard (Eisenbrauns, 1987)",
+            "type": "scholarship"
+        },
+        {
+            "title": "An Aramaic Stele Fragment from Tel Dan",
+            "author": "Avraham Biran & Joseph Naveh, Israel Exploration Journal 43 (1993)",
+            "type": "archaeology"
+        },
+        {
+            "title": "Israel Recognizes Aramean Minority in Israel as Separate Nationality",
+            "author": "Haaretz, 17 September 2014",
+            "type": "news",
+            "url": "https://www.haaretz.com/2014-09-17/ty-article/israel-recognizes-arameans-as-official-group/0000017f-e5df-df5f-a17f-ffdfe07b0000"
+        }
+    ]
+}

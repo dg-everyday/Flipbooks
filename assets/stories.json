@@ -2,31 +2,36 @@
     {
         "id": "a-great-way-off",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK1.webp",
-        "title": "A Great Way Off",
-        "description": "King Nebuchadnezzar raises a golden statue and commands everyone to bow before it."
+        "title": "The Father Who Ran",
+        "description": "A Son Who Spent Everything, a Speech He Never Finished, and a Brother Who Stayed Outside.",
+        "audio": "https://dailygrace.faith/media/stories/a-great-way-off/a-great-way-off.webm",
+        "story-book": "https://dailygrace.faith/media/stories/a-great-way-off/a-great-way-off-storybook.pdf"
     },
     {
         "id": "and-ruth-with-her",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK2.webp",
-        "title": "And Ruth With Her",
-        "description": "Shadrach, Meshach and Abednego refuse to bow to anyone but God."
+        "title": "Where You Go, I Will Go",
+        "description": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean.",
+        "audio": "https://dailygrace.faith/media/stories/and-ruth-with-her/and-ruth-with-her.webm",
+        "story-book": "https://dailygrace.faith/media/stories/and-ruth-with-her/and-ruth-with-her-storybook.pdf"
     },
     {
         "id": "into-his-hand",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK3.webp",
-        "title": "Into His Hand",
-        "description": "The king orders the furnace heated seven times hotter than usual."
+        "title": "Trusted, Framed, and Trusted Again",
+        "description": "Joseph in Potiphar's House, the Garment He Left Behind, and the Prison Where It Happened Again.",
+        "story-book": "https://dailygrace.faith/media/storybooks/2027/2027-WEEK1.pdf"
     },
     {
         "id": "one-thing-thou-lackest",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK4.webp",
-        "title": "One Thing Thou Lackest",
-        "description": "In the flames a fourth figure walks with them, and they are unharmed."
+        "title": "The Rich Man Who Walked Away",
+        "description": "A Question About Eternal Life, the Look That Loved Him, and the One Thing He Could Not Give Up."
     },
     {
         "id": "the-fourth-man-in-the-fire",
         "cover_page": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK5.webp",
         "title": "The Fourth Man in the Fire",
-        "description": "They step out untouched, and the king praises the God who rescued them."
+        "description": "Three Hebrews, One Golden Image, and the Furnace on the Plain of Dura."
     }
 ]

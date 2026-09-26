@@ -489,41 +489,9 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
 }
 html:has(.splash-dialog[open]) { overflow: hidden; }
 
-/* Help: the round "?" in the footer's top corner opens a guide to the
-   page's taps, holds and swipes. Its icons echo the real controls, red for
-   the round banner buttons, so they are easy to spot on the page. */
-.footer-main { position: relative; }
-.footer-help {
-  position: absolute;
-  /* The 44px target is larger than the icon; line the icon up with the QR tile. */
-  top: 18px;
-  right: 18px;
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  /* A soft disc keeps the icon legible where it sits over the footer photo. */
-  background: radial-gradient(circle, rgb(243 231 210 / 85%) 0 15px, transparent 16px);
-  color: var(--navy);
-  cursor: pointer;
-  transition: background-color .15s ease, transform .2s ease;
-}
-.footer-help svg {
-  display: block;
-  width: 30px;
-  height: 30px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-.footer-help .help-dot { fill: currentColor; stroke: none; }
-.footer-help:hover { background-color: rgb(243 231 210 / 70%); transform: scale(1.06); }
-.footer-help:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
-
+/* Help: "Help" in the menu opens a guide to the page's taps, holds and
+   swipes. Its icons echo the real controls, red for the round banner buttons,
+   so they are easy to spot on the page. */
 .help-dialog {
   width: min(580px, 94vw);
   max-height: 90vh;
@@ -674,8 +642,8 @@ html:has(.help-dialog[open]) { overflow: hidden; }
 .help-icon .help-fill { fill: currentColor; stroke: none; }
 .help-icon img { width: 26px; height: 26px; object-fit: contain; }
 
-/* About: the DG icon at the top opens the story of Daily Grace. The dialog
-   grows out of the icon; its sections rise into view as they are scrolled to,
+/* The DG icon at the top opens the menu (see "Menu" below). "About" in the
+   menu opens the story of Daily Grace. The dialog grows out of the icon; its sections rise into view as they are scrolled to,
    and a gold line along the top fills as the reader works down the page. */
 .hero-about {
   position: relative;
@@ -688,19 +656,8 @@ html:has(.help-dialog[open]) { overflow: hidden; }
   background: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: transform .25s cubic-bezier(.2, .9, .25, 1.2);
 }
-.hero-about:hover { transform: scale(1.06); }
-.hero-about:active { transform: scale(.94); }
 .hero-about:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
-/* A soft gold ring that ripples out twice after load, to say "tap me". */
-.hero-about::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border-radius: 50%;
-  pointer-events: none;
-}
 
 .about-dialog {
   width: min(600px, 94vw);
@@ -1101,7 +1058,6 @@ html:has(.about-dialog[open]) { overflow: hidden; }
 .about-begin:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-about::after { animation: about-beckon 2.2s ease-out 1.6s 2; }
   /* The title block settles in, one line after another, as the dialog opens. */
   .about-dialog[open] .about-hero > * {
     animation: about-rise .8s cubic-bezier(.22, 1, .36, 1) both;
@@ -1118,18 +1074,13 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   }
   .about-dialog.revealing .about-reveal.is-visible { opacity: 1; transform: none; }
 }
-@keyframes about-beckon {
-  from { box-shadow: 0 0 0 0 rgb(198 146 46 / 55%); }
-  to { box-shadow: 0 0 0 12px rgb(198 146 46 / 0%); }
-}
 @keyframes about-rise {
   from { opacity: 0; transform: translateY(14px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
-  .footer-help { transition: none; }
-  .hero-about, .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
+  .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
   .bookmark-tabs [role="tab"] { transition: none; }
 }
 .footer-qr figcaption {
@@ -1213,10 +1164,90 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   .site-footer { background-image: linear-gradient(90deg, rgba(243,231,210,.97), rgba(243,231,210,.78)), url('../images/hero-1440.webp'); }
   .footer-main { padding: 24px 20px 18px; gap: 12px; }
   .footer-qr img { width: 76px; height: 76px; }
-  .footer-help { top: 14px; right: 13px; }
   .about-body { padding-inline: 20px; }
   .about-hero { padding-top: 34px; }
   .footer-bottom { flex-direction: column; justify-content: center; padding: 8px 20px 24px; text-align: center; }
   .footer-sign { align-items: center; }
   .footer-social { margin-right: 0; }
+}
+
+/* Menu: the DG icon opens a drawer from the left edge. The study pages sit at
+   the top; Help and About sit at the foot, under a rule. It reuses the Help
+   dialog's header, emblem, close button and round icons. */
+.menu-dialog {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: min(340px, 86vw);
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0 20px 20px 0;
+  background:
+    radial-gradient(120% 60% at 0% 0%, #fffaf0 0%, transparent 60%),
+    var(--cream);
+  color: var(--ink);
+  box-shadow: 18px 0 50px rgb(0 27 52 / 35%);
+  font-family: 'Roboto', Arial, sans-serif;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.menu-dialog[open] { display: flex; flex-direction: column; }
+.menu-dialog::backdrop {
+  background: rgb(0 27 52 / 55%);
+  backdrop-filter: blur(3px);
+}
+html:has(.menu-dialog[open]) { overflow: hidden; }
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 12px 16px 20px;
+  border-bottom: 1px solid rgb(198 146 46 / 45%);
+}
+.menu-header h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 400 1.75rem/1.05 'Germania One', Georgia, serif;
+  letter-spacing: .02em;
+}
+.menu-nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 14px 12px calc(18px + env(safe-area-inset-bottom));
+}
+.menu-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+/* Help and About sit at the foot of the drawer, under a rule. */
+.menu-foot {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgb(0 27 52 / 22%);
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--navy);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.menu-item:hover { background: rgb(255 255 255 / 70%); }
+.menu-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
+.menu-text { display: grid; gap: 2px; min-width: 0; }
+.menu-text strong { font-size: 1rem; font-weight: 700; }
+.menu-text small { color: rgb(16 37 59 / 72%); font-size: .8125rem; line-height: 1.35; }
+@media (prefers-reduced-motion: reduce) {
+  .menu-item { transition: none; }
 }

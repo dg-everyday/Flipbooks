@@ -1,0 +1,261 @@
+{
+    "id": "anakim",
+    "name": "Anakim",
+    "kjv_names": [
+        "Anakims",
+        "sons of Anak",
+        "children of Anak",
+        "giants"
+    ],
+    "also_known_as": [
+        "Sons of Anak",
+        "Anakites"
+    ],
+    "category": "Pre-Israelite giants",
+    "group": "Before Israel",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "A clan of unusually tall warriors around Hebron whose size terrified Israel's spies: 'we were in our own sight as grasshoppers'. Fear of them kept a whole generation out of the promised land. Forty-five years later the 85-year-old Caleb drove them out of Hebron, and their survivors retreated to Philistine Gath, Goliath's town.",
+    "name_meaning": "Anak probably means 'long-necked' or 'necklace', i.e. tall.",
+    "origin": {
+        "account": "The Anakim descended from Anak, son of Arba, 'a great man among the Anakims', after whom Hebron was first named Kirjath-arba (city of Arba). The spies linked them to the Nephilim ('the giants, the sons of Anak, which come of the giants'), and Moses counted them among the Rephaim.",
+        "references": [
+            "Joshua 14:15",
+            "Joshua 15:13",
+            "Numbers 13:33",
+            "Deuteronomy 2:10-11"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Arba, father of Anak",
+        "line": [
+            "Arba",
+            "Anak",
+            "Sheshai, Ahiman and Talmai"
+        ],
+        "notes": "The three sons of Anak named at Hebron were Sheshai, Ahiman and Talmai.",
+        "references": [
+            "Numbers 13:22",
+            "Joshua 15:14"
+        ]
+    },
+    "homeland": {
+        "region": "Hebron and the hill country of Judah",
+        "description": "Walled towns in the southern hill country: Hebron, Debir and Anab, and 'all the mountains of Judah, and… all the mountains of Israel'. After Joshua's campaigns, only Gaza, Gath and Ashdod still had Anakim.",
+        "modern_location": "Hebron hills (West Bank) and the southern coastal plain of Israel.",
+        "modern_countries": [
+            "Palestinian territories",
+            "Israel"
+        ],
+        "center": {
+            "lat": 31.53,
+            "lon": 35.1
+        },
+        "places": [
+            {
+                "name": "Hebron (Kirjath-arba)",
+                "modern_name": "Hebron",
+                "lat": 31.53,
+                "lon": 35.1,
+                "note": "Their city, given to Caleb.",
+                "references": [
+                    "Joshua 14:13-15"
+                ]
+            },
+            {
+                "name": "Debir (Kirjath-sepher)",
+                "modern_name": "Probably Khirbet Rabud",
+                "lat": 31.4,
+                "lon": 34.98,
+                "note": "Taken by Othniel for Caleb's daughter.",
+                "references": [
+                    "Joshua 15:15-17"
+                ]
+            },
+            {
+                "name": "Valley of Eshcol",
+                "modern_name": "Near Hebron",
+                "lat": 31.55,
+                "lon": 35.1,
+                "note": "Where the spies cut the great cluster of grapes.",
+                "references": [
+                    "Numbers 13:23-24"
+                ]
+            },
+            {
+                "name": "Gath, Gaza and Ashdod",
+                "modern_name": "Philistine coastal cities",
+                "lat": 31.7,
+                "lon": 34.85,
+                "note": "Where the last Anakim remained.",
+                "references": [
+                    "Joshua 11:22"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Wilderness period",
+            "event": "Twelve spies see the sons of Anak in Hebron. Ten bring an evil report; the people rebel and are sentenced to forty years in the wilderness. Only Joshua and Caleb believe God.",
+            "references": [
+                "Numbers 13:28",
+                "Numbers 13:31-33",
+                "Numbers 14:6-9",
+                "Numbers 14:29-30"
+            ]
+        },
+        {
+            "date": "End of the wilderness period",
+            "event": "Moses reminds Israel: 'Who can stand before the children of Anak!' — but the LORD goes before them as a consuming fire.",
+            "references": [
+                "Deuteronomy 9:1-3"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "Joshua cuts off the Anakim from the hill country.",
+            "references": [
+                "Joshua 11:21-22"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "Caleb, aged 85, claims Hebron and drives out Sheshai, Ahiman and Talmai.",
+            "references": [
+                "Joshua 14:10-12",
+                "Joshua 15:14"
+            ]
+        },
+        {
+            "date": "c. 1020–1000 BC",
+            "event": "Giants of Gath, including Goliath and his kin, are killed by David and his men — probably Anakim survivors.",
+            "references": [
+                "1 Samuel 17:4",
+                "2 Samuel 21:22"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Not recorded"
+        ],
+        "practices": "Nothing is recorded.",
+        "references": []
+    },
+    "importance": "The Anakim are the Bible's lesson on fear and faith. The same giants that made ten spies feel like grasshoppers made Caleb say, 'if so be the LORD will be with me, then I shall be able to drive them out.' A generation died in the wilderness because they measured the giants rather than God. Forty-five years later Caleb, still 'wholly following the LORD', took the very city that had frightened them.",
+    "impact": [
+        {
+            "who": "The wilderness generation",
+            "how": "Their unbelief at the report of the Anakim cost them the land.",
+            "references": [
+                "Numbers 14:22-23",
+                "Hebrews 3:17-19"
+            ]
+        },
+        {
+            "who": "Caleb",
+            "how": "His faith at 40 was rewarded at 85 with Hebron.",
+            "references": [
+                "Joshua 14:7-14"
+            ]
+        },
+        {
+            "who": "David",
+            "how": "Faced the Anakim's likely descendant, Goliath of Gath.",
+            "references": [
+                "1 Samuel 17:45-47"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Arba",
+            "role": "Founder of Hebron (Kirjath-arba)",
+            "references": [
+                "Joshua 21:11"
+            ]
+        },
+        {
+            "name": "Anak",
+            "role": "Ancestor of the clan",
+            "references": [
+                "Joshua 15:13"
+            ]
+        },
+        {
+            "name": "Sheshai, Ahiman and Talmai",
+            "role": "Sons of Anak at Hebron",
+            "references": [
+                "Numbers 13:22"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Numbers 13:33",
+            "text": "And there we saw the giants, the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers, and so we were in their sight."
+        },
+        {
+            "reference": "Numbers 14:9",
+            "text": "Only rebel not ye against the LORD, neither fear ye the people of the land; for they are bread for us: their defence is departed from them, and the LORD is with us: fear them not."
+        },
+        {
+            "reference": "Joshua 14:12",
+            "text": "Now therefore give me this mountain, whereof the LORD spake in that day; for thou heardest in that day how the Anakims were there, and that the cities were great and fenced: if so be the LORD will be with me, then I shall be able to drive them out, as the LORD said."
+        }
+    ],
+    "fate": {
+        "summary": "Driven from the hill country by Joshua and Caleb; the remnant lived in Gaza, Gath and Ashdod and seem to disappear after David's wars with the giants of Gath.",
+        "references": [
+            "Joshua 11:22",
+            "1 Chronicles 20:8"
+        ]
+    },
+    "today": {
+        "summary": "No Anakim exist today. They are known only from the Bible. Some scholars connect them with the 'Iy-'anaq' named in Egyptian Execration Texts (c. 19th century BC), but the link is uncertain.",
+        "descendants": "None.",
+        "modern_legacy": "'We were as grasshoppers' remains a proverb for self-defeating fear."
+    },
+    "archaeology": [
+        {
+            "name": "Egyptian Execration Texts",
+            "date": "c. 19th–18th centuries BC",
+            "discovered": "Egypt (Berlin and Brussels groups)",
+            "location": "Ägyptisches Museum Berlin; Musées royaux d'Art et d'Histoire, Brussels",
+            "significance": "Curse texts naming Canaanite rulers, including of a place or people 'Iy-'anaq', which some link to the Anakim."
+        }
+    ],
+    "related_peoples": [
+        "rephaim",
+        "philistines",
+        "amorites",
+        "canaanites",
+        "israelites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed.",
+            "author": "James B. Pritchard, ed. (Princeton, 1969)",
+            "type": "primary",
+            "note": "Execration Texts."
+        },
+        {
+            "title": "International Standard Bible Encyclopedia, 'Anak; Anakim'",
+            "author": "James Orr, ed. (1915)",
+            "type": "dictionary"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Anakim'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

@@ -1,0 +1,2594 @@
+{
+    "totals": {
+        "heroes": 27,
+        "villains": 18,
+        "people": 45
+    },
+    "heroes": [
+        {
+            "id": "noah",
+            "side": "hero",
+            "name": "Noah",
+            "epithet": "The builder who believed",
+            "testament": "Old",
+            "era": "Before the flood",
+            "books": [
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                }
+            ],
+            "summary": "A righteous man in a violent world who built the ark at God's word and carried humanity through the flood.",
+            "story": "When 'the wickedness of man was great in the earth', Noah 'found grace in the eyes of the LORD'. God told him to build an ark of gopher wood and bring his family and the animals into it. For years he built a ship on dry land. The flood came, the ark floated, and after it settled on the mountains of Ararat God made a covenant with Noah never again to destroy the earth by flood, sealed with the rainbow.",
+            "moment": {
+                "title": "He did all that God commanded",
+                "reference": "Genesis 6:22"
+            },
+            "traits": [
+                "Faith",
+                "Obedience",
+                "Patience",
+                "Righteousness in a corrupt age"
+            ],
+            "flaws": "After the flood Noah planted a vineyard, got drunk and lay uncovered in his tent — a sad scene that led to the curse on Canaan (Genesis 9:20-25).",
+            "lesson": "Faith obeys even when the task looks foolish and the world is watching. God's grace comes first; Noah's obedience answers it.",
+            "told_in": [
+                "Genesis 6-9"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Genesis 6:8",
+                    "text": "But Noah found grace in the eyes of the LORD."
+                },
+                {
+                    "reference": "Hebrews 11:7",
+                    "text": "By faith Noah, being warned of God of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith."
+                }
+            ],
+            "faced": [],
+            "peoples": []
+        },
+        {
+            "id": "abraham",
+            "side": "hero",
+            "name": "Abraham",
+            "epithet": "The father of faith",
+            "testament": "Old",
+            "era": "c. 2000 BC (traditional)",
+            "books": [
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                }
+            ],
+            "summary": "Called out of Ur to a land he did not know, he believed God's promise of a son and a nation — and was counted righteous.",
+            "story": "At seventy-five Abram left Haran at God's call, with the promise that he would become a great nation and a blessing to all families of the earth. Childless for decades, he 'believed in the LORD; and he counted it to him for righteousness'. God renamed him Abraham, 'father of many nations', and gave him Isaac when he was a hundred. Then came the hardest test: to offer Isaac on Mount Moriah. Abraham went, and God provided a ram.",
+            "moment": {
+                "title": "The offering of Isaac on Mount Moriah",
+                "reference": "Genesis 22:1-14"
+            },
+            "traits": [
+                "Faith",
+                "Obedience",
+                "Hospitality",
+                "Intercession for others"
+            ],
+            "flaws": "Twice he passed Sarah off as his sister to protect himself (Genesis 12; 20), and he took Hagar to force the promise (Genesis 16).",
+            "lesson": "Faith is trusting God's promise before you can see it. Paul makes Abraham the pattern for everyone who is justified by faith (Romans 4).",
+            "told_in": [
+                "Genesis 11:27-25:11"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Genesis 15:6",
+                    "text": "And he believed in the LORD; and he counted it to him for righteousness."
+                },
+                {
+                    "reference": "Genesis 22:14",
+                    "text": "And Abraham called the name of that place Jehovah-jireh: as it is said to this day, In the mount of the LORD it shall be seen."
+                },
+                {
+                    "reference": "Hebrews 11:8",
+                    "text": "By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "canaanites",
+                "hittites",
+                "egyptians",
+                "ishmaelites"
+            ]
+        },
+        {
+            "id": "joseph",
+            "side": "hero",
+            "name": "Joseph",
+            "epithet": "The dreamer who forgave",
+            "testament": "Old",
+            "era": "c. 1900–1800 BC (traditional)",
+            "books": [
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                }
+            ],
+            "summary": "Sold into slavery by his brothers and jailed on a lie, he rose to rule Egypt and saved the family that betrayed him.",
+            "story": "Jacob's favourite son dreamed his brothers would bow to him. In jealousy they sold him to traders bound for Egypt. As a slave in Potiphar's house he refused his master's wife and was thrown into prison, where he interpreted dreams. Called before Pharaoh, he foretold seven years of plenty and seven of famine and was made ruler over Egypt. When his brothers came to buy grain, he tested them, then revealed himself and forgave them: 'ye thought evil against me; but God meant it unto good.'",
+            "moment": {
+                "title": "Revealing himself to his brothers",
+                "reference": "Genesis 45:1-8"
+            },
+            "traits": [
+                "Integrity",
+                "Purity",
+                "Faithfulness in hardship",
+                "Forgiveness"
+            ],
+            "flaws": "As a young man he tactlessly told his dreams and brought a bad report of his brothers (Genesis 37:2-11).",
+            "lesson": "God is at work even in betrayal and injustice. Faithfulness in small, hidden places prepares for great ones, and forgiveness breaks the cycle of revenge.",
+            "told_in": [
+                "Genesis 37-50"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Genesis 39:9",
+                    "text": "There is none greater in this house than I; neither hath he kept back any thing from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?"
+                },
+                {
+                    "reference": "Genesis 50:20",
+                    "text": "But as for you, ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "egyptians",
+                "ishmaelites",
+                "midianites",
+                "israelites"
+            ]
+        },
+        {
+            "id": "moses",
+            "side": "hero",
+            "name": "Moses",
+            "epithet": "The deliverer and lawgiver",
+            "testament": "Old",
+            "era": "15th or 13th century BC",
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "Numbers",
+                    "id": "numbers"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                }
+            ],
+            "summary": "Saved as a baby, raised in Pharaoh's palace, and sent from a burning bush to lead Israel out of slavery and receive God's Law.",
+            "story": "Hidden in a basket on the Nile, Moses was adopted by Pharaoh's daughter. At forty he killed an Egyptian and fled to Midian, where he kept sheep for forty years. God called him from a burning bush. Reluctant and slow of speech, he went back, confronted Pharaoh through ten plagues, and led Israel through the Red Sea. On Sinai he received the Ten Commandments, and for forty years he led a complaining people through the wilderness, interceding for them again and again. He saw the promised land from Mount Nebo, and died there.",
+            "moment": {
+                "title": "Parting the Red Sea",
+                "reference": "Exodus 14:21-22"
+            },
+            "traits": [
+                "Humility",
+                "Intercession",
+                "Perseverance",
+                "Faithfulness"
+            ],
+            "flaws": "He killed an Egyptian in anger, argued with God's call, and struck the rock in anger at Meribah — which kept him out of the promised land (Numbers 20:10-12).",
+            "lesson": "God uses reluctant, imperfect people. Moses was 'very meek, above all the men which were upon the face of the earth', and God spoke with him 'face to face'.",
+            "told_in": [
+                "Exodus 2-40",
+                "Numbers 1-36",
+                "Deuteronomy 1-34"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Exodus 3:14",
+                    "text": "And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you."
+                },
+                {
+                    "reference": "Numbers 12:3",
+                    "text": "(Now the man Moses was very meek, above all the men which were upon the face of the earth.)"
+                },
+                {
+                    "reference": "Hebrews 11:24-25",
+                    "text": "By faith Moses, when he was come to years, refused to be called the son of Pharaoh’s daughter; Choosing rather to suffer affliction with the people of God, than to enjoy the pleasures of sin for a season;"
+                }
+            ],
+            "faced": [
+                "pharaoh"
+            ],
+            "peoples": [
+                "israelites",
+                "egyptians",
+                "midianites",
+                "amalekites",
+                "moabites"
+            ]
+        },
+        {
+            "id": "joshua",
+            "side": "hero",
+            "name": "Joshua",
+            "epithet": "The strong and courageous",
+            "testament": "Old",
+            "era": "c. 1400 BC (traditional)",
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Numbers",
+                    "id": "numbers"
+                },
+                {
+                    "name": "Joshua",
+                    "id": "joshua"
+                }
+            ],
+            "summary": "Moses' faithful assistant who led Israel across the Jordan, brought down Jericho and divided the promised land.",
+            "story": "Joshua fought the Amalekites while Moses prayed, served Moses on Sinai, and was one of only two spies who trusted God to give Canaan. After Moses died, God told him three times to be strong and courageous. He led the people across the Jordan on dry ground, marched around Jericho until its walls fell, and fought the kings of Canaan. In old age he gathered Israel at Shechem and called them to choose: 'as for me and my house, we will serve the LORD.'",
+            "moment": {
+                "title": "The walls of Jericho fall",
+                "reference": "Joshua 6:20"
+            },
+            "traits": [
+                "Courage",
+                "Loyalty",
+                "Obedience",
+                "Leadership"
+            ],
+            "flaws": "He made a treaty with the Gibeonites without asking counsel of the LORD (Joshua 9:14).",
+            "lesson": "Courage rests on God's presence, not on the size of the enemy: 'the LORD thy God is with thee whithersoever thou goest.'",
+            "told_in": [
+                "Exodus 17:8-14",
+                "Numbers 13-14",
+                "Joshua 1-24"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Joshua 1:9",
+                    "text": "Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest."
+                },
+                {
+                    "reference": "Joshua 24:15",
+                    "text": "And if it seem evil unto you to serve the LORD, choose you this day whom ye will serve; whether the gods which your fathers served that were on the other side of the flood, or the gods of the Amorites, in whose land ye dwell: but as for me and my house, we will serve the LORD."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "canaanites",
+                "amorites",
+                "amalekites",
+                "anakim",
+                "hivites"
+            ]
+        },
+        {
+            "id": "rahab",
+            "side": "hero",
+            "name": "Rahab",
+            "epithet": "The outsider saved by faith",
+            "testament": "Old",
+            "era": "c. 1400 BC (traditional)",
+            "books": [
+                {
+                    "name": "Joshua",
+                    "id": "joshua"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                }
+            ],
+            "summary": "A Canaanite woman of Jericho who hid Israel's spies, trusted their God, and became an ancestor of King David and of Jesus.",
+            "story": "Rahab, a harlot whose house was on Jericho's wall, had heard what God did at the Red Sea and confessed: 'the LORD your God, he is God in heaven above, and in earth beneath.' She hid the two spies on her roof and let them down by a rope, asking only that her family be spared. A scarlet cord in her window marked her house, and when the walls fell she and her household were saved. She married into Israel; Matthew names her as the mother of Boaz.",
+            "moment": {
+                "title": "The scarlet cord in the window",
+                "reference": "Joshua 2:18-21"
+            },
+            "traits": [
+                "Faith",
+                "Courage",
+                "Kindness",
+                "Loyalty to God's people"
+            ],
+            "flaws": "Her past as a harlot is named plainly, and she lied to the king's men to protect the spies (Joshua 2:4-5).",
+            "lesson": "No one is too far outside for God's grace. Rahab is one of only two women named in Hebrews 11's hall of faith.",
+            "told_in": [
+                "Joshua 2",
+                "Joshua 6:22-25"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Joshua 2:11",
+                    "text": "And as soon as we had heard these things, our hearts did melt, neither did there remain any more courage in any man, because of you: for the LORD your God, he is God in heaven above, and in earth beneath."
+                },
+                {
+                    "reference": "Hebrews 11:31",
+                    "text": "By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "canaanites",
+                "israelites"
+            ]
+        },
+        {
+            "id": "deborah",
+            "side": "hero",
+            "name": "Deborah",
+            "epithet": "The prophetess who judged Israel",
+            "testament": "Old",
+            "era": "c. 1200 BC",
+            "books": [
+                {
+                    "name": "Judges",
+                    "id": "judges"
+                }
+            ],
+            "summary": "A prophetess and judge who summoned Barak to battle, went with him, and celebrated God's victory over Sisera in song.",
+            "story": "Under Jabin king of Canaan, whose general Sisera had nine hundred iron chariots, Israel was oppressed for twenty years. Deborah judged Israel under a palm tree between Ramah and Bethel. She told Barak that God would give him victory; he would only go if she went too, so she went, and foretold that the honour would go to a woman. God routed Sisera's army at the river Kishon, and Jael killed Sisera. Deborah's song (Judges 5) is one of the oldest poems in the Bible.",
+            "moment": {
+                "title": "'Up; for this is the day'",
+                "reference": "Judges 4:14"
+            },
+            "traits": [
+                "Wisdom",
+                "Courage",
+                "Faith",
+                "Leadership"
+            ],
+            "flaws": "Scripture records no failing of Deborah's.",
+            "lesson": "God raises up the leaders he chooses. Faithful leadership calls others to act and gives God the glory.",
+            "told_in": [
+                "Judges 4-5"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Judges 4:14",
+                    "text": "And Deborah said unto Barak, Up; for this is the day in which the LORD hath delivered Sisera into thine hand: is not the LORD gone out before thee? So Barak went down from mount Tabor, and ten thousand men after him."
+                },
+                {
+                    "reference": "Judges 5:31",
+                    "text": "So let all thine enemies perish, O LORD: but let them that love him be as the sun when he goeth forth in his might. And the land had rest forty years."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "canaanites",
+                "kenites"
+            ]
+        },
+        {
+            "id": "gideon",
+            "side": "hero",
+            "name": "Gideon",
+            "epithet": "The least who became mighty",
+            "testament": "Old",
+            "era": "c. 1150 BC",
+            "books": [
+                {
+                    "name": "Judges",
+                    "id": "judges"
+                }
+            ],
+            "summary": "A fearful farmer called 'mighty man of valour', who defeated the Midianite hordes with three hundred men, trumpets and torches.",
+            "story": "Gideon was threshing wheat in a winepress to hide it from the Midianites when the angel of the LORD greeted him as a 'mighty man of valour'. He protested he was the least in his father's house. He tore down his father's altar to Baal by night and asked for signs with a fleece. God cut his army from 32,000 to 300 so that Israel could not boast. At night they broke their pitchers, shone their lamps and blew their trumpets, and the Midianites turned on one another and fled.",
+            "moment": {
+                "title": "Three hundred trumpets and torches",
+                "reference": "Judges 7:19-22"
+            },
+            "traits": [
+                "Obedience",
+                "Humility",
+                "Courage that grew",
+                "Refused to be king"
+            ],
+            "flaws": "He asked for repeated signs, took revenge on two towns, and made a gold ephod that became a snare to Israel and his family (Judges 8:27).",
+            "lesson": "God delights to save by few, so that the glory is his: 'The people that are with thee are too many for me.'",
+            "told_in": [
+                "Judges 6-8"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Judges 6:12",
+                    "text": "And the angel of the LORD appeared unto him, and said unto him, The LORD is with thee, thou mighty man of valour."
+                },
+                {
+                    "reference": "Judges 7:2",
+                    "text": "And the LORD said unto Gideon, The people that are with thee are too many for me to give the Midianites into their hands, lest Israel vaunt themselves against me, saying, Mine own hand hath saved me."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "midianites",
+                "amalekites"
+            ]
+        },
+        {
+            "id": "ruth",
+            "side": "hero",
+            "name": "Ruth",
+            "epithet": "The loyal Moabitess",
+            "testament": "Old",
+            "era": "c. 1100 BC",
+            "books": [
+                {
+                    "name": "Ruth",
+                    "id": "ruth"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ],
+            "summary": "A Moabite widow who refused to leave her mother-in-law, chose Israel's God, and became the great-grandmother of David.",
+            "story": "When Naomi lost her husband and both sons in Moab and decided to go home, her daughter-in-law Orpah went back to her people, but Ruth clung to her: 'thy people shall be my people, and thy God my God.' In Bethlehem Ruth gleaned barley to feed them both, in the field of Boaz, a relative, who showed her great kindness. At Naomi's urging she asked Boaz to redeem the family; he married her, and their son Obed was the grandfather of David.",
+            "moment": {
+                "title": "'Whither thou goest, I will go'",
+                "reference": "Ruth 1:16-17"
+            },
+            "traits": [
+                "Loyalty",
+                "Kindness (hesed)",
+                "Hard work",
+                "Humility"
+            ],
+            "flaws": "Scripture records no failing of Ruth's.",
+            "lesson": "Faithful love in ordinary life is part of God's great story. A foreigner who took refuge under God's wings became part of the Messiah's family.",
+            "told_in": [
+                "Ruth 1-4"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Ruth 1:16",
+                    "text": "And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God:"
+                },
+                {
+                    "reference": "Ruth 2:12",
+                    "text": "The LORD recompense thy work, and a full reward be given thee of the LORD God of Israel, under whose wings thou art come to trust."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "moabites",
+                "israelites"
+            ]
+        },
+        {
+            "id": "hannah",
+            "side": "hero",
+            "name": "Hannah",
+            "epithet": "The woman who prayed",
+            "testament": "Old",
+            "era": "c. 1100 BC",
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                }
+            ],
+            "summary": "A barren, taunted wife who poured out her soul to God for a son, then gave that son — Samuel — back to God's service.",
+            "story": "Hannah had no children, and her rival Peninnah provoked her year after year. At the tabernacle in Shiloh she prayed so intensely that Eli the priest thought she was drunk. She vowed that if God gave her a son she would give him to the LORD all his life. God remembered her, and she named the boy Samuel. When he was weaned she brought him to Eli and left him there, and sang a song of praise that Mary would echo a thousand years later.",
+            "moment": {
+                "title": "Pouring out her soul before the LORD",
+                "reference": "1 Samuel 1:15"
+            },
+            "traits": [
+                "Prayer",
+                "Faithfulness",
+                "Keeping her word",
+                "Praise"
+            ],
+            "flaws": "Scripture records no failing of Hannah's.",
+            "lesson": "Bring your deepest grief to God honestly. What he gives, give back to him.",
+            "told_in": [
+                "1 Samuel 1:1-2:11"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 1:27",
+                    "text": "For this child I prayed; and the LORD hath given me my petition which I asked of him:"
+                },
+                {
+                    "reference": "1 Samuel 2:2",
+                    "text": "There is none holy as the LORD: for there is none beside thee: neither is there any rock like our God."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites"
+            ]
+        },
+        {
+            "id": "samuel",
+            "side": "hero",
+            "name": "Samuel",
+            "epithet": "The prophet who anointed kings",
+            "testament": "Old",
+            "era": "c. 1100–1015 BC",
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                }
+            ],
+            "summary": "Hannah's son, called by God as a boy, who became Israel's last judge and the prophet who anointed Saul and David.",
+            "story": "Serving in the tabernacle as a child, Samuel heard a voice in the night and answered, 'Speak; for thy servant heareth.' He grew into a prophet 'established' before all Israel, led the nation back from idols, and judged it all his life. When the people demanded a king, he warned them, then anointed Saul. When Saul disobeyed, Samuel confronted him and later anointed the shepherd boy David.",
+            "moment": {
+                "title": "'Speak; for thy servant heareth'",
+                "reference": "1 Samuel 3:10"
+            },
+            "traits": [
+                "Listening to God",
+                "Integrity",
+                "Prayer",
+                "Courage to confront kings"
+            ],
+            "flaws": "His sons did not walk in his ways and took bribes, which prompted the demand for a king (1 Samuel 8:1-5).",
+            "lesson": "Leadership begins with listening. Samuel could say, when he retired, that he had taken nothing from anyone (1 Samuel 12:3-4).",
+            "told_in": [
+                "1 Samuel 1-16",
+                "1 Samuel 25:1"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 3:10",
+                    "text": "And the LORD came, and stood, and called as at other times, Samuel, Samuel. Then Samuel answered, Speak; for thy servant heareth."
+                },
+                {
+                    "reference": "1 Samuel 15:22",
+                    "text": "And Samuel said, Hath the LORD as great delight in burnt offerings and sacrifices, as in obeying the voice of the LORD? Behold, to obey is better than sacrifice, and to hearken than the fat of rams."
+                }
+            ],
+            "faced": [
+                "saul"
+            ],
+            "peoples": [
+                "israelites",
+                "philistines",
+                "amalekites"
+            ]
+        },
+        {
+            "id": "david",
+            "side": "hero",
+            "name": "David",
+            "epithet": "The shepherd king",
+            "testament": "Old",
+            "era": "c. 1040–970 BC",
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                },
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                },
+                {
+                    "name": "1 Kings",
+                    "id": "1-kings"
+                },
+                {
+                    "name": "1 Chronicles",
+                    "id": "1-chronicles"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ],
+            "summary": "The youngest son of Jesse, who killed Goliath, became Israel's greatest king, wrote many psalms, and received God's promise of an everlasting throne.",
+            "story": "God chose David because 'the LORD looketh on the heart'. As a teenager he faced the giant Goliath with a sling, 'in the name of the LORD of hosts'. He served Saul, who grew jealous and hunted him for years, yet David twice refused to kill him. As king he took Jerusalem, brought the ark there dancing, and received God's covenant that his throne would last for ever. But he committed adultery with Bathsheba and had her husband killed; confronted by Nathan, he repented deeply (Psalm 51), and lived with the painful consequences in his family.",
+            "moment": {
+                "title": "Facing Goliath",
+                "reference": "1 Samuel 17:45-50"
+            },
+            "traits": [
+                "Faith",
+                "Courage",
+                "Worship",
+                "Repentance",
+                "Mercy to enemies"
+            ],
+            "flaws": "Adultery with Bathsheba and the murder of Uriah (2 Samuel 11); indulgence toward his sons; a proud census (2 Samuel 24).",
+            "lesson": "God calls him 'a man after mine own heart' — not because he was sinless, but because he trusted God and truly repented. His greater Son is Jesus, 'the son of David'.",
+            "told_in": [
+                "1 Samuel 16-31",
+                "2 Samuel 1-24",
+                "1 Kings 1-2"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 17:45",
+                    "text": "Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of the LORD of hosts, the God of the armies of Israel, whom thou hast defied."
+                },
+                {
+                    "reference": "Psalms 23:1",
+                    "text": "The LORD is my shepherd; I shall not want. "
+                },
+                {
+                    "reference": "Psalms 51:10",
+                    "text": "Create in me a clean heart, O God; and renew a right spirit within me. "
+                }
+            ],
+            "faced": [
+                "goliath",
+                "saul",
+                "absalom"
+            ],
+            "peoples": [
+                "israelites",
+                "philistines",
+                "jebusites",
+                "ammonites",
+                "moabites",
+                "amalekites"
+            ]
+        },
+        {
+            "id": "jonathan",
+            "side": "hero",
+            "name": "Jonathan",
+            "epithet": "The faithful friend",
+            "testament": "Old",
+            "era": "c. 1010 BC",
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                },
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                }
+            ],
+            "summary": "Saul's son and heir, a brave warrior who loved David as his own soul and gave up the throne to protect him.",
+            "story": "Jonathan attacked a Philistine garrison with only his armourbearer, saying 'there is no restraint to the LORD to save by many or by few.' After David killed Goliath, Jonathan made a covenant with him and gave him his robe, sword and bow. When Saul tried to kill David, Jonathan warned him, risked his father's spear, and parted from David in tears. He died beside Saul on Mount Gilboa, and David mourned: 'thy love to me was wonderful.'",
+            "moment": {
+                "title": "The covenant of friendship",
+                "reference": "1 Samuel 18:1-4"
+            },
+            "traits": [
+                "Loyalty",
+                "Selflessness",
+                "Courage",
+                "Faith"
+            ],
+            "flaws": "Scripture records no failing of Jonathan's; he stayed loyal to his father even while protecting David.",
+            "lesson": "True friendship gives up its own advantage for another. Jonathan knew David would be king, and rejoiced in it.",
+            "told_in": [
+                "1 Samuel 13-14",
+                "1 Samuel 18-20",
+                "1 Samuel 23:16-18",
+                "2 Samuel 1:17-27"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 14:6",
+                    "text": "And Jonathan said to the young man that bare his armour, Come, and let us go over unto the garrison of these uncircumcised: it may be that the LORD will work for us: for there is no restraint to the LORD to save by many or by few."
+                },
+                {
+                    "reference": "1 Samuel 18:1",
+                    "text": "And it came to pass, when he had made an end of speaking unto Saul, that the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul."
+                }
+            ],
+            "faced": [
+                "saul"
+            ],
+            "peoples": [
+                "israelites",
+                "philistines"
+            ]
+        },
+        {
+            "id": "elijah",
+            "side": "hero",
+            "name": "Elijah",
+            "epithet": "The prophet of fire",
+            "testament": "Old",
+            "era": "c. 870–850 BC",
+            "books": [
+                {
+                    "name": "1 Kings",
+                    "id": "1-kings"
+                },
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "Malachi",
+                    "id": "malachi"
+                }
+            ],
+            "summary": "The fearless prophet who stood alone against King Ahab and 450 prophets of Baal, and was taken to heaven in a whirlwind.",
+            "story": "Elijah the Tishbite announced a drought to Ahab and was fed by ravens and by a widow of Zarephath, whose son he raised to life. On Mount Carmel he challenged the prophets of Baal: 'How long halt ye between two opinions?' Their god did not answer; the LORD sent fire. Yet when Jezebel threatened him he fled to the desert in despair, and God met him not in wind, earthquake or fire, but in 'a still small voice'. He anointed Elisha and was taken up in a chariot of fire.",
+            "moment": {
+                "title": "Fire on Mount Carmel",
+                "reference": "1 Kings 18:36-39"
+            },
+            "traits": [
+                "Boldness",
+                "Prayer",
+                "Zeal for God",
+                "Faith"
+            ],
+            "flaws": "After Carmel he ran from Jezebel and asked to die, convinced he alone was left (1 Kings 19:4, 10).",
+            "lesson": "James calls Elijah 'a man subject to like passions as we are' — ordinary, yet his prayer was powerful. God cares for his servants in their lowest moments too.",
+            "told_in": [
+                "1 Kings 17-19",
+                "1 Kings 21",
+                "2 Kings 1-2"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Kings 18:21",
+                    "text": "And Elijah came unto all the people, and said, How long halt ye between two opinions? if the LORD be God, follow him: but if Baal, then follow him. And the people answered him not a word."
+                },
+                {
+                    "reference": "1 Kings 19:12",
+                    "text": "And after the earthquake a fire; but the LORD was not in the fire: and after the fire a still small voice."
+                },
+                {
+                    "reference": "James 5:17",
+                    "text": "Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months."
+                }
+            ],
+            "faced": [
+                "ahab",
+                "jezebel"
+            ],
+            "peoples": [
+                "israelites",
+                "phoenicians"
+            ]
+        },
+        {
+            "id": "hezekiah",
+            "side": "hero",
+            "name": "Hezekiah",
+            "epithet": "The king who trusted",
+            "testament": "Old",
+            "era": "c. 715–686 BC",
+            "books": [
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "2 Chronicles",
+                    "id": "2-chronicles"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                }
+            ],
+            "summary": "A reforming king of Judah who tore down idols and, when Assyria surrounded Jerusalem, spread the enemy's letter before God and prayed.",
+            "story": "Hezekiah reopened the Temple, restored the Passover and broke even the bronze serpent Moses made, because the people burned incense to it. 'He trusted in the LORD God of Israel; so that after him was none like him.' When Sennacherib's army besieged Jerusalem and mocked God, Hezekiah took the letter into the Temple and prayed. That night the angel of the LORD struck the Assyrian camp. Later, when he was deathly ill, God added fifteen years to his life.",
+            "moment": {
+                "title": "Spreading the letter before the LORD",
+                "reference": "2 Kings 19:14-19"
+            },
+            "traits": [
+                "Trust in God",
+                "Reform",
+                "Prayer",
+                "Courage"
+            ],
+            "flaws": "In pride he showed all his treasures to envoys from Babylon, and Isaiah foretold they would be carried there (2 Kings 20:12-18).",
+            "lesson": "Bring your crisis to God before anyone else. Hezekiah's prayer asks that 'all the kingdoms of the earth may know' who God is.",
+            "told_in": [
+                "2 Kings 18-20",
+                "2 Chronicles 29-32",
+                "Isaiah 36-39"
+            ],
+            "key_verses": [
+                {
+                    "reference": "2 Kings 18:5",
+                    "text": "He trusted in the LORD God of Israel; so that after him was none like him among all the kings of Judah, nor any that were before him."
+                },
+                {
+                    "reference": "2 Kings 19:19",
+                    "text": "Now therefore, O LORD our God, I beseech thee, save thou us out of his hand, that all the kingdoms of the earth may know that thou art the LORD God, even thou only."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "assyrians",
+                "babylonians"
+            ]
+        },
+        {
+            "id": "josiah",
+            "side": "hero",
+            "name": "Josiah",
+            "epithet": "The boy king who found the Book",
+            "testament": "Old",
+            "era": "c. 640–609 BC",
+            "books": [
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "2 Chronicles",
+                    "id": "2-chronicles"
+                }
+            ],
+            "summary": "Made king at eight, he sought God as a youth, and when the lost book of the law was found he led Judah's greatest reformation.",
+            "story": "Josiah became king after his father Amon was assassinated. At sixteen he began to seek God, and at twenty to purge Judah of idols. While the Temple was being repaired, the high priest found the book of the law. When it was read to him, Josiah tore his clothes, gathered the people, renewed the covenant, destroyed the high places — even Jeroboam's altar at Bethel, as prophesied three centuries before — and kept a Passover like none since Samuel.",
+            "moment": {
+                "title": "Hearing the book of the law",
+                "reference": "2 Kings 22:11-13"
+            },
+            "traits": [
+                "Tender heart",
+                "Zeal for God's Word",
+                "Courage to reform",
+                "Humility"
+            ],
+            "flaws": "He went to fight Pharaoh Necho against God's warning and was killed at Megiddo (2 Chronicles 35:20-24).",
+            "lesson": "It is never too early to seek God, and God's Word, once heard, must be obeyed.",
+            "told_in": [
+                "2 Kings 22:1-23:30",
+                "2 Chronicles 34-35"
+            ],
+            "key_verses": [
+                {
+                    "reference": "2 Kings 22:19",
+                    "text": "Because thine heart was tender, and thou hast humbled thyself before the LORD, when thou heardest what I spake against this place, and against the inhabitants thereof, that they should become a desolation and a curse, and hast rent thy clothes, and wept before me; I also have heard thee, saith the LORD."
+                },
+                {
+                    "reference": "2 Kings 23:25",
+                    "text": "And like unto him was there no king before him, that turned to the LORD with all his heart, and with all his soul, and with all his might, according to all the law of Moses; neither after him arose there any like him."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "egyptians"
+            ]
+        },
+        {
+            "id": "esther",
+            "side": "hero",
+            "name": "Esther",
+            "epithet": "The queen for such a time",
+            "testament": "Old",
+            "era": "c. 480 BC",
+            "books": [
+                {
+                    "name": "Esther",
+                    "id": "esther"
+                }
+            ],
+            "summary": "A Jewish orphan made queen of Persia, who risked her life to stand before the king and save her people from Haman.",
+            "story": "Raised by her cousin Mordecai, Esther was chosen queen by King Ahasuerus without revealing she was a Jew. When Haman obtained a decree to destroy all the Jews, Mordecai urged her to plead with the king, though going unbidden could mean death. She asked the Jews to fast three days, then went in: 'if I perish, I perish.' The king held out his sceptre. At her banquet she exposed Haman, who was hanged on his own gallows, and the Jews were delivered.",
+            "moment": {
+                "title": "'If I perish, I perish'",
+                "reference": "Esther 4:16"
+            },
+            "traits": [
+                "Courage",
+                "Wisdom and timing",
+                "Humility",
+                "Self-sacrifice"
+            ],
+            "flaws": "At first she hesitated to act, pointing to the danger (Esther 4:11).",
+            "lesson": "God places people where they are 'for such a time as this'. Courage often means using the position you have for others.",
+            "told_in": [
+                "Esther 2-9"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Esther 4:14",
+                    "text": "For if thou altogether holdest thy peace at this time, then shall there enlargement and deliverance arise to the Jews from another place; but thou and thy father’s house shall be destroyed: and who knoweth whether thou art come to the kingdom for such a time as this?"
+                },
+                {
+                    "reference": "Esther 4:16",
+                    "text": "Go, gather together all the Jews that are present in Shushan, and fast ye for me, and neither eat nor drink three days, night or day: I also and my maidens will fast likewise; and so will I go in unto the king, which is not according to the law: and if I perish, I perish."
+                }
+            ],
+            "faced": [
+                "haman"
+            ],
+            "peoples": [
+                "persians",
+                "israelites",
+                "amalekites"
+            ]
+        },
+        {
+            "id": "nehemiah",
+            "side": "hero",
+            "name": "Nehemiah",
+            "epithet": "The builder who prayed",
+            "testament": "Old",
+            "era": "c. 445–430 BC",
+            "books": [
+                {
+                    "name": "Nehemiah",
+                    "id": "nehemiah"
+                }
+            ],
+            "summary": "A Persian king's cupbearer who left the palace to rebuild Jerusalem's broken walls in fifty-two days, against fierce opposition.",
+            "story": "Hearing that Jerusalem lay in ruins, Nehemiah wept, fasted and prayed for days, then risked the king's displeasure to ask for leave to rebuild. He inspected the walls by night, organised families to build their own sections, and answered mockery and threats from Sanballat and Tobiah with prayer and guards: half worked, half held spears. The wall was finished in fifty-two days, and he led the people back to God's Law.",
+            "moment": {
+                "title": "The wall finished in fifty-two days",
+                "reference": "Nehemiah 6:15-16"
+            },
+            "traits": [
+                "Prayer",
+                "Leadership",
+                "Perseverance",
+                "Integrity"
+            ],
+            "flaws": "His reforms could be fierce — he beat and pulled out the hair of men who had married foreign wives (Nehemiah 13:25).",
+            "lesson": "Pray, then plan and work. 'The joy of the LORD is your strength.'",
+            "told_in": [
+                "Nehemiah 1-13"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Nehemiah 2:20",
+                    "text": "Then answered I them, and said unto them, The God of heaven, he will prosper us; therefore we his servants will arise and build: but ye have no portion, nor right, nor memorial, in Jerusalem."
+                },
+                {
+                    "reference": "Nehemiah 8:10",
+                    "text": "Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for this day is holy unto our Lord: neither be ye sorry; for the joy of the LORD is your strength."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "persians",
+                "israelites",
+                "samaritans",
+                "ammonites"
+            ]
+        },
+        {
+            "id": "daniel",
+            "side": "hero",
+            "name": "Daniel",
+            "epithet": "The faithful exile",
+            "testament": "Old",
+            "era": "c. 605–536 BC",
+            "books": [
+                {
+                    "name": "Daniel",
+                    "id": "daniel"
+                }
+            ],
+            "summary": "Taken to Babylon as a youth, he stayed faithful to God under four kings, interpreted dreams, and was delivered from the lions' den.",
+            "story": "Daniel 'purposed in his heart' not to defile himself with the king's food, and God gave him wisdom. He interpreted Nebuchadnezzar's dreams and read the writing on the wall for Belshazzar on the night Babylon fell. Under Darius, jealous officials trapped him with a law against prayer; Daniel went home and prayed three times a day with his windows open, as before. Thrown to the lions, he was unharmed: 'My God hath sent his angel, and hath shut the lions' mouths.'",
+            "moment": {
+                "title": "Praying with the windows open",
+                "reference": "Daniel 6:10"
+            },
+            "traits": [
+                "Integrity",
+                "Prayer",
+                "Wisdom",
+                "Faithfulness over a lifetime"
+            ],
+            "flaws": "Scripture records no failing of Daniel's; he confesses his people's sins as his own (Daniel 9).",
+            "lesson": "You can serve faithfully in a culture that does not share your faith, without giving up your faith.",
+            "told_in": [
+                "Daniel 1-12"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Daniel 1:8",
+                    "text": "But Daniel purposed in his heart that he would not defile himself with the portion of the king’s meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself."
+                },
+                {
+                    "reference": "Daniel 6:22",
+                    "text": "My God hath sent his angel, and hath shut the lions mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt."
+                }
+            ],
+            "faced": [
+                "nebuchadnezzar"
+            ],
+            "peoples": [
+                "babylonians",
+                "medes",
+                "persians",
+                "israelites"
+            ]
+        },
+        {
+            "id": "shadrach-meshach-and-abednego",
+            "side": "hero",
+            "name": "Shadrach, Meshach and Abednego",
+            "epithet": "The three who would not bow",
+            "testament": "Old",
+            "era": "c. 600–580 BC",
+            "books": [
+                {
+                    "name": "Daniel",
+                    "id": "daniel"
+                }
+            ],
+            "summary": "Daniel's three friends who refused to worship Nebuchadnezzar's golden image and walked unharmed in the fiery furnace with a fourth man.",
+            "story": "Hananiah, Mishael and Azariah were given Babylonian names and high office. When Nebuchadnezzar set up a golden image on the plain of Dura and commanded all to bow, they stood. Given a second chance, they answered that God was able to deliver them, 'But if not… we will not serve thy gods.' Bound and thrown into a furnace heated seven times hotter, they walked loose in the fire with a fourth figure 'like the Son of God', and came out without even the smell of smoke.",
+            "moment": {
+                "title": "'But if not'",
+                "reference": "Daniel 3:17-18"
+            },
+            "traits": [
+                "Courage",
+                "Faith",
+                "Loyalty to God",
+                "Friendship"
+            ],
+            "flaws": "Scripture records no failing of theirs.",
+            "lesson": "Faith trusts God's power and his will — whether or not he rescues. And no one goes through the fire alone.",
+            "told_in": [
+                "Daniel 1",
+                "Daniel 3"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Daniel 3:17-18",
+                    "text": "If it be so, our God whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king. But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up."
+                },
+                {
+                    "reference": "Daniel 3:25",
+                    "text": "He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of God."
+                }
+            ],
+            "faced": [
+                "nebuchadnezzar"
+            ],
+            "peoples": [
+                "babylonians",
+                "israelites"
+            ]
+        },
+        {
+            "id": "job",
+            "side": "hero",
+            "name": "Job",
+            "epithet": "The patient sufferer",
+            "testament": "Old",
+            "era": "Patriarchal age",
+            "books": [
+                {
+                    "name": "Job",
+                    "id": "job"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                }
+            ],
+            "summary": "A blameless man who lost everything, wrestled honestly with God through his pain, and never cursed him.",
+            "story": "Job was the greatest man of the east, 'perfect and upright'. In one day he lost his herds, his servants and his ten children, and then his health. He fell to the ground and worshipped. His friends insisted he must have sinned; Job protested his innocence and cried out for an answer. God spoke from the whirlwind, Job repented of speaking beyond his knowledge, and God restored him double.",
+            "moment": {
+                "title": "'The LORD gave, and the LORD hath taken away'",
+                "reference": "Job 1:20-22"
+            },
+            "traits": [
+                "Patience",
+                "Integrity",
+                "Honest prayer",
+                "Faith in suffering"
+            ],
+            "flaws": "In his anguish he spoke rashly and demanded that God answer him (Job 40:2-5; 42:3).",
+            "lesson": "Suffering is not always punishment. We may bring our questions to God, and trust him even when he does not explain.",
+            "told_in": [
+                "Job 1-42"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Job 1:21",
+                    "text": "And said, Naked came I out of my mother’s womb, and naked shall I return thither: the LORD gave, and the LORD hath taken away; blessed be the name of the LORD."
+                },
+                {
+                    "reference": "Job 19:25",
+                    "text": "For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth:"
+                },
+                {
+                    "reference": "James 5:11",
+                    "text": "Behold, we count them happy which endure. Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy."
+                }
+            ],
+            "faced": [
+                "satan"
+            ],
+            "peoples": [
+                "sabeans"
+            ]
+        },
+        {
+            "id": "mary-mother-of-jesus",
+            "side": "hero",
+            "name": "Mary, mother of Jesus",
+            "epithet": "The handmaid of the Lord",
+            "testament": "New",
+            "era": "c. 20 BC – 1st century AD",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ],
+            "summary": "A young woman of Nazareth who said yes to God's plan, bore the Son of God, and stood by him at the cross.",
+            "story": "The angel Gabriel told Mary, a virgin engaged to Joseph, that she would bear the Son of the Highest. She answered, 'be it unto me according to thy word', and sang the Magnificat. She gave birth in Bethlehem, fled to Egypt, and 'kept all these things, and pondered them in her heart'. At Cana she told the servants, 'Whatsoever he saith unto you, do it.' She stood at the cross, where Jesus entrusted her to John, and was praying with the disciples before Pentecost.",
+            "moment": {
+                "title": "'Be it unto me according to thy word'",
+                "reference": "Luke 1:38"
+            },
+            "traits": [
+                "Faith",
+                "Humility",
+                "Obedience",
+                "Endurance in sorrow"
+            ],
+            "flaws": "Scripture records no failing of hers; once she and Jesus' brothers came to take him home (Mark 3:21, 31-35).",
+            "lesson": "Surrender to God's will, even when it costs your reputation and breaks your heart.",
+            "told_in": [
+                "Luke 1-2",
+                "John 2:1-11",
+                "John 19:25-27",
+                "Acts 1:14"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Luke 1:38",
+                    "text": "And Mary said, Behold the handmaid of the Lord; be it unto me according to thy word. And the angel departed from her."
+                },
+                {
+                    "reference": "Luke 1:46-47",
+                    "text": "And Mary said, My soul doth magnify the Lord, And my spirit hath rejoiced in God my Saviour."
+                }
+            ],
+            "faced": [
+                "herod-the-great"
+            ],
+            "peoples": [
+                "israelites",
+                "egyptians"
+            ]
+        },
+        {
+            "id": "john-the-baptist",
+            "side": "hero",
+            "name": "John the Baptist",
+            "epithet": "The voice in the wilderness",
+            "testament": "New",
+            "era": "c. 5 BC – AD 29",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                }
+            ],
+            "summary": "The forerunner who prepared the way for Jesus, baptised him, and was beheaded for rebuking King Herod.",
+            "story": "Born to the elderly priest Zacharias and Elisabeth, John lived in the wilderness, wore camel's hair and ate locusts and wild honey. He preached repentance and baptised crowds in the Jordan, then pointed to Jesus: 'Behold the Lamb of God.' He told his disciples, 'He must increase, but I must decrease.' He rebuked Herod Antipas for taking his brother's wife, was imprisoned, and beheaded at Herodias' request. Jesus said none born of women was greater.",
+            "moment": {
+                "title": "'Behold the Lamb of God'",
+                "reference": "John 1:29"
+            },
+            "traits": [
+                "Boldness",
+                "Humility",
+                "Self-denial",
+                "Faithfulness to death"
+            ],
+            "flaws": "In prison he sent to ask Jesus, 'Art thou he that should come, or do we look for another?' (Matthew 11:3).",
+            "lesson": "Point people to Jesus, not to yourself — and tell the truth even to the powerful.",
+            "told_in": [
+                "Luke 1",
+                "Luke 3:1-22",
+                "John 1:19-36",
+                "John 3:22-30",
+                "Mark 6:14-29"
+            ],
+            "key_verses": [
+                {
+                    "reference": "John 1:29",
+                    "text": "The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world."
+                },
+                {
+                    "reference": "John 3:30",
+                    "text": "He must increase, but I must decrease."
+                }
+            ],
+            "faced": [
+                "herod-antipas"
+            ],
+            "peoples": [
+                "israelites"
+            ]
+        },
+        {
+            "id": "peter",
+            "side": "hero",
+            "name": "Peter",
+            "epithet": "The rock who fell and rose",
+            "testament": "New",
+            "era": "1st century AD",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                },
+                {
+                    "name": "2 Peter",
+                    "id": "2-peter"
+                }
+            ],
+            "summary": "An impulsive fisherman who confessed Jesus as the Christ, denied him three times, was restored, and led the early church.",
+            "story": "Simon left his nets to follow Jesus, who named him Peter, 'rock'. He walked on water until he looked at the waves, confessed 'Thou art the Christ, the Son of the living God', and swore he would never deny Jesus — then did, three times, before the cock crowed. After the resurrection Jesus asked him three times, 'lovest thou me?' and told him to feed his sheep. At Pentecost Peter preached and three thousand believed. He healed a lame man, opened the door to the Gentile Cornelius, and by tradition died a martyr in Rome.",
+            "moment": {
+                "title": "Preaching at Pentecost",
+                "reference": "Acts 2:14-41"
+            },
+            "traits": [
+                "Boldness",
+                "Wholehearted love",
+                "Leadership",
+                "Humility after failure"
+            ],
+            "flaws": "He denied Jesus three times (Luke 22:54-62), and later drew back from eating with Gentiles until Paul rebuked him (Galatians 2:11-14).",
+            "lesson": "Failure need not be final. Jesus restores those who fall and uses them to strengthen others.",
+            "told_in": [
+                "Matthew 16:13-19",
+                "Luke 22:31-62",
+                "John 21:15-19",
+                "Acts 1-12"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Matthew 16:16",
+                    "text": "And Simon Peter answered and said, Thou art the Christ, the Son of the living God."
+                },
+                {
+                    "reference": "John 21:17",
+                    "text": "He saith unto him the third time, Simon, son of Jonas, lovest thou me? Peter was grieved because he said unto him the third time, Lovest thou me? And he said unto him, Lord, thou knowest all things; thou knowest that I love thee. Jesus saith unto him, Feed my sheep. "
+                },
+                {
+                    "reference": "Acts 4:12",
+                    "text": "Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved."
+                }
+            ],
+            "faced": [
+                "caiaphas"
+            ],
+            "peoples": [
+                "israelites",
+                "romans",
+                "samaritans"
+            ]
+        },
+        {
+            "id": "mary-magdalene",
+            "side": "hero",
+            "name": "Mary Magdalene",
+            "epithet": "The first witness of the resurrection",
+            "testament": "New",
+            "era": "1st century AD",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                }
+            ],
+            "summary": "Freed by Jesus from seven devils, she followed and supported him, stood at the cross, and was the first to see him risen.",
+            "story": "Mary of Magdala was one of the women who travelled with Jesus and provided for him from their own means, after he cast seven devils out of her. When most of the disciples had fled, she watched the crucifixion and saw where he was buried. Early on the first day of the week she came to the tomb and found it empty. Weeping in the garden, she heard her name — 'Mary' — and knew him. Jesus sent her to tell the disciples: 'I ascend unto my Father, and your Father.'",
+            "moment": {
+                "title": "'Mary' — 'Rabboni'",
+                "reference": "John 20:16"
+            },
+            "traits": [
+                "Devotion",
+                "Courage",
+                "Gratitude",
+                "Faithful witness"
+            ],
+            "flaws": "Scripture records no failing of hers. (The later idea that she had been a prostitute is not in the Bible.)",
+            "lesson": "Jesus meets those who seek him and entrusts the best news in history to those the world overlooks.",
+            "told_in": [
+                "Luke 8:1-3",
+                "Mark 15:40-47",
+                "John 20:1-18"
+            ],
+            "key_verses": [
+                {
+                    "reference": "John 20:16",
+                    "text": "Jesus saith unto her, Mary. She turned herself, and saith unto him, Rabboni; which is to say, Master."
+                },
+                {
+                    "reference": "John 20:18",
+                    "text": "Mary Magdalene came and told the disciples that she had seen the Lord, and that he had spoken these things unto her."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites"
+            ]
+        },
+        {
+            "id": "stephen",
+            "side": "hero",
+            "name": "Stephen",
+            "epithet": "The first martyr",
+            "testament": "New",
+            "era": "c. AD 34",
+            "books": [
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ],
+            "summary": "A deacon 'full of faith and power' who preached Christ before the council and died praying for those who stoned him.",
+            "story": "Stephen was one of seven men chosen to care for the widows of the Jerusalem church, and he did great wonders among the people. Accused of blasphemy, he answered the council with a sweeping history of Israel, ending with their rejection of the Just One. As they rushed at him he saw 'the Son of man standing on the right hand of God'. While they stoned him — with a young man named Saul holding their coats — he prayed, 'Lord, lay not this sin to their charge.'",
+            "moment": {
+                "title": "Praying for his killers",
+                "reference": "Acts 7:59-60"
+            },
+            "traits": [
+                "Faith",
+                "Wisdom",
+                "Courage",
+                "Forgiveness"
+            ],
+            "flaws": "Scripture records no failing of Stephen's.",
+            "lesson": "Faithfulness can cost everything — and forgiveness can reach even the persecutor watching (Saul became Paul).",
+            "told_in": [
+                "Acts 6-7"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Acts 6:8",
+                    "text": "And Stephen, full of faith and power, did great wonders and miracles among the people."
+                },
+                {
+                    "reference": "Acts 7:60",
+                    "text": "And he kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge. And when he had said this, he fell asleep."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "greeks"
+            ]
+        },
+        {
+            "id": "paul",
+            "side": "hero",
+            "name": "Paul",
+            "epithet": "The persecutor turned apostle",
+            "testament": "New",
+            "era": "c. AD 5 – 67",
+            "books": [
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                },
+                {
+                    "name": "2 Corinthians",
+                    "id": "2-corinthians"
+                },
+                {
+                    "name": "Galatians",
+                    "id": "galatians"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Philippians",
+                    "id": "philippians"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "1 Thessalonians",
+                    "id": "1-thessalonians"
+                },
+                {
+                    "name": "2 Thessalonians",
+                    "id": "2-thessalonians"
+                },
+                {
+                    "name": "1 Timothy",
+                    "id": "1-timothy"
+                },
+                {
+                    "name": "2 Timothy",
+                    "id": "2-timothy"
+                },
+                {
+                    "name": "Titus",
+                    "id": "titus"
+                },
+                {
+                    "name": "Philemon",
+                    "id": "philemon"
+                }
+            ],
+            "summary": "Saul the zealous Pharisee who hunted Christians, until the risen Jesus met him on the Damascus road — then the greatest missionary of the church.",
+            "story": "Saul of Tarsus approved Stephen's death and 'made havock of the church'. On the road to Damascus a light from heaven blinded him and a voice asked, 'Saul, Saul, why persecutest thou me?' Baptised by Ananias, he began to preach the Jesus he had persecuted. As Paul he made three long missionary journeys, planted churches across Asia Minor and Greece, and wrote thirteen New Testament letters. Beaten, shipwrecked and imprisoned, he was finally taken to Rome, where by tradition he was executed under Nero.",
+            "moment": {
+                "title": "The Damascus road",
+                "reference": "Acts 9:3-6"
+            },
+            "traits": [
+                "Zeal",
+                "Endurance",
+                "Grace-filled teaching",
+                "Love for the churches"
+            ],
+            "flaws": "Before his conversion he persecuted the church violently; later he fell out sharply with Barnabas over Mark (Acts 15:39).",
+            "lesson": "No one is beyond the reach of grace. Paul called himself the chief of sinners, and the proof of Christ's longsuffering.",
+            "turned": "From the church's fiercest persecutor to its greatest missionary.",
+            "told_in": [
+                "Acts 7:58-8:3",
+                "Acts 9:1-31",
+                "Acts 13-28"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Acts 9:4",
+                    "text": "And he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me? "
+                },
+                {
+                    "reference": "Galatians 2:20",
+                    "text": "I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me."
+                },
+                {
+                    "reference": "2 Timothy 4:7",
+                    "text": "I have fought a good fight, I have finished my course, I have kept the faith:"
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "romans",
+                "greeks"
+            ]
+        }
+    ],
+    "villains": [
+        {
+            "id": "cain",
+            "side": "villain",
+            "name": "Cain",
+            "epithet": "The first murderer",
+            "testament": "Old",
+            "era": "The beginning",
+            "books": [
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                },
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                },
+                {
+                    "name": "Jude",
+                    "id": "jude"
+                }
+            ],
+            "summary": "Adam and Eve's firstborn, who killed his brother Abel in jealousy and asked God, 'Am I my brother's keeper?'",
+            "story": "Cain farmed; his brother Abel kept sheep. Both brought offerings, and God respected Abel's but not Cain's. God warned Cain that sin was crouching at the door and that he must rule over it. Instead Cain lured Abel into the field and killed him. When God asked where his brother was, Cain lied. He was driven out as a wanderer, yet God put a mark on him so no one would kill him.",
+            "moment": {
+                "title": "'Am I my brother's keeper?'",
+                "reference": "Genesis 4:8-9"
+            },
+            "traits": [
+                "Jealousy",
+                "Anger",
+                "Refusing God's warning",
+                "Deceit"
+            ],
+            "end": "Banished from God's presence to the land of Nod, east of Eden, where he built a city.",
+            "lesson": "Sin starts in the heart — 'sin lieth at the door' — and must be mastered before it masters us. John names Cain as the opposite of love (1 John 3:12).",
+            "told_in": [
+                "Genesis 4:1-16"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Genesis 4:7",
+                    "text": "If thou doest well, shalt thou not be accepted? and if thou doest not well, sin lieth at the door. And unto thee shall be his desire, and thou shalt rule over him."
+                },
+                {
+                    "reference": "1 John 3:12",
+                    "text": "Not as Cain, who was of that wicked one, and slew his brother. And wherefore slew he him? Because his own works were evil, and his brother’s righteous."
+                }
+            ],
+            "faced": [],
+            "peoples": []
+        },
+        {
+            "id": "pharaoh",
+            "side": "villain",
+            "name": "Pharaoh",
+            "epithet": "The king who hardened his heart",
+            "testament": "Old",
+            "era": "15th or 13th century BC",
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                }
+            ],
+            "summary": "The unnamed king of Egypt who enslaved Israel and refused, through ten plagues, to 'let my people go'.",
+            "story": "A new king who 'knew not Joseph' feared the growing Hebrews, made them slaves and ordered their baby boys drowned. When Moses demanded 'Let my people go', Pharaoh answered, 'Who is the LORD, that I should obey his voice?' Through ten plagues he promised and broke his word. After the death of Egypt's firstborn he finally let them go, then changed his mind and chased them to the Red Sea, where his army drowned.",
+            "moment": {
+                "title": "'Who is the LORD, that I should obey?'",
+                "reference": "Exodus 5:2"
+            },
+            "traits": [
+                "Pride",
+                "Cruelty",
+                "Broken promises",
+                "A hardened heart"
+            ],
+            "end": "His chariots and army were drowned in the Red Sea; Egypt was left devastated.",
+            "lesson": "Each refusal to listen to God makes the heart harder. God raised Pharaoh up 'that my name might be declared throughout all the earth' (Romans 9:17).",
+            "told_in": [
+                "Exodus 1-14"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Exodus 5:2",
+                    "text": "And Pharaoh said, Who is the LORD, that I should obey his voice to let Israel go? I know not the LORD, neither will I let Israel go."
+                },
+                {
+                    "reference": "Exodus 14:28",
+                    "text": "And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them."
+                }
+            ],
+            "faced": [
+                "moses"
+            ],
+            "peoples": [
+                "egyptians",
+                "israelites"
+            ]
+        },
+        {
+            "id": "balaam",
+            "side": "villain",
+            "name": "Balaam",
+            "epithet": "The prophet for hire",
+            "testament": "Old",
+            "era": "End of the wilderness period",
+            "books": [
+                {
+                    "name": "Numbers",
+                    "id": "numbers"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "2 Peter",
+                    "id": "2-peter"
+                },
+                {
+                    "name": "Jude",
+                    "id": "jude"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ],
+            "summary": "A famous soothsayer hired by the king of Moab to curse Israel, who could only bless — and then showed Moab how to make Israel sin.",
+            "story": "Balak king of Moab offered Balaam rich rewards to curse Israel. God told him not to go; he went anyway, and his donkey saw the angel of the LORD blocking the road before he did. Three times Balak led him to a high place, and three times — four in all — Balaam could only bless Israel, foretelling 'a Star out of Jacob'. But afterwards he counselled Moab to lure Israel into idolatry and immorality at Peor.",
+            "moment": {
+                "title": "The donkey that spoke",
+                "reference": "Numbers 22:28-31"
+            },
+            "traits": [
+                "Greed",
+                "Double-mindedness",
+                "Using religion for profit"
+            ],
+            "end": "Killed by Israel in the war against Midian (Numbers 31:8). The New Testament uses him as a warning against loving 'the wages of unrighteousness'.",
+            "lesson": "You can say the right words and still have a wrong heart. Balaam is the Bible's example of ministry for money.",
+            "told_in": [
+                "Numbers 22-24",
+                "Numbers 31:8",
+                "Numbers 31:16"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Numbers 23:19",
+                    "text": "God is not a man, that he should lie; neither the son of man, that he should repent: hath he said, and shall he not do it? or hath he spoken, and shall he not make it good?"
+                },
+                {
+                    "reference": "2 Peter 2:15",
+                    "text": "Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;"
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "moabites",
+                "midianites",
+                "israelites"
+            ]
+        },
+        {
+            "id": "delilah",
+            "side": "villain",
+            "name": "Delilah",
+            "epithet": "The betrayer of Samson",
+            "testament": "Old",
+            "era": "c. 1100 BC",
+            "books": [
+                {
+                    "name": "Judges",
+                    "id": "judges"
+                }
+            ],
+            "summary": "The woman Samson loved, who took the Philistines' silver to discover the secret of his strength and handed him over.",
+            "story": "Delilah lived in the valley of Sorek. The lords of the Philistines each offered her eleven hundred pieces of silver to find the secret of Samson's strength. Three times she asked and he lied; three times she tried to hand him over. She pressed him daily 'so that his soul was vexed unto death', until he told her about his Nazirite hair. She had his head shaved while he slept and called the Philistines.",
+            "moment": {
+                "title": "'The Philistines be upon thee, Samson'",
+                "reference": "Judges 16:18-20"
+            },
+            "traits": [
+                "Greed",
+                "Manipulation",
+                "Persistent betrayal"
+            ],
+            "end": "Scripture does not say. Samson was blinded and imprisoned, but in his death he pulled down the temple of Dagon.",
+            "lesson": "Temptation often works by wearing us down slowly. Samson played with his calling until he lost it.",
+            "told_in": [
+                "Judges 16:4-21"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Judges 16:5",
+                    "text": "And the lords of the Philistines came up unto her, and said unto her, Entice him, and see wherein his great strength lieth, and by what means we may prevail against him, that we may bind him to afflict him: and we will give thee every one of us eleven hundred pieces of silver."
+                },
+                {
+                    "reference": "Judges 16:20",
+                    "text": "And she said, The Philistines be upon thee, Samson. And he awoke out of his sleep, and said, I will go out as at other times before, and shake myself. And he wist not that the LORD was departed from him."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "philistines",
+                "israelites"
+            ]
+        },
+        {
+            "id": "goliath",
+            "side": "villain",
+            "name": "Goliath",
+            "epithet": "The giant of Gath",
+            "testament": "Old",
+            "era": "c. 1025 BC",
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                }
+            ],
+            "summary": "The Philistine champion, six cubits and a span tall, who defied the armies of Israel for forty days — until a shepherd boy came.",
+            "story": "Goliath of Gath wore a bronze coat of mail weighing five thousand shekels and carried a spear like a weaver's beam. Morning and evening for forty days he challenged Israel to send a man to fight him, and Saul's army was 'dismayed, and greatly afraid'. David, bringing food to his brothers, was outraged that anyone should 'defy the armies of the living God'. Goliath mocked him, cursed him by his gods, and was felled by one stone.",
+            "moment": {
+                "title": "'Am I a dog, that thou comest to me with staves?'",
+                "reference": "1 Samuel 17:43-44"
+            },
+            "traits": [
+                "Pride",
+                "Intimidation",
+                "Defiance of God",
+                "Trust in strength"
+            ],
+            "end": "Struck in the forehead by David's stone and killed with his own sword; the Philistines fled.",
+            "lesson": "The biggest threat is small before God: 'the battle is the LORD's'.",
+            "told_in": [
+                "1 Samuel 17"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 17:10",
+                    "text": "And the Philistine said, I defy the armies of Israel this day; give me a man, that we may fight together."
+                },
+                {
+                    "reference": "1 Samuel 17:47",
+                    "text": "And all this assembly shall know that the LORD saveth not with sword and spear: for the battle is the LORD’S, and he will give you into our hands."
+                }
+            ],
+            "faced": [
+                "david"
+            ],
+            "peoples": [
+                "philistines",
+                "anakim",
+                "rephaim"
+            ]
+        },
+        {
+            "id": "saul",
+            "side": "villain",
+            "name": "Saul",
+            "epithet": "The king who fell",
+            "testament": "Old",
+            "era": "c. 1050–1010 BC",
+            "books": [
+                {
+                    "name": "1 Samuel",
+                    "id": "1-samuel"
+                },
+                {
+                    "name": "1 Chronicles",
+                    "id": "1-chronicles"
+                }
+            ],
+            "summary": "Israel's first king — tall, anointed and humble at first — who disobeyed God, grew jealous of David, and hunted him for years.",
+            "story": "Saul was 'a choice young man, and a goodly', who hid among the baggage when chosen king. He began well, rescuing Jabesh-gilead. But he offered a sacrifice he had no right to make, and later spared King Agag and the best spoil against God's command, and God rejected him as king. When the women sang that David had slain his ten thousands, Saul's jealousy turned murderous: he threw spears at David and chased him through the wilderness. On the eve of his last battle he consulted a medium at Endor.",
+            "moment": {
+                "title": "'To obey is better than sacrifice'",
+                "reference": "1 Samuel 15:22-23"
+            },
+            "traits": [
+                "Insecurity",
+                "Jealousy",
+                "Partial obedience",
+                "Fear of people"
+            ],
+            "end": "Badly wounded on Mount Gilboa, he fell on his own sword; three of his sons, including Jonathan, died that day (1 Samuel 31).",
+            "lesson": "A good start is no guarantee of a good finish. Saul feared the people more than God, and jealousy consumed him.",
+            "told_in": [
+                "1 Samuel 9-31"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Samuel 15:22",
+                    "text": "And Samuel said, Hath the LORD as great delight in burnt offerings and sacrifices, as in obeying the voice of the LORD? Behold, to obey is better than sacrifice, and to hearken than the fat of rams."
+                },
+                {
+                    "reference": "1 Samuel 18:7-9",
+                    "text": "And the women answered one another as they played, and said, Saul hath slain his thousands, and David his ten thousands. And Saul was very wroth, and the saying displeased him; and he said, They have ascribed unto David ten thousands, and to me they have ascribed but thousands: and what can he have more but the kingdom? And Saul eyed David from that day and forward."
+                }
+            ],
+            "faced": [
+                "david",
+                "samuel",
+                "jonathan"
+            ],
+            "peoples": [
+                "israelites",
+                "philistines",
+                "amalekites",
+                "ammonites"
+            ]
+        },
+        {
+            "id": "absalom",
+            "side": "villain",
+            "name": "Absalom",
+            "epithet": "The prince who stole hearts",
+            "testament": "Old",
+            "era": "c. 980 BC",
+            "books": [
+                {
+                    "name": "2 Samuel",
+                    "id": "2-samuel"
+                }
+            ],
+            "summary": "David's handsome son, who avenged his sister, then 'stole the hearts of the men of Israel' and seized his father's throne.",
+            "story": "After his half-brother Amnon violated his sister Tamar, Absalom waited two years and had Amnon killed. Allowed back from exile, he sat by the city gate telling everyone who came for justice that he would treat them better than the king. After four years he declared himself king in Hebron, and David fled Jerusalem weeping. In the battle in the wood of Ephraim, Absalom's long hair caught in an oak and Joab killed him, against David's order.",
+            "moment": {
+                "title": "Stealing the hearts of Israel",
+                "reference": "2 Samuel 15:6"
+            },
+            "traits": [
+                "Vanity",
+                "Ambition",
+                "Revenge",
+                "Flattery"
+            ],
+            "end": "Killed while hanging from an oak; David's grief — 'O my son Absalom… would God I had died for thee' — is one of the most heart-breaking lines in Scripture.",
+            "lesson": "Charm and ambition without integrity destroy. And sin in a family can echo for years (2 Samuel 12:10).",
+            "told_in": [
+                "2 Samuel 13-18"
+            ],
+            "key_verses": [
+                {
+                    "reference": "2 Samuel 15:6",
+                    "text": "And on this manner did Absalom to all Israel that came to the king for judgment: so Absalom stole the hearts of the men of Israel."
+                },
+                {
+                    "reference": "2 Samuel 18:33",
+                    "text": "And the king was much moved, and went up to the chamber over the gate, and wept: and as he went, thus he said, O my son Absalom, my son, my son Absalom! would God I had died for thee, O Absalom, my son, my son!"
+                }
+            ],
+            "faced": [
+                "david"
+            ],
+            "peoples": [
+                "israelites"
+            ]
+        },
+        {
+            "id": "ahab",
+            "side": "villain",
+            "name": "Ahab",
+            "epithet": "The king who sold himself to evil",
+            "testament": "Old",
+            "era": "c. 874–853 BC",
+            "books": [
+                {
+                    "name": "1 Kings",
+                    "id": "1-kings"
+                },
+                {
+                    "name": "2 Chronicles",
+                    "id": "2-chronicles"
+                }
+            ],
+            "summary": "King of Israel who married Jezebel, built a temple to Baal in Samaria, and let his wife murder Naboth for a vineyard.",
+            "story": "Ahab 'did more to provoke the LORD God of Israel to anger than all the kings of Israel that were before him'. He married Jezebel, served Baal, and called Elijah 'thou troubler of Israel'. He saw God's fire fall on Carmel but did not change. When Naboth would not sell his vineyard, Ahab sulked on his bed until Jezebel had Naboth killed. Elijah met him in the vineyard with God's judgement. Ahab humbled himself, and God delayed the disaster — but Ahab later ignored the prophet Micaiah and went to war.",
+            "moment": {
+                "title": "Taking Naboth's vineyard",
+                "reference": "1 Kings 21:15-19"
+            },
+            "traits": [
+                "Weakness",
+                "Greed",
+                "Idolatry",
+                "Hating God's messengers"
+            ],
+            "end": "Killed by an arrow shot 'at a venture' at Ramoth-gilead; dogs licked his blood, as Elijah had said (1 Kings 22:34-38).",
+            "lesson": "Passive evil is still evil. Ahab let others do his wickedness for him and was held responsible.",
+            "told_in": [
+                "1 Kings 16:29-22:40"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Kings 18:17",
+                    "text": "And it came to pass, when Ahab saw Elijah, that Ahab said unto him, Art thou he that troubleth Israel?"
+                },
+                {
+                    "reference": "1 Kings 21:25",
+                    "text": "But there was none like unto Ahab, which did sell himself to work wickedness in the sight of the LORD, whom Jezebel his wife stirred up."
+                }
+            ],
+            "faced": [
+                "elijah"
+            ],
+            "peoples": [
+                "israelites",
+                "phoenicians",
+                "arameans",
+                "moabites"
+            ]
+        },
+        {
+            "id": "jezebel",
+            "side": "villain",
+            "name": "Jezebel",
+            "epithet": "The queen of Baal",
+            "testament": "Old",
+            "era": "c. 874–841 BC",
+            "books": [
+                {
+                    "name": "1 Kings",
+                    "id": "1-kings"
+                },
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ],
+            "summary": "A Sidonian princess, Ahab's queen, who promoted Baal worship, killed the LORD's prophets, and plotted Naboth's murder.",
+            "story": "Daughter of Ethbaal king of the Zidonians, Jezebel fed 450 prophets of Baal and 400 of the groves at her table and 'cut off the prophets of the LORD'. After Carmel she vowed to kill Elijah within a day, sending him fleeing. She forged letters in Ahab's name to have Naboth falsely accused and stoned. Elijah foretold that dogs would eat her by the wall of Jezreel. Her name became a byword: Revelation uses it for a false prophetess in Thyatira.",
+            "moment": {
+                "title": "The letters that killed Naboth",
+                "reference": "1 Kings 21:7-10"
+            },
+            "traits": [
+                "Idolatry",
+                "Ruthlessness",
+                "Manipulation",
+                "Hatred of God's prophets"
+            ],
+            "end": "When Jehu came to Jezreel she painted her face and taunted him; her servants threw her from a window, and dogs ate her, as Elijah had said (2 Kings 9:30-37).",
+            "lesson": "Power used to crush the innocent will be judged. God sees what is done in secret with a forged seal.",
+            "told_in": [
+                "1 Kings 16:31",
+                "1 Kings 18-19",
+                "1 Kings 21",
+                "2 Kings 9:30-37"
+            ],
+            "key_verses": [
+                {
+                    "reference": "1 Kings 19:2",
+                    "text": "Then Jezebel sent a messenger unto Elijah, saying, So let the gods do to me, and more also, if I make not thy life as the life of one of them by to morrow about this time."
+                },
+                {
+                    "reference": "1 Kings 21:25",
+                    "text": "But there was none like unto Ahab, which did sell himself to work wickedness in the sight of the LORD, whom Jezebel his wife stirred up."
+                }
+            ],
+            "faced": [
+                "elijah"
+            ],
+            "peoples": [
+                "phoenicians",
+                "israelites"
+            ]
+        },
+        {
+            "id": "manasseh",
+            "side": "villain",
+            "name": "Manasseh",
+            "epithet": "The worst king who repented",
+            "testament": "Old",
+            "era": "c. 697–642 BC",
+            "books": [
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "2 Chronicles",
+                    "id": "2-chronicles"
+                }
+            ],
+            "summary": "Hezekiah's son and Judah's longest-reigning king, who filled Jerusalem with idols and innocent blood — and, in chains, humbled himself before God.",
+            "story": "Manasseh undid all his father's reforms: he rebuilt the high places, set an idol in the Temple, practised sorcery, burned his own son as an offering, and 'shed innocent blood very much'. Kings says his sins sealed Judah's fate. But Chronicles adds that the Assyrians took him to Babylon in chains, where 'he besought the LORD his God, and humbled himself greatly'. God heard him and brought him home, and he removed the idols he had set up.",
+            "moment": {
+                "title": "Humbled in chains",
+                "reference": "2 Chronicles 33:12-13"
+            },
+            "traits": [
+                "Idolatry",
+                "Cruelty",
+                "Occult practice",
+                "Repentance, at last"
+            ],
+            "end": "Restored to his throne, he tore down foreign altars; but the damage he had done to Judah remained (2 Kings 23:26).",
+            "lesson": "No one is too far gone to be forgiven: 'Then Manasseh knew that the LORD he was God.' Yet forgiven sin can still leave lasting consequences.",
+            "turned": "The most wicked king of Judah repented and was restored.",
+            "told_in": [
+                "2 Kings 21:1-18",
+                "2 Chronicles 33:1-20"
+            ],
+            "key_verses": [
+                {
+                    "reference": "2 Kings 21:16",
+                    "text": "Moreover Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another; beside his sin wherewith he made Judah to sin, in doing that which was evil in the sight of the LORD."
+                },
+                {
+                    "reference": "2 Chronicles 33:12-13",
+                    "text": "And when he was in affliction, he besought the LORD his God, and humbled himself greatly before the God of his fathers, And prayed unto him: and he was intreated of him, and heard his supplication, and brought him again to Jerusalem into his kingdom. Then Manasseh knew that the LORD he was God."
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites",
+                "assyrians"
+            ]
+        },
+        {
+            "id": "nebuchadnezzar",
+            "side": "villain",
+            "name": "Nebuchadnezzar",
+            "epithet": "The proud king humbled",
+            "testament": "Old",
+            "era": "605–562 BC",
+            "books": [
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "Jeremiah",
+                    "id": "jeremiah"
+                },
+                {
+                    "name": "Daniel",
+                    "id": "daniel"
+                }
+            ],
+            "summary": "The Babylonian emperor who destroyed Jerusalem and threw three Hebrews into a furnace — until God humbled him and he praised the Most High.",
+            "story": "Nebuchadnezzar took Daniel and others captive in 605 BC, and in 586 BC his army burned Jerusalem and the Temple. He set up a golden image and raged when three young Jews would not bow, then saw them walking in the fire with a fourth. Walking on his palace roof he boasted, 'Is not this great Babylon, that I have built… for the honour of my majesty?' That hour he lost his reason and lived like an animal, until he 'lifted up mine eyes unto heaven' and blessed the Most High.",
+            "moment": {
+                "title": "'Is not this great Babylon, that I have built?'",
+                "reference": "Daniel 4:30-33"
+            },
+            "traits": [
+                "Pride",
+                "Violent temper",
+                "Self-glory",
+                "Humility, at last"
+            ],
+            "end": "His reason returned and he praised God: 'those that walk in pride he is able to abase' (Daniel 4:37). He reigned 43 years.",
+            "lesson": "God rules 'in the kingdom of men, and giveth it to whomsoever he will'. Even the most powerful can be humbled — and restored.",
+            "turned": "Humbled by God, he ended by praising the King of heaven.",
+            "told_in": [
+                "2 Kings 24-25",
+                "Daniel 1-4"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Daniel 3:28",
+                    "text": "Then Nebuchadnezzar spake, and said, Blessed be the God of Shadrach, Meshach, and Abed-nego, who hath sent his angel, and delivered his servants that trusted in him, and have changed the king’s word, and yielded their bodies, that they might not serve nor worship any god, except their own God."
+                },
+                {
+                    "reference": "Daniel 4:37",
+                    "text": "Now I Nebuchadnezzar praise and extol and honour the King of heaven, all whose works are truth, and his ways judgment: and those that walk in pride he is able to abase."
+                }
+            ],
+            "faced": [
+                "daniel",
+                "shadrach-meshach-and-abednego"
+            ],
+            "peoples": [
+                "babylonians",
+                "israelites",
+                "egyptians"
+            ]
+        },
+        {
+            "id": "haman",
+            "side": "villain",
+            "name": "Haman",
+            "epithet": "The enemy of the Jews",
+            "testament": "Old",
+            "era": "c. 474 BC",
+            "books": [
+                {
+                    "name": "Esther",
+                    "id": "esther"
+                }
+            ],
+            "summary": "The Persian king's chief minister who, enraged that Mordecai would not bow, plotted to destroy every Jew in the empire.",
+            "story": "Haman the Agagite was promoted above all the king's princes, and everyone bowed to him except Mordecai. Rather than punish one man, Haman cast lots (pur) and obtained a decree to kill all the Jews on one day. He built a gallows fifty cubits high for Mordecai. But the night before, the sleepless king read of Mordecai's loyalty and made Haman lead him through the city in honour. At Queen Esther's banquet Haman's plot was exposed.",
+            "moment": {
+                "title": "The decree to destroy the Jews",
+                "reference": "Esther 3:8-11"
+            },
+            "traits": [
+                "Pride",
+                "Hatred",
+                "Wounded vanity",
+                "Genocidal cruelty"
+            ],
+            "end": "Hanged on the gallows he had built for Mordecai; the feast of Purim celebrates the reversal (Esther 7:10; 9:26).",
+            "lesson": "'Pride goeth before destruction.' Haman's plans turned back on his own head.",
+            "told_in": [
+                "Esther 3-7"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Esther 3:6",
+                    "text": "And he thought scorn to lay hands on Mordecai alone; for they had shewed him the people of Mordecai: wherefore Haman sought to destroy all the Jews that were throughout the whole kingdom of Ahasuerus, even the people of Mordecai."
+                },
+                {
+                    "reference": "Esther 7:10",
+                    "text": "So they hanged Haman on the gallows that he had prepared for Mordecai. Then was the king’s wrath pacified."
+                }
+            ],
+            "faced": [
+                "esther"
+            ],
+            "peoples": [
+                "persians",
+                "amalekites",
+                "israelites"
+            ]
+        },
+        {
+            "id": "herod-the-great",
+            "side": "villain",
+            "name": "Herod the Great",
+            "epithet": "The king who feared a child",
+            "testament": "New",
+            "era": "Ruled 37–4 BC",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ],
+            "summary": "The Idumean king of Judea who tried to kill the newborn 'King of the Jews' and ordered the massacre of Bethlehem's children.",
+            "story": "Herod was a great builder — he rebuilt the Temple on a grand scale — and a ruthless ruler who killed his own wife and sons when he suspected them. When wise men from the east asked where the King of the Jews was born, he was 'troubled, and all Jerusalem with him'. He pretended he wanted to worship the child, and when the wise men went home another way, he ordered all the boys of Bethlehem two years old and under to be killed. Joseph had already fled with Mary and Jesus to Egypt.",
+            "moment": {
+                "title": "The slaughter at Bethlehem",
+                "reference": "Matthew 2:16"
+            },
+            "traits": [
+                "Paranoia",
+                "Cruelty",
+                "Deceit",
+                "Clinging to power"
+            ],
+            "end": "He died soon afterwards, in 4 BC, and Joseph brought the family back from Egypt (Matthew 2:19-20).",
+            "lesson": "No ruler can stop God's purpose. The child Herod feared outlived him and his kingdom.",
+            "told_in": [
+                "Matthew 2:1-22"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Matthew 2:3",
+                    "text": "When Herod the king had heard these things, he was troubled, and all Jerusalem with him."
+                },
+                {
+                    "reference": "Matthew 2:16",
+                    "text": "Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men."
+                }
+            ],
+            "faced": [
+                "mary-mother-of-jesus"
+            ],
+            "peoples": [
+                "edomites",
+                "romans",
+                "israelites"
+            ]
+        },
+        {
+            "id": "herod-antipas",
+            "side": "villain",
+            "name": "Herod Antipas",
+            "epithet": "The king who kept the wrong promise",
+            "testament": "New",
+            "era": "Ruled 4 BC – AD 39",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ],
+            "summary": "Herod the Great's son, ruler of Galilee, who beheaded John the Baptist to keep a rash oath and mocked Jesus at his trial.",
+            "story": "Antipas married Herodias, his brother Philip's wife, and John the Baptist told him it was unlawful. He imprisoned John, yet 'feared John, knowing that he was a just man… and heard him gladly'. At his birthday feast Herodias' daughter danced, and he swore to give her anything. Prompted by her mother she asked for John's head, and Herod, 'for his oath's sake', agreed. Jesus called him 'that fox'. At Jesus' trial Herod hoped to see a miracle, then mocked him and sent him back to Pilate.",
+            "moment": {
+                "title": "The oath at the birthday feast",
+                "reference": "Mark 6:22-27"
+            },
+            "traits": [
+                "Weakness",
+                "Pride",
+                "Fear of what others think",
+                "Curiosity without repentance"
+            ],
+            "end": "Exiled by the emperor Caligula to Gaul in AD 39 (Josephus, Antiquities 18.7.2).",
+            "lesson": "Keeping face can cost a soul. Herod heard the truth gladly but would not act on it.",
+            "told_in": [
+                "Mark 6:14-29",
+                "Luke 13:31-32",
+                "Luke 23:6-12"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Mark 6:20",
+                    "text": "For Herod feared John, knowing that he was a just man and an holy, and observed him; and when he heard him, he did many things, and heard him gladly."
+                },
+                {
+                    "reference": "Mark 6:26",
+                    "text": "And the king was exceeding sorry; yet for his oath’s sake, and for their sakes which sat with him, he would not reject her."
+                }
+            ],
+            "faced": [
+                "john-the-baptist"
+            ],
+            "peoples": [
+                "edomites",
+                "romans",
+                "israelites"
+            ]
+        },
+        {
+            "id": "caiaphas",
+            "side": "villain",
+            "name": "Caiaphas",
+            "epithet": "The high priest who plotted",
+            "testament": "New",
+            "era": "High priest c. AD 18–36",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ],
+            "summary": "The high priest who reasoned that it was 'expedient… that one man should die for the people' and led the trial that condemned Jesus.",
+            "story": "After Jesus raised Lazarus, the council feared the Romans would take away 'our place and nation'. Caiaphas answered that it was better for one man to die than for the whole nation to perish — unknowingly prophesying the meaning of the cross. He presided at the night trial, and when Jesus said he was the Christ and would be seen at the right hand of power, Caiaphas tore his clothes and declared it blasphemy. He later questioned Peter and John after they healed a lame man.",
+            "moment": {
+                "title": "'One man should die for the people'",
+                "reference": "John 11:49-50"
+            },
+            "traits": [
+                "Political calculation",
+                "Protecting position",
+                "Religious pride"
+            ],
+            "end": "Removed from office by the Roman governor Vitellius in AD 36 (Josephus). An ornate ossuary inscribed 'Joseph son of Caiaphas', found in Jerusalem in 1990, may be his.",
+            "lesson": "Religion can be used to protect power instead of seeking truth. Yet God turned Caiaphas' scheme into the salvation he spoke of.",
+            "told_in": [
+                "John 11:47-53",
+                "Matthew 26:57-68",
+                "Acts 4:5-7"
+            ],
+            "key_verses": [
+                {
+                    "reference": "John 11:50",
+                    "text": "Nor consider that it is expedient for us, that one man should die for the people, and that the whole nation perish not."
+                },
+                {
+                    "reference": "Matthew 26:65",
+                    "text": "Then the high priest rent his clothes, saying, He hath spoken blasphemy; what further need have we of witnesses? behold, now ye have heard his blasphemy."
+                }
+            ],
+            "faced": [
+                "peter"
+            ],
+            "peoples": [
+                "israelites",
+                "romans"
+            ]
+        },
+        {
+            "id": "judas-iscariot",
+            "side": "villain",
+            "name": "Judas Iscariot",
+            "epithet": "The betrayer",
+            "testament": "New",
+            "era": "Died c. AD 30",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ],
+            "summary": "One of the twelve apostles, the group's treasurer, who betrayed Jesus to the chief priests for thirty pieces of silver.",
+            "story": "Judas was chosen as one of the twelve and kept the money bag — and, John says, stole from it. When Mary anointed Jesus with costly ointment, Judas complained it should have been sold. He went to the chief priests and asked, 'What will ye give me?' They weighed out thirty pieces of silver. At the Last Supper Jesus told him, 'That thou doest, do quickly.' In Gethsemane Judas led the soldiers and identified Jesus with a kiss.",
+            "moment": {
+                "title": "The kiss in Gethsemane",
+                "reference": "Luke 22:47-48"
+            },
+            "traits": [
+                "Greed",
+                "Hypocrisy",
+                "Betrayal of a friend",
+                "Despair"
+            ],
+            "end": "Seeing Jesus condemned, he was seized with remorse, threw the silver down in the Temple and hanged himself; the money bought the potter's field (Matthew 27:3-8; Acts 1:18-19).",
+            "lesson": "It is possible to be near Jesus without belonging to him. Remorse without turning to God is not repentance — compare Peter, who also failed but came back.",
+            "told_in": [
+                "John 12:4-6",
+                "Matthew 26:14-16",
+                "Matthew 26:47-50",
+                "Matthew 27:3-10"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Matthew 26:15",
+                    "text": "And said unto them, What will ye give me, and I will deliver him unto you? And they covenanted with him for thirty pieces of silver."
+                },
+                {
+                    "reference": "Luke 22:48",
+                    "text": "But Jesus said unto him, Judas, betrayest thou the Son of man with a kiss? "
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "israelites"
+            ]
+        },
+        {
+            "id": "pontius-pilate",
+            "side": "villain",
+            "name": "Pontius Pilate",
+            "epithet": "The judge who washed his hands",
+            "testament": "New",
+            "era": "Governor of Judea AD 26–36",
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "1 Timothy",
+                    "id": "1-timothy"
+                }
+            ],
+            "summary": "The Roman governor who found no fault in Jesus, yet handed him over to be crucified to satisfy the crowd.",
+            "story": "Pilate questioned Jesus — 'Art thou the King of the Jews?' — and asked 'What is truth?' He said three times that he found no fault in him, sent him to Herod, and offered to release him for Passover, but the crowd chose Barabbas. His wife warned him about a dream. When the crowd threatened that he was no friend of Caesar, Pilate washed his hands — 'I am innocent of the blood of this just person' — scourged Jesus and gave him to be crucified, with the title 'Jesus of Nazareth the King of the Jews' over the cross.",
+            "moment": {
+                "title": "Washing his hands",
+                "reference": "Matthew 27:24-26"
+            },
+            "traits": [
+                "Cowardice",
+                "Political self-interest",
+                "Cynicism about truth"
+            ],
+            "end": "Recalled to Rome in AD 36 after violently suppressing a Samaritan gathering (Josephus, Antiquities 18.4.1–2). His name is kept in the Creeds: 'suffered under Pontius Pilate'.",
+            "lesson": "Neutrality about Jesus is not possible, and washing your hands does not remove responsibility.",
+            "told_in": [
+                "Matthew 27:1-26",
+                "Luke 23:1-25",
+                "John 18:28-19:22"
+            ],
+            "key_verses": [
+                {
+                    "reference": "John 18:38",
+                    "text": "Pilate saith unto him, What is truth? And when he had said this, he went out again unto the Jews, and saith unto them, I find in him no fault at all. "
+                },
+                {
+                    "reference": "Matthew 27:24",
+                    "text": "When Pilate saw that he could prevail nothing, but that rather a tumult was made, he took water, and washed his hands before the multitude, saying, I am innocent of the blood of this just person: see ye to it. "
+                }
+            ],
+            "faced": [],
+            "peoples": [
+                "romans",
+                "israelites",
+                "samaritans"
+            ]
+        },
+        {
+            "id": "satan",
+            "side": "villain",
+            "name": "Satan",
+            "epithet": "The adversary",
+            "testament": "Both",
+            "era": "From the beginning to the end",
+            "books": [
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Job",
+                    "id": "job"
+                },
+                {
+                    "name": "Zechariah",
+                    "id": "zechariah"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "2 Corinthians",
+                    "id": "2-corinthians"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ],
+            "summary": "The devil, the accuser and deceiver, who tempted Eve, tested Job and Jesus, and whose final defeat Scripture promises.",
+            "story": "Satan means 'adversary'. In Eden the serpent questioned God's word — 'Yea, hath God said?' — and deceived Eve. In Job he accuses a righteous man before God, and in Zechariah he stands to resist the high priest. He tempted Jesus in the wilderness for forty days and was answered each time with 'It is written'. Jesus called him 'a liar, and the father of it'. He entered Judas; he 'walketh about, seeking whom he may devour'. Revelation shows the dragon cast down and finally thrown into the lake of fire.",
+            "moment": {
+                "title": "The temptation in the wilderness",
+                "reference": "Matthew 4:1-11"
+            },
+            "traits": [
+                "Deception",
+                "Accusation",
+                "Pride",
+                "Hatred of God's people"
+            ],
+            "end": "Defeated at the cross (Colossians 2:15; Hebrews 2:14) and, at the end, 'cast into the lake of fire and brimstone' (Revelation 20:10).",
+            "lesson": "Resist him with God's Word and in God's armour: 'Resist the devil, and he will flee from you.' His defeat is already certain.",
+            "told_in": [
+                "Genesis 3:1-15",
+                "Job 1-2",
+                "Matthew 4:1-11",
+                "Revelation 12",
+                "Revelation 20:1-10"
+            ],
+            "key_verses": [
+                {
+                    "reference": "Genesis 3:1",
+                    "text": "Now the serpent was more subtil than any beast of the field which the LORD God had made. And he said unto the woman, Yea, hath God said, Ye shall not eat of every tree of the garden?"
+                },
+                {
+                    "reference": "John 8:44",
+                    "text": "Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it. "
+                },
+                {
+                    "reference": "1 Peter 5:8",
+                    "text": "Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:"
+                },
+                {
+                    "reference": "James 4:7",
+                    "text": "Submit yourselves therefore to God. Resist the devil, and he will flee from you."
+                }
+            ],
+            "faced": [
+                "job",
+                "peter"
+            ],
+            "peoples": []
+        }
+    ]
+}

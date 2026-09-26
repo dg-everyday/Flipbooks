@@ -1,0 +1,112 @@
+/* Styles for apps/pages/bible-books.html (Books of the Bible), on top of
+   study-page.css, which holds the palette, topbar, hero, chips and panels. */
+
+/* One colour per group; .g-* classes set --g for tiles, bars and accents. */
+.g-law              { --g: #b07c1f; }
+.g-history          { --g: #b5532f; }
+.g-poetry           { --g: #7a4f7a; }
+.g-major-prophets   { --g: #2f5d8a; }
+.g-minor-prophets   { --g: #2e7480; }
+.g-gospels          { --g: #a3343a; }
+.g-church-history   { --g: #5f7a2e; }
+.g-pauline-epistles { --g: #6a5acd; }
+.g-general-epistles { --g: #4f6272; }
+.g-prophecy         { --g: #8a3f8f; }
+
+/* ---------------------------------------------------------------- testaments */
+
+.testament { margin-top: 28px; display: grid; gap: 16px; }
+.testament-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px;
+  padding: 0 4px 6px;
+  border-bottom: 2px solid var(--line);
+}
+.testament-head h2 { font: 400 clamp(1.9rem, 1.5rem + 1.6vw, 2.5rem)/1.05 var(--display); color: var(--navy); }
+.testament-head p { margin: 0; font-weight: 600; color: var(--muted); }
+
+/* ---------------------------------------------------------------- groups */
+
+.book-group { border-top: 5px solid var(--g); }
+.group-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 16px;
+}
+.group-head h3 { font: 400 1.7rem/1.1 var(--display); color: var(--navy); }
+.group-counts { margin: 0; font-size: .85rem; font-weight: 700; color: var(--g); }
+.group-desc { margin: 8px 0 10px; max-width: 75ch; color: var(--ink); }
+
+.key-chapters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; padding: 0; list-style: none; }
+.key-chapters li {
+  padding: 3px 10px; border-radius: 8px;
+  font-size: .8rem; color: var(--muted);
+  background: #fff; border: 1px dashed var(--line);
+}
+.key-chapters b { color: var(--g); }
+
+/* ---------------------------------------------------------------- book tiles */
+
+.book-grid {
+  position: relative;                 /* offsetLeft/Top of tiles are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.book-tile {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  min-width: 0;
+  padding: 12px 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.book-tile:hover { transform: translateY(-2px); border-color: var(--g); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+.book-tile.is-open {
+  border-color: var(--g);
+  background: var(--g);
+  color: #fff;
+  box-shadow: 0 8px 18px rgb(16 37 59 / 18%);
+}
+.book-no { font-size: .72rem; font-weight: 800; letter-spacing: .08em; color: var(--g); }
+.book-name { font: 400 1.35rem/1.05 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.book-counts { display: flex; flex-direction: column; font-size: .8rem; color: var(--muted); line-height: 1.35; }
+.book-counts b { color: var(--ink); font-weight: 700; }
+.book-bar {
+  display: block; width: 100%; height: 4px; margin-top: 6px;
+  border-radius: 2px; background: rgb(16 37 59 / 8%); overflow: hidden;
+}
+.book-bar > span { display: block; height: 100%; border-radius: 2px; background: var(--g); }
+.book-tile.is-open .book-no,
+.book-tile.is-open .book-name,
+.book-tile.is-open .book-counts,
+.book-tile.is-open .book-counts b { color: #fff; }
+.book-tile.is-open .book-bar { background: rgb(255 255 255 / 30%); }
+.book-tile.is-open .book-bar > span { background: #fff; }
+
+/* ---------------------------------------------------------------- open book
+   The panel itself is .row-panel in study-page.css; only the outline is
+   book-specific. */
+
+.outline { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.outline li {
+  display: grid; grid-template-columns: 110px 1fr; gap: 10px;
+  padding: 6px 10px; border-radius: 8px; background: #fff; border: 1px solid var(--line);
+  font-size: .92rem;
+}
+.outline-range { font-weight: 700; color: var(--g); font-size: .82rem; padding-top: 1px; }
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .book-grid { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 8px; }
+  .book-name { font-size: 1.2rem; }
+  .outline li { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-tile { transition: none; }
+  .book-tile:hover { transform: none; }
+}

@@ -1,0 +1,364 @@
+{
+    "id": "greeks",
+    "name": "Greeks",
+    "kjv_names": [
+        "Greeks",
+        "Greek",
+        "Grecians",
+        "Grecia",
+        "Greece",
+        "Javan"
+    ],
+    "also_known_as": [
+        "Javan (Ionians)",
+        "Hellenes",
+        "Grecians (in Acts, usually Greek-speaking Jews)"
+    ],
+    "category": "Nation / empire",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The descendants of Javan, son of Japheth, whose culture spread across the East after Alexander the Great. Greek became the common language of the Roman world, the Old Testament was translated into it, and the whole New Testament was written in it. In Paul's letters 'Jew and Greek' together stand for all humanity, one in Christ.",
+    "name_meaning": "Javan = Ionia (Greek Iaones), the Greeks of the Aegean coast. 'Greek' comes from Latin Graecus. The Greeks called themselves Hellenes.",
+    "origin": {
+        "account": "Javan was the fourth son of Japheth; his sons Elishah, Tarshish, Kittim and Dodanim peopled 'the isles of the Gentiles' — the Aegean islands, Cyprus (Kittim) and the Mediterranean coasts. Historically, Greek-speaking peoples are attested from the Mycenaean age (c. 1600–1100 BC, Linear B tablets), and classical Greek city-states flourished from the 8th century BC.",
+        "references": [
+            "Genesis 10:2",
+            "Genesis 10:4-5"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Javan, son of Japheth",
+        "line": [
+            "Noah",
+            "Japheth",
+            "Javan"
+        ],
+        "notes": "Noah's blessing — 'God shall enlarge Japheth, and he shall dwell in the tents of Shem' — was read by early Christian writers as fulfilled when Greek-speaking Gentiles entered the church.",
+        "references": [
+            "Genesis 9:27",
+            "Isaiah 66:19"
+        ]
+    },
+    "homeland": {
+        "region": "Greece, the Aegean islands and western Asia Minor ('the isles')",
+        "description": "Mountainous peninsulas and islands of the Aegean, with colonies across the Mediterranean and Black Sea. After Alexander (336–323 BC), Greek cities and culture spread through Egypt, Syria, Judea and Mesopotamia — the Hellenistic world of the Ptolemies and Seleucids.",
+        "modern_location": "Greece, Cyprus and western Turkey; historically Greek-speaking cities across the eastern Mediterranean.",
+        "modern_countries": [
+            "Greece",
+            "Cyprus",
+            "Turkey"
+        ],
+        "center": {
+            "lat": 37.97,
+            "lon": 23.73
+        },
+        "places": [
+            {
+                "name": "Athens",
+                "modern_name": "Athens, Greece",
+                "lat": 37.97,
+                "lon": 23.73,
+                "note": "Paul preached on Mars' hill about 'the unknown god'.",
+                "references": [
+                    "Acts 17:22-23"
+                ]
+            },
+            {
+                "name": "Corinth",
+                "modern_name": "Ancient Corinth, Greece",
+                "lat": 37.91,
+                "lon": 22.88,
+                "note": "Paul stayed eighteen months; two letters to its church.",
+                "references": [
+                    "Acts 18:1",
+                    "Acts 18:11"
+                ]
+            },
+            {
+                "name": "Philippi",
+                "modern_name": "Filippoi, Greece",
+                "lat": 41.01,
+                "lon": 24.29,
+                "note": "First church in Europe (Lydia, the jailer).",
+                "references": [
+                    "Acts 16:12-15"
+                ]
+            },
+            {
+                "name": "Thessalonica",
+                "modern_name": "Thessaloniki, Greece",
+                "lat": 40.64,
+                "lon": 22.94,
+                "note": "'Devout Greeks a great multitude' believed.",
+                "references": [
+                    "Acts 17:1-4"
+                ]
+            },
+            {
+                "name": "Ephesus",
+                "modern_name": "Selçuk, Turkey",
+                "lat": 37.94,
+                "lon": 27.34,
+                "note": "Ionian Greek city where Paul taught two years.",
+                "references": [
+                    "Acts 19:10"
+                ]
+            },
+            {
+                "name": "Chittim (Kittim)",
+                "modern_name": "Cyprus",
+                "lat": 35.13,
+                "lon": 33.43,
+                "note": "Named after a son of Javan.",
+                "references": [
+                    "Genesis 10:4",
+                    "Isaiah 23:1"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "8th century BC",
+            "event": "Joel condemns Tyre and Sidon for selling Judeans 'unto the Grecians'.",
+            "references": [
+                "Joel 3:6"
+            ]
+        },
+        {
+            "date": "c. 530 BC (prophesied)",
+            "event": "Daniel's visions of the 'king of Grecia' — the he-goat with a notable horn, broken at its height and divided in four.",
+            "references": [
+                "Daniel 8:21-22",
+                "Daniel 11:2-4"
+            ]
+        },
+        {
+            "date": "334–323 BC",
+            "event": "Alexander the Great conquers Persia, Egypt and the East; after his death his empire splits among his generals.",
+            "references": [
+                "Daniel 11:3-4"
+            ]
+        },
+        {
+            "date": "c. 280–130 BC",
+            "event": "The Hebrew Scriptures are translated into Greek at Alexandria (the Septuagint).",
+            "references": []
+        },
+        {
+            "date": "167–164 BC",
+            "event": "The Seleucid Greek king Antiochus IV desecrates the Temple; the Maccabean revolt follows (Hanukkah). Many see this in Daniel's 'abomination that maketh desolate'.",
+            "references": [
+                "Daniel 11:31"
+            ]
+        },
+        {
+            "date": "c. AD 30",
+            "event": "Greeks at the Passover ask Philip, 'Sir, we would see Jesus'.",
+            "references": [
+                "John 12:20-23"
+            ]
+        },
+        {
+            "date": "c. AD 33",
+            "event": "Complaints of the Grecians (Greek-speaking Jewish believers) lead to the appointment of the Seven.",
+            "references": [
+                "Acts 6:1-6"
+            ]
+        },
+        {
+            "date": "c. AD 40",
+            "event": "At Antioch, believers first preach the Lord Jesus to Greeks, and the disciples are first called Christians.",
+            "references": [
+                "Acts 11:20-21",
+                "Acts 11:26"
+            ]
+        },
+        {
+            "date": "c. AD 49–57",
+            "event": "Paul's missionary journeys plant churches across Macedonia, Achaia and Asia; Timothy and Titus, of Greek fathers, become his co-workers.",
+            "references": [
+                "Acts 16:1",
+                "Galatians 2:3"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Zeus (Jupiter)",
+            "Hermes (Mercurius)",
+            "Artemis (Diana of the Ephesians)",
+            "the 'unknown god'"
+        ],
+        "practices": "Civic polytheism, mystery cults and philosophy (Epicureans and Stoics). At Lystra the crowd called Barnabas Jupiter and Paul Mercurius. At Ephesus the silversmiths rioted for Diana. Paul told the Athenians God 'hath made of one blood all nations of men' and now commands all to repent.",
+        "references": [
+            "Acts 14:11-13",
+            "Acts 17:18",
+            "Acts 17:26-30",
+            "Acts 19:24-28"
+        ]
+    },
+    "importance": "The Greek world was the setting God used to spread the gospel. The New Testament was written in Koine Greek, and its authors quote the Septuagint. Greek audiences, who 'seek after wisdom', met Christ crucified, 'unto the Greeks foolishness', and many believed. Paul's gospel is 'to the Jew first, and also to the Greek', and in Christ 'there is neither Jew nor Greek'.",
+    "impact": [
+        {
+            "who": "The Jews of the dispersion",
+            "how": "Read the Scriptures in Greek; Greek-speaking synagogues were the first stops on Paul's journeys.",
+            "references": [
+                "Acts 14:1",
+                "Acts 17:4"
+            ]
+        },
+        {
+            "who": "The Jerusalem church",
+            "how": "Greek-speaking widows' needs produced the first deacons, including Stephen.",
+            "references": [
+                "Acts 6:1-5"
+            ]
+        },
+        {
+            "who": "Timothy and Titus",
+            "how": "Paul's closest helpers were part Greek or fully Greek.",
+            "references": [
+                "Acts 16:3",
+                "Titus 1:4"
+            ]
+        },
+        {
+            "who": "Gentile believers",
+            "how": "The Jerusalem council decided Greeks need not be circumcised to be saved.",
+            "references": [
+                "Acts 15:19",
+                "Galatians 2:3"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Javan",
+            "role": "Son of Japheth",
+            "references": [
+                "Genesis 10:2"
+            ]
+        },
+        {
+            "name": "The 'king of Grecia' (Alexander the Great)",
+            "role": "Foretold in Daniel",
+            "references": [
+                "Daniel 8:21"
+            ]
+        },
+        {
+            "name": "Titus",
+            "role": "Greek co-worker of Paul",
+            "references": [
+                "Galatians 2:3"
+            ]
+        },
+        {
+            "name": "Timothy",
+            "role": "Son of a Greek father",
+            "references": [
+                "Acts 16:1"
+            ]
+        },
+        {
+            "name": "Dionysius the Areopagite and Damaris",
+            "role": "Athenian converts",
+            "references": [
+                "Acts 17:34"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Daniel 8:21",
+            "text": "And the rough goat is the king of Grecia: and the great horn that is between his eyes is the first king."
+        },
+        {
+            "reference": "John 12:20-21",
+            "text": "And there were certain Greeks among them that came up to worship at the feast: The same came therefore to Philip, which was of Bethsaida of Galilee, and desired him, saying, Sir, we would see Jesus."
+        },
+        {
+            "reference": "Romans 1:16",
+            "text": "For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek."
+        },
+        {
+            "reference": "1 Corinthians 1:22-24",
+            "text": "For the Jews require a sign, and the Greeks seek after wisdom: But we preach Christ crucified, unto the Jews a stumblingblock, and unto the Greeks foolishness; But unto them which are called, both Jews and Greeks, Christ the power of God, and the wisdom of God."
+        },
+        {
+            "reference": "Galatians 3:28",
+            "text": "There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus."
+        }
+    ],
+    "fate": {
+        "summary": "Greece came under Rome in 146 BC, but Greek remained the language of the eastern empire and of the early church. The Greek-speaking Byzantine Empire lasted until 1453, and modern Greece became independent in the 1820s–1830s.",
+        "references": []
+    },
+    "today": {
+        "summary": "Modern Greeks (about 10 million in Greece, 0.7 million in Cyprus, plus a large diaspora) are the continuation of the ancient Greek-speaking world. The Greek Orthodox Church still reads the New Testament in its original Koine Greek.",
+        "descendants": "The Greek people.",
+        "modern_legacy": "The Septuagint and the Greek New Testament. Words such as 'Bible', 'gospel' (evangelion), 'church' (ekklesia), 'baptism' and 'Christ' come from Greek."
+    },
+    "archaeology": [
+        {
+            "name": "Gallio inscription (Delphi inscription)",
+            "date": "AD 52",
+            "discovered": "Delphi, published 1905",
+            "location": "Delphi Archaeological Museum",
+            "significance": "Dates Gallio's proconsulship of Achaia, fixing the date of Paul's stay in Corinth."
+        },
+        {
+            "name": "Erastus inscription",
+            "date": "1st century AD",
+            "discovered": "1929, Corinth",
+            "location": "In situ, Ancient Corinth",
+            "significance": "Names an Erastus who paved the square — possibly 'Erastus the chamberlain of the city'."
+        },
+        {
+            "name": "Politarch inscriptions of Thessalonica",
+            "date": "1st–2nd century AD",
+            "discovered": "Thessaloniki (one from the Vardar Gate, 1876)",
+            "location": "British Museum and Thessaloniki",
+            "significance": "Confirm Luke's unusual title 'rulers of the city' (politarchs)."
+        }
+    ],
+    "related_peoples": [
+        "romans",
+        "persians",
+        "egyptians",
+        "phoenicians",
+        "israelites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Judaism and Hellenism",
+            "author": "Martin Hengel (Fortress, 1974)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Anabasis of Alexander",
+            "author": "Arrian (2nd century AD)",
+            "type": "primary"
+        },
+        {
+            "title": "1 Maccabees (Apocrypha)",
+            "type": "primary",
+            "note": "Historical source for Antiochus IV and the Maccabean revolt (not part of the Protestant canon)."
+        },
+        {
+            "title": "The Book of Acts in Its First Century Setting",
+            "author": "Bruce W. Winter, ed. (Eerdmans, 1993–1996)",
+            "type": "scholarship"
+        }
+    ]
+}

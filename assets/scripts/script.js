@@ -703,20 +703,19 @@ verseDialog.addEventListener("click", (event) => {
     closeVerse();
 });
 
-// Help: the "?" in the footer opens a guide to the page's gestures. Unlike the
+// Help: "Help" in the menu opens a guide to the page's gestures. Unlike the
 // other popups it is read, and scrolled, so only the close button, the
 // backdrop or Escape closes it.
 const helpDialog = document.getElementById("help-dialog");
-const helpOpen = document.getElementById("help-open");
 const helpClose = document.getElementById("help-close");
 let helpClosing = false;
 
-helpOpen.addEventListener("click", () => {
+function openHelp() {
     if (helpDialog.open) return;
     helpDialog.showModal();
     helpDialog.scrollTop = 0;
     if (!reducedMotionQuery.matches) slideDialog(helpDialog, "open");
-});
+}
 
 async function closeHelp() {
     if (!helpDialog.open || helpClosing) return;
@@ -739,12 +738,13 @@ helpDialog.addEventListener("click", (event) => {
     if (event.target === helpDialog) closeHelp();
 });
 
-// About: the DG icon at the top opens the story of Daily Grace. It grows out of
-// the icon and shrinks back into it. Each section rises into view as it is
+// About: "About" in the menu opens the story of Daily Grace. It grows out of
+// the DG icon and shrinks back into it. Each section rises into view as it is
 // scrolled to, the gold line along the top fills as the reader goes, and a
 // compact header takes over from the big title, as the Help header does.
 const aboutDialog = document.getElementById("about-dialog");
-const aboutOpen = document.getElementById("about-open");
+// The DG emblem: it opens the menu, and the About story grows out of it.
+const dgButton = document.getElementById("menu-open");
 const aboutClose = document.getElementById("about-close");
 const aboutBegin = document.getElementById("about-begin");
 const aboutSections = aboutDialog.querySelectorAll(".about-reveal");
@@ -773,7 +773,7 @@ function updateAboutScroll() {
     aboutDialog.classList.toggle("condensed", scrollTop > titleGone);
 }
 
-aboutOpen.addEventListener("click", () => {
+function openAbout() {
     if (aboutDialog.open) return;
     aboutDialog.showModal();
     aboutDialog.scrollTop = 0;
@@ -785,13 +785,13 @@ aboutOpen.addEventListener("click", () => {
         section.classList.remove("is-visible");
         if (animate) aboutObserver.observe(section);
     }
-    if (animate) growDialog(aboutOpen, aboutDialog, "open", ABOUT_TIMING);
-});
+    if (animate) growDialog(dgButton, aboutDialog, "open", ABOUT_TIMING);
+}
 
 async function closeAbout() {
     if (!aboutDialog.open || aboutClosing) return;
     aboutClosing = true;
-    if (!reducedMotionQuery.matches) await growDialog(aboutOpen, aboutDialog, "close", ABOUT_TIMING);
+    if (!reducedMotionQuery.matches) await growDialog(dgButton, aboutDialog, "close", ABOUT_TIMING);
     aboutDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     aboutObserver.disconnect();
     aboutDialog.close();
@@ -814,4 +814,66 @@ aboutDialog.addEventListener("click", (event) => {
 aboutBegin.addEventListener("click", async () => {
     await closeAbout();
     document.getElementById("daily-devotional").scrollIntoView({ behavior: "smooth" });
+});
+
+// Menu: the DG emblem opens a drawer that slides in from the left, with the
+// study pages (Books and Peoples of the Bible) at the top and Help and About
+// at the foot. It has no close button: a tap on the page beside it, or
+// Escape, closes it.
+const menuDialog = document.getElementById("site-menu");
+let menuClosing = false;
+
+function drawerDialog(dialog, direction) {
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 380 : 240,
+        easing: opening ? "cubic-bezier(.22, 1, .36, 1)" : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    const offscreen = { transform: "translateX(-100%)" };
+    const full = { transform: "none" };
+    dialog.animate(opening ? [offscreen, full] : [full, offscreen], options);
+    const backdrop = dialog.animate(
+        opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
+}
+
+function openMenu() {
+    if (menuDialog.open) return;
+    menuDialog.showModal();
+    dgButton.setAttribute("aria-expanded", "true");
+    if (!reducedMotionQuery.matches) drawerDialog(menuDialog, "open");
+}
+
+async function closeMenu() {
+    if (!menuDialog.open || menuClosing) return;
+    menuClosing = true;
+    if (!reducedMotionQuery.matches) await drawerDialog(menuDialog, "close");
+    menuDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    menuDialog.close();
+    dgButton.setAttribute("aria-expanded", "false");
+    menuClosing = false;
+}
+
+dgButton.addEventListener("click", openMenu);
+// Escape would close instantly; route it through the closing animation instead.
+menuDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeMenu();
+});
+// The dialog has no padding, so a click that lands on it rather than its
+// contents came from the backdrop.
+menuDialog.addEventListener("click", (event) => {
+    if (event.target === menuDialog) closeMenu();
+});
+// Help and About replace the menu rather than stacking on top of it.
+document.getElementById("menu-help").addEventListener("click", async () => {
+    await closeMenu();
+    openHelp();
+});
+document.getElementById("menu-about").addEventListener("click", async () => {
+    await closeMenu();
+    openAbout();
 });

@@ -1,0 +1,210 @@
+{
+    "id": "horites",
+    "name": "Horites",
+    "kjv_names": [
+        "Horites",
+        "Horims",
+        "Horite"
+    ],
+    "also_known_as": [
+        "Hurrians (a common but debated identification)",
+        "children of Seir"
+    ],
+    "category": "Pre-Israelite inhabitants",
+    "group": "Before Israel",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "The original inhabitants of Mount Seir, displaced by Esau's descendants, who then married into them. Genesis 36 preserves their tribal genealogy. Many scholars identify them with the Hurrians, a major people of Syria and Mesopotamia in the 2nd millennium BC; others think the name means 'cave-dwellers'.",
+    "name_meaning": "Possibly from Hebrew hor, 'hole, cave' — 'cave-dwellers' — or from Hurri, the Hurrian people.",
+    "origin": {
+        "account": "The Horites were 'the sons of Seir the Horite, who inhabited the land'. Chedorlaomer struck 'the Horites in their mount Seir'. Their origin before that is not given.",
+        "references": [
+            "Genesis 14:6",
+            "Genesis 36:20"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Seir the Horite",
+        "line": [
+            "Seir",
+            "Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, Dishan"
+        ],
+        "notes": "Seir's seven sons were 'dukes' (chiefs) of the Horites. Timna, Lotan's sister, became the concubine of Esau's son Eliphaz and mother of Amalek. Aholibamah, daughter of Anah, married Esau. The Horites were absorbed into Edom by marriage as well as conquest.",
+        "references": [
+            "Genesis 36:20-30",
+            "Genesis 36:12",
+            "Genesis 36:25",
+            "1 Chronicles 1:38-42"
+        ]
+    },
+    "homeland": {
+        "region": "Mount Seir — the highlands later called Edom",
+        "description": "The rugged mountains east of the Arabah, south of the Dead Sea, full of caves and rock shelters.",
+        "modern_location": "Southern Jordan.",
+        "modern_countries": [
+            "Jordan"
+        ],
+        "center": {
+            "lat": 30.6,
+            "lon": 35.5
+        },
+        "places": [
+            {
+                "name": "Mount Seir",
+                "modern_name": "Mountains of southern Jordan",
+                "lat": 30.6,
+                "lon": 35.5,
+                "note": "Horite homeland, later Edom.",
+                "references": [
+                    "Deuteronomy 2:12"
+                ]
+            },
+            {
+                "name": "El-paran",
+                "modern_name": "Near Elath/Aqaba",
+                "lat": 29.55,
+                "lon": 35.0,
+                "note": "Southern limit of Chedorlaomer's attack on the Horites.",
+                "references": [
+                    "Genesis 14:6"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Chedorlaomer smites the Horites in Mount Seir.",
+            "references": [
+                "Genesis 14:6"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Anah the Horite finds 'the mules in the wilderness' (or hot springs) while feeding his father's asses.",
+            "references": [
+                "Genesis 36:24"
+            ]
+        },
+        {
+            "date": "Patriarchal age onward",
+            "event": "Esau's descendants intermarry with the Horites, then destroy and replace them.",
+            "references": [
+                "Genesis 36:2",
+                "Deuteronomy 2:12",
+                "Deuteronomy 2:22"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Not recorded (Hurrian gods included Teshub and Hebat)"
+        ],
+        "practices": "The Bible records nothing of Horite religion.",
+        "references": []
+    },
+    "importance": "The Horites belong to the background of Edom and Amalek. Their inclusion in Genesis 36 shows the Bible's care in recording the neighbouring peoples' histories. Deuteronomy uses their displacement by Esau as a parallel to Israel's own conquest — God gave the land to Esau just as He gave Canaan to Israel.",
+    "impact": [
+        {
+            "who": "Esau and Edom",
+            "how": "Esau's family intermarried with and then replaced the Horites.",
+            "references": [
+                "Genesis 36:2",
+                "Deuteronomy 2:12"
+            ]
+        },
+        {
+            "who": "Amalek",
+            "how": "Born to a Horite mother, Timna.",
+            "references": [
+                "Genesis 36:12",
+                "Genesis 36:22"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Seir the Horite",
+            "role": "Ancestor",
+            "references": [
+                "Genesis 36:20"
+            ]
+        },
+        {
+            "name": "Anah",
+            "role": "Horite chief; father of Aholibamah",
+            "references": [
+                "Genesis 36:24-25"
+            ]
+        },
+        {
+            "name": "Timna",
+            "role": "Mother of Amalek",
+            "references": [
+                "Genesis 36:12"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 36:20",
+            "text": "These are the sons of Seir the Horite, who inhabited the land; Lotan, and Shobal, and Zibeon, and Anah,"
+        },
+        {
+            "reference": "Deuteronomy 2:12",
+            "text": "The Horims also dwelt in Seir beforetime; but the children of Esau succeeded them, when they had destroyed them from before them, and dwelt in their stead; as Israel did unto the land of his possession, which the LORD gave unto them."
+        }
+    ],
+    "fate": {
+        "summary": "Destroyed or absorbed by Esau's descendants in Mount Seir.",
+        "references": [
+            "Deuteronomy 2:22"
+        ]
+    },
+    "today": {
+        "summary": "No Horites exist today. If they are the Hurrians, their wider history is well documented: the Hurrian kingdom of Mitanni in northern Mesopotamia (c. 1550–1260 BC) was a great power, and Hurrian culture strongly influenced the Hittites. The Nuzi tablets, from a Hurrian town, are often compared with customs in Genesis.",
+        "descendants": "None identified.",
+        "modern_legacy": "The oldest known substantially complete piece of notated music — the 'Hurrian Hymn' (h.6) from Ugarit, c. 1400 BC — is Hurrian."
+    },
+    "archaeology": [
+        {
+            "name": "Nuzi tablets",
+            "date": "15th–14th centuries BC",
+            "discovered": "1925–1931, Yorghan Tepe near Kirkuk, Iraq",
+            "location": "Harvard Semitic Museum; Iraq Museum",
+            "significance": "Records of a Hurrian town, often cited for adoption, inheritance and household-god customs compared with the patriarchs (e.g. Rachel and Laban's images)."
+        },
+        {
+            "name": "Hurrian Hymn no. 6",
+            "date": "c. 1400 BC",
+            "discovered": "1950s at Ugarit",
+            "location": "National Museum of Damascus",
+            "significance": "Hymn to the goddess Nikkal with musical notation."
+        }
+    ],
+    "related_peoples": [
+        "edomites",
+        "amalekites",
+        "hivites",
+        "hittites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Hurrians",
+            "author": "Gernot Wilhelm (Aris & Phillips, 1989)",
+            "type": "scholarship"
+        },
+        {
+            "title": "International Standard Bible Encyclopedia, 'Horites'",
+            "author": "James Orr, ed. (1915)",
+            "type": "dictionary"
+        }
+    ]
+}

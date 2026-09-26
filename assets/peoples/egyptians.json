@@ -1,0 +1,451 @@
+{
+    "id": "egyptians",
+    "name": "Egyptians",
+    "kjv_names": [
+        "Egyptians",
+        "Egyptian",
+        "Egypt",
+        "Mizraim",
+        "land of Ham"
+    ],
+    "also_known_as": [
+        "Mizraim",
+        "the house of bondage (from Israel's view)"
+    ],
+    "category": "Empire",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The people of the Nile, whose civilisation was already ancient when Abraham visited. Egypt was Israel's refuge in famine, its house of bondage, the stage of the Exodus, a tempting ally for Judah's kings, and a hiding place for the infant Jesus. The prophets foresaw a day when God would call Egypt 'my people'.",
+    "name_meaning": "Hebrew Mizraim (a dual form, perhaps 'the two lands' of Upper and Lower Egypt). 'Egypt' comes through Greek Aigyptos, probably from Hwt-ka-Ptah, a name of the temple of Ptah at Memphis.",
+    "origin": {
+        "account": "Mizraim was the second son of Ham. From him came the Ludim, Anamim, Lehabim, Naphtuhim, Pathrusim, Casluhim and Caphtorim — the peoples of Egypt and its neighbours. The Psalms call Egypt 'the land of Ham'. Historically, Egypt was unified under the first pharaohs about 3100 BC.",
+        "references": [
+            "Genesis 10:6",
+            "Genesis 10:13-14",
+            "Psalms 105:23"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Mizraim, son of Ham",
+        "line": [
+            "Noah",
+            "Ham",
+            "Mizraim"
+        ],
+        "notes": "Pathrusim = people of Pathros (Upper Egypt); Naphtuhim probably Lower Egypt; Lehabim probably Libyans. Egyptian women entered Israel's line: Hagar (mother of Ishmael) and Asenath, wife of Joseph and mother of Ephraim and Manasseh.",
+        "references": [
+            "Genesis 16:1",
+            "Genesis 41:45",
+            "Genesis 41:50-52"
+        ]
+    },
+    "homeland": {
+        "region": "Egypt — the Nile valley and Delta",
+        "description": "A narrow ribbon of fertile land along the Nile, widening into the Delta. The river's annual flood watered it, making it the breadbasket of the ancient world, and the deserts on either side protected it. Scripture distinguishes Lower Egypt (the Delta, where Goshen, Zoan and On lay) from Pathros (Upper Egypt, with No/Thebes).",
+        "modern_location": "Egypt.",
+        "modern_countries": [
+            "Egypt"
+        ],
+        "center": {
+            "lat": 29.85,
+            "lon": 31.25
+        },
+        "places": [
+            {
+                "name": "Noph (Memphis)",
+                "modern_name": "Mit Rahina, near Cairo",
+                "lat": 29.85,
+                "lon": 31.25,
+                "note": "Ancient capital, condemned by the prophets.",
+                "references": [
+                    "Isaiah 19:13",
+                    "Jeremiah 46:19"
+                ]
+            },
+            {
+                "name": "No / No-Amon (Thebes)",
+                "modern_name": "Luxor",
+                "lat": 25.7,
+                "lon": 32.64,
+                "note": "Great southern capital; its fall to Assyria (663 BC) is cited by Nahum.",
+                "references": [
+                    "Nahum 3:8",
+                    "Jeremiah 46:25"
+                ]
+            },
+            {
+                "name": "Zoan (Tanis)",
+                "modern_name": "San el-Hagar",
+                "lat": 30.98,
+                "lon": 31.88,
+                "note": "Delta capital; 'the field of Zoan' where God did wonders.",
+                "references": [
+                    "Psalms 78:12",
+                    "Numbers 13:22"
+                ]
+            },
+            {
+                "name": "On (Heliopolis)",
+                "modern_name": "Matariya, Cairo",
+                "lat": 30.13,
+                "lon": 31.31,
+                "note": "Home of Joseph's father-in-law Potipherah.",
+                "references": [
+                    "Genesis 41:45"
+                ]
+            },
+            {
+                "name": "Raamses and Pithom",
+                "modern_name": "Qantir/Pi-Ramesse and Tell el-Retaba (probable)",
+                "lat": 30.8,
+                "lon": 31.83,
+                "note": "Treasure cities built by Israelite slaves.",
+                "references": [
+                    "Exodus 1:11"
+                ]
+            },
+            {
+                "name": "Tahpanhes",
+                "modern_name": "Tell Defenneh",
+                "lat": 30.86,
+                "lon": 32.17,
+                "note": "Where Jeremiah was taken after Jerusalem's fall.",
+                "references": [
+                    "Jeremiah 43:7-9"
+                ]
+            },
+            {
+                "name": "Alexandria",
+                "modern_name": "Alexandria",
+                "lat": 31.2,
+                "lon": 29.92,
+                "note": "Hellenistic Jewish centre; home of Apollos.",
+                "references": [
+                    "Acts 18:24"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "c. 3100 BC",
+            "event": "Upper and Lower Egypt unified; the age of the pyramids follows (Old Kingdom, c. 2686–2181 BC).",
+            "references": []
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Abram goes down to Egypt in a famine; Pharaoh takes Sarai and is plagued.",
+            "references": [
+                "Genesis 12:10-20"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Joseph is sold into Egypt, rises to rule under Pharaoh, and saves Egypt and his family from famine. Israel settles in Goshen.",
+            "references": [
+                "Genesis 39:1",
+                "Genesis 41:39-44",
+                "Genesis 47:27"
+            ]
+        },
+        {
+            "date": "Mid-15th or 13th century BC (debated)",
+            "event": "A new king 'which knew not Joseph' enslaves Israel. God sends ten plagues through Moses, and Israel crosses the Red Sea.",
+            "references": [
+                "Exodus 1:8-11",
+                "Exodus 12:29-36",
+                "Exodus 14:26-31"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "Solomon marries Pharaoh's daughter, who brings Gezer as her dowry; Egypt trades horses and chariots with him.",
+            "references": [
+                "1 Kings 3:1",
+                "1 Kings 9:16",
+                "1 Kings 10:28-29"
+            ]
+        },
+        {
+            "date": "c. 925 BC",
+            "event": "Shishak (Shoshenq I) plunders the Temple treasures in Rehoboam's fifth year.",
+            "references": [
+                "1 Kings 14:25-26"
+            ]
+        },
+        {
+            "date": "c. 701 BC",
+            "event": "Judah's reliance on Egypt against Assyria is condemned: 'the strength of Pharaoh shall be your shame'. Tirhakah of Ethiopia marches out.",
+            "references": [
+                "Isaiah 30:1-3",
+                "Isaiah 31:1",
+                "2 Kings 19:9"
+            ]
+        },
+        {
+            "date": "609 BC",
+            "event": "Pharaoh Necho kills King Josiah at Megiddo and puts Jehoiakim on Judah's throne.",
+            "references": [
+                "2 Kings 23:29",
+                "2 Kings 23:34"
+            ]
+        },
+        {
+            "date": "605 BC",
+            "event": "Nebuchadnezzar defeats Necho at Carchemish.",
+            "references": [
+                "Jeremiah 46:2"
+            ]
+        },
+        {
+            "date": "c. 582 BC",
+            "event": "Judean refugees flee to Egypt, taking Jeremiah, against God's word.",
+            "references": [
+                "Jeremiah 43:5-7",
+                "Jeremiah 44:1"
+            ]
+        },
+        {
+            "date": "525 BC – 30 BC",
+            "event": "Egypt ruled by Persia, then by Alexander and the Ptolemies; the Hebrew Scriptures are translated into Greek at Alexandria (the Septuagint).",
+            "references": [
+                "Daniel 11:5-8"
+            ]
+        },
+        {
+            "date": "c. 5–4 BC",
+            "event": "Joseph, Mary and the child Jesus flee to Egypt from Herod: 'Out of Egypt have I called my son.'",
+            "references": [
+                "Matthew 2:13-15",
+                "Hosea 11:1"
+            ]
+        },
+        {
+            "date": "c. AD 30",
+            "event": "Jews and proselytes from Egypt hear the apostles on the day of Pentecost.",
+            "references": [
+                "Acts 2:10"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Ra (the sun)",
+            "Amon (Amun) of No/Thebes",
+            "Osiris",
+            "Isis",
+            "Ptah",
+            "the Apis bull",
+            "Pharaoh as a god-king"
+        ],
+        "practices": "Elaborate polytheism with animal-form gods, temples, a powerful priesthood, magicians and an intense focus on the afterlife. God said the Exodus plagues were judgement 'against all the gods of Egypt', and Pharaoh's magicians eventually admitted, 'This is the finger of God.'",
+        "references": [
+            "Exodus 12:12",
+            "Exodus 8:19",
+            "Jeremiah 46:25",
+            "Numbers 33:4"
+        ]
+    },
+    "importance": "Egypt is the place from which God redeemed His people, and the Exodus became the defining act of salvation in the Old Testament: 'I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage.' Passover commemorates it, and the New Testament presents Christ as 'our passover'. Egypt was also a place of preservation — for Abraham, for Jacob's family and for the child Jesus. Isaiah foresees Egypt joining Israel and Assyria in worship: 'Blessed be Egypt my people.'",
+    "impact": [
+        {
+            "who": "Joseph",
+            "how": "Rose from slavery and prison to second in the kingdom; saved many lives.",
+            "references": [
+                "Genesis 41:41",
+                "Genesis 50:20"
+            ]
+        },
+        {
+            "who": "Moses",
+            "how": "Raised as Pharaoh's daughter's son and 'learned in all the wisdom of the Egyptians'.",
+            "references": [
+                "Exodus 2:10",
+                "Acts 7:22"
+            ]
+        },
+        {
+            "who": "Israel",
+            "how": "Four centuries of sojourn, bondage and deliverance shaped the Law ('ye were strangers in the land of Egypt').",
+            "references": [
+                "Exodus 12:40",
+                "Deuteronomy 10:19"
+            ]
+        },
+        {
+            "who": "King Josiah",
+            "how": "Killed at Megiddo opposing Pharaoh Necho.",
+            "references": [
+                "2 Chronicles 35:20-24"
+            ]
+        },
+        {
+            "who": "The holy family",
+            "how": "Found safety in Egypt until Herod's death.",
+            "references": [
+                "Matthew 2:14-15"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Hagar",
+            "role": "Egyptian mother of Ishmael",
+            "references": [
+                "Genesis 16:1"
+            ]
+        },
+        {
+            "name": "Potiphar",
+            "role": "Captain of the guard who bought Joseph",
+            "references": [
+                "Genesis 39:1"
+            ]
+        },
+        {
+            "name": "Asenath",
+            "role": "Joseph's wife, mother of Ephraim and Manasseh",
+            "references": [
+                "Genesis 41:50"
+            ]
+        },
+        {
+            "name": "The Pharaoh of the Exodus",
+            "role": "Hardened his heart against God's command",
+            "references": [
+                "Exodus 5:2"
+            ]
+        },
+        {
+            "name": "Pharaoh's daughter",
+            "role": "Rescued and raised Moses",
+            "references": [
+                "Exodus 2:5-10"
+            ]
+        },
+        {
+            "name": "Shishak, So, Tirhakah, Necho, Hophra",
+            "role": "Pharaohs named in Kings, Chronicles and Jeremiah",
+            "references": [
+                "1 Kings 14:25",
+                "2 Kings 17:4",
+                "2 Kings 19:9",
+                "2 Kings 23:29",
+                "Jeremiah 44:30"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 50:20",
+            "text": "But as for you, ye thought evil against me; but God meant it unto good, to bring to pass, as it is this day, to save much people alive."
+        },
+        {
+            "reference": "Exodus 12:12",
+            "text": "For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am the LORD."
+        },
+        {
+            "reference": "Exodus 20:2",
+            "text": "I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage."
+        },
+        {
+            "reference": "Isaiah 19:25",
+            "text": "Whom the LORD of hosts shall bless, saying, Blessed be Egypt my people, and Assyria the work of my hands, and Israel mine inheritance."
+        },
+        {
+            "reference": "Matthew 2:15",
+            "text": "And was there until the death of Herod: that it might be fulfilled which was spoken of the Lord by the prophet, saying, Out of Egypt have I called my son."
+        }
+    ],
+    "fate": {
+        "summary": "Egypt was never destroyed, but it lost its independence. Ezekiel said 'it shall be the basest of the kingdoms'. Native pharaonic rule ended with the Persian conquest of 343 BC; Egypt was then ruled by Persians, Macedonian Greeks (the Ptolemies, until Cleopatra VII in 30 BC), Romans, Byzantines, Arabs, Ottomans and the British before independence in the 20th century.",
+        "references": [
+            "Ezekiel 29:14-15",
+            "Isaiah 19:19-21"
+        ]
+    },
+    "today": {
+        "summary": "Modern Egyptians — over 100 million people — are the direct continuation of the Nile valley's ancient population, now largely Arabic-speaking and Muslim. Egypt's Coptic Christians (roughly 10% of the population by common estimates) trace their church to the apostle Mark, and their liturgical language, Coptic, is the last stage of the ancient Egyptian language.",
+        "descendants": "The Egyptian people, Muslim and Coptic Christian.",
+        "modern_legacy": "Pyramids, temples and hieroglyphs; the Septuagint (made in Alexandria); Egypt as one of Christianity's earliest heartlands."
+    },
+    "archaeology": [
+        {
+            "name": "Merneptah Stele",
+            "date": "c. 1208 BC",
+            "discovered": "1896 at Thebes",
+            "location": "Egyptian Museum, Cairo (JE 31408)",
+            "significance": "Contains the earliest known mention of 'Israel' outside the Bible."
+        },
+        {
+            "name": "Bubastite Portal, Karnak",
+            "date": "c. 925 BC",
+            "discovered": "Temple of Amun, Karnak",
+            "location": "Luxor, Egypt",
+            "significance": "Shoshenq I's list of conquered towns in Israel and Judah, matching Shishak's campaign."
+        },
+        {
+            "name": "Beni Hasan tomb painting of Asiatics",
+            "date": "c. 1890 BC",
+            "discovered": "Tomb of Khnumhotep II, Beni Hasan",
+            "location": "In situ, Egypt",
+            "significance": "Shows a group of Semitic travellers in colourful garments entering Egypt, often compared to the patriarchal era."
+        },
+        {
+            "name": "Elephantine papyri",
+            "date": "5th century BC",
+            "discovered": "Elephantine island, Aswan, from 1893",
+            "location": "Berlin, Brooklyn, Cairo and others",
+            "significance": "Letters of a Jewish military colony in Egypt, including a request to rebuild its temple."
+        }
+    ],
+    "related_peoples": [
+        "israelites",
+        "ishmaelites",
+        "cushites",
+        "philistines",
+        "babylonians",
+        "assyrians",
+        "greeks",
+        "romans"
+    ],
+    "stories": [
+        "into-his-hand"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Israel in Egypt: The Evidence for the Authenticity of the Exodus Tradition",
+            "author": "James K. Hoffmeier (Oxford University Press, 1997)",
+            "type": "scholarship"
+        },
+        {
+            "title": "On the Reliability of the Old Testament",
+            "author": "K. A. Kitchen (Eerdmans, 2003)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The Oxford History of Ancient Egypt",
+            "author": "Ian Shaw, ed. (Oxford University Press, 2000)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed.",
+            "author": "James B. Pritchard, ed. (Princeton, 1969)",
+            "type": "primary"
+        },
+        {
+            "title": "Histories, book 2",
+            "author": "Herodotus (5th century BC)",
+            "type": "primary",
+            "note": "The earliest Greek description of Egypt."
+        }
+    ]
+}

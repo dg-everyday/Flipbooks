@@ -1,0 +1,387 @@
+{
+    "id": "phoenicians",
+    "name": "Phoenicians",
+    "kjv_names": [
+        "Zidonians",
+        "Sidonians",
+        "Tyrians",
+        "Zidon",
+        "Sidon",
+        "Tyre",
+        "Tyrus",
+        "Syrophenician",
+        "Phenice",
+        "Phenicia"
+    ],
+    "also_known_as": [
+        "Sidonians and Tyrians (the Bible's usual names)",
+        "coastal Canaanites"
+    ],
+    "category": "Maritime city-states",
+    "group": "Peoples of Canaan",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The seafaring Canaanites of Tyre and Sidon on the Lebanese coast. They were traders and colonisers across the whole Mediterranean, spread the alphabet, and made the famous purple dye. Hiram of Tyre supplied cedar and craftsmen for Solomon's Temple. Jezebel of Sidon brought Baal worship into Israel. Jesus ministered in the region of Tyre and Sidon.",
+    "name_meaning": "'Phoenician' is Greek (Phoinikes), probably from phoinix, 'purple-red', after their dye. They called themselves Canaanites, or by their city: Sidonians, Tyrians.",
+    "origin": {
+        "account": "Sidon was Canaan's firstborn son, and the border of the Canaanites began at Sidon. Tyre, 'the strong city', is first mentioned in Joshua. Historically Byblos (Gebal), Sidon, Tyre and Arvad were Bronze Age Canaanite ports that flourished as independent Phoenician city-states after about 1200 BC.",
+        "references": [
+            "Genesis 10:15",
+            "Genesis 10:19",
+            "Joshua 19:29"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Sidon, firstborn of Canaan",
+        "line": [
+            "Noah",
+            "Ham",
+            "Canaan",
+            "Sidon"
+        ],
+        "notes": "The Arvadite (Arvad) and Giblites (Gebal/Byblos) are also Phoenician cities in the Bible. Genetic study shows substantial continuity from Bronze Age Sidon to present-day Lebanese.",
+        "references": [
+            "Genesis 10:18",
+            "Ezekiel 27:8-9",
+            "Joshua 13:5"
+        ]
+    },
+    "homeland": {
+        "region": "Phoenicia — the narrow coast of Lebanon between the mountains and the sea",
+        "description": "Island and harbour cities backed by the cedar forests of Lebanon, with little farmland — so the Phoenicians turned to the sea. They founded colonies across the Mediterranean, including Carthage (traditionally 814 BC), Cadiz (Tarshish is often linked with Spain), Sicily, Sardinia and Cyprus.",
+        "modern_location": "Coastal Lebanon and parts of northern Israel and Syria; colonies in Tunisia, Spain, Sicily, Sardinia and Cyprus.",
+        "modern_countries": [
+            "Lebanon",
+            "Syria",
+            "Israel",
+            "Tunisia",
+            "Cyprus"
+        ],
+        "center": {
+            "lat": 33.56,
+            "lon": 35.37
+        },
+        "places": [
+            {
+                "name": "Tyre (Tyrus)",
+                "modern_name": "Sour, Lebanon",
+                "lat": 33.27,
+                "lon": 35.2,
+                "note": "Island city of merchants; besieged by Nebuchadnezzar and taken by Alexander.",
+                "references": [
+                    "Ezekiel 26:3-5",
+                    "Ezekiel 27:3"
+                ]
+            },
+            {
+                "name": "Sidon (Zidon)",
+                "modern_name": "Saida, Lebanon",
+                "lat": 33.56,
+                "lon": 35.37,
+                "note": "'Great Zidon'; Paul's friends there cared for him.",
+                "references": [
+                    "Joshua 11:8",
+                    "Acts 27:3"
+                ]
+            },
+            {
+                "name": "Gebal (Byblos)",
+                "modern_name": "Jbeil, Lebanon",
+                "lat": 34.12,
+                "lon": 35.65,
+                "note": "Its craftsmen helped build the Temple; the word 'Bible' comes from its name.",
+                "references": [
+                    "1 Kings 5:18",
+                    "Ezekiel 27:9"
+                ]
+            },
+            {
+                "name": "Zarephath",
+                "modern_name": "Sarafand, Lebanon",
+                "lat": 33.45,
+                "lon": 35.3,
+                "note": "Where Elijah was fed by a widow and raised her son.",
+                "references": [
+                    "1 Kings 17:9-10",
+                    "Luke 4:26"
+                ]
+            },
+            {
+                "name": "Carthage",
+                "modern_name": "Tunis, Tunisia",
+                "lat": 36.85,
+                "lon": 10.32,
+                "note": "Tyre's greatest colony (not named in the Bible).",
+                "references": []
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Conquest",
+            "event": "Sidon marks Asher's border; Asher does not drive out the Sidonians.",
+            "references": [
+                "Joshua 19:28-29",
+                "Judges 1:31"
+            ]
+        },
+        {
+            "date": "c. 1000–950 BC",
+            "event": "Hiram king of Tyre sends cedar, carpenters and masons to build David's house and later Solomon's Temple, and joins Solomon's fleet to Ophir.",
+            "references": [
+                "2 Samuel 5:11",
+                "1 Kings 5:1-10",
+                "1 Kings 9:26-28"
+            ]
+        },
+        {
+            "date": "c. 950 BC",
+            "event": "Huram, a Tyrian bronze-worker with an Israelite mother, casts the Temple pillars Jachin and Boaz.",
+            "references": [
+                "1 Kings 7:13-14",
+                "1 Kings 7:21"
+            ]
+        },
+        {
+            "date": "c. 874 BC",
+            "event": "Ahab marries Jezebel, daughter of Ethbaal king of the Zidonians, and serves Baal.",
+            "references": [
+                "1 Kings 16:31"
+            ]
+        },
+        {
+            "date": "c. 860 BC",
+            "event": "Elijah is sent to a widow of Zarephath; the meal and oil do not fail.",
+            "references": [
+                "1 Kings 17:8-16"
+            ]
+        },
+        {
+            "date": "c. 760 BC",
+            "event": "Amos condemns Tyre for selling captives to Edom and forgetting 'the brotherly covenant'.",
+            "references": [
+                "Amos 1:9-10"
+            ]
+        },
+        {
+            "date": "585–572 BC",
+            "event": "Nebuchadnezzar besieges Tyre for thirteen years.",
+            "references": [
+                "Ezekiel 26:7",
+                "Ezekiel 29:18"
+            ]
+        },
+        {
+            "date": "332 BC",
+            "event": "Alexander the Great builds a causeway to island Tyre and destroys it after a seven-month siege — as Ezekiel had said, 'thou shalt be a place to spread nets upon'.",
+            "references": [
+                "Ezekiel 26:14",
+                "Zechariah 9:3-4"
+            ]
+        },
+        {
+            "date": "c. AD 29",
+            "event": "Crowds from Tyre and Sidon come to Jesus; he heals the daughter of a Syrophenician woman.",
+            "references": [
+                "Mark 3:8",
+                "Mark 7:24-30"
+            ]
+        },
+        {
+            "date": "c. AD 57–59",
+            "event": "Paul spends seven days with disciples at Tyre and visits friends at Sidon.",
+            "references": [
+                "Acts 21:3-6",
+                "Acts 27:3"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Baal (Baal Melqart at Tyre)",
+            "Ashtoreth (Astarte), 'the goddess of the Zidonians'",
+            "Eshmun"
+        ],
+        "practices": "Baal and Astarte worship, spread into Israel by Jezebel, who fed 450 prophets of Baal and 400 of the groves at her table. The Carthaginian colony became notorious for child sacrifice (the 'tophet'). Solomon built a high place for Ashtoreth.",
+        "references": [
+            "1 Kings 11:5",
+            "1 Kings 18:19",
+            "2 Kings 23:13"
+        ]
+    },
+    "importance": "Tyre and Sidon show both blessing and danger from outside. Tyrian skill and cedar built the Temple of God. A Sidonian princess, Jezebel, nearly destroyed Israel's faith and provoked the contest on Mount Carmel. Tyre's pride and trade are the subject of Ezekiel's great lament (chs. 26–28), often linked with the fall of Satan. Jesus said that if his mighty works had been done in Tyre and Sidon 'they would have repented long ago', and a Gentile mother from there won his praise.",
+    "impact": [
+        {
+            "who": "Solomon and the Temple",
+            "how": "Built with Tyrian materials, craftsmen and a bronze-worker of mixed Tyrian–Israelite birth.",
+            "references": [
+                "1 Kings 5:6",
+                "2 Chronicles 2:13-14"
+            ]
+        },
+        {
+            "who": "Elijah",
+            "how": "Hid in Sidonian Zarephath from Jezebel's husband, and was fed by a Gentile widow.",
+            "references": [
+                "1 Kings 17:9"
+            ]
+        },
+        {
+            "who": "Israel under Ahab",
+            "how": "Jezebel's influence led to the killing of the LORD's prophets and the murder of Naboth.",
+            "references": [
+                "1 Kings 18:4",
+                "1 Kings 21:7-15"
+            ]
+        },
+        {
+            "who": "The Syrophenician mother",
+            "how": "Her answer — 'yet the dogs under the table eat of the children's crumbs' — won her daughter's healing.",
+            "references": [
+                "Mark 7:28-29"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Hiram king of Tyre",
+            "role": "Friend of David and Solomon",
+            "references": [
+                "1 Kings 5:1"
+            ]
+        },
+        {
+            "name": "Huram (Hiram) the craftsman",
+            "role": "Temple bronze-worker",
+            "references": [
+                "1 Kings 7:13"
+            ]
+        },
+        {
+            "name": "Ethbaal",
+            "role": "King of the Zidonians, Jezebel's father",
+            "references": [
+                "1 Kings 16:31"
+            ]
+        },
+        {
+            "name": "Jezebel",
+            "role": "Queen of Israel who promoted Baal",
+            "references": [
+                "1 Kings 21:25"
+            ]
+        },
+        {
+            "name": "The widow of Zarephath",
+            "role": "Fed Elijah; her son was raised",
+            "references": [
+                "1 Kings 17:22-24"
+            ]
+        },
+        {
+            "name": "The Syrophenician (Canaanite) woman",
+            "role": "Mother whose daughter Jesus healed",
+            "references": [
+                "Mark 7:26"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "1 Kings 5:6",
+            "text": "Now therefore command thou that they hew me cedar trees out of Lebanon; and my servants shall be with thy servants: and unto thee will I give hire for thy servants according to all that thou shalt appoint: for thou knowest that there is not among us any that can skill to hew timber like unto the Sidonians."
+        },
+        {
+            "reference": "1 Kings 16:31",
+            "text": "And it came to pass, as if it had been a light thing for him to walk in the sins of Jeroboam the son of Nebat, that he took to wife Jezebel the daughter of Ethbaal king of the Zidonians, and went and served Baal, and worshipped him."
+        },
+        {
+            "reference": "Ezekiel 27:3",
+            "text": "And say unto Tyrus, O thou that art situate at the entry of the sea, which art a merchant of the people for many isles, Thus saith the Lord GOD; O Tyrus, thou hast said, I am of perfect beauty."
+        },
+        {
+            "reference": "Matthew 11:21",
+            "text": "Woe unto thee, Chorazin! woe unto thee, Bethsaida! for if the mighty works, which were done in you, had been done in Tyre and Sidon, they would have repented long ago in sackcloth and ashes. "
+        },
+        {
+            "reference": "Mark 7:28",
+            "text": "And she answered and said unto him, Yes, Lord: yet the dogs under the table eat of the children’s crumbs."
+        }
+    ],
+    "fate": {
+        "summary": "The Phoenician cities passed under Assyria, Babylon and Persia, and lost independence after Alexander. They were Hellenised and later Romanised, and became early Christian centres. Carthage fell to Rome in 146 BC, but its Punic language was still spoken in North Africa in Augustine's day (5th century AD).",
+        "references": [
+            "Isaiah 23:1",
+            "Isaiah 23:17-18",
+            "Ezekiel 26:21"
+        ]
+    },
+    "today": {
+        "summary": "The Phoenicians are the ancestors of much of the population of modern Lebanon. A 2017 genetic study found that present-day Lebanese derive about 93% of their ancestry from the Bronze Age population of Sidon. Tyre (Sour) and Sidon (Saida) are still Lebanese cities; Tyre's ruins are a UNESCO World Heritage site.",
+        "descendants": "Lebanese people in particular, and other coastal Levantine populations.",
+        "modern_legacy": "The Phoenician alphabet is the ancestor of the Greek, Latin, Hebrew and Arabic scripts. 'Bible' derives from Byblos, the Phoenician port through which Egyptian papyrus reached Greece."
+    },
+    "archaeology": [
+        {
+            "name": "Ahiram sarcophagus",
+            "date": "c. 1000 BC",
+            "discovered": "1923 at Byblos",
+            "location": "National Museum of Beirut",
+            "significance": "Carries one of the earliest fully developed Phoenician alphabetic inscriptions."
+        },
+        {
+            "name": "Eshmunazar II sarcophagus",
+            "date": "5th century BC",
+            "discovered": "1855 at Sidon",
+            "location": "Louvre, Paris",
+            "significance": "Long royal inscription of a king of Sidon."
+        },
+        {
+            "name": "Tophet of Carthage (Salammbo)",
+            "date": "8th–2nd centuries BC",
+            "discovered": "1921 onward",
+            "location": "Tunis, Tunisia",
+            "significance": "Cemetery of cremated infants and stelae, central to debates about Phoenician child sacrifice."
+        }
+    ],
+    "related_peoples": [
+        "canaanites",
+        "israelites",
+        "greeks",
+        "babylonians",
+        "arameans"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Phoenicians",
+            "author": "Glenn E. Markoe (British Museum Press / University of California Press, 2000)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Continuity and Admixture in the Last Five Millennia of Levantine History from Ancient Canaanite and Present-Day Lebanese Genome Sequences",
+            "author": "Marc Haber et al., American Journal of Human Genetics 101(2), 2017",
+            "type": "genetics",
+            "url": "https://www.cell.com/ajhg/fulltext/S0002-92971730276-8"
+        },
+        {
+            "title": "Against Apion, 1.17–18; Antiquities of the Jews, 8.5.3",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "Quotes the Tyrian archives on Hiram and Solomon."
+        },
+        {
+            "title": "Anabasis of Alexander, book 2",
+            "author": "Arrian (2nd century AD)",
+            "type": "primary",
+            "note": "The siege of Tyre, 332 BC."
+        }
+    ]
+}

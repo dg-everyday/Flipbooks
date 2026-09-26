@@ -1,0 +1,310 @@
+{
+    "id": "cushites",
+    "name": "Cushites (Ethiopians)",
+    "kjv_names": [
+        "Ethiopians",
+        "Ethiopian",
+        "Ethiopia",
+        "Cush",
+        "Cushi"
+    ],
+    "also_known_as": [
+        "Kushites",
+        "Nubians",
+        "the kingdom of Kush / Meroë"
+    ],
+    "category": "Kingdom",
+    "group": "Empires & kingdoms",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The people of Cush — the Nile kingdom south of Egypt in what is now Sudan, which the KJV calls 'Ethiopia'. A Cushite dynasty ruled Egypt as the 25th Dynasty, and its king Tirhakah marched against Sennacherib. An Ethiopian official, Ebed-melech, rescued Jeremiah from a cistern. The Ethiopian eunuch, treasurer of Queen Candace, was among the first Gentiles baptised into Christ.",
+    "name_meaning": "Hebrew Kush, from Egyptian Kash/Kush. 'Ethiopian' is Greek Aithiops, 'burnt-face', used by Greeks for dark-skinned Africans south of Egypt.",
+    "origin": {
+        "account": "Cush was the first son of Ham. His sons Seba, Havilah, Sabtah, Raamah and Sabtechah are generally linked with Africa and Arabia, and Nimrod the city-builder is also called his son. Historically, Kush was a Nubian civilisation along the middle Nile from about 2500 BC (the Kerma culture), later centred on Napata and then Meroë.",
+        "references": [
+            "Genesis 10:6-8"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Cush, son of Ham",
+        "line": [
+            "Noah",
+            "Ham",
+            "Cush"
+        ],
+        "notes": "Genesis 2:13 names 'the whole land of Ethiopia' (Cush) as bounded by the Gihon, one of Eden's rivers; its location is debated. Moses married a Cushite woman, which Miriam and Aaron criticised and God defended by rebuking them.",
+        "references": [
+            "Genesis 2:13",
+            "Numbers 12:1",
+            "Numbers 12:9-10"
+        ]
+    },
+    "homeland": {
+        "region": "Cush / Nubia — the Nile valley south of Aswan",
+        "description": "The land 'beyond the rivers of Ethiopia', from the first cataract of the Nile at Aswan south past the confluence of the Blue and White Niles. It was rich in gold, ivory, ebony and incense, with a tradition of warrior archers and ruling queens (Kandake).",
+        "modern_location": "Northern Sudan and southern Egypt (not the modern country of Ethiopia).",
+        "modern_countries": [
+            "Sudan",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 18.53,
+            "lon": 31.82
+        },
+        "places": [
+            {
+                "name": "Napata / Jebel Barkal",
+                "modern_name": "Karima, Sudan (UNESCO site)",
+                "lat": 18.53,
+                "lon": 31.82,
+                "note": "Religious capital of the 25th-Dynasty kings, including Tirhakah (not named in the Bible).",
+                "references": []
+            },
+            {
+                "name": "Meroë",
+                "modern_name": "Near Shendi, Sudan (UNESCO site)",
+                "lat": 16.94,
+                "lon": 33.75,
+                "note": "Later capital with over 200 pyramids; seat of the Kandake queens.",
+                "references": []
+            },
+            {
+                "name": "Syene (Aswan)",
+                "modern_name": "Aswan, Egypt",
+                "lat": 24.09,
+                "lon": 32.9,
+                "note": "Egypt's border 'even unto the border of Ethiopia'.",
+                "references": [
+                    "Ezekiel 29:10"
+                ]
+            },
+            {
+                "name": "Gaza road",
+                "modern_name": "Road from Jerusalem to Gaza",
+                "lat": 31.6,
+                "lon": 34.8,
+                "note": "Where Philip met the Ethiopian eunuch.",
+                "references": [
+                    "Acts 8:26-27"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Wilderness period",
+            "event": "Miriam and Aaron speak against Moses 'because of the Ethiopian woman whom he had married'.",
+            "references": [
+                "Numbers 12:1"
+            ]
+        },
+        {
+            "date": "c. 1000 BC",
+            "event": "A Cushite runner brings David news of Absalom's death.",
+            "references": [
+                "2 Samuel 18:21",
+                "2 Samuel 18:31-32"
+            ]
+        },
+        {
+            "date": "c. 900 BC",
+            "event": "Zerah the Ethiopian comes against Asa with a huge army and is routed after Asa's prayer.",
+            "references": [
+                "2 Chronicles 14:9-12"
+            ]
+        },
+        {
+            "date": "c. 744–656 BC",
+            "event": "Kushite kings (Piye, Shabaka, Taharqa) conquer and rule Egypt as the 25th Dynasty.",
+            "references": [
+                "Isaiah 18:1-2"
+            ]
+        },
+        {
+            "date": "701 BC",
+            "event": "Tirhakah king of Ethiopia marches against Sennacherib.",
+            "references": [
+                "2 Kings 19:9",
+                "Isaiah 37:9"
+            ]
+        },
+        {
+            "date": "c. 587 BC",
+            "event": "Ebed-melech the Ethiopian, a palace official, pulls Jeremiah out of a muddy cistern with ropes and rags; God promises to spare his life 'because thou hast put thy trust in me'.",
+            "references": [
+                "Jeremiah 38:7-13",
+                "Jeremiah 39:15-18"
+            ]
+        },
+        {
+            "date": "c. AD 34",
+            "event": "The treasurer of Candace, queen of the Ethiopians, reading Isaiah 53 on his way home from Jerusalem, hears the gospel from Philip and is baptised.",
+            "references": [
+                "Acts 8:27-39"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Amun (worshipped at Jebel Barkal)",
+            "Apedemak (the lion god of Meroë)"
+        ],
+        "practices": "The 25th-Dynasty kings were devout worshippers of Amun in Egyptian style. The eunuch of Acts 8 had gone to Jerusalem 'for to worship', showing Gentile Ethiopians who revered Israel's God.",
+        "references": [
+            "Acts 8:27"
+        ]
+    },
+    "importance": "Cush represents the far reaches of the earth reached by God's grace — 'Ethiopia shall soon stretch out her hands unto God'. Two Cushites are shown as models of faith: Ebed-melech, who risked his life to save the prophet when Judah's leaders would not, and the Ethiopian eunuch, who became one of the first Gentile converts and carried the gospel toward Africa. The 'Can the Ethiopian change his skin' proverb in Jeremiah refers to a natural fact, not moral inferiority. Amos records God saying 'Are ye not as children of the Ethiopians unto me, O children of Israel?'",
+    "impact": [
+        {
+            "who": "Moses and Miriam",
+            "how": "God defended Moses' Cushite marriage and disciplined Miriam.",
+            "references": [
+                "Numbers 12:9-15"
+            ]
+        },
+        {
+            "who": "Jeremiah",
+            "how": "Rescued from death in the cistern by Ebed-melech.",
+            "references": [
+                "Jeremiah 38:10-13"
+            ]
+        },
+        {
+            "who": "King Asa",
+            "how": "Victory over Zerah taught him reliance on God.",
+            "references": [
+                "2 Chronicles 14:11"
+            ]
+        },
+        {
+            "who": "Philip the evangelist",
+            "how": "Led by the Spirit to explain Isaiah 53 to the eunuch.",
+            "references": [
+                "Acts 8:29-35"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Cush",
+            "role": "Son of Ham",
+            "references": [
+                "Genesis 10:6"
+            ]
+        },
+        {
+            "name": "Zerah the Ethiopian",
+            "role": "Invader defeated by Asa",
+            "references": [
+                "2 Chronicles 14:9"
+            ]
+        },
+        {
+            "name": "Tirhakah",
+            "role": "King of Ethiopia (Pharaoh Taharqa)",
+            "references": [
+                "2 Kings 19:9"
+            ]
+        },
+        {
+            "name": "Ebed-melech",
+            "role": "Rescuer of Jeremiah",
+            "references": [
+                "Jeremiah 38:7"
+            ]
+        },
+        {
+            "name": "The Ethiopian eunuch",
+            "role": "Treasurer of Candace, baptised by Philip",
+            "references": [
+                "Acts 8:27",
+                "Acts 8:38"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Psalms 68:31",
+            "text": "Princes shall come out of Egypt; Ethiopia shall soon stretch out her hands unto God. "
+        },
+        {
+            "reference": "Amos 9:7",
+            "text": "Are ye not as children of the Ethiopians unto me, O children of Israel? saith the LORD. Have not I brought up Israel out of the land of Egypt? and the Philistines from Caphtor, and the Syrians from Kir?"
+        },
+        {
+            "reference": "Jeremiah 39:18",
+            "text": "For I will surely deliver thee, and thou shalt not fall by the sword, but thy life shall be for a prey unto thee: because thou hast put thy trust in me, saith the LORD."
+        },
+        {
+            "reference": "Acts 8:27",
+            "text": "And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship,"
+        }
+    ],
+    "fate": {
+        "summary": "After the Assyrians drove the Kushite pharaohs out of Egypt (c. 663 BC), Kush continued as an independent kingdom at Napata and later Meroë for another thousand years. Meroë declined in the 4th century AD, and the Christian Nubian kingdoms (Nobatia, Makuria, Alodia) followed from the 6th century.",
+        "references": [
+            "Isaiah 45:14",
+            "Zephaniah 3:10"
+        ]
+    },
+    "today": {
+        "summary": "The biblical Cushites were the Nubians of today's Sudan and southern Egypt, whose descendants include Nubian peoples there. The modern country of Ethiopia took the name later. Its Orthodox Church traces a separate tradition to the Queen of Sheba and to the Ethiopian eunuch, and the Aksumite kingdom became Christian in the 4th century.",
+        "descendants": "Nubian and other peoples of northern Sudan and southern Egypt.",
+        "modern_legacy": "Sudan has more pyramids than Egypt (at Meroë, Nuri and el-Kurru). 'Kandake' (Candace) is remembered as the title of powerful Nubian queens."
+    },
+    "archaeology": [
+        {
+            "name": "Kawa stelae and Jebel Barkal temples of Taharqa",
+            "date": "c. 690–664 BC",
+            "discovered": "Kawa (1930s) and Jebel Barkal",
+            "location": "Sudan National Museum; Ashmolean, Oxford; site",
+            "significance": "Taharqa's own inscriptions, confirming the Kushite pharaoh Tirhakah of 2 Kings 19:9."
+        },
+        {
+            "name": "Pyramids of Meroë",
+            "date": "c. 300 BC – AD 350",
+            "discovered": "Studied from the 19th century",
+            "location": "Sudan (UNESCO site)",
+            "significance": "Royal tombs of the kingdom of the Kandakes."
+        }
+    ],
+    "related_peoples": [
+        "egyptians",
+        "sabeans",
+        "assyrians",
+        "israelites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "Africa and the Bible",
+            "author": "Edwin M. Yamauchi (Baker Academic, 2004)",
+            "type": "scholarship"
+        },
+        {
+            "title": "The Black Pharaohs: Egypt's Nubian Rulers",
+            "author": "Robert Morkot (Rubicon Press, 2000)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Geography, 17.1.54",
+            "author": "Strabo (1st century BC/AD)",
+            "type": "primary",
+            "note": "Refers to the Meroitic queen Candace."
+        },
+        {
+            "title": "Natural History, 6.35",
+            "author": "Pliny the Elder (1st century AD)",
+            "type": "primary",
+            "note": "Notes that 'Candace' was the name passed on to the queens of Meroë."
+        }
+    ]
+}

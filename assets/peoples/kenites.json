@@ -1,0 +1,263 @@
+{
+    "id": "kenites",
+    "name": "Kenites",
+    "kjv_names": [
+        "Kenites",
+        "Kenite"
+    ],
+    "also_known_as": [
+        "Children of the Kenite",
+        "a clan of Midian"
+    ],
+    "category": "Nomadic clan",
+    "group": "Neighbours & kin",
+    "testaments": [
+        "Old"
+    ],
+    "summary": "A small clan of nomadic smiths related to Moses' father-in-law. They travelled with Israel into Canaan and lived peacefully among Judah. Their history is full of loyalty: Jael the Kenite killed Sisera, Saul spared the Kenites for their kindness in the wilderness, and the Rechabites came from them.",
+    "name_meaning": "From Cain (Qayin), which also means 'smith' or 'metalworker' — probably pointing to the clan's trade.",
+    "origin": {
+        "account": "The Kenites first appear in God's promise to Abram as one of the peoples of the land. Judges calls Moses' father-in-law 'the Kenite', while Exodus calls him 'the priest of Midian'. So the Kenites were probably a clan within, or allied to, Midian. His descendants went up with Judah from Jericho into the Negev of Arad.",
+        "references": [
+            "Genesis 15:19",
+            "Judges 1:16",
+            "Judges 4:11",
+            "Exodus 3:1"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Hobab / Jethro's family; the house of Hemath",
+        "line": [
+            "Abraham (through Midian, if Kenites were Midianite)",
+            "Midian",
+            "Jethro / Reuel",
+            "Hobab",
+            "Kenite clans"
+        ],
+        "notes": "1 Chronicles places the Kenites among Judah's clans and names 'the Kenites that came of Hemath, the father of the house of Rechab'. Their exact descent is uncertain.",
+        "references": [
+            "Numbers 10:29",
+            "1 Chronicles 2:55"
+        ]
+    },
+    "homeland": {
+        "region": "The Negev around Arad, and scattered encampments in the north",
+        "description": "Semi-nomadic tent-dwellers. Their main settlement was in the south of Judah near Arad, but Heber the Kenite pitched his tent as far north as the plain of Zaanaim near Kedesh in Galilee. Balaam saw their 'nest in a rock'.",
+        "modern_location": "Southern Israel (Negev), with a branch in Galilee.",
+        "modern_countries": [
+            "Israel"
+        ],
+        "center": {
+            "lat": 31.28,
+            "lon": 35.13
+        },
+        "places": [
+            {
+                "name": "Arad (the wilderness of Judah south of Arad)",
+                "modern_name": "Tel Arad, Israel",
+                "lat": 31.28,
+                "lon": 35.13,
+                "note": "Where the Kenites settled with Judah.",
+                "references": [
+                    "Judges 1:16"
+                ]
+            },
+            {
+                "name": "Plain of Zaanaim, by Kedesh",
+                "modern_name": "Near Kedesh, Upper Galilee",
+                "lat": 33.11,
+                "lon": 35.53,
+                "note": "Heber's tent, where Jael killed Sisera.",
+                "references": [
+                    "Judges 4:11"
+                ]
+            },
+            {
+                "name": "Cities of the Kenites",
+                "modern_name": "Negev of Judah",
+                "lat": 31.2,
+                "lon": 35.0,
+                "note": "David shared Amalekite spoil with them.",
+                "references": [
+                    "1 Samuel 30:29"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Listed first among the peoples whose land God promises to Abram.",
+            "references": [
+                "Genesis 15:19"
+            ]
+        },
+        {
+            "date": "Wilderness period",
+            "event": "Moses begs Hobab to come with Israel: 'thou mayest be to us instead of eyes'.",
+            "references": [
+                "Numbers 10:29-32"
+            ]
+        },
+        {
+            "date": "Wilderness period",
+            "event": "Balaam foretells that the Kenite will be 'wasted, until Asshur shall carry thee away captive'.",
+            "references": [
+                "Numbers 24:21-22"
+            ]
+        },
+        {
+            "date": "Conquest",
+            "event": "The Kenites go up with Judah from the city of palm trees (Jericho) and settle near Arad.",
+            "references": [
+                "Judges 1:16"
+            ]
+        },
+        {
+            "date": "Period of the Judges",
+            "event": "Heber the Kenite is at peace with Jabin of Hazor; his wife Jael kills the fleeing Sisera with a tent peg. Deborah sings her praise.",
+            "references": [
+                "Judges 4:17-21",
+                "Judges 5:24-27"
+            ]
+        },
+        {
+            "date": "c. 1030 BC",
+            "event": "Saul warns the Kenites to leave the Amalekites before he attacks, 'for ye shewed kindness to all the children of Israel'.",
+            "references": [
+                "1 Samuel 15:6"
+            ]
+        },
+        {
+            "date": "c. 1010 BC",
+            "event": "David treats the Kenites as friends of Judah.",
+            "references": [
+                "1 Samuel 27:10",
+                "1 Samuel 30:29"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "The LORD (by association with Jethro)"
+        ],
+        "practices": "Their ancestor Jethro blessed the LORD and offered sacrifices to God. The Kenite Rechabites were known for strict faithfulness to their father's commands.",
+        "references": [
+            "Exodus 18:10-12",
+            "Jeremiah 35:6"
+        ]
+    },
+    "importance": "The Kenites are outsiders who became insiders through loyalty. They chose to go with Israel, guided it in the desert, and lived among Judah. Their kindness was remembered generations later by Saul. Jael, a Kenite woman, struck the decisive blow of Deborah's war and is called 'blessed above women'. Their descendants the Rechabites were held up by God to Jerusalem as a model of faithfulness.",
+    "impact": [
+        {
+            "who": "Moses and Israel",
+            "how": "Hobab's desert experience served as guidance for the journey.",
+            "references": [
+                "Numbers 10:31"
+            ]
+        },
+        {
+            "who": "Deborah and Barak",
+            "how": "Jael's act fulfilled Deborah's word that the LORD would sell Sisera 'into the hand of a woman'.",
+            "references": [
+                "Judges 4:9",
+                "Judges 4:22"
+            ]
+        },
+        {
+            "who": "Saul's campaign",
+            "how": "The Kenites were spared from the war against Amalek.",
+            "references": [
+                "1 Samuel 15:6"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Jethro / Reuel",
+            "role": "Moses' father-in-law, called 'the Kenite'",
+            "references": [
+                "Judges 1:16"
+            ]
+        },
+        {
+            "name": "Hobab",
+            "role": "Moses' brother-in-law and guide",
+            "references": [
+                "Judges 4:11"
+            ]
+        },
+        {
+            "name": "Heber the Kenite",
+            "role": "Separated from the Kenites; lived in the north",
+            "references": [
+                "Judges 4:11"
+            ]
+        },
+        {
+            "name": "Jael",
+            "role": "Killed Sisera; 'blessed above women'",
+            "references": [
+                "Judges 5:24"
+            ]
+        },
+        {
+            "name": "Jonadab son of Rechab",
+            "role": "Kenite ancestor of the Rechabites",
+            "references": [
+                "Jeremiah 35:6"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Judges 1:16",
+            "text": "And the children of the Kenite, Moses’ father in law, went up out of the city of palm trees with the children of Judah into the wilderness of Judah, which lieth in the south of Arad; and they went and dwelt among the people."
+        },
+        {
+            "reference": "Judges 5:24",
+            "text": "Blessed above women shall Jael the wife of Heber the Kenite be, blessed shall she be above women in the tent."
+        },
+        {
+            "reference": "1 Samuel 15:6",
+            "text": "And Saul said unto the Kenites, Go, depart, get you down from among the Amalekites, lest I destroy you with them: for ye shewed kindness to all the children of Israel, when they came up out of Egypt. So the Kenites departed from among the Amalekites."
+        }
+    ],
+    "fate": {
+        "summary": "Absorbed into Judah. Their Rechabite branch survived as a distinct group until at least the Babylonian invasion of Jerusalem.",
+        "references": [
+            "1 Chronicles 2:55",
+            "Jeremiah 35:11"
+        ]
+    },
+    "today": {
+        "summary": "No Kenite people exist today. In scholarship they are best known through the 'Kenite hypothesis', which suggests that knowledge of YHWH came to Moses through his Kenite–Midianite in-laws. The theory is debated.",
+        "descendants": "Absorbed into Judah.",
+        "modern_legacy": "The Kenite hypothesis in Old Testament studies."
+    },
+    "archaeology": [],
+    "related_peoples": [
+        "midianites",
+        "rechabites",
+        "amalekites",
+        "israelites"
+    ],
+    "stories": [],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Midianite-Kenite Hypothesis Revisited and the Origins of Judah",
+            "author": "Joseph Blenkinsopp, Journal for the Study of the Old Testament 33.2 (2008)",
+            "type": "scholarship"
+        },
+        {
+            "title": "International Standard Bible Encyclopedia, 'Kenites'",
+            "author": "James Orr, ed. (1915)",
+            "type": "dictionary"
+        }
+    ]
+}

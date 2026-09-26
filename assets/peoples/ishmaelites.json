@@ -1,0 +1,360 @@
+{
+    "id": "ishmaelites",
+    "name": "Ishmaelites",
+    "kjv_names": [
+        "Ishmaelites",
+        "Ishmeelites",
+        "Ishmaelite",
+        "Ishmeelite",
+        "Kedar",
+        "Nebajoth",
+        "Hagarenes",
+        "Hagarites"
+    ],
+    "also_known_as": [
+        "Qedarites (Assyrian records)",
+        "Hagrites"
+    ],
+    "category": "Nomadic tribes",
+    "group": "Neighbours & kin",
+    "testaments": [
+        "Old",
+        "New"
+    ],
+    "summary": "The twelve tribes descended from Ishmael, Abraham's first son by Hagar the Egyptian, who lived as desert nomads and caravan traders across northern Arabia. It was an Ishmaelite caravan, loaded with spices for Egypt, that bought Joseph. Arab tradition has long counted Ishmael as a forefather of the northern Arabs.",
+    "name_meaning": "Ishmael: 'God hears' — named by the angel because 'the LORD hath heard thy affliction'.",
+    "origin": {
+        "account": "When Sarai was barren she gave her Egyptian maid Hagar to Abram, and Hagar bore Ishmael. After Isaac's birth Hagar and Ishmael were sent away. In the wilderness of Beer-sheba God heard the lad's voice and promised, 'I will make him a great nation.' Ishmael grew up in the wilderness of Paran, became an archer, and married an Egyptian wife.",
+        "references": [
+            "Genesis 16:1-16",
+            "Genesis 21:9-21"
+        ]
+    },
+    "lineage": {
+        "ancestor": "Ishmael, son of Abraham and Hagar",
+        "line": [
+            "Terah",
+            "Abraham",
+            "Ishmael"
+        ],
+        "notes": "God promised that Ishmael would father 'twelve princes'. They were Nebajoth, Kedar, Adbeel, Mibsam, Mishma, Dumah, Massa, Hadar, Tema, Jetur, Naphish and Kedemah. Esau married Ishmael's daughter Mahalath. Jetur and Naphish appear later as the Hagarites east of Gilead, whom the Transjordan tribes defeated.",
+        "references": [
+            "Genesis 17:20",
+            "Genesis 25:12-18",
+            "Genesis 28:9",
+            "1 Chronicles 5:19-20"
+        ]
+    },
+    "homeland": {
+        "region": "From Havilah to Shur — the deserts of northern Arabia and Sinai",
+        "description": "Ishmael's sons 'dwelt from Havilah unto Shur, that is before Egypt, as thou goest toward Assyria' — the great arc of desert from the edge of Egypt across northern Arabia towards Mesopotamia. Their tribes controlled oasis towns and the incense-and-spice caravan routes.",
+        "modern_location": "Northern Saudi Arabia, Jordan's eastern desert, southern Syria and Iraq's western desert, and Sinai.",
+        "modern_countries": [
+            "Saudi Arabia",
+            "Jordan",
+            "Syria",
+            "Iraq",
+            "Egypt"
+        ],
+        "center": {
+            "lat": 28.5,
+            "lon": 38.5
+        },
+        "places": [
+            {
+                "name": "Wilderness of Paran",
+                "modern_name": "North-eastern Sinai / Negev",
+                "lat": 30.3,
+                "lon": 34.5,
+                "note": "Where Ishmael grew up.",
+                "references": [
+                    "Genesis 21:21"
+                ]
+            },
+            {
+                "name": "Beer-lahai-roi",
+                "modern_name": "Between Kadesh and Bered (unlocated)",
+                "lat": 30.7,
+                "lon": 34.5,
+                "note": "The well where the angel met Hagar: 'Thou God seest me'.",
+                "references": [
+                    "Genesis 16:13-14"
+                ]
+            },
+            {
+                "name": "Tema",
+                "modern_name": "Tayma, Saudi Arabia",
+                "lat": 27.63,
+                "lon": 38.55,
+                "note": "Oasis named after Ishmael's son; the Babylonian king Nabonidus lived there for ten years.",
+                "references": [
+                    "Isaiah 21:14",
+                    "Job 6:19"
+                ]
+            },
+            {
+                "name": "Dumah",
+                "modern_name": "Dumat al-Jandal (al-Jawf), Saudi Arabia",
+                "lat": 29.81,
+                "lon": 39.87,
+                "note": "Oasis named after Ishmael's son; seat of Qedarite queens in Assyrian records.",
+                "references": [
+                    "Isaiah 21:11"
+                ]
+            },
+            {
+                "name": "Kedar",
+                "modern_name": "Syro-Arabian desert",
+                "lat": 31.0,
+                "lon": 38.0,
+                "note": "The most powerful Ishmaelite tribe: 'the tents of Kedar'.",
+                "references": [
+                    "Psalms 120:5",
+                    "Song of Solomon 1:5"
+                ]
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "date": "Patriarchal age",
+            "event": "Ishmael born; God promises to multiply him.",
+            "references": [
+                "Genesis 16:10-11",
+                "Genesis 16:15"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Ishmael, aged thirteen, is circumcised with Abraham — the first to receive the covenant sign alongside him.",
+            "references": [
+                "Genesis 17:23-26"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Hagar and Ishmael are sent away; God provides a well.",
+            "references": [
+                "Genesis 21:14-19"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Isaac and Ishmael bury Abraham together at Machpelah. Ishmael dies aged 137.",
+            "references": [
+                "Genesis 25:9",
+                "Genesis 25:17"
+            ]
+        },
+        {
+            "date": "Patriarchal age",
+            "event": "Ishmaelite traders from Gilead, carrying spicery, balm and myrrh, buy Joseph for twenty pieces of silver.",
+            "references": [
+                "Genesis 37:25-28"
+            ]
+        },
+        {
+            "date": "c. 1000 BC",
+            "event": "Obil the Ishmaelite keeps David's camels.",
+            "references": [
+                "1 Chronicles 27:30"
+            ]
+        },
+        {
+            "date": "8th–7th centuries BC",
+            "event": "Assyrian kings fight and tax the Qedarite Arabs and their queens (Zabibe, Samsi); the prophets pronounce 'the burden upon Arabia'.",
+            "references": [
+                "Isaiah 21:13-17",
+                "Jeremiah 49:28-29"
+            ]
+        },
+        {
+            "date": "c. AD 55",
+            "event": "Paul uses Hagar and Sarah as an allegory of two covenants — bondage and freedom.",
+            "references": [
+                "Galatians 4:22-31"
+            ]
+        }
+    ],
+    "religion": {
+        "gods": [
+            "Pre-Islamic Arabian deities (e.g. Allat/Atarsamain in Qedarite records)"
+        ],
+        "practices": "Ishmael himself was circumcised into Abraham's covenant and blessed by God. His descendants later worshipped Arabian gods; Assyrian kings took Qedarite idols as trophies and sometimes returned them.",
+        "references": [
+            "Genesis 17:20",
+            "Genesis 17:26",
+            "Genesis 21:20"
+        ]
+    },
+    "importance": "Ishmael's story shows God's care for those on the edges of the covenant family. The first person in Scripture to give God a name was Hagar, an Egyptian slave: 'Thou God seest me.' Ishmael's very name means 'God hears'. The chosen line ran through Isaac, yet God blessed Ishmael too and kept his promise to make him a great nation. The Ishmaelite caravan that bought Joseph was the unwitting means by which God preserved Israel in the famine.",
+    "impact": [
+        {
+            "who": "Hagar",
+            "how": "Met by God twice in the wilderness and given promises for her son.",
+            "references": [
+                "Genesis 16:13",
+                "Genesis 21:17-18"
+            ]
+        },
+        {
+            "who": "Joseph",
+            "how": "Carried to Egypt by Ishmaelite traders.",
+            "references": [
+                "Genesis 39:1"
+            ]
+        },
+        {
+            "who": "Esau",
+            "how": "Married Mahalath, Ishmael's daughter, to please his father.",
+            "references": [
+                "Genesis 28:8-9"
+            ]
+        },
+        {
+            "who": "The Galatian church",
+            "how": "Hagar and Ishmael became Paul's picture of life under the law versus the promise.",
+            "references": [
+                "Galatians 4:28-31"
+            ]
+        }
+    ],
+    "notable_people": [
+        {
+            "name": "Ishmael",
+            "role": "Son of Abraham, father of twelve princes",
+            "references": [
+                "Genesis 25:16"
+            ]
+        },
+        {
+            "name": "Hagar",
+            "role": "Egyptian mother of Ishmael",
+            "references": [
+                "Genesis 16:1"
+            ]
+        },
+        {
+            "name": "Nebajoth and Kedar",
+            "role": "Ishmael's eldest sons; Isaiah foresees their flocks at God's altar",
+            "references": [
+                "Genesis 25:13",
+                "Isaiah 60:7"
+            ]
+        },
+        {
+            "name": "Mahalath (Bashemath)",
+            "role": "Ishmael's daughter, wife of Esau",
+            "references": [
+                "Genesis 28:9",
+                "Genesis 36:3"
+            ]
+        },
+        {
+            "name": "Obil the Ishmaelite",
+            "role": "David's camel-master",
+            "references": [
+                "1 Chronicles 27:30"
+            ]
+        },
+        {
+            "name": "Geshem the Arabian",
+            "role": "Opposed Nehemiah (an Arab chief of Qedar, per the Tell el-Maskhuta bowl)",
+            "references": [
+                "Nehemiah 2:19",
+                "Nehemiah 6:1"
+            ]
+        }
+    ],
+    "key_verses": [
+        {
+            "reference": "Genesis 16:11",
+            "text": "And the angel of the LORD said unto her, Behold, thou art with child, and shalt bear a son, and shalt call his name Ishmael; because the LORD hath heard thy affliction."
+        },
+        {
+            "reference": "Genesis 17:20",
+            "text": "And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation."
+        },
+        {
+            "reference": "Genesis 21:17-18",
+            "text": "And God heard the voice of the lad; and the angel of God called Hagar out of heaven, and said unto her, What aileth thee, Hagar? fear not; for God hath heard the voice of the lad where he is.  Arise, lift up the lad, and hold him in thine hand; for I will make him a great nation."
+        },
+        {
+            "reference": "Genesis 37:25",
+            "text": "And they sat down to eat bread: and they lifted up their eyes and looked, and, behold, a company of Ishmeelites came from Gilead with their camels bearing spicery and balm and myrrh, going to carry it down to Egypt."
+        }
+    ],
+    "fate": {
+        "summary": "The Ishmaelite tribes did not disappear. Kedar, Nebaioth, Dumah and Tema are recorded in Assyrian and Babylonian texts as Arab tribes and oases through the 7th–5th centuries BC. They merged into the wider Arab peoples of the peninsula.",
+        "references": [
+            "Isaiah 42:11",
+            "Isaiah 60:7"
+        ]
+    },
+    "today": {
+        "summary": "Arab and Islamic tradition regards Ishmael (Isma'il) as the ancestor of the northern Arabs ('Adnanites), and traces the Prophet Muhammad's lineage to him. The Bible does not make that specific link. Modern historians treat these genealogies as traditional rather than documented. The oases named after Ishmael's sons — Tayma, Dumat al-Jandal — are still inhabited in Saudi Arabia.",
+        "descendants": "Traditionally, many Arab tribes of northern and central Arabia.",
+        "modern_legacy": "Ishmael and Hagar hold an honoured place in Islam. Muslim tradition connects Hagar's search for water to the rite of sa'i at Mecca."
+    },
+    "archaeology": [
+        {
+            "name": "Assyrian annals of Tiglath-pileser III, Sennacherib, Esarhaddon and Ashurbanipal",
+            "date": "8th–7th centuries BC",
+            "discovered": "Nineveh and Nimrud",
+            "location": "British Museum and others",
+            "significance": "Record wars with Qedar (Qidri), Nebaioth (Nabayati), Dumah (Adummatu) and Arab queens."
+        },
+        {
+            "name": "Tell el-Maskhuta silver bowl",
+            "date": "c. 400 BC",
+            "discovered": "Tell el-Maskhuta, Egypt",
+            "location": "Brooklyn Museum",
+            "significance": "Dedicated by 'Qainu son of Gashmu, king of Qedar' — likely the son of Nehemiah's opponent Geshem the Arabian."
+        },
+        {
+            "name": "Tayma inscriptions",
+            "date": "6th century BC",
+            "discovered": "Tayma, Saudi Arabia",
+            "location": "Saudi Arabia",
+            "significance": "Record the Babylonian king Nabonidus' long stay at Tema."
+        }
+    ],
+    "related_peoples": [
+        "midianites",
+        "edomites",
+        "egyptians",
+        "israelites",
+        "sabeans"
+    ],
+    "stories": [
+        "into-his-hand"
+    ],
+    "sources": [
+        {
+            "title": "The Holy Bible, King James Version",
+            "type": "scripture",
+            "note": "All quotations taken from the KJV text in assets/db/dailygrace.db."
+        },
+        {
+            "title": "The Ancient Arabs: Nomads on the Borders of the Fertile Crescent, 9th–5th Centuries B.C.",
+            "author": "Israel Eph'al (Magnes Press / Brill, 1982)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Antiquities of the Jews, 1.12.4",
+            "author": "Flavius Josephus (trans. William Whiston, 1737)",
+            "type": "primary",
+            "note": "Josephus already identifies Ishmael's sons with the Arab nations."
+        },
+        {
+            "title": "Arabs in Antiquity: Their History from the Assyrians to the Umayyads",
+            "author": "Jan Retsö (RoutledgeCurzon, 2003)",
+            "type": "scholarship"
+        },
+        {
+            "title": "Easton's Bible Dictionary, 'Ishmaelite', 'Kedar'",
+            "author": "M. G. Easton (1897)",
+            "type": "dictionary"
+        }
+    ]
+}

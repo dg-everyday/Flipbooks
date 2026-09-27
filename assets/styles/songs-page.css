@@ -90,7 +90,7 @@
 .song-passage blockquote { margin: 0; }
 .song-passage p {
   margin: 0 0 6px; padding-left: 1.2em; text-indent: -1.2em;   /* wrapped lines hang under the first */
-  font: 400 1.12rem/1.5 var(--body);
+  font: 400 1.12rem/1.35 var(--body);
   color: var(--ink);
 }
 .song-passage p:last-child { margin-bottom: 0; }

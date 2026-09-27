@@ -65,7 +65,7 @@
   border-radius: 12px; background: #fff;
   border: 1px solid var(--line); border-left: 5px solid var(--red);
 }
-.red-quote blockquote { margin: 0; font: 400 1.3rem/1.5 var(--body); color: var(--red-deep); }
+.red-quote blockquote { margin: 0; font: 400 1.3rem/1.35 var(--body); color: var(--red-deep); }
 .red-quote figcaption {
   margin-top: 10px; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red);
 }
@@ -112,7 +112,7 @@
 
 .rl-passage-body { padding: 0 14px 14px; display: grid; gap: 12px; }
 .rl-verses { display: grid; gap: 6px; }
-.rl-verse { margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--red-deep); }
+.rl-verse { margin: 0; font-size: 1.05rem; line-height: 1.4; color: var(--red-deep); }
 .rl-verse sup { font-size: .7rem; font-weight: 700; color: var(--muted); }
 
 .plain-explanation {

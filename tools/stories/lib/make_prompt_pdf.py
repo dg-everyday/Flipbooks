@@ -108,14 +108,14 @@ def build(C, key, out):
         "<b>Obey the art direction in section 2 on every page</b>, especially the rules about what is never "
         "drawn. Where a panel's description includes an ART NOTE, it overrides everything else.",
         "<b>Lettering.</b> Render each panel's lettering exactly as written — every word, spelling and "
-        "punctuation mark. The Bible text is the King James Version and its old spellings are deliberate: do "
-        "not modernise them. CAPTION = a rectangular box at the top or bottom of the panel; CAPTION (lower) "
+        "punctuation mark. The lettering is plain modern English, the Bible's words rendered closely from "
+        "the King James Version: do not change it back to older wording, and add no verse numbers. CAPTION = a rectangular box at the top or bottom of the panel; CAPTION (lower) "
         "= a second box at the bottom. A name followed by a colon = a rounded speech balloon with its tail "
         "to that speaker. A note in brackets after the name tells you how to letter it: <b>(off)</b> = the tail "
         "runs off the panel edge because the speaker is not in the frame; <b>(from the cloud)</b>, <b>(from "
         "within)</b> and similar = the tail points to that place, not to a person; <b>(caption)</b> = the "
-        "words go in a caption box, not a balloon, because the speaker is narrating over the picture. Keep "
-        "the verse references in brackets. Where a panel says NO LETTERING, draw no text at all.",
+        "words go in a caption box, not a balloon, because the speaker is narrating over the picture. Where a "
+        "panel says NO LETTERING, draw no text at all.",
         "<b>Do not draw</b> the page headings, verse ranges, light notes or this document's own labels — "
         "they are instructions, not artwork. No watermark, no signature, no page numbers.",
     ], 1):

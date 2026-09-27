@@ -41,6 +41,11 @@ commands. Use `tools/stories/content/how-much-more.py` as the model for a new fi
    NEVER SHOWN entry) and `tools/stories/lib/covers.py` (scene, why, light, title zone, avoid).
 6. **Check:** `python tools/stories/check.py <slug>`. Fix every ERROR. Go through every REVIEW item:
    each must be a labelled quote of the source, a modern translation, or a gloss. Re-run until clean.
+6a. **Write the modern lettering** `tools/stories/modern/<slug>.py` (see "Modern-English lettering for
+   the comic artist" in `tools/stories/README.md`). The artist's script and the image prompts letter
+   the comic in plain modern English with no verse references; the content file stays verbatim KJV.
+   Render each line closely from the KJV and add nothing; keep any word a narration caption comments
+   on, and drop a caption that only glossed an old word. The build lists every line still missing.
 7. **Build:** `python tools/stories/build.py <slug>`. A "panel overflows" error means a panel's text
    is too long for its box — shorten it. Windows locks PDFs that are open in a viewer; if a write
    fails with "Permission denied", ask the user to close the file.
@@ -57,7 +62,9 @@ study story from the book's own cross-references, and accept a WARN rather than 
 
 ## Fidelity rules (the series' standard)
 
-- Quote the King James text exactly. Speech balloons must be verbatim. Indirect speech in the text
+- Quote the King James text exactly. Speech balloons must be verbatim in the content file (the study
+  book); only the artist's documents use the modern layer in `tools/stories/modern/`, which keeps
+  the same speakers, adds nothing, and never gives a line to someone the text does not. Indirect speech in the text
   ("he charged them that…", "asked what these things meant") is lettered as a CAPTION, never a balloon.
   Never give anyone words the text does not give them.
 - Keep verse order within a verse: never split a verse across panels in reverse order.

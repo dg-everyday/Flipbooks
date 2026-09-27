@@ -1220,6 +1220,8 @@ html:has(.menu-dialog[open]) { overflow: hidden; }
   font: 400 1.75rem/1.05 'Germania One', Georgia, serif;
   letter-spacing: .02em;
 }
+/* In the menu the eyebrow sits under the title, so it needs space above, not below. */
+.menu-header .help-eyebrow { margin: 6px 0 0; }
 .menu-nav {
   display: flex;
   flex: 1;

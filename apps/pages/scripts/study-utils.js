@@ -17,7 +17,9 @@ export async function fetchJson(path) {
 /**
  * Tiny DOM builder. Strings become text nodes, so nothing from the data is
  * ever parsed as HTML. Falsy children are dropped, which keeps optional parts
- * inline: h('p', {}, maybe && h('b', {}, maybe)).
+ * inline: h('p', {}, maybe && h('b', {}, maybe)). That includes 0, because the
+ * usual guard is list.length && …, which gives 0 for an empty list; pass a
+ * string, String(n), to show a count that may be zero.
  */
 export function h(tag, attrs = {}, ...children) {
   const node = document.createElement(tag);
@@ -28,7 +30,7 @@ export function h(tag, attrs = {}, ...children) {
     else node.setAttribute(key, value === true ? '' : value);
   }
   for (const child of children.flat(Infinity)) {
-    if (child == null || child === false || child === '') continue;
+    if (child == null || child === false || child === '' || child === 0) continue;
     node.append(child instanceof Node ? child : String(child));
   }
   return node;

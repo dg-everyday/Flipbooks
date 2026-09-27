@@ -9,7 +9,7 @@
  * study-utils.js). #the-lord-is-my-shepherd in the URL opens Psalm 23.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260926-2';
+import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
 
 const DATA = 'assets/songs-in-the-bible.json';
 

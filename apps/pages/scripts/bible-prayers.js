@@ -1,69 +1,59 @@
 /**
- * Bible Characters — drives bible-characters.html.
+ * Prayers of the Bible — drives bible-prayers.html.
  *
- * Reads assets/bible-characters.json (built and verse-checked by
- * tools/characters/build_characters.py): the people of the Bible from Adam to
- * the first church, grouped by era. Each group is a section of cards; clicking
- * one opens it in place, under the row it sits in (rowExpander in
- * study-utils.js). Family members link to each other by URL hash (#jacob), so
- * a tap on one opens that person; #moses in the URL opens Moses.
+ * Reads assets/bible-prayers.json (built and verse-checked by
+ * tools/prayers/build_prayers.py): what Jesus taught about prayer, Jesus at
+ * prayer, and the prayers of the patriarchs, kings, prophets, exiles, psalmists
+ * and first Christians, each with what it means for daily life. Each group is a
+ * section of cards; clicking one opens it in place, under the row it sits in
+ * (rowExpander in study-utils.js). #the-lords-prayer in the URL opens it.
  */
 
 import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
 
-const DATA = 'assets/bible-characters.json';
+const DATA = 'assets/bible-prayers.json';
 
 // Per group: a CSS class for its colour, and an intro.
 const GROUPS = {
-  'The beginning': {
-    cls: 'g-beginning',
-    intro: 'From the first man and woman to the flood and the first kingdoms: the people of Genesis 1 to 11.',
+  'Jesus teaches us to pray': {
+    cls: 'g-teach',
+    intro: 'The Lord\'s Prayer, and what Jesus taught about praying in secret, asking, persisting, humility and praying for enemies.',
   },
-  'The patriarchs': {
-    cls: 'g-patriarchs',
-    intro: 'Abraham, Isaac and Jacob, the women beside them, and the family that God promised to make a nation.',
-  },
-  'Exodus and the promised land': {
-    cls: 'g-exodus',
-    intro: 'Slavery in Egypt, the law at Sinai, forty years in the wilderness, and the crossing into Canaan.',
-  },
-  'The judges': {
-    cls: 'g-judges',
-    intro: 'Deliverers raised up in Israel\'s dark and troubled years, and the faithful families of Bethlehem and Shiloh.',
-  },
-  'The kingdom': {
-    cls: 'g-kingdom',
-    intro: 'Saul, David and Solomon, and the people around the throne of Israel when it was one kingdom.',
-  },
-  'The divided kingdom': {
-    cls: 'g-divided',
-    intro: 'Two kingdoms, north and south: kings who led their people astray or back to God, and the prophets who spoke to them.',
-  },
-  'Exile and return': {
-    cls: 'g-exile',
-    intro: 'Carried away to Babylon, faithful in a foreign land, and brought home to rebuild the temple and the walls.',
-  },
-  'The life of Jesus': {
+  'Jesus at prayer': {
     cls: 'g-jesus',
-    intro: 'Jesus, and the people whose lives crossed his: his family, his disciples, his friends, and those who condemned him.',
+    intro: 'Before dawn, all night, at a friend\'s tomb, in Gethsemane and on the cross: Jesus prayed, and his prayers show us how.',
   },
-  'The early church': {
+  'The patriarchs and Moses': {
+    cls: 'g-patriarchs',
+    intro: 'Abraham pleading for a city, a servant at a well, Jacob afraid, Moses standing in the gap, and a blessing to speak over others.',
+  },
+  'Kings and prophets': {
+    cls: 'g-kings',
+    intro: 'A mother\'s tears, a king\'s wonder, a request for wisdom, fire on Carmel, a letter spread before God, and a nation that did not know what to do.',
+  },
+  'Prayers in exile': {
+    cls: 'g-exile',
+    intro: 'Far from home and under pressure, God\'s people kept praying: at an open window, in confession, in a moment before a king.',
+  },
+  'Psalms for every day': {
+    cls: 'g-psalms',
+    intro: 'Prayers from Israel\'s songbook for the rhythm of a day: morning and evening, confession and guidance, loneliness and speech.',
+  },
+  'The early church at prayer': {
     cls: 'g-church',
-    intro: 'The first believers who carried the good news from Jerusalem to Rome.',
+    intro: 'The first Christians prayed for boldness, for one another and without ceasing, and the Bible ends with a prayer.',
   },
 };
 
 // Line icons, one per group (24 × 24, drawn with the current colour).
 const ICONS = {
-  'The beginning': '<path d="M12 22v-7"/><path d="M12 15c-4 0-7-2.5-7-6a7 7 0 0 1 14 0c0 3.5-3 6-7 6z"/>',
-  'The patriarchs': '<path d="M3 20 12 4l9 16z"/><path d="M9 20l3-6 3 6"/>',
-  'Exodus and the promised land': '<path d="M2 8c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0M2 13c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0M2 18c2.5-2 4.5-2 7 0s4.5 2 7 0 4.5-2 6 0"/>',
-  'The judges': '<path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6z"/>',
-  'The kingdom': '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>',
-  'The divided kingdom': '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/><path d="M12 9v10"/>',
-  'Exile and return': '<circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h6"/>',
-  'The life of Jesus': '<path d="M12 3v18M7 8h10"/>',
-  'The early church': '<path d="M12 22c3.9 0 6.5-2.8 6.5-6.5 0-3.4-2.3-5.4-3.5-8-1 1.8-1.8 2.6-2.8 2.8.2-2.4-.6-4.6-2.7-6.8-.8 3.1-4 5.9-4 10.2C5.5 19.2 8.1 22 12 22z"/>',
+  'Jesus teaches us to pray': '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
+  'Jesus at prayer': '<path d="M12 3v18M7 8h10"/>',
+  'The patriarchs and Moses': '<path d="M3 20 12 4l9 16z"/><path d="M9 20l3-6 3 6"/>',
+  'Kings and prophets': '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>',
+  'Prayers in exile': '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M4 12h16"/>',
+  'Psalms for every day': '<path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 7V4M5.6 11.6 3.8 9.8M18.4 11.6l1.8-1.8"/>',
+  'The early church at prayer': '<path d="M12 22c3.9 0 6.5-2.8 6.5-6.5 0-3.4-2.3-5.4-3.5-8-1 1.8-1.8 2.6-2.8 2.8.2-2.4-.6-4.6-2.7-6.8-.8 3.1-4 5.9-4 10.2C5.5 19.2 8.1 22 12 22z"/>',
 };
 
 function icon(group, cls) {
@@ -75,21 +65,34 @@ function icon(group, cls) {
 
 const testamentLabel = t => `${t} Testament`;
 
-// The letter on a card: the name's first letter, past a leading "The".
-const initial = name => name.replace(/^The\s+/i, '').charAt(0).toUpperCase();
+function people(list) {
+  return list?.length && h('ul', { class: 'pr-people' },
+    list.map(p => h('li', {},
+      p.hero
+        ? h('a', { href: `heroes-and-villains.html#${encodeURIComponent(p.hero)}` }, p.name)
+        : h('span', {}, p.name))));
+}
+
+// The prayer's own words: one line per verse, each passage with its reference.
+function prayerWords(prayed) {
+  return prayed?.length && h('div', { class: 'prayer-words' },
+    prayed.map(s => h('figure', { class: 'prayer-passage' },
+      h('blockquote', {}, s.lines.map(line => h('p', {}, line))),
+      h('figcaption', {}, s.reference))));
+}
 
 // ------------------------------------------------------------------ cards
 
 function tile(item, onToggle) {
   return h('button', {
-    type: 'button', class: 'bc-tile', id: `tile-${item.id}`, 'data-id': item.id,
-    'aria-expanded': 'false', 'aria-controls': 'bc-detail', onclick: () => onToggle(item.id)
+    type: 'button', class: 'pr-tile', id: `tile-${item.id}`, 'data-id': item.id,
+    'aria-expanded': 'false', 'aria-controls': 'pr-detail', onclick: () => onToggle(item.id)
   },
-    h('span', { class: 'bc-mark', 'aria-hidden': 'true' }, initial(item.name)),
-    h('span', { class: 'bc-text' },
-      h('span', { class: 'bc-name' }, item.name),
-      h('span', { class: 'bc-epithet' }, item.epithet),
-      h('span', { class: 'bc-meta' }, `${item.role} · ${testamentLabel(item.testament)}`)));
+    icon(item.group, 'pr-mark'),
+    h('span', { class: 'pr-text' },
+      h('span', { class: 'pr-name' }, item.name),
+      h('span', { class: 'pr-epithet' }, item.epithet),
+      h('span', { class: 'pr-meta' }, `${testamentLabel(item.testament)} · ${item.told_in}`)));
 }
 
 // ------------------------------------------------------------------ detail
@@ -99,26 +102,14 @@ function detail(item, onClose) {
   const block = (title, ...body) => h('section', { class: 'detail-block' }, h('h4', {}, title), body);
 
   const facts = h('dl', { class: 'facts' },
-    [h('dt', {}, 'Role'), h('dd', {}, item.role)],
-    item.era && [h('dt', {}, 'When'), h('dd', {}, item.era)],
-    [h('dt', {}, 'Testament'), h('dd', {}, testamentLabel(item.testament))],
-    item.hero && [h('dt', {}, 'More'), h('dd', {},
-      h('a', { class: 'bc-hero-link', href: `heroes-and-villains.html#${encodeURIComponent(item.hero)}` },
-        'Read their lesson in Heroes and Villains'))]);
-
-  // A family member on this page is a link: the hash change opens them.
-  const family = item.family?.length && h('ul', { class: 'bc-family' },
-    item.family.map(f => h('li', {},
-      h('span', { class: 'bc-relation' }, f.relation),
-      f.id
-        ? h('a', { href: `#${encodeURIComponent(f.id)}` }, f.name)
-        : h('span', { class: 'bc-person' }, f.name))));
-
-  const knownFor = item.known_for?.length && h('ul', { class: 'bc-known' },
-    item.known_for.map(k => h('li', {}, k)));
+    item.by?.length && [h('dt', {}, item.by_label || 'Prayed by'), h('dd', {}, people(item.by))],
+    item.with?.length && [h('dt', {}, 'Also there'), h('dd', {}, people(item.with))],
+    item.occasion && [h('dt', {}, 'The occasion'), h('dd', {}, item.occasion)],
+    item.where && [h('dt', {}, 'Where'), h('dd', {}, item.where)],
+    [h('dt', {}, 'Testament'), h('dd', {}, testamentLabel(item.testament))]);
 
   const accounts = item.accounts?.length > 1 &&
-    h('p', { class: 'accounts-note' }, `Told or remembered in ${item.accounts.length} places`);
+    h('p', { class: 'accounts-note' }, `Told or echoed in ${item.accounts.length} places`);
 
   const books = item.books?.length && h('ul', { class: 'book-links' },
     item.books.map(b => h('li', {}, h('a', { href: `bible-books.html#${encodeURIComponent(b.id)}` }, b.name))));
@@ -128,27 +119,35 @@ function detail(item, onClose) {
       h('blockquote', {}, v.text),
       h('figcaption', {}, v.reference))));
 
+  // A short prayer in our own words, set apart from Scripture.
+  const prayIt = item.pray_it && h('figure', { class: 'pray-it' },
+    h('blockquote', {}, item.pray_it),
+    h('figcaption', {}, 'A prayer in our own words'));
+
+  const words = prayerWords(item.prayed);
+
   return h('div', {
-    class: `row-panel ${g.cls}`, id: 'bc-detail', role: 'region',
-    'aria-labelledby': 'bc-detail-title', tabindex: '-1'
+    class: `row-panel ${g.cls}`, id: 'pr-detail', role: 'region',
+    'aria-labelledby': 'pr-detail-title', tabindex: '-1'
   },
     h('button', { type: 'button', class: 'panel-close', 'aria-label': `Close ${item.name}`, onclick: onClose }, '×'),
     h('header', { class: 'detail-head' },
       h('p', { class: 'detail-group' }, `${item.group} · ${testamentLabel(item.testament)}`),
-      h('h3', { id: 'bc-detail-title' }, item.name),
+      h('h3', { id: 'pr-detail-title' }, item.name),
       para(item.epithet, 'detail-meaning'),
       para(item.summary, 'detail-summary')),
     h('div', { class: 'detail-cols' },
       h('div', { class: 'detail-main' },
-        block('Their story', para(item.story)),
-        item.importance && block('Why they matter', para(item.importance, 'importance')),
-        knownFor && block('Known for', knownFor)),
+        words && block('The words', words),
+        block('The story behind it', para(item.story)),
+        item.meaning && block('What it teaches', para(item.meaning)),
+        item.daily && block('In your daily life', para(item.daily, 'daily')),
+        prayIt && block('Pray it today', prayIt)),
       h('div', { class: 'detail-side' },
         block('At a glance', facts),
-        family && block('Family and connections', family),
         block('Read it', refList(item.accounts), accounts),
         books && block('Found in', books),
-        verses && block('Key verses', verses))));
+        verses && block('Read it with', verses))));
 }
 
 // ------------------------------------------------------------------ page
@@ -158,16 +157,16 @@ export async function start(view) {
   try {
     data = await fetchJson(DATA);
   } catch (error) {
-    console.error('Unable to load the Bible characters:', error);
+    console.error('Unable to load the prayers:', error);
     view.replaceChildren(h('p', { class: 'status' },
-      'The Bible characters could not be loaded. Please try again later.'));
+      'The prayers could not be loaded. Please try again later.'));
     return;
   }
 
   const entries = data.entries;
   const byId = new Map(entries.map(e => [e.id, e]));
   const state = { group: 'all', testament: 'all', query: '' };
-  const expander = rowExpander({ tileSelector: '.bc-tile' });
+  const expander = rowExpander({ tileSelector: '.pr-tile' });
 
   // --- opening and closing -------------------------------------------------
 
@@ -175,7 +174,7 @@ export async function start(view) {
     const item = byId.get(id);
     let openTile = document.getElementById(`tile-${id}`);
     if (!item || !openTile) return;
-    // A link may point at someone the filters are hiding.
+    // A link may point at something the filters are hiding.
     if (openTile.hidden) {
       resetFilters();
       openTile = document.getElementById(`tile-${id}`);
@@ -191,8 +190,9 @@ export async function start(view) {
   // --- filters ---------------------------------------------------------------
 
   const haystack = new Map(entries.map(e => [e.id,
-    [e.name, e.epithet, e.role, e.summary, e.group, e.era,
-      ...(e.known_for || []), ...(e.family || []).map(f => f.name)]
+    [e.name, e.epithet, e.summary, e.group, e.occasion, e.where, e.told_in, e.daily,
+      ...(e.by || []).map(p => p.name), ...(e.with || []).map(p => p.name),
+      ...(e.prayed || []).flatMap(s => s.lines)]
       .join(' ').toLowerCase()]));
 
   function apply() {
@@ -201,7 +201,7 @@ export async function start(view) {
     for (const section of view.querySelectorAll('.group-section')) {
       const groupMatch = state.group === 'all' || section.dataset.group === state.group;
       let sectionShown = 0;
-      for (const t of section.querySelectorAll('.bc-tile')) {
+      for (const t of section.querySelectorAll('.pr-tile')) {
         const e = byId.get(t.dataset.id);
         const visible = groupMatch
           && (state.testament === 'all' || e.testament === state.testament)
@@ -233,7 +233,7 @@ export async function start(view) {
 
   const search = h('input', {
     type: 'search', class: 'search', autocomplete: 'off',
-    placeholder: 'Search a name, a role or a story…', 'aria-label': 'Search the Bible characters'
+    placeholder: 'Search a prayer, a need or a name…', 'aria-label': 'Search the prayers of the Bible'
   });
   search.addEventListener('input', () => { state.query = search.value; apply(); });
 
@@ -244,8 +244,8 @@ export async function start(view) {
 
   const t = data.totals;
   const chips = h('div', { class: 'chip-rows' },
-    h('div', { class: 'chips', role: 'group', 'aria-label': 'Show one era' },
-      chip('group', 'all', 'Everyone', t.entries),
+    h('div', { class: 'chips', role: 'group', 'aria-label': 'Show one kind' },
+      chip('group', 'all', 'Every prayer', t.entries),
       data.groups.map(g => chip('group', g, g, t.groups[g], GROUPS[g].cls))),
     h('div', { class: 'chips', role: 'group', 'aria-label': 'Filter by testament' },
       chip('testament', 'all', 'Both Testaments'),
@@ -259,7 +259,7 @@ export async function start(view) {
   });
 
   const count = h('p', { class: 'result-count', 'aria-live': 'polite' });
-  const empty = h('p', { class: 'status', hidden: true }, 'No one matches that search.');
+  const empty = h('p', { class: 'status', hidden: true }, 'No prayer matches that search.');
 
   const section = group => {
     const members = entries.filter(e => e.group === group);
@@ -271,18 +271,18 @@ export async function start(view) {
         h('h2', { id }, icon(group, 'group-icon'), group),
         h('p', { class: 'group-count' }, `${members.length}`),
         para(GROUPS[group].intro, 'group-intro')),
-      h('div', { class: 'bc-grid' }, members.map(e => tile(e, toggle))));
+      h('div', { class: 'pr-grid' }, members.map(e => tile(e, toggle))));
   };
 
   view.replaceChildren(
     h('section', { class: 'hero' },
-      h('h1', {}, 'Bible Characters'),
+      h('h1', {}, 'Prayers of the Bible'),
       h('p', { class: 'lede' },
-        'The people who make up the Bible\'s story, from Adam to the first church: who they were, ' +
-        'what they did, how they are connected, and why they matter. Tap anyone to read their story, ' +
-        'and tap a family member to go to them.'),
+        'The prayers Jesus taught and prayed, and the prayers of the men and women of Scripture: in joy '
+        + 'and in fear, in the morning and at night, for themselves and for others. Read each one, see '
+        + 'what it teaches, and find a way to pray it in your own day. Tap any one to read it.'),
       h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.entries), 'people'),
+        h('li', {}, h('b', {}, t.entries), 'prayers'),
         h('li', {}, h('b', {}, t.old), 'Old Testament'),
         h('li', {}, h('b', {}, t.new), 'New Testament')),
       h('div', { class: 'finder' }, search),

@@ -232,7 +232,8 @@ searchClear.addEventListener("click", () => {
 // reader swipe back through the past week; the rest of the page stays on today.
 document.getElementById("banner-slider").setAttribute("media-base", MEDIA_BASE_URL);
 
-// <daily-strides> loads today's reflection from assets/verses.json itself.
+// <daily-guidance> picks today's Guidance for Life topic from
+// assets/guidance-for-life.json itself. (The day's reflection is under the banner.)
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
 document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);

@@ -8,10 +8,10 @@
         />
         <meta
             name="description"
-            content="The plants and animals of the Bible — what they were used for, why they are in Scripture, who used them, and why they matter."
+            content="The people of the Bible, from Adam to the first church — who they were, what they did, how they are connected, and why they matter."
         />
 
-        <title>Daily Grace — Flora and Fauna</title>
+        <title>Daily Grace — Bible Characters</title>
         <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
         <link
             rel="preload"
@@ -33,12 +33,12 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/flora-fauna-page.css?v=20260926-1"
+            href="../../assets/styles/characters-page.css?v=20260927-1"
         />
     </head>
     <body>
         <div class="topbar">
-            <a class="brand" href="flora-and-fauna.html" aria-label="Flora and Fauna of the Bible">
+            <a class="brand" href="bible-characters.html" aria-label="Bible Characters">
                 <img
                     class="brand-logo"
                     src="../../assets/images/daily-grace-white-480.webp"
@@ -46,7 +46,7 @@
                     width="480"
                     height="160"
                 />
-                <span class="brand-pill">Flora and Fauna</span>
+                <span class="brand-pill">Bible Characters</span>
             </a>
             <a class="home" href="../../index.html" aria-label="Home" title="Home">
                 <svg
@@ -66,20 +66,19 @@
             </a>
         </div>
 
-        <!-- flora-and-fauna.js renders the two sections into this element.
-             A card opens in place below its row; #olive opens the olive. -->
+        <!-- bible-characters.js renders the sections into this element. A card
+             opens in place below its row; #moses opens Moses, and the family
+             links inside an open card move from person to person. -->
         <main id="view">
-            <p class="status">Loading the plants and animals of the Bible…</p>
+            <p class="status">Loading the people of the Bible…</p>
         </main>
 
         <footer class="page-footer">
-            Scripture quotations from the King James Version. Verse counts are
-            the KJV verses that name the plant or animal, in any of the words
-            the KJV uses for it.
+            Scripture quotations from the King James Version.
         </footer>
 
         <script type="module">
-            import { start } from "./scripts/flora-and-fauna.js?v=20260927-9";
+            import { start } from "./scripts/bible-characters.js?v=20260927-9";
             start(document.getElementById("view"));
         </script>
     </body>

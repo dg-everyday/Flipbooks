@@ -8,7 +8,7 @@
  * #david in the URL opens David.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260926-2';
+import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
 
 const DATA = 'assets/heroes-and-villains.json';
 

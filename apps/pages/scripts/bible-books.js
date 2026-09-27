@@ -8,7 +8,7 @@
  * in the URL hash (#genesis), so it can be linked to and survives a reload.
  */
 
-import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20260926-2';
+import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20260927-1';
 
 const DATA = 'assets/bible-books.json';
 const fmt = n => n.toLocaleString('en-US');

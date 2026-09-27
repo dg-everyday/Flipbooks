@@ -1,0 +1,131 @@
+/* Styles for apps/pages/bible-characters.html, on top of study-page.css,
+   which holds the palette, topbar, hero, chips and the in-place .row-panel. */
+
+/* One colour per era; --g colours everything inside. */
+.g-beginning  { --g: #5d4e8c; --g-soft: rgb(93 78 140 / 12%); }
+.g-patriarchs { --g: #a8761a; --g-soft: rgb(168 118 26 / 13%); }
+.g-exodus     { --g: #b5651d; --g-soft: rgb(181 101 29 / 12%); }
+.g-judges     { --g: #2e7d6b; --g-soft: rgb(46 125 107 / 12%); }
+.g-kingdom    { --g: #2f5d8a; --g-soft: rgb(47 93 138 / 12%); }
+.g-divided    { --g: #7a3b69; --g-soft: rgb(122 59 105 / 12%); }
+.g-exile      { --g: #4a5a78; --g-soft: rgb(74 90 120 / 12%); }
+.g-jesus      { --g: #9b2335; --g-soft: rgb(155 35 53 / 11%); }
+.g-church     { --g: #2d6f8f; --g-soft: rgb(45 111 143 / 12%); }
+
+.chip-rows { display: grid; gap: 8px; }
+
+/* ---------------------------------------------------------------- sections */
+
+.group-section { margin-top: 18px; padding-top: 0; overflow: hidden; }
+.group-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 16px;
+  margin: 0 -20px 18px; padding: 16px 20px 14px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
+    linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
+}
+.group-head h2 {
+  display: flex; align-items: center; gap: 10px;
+  font: 400 clamp(1.7rem, 1.4rem + 1.3vw, 2.3rem)/1.05 var(--display);
+}
+.group-icon { display: grid; flex: 0 0 auto; width: 30px; height: 30px; }
+.group-icon svg { width: 100%; height: 100%; }
+.group-count {
+  margin: 0; min-width: 34px; padding: 2px 10px; border-radius: 999px;
+  font-weight: 700; font-size: .9rem; text-align: center;
+  background: rgb(255 255 255 / 18%);
+}
+.group-intro { grid-column: 1 / -1; margin: 6px 0 0; max-width: 75ch; font-size: .96rem; opacity: .95; }
+
+/* ---------------------------------------------------------------- cards */
+
+.bc-grid {
+  position: relative;                 /* tiles' offsetLeft/Top are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.bc-tile {
+  display: flex; align-items: flex-start; gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--g);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.bc-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+/* The person's initial in a ring. */
+.bc-mark {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  color: var(--g); background: var(--g-soft);
+  border: 1.5px solid var(--g);
+  font: 400 1.5rem/1 var(--display);
+}
+.bc-text { display: grid; gap: 1px; min-width: 0; }
+.bc-name { font: 400 1.25rem/1.1 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.bc-epithet { font-size: .88rem; color: var(--ink); }
+.bc-meta { font-size: .74rem; color: var(--muted); margin-top: 2px; }
+
+.bc-tile.is-open { background: var(--g); border-color: var(--g); color: #fff; box-shadow: 0 8px 18px rgb(16 37 59 / 18%); }
+.bc-tile.is-open .bc-name,
+.bc-tile.is-open .bc-epithet,
+.bc-tile.is-open .bc-meta { color: #fff; }
+.bc-tile.is-open .bc-mark { color: var(--g); background: #fff; border-color: #fff; }
+
+/* ---------------------------------------------------------------- open card */
+
+.importance { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); }
+
+.bc-known { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.bc-known li {
+  padding: 3px 11px; border-radius: 999px;
+  font-size: .86rem; font-weight: 600;
+  color: #fff; background: var(--g);
+}
+
+/* Family and connections: the relation above the name; names on the page are links. */
+.bc-family { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.bc-family li {
+  display: grid; gap: 0;
+  padding: 4px 11px 5px; border-radius: 10px;
+  background: #fff; border: 1px solid var(--line);
+}
+.bc-relation { font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.bc-family a { font-weight: 600; color: var(--g); text-decoration: none; }
+.bc-family a:hover { text-decoration: underline; }
+.bc-person { font-weight: 600; color: var(--ink); }
+.bc-family li:has(a) { border-color: color-mix(in srgb, var(--g) 45%, transparent); }
+
+.bc-hero-link { font-weight: 600; color: var(--g); }
+
+.accounts-note { margin: 6px 0 0; font-size: .8rem; color: var(--muted); }
+
+.book-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.book-links a {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: .84rem; font-weight: 600; text-decoration: none;
+  color: var(--navy-2); background: #fff; border: 1px solid var(--line);
+}
+.book-links a:hover { border-color: var(--g); }
+
+.row-panel .verse { border-left-color: var(--g); }
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .group-head { margin: 0 -16px 14px; padding: 14px 16px; }
+  .bc-grid { grid-template-columns: 1fr; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bc-tile { transition: none; }
+  .bc-tile:hover { transform: none; }
+}

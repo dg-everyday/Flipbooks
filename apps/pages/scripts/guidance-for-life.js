@@ -10,7 +10,7 @@
  * opens Forgiveness.
  */
 
-import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20260926-2';
+import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20260927-1';
 
 const DATA = 'assets/guidance-for-life.json';
 

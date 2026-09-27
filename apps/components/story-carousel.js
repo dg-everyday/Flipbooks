@@ -30,6 +30,8 @@
  * Events       storiesload  detail: { stories }
  *
  * The element hides itself when the list is empty or cannot be loaded.
+ * It remembers the story it is on for the tab (sessionStorage) and opens on it
+ * again, so coming back from a flipbook lands on the same card.
  *
  * CSS custom properties
  *   --story-card-width   share of the row the current card takes. Default: 75%
@@ -42,6 +44,10 @@
 
 const DEFAULT_SRC = 'assets/stories.json';
 const DEFAULT_READER = 'apps/pages/stories.html';
+// The story the reader was on, so that coming back from its flipbook (or a
+// reload) opens the row on the same card. sessionStorage, like the page's own
+// scroll position: it lasts for the tab, and a new visit starts at the first.
+const CURRENT_KEY = 'dailygrace:story-carousel';
 // Fewer cards than this and the row is repeated, so one lap is always wider
 // than the viewport and the wrap-around jump never shows.
 const MIN_LAP_CARDS = 6;
@@ -246,6 +252,20 @@ export class StoryCarousel extends HTMLElement {
   #suppressClick = false;
   #audio = null;
   #audioStory = -1;
+  // A flipbook is being opened: its story stays remembered, whatever the row
+  // does as the page goes away, until the reader touches the row again.
+  #pinned = false;
+  // The Back button can bring the page back from the back/forward cache
+  // without rebuilding the row; show the remembered story then too.
+  #onPageShow = (event) => {
+    if (!event.persisted) return;
+    this.#pinned = false;
+    const saved = this.#savedStory();
+    const step = this.#cardStep();
+    if (saved >= 0 && step && saved !== this.#currentStory()) {
+      this.#track.scrollLeft = this.#lapWidth + saved * step;
+    }
+  };
   #resizeObserver = new ResizeObserver(() => this.#measure());
   #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -285,18 +305,28 @@ export class StoryCarousel extends HTMLElement {
     this.#track.addEventListener('click', (event) => {
       const pill = event.target.closest('.pill-audio');
       if (pill) this.#toggleAudio(Number(pill.dataset.story));
+      // Opening a flipbook: remember that story, even if its card was only
+      // peeking in beside the current one.
+      const ear = event.target.closest('.dog-ear');
+      if (ear) this.#remember(Number(ear.dataset.story), { pin: true });
     });
+    // Any new touch, click or key on the row is the reader moving on.
+    for (const type of ['pointerdown', 'keydown']) {
+      this.#track.addEventListener(type, () => { this.#pinned = false; }, true);
+    }
 
     this.#syncHeading();
   }
 
   connectedCallback() {
     this.#resizeObserver.observe(this.#track);
+    addEventListener('pageshow', this.#onPageShow);
     this.#scheduleLoad();
   }
 
   disconnectedCallback() {
     this.#resizeObserver.disconnect();
+    removeEventListener('pageshow', this.#onPageShow);
     clearTimeout(this.#scrollTimer);
     this.#stopAudio();
   }
@@ -378,7 +408,7 @@ export class StoryCarousel extends HTMLElement {
       <li class="item"${isCopy ? ' aria-hidden="true"' : ''}>
         <div class="cover-wrap">
           <img class="cover" src="${escapeHtml(story.cover_page)}" alt="" loading="lazy" decoding="async" draggable="false" />
-          <a class="dog-ear" href="${escapeHtml(reader.href)}" draggable="false" aria-label="Open the ${title} flipbook" title="Open the flipbook"${tabindex}></a>
+          <a class="dog-ear" href="${escapeHtml(reader.href)}" data-story="${index}" draggable="false" aria-label="Open the ${title} flipbook" title="Open the flipbook"${tabindex}></a>
         </div>
         <p class="text"><span class="title">${title}</span>${description ? ` - ${description}` : ''}</p>${pills ? `
         <div class="pills">${pills}</div>` : ''}
@@ -408,7 +438,25 @@ export class StoryCarousel extends HTMLElement {
     }
     this.#track.innerHTML = html.join('');
     this.#measure();
-    this.#track.scrollLeft = this.#lapWidth;
+    // Start on the story the reader was on last, in the middle lap, or on the first.
+    const saved = this.#savedStory();
+    this.#track.scrollLeft = this.#lapWidth + Math.max(saved, 0) * this.#cardStep();
+  }
+
+  /** Keep the story's id for the tab; storage can be refused, which only loses the memory. */
+  #remember(index, { pin = false } = {}) {
+    if (this.#pinned && !pin) return;
+    const id = this.#stories[index]?.id;
+    if (!id) return;
+    if (pin) this.#pinned = true;
+    try { sessionStorage.setItem(CURRENT_KEY, id); } catch { /* private browsing */ }
+  }
+
+  /** The index of the remembered story in the current list, or -1. */
+  #savedStory() {
+    let id = null;
+    try { id = sessionStorage.getItem(CURRENT_KEY); } catch { /* private browsing */ }
+    return id ? this.#stories.findIndex((story) => story.id === id) : -1;
   }
 
   #measure() {
@@ -456,6 +504,7 @@ export class StoryCarousel extends HTMLElement {
       this.#track.classList.remove('dragging');
     }
     this.#wrap();
+    this.#remember(this.#currentStory());
     // Moving on to another story stops the one playing.
     if (this.#audioStory >= 0 && this.#currentStory() !== this.#audioStory) this.#stopAudio();
   }

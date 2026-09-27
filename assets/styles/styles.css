@@ -1228,7 +1228,8 @@ html:has(.menu-dialog[open]) { overflow: hidden; }
   flex-direction: column;
   padding: 14px 12px calc(18px + env(safe-area-inset-bottom));
 }
-.menu-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+/* Items sit close, so the list reads as one menu; each stays a comfortable tap target. */
+.menu-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
 /* Help and About sit at the foot of the drawer, under a rule. */
 .menu-foot {
   margin-top: auto;
@@ -1241,7 +1242,7 @@ html:has(.menu-dialog[open]) { overflow: hidden; }
   align-items: flex-start;
   gap: 14px;
   width: 100%;
-  padding: 10px 12px;
+  padding: 7px 12px;
   border: 0;
   border-radius: 12px;
   background: transparent;

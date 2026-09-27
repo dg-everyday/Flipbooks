@@ -4,44 +4,43 @@
     "pages": [
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/images/coverpages/2027/2027-WEEK2.webp",
-            "caption": "King Nebuchadnezzar raises a golden statue and commands everyone to bow before it.",
-            "audio": "assets/audio/correct.webm"
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/00.webp",
+            "caption": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean."
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/images/sources/december/December 8, 2026 - Comic.webp",
-            "caption": "Shadrach, Meshach and Abednego refuse to bow to anyone but God."
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/01.webp",
+            "caption": "Ruth Gleans in the Fields, and Boaz Notices Her Kindness."
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/images/sources/december/December 9, 2026 - Comic.webp",
-            "caption": "The king orders the furnace heated seven times hotter than usual."
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/02.webp",
+            "caption": "Boaz Shows Favor to Ruth, and She Finds Security in His Fields."
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/images/sources/december/December 10, 2026 - Comic.webp",
-            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/03.webp",
+            "caption": "Ruth Returns to Naomi with a Full Harvest, and Their Hope is Renewed."
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/images/sources/december/December 11, 2026 - Comic.webp",
-            "caption": "They step out untouched, and the king praises the God who rescued them."
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/04.webp",
+            "caption": "Boaz Provides for Ruth and Naomi, and Their Future Looks Bright."
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/images/sources/december/December 12, 2026 - Comic.webp",
-            "caption": "In the flames a fourth figure walks with them, and they are unharmed."
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/05.webp",
+            "caption": "Ruth and Boaz's Relationship Grows, and God's Providence is Evident."
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/images/sources/december/December 13, 2026 - Comic.webp",
-            "caption": "They step out untouched, and the king praises the God who rescued them."
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/06.webp",
+            "caption": "Ruth Marries Boaz, and Naomi's Family is Restored."
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/images/sources/december/December 14, 2026 - Comic.webp",
-            "caption": "They step out untouched, and the king praises the God who rescued them."
+            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/07.webp",
+            "caption": "The Story of Ruth Concludes with Redemption and God's Faithfulness."
         }
     ]
 }

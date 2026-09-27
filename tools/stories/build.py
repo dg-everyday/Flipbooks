@@ -11,6 +11,9 @@ goes to stories/<slug>/ (git-ignored):
     book        <slug>.pdf                story, characters, comic script, fidelity check
     script      <slug>-script.pdf         the artist's script with per-panel image prompts
     prompts     <slug>-image-prompts.pdf  one document for a multi-page comic generator
+
+The script and the image prompts letter the panels in modern English, without verse references,
+from tools/stories/modern/<slug>.py (see lib/modern.py); the book keeps the King James text.
     cover       <slug>-cover-prompt.pdf   one cover image, title as its only text
     storybook   <slug>-storybook.pdf      the story text set as an A4 reader's book
 
@@ -26,6 +29,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))
 CONTENT = os.path.join(HERE, "content")
 sys.path.insert(0, os.path.join(HERE, "lib"))
+sys.dont_write_bytecode = True   # don't leave __pycache__ in content/, lib/ or modern/
 
 TARGETS = ("book", "script", "prompts", "cover", "storybook")
 
@@ -51,6 +55,7 @@ def build(slug, only):
     import make_cover_pdf
     import make_prompt_pdf
     import make_reader_pdf
+    import modern
     from cast import CAST
     from covers import COVERS
 
@@ -62,11 +67,14 @@ def build(slug, only):
         if t == "book":
             bookgen.build(C, "book", name(".pdf"))
         elif t == "script":
-            bookgen.build(C, "script", name("-script.pdf"))
+            # The artist's script and the image prompts letter the panels in modern English
+            # (lib/modern.py); the study book keeps the King James text.
+            bookgen.build(modern.apply(C, slug), "script", name("-script.pdf"))
         elif t in ("prompts", "cover") and slug not in CAST:
             print("skipped %s: no character sheet for %r in lib/cast.py" % (t, slug))
         elif t == "prompts":
-            make_prompt_pdf.build(C, slug, name("-image-prompts.pdf"))
+            make_prompt_pdf.build(modern.apply(C, slug, quiet="script" in only), slug,
+                                  name("-image-prompts.pdf"))
         elif t == "cover" and slug not in COVERS:
             print("skipped cover: no cover concept for %r in lib/covers.py" % slug)
         elif t == "cover":

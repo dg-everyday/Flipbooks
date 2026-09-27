@@ -15,8 +15,8 @@ python tools/stories/check.py --all && python tools/stories/build.py --all
 | Output | What it is |
 | --- | --- |
 | `<slug>.pdf` | story, characters, comic script (six panels a page), scripture fidelity check |
-| `<slug>-script.pdf` | the artist's script: how-to-read, cast, page breakdown, script pages, style bible, one prompt per panel |
-| `<slug>-image-prompts.pdf` | one document for a multi-page comic generator: instructions, art direction, fixed character looks, every panel with its lettering |
+| `<slug>-script.pdf` | the artist's script: how-to-read, cast, page breakdown, script pages, style bible, one prompt per panel; lettered in modern English |
+| `<slug>-image-prompts.pdf` | one document for a multi-page comic generator: instructions, art direction, fixed character looks, every panel with its lettering in modern English |
 | `<slug>-cover-prompt.pdf` | one 9:16 cover image whose only text is the title |
 | `<slug>-storybook.pdf` | the story text set as an A4 reader's book on the site's end paper |
 | `<slug>-speech.txt` | the story as the author tells it aloud to an audience; plain text, written by hand from `NARRATIVE` |
@@ -34,12 +34,14 @@ tools/stories/
   check_speech.py       checks a speech's quotations against the KJV and flags time-of-day words
   chunk_speech.py       splits each speech into parts of about four minutes read aloud (140 wpm)
   content/<slug>.py     one story: the text, characters, pages, fidelity notes, style bible
+  modern/<slug>.py      the comic lettering in modern English, for the artist's script and image prompts
   lib/bookgen.py        <slug>.pdf and <slug>-script.pdf
   lib/make_prompt_pdf.py    <slug>-image-prompts.pdf
   lib/make_cover_pdf.py     <slug>-cover-prompt.pdf
   lib/make_reader_pdf.py    <slug>-storybook.pdf
   lib/cast.py           fixed character looks per story (image prompts and cover)
   lib/covers.py         one cover concept per story
+  lib/modern.py         swaps in modern/<slug>.py and strips verse references for the artist's documents
   assets/end-paper-tile.png   assets/images/end-paper.svg rendered by Chrome at 4x
 ```
 
@@ -74,6 +76,31 @@ NO LETTERING.
 
 Add the story to `lib/cast.py` (`CAST[slug]`) and `lib/covers.py` (`COVERS[slug]`) for the image and
 cover prompts; `build.py` skips those two outputs if either is missing.
+
+## Modern-English lettering for the comic artist
+
+The content file letters the comic in the King James Version, with a verse reference after each
+quotation, and that is what the study book (`<slug>.pdf`), `check.py` and the fidelity check use. The
+two documents that go to the comic artist, `<slug>-script.pdf` and `<slug>-image-prompts.pdf`, letter
+the same panels in plain modern English with no verse references, from `modern/<slug>.py`:
+
+```python
+MODERN = {
+    "“Father, give me the portion of goods that falleth to me.”":
+        "“Father, give me the share of the property that will come to me.”",
+    "<i>Garnished</i>: adorned.":
+        "",                                   # empty: drop the line (a gloss the modern text no longer needs)
+}
+```
+
+Each key is one lettering line as the content file has it, less its speaker label and verse reference
+(HTML entities written as the characters). The label is kept; only the words change. Render closely
+from the KJV and add nothing. Where a narration caption comments on a word ("<i>Serve.</i>", "Note the
+word"), keep that word in the modern line, or change the caption to match. The build stops and lists
+any line that still reads as King James English (a quotation, or a word such as "thou" or "unto")
+with no modern version, and warns about modern lines that match nothing, which means the content file
+changed. `lib/modern.py` also replaces the artist's-script "How to read" item about verse numbers in
+brackets. The storybook, speech and cover are not affected.
 
 ## Requirements
 

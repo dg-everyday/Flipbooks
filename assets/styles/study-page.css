@@ -44,7 +44,8 @@ body {
   min-height: 100vh;
   font-family: var(--body);
   font-size: 16px;
-  line-height: 1.6;
+  /* Tight enough that a paragraph reads as one block, loose enough to read. */
+  line-height: 1.35;
   color: var(--ink);
   background:
     radial-gradient(circle at 15% 0%, rgb(255 255 255 / 60%), transparent 32%),
@@ -195,7 +196,7 @@ main {
 }
 .verse blockquote {
   margin: 0;
-  font: 400 1.12rem/1.55 var(--body);
+  font: 400 1.12rem/1.4 var(--body);
   color: var(--ink);
 }
 .verse figcaption {
@@ -278,7 +279,7 @@ main {
 .christ { padding: 10px 14px; border-radius: 10px; background: rgb(198 146 46 / 9%); border-left: 3px solid var(--gold); }
 
 .row-panel .detail-side .facts { margin: 0; }
-.facts .note { display: block; margin-top: 4px; font-size: .8rem; line-height: 1.45; color: var(--muted); }
+.facts .note { display: block; margin-top: 4px; font-size: .8rem; line-height: 1.3; color: var(--muted); }
 
 .key-people { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .key-people li { padding: 3px 10px; border-radius: 999px; font-size: .84rem; background: #fff; border: 1px solid var(--line); }

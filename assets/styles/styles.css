@@ -1256,7 +1256,8 @@ html:has(.menu-dialog[open]) { overflow: hidden; }
 .menu-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
 .menu-text { display: grid; gap: 2px; min-width: 0; }
 .menu-text strong { font-size: 1rem; font-weight: 700; }
-.menu-text small { color: rgb(16 37 59 / 72%); font-size: .8125rem; line-height: 1.35; }
+/* Tight leading, so a description that wraps to two or three lines reads as one block. */
+.menu-text small { color: rgb(16 37 59 / 72%); font-size: .8125rem; line-height: 1.15; }
 @media (prefers-reduced-motion: reduce) {
   .menu-item { transition: none; }
 }

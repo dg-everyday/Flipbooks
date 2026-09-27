@@ -24,6 +24,14 @@
         "story-book": "https://dailygrace.faith/media/stories/and-ruth-with-her/and-ruth-with-her-storybook.pdf"
     },
     {
+        "id": "forbid-them-not",
+        "cover_page": "https://dailygrace.faith/media/stories/forbid-them-not/00.webp",
+        "title": "Let the Children Come",
+        "description": "Jesus, His Disciples, and the Young Children Brought to Him.",
+        "audio": "https://dailygrace.faith/media/stories/forbid-them-not/forbid-them-not.webm",
+        "story-book": "https://dailygrace.faith/media/stories/forbid-them-not/forbid-them-not-storybook.pdf"
+    },
+    {
         "id": "into-his-hand",
         "cover_page": "../assets/images/staytuned.webp",
         "title": "Trusted, Framed, and Trusted Again",

@@ -1,21 +1,24 @@
-"""Build assets/songs-in-the-bible.json for apps/pages/songs-in-the-bible.html.
+"""Build assets/poems-songs-and-wisdom.json for apps/pages/poems-songs-and-wisdom.html.
 
-The hand-written entries live in tools/songs/content/history.py, psalms.py
-and gospel.py. This script:
+The hand-written entries live in tools/poetry/content/: poems.py (poems of the
+prophets and of the New Testament), history.py, psalms.py and gospel.py (the
+songs), and wisdom.py (Proverbs, Job and Ecclesiastes, and the wisdom of Jesus
+and the apostles). This script:
 
   * gives each entry an id (from its name) and checks ids are unique,
-  * checks `group` and `testament`, and that `by` / `with` hero ids point at
+  * checks `group` and `testament`, sets `kind` (Poems, Songs or Wisdom) from
+    the group, and checks that `by` / `with` hero ids point at
     heroes-and-villains entries,
-  * checks every scripture reference (told_in, also_in, sung, key_verses),
-  * fills `sung` with the song's own words, one line per verse, and
+  * checks every scripture reference (told_in, also_in, words, key_verses),
+  * fills `words` with the passage's own words, one line per verse, and
     key_verses[].text with the exact KJV wording,
   * refuses verse text the database has damaged (a broken apostrophe, or the
     next psalm's heading run on to the end of a verse), so none is shown,
   * checks every 'single-quoted' phrase is verbatim KJV (tools/kjv_quotes.py),
-  * lists the books each song is told in, for links to bible-books.html,
-  * writes assets/songs-in-the-bible.json.
+  * lists the books each entry is told in, for links to bible-books.html,
+  * writes assets/poems-songs-and-wisdom.json.
 
-Run from the repo root:  python tools/songs/build_songs.py
+Run from the repo root:  python tools/poetry/build_poetry.py
 Exits non-zero if anything does not resolve.
 """
 import json
@@ -32,22 +35,38 @@ sys.path.insert(0, str(HERE))
 
 from build_people import Bible, DB, REF  # noqa: E402  (reuse the verse resolver)
 from kjv_quotes import Quotes  # noqa: E402
+from content.poems import POEMS  # noqa: E402
 from content.history import HISTORY  # noqa: E402
 from content.psalms import PSALMS  # noqa: E402
 from content.gospel import GOSPEL  # noqa: E402
+from content.wisdom import WISDOM  # noqa: E402
 
-OUT = ROOT / "assets" / "songs-in-the-bible.json"
+OUT = ROOT / "assets" / "poems-songs-and-wisdom.json"
 HEROES = ROOT / "assets" / "heroes-and-villains.json"
 
-GROUPS = [
-    "Songs of victory",
-    "Worship and thanksgiving",
-    "Laments",
-    "Psalms and songs of wisdom",
-    "Songs of the prophets",
-    "Songs of the coming King",
-    "Songs of the church and of heaven",
-]
+# The three kinds, in the order of the page's title, and the groups in each.
+KINDS = {
+    "Poems": [
+        "Poems of the prophets",
+        "Poems of the New Testament",
+    ],
+    "Songs": [
+        "Songs of victory",
+        "Worship and thanksgiving",
+        "Laments",
+        "Psalms and songs of Solomon",
+        "Songs of the prophets",
+        "Songs of the coming King",
+        "Songs of the church and of heaven",
+    ],
+    "Wisdom": [
+        "Proverbs for every day",
+        "Wisdom for hard questions",
+        "Wisdom of Jesus and the apostles",
+    ],
+}
+GROUPS = [group for groups in KINDS.values() for group in groups]
+KIND_OF = {group: kind for kind, groups in KINDS.items() for group in groups}
 TESTAMENTS = {"Old", "New"}
 # The database has some verses with a mangled apostrophe, and some last verses
 # of a psalm with the next psalm's title run on ("…for ever.    Psalm 24  A Psalm
@@ -84,7 +103,8 @@ def main():
                 errors.append(f"{where} {ref}: the database text is damaged ({line[:60]}…); pick another verse")
         return found
 
-    entries = [{"id": item.get("id") or slug(item["name"]), **item} for item in HISTORY + PSALMS + GOSPEL]
+    entries = [{"id": item.get("id") or slug(item["name"]), **item}
+               for item in POEMS + HISTORY + PSALMS + GOSPEL + WISDOM]
 
     ids = [e["id"] for e in entries]
     for i in set(ids):
@@ -95,6 +115,7 @@ def main():
         where = e["name"]
         if e.get("group") not in GROUPS:
             errors.append(f"{where}: group {e.get('group')!r} is not one of {GROUPS}")
+        e["kind"] = KIND_OF.get(e.get("group"))
         if e.get("testament") not in TESTAMENTS:
             errors.append(f"{where}: testament must be Old or New")
         for person in e.get("by", []) + e.get("with", []):
@@ -114,12 +135,12 @@ def main():
         e["accounts"] = accounts
         e["books"] = [{"name": b, "id": slug(b)} for b in books]
 
-        sung = []
-        for ref in e.get("sung", []):
-            found = lines(ref, f"{where} sung")
+        said = []
+        for ref in e.get("words", []):
+            found = lines(ref, f"{where} words")
             if found:
-                sung.append({"reference": ref, "lines": found})
-        e["sung"] = sung
+                said.append({"reference": ref, "lines": found})
+        e["words"] = said
 
         kvs = []
         for ref in e.get("key_verses", []):
@@ -128,22 +149,27 @@ def main():
                 kvs.append({"reference": ref, "text": " ".join(found)})
         e["key_verses"] = kvs
 
+    # Sorted by group, in page order; within a group the content files' order stands.
     entries.sort(key=lambda e: GROUPS.index(e["group"]) if e["group"] in GROUPS else 99)
     doc = {
         "totals": {
             "entries": len(entries),
             "old": sum(1 for e in entries if e["testament"] == "Old"),
             "new": sum(1 for e in entries if e["testament"] == "New"),
+            "kinds": {k: sum(1 for e in entries if e["kind"] == k) for k in KINDS},
             "groups": {g: sum(1 for e in entries if e["group"] == g) for g in GROUPS},
         },
+        "kinds": [{"name": k, "groups": groups} for k, groups in KINDS.items()],
         "groups": GROUPS,
         "entries": entries,
     }
     OUT.write_text(json.dumps(doc, indent=4, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(f"{len(entries)} entries written to {OUT.relative_to(ROOT)}.")
-    for g, n in doc["totals"]["groups"].items():
-        print(f"  {g:<36} {n}")
+    for kind, groups in KINDS.items():
+        print(f"{kind} ({doc['totals']['kinds'][kind]})")
+        for g in groups:
+            print(f"  {g:<36} {doc['totals']['groups'][g]}")
     if errors:
         print(f"{len(errors)} problem(s):")
         for err in errors:

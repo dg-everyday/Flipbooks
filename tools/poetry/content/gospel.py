@@ -16,7 +16,7 @@ GOSPEL = [
         "where": "A city in the hill country of Judah",
         "told_in": "Luke 1:39-56",
         "also_in": ["1 Samuel 2:1-10"],
-        "sung": ["Luke 1:46-49", "Luke 1:52-53"],
+        "words": ["Luke 1:46-49", "Luke 1:52-53"],
         "summary": "Expecting Jesus, Mary visited her cousin Elisabeth and sang of the God who lifts up the humble and fills the hungry.",
         "story": (
             "After Gabriel's visit, Mary hurried to the hill country to see Elisabeth, who was "
@@ -44,7 +44,7 @@ GOSPEL = [
         "where": "The hill country of Judaea",
         "told_in": "Luke 1:57-80",
         "also_in": ["Luke 1:5-25", "Malachi 4:2"],
-        "sung": ["Luke 1:68-69", "Luke 1:78-79"],
+        "words": ["Luke 1:68-69", "Luke 1:78-79"],
         "summary": "Struck dumb for doubting the angel, Zacharias got his voice back at his son's naming, and used it to sing of the salvation his son would announce.",
         "story": (
             "When Gabriel promised the old priest a son, Zacharias doubted, and could not speak "
@@ -73,7 +73,7 @@ GOSPEL = [
         "where": "The fields near Bethlehem, at night",
         "told_in": "Luke 2:8-20",
         "also_in": ["Job 38:4-7"],
-        "sung": ["Luke 2:13-14"],
+        "words": ["Luke 2:13-14"],
         "summary": "The night Jesus was born, one angel told shepherds the news, and then a whole army of angels appeared praising God.",
         "story": (
             "Shepherds were keeping watch over their flock by night when the angel of the Lord "
@@ -101,7 +101,7 @@ GOSPEL = [
         "where": "The temple in Jerusalem",
         "told_in": "Luke 2:25-35",
         "also_in": ["Luke 2:36-38", "Isaiah 49:6"],
-        "sung": ["Luke 2:29-32"],
+        "words": ["Luke 2:29-32"],
         "summary": "An old man who had been promised he would not die before seeing the Christ took the baby Jesus in his arms and sang that he could now die in peace.",
         "story": (
             "Simeon was 'just and devout, waiting for the consolation of Israel', and the Holy "
@@ -128,7 +128,7 @@ GOSPEL = [
         "where": "The road down the mount of Olives, and the temple",
         "told_in": "Matthew 21:1-17",
         "also_in": ["John 12:12-19", "Psalms 118:25-26", "Psalms 8:1-2"],
-        "sung": ["Matthew 21:9"],
+        "words": ["Matthew 21:9"],
         "summary": "As Jesus rode into Jerusalem, the crowds sang words from Psalm 118, and children took up the cry of “Hosanna” in the temple.",
         "story": (
             "The crowds coming for the Passover spread their clothes and cut branches for the road, "
@@ -184,7 +184,7 @@ GOSPEL = [
         "where": "A letter from prison to Philippi",
         "told_in": "Philippians 2:5-11",
         "also_in": ["Isaiah 45:22-23"],
-        "sung": ["Philippians 2:6-11"],
+        "words": ["Philippians 2:6-11"],
         "summary": "Many scholars think these verses were an early Christian hymn: Christ came down from equality with God to death on a cross, and God raised him to the highest place.",
         "story": (
             "Paul was urging a quarrelling church to be humble: 'Let this mind be in you, which was "
@@ -212,7 +212,7 @@ GOSPEL = [
         "where": "A letter to Timothy at Ephesus",
         "told_in": "1 Timothy 3:14-16",
         "also_in": ["John 1:14"],
-        "sung": ["1 Timothy 3:16"],
+        "words": ["1 Timothy 3:16"],
         "summary": "In six short lines, probably from an early hymn or creed, Paul sums up the whole story of Christ from his coming to his ascension.",
         "story": (
             "Paul wrote so that Timothy would know how to behave 'in the house of God, which is "
@@ -238,7 +238,7 @@ GOSPEL = [
         "where": "Heaven, in the vision John was given on Patmos",
         "told_in": "Revelation 4:1-11",
         "also_in": ["Isaiah 6:1-4"],
-        "sung": ["Revelation 4:8", "Revelation 4:11"],
+        "words": ["Revelation 4:8", "Revelation 4:11"],
         "summary": "Around God's throne the living creatures never stop singing 'Holy, holy, holy', and the elders cast their crowns before the throne and worship the Creator.",
         "story": (
             "A door opened in heaven, and John saw a throne with a rainbow like an emerald around "
@@ -265,7 +265,7 @@ GOSPEL = [
         "where": "Heaven, in John's vision",
         "told_in": "Revelation 5:1-14",
         "also_in": ["Psalms 96:1", "Isaiah 53:7"],
-        "sung": ["Revelation 5:9-10", "Revelation 5:12"],
+        "words": ["Revelation 5:9-10", "Revelation 5:12"],
         "summary": "When no one could open God's sealed book, a Lamb that had been slain took it, and all heaven broke into a new song.",
         "story": (
             "John wept because no one was worthy to open the sealed book. An elder told him, 'Weep "
@@ -293,7 +293,7 @@ GOSPEL = [
         "where": "Heaven, beside a sea of glass mingled with fire",
         "told_in": "Revelation 15:1-4",
         "also_in": ["Exodus 15:1-18", "Deuteronomy 32:3-4"],
-        "sung": ["Revelation 15:3-4"],
+        "words": ["Revelation 15:3-4"],
         "summary": "Beside a sea of glass mingled with fire, those who overcame sing a song that joins Moses' song at the Red Sea with the song of the Lamb.",
         "story": (
             "John saw 'as it were a sea of glass mingled with fire', and standing on it, holding "
@@ -319,7 +319,7 @@ GOSPEL = [
         "where": "Heaven, in John's vision",
         "told_in": "Revelation 19:1-9",
         "also_in": ["Psalms 150:1-6"],
-        "sung": ["Revelation 19:1", "Revelation 19:6-7"],
+        "words": ["Revelation 19:1", "Revelation 19:6-7"],
         "summary": "The only place in the New Testament where Alleluia is sung: a vast choir in heaven praises God because he reigns and the marriage of the Lamb has come.",
         "story": (
             "After the fall of Babylon, John heard 'a great voice of much people in heaven, saying, "

@@ -8,10 +8,10 @@
         />
         <meta
             name="description"
-            content="The miracles, healings, raisings from the dead, casting out of demons, the magic and sorcery, and the prophecies of the Bible — what happened, why it matters, and what it teaches."
+            content="The poems, songs and wisdom of the Bible — the poems of the prophets and apostles, songs from the Red Sea to heaven, the best-loved psalms, and the wisdom of Proverbs, Job, Ecclesiastes and Jesus: the words, the story behind them, and what they mean for daily life."
         />
 
-        <title>Daily Grace — Supernaturals and Prophecies</title>
+        <title>Daily Grace — Poems, Songs and Wisdom</title>
         <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
         <link
             rel="preload"
@@ -33,12 +33,12 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/supernaturals-page.css?v=20260929-1"
+            href="../../assets/styles/poems-songs-page.css?v=20260929-1"
         />
     </head>
     <body>
         <div class="topbar">
-            <a class="brand" href="supernaturals.html" aria-label="Supernaturals and Prophecies of the Bible">
+            <a class="brand" href="poems-songs-and-wisdom.html" aria-label="Poems, Songs and Wisdom">
                 <img
                     class="brand-logo"
                     src="../../assets/images/daily-grace-white-480.webp"
@@ -46,7 +46,7 @@
                     width="480"
                     height="160"
                 />
-                <span class="brand-pill">Supernaturals and Prophecies</span>
+                <span class="brand-pill">Poems, Songs and Wisdom</span>
             </a>
             <a class="home" href="../../index.html" aria-label="Home" title="Home">
                 <svg
@@ -66,20 +66,19 @@
             </a>
         </div>
 
-        <!-- supernaturals.js renders the sections into this element. A card
-             opens in place below its row; #lazarus-raised opens Lazarus. -->
+        <!-- poems-songs-and-wisdom.js renders the sections into this element.
+             A card opens in place below its row; #the-lord-is-my-shepherd
+             opens Psalm 23. -->
         <main id="view">
-            <p class="status">Loading the miracles, wonders and prophecies of the Bible…</p>
+            <p class="status">Loading the poems, songs and wisdom of the Bible…</p>
         </main>
 
         <footer class="page-footer">
-            Scripture quotations from the King James Version. Magic and sorcery
-            are described as the Bible reports and judges them, never as
-            practices to follow.
+            Scripture quotations from the King James Version.
         </footer>
 
         <script type="module">
-            import { start } from "./scripts/supernaturals.js?v=20260929-1";
+            import { start } from "./scripts/poems-songs-and-wisdom.js?v=20260929-1";
             start(document.getElementById("view"));
         </script>
     </body>

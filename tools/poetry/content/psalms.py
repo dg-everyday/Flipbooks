@@ -1,4 +1,4 @@
-"""Psalms and songs of wisdom, and songs of the prophets.
+"""Songs: psalms and the songs of Solomon, and songs of the prophets.
 
 Same fields as history.py.
 """
@@ -7,7 +7,7 @@ PSALMS = [
     # ------------------------------------------------------------------ psalms and songs of wisdom
     {
         "name": "The two ways",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "Blessed is the man",
         "by_label": "Written by",
@@ -16,7 +16,7 @@ PSALMS = [
         "where": "Psalm 1, Israel's songbook",
         "told_in": "Psalms 1:1-6",
         "also_in": ["Jeremiah 17:7-8"],
-        "sung": ["Psalms 1:1-3"],
+        "words": ["Psalms 1:1-3"],
         "summary": "The first psalm opens Israel's songbook with two roads: the blessed person rooted in God's word like a tree, and the ungodly blown away like chaff.",
         "story": (
             "The Psalms are 150 songs and prayers, gathered over about a thousand years into five "
@@ -32,7 +32,7 @@ PSALMS = [
     },
     {
         "name": "The LORD is my shepherd",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "I shall not want",
         "by_label": "Written by",
@@ -41,7 +41,7 @@ PSALMS = [
         "where": "Psalm 23",
         "told_in": "Psalms 23:1-6",
         "also_in": ["John 10:11-14", "1 Peter 2:25", "Revelation 7:17"],
-        "sung": ["Psalms 23:1-2", "Psalms 23:4"],
+        "words": ["Psalms 23:1-2", "Psalms 23:4"],
         "summary": "The best-loved psalm of all: David, once a shepherd boy, sings of the LORD as his shepherd, through green pastures and the darkest valley to the house of the LORD.",
         "story": (
             "David had kept his father's sheep, fighting off a lion and a bear (1 Samuel "
@@ -58,7 +58,7 @@ PSALMS = [
     },
     {
         "name": "God is our refuge",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "A very present help in trouble",
         "by_label": "Written by",
@@ -66,7 +66,7 @@ PSALMS = [
         "occasion": "Trust in God when the world is shaking",
         "where": "Psalm 46",
         "told_in": "Psalms 46:1-11",
-        "sung": ["Psalms 46:1-2", "Psalms 46:10"],
+        "words": ["Psalms 46:1-2", "Psalms 46:10"],
         "summary": "Though the earth shakes and the nations rage, the city of God stands, because God is in the midst of her: 'Be still, and know that I am God'.",
         "story": (
             "The psalm pictures the worst: mountains falling into the sea, waters roaring, nations "
@@ -82,7 +82,7 @@ PSALMS = [
     },
     {
         "name": "Create in me a clean heart",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "Have mercy upon me, O God",
         "by_label": "Written by",
@@ -92,7 +92,7 @@ PSALMS = [
         "where": "Psalm 51, written in Jerusalem",
         "told_in": "Psalms 51:1-19",
         "also_in": ["2 Samuel 12:1-13"],
-        "sung": ["Psalms 51:1-2", "Psalms 51:10-12"],
+        "words": ["Psalms 51:1-2", "Psalms 51:10-12"],
         "summary": "David's prayer of repentance after he took Bathsheba and had her husband killed, written when the prophet Nathan confronted him.",
         "story": (
             "David took Bathsheba, then arranged for her husband Uriah to die in battle. The prophet "
@@ -110,7 +110,7 @@ PSALMS = [
     },
     {
         "name": "Teach us to number our days",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "LORD, thou hast been our dwelling place",
         "by_label": "Written by",
@@ -119,7 +119,7 @@ PSALMS = [
         "where": "Psalm 90",
         "told_in": "Psalms 90:1-17",
         "also_in": ["2 Peter 3:8"],
-        "sung": ["Psalms 90:1-2", "Psalms 90:12"],
+        "words": ["Psalms 90:1-2", "Psalms 90:12"],
         "summary": "Headed “A Prayer of Moses the man of God”, this psalm sets our short lives against God's eternity and asks for wisdom to use our days well.",
         "story": (
             "Moses had watched a whole generation die in the wilderness. He sings of a God who was "
@@ -136,7 +136,7 @@ PSALMS = [
     },
     {
         "name": "Under his wings",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "He that dwelleth in the secret place of the most High",
         "by_label": "Written by",
@@ -146,7 +146,7 @@ PSALMS = [
         "where": "Psalm 91",
         "told_in": "Psalms 91:1-16",
         "also_in": ["Matthew 4:5-7", "Luke 4:9-12"],
-        "sung": ["Psalms 91:1-2", "Psalms 91:4"],
+        "words": ["Psalms 91:1-2", "Psalms 91:4"],
         "summary": "A song of shelter: whoever lives close to God is covered by his feathers, safe from the terror by night and the arrow by day.",
         "story": (
             "The psalm moves from the singer's trust, 'I will say of the LORD, He is my refuge', to "
@@ -163,7 +163,7 @@ PSALMS = [
     },
     {
         "name": "Make a joyful noise",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "Serve the LORD with gladness",
         "by_label": "Written by",
@@ -171,7 +171,7 @@ PSALMS = [
         "occasion": "A call to come into God's courts with thanks",
         "where": "Psalm 100",
         "told_in": "Psalms 100:1-5",
-        "sung": ["Psalms 100:1-4"],
+        "words": ["Psalms 100:1-4"],
         "summary": "Five verses calling all lands into God's presence with singing, because he made us and we are his sheep.",
         "story": (
             "Every line is an invitation: make a joyful noise, serve with gladness, come with "
@@ -187,7 +187,7 @@ PSALMS = [
     },
     {
         "name": "Thy word is a lamp",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "A lamp unto my feet, and a light unto my path",
         "by_label": "Written by",
@@ -195,7 +195,7 @@ PSALMS = [
         "occasion": "A long love song to God's word",
         "where": "Psalm 119",
         "told_in": "Psalms 119:1-176",
-        "sung": ["Psalms 119:11", "Psalms 119:105"],
+        "words": ["Psalms 119:11", "Psalms 119:105"],
         "summary": "The longest chapter in the Bible: 176 verses in 22 stanzas, one for each letter of the Hebrew alphabet, and almost every verse about God's word.",
         "story": (
             "Each stanza has eight verses, and every verse in a stanza begins with the same Hebrew "
@@ -213,7 +213,7 @@ PSALMS = [
     },
     {
         "name": "I will lift up mine eyes",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "From whence cometh my help",
         "by": [{"name": "Pilgrims going up to Jerusalem"}],
@@ -221,7 +221,7 @@ PSALMS = [
         "where": "Psalm 121, one of the Songs of degrees",
         "told_in": "Psalms 121:1-8",
         "also_in": ["Psalms 120:1-7", "Psalms 134:1-3"],
-        "sung": ["Psalms 121:1-3"],
+        "words": ["Psalms 121:1-3"],
         "summary": "One of fifteen Songs of degrees (Psalms 120 to 134), sung by pilgrims climbing to Jerusalem, it promises that the LORD who made heaven and earth never sleeps.",
         "story": (
             "Three times a year Israelites went up to Jerusalem for the feasts, and the road "
@@ -239,7 +239,7 @@ PSALMS = [
     },
     {
         "name": "Let every thing that hath breath",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "Praise ye the LORD",
         "by_label": "Written by",
@@ -248,7 +248,7 @@ PSALMS = [
         "where": "Psalm 150",
         "told_in": "Psalms 150:1-6",
         "also_in": ["Revelation 19:1-6"],
-        "sung": ["Psalms 150:3-6"],
+        "words": ["Psalms 150:3-6"],
         "summary": "The last psalm is pure praise: every instrument, every place and every living thing called to praise the LORD.",
         "story": (
             "The Psalms have travelled through tears, anger, confession and fear. They end with no "
@@ -265,7 +265,7 @@ PSALMS = [
     },
     {
         "name": "The Song of Songs",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "Love is strong as death",
         "by_label": "Written by",
@@ -275,7 +275,7 @@ PSALMS = [
         "where": "Vineyards, gardens and the hills of Israel",
         "told_in": "Song of Solomon 2:8-17",
         "also_in": ["Song of Solomon 8:6-7", "Ephesians 5:25-32"],
-        "sung": ["Song of Solomon 2:10-12", "Song of Solomon 8:7"],
+        "words": ["Song of Solomon 2:10-12", "Song of Solomon 8:7"],
         "summary": "The Bible's own love song: a bride and her beloved delight in each other in poetry full of gardens, vineyards and springtime.",
         "story": (
             "'The song of songs' means the finest song of all. Its voices are a young woman, her "
@@ -293,7 +293,7 @@ PSALMS = [
     },
     {
         "name": "Solomon's thousand and five songs",
-        "group": "Psalms and songs of wisdom",
+        "group": "Psalms and songs of Solomon",
         "testament": "Old",
         "epithet": "His songs were a thousand and five",
         "by_label": "Written by",
@@ -331,7 +331,7 @@ PSALMS = [
         "where": "The plains of Moab, across the Jordan from the promised land",
         "told_in": "Deuteronomy 31:30-32:47",
         "also_in": ["Deuteronomy 31:19-22", "Romans 10:19", "Revelation 15:3"],
-        "sung": ["Deuteronomy 32:1", "Deuteronomy 32:3-4"],
+        "words": ["Deuteronomy 32:1", "Deuteronomy 32:3-4"],
         "summary": "Before he died, Moses taught Israel a song to carry into the promised land: a witness to God's faithfulness, and to their unfaithfulness.",
         "story": (
             "God told Moses his people would turn to other gods once they were settled, and gave "
@@ -360,7 +360,7 @@ PSALMS = [
         "where": "Jerusalem",
         "told_in": "Isaiah 5:1-7",
         "also_in": ["Matthew 21:33-44", "John 15:1-8"],
-        "sung": ["Isaiah 5:1-2", "Isaiah 5:7"],
+        "words": ["Isaiah 5:1-2", "Isaiah 5:7"],
         "summary": "Isaiah began like a wedding singer, with a love song about a friend's vineyard, then revealed that the vineyard was Israel and its wild grapes were injustice.",
         "story": (
             "'Now will I sing to my wellbeloved a song of my beloved touching his vineyard.' The "
@@ -387,7 +387,7 @@ PSALMS = [
         "where": "Jerusalem",
         "told_in": "Isaiah 12:1-6",
         "also_in": ["Exodus 15:2", "John 7:37-39"],
-        "sung": ["Isaiah 12:1-3"],
+        "words": ["Isaiah 12:1-3"],
         "summary": "After chapters of warning, Isaiah gives a short song for the day God's anger turns to comfort, echoing the song at the Red Sea.",
         "story": (
             "Isaiah has just promised a king from the family of Jesse, on whom the Spirit of the "
@@ -415,7 +415,7 @@ PSALMS = [
         "where": "Jerusalem",
         "told_in": "Isaiah 38:9-20",
         "also_in": ["Isaiah 38:1-8", "2 Kings 20:1-11"],
-        "sung": ["Isaiah 38:17", "Isaiah 38:19-20"],
+        "words": ["Isaiah 38:17", "Isaiah 38:19-20"],
         "summary": "When God healed King Hezekiah of a mortal illness, he wrote a song about the fear of dying and the joy of being spared.",
         "story": (
             "Isaiah had told Hezekiah, 'Set thine house in order: for thou shalt die, and not "
@@ -444,7 +444,7 @@ PSALMS = [
         "where": "Inside the great fish",
         "told_in": "Jonah 2:1-10",
         "also_in": ["Jonah 1:1-17", "Matthew 12:39-41"],
-        "sung": ["Jonah 2:2", "Jonah 2:9"],
+        "words": ["Jonah 2:2", "Jonah 2:9"],
         "summary": "From inside the fish, the runaway prophet prayed a psalm of thanks before he was even out, and ended, 'Salvation is of the LORD.'",
         "story": (
             "Jonah ran from God's call to Nineveh, was thrown overboard in a storm, and was "
@@ -471,7 +471,7 @@ PSALMS = [
         "where": "Judah",
         "told_in": "Habakkuk 3:1-19",
         "also_in": ["Habakkuk 1:1-6", "Habakkuk 2:1-4", "Romans 1:17"],
-        "sung": ["Habakkuk 3:2", "Habakkuk 3:17-18"],
+        "words": ["Habakkuk 3:2", "Habakkuk 3:17-18"],
         "summary": "Habakkuk asked God why he allowed evil, heard that Babylon was coming, and ended with a song: though everything fails, I will rejoice in the LORD.",
         "story": (
             "The book begins with a complaint: 'O LORD, how long shall I cry, and thou wilt not "
@@ -499,7 +499,7 @@ PSALMS = [
         "where": "Jerusalem, in the days of King Josiah",
         "told_in": "Zephaniah 3:14-20",
         "also_in": ["Zephaniah 1:14-18"],
-        "sung": ["Zephaniah 3:14", "Zephaniah 3:17"],
+        "words": ["Zephaniah 3:14", "Zephaniah 3:17"],
         "summary": "Zephaniah's book of judgement ends with a surprise: Israel is told to sing, and God himself sings over his people.",
         "story": (
             "Zephaniah preached in the days of Josiah about 'the great day of the LORD', a day of "

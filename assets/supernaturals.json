@@ -1,8 +1,10 @@
 {
     "totals": {
-        "entries": 77,
-        "old": 38,
-        "new": 39,
+        "entries": 93,
+        "events": 77,
+        "topics": 16,
+        "old": 45,
+        "new": 53,
         "groups": {
             "Power over nature": 8,
             "Food and plenty": 6,
@@ -11,7 +13,9 @@
             "Casting out demons": 9,
             "Magic and sorcery": 9,
             "Signs, wonders and angels": 10,
-            "Prophecies": 16
+            "Prophecies": 16,
+            "Angels": 7,
+            "Demons": 9
         }
     },
     "groups": [
@@ -22,7 +26,13 @@
         "Casting out demons",
         "Magic and sorcery",
         "Signs, wonders and angels",
-        "Prophecies"
+        "Prophecies",
+        "Angels",
+        "Demons"
+    ],
+    "special": [
+        "Angels",
+        "Demons"
     ],
     "entries": [
         {
@@ -63,6 +73,7 @@
                     "text": "And Moses stretched out his hand over the sea; and the LORD caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Exodus 14:10-31",
                 "Hebrews 11:29"
@@ -110,6 +121,7 @@
                     "text": "And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Christ."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Exodus 17:1-7",
                 "Numbers 20:2-13"
@@ -163,6 +175,7 @@
                     "text": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Exodus 16:1-36",
                 "Numbers 11:4-9",
@@ -217,6 +230,7 @@
                     "text": "And there was no day like that before it or after it, that the LORD hearkened unto the voice of a man: for the LORD fought for Israel."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Joshua 10:6-14"
             ],
@@ -265,6 +279,7 @@
                     "text": "Then the fire of the LORD fell, and consumed the burnt sacrifice, and the wood, and the stones, and the dust, and licked up the water that was in the trench. And when all the people saw it, they fell on their faces: and they said, The LORD, he is the God; the LORD, he is the God."
                 }
             ],
+            "special": false,
             "accounts": [
                 "1 Kings 18:17-40",
                 "James 5:17-18"
@@ -304,6 +319,7 @@
                     "text": "But as one was felling a beam, the axe head fell into the water: and he cried, and said, Alas, master! for it was borrowed. And the man of God said, Where fell it? And he shewed him the place. And he cut down a stick, and cast it in thither; and the iron did swim."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Kings 6:1-7"
             ],
@@ -346,6 +362,7 @@
                     "text": "And they feared exceedingly, and said one to another, What manner of man is this, that even the wind and the sea obey him?"
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 4:35-41",
                 "Matthew 8:23-27",
@@ -404,6 +421,7 @@
                     "text": "But when he saw the wind boisterous, he was afraid; and beginning to sink, he cried, saying, Lord, save me. And immediately Jesus stretched forth his hand, and caught him, and said unto him, O thou of little faith, wherefore didst thou doubt? "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Matthew 14:22-33",
                 "Mark 6:45-52",
@@ -456,6 +474,7 @@
                     "text": "And the barrel of meal wasted not, neither did the cruse of oil fail, according to the word of the LORD, which he spake by Elijah."
                 }
             ],
+            "special": false,
             "accounts": [
                 "1 Kings 17:8-16",
                 "Luke 4:25-26"
@@ -494,6 +513,7 @@
                     "text": "And it came to pass, when the vessels were full, that she said unto her son, Bring me yet a vessel. And he said unto her, There is not a vessel more. And the oil stayed."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Kings 4:1-7"
             ],
@@ -538,6 +558,7 @@
                     "text": "This beginning of miracles did Jesus in Cana of Galilee, and manifested forth his glory; and his disciples believed on him."
                 }
             ],
+            "special": false,
             "accounts": [
                 "John 2:1-11"
             ],
@@ -586,6 +607,7 @@
                     "text": "And Jesus took the loaves; and when he had given thanks, he distributed to the disciples, and the disciples to them that were set down; and likewise of the fishes as much as they would."
                 }
             ],
+            "special": false,
             "accounts": [
                 "John 6:1-14",
                 "Matthew 14:13-21",
@@ -645,6 +667,7 @@
                     "text": "And so was also James, and John, the sons of Zebedee, which were partners with Simon. And Jesus said unto Simon, Fear not; from henceforth thou shalt catch men. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Luke 5:1-11"
             ],
@@ -685,6 +708,7 @@
                     "text": "Notwithstanding, lest we should offend them, go thou to the sea, and cast an hook, and take up the fish that first cometh up; and when thou hast opened his mouth, thou shalt find a piece of money: that take, and give unto them for me and thee. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Matthew 17:24-27"
             ],
@@ -731,6 +755,7 @@
                     "text": "And he returned to the man of God, he and all his company, and came, and stood before him: and he said, Behold, now I know that there is no God in all earth, but in Israel: now therefore, I pray thee, take a blessing of thy servant."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Kings 5:1-19",
                 "Luke 4:27"
@@ -783,6 +808,7 @@
                     "text": "And Isaiah the prophet cried unto the LORD: and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Kings 20:1-11",
                 "Isaiah 38:1-8"
@@ -826,6 +852,7 @@
                     "text": "And there came a leper to him, beseeching him, and kneeling down to him, and saying unto him, If thou wilt, thou canst make me clean. And Jesus, moved with compassion, put forth his hand, and touched him, and saith unto him, I will; be thou clean. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 1:40-45",
                 "Matthew 8:1-4",
@@ -878,6 +905,7 @@
                     "text": "But that ye may know that the Son of man hath power on earth to forgive sins, (he saith to the sick of the palsy,) I say unto thee, Arise, and take up thy bed, and go thy way into thine house. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 2:1-12",
                 "Matthew 9:1-8",
@@ -929,6 +957,7 @@
                     "text": "When Jesus heard these things, he marvelled at him, and turned him about, and said unto the people that followed him, I say unto you, I have not found so great faith, no, not in Israel. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Luke 7:1-10",
                 "Matthew 8:5-13"
@@ -976,6 +1005,7 @@
                     "text": "And he said unto her, Daughter, thy faith hath made thee whole; go in peace, and be whole of thy plague. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 5:25-34",
                 "Matthew 9:20-22",
@@ -1028,6 +1058,7 @@
                     "text": "And Jesus said unto him, Go thy way; thy faith hath made thee whole. And immediately he received his sight, and followed Jesus in the way."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 10:46-52",
                 "Matthew 20:29-34",
@@ -1076,6 +1107,7 @@
                     "text": "He answered and said, Whether he be a sinner or no, I know not: one thing I know, that, whereas I was blind, now I see."
                 }
             ],
+            "special": false,
             "accounts": [
                 "John 9:1-41"
             ],
@@ -1114,6 +1146,7 @@
                     "text": "And Jesus answering said, Were there not ten cleansed? but where are the nine? "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Luke 17:11-19"
             ],
@@ -1156,6 +1189,7 @@
                     "text": "And he leaping up stood, and walked, and entered with them into the temple, walking, and leaping, and praising God."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 3:1-10",
                 "Acts 4:22"
@@ -1199,6 +1233,7 @@
                     "text": "And the woman said to Elijah, Now by this I know that thou art a man of God, and that the word of the LORD in thy mouth is truth."
                 }
             ],
+            "special": false,
             "accounts": [
                 "1 Kings 17:17-24",
                 "Hebrews 11:35"
@@ -1242,6 +1277,7 @@
                     "text": "Then he returned, and walked in the house to and fro; and went up, and stretched himself upon him: and the child sneezed seven times, and the child opened his eyes."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Kings 4:18-37"
             ],
@@ -1275,6 +1311,7 @@
                     "text": "And it came to pass, as they were burying a man, that, behold, they spied a band of men; and they cast the man into the sepulchre of Elisha: and when the man was let down, and touched the bones of Elisha, he revived, and stood up on his feet."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Kings 13:20-21"
             ],
@@ -1313,6 +1350,7 @@
                     "text": "And he came and touched the bier: and they that bare him stood still. And he said, Young man, I say unto thee, Arise.  And he that was dead sat up, and began to speak. And he delivered him to his mother."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Luke 7:11-17"
             ],
@@ -1361,6 +1399,7 @@
                     "text": "And he took the damsel by the hand, and said unto her, Talitha cumi; which is, being interpreted, Damsel, I say unto thee, arise. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 5:21-43",
                 "Matthew 9:18-26",
@@ -1414,6 +1453,7 @@
                     "text": "And when he thus had spoken, he cried with a loud voice, Lazarus, come forth.  And he that was dead came forth, bound hand and foot with graveclothes: and his face was bound about with a napkin. Jesus saith unto them, Loose him, and let him go. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "John 11:1-44"
             ],
@@ -1449,6 +1489,7 @@
                     "text": "But Peter put them all forth, and kneeled down, and prayed; and turning him to the body said, Tabitha, arise. And she opened her eyes: and when she saw Peter, she sat up."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 9:36-42"
             ],
@@ -1484,6 +1525,7 @@
                     "text": "And there sat in a window a certain young man named Eutychus, being fallen into a deep sleep: and as Paul was long preaching, he sunk down with sleep, and fell down from the third loft, and was taken up dead. And Paul went down, and fell on him, and embracing him said, Trouble not yourselves; for his life is in him."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 20:7-12"
             ],
@@ -1538,6 +1580,7 @@
                     "text": "But now is Christ risen from the dead, and become the firstfruits of them that slept."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Luke 24:1-12",
                 "Matthew 28:1-10",
@@ -1606,6 +1649,7 @@
                     "text": "And it came to pass, when the evil spirit from God was upon Saul, that David took an harp, and played with his hand: so Saul was refreshed, and was well, and the evil spirit departed from him."
                 }
             ],
+            "special": false,
             "accounts": [
                 "1 Samuel 16:14-23",
                 "1 Samuel 18:10-11"
@@ -1648,6 +1692,7 @@
                     "text": "And they were all amazed, insomuch that they questioned among themselves, saying, What thing is this? what new doctrine is this? for with authority commandeth he even the unclean spirits, and they do obey him."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 1:21-28",
                 "Luke 4:31-37"
@@ -1699,6 +1744,7 @@
                     "text": "Howbeit Jesus suffered him not, but saith unto him, Go home to thy friends, and tell them how great things the Lord hath done for thee, and hath had compassion on thee. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 5:1-20",
                 "Matthew 8:28-34",
@@ -1746,6 +1792,7 @@
                     "text": "And she answered and said unto him, Yes, Lord: yet the dogs under the table eat of the children’s crumbs. And he said unto her, For this saying go thy way; the devil is gone out of thy daughter. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 7:24-30",
                 "Matthew 15:21-28"
@@ -1793,6 +1840,7 @@
                     "text": "And he said unto them, This kind can come forth by nothing, but by prayer and fasting. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 9:14-29",
                 "Matthew 17:14-21",
@@ -1850,6 +1898,7 @@
                     "text": "Now when Jesus was risen early the first day of the week, he appeared first to Mary Magdalene, out of whom he had cast seven devils."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Luke 8:1-3",
                 "Mark 16:9"
@@ -1897,6 +1946,7 @@
                     "text": "But if I cast out devils by the Spirit of God, then the kingdom of God is come unto you. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Matthew 12:22-30",
                 "Mark 3:22-27",
@@ -1942,6 +1992,7 @@
                     "text": "And this did she many days. But Paul, being grieved, turned and said to the spirit, I command thee in the name of Jesus Christ to come out of her. And he came out the same hour."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 16:16-24"
             ],
@@ -1982,6 +2033,7 @@
                     "text": "And the evil spirit answered and said, Jesus I know, and Paul I know; but who are ye?"
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 19:11-17"
             ],
@@ -2024,6 +2076,7 @@
                     "text": "The LORD thy God will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken;"
                 }
             ],
+            "special": false,
             "accounts": [
                 "Deuteronomy 18:9-15",
                 "Leviticus 19:31",
@@ -2087,6 +2140,7 @@
                     "text": "Then the magicians said unto Pharaoh, This is the finger of God: and Pharaoh’s heart was hardened, and he hearkened not unto them; as the LORD had said."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Exodus 7:8-13",
                 "Exodus 7:20-22",
@@ -2138,6 +2192,7 @@
                     "text": "I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Jacob, and a Sceptre shall rise out of Israel, and shall smite the corners of Moab, and destroy all the children of Sheth."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Numbers 22:1-24:25",
                 "Joshua 13:22",
@@ -2204,6 +2259,7 @@
                     "text": "So Saul died for his transgression which he committed against the LORD, even against the word of the LORD, which he kept not, and also for asking counsel of one that had a familiar spirit, to enquire of it;  And enquired not of the LORD: therefore he slew him, and turned the kingdom unto David the son of Jesse."
                 }
             ],
+            "special": false,
             "accounts": [
                 "1 Samuel 28:3-25",
                 "1 Chronicles 10:13-14"
@@ -2251,6 +2307,7 @@
                     "text": "And when he was in affliction, he besought the LORD his God, and humbled himself greatly before the God of his fathers, And prayed unto him: and he was intreated of him, and heard his supplication, and brought him again to Jerusalem into his kingdom. Then Manasseh knew that the LORD he was God."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Chronicles 33:1-20",
                 "2 Kings 21:1-18"
@@ -2303,6 +2360,7 @@
                     "text": "Daniel answered in the presence of the king, and said, The secret which the king hath demanded cannot the wise men, the astrologers, the magicians, the soothsayers, shew unto the king; But there is a God in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days. Thy dream, and the visions of thy head upon thy bed, are these;"
                 }
             ],
+            "special": false,
             "accounts": [
                 "Daniel 2:1-30",
                 "Daniel 5:7-17"
@@ -2351,6 +2409,7 @@
                     "text": "Repent therefore of this thy wickedness, and pray God, if perhaps the thought of thine heart may be forgiven thee."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 8:9-24"
             ],
@@ -2395,6 +2454,7 @@
                     "text": "Then the deputy, when he saw what was done, believed, being astonished at the doctrine of the Lord."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 13:6-12"
             ],
@@ -2435,6 +2495,7 @@
                     "text": "Many of them also which used curious arts brought their books together, and burned them before all men: and they counted the price of them, and found it fifty thousand pieces of silver. So mightily grew the word of God and prevailed."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 19:17-20"
             ],
@@ -2482,6 +2543,7 @@
                     "text": "And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, I AM hath sent me unto you."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Exodus 3:1-14",
                 "Mark 12:26-27"
@@ -2532,6 +2594,7 @@
                     "text": "And the LORD went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night: He took not away the pillar of the cloud by day, nor the pillar of fire by night, from before the people."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Exodus 13:17-22",
                 "Exodus 14:19-20",
@@ -2590,6 +2653,7 @@
                     "text": "Then the LORD opened the eyes of Balaam, and he saw the angel of the LORD standing in the way, and his sword drawn in his hand: and he bowed down his head, and fell flat on his face."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Numbers 22:21-35",
                 "2 Peter 2:16"
@@ -2643,6 +2707,7 @@
                     "text": "He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of God."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Daniel 3:1-30"
             ],
@@ -2687,6 +2752,7 @@
                     "text": "TEKEL; Thou art weighed in the balances, and art found wanting."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Daniel 5:1-31"
             ],
@@ -2734,6 +2800,7 @@
                     "text": "My God hath sent his angel, and hath shut the lions mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Daniel 6:1-28",
                 "Hebrews 11:33"
@@ -2779,6 +2846,7 @@
                     "text": "For with God nothing shall be impossible. And Mary said, Behold the handmaid of the Lord; be it unto me according to thy word. And the angel departed from her."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Luke 1:26-38"
             ],
@@ -2828,6 +2896,7 @@
                     "text": "And there was a cloud that overshadowed them: and a voice came out of the cloud, saying, This is my beloved Son: hear him."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 9:2-8",
                 "Matthew 17:1-8",
@@ -2887,6 +2956,7 @@
                     "text": "And, behold, the angel of the Lord came upon him, and a light shined in the prison: and he smote Peter on the side, and raised him up, saying, Arise up quickly. And his chains fell off from his hands."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 12:1-17"
             ],
@@ -2934,6 +3004,7 @@
                     "text": "And it came to pass, as they still went on, and talked, that, behold, there appeared a chariot of fire, and horses of fire, and parted them both asunder; and Elijah went up by a whirlwind into heaven."
                 }
             ],
+            "special": false,
             "accounts": [
                 "2 Kings 2:1-14",
                 "Malachi 4:5",
@@ -2997,6 +3068,7 @@
                     "text": "But when the fulness of the time was come, God sent forth his Son, made of a woman, made under the law,"
                 }
             ],
+            "special": false,
             "accounts": [
                 "Genesis 3:1-15",
                 "Galatians 4:4-5",
@@ -3071,6 +3143,7 @@
                     "text": "And the seven years of dearth began to come, according as Joseph had said: and the dearth was in all lands; but in all the land of Egypt there was bread."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Genesis 41:1-36",
                 "Genesis 41:47-57",
@@ -3128,6 +3201,7 @@
                     "text": "And as Josiah turned himself, he spied the sepulchres that were there in the mount, and sent, and took the bones out of the sepulchres, and burned them upon the altar, and polluted it, according to the word of the LORD which the man of God proclaimed, who proclaimed these words."
                 }
             ],
+            "special": false,
             "accounts": [
                 "1 Kings 13:1-5",
                 "2 Kings 23:15-18"
@@ -3190,6 +3264,7 @@
                     "text": "Wherefore they came again, and told him. And he said, This is the word of the LORD, which he spake by his servant Elijah the Tishbite, saying, In the portion of Jezreel shall dogs eat the flesh of Jezebel:"
                 }
             ],
+            "special": false,
             "accounts": [
                 "1 Kings 21:17-29",
                 "1 Kings 22:34-38",
@@ -3247,6 +3322,7 @@
                     "text": "Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, God with us."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Isaiah 7:10-16",
                 "Matthew 1:18-25",
@@ -3309,6 +3385,7 @@
                     "text": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet, And thou Bethlehem, in the land of Juda, art not the least among the princes of Juda: for out of thee shall come a Governor, that shall rule my people Israel."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Micah 5:2-5",
                 "Matthew 2:1-6",
@@ -3376,6 +3453,7 @@
                     "text": "Then Philip opened his mouth, and began at the same scripture, and preached unto him Jesus."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Isaiah 52:13-53:12",
                 "Acts 8:26-35",
@@ -3451,6 +3529,7 @@
                     "text": "Now in the first year of Cyrus king of Persia, that the word of the LORD by the mouth of Jeremiah might be fulfilled, the LORD stirred up the spirit of Cyrus king of Persia, that he made a proclamation throughout all his kingdom, and put it also in writing, saying,"
                 }
             ],
+            "special": false,
             "accounts": [
                 "Isaiah 44:24-45:7",
                 "Jeremiah 29:10-14",
@@ -3519,6 +3598,7 @@
                     "text": "And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Daniel 2:31-45",
                 "Daniel 7:1-28"
@@ -3570,6 +3650,7 @@
                     "text": "Tell ye the daughter of Sion, Behold, thy King cometh unto thee, meek, and sitting upon an ass, and a colt the foal of an ass."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Zechariah 9:9-10",
                 "Matthew 21:1-11",
@@ -3635,6 +3716,7 @@
                     "text": "For the promise is unto you, and to your children, and to all that are afar off, even as many as the Lord our God shall call."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Joel 2:28-32",
                 "Acts 2:1-21",
@@ -3693,6 +3775,7 @@
                     "text": "He is not here, but is risen: remember how he spake unto you when he was yet in Galilee, Saying, The Son of man must be delivered into the hands of sinful men, and be crucified, and the third day rise again. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 8:31-33",
                 "Mark 9:30-32",
@@ -3754,6 +3837,7 @@
                     "text": "But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 14:26-31",
                 "Mark 14:66-72",
@@ -3814,6 +3898,7 @@
                     "text": "And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation. "
                 }
             ],
+            "special": false,
             "accounts": [
                 "Mark 13:1-2",
                 "Matthew 24:1-2",
@@ -3881,6 +3966,7 @@
                     "text": "And when he would not be persuaded, we ceased, saying, The will of the Lord be done."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 21:7-14",
                 "Acts 11:27-30",
@@ -3939,6 +4025,7 @@
                     "text": "He which testifieth these things saith, Surely I come quickly. Amen. Even so, come, Lord Jesus."
                 }
             ],
+            "special": false,
             "accounts": [
                 "Acts 1:9-11",
                 "John 14:1-3",
@@ -3961,6 +4048,1024 @@
                 {
                     "name": "Revelation",
                     "id": "revelation"
+                }
+            ]
+        },
+        {
+            "id": "what-are-angels",
+            "name": "What are angels?",
+            "group": "Angels",
+            "testament": "Both",
+            "epithet": "Ministering spirits",
+            "told_in": "Hebrews 1:13-14",
+            "also_in": [
+                "Psalms 148:2-5",
+                "Colossians 1:16",
+                "Psalms 103:20",
+                "Luke 15:10",
+                "Revelation 5:11",
+                "Matthew 22:30"
+            ],
+            "related": [
+                "gabriel-comes-to-mary",
+                "peter-freed-by-an-angel"
+            ],
+            "summary": "Angels are spirits created by God to worship him and to serve him, sent out to help those who will inherit salvation.",
+            "story": "The word angel means messenger, in Hebrew and in Greek. The Bible says angels were made: 'Praise ye him, all his angels … for he commanded, and they were created.' They were made through Christ, 'whether they be thrones, or dominions, or principalities, or powers' (Colossians 1:16). They are strong, 'that excel in strength, that do his commandments' (Psalms 103:20), and many: John heard 'ten thousand times ten thousand, and thousands of thousands' around God's throne. Hebrews sums up their work: 'Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?'",
+            "meaning": "Angels are real, but they are servants, not rivals to God or objects of devotion. They rejoice when a sinner repents (Luke 15:10). People do not become angels when they die: Jesus said the raised will be 'as the angels of God in heaven' in that they do not marry, not that they turn into angels. The Bible tells us what angels do far more than what they are like.",
+            "lesson": "Worship with confidence: you join a crowd too large to count. And remember that you are cared for by a God whose servants are sent to help his people.",
+            "key_verses": [
+                {
+                    "reference": "Hebrews 1:14",
+                    "text": "Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation?"
+                },
+                {
+                    "reference": "Luke 15:10",
+                    "text": "Likewise, I say unto you, there is joy in the presence of the angels of God over one sinner that repenteth. "
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Hebrews 1:13-14",
+                "Psalms 148:2-5",
+                "Colossians 1:16",
+                "Psalms 103:20",
+                "Luke 15:10",
+                "Revelation 5:11",
+                "Matthew 22:30"
+            ],
+            "books": [
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ]
+        },
+        {
+            "id": "the-angel-of-the-lord",
+            "name": "The angel of the LORD",
+            "group": "Angels",
+            "testament": "Old",
+            "epithet": "Thou God seest me",
+            "told_in": "Genesis 16:7-13",
+            "also_in": [
+                "Genesis 22:11-18",
+                "Exodus 3:2-6",
+                "Judges 6:11-24",
+                "Judges 13:15-22",
+                "Psalms 34:7"
+            ],
+            "related": [
+                "the-burning-bush",
+                "balaam-s-donkey-speaks"
+            ],
+            "summary": "In the Old Testament a mysterious figure called the angel of the LORD appears, speaks as God, and is worshipped as God.",
+            "story": "When Hagar fled into the desert, 'the angel of the LORD found her by a fountain of water'. He promised her a son, and she 'called the name of the LORD that spake unto her, Thou God seest me'. The angel of the LORD called to Abraham on Mount Moriah, 'appeared unto him in a flame of fire out of the midst of a bush' to Moses, and told Samson's father his name was 'secret' (Judges 13:18). Again and again those who met him said they had seen God.",
+            "meaning": "Christians have long read these appearances in different ways. Many, since the early church, see the Son of God appearing before he was born as a man; others see an angel who carries God's name and speaks for him. The Bible does not settle it, but it does show a God who comes close to the frightened and the forgotten.",
+            "lesson": "Like Hagar, you are seen, even in the wilderness. 'The angel of the LORD encampeth round about them that fear him, and delivereth them' (Psalms 34:7).",
+            "key_verses": [
+                {
+                    "reference": "Genesis 16:13",
+                    "text": "And she called the name of the LORD that spake unto her, Thou God seest me: for she said, Have I also here looked after him that seeth me?"
+                },
+                {
+                    "reference": "Psalms 34:7",
+                    "text": "The angel of the LORD encampeth round about them that fear him, and delivereth them. "
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Genesis 16:7-13",
+                "Genesis 22:11-18",
+                "Exodus 3:2-6",
+                "Judges 6:11-24",
+                "Judges 13:15-22",
+                "Psalms 34:7"
+            ],
+            "books": [
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Judges",
+                    "id": "judges"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "cherubim-and-seraphim",
+            "name": "Cherubim and seraphim",
+            "group": "Angels",
+            "testament": "Old",
+            "epithet": "Holy, holy, holy, is the LORD of hosts",
+            "told_in": "Isaiah 6:1-8",
+            "also_in": [
+                "Genesis 3:24",
+                "Exodus 25:18-22",
+                "Ezekiel 10:1-22",
+                "Revelation 4:6-8"
+            ],
+            "summary": "The Bible names two kinds of heavenly beings who stand nearest God's throne: cherubim who guard his holiness and seraphim who cry out his praise.",
+            "story": "After the fall, God 'placed at the east of the garden of Eden Cherubim, and a flaming sword' to guard the tree of life. Golden cherubim covered the mercy seat on the ark, and Ezekiel saw living creatures with wings and wheels and said, 'I knew that they were the cherubims.' Isaiah saw 'the seraphims: each one had six wings' above God's throne, calling, 'Holy, holy, holy, is the LORD of hosts: the whole earth is full of his glory.' One flew to him with a live coal and touched his lips: 'thine iniquity is taken away'.",
+            "meaning": "These are not the chubby babies of later paintings. Cherubim and seraphim show how holy God is: the most glorious creatures cover their faces before him. Yet Isaiah's vision ends in grace, with sin purged and a man sent out: 'Here am I; send me' (Isaiah 6:8).",
+            "lesson": "Come to worship with awe as well as joy. And when you feel unworthy, remember that God's holiness came to Isaiah with forgiveness and a calling.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 6:3",
+                    "text": "And one cried unto another, and said, Holy, holy, holy, is the LORD of hosts: the whole earth is full of his glory."
+                },
+                {
+                    "reference": "Revelation 4:8",
+                    "text": "And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Lord God Almighty, which was, and is, and is to come."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Isaiah 6:1-8",
+                "Genesis 3:24",
+                "Exodus 25:18-22",
+                "Ezekiel 10:1-22",
+                "Revelation 4:6-8"
+            ],
+            "books": [
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                },
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Ezekiel",
+                    "id": "ezekiel"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ]
+        },
+        {
+            "id": "michael-and-gabriel",
+            "name": "Michael and Gabriel",
+            "group": "Angels",
+            "testament": "Both",
+            "epithet": "The only angels the Bible names",
+            "told_in": "Daniel 10:10-21",
+            "also_in": [
+                "Daniel 12:1",
+                "Jude 1:9",
+                "Revelation 12:7-9",
+                "Daniel 8:15-19",
+                "Daniel 9:20-23",
+                "Luke 1:11-20",
+                "Luke 1:26-38"
+            ],
+            "related": [
+                "gabriel-comes-to-mary"
+            ],
+            "summary": "Only two angels are named in the Bible: Michael, the archangel who fights for God's people, and Gabriel, who brings God's messages.",
+            "story": "Daniel hears of a heavenly struggle in which 'Michael, one of the chief princes, came to help'. Later, 'at that time shall Michael stand up, the great prince which standeth for the children of thy people'. Jude calls him 'Michael the archangel', and in Revelation 'Michael and his angels fought against the dragon'. Gabriel explained Daniel's visions, then told Zacharias, 'I am Gabriel, that stand in the presence of God', and was sent to Mary in Nazareth.",
+            "meaning": "Michael is linked with protection and battle, Gabriel with good news. Even Michael, contending with the devil, 'durst not bring against him a railing accusation, but said, The Lord rebuke thee' (Jude 1:9): the strongest angel relies on God's authority, not his own. Other names, such as Raphael, come from books outside the Protestant Bible.",
+            "lesson": "Take on spiritual battles the way Michael did, not in your own strength or with insults, but by trusting the Lord. And listen for good news: Gabriel's words to Mary still stand, 'with God nothing shall be impossible' (Luke 1:37).",
+            "key_verses": [
+                {
+                    "reference": "Jude 1:9",
+                    "text": "Yet Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, The Lord rebuke thee."
+                },
+                {
+                    "reference": "Luke 1:19",
+                    "text": "And the angel answering said unto him, I am Gabriel, that stand in the presence of God; and am sent to speak unto thee, and to shew thee these glad tidings."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Daniel 10:10-21",
+                "Daniel 12:1",
+                "Jude 1:9",
+                "Revelation 12:7-9",
+                "Daniel 8:15-19",
+                "Daniel 9:20-23",
+                "Luke 1:11-20",
+                "Luke 1:26-38"
+            ],
+            "books": [
+                {
+                    "name": "Daniel",
+                    "id": "daniel"
+                },
+                {
+                    "name": "Jude",
+                    "id": "jude"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ]
+        },
+        {
+            "id": "angels-who-guard-and-help",
+            "name": "Angels who guard and help",
+            "group": "Angels",
+            "testament": "Both",
+            "epithet": "He shall give his angels charge over thee",
+            "told_in": "Psalms 91:9-13",
+            "also_in": [
+                "2 Kings 6:14-17",
+                "Psalms 34:7",
+                "Daniel 6:22",
+                "Acts 12:5-11",
+                "Matthew 18:10",
+                "Hebrews 13:2"
+            ],
+            "related": [
+                "daniel-in-the-lions-den",
+                "peter-freed-by-an-angel",
+                "the-fourth-man-in-the-fire"
+            ],
+            "summary": "Scripture shows angels sent to protect, rescue and strengthen God's people, often unseen.",
+            "story": "When an army surrounded Elisha, his servant panicked. Elisha said, 'Fear not: for they that be with us are more than they that be with them', and prayed for the young man's eyes to be opened: 'the mountain was full of horses and chariots of fire round about Elisha.' God 'shall give his angels charge over thee, to keep thee in all thy ways.' An angel shut the lions' mouths for Daniel and led Peter out of prison, and Hebrews says some 'have entertained angels unawares.'",
+            "meaning": "God protects his people, and angels are one of the ways he does it. Jesus said of the little ones, 'in heaven their angels do always behold the face of my Father' (Matthew 18:10), and some take this to mean each believer has a guardian angel; the Bible does not say so plainly. Psalm 91 was also quoted by the devil to tempt Jesus to jump from the temple (Matthew 4:6): angels' care is no licence to take foolish risks.",
+            "lesson": "When you are afraid, pray Elisha's prayer: that your eyes would see that those with you are more than those against you. And be kind to strangers; you never know whom you are welcoming.",
+            "key_verses": [
+                {
+                    "reference": "2 Kings 6:16",
+                    "text": "And he answered, Fear not: for they that be with us are more than they that be with them."
+                },
+                {
+                    "reference": "Hebrews 13:2",
+                    "text": "Be not forgetful to entertain strangers: for thereby some have entertained angels unawares."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Psalms 91:9-13",
+                "2 Kings 6:14-17",
+                "Psalms 34:7",
+                "Daniel 6:22",
+                "Acts 12:5-11",
+                "Matthew 18:10",
+                "Hebrews 13:2"
+            ],
+            "books": [
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                },
+                {
+                    "name": "Daniel",
+                    "id": "daniel"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                }
+            ]
+        },
+        {
+            "id": "angels-in-the-life-of-jesus",
+            "name": "Angels in the life of Jesus",
+            "group": "Angels",
+            "testament": "New",
+            "epithet": "Angels came and ministered unto him",
+            "told_in": "Matthew 28:1-7",
+            "also_in": [
+                "Luke 1:26-38",
+                "Luke 2:8-14",
+                "Matthew 4:11",
+                "Luke 22:43",
+                "Acts 1:10-11",
+                "Matthew 25:31"
+            ],
+            "related": [
+                "gabriel-comes-to-mary"
+            ],
+            "summary": "Angels announced Jesus' birth, served him after his temptation, strengthened him in Gethsemane, opened his tomb, and will come with him when he returns.",
+            "story": "Gabriel told Mary she would bear a son, and a multitude of angels praised God over the fields of Bethlehem. After forty days of temptation, 'the devil leaveth him, and, behold, angels came and ministered unto him.' In Gethsemane 'there appeared an angel unto him from heaven, strengthening him.' On Easter morning 'the angel of the Lord descended from heaven, and came and rolled back the stone', and told the women, 'He is not here: for he is risen'. At his ascension two men in white promised he would come again, and when he does, 'all the holy angels with him'.",
+            "meaning": "Angels surround the whole story of Jesus, but always as servants. Hebrews says he is 'so much better than the angels' (Hebrews 1:4); they worship him. The good news they bring is about him, not about themselves.",
+            "lesson": "When you face your own Gethsemane, remember that God strengthened his Son in his darkest night, and he has promised strength to you. Live today as someone waiting for Christ's return.",
+            "key_verses": [
+                {
+                    "reference": "Luke 22:43",
+                    "text": "And there appeared an angel unto him from heaven, strengthening him."
+                },
+                {
+                    "reference": "Matthew 25:31",
+                    "text": "When the Son of man shall come in his glory, and all the holy angels with him, then shall he sit upon the throne of his glory: "
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Matthew 28:1-7",
+                "Luke 1:26-38",
+                "Luke 2:8-14",
+                "Matthew 4:11",
+                "Luke 22:43",
+                "Acts 1:10-11",
+                "Matthew 25:31"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ]
+        },
+        {
+            "id": "worship-god-not-angels",
+            "name": "Worship God, not angels",
+            "group": "Angels",
+            "testament": "New",
+            "epithet": "See thou do it not",
+            "told_in": "Revelation 22:8-9",
+            "also_in": [
+                "Revelation 19:10",
+                "Colossians 2:18-19",
+                "Galatians 1:8",
+                "Hebrews 1:4-6"
+            ],
+            "summary": "When John fell down to worship an angel, the angel stopped him: angels are fellow servants, and worship belongs to God alone.",
+            "story": "Overwhelmed by his visions, John 'fell down to worship before the feet of the angel which shewed me these things.' The angel said, 'See thou do it not: for I am thy fellowservant … worship God.' Paul warned the Colossians against 'worshipping of angels', and the Galatians that even 'an angel from heaven' preaching another gospel should be rejected (Galatians 1:8).",
+            "meaning": "Fascination with angels can quietly replace faith in Christ. The Bible never tells us to pray to angels, to seek messages from them, or to learn their names. Any message that contradicts the gospel is to be refused, whoever seems to bring it.",
+            "lesson": "Test what you hear by Scripture, however heavenly it sounds. Give your devotion to Jesus alone, and thank God, not angels, for his care.",
+            "key_verses": [
+                {
+                    "reference": "Colossians 2:18",
+                    "text": "Let no man beguile you of your reward in a voluntary humility and worshipping of angels, intruding into those things which he hath not seen, vainly puffed up by his fleshly mind,"
+                },
+                {
+                    "reference": "Galatians 1:8",
+                    "text": "But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Revelation 22:8-9",
+                "Revelation 19:10",
+                "Colossians 2:18-19",
+                "Galatians 1:8",
+                "Hebrews 1:4-6"
+            ],
+            "books": [
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "Galatians",
+                    "id": "galatians"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                }
+            ]
+        },
+        {
+            "id": "satan-the-adversary",
+            "name": "Satan, the adversary",
+            "group": "Demons",
+            "testament": "Both",
+            "epithet": "As a roaring lion, walketh about",
+            "with": [
+                {
+                    "name": "Satan",
+                    "hero": "satan"
+                }
+            ],
+            "told_in": "1 Peter 5:8-9",
+            "also_in": [
+                "Genesis 3:1-5",
+                "Job 1:6-12",
+                "Zechariah 3:1-2",
+                "Matthew 4:1-11",
+                "John 8:44",
+                "2 Corinthians 11:14",
+                "Revelation 12:9"
+            ],
+            "related": [
+                "a-house-divided"
+            ],
+            "summary": "Satan, whose name means adversary, is the Bible's great enemy of God and his people: a liar, an accuser and a tempter, but never God's equal.",
+            "story": "The serpent in Eden asked, 'Yea, hath God said?' In Job, 'Satan came also among them' before the LORD, and could do only what God allowed. In Zechariah he stands 'at his right hand to resist him', accusing the high priest. He tempted Jesus in the wilderness and was sent away with Scripture: 'Get thee hence, Satan'. Jesus called him 'a liar, and the father of it'. Paul warns that 'Satan himself is transformed into an angel of light', and Peter that 'your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour'.",
+            "meaning": "Satan is real, personal and dangerous, but he is a created being on a leash, not a dark god equal to the Lord. His main weapons are lies, accusation and temptation. The Bible never asks us to be curious about him, only to be watchful and firm.",
+            "lesson": "Be sober and alert: notice the lies that pull you away from God, especially the ones that sound reasonable. Answer them as Jesus did, with what is written.",
+            "key_verses": [
+                {
+                    "reference": "1 Peter 5:8",
+                    "text": "Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:"
+                },
+                {
+                    "reference": "John 8:44",
+                    "text": "Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it. "
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "1 Peter 5:8-9",
+                "Genesis 3:1-5",
+                "Job 1:6-12",
+                "Zechariah 3:1-2",
+                "Matthew 4:1-11",
+                "John 8:44",
+                "2 Corinthians 11:14",
+                "Revelation 12:9"
+            ],
+            "books": [
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                },
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Job",
+                    "id": "job"
+                },
+                {
+                    "name": "Zechariah",
+                    "id": "zechariah"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "2 Corinthians",
+                    "id": "2-corinthians"
+                },
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                }
+            ]
+        },
+        {
+            "id": "where-did-demons-come-from",
+            "name": "Where did demons come from?",
+            "group": "Demons",
+            "testament": "New",
+            "epithet": "The angels which kept not their first estate",
+            "told_in": "Revelation 12:7-9",
+            "also_in": [
+                "Jude 1:6",
+                "2 Peter 2:4",
+                "Matthew 25:41",
+                "Luke 10:18",
+                "Isaiah 14:12-15",
+                "Ezekiel 28:12-17"
+            ],
+            "summary": "The Bible does not tell the whole story, but it speaks of angels who sinned and fell, and of the devil and his angels cast out of heaven.",
+            "story": "Scripture gives glimpses rather than a full account. Jude speaks of 'the angels which kept not their first estate, but left their own habitation', and Peter of 'the angels that sinned'. Revelation describes war in heaven: 'the great dragon was cast out, that old serpent, called the Devil, and Satan … and his angels were cast out with him.' Jesus said, 'I beheld Satan as lightning fall from heaven', and spoke of 'everlasting fire, prepared for the devil and his angels'.",
+            "meaning": "Most Christians have understood demons as fallen angels who followed Satan in rebellion. Isaiah 14 and Ezekiel 28, which speak of the kings of Babylon and Tyre, have often been read as describing the devil's fall too, though that reading is debated. God did not create evil: these beings were made good and turned away.",
+            "lesson": "Do not fill the gaps with speculation or films. Hold to what is written: evil is real but rebellious, limited and already judged.",
+            "key_verses": [
+                {
+                    "reference": "Jude 1:6",
+                    "text": "And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day."
+                },
+                {
+                    "reference": "Matthew 25:41",
+                    "text": "Then shall he say also unto them on the left hand, Depart from me, ye cursed, into everlasting fire, prepared for the devil and his angels: "
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Revelation 12:7-9",
+                "Jude 1:6",
+                "2 Peter 2:4",
+                "Matthew 25:41",
+                "Luke 10:18",
+                "Isaiah 14:12-15",
+                "Ezekiel 28:12-17"
+            ],
+            "books": [
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Jude",
+                    "id": "jude"
+                },
+                {
+                    "name": "2 Peter",
+                    "id": "2-peter"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                },
+                {
+                    "name": "Ezekiel",
+                    "id": "ezekiel"
+                }
+            ]
+        },
+        {
+            "id": "what-demons-do",
+            "name": "What demons do",
+            "group": "Demons",
+            "testament": "New",
+            "epithet": "The god of this world hath blinded the minds",
+            "told_in": "2 Corinthians 4:3-6",
+            "also_in": [
+                "1 Timothy 4:1",
+                "1 Corinthians 10:19-21",
+                "Luke 13:10-17",
+                "Acts 10:38",
+                "Mark 5:1-5"
+            ],
+            "related": [
+                "legion",
+                "the-boy-the-disciples-could-not-free",
+                "the-slave-girl-at-philippi"
+            ],
+            "summary": "In the Bible, evil spirits deceive, blind people to the gospel, stand behind false worship, and sometimes oppress people in body and mind.",
+            "story": "Paul says 'the god of this world hath blinded the minds of them which believe not'. He warns of 'seducing spirits, and doctrines of devils', and that sacrifices to idols are made 'to devils, and not to God'. In the Gospels, spirits tormented people: the man in the tombs cut himself with stones, and a woman 'whom Satan hath bound, lo, these eighteen years' could not stand upright. Peter summed up Jesus' ministry as 'healing all that were oppressed of the devil'.",
+            "meaning": "The Bible takes the spirit world seriously, but it does not blame every illness or trouble on demons. Many healings in the Gospels involve no spirit at all, and Jesus told the difference. Deception is the devil's chief work, so truth is our first defence.",
+            "lesson": "Be careful not to see a demon behind every problem, or none anywhere. Pray for discernment, get medical help when you are ill, and hold fast to the truth of the gospel.",
+            "key_verses": [
+                {
+                    "reference": "2 Corinthians 4:4",
+                    "text": "In whom the god of this world hath blinded the minds of them which believe not, lest the light of the glorious gospel of Christ, who is the image of God, should shine unto them."
+                },
+                {
+                    "reference": "Acts 10:38",
+                    "text": "How God anointed Jesus of Nazareth with the Holy Ghost and with power: who went about doing good, and healing all that were oppressed of the devil; for God was with him."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "2 Corinthians 4:3-6",
+                "1 Timothy 4:1",
+                "1 Corinthians 10:19-21",
+                "Luke 13:10-17",
+                "Acts 10:38",
+                "Mark 5:1-5"
+            ],
+            "books": [
+                {
+                    "name": "2 Corinthians",
+                    "id": "2-corinthians"
+                },
+                {
+                    "name": "1 Timothy",
+                    "id": "1-timothy"
+                },
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                }
+            ]
+        },
+        {
+            "id": "jesus-authority-over-demons",
+            "name": "Jesus' authority over demons",
+            "group": "Demons",
+            "testament": "New",
+            "epithet": "Even the unclean spirits … do obey him",
+            "told_in": "Mark 1:21-28",
+            "also_in": [
+                "Luke 10:17-20",
+                "Colossians 2:15",
+                "1 John 3:8",
+                "Hebrews 2:14-15",
+                "John 12:31"
+            ],
+            "related": [
+                "the-man-in-the-synagogue",
+                "legion",
+                "mary-magdalene-set-free",
+                "the-sons-of-sceva"
+            ],
+            "summary": "Jesus cast out demons with a word, gave his followers authority in his name, and at the cross disarmed the powers of darkness.",
+            "story": "In the synagogue at Capernaum the people were amazed: 'with authority commandeth he even the unclean spirits, and they do obey him.' He used no rituals or charms, only a command. The seventy returned saying, 'Lord, even the devils are subject unto us through thy name.' At the cross, Paul says, Christ 'spoiled principalities and powers, he made a shew of them openly, triumphing over them in it.'",
+            "meaning": "'For this purpose the Son of God was manifested, that he might destroy the works of the devil' (1 John 3:8). The power is Christ's, not ours: the sons of Sceva tried to use Jesus' name like a spell and were overpowered (Acts 19:13-16). Jesus told his disciples to rejoice not that spirits obeyed them, 'but rather rejoice, because your names are written in heaven.'",
+            "lesson": "You do not need to fear what Christ has already defeated. Rejoice most of all that you belong to him.",
+            "key_verses": [
+                {
+                    "reference": "1 John 3:8",
+                    "text": "He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of God was manifested, that he might destroy the works of the devil."
+                },
+                {
+                    "reference": "Colossians 2:15",
+                    "text": "And having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Mark 1:21-28",
+                "Luke 10:17-20",
+                "Colossians 2:15",
+                "1 John 3:8",
+                "Hebrews 2:14-15",
+                "John 12:31"
+            ],
+            "books": [
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                }
+            ]
+        },
+        {
+            "id": "the-whole-armour-of-god",
+            "name": "The whole armour of God",
+            "group": "Demons",
+            "testament": "New",
+            "epithet": "We wrestle not against flesh and blood",
+            "told_in": "Ephesians 6:10-18",
+            "also_in": [
+                "Romans 13:12",
+                "1 Thessalonians 5:8",
+                "2 Corinthians 10:3-5"
+            ],
+            "summary": "Paul tells Christians to stand against the devil's schemes in God's armour: truth, righteousness, the gospel, faith, salvation, the word of God and prayer.",
+            "story": "Writing in chains, perhaps with a Roman guard beside him, Paul says, 'Put on the whole armour of God, that ye may be able to stand against the wiles of the devil. For we wrestle not against flesh and blood, but against principalities, against powers'. Then he names each piece: the belt of truth, the 'breastplate of righteousness', feet ready with 'the gospel of peace', 'the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked', 'the helmet of salvation, and the sword of the Spirit, which is the word of God', and prayer 'always'.",
+            "meaning": "Most of the armour is ordinary Christian living: honesty, right living, the gospel, trust, Scripture and prayer. Spiritual battle is not mainly dramatic encounters but daily faithfulness. And our enemy is not the people who oppose us: 'we wrestle not against flesh and blood'.",
+            "lesson": "Put the armour on each morning: read a verse, tell the truth, trust God and pray for the people around you. Remember that the person who hurt you is not your real enemy.",
+            "key_verses": [
+                {
+                    "reference": "Ephesians 6:11",
+                    "text": "Put on the whole armour of God, that ye may be able to stand against the wiles of the devil."
+                },
+                {
+                    "reference": "Ephesians 6:16",
+                    "text": "Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Ephesians 6:10-18",
+                "Romans 13:12",
+                "1 Thessalonians 5:8",
+                "2 Corinthians 10:3-5"
+            ],
+            "books": [
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "1 Thessalonians",
+                    "id": "1-thessalonians"
+                },
+                {
+                    "name": "2 Corinthians",
+                    "id": "2-corinthians"
+                }
+            ]
+        },
+        {
+            "id": "resist-the-devil",
+            "name": "Resist the devil",
+            "group": "Demons",
+            "testament": "New",
+            "epithet": "And he will flee from you",
+            "told_in": "James 4:7-8",
+            "also_in": [
+                "1 Peter 5:8-9",
+                "Ephesians 4:26-27",
+                "Matthew 4:1-11",
+                "1 Corinthians 10:13"
+            ],
+            "summary": "The Bible's plan for facing the devil is simple: submit to God, resist the devil, and do not give him a foothold.",
+            "story": "James writes, 'Submit yourselves therefore to God. Resist the devil, and he will flee from you.' Peter says the same: 'Whom resist stedfast in the faith'. Paul warns that anger left overnight gives the devil room: 'Neither give place to the devil.' Jesus showed the way in the wilderness, answering each temptation with 'It is written'.",
+            "meaning": "The order matters: submit to God first, then resist. Resistance is not shouting at the devil but saying no to sin and yes to God. And there is always a way out: 'God is faithful, who will not suffer you to be tempted above that ye are able' (1 Corinthians 10:13).",
+            "lesson": "Name the place where you keep giving the devil a foothold, whether anger, a habit or a lie you believe, and close it today by submitting it to God and choosing the way out.",
+            "key_verses": [
+                {
+                    "reference": "James 4:7",
+                    "text": "Submit yourselves therefore to God. Resist the devil, and he will flee from you."
+                },
+                {
+                    "reference": "1 Corinthians 10:13",
+                    "text": "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "James 4:7-8",
+                "1 Peter 5:8-9",
+                "Ephesians 4:26-27",
+                "Matthew 4:1-11",
+                "1 Corinthians 10:13"
+            ],
+            "books": [
+                {
+                    "name": "James",
+                    "id": "james"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                }
+            ]
+        },
+        {
+            "id": "try-the-spirits",
+            "name": "Try the spirits",
+            "group": "Demons",
+            "testament": "New",
+            "epithet": "Believe not every spirit",
+            "told_in": "1 John 4:1-6",
+            "also_in": [
+                "2 Corinthians 11:13-15",
+                "Deuteronomy 18:9-14",
+                "Acts 19:18-20",
+                "Galatians 1:8"
+            ],
+            "related": [
+                "the-law-against-sorcery",
+                "the-witch-of-endor",
+                "the-books-burned-at-ephesus"
+            ],
+            "summary": "Not every spiritual experience comes from God. John tells believers to test the spirits by what they say about Jesus Christ.",
+            "story": "John writes, 'Beloved, believe not every spirit, but try the spirits whether they are of God: because many false prophets are gone out into the world.' The test is Christ: every spirit that confesses 'that Jesus Christ is come in the flesh is of God' (1 John 4:2). Paul warns that false teachers can look like 'ministers of righteousness'. At Ephesus, new believers burned their books of magic in public (Acts 19:19).",
+            "meaning": "The Bible forbids consulting mediums, fortune-tellers and spirits (Deuteronomy 18:10-12), not because they are harmless but because they are not. A spiritual message is to be judged by Scripture and by what it says about Jesus, not by how impressive it feels.",
+            "lesson": "Stay away from horoscopes, séances, ouija boards and fortune-telling, even as a game. If you have been involved, bring it to God, get rid of anything connected to it, and talk to a pastor.",
+            "key_verses": [
+                {
+                    "reference": "1 John 4:1",
+                    "text": "Beloved, believe not every spirit, but try the spirits whether they are of God: because many false prophets are gone out into the world."
+                },
+                {
+                    "reference": "Acts 19:19",
+                    "text": "Many of them also which used curious arts brought their books together, and burned them before all men: and they counted the price of them, and found it fifty thousand pieces of silver."
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "1 John 4:1-6",
+                "2 Corinthians 11:13-15",
+                "Deuteronomy 18:9-14",
+                "Acts 19:18-20",
+                "Galatians 1:8"
+            ],
+            "books": [
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                },
+                {
+                    "name": "2 Corinthians",
+                    "id": "2-corinthians"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "Galatians",
+                    "id": "galatians"
+                }
+            ]
+        },
+        {
+            "id": "greater-is-he-that-is-in-you",
+            "name": "Greater is he that is in you",
+            "group": "Demons",
+            "testament": "New",
+            "epithet": "Than he that is in the world",
+            "told_in": "1 John 4:4",
+            "also_in": [
+                "Romans 8:37-39",
+                "Colossians 1:13",
+                "Luke 10:19-20",
+                "2 Kings 6:16"
+            ],
+            "summary": "Should a Christian be afraid of demons? The Bible's answer is no: the one who lives in believers is greater than any power in the world.",
+            "story": "John writes to ordinary believers surrounded by false teaching: 'Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.' Paul lists every power he can think of, 'angels, nor principalities, nor powers', and says none 'shall be able to separate us from the love of God' (Romans 8:38-39). God 'hath delivered us from the power of darkness' (Colossians 1:13).",
+            "meaning": "The Bible treats evil seriously but never tells believers to live in fear of it. The Holy Spirit lives in those who belong to Christ, and nothing can snatch them from God. Fear of the devil gives him more attention than he deserves; faith keeps our eyes on the Lord.",
+            "lesson": "If you are afraid at night or troubled by dark thoughts, pray in Jesus' name, read Romans 8:38-39 aloud, and rest in the one who is greater.",
+            "key_verses": [
+                {
+                    "reference": "1 John 4:4",
+                    "text": "Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world."
+                },
+                {
+                    "reference": "Colossians 1:13",
+                    "text": "Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son:"
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "1 John 4:4",
+                "Romans 8:37-39",
+                "Colossians 1:13",
+                "Luke 10:19-20",
+                "2 Kings 6:16"
+            ],
+            "books": [
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "2 Kings",
+                    "id": "2-kings"
+                }
+            ]
+        },
+        {
+            "id": "the-end-of-the-devil",
+            "name": "The end of the devil",
+            "group": "Demons",
+            "testament": "Both",
+            "epithet": "The God of peace shall bruise Satan under your feet",
+            "told_in": "Revelation 20:7-10",
+            "also_in": [
+                "Genesis 3:15",
+                "Romans 16:20",
+                "Matthew 25:41",
+                "Hebrews 2:14-15",
+                "Revelation 21:3-4"
+            ],
+            "summary": "The Bible's story ends with the devil defeated for ever: the serpent's head crushed, as God promised in Eden.",
+            "story": "Right after the first sin, God told the serpent that the woman's seed would win: 'it shall bruise thy head' (Genesis 3:15). Paul promised the Romans, 'the God of peace shall bruise Satan under your feet shortly.' Jesus shared our flesh 'that through death he might destroy him that had the power of death, that is, the devil'. At the end, 'the devil that deceived them was cast into the lake of fire', and God makes all things new, with no more death, sorrow or pain (Revelation 21:4).",
+            "meaning": "Evil will not have the last word. The victory was won at the cross and will be completed at Christ's return. Until then the devil is a defeated enemy who can still do harm, but his time is short (Revelation 12:12).",
+            "lesson": "When evil seems to be winning, in the news or in your own life, remember how the story ends. Live today on the side of the winner.",
+            "key_verses": [
+                {
+                    "reference": "Romans 16:20",
+                    "text": "And the God of peace shall bruise Satan under your feet shortly. The grace of our Lord Jesus Christ be with you. Amen."
+                },
+                {
+                    "reference": "Hebrews 2:14",
+                    "text": "Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil;"
+                }
+            ],
+            "special": true,
+            "accounts": [
+                "Revelation 20:7-10",
+                "Genesis 3:15",
+                "Romans 16:20",
+                "Matthew 25:41",
+                "Hebrews 2:14-15",
+                "Revelation 21:3-4"
+            ],
+            "books": [
+                {
+                    "name": "Revelation",
+                    "id": "revelation"
+                },
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
                 }
             ]
         }

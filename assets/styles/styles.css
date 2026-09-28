@@ -1148,18 +1148,32 @@ html:has(.about-dialog[open]) { overflow: hidden; }
 .footer-sign { display: flex; flex-direction: column; align-items: flex-start; }
 .footer-sign .footer-brand { min-height: 0; }
 .footer-tagline { color: var(--ink); }
-.footer-social { display: flex; align-items: center; gap: 2px; margin-right: -10px; }
-.footer-social a {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: #111;
-  transition: background-color .15s ease;
+/* Our mission: a link to the Mission Statement page, where the social links were. */
+.footer-mission {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 44px;
+  color: var(--navy);
+  text-align: right;
+  text-decoration: none;
 }
-.footer-social a:hover { background: rgb(0 27 52 / 8%); }
-.footer-social svg { display: block; width: 18px; height: 18px; }
+.footer-mission-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #805b18;
+}
+.footer-mission-text {
+  font-size: .8rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgb(0 27 52 / 25%);
+  text-underline-offset: 3px;
+}
+.footer-mission:hover .footer-mission-text { text-decoration-color: currentColor; }
 @media (max-width: 650px) {
   .hero { padding: 10px 0 0; }
   .hero-toolbar { padding-inline: 8px; gap: 8px; }
@@ -1172,7 +1186,7 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   .about-hero { padding-top: 34px; }
   .footer-bottom { flex-direction: column; justify-content: center; padding: 8px 20px 24px; text-align: center; }
   .footer-sign { align-items: center; }
-  .footer-social { margin-right: 0; }
+  .footer-mission { align-items: center; text-align: center; }
 }
 
 /* Menu: the DG icon opens a drawer from the left edge. The study pages sit at

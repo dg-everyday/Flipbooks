@@ -1,0 +1,3210 @@
+{
+    "totals": {
+        "entries": 47,
+        "old": 21,
+        "new": 26,
+        "groups": {
+            "The Ten Commandments": 10,
+            "The greatest commandments": 4,
+            "Commandments of Jesus": 9,
+            "Wisdom for daily life": 9,
+            "Commandments of the apostles": 15
+        }
+    },
+    "groups": [
+        "The Ten Commandments",
+        "The greatest commandments",
+        "Commandments of Jesus",
+        "Wisdom for daily life",
+        "Commandments of the apostles"
+    ],
+    "entries": [
+        {
+            "id": "no-other-gods",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 1,
+            "name": "No other gods",
+            "epithet": "Thou shalt have no other gods before me",
+            "told_in": "Exodus 20:1-3",
+            "also_in": [
+                "Deuteronomy 5:6-7",
+                "Matthew 4:10",
+                "1 John 5:21"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:2-3",
+                    "lines": [
+                        "I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage.",
+                        "Thou shalt have no other gods before me."
+                    ]
+                }
+            ],
+            "summary": "The first commandment: the God who rescued Israel from slavery is to be their only God.",
+            "story": "Three months after leaving Egypt, Israel camped before Mount Sinai. The mountain smoked and shook, and 'God spake all these words'. The commandments begin not with a rule but with a rescue: 'I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage.' Then comes the first command: 'Thou shalt have no other gods before me.'",
+            "meaning": "God's law starts with grace: he saved first, and then asked for loyalty. Anything we trust, love or fear more than God becomes a god. Jesus answered the tempter with this command: 'Thou shalt worship the Lord thy God, and him only shalt thou serve' (Matthew 4:10).",
+            "daily": "Notice what quietly takes God's place: money, success, approval, a relationship, even a good cause. Put God first in your time, your choices and your trust.",
+            "try_it": "Before you check your phone tomorrow morning, spend the first minutes of the day with God.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 4:10",
+                    "text": "Then saith Jesus unto him, Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve."
+                },
+                {
+                    "reference": "Matthew 6:24",
+                    "text": "No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:1-3",
+                "Deuteronomy 5:6-7",
+                "Matthew 4:10",
+                "1 John 5:21"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                }
+            ]
+        },
+        {
+            "id": "no-graven-images",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 2,
+            "name": "No graven images",
+            "epithet": "Thou shalt not make unto thee any graven image",
+            "told_in": "Exodus 20:4-6",
+            "also_in": [
+                "Deuteronomy 4:15-19",
+                "Exodus 32:1-8",
+                "John 4:24"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:4-6",
+                    "lines": [
+                        "Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth:",
+                        "Thou shalt not bow down thyself to them, nor serve them: for I the LORD thy God am a jealous God, visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me;",
+                        "And shewing mercy unto thousands of them that love me, and keep my commandments."
+                    ]
+                }
+            ],
+            "summary": "God is not to be worshipped through images or likenesses, because no image can show who he is.",
+            "story": "At Sinai the people heard God's voice from the fire, but 'ye saw no manner of similitude' (Deuteronomy 4:15). So they were not to make an image of anything in heaven, on earth or in the sea, or bow down to one. Weeks later, while Moses was still on the mountain, they made a golden calf and called it the god who had brought them out of Egypt.",
+            "meaning": "The first commandment is about which God we worship; the second is about how. God cannot be shaped, carried or controlled. The command carries a promise too: mercy 'unto thousands of them that love me, and keep my commandments.' Jesus said, 'God is a Spirit: and they that worship him must worship him in spirit and in truth' (John 4:24).",
+            "daily": "We rarely carve idols now, but we still shrink God to a size we can manage: a lucky charm, a vending machine, a god who always agrees with us. Let God be who the Bible says he is.",
+            "try_it": "Read a psalm about God's greatness, such as Psalm 145, and let it enlarge a picture of God that has grown too small.",
+            "key_verses": [
+                {
+                    "reference": "John 4:24",
+                    "text": "God is a Spirit: and they that worship him must worship him in spirit and in truth."
+                },
+                {
+                    "reference": "1 John 5:21",
+                    "text": "Little children, keep yourselves from idols. Amen."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:4-6",
+                "Deuteronomy 4:15-19",
+                "Exodus 32:1-8",
+                "John 4:24"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "John",
+                    "id": "john"
+                }
+            ]
+        },
+        {
+            "id": "gods-name",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 3,
+            "name": "God's name",
+            "epithet": "Thou shalt not take the name of the LORD thy God in vain",
+            "told_in": "Exodus 20:7",
+            "also_in": [
+                "Leviticus 19:12",
+                "Matthew 5:33-37",
+                "Matthew 6:9"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:7",
+                    "lines": [
+                        "Thou shalt not take the name of the LORD thy God in vain; for the LORD will not hold him guiltless that taketh his name in vain."
+                    ]
+                }
+            ],
+            "summary": "God's name is not to be used emptily: not in careless curses, and not to back up false promises.",
+            "story": "In Israel a name stood for the person. To take God's name 'in vain' was to use it for nothing, or for a lie: swearing falsely by it, cursing with it, or claiming his authority for one's own ends. The law adds, 'ye shall not swear by my name falsely, neither shalt thou profane the name of thy God' (Leviticus 19:12).",
+            "meaning": "It covers more than bad language. Those who carry God's name, as his people do, can take it in vain by living in a way that dishonours it. Jesus taught his disciples to pray first, 'Hallowed be thy name', and to keep their word so plainly that no oath is needed: 'let your communication be, Yea, yea; Nay, nay' (Matthew 5:37).",
+            "daily": "Speak God's name with respect, keep your promises without needing to swear, and remember that people judge God by how his people live.",
+            "try_it": "Keep one promise today exactly as you made it, and let your yes mean yes.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 5:37",
+                    "text": "But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil."
+                },
+                {
+                    "reference": "Matthew 6:9",
+                    "text": "After this manner therefore pray ye: Our Father which art in heaven, Hallowed be thy name."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:7",
+                "Leviticus 19:12",
+                "Matthew 5:33-37",
+                "Matthew 6:9"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ]
+        },
+        {
+            "id": "the-sabbath-day",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 4,
+            "name": "The sabbath day",
+            "epithet": "Remember the sabbath day, to keep it holy",
+            "told_in": "Exodus 20:8-11",
+            "also_in": [
+                "Deuteronomy 5:12-15",
+                "Mark 2:23-28",
+                "Hebrews 4:9-10"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:8-11",
+                    "lines": [
+                        "Remember the sabbath day, to keep it holy.",
+                        "Six days shalt thou labour, and do all thy work:",
+                        "But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates:",
+                        "For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it."
+                    ]
+                }
+            ],
+            "summary": "One day in seven set apart for rest and for God, for everyone in the household, servants and animals included.",
+            "story": "'Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of the LORD thy God.' No one was to work that day: not children, not servants, not animals, not the foreigner in town. Exodus grounds it in creation, for God rested on the seventh day. Deuteronomy adds the memory of slavery: 'remember that thou wast a servant in the land of Egypt' (Deuteronomy 5:15).",
+            "meaning": "The sabbath is a gift before it is a rule: a slave never gets a day off, and God's people do. Jesus said, 'The sabbath was made for man, and not man for the sabbath' (Mark 2:27), and he healed on it. Christians keep this command in different ways, many gathering on Sunday, the day of the resurrection, and all see in it the deeper rest God gives (Hebrews 4:9-10).",
+            "daily": "Your worth is not measured by how much you produce. Set aside regular time to stop, to rest, to worship, and to enjoy God and the people around you.",
+            "try_it": "Choose a day this week to put work aside for rest, worship and the people you love, and plan it now.",
+            "key_verses": [
+                {
+                    "reference": "Mark 2:27",
+                    "text": "And he said unto them, The sabbath was made for man, and not man for the sabbath:"
+                },
+                {
+                    "reference": "Hebrews 4:9",
+                    "text": "There remaineth therefore a rest to the people of God."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:8-11",
+                "Deuteronomy 5:12-15",
+                "Mark 2:23-28",
+                "Hebrews 4:9-10"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                }
+            ]
+        },
+        {
+            "id": "honour-your-father-and-mother",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 5,
+            "name": "Honour your father and mother",
+            "epithet": "Honour thy father and thy mother",
+            "told_in": "Exodus 20:12",
+            "also_in": [
+                "Deuteronomy 5:16",
+                "Ephesians 6:1-4",
+                "Mark 7:9-13"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:12",
+                    "lines": [
+                        "Honour thy father and thy mother: that thy days may be long upon the land which the LORD thy God giveth thee."
+                    ]
+                }
+            ],
+            "summary": "Children of every age are to honour their father and mother, the first commandment with a promise attached.",
+            "story": "The fifth commandment turns from God to people, and begins at home: 'Honour thy father and thy mother: that thy days may be long upon the land which the LORD thy God giveth thee.' Jesus rebuked religious leaders who let people avoid supporting their aged parents by declaring their money a gift to God (Mark 7:10-13).",
+            "meaning": "To honour is to give weight to: respect, gratitude and, in old age, care. Paul calls it 'the first commandment with promise' (Ephesians 6:2), and he has a word for parents too: 'provoke not your children to wrath' (Ephesians 6:4). From the cross, Jesus made sure his mother would be cared for (John 19:26-27).",
+            "daily": "Honour does not always mean agreeing, and it is harder when parents have failed. But it always means respect, gratitude where you can give it, and care as they grow older.",
+            "try_it": "Call or visit a parent or an older relative today, and thank them for one specific thing.",
+            "key_verses": [
+                {
+                    "reference": "Ephesians 6:2-3",
+                    "text": "Honour thy father and mother; (which is the first commandment with promise;) That it may be well with thee, and thou mayest live long on the earth."
+                },
+                {
+                    "reference": "Proverbs 23:22",
+                    "text": "Hearken unto thy father that begat thee, and despise not thy mother when she is old."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:12",
+                "Deuteronomy 5:16",
+                "Ephesians 6:1-4",
+                "Mark 7:9-13"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                }
+            ]
+        },
+        {
+            "id": "do-not-kill",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 6,
+            "name": "Do not kill",
+            "epithet": "Thou shalt not kill",
+            "told_in": "Exodus 20:13",
+            "also_in": [
+                "Genesis 9:6",
+                "Matthew 5:21-24",
+                "1 John 3:15"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:13",
+                    "lines": [
+                        "Thou shalt not kill."
+                    ]
+                }
+            ],
+            "summary": "Human life is not ours to take, because every person is made in the image of God.",
+            "story": "The sixth commandment is four words in English: 'Thou shalt not kill.' The Hebrew word is the one used for murder, the unlawful taking of a human life, which is why many modern translations say “You shall not murder”. Behind it stands Genesis: 'for in the image of God made he man' (Genesis 9:6).",
+            "meaning": "Jesus went to the root: anger and contempt are murder in the heart. 'Whosoever is angry with his brother without a cause shall be in danger of the judgment' (Matthew 5:22), and he told his hearers to be reconciled before they brought a gift to the altar. John adds, 'Whosoever hateth his brother is a murderer' (1 John 3:15).",
+            "daily": "Value life at every stage, and guard your heart against the anger, contempt and bitterness that grow into violence of word or deed.",
+            "try_it": "If there is someone you are angry with, take one step toward making peace with them today.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 5:22",
+                    "text": "But I say unto you, That whosoever is angry with his brother without a cause shall be in danger of the judgment: and whosoever shall say to his brother, Raca, shall be in danger of the council: but whosoever shall say, Thou fool, shall be in danger of hell fire."
+                },
+                {
+                    "reference": "1 John 3:15",
+                    "text": "Whosoever hateth his brother is a murderer: and ye know that no murderer hath eternal life abiding in him."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:13",
+                "Genesis 9:6",
+                "Matthew 5:21-24",
+                "1 John 3:15"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                }
+            ]
+        },
+        {
+            "id": "do-not-commit-adultery",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 7,
+            "name": "Do not commit adultery",
+            "epithet": "Thou shalt not commit adultery",
+            "told_in": "Exodus 20:14",
+            "also_in": [
+                "Proverbs 5:15-20",
+                "Matthew 5:27-28",
+                "Hebrews 13:4"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:14",
+                    "lines": [
+                        "Thou shalt not commit adultery."
+                    ]
+                }
+            ],
+            "summary": "Marriage is to be kept faithful, and the covenant between husband and wife protected.",
+            "story": "'Thou shalt not commit adultery.' The seventh commandment guards marriage, the covenant at the heart of the family. The law, the prophets and the proverbs all treat unfaithfulness as betrayal, and Proverbs urges a husband to 'rejoice with the wife of thy youth' (Proverbs 5:18).",
+            "meaning": "Jesus again went to the heart: to look at someone with lust is adultery already committed in the heart (Matthew 5:28). Hebrews says, 'Marriage is honourable in all, and the bed undefiled' (Hebrews 13:4). God's intention is joyful, faithful love, and faithfulness begins with the eyes and the imagination.",
+            "daily": "Protect your marriage, or a future one, by what you look at, the friendships you allow, and the honesty you keep with your husband or wife.",
+            "try_it": "Do one thoughtful thing today that tells your husband or wife, I choose you again. If you are not married, pray for a marriage you know.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 5:28",
+                    "text": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart."
+                },
+                {
+                    "reference": "Hebrews 13:4",
+                    "text": "Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:14",
+                "Proverbs 5:15-20",
+                "Matthew 5:27-28",
+                "Hebrews 13:4"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                }
+            ]
+        },
+        {
+            "id": "do-not-steal",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 8,
+            "name": "Do not steal",
+            "epithet": "Thou shalt not steal",
+            "told_in": "Exodus 20:15",
+            "also_in": [
+                "Leviticus 19:11-13",
+                "Exodus 22:1",
+                "Ephesians 4:28"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:15",
+                    "lines": [
+                        "Thou shalt not steal."
+                    ]
+                }
+            ],
+            "summary": "Other people's property is to be respected, and a living earned honestly.",
+            "story": "'Thou shalt not steal.' The law spelled it out for daily business: 'Ye shall not steal, neither deal falsely, neither lie one to another' (Leviticus 19:11), and a worker's wages were not to be held back overnight (Leviticus 19:13). What was stolen had to be repaid, often several times over (Exodus 22:1).",
+            "meaning": "Paul turns the command from a prohibition into a new way of living: 'Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth' (Ephesians 4:28). The opposite of stealing is not only honesty, but generosity.",
+            "daily": "Stealing includes cheating on time, taxes, copyright or expenses, and not paying what we owe. Work honestly, pay fairly and promptly, and give.",
+            "try_it": "Pay back anything you owe, even something small, or return something you borrowed.",
+            "key_verses": [
+                {
+                    "reference": "Ephesians 4:28",
+                    "text": "Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:15",
+                "Leviticus 19:11-13",
+                "Exodus 22:1",
+                "Ephesians 4:28"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                }
+            ]
+        },
+        {
+            "id": "do-not-bear-false-witness",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 9,
+            "name": "Do not bear false witness",
+            "epithet": "Thou shalt not bear false witness against thy neighbour",
+            "told_in": "Exodus 20:16",
+            "also_in": [
+                "Deuteronomy 19:15-19",
+                "Proverbs 6:16-19",
+                "Ephesians 4:25"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:16",
+                    "lines": [
+                        "Thou shalt not bear false witness against thy neighbour."
+                    ]
+                }
+            ],
+            "summary": "We are not to lie about other people, in court or in conversation.",
+            "story": "'Thou shalt not bear false witness against thy neighbour.' In Israel a case could turn on witnesses, so a lie could cost someone their property or their life, and a false witness was given the punishment he had meant for the other (Deuteronomy 19:18-19). Proverbs lists 'A false witness that speaketh lies' among the things the LORD hates (Proverbs 6:19).",
+            "meaning": "Jesus himself was condemned by false witnesses (Mark 14:56). The command reaches beyond the courtroom to gossip, slander and half-truths that damage someone's name. Paul writes, 'putting away lying, speak every man truth with his neighbour' (Ephesians 4:25).",
+            "daily": "Before you repeat something about someone, ask: is it true, is it kind, is it mine to share? Defend people's reputations when they are not there.",
+            "try_it": "Say something good about someone who is not in the room.",
+            "key_verses": [
+                {
+                    "reference": "Ephesians 4:25",
+                    "text": "Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another."
+                },
+                {
+                    "reference": "Proverbs 12:22",
+                    "text": "Lying lips are abomination to the LORD: but they that deal truly are his delight."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:16",
+                "Deuteronomy 19:15-19",
+                "Proverbs 6:16-19",
+                "Ephesians 4:25"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                }
+            ]
+        },
+        {
+            "id": "do-not-covet",
+            "group": "The Ten Commandments",
+            "testament": "Old",
+            "by_label": "Spoken by",
+            "by": [
+                {
+                    "name": "God, from Mount Sinai"
+                }
+            ],
+            "to": "Israel, through Moses",
+            "where": "Mount Sinai",
+            "number": 10,
+            "name": "Do not covet",
+            "epithet": "Thou shalt not covet",
+            "told_in": "Exodus 20:17",
+            "also_in": [
+                "Romans 7:7",
+                "Luke 12:15",
+                "1 Timothy 6:6-8"
+            ],
+            "words": [
+                {
+                    "reference": "Exodus 20:17",
+                    "lines": [
+                        "Thou shalt not covet thy neighbour’s house, thou shalt not covet thy neighbour’s wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour’s."
+                    ]
+                }
+            ],
+            "summary": "The last commandment reaches inside: we are not to set our hearts on what belongs to someone else.",
+            "story": "The first nine commandments mostly concern what we do. The tenth is about what we want: 'Thou shalt not covet thy neighbour's house, thou shalt not covet thy neighbour's wife … nor any thing that is thy neighbour's.' Paul said it was this commandment that showed him his own heart: 'I had not known lust, except the law had said, Thou shalt not covet' (Romans 7:7).",
+            "meaning": "Coveting is where stealing, adultery and many lies begin. Jesus warned, 'Take heed, and beware of covetousness' (Luke 12:15), because life does not consist in what we own. The cure is contentment: 'godliness with contentment is great gain' (1 Timothy 6:6).",
+            "daily": "Comparison drives covetousness, and screens feed it all day long. Practise gratitude for what you have, and rejoice when others are blessed.",
+            "try_it": "Write down five things you are thankful for, and mute one account that keeps you wanting what others have.",
+            "key_verses": [
+                {
+                    "reference": "Luke 12:15",
+                    "text": "And he said unto them, Take heed, and beware of covetousness: for a man’s life consisteth not in the abundance of the things which he possesseth."
+                },
+                {
+                    "reference": "1 Timothy 6:6",
+                    "text": "But godliness with contentment is great gain."
+                }
+            ],
+            "accounts": [
+                "Exodus 20:17",
+                "Romans 7:7",
+                "Luke 12:15",
+                "1 Timothy 6:6-8"
+            ],
+            "books": [
+                {
+                    "name": "Exodus",
+                    "id": "exodus"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "1 Timothy",
+                    "id": "1-timothy"
+                }
+            ]
+        },
+        {
+            "id": "love-god-with-all-your-heart",
+            "name": "Love God with all your heart",
+            "group": "The greatest commandments",
+            "testament": "Old",
+            "epithet": "Thou shalt love the LORD thy God with all thine heart",
+            "by_label": "Given by",
+            "by": [
+                {
+                    "name": "God, through Moses",
+                    "hero": "moses"
+                }
+            ],
+            "to": "Israel, about to enter the promised land",
+            "where": "The plains of Moab",
+            "told_in": "Deuteronomy 6:4-9",
+            "also_in": [
+                "Matthew 22:36-38",
+                "Mark 12:28-30",
+                "Luke 10:25-28"
+            ],
+            "words": [
+                {
+                    "reference": "Deuteronomy 6:4-5",
+                    "lines": [
+                        "Hear, O Israel: The LORD our God is one LORD:",
+                        "And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might."
+                    ]
+                },
+                {
+                    "reference": "Matthew 22:37-38",
+                    "lines": [
+                        "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind.",
+                        "This is the first and great commandment."
+                    ]
+                }
+            ],
+            "summary": "The first and great commandment: love the one true God with everything you are.",
+            "story": "Before Israel crossed the Jordan, Moses repeated the law and gave them the words Jews still say every morning and evening, the Shema: 'Hear, O Israel: The LORD our God is one LORD'. Centuries later a lawyer asked Jesus, 'Master, which is the great commandment in the law?' Jesus answered with these words, and called them 'the first and great commandment.'",
+            "meaning": "Heart, soul, mind and strength together mean all of you: your feelings, your life, your thinking and your energy. Love for God is not one part of life beside the others; it is the centre the rest turns on. The first four of the Ten Commandments are this one commandment spelled out.",
+            "daily": "Loving God is shown by trust, obedience, worship and time. Jesus said, 'If ye love me, keep my commandments' (John 14:15). Bring God into the ordinary parts of the day, not only the religious ones.",
+            "try_it": "Tell God today, in your own words, three reasons you love him.",
+            "key_verses": [
+                {
+                    "reference": "Mark 12:30",
+                    "text": "And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment."
+                },
+                {
+                    "reference": "John 14:15",
+                    "text": "If ye love me, keep my commandments."
+                }
+            ],
+            "accounts": [
+                "Deuteronomy 6:4-9",
+                "Matthew 22:36-38",
+                "Mark 12:28-30",
+                "Luke 10:25-28"
+            ],
+            "books": [
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ]
+        },
+        {
+            "id": "love-your-neighbour-as-yourself",
+            "name": "Love your neighbour as yourself",
+            "group": "The greatest commandments",
+            "testament": "Old",
+            "epithet": "Thou shalt love thy neighbour as thyself",
+            "by_label": "Given by",
+            "by": [
+                {
+                    "name": "God, through Moses",
+                    "hero": "moses"
+                }
+            ],
+            "to": "Israel",
+            "where": "Mount Sinai",
+            "told_in": "Leviticus 19:18",
+            "also_in": [
+                "Matthew 22:39-40",
+                "Luke 10:29-37",
+                "Romans 13:8-10",
+                "Galatians 5:14"
+            ],
+            "words": [
+                {
+                    "reference": "Leviticus 19:18",
+                    "lines": [
+                        "Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD."
+                    ]
+                },
+                {
+                    "reference": "Matthew 22:39-40",
+                    "lines": [
+                        "And the second is like unto it, Thou shalt love thy neighbour as thyself.",
+                        "On these two commandments hang all the law and the prophets."
+                    ]
+                }
+            ],
+            "summary": "The second great commandment: treat other people with the same care you want for yourself.",
+            "story": "The command sits in the middle of the law's rules for everyday life in Leviticus 19: 'Thou shalt not avenge, nor bear any grudge … but thou shalt love thy neighbour as thyself'. When a lawyer asked Jesus, 'And who is my neighbour?', he told the story of the good Samaritan, who stopped for a wounded stranger of another people, and ended, 'Go, and do thou likewise' (Luke 10:37).",
+            "meaning": "Jesus joined this command to the first: 'On these two commandments hang all the law and the prophets.' Paul says the last six of the Ten Commandments are 'briefly comprehended' in it, and 'love is the fulfilling of the law' (Romans 13:9-10). Your neighbour is anyone whose need you can see and meet.",
+            "daily": "Your neighbour is the person next to you: family, colleague, stranger, the one who disagrees with you. Love is practical: time, help, patience, fairness and kindness.",
+            "try_it": "Notice one person today who needs help, and help them without being asked.",
+            "key_verses": [
+                {
+                    "reference": "Romans 13:10",
+                    "text": "Love worketh no ill to his neighbour: therefore love is the fulfilling of the law."
+                },
+                {
+                    "reference": "Galatians 5:14",
+                    "text": "For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself."
+                }
+            ],
+            "accounts": [
+                "Leviticus 19:18",
+                "Matthew 22:39-40",
+                "Luke 10:29-37",
+                "Romans 13:8-10",
+                "Galatians 5:14"
+            ],
+            "books": [
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "Galatians",
+                    "id": "galatians"
+                }
+            ]
+        },
+        {
+            "id": "love-one-another-as-i-have-loved-you",
+            "name": "Love one another as I have loved you",
+            "group": "The greatest commandments",
+            "testament": "New",
+            "epithet": "A new commandment I give unto you",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "His disciples",
+            "where": "The Last Supper",
+            "told_in": "John 13:31-35",
+            "also_in": [
+                "John 15:12-17",
+                "1 John 3:16-18",
+                "1 John 4:7-11"
+            ],
+            "words": [
+                {
+                    "reference": "John 13:34-35",
+                    "lines": [
+                        "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.",
+                        "By this shall all men know that ye are my disciples, if ye have love one to another."
+                    ]
+                }
+            ],
+            "summary": "Jesus's new commandment: love each other the way he loved us, and the world will know we are his.",
+            "story": "On the night before he died, after washing his disciples' feet and sending Judas out into the dark, Jesus said, 'A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.' He said it again later that night: 'Greater love hath no man than this, that a man lay down his life for his friends' (John 15:13).",
+            "meaning": "Love was already commanded; what is new is the measure: 'as I have loved you'. That love serves, forgives and lays down its life. It is the mark by which people are to recognise Christ's followers: 'By this shall all men know that ye are my disciples'. John writes, 'let us not love in word, neither in tongue; but in deed and in truth' (1 John 3:18).",
+            "daily": "How Christians treat each other is the clearest sermon the world hears. Serve, forgive and care for fellow believers, especially the hard ones to love.",
+            "try_it": "Do a humble, practical service for someone in your church or family this week, like Jesus washing feet.",
+            "key_verses": [
+                {
+                    "reference": "John 15:13",
+                    "text": "Greater love hath no man than this, that a man lay down his life for his friends."
+                },
+                {
+                    "reference": "1 John 4:11",
+                    "text": "Beloved, if God so loved us, we ought also to love one another."
+                }
+            ],
+            "accounts": [
+                "John 13:31-35",
+                "John 15:12-17",
+                "1 John 3:16-18",
+                "1 John 4:7-11"
+            ],
+            "books": [
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                }
+            ]
+        },
+        {
+            "id": "the-golden-rule",
+            "name": "The golden rule",
+            "group": "The greatest commandments",
+            "testament": "New",
+            "epithet": "Whatsoever ye would that men should do to you, do ye even so to them",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "The crowds and his disciples",
+            "where": "The Sermon on the Mount",
+            "told_in": "Matthew 7:12",
+            "also_in": [
+                "Luke 6:31"
+            ],
+            "words": [
+                {
+                    "reference": "Matthew 7:12",
+                    "lines": [
+                        "Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets."
+                    ]
+                }
+            ],
+            "summary": "Treat others the way you would want them to treat you; Jesus said this sums up the law and the prophets.",
+            "story": "Near the end of the Sermon on the Mount, after teaching that the Father gives good things to those who ask him, Jesus drew it all together: 'Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets.' Christians have long called it “the golden rule”.",
+            "meaning": "Others taught a negative form: do not do to others what you would hate done to you. Jesus put it positively. It is not enough to avoid harm; we are to take the first step and do the good we would hope for ourselves. It is the love of neighbour turned into a question anyone can ask.",
+            "daily": "Before you speak, reply, drive, review, bargain or post, ask: how would I want to be treated here? Then do that first.",
+            "try_it": "Before your next hard conversation, ask yourself how you would want to be spoken to, and speak that way.",
+            "key_verses": [
+                {
+                    "reference": "Luke 6:31",
+                    "text": "And as ye would that men should do to you, do ye also to them likewise."
+                }
+            ],
+            "accounts": [
+                "Matthew 7:12",
+                "Luke 6:31"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ]
+        },
+        {
+            "id": "repent-and-believe-the-gospel",
+            "name": "Repent and believe the gospel",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Repent ye, and believe the gospel",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "Everyone who heard him",
+            "where": "Galilee",
+            "told_in": "Mark 1:14-15",
+            "also_in": [
+                "Matthew 4:17",
+                "Acts 2:38",
+                "Acts 17:30"
+            ],
+            "words": [
+                {
+                    "reference": "Mark 1:15",
+                    "lines": [
+                        "And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel."
+                    ]
+                }
+            ],
+            "summary": "Jesus's first command: turn from sin and trust the good news that God's kingdom has come.",
+            "story": "After John the Baptist was put in prison, Jesus came into Galilee 'preaching the gospel of the kingdom of God'. His message was short: 'The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel.' On the day of Pentecost Peter preached the same: 'Repent, and be baptized every one of you' (Acts 2:38).",
+            "meaning": "To repent is to change your mind and turn around: from sin, and from running your own life, to God. To believe is to trust Jesus and the good news he brings. Every other commandment of Jesus begins here; it is the door into the kingdom.",
+            "daily": "Repentance is not only the first step; it is a way of life. Keep short accounts with God: confess quickly, turn back, and trust his forgiveness.",
+            "try_it": "At the end of today, name one thing to turn from and one promise of God to trust.",
+            "key_verses": [
+                {
+                    "reference": "Acts 3:19",
+                    "text": "Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord;"
+                },
+                {
+                    "reference": "1 John 1:9",
+                    "text": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."
+                }
+            ],
+            "accounts": [
+                "Mark 1:14-15",
+                "Matthew 4:17",
+                "Acts 2:38",
+                "Acts 17:30"
+            ],
+            "books": [
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ]
+        },
+        {
+            "id": "deny-yourself-and-follow-me",
+            "name": "Deny yourself and follow me",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Take up his cross daily, and follow me",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "All who would follow him",
+            "where": "Near Caesarea Philippi",
+            "told_in": "Luke 9:18-26",
+            "also_in": [
+                "Matthew 16:24-26",
+                "Mark 8:34-37"
+            ],
+            "words": [
+                {
+                    "reference": "Luke 9:23-24",
+                    "lines": [
+                        "And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.",
+                        "For whosoever will save his life shall lose it: but whosoever will lose his life for my sake, the same shall save it."
+                    ]
+                }
+            ],
+            "summary": "Following Jesus means putting him before yourself every day, even when it costs.",
+            "story": "Just after Peter confessed that Jesus was 'The Christ of God', Jesus told his disciples that he must suffer, be rejected and be killed. Then he said to them all, 'If any man will come after me, let him deny himself, and take up his cross daily, and follow me.'",
+            "meaning": "A cross was not a burden to carry for a while; it was the end of a life lived for oneself. Jesus promises that this loss is really gain: 'whosoever will lose his life for my sake, the same shall save it.' Luke adds one word the others do not: 'daily'.",
+            "daily": "Denying yourself looks ordinary: choosing honesty when it costs, serving when you are tired, giving up a comfort for someone else, saying yes to God when you want to say no.",
+            "try_it": "Pick one small comfort to give up today, and use the time or money to serve someone else.",
+            "key_verses": [
+                {
+                    "reference": "Galatians 2:20",
+                    "text": "I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me."
+                }
+            ],
+            "accounts": [
+                "Luke 9:18-26",
+                "Matthew 16:24-26",
+                "Mark 8:34-37"
+            ],
+            "books": [
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                }
+            ]
+        },
+        {
+            "id": "seek-first-the-kingdom-of-god",
+            "name": "Seek first the kingdom of God",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Seek ye first the kingdom of God, and his righteousness",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "The crowds and his disciples",
+            "where": "The Sermon on the Mount",
+            "told_in": "Matthew 6:25-34",
+            "also_in": [
+                "Luke 12:22-31",
+                "Philippians 4:19"
+            ],
+            "words": [
+                {
+                    "reference": "Matthew 6:31-34",
+                    "lines": [
+                        "Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed?",
+                        "(For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things.",
+                        "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.",
+                        "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof."
+                    ]
+                }
+            ],
+            "summary": "Do not be ruled by worry about food, clothes and tomorrow; put God's kingdom first and trust him for the rest.",
+            "story": "Jesus pointed his hearers to the birds, which 'sow not, neither do they reap', and the lilies of the field, dressed more finely than 'Solomon in all his glory'. If God cares for them, he will care for his children. So: 'seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.'",
+            "meaning": "“Take no thought” in the KJV means “do not be anxious”. Jesus does not forbid work or planning; he forbids letting worry set our priorities. The cure for anxiety is not less caring but a greater trust: 'your heavenly Father knoweth that ye have need of all these things.'",
+            "daily": "Your calendar and your bank statement show what you seek first. Start the day with God, give to his work first, and hand tomorrow's worries back to him.",
+            "try_it": "Write down what you are worried about, pray over each line, and then do the one thing you can do today.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 6:33",
+                    "text": "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you."
+                },
+                {
+                    "reference": "Philippians 4:19",
+                    "text": "But my God shall supply all your need according to his riches in glory by Christ Jesus."
+                }
+            ],
+            "accounts": [
+                "Matthew 6:25-34",
+                "Luke 12:22-31",
+                "Philippians 4:19"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Philippians",
+                    "id": "philippians"
+                }
+            ]
+        },
+        {
+            "id": "love-your-enemies",
+            "name": "Love your enemies",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Love your enemies, bless them that curse you",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "The crowds and his disciples",
+            "where": "The Sermon on the Mount",
+            "told_in": "Matthew 5:43-48",
+            "also_in": [
+                "Luke 6:27-36",
+                "Romans 12:14",
+                "Romans 12:20-21"
+            ],
+            "words": [
+                {
+                    "reference": "Matthew 5:44-45",
+                    "lines": [
+                        "But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;",
+                        "That ye may be the children of your Father which is in heaven: for he maketh his sun to rise on the evil and on the good, and sendeth rain on the just and on the unjust."
+                    ]
+                }
+            ],
+            "summary": "Jesus commands the hardest love: to do good to those who hate us and to pray for those who hurt us.",
+            "story": "'Ye have heard that it hath been said, Thou shalt love thy neighbour, and hate thine enemy. But I say unto you, Love your enemies'. Jesus lived it: on the cross he prayed, 'Father, forgive them; for they know not what they do' (Luke 23:34), and Stephen prayed the same as he was stoned (Acts 7:60).",
+            "meaning": "God himself 'maketh his sun to rise on the evil and on the good'; loving enemies makes us like our Father. Love here is not a warm feeling but a choice: to bless, to do good, and to pray. Paul writes, 'Be not overcome of evil, but overcome evil with good' (Romans 12:21).",
+            "daily": "Your enemy may be a critic at work, an unkind neighbour, an ex, or someone online. You do not have to trust them or stay in harm's way, but you can refuse to hate them, and pray for them by name.",
+            "try_it": "Pray by name for someone who has hurt you, and ask God to bless them.",
+            "key_verses": [
+                {
+                    "reference": "Luke 6:27-28",
+                    "text": "But I say unto you which hear, Love your enemies, do good to them which hate you, Bless them that curse you, and pray for them which despitefully use you."
+                },
+                {
+                    "reference": "Romans 12:21",
+                    "text": "Be not overcome of evil, but overcome evil with good."
+                }
+            ],
+            "accounts": [
+                "Matthew 5:43-48",
+                "Luke 6:27-36",
+                "Romans 12:14",
+                "Romans 12:20-21"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                }
+            ]
+        },
+        {
+            "id": "forgive-seventy-times-seven",
+            "name": "Forgive, seventy times seven",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Until seventy times seven",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "with": [
+                {
+                    "name": "Peter",
+                    "hero": "peter"
+                }
+            ],
+            "to": "Peter and the disciples",
+            "where": "Capernaum",
+            "told_in": "Matthew 18:21-35",
+            "also_in": [
+                "Mark 11:25",
+                "Matthew 6:14-15",
+                "Colossians 3:13"
+            ],
+            "words": [
+                {
+                    "reference": "Matthew 18:21-22",
+                    "lines": [
+                        "Then came Peter to him, and said, Lord, how oft shall my brother sin against me, and I forgive him? till seven times?",
+                        "Jesus saith unto him, I say not unto thee, Until seven times: but, Until seventy times seven."
+                    ]
+                },
+                {
+                    "reference": "Mark 11:25",
+                    "lines": [
+                        "And when ye stand praying, forgive, if ye have ought against any: that your Father also which is in heaven may forgive you your trespasses."
+                    ]
+                }
+            ],
+            "summary": "Jesus's followers are to forgive without keeping count, as God has forgiven them.",
+            "story": "Peter asked, 'Lord, how oft shall my brother sin against me, and I forgive him? till seven times?' Jesus answered, 'Until seventy times seven', and told of a servant forgiven a debt he could never pay, who then seized a fellow servant over a small one. His master asked him, 'Shouldest not thou also have had compassion on thy fellowservant, even as I had pity on thee?' (Matthew 18:33).",
+            "meaning": "Forgiveness is not pretending the wrong did not happen, and it does not always mean trust returns at once. It means cancelling the debt and giving up revenge, because God has cancelled ours. Jesus ties our forgiving to our prayers: 'when ye stand praying, forgive, if ye have ought against any'.",
+            "daily": "Forgiveness is often a decision you make before your feelings catch up, and you may need to make it again. Let go of the replaying, the punishing and the score keeping.",
+            "try_it": "Name one grudge you are holding, and tell God you are letting it go; if you can, tell the person too.",
+            "key_verses": [
+                {
+                    "reference": "Matthew 6:14",
+                    "text": "For if ye forgive men their trespasses, your heavenly Father will also forgive you:"
+                },
+                {
+                    "reference": "Colossians 3:13",
+                    "text": "Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye."
+                }
+            ],
+            "accounts": [
+                "Matthew 18:21-35",
+                "Mark 11:25",
+                "Matthew 6:14-15",
+                "Colossians 3:13"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                }
+            ]
+        },
+        {
+            "id": "judge-not",
+            "name": "Judge not",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Judge not, that ye be not judged",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "The crowds and his disciples",
+            "where": "The Sermon on the Mount",
+            "told_in": "Matthew 7:1-5",
+            "also_in": [
+                "Luke 6:37-42",
+                "Romans 14:10-13",
+                "James 4:11-12"
+            ],
+            "words": [
+                {
+                    "reference": "Matthew 7:1-5",
+                    "lines": [
+                        "Judge not, that ye be not judged.",
+                        "For with what judgment ye judge, ye shall be judged: and with what measure ye mete, it shall be measured to you again.",
+                        "And why beholdest thou the mote that is in thy brother’s eye, but considerest not the beam that is in thine own eye?",
+                        "Or how wilt thou say to thy brother, Let me pull out the mote out of thine eye; and, behold, a beam is in thine own eye?",
+                        "Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother’s eye."
+                    ]
+                }
+            ],
+            "summary": "Do not condemn others while ignoring your own faults; deal with the beam in your own eye first.",
+            "story": "Jesus drew a picture that makes his hearers smile: a man with a beam of wood in his own eye trying to pull a speck of sawdust, a 'mote', from his brother's. 'Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother's eye.'",
+            "meaning": "Jesus does not forbid telling right from wrong, or helping a brother with his speck; he says 'then shalt thou see clearly' to do so. He forbids the harsh, self-righteous judging that condemns others and excuses ourselves, for 'with what measure ye mete, it shall be measured to you again.'",
+            "daily": "When someone's fault irritates you, ask first where the same fault lives in you. Assume the best, speak humbly, and leave final judgment to God.",
+            "try_it": "The next time you feel like criticising someone, name one of your own faults to God first.",
+            "key_verses": [
+                {
+                    "reference": "Luke 6:37",
+                    "text": "Judge not, and ye shall not be judged: condemn not, and ye shall not be condemned: forgive, and ye shall be forgiven:"
+                },
+                {
+                    "reference": "Romans 14:13",
+                    "text": "Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock or an occasion to fall in his brother’s way."
+                }
+            ],
+            "accounts": [
+                "Matthew 7:1-5",
+                "Luke 6:37-42",
+                "Romans 14:10-13",
+                "James 4:11-12"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                }
+            ]
+        },
+        {
+            "id": "do-this-in-remembrance-of-me",
+            "name": "Do this in remembrance of me",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "This do in remembrance of me",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "The twelve",
+            "where": "The Last Supper, Jerusalem",
+            "told_in": "Luke 22:14-20",
+            "also_in": [
+                "Matthew 26:26-29",
+                "Mark 14:22-25",
+                "1 Corinthians 11:23-26"
+            ],
+            "words": [
+                {
+                    "reference": "Luke 22:19-20",
+                    "lines": [
+                        "And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me.",
+                        "Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you."
+                    ]
+                }
+            ],
+            "summary": "Jesus commanded his followers to share bread and the cup to remember his death for them.",
+            "story": "At the Passover meal on the night he was betrayed, Jesus took bread, gave thanks, broke it and said, 'This is my body which is given for you: this do in remembrance of me.' Then the cup: 'This cup is the new testament in my blood, which is shed for you.' The church has kept this meal ever since, called the Lord's Supper, Holy Communion or the Eucharist.",
+            "meaning": "Churches understand the meal in different ways, but all keep it at Jesus's command. It looks back to the cross, looks around at the church sharing one loaf, and looks forward: 'ye do shew the Lord's death till he come' (1 Corinthians 11:26). Paul asks each person to examine himself before he eats.",
+            "daily": "Remembering Jesus is not only for communion Sundays. Let his death for you shape how you see your sin, your worth, and the people you share the table with.",
+            "try_it": "Before your next meal, pause to thank Jesus for giving his body and blood for you.",
+            "key_verses": [
+                {
+                    "reference": "1 Corinthians 11:26",
+                    "text": "For as often as ye eat this bread, and drink this cup, ye do shew the Lord’s death till he come."
+                },
+                {
+                    "reference": "1 Corinthians 11:28",
+                    "text": "But let a man examine himself, and so let him eat of that bread, and drink of that cup."
+                }
+            ],
+            "accounts": [
+                "Luke 22:14-20",
+                "Matthew 26:26-29",
+                "Mark 14:22-25",
+                "1 Corinthians 11:23-26"
+            ],
+            "books": [
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                }
+            ]
+        },
+        {
+            "id": "go-and-make-disciples",
+            "name": "Go and make disciples",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Go ye therefore, and teach all nations",
+            "by": [
+                {
+                    "name": "Jesus, risen from the dead"
+                }
+            ],
+            "to": "The eleven disciples",
+            "where": "A mountain in Galilee",
+            "told_in": "Matthew 28:16-20",
+            "also_in": [
+                "Mark 16:15",
+                "Acts 1:8"
+            ],
+            "words": [
+                {
+                    "reference": "Matthew 28:18-20",
+                    "lines": [
+                        "And Jesus came and spake unto them, saying, All power is given unto me in heaven and in earth.",
+                        "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost:",
+                        "Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen."
+                    ]
+                }
+            ],
+            "summary": "The risen Jesus sent his followers to make disciples of all nations, baptising and teaching them.",
+            "story": "After his resurrection Jesus met the eleven on a mountain in Galilee. 'All power is given unto me in heaven and in earth. Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost'. It is often called “the Great Commission”.",
+            "meaning": "“Teach all nations” means “make disciples”: not just converts, but learners who are 'Teaching them to observe all things whatsoever I have commanded you'. The command comes with a promise that makes it possible: 'lo, I am with you alway, even unto the end of the world.'",
+            "daily": "Most disciple-making happens close to home: in a family, a friendship, a small group, a workplace. Share what you know of Jesus, and help someone take their next step.",
+            "try_it": "Tell one person this week what Jesus has done for you, or invite them to read a Gospel with you.",
+            "key_verses": [
+                {
+                    "reference": "Acts 1:8",
+                    "text": "But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth."
+                }
+            ],
+            "accounts": [
+                "Matthew 28:16-20",
+                "Mark 16:15",
+                "Acts 1:8"
+            ],
+            "books": [
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Mark",
+                    "id": "mark"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ]
+        },
+        {
+            "id": "abide-in-me",
+            "name": "Abide in me",
+            "group": "Commandments of Jesus",
+            "testament": "New",
+            "epithet": "Abide in me, and I in you",
+            "by": [
+                {
+                    "name": "Jesus"
+                }
+            ],
+            "to": "His disciples",
+            "where": "On the way to Gethsemane",
+            "told_in": "John 15:1-11",
+            "also_in": [
+                "John 14:15-21",
+                "1 John 2:6"
+            ],
+            "words": [
+                {
+                    "reference": "John 15:4-5",
+                    "lines": [
+                        "Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me.",
+                        "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing."
+                    ]
+                },
+                {
+                    "reference": "John 14:15",
+                    "lines": [
+                        "If ye love me, keep my commandments."
+                    ]
+                }
+            ],
+            "summary": "Stay joined to Jesus like a branch to a vine; everything good in the Christian life grows from that.",
+            "story": "On his last night, Jesus told his disciples, 'I am the vine, ye are the branches'. A branch does not strain to produce grapes; it stays joined to the vine and the fruit comes. 'Abide in me, and I in you … for without me ye can do nothing.'",
+            "meaning": "To abide is to remain, to live in. Jesus shows how: his words abide in us, we keep his commandments, and we continue in his love (John 15:7-10). Obedience is not the price of his love but the way we stay in it: 'If ye love me, keep my commandments.' The goal is joy: 'that my joy might remain in you, and that your joy might be full' (John 15:11).",
+            "daily": "Abiding is built out of daily habits: reading his words, praying, obeying what you already know, and staying close to his people.",
+            "try_it": "Read John 15:1-11 slowly today, and carry one line of it with you through the day.",
+            "key_verses": [
+                {
+                    "reference": "John 15:7",
+                    "text": "If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you."
+                },
+                {
+                    "reference": "John 15:11",
+                    "text": "These things have I spoken unto you, that my joy might remain in you, and that your joy might be full."
+                }
+            ],
+            "accounts": [
+                "John 15:1-11",
+                "John 14:15-21",
+                "1 John 2:6"
+            ],
+            "books": [
+                {
+                    "name": "John",
+                    "id": "john"
+                },
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                }
+            ]
+        },
+        {
+            "id": "do-justly-love-mercy-walk-humbly",
+            "name": "Do justly, love mercy, walk humbly",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "What doth the LORD require of thee",
+            "by_label": "Spoken through",
+            "by": [
+                {
+                    "name": "Micah the prophet"
+                }
+            ],
+            "to": "Judah and Israel",
+            "where": "Judah, in the eighth century BC",
+            "told_in": "Micah 6:6-8",
+            "also_in": [
+                "Hosea 6:6",
+                "Matthew 23:23"
+            ],
+            "words": [
+                {
+                    "reference": "Micah 6:8",
+                    "lines": [
+                        "He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?"
+                    ]
+                }
+            ],
+            "summary": "God's whole will for daily life in one verse: do what is right, love kindness, and walk humbly with him.",
+            "story": "Micah imagines someone asking how to please God: with burnt offerings, 'thousands of rams', even their firstborn child? The answer is simpler and harder: 'He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?'",
+            "meaning": "God is not bought with religious performance. Justice is doing right by others; mercy is loyal, generous kindness, and we are to love it, not merely put up with it; humility is walking with God rather than ahead of him. Jesus called justice, mercy and faith 'the weightier matters of the law' (Matthew 23:23).",
+            "daily": "At work, at home and online: be fair, be kind, and stay humble. This one verse is a good test for any decision.",
+            "try_it": "Write Micah 6:8 on a card and put it where you will see it before you start work.",
+            "key_verses": [
+                {
+                    "reference": "Hosea 6:6",
+                    "text": "For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings."
+                },
+                {
+                    "reference": "Matthew 23:23",
+                    "text": "Woe unto you, scribes and Pharisees, hypocrites! for ye pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought ye to have done, and not to leave the other undone."
+                }
+            ],
+            "accounts": [
+                "Micah 6:6-8",
+                "Hosea 6:6",
+                "Matthew 23:23"
+            ],
+            "books": [
+                {
+                    "name": "Micah",
+                    "id": "micah"
+                },
+                {
+                    "name": "Hosea",
+                    "id": "hosea"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ]
+        },
+        {
+            "id": "care-for-the-poor-and-the-stranger",
+            "name": "Care for the poor and the stranger",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "Love ye therefore the stranger",
+            "by_label": "Given by",
+            "by": [
+                {
+                    "name": "God, through Moses",
+                    "hero": "moses"
+                }
+            ],
+            "to": "Israel",
+            "where": "Sinai and the plains of Moab",
+            "told_in": "Deuteronomy 10:17-19",
+            "also_in": [
+                "Leviticus 19:9-10",
+                "Zechariah 7:9-10",
+                "Isaiah 1:17",
+                "James 1:27"
+            ],
+            "words": [
+                {
+                    "reference": "Deuteronomy 10:18-19",
+                    "lines": [
+                        "He doth execute the judgment of the fatherless and widow, and loveth the stranger, in giving him food and raiment.",
+                        "Love ye therefore the stranger: for ye were strangers in the land of Egypt."
+                    ]
+                },
+                {
+                    "reference": "Leviticus 19:9-10",
+                    "lines": [
+                        "And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest.",
+                        "And thou shalt not glean thy vineyard, neither shalt thou gather every grape of thy vineyard; thou shalt leave them for the poor and stranger: I am the LORD your God."
+                    ]
+                }
+            ],
+            "summary": "God defends the widow, the orphan, the foreigner and the poor, and commands his people to do the same.",
+            "story": "Israel's farmers were told not to reap to the very edge of the field, nor go back for what they missed: 'thou shalt leave them for the poor and stranger'. That is how Ruth, a foreign widow, gleaned in Boaz's field (Ruth 2). The reason was Israel's own story: 'for ye were strangers in the land of Egypt.'",
+            "meaning": "Again and again the law and the prophets name four people: the widow, the fatherless, the stranger and the poor, those with no one to stand up for them. God 'doth execute the judgment of the fatherless and widow, and loveth the stranger'. James says real religion is 'To visit the fatherless and widows in their affliction' (James 1:27).",
+            "daily": "Leave some margin in your life, your time and your money for others. Welcome newcomers, notice the lonely, and give to those who cannot repay you.",
+            "try_it": "Set aside a small amount this week for someone in need, or welcome a newcomer at church, work or school.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 1:17",
+                    "text": "Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow."
+                },
+                {
+                    "reference": "James 1:27",
+                    "text": "Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world."
+                }
+            ],
+            "accounts": [
+                "Deuteronomy 10:17-19",
+                "Leviticus 19:9-10",
+                "Zechariah 7:9-10",
+                "Isaiah 1:17",
+                "James 1:27"
+            ],
+            "books": [
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "Zechariah",
+                    "id": "zechariah"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                }
+            ]
+        },
+        {
+            "id": "honest-weights-and-measures",
+            "name": "Honest weights and measures",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "A just weight is his delight",
+            "by_label": "Given by",
+            "by": [
+                {
+                    "name": "God, through Moses",
+                    "hero": "moses"
+                }
+            ],
+            "to": "Israel",
+            "where": "Mount Sinai",
+            "told_in": "Leviticus 19:35-36",
+            "also_in": [
+                "Deuteronomy 25:13-16",
+                "Proverbs 11:1",
+                "Proverbs 20:10"
+            ],
+            "words": [
+                {
+                    "reference": "Leviticus 19:35-36",
+                    "lines": [
+                        "Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure.",
+                        "Just balances, just weights, a just ephah, and a just hin, shall ye have: I am the LORD your God, which brought you out of the land of Egypt."
+                    ]
+                },
+                {
+                    "reference": "Proverbs 11:1",
+                    "lines": [
+                        "A false balance is abomination to the LORD: but a just weight is his delight."
+                    ]
+                }
+            ],
+            "summary": "God cares about honesty in business: fair prices, true measures, and no hidden cheating.",
+            "story": "In the market, goods were weighed against stones on a balance. A trader could keep two sets, a heavy one for buying and a light one for selling. The law forbade it: 'Just balances, just weights, a just ephah, and a just hin, shall ye have'. Proverbs puts it simply: 'A false balance is abomination to the LORD: but a just weight is his delight.'",
+            "meaning": "God does not only care about worship; he watches the scales. Cheating in business is a sin against God as well as the customer. The command ends with the reason: 'I am the LORD your God, which brought you out of the land of Egypt.' The God who freed them expects them to deal fairly.",
+            "daily": "Honest weights today are honest invoices, fair prices, true reports, accurate timesheets and products that are what the label says.",
+            "try_it": "Check one thing you sell, bill, report or claim this week, and make sure it is completely honest.",
+            "key_verses": [
+                {
+                    "reference": "Proverbs 11:1",
+                    "text": "A false balance is abomination to the LORD: but a just weight is his delight."
+                }
+            ],
+            "accounts": [
+                "Leviticus 19:35-36",
+                "Deuteronomy 25:13-16",
+                "Proverbs 11:1",
+                "Proverbs 20:10"
+            ],
+            "books": [
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                }
+            ]
+        },
+        {
+            "id": "pay-the-worker-on-time",
+            "name": "Pay the worker on time",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "At his day thou shalt give him his hire",
+            "by_label": "Given by",
+            "by": [
+                {
+                    "name": "God, through Moses",
+                    "hero": "moses"
+                }
+            ],
+            "to": "Israel",
+            "where": "Sinai and the plains of Moab",
+            "told_in": "Deuteronomy 24:14-15",
+            "also_in": [
+                "Leviticus 19:13",
+                "James 5:4",
+                "Colossians 4:1"
+            ],
+            "words": [
+                {
+                    "reference": "Leviticus 19:13",
+                    "lines": [
+                        "Thou shalt not defraud thy neighbour, neither rob him: the wages of him that is hired shall not abide with thee all night until the morning."
+                    ]
+                },
+                {
+                    "reference": "Deuteronomy 24:14-15",
+                    "lines": [
+                        "Thou shalt not oppress an hired servant that is poor and needy, whether he be of thy brethren, or of thy strangers that are in thy land within thy gates:",
+                        "At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it: lest he cry against thee unto the LORD, and it be sin unto thee."
+                    ]
+                }
+            ],
+            "summary": "Those who employ others are to pay fairly and promptly, and never take advantage of the poor.",
+            "story": "A day labourer in Israel lived on each day's wage. So the law said, 'the wages of him that is hired shall not abide with thee all night until the morning.' Pay him before sunset, 'for he is poor, and setteth his heart upon it'. James warns rich men that the unpaid wages of their workers cry out to God (James 5:4).",
+            "meaning": "Wages are not a favour but a debt. God hears the cry of the worker who is cheated or kept waiting. Paul tells masters, 'give unto your servants that which is just and equal; knowing that ye also have a Master in heaven' (Colossians 4:1).",
+            "daily": "Pay the cleaner, the tutor, the contractor and the freelancer fairly and on time. If you manage people, treat them as God's image bearers, not as costs.",
+            "try_it": "Pay any bill or wage you owe to a person today, not at the last possible moment, and say thank you.",
+            "key_verses": [
+                {
+                    "reference": "Colossians 4:1",
+                    "text": "Masters, give unto your servants that which is just and equal; knowing that ye also have a Master in heaven."
+                }
+            ],
+            "accounts": [
+                "Deuteronomy 24:14-15",
+                "Leviticus 19:13",
+                "James 5:4",
+                "Colossians 4:1"
+            ],
+            "books": [
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                }
+            ]
+        },
+        {
+            "id": "trust-in-the-lord-with-all-your-heart",
+            "name": "Trust in the LORD with all your heart",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "Lean not unto thine own understanding",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Solomon"
+                }
+            ],
+            "to": "His son, and every reader",
+            "where": "The book of Proverbs",
+            "told_in": "Proverbs 3:1-8",
+            "also_in": [
+                "Psalms 37:3-5",
+                "Jeremiah 17:7-8"
+            ],
+            "words": [
+                {
+                    "reference": "Proverbs 3:5-6",
+                    "lines": [
+                        "Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+                        "In all thy ways acknowledge him, and he shall direct thy paths."
+                    ]
+                }
+            ],
+            "summary": "Rely on God more than on your own reasoning, and bring him into every decision.",
+            "story": "Proverbs is written as a father teaching his son how to live wisely. In chapter three he says, 'Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.'",
+            "meaning": "This does not ask us to switch off our minds; Proverbs praises understanding everywhere. It asks us not to lean our full weight on it. To “acknowledge him” is to know him and bring him into every part of life, 'In all thy ways', and to trust him to make the path straight.",
+            "daily": "Before big decisions and small ones, stop and pray. Ask what God's word says, seek wise counsel, and then take the next step in trust.",
+            "try_it": "Before your next decision today, however small, pause and ask God to direct you.",
+            "key_verses": [
+                {
+                    "reference": "Psalms 37:5",
+                    "text": "Commit thy way unto the LORD; trust also in him; and he shall bring it to pass."
+                },
+                {
+                    "reference": "Jeremiah 17:7",
+                    "text": "Blessed is the man that trusteth in the LORD, and whose hope the LORD is."
+                }
+            ],
+            "accounts": [
+                "Proverbs 3:1-8",
+                "Psalms 37:3-5",
+                "Jeremiah 17:7-8"
+            ],
+            "books": [
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "Jeremiah",
+                    "id": "jeremiah"
+                }
+            ]
+        },
+        {
+            "id": "be-strong-and-of-a-good-courage",
+            "name": "Be strong and of a good courage",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "Be not afraid, neither be thou dismayed",
+            "by": [
+                {
+                    "name": "God"
+                }
+            ],
+            "to": "Joshua, after the death of Moses",
+            "with": [
+                {
+                    "name": "Joshua",
+                    "hero": "joshua"
+                }
+            ],
+            "where": "Beside the Jordan",
+            "told_in": "Joshua 1:1-9",
+            "also_in": [
+                "Deuteronomy 31:6-8",
+                "Isaiah 41:10"
+            ],
+            "words": [
+                {
+                    "reference": "Joshua 1:9",
+                    "lines": [
+                        "Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest."
+                    ]
+                }
+            ],
+            "summary": "God commands courage, not because the task is easy but because he goes with us.",
+            "story": "Moses was dead, and Joshua had to lead a nation across the Jordan into a land of walled cities. Three times God told him to be strong and courageous, and ended, 'Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.'",
+            "meaning": "Courage is commanded, which means it is a choice as well as a feeling. It rests on a promise, not on self-confidence: 'the LORD thy God is with thee'. The same chapter ties it to God's word: Joshua was to meditate in the law 'day and night' (Joshua 1:8).",
+            "daily": "Fear comes before hard conversations, new jobs, diagnoses and moves. Name the fear, remember who is with you, and take the next faithful step.",
+            "try_it": "Name one thing you have been avoiding out of fear, and take one small step toward it today.",
+            "key_verses": [
+                {
+                    "reference": "Isaiah 41:10",
+                    "text": "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness."
+                },
+                {
+                    "reference": "Deuteronomy 31:6",
+                    "text": "Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee."
+                }
+            ],
+            "accounts": [
+                "Joshua 1:1-9",
+                "Deuteronomy 31:6-8",
+                "Isaiah 41:10"
+            ],
+            "books": [
+                {
+                    "name": "Joshua",
+                    "id": "joshua"
+                },
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Isaiah",
+                    "id": "isaiah"
+                }
+            ]
+        },
+        {
+            "id": "teach-your-children",
+            "name": "Teach your children",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "Thou shalt teach them diligently unto thy children",
+            "by_label": "Given by",
+            "by": [
+                {
+                    "name": "God, through Moses",
+                    "hero": "moses"
+                }
+            ],
+            "to": "Israel's parents",
+            "where": "The plains of Moab",
+            "told_in": "Deuteronomy 6:6-9",
+            "also_in": [
+                "Proverbs 22:6",
+                "Ephesians 6:4",
+                "2 Timothy 3:14-15"
+            ],
+            "words": [
+                {
+                    "reference": "Deuteronomy 6:6-7",
+                    "lines": [
+                        "And these words, which I command thee this day, shall be in thine heart:",
+                        "And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up."
+                    ]
+                },
+                {
+                    "reference": "Proverbs 22:6",
+                    "lines": [
+                        "Train up a child in the way he should go: and when he is old, he will not depart from it."
+                    ]
+                }
+            ],
+            "summary": "Faith is to be passed on at home, in everyday conversation, from one generation to the next.",
+            "story": "Straight after the command to love God with all the heart, Moses said, 'these words, which I command thee this day, shall be in thine heart: And thou shalt teach them diligently unto thy children'. Timothy learned the scriptures 'from a child' through his grandmother Lois and mother Eunice (2 Timothy 1:5, 3:15).",
+            "meaning": "God's word goes into the parent's heart first, then out to the children. The classroom is ordinary life: 'when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.' It is caught as much as taught.",
+            "daily": "Talk about God naturally at meals, in the car and at bedtime. Pray with your children, answer their questions honestly, and let them see your faith at work. If you have no children, you can still encourage the young people around you.",
+            "try_it": "Share a Bible story or pray with a child at bedtime tonight, or send an encouraging word to a young person you know.",
+            "key_verses": [
+                {
+                    "reference": "Proverbs 22:6",
+                    "text": "Train up a child in the way he should go: and when he is old, he will not depart from it."
+                },
+                {
+                    "reference": "2 Timothy 3:15",
+                    "text": "And that from a child thou hast known the holy scriptures, which are able to make thee wise unto salvation through faith which is in Christ Jesus."
+                }
+            ],
+            "accounts": [
+                "Deuteronomy 6:6-9",
+                "Proverbs 22:6",
+                "Ephesians 6:4",
+                "2 Timothy 3:14-15"
+            ],
+            "books": [
+                {
+                    "name": "Deuteronomy",
+                    "id": "deuteronomy"
+                },
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "2 Timothy",
+                    "id": "2-timothy"
+                }
+            ]
+        },
+        {
+            "id": "guard-your-heart",
+            "name": "Guard your heart",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "Keep thy heart with all diligence",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Solomon"
+                }
+            ],
+            "to": "His son, and every reader",
+            "where": "The book of Proverbs",
+            "told_in": "Proverbs 4:20-27",
+            "also_in": [
+                "Matthew 15:18-19",
+                "Philippians 4:8"
+            ],
+            "words": [
+                {
+                    "reference": "Proverbs 4:23",
+                    "lines": [
+                        "Keep thy heart with all diligence; for out of it are the issues of life."
+                    ]
+                }
+            ],
+            "summary": "Watch over your inner life carefully, because everything you say and do flows from it.",
+            "story": "The father in Proverbs tells his son to keep his words close, and then: 'Keep thy heart with all diligence; for out of it are the issues of life.' He goes on to the mouth, the eyes and the feet: what we say, what we look at and where we go (Proverbs 4:24-27).",
+            "meaning": "In the Bible the heart is the whole inner person: thoughts, desires and will. Jesus taught the same: what defiles a person comes 'out of the heart' (Matthew 15:19). Paul tells us what to feed it: whatsoever things are true, honest, just, pure, lovely and of good report, 'think on these things' (Philippians 4:8).",
+            "daily": "What you watch, read, scroll and listen to shapes your heart. Guard the inputs, and give God the first and last thoughts of the day.",
+            "try_it": "Replace fifteen minutes of scrolling today with a psalm, a walk or a conversation.",
+            "key_verses": [
+                {
+                    "reference": "Philippians 4:8",
+                    "text": "Finally, brethren, whatsoever things are true, whatsoever things are honest, whatsoever things are just, whatsoever things are pure, whatsoever things are lovely, whatsoever things are of good report; if there be any virtue, and if there be any praise, think on these things."
+                }
+            ],
+            "accounts": [
+                "Proverbs 4:20-27",
+                "Matthew 15:18-19",
+                "Philippians 4:8"
+            ],
+            "books": [
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Philippians",
+                    "id": "philippians"
+                }
+            ]
+        },
+        {
+            "id": "do-not-take-revenge",
+            "name": "Do not take revenge",
+            "group": "Wisdom for daily life",
+            "testament": "Old",
+            "epithet": "Thou shalt not avenge, nor bear any grudge",
+            "by_label": "Given by",
+            "by": [
+                {
+                    "name": "God, through Moses",
+                    "hero": "moses"
+                }
+            ],
+            "to": "Israel",
+            "where": "Mount Sinai",
+            "told_in": "Leviticus 19:17-18",
+            "also_in": [
+                "Proverbs 20:22",
+                "Romans 12:17-21",
+                "1 Peter 3:9"
+            ],
+            "words": [
+                {
+                    "reference": "Romans 12:17-19",
+                    "lines": [
+                        "Recompense to no man evil for evil. Provide things honest in the sight of all men.",
+                        "If it be possible, as much as lieth in you, live peaceably with all men.",
+                        "Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord."
+                    ]
+                }
+            ],
+            "summary": "Leave vengeance to God; do not repay evil for evil, and do not nurse a grudge.",
+            "story": "The law of Moses already said, 'Thou shalt not avenge, nor bear any grudge against the children of thy people'. David had Saul at his mercy twice, and twice refused to strike him (1 Samuel 24 and 26). Paul quotes the law: 'Vengeance is mine; I will repay, saith the Lord.'",
+            "meaning": "Refusing revenge is not pretending evil does not matter. It is trusting that God is the judge and will set things right. That frees us to do good even to an enemy, and to 'live peaceably with all men' as far as it depends on us.",
+            "daily": "Revenge today is often small: the cutting reply, the cold shoulder, the post meant to shame, the delay meant to punish. Let it go to God, and look for the good you can do instead.",
+            "try_it": "When someone wrongs you today, hold back the comeback and say a short prayer for them instead.",
+            "key_verses": [
+                {
+                    "reference": "Proverbs 20:22",
+                    "text": "Say not thou, I will recompense evil; but wait on the LORD, and he shall save thee."
+                },
+                {
+                    "reference": "1 Peter 3:9",
+                    "text": "Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing."
+                }
+            ],
+            "accounts": [
+                "Leviticus 19:17-18",
+                "Proverbs 20:22",
+                "Romans 12:17-21",
+                "1 Peter 3:9"
+            ],
+            "books": [
+                {
+                    "name": "Leviticus",
+                    "id": "leviticus"
+                },
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                }
+            ]
+        },
+        {
+            "id": "put-on-love",
+            "name": "Put on love",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Above all these things put on charity",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Colossae",
+            "where": "A letter from prison",
+            "told_in": "Colossians 3:12-17",
+            "also_in": [
+                "1 Corinthians 13:4-7",
+                "Galatians 5:22-23"
+            ],
+            "words": [
+                {
+                    "reference": "Colossians 3:12-14",
+                    "lines": [
+                        "Put on therefore, as the elect of God, holy and beloved, bowels of mercies, kindness, humbleness of mind, meekness, longsuffering;",
+                        "Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye.",
+                        "And above all these things put on charity, which is the bond of perfectness."
+                    ]
+                }
+            ],
+            "summary": "God's people are to dress themselves each day in compassion, kindness, humility, patience, forgiveness and, above all, love.",
+            "story": "Paul tells the Colossians to 'put off' the old life like old clothes: anger, malice, filthy talk and lies (Colossians 3:8-9). Then he tells them what to put on: 'Put on therefore, as the elect of God, holy and beloved, bowels of mercies, kindness, humbleness of mind, meekness, longsuffering'.",
+            "meaning": "“Bowels of mercies” is the KJV's way of saying “a heart of compassion”, and “charity” means love. These are not moods we wait for but clothes we choose to put on, and love is the belt that holds the rest together: 'the bond of perfectness.' Paul describes that love in 1 Corinthians 13: 'Charity suffereth long, and is kind'.",
+            "daily": "Each morning you choose what to wear. Choose, too, to put on patience before the commute, kindness before the meeting, and forgiveness before you walk in the door at home.",
+            "try_it": "As you get dressed tomorrow, pray through the list in Colossians 3:12 and ask God for one of them for the day.",
+            "key_verses": [
+                {
+                    "reference": "1 Corinthians 13:4",
+                    "text": "Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up,"
+                },
+                {
+                    "reference": "Colossians 3:17",
+                    "text": "And whatsoever ye do in word or deed, do all in the name of the Lord Jesus, giving thanks to God and the Father by him."
+                }
+            ],
+            "accounts": [
+                "Colossians 3:12-17",
+                "1 Corinthians 13:4-7",
+                "Galatians 5:22-23"
+            ],
+            "books": [
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                },
+                {
+                    "name": "Galatians",
+                    "id": "galatians"
+                }
+            ]
+        },
+        {
+            "id": "be-kind-and-tenderhearted",
+            "name": "Be kind and tenderhearted",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Be ye kind one to another, tenderhearted, forgiving one another",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Ephesus",
+            "where": "A letter from prison",
+            "told_in": "Ephesians 4:29-32",
+            "also_in": [
+                "Colossians 3:8",
+                "Titus 3:1-2"
+            ],
+            "words": [
+                {
+                    "reference": "Ephesians 4:31-32",
+                    "lines": [
+                        "Let all bitterness, and wrath, and anger, and clamour, and evil speaking, be put away from you, with all malice:",
+                        "And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you."
+                    ]
+                }
+            ],
+            "summary": "Put away bitterness, anger and harsh words, and be kind and forgiving, as God in Christ forgave you.",
+            "story": "Paul spends the second half of Ephesians on how new life in Christ looks in practice. He lists what must go: 'Let all bitterness, and wrath, and anger, and clamour, and evil speaking, be put away from you, with all malice'. Then what must replace it.",
+            "meaning": "Kindness is not weakness; it is what God showed us. The measure of our forgiving is his: 'even as God for Christ's sake hath forgiven you.' Paul says unkindness does not only hurt people; it grieves 'the holy Spirit of God' (Ephesians 4:30).",
+            "daily": "Bitterness grows when we rehearse old hurts; kindness grows when we practise small mercies. Choose the gentle tone, the benefit of the doubt, and the quick apology.",
+            "try_it": "Do three small, deliberate kindnesses today, at least one for someone who has been hard to love.",
+            "key_verses": [
+                {
+                    "reference": "Ephesians 4:30",
+                    "text": "And grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption."
+                },
+                {
+                    "reference": "Titus 3:2",
+                    "text": "To speak evil of no man, to be no brawlers, but gentle, shewing all meekness unto all men."
+                }
+            ],
+            "accounts": [
+                "Ephesians 4:29-32",
+                "Colossians 3:8",
+                "Titus 3:1-2"
+            ],
+            "books": [
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "Titus",
+                    "id": "titus"
+                }
+            ]
+        },
+        {
+            "id": "be-angry-and-sin-not",
+            "name": "Be angry, and sin not",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Let not the sun go down upon your wrath",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Ephesus",
+            "where": "A letter from prison",
+            "told_in": "Ephesians 4:26-27",
+            "also_in": [
+                "Psalms 4:4",
+                "James 1:19-20",
+                "Proverbs 15:1"
+            ],
+            "words": [
+                {
+                    "reference": "Ephesians 4:26-27",
+                    "lines": [
+                        "Be ye angry, and sin not: let not the sun go down upon your wrath:",
+                        "Neither give place to the devil."
+                    ]
+                },
+                {
+                    "reference": "James 1:19-20",
+                    "lines": [
+                        "Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:",
+                        "For the wrath of man worketh not the righteousness of God."
+                    ]
+                }
+            ],
+            "summary": "Anger itself is not always sin, but it must be dealt with quickly before it turns into sin.",
+            "story": "Paul quotes a psalm, 'Be ye angry, and sin not', and adds a deadline: 'let not the sun go down upon your wrath'. James gives the practical order: 'let every man be swift to hear, slow to speak, slow to wrath'.",
+            "meaning": "Jesus was angry at injustice and hardness of heart (Mark 3:5), so anger can be right. But anger left overnight becomes a foothold: 'Neither give place to the devil.' And most of our anger is not holy: 'the wrath of man worketh not the righteousness of God.'",
+            "daily": "Deal with anger the same day: pause, pray, listen, and talk it through calmly. 'A soft answer turneth away wrath' (Proverbs 15:1).",
+            "try_it": "If you go to bed angry with someone tonight, talk to God about it first, and plan when you will talk to them.",
+            "key_verses": [
+                {
+                    "reference": "Proverbs 15:1",
+                    "text": "A soft answer turneth away wrath: but grievous words stir up anger."
+                },
+                {
+                    "reference": "James 1:19",
+                    "text": "Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:"
+                }
+            ],
+            "accounts": [
+                "Ephesians 4:26-27",
+                "Psalms 4:4",
+                "James 1:19-20",
+                "Proverbs 15:1"
+            ],
+            "books": [
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                },
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                }
+            ]
+        },
+        {
+            "id": "speak-truth-and-words-that-build-up",
+            "name": "Speak truth and words that build up",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Speak every man truth with his neighbour",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Ephesus",
+            "where": "A letter from prison",
+            "told_in": "Ephesians 4:25-29",
+            "also_in": [
+                "Colossians 4:6",
+                "James 3:2-10"
+            ],
+            "words": [
+                {
+                    "reference": "Ephesians 4:25",
+                    "lines": [
+                        "Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another."
+                    ]
+                },
+                {
+                    "reference": "Ephesians 4:29",
+                    "lines": [
+                        "Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers."
+                    ]
+                }
+            ],
+            "summary": "Christians are to tell the truth and to use words that help, not harm.",
+            "story": "Paul gives a reason for honesty that goes beyond rules: 'for we are members one of another.' Lying to a fellow believer is like one hand deceiving the other. Then he turns to the way we speak: 'Let no corrupt communication proceed out of your mouth'.",
+            "meaning": "Our words have a job to do: 'that which is good to the use of edifying, that it may minister grace unto the hearers.' James compares the tongue to a small fire that can set a forest alight (James 3:5-6). Paul adds, 'Let your speech be alway with grace, seasoned with salt' (Colossians 4:6).",
+            "daily": "Before you speak, text or post, ask: is it true, and will it build this person up? Cut the exaggeration, the sarcasm that wounds, and the gossip.",
+            "try_it": "Send an honest, encouraging message to someone today that tells them what you value in them.",
+            "key_verses": [
+                {
+                    "reference": "Colossians 4:6",
+                    "text": "Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man."
+                }
+            ],
+            "accounts": [
+                "Ephesians 4:25-29",
+                "Colossians 4:6",
+                "James 3:2-10"
+            ],
+            "books": [
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                }
+            ]
+        },
+        {
+            "id": "work-with-your-hands",
+            "name": "Work with your hands",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "That with quietness they work, and eat their own bread",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The churches at Thessalonica and Ephesus",
+            "where": "Letters to the churches",
+            "told_in": "2 Thessalonians 3:6-13",
+            "also_in": [
+                "1 Thessalonians 4:11-12",
+                "Ephesians 4:28",
+                "Proverbs 6:6-8"
+            ],
+            "words": [
+                {
+                    "reference": "2 Thessalonians 3:10-12",
+                    "lines": [
+                        "For even when we were with you, this we commanded you, that if any would not work, neither should he eat.",
+                        "For we hear that there are some which walk among you disorderly, working not at all, but are busybodies.",
+                        "Now them that are such we command and exhort by our Lord Jesus Christ, that with quietness they work, and eat their own bread."
+                    ]
+                }
+            ],
+            "summary": "Honest work is part of the Christian life: provide for yourself, and have something to give.",
+            "story": "Some in Thessalonica had stopped working, perhaps thinking Jesus would return any day, and were living off others and meddling in their affairs. Paul, who had worked night and day as a tentmaker so as not to be a burden, wrote plainly: 'if any would not work, neither should he eat.'",
+            "meaning": "Paul is speaking of those who will not work, not those who cannot; elsewhere the church cares for the sick, the widow and the poor. Work is a gift from the beginning: Adam was put in the garden 'to dress it and to keep it' (Genesis 2:15). Its aim is not only our own bread but 'that he may have to give to him that needeth' (Ephesians 4:28).",
+            "daily": "Do your job well and quietly, whether it is paid, at home or voluntary. Earn honestly, avoid needless debt, and see your work as a way to serve and to give.",
+            "try_it": "Finish one task today that you have been putting off, and do it as well as you can.",
+            "key_verses": [
+                {
+                    "reference": "1 Thessalonians 4:11",
+                    "text": "And that ye study to be quiet, and to do your own business, and to work with your own hands, as we commanded you;"
+                },
+                {
+                    "reference": "Ephesians 4:28",
+                    "text": "Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth."
+                }
+            ],
+            "accounts": [
+                "2 Thessalonians 3:6-13",
+                "1 Thessalonians 4:11-12",
+                "Ephesians 4:28",
+                "Proverbs 6:6-8"
+            ],
+            "books": [
+                {
+                    "name": "2 Thessalonians",
+                    "id": "2-thessalonians"
+                },
+                {
+                    "name": "1 Thessalonians",
+                    "id": "1-thessalonians"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Proverbs",
+                    "id": "proverbs"
+                }
+            ]
+        },
+        {
+            "id": "honour-and-pray-for-those-in-authority",
+            "name": "Honour and pray for those in authority",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Render therefore to all their dues",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Rome, and Timothy",
+            "where": "Letters to the churches",
+            "told_in": "Romans 13:1-7",
+            "also_in": [
+                "1 Timothy 2:1-2",
+                "1 Peter 2:13-17",
+                "Matthew 22:21",
+                "Acts 5:29"
+            ],
+            "words": [
+                {
+                    "reference": "Romans 13:1",
+                    "lines": [
+                        "Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God."
+                    ]
+                },
+                {
+                    "reference": "Romans 13:7",
+                    "lines": [
+                        "Render therefore to all their dues: tribute to whom tribute is due; custom to whom custom; fear to whom fear; honour to whom honour."
+                    ]
+                },
+                {
+                    "reference": "1 Timothy 2:1-2",
+                    "lines": [
+                        "I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men;",
+                        "For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty."
+                    ]
+                }
+            ],
+            "summary": "Respect the governing authorities, pay what you owe, and pray for your leaders.",
+            "story": "Paul wrote to Christians in Rome under the emperor Nero: 'Let every soul be subject unto the higher powers.' Jesus had said, 'Render therefore unto Caesar the things which are Caesar's; and unto God the things that are God's' (Matthew 22:21). Paul told Timothy to pray first of all 'For kings, and for all that are in authority'.",
+            "meaning": "Government is God's gift for order and justice, and Christians are to be good citizens: paying taxes, obeying the law, and showing respect. There is a limit. When rulers command what God forbids, the apostles answered, 'We ought to obey God rather than men' (Acts 5:29). Even then they respected and prayed for those in power.",
+            "daily": "Pay your taxes honestly, keep the law, speak respectfully of leaders you disagree with, and pray for them by name, locally and nationally.",
+            "try_it": "Pray by name today for your local leader and your national leader, whoever they are.",
+            "key_verses": [
+                {
+                    "reference": "1 Peter 2:17",
+                    "text": "Honour all men. Love the brotherhood. Fear God. Honour the king."
+                },
+                {
+                    "reference": "Acts 5:29",
+                    "text": "Then Peter and the other apostles answered and said, We ought to obey God rather than men."
+                }
+            ],
+            "accounts": [
+                "Romans 13:1-7",
+                "1 Timothy 2:1-2",
+                "1 Peter 2:13-17",
+                "Matthew 22:21",
+                "Acts 5:29"
+            ],
+            "books": [
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "1 Timothy",
+                    "id": "1-timothy"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                }
+            ]
+        },
+        {
+            "id": "flee-sexual-sin",
+            "name": "Flee sexual sin",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Flee fornication",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Corinth",
+            "where": "A letter from Ephesus",
+            "told_in": "1 Corinthians 6:15-20",
+            "also_in": [
+                "Genesis 39:7-12",
+                "1 Thessalonians 4:3-5",
+                "2 Timothy 2:22"
+            ],
+            "words": [
+                {
+                    "reference": "1 Corinthians 6:18-20",
+                    "lines": [
+                        "Flee fornication. Every sin that a man doeth is without the body; but he that committeth fornication sinneth against his own body.",
+                        "What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?",
+                        "For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God’s."
+                    ]
+                }
+            ],
+            "summary": "Run from sexual sin, because your body belongs to God and is a temple of the Holy Spirit.",
+            "story": "Corinth was a port city famous for its immorality, and some in the church thought what they did with their bodies did not matter. Paul answered, 'Flee fornication.' Joseph had done exactly that: when Potiphar's wife grabbed his garment, 'he left his garment in her hand, and fled' (Genesis 39:12).",
+            "meaning": "Some temptations are to be resisted; this one is to be run from. The reason is not that the body is bad but that it is precious: 'your body is the temple of the Holy Ghost … ye are bought with a price: therefore glorify God in your body'. The seventh commandment protects marriage; this command protects the heart, the body and future marriages too.",
+            "daily": "Fleeing is practical: know your weak moments, set up filters and accountability, avoid situations that invite compromise, and if you have fallen, come back to God, who forgives.",
+            "try_it": "Name one situation or screen habit that pulls you toward temptation, and put a guard on it today.",
+            "key_verses": [
+                {
+                    "reference": "2 Timothy 2:22",
+                    "text": "Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart."
+                },
+                {
+                    "reference": "1 Thessalonians 4:3",
+                    "text": "For this is the will of God, even your sanctification, that ye should abstain from fornication:"
+                }
+            ],
+            "accounts": [
+                "1 Corinthians 6:15-20",
+                "Genesis 39:7-12",
+                "1 Thessalonians 4:3-5",
+                "2 Timothy 2:22"
+            ],
+            "books": [
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                },
+                {
+                    "name": "Genesis",
+                    "id": "genesis"
+                },
+                {
+                    "name": "1 Thessalonians",
+                    "id": "1-thessalonians"
+                },
+                {
+                    "name": "2 Timothy",
+                    "id": "2-timothy"
+                }
+            ]
+        },
+        {
+            "id": "be-anxious-for-nothing",
+            "name": "Be anxious for nothing",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Be careful for nothing",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Philippi",
+            "where": "A letter from prison",
+            "told_in": "Philippians 4:4-9",
+            "also_in": [
+                "1 Peter 5:7",
+                "Matthew 6:25-34"
+            ],
+            "words": [
+                {
+                    "reference": "Philippians 4:6-7",
+                    "lines": [
+                        "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.",
+                        "And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus."
+                    ]
+                }
+            ],
+            "summary": "Turn every worry into a prayer with thanksgiving, and God's peace will guard your heart and mind.",
+            "story": "Paul wrote this from prison, not knowing if he would live or die. Yet he told the Philippians, 'Rejoice in the Lord alway' (Philippians 4:4), and, “Be careful for nothing”, which in the KJV means “do not be anxious about anything”.",
+            "meaning": "The command comes with a method: 'in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.' It comes with a promise too: 'the peace of God, which passeth all understanding, shall keep your hearts and minds'. Peter says the same: cast 'all your care upon him; for he careth for you' (1 Peter 5:7).",
+            "daily": "When worry starts, turn it straight into a prayer. Thank God for one thing, ask him for what you need, and leave it with him. Anxiety that will not lift may also need help from a doctor or counsellor, and that is not a lack of faith.",
+            "try_it": "Each time you feel anxious today, stop and pray one sentence of request and one of thanks.",
+            "key_verses": [
+                {
+                    "reference": "1 Peter 5:7",
+                    "text": "Casting all your care upon him; for he careth for you."
+                }
+            ],
+            "accounts": [
+                "Philippians 4:4-9",
+                "1 Peter 5:7",
+                "Matthew 6:25-34"
+            ],
+            "books": [
+                {
+                    "name": "Philippians",
+                    "id": "philippians"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ]
+        },
+        {
+            "id": "be-doers-of-the-word",
+            "name": "Be doers of the word",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Be ye doers of the word, and not hearers only",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "James, the brother of Jesus"
+                }
+            ],
+            "to": "The twelve tribes scattered abroad",
+            "where": "A letter from Jerusalem",
+            "told_in": "James 1:22-27",
+            "also_in": [
+                "Matthew 7:24-27",
+                "Luke 6:46"
+            ],
+            "words": [
+                {
+                    "reference": "James 1:22",
+                    "lines": [
+                        "But be ye doers of the word, and not hearers only, deceiving your own selves."
+                    ]
+                }
+            ],
+            "summary": "Hearing God's word is not enough; it is meant to be obeyed.",
+            "story": "James compares a hearer who does nothing to a man who looks in a mirror, goes away, and 'straightway forgetteth what manner of man he was.' Jesus ended the Sermon on the Mount the same way, with two houses: one on rock, built by the man who hears and does, and one on sand (Matthew 7:24-27).",
+            "meaning": "Hearing without doing is self-deception: 'deceiving your own selves.' The blessing is in the doing: 'this man shall be blessed in his deed' (James 1:25). Jesus asked, 'why call ye me, Lord, Lord, and do not the things which I say?' (Luke 6:46).",
+            "daily": "After every sermon, study or Bible reading, ask: what is one thing I will do? Then do it, today if you can.",
+            "try_it": "Choose one commandment on this page and put it into practice before the day ends.",
+            "key_verses": [
+                {
+                    "reference": "James 1:25",
+                    "text": "But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed."
+                },
+                {
+                    "reference": "Luke 6:46",
+                    "text": "And why call ye me, Lord, Lord, and do not the things which I say?"
+                }
+            ],
+            "accounts": [
+                "James 1:22-27",
+                "Matthew 7:24-27",
+                "Luke 6:46"
+            ],
+            "books": [
+                {
+                    "name": "James",
+                    "id": "james"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                },
+                {
+                    "name": "Luke",
+                    "id": "luke"
+                }
+            ]
+        },
+        {
+            "id": "bear-one-anothers-burdens",
+            "name": "Bear one another's burdens",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "And so fulfil the law of Christ",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The churches of Galatia",
+            "where": "A letter to the churches",
+            "told_in": "Galatians 6:1-10",
+            "also_in": [
+                "Romans 12:15",
+                "Romans 15:1-2"
+            ],
+            "words": [
+                {
+                    "reference": "Galatians 6:2",
+                    "lines": [
+                        "Bear ye one another’s burdens, and so fulfil the law of Christ."
+                    ]
+                }
+            ],
+            "summary": "Help carry the weight other people are carrying; that is how we keep the law of Christ.",
+            "story": "Paul writes to churches arguing about the law, and says the real law of Christ is simple: 'Bear ye one another's burdens'. He begins with restoring someone who has fallen 'in the spirit of meekness' (Galatians 6:1) and ends, 'let us do good unto all men, especially unto them who are of the household of faith' (Galatians 6:10).",
+            "meaning": "“The law of Christ” is his command to love one another. Burdens may be grief, illness, money trouble, temptation or loneliness. Paul says, 'Rejoice with them that do rejoice, and weep with them that weep' (Romans 12:15).",
+            "daily": "Ask people how they really are, and listen. Bring a meal, sit at the hospital, help with the move, pray with someone. Let others carry your burdens too.",
+            "try_it": "Ask someone who is going through a hard time what would actually help, and do it this week.",
+            "key_verses": [
+                {
+                    "reference": "Romans 12:15",
+                    "text": "Rejoice with them that do rejoice, and weep with them that weep."
+                },
+                {
+                    "reference": "Galatians 6:10",
+                    "text": "As we have therefore opportunity, let us do good unto all men, especially unto them who are of the household of faith."
+                }
+            ],
+            "accounts": [
+                "Galatians 6:1-10",
+                "Romans 12:15",
+                "Romans 15:1-2"
+            ],
+            "books": [
+                {
+                    "name": "Galatians",
+                    "id": "galatians"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                }
+            ]
+        },
+        {
+            "id": "love-at-home",
+            "name": "Love at home",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Submitting yourselves one to another in the fear of God",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "Husbands, wives, children and parents at Ephesus",
+            "where": "A letter from prison",
+            "told_in": "Ephesians 5:21-6:4",
+            "also_in": [
+                "Colossians 3:18-21",
+                "1 Peter 3:1-7"
+            ],
+            "words": [
+                {
+                    "reference": "Ephesians 5:21",
+                    "lines": [
+                        "Submitting yourselves one to another in the fear of God."
+                    ]
+                },
+                {
+                    "reference": "Ephesians 5:25",
+                    "lines": [
+                        "Husbands, love your wives, even as Christ also loved the church, and gave himself for it;"
+                    ]
+                },
+                {
+                    "reference": "Ephesians 6:1-4",
+                    "lines": [
+                        "Children, obey your parents in the Lord: for this is right.",
+                        "Honour thy father and mother; (which is the first commandment with promise;)",
+                        "That it may be well with thee, and thou mayest live long on the earth.",
+                        "And, ye fathers, provoke not your children to wrath: but bring them up in the nurture and admonition of the Lord."
+                    ]
+                }
+            ],
+            "summary": "Christ's love is to shape the home: husbands and wives, children and parents, each serving the other.",
+            "story": "Paul's family commands begin with one for everyone: 'Submitting yourselves one to another in the fear of God.' He speaks to wives and husbands, then to children, quoting the fifth commandment, and to fathers. The standard for husbands is the cross: 'love your wives, even as Christ also loved the church, and gave himself for it'.",
+            "meaning": "In a world where husbands and fathers held all the power, Paul addressed every member of the family and laid the heaviest demand on those with the most power: to love sacrificially, and 'provoke not your children to wrath: but bring them up in the nurture and admonition of the Lord.' Christians read the details in different ways, but the heart is the same: Christlike, self-giving love.",
+            "daily": "Home is where faith is hardest to fake. Serve first, apologise quickly, speak gently, and put your family's good ahead of your own comfort. No one should stay in an abusive home; this passage never asks that.",
+            "try_it": "Do one thing today for someone at home that puts their good ahead of your own comfort.",
+            "key_verses": [
+                {
+                    "reference": "Colossians 3:19",
+                    "text": "Husbands, love your wives, and be not bitter against them."
+                },
+                {
+                    "reference": "Colossians 3:21",
+                    "text": "Fathers, provoke not your children to anger, lest they be discouraged."
+                }
+            ],
+            "accounts": [
+                "Ephesians 5:21-6:4",
+                "Colossians 3:18-21",
+                "1 Peter 3:1-7"
+            ],
+            "books": [
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "1 Peter",
+                    "id": "1-peter"
+                }
+            ]
+        },
+        {
+            "id": "love-not-the-world",
+            "name": "Love not the world",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Love not the world, neither the things that are in the world",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "John the apostle"
+                }
+            ],
+            "to": "The churches in his care",
+            "where": "A letter, probably from Ephesus",
+            "told_in": "1 John 2:15-17",
+            "also_in": [
+                "Romans 12:2",
+                "James 4:4",
+                "Matthew 6:19-21"
+            ],
+            "words": [
+                {
+                    "reference": "1 John 2:15-17",
+                    "lines": [
+                        "Love not the world, neither the things that are in the world. If any man love the world, the love of the Father is not in him.",
+                        "For all that is in the world, the lust of the flesh, and the lust of the eyes, and the pride of life, is not of the Father, but is of the world.",
+                        "And the world passeth away, and the lust thereof: but he that doeth the will of God abideth for ever."
+                    ]
+                }
+            ],
+            "summary": "Do not give your heart to a world system that pulls you from God, because it is passing away.",
+            "story": "John, the disciple who wrote 'For God so loved the world' (John 3:16), also wrote, 'Love not the world'. He means two different things: God loves the people of the world; we are not to love the world's way of life apart from God, 'the lust of the flesh, and the lust of the eyes, and the pride of life'.",
+            "meaning": "Those three phrases sum up temptation: wanting what feels good, wanting what looks good, and wanting to look good. They are the same three that pulled Eve to the fruit (Genesis 3:6). John's reason is time: 'the world passeth away … but he that doeth the will of God abideth for ever.' Paul says, 'be not conformed to this world: but be ye transformed' (Romans 12:2).",
+            "daily": "Enjoy God's good gifts, but hold them loosely. Watch where advertising, status and comparison are shaping your wants, and invest in what lasts.",
+            "try_it": "Before your next purchase that is not a need, wait one day and ask if it helps you love God and people more.",
+            "key_verses": [
+                {
+                    "reference": "Romans 12:2",
+                    "text": "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God."
+                },
+                {
+                    "reference": "Matthew 6:20",
+                    "text": "But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal:"
+                }
+            ],
+            "accounts": [
+                "1 John 2:15-17",
+                "Romans 12:2",
+                "James 4:4",
+                "Matthew 6:19-21"
+            ],
+            "books": [
+                {
+                    "name": "1 John",
+                    "id": "1-john"
+                },
+                {
+                    "name": "Romans",
+                    "id": "romans"
+                },
+                {
+                    "name": "James",
+                    "id": "james"
+                },
+                {
+                    "name": "Matthew",
+                    "id": "matthew"
+                }
+            ]
+        },
+        {
+            "id": "rejoice-pray-give-thanks",
+            "name": "Rejoice, pray, give thanks",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "In every thing give thanks",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The church at Thessalonica",
+            "where": "A letter from Corinth",
+            "told_in": "1 Thessalonians 5:16-18",
+            "also_in": [
+                "Philippians 4:4",
+                "Colossians 4:2",
+                "Ephesians 5:20"
+            ],
+            "words": [
+                {
+                    "reference": "1 Thessalonians 5:16-18",
+                    "lines": [
+                        "Rejoice evermore.",
+                        "Pray without ceasing.",
+                        "In every thing give thanks: for this is the will of God in Christ Jesus concerning you."
+                    ]
+                }
+            ],
+            "summary": "Three short commands for every day: rejoice always, pray without ceasing, give thanks in everything.",
+            "story": "Near the end of his first letter to a young, persecuted church, Paul gives a string of short commands. Three of them belong together: 'Rejoice evermore. Pray without ceasing. In every thing give thanks'. He adds something rare: 'for this is the will of God in Christ Jesus concerning you.'",
+            "meaning": "People often ask what God's will is for their lives. Here is part of it, plainly stated. Paul says “in every thing”, not “for every thing”: we do not thank God for evil, but we can find something to thank him for in every situation, because he is with us in it.",
+            "daily": "Turn the day into a conversation with God: short prayers in the queue, thanks at meals, joy in small gifts. Gratitude changes how you see everything else.",
+            "try_it": "Set three reminders on your phone today, and each time, say one thing you are thankful for.",
+            "key_verses": [
+                {
+                    "reference": "Philippians 4:4",
+                    "text": "Rejoice in the Lord alway: and again I say, Rejoice."
+                },
+                {
+                    "reference": "Colossians 4:2",
+                    "text": "Continue in prayer, and watch in the same with thanksgiving;"
+                }
+            ],
+            "accounts": [
+                "1 Thessalonians 5:16-18",
+                "Philippians 4:4",
+                "Colossians 4:2",
+                "Ephesians 5:20"
+            ],
+            "books": [
+                {
+                    "name": "1 Thessalonians",
+                    "id": "1-thessalonians"
+                },
+                {
+                    "name": "Philippians",
+                    "id": "philippians"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                },
+                {
+                    "name": "Ephesians",
+                    "id": "ephesians"
+                }
+            ]
+        },
+        {
+            "id": "do-not-neglect-meeting-together",
+            "name": "Do not neglect meeting together",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Not forsaking the assembling of ourselves together",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "The writer to the Hebrews"
+                }
+            ],
+            "to": "Jewish Christians under pressure",
+            "where": "A letter to the Hebrews",
+            "told_in": "Hebrews 10:19-25",
+            "also_in": [
+                "Acts 2:42-47",
+                "Psalms 133:1"
+            ],
+            "words": [
+                {
+                    "reference": "Hebrews 10:24-25",
+                    "lines": [
+                        "And let us consider one another to provoke unto love and to good works:",
+                        "Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching."
+                    ]
+                }
+            ],
+            "summary": "Keep gathering with other believers, to encourage one another and spur each other on to love and good works.",
+            "story": "Some of the first readers of Hebrews were being mocked and losing property for their faith, and some had started to stay away from the church's meetings. The writer urged them, 'let us consider one another to provoke unto love and to good works'. The first church in Jerusalem met daily, 'breaking bread from house to house' (Acts 2:46).",
+            "meaning": "The Christian life is not meant to be lived alone. We gather not only to receive but to give: to encourage others, and to “provoke” them, in the KJV's sense of stirring them up, to love. The nearer the Lord's return, the more it matters: 'so much the more, as ye see the day approaching.'",
+            "daily": "Make church and a small group a fixed part of your week, not an optional extra. Go ready to encourage someone, and notice who is missing.",
+            "try_it": "Contact someone who has not been at church lately, and tell them they are missed.",
+            "key_verses": [
+                {
+                    "reference": "Acts 2:42",
+                    "text": "And they continued stedfastly in the apostles’ doctrine and fellowship, and in breaking of bread, and in prayers."
+                },
+                {
+                    "reference": "Psalms 133:1",
+                    "text": "Behold, how good and how pleasant it is for brethren to dwell together in unity!"
+                }
+            ],
+            "accounts": [
+                "Hebrews 10:19-25",
+                "Acts 2:42-47",
+                "Psalms 133:1"
+            ],
+            "books": [
+                {
+                    "name": "Hebrews",
+                    "id": "hebrews"
+                },
+                {
+                    "name": "Acts",
+                    "id": "acts"
+                },
+                {
+                    "name": "Psalms",
+                    "id": "psalms"
+                }
+            ]
+        },
+        {
+            "id": "do-all-to-the-glory-of-god",
+            "name": "Do all to the glory of God",
+            "group": "Commandments of the apostles",
+            "testament": "New",
+            "epithet": "Whatsoever ye do, do all to the glory of God",
+            "by_label": "Written by",
+            "by": [
+                {
+                    "name": "Paul",
+                    "hero": "paul"
+                }
+            ],
+            "to": "The churches at Corinth and Colossae",
+            "where": "Letters to the churches",
+            "told_in": "1 Corinthians 10:31",
+            "also_in": [
+                "Colossians 3:17",
+                "Colossians 3:23-24"
+            ],
+            "words": [
+                {
+                    "reference": "1 Corinthians 10:31",
+                    "lines": [
+                        "Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God."
+                    ]
+                },
+                {
+                    "reference": "Colossians 3:23-24",
+                    "lines": [
+                        "And whatsoever ye do, do it heartily, as to the Lord, and not unto men;",
+                        "Knowing that of the Lord ye shall receive the reward of the inheritance: for ye serve the Lord Christ."
+                    ]
+                }
+            ],
+            "summary": "Every part of life, even eating and drinking, can be done for God's glory.",
+            "story": "The Corinthians were arguing about whether they could eat meat that had been offered to idols. Paul answered the question, and then gave a rule for everything: 'Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God.' To servants doing hard, unseen work he wrote, 'do it heartily, as to the Lord, and not unto men'.",
+            "meaning": "There is no split between sacred and ordinary. Washing dishes, writing code, driving a truck and caring for a child can all be worship when done for God, in his way, with thanks. This command gathers up all the others on this page: whatever we do is for him.",
+            "daily": "Before each part of your day, offer it to God: this meeting, this chore, this meal, this rest. Do it well, because he is the one you are really serving.",
+            "try_it": "Pick the most ordinary task on your list today and do it carefully, as if for Jesus himself.",
+            "key_verses": [
+                {
+                    "reference": "Colossians 3:17",
+                    "text": "And whatsoever ye do in word or deed, do all in the name of the Lord Jesus, giving thanks to God and the Father by him."
+                },
+                {
+                    "reference": "Colossians 3:23",
+                    "text": "And whatsoever ye do, do it heartily, as to the Lord, and not unto men;"
+                }
+            ],
+            "accounts": [
+                "1 Corinthians 10:31",
+                "Colossians 3:17",
+                "Colossians 3:23-24"
+            ],
+            "books": [
+                {
+                    "name": "1 Corinthians",
+                    "id": "1-corinthians"
+                },
+                {
+                    "name": "Colossians",
+                    "id": "colossians"
+                }
+            ]
+        }
+    ]
+}

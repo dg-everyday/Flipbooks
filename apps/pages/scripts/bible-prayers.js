@@ -1,5 +1,5 @@
 /**
- * Prayers of the Bible — drives bible-prayers.html.
+ * Prayers in the Bible — drives bible-prayers.html.
  *
  * Reads assets/bible-prayers.json (built and verse-checked by
  * tools/prayers/build_prayers.py): what Jesus taught about prayer, Jesus at
@@ -233,7 +233,7 @@ export async function start(view) {
 
   const search = h('input', {
     type: 'search', class: 'search', autocomplete: 'off',
-    placeholder: 'Search a prayer, a need or a name…', 'aria-label': 'Search the prayers of the Bible'
+    placeholder: 'Search a prayer, a need or a name…', 'aria-label': 'Search the prayers in the Bible'
   });
   search.addEventListener('input', () => { state.query = search.value; apply(); });
 
@@ -276,7 +276,7 @@ export async function start(view) {
 
   view.replaceChildren(
     h('section', { class: 'hero' },
-      h('h1', {}, 'Prayers of the Bible'),
+      h('h1', {}, 'Prayers in the Bible'),
       h('p', { class: 'lede' },
         'The prayers Jesus taught and prayed, and the prayers of the men and women of Scripture: in joy '
         + 'and in fear, in the morning and at night, for themselves and for others. Read each one, see '

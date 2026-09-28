@@ -1,4 +1,4 @@
-# Prayers of the Bible data
+# Prayers in the Bible data
 
 Builds `assets/bible-prayers.json`, which `apps/pages/bible-prayers.html` reads.
 

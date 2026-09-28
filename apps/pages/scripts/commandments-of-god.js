@@ -1,59 +1,51 @@
 /**
- * Prayers in the Bible — drives bible-prayers.html.
+ * Commandments of God — drives commandments-of-god.html.
  *
- * Reads assets/bible-prayers.json (built and verse-checked by
- * tools/prayers/build_prayers.py): what Jesus taught about prayer, Jesus at
- * prayer, and the prayers of the patriarchs, kings, prophets, exiles, psalmists
- * and first Christians, each with what it means for daily life. Each group is a
- * section of cards; clicking one opens it in place, under the row it sits in
- * (rowExpander in study-utils.js). #the-lords-prayer in the URL opens it.
+ * Reads assets/commandments-of-god.json (built and verse-checked by
+ * tools/commandments/build_commandments.py): the Ten Commandments, the greatest
+ * commandments, the commandments of Jesus, wisdom for daily life from the law,
+ * prophets and Proverbs, and the commandments of the apostles, each with what
+ * it means for daily life and one step to take today. Each group is a section
+ * of cards; clicking one opens it in place, under the row it sits in
+ * (rowExpander in study-utils.js). #no-other-gods in the URL opens it.
  */
 
 import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
 
-const DATA = 'assets/bible-prayers.json';
+const DATA = 'assets/commandments-of-god.json';
 
 // Per group: a CSS class for its colour, and an intro.
 const GROUPS = {
-  'Jesus teaches us to pray': {
-    cls: 'g-teach',
-    intro: 'The Lord\'s Prayer, and what Jesus taught about praying in secret, asking, persisting, humility and praying for enemies.',
+  'The Ten Commandments': {
+    cls: 'g-ten',
+    intro: 'The ten words God spoke from Mount Sinai: four about loving God, six about loving the people around us. Jesus and the apostles kept every one, and showed that they reach the heart.',
+    note: 'Numbered here as most Protestant and Orthodox churches number them. Catholic and Lutheran churches count the same words differently, joining the first two and dividing the last into two.',
   },
-  'Jesus at prayer': {
+  'The greatest commandments': {
+    cls: 'g-great',
+    intro: 'Asked which commandment was the greatest, Jesus named two, love for God and love for neighbour, and said all the law hangs on them. Then he gave a new one.',
+  },
+  'Commandments of Jesus': {
     cls: 'g-jesus',
-    intro: 'Before dawn, all night, at a friend\'s tomb, in Gethsemane and on the cross: Jesus prayed, and his prayers show us how.',
+    intro: 'What Jesus told his followers to do: repent and believe, follow him, seek the kingdom first, love enemies, forgive, remember him, make disciples and abide in him.',
   },
-  'The patriarchs and Moses': {
-    cls: 'g-patriarchs',
-    intro: 'Abraham pleading for a city, a servant at a well, Jacob afraid, Moses standing in the gap, and a blessing to speak over others.',
+  'Wisdom for daily life': {
+    cls: 'g-wisdom',
+    intro: 'Commands from the law, the prophets and Proverbs for ordinary days: fairness at work, care for the poor, trust, courage, home, and a guarded heart.',
   },
-  'Kings and prophets': {
-    cls: 'g-kings',
-    intro: 'A mother\'s tears, a king\'s wonder, a request for wisdom, fire on Carmel, a letter spread before God, and a nation that did not know what to do.',
-  },
-  'Prayers in exile': {
-    cls: 'g-exile',
-    intro: 'Far from home and under pressure, God\'s people kept praying: at an open window, in confession, in a moment before a king.',
-  },
-  'Psalms for every day': {
-    cls: 'g-psalms',
-    intro: 'Prayers from Israel\'s songbook for the rhythm of a day: morning and evening, confession and guidance, loneliness and speech.',
-  },
-  'The early church at prayer': {
-    cls: 'g-church',
-    intro: 'The first Christians prayed for boldness, for one another and without ceasing, and the Bible ends with a prayer.',
+  'Commandments of the apostles': {
+    cls: 'g-apostles',
+    intro: 'The apostles wrote to young churches about how to live: in their words and their anger, at work and at home, with money, worry, the world and one another.',
   },
 };
 
 // Line icons, one per group (24 × 24, drawn with the current colour).
 const ICONS = {
-  'Jesus teaches us to pray': '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
-  'Jesus at prayer': '<path d="M12 3v18M7 8h10"/>',
-  'The patriarchs and Moses': '<path d="M3 20 12 4l9 16z"/><path d="M9 20l3-6 3 6"/>',
-  'Kings and prophets': '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>',
-  'Prayers in exile': '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M4 12h16"/>',
-  'Psalms for every day': '<path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 7V4M5.6 11.6 3.8 9.8M18.4 11.6l1.8-1.8"/>',
-  'The early church at prayer': '<path d="M12 22c3.9 0 6.5-2.8 6.5-6.5 0-3.4-2.3-5.4-3.5-8-1 1.8-1.8 2.6-2.8 2.8.2-2.4-.6-4.6-2.7-6.8-.8 3.1-4 5.9-4 10.2C5.5 19.2 8.1 22 12 22z"/>',
+  'The Ten Commandments': '<path d="M5 20V8a3.5 3.5 0 0 1 7 0v12zM12 20V8a3.5 3.5 0 0 1 7 0v12z"/><path d="M7.5 10.5h2M7.5 13.5h2M14.5 10.5h2M14.5 13.5h2"/>',
+  'The greatest commandments': '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+  'Commandments of Jesus': '<path d="M12 3v18M7 8h10"/>',
+  'Wisdom for daily life': '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
+  'Commandments of the apostles': '<path d="M4 20l3-1L19 7l-2-2L5 17z"/><path d="M14.5 7.5l2 2"/>',
 };
 
 function icon(group, cls) {
@@ -65,34 +57,44 @@ function icon(group, cls) {
 
 const testamentLabel = t => `${t} Testament`;
 
+const ORDINALS = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth'];
+const ordinal = n => ORDINALS[n - 1] || `No. ${n}`;
+
 function people(list) {
-  return list?.length && h('ul', { class: 'pr-people' },
+  return list?.length && h('ul', { class: 'cm-people' },
     list.map(p => h('li', {},
       p.hero
         ? h('a', { href: `heroes-and-villains.html#${encodeURIComponent(p.hero)}` }, p.name)
         : h('span', {}, p.name))));
 }
 
-// The prayer's own words: one line per verse, each passage with its reference.
-function prayerWords(prayed) {
-  return prayed?.length && h('div', { class: 'prayer-words' },
-    prayed.map(s => h('figure', { class: 'prayer-passage' },
+// The commandment's own words: one line per verse, each passage with its reference.
+function commandWords(words) {
+  return words?.length && h('div', { class: 'cm-words' },
+    words.map(s => h('figure', { class: 'cm-passage' },
       h('blockquote', {}, s.lines.map(line => h('p', {}, line))),
       h('figcaption', {}, s.reference))));
 }
 
 // ------------------------------------------------------------------ cards
 
+// The Ten Commandments carry their number in place of the group icon.
+function mark(item) {
+  return item.number
+    ? h('span', { class: 'cm-mark is-number', 'aria-hidden': 'true' }, String(item.number))
+    : icon(item.group, 'cm-mark');
+}
+
 function tile(item, onToggle) {
   return h('button', {
-    type: 'button', class: 'pr-tile', id: `tile-${item.id}`, 'data-id': item.id,
-    'aria-expanded': 'false', 'aria-controls': 'pr-detail', onclick: () => onToggle(item.id)
+    type: 'button', class: 'cm-tile', id: `tile-${item.id}`, 'data-id': item.id,
+    'aria-expanded': 'false', 'aria-controls': 'cm-detail', onclick: () => onToggle(item.id)
   },
-    icon(item.group, 'pr-mark'),
-    h('span', { class: 'pr-text' },
-      h('span', { class: 'pr-name' }, item.name),
-      h('span', { class: 'pr-epithet' }, item.epithet),
-      h('span', { class: 'pr-meta' }, `${testamentLabel(item.testament)} · ${item.told_in}`)));
+    mark(item),
+    h('span', { class: 'cm-text' },
+      h('span', { class: 'cm-name' }, item.name),
+      h('span', { class: 'cm-epithet' }, item.epithet),
+      h('span', { class: 'cm-meta' }, `${testamentLabel(item.testament)} · ${item.told_in}`)));
 }
 
 // ------------------------------------------------------------------ detail
@@ -102,14 +104,15 @@ function detail(item, onClose) {
   const block = (title, ...body) => h('section', { class: 'detail-block' }, h('h4', {}, title), body);
 
   const facts = h('dl', { class: 'facts' },
-    item.by?.length && [h('dt', {}, item.by_label || 'Prayed by'), h('dd', {}, people(item.by))],
-    item.with?.length && [h('dt', {}, 'Also there'), h('dd', {}, people(item.with))],
-    item.occasion && [h('dt', {}, 'The occasion'), h('dd', {}, item.occasion)],
+    item.number && [h('dt', {}, 'Commandment'), h('dd', {}, `${ordinal(item.number)} of ten`)],
+    item.by?.length && [h('dt', {}, item.by_label || 'Given by'), h('dd', {}, people(item.by))],
+    item.to && [h('dt', {}, 'Given to'), h('dd', {}, item.to)],
+    item.with?.length && [h('dt', {}, 'With'), h('dd', {}, people(item.with))],
     item.where && [h('dt', {}, 'Where'), h('dd', {}, item.where)],
     [h('dt', {}, 'Testament'), h('dd', {}, testamentLabel(item.testament))]);
 
   const accounts = item.accounts?.length > 1 &&
-    h('p', { class: 'accounts-note' }, `Told or echoed in ${item.accounts.length} places`);
+    h('p', { class: 'accounts-note' }, `Given or taken up in ${item.accounts.length} places`);
 
   const books = item.books?.length && h('ul', { class: 'book-links' },
     item.books.map(b => h('li', {}, h('a', { href: `bible-books.html#${encodeURIComponent(b.id)}` }, b.name))));
@@ -119,30 +122,31 @@ function detail(item, onClose) {
       h('blockquote', {}, v.text),
       h('figcaption', {}, v.reference))));
 
-  // A short prayer in our own words, set apart from Scripture.
-  const prayIt = item.pray_it && h('figure', { class: 'pray-it' },
-    h('blockquote', {}, item.pray_it),
-    h('figcaption', {}, 'A prayer in our own words'));
+  // One practical step in our own words, set apart from Scripture.
+  const tryIt = item.try_it && h('figure', { class: 'try-it' },
+    h('p', {}, item.try_it),
+    h('figcaption', {}, 'A step in our own words'));
 
-  const words = prayerWords(item.prayed);
+  const words = commandWords(item.words);
+  const title = item.number ? `The ${ordinal(item.number).toLowerCase()} commandment` : item.group;
 
   return h('div', {
-    class: `row-panel ${g.cls}`, id: 'pr-detail', role: 'region',
-    'aria-labelledby': 'pr-detail-title', tabindex: '-1'
+    class: `row-panel ${g.cls}`, id: 'cm-detail', role: 'region',
+    'aria-labelledby': 'cm-detail-title', tabindex: '-1'
   },
     h('button', { type: 'button', class: 'panel-close', 'aria-label': `Close ${item.name}`, onclick: onClose }, '×'),
     h('header', { class: 'detail-head' },
-      h('p', { class: 'detail-group' }, `${item.group} · ${testamentLabel(item.testament)}`),
-      h('h3', { id: 'pr-detail-title' }, item.name),
+      h('p', { class: 'detail-group' }, `${title} · ${testamentLabel(item.testament)}`),
+      h('h3', { id: 'cm-detail-title' }, item.name),
       para(item.epithet, 'detail-meaning'),
       para(item.summary, 'detail-summary')),
     h('div', { class: 'detail-cols' },
       h('div', { class: 'detail-main' },
         words && block('The words', words),
-        block('The story behind it', para(item.story)),
-        item.meaning && block('What it teaches', para(item.meaning)),
+        block('Where it comes from', para(item.story)),
+        item.meaning && block('What it means', para(item.meaning)),
         item.daily && block('In your daily life', para(item.daily, 'daily')),
-        prayIt && block('Pray it today', prayIt)),
+        tryIt && block('Do this today', tryIt)),
       h('div', { class: 'detail-side' },
         block('At a glance', facts),
         block('Read it', refList(item.accounts), accounts),
@@ -157,16 +161,16 @@ export async function start(view) {
   try {
     data = await fetchJson(DATA);
   } catch (error) {
-    console.error('Unable to load the prayers:', error);
+    console.error('Unable to load the commandments:', error);
     view.replaceChildren(h('p', { class: 'status' },
-      'The prayers could not be loaded. Please try again later.'));
+      'The commandments could not be loaded. Please try again later.'));
     return;
   }
 
   const entries = data.entries;
   const byId = new Map(entries.map(e => [e.id, e]));
   const state = { group: 'all', testament: 'all', query: '' };
-  const expander = rowExpander({ tileSelector: '.pr-tile' });
+  const expander = rowExpander({ tileSelector: '.cm-tile' });
 
   // --- opening and closing -------------------------------------------------
 
@@ -190,10 +194,11 @@ export async function start(view) {
   // --- filters ---------------------------------------------------------------
 
   const haystack = new Map(entries.map(e => [e.id,
-    [e.name, e.epithet, e.summary, e.group, e.occasion, e.where, e.told_in, e.daily,
+    [e.name, e.epithet, e.summary, e.group, e.to, e.where, e.told_in, e.daily, e.try_it,
+      e.number && `${ordinal(e.number)} commandment`,
       ...(e.by || []).map(p => p.name), ...(e.with || []).map(p => p.name),
-      ...(e.prayed || []).flatMap(s => s.lines)]
-      .join(' ').toLowerCase()]));
+      ...(e.words || []).flatMap(s => s.lines)]
+      .filter(Boolean).join(' ').toLowerCase()]));
 
   function apply() {
     const q = state.query.trim().toLowerCase();
@@ -201,7 +206,7 @@ export async function start(view) {
     for (const section of view.querySelectorAll('.group-section')) {
       const groupMatch = state.group === 'all' || section.dataset.group === state.group;
       let sectionShown = 0;
-      for (const t of section.querySelectorAll('.pr-tile')) {
+      for (const t of section.querySelectorAll('.cm-tile')) {
         const e = byId.get(t.dataset.id);
         const visible = groupMatch
           && (state.testament === 'all' || e.testament === state.testament)
@@ -233,7 +238,7 @@ export async function start(view) {
 
   const search = h('input', {
     type: 'search', class: 'search', autocomplete: 'off',
-    placeholder: 'Search a prayer, a need or a name…', 'aria-label': 'Search the prayers in the Bible'
+    placeholder: 'Search a commandment or a need…', 'aria-label': 'Search the commandments of God'
   });
   search.addEventListener('input', () => { state.query = search.value; apply(); });
 
@@ -245,7 +250,7 @@ export async function start(view) {
   const t = data.totals;
   const chips = h('div', { class: 'chip-rows' },
     h('div', { class: 'chips', role: 'group', 'aria-label': 'Show one kind' },
-      chip('group', 'all', 'Every prayer', t.entries),
+      chip('group', 'all', 'Every commandment', t.entries),
       data.groups.map(g => chip('group', g, g, t.groups[g], GROUPS[g].cls))),
     h('div', { class: 'chips', role: 'group', 'aria-label': 'Filter by testament' },
       chip('testament', 'all', 'Both Testaments'),
@@ -259,7 +264,7 @@ export async function start(view) {
   });
 
   const count = h('p', { class: 'result-count', 'aria-live': 'polite' });
-  const empty = h('p', { class: 'status', hidden: true }, 'No prayer matches that search.');
+  const empty = h('p', { class: 'status', hidden: true }, 'No commandment matches that search.');
 
   const section = group => {
     const members = entries.filter(e => e.group === group);
@@ -271,18 +276,20 @@ export async function start(view) {
         h('h2', { id }, icon(group, 'group-icon'), group),
         h('p', { class: 'group-count' }, `${members.length}`),
         para(GROUPS[group].intro, 'group-intro')),
-      h('div', { class: 'pr-grid' }, members.map(e => tile(e, toggle))));
+      GROUPS[group].note && h('p', { class: 'group-note' }, h('strong', {}, 'Numbering. '), GROUPS[group].note),
+      h('div', { class: 'cm-grid' }, members.map(e => tile(e, toggle))));
   };
 
   view.replaceChildren(
     h('section', { class: 'hero' },
-      h('h1', {}, 'Prayers in the Bible'),
+      h('h1', {}, 'Commandments of God'),
       h('p', { class: 'lede' },
-        'The prayers Jesus taught and prayed, and the prayers of the men and women of Scripture: in joy '
-        + 'and in fear, in the morning and at night, for themselves and for others. Read each one, see '
-        + 'what it teaches, and find a way to pray it in your own day. Tap any one to read it.'),
+        'The Ten Commandments first, then the two Jesus called the greatest, the commands he gave his '
+        + 'followers, wisdom for ordinary days from the law and the prophets, and what the apostles taught '
+        + 'the first churches. Each one shows where it comes from, what it means, and one step to take '
+        + 'today. Tap any one to read it.'),
       h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.entries), 'prayers'),
+        h('li', {}, h('b', {}, t.entries), 'commandments'),
         h('li', {}, h('b', {}, t.old), 'Old Testament'),
         h('li', {}, h('b', {}, t.new), 'New Testament')),
       h('div', { class: 'finder' }, search),

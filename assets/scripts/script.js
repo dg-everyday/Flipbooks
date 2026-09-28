@@ -535,10 +535,106 @@ let bookmarksGeneration = 0;
 let bookmarksClosing = false;
 
 function updateBookmarkCounts() {
+    let total = 0;
     for (const [tab, list] of bookmarkLists) {
         tab.querySelector(".bookmark-count").textContent = list.bookmarks.length || "";
+        total += list.bookmarks.length;
+    }
+    // Nothing to put in a PDF until something is bookmarked.
+    bookmarksPdf.disabled = total === 0;
+    bookmarksPdf.title = total ? "Open your bookmarks as a PDF" : "Nothing bookmarked yet";
+}
+
+// The PDF pill: every bookmark, all three kinds, as one PDF opened in a new
+// tab. The builder and the jsPDF library behind it load on the first tap, not
+// with the page, and the whole thing runs on the reader's device.
+const bookmarksPdf = document.getElementById("bookmarks-pdf");
+const bookmarksPdfNote = document.getElementById("bookmarks-pdf-note");
+const BOOKMARKS_PDF_MODULE = new URL("assets/scripts/bookmarks-pdf.js?v=20260928-2", document.baseURI).href;
+let bookmarksPdfNoteTimer = 0;
+
+function showBookmarksPdfNote(message, { error = false, linger = 0 } = {}) {
+    clearTimeout(bookmarksPdfNoteTimer);
+    bookmarksPdfNote.textContent = message;
+    bookmarksPdfNote.classList.toggle("is-error", error);
+    bookmarksPdfNote.hidden = !message;
+    if (message && linger) {
+        bookmarksPdfNoteTimer = setTimeout(() => showBookmarksPdfNote(""), linger);
     }
 }
+
+// The tab is opened at once, inside the tap: browsers block a tab opened later,
+// once the PDF is ready. It says what is coming until the PDF replaces it.
+function openPdfTab() {
+    const tab = window.open("", "_blank");
+    if (!tab) return null;
+    try {
+        tab.document.title = "My Bookmarks — Daily Grace";
+        tab.document.body.style.cssText =
+            "margin:0;display:grid;place-items:center;min-height:100vh;"
+            + "background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif";
+        tab.document.body.textContent = "Preparing your bookmarks…";
+    } catch {
+        // Some browsers keep the new tab to themselves; it still loads the PDF.
+    }
+    return tab;
+}
+
+// When no tab could be opened (a pop-up blocker), the PDF is saved instead.
+function savePdf(url, filename) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.append(link);
+    link.click();
+    link.remove();
+}
+
+async function openBookmarksPdf() {
+    if (bookmarksPdf.getAttribute("aria-busy") === "true") return;
+    const tab = openPdfTab();
+    bookmarksPdf.setAttribute("aria-busy", "true");
+    showBookmarksPdfNote("Preparing your PDF…");
+    try {
+        const verseIds = bookmarkVerses.bookmarks;
+        const [verses, facts, sayings, { makeBookmarksPdf }] = await Promise.all([
+            verseIds.length
+                ? loadBibleBookSuggestions().then(() => getVersesByIds(verseIds))
+                : [],
+            bookmarkFacts.bookmarkedItems(),
+            bookmarkSayings.bookmarkedItems(),
+            import(BOOKMARKS_PDF_MODULE),
+        ]);
+        if (!verses.length && !facts.length && !sayings.length) {
+            tab?.close();
+            showBookmarksPdfNote("Nothing is bookmarked yet.", { linger: 4000 });
+            return;
+        }
+        const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings });
+        const url = URL.createObjectURL(blob);
+        // Kept long enough for the tab to load it, and to reload it for a while.
+        setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+        if (tab && !tab.closed) {
+            tab.location.href = url;
+            showBookmarksPdfNote("Your PDF has opened in a new tab.", { linger: 4000 });
+        } else {
+            savePdf(url, filename);
+            showBookmarksPdfNote("Your browser blocked the new tab, so the PDF was downloaded instead.",
+                { linger: 6000 });
+        }
+    } catch (error) {
+        tab?.close();
+        console.warn("The bookmarks PDF could not be made:", error);
+        showBookmarksPdfNote(
+            "The PDF could not be made. Check your connection and try again.",
+            { error: true, linger: 8000 },
+        );
+    } finally {
+        bookmarksPdf.removeAttribute("aria-busy");
+    }
+}
+
+bookmarksPdf.addEventListener("click", openBookmarksPdf);
 
 function selectBookmarkTab(tab, { focus = false } = {}) {
     bookmarkTab = tab;
@@ -609,6 +705,7 @@ async function closeBookmarks() {
     bookmarksDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     bookmarksDialog.close();
     bookmarkVerses.reset();
+    showBookmarksPdfNote("");
     bookmarksClosing = false;
 }
 

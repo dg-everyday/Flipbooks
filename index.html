@@ -23,7 +23,7 @@
 
         <title>Grace for Today • Our Faith Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260928-1" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260928-2" />
         <link rel="preload" href="assets/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="preload" href="assets/fonts/Strait-Regular.woff2" as="font" type="font/woff2" crossorigin />
         <script>
@@ -832,11 +832,28 @@
                 />
                 <div class="help-heading">
                     <p class="help-eyebrow">Saved on this device</p>
-                    <h2 id="bookmarks-title">Bookmarks</h2>
+                    <div class="bookmarks-title">
+                        <h2 id="bookmarks-title">Bookmarks</h2>
+                        <!-- Opens every bookmark, all three kinds, as one PDF in a new tab
+                             (assets/scripts/bookmarks-pdf.js). -->
+                        <button
+                            id="bookmarks-pdf"
+                            class="bookmarks-pdf"
+                            type="button"
+                            aria-label="Open your bookmarks as a PDF in a new tab"
+                            title="Open your bookmarks as a PDF"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14" />
+                            </svg>
+                            <span>PDF</span>
+                        </button>
+                    </div>
                 </div>
                 <button
                     id="bookmarks-close"
                     class="help-close"
+                    autofocus
                     type="button"
                     aria-label="Close bookmarks"
                     title="Close"
@@ -856,6 +873,7 @@
                         Bible Sayings <span class="bookmark-count"></span>
                     </button>
                 </div>
+                <p id="bookmarks-pdf-note" class="bookmarks-pdf-note" role="status" hidden></p>
             </header>
             <section id="bookmarks-panel-verses" class="bookmarks-panel" role="tabpanel" aria-labelledby="bookmarks-tab-verses">
                 <bible-search-results id="bookmark-verses" compact></bible-search-results>
@@ -890,12 +908,12 @@
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
         <script src="assets/scripts/sql_script.js?v=20260925-1" defer></script>
-        <script src="assets/scripts/script.js?v=20260927-2" defer></script>
+        <script src="assets/scripts/script.js?v=20260928-2" defer></script>
         <script type="module" src="apps/components/banner-slider.js?v=20260925-1"></script>
         <script type="module" src="apps/components/poster-card.js?v=20260927-1"></script>
-        <script type="module" src="apps/components/did-you-know.js?v=20260927-1"></script>
+        <script type="module" src="apps/components/did-you-know.js?v=20260928-1"></script>
         <script type="module" src="apps/components/daily-guidance.js?v=20260927-2"></script>
-        <script type="module" src="apps/components/bible-sayings.js?v=20260927-1"></script>
+        <script type="module" src="apps/components/bible-sayings.js?v=20260928-1"></script>
         <script type="module" src="apps/components/bible-search-results.js?v=20260927-1"></script>
         <script type="module" src="apps/components/bible-trivia.js?v=20260925-3"></script>
         <script type="module" src="apps/components/story-carousel.js?v=20260927-2"></script>

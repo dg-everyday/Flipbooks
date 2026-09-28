@@ -3,7 +3,7 @@
 Fields (all but name, group, testament, told_in and summary are optional):
 
   name, epithet   the song's name, and a line from it
-  group           one of GROUPS in build_songs.py
+  group           one of GROUPS in build_poetry.py
   testament       Old or New
   by, with        [{name, hero?}]: who sang or wrote it, and who else was there.
                   hero is an id on heroes-and-villains.html. by_label replaces
@@ -11,11 +11,11 @@ Fields (all but name, group, testament, told_in and summary are optional):
   occasion        what the song was sung for
   where           where it was sung
   told_in         the passage that tells it; also_in: parallels and echoes
-  sung            references for the song's own words; the build adds the text
+  words           references for the song's own words; the build adds the text
   summary         one sentence
   story           the story behind it
   meaning         why it matters
-  lesson          what we learn
+  lesson          for your daily life: what to take into the day
   key_verses      other verses to read with it; the build adds the text
 
 Scripture in 'single quotes' must be word for word KJV (the build checks it).
@@ -34,7 +34,7 @@ HISTORY = [
         "where": "Among Cain's descendants, east of Eden",
         "told_in": "Genesis 4:19-24",
         "also_in": ["Matthew 18:21-22"],
-        "sung": ["Genesis 4:23-24"],
+        "words": ["Genesis 4:23-24"],
         "summary": "The first song in the Bible is a boast. Lamech, of Cain's line, sang to his wives that he had killed a man, and would take revenge seventy-seven times over.",
         "story": (
             "Cain's family built the first city and began the first crafts. One of Lamech's sons, "
@@ -61,7 +61,7 @@ HISTORY = [
         "where": "The shore of the Red Sea",
         "told_in": "Exodus 15:1-19",
         "also_in": ["Psalms 106:9-12", "Revelation 15:2-4"],
-        "sung": ["Exodus 15:1", "Exodus 15:11", "Exodus 15:18"],
+        "words": ["Exodus 15:1", "Exodus 15:11", "Exodus 15:18"],
         "summary": "The first great song of Scripture: Israel, safe on the far shore, sang of the God who threw horse and rider into the sea.",
         "story": (
             "Israel had walked through the sea on dry ground, and in the morning they saw the "
@@ -90,7 +90,7 @@ HISTORY = [
         "where": "The shore of the Red Sea",
         "told_in": "Exodus 15:20-21",
         "also_in": ["Micah 6:4"],
-        "sung": ["Exodus 15:21"],
+        "words": ["Exodus 15:21"],
         "summary": "Miriam took a timbrel and led the women of Israel in dancing, answering Moses' song with its opening line.",
         "story": (
             "'And Miriam the prophetess, the sister of Aaron, took a timbrel in her hand; and all "
@@ -117,7 +117,7 @@ HISTORY = [
         "where": "Israel, after the battle by the river Kishon",
         "told_in": "Judges 5:1-31",
         "also_in": ["Judges 4:1-24", "Hebrews 11:32"],
-        "sung": ["Judges 5:3", "Judges 5:31"],
+        "words": ["Judges 5:3", "Judges 5:31"],
         "summary": "After God routed Sisera's chariots at the river Kishon, Deborah and Barak sang of the tribes who came, the tribes who stayed home, and the stars that fought from heaven.",
         "story": (
             "For twenty years Jabin's nine hundred iron chariots had crushed Israel. Deborah, a "
@@ -146,7 +146,7 @@ HISTORY = [
         "where": "The cities of Israel",
         "told_in": "1 Samuel 18:6-9",
         "also_in": ["1 Samuel 21:10-12", "1 Samuel 29:5"],
-        "sung": ["1 Samuel 18:7"],
+        "words": ["1 Samuel 18:7"],
         "summary": "The women sang to welcome the army home, and one line gave young David more praise than the king. Saul never forgave it.",
         "story": (
             "When David came back from killing Goliath, 'the women came out of all cities of "
@@ -173,7 +173,7 @@ HISTORY = [
         "where": "Jerusalem, late in David's reign",
         "told_in": "2 Samuel 22:1-51",
         "also_in": ["Psalms 18:1-50", "Romans 15:9"],
-        "sung": ["2 Samuel 22:2-3"],
+        "words": ["2 Samuel 22:2-3"],
         "summary": "Near the end of his life David sang of the God who had rescued him again and again: his rock, his fortress, his deliverer.",
         "story": (
             "David 'spake unto the LORD the words of this song in the day that the LORD had "
@@ -200,7 +200,7 @@ HISTORY = [
         "where": "The wilderness of Tekoa",
         "told_in": "2 Chronicles 20:1-30",
         "also_in": ["Psalms 136:1-3"],
-        "sung": ["2 Chronicles 20:21"],
+        "words": ["2 Chronicles 20:21"],
         "summary": "Facing an army far bigger than his own, King Jehoshaphat sent singers out in front of his soldiers. As they began to praise, the LORD routed the enemy.",
         "story": (
             "A great multitude was coming against Judah. Jehoshaphat proclaimed a fast and prayed, "
@@ -230,7 +230,7 @@ HISTORY = [
         "where": "The house of the LORD at Shiloh",
         "told_in": "1 Samuel 2:1-10",
         "also_in": ["1 Samuel 1:1-28", "Luke 1:46-55"],
-        "sung": ["1 Samuel 2:1-2"],
+        "words": ["1 Samuel 2:1-2"],
         "summary": "Hannah, once mocked for having no children, brought her son Samuel to Shiloh and sang of the God who lifts up the poor and brings down the proud.",
         "story": (
             "Year after year Hannah wept at Shiloh because she had no child, while her rival "
@@ -258,7 +258,7 @@ HISTORY = [
         "where": "Beer, on the way to the promised land",
         "told_in": "Numbers 21:16-18",
         "also_in": ["Numbers 21:4-9"],
-        "sung": ["Numbers 21:17"],
+        "words": ["Numbers 21:17"],
         "summary": "In the wilderness God promised water, and as the leaders dug the well with their staffs, Israel sang to it.",
         "story": (
             "Near the end of the forty years, Israel came to a place called Beer, which means "
@@ -285,7 +285,7 @@ HISTORY = [
         "where": "The tent David pitched for the ark in Jerusalem",
         "told_in": "1 Chronicles 16:1-36",
         "also_in": ["1 Chronicles 15:16-28", "2 Samuel 6:12-19", "Psalms 105:1-15", "Psalms 96:1-13"],
-        "sung": ["1 Chronicles 16:8", "1 Chronicles 16:34"],
+        "words": ["1 Chronicles 16:8", "1 Chronicles 16:34"],
         "summary": "When the ark came up to Jerusalem with shouting, trumpets and dancing, David gave Asaph a psalm of thanks for all the people to sing.",
         "story": (
             "The first attempt to move the ark ended in death, because it was carried the wrong "
@@ -313,7 +313,7 @@ HISTORY = [
         "where": "The temple in Jerusalem",
         "told_in": "2 Chronicles 5:11-14",
         "also_in": ["1 Kings 8:10-11", "2 Chronicles 7:1-3"],
-        "sung": ["2 Chronicles 5:13"],
+        "words": ["2 Chronicles 5:13"],
         "summary": "At the dedication of Solomon's temple, a hundred and twenty trumpeters and the singers made one sound, and the glory of the LORD filled the house as a cloud.",
         "story": (
             "When the ark was brought into Solomon's temple, the Levite singers stood at the east "
@@ -340,7 +340,7 @@ HISTORY = [
         "where": "The ruins of the temple in Jerusalem",
         "told_in": "Ezra 3:8-13",
         "also_in": ["Haggai 2:1-9"],
-        "sung": ["Ezra 3:11"],
+        "words": ["Ezra 3:11"],
         "summary": "When the exiles home from Babylon laid the new temple's foundation, the young shouted for joy and the old wept, and no one could tell the two sounds apart.",
         "story": (
             "Back from Babylon, the builders laid the foundation of the LORD's house, and the "
@@ -450,7 +450,7 @@ HISTORY = [
         "where": "Ziklag, when the news came",
         "told_in": "2 Samuel 1:17-27",
         "also_in": ["1 Samuel 31:1-6"],
-        "sung": ["2 Samuel 1:19", "2 Samuel 1:23", "2 Samuel 1:26"],
+        "words": ["2 Samuel 1:19", "2 Samuel 1:23", "2 Samuel 1:26"],
         "summary": "When Saul and his son Jonathan died in battle, David wrote a lament for them both: the king who had hunted him, and the friend who had loved him.",
         "story": (
             "A messenger brought David the news that Israel had fled before the Philistines and "
@@ -476,7 +476,7 @@ HISTORY = [
         "occasion": "The murder of Abner by Joab",
         "where": "Hebron",
         "told_in": "2 Samuel 3:27-39",
-        "sung": ["2 Samuel 3:33-34"],
+        "words": ["2 Samuel 3:33-34"],
         "summary": "When Joab murdered Abner in revenge, David walked behind the bier and sang a short lament, so all Israel would know the king had no part in it.",
         "story": (
             "Abner had led Saul's army against David, then came to Hebron to make peace and bring "
@@ -530,7 +530,7 @@ HISTORY = [
         "where": "By the rivers of Babylon",
         "told_in": "Psalms 137:1-9",
         "also_in": ["2 Kings 25:8-11", "Psalms 126:1-6"],
-        "sung": ["Psalms 137:1-3", "Psalms 137:5"],
+        "words": ["Psalms 137:1-3", "Psalms 137:5"],
         "summary": "Captives in Babylon hung their harps on the willows when their captors demanded a cheerful song from Zion.",
         "story": (
             "Jerusalem and its temple had been burned, and the survivors carried off to Babylon. "
@@ -558,7 +558,7 @@ HISTORY = [
         "where": "The ruined city of Jerusalem",
         "told_in": "Lamentations 3:1-33",
         "also_in": ["Lamentations 1:1-2"],
-        "sung": ["Lamentations 3:21", "Lamentations 3:23-26"],
+        "words": ["Lamentations 3:21", "Lamentations 3:23-26"],
         "summary": "Lamentations is five poems of grief over fallen Jerusalem. At its very centre, in the darkest place, the poet remembers that God's mercies are new every morning.",
         "story": (
             "The book opens with the city sitting alone: 'How doth the city sit solitary, that was "
@@ -585,7 +585,7 @@ HISTORY = [
         "where": "Sung in Israel; cried out at Golgotha",
         "told_in": "Psalms 22:1-31",
         "also_in": ["Matthew 27:35-46", "John 19:23-24", "Hebrews 2:12"],
-        "sung": ["Psalms 22:1", "Psalms 22:16-18"],
+        "words": ["Psalms 22:1", "Psalms 22:16-18"],
         "summary": "David's psalm begins in utter abandonment and ends in praise that reaches the ends of the earth. Jesus prayed its first line from the cross.",
         "story": (
             "The psalm opens with a cry: 'My God, my God, why hast thou forsaken me?' The sufferer "
@@ -610,7 +610,7 @@ HISTORY = [
         "occasion": "A plea for forgiveness from the depths of guilt",
         "where": "One of the Songs of degrees, sung on the way up to Jerusalem",
         "told_in": "Psalms 130:1-8",
-        "sung": ["Psalms 130:1-5"],
+        "words": ["Psalms 130:1-5"],
         "summary": "Sung by pilgrims on the way up to Jerusalem, this psalm cries to God from the depths and waits for him as a watchman waits for the morning.",
         "story": (
             "The singer is in deep water, and the depths are not only trouble but sin: 'If thou, "

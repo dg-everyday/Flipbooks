@@ -10,6 +10,8 @@
 .g-magic   { --g: #4a4f57; --g-soft: rgb(74 79 87 / 12%); }
 .g-signs   { --g: #b5651d; --g-soft: rgb(181 101 29 / 12%); }
 .g-prophecy { --g: #7a3b69; --g-soft: rgb(122 59 105 / 12%); }
+.g-angels  { --g: #2f7a9a; --g-soft: rgb(47 122 154 / 12%); }
+.g-spirits { --g: #5b2333; --g-soft: rgb(91 35 51 / 11%); }
 
 .chip-rows { display: grid; gap: 8px; }
 
@@ -24,7 +26,7 @@
     radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
     linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
 }
-.group-head h2 {
+.group-head h2, .group-head h3 {
   display: flex; align-items: center; gap: 10px;
   font: 400 clamp(1.7rem, 1.4rem + 1.3vw, 2.3rem)/1.05 var(--display);
 }
@@ -93,6 +95,15 @@
 
 .accounts-note { margin: 6px 0 0; font-size: .8rem; color: var(--muted); }
 
+/* A special topic's links to the events on this page that show it. */
+.related-links { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.related-links a {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 600; color: var(--g); text-decoration: none;
+}
+.related-links a::before { content: '→'; }
+.related-links a:hover { text-decoration: underline; }
+
 .book-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .book-links a {
   display: inline-block; padding: 3px 10px; border-radius: 999px;
@@ -105,12 +116,49 @@
 
 /* ---------------------------------------------------------------- small screens */
 
+/* ---------------------------------------------------------------- special topics */
+
+/* The heading over the Angels and Demons sections. */
+.special-head { margin: 34px 4px 0; scroll-margin-top: calc(var(--topbar) + 12px); }
+.special-head .eyebrow { color: var(--gold); }
+.special-head h2 {
+  display: flex; align-items: center; gap: 12px;
+  color: var(--navy);
+  font: 400 clamp(2.1rem, 1.7rem + 1.8vw, 3rem)/1 var(--display);
+}
+.special-head h2::after {
+  content: ''; flex: 1 1 auto; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.special-intro { margin: 8px 0 0; max-width: 70ch; color: var(--muted); font-size: 1.02rem; }
+.group-section.is-special { scroll-margin-top: calc(var(--topbar) + 12px); }
+
+/* The hero's shortcuts to the special topics. */
+.special-links {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+  margin: 16px 0 0; color: rgb(243 231 210 / 80%); font-size: .95rem;
+}
+.special-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px 7px 10px;
+  border: 0; border-radius: 999px;
+  background: var(--g); color: #fff;
+  font: 700 .92rem/1.2 var(--body); cursor: pointer;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+  transition: transform .15s ease, filter .15s ease;
+}
+.special-link:hover { transform: translateY(-1px); filter: brightness(1.12); }
+.special-link-icon { display: grid; width: 20px; height: 20px; }
+.special-link-icon svg { width: 100%; height: 100%; }
+
 @media (max-width: 600px) {
   .group-head { margin: 0 -16px 14px; padding: 14px 16px; }
   .sn-grid { grid-template-columns: 1fr; gap: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .special-link { transition: none; }
+  .special-link:hover { transform: none; }
   .sn-tile { transition: none; }
   .sn-tile:hover { transform: none; }
 }

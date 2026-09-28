@@ -1,20 +1,49 @@
 /**
- * Songs in the Bible — drives songs-in-the-bible.html.
+ * Poems, Songs and Wisdom — drives poems-songs-and-wisdom.html.
  *
- * Reads assets/songs-in-the-bible.json (built and verse-checked by
- * tools/songs/build_songs.py): songs of victory, worship and thanksgiving,
- * laments, psalms, songs of the prophets, the songs around Jesus' birth, and
- * the songs of the church and of heaven. Each group is a section of cards;
- * clicking one opens it in place, under the row it sits in (rowExpander in
- * study-utils.js). #the-lord-is-my-shepherd in the URL opens Psalm 23.
+ * Reads assets/poems-songs-and-wisdom.json (built and verse-checked by
+ * tools/poetry/build_poetry.py): the poems of the prophets and the New
+ * Testament; the songs of victory, worship and grief, the psalms, the songs of
+ * the prophets, of Jesus' birth, of the church and of heaven; and the wisdom of
+ * Proverbs, Job, Ecclesiastes, Jesus and the apostles, each with what it means
+ * for daily life. The page is in three parts, one per kind, and each group is a
+ * section of cards; clicking one opens it in place, under the row it sits in
+ * (rowExpander in study-utils.js). #the-lord-is-my-shepherd in the URL opens
+ * Psalm 23. songs-in-the-bible.html, the page's old name, forwards here with
+ * its hash, so the songs keep their links.
  */
 
 import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
 
-const DATA = 'assets/songs-in-the-bible.json';
+const DATA = 'assets/poems-songs-and-wisdom.json';
+
+// Per kind: one word for a card, the label for who gave it, the heading over
+// its words, and an intro.
+const KINDS = {
+  'Poems': {
+    one: 'Poem', by: 'Written by', words: 'From the poem',
+    intro: 'The Bible\'s great poems outside its songbook: the prophets\' visions of comfort and peace, and the poems of the New Testament on the Word made flesh, love, and the victory over death.',
+  },
+  'Songs': {
+    one: 'Song', by: 'Sung by', words: 'From the song',
+    intro: 'From Moses at the Red Sea to the new song of heaven: the songs God\'s people sang in victory, worship and grief, the psalms they loved, and the hymns of the first Christians.',
+  },
+  'Wisdom': {
+    one: 'Wisdom', by: 'Written by', words: 'The words',
+    intro: 'Wisdom for ordinary days and hard questions: Proverbs on words, work, money and friends, Job and Ecclesiastes on suffering and meaning, and the wisdom of Jesus and the apostles.',
+  },
+};
 
 // Per group: a CSS class for its colour, and an intro.
 const GROUPS = {
+  'Poems of the prophets': {
+    cls: 'g-oracles',
+    intro: 'Isaiah and Micah wrote poems of comfort for the weary, a servant who suffers for others, a free invitation to the thirsty, and a world where swords become plowshares.',
+  },
+  'Poems of the New Testament': {
+    cls: 'g-letters',
+    intro: 'John\'s poem of the Word made flesh, and Paul\'s on love, on nothing separating us from God, on Christ above all things, and on death swallowed up in victory.',
+  },
   'Songs of victory': {
     cls: 'g-victory',
     intro: 'Sung on the far side of a rescue: at the Red Sea, after Deborah\'s battle, as an army came home. And the first song of all, a boast of revenge.',
@@ -27,7 +56,7 @@ const GROUPS = {
     cls: 'g-lament',
     intro: 'Songs of grief for the fallen, for a ruined city and for sin. The Bible gives words for tears as well as for joy.',
   },
-  'Psalms and songs of wisdom': {
+  'Psalms and songs of Solomon': {
     cls: 'g-psalms',
     intro: 'Israel\'s songbook of 150 psalms, a few of the best loved, with the Song of Songs and the songs of Solomon.',
   },
@@ -43,17 +72,34 @@ const GROUPS = {
     cls: 'g-heaven',
     intro: 'The hymns of the first Christians, and the songs John heard around the throne of God, where the Bible\'s story ends in praise.',
   },
+  'Proverbs for every day': {
+    cls: 'g-proverbs',
+    intro: 'Short sayings for daily life: where wisdom begins, work, words, pride, friends, plans, joy, money, self-control, and a portrait of a woman of strength.',
+  },
+  'Wisdom for hard questions': {
+    cls: 'g-hard',
+    intro: 'Job and Ecclesiastes face what Proverbs leaves out: suffering without a reason, and a life that feels like chasing the wind. Their answers are honest, and they end in God.',
+  },
+  'Wisdom of Jesus and the apostles': {
+    cls: 'g-sayings',
+    intro: 'The Beatitudes, salt and light, treasure in heaven and the two builders, with James on wisdom and the tongue and Paul on the mind and the cross.',
+  },
 };
 
 // Line icons, one per group (24 × 24, drawn with the current colour).
 const ICONS = {
+  'Poems of the prophets': '<path d="M5 19c4-1 7-4 9-8l4-7c1 3 0 7-2 10-2 4-6 5-11 5z"/><path d="M5 19l5-5"/>',
+  'Poems of the New Testament': '<path d="M4 5.5C6.5 4 9.5 4 12 5.5v14C9.5 18 6.5 18 4 19.5zM20 5.5C17.5 4 14.5 4 12 5.5v14c2.5-1.5 5.5-1.5 8 0z"/>',
   'Songs of victory': '<circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="4.5" r="1.4"/><circle cx="12" cy="19.5" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="19.5" cy="12" r="1.4"/>',
   'Worship and thanksgiving': '<path d="M7 4c-2 3-2 8 1 11h8c3-3 3-8 1-11"/><path d="M8 15v5h8v-5M10 7v8M12 6v9M14 7v8"/>',
   'Laments': '<path d="M12 3c3 4.5 6 8 6 11a6 6 0 0 1-12 0c0-3 3-6.5 6-11z"/>',
-  'Psalms and songs of wisdom': '<path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+  'Psalms and songs of Solomon': '<path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
   'Songs of the prophets': '<path d="M7 3h11a2 2 0 0 1 2 2v12M7 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-2H9v2a2 2 0 0 1-2 2"/><path d="M9 8h7M9 11.5h7"/>',
   'Songs of the coming King': '<path d="m12 3 2.6 5.8 6.4.7-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2L3 9.5l6.4-.7z"/>',
   'Songs of the church and of heaven': '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>',
+  'Proverbs for every day': '<path d="M12 3v3M5.6 5.6l2.1 2.1M18.4 5.6l-2.1 2.1"/><path d="M9 18h6M10 21h4M12 8a5 5 0 0 0-3 9h6a5 5 0 0 0-3-9z"/>',
+  'Wisdom for hard questions': '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"/>',
+  'Wisdom of Jesus and the apostles': '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
 };
 
 function icon(group, cls) {
@@ -73,10 +119,10 @@ function people(list) {
         : h('span', {}, p.name))));
 }
 
-// The song's own words: one line per verse, each passage with its reference.
-function songWords(sung) {
-  return sung?.length && h('div', { class: 'song-words' },
-    sung.map(s => h('figure', { class: 'song-passage' },
+// The passage's own words: one line per verse, each passage with its reference.
+function passageWords(words) {
+  return words?.length && h('div', { class: 'passage-words' },
+    words.map(s => h('figure', { class: 'passage' },
       h('blockquote', {}, s.lines.map(line => h('p', {}, line))),
       h('figcaption', {}, s.reference))));
 }
@@ -92,17 +138,19 @@ function tile(item, onToggle) {
     h('span', { class: 'sg-text' },
       h('span', { class: 'sg-name' }, item.name),
       h('span', { class: 'sg-epithet' }, item.epithet),
-      h('span', { class: 'sg-meta' }, `${testamentLabel(item.testament)} · ${item.told_in}`)));
+      h('span', { class: 'sg-meta' },
+        `${KINDS[item.kind].one} · ${testamentLabel(item.testament)} · ${item.told_in}`)));
 }
 
 // ------------------------------------------------------------------ detail
 
 function detail(item, onClose) {
   const g = GROUPS[item.group];
+  const k = KINDS[item.kind];
   const block = (title, ...body) => h('section', { class: 'detail-block' }, h('h4', {}, title), body);
 
   const facts = h('dl', { class: 'facts' },
-    item.by?.length && [h('dt', {}, item.by_label || 'Sung by'), h('dd', {}, people(item.by))],
+    item.by?.length && [h('dt', {}, item.by_label || k.by), h('dd', {}, people(item.by))],
     item.with?.length && [h('dt', {}, 'Also there'), h('dd', {}, people(item.with))],
     item.occasion && [h('dt', {}, 'The occasion'), h('dd', {}, item.occasion)],
     item.where && [h('dt', {}, 'Where'), h('dd', {}, item.where)],
@@ -119,7 +167,7 @@ function detail(item, onClose) {
       h('blockquote', {}, v.text),
       h('figcaption', {}, v.reference))));
 
-  const words = songWords(item.sung);
+  const words = passageWords(item.words);
 
   return h('div', {
     class: `row-panel ${g.cls}`, id: 'sg-detail', role: 'region',
@@ -133,10 +181,10 @@ function detail(item, onClose) {
       para(item.summary, 'detail-summary')),
     h('div', { class: 'detail-cols' },
       h('div', { class: 'detail-main' },
-        words && block('From the song', words),
+        words && block(k.words, words),
         block('The story behind it', para(item.story)),
         item.meaning && block('Why it matters', para(item.meaning)),
-        item.lesson && block('The lesson', para(item.lesson, 'lesson'))),
+        item.lesson && block('For your daily life', para(item.lesson, 'lesson'))),
       h('div', { class: 'detail-side' },
         block('At a glance', facts),
         block('Read it', refList(item.accounts), accounts),
@@ -151,15 +199,16 @@ export async function start(view) {
   try {
     data = await fetchJson(DATA);
   } catch (error) {
-    console.error('Unable to load the songs:', error);
+    console.error('Unable to load the poems, songs and wisdom:', error);
     view.replaceChildren(h('p', { class: 'status' },
-      'The songs could not be loaded. Please try again later.'));
+      'The poems, songs and wisdom could not be loaded. Please try again later.'));
     return;
   }
 
   const entries = data.entries;
   const byId = new Map(entries.map(e => [e.id, e]));
-  const state = { group: 'all', testament: 'all', query: '' };
+  const kindOf = new Map(data.kinds.flatMap(k => k.groups.map(g => [g, k.name])));
+  const state = { kind: 'all', group: 'all', testament: 'all', query: '' };
   const expander = rowExpander({ tileSelector: '.sg-tile' });
 
   // --- opening and closing -------------------------------------------------
@@ -184,16 +233,17 @@ export async function start(view) {
   // --- filters ---------------------------------------------------------------
 
   const haystack = new Map(entries.map(e => [e.id,
-    [e.name, e.epithet, e.summary, e.group, e.occasion, e.where, e.told_in,
+    [e.name, e.epithet, e.summary, e.group, e.kind, e.occasion, e.where, e.told_in, e.lesson,
       ...(e.by || []).map(p => p.name), ...(e.with || []).map(p => p.name),
-      ...(e.sung || []).flatMap(s => s.lines)]
-      .join(' ').toLowerCase()]));
+      ...(e.words || []).flatMap(s => s.lines)]
+      .filter(Boolean).join(' ').toLowerCase()]));
 
   function apply() {
     const q = state.query.trim().toLowerCase();
     let shown = 0;
     for (const section of view.querySelectorAll('.group-section')) {
-      const groupMatch = state.group === 'all' || section.dataset.group === state.group;
+      const groupMatch = (state.kind === 'all' || kindOf.get(section.dataset.group) === state.kind)
+        && (state.group === 'all' || section.dataset.group === state.group);
       let sectionShown = 0;
       for (const t of section.querySelectorAll('.sg-tile')) {
         const e = byId.get(t.dataset.id);
@@ -206,6 +256,17 @@ export async function start(view) {
       section.hidden = sectionShown === 0;
       shown += sectionShown;
     }
+    // A kind's heading shows while any of its sections does.
+    for (const head of view.querySelectorAll('.kind-head')) {
+      head.hidden = ![...view.querySelectorAll(`.group-section[data-kind="${head.dataset.kind}"]`)]
+        .some(section => !section.hidden);
+    }
+    // The group chips show once a kind is chosen, and offer only its groups,
+    // so a phone is not faced with a dozen of them at once.
+    groupChips.hidden = state.kind === 'all';
+    for (const c of groupChips.querySelectorAll('.chip')) {
+      c.hidden = c.dataset.value !== 'all' && kindOf.get(c.dataset.value) !== state.kind;
+    }
     if (expander.openTile?.hidden) expander.close();
     else expander.place();
     count.textContent = shown === entries.length ? '' : `Showing ${shown} of ${entries.length}`;
@@ -216,6 +277,7 @@ export async function start(view) {
   }
 
   function resetFilters() {
+    state.kind = 'all';
     state.group = 'all';
     state.testament = 'all';
     state.query = '';
@@ -227,7 +289,7 @@ export async function start(view) {
 
   const search = h('input', {
     type: 'search', class: 'search', autocomplete: 'off',
-    placeholder: 'Search a song, a line, a singer or a place…', 'aria-label': 'Search the songs of the Bible'
+    placeholder: 'Search a song, poem, proverb or line…', 'aria-label': 'Search the poems, songs and wisdom of the Bible'
   });
   search.addEventListener('input', () => { state.query = search.value; apply(); });
 
@@ -237,10 +299,14 @@ export async function start(view) {
   }, label, n != null && h('span', { class: 'chip-count' }, n));
 
   const t = data.totals;
+  const groupChips = h('div', { class: 'chips', role: 'group', 'aria-label': 'Show one group' },
+    chip('group', 'all', 'Every group'),
+    data.groups.map(g => chip('group', g, g, t.groups[g], GROUPS[g].cls)));
   const chips = h('div', { class: 'chip-rows' },
     h('div', { class: 'chips', role: 'group', 'aria-label': 'Show one kind' },
-      chip('group', 'all', 'Every song', t.entries),
-      data.groups.map(g => chip('group', g, g, t.groups[g], GROUPS[g].cls))),
+      chip('kind', 'all', 'Poems, songs and wisdom', t.entries),
+      data.kinds.map(k => chip('kind', k.name, k.name, t.kinds[k.name]))),
+    groupChips,
     h('div', { class: 'chips', role: 'group', 'aria-label': 'Filter by testament' },
       chip('testament', 'all', 'Both Testaments'),
       chip('testament', 'Old', 'Old Testament', t.old),
@@ -249,44 +315,57 @@ export async function start(view) {
     const c = e.target.closest('.chip');
     if (!c) return;
     state[c.dataset.filter] = c.dataset.value;
+    // A new kind starts from all of its groups.
+    if (c.dataset.filter === 'kind') state.group = 'all';
     apply();
   });
 
   const count = h('p', { class: 'result-count', 'aria-live': 'polite' });
-  const empty = h('p', { class: 'status', hidden: true }, 'No song matches that search.');
+  const empty = h('p', { class: 'status', hidden: true }, 'Nothing matches that search.');
 
   const section = group => {
     const members = entries.filter(e => e.group === group);
     const id = `h-${group.toLowerCase().replace(/[^a-z]+/g, '-')}`;
     return h('section', {
-      class: `panel group-section ${GROUPS[group].cls}`, 'data-group': group, 'aria-labelledby': id
+      class: `panel group-section ${GROUPS[group].cls}`, 'data-group': group,
+      'data-kind': kindOf.get(group), 'aria-labelledby': id
     },
       h('header', { class: 'group-head' },
-        h('h2', { id }, icon(group, 'group-icon'), group),
+        h('h3', { id }, icon(group, 'group-icon'), group),
         h('p', { class: 'group-count' }, `${members.length}`),
         para(GROUPS[group].intro, 'group-intro')),
       h('div', { class: 'sg-grid' }, members.map(e => tile(e, toggle))));
   };
 
+  // Each kind: a heading, then its groups.
+  const part = kind => [
+    h('header', { class: 'kind-head', 'data-kind': kind.name },
+      h('h2', {}, kind.name, h('span', { class: 'kind-count' }, `${t.kinds[kind.name]}`)),
+      para(KINDS[kind.name].intro, 'kind-intro')),
+    ...kind.groups.map(section),
+  ];
+
   view.replaceChildren(
     h('section', { class: 'hero' },
-      h('h1', {}, 'Songs in the Bible'),
+      h('h1', {}, 'Poems, Songs and Wisdom'),
       h('p', { class: 'lede' },
-        'From Moses at the Red Sea to the new song of heaven: the songs God\'s people sang in ' +
-        'victory, worship and grief, the psalms they loved, and the hymns of the first ' +
-        'Christians. Read the words, the story behind each song, and why it still matters. ' +
-        'Tap any one to read it.'),
+        'The poetry of the Bible, written to be read aloud, sung and remembered: the poems of the ' +
+        'prophets and apostles, the songs God\'s people sang from the Red Sea to heaven, and the ' +
+        'wisdom of Proverbs, Job, Ecclesiastes and Jesus. Read the words, the story behind them, ' +
+        'and what they mean for your daily life. Tap any one to read it.'),
       // A selection, not every song: see "How many songs are in the Bible?" in
-      // tools/songs/README.md before adding a total here.
-      h('p', { class: 'lede' }, `Here are ${t.entries} of the best known.`),
+      // tools/poetry/README.md before adding a total here.
+      h('p', { class: 'lede' },
+        `Here are ${t.kinds.Poems} poems, ${t.kinds.Songs} songs and ${t.kinds.Wisdom} pieces of ` +
+        'wisdom, among the best known and most loved.'),
       h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.entries), 'songs'),
-        h('li', {}, h('b', {}, t.old), 'Old Testament'),
-        h('li', {}, h('b', {}, t.new), 'New Testament')),
+        h('li', {}, h('b', {}, t.kinds.Poems), 'poems'),
+        h('li', {}, h('b', {}, t.kinds.Songs), 'songs'),
+        h('li', {}, h('b', {}, t.kinds.Wisdom), 'wisdom')),
       h('div', { class: 'finder' }, search),
       chips),
     count,
-    ...data.groups.map(section),
+    ...data.kinds.flatMap(part),
     empty);
 
   apply();

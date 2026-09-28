@@ -1,4 +1,4 @@
-/* Styles for apps/pages/songs-in-the-bible.html, on top of study-page.css,
+/* Styles for apps/pages/poems-songs-and-wisdom.html, on top of study-page.css,
    which holds the palette, topbar, hero, chips and the in-place .row-panel. */
 
 /* One colour per group; --g colours everything inside. */
@@ -9,8 +9,29 @@
 .g-prophets { --g: #7a3b69; --g-soft: rgb(122 59 105 / 12%); }
 .g-advent   { --g: #9b2335; --g-soft: rgb(155 35 53 / 11%); }
 .g-heaven   { --g: #6b4c9a; --g-soft: rgb(107 76 154 / 12%); }
+.g-oracles  { --g: #1f6f78; --g-soft: rgb(31 111 120 / 12%); }
+.g-letters  { --g: #8a4f1d; --g-soft: rgb(138 79 29 / 12%); }
+.g-proverbs { --g: #5f7a2e; --g-soft: rgb(95 122 46 / 13%); }
+.g-hard     { --g: #6a5440; --g-soft: rgb(106 84 64 / 12%); }
+.g-sayings  { --g: #b5532f; --g-soft: rgb(181 83 47 / 12%); }
 
 .chip-rows { display: grid; gap: 8px; }
+
+/* ---------------------------------------------------------------- kinds */
+
+/* Poems, Songs, Wisdom: a heading over each kind's sections. */
+.kind-head { margin: 34px 4px 0; }
+.kind-head h2 {
+  display: flex; align-items: baseline; gap: 12px;
+  color: var(--navy);
+  font: 400 clamp(2.1rem, 1.7rem + 1.8vw, 3rem)/1 var(--display);
+}
+.kind-head h2::after {
+  content: ''; flex: 1 1 auto; height: 2px; align-self: center;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.kind-count { font: 700 1rem/1 var(--body); color: var(--gold); }
+.kind-intro { margin: 8px 0 0; max-width: 70ch; color: var(--muted); font-size: 1.02rem; }
 
 /* ---------------------------------------------------------------- sections */
 
@@ -23,7 +44,7 @@
     radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
     linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
 }
-.group-head h2 {
+.group-head h3 {
   display: flex; align-items: center; gap: 10px;
   font: 400 clamp(1.7rem, 1.4rem + 1.3vw, 2.3rem)/1.05 var(--display);
 }
@@ -80,25 +101,26 @@
 /* ---------------------------------------------------------------- open card */
 
 /* The song's own words, set as verse: one line per Bible verse. */
-.song-words { display: grid; gap: 12px; }
-.song-passage {
+.passage-words { display: grid; gap: 12px; }
+.passage {
   margin: 0; padding: 14px 18px 12px 20px;
   border-radius: 12px;
   background: var(--g-soft);
   border-left: 4px solid var(--g);
 }
-.song-passage blockquote { margin: 0; }
-.song-passage p {
+.passage blockquote { margin: 0; }
+.passage p {
   margin: 0 0 6px; padding-left: 1.2em; text-indent: -1.2em;   /* wrapped lines hang under the first */
   font: 400 1.12rem/1.35 var(--body);
   color: var(--ink);
 }
-.song-passage p:last-child { margin-bottom: 0; }
-.song-passage figcaption {
+.passage p:last-child { margin-bottom: 0; }
+.passage figcaption {
   margin-top: 8px;
   font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--g);
 }
 
+/* For your daily life: the part of each entry to take into the day. */
 .lesson { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); font-weight: 500; }
 
 .sg-people { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 2px 0 0; padding: 0; list-style: none; }
@@ -127,7 +149,7 @@
 @media (max-width: 600px) {
   .group-head { margin: 0 -16px 14px; padding: 14px 16px; }
   .sg-grid { grid-template-columns: 1fr; gap: 8px; }
-  .song-passage p { font-size: 1.04rem; }
+  .passage p { font-size: 1.04rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,12 +1,14 @@
 """Build assets/supernaturals.json for apps/pages/supernaturals.html.
 
 The hand-written entries live in tools/supernaturals/content/miracles.py,
-spirits.py and prophecies.py. This script:
+spirits.py and prophecies.py (events), and topics.py (the special topics,
+Angels and Demons, which each gather many passages). This script:
 
   * gives each entry an id (from its name) and checks ids are unique,
   * checks `group` and `testament`, and that `by` / `with` hero ids point at
     heroes-and-villains entries,
-  * checks every scripture reference (told_in, also_in, key_verses),
+  * checks every scripture reference (told_in, also_in, key_verses), and that
+    a topic's `related` ids are events on the page,
   * fills key_verses[].text with the exact KJV wording,
   * checks every 'single-quoted' phrase is verbatim KJV (tools/kjv_quotes.py),
   * lists the books each event is told in, for links to bible-books.html,
@@ -32,6 +34,7 @@ from kjv_quotes import Quotes  # noqa: E402
 from content.miracles import MIRACLES  # noqa: E402
 from content.spirits import SPIRITS  # noqa: E402
 from content.prophecies import PROPHECIES  # noqa: E402
+from content.topics import TOPICS  # noqa: E402
 
 OUT = ROOT / "assets" / "supernaturals.json"
 HEROES = ROOT / "assets" / "heroes-and-villains.json"
@@ -45,8 +48,14 @@ GROUPS = [
     "Magic and sorcery",
     "Signs, wonders and angels",
     "Prophecies",
+    # The special topics, shown after the events under a heading of their own.
+    "Angels",
+    "Demons",
 ]
+SPECIAL = ["Angels", "Demons"]
+# A special topic may draw on both Testaments; it then shows under either filter.
 TESTAMENTS = {"Old", "New"}
+TOPIC_TESTAMENTS = {"Old", "New", "Both"}
 
 
 def slug(name):
@@ -67,7 +76,8 @@ def main():
             errors.append(f"{where}: {e}")
             return None
 
-    entries = [{"id": item.get("id") or slug(item["name"]), **item} for item in MIRACLES + SPIRITS + PROPHECIES]
+    entries = [{"id": item.get("id") or slug(item["name"]), **item}
+               for item in MIRACLES + SPIRITS + PROPHECIES + TOPICS]
 
     ids = [e["id"] for e in entries]
     for i in set(ids):
@@ -78,8 +88,13 @@ def main():
         where = e["name"]
         if e.get("group") not in GROUPS:
             errors.append(f"{where}: group {e.get('group')!r} is not one of {GROUPS}")
-        if e.get("testament") not in TESTAMENTS:
-            errors.append(f"{where}: testament must be Old or New")
+        special = e.get("group") in SPECIAL
+        e["special"] = special
+        if e.get("testament") not in (TOPIC_TESTAMENTS if special else TESTAMENTS):
+            errors.append(f"{where}: testament must be Old or New" + (", or Both" if special else ""))
+        for rid in e.get("related", []):
+            if rid not in ids or rid == e["id"]:
+                errors.append(f"{where}: related id {rid!r} is not another entry on the page")
         for person in e.get("by", []) + e.get("with", []):
             if person.get("hero") and person["hero"] not in hero_ids:
                 errors.append(f"{where}: unknown hero id {person['hero']!r}")
@@ -108,11 +123,14 @@ def main():
     doc = {
         "totals": {
             "entries": len(entries),
-            "old": sum(1 for e in entries if e["testament"] == "Old"),
-            "new": sum(1 for e in entries if e["testament"] == "New"),
+            "events": sum(1 for e in entries if not e["special"]),
+            "topics": sum(1 for e in entries if e["special"]),
+            "old": sum(1 for e in entries if e["testament"] in ("Old", "Both")),
+            "new": sum(1 for e in entries if e["testament"] in ("New", "Both")),
             "groups": {g: sum(1 for e in entries if e["group"] == g) for g in GROUPS},
         },
         "groups": GROUPS,
+        "special": SPECIAL,
         "entries": entries,
     }
     OUT.write_text(json.dumps(doc, indent=4, ensure_ascii=False) + "\n", encoding="utf-8")

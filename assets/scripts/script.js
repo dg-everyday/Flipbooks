@@ -521,12 +521,14 @@ const bookmarksClose = document.getElementById("bookmarks-close");
 const bookmarkVerses = document.getElementById("bookmark-verses");
 const bookmarkFacts = document.getElementById("bookmark-facts");
 const bookmarkSayings = document.getElementById("bookmark-sayings");
+const bookmarkGuidance = document.getElementById("bookmark-guidance");
 const bookmarkTabs = [...bookmarksDialog.querySelectorAll('[role="tab"]')];
 // The component behind each tab, whose bookmarks the tab counts.
 const bookmarkLists = new Map([
     [bookmarkTabs[0], bookmarkVerses],
     [bookmarkTabs[1], bookmarkFacts],
     [bookmarkTabs[2], bookmarkSayings],
+    [bookmarkTabs[3], bookmarkGuidance],
 ]);
 for (const list of bookmarkLists.values()) list.setAttribute("media-base", MEDIA_BASE_URL);
 // The popup opens on the kind of bookmark looked at last.
@@ -545,12 +547,12 @@ function updateBookmarkCounts() {
     bookmarksPdf.title = total ? "Open your bookmarks as a PDF" : "Nothing bookmarked yet";
 }
 
-// The PDF pill: every bookmark, all three kinds, as one PDF opened in a new
+// The PDF pill: every bookmark, all four kinds, as one PDF opened in a new
 // tab. The builder and the jsPDF library behind it load on the first tap, not
 // with the page, and the whole thing runs on the reader's device.
 const bookmarksPdf = document.getElementById("bookmarks-pdf");
 const bookmarksPdfNote = document.getElementById("bookmarks-pdf-note");
-const BOOKMARKS_PDF_MODULE = new URL("assets/scripts/bookmarks-pdf.js?v=20260928-2", document.baseURI).href;
+const BOOKMARKS_PDF_MODULE = new URL("assets/scripts/bookmarks-pdf.js?v=20260928-3", document.baseURI).href;
 let bookmarksPdfNoteTimer = 0;
 
 function showBookmarksPdfNote(message, { error = false, linger = 0 } = {}) {
@@ -597,20 +599,21 @@ async function openBookmarksPdf() {
     showBookmarksPdfNote("Preparing your PDF…");
     try {
         const verseIds = bookmarkVerses.bookmarks;
-        const [verses, facts, sayings, { makeBookmarksPdf }] = await Promise.all([
+        const [verses, facts, sayings, guidance, { makeBookmarksPdf }] = await Promise.all([
             verseIds.length
                 ? loadBibleBookSuggestions().then(() => getVersesByIds(verseIds))
                 : [],
             bookmarkFacts.bookmarkedItems(),
             bookmarkSayings.bookmarkedItems(),
+            bookmarkGuidance.bookmarkedItems(),
             import(BOOKMARKS_PDF_MODULE),
         ]);
-        if (!verses.length && !facts.length && !sayings.length) {
+        if (!verses.length && !facts.length && !sayings.length && !guidance.length) {
             tab?.close();
             showBookmarksPdfNote("Nothing is bookmarked yet.", { linger: 4000 });
             return;
         }
-        const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings });
+        const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings, guidance });
         const url = URL.createObjectURL(blob);
         // Kept long enough for the tab to load it, and to reload it for a while.
         setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
@@ -680,6 +683,7 @@ async function showBookmarks() {
     // Bookmarks may have been added on the page since the lists were last drawn.
     bookmarkFacts.showBookmarks();
     bookmarkSayings.showBookmarks();
+    bookmarkGuidance.showBookmarks();
     const ids = bookmarkVerses.bookmarks;
     if (!ids.length) {
         bookmarkVerses.showBookmarks([]);

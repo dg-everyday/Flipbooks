@@ -12,10 +12,12 @@
  *
  * Usage
  *   const { makeBookmarksPdf } = await import('./bookmarks-pdf.js?v=…');
- *   const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings });
+ *   const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings, guidance });
  *     verses   [{ book_name, chapter, verse, text }]   (getVersesByIds)
  *     facts    [{ title, text, reference }]            (<did-you-know>.bookmarkedItems())
  *     sayings  [{ saying, meaning, kjv_text, reference }] (<bible-sayings>.bookmarkedItems())
+ *     guidance [{ name, section, question, summary, guidance, teachings, practice, prayer }]
+ *              (<daily-guidance>.bookmarkedItems(): topics of guidance-for-life.json)
  * Each list is newest first, as the popup shows it. Rejects if jsPDF or the
  * fonts cannot be loaded.
  */
@@ -145,7 +147,9 @@ function localDate(date) {
 
 /**
  * Lays out a document top to bottom. Each item is a list of runs (one style
- * each); an item that fits on a page is never split between two.
+ * each), in blocks: a run marked breakBefore starts a new block, and a page
+ * may turn only between blocks. Most items are one block, so they are never
+ * split; a long guidance topic may turn between its passages.
  */
 class Writer {
   constructor(doc) {
@@ -180,21 +184,36 @@ class Writer {
     if (this.y + height > BOTTOM && this.y > TOP) this.newPage();
   }
 
-  /** Draws runs as one item, moving it whole to the next page if need be. */
-  item(runs, { keepWith = 0 } = {}) {
-    const measured = this.measure(runs);
-    const height = measured.reduce((sum, run) => sum + run.height, 0);
-    if (height + keepWith <= BOTTOM - TOP) this.keep(height + keepWith);
-    for (const run of measured) {
-      this.style(run);
-      for (const line of run.lines) {
-        if (this.y + run.step > BOTTOM) this.newPage();      // only for an item taller than a page
-        this.doc.text(line, MARGIN_X + run.indent, this.y, { baseline: 'top' });
-        this.y += run.step;
-      }
-      this.y += run.gap ?? 0;
+  /** The measured runs in blocks, each with its height. */
+  blocks(runs) {
+    const blocks = [];
+    for (const run of this.measure(runs)) {
+      if (!blocks.length || run.breakBefore) blocks.push({ runs: [], height: 0 });
+      const block = blocks[blocks.length - 1];
+      block.runs.push(run);
+      block.height += run.height;
     }
-    return height;
+    return blocks;
+  }
+
+  /**
+   * Draws an item block by block, moving each block whole to the next page if
+   * need be; keepWith keeps that much room after the first block.
+   */
+  item(runs, { keepWith = 0 } = {}) {
+    this.blocks(runs).forEach((block, index) => {
+      const room = block.height + (index === 0 ? keepWith : 0);
+      if (room <= BOTTOM - TOP) this.keep(room);
+      for (const run of block.runs) {
+        this.style(run);
+        for (const line of run.lines) {
+          if (this.y + run.step > BOTTOM) this.newPage();    // only for a block taller than a page
+          this.doc.text(line, MARGIN_X + run.indent, this.y, { baseline: 'top' });
+          this.y += run.step;
+        }
+        this.y += run.gap ?? 0;
+      }
+    });
   }
 
   rule(color = RULE, gap = 4) {
@@ -235,7 +254,7 @@ function drawSection(writer, title, items, toRuns) {
   const heading = [
     { font: 'GermaniaOne', size: 17, color: NAVY, text: `${title} (${items.length})`, gap: 1.5 },
   ];
-  const first = writer.measure(toRuns(items[0])).reduce((sum, run) => sum + run.height, 0);
+  const first = writer.blocks(toRuns(items[0]))[0]?.height ?? 0;
   writer.item(heading, { keepWith: 6 + first });
   writer.doc.setDrawColor(GOLD);
   writer.doc.setLineWidth(0.8);
@@ -269,6 +288,24 @@ const sayingRuns = (saying) => [
   { size: 9.5, color: RED, text: saying.reference ? `(${clean(saying.reference)})` : '', gap: 1 },
 ];
 
+// A guidance topic in full, as on the Guidance for Life page: the question and
+// its answer, every passage of Scripture with who spoke it, then what to do.
+// A page may turn before a passage or before "Try this", never inside one.
+const guidanceRuns = (topic) => [
+  { size: 8.5, color: GOLD_DARK, text: clean(topic.section).toUpperCase(), gap: 0.8 },
+  { font: 'GermaniaOne', size: 13, color: NAVY, text: clean(topic.name), gap: 0.8 },
+  { size: 11.5, color: NAVY, text: clean(topic.question), gap: 1.2 },
+  { size: 11, text: clean(topic.summary), gap: 1.2 },
+  { size: 11, text: clean(topic.guidance), gap: 2 },
+  ...(topic.teachings || []).flatMap((teaching) => [
+    { font: 'GermaniaOne', size: 11, color: GOLD_DARK, indent: 4, gap: 0.4, breakBefore: true,
+      text: [clean(teaching.reference), clean(teaching.who)].filter(Boolean).join(' · ') },
+    { size: 10.5, indent: 4, text: clean(teaching.text), gap: 1.6 },
+  ]),
+  { size: 11, color: GOLD_DARK, text: topic.practice ? `Try this: ${clean(topic.practice)}` : '', gap: 1, breakBefore: true },
+  { size: 11, color: MUTED, text: topic.prayer ? `A prayer: ${clean(topic.prayer)}` : '', gap: 1 },
+];
+
 function drawFooters(doc) {
   const pages = doc.getNumberOfPages();
   for (let page = 1; page <= pages; page++) {
@@ -288,7 +325,7 @@ function drawFooters(doc) {
 // ------------------------------------------------------------------ entry
 
 /** Builds the PDF of the bookmarks: resolves to { blob, filename }. */
-export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [] }) {
+export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], guidance = [] }) {
   const [JsPdf, fonts, emblem] = await Promise.all([
     loadJsPdf(),
     Promise.all(FONTS.map((font) => loadFont(font.url))),
@@ -307,12 +344,13 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [] }
     verses.length && plural(verses.length, 'verse'),
     facts.length && plural(facts.length, 'fact'),
     sayings.length && plural(sayings.length, 'saying'),
+    guidance.length && plural(guidance.length, 'guidance topic'),
   ].filter(Boolean).join(', ');
   // A PDF viewer's tab shows this title rather than the blob URL.
   doc.viewerPreferences({ DisplayDocTitle: true });
   doc.setProperties({
     title: 'My Bookmarks — Daily Grace',
-    subject: `Bookmarked verses, facts and sayings, saved ${date}`,
+    subject: `Bookmarked verses, facts, sayings and guidance, saved ${date}`,
     author: 'Daily Grace',
     creator: 'Daily Grace (dailygrace.faith)',
   });
@@ -322,6 +360,7 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [] }
   drawSection(writer, 'Bible Verses', verses, verseRuns);
   drawSection(writer, 'Did You Know', facts, factRuns);
   drawSection(writer, 'Bible Sayings', sayings, sayingRuns);
+  drawSection(writer, 'Guidance for Life', guidance, guidanceRuns);
   drawFooters(doc);
 
   return { blob: doc.output('blob'), filename: `daily-grace-bookmarks-${localDate(now)}.pdf` };

@@ -433,12 +433,12 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
 }
 .bookmarks-pdf-note.is-error { color: var(--action); }
 
-/* A segmented switch: three equal segments on a sunken track, the chosen one
-   raised in white with its count in gold. */
+/* A segmented switch: four equal segments on a sunken track (two rows of two
+   on a phone), the chosen one raised in white with its count in gold. */
 .bookmark-tabs {
   display: grid;
   flex: 1 0 100%;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 4px;
   padding: 4px;
   border-radius: 14px;
@@ -485,6 +485,10 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
    with a second scrollbar beside the popup's. */
 #bookmark-verses,
 #verse-results { --reader-max-height: none; }
+@media (max-width: 560px) {
+  .bookmark-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bookmark-tabs [role="tab"] { min-height: 36px; }
+}
 @media (max-width: 420px) {
   .bookmarks-panel { padding: 10px; }
   .bookmark-tabs [role="tab"] { padding: 6px 4px; font-size: .75rem; }

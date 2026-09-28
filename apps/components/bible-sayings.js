@@ -34,6 +34,8 @@
  * Methods      refresh()        show a new batch
  *              more()           add a batch below the list, up to 20 sayings
  *              showBookmarks()  show the bookmarked sayings, newest first
+ *              bookmarkedItems()  resolves to the bookmarked sayings themselves,
+ *                               newest first, fetching the file if need be
  *              open(id)         pop up one saying
  *              close()          close the popup
  * Properties   bookmarks (read-only): the bookmarked saying ids, newest first
@@ -502,6 +504,14 @@ export class BibleSayings extends HTMLElement {
   /** The bookmarked saying ids, newest first. */
   get bookmarks() {
     return bookmarks.read();
+  }
+
+  /** The bookmarked sayings, newest first, as they are in the sayings file. */
+  async bookmarkedItems() {
+    const src = this.getAttribute('src') || DEFAULT_SRC;
+    const sayings = await readSayings(new URL(src, document.baseURI).href);
+    const byId = new Map(sayings.map((saying) => [saying.id, saying]));
+    return bookmarks.read().map((id) => byId.get(id)).filter(Boolean);
   }
 
   get #mediaBase() {

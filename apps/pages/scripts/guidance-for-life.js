@@ -8,11 +8,26 @@
  * mind, Relationships, … The future); clicking one opens it in place, under
  * the row it sits in (rowExpander in study-utils.js). #forgiveness in the URL
  * opens Forgiveness.
+ *
+ * Holding a question's tile for half a second bookmarks it, as on the home
+ * page (card-bookmarks.js), and an open question has a Bookmark button too.
+ * The bookmarks are the ones "Today's Guidance for Life" keeps on the home
+ * page (the same localStorage key), so they show in its bookmarks popup and
+ * its PDF.
  */
 
 import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import {
+  BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
+} from '../../components/card-bookmarks.js?v=20260927-1';
 
 const DATA = 'assets/guidance-for-life.json';
+
+// The same store as <daily-guidance> on the home page.
+const bookmarks = bookmarkStore('dailygrace:bookmarks:guidance',
+  { isId: (id) => typeof id === 'string' && id !== '', limit: 50 });
+
+const RIBBON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>';
 
 const SECTIONS = {
   'Heart and mind': {
@@ -66,7 +81,8 @@ function icon(section, cls) {
 
 function tile(topic, onToggle) {
   return h('button', {
-    type: 'button', class: 'gl-tile', id: `tile-${topic.id}`, 'data-id': topic.id,
+    type: 'button', id: `tile-${topic.id}`, 'data-id': topic.id,
+    class: `gl-tile bookmarkable${bookmarks.has(topic.id) ? ' bookmarked' : ''}`,
     'aria-expanded': 'false', 'aria-controls': 'gl-detail', onclick: () => onToggle(topic.id)
   },
     icon(topic.section, 'gl-mark'),
@@ -92,7 +108,25 @@ function teaching(t) {
     t.note && h('p', { class: 'teaching-note' }, t.note));
 }
 
-function detail(topic, onClose) {
+// The open question's Bookmark button: pressed while the topic is bookmarked.
+function bookmarkButton(topic, onToggle) {
+  const button = h('button', {
+    type: 'button', class: 'gl-bookmark', 'data-id': topic.id, onclick: () => onToggle(topic)
+  });
+  button.innerHTML = RIBBON_ICON;          // a fixed string, never data
+  button.append(h('span', {}));
+  syncBookmarkButton(button);
+  return button;
+}
+
+function syncBookmarkButton(button) {
+  const saved = bookmarks.has(button.dataset.id);
+  button.setAttribute('aria-pressed', String(saved));
+  button.querySelector('span').textContent = saved ? 'Bookmarked' : 'Bookmark';
+  button.title = saved ? 'Remove the bookmark' : 'Bookmark this question';
+}
+
+function detail(topic, onClose, onBookmark) {
   const s = SECTIONS[topic.section];
   const block = (title, ...body) => h('section', { class: 'detail-block' }, h('h4', {}, title), body);
 
@@ -117,7 +151,8 @@ function detail(topic, onClose) {
       h('p', { class: 'detail-group' }, topic.section),
       h('h3', { id: 'gl-detail-title' }, topic.name),
       para(topic.question, 'detail-meaning'),
-      para(topic.summary, 'detail-summary')),
+      para(topic.summary, 'detail-summary'),
+      bookmarkButton(topic, onBookmark)),
     h('div', { class: 'detail-cols' },
       h('div', { class: 'detail-main' },
         block('In plain words', para(topic.guidance)),
@@ -161,8 +196,39 @@ export async function start(view) {
       resetFilters();
       openTile = document.getElementById(`tile-${id}`);
     }
-    expander.open(openTile, detail(topic, () => expander.close({ focus: true })), options);
+    expander.open(openTile,
+      detail(topic, () => expander.close({ focus: true }), toggleBookmark), options);
   }
+
+  // --- bookmarks -------------------------------------------------------------
+
+  // The glow, ribbon and note of a held card, from card-bookmarks.js.
+  document.head.append(h('style', {}, BOOKMARK_STYLES));
+  const status = h('p', { class: 'visually-hidden', role: 'status', 'aria-atomic': 'true' });
+
+  function toggleBookmark(topic, card = document.getElementById(`tile-${topic.id}`)) {
+    const result = bookmarks.toggle(topic.id);
+    if (card) showBookmarkResult(card, result, bookmarks.limit);
+    status.textContent = `${topic.name}: ${bookmarkNote(result, bookmarks.limit)}`;
+  }
+
+  // Every tile and the open question's button follow the store, which also
+  // changes when another tab bookmarks something.
+  function syncBookmarks() {
+    for (const tl of view.querySelectorAll('.gl-tile')) {
+      tl.classList.toggle('bookmarked', bookmarks.has(tl.dataset.id));
+    }
+    for (const button of view.querySelectorAll('.gl-bookmark')) syncBookmarkButton(button);
+  }
+  bookmarks.addEventListener('change', syncBookmarks);
+
+  new CardHold(view, {
+    selector: '.gl-tile',
+    onHold: (card) => {
+      const topic = byId.get(card.dataset.id);
+      if (topic) toggleBookmark(topic, card);
+    },
+  });
 
   function toggle(id) {
     if (expander.openId === id) expander.close();
@@ -260,7 +326,7 @@ export async function start(view) {
       h('p', { class: 'lede' },
         'The questions we all bring to life, answered by the whole of Scripture: the teaching of ' +
         'Jesus, the prophets, the apostles, the wisdom books and the Law. Guidance from of old, and ' +
-        'for the future. Tap a question to read it.'),
+        'for the future. Tap a question to read it; hold it for half a second to bookmark it.'),
       h('ul', { class: 'stats' },
         h('li', {}, h('b', {}, tot.topics), 'questions'),
         h('li', {}, h('b', {}, tot.teachings), 'passages'),
@@ -269,7 +335,8 @@ export async function start(view) {
       chips),
     count,
     ...data.sections.map(section),
-    empty);
+    empty,
+    status);
 
   apply();
   followHash(id => open(id, { smooth: false }));

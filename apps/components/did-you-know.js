@@ -33,6 +33,8 @@
  * Methods      refresh()        show a new batch
  *              more()           add a batch below the list, up to 20 facts
  *              showBookmarks()  show the bookmarked facts, newest first
+ *              bookmarkedItems()  resolves to the bookmarked facts themselves,
+ *                               newest first, reading the database if need be
  * Properties   bookmarks (read-only): the bookmarked fact ids, newest first
  * Events       ready         fired once facts are loaded, detail: { total }
  *              refresh       fired after each batch, detail: { ids }
@@ -361,6 +363,14 @@ export class DidYouKnow extends HTMLElement {
   /** The bookmarked fact ids, newest first. */
   get bookmarks() {
     return bookmarks.read();
+  }
+
+  /** The bookmarked facts, newest first: { id, title, text, reference, book }. */
+  async bookmarkedItems() {
+    const src = this.getAttribute('src') || DEFAULT_SRC;
+    const facts = await readFacts(new URL(src, document.baseURI).href);
+    const byId = new Map(facts.map((fact) => [fact.id, fact]));
+    return bookmarks.read().map((id) => byId.get(id)).filter((fact) => fact?.title && fact.text);
   }
 
   get #mediaBase() {

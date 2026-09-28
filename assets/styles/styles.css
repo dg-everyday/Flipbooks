@@ -386,12 +386,59 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
   font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
   letter-spacing: .02em;
 }
-/* A segmented switch: three equal segments on a sunken track, the chosen one
-   raised in white with its count in gold. */
+/* The title with the PDF pill beside it. */
+.bookmarks-title { display: flex; align-items: center; gap: 10px; }
+.bookmarks-pdf {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  min-height: 28px;
+  padding: 4px 11px 4px 8px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--action);
+  color: var(--action-ink);
+  box-shadow: 0 3px 8px rgb(0 0 0 / 22%);
+  font: 700 .75rem/1 'Roboto', Arial, sans-serif;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.bookmarks-pdf:hover { background: var(--action-hover); transform: translateY(-1px); }
+.bookmarks-pdf:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.bookmarks-pdf svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* While the PDF is built the arrow keeps dropping into the tray. */
+.bookmarks-pdf[aria-busy="true"] { cursor: progress; }
+.bookmarks-pdf[aria-busy="true"] svg { animation: pdf-drop .9s ease-in-out infinite; }
+@keyframes pdf-drop {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(2px); }
+}
+.bookmarks-pdf:disabled { opacity: .45; cursor: default; box-shadow: none; transform: none; }
+.bookmarks-pdf-note {
+  flex: 1 0 100%;
+  margin: -4px 0 0;
+  color: #805b18;
+  font-size: .8rem;
+  line-height: 1.35;
+}
+.bookmarks-pdf-note.is-error { color: var(--action); }
+
+/* A segmented switch: four equal segments on a sunken track (two rows of two
+   on a phone), the chosen one raised in white with its count in gold. */
 .bookmark-tabs {
   display: grid;
   flex: 1 0 100%;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 4px;
   padding: 4px;
   border-radius: 14px;
@@ -438,6 +485,10 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
    with a second scrollbar beside the popup's. */
 #bookmark-verses,
 #verse-results { --reader-max-height: none; }
+@media (max-width: 560px) {
+  .bookmark-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bookmark-tabs [role="tab"] { min-height: 36px; }
+}
 @media (max-width: 420px) {
   .bookmarks-panel { padding: 10px; }
   .bookmark-tabs [role="tab"] { padding: 6px 4px; font-size: .75rem; }
@@ -1085,6 +1136,8 @@ html:has(.about-dialog[open]) { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
   .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
+  .bookmarks-pdf { transition: none; }
+  .bookmarks-pdf[aria-busy="true"] svg { animation: none; }
   .bookmark-tabs [role="tab"] { transition: none; }
 }
 .footer-qr figcaption {

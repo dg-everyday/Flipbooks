@@ -1,7 +1,52 @@
 {
-    "title": "The Fourth Man in the Fire",
+    "title": "The 4th Man in the Fire",
     "aspect": "9/16",
     "pages": [
+        {
+            "id": "id-00",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/00.webp",
+            "caption": "Three Hebrews, One Golden Image, and the Furnace on the Plain of Dura."
+        },
+        {
+            "id": "id-01",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/01.webp",
+            "caption": "I. The Image on the Plain"
+        },
+        {
+            "id": "id-02",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/02.webp",
+            "caption": "II. The Herald and the Music"
+        },
+        {
+            "id": "id-03",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/03.webp",
+            "caption": "III. Certain Chaldeans Came Near"
+        },
+        {
+            "id": "id-04",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/04.webp",
+            "caption": "IV. Is It True?"
+        },
+        {
+            "id": "id-05",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/05.webp",
+            "caption": "V. But If Not"
+        },
+        {
+            "id": "id-06",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/06.webp",
+            "caption": "VI. Seven Times Hotter"
+        },
+        {
+            "id": "id-07",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/07.webp",
+            "caption": "VII. Lo, I See Four Men"
+        },
+        {
+            "id": "id-08",
+            "image": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/08.webp",
+            "caption": "VIII. Nor the Smell of Fire"
+        }    
         
     ]
 }

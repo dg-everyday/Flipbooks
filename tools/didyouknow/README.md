@@ -6,7 +6,7 @@ cards. The table is `did_you_know`:
 | column | meaning |
 | --- | --- |
 | `id` | 1–501 came from `assets/did-you-know.json`, 502 onward were written for the database |
-| `Title` | short headline for the card |
+| `Title` | the card's question, ending in `?`; the banner already says "Did you know", so the title leaves it out, e.g. `The temple's two bronze pillars had names?` |
 | `Fact` | the body text |
 | `Reference_verse` | single verse, always `Book chapter:verse` |
 | `Book` | the book the verse is in — the correct answer for the trivia question |
@@ -40,7 +40,13 @@ python tools/didyouknow/add_rows.py new_rows.json
 ```
 
 Before writing anything it checks every reference against the KJV text in
-`assets/db/dailygrace.db`, confirms the `Book` column matches the reference, and
-rejects any row whose reference or title already exists. If any row fails, the
+`assets/db/dailygrace.db`, confirms the `Book` column matches the reference,
+requires the title to be a question without "Did you know", and rejects any row whose
+reference or title already exists. If any row fails, the
 whole batch is refused and nothing is written. New ids continue from the current
 maximum.
+
+The components fetch the database with `force-cache`, so after changing any rows
+bump the `?v=` token on `DEFAULT_SRC` in both `apps/components/did-you-know.js`
+and `apps/components/bible-trivia.js`, and the tokens on those two scripts in
+`index.html`.

@@ -74,7 +74,8 @@ const THUMBNAIL_TRIM = 0.985;
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const BANNER_URL = asset('../../assets/images/trivia-1440.webp');
-const DEFAULT_SRC = asset('../../assets/db/didyouknow.db');
+// The same token as <did-you-know>; bump both when the database changes.
+const DEFAULT_SRC = asset('../../assets/db/didyouknow.db?v=20260929-2');
 const CORRECT_SOUND = asset('../../assets/audio/correct.webm');
 const WRONG_SOUND = asset('../../assets/audio/wrong.webm');
 

@@ -21,6 +21,9 @@ BIBLE_DB = os.path.join(ROOT, "assets", "db", "dailygrace.db")
 DYK_DB = os.path.join(ROOT, "assets", "db", "didyouknow.db")
 
 REQUIRED = ("Title", "Fact", "Reference_verse", "Book")
+# Every card title completes the banner's "Did you know?", so it is a
+# question that leaves those words out.
+TITLE_PATTERN = re.compile(r"^(?!Did you know)\S.*\?$", re.IGNORECASE)
 
 
 def load_bible():
@@ -62,6 +65,9 @@ def check(rows, bible, abbr, known_refs, known_titles):
         if ref in seen_refs:
             problems.append((i, "%s is repeated in this batch" % ref))
         seen_refs.add(ref)
+
+        if not TITLE_PATTERN.match(title):
+            problems.append((i, "title %r must be a question ending in '?' without 'Did you know'" % title))
 
         key = title.strip().lower()
         if key in known_titles:

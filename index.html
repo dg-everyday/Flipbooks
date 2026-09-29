@@ -23,7 +23,7 @@
 
         <title>Grace for Today • Our Faith Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20260928-3" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20260929-2" />
         <link rel="preload" href="assets/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="preload" href="assets/fonts/Strait-Regular.woff2" as="font" type="font/woff2" crossorigin />
         <script>
@@ -901,20 +901,48 @@
             id="splash-dialog"
             class="splash-dialog"
             aria-label="A word of thanks from Daily Grace"
+            autofocus
         >
-            <img
-                src="assets/images/splash.webp"
-                alt="Daily Grace. We thank thee for thy visit. Mayest thou find herein words of grace and truth, unto the comfort of the heart and the edifying of the soul. A code to scan: accepting sponsorships and donations."
-                width="940"
-                height="1672"
-                loading="lazy"
-            />
-            <p class="splash-hint">Tap anywhere to close</p>
+            <div class="splash-card">
+                <img
+                    class="splash-poster"
+                    src="assets/images/splash.webp"
+                    alt="Daily Grace. We thank thee for thy visit. Mayest thou find herein words of grace and truth, unto the comfort of the heart and the edifying of the soul. A code to scan: accepting sponsorships and donations."
+                    width="940"
+                    height="1672"
+                    loading="lazy"
+                />
+                <!-- Sponsors: one <li> each, a logo in assets/images/sponsors/
+                     linking to the sponsor's site in a new tab. A tap on a
+                     sponsor opens its site; a tap anywhere else closes. -->
+                <section class="splash-sponsors" aria-labelledby="splash-thanks">
+                    <h2 id="splash-thanks">Thanks To</h2>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://icountera.com.ph"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="iCountera, Emmanuel C. Bulatao, CEO (opens in a new tab)"
+                                title="iCountera"
+                            >
+                                <img
+                                    src="assets/images/sponsors/icountera.webp"
+                                    alt="Emmanuel C. Bulatao, CEO of iCountera"
+                                    width="2171"
+                                    height="724"
+                                    loading="lazy"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
         </dialog>
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
         <script src="assets/scripts/sql_script.js?v=20260925-1" defer></script>
-        <script src="assets/scripts/script.js?v=20260928-3" defer></script>
+        <script src="assets/scripts/script.js?v=20260929-1" defer></script>
         <script type="module" src="apps/components/banner-slider.js?v=20260925-1"></script>
         <script type="module" src="apps/components/poster-card.js?v=20260927-1"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20260928-1"></script>

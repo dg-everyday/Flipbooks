@@ -495,8 +495,8 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
 }
 
 /* Sponsorship splash: the thank-you poster that pops up when the reader taps
-   the footer QR code. The dialog shrink-wraps the poster, so the box is the
-   artwork itself with the hint sitting on the backdrop below it. */
+   the footer QR code, with the sponsors under it. The dialog shrink-wraps the
+   card (poster, "Thanks To" bar, sponsors). */
 .splash-dialog {
   padding: 0;
   border: 0;
@@ -510,26 +510,57 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
   background: rgb(0 27 52 / 62%);
   backdrop-filter: blur(3px);
 }
-.splash-dialog img {
-  display: block;
-  width: auto;
-  height: auto;
-  /* 75% of the viewport on whichever side runs out first, aspect kept. */
-  max-width: 75vw;
-  max-height: 75vh;
-  max-width: 75dvw;
-  max-height: 75dvh;
+/* The card's width is set so the whole card (a poster 1.78 times as tall as it
+   is wide, plus the bar and sponsors, about 2.3 widths in all) fits in 85% of
+   the screen's height, 88% of its width, and never grows past 420px. */
+.splash-card {
+  --splash-w: min(420px, 88vw, calc((85vh - 40px) / 2.3));
+  --splash-w: min(420px, 88dvw, calc((85dvh - 40px) / 2.3));
+  width: var(--splash-w);
+  padding: 6px;
+  border: 2px solid var(--navy);
   border-radius: 14px;
+  background: var(--cream);
   box-shadow: 0 24px 60px rgb(0 27 52 / 45%);
 }
-.splash-hint {
-  margin: 14px 0 0;
-  color: rgb(255 255 255 / 82%);
-  text-align: center;
-  font: 600 .6875rem/1 'Roboto', Arial, sans-serif;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+.splash-poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
 }
+.splash-sponsors {
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
+  background: #fff;
+}
+.splash-sponsors h2 {
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  font: 400 clamp(1.05rem, .95rem + .5vw, 1.3rem)/1.2 'Germania One', Georgia, serif;
+  letter-spacing: .03em;
+}
+.splash-sponsors ul {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 18px 16px 20px;
+  list-style: none;
+}
+.splash-sponsors a {
+  display: block;
+  width: min(100%, 250px);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.splash-sponsors a:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(0 27 52 / 14%); }
+.splash-sponsors a:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.splash-sponsors a img { display: block; width: 100%; height: auto; border-radius: 8px; }
 html:has(.splash-dialog[open]) { overflow: hidden; }
 
 /* Help: "Help" in the menu opens a guide to the page's taps, holds and
@@ -1136,6 +1167,8 @@ html:has(.about-dialog[open]) { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .footer-qr-button { transition: none; }
   .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
+  .splash-sponsors a { transition: none; }
+  .splash-sponsors a:hover { transform: none; }
   .bookmarks-pdf { transition: none; }
   .bookmarks-pdf[aria-busy="true"] svg { animation: none; }
   .bookmark-tabs [role="tab"] { transition: none; }

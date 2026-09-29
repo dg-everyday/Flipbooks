@@ -375,7 +375,8 @@ if (!location.hash) {
 
 // Both the splash and the verse popup grow in with the same little overshoot.
 // Sponsorship splash: the thank-you poster, with its sponsorships and donations
-// code, opens only when the reader taps the footer QR code, and closes on any tap.
+// code and the sponsors under it, opens only when the reader taps the footer QR
+// code. A tap on a sponsor opens its site in a new tab; any other tap closes it.
 const splashDialog = document.getElementById("splash-dialog");
 const qrOpen = document.getElementById("qr-open");
 let splashClosing = false;
@@ -447,7 +448,11 @@ splashDialog.addEventListener("cancel", (event) => {
     closeSplash();
 });
 // A click or tap anywhere closes it: on the poster, the hint or the backdrop.
-splashDialog.addEventListener("click", closeSplash);
+// A sponsor's link opens its site instead, and leaves the splash open.
+const onSponsor = (event) => Boolean(event.target.closest?.(".splash-sponsors a"));
+splashDialog.addEventListener("click", (event) => {
+    if (!onSponsor(event)) closeSplash();
+});
 
 // Secret: double click or double tap the footer QR code to forget the trivia's
 // daily tally and play a round on the spot. The first tap opens the splash, so
@@ -458,7 +463,8 @@ splashDialog.addEventListener("click", closeSplash);
 const DOUBLE_TAP_MS = 450;
 const bibleTrivia = document.getElementById("bible-trivia");
 
-splashDialog.addEventListener("pointerup", async () => {
+splashDialog.addEventListener("pointerup", async (event) => {
+    if (onSponsor(event)) return;
     if (!splashShownAt || Date.now() - splashShownAt > DOUBLE_TAP_MS) return;
     splashShownAt = 0;
     bibleTrivia.reset();

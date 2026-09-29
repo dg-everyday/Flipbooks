@@ -288,7 +288,7 @@ const sayingRuns = (saying) => [
   { size: 9.5, color: RED, text: saying.reference ? `(${clean(saying.reference)})` : '', gap: 1 },
 ];
 
-// A guidance topic in full, as on the Guidance for Life page: the question and
+// A guidance topic in full, as on the Questions We All Ask page: the question and
 // its answer, every passage of Scripture with who spoke it, then what to do.
 // A page may turn before a passage or before "Try this", never inside one.
 const guidanceRuns = (topic) => [
@@ -344,13 +344,13 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], 
     verses.length && plural(verses.length, 'verse'),
     facts.length && plural(facts.length, 'fact'),
     sayings.length && plural(sayings.length, 'saying'),
-    guidance.length && plural(guidance.length, 'guidance topic'),
+    guidance.length && plural(guidance.length, 'question'),
   ].filter(Boolean).join(', ');
   // A PDF viewer's tab shows this title rather than the blob URL.
   doc.viewerPreferences({ DisplayDocTitle: true });
   doc.setProperties({
     title: 'My Bookmarks — Daily Grace',
-    subject: `Bookmarked verses, facts, sayings and guidance, saved ${date}`,
+    subject: `Bookmarked verses, facts, sayings and questions, saved ${date}`,
     author: 'Daily Grace',
     creator: 'Daily Grace (dailygrace.faith)',
   });
@@ -360,7 +360,7 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], 
   drawSection(writer, 'Bible Verses', verses, verseRuns);
   drawSection(writer, 'Did You Know', facts, factRuns);
   drawSection(writer, 'Bible Sayings', sayings, sayingRuns);
-  drawSection(writer, 'Guidance for Life', guidance, guidanceRuns);
+  drawSection(writer, 'Questions We All Ask', guidance, guidanceRuns);
   drawFooters(doc);
 
   return { blob: doc.output('blob'), filename: `daily-grace-bookmarks-${localDate(now)}.pdf` };

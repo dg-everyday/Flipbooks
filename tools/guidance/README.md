@@ -1,4 +1,4 @@
-# Guidance for Life data
+# Questions We All Ask data
 
 Builds `assets/guidance-for-life.json`, which `apps/pages/guidance-for-life.html` reads.
 
@@ -19,6 +19,22 @@ Builds `assets/guidance-for-life.json`, which `apps/pages/guidance-for-life.html
 
 Quote Scripture in 'single quotes', exactly as `assets/db/dailygrace.db` has it. Put anything
 that is not Scripture in “double quotes”.
+
+## Narration
+
+After a build, run:
+
+```
+python tools/guidance/build_narration.py
+```
+
+It writes the scripts for the play button on "Today's Question" to `narration/`:
+`questions-we-all-ask-narration.pdf` (one script per page, with a contents table) and
+`text/<id>.txt` (the same scripts as plain text, to paste into the text-to-speech tool). Each
+script reads the question, the short answer, the guidance, two or three passages in the KJV
+words with their references spoken out, the thing to try and the prayer, in about two minutes.
+Save each recording as `<id>.webm`. If a topic's text changes, rebuild and record that topic
+again. It exits non-zero if a script names a time of day, since the audio plays at any hour.
 
 ## Topic fields
 

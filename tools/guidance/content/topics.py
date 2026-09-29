@@ -1,4 +1,4 @@
-"""Guidance for life: the questions of life, answered by the voices of Scripture.
+"""Questions We All Ask: the questions of life, answered by the voices of Scripture.
 
 Each topic: name, section, question (how a reader would ask it), summary (the
 short answer), guidance (in plain words), teachings, practice (one thing to
@@ -155,6 +155,29 @@ TOPICS = [
         "practice": "Notice what you feed your eyes and mind on this week, and swap one thing for something good.",
         "prayer": "Create in me a clean heart, O God. Help me to honour you with my mind and body.",
     },
+    {
+        "name": "Self-worth",
+        "section": "Heart and mind",
+        "question": "Do I really matter to God?",
+        "summary": "More than you know. God made you, knows you by name, and loved you before you did anything to earn it.",
+        "guidance": (
+            "The world measures people by looks, money and success. God measures differently: he looks "
+            "on the heart. Jesus said that not one sparrow falls without the Father, and that the very "
+            "hairs of your head are numbered. The prophets heard God call his people by name and say "
+            "'thou art mine', and the apostles say we are his workmanship, loved enough to be called "
+            "the sons of God."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 10:29-31", "note": "Not one sparrow falls without your Father, and you are worth more than many sparrows."},
+            {"voice": "Law and history", "who": "Genesis", "reference": "Genesis 1:27", "note": "Every person is made in the image of God."},
+            {"voice": "Law and history", "who": "The LORD, to Samuel", "hero": "samuel", "reference": "1 Samuel 16:7", "note": "People look at the outside; the LORD looks at the heart."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 139:13-14", "note": "God formed you in the womb; you are fearfully and wonderfully made."},
+            {"voice": "The prophets", "who": "Isaiah", "reference": "Isaiah 43:1", "note": "God calls you by name and says: you are mine."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "Ephesians 2:10", "note": "You are God's workmanship, made for the good works he has prepared."},
+            {"voice": "The apostles", "who": "John", "reference": "1 John 3:1", "note": "See how much the Father loves us: he calls us his children."},
+        ],
+        "practice": "When a voice inside tells you that you are worthless, answer it out loud: 'I am fearfully and wonderfully made'.",
+        "prayer": "Father, thank you that you made me and know me by name. Help me to see myself as you see me.",
+    },
 
     # ================================================================== relationships
     {
@@ -300,6 +323,30 @@ TOPICS = [
         "practice": "For one day, say nothing about anyone that you wouldn't say to their face.",
         "prayer": "Set a watch, O LORD, before my mouth. Let my words today build up and not tear down.",
     },
+    {
+        "name": "Singleness",
+        "section": "Relationships",
+        "question": "Is being single second best?",
+        "summary": "No. Jesus and Paul both lived single lives, and Paul calls it a gift. Your worth and your family are found in Christ, married or not.",
+        "guidance": (
+            "Many people feel that life only really begins at the wedding. The Bible disagrees. Jesus "
+            "was never married, and he said some would stay single for the kingdom's sake. Paul, also "
+            "single, called both marriage and singleness a 'proper gift of God', and said the unmarried "
+            "can give undivided care to the Lord. Isaiah heard God promise a name 'better than of sons "
+            "and of daughters' to those who hold fast to him. And Jesus said that all who do God's will "
+            "are his brother, sister and mother."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 19:11-12", "note": "Some stay unmarried for the sake of God's kingdom; it is a calling, not a lack."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 12:49-50", "note": "Everyone who does the Father's will is Jesus' family."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "1 Corinthians 7:7-8", "note": "Marriage and singleness are each a gift from God."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "1 Corinthians 7:32", "note": "The unmarried can give themselves fully to the things of the Lord."},
+            {"voice": "The prophets", "who": "Isaiah", "reference": "Isaiah 56:4-5", "note": "God promises those without children a place and a name better than sons and daughters."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 16:5-6", "note": "The LORD is my portion; my life has fallen in pleasant places."},
+            {"voice": "Wisdom", "who": "The sons of Korah", "reference": "Psalms 84:11", "note": "God holds back no good thing from those who walk uprightly."},
+        ],
+        "practice": "If you are single, give one free hour this week to serving someone. If you are married, invite a single friend into your family's life.",
+        "prayer": "Lord, you are my portion. Married or single, let my life be wholly yours, and set me in your family.",
+    },
 
     # ================================================================== work and money
     {
@@ -408,6 +455,28 @@ TOPICS = [
         ],
         "practice": "Find one person or cause near you that speaks for the voiceless, and give your time or help.",
         "prayer": "Lord, open my eyes to the people I pass by. Teach me to do justly and love mercy.",
+    },
+    {
+        "name": "Debt and borrowing",
+        "section": "Work and money",
+        "question": "Is it wrong to be in debt?",
+        "summary": "Borrowing is not a sin, but debt is a kind of servitude. Count the cost, pay what you owe, and let love be the only debt you keep.",
+        "guidance": (
+            "The Bible does not forbid borrowing, but it is honest about what debt does: 'the borrower "
+            "is servant to the lender'. Jesus told people to count the cost before they build, and to "
+            "give back what is owed. Paul sums it up: owe nothing except love. And where others are in "
+            "debt to us, the Law asks for mercy, not profit from the poor."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Luke 14:28", "note": "Sit down and count the cost before you begin, to see if you can finish."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 22:21", "note": "Pay what you owe: to Caesar what is Caesar's, and to God what is God's."},
+            {"voice": "Wisdom", "who": "Solomon", "reference": "Proverbs 22:7", "note": "The borrower becomes the servant of the lender."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 37:21", "note": "The wicked borrow and don't repay; the righteous are generous."},
+            {"voice": "The prophets", "who": "Elisha and a widow", "reference": "2 Kings 4:1-2", "note": "A widow in debt cried to Elisha, and God met her need through what she already had."},
+            {"voice": "Law and history", "who": "The Law of Moses", "reference": "Exodus 22:25", "note": "If you lend to the poor, don't profit from their need."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "Romans 13:8", "note": "Owe no one anything, except the debt of love."},
+        ],
+        "practice": "Write down everything you owe, and make a plan to pay back one debt, however small.",
+        "prayer": "Lord, keep me from being a slave to debt. Give me wisdom with money, and a heart that owes nothing but love.",
     },
 
     # ================================================================== walking with God
@@ -539,6 +608,100 @@ TOPICS = [
         "practice": "Look for the job nobody wants to do this week, and do it.",
         "prayer": "Lord Jesus, you came to serve. Give me a servant's heart.",
     },
+    {
+        "name": "Salvation",
+        "section": "Walking with God",
+        "question": "How can I be right with God?",
+        "summary": "Not by being good enough, but by grace through faith. Jesus came to seek and to save the lost, and he turns no one away.",
+        "guidance": (
+            "Most people ask what they must do to reach God. The Bible answers with what God has done to "
+            "reach us. No one can earn their way back to him, but Christ died for us while we were still "
+            "sinners. Abraham believed God, and it was counted to him for righteousness. The prophets "
+            "promised that God would abundantly pardon all who return, and Jesus said that whoever comes "
+            "to him will never be cast out. The apostles put it simply: 'Believe on the Lord Jesus "
+            "Christ, and thou shalt be saved'."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Luke 19:10", "note": "Jesus came to seek and to save the lost."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "John 14:6", "note": "Jesus is the way, the truth and the life: the way to the Father."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "John 6:37", "note": "Whoever comes to Jesus will never be turned away."},
+            {"voice": "Law and history", "who": "Abraham", "hero": "abraham", "reference": "Genesis 15:6", "note": "Abraham believed God, and God counted it as righteousness."},
+            {"voice": "The prophets", "who": "Isaiah", "reference": "Isaiah 55:6-7", "note": "Seek the LORD and turn to him, and he will abundantly pardon."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "Romans 5:8", "note": "God showed his love: Christ died for us while we were still sinners."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "Ephesians 2:8-9", "note": "We are saved by grace through faith: a gift, not a reward for good works."},
+        ],
+        "practice": "Read Romans 10:9. If you have never done it, tell God in your own words that you believe, and tell one person too.",
+        "prayer": "Lord Jesus, I cannot save myself. I believe you died for me and rose again. Forgive me, and make me new.",
+    },
+    {
+        "name": "Reading the Bible",
+        "section": "Walking with God",
+        "question": "Why should I read the Bible?",
+        "summary": "Because it is God speaking. His word feeds the soul, lights the path and lasts for ever.",
+        "guidance": (
+            "Jesus met temptation with 'It is written', and said the Scriptures point to him. Joshua "
+            "was told to think on God's law day and night, and Jeremiah found God's words the joy of "
+            "his heart. The apostles say that 'All scripture is given by inspiration of God', and that "
+            "it is meant to change how we live: be doers of the word, not hearers only. Reading the "
+            "Bible is how we come to know the God who speaks in it."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Luke 11:28", "note": "Blessed are those who hear God's word and keep it."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "John 5:39", "note": "Search the Scriptures: they speak of Jesus."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 7:24", "note": "Whoever hears Jesus' words and does them builds on rock."},
+            {"voice": "Law and history", "who": "The LORD, to Joshua", "hero": "joshua", "reference": "Joshua 1:8", "note": "Keep God's word in your mouth, and think on it day and night."},
+            {"voice": "The prophets", "who": "Jeremiah", "reference": "Jeremiah 15:16", "note": "God's words were Jeremiah's food and the joy of his heart."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "2 Timothy 3:16-17", "note": "All Scripture is inspired by God and equips us for every good work."},
+            {"voice": "The apostles", "who": "James", "reference": "James 1:22", "note": "Do what the word says; don't only listen to it."},
+        ],
+        "practice": "Pick one Gospel and read a short passage each day this week. Before you close it, ask: what does this show me about Jesus?",
+        "prayer": "Lord, open my eyes to see wonderful things in your word, and help me to do what it says.",
+    },
+    {
+        "name": "Church and fellowship",
+        "section": "Walking with God",
+        "question": "Do I need a church?",
+        "summary": "Following Jesus was never meant to be done alone. We are one body, and we need each other.",
+        "guidance": (
+            "Jesus promised to be present where two or three gather in his name. The first believers "
+            "devoted themselves to the apostles' teaching, fellowship, the breaking of bread and prayer. "
+            "The apostles call the church the body of Christ, where every member matters, and warn "
+            "against giving up meeting together. Church is not a building to visit, but a family to "
+            "belong to."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 18:20", "note": "Where two or three gather in Jesus' name, he is with them."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 16:18", "note": "Jesus builds his church, and the gates of hell will not overcome it."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 133:1", "note": "How good it is when God's people live together in unity."},
+            {"voice": "The prophets", "who": "Malachi", "reference": "Malachi 3:16", "note": "When those who feared God spoke together, God listened and remembered."},
+            {"voice": "The apostles", "who": "Luke, in Acts", "reference": "Acts 2:42", "note": "The first church kept to teaching, fellowship, the Lord's supper and prayer."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "1 Corinthians 12:27", "note": "You are the body of Christ, and each of you is part of it."},
+            {"voice": "The apostles", "who": "The letter to the Hebrews", "reference": "Hebrews 10:24-25", "note": "Don't give up meeting together; spur each other on to love and good works."},
+        ],
+        "practice": "Go to church this week and learn one new person's name, or invite someone to come with you.",
+        "prayer": "Lord, thank you for your family. Make me a faithful part of your body, and bind us together in love.",
+    },
+    {
+        "name": "Thankfulness",
+        "section": "Walking with God",
+        "question": "How can I be thankful when life is hard?",
+        "summary": "Give thanks in everything, not for everything. Thankfulness remembers what God has done and trusts him for what he will do.",
+        "guidance": (
+            "Ten lepers were healed and only one came back to say thank you, and Jesus noticed. Jesus "
+            "himself gave thanks at Lazarus' grave before he called him out. David told his own soul to "
+            "forget not all God's benefits. Habakkuk chose to rejoice when the fig tree did not blossom, "
+            "and Daniel gave thanks three times a day even when prayer had been forbidden. Paul writes, "
+            "'In every thing give thanks', because thankfulness is not a feeling but a choice to "
+            "remember God."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Luke 17:17-18", "note": "Ten were healed, but only one came back to give thanks."},
+            {"voice": "Jesus", "who": "Jesus, at Lazarus' tomb", "reference": "John 11:41", "note": "Jesus thanked the Father before Lazarus came out of the grave."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 103:1-2", "note": "Bless the LORD, and forget none of his benefits."},
+            {"voice": "Wisdom", "who": "A psalmist", "reference": "Psalms 136:1", "note": "Give thanks to the LORD, for he is good; his mercy lasts for ever."},
+            {"voice": "The prophets", "who": "Habakkuk", "reference": "Habakkuk 3:17-18", "note": "Even if everything fails, I will rejoice in the LORD."},
+            {"voice": "The prophets", "who": "Daniel", "hero": "daniel", "reference": "Daniel 6:10", "note": "Daniel kept giving thanks, even when prayer had been forbidden."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "1 Thessalonians 5:18", "note": "Give thanks in every situation; this is God's will for you."},
+        ],
+        "practice": "Each day this week, write down three things you can thank God for, even on a hard day.",
+        "prayer": "Lord, you are good, and your mercy endures for ever. Teach me to give thanks in everything.",
+    },
 
     # ================================================================== hard times
     {
@@ -628,6 +791,122 @@ TOPICS = [
         "practice": "Reach out to one person today, even with a short message. Someone else may be lonely too.",
         "prayer": "Lord, you are with me even here. Set me in a family of your people.",
     },
+    {
+        "name": "Sickness and healing",
+        "section": "Hard times",
+        "question": "Where is God when I'm sick?",
+        "summary": "He is near. God heals, and he gives grace to bear what is not yet healed. Pray, ask others to pray, and trust him with the outcome.",
+        "guidance": (
+            "Jesus spent much of his ministry healing, and he reached out and touched a leper no one else "
+            "would touch. God calls himself 'the LORD that healeth thee', and James tells the sick to call "
+            "the elders to pray. Yet Paul prayed three times for his thorn to be taken away and was told, "
+            "'My grace is sufficient for thee'. Healing may come now or in the life to come; either way, "
+            "God does not leave the sick alone."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus, with a leper", "reference": "Matthew 8:2-3", "note": "Jesus touched the leper and said: I will; be clean.", "example": True},
+            {"voice": "Jesus", "who": "Jesus", "reference": "Mark 5:34", "note": "To the woman who touched him: your faith has made you whole; go in peace."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 25:36", "note": "Visiting the sick is visiting Jesus himself."},
+            {"voice": "Law and history", "who": "The LORD, at Marah", "reference": "Exodus 15:26", "note": "God calls himself the LORD who heals."},
+            {"voice": "The prophets", "who": "Isaiah, to Hezekiah", "hero": "hezekiah", "reference": "2 Kings 20:5", "note": "God heard Hezekiah's prayer, saw his tears, and healed him."},
+            {"voice": "The apostles", "who": "James", "reference": "James 5:14-15", "note": "The sick should call the elders to pray over them."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "2 Corinthians 12:9", "note": "God's grace is enough; his strength shows most in our weakness."},
+        ],
+        "practice": "If you are sick, ask someone to pray with you. If you are well, visit or call someone who is sick.",
+        "prayer": "Lord, you are the one who heals. Touch my body, or give me grace to bear what I must. I trust you.",
+    },
+    {
+        "name": "Guilt and shame",
+        "section": "Hard times",
+        "question": "Can God forgive what I've done?",
+        "summary": "Yes. No sin is too big for his mercy. Confess it, and he forgives and cleanses, and removes it as far as the east is from the west.",
+        "guidance": (
+            "Guilt is real, and Scripture does not pretend otherwise. But David, who had committed "
+            "adultery and murder, wrote that when he confessed, God forgave. Isaiah heard God promise "
+            "that sins like scarlet could be made white as snow. Jesus told of a son who wasted everything "
+            "and a father who ran to meet him, and said to a woman caught in sin, 'Neither do I condemn "
+            "thee: go, and sin no more'. The apostles say that if we confess, he is faithful and just "
+            "to forgive."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Luke 15:20-22", "note": "The father ran to the son who came home, and gave him the best robe."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "John 8:11", "note": "Jesus did not condemn the woman, but told her to sin no more."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 32:5", "note": "When David confessed his sin, God forgave it."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 103:12", "note": "God removes our sins as far as the east is from the west."},
+            {"voice": "The prophets", "who": "Isaiah", "reference": "Isaiah 1:18", "note": "Sins like scarlet can be made white as snow."},
+            {"voice": "The apostles", "who": "John", "reference": "1 John 1:9", "note": "Confess your sins, and God will forgive you and make you clean."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "Romans 8:1", "note": "There is no condemnation for those who are in Christ Jesus."},
+        ],
+        "practice": "Tell God plainly what you did, then read 1 John 1:9 and believe it. If you need to put it right with someone, do that too.",
+        "prayer": "Have mercy on me, O God. Wash me and make me clean, and help me to believe that I am forgiven.",
+    },
+    {
+        "name": "Failure",
+        "section": "Hard times",
+        "question": "Can I start again after I've failed?",
+        "summary": "Yes. The righteous fall and rise again, and Jesus restored even the friend who denied him.",
+        "guidance": (
+            "Peter swore he would never deny Jesus, and then did, three times. Jesus had already prayed "
+            "for him, and after the resurrection asked him three times, 'lovest thou me?', and gave him "
+            "work to do again. Jonah ran from God, and the word of the LORD came to him a second time. "
+            "Proverbs says a just man falls seven times and rises up again. Paul, who once persecuted the "
+            "church, learned to forget what was behind and press on."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus, to Peter", "hero": "peter", "reference": "Luke 22:31-32", "note": "Before Peter failed, Jesus prayed for him and gave him work for afterwards."},
+            {"voice": "Jesus", "who": "Jesus, to Peter", "hero": "peter", "reference": "John 21:17", "note": "Jesus restored Peter with a question, do you love me?, and a task: feed my sheep."},
+            {"voice": "The prophets", "who": "Jonah", "reference": "Jonah 3:1", "note": "The word of the LORD came to Jonah a second time."},
+            {"voice": "The prophets", "who": "Micah", "reference": "Micah 7:8", "note": "When I fall, I will rise; the LORD will be my light."},
+            {"voice": "Wisdom", "who": "Solomon", "reference": "Proverbs 24:16", "note": "The righteous fall seven times and rise again."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 37:23-24", "note": "Though you fall, you won't be thrown down; the LORD holds your hand."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "Philippians 3:13-14", "note": "Forget what lies behind, and press on toward the goal."},
+        ],
+        "practice": "Name one failure you keep replaying. Give it to God, learn one lesson from it, and take one step forward.",
+        "prayer": "Lord, I have failed. Thank you that your mercies are new. Lift me up, and let me begin again with you.",
+    },
+    {
+        "name": "Waiting",
+        "section": "Hard times",
+        "question": "Why is God taking so long?",
+        "summary": "God's timing is not ours, but he is never late. Waiting is not wasted time.",
+        "guidance": (
+            "Abraham and Sarah waited decades for a son, and he came 'at the set time'. When Jesus heard "
+            "that Lazarus was sick, he stayed where he was two more days, because he meant to do something "
+            "greater than a healing. David waited patiently and was heard. Habakkuk was told that what God "
+            "had shown him would come, 'though it tarry'. James points to the farmer who waits patiently "
+            "for the rain."),
+        "teachings": [
+            {"voice": "Jesus", "who": "The risen Jesus", "reference": "Acts 1:7", "note": "The times and seasons are in the Father's hands."},
+            {"voice": "Jesus", "who": "Jesus, told of Lazarus", "reference": "John 11:6", "note": "Jesus waited two more days before going to Lazarus, for a greater purpose.", "example": True},
+            {"voice": "Law and history", "who": "Abraham and Sarah", "hero": "abraham", "reference": "Genesis 21:1-2", "note": "God kept his promise to Sarah and Abraham at the set time."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 40:1", "note": "David waited patiently, and God bent down and heard his cry."},
+            {"voice": "The prophets", "who": "Habakkuk", "reference": "Habakkuk 2:3", "note": "What God has promised will come; though it seems slow, wait for it."},
+            {"voice": "The prophets", "who": "Lamentations", "reference": "Lamentations 3:25-26", "note": "It is good to hope, and to wait quietly for the LORD."},
+            {"voice": "The apostles", "who": "James", "reference": "James 5:7-8", "note": "Be patient, like a farmer waiting for the rain."},
+        ],
+        "practice": "Write down what you are waiting for. Beside it, write one thing you can do faithfully while you wait.",
+        "prayer": "Lord, I don't understand your timing, but I trust your heart. Teach me to wait on you with hope.",
+    },
+    {
+        "name": "Standing for your faith",
+        "section": "Hard times",
+        "question": "What if people mock me for my faith?",
+        "summary": "Jesus said it would happen, and called those who suffer for him blessed. Don't be ashamed, don't hit back, and remember that nothing can separate you from his love.",
+        "guidance": (
+            "Jesus warned his followers that the world would hate them as it hated him, and told them to "
+            "rejoice, because the prophets were treated the same way. Shadrach, Meshach and Abednego "
+            "refused to bow even if God did not rescue them. Stephen died praying for the men who stoned "
+            "him. Paul asks, 'Who shall separate us from the love of Christ?', and answers that in all "
+            "these things we are more than conquerors."),
+        "teachings": [
+            {"voice": "Jesus", "who": "Jesus", "reference": "Matthew 5:10-12", "note": "Those who are persecuted for Jesus' sake are blessed; great is their reward."},
+            {"voice": "Jesus", "who": "Jesus", "reference": "John 15:18", "note": "If the world hates you, remember that it hated Jesus first."},
+            {"voice": "The prophets", "who": "Shadrach, Meshach and Abednego", "hero": "shadrach-meshach-and-abednego", "reference": "Daniel 3:17-18", "note": "God can save us; but even if he does not, we will not bow."},
+            {"voice": "Wisdom", "who": "David", "hero": "david", "reference": "Psalms 56:4", "note": "Trust God, and don't fear what people can do to you."},
+            {"voice": "The apostles", "who": "Stephen", "hero": "stephen", "reference": "Acts 7:59-60", "note": "Stephen prayed for the men who were stoning him."},
+            {"voice": "The apostles", "who": "Peter", "hero": "peter", "reference": "1 Peter 4:14", "note": "If you are insulted for Christ's name, you are blessed."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "Romans 8:35-37", "note": "Nothing can separate us from Christ's love; we are more than conquerors."},
+        ],
+        "practice": "Pray by name for someone who mocks your faith, and answer them this week with kindness, not argument.",
+        "prayer": "Lord Jesus, you were despised for my sake. Keep me faithful and unashamed, and help me to bless those who mock.",
+    },
 
     # ================================================================== the future
     {
@@ -650,6 +929,29 @@ TOPICS = [
         ],
         "practice": "Write down one fear about the future, and next to it one promise of God.",
         "prayer": "God of hope, fill me with joy and peace as I trust you with my future.",
+    },
+    {
+        "name": "Growing old",
+        "section": "The future",
+        "question": "What does God say about growing old?",
+        "summary": "Old age is not the end of usefulness. God carries his people to grey hairs, and the old still bear fruit.",
+        "guidance": (
+            "God promised his people, 'even to hoar hairs will I carry you'. Caleb was eighty-five and "
+            "still ready to take a mountain. Anna, at a great age, served God night and day and was among "
+            "the first to speak of the child Jesus. The psalmists pray not to be cast off when strength "
+            "fails, but to live to tell the next generation what God has done. Paul says that though the "
+            "body wears out, the inner person is renewed day by day."),
+        "teachings": [
+            {"voice": "The prophets", "who": "Isaiah", "reference": "Isaiah 46:4", "note": "Even to old age and grey hair, God will carry you."},
+            {"voice": "The prophets", "who": "Anna the prophetess", "reference": "Luke 2:36-38", "note": "Anna, at a great age, served God night and day and spoke of Jesus to all who were waiting."},
+            {"voice": "Law and history", "who": "Caleb", "reference": "Joshua 14:10-11", "note": "At eighty-five, Caleb was as strong and ready as ever."},
+            {"voice": "Law and history", "who": "The Law of Moses", "reference": "Leviticus 19:32", "note": "Stand up for the grey-haired, and honour the old."},
+            {"voice": "Wisdom", "who": "A psalmist", "reference": "Psalms 92:14", "note": "The righteous still bear fruit in old age."},
+            {"voice": "Wisdom", "who": "A psalmist", "reference": "Psalms 71:18", "note": "Don't leave me when I am old, until I have told the next generation of your strength."},
+            {"voice": "The apostles", "who": "Paul", "hero": "paul", "reference": "2 Corinthians 4:16", "note": "Though our body wears out, our inner self is renewed day by day."},
+        ],
+        "practice": "If you are older, tell a younger person one thing God has done for you. If you are younger, ask an older believer for their story.",
+        "prayer": "Lord, you have carried me this far. Carry me to the end, and let me bear fruit and tell of your goodness to those who come after me.",
     },
     {
         "name": "Death and eternal life",

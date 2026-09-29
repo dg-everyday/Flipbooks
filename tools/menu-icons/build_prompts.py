@@ -85,8 +85,9 @@ GUIDES = [
      "two stone tablets with rounded tops standing side by side and touching, "
      "each with three short horizontal lines standing for engraved text",
      "Roman numerals, letters, a mountain, lightning"),
-    ("Guidance for Life",
-     "What Jesus, the prophets and the apostles teach about life, today and tomorrow",
+    ("Questions We All Ask",
+     "From worry to what comes after, answered by Jesus, the prophets, the apostles, "
+     "the wisdom books and the Law",
      "a small ancient clay oil lamp seen from the side, with a handle at one "
      "end and a single teardrop flame rising from the spout at the other, as "
      "in \"thy word is a lamp unto my feet\"",

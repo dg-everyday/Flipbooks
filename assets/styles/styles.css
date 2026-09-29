@@ -1355,6 +1355,11 @@ html:has(.menu-dialog[open]) { overflow: hidden; }
 }
 /* Help and About are a single line, so they stay centred on the icon. */
 .menu-foot .menu-item { align-items: center; }
+/* Menu icons are pictures of their own (assets/images/study-guide-icons),
+   so they sit straight on the drawer without the white circle; About keeps
+   the DG emblem at its own size. */
+.menu-item .help-icon { border: 0; background: none; }
+.help-icon .menu-icon { width: 36px; height: 36px; }
 .menu-item:hover { background: rgb(255 255 255 / 70%); }
 .menu-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
 .menu-text { display: grid; gap: 2px; min-width: 0; }

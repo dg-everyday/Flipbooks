@@ -2,8 +2,12 @@
  * <did-you-know> — "Did you know? Essential Bible Facts" as a web component.
  *
  * Shows a banner with a refresh button and a list of random facts. Each fact
- * has the book symbol, a title, the fact text and its Bible reference. The
- * refresh button draws a new batch that never repeats the previous one.
+ * has the book symbol, a title, the fact text and its Bible reference. Every
+ * title finishes the banner's "Did you know?" as a question, and a card first
+ * shows only the symbol and that question: tapping it (or pressing Enter on
+ * the question) opens the fact and its reference beneath, and tapping again
+ * folds them away. The refresh button draws a new batch that never repeats
+ * the previous one.
  * Pulling down (or tapping) the chevrons under the list adds another batch
  * of facts not yet shown, up to 20 in all; then the chevrons fold away until
  * the next refresh.
@@ -13,7 +17,7 @@
  * Up to 50 fact ids are kept in localStorage, newest first (see
  * card-bookmarks.js). With the bookmarks attribute the component shows only
  * the bookmarked facts, under a header and with no banner, which is how the
- * page's bookmarks popup uses it.
+ * page's bookmarks popup uses it; those cards start open.
  *
  * Usage
  *   <did-you-know></did-you-know>
@@ -85,7 +89,10 @@ const asset = (path) => new URL(path, import.meta.url).href;
 
 const BANNER_URL = asset('../../assets/images/did-you-know-1440.webp');
 const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
-const DEFAULT_SRC = asset('../../assets/db/didyouknow.db');
+// The database is fetched with force-cache, so bump the token whenever its rows
+// change. <bible-trivia> uses the same token, so the page caches one copy.
+const DEFAULT_SRC = asset('../../assets/db/didyouknow.db?v=20260929-2');
+const CHEVRON_ICON = '<svg class="fact-chevron" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
 const FACTS_QUERY = 'SELECT id, Title, Fact, Reference_verse, Book FROM did_you_know';
 
 const bookmarks = bookmarkStore('dailygrace:bookmarks:facts', { isId: Number.isSafeInteger, limit: 50 });
@@ -220,12 +227,45 @@ const STYLES = /* css */ `
     min-width: 0; padding: 0 18px;
     border-left: 1px solid rgb(128 91 24 / 35%);
   }
+  .fact { cursor: pointer; }
   .title {
-    margin: 0 0 8px; color: var(--dyk-navy); overflow-wrap: anywhere;
+    margin: 0; color: var(--dyk-navy); overflow-wrap: anywhere;
     font: 400 clamp(1.25rem, 1.1rem + .6vw, 1.5rem)/1.2 'Germania One', Georgia, serif;
   }
+  /* The question is the button that opens the card; the whole card opens it
+     too, but this is what a keyboard or screen reader reaches. It is at least
+     as tall as the symbol, so a closed card sits the question beside it. */
+  .toggle {
+    display: flex; align-items: center; gap: 12px;
+    width: 100%; min-height: var(--dyk-symbol-size); padding: 0;
+    border: 0; background: none; color: inherit;
+    font: inherit; text-align: left; cursor: pointer;
+  }
+  .toggle:focus-visible {
+    outline: 2px solid var(--dyk-navy); outline-offset: 4px; border-radius: 3px;
+  }
+  .question { flex: 1; min-width: 0; }
+  .fact-chevron {
+    flex: none; width: 20px; height: 20px;
+    color: var(--dyk-reference);
+    transition: transform .25s ease;
+  }
+  .fact.open .fact-chevron { transform: rotate(180deg); }
+  /* The answer folds away under the question. Rows animate from 0fr to 1fr;
+     visibility keeps a closed answer out of reach of the tab key and screen
+     readers, and switches only once the fold has finished. */
+  .details {
+    display: grid; grid-template-rows: 0fr;
+    transition: grid-template-rows .25s ease;
+  }
+  .fact.open .details { grid-template-rows: 1fr; }
+  .details-inner {
+    min-height: 0; overflow: hidden; visibility: hidden;
+    transition: visibility 0s linear .25s;
+  }
+  .fact.open .details-inner { visibility: visible; transition-delay: 0s; }
   .text {
-    margin: 0;
+    margin: 0; padding-top: 8px;
     font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
   }
   .reference {
@@ -255,6 +295,7 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .refresh svg, .refresh.is-spinning svg { transition: none; animation: none; }
+    .fact-chevron, .details, .details-inner { transition: none; }
   }
 ${BOOKMARK_STYLES}
 ${PULL_TAB_STYLES}`;
@@ -316,10 +357,20 @@ export class DidYouKnow extends HTMLElement {
 
     this.#pullTab = new PullTab(this.#root.querySelector('.pull-tab'), { onPull: () => this.more() });
 
-    // The reference is a button of its own, so holding it does nothing.
+    // Tapping a card opens or closes it. The reference is a button of its own
+    // and a hold swallows its click, so neither of those toggles the card.
+    this.#list.addEventListener('click', (event) => {
+      const card = event.target.closest('.fact');
+      if (!card || event.target.closest('.reference')) return;
+      // Selecting text in an open card should not fold it away.
+      if (!event.target.closest('.toggle') && document.getSelection()?.toString()) return;
+      this.#setOpen(card, !card.classList.contains('open'));
+    });
+
+    // Holding the reference does nothing; it is a button of its own.
     this.#hold = new CardHold(this.#list, {
       selector: '.fact',
-      exclude: 'button',
+      exclude: '.reference',
       onHold: (card) => {
         const id = Number(card.dataset.id);
         const result = bookmarks.toggle(id);
@@ -452,7 +503,7 @@ export class DidYouKnow extends HTMLElement {
     else this.#pullTab.hide(options);
   }
 
-  #createFact(fact) {
+  #createFact(fact, { open = false } = {}) {
     const card = document.createElement('article');
     card.className = 'fact bookmarkable';
     card.dataset.id = fact.id;
@@ -472,15 +523,35 @@ export class DidYouKnow extends HTMLElement {
       symbol.style.visibility = 'hidden';
     }
 
-    const body = document.createElement('div');
-    body.className = 'body';
+    // Only the question shows at first; the fact and its reference open under it.
+    const detailsId = `fact-${fact.id}-details`;
     const title = document.createElement('h4');
     title.className = 'title';
-    title.textContent = fact.title;
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'toggle';
+    toggle.setAttribute('aria-controls', detailsId);
+    const question = document.createElement('span');
+    question.className = 'question';
+    question.textContent = fact.title;
+    toggle.append(question);
+    toggle.insertAdjacentHTML('beforeend', CHEVRON_ICON);
+    title.append(toggle);
+
+    const details = document.createElement('div');
+    details.className = 'details';
+    details.id = detailsId;
+    const inner = document.createElement('div');
+    inner.className = 'details-inner';
+    details.append(inner);
     const text = document.createElement('p');
     text.className = 'text';
     text.textContent = fact.text;
-    body.append(title, text);
+    inner.append(text);
+
+    const body = document.createElement('div');
+    body.className = 'body';
+    body.append(title, details);
 
     if (fact.reference) {
       // The reference opens the passage itself; the page decides how to show it.
@@ -496,11 +567,17 @@ export class DidYouKnow extends HTMLElement {
           detail: { reference: fact.reference, book: fact.book ?? null },
         }));
       });
-      body.append(reference);
+      inner.append(reference);
     }
 
     card.append(symbol, body);
+    this.#setOpen(card, open);
     return card;
+  }
+
+  #setOpen(card, open) {
+    card.classList.toggle('open', open);
+    card.querySelector('.toggle').setAttribute('aria-expanded', String(open));
   }
 
   #render(facts) {
@@ -542,7 +619,8 @@ export class DidYouKnow extends HTMLElement {
       return;
     }
     this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
-    this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact)));
+    // Saved facts are there to be reread, so they open already answered.
+    this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact, { open: true })));
     this.#status.textContent = `Bookmarked facts. ${this.#bookmarksSummary()}`;
   }
 

@@ -46,6 +46,9 @@ SECTIONS = [
 ]
 VOICES = ["Jesus", "The prophets", "The apostles", "Wisdom", "Law and history"]
 NEW_TESTAMENT_FROM = "Matt"   # book id of the first New Testament book
+# The database carries the next psalm's heading on the end of a psalm's last
+# verse ("…my God.    Psalm 43   "); it is not part of the verse.
+PSALM_HEADING = re.compile(r"\s{2,}Psalm \d+\b.*$")
 
 
 def slug(name):
@@ -105,7 +108,7 @@ def main():
             for problem in quotes.problems(teaching.get("note")):
                 errors.append(f"{here} note: {problem}")
             try:
-                teaching["text"] = " ".join(bible.verses(ref))
+                teaching["text"] = " ".join(PSALM_HEADING.sub(" ", v) for v in bible.verses(ref))
             except ValueError as e:
                 errors.append(f"{here}: {e}")
                 continue

@@ -232,7 +232,7 @@ searchClear.addEventListener("click", () => {
 // reader swipe back through the past week; the rest of the page stays on today.
 document.getElementById("banner-slider").setAttribute("media-base", MEDIA_BASE_URL);
 
-// <daily-guidance> picks today's Guidance for Life topic from
+// <daily-guidance> picks today's Questions We All Ask topic from
 // assets/guidance-for-life.json itself. (The day's reflection is under the banner.)
 
 // <did-you-know> loads its own facts; hand it the same media host used here.
@@ -558,7 +558,7 @@ function updateBookmarkCounts() {
 // with the page, and the whole thing runs on the reader's device.
 const bookmarksPdf = document.getElementById("bookmarks-pdf");
 const bookmarksPdfNote = document.getElementById("bookmarks-pdf-note");
-const BOOKMARKS_PDF_MODULE = new URL("assets/scripts/bookmarks-pdf.js?v=20260928-3", document.baseURI).href;
+const BOOKMARKS_PDF_MODULE = new URL("assets/scripts/bookmarks-pdf.js?v=20260929-1", document.baseURI).href;
 let bookmarksPdfNoteTimer = 0;
 
 function showBookmarksPdfNote(message, { error = false, linger = 0 } = {}) {

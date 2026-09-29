@@ -1,9 +1,9 @@
 /**
- * <daily-guidance> — today's Guidance for Life on a navy card, as a web component.
+ * <daily-guidance> — today's question from Questions We All Ask on a navy card, as a web component.
  *
- * Shows the Daily Grace emblem, the "Today's Guidance for Life" heading and one
+ * Shows the Daily Grace emblem, the "Today's Question" heading and one
  * topic from guidance-for-life.json: its question, a short answer, one verse,
- * one thing to try, and a link that opens the topic on the Guidance for Life
+ * one thing to try, and a link that opens the topic on the Questions We All Ask
  * page. A different topic is picked at random each time the page is opened,
  * and again when the browser brings the page back from its back/forward cache.
  * The last topic shown is remembered in localStorage (when it is available) so
@@ -12,7 +12,7 @@
  * Holding the card for half a second bookmarks its topic: a gold glow spreads
  * from the finger and the card takes a ribbon. Holding it again removes the
  * bookmark. Up to 50 topic ids are kept in localStorage, newest first (see
- * card-bookmarks.js), shared with the tiles on the Guidance for Life page.
+ * card-bookmarks.js), shared with the tiles on the Questions We All Ask page.
  * With the bookmarks attribute the component shows the bookmarked topics as a
  * list instead of the card, which is how the page's bookmarks popup uses it.
  *
@@ -23,7 +23,7 @@
  * Attributes
  *   guidance-src   guidance-for-life.json, resolved against the page.
  *                  Default: assets/guidance-for-life.json
- *   page-href      the Guidance for Life page; the topic's id is added as the
+ *   page-href      the Questions We All Ask page; the topic's id is added as the
  *                  hash. Default: apps/pages/guidance-for-life.html
  *   bookmarks      Present: no card; show the bookmarked topics, newest first.
  *                  Call showBookmarks() to bring the list up to date.
@@ -64,7 +64,7 @@ const asset = (path) => new URL(path, import.meta.url).href;
 
 const EMBLEM_URL = asset('../../assets/images/dg-icon-02-flat-256.webp');
 
-// Shared with the Guidance for Life page (guidance-for-life.js), which uses the same key.
+// Shared with the Questions We All Ask page (guidance-for-life.js), which uses the same key.
 const bookmarks = bookmarkStore('dailygrace:bookmarks:guidance',
   { isId: (id) => typeof id === 'string' && id !== '', limit: 50 });
 
@@ -367,20 +367,20 @@ export class DailyGuidance extends HTMLElement {
         <div class="emblem">
           <img src="${EMBLEM_URL}" alt="Daily Grace" width="78" height="78" />
         </div>
-        <h3 class="title" id="title">Today's Guidance for Life</h3>
+        <h3 class="title" id="title">Today's Question</h3>
         <p class="section" hidden></p>
-        <p class="question" aria-live="polite">Loading today's guidance…</p>
+        <p class="question" aria-live="polite">Loading today's question…</p>
         <p class="summary" hidden></p>
         <figure hidden><blockquote></blockquote><figcaption></figcaption></figure>
         <p class="practice" hidden><b>Try this:</b> <span></span></p>
-        <a class="more" hidden>Read the full guidance <span aria-hidden="true">→</span></a>
+        <a class="more" hidden>Read the full answer <span aria-hidden="true">→</span></a>
       </article>
-      <section class="saved" aria-label="Bookmarked guidance">
+      <section class="saved" aria-label="Bookmarked questions">
         <header class="bookmarks-header" hidden>
-          <h3 class="bookmarks-title">Bookmarked guidance</h3>
+          <h3 class="bookmarks-title">Bookmarked questions</h3>
           <p class="bookmarks-summary"></p>
         </header>
-        <div class="list"><p class="message">Loading your guidance…</p></div>
+        <div class="list"><p class="message">Loading your questions…</p></div>
       </section>
       <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
     const $ = (selector) => this.#root.querySelector(selector);
@@ -472,15 +472,15 @@ export class DailyGuidance extends HTMLElement {
     if (!topics.length) {
       const message = document.createElement('p');
       message.className = 'message';
-      message.textContent = 'No bookmarked guidance yet. Hold “Today’s Guidance for Life”, '
-        + 'or a question on the Guidance for Life page, for half a second to bookmark it.';
+      message.textContent = 'No bookmarked questions yet. Hold “Today’s Question”, '
+        + 'or a question on the Questions We All Ask page, for half a second to bookmark it.';
       els.list.replaceChildren(message);
       this.#status.textContent = message.textContent;
       return;
     }
     els.summaryLine.textContent = this.#bookmarksSummary();
     els.list.replaceChildren(...topics.map((topic) => this.#createTopic(topic)));
-    this.#status.textContent = `Bookmarked guidance. ${this.#bookmarksSummary()}`;
+    this.#status.textContent = `Bookmarked questions. ${this.#bookmarksSummary()}`;
   }
 
   get #src() {
@@ -494,8 +494,8 @@ export class DailyGuidance extends HTMLElement {
   }
 
   #bookmarksSummary() {
-    return `${bookmarks.read().length} of ${bookmarks.limit} saved topics, newest first. `
-      + 'Hold a topic to remove its bookmark.';
+    return `${bookmarks.read().length} of ${bookmarks.limit} saved questions, newest first. `
+      + 'Hold a question to remove its bookmark.';
   }
 
   #toggle(topic, card) {
@@ -536,9 +536,9 @@ export class DailyGuidance extends HTMLElement {
       practice.prepend(line('b', '', 'Try this:'));
       card.append(practice);
     }
-    const link = line('a', 'topic-link', 'Read the full guidance →');
+    const link = line('a', 'topic-link', 'Read the full answer →');
     link.href = this.#pageHref(topic.id);
-    link.setAttribute('aria-label', `Read the full guidance: ${topic.name}`);
+    link.setAttribute('aria-label', `Read the full answer: ${topic.name}`);
     card.append(link);
     return card;
   }
@@ -554,14 +554,14 @@ export class DailyGuidance extends HTMLElement {
       })
       .catch((error) => {
         if (loading !== this.#loading) return;
-        console.warn("Today's guidance could not be loaded:", error);
+        console.warn("Today's question could not be loaded:", error);
         this.#loading = null;          // a bookmarks list can ask again
         this.#topic = null;
         this.#topics = [];
-        this.#els.question.textContent = "Today's guidance is unavailable. Please try again later.";
+        this.#els.question.textContent = "Today's question is unavailable. Please try again later.";
         const message = document.createElement('p');
         message.className = 'message';
-        message.textContent = 'Your bookmarked guidance could not be loaded. Please try again.';
+        message.textContent = 'Your bookmarked questions could not be loaded. Please try again.';
         this.#els.list.replaceChildren(message);
         this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
       }));
@@ -584,7 +584,7 @@ export class DailyGuidance extends HTMLElement {
     els.practiceText.textContent = tidy(topic.practice);
     els.practice.hidden = !topic.practice;
     els.more.href = this.#pageHref(topic.id);
-    els.more.setAttribute('aria-label', `Read the full guidance: ${topic.name}`);
+    els.more.setAttribute('aria-label', `Read the full answer: ${topic.name}`);
     els.more.hidden = false;
     this.#syncBookmarks();
   }

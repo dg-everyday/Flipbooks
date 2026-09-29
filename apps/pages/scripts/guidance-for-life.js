@@ -1,5 +1,5 @@
 /**
- * Guidance for Life — drives guidance-for-life.html.
+ * Questions We All Ask — drives guidance-for-life.html.
  *
  * Reads assets/guidance-for-life.json (built and verse-checked by
  * tools/guidance/build_guidance.py): the questions of life, each answered by
@@ -11,7 +11,7 @@
  *
  * Holding a question's tile for half a second bookmarks it, as on the home
  * page (card-bookmarks.js), and an open question has a Bookmark button too.
- * The bookmarks are the ones "Today's Guidance for Life" keeps on the home
+ * The bookmarks are the ones "Today's Question" keeps on the home
  * page (the same localStorage key), so they show in its bookmarks popup and
  * its PDF.
  */
@@ -32,32 +32,32 @@ const RIBBON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const SECTIONS = {
   'Heart and mind': {
     cls: 's-heart',
-    intro: 'Worry, fear, anger, pride and temptation: what goes on inside, and how God meets us there.',
+    intro: 'Worry, fear, anger, pride, temptation and what we are worth: what goes on inside, and how God meets us there.',
     icon: '<path d="M12 20s-7-4.4-9.2-8.6C1.2 8.2 3 4.5 6.5 4.5c2.1 0 3.6 1.2 4.5 2.7.9-1.5 2.4-2.7 4.5-2.7 3.5 0 5.3 3.7 3.7 6.9C18.9 15.6 12 20 12 20z"/>',
   },
   'Relationships': {
     cls: 's-people',
-    intro: 'Love, forgiveness, marriage, family, friends and enemies, and the words we say to each other.',
+    intro: 'Love, forgiveness, marriage and singleness, family, friends and enemies, and the words we say to each other.',
     icon: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c.6-.3 1.3-.5 2-.5 2.8 0 5 2.2 5 5"/>',
   },
   'Work and money': {
     cls: 's-work',
-    intro: 'Our work, our money and what we do with it: honesty, generosity and justice for the poor.',
+    intro: 'Our work, our money and what we do with it: honesty, generosity, debt and justice for the poor.',
     icon: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>',
   },
   'Walking with God': {
     cls: 's-walk',
-    intro: 'Purpose, prayer, faith, finding God\'s will, rest, and a life spent serving others.',
+    intro: 'Salvation, purpose, prayer, the Bible, church, faith, finding God\'s will, thankfulness, rest, and a life spent serving others.',
     icon: '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
   },
   'Hard times': {
     cls: 's-hard',
-    intro: 'Suffering, grief, discouragement and loneliness. Scripture does not look away from pain.',
+    intro: 'Suffering, grief, sickness, guilt, failure, waiting, loneliness and mockery. Scripture does not look away from pain.',
     icon: '<path d="M7 16a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a3.5 3.5 0 0 1 0 7z"/><path d="M8 19l-1 2M12 19l-1 2M16 19l-1 2"/>',
   },
   'The future': {
     cls: 's-future',
-    intro: 'Hope, death and eternal life, Christ\'s return, judgement, and the new heaven and earth: guidance for what is still to come.',
+    intro: 'Hope, growing old, death and eternal life, Christ\'s return, judgement, and the new heaven and earth: guidance for what is still to come.',
     icon: '<path d="M3 19h18M6.5 19a5.5 5.5 0 0 1 11 0M12 4v4M5.2 8.2l2 2M18.8 8.2l-2 2M2.5 14.5h2.5M19 14.5h2.5"/>',
   },
 };
@@ -280,7 +280,7 @@ export async function start(view) {
 
   const search = h('input', {
     type: 'search', class: 'search', autocomplete: 'off',
-    placeholder: 'Search a question, word or verse…', 'aria-label': 'Search the guidance'
+    placeholder: 'Search a question, word or verse…', 'aria-label': 'Search the questions'
   });
   search.addEventListener('input', () => { state.query = search.value; apply(); });
 
@@ -322,11 +322,11 @@ export async function start(view) {
 
   view.replaceChildren(
     h('section', { class: 'hero' },
-      h('h1', {}, 'Guidance for Life'),
+      h('h1', {}, 'Questions We All Ask'),
       h('p', { class: 'lede' },
-        'The questions we all bring to life, answered by the whole of Scripture: the teaching of ' +
-        'Jesus, the prophets, the apostles, the wisdom books and the Law. Guidance from of old, and ' +
-        'for the future. Tap a question to read it; hold it for half a second to bookmark it.'),
+        'From worry and anger to money, marriage, grief and what comes after, each answered by the ' +
+        'whole of Scripture: the teaching of Jesus, the prophets, the apostles, the wisdom books and ' +
+        'the Law. Tap a question to read it; hold it for half a second to bookmark it.'),
       h('ul', { class: 'stats' },
         h('li', {}, h('b', {}, tot.topics), 'questions'),
         h('li', {}, h('b', {}, tot.teachings), 'passages'),

@@ -438,7 +438,7 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
 .bookmark-tabs {
   display: grid;
   flex: 1 0 100%;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 4px;
   padding: 4px;
   border-radius: 14px;
@@ -486,7 +486,10 @@ html:has(.bookmarks-dialog[open]) { overflow: hidden; }
 #bookmark-verses,
 #verse-results { --reader-max-height: none; }
 @media (max-width: 560px) {
-  .bookmark-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Five tabs in two rows: three above, two below. */
+  .bookmark-tabs { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .bookmark-tabs [role="tab"] { grid-column: span 2; }
+  .bookmark-tabs [role="tab"]:nth-child(n + 4) { grid-column: span 3; }
   .bookmark-tabs [role="tab"] { min-height: 36px; }
 }
 @media (max-width: 420px) {

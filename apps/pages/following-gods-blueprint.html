@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="The plan God has drawn for his people: salvation, the heart of his law, what Christians do every day, solving problems God's way, understanding the times, getting ready for Christ's return, and a test for whether a resolution follows the Lord's blueprint."
+        />
+
+        <title>Daily Grace — Following God's Blueprint</title>
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+        <link
+            rel="preload"
+            href="../../assets/fonts/GermaniaOne-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Strait-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/study-page.css?v=20260927-1"
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/blueprint-page.css?v=20260930-2"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="brand" href="following-gods-blueprint.html" aria-label="Following God's Blueprint">
+                <img
+                    class="brand-logo"
+                    src="../../assets/images/daily-grace-white-480.webp"
+                    alt="Daily Grace"
+                    width="480"
+                    height="160"
+                />
+                <span class="brand-pill">Following God's Blueprint</span>
+            </a>
+            <a class="home" href="../../index.html" aria-label="Home" title="Home">
+                <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m3 10 9-7 9 7"></path>
+                    <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- following-gods-blueprint.js renders the plan into this element. A
+             part of the plan opens in place below its row; #born-again opens it,
+             and #blueprint-test goes to the test. -->
+        <main id="view">
+            <p class="status">Loading the blueprint…</p>
+        </main>
+
+        <footer class="page-footer">
+            Scripture quotations from the King James Version. Words of Jesus are
+            checked against the red-letter text. "In plain words" notes are a
+            simple guide to each passage, not a replacement for it. The blueprint
+            test is a help for prayer and honest thinking, not a verdict; your
+            answers stay on this page and are not saved.
+        </footer>
+
+        <script type="module">
+            import { start } from "./scripts/following-gods-blueprint.js?v=20260930-2";
+            start(document.getElementById("view"));
+        </script>
+    </body>
+</html>

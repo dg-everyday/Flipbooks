@@ -1,5 +1,6 @@
 /**
- * Bookmarks as a PDF: the reader's bookmarked verses, facts and sayings laid
+ * Bookmarks as a PDF: the reader's bookmarked verses, facts, sayings, questions
+ * and blueprints laid
  * out on A4 pages, returned as a PDF blob named daily-grace-bookmarks-<date>.pdf.
  * script.js opens it in a new tab.
  *
@@ -12,12 +13,14 @@
  *
  * Usage
  *   const { makeBookmarksPdf } = await import('./bookmarks-pdf.js?v=…');
- *   const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings, guidance });
+ *   const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings, guidance, blueprint });
  *     verses   [{ book_name, chapter, verse, text }]   (getVersesByIds)
  *     facts    [{ title, text, reference }]            (<did-you-know>.bookmarkedItems())
  *     sayings  [{ saying, meaning, kjv_text, reference }] (<bible-sayings>.bookmarkedItems())
  *     guidance [{ name, section, question, summary, guidance, teachings, practice, prayer }]
  *              (<daily-guidance>.bookmarkedItems(): topics of guidance-for-life.json)
+ *     blueprint [{ name, part, number, summary, plain, verses, example, build, ask }]
+ *              (<gods-blueprint>.bookmarkedItems(): items of following-gods-blueprint.json)
  * Each list is newest first, as the popup shows it. Rejects if jsPDF or the
  * fonts cannot be loaded.
  */
@@ -306,6 +309,32 @@ const guidanceRuns = (topic) => [
   { size: 11, color: MUTED, text: topic.prayer ? `A prayer: ${clean(topic.prayer)}` : '', gap: 1 },
 ];
 
+// A part of the plan in full, as on the Following God's Blueprint page: its
+// sheet and name, the short answer, the plan in plain words, every passage
+// with who spoke it, the Bible example, then what to do. A page may turn
+// before a passage, the example or the steps, never inside one.
+const blueprintRuns = (item) => [
+  { size: 8.5, color: GOLD_DARK, gap: 0.8,
+    text: [item.number, item.part].filter(Boolean).map(clean).join(' · ').toUpperCase() },
+  { font: 'GermaniaOne', size: 13, color: NAVY, text: clean(item.name), gap: 0.8 },
+  { size: 11.5, color: NAVY, text: clean(item.summary), gap: 1.2 },
+  { size: 11, text: clean(item.plain), gap: 2 },
+  ...(item.verses || []).flatMap((verse) => [
+    { font: 'GermaniaOne', size: 11, color: GOLD_DARK, indent: 4, gap: 0.4, breakBefore: true,
+      text: [clean(verse.reference), clean(verse.who)].filter(Boolean).join(' · ') },
+    { size: 10.5, indent: 4, color: verse.red ? RED : INK, text: clean(verse.text), gap: 1.6 },
+  ]),
+  ...(item.example ? [
+    { font: 'GermaniaOne', size: 11, color: NAVY, gap: 0.4, breakBefore: true,
+      text: `The plan at work: ${clean(item.example.title)} (${clean(item.example.reference)})` },
+    { size: 10.5, text: clean(item.example.text), gap: 1.6 },
+  ] : []),
+  ...(item.build || []).map((step, index) => ({
+    size: 11, color: GOLD_DARK, gap: 0.8, breakBefore: index === 0,
+    text: `${index === 0 ? 'Build it: ' : ''}${index + 1}. ${clean(step)}` })),
+  { size: 11, color: MUTED, text: item.ask ? `Ask yourself: ${clean(item.ask)}` : '', gap: 1 },
+];
+
 function drawFooters(doc) {
   const pages = doc.getNumberOfPages();
   for (let page = 1; page <= pages; page++) {
@@ -325,7 +354,7 @@ function drawFooters(doc) {
 // ------------------------------------------------------------------ entry
 
 /** Builds the PDF of the bookmarks: resolves to { blob, filename }. */
-export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], guidance = [] }) {
+export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], guidance = [], blueprint = [] }) {
   const [JsPdf, fonts, emblem] = await Promise.all([
     loadJsPdf(),
     Promise.all(FONTS.map((font) => loadFont(font.url))),
@@ -345,12 +374,13 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], 
     facts.length && plural(facts.length, 'fact'),
     sayings.length && plural(sayings.length, 'saying'),
     guidance.length && plural(guidance.length, 'question'),
+    blueprint.length && plural(blueprint.length, 'blueprint'),
   ].filter(Boolean).join(', ');
   // A PDF viewer's tab shows this title rather than the blob URL.
   doc.viewerPreferences({ DisplayDocTitle: true });
   doc.setProperties({
     title: 'My Bookmarks — Daily Grace',
-    subject: `Bookmarked verses, facts, sayings and questions, saved ${date}`,
+    subject: `Bookmarked verses, facts, sayings, questions and blueprints, saved ${date}`,
     author: 'Daily Grace',
     creator: 'Daily Grace (dailygrace.faith)',
   });
@@ -361,6 +391,7 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], 
   drawSection(writer, 'Did You Know', facts, factRuns);
   drawSection(writer, 'Bible Sayings', sayings, sayingRuns);
   drawSection(writer, 'Questions We All Ask', guidance, guidanceRuns);
+  drawSection(writer, "Following God's Blueprint", blueprint, blueprintRuns);
   drawFooters(doc);
 
   return { blob: doc.output('blob'), filename: `daily-grace-bookmarks-${localDate(now)}.pdf` };

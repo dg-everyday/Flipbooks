@@ -1,0 +1,331 @@
+/* Styles for apps/pages/following-gods-blueprint.html, on top of study-page.css,
+   which holds the palette, topbar, hero, chips and the in-place .row-panel.
+   The page is drawn like a set of blueprints: each part of the plan is a sheet
+   with a faint drafting grid. */
+
+:root {
+  --bp-blue: #0d3b66;
+  --bp-grid: rgb(255 255 255 / 9%);
+}
+
+/* One colour per sheet; --g colours everything inside. */
+.p-foundation { --g: #1f4e79; --g-soft: rgb(31 78 121 / 11%); }
+.p-beyond     { --g: #2e7d6b; --g-soft: rgb(46 125 107 / 12%); }
+.p-daily      { --g: #a8761a; --g-soft: rgb(168 118 26 / 13%); }
+.p-problems   { --g: #a8445a; --g-soft: rgb(168 68 90 / 11%); }
+.p-times      { --g: #6b4c9a; --g-soft: rgb(107 76 154 / 12%); }
+.p-return     { --g: #b5651d; --g-soft: rgb(181 101 29 / 12%); }
+.p-test       { --g: var(--bp-blue); --g-soft: rgb(13 59 102 / 10%); }
+
+/* The drafting grid, laid over a sheet's colour. */
+.bp-hero, .bp-sheet-head {
+  background-image:
+    linear-gradient(var(--bp-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-grid) 1px, transparent 1px),
+    radial-gradient(circle at 92% 0%, rgb(255 255 255 / 18%), transparent 45%),
+    linear-gradient(135deg, var(--g, var(--bp-blue)), color-mix(in srgb, var(--g, var(--bp-blue)) 68%, #000));
+  background-size: 22px 22px, 22px 22px, auto, auto;
+}
+
+/* ---------------------------------------------------------------- hero */
+
+.bp-hero { --g: var(--bp-blue); }
+.bp-hero-test { margin: 16px 0 0; color: rgb(243 231 210 / 85%); font-size: .95rem; }
+.bp-test-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-right: 6px; padding: 9px 16px;
+  border-radius: 999px;
+  font-weight: 700; text-decoration: none;
+  color: var(--navy); background: var(--gold-light);
+}
+.bp-test-link:hover { background: #f0c66c; }
+.bp-link-icon { display: grid; width: 20px; height: 20px; }
+.bp-link-icon svg { width: 100%; height: 100%; }
+.chip.p-foundation::before, .chip.p-beyond::before, .chip.p-daily::before, .chip.p-problems::before,
+.chip.p-times::before, .chip.p-return::before, .chip.p-test::before {
+  background: color-mix(in srgb, var(--g) 55%, #fff);
+}
+
+/* ---------------------------------------------------------------- the pattern */
+
+.bp-pattern { margin-top: 18px; }
+.bp-pattern-intro { max-width: 72ch; margin-bottom: 14px; }
+.bp-pattern-grid {
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* ---------------------------------------------------------------- sheets */
+
+.bp-part, .bp-test { margin-top: 18px; padding-top: 0; overflow: hidden; scroll-margin-top: calc(var(--topbar) + 12px); }
+.bp-sheet-head {
+  display: grid; gap: 2px;
+  margin: 0 -20px 18px; padding: 14px 20px 16px;
+  color: #fff;
+  border-bottom: 3px solid color-mix(in srgb, var(--g) 60%, #000);
+}
+.bp-sheet-label {
+  display: flex; align-items: center; gap: 10px; margin: 0;
+  font: 700 .74rem/1.2 var(--body); letter-spacing: .18em; text-transform: uppercase;
+  opacity: .85;
+}
+.bp-sheet-count {
+  min-width: 28px; padding: 1px 8px; border-radius: 999px;
+  font-size: .8rem; letter-spacing: 0; text-align: center;
+  background: rgb(255 255 255 / 18%);
+}
+.bp-sheet-head h2 {
+  display: flex; align-items: center; gap: 10px;
+  font: 400 clamp(1.7rem, 1.4rem + 1.3vw, 2.3rem)/1.05 var(--display);
+}
+.bp-sheet-icon { display: grid; flex: 0 0 auto; width: 32px; height: 32px; }
+.bp-sheet-icon svg { width: 100%; height: 100%; }
+.bp-sheet-intro { margin: 6px 0 0; max-width: 75ch; font-size: .96rem; opacity: .95; }
+
+/* ---------------------------------------------------------------- cards */
+
+.bp-grid {
+  position: relative;                 /* tiles' offsetLeft/Top are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.bp-tile {
+  display: flex; align-items: flex-start; gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--g);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.bp-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+.bp-num {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  min-width: 44px; height: 44px; padding: 0 6px;
+  border: 1.5px dashed var(--g); border-radius: 8px;
+  font: 700 .95rem/1 var(--body); letter-spacing: .02em;
+  color: var(--g); background: var(--g-soft);
+}
+.bp-text { display: grid; gap: 3px; min-width: 0; }
+.bp-name { font: 400 1.22rem/1.1 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.bp-summary {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+  font-size: .88rem; line-height: 1.3; color: var(--ink);
+}
+.bp-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 3px; font-size: .74rem; color: var(--muted); }
+.bp-has-example {
+  padding: 1px 8px; border-radius: 999px;
+  font-weight: 700; color: var(--g); background: var(--g-soft);
+}
+
+.bp-tile.is-open { background: var(--g); border-color: var(--g); color: #fff; box-shadow: 0 8px 18px rgb(16 37 59 / 18%); }
+.bp-tile.is-open .bp-name,
+.bp-tile.is-open .bp-summary,
+.bp-tile.is-open .bp-meta { color: #fff; }
+.bp-tile.is-open .bp-num { color: var(--g); background: #fff; border-color: #fff; border-style: solid; }
+.bp-tile.is-open .bp-has-example { color: var(--g); background: #fff; }
+
+/* ---------------------------------------------------------------- open card */
+
+.bp-verses { display: grid; gap: 10px; }
+.bp-verse {
+  margin: 0; padding: 14px 16px 12px 18px;
+  border-radius: 12px; background: #fff;
+  border: 1px solid var(--line); border-left: 4px solid var(--g, var(--bp-blue));
+}
+.bp-verse blockquote { margin: 0; font: 400 1.04rem/1.4 var(--body); color: var(--ink); }
+/* Jesus' own words in red, as in a red-letter Bible. */
+.bp-verse.red { border-left-color: #b3261e; }
+.bp-verse.red blockquote { color: #8f1d16; }
+.bp-verse figcaption { margin-top: 8px; font-size: .82rem; color: var(--muted); }
+.bp-verse figcaption a { color: var(--navy-2); font-weight: 600; text-underline-offset: 2px; }
+.bp-ref {
+  font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .74rem;
+  color: var(--g, var(--bp-blue));
+}
+.bp-verse.red .bp-ref { color: #b3261e; }
+.bp-note {
+  margin: 8px 0 0; padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  font-size: .93rem; color: var(--ink);
+}
+.bp-note::before { content: 'In plain words: '; font-weight: 700; color: var(--g, var(--bp-blue)); }
+.bp-pattern .bp-verse { border-left-color: var(--gold); }
+
+.bp-example {
+  padding: 14px 16px; border-radius: 12px;
+  background: var(--g-soft); border: 1px dashed var(--g);
+}
+.bp-example-title {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
+  margin: 0 0 6px !important;
+  font: 400 1.15rem/1.15 var(--display); color: var(--navy);
+}
+
+.bp-build { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; counter-reset: build; }
+.bp-build li {
+  position: relative; padding: 9px 12px 9px 44px;
+  border-radius: 10px; background: var(--g-soft);
+  counter-increment: build;
+}
+.bp-build li::before {
+  content: counter(build);
+  position: absolute; left: 10px; top: 8px;
+  display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  font: 700 .8rem/1 var(--body); color: #fff; background: var(--g);
+}
+.bp-ask {
+  padding: 12px 14px; border-radius: 10px;
+  background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--g);
+  font-size: 1.02rem; font-weight: 600; color: var(--navy-2);
+}
+.bp-see { font-weight: 700; color: var(--g); text-underline-offset: 3px; }
+
+/* ---------------------------------------------------------------- the test */
+
+.bp-test-body { display: grid; gap: 20px; }
+/* Wide screens: questions and warning signs on the left, the result pinned
+   beside them so it stays in view while answering. */
+@media (min-width: 980px) {
+  .bp-test-body { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); align-items: start; }
+  .bp-questions, .bp-warnings-box { grid-column: 1; }
+  .bp-result-box {
+    grid-column: 2; grid-row: 1 / span 2; align-self: start;
+    position: sticky; top: calc(var(--topbar) + 14px);
+  }
+}
+
+.bp-questions { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.bp-q {
+  padding: 14px 16px;
+  border: 1px solid var(--line); border-left: 4px solid var(--bp-blue); border-radius: 12px;
+  background: #fff;
+  transition: border-color .15s ease;
+}
+.bp-q[data-answer="yes"] { border-left-color: #2e7d4f; }
+.bp-q[data-answer="unsure"] { border-left-color: #b58a12; }
+.bp-q[data-answer="no"] { border-left-color: #b3261e; }
+.bp-q-head { display: flex; gap: 12px; align-items: flex-start; }
+.bp-q-num {
+  flex: 0 0 auto; display: grid; place-items: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  font: 700 .9rem/1 var(--body); color: #fff; background: var(--bp-blue);
+}
+.bp-q h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 3px; }
+.bp-q-ask { font-size: .93rem; color: var(--ink); }
+.bp-q-verse {
+  margin: 10px 0 0 44px; padding: 8px 12px;
+  border-radius: 8px; background: var(--paper);
+}
+.bp-q-verse blockquote { margin: 0; font-size: .92rem; line-height: 1.35; color: var(--navy-2); }
+.bp-q-verse figcaption {
+  margin-top: 4px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--bp-blue);
+}
+
+.bp-answers { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0 44px; }
+.bp-answer { position: relative; }
+.bp-answer input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.bp-answer span {
+  display: inline-block; min-width: 88px; padding: 8px 14px;
+  border: 1.5px solid rgb(13 59 102 / 30%); border-radius: 999px;
+  font: 700 .9rem/1 var(--body); text-align: center;
+  color: var(--navy-2); background: #fff;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.bp-answer:hover span { border-color: var(--bp-blue); }
+.bp-answer input:focus-visible + span { outline: 3px solid var(--gold-light); outline-offset: 2px; }
+.a-yes input:checked + span { color: #fff; background: #2e7d4f; border-color: #2e7d4f; }
+.a-unsure input:checked + span { color: var(--navy); background: #e8c45a; border-color: #d4ad3c; }
+.a-no input:checked + span { color: #fff; background: #b3261e; border-color: #b3261e; }
+
+.bp-warnings-box, .bp-result-box {
+  padding: 16px; border-radius: 12px;
+  border: 1px solid var(--line); background: #fff;
+}
+.bp-warnings-box h3, .bp-result-box h3 { font-size: 1.35rem; color: var(--navy); margin-bottom: 6px; }
+.bp-warnings-box > p { font-size: .9rem; color: var(--muted); }
+.bp-warnings { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.bp-warning {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 8px 10px; border-radius: 10px;
+  cursor: pointer;
+}
+.bp-warning:hover { background: rgb(179 38 30 / 5%); }
+.bp-warning input { flex: 0 0 auto; width: 20px; height: 20px; margin: 1px 0 0; accent-color: #b3261e; cursor: pointer; }
+.bp-warning-text { display: grid; gap: 3px; }
+.bp-warning-text b { font-size: .96rem; color: var(--ink); }
+.bp-warning-verse { font-size: .82rem; line-height: 1.3; color: var(--muted); }
+.bp-warning input:checked + .bp-warning-text b { color: #b3261e; }
+
+.bp-result { display: grid; gap: 8px; }
+.bp-result p { margin: 0; }
+.bp-progress { font-weight: 700; color: var(--navy-2); }
+.bp-bar { height: 8px; border-radius: 999px; background: rgb(13 59 102 / 12%); overflow: hidden; }
+.bp-bar span { display: block; height: 100%; border-radius: inherit; background: var(--bp-blue); transition: width .2s ease; }
+.bp-verdict { font: 400 1.35rem/1.15 var(--display); }
+.bp-verdict.ok { color: #2e7d4f; }
+.bp-verdict.look { color: #b3261e; }
+.bp-again { display: grid; gap: 6px; margin: 4px 0 0; padding: 0; list-style: none; }
+.bp-again li {
+  padding: 7px 10px; border-radius: 8px;
+  font-size: .92rem; font-weight: 600;
+  background: rgb(232 196 90 / 18%); border-left: 3px solid #d4ad3c;
+}
+.bp-again li.is-sign { background: rgb(179 38 30 / 7%); border-left-color: #b3261e; }
+.bp-again .bp-ref { display: block; margin-top: 2px; font-size: .7rem; color: var(--muted); }
+.bp-caveat { margin: 14px 0 0 !important; font-size: .82rem; color: var(--muted); }
+.bp-reset {
+  margin-top: 12px; padding: 8px 16px;
+  border: 1.5px solid var(--bp-blue); border-radius: 999px;
+  font: 700 .88rem/1 var(--body); color: var(--bp-blue); background: #fff;
+  cursor: pointer;
+}
+.bp-reset:hover { background: rgb(13 59 102 / 8%); }
+
+/* ---------------------------------------------------------------- bookmarks */
+
+/* The open item's Bookmark button; a held tile's glow and ribbon come from
+   card-bookmarks.js. */
+.bp-bookmark {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 36px; margin-top: 12px; padding: 6px 14px 6px 10px;
+  border: 1.5px solid var(--g); border-radius: 999px;
+  background: #fff; color: var(--g);
+  font: 700 .88rem/1 var(--body); cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.bp-bookmark svg { width: 18px; height: 18px; }
+.bp-bookmark:hover { background: var(--g-soft); }
+.bp-bookmark[aria-pressed="true"] { background: #a8810c; border-color: #a8810c; color: #fff; }
+.bp-bookmark[aria-pressed="true"] svg { fill: currentColor; }
+.bp-tile { position: relative; }
+.bp-tile.bookmarked::after { right: 12px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .bp-sheet-head { margin: 0 -16px 14px; padding: 12px 16px 14px; }
+  .bp-grid { grid-template-columns: 1fr; gap: 8px; }
+  .bp-verse { padding: 12px 12px 10px 14px; }
+  .bp-q { padding: 12px; }
+  .bp-q-verse, .bp-answers { margin-left: 0; }
+  .bp-answer span { min-width: 0; padding: 8px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-tile, .bp-answer span, .bp-q, .bp-bar span, .bp-bookmark { transition: none; }
+  .bp-tile:hover { transform: none; }
+}

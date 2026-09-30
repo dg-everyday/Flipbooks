@@ -92,6 +92,13 @@ GUIDES = [
      "end and a single teardrop flame rising from the spout at the other, as "
      "in \"thy word is a lamp unto my feet\"",
      "a candle, a light bulb, a lantern with glass, rays or sparkles"),
+    ("Following God's Blueprint",
+     "God's plan to build on: salvation, every day, solving problems his way, "
+     "and getting ready for Christ's return",
+     "a closed Bible with a small cross on its cover and a ribbon bookmark, "
+     "standing in front of an unrolled blueprint scroll with a simple floor "
+     "plan drawn on it, the scroll curling at its right edge",
+     "a house, tools, a ruler, a compass, rays or sparkles"),
 ]
 
 STYLE = (
@@ -101,7 +108,7 @@ STYLE = (
     "shading and no text or letters. One colour only, deep navy #001B34, on a "
     "transparent background. Centred with about 2px of empty space on every "
     "side, and simple enough to read clearly at 18 pixels wide. It belongs to "
-    "a matching set of eleven icons for a Bible study app called Daily Grace, "
+    "a matching set of twelve icons for a Bible study app called Daily Grace, "
     "so keep the line weight and level of detail identical across the set."
 )
 OUTPUT = (
@@ -121,7 +128,7 @@ def prompt_for(title, subject, avoid):
 def set_prompt():
     items = "; ".join(f"{i}. {title}: {subject}"
                       for i, (title, _, subject, _) in enumerate(GUIDES, 1))
-    return (f"A set of eleven matching SVG icons for a Bible study app, laid out "
+    return (f"A set of twelve matching SVG icons for a Bible study app, laid out "
             f"in a grid of four columns and three rows with generous spacing, "
             f"in this order: {items}. Each icon follows the same rules. {STYLE} "
             f"{OUTPUT.replace('a clean SVG', 'one clean SVG per icon')} Avoid "
@@ -187,10 +194,10 @@ def build():
         Paragraph("Menu icon prompts", st["title"]),
         Spacer(1, 6),
         Paragraph(
-            "One prompt for each of the eleven guides in the Daily Grace menu. "
+            "One prompt for each of the twelve guides in the Daily Grace menu. "
             "Each prompt is complete on its own: paste one box into the image "
             "generator to get one icon. To keep the whole set consistent, you "
-            "can first try the set prompt below, which asks for all eleven "
+            "can first try the set prompt below, which asks for all twelve "
             "icons in one image.", st["body"]),
         Spacer(1, 8),
         Paragraph("What every icon must be", st["h2"]),
@@ -203,7 +210,7 @@ def build():
             "currentColor, so the SVG should use stroke=\"currentColor\".",
             st["body"]),
         Spacer(1, 10),
-        Paragraph("Set prompt: all eleven icons at once", st["h2"]),
+        Paragraph("Set prompt: all twelve icons at once", st["h2"]),
         Spacer(1, 4),
         prompt_box(set_prompt(), st),
     ]

@@ -16,7 +16,7 @@
  * its PDF.
  */
 
-import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20261002-2';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from '../../components/card-bookmarks.js?v=20260927-1';

@@ -15,7 +15,7 @@
  * #i-am-the-bread-of-life opens that saying; #john-6-35-40 opens that passage.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20261002-2';
 
 const DATA = 'assets/red-letter-quotes.json';
 const COMMENTARY = (book, chapter) => `assets/explanations/${book}/${chapter}.json`;

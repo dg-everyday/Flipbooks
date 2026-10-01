@@ -10,7 +10,7 @@
  * (rowExpander in study-utils.js). #no-other-gods in the URL opens it.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20261002-2';
 
 const DATA = 'assets/commandments-of-god.json';
 

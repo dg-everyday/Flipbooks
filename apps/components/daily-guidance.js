@@ -6,8 +6,10 @@
  * one thing to try, and a link that opens the topic on the Questions We All Ask
  * page. A round button in the top-right corner plays or pauses the topic's
  * narration, <audio-base><id>.webm; the file is only requested when the button
- * is first pressed, and a new topic stops it. A different topic is picked at random each time the page is opened,
- * and again when the browser brings the page back from its back/forward cache.
+ * is first pressed, and a new topic stops it. Its Bible references are pills
+ * that open the passage (scripture-refs.js). A different topic is picked at
+ * random each time the page is opened, and again when the browser brings the
+ * page back from its back/forward cache.
  * The last topic shown is remembered in localStorage (when it is available) so
  * the same one never comes up twice in a row.
  *
@@ -60,6 +62,7 @@ import { registerFonts } from '../../assets/scripts/fonts.js';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260927-1';
+import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
 
 const DEFAULT_SRC = 'assets/guidance-for-life.json';
 const DEFAULT_PAGE = 'apps/pages/guidance-for-life.html';
@@ -356,7 +359,8 @@ const STYLES = /* css */ `
     .more, .audio, .audio svg { transition: none; }
     .more:hover, .audio:hover svg { transform: none; }
   }
-${BOOKMARK_STYLES}`;
+${BOOKMARK_STYLES}
+${PILL_STYLES}`;
 
 /** localStorage, which can be missing or throw (private windows, blocked storage). */
 function remember(id) {
@@ -446,7 +450,7 @@ export class DailyGuidance extends HTMLElement {
     });
     this.#listHold = new CardHold(this.#els.list, {
       selector: '.topic',
-      exclude: 'a',
+      exclude: 'a, button',
       onHold: (card) => {
         const topic = this.#topics.find((t) => t.id === card.dataset.id);
         if (topic) this.#toggle(topic, card);
@@ -642,6 +646,7 @@ export class DailyGuidance extends HTMLElement {
       practice.prepend(line('b', '', 'Try this:'));
       card.append(practice);
     }
+    linkScripture(card);
     const link = line('a', 'topic-link', 'Read the full answer →');
     link.href = this.#pageHref(topic.id);
     link.setAttribute('aria-label', `Read the full answer: ${topic.name}`);
@@ -685,13 +690,15 @@ export class DailyGuidance extends HTMLElement {
     els.section.hidden = !topic.section;
     els.question.textContent = topic.question || topic.name;
     els.summary.textContent = tidy(topic.summary);
+    linkScripture(els.summary);
     els.summary.hidden = !topic.summary;
     // The first teaching leads each topic (Jesus' words, where he spoke to it).
     const teaching = topic.teachings?.[0];
     els.verse.textContent = tidy(teaching?.text);
-    els.reference.textContent = teaching?.reference || '';
+    els.reference.replaceChildren(refPill(teaching?.reference || ''));
     els.figure.hidden = !teaching?.text;
     els.practiceText.textContent = tidy(topic.practice);
+    linkScripture(els.practiceText);
     els.practice.hidden = !topic.practice;
     els.more.href = this.#pageHref(topic.id);
     els.more.setAttribute('aria-label', `Read the full answer: ${topic.name}`);

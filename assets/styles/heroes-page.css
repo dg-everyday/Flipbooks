@@ -74,11 +74,11 @@
 
 .moment { display: grid; gap: 4px; margin: 0; }
 .moment strong { font-size: 1.05rem; color: var(--navy); }
+/* Holds the reference's pill (scripture-refs.js). */
 .moment-ref {
   justify-self: start;
-  padding: 1px 8px; border-radius: 6px;
-  font-size: .76rem; font-weight: 600;
-  color: #7a5a1c; background: rgb(198 146 46 / 10%); border: 1px solid rgb(198 146 46 / 25%);
+  font-size: .82rem; font-weight: 600;
+  color: #7a5a1c;
 }
 .row-panel .tags li { background: var(--g); }
 .lesson { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); font-weight: 500; }

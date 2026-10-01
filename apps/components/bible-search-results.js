@@ -7,7 +7,9 @@
  * a "N verses found" summary and a scrolling reader that loads verses in
  * batches as you scroll or press "Load more verses". Each verse card has a
  * dog-eared corner that opens the verse's explanation in a popup; the
- * explanations are fetched one chapter at a time from explanations-base. The
+ * explanations are fetched one chapter at a time from explanations-base, and
+ * the Bible references in them are pills that open the passage on top
+ * (scripture-refs.js). The
  * words of Jesus are printed in red, from the ranges in red-letter-src.
  *
  * Holding a verse card for half a second bookmarks it: a gold glow spreads
@@ -68,6 +70,7 @@
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
 import { bookmarkNote, keepBookmarks } from './card-bookmarks.js?v=20260927-1';
+import { PILL_STYLES, linkScripture } from './scripture-refs.js?v=20261002-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
@@ -438,6 +441,7 @@ const STYLES = /* css */ `
   .explanation-body p { margin: 0 0 .75em; }
   .explanation-body p:last-child { margin-bottom: 0; }
   .explanation-body strong { color: var(--search-navy); font-weight: 700; }
+  .explanation-body { --scripture-ref-color: #805b18; }
   .explanation-body .message { padding: 0; }
   .explanation-source {
     margin: 14px 0 0; padding-top: 10px;
@@ -474,7 +478,7 @@ const STYLES = /* css */ `
     .chapter-start .verse-numbers { margin-inline: 8px; padding: 7px 4px 9px; }
     .verse-book { font-size: .8125rem; }
   }
-`;
+${PILL_STYLES}`;
 
 // Metadata is shared by every instance: one fetch per symbol URL, one for the bundled snapshot.
 const bookMetadataCache = new Map();
@@ -515,8 +519,10 @@ function loadChapterExplanations(url) {
   return explanationCache.get(url);
 }
 
+// "etc." ("&c." in the commentaries themselves) only marks where the quoted
+// words of the verse stop, so it is left out of the comparison.
 const comparable = (text) =>
-  text.toLowerCase().replace(/&c\.?/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+  text.toLowerCase().replace(/&c\.?|\betc\./g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
 
 // Both commentaries open a paragraph with the words of the verse it explains:
 // JFB as "words--note", Gill as "words,.... note". Those words are set in bold,
@@ -1172,6 +1178,7 @@ export class BibleSearchResults extends HTMLElement {
       }
       const paragraphs = entry.text.split(/\n{2,}/)
         .map((block) => explanationParagraph(block, row.text));
+      paragraphs.forEach(linkScripture);
       dialog.querySelector('.explanation-body').replaceChildren(...paragraphs);
       const source = dialog.querySelector('.explanation-source');
       source.textContent = `From ${EXPLANATION_SOURCES[entry.source] ?? entry.source}`;

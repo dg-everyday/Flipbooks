@@ -4,7 +4,8 @@
  * Shows the guide's icon, the "Following Today's God Blueprint" heading and one item from
  * following-gods-blueprint.json: its sheet, name and short answer, one verse,
  * one step to build it, the question to ask yourself and a link that opens
- * the item on the Following God's Blueprint page. A different item is picked
+ * the item on the Following God's Blueprint page. Its Bible references are
+ * pills that open the passage (scripture-refs.js). A different item is picked
  * at random each time the page is opened, and again when the browser brings
  * the page back from its back/forward cache.
  * The last item shown is remembered in localStorage (when it is available) so
@@ -55,6 +56,7 @@ import { registerFonts } from '../../assets/scripts/fonts.js';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260927-1';
+import { PILL_STYLES, linkScripture } from './scripture-refs.js?v=20261002-1';
 
 const DEFAULT_SRC = 'assets/following-gods-blueprint.json';
 const DEFAULT_PAGE = 'apps/pages/following-gods-blueprint.html';
@@ -354,7 +356,8 @@ const STYLES = /* css */ `
     .more { transition: none; }
     .more:hover { transform: none; }
   }
-${BOOKMARK_STYLES}`;
+${BOOKMARK_STYLES}
+${PILL_STYLES}`;
 
 /** localStorage, which can be missing or throw (private windows, blocked storage). */
 function remember(id) {
@@ -435,12 +438,12 @@ export class GodsBlueprint extends HTMLElement {
     // takes its bookmark off (and puts it back). The links are not held.
     this.#hold = new CardHold(this.#els.card, {
       selector: '.card',
-      exclude: 'a',
+      exclude: 'a, button',
       onHold: (card) => { if (this.#item) this.#toggle(this.#item, card); },
     });
     this.#listHold = new CardHold(this.#els.list, {
       selector: '.entry',
-      exclude: 'a',
+      exclude: 'a, button',
       onHold: (card) => {
         const item = this.#items.find((i) => i.id === card.dataset.id);
         if (item) this.#toggle(item, card);
@@ -577,6 +580,7 @@ export class GodsBlueprint extends HTMLElement {
     if (item.summary) card.append(line('p', 'entry-summary', tidy(item.summary)));
     if (item.build?.[0]) card.append(labelled('entry-build', 'Build it:', item.build[0]));
     if (item.ask) card.append(labelled('entry-ask', 'Ask yourself:', item.ask));
+    linkScripture(card);
     const link = line('a', 'entry-link', 'Open the full plan →');
     link.href = this.#pageHref(item.id);
     link.setAttribute('aria-label', `Open the full plan: ${item.name}`);
@@ -618,17 +622,21 @@ export class GodsBlueprint extends HTMLElement {
     els.sheet.hidden = !item.part;
     els.name.textContent = item.name;
     els.summary.textContent = tidy(item.summary);
+    linkScripture(els.summary);
     els.summary.hidden = !item.summary;
     // The first verse leads each item.
     const verse = item.verses?.[0];
     els.verse.textContent = tidy(verse?.text);
     els.reference.textContent = [verse?.reference, verse?.who].filter(Boolean).join(' · ');
+    linkScripture(els.reference);
     els.figure.classList.toggle('red', Boolean(verse?.red));
     els.figure.hidden = !verse?.text;
     const step = item.build?.[0];
     els.build.textContent = tidy(step);
+    linkScripture(els.build);
     els.buildLine.hidden = !step;
     els.ask.textContent = tidy(item.ask);
+    linkScripture(els.ask);
     els.askLine.hidden = !item.ask;
     els.steps.hidden = !step && !item.ask;
     els.more.href = this.#pageHref(item.id);

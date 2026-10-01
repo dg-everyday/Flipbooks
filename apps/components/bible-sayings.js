@@ -46,9 +46,10 @@
  *              bookmarkchange  a hold added or removed a bookmark,
  *                            detail: { id, result: 'added' | 'removed' }
  *              error         detail: { message }
- *              verse-request a reference in the popup was clicked,
- *                            detail: { reference, book }
- *                            (bubbles and crosses the shadow boundary)
+ *              verse-request a reference pill was tapped, on a card or in
+ *                            the popup, detail: { reference, label }
+ *                            (bubbles and crosses the shadow boundary; unless
+ *                            cancelled, the passage opens in <verse-popup>)
  *
  * Data: assets/bible-sayings.json, built by tools/sayings/build_sayings.py,
  * fetched once and shared by every instance on the page. Once the page has
@@ -78,6 +79,7 @@ import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260927-1';
 import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
+import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
 
 // The thumbnails are .webp on the media host; .svg is not published.
 const bookThumbnailUrl = (mediaBase, book) =>
@@ -265,10 +267,12 @@ const STYLES = /* css */ `
     font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
   }
   .card-reference {
-    display: block; margin: 12px 0 0;
-    color: var(--bs-reference);
+    margin: 12px 0 0;
     font: 400 clamp(.9375rem, .9rem + .2vw, 1rem)/1.4 'Strait', 'Roboto', sans-serif;
   }
+  .saying, dialog { --scripture-ref-color: var(--bs-reference); }
+  /* Above the saying's button, which stretches over the whole card. */
+  .saying .scripture-ref { z-index: 1; }
 
   .pull-tab { margin-top: 2px; }
   :host([bookmarks]) .pull-tab { display: none; }
@@ -341,19 +345,9 @@ const STYLES = /* css */ `
     margin: 0;
     font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.55 Georgia, 'Times New Roman', serif;
   }
-  .references { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; }
-  .reference {
-    padding: 4px 0;
-    border: 0; background: none;
-    color: var(--bs-reference); cursor: pointer;
+  .references {
+    display: flex; flex-wrap: wrap; gap: 10px 8px; margin-top: 10px;
     font: 400 clamp(.9375rem, .9rem + .2vw, 1rem)/1.4 'Strait', 'Roboto', sans-serif;
-    text-decoration: underline;
-    text-decoration-color: rgb(198 40 40 / 35%);
-    text-underline-offset: 3px;
-  }
-  .reference:hover { text-decoration-color: currentColor; }
-  .reference:focus-visible {
-    outline: 2px solid var(--bs-reference); outline-offset: 3px; border-radius: 3px;
   }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
   .tags li {
@@ -376,7 +370,8 @@ const STYLES = /* css */ `
     .saying { transition: none; }
   }
 ${BOOKMARK_STYLES}
-${PULL_TAB_STYLES}`;
+${PULL_TAB_STYLES}
+${PILL_STYLES}`;
 
 export class BibleSayings extends HTMLElement {
   static observedAttributes = ['media-base', 'src', 'count'];
@@ -449,6 +444,7 @@ export class BibleSayings extends HTMLElement {
     // the click that ends it.
     this.#hold = new CardHold(this.#list, {
       selector: '.saying',
+      exclude: '.scripture-ref',
       onHold: (card) => {
         const { id } = card.dataset;
         const result = bookmarks.toggle(id);
@@ -465,7 +461,7 @@ export class BibleSayings extends HTMLElement {
       event.preventDefault();
       this.close();
     });
-    // A tap anywhere closes the popup, except on the reference buttons.
+    // A tap anywhere closes the popup, except on the reference pills.
     this.#dialog.addEventListener('click', (event) => {
       if (event.composedPath().some((node) => node.nodeName === 'BUTTON')) return;
       this.close();
@@ -639,12 +635,13 @@ export class BibleSayings extends HTMLElement {
     const meaning = document.createElement('p');
     meaning.className = 'text';
     meaning.textContent = saying.meaning;
+    linkScripture(meaning);
     body.append(title, meaning);
 
     if (saying.reference) {
-      const reference = document.createElement('span');
+      const reference = document.createElement('p');
       reference.className = 'card-reference';
-      reference.textContent = `(${saying.reference})`;
+      reference.append(refPill(saying.reference));
       body.append(reference);
     }
 
@@ -675,24 +672,8 @@ export class BibleSayings extends HTMLElement {
     const paragraph = document.createElement('p');
     paragraph.className = 'text';
     paragraph.textContent = text;
+    linkScripture(paragraph);
     return paragraph;
-  }
-
-  #referenceButton(reference, book) {
-    // The reference opens the passage itself; the page decides how to show it.
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'reference';
-    button.textContent = reference;
-    button.setAttribute('aria-label', `Read ${reference}`);
-    button.addEventListener('click', () => {
-      this.dispatchEvent(new CustomEvent('verse-request', {
-        bubbles: true,
-        composed: true,
-        detail: { reference, book: book ?? null },
-      }));
-    });
-    return button;
   }
 
   #renderDetail(saying) {
@@ -730,9 +711,7 @@ export class BibleSayings extends HTMLElement {
       const references = document.createElement('div');
       references.className = 'references';
       const all = saying.references?.length ? saying.references : [saying.reference];
-      // Only the primary reference is in the saying's own book.
-      references.append(...all.map((reference, index) =>
-        this.#referenceButton(reference, index === 0 ? saying.book : null)));
+      references.append(...all.map((reference) => refPill(reference)));
       scripture.push(references);
       parts.push(this.#part('Scripture (KJV)', ...scripture));
     }

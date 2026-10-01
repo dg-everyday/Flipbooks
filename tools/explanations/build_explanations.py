@@ -26,9 +26,19 @@ FOOTNOTE_PARA = re.compile(r"^\s*\([a-z]{1,2}\d?\) ")
 FOOTNOTE_MARK = re.compile(r"\s?\([a-z]{1,2}\d?\)(?=[\s,.;:!?)\]\"']|$)")
 # A leading "Genesis 1:1" line on some JFB chapter introductions
 REF_LINE = re.compile(r"^\s*(?:[1-3] )?[A-Z][A-Za-z ]+ \d+:\d+\s*\n")
+# Characters the source mangled on the way through other encodings (UTF-8 read
+# as Latin-1 or Windows-1252, the "¦" then half-escaped): "Cæsarea" arrives as
+# "CÃ&brvbrsarea", "IRENÆUS" as "IRENÃ†US", "£342" as "Â£342".
+MOJIBAKE = {"Ã&brvbr": "æ", "Ã†": "Æ", "Ã¶": "ö", "Â£": "£"}
+# The commentaries' "&c." (et cetera), spelt as readers know it today. A
+# second full stop is the sentence's, left behind by a removed footnote mark.
+ET_CETERA = re.compile(r"&c\b\.{0,2}")
 
 
 def tidy(text):
+    for broken, char in MOJIBAKE.items():
+        text = text.replace(broken, char)
+    text = ET_CETERA.sub("etc.", text)
     text = "\n".join(line.strip() for line in text.replace("\r", "").split("\n"))
     text = re.sub(r"[ \t]{2,}", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)

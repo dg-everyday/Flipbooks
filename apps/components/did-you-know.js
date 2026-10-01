@@ -46,8 +46,9 @@
  *              bookmarkchange  a hold added or removed a bookmark,
  *                            detail: { id, result: 'added' | 'removed' }
  *              error         detail: { message }
- *              verse-request a reference was clicked, detail: { reference, book }
- *                            (bubbles and crosses the shadow boundary)
+ *              verse-request a reference pill was tapped, detail: { reference, label }
+ *                            (bubbles and crosses the shadow boundary; unless
+ *                            cancelled, the passage opens in <verse-popup>)
  *
  * Data: the facts come from the did_you_know table (id, Title, Fact,
  * Reference_verse, Book, Similar_books) in assets/db/didyouknow.db, read once
@@ -73,6 +74,7 @@ import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260927-1';
 import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
+import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
@@ -268,20 +270,12 @@ const STYLES = /* css */ `
     margin: 0; padding-top: 8px;
     font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
   }
+  /* The fact's reference, a pill that opens the passage (scripture-refs.js). */
   .reference {
-    display: inline-block;
-    margin: 12px 0 0; padding: 4px 0;
-    border: 0; background: none;
-    color: var(--dyk-reference); cursor: pointer;
+    margin: 12px 0 0;
     font: 400 clamp(.9375rem, .9rem + .2vw, 1rem)/1.4 'Strait', 'Roboto', sans-serif;
-    text-decoration: underline;
-    text-decoration-color: rgb(198 40 40 / 35%);
-    text-underline-offset: 3px;
   }
-  .reference:hover { text-decoration-color: currentColor; }
-  .reference:focus-visible {
-    outline: 2px solid var(--dyk-reference); outline-offset: 3px; border-radius: 3px;
-  }
+  .details { --scripture-ref-color: var(--dyk-reference); }
 
   /* The chevrons tuck up under the last fact rather than sit a full gap away. */
   .pull-tab { margin-top: -14px; }
@@ -298,7 +292,8 @@ const STYLES = /* css */ `
     .fact-chevron, .details, .details-inner { transition: none; }
   }
 ${BOOKMARK_STYLES}
-${PULL_TAB_STYLES}`;
+${PULL_TAB_STYLES}
+${PILL_STYLES}`;
 
 export class DidYouKnow extends HTMLElement {
   static observedAttributes = ['media-base', 'src', 'count'];
@@ -357,20 +352,20 @@ export class DidYouKnow extends HTMLElement {
 
     this.#pullTab = new PullTab(this.#root.querySelector('.pull-tab'), { onPull: () => this.more() });
 
-    // Tapping a card opens or closes it. The reference is a button of its own
-    // and a hold swallows its click, so neither of those toggles the card.
+    // Tapping a card opens or closes it. A reference pill is a button of its
+    // own and a hold swallows its click, so neither of those toggles the card.
     this.#list.addEventListener('click', (event) => {
       const card = event.target.closest('.fact');
-      if (!card || event.target.closest('.reference')) return;
+      if (!card || event.target.closest('.scripture-ref')) return;
       // Selecting text in an open card should not fold it away.
       if (!event.target.closest('.toggle') && document.getSelection()?.toString()) return;
       this.#setOpen(card, !card.classList.contains('open'));
     });
 
-    // Holding the reference does nothing; it is a button of its own.
+    // Holding a reference does nothing; it is a button of its own.
     this.#hold = new CardHold(this.#list, {
       selector: '.fact',
-      exclude: '.reference',
+      exclude: '.scripture-ref',
       onHold: (card) => {
         const id = Number(card.dataset.id);
         const result = bookmarks.toggle(id);
@@ -547,6 +542,7 @@ export class DidYouKnow extends HTMLElement {
     const text = document.createElement('p');
     text.className = 'text';
     text.textContent = fact.text;
+    linkScripture(text);
     inner.append(text);
 
     const body = document.createElement('div');
@@ -554,19 +550,10 @@ export class DidYouKnow extends HTMLElement {
     body.append(title, details);
 
     if (fact.reference) {
-      // The reference opens the passage itself; the page decides how to show it.
-      const reference = document.createElement('button');
-      reference.type = 'button';
+      // A pill that opens the passage (scripture-refs.js).
+      const reference = document.createElement('p');
       reference.className = 'reference';
-      reference.textContent = `(${fact.reference})`;
-      reference.setAttribute('aria-label', `Read ${fact.reference}`);
-      reference.addEventListener('click', () => {
-        this.dispatchEvent(new CustomEvent('verse-request', {
-          bubbles: true,
-          composed: true,
-          detail: { reference: fact.reference, book: fact.book ?? null },
-        }));
-      });
+      reference.append(refPill(fact.reference));
       inner.append(reference);
     }
 

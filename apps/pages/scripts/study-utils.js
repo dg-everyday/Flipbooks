@@ -2,6 +2,13 @@
  * Small helpers shared by the study pages (peoples.html, bible-books.html).
  */
 
+import { watchScripture } from '../../components/scripture-refs.js?v=20261002-1';
+
+// Every study page imports this file, so every Bible reference the pages
+// render, now or later (an opened panel, a filter, the blueprint test), is a
+// pill that opens the passage in a popup.
+watchScripture(document.body);
+
 // The pages sit at apps/pages/, so the site root is two levels up. Data paths
 // are written relative to the site root ("assets/..."), like stories.js.
 export function siteRoot() {
@@ -36,7 +43,7 @@ export function h(tag, attrs = {}, ...children) {
   return node;
 }
 
-/** A row of small scripture-reference labels, or null when there are none. */
+/** A row of scripture references (pills, once linked), or null when there are none. */
 export function refList(refs) {
   if (!Array.isArray(refs) || refs.length === 0) return null;
   return h('ul', { class: 'refs', 'aria-label': 'Scripture references' },

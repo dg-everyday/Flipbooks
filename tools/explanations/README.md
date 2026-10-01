@@ -13,7 +13,7 @@ from 4.8 MB to about 27 MB.
 
 ```json
 {
-  "16": { "source": "jfb", "text": "For God so loved, &c.--What proclamation…" }
+  "16": { "source": "jfb", "text": "For God so loved, etc.--What proclamation…" }
 }
 ```
 
@@ -60,4 +60,7 @@ What it cleans up:
   introduction is used as verse 1.
 - Gill's footnote markers like `(a)` are removed, along with the trailing paragraphs
   that list his Latin and Hebrew sources.
+- Characters the source mangled in transit are put back: `Ã&brvbr` is `æ`
+  ("Cæsarea"), `Ã†` is `Æ`, `Ã¶` is `ö` and `Â£` is `£`.
+- The commentaries' `&c.` is written `etc.`, as readers know it today.
 - Whitespace is normalised.

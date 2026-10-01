@@ -85,11 +85,11 @@
 .who-name { font-weight: 700; color: var(--navy); }
 a.who-name { text-decoration-color: var(--g); text-underline-offset: 2px; }
 a.who-name:hover { color: var(--g); }
+/* Holds the reference's pill (scripture-refs.js). */
 .who-ref {
   justify-self: start;
-  padding: 1px 8px; border-radius: 6px;
-  font-size: .74rem; font-weight: 600;
-  color: #7a5a1c; background: rgb(198 146 46 / 10%); border: 1px solid rgb(198 146 46 / 25%);
+  font-size: .8rem; font-weight: 600;
+  color: #7a5a1c;
 }
 
 .lesson { padding: 10px 14px; border-radius: 10px; background: var(--g-soft); border-left: 3px solid var(--g); font-weight: 500; }

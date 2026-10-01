@@ -473,49 +473,11 @@ splashDialog.addEventListener("pointerup", async (event) => {
     bibleTrivia.open({ force: true });
 });
 
-// Verse popup: a Bible reference in a Did You Know card or a Bible saying opens
-// that passage in the search results panel, shown as a modal that any tap closes.
-const didYouKnow = document.getElementById("did-you-know");
-const bibleSayings = document.getElementById("bible-sayings");
-const verseDialog = document.getElementById("verse-dialog");
-const verseResults = document.getElementById("verse-results");
-verseResults.setAttribute("media-base", MEDIA_BASE_URL);
-let verseClosing = false;
-let verseGeneration = 0;
-
-function openVerseDialog() {
-    if (verseDialog.open) return;
-    verseDialog.showModal();
-    if (!reducedMotionQuery.matches) popDialog(verseDialog, "open");
-}
-
-async function showVerse(reference) {
-    const generation = ++verseGeneration;
-    openVerseDialog();
-    verseResults.loading("Loading Bible verses…");
-    try {
-        const parsed = parseBibleReference(reference);
-        await loadBibleBookSuggestions();
-        if (generation !== verseGeneration || !verseDialog.open) return;
-        const bookName = bibleBooks.find((book) =>
-            book.toLocaleLowerCase() === parsed.bookName.toLocaleLowerCase(),
-        );
-        if (!bookName) {
-            verseResults.showMessage(`${reference} could not be found in this Bible.`);
-            return;
-        }
-        const rows = getVerses(bookName, parsed.chapter, parsed.verses);
-        if (!rows.length) {
-            verseResults.showMessage(`No verses found for ${reference}.`);
-            return;
-        }
-        verseResults.showVerses(rows);
-    } catch (error) {
-        if (generation !== verseGeneration) return;
-        console.warn(`Verse lookup failed for ${reference}:`, error);
-        verseResults.showMessage("Bible verses could not be loaded. Please try again.");
-    }
-}
+// Verse popup: every Bible reference on the page is a pill (a fact, a saying,
+// today's question, the blueprint, an explanation, the bookmarks), and a tap
+// on one opens the passage in <verse-popup> on top of whatever is open
+// (apps/components/scripture-refs.js and verse-popup.js). It uses the
+// database the search opens.
 
 // Bookmarks: holding a verse, a fact or a saying saves it (each component keeps
 // its own list), and holding the DG emblem opens them all in the bookmarks
@@ -731,37 +693,6 @@ bookmarksDialog.addEventListener("cancel", (event) => {
 bookmarksClose.addEventListener("click", closeBookmarks);
 bookmarksDialog.addEventListener("click", (event) => {
     if (event.target === bookmarksDialog) closeBookmarks();
-});
-
-async function closeVerse() {
-    if (!verseDialog.open || verseClosing) return;
-    verseClosing = true;
-    verseGeneration++;
-    if (!reducedMotionQuery.matches) await popDialog(verseDialog, "close");
-    verseDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-    verseDialog.close();
-    verseResults.reset();
-    verseClosing = false;
-}
-
-// A reference in a fact or a saying, on the page or among the bookmarks, opens
-// the passage on top. A saying's popup, like the bookmarks popup, stays open
-// underneath; closing the passage returns to it.
-for (const source of [didYouKnow, bibleSayings, bookmarkFacts, bookmarkSayings]) {
-    source.addEventListener("verse-request", (event) => {
-        showVerse(event.detail.reference);
-    });
-}
-
-// Escape would close instantly; route it through the closing animation instead.
-verseDialog.addEventListener("cancel", (event) => {
-    event.preventDefault();
-    closeVerse();
-});
-// A click or tap anywhere closes it, except on the panel's own buttons.
-verseDialog.addEventListener("click", (event) => {
-    if (event.composedPath().some((node) => node.nodeName === "BUTTON")) return;
-    closeVerse();
 });
 
 // Help: "Help" in the menu opens a guide to the page's gestures. Unlike the

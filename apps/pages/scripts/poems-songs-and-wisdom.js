@@ -13,7 +13,7 @@
  * its hash, so the songs keep their links.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/poems-songs-and-wisdom.json';
 
@@ -345,8 +345,16 @@ export async function start(view) {
     ...kind.groups.map(section),
   ];
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.kinds.Poems), 'poems'),
+      h('li', {}, h('b', {}, t.kinds.Songs), 'songs'),
+      h('li', {}, h('b', {}, t.kinds.Wisdom), 'wisdom')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Poems, Songs and Wisdom'),
       h('p', { class: 'lede' },
         'The poetry of the Bible, written to be read aloud, sung and remembered: the poems of the ' +
@@ -358,12 +366,8 @@ export async function start(view) {
       h('p', { class: 'lede' },
         `Here are ${t.kinds.Poems} poems, ${t.kinds.Songs} songs and ${t.kinds.Wisdom} pieces of ` +
         'wisdom, among the best known and most loved.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.kinds.Poems), 'poems'),
-        h('li', {}, h('b', {}, t.kinds.Songs), 'songs'),
-        h('li', {}, h('b', {}, t.kinds.Wisdom), 'wisdom')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     ...data.kinds.flatMap(part),
     empty);

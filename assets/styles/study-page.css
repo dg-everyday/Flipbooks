@@ -176,12 +176,16 @@ main {
 
 .result-count { margin: 22px 2px 10px; font-weight: 600; color: var(--muted); }
 
-/* scripture reference chips */
-.refs { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 0; padding: 0; list-style: none; }
-.refs li {
-  padding: 1px 8px; border-radius: 6px;
-  font-size: .74rem; font-weight: 600; letter-spacing: .01em;
-  color: #7a5a1c; background: rgb(198 146 46 / 10%); border: 1px solid rgb(198 146 46 / 25%);
+/* Scripture references are pills that open the passage in a popup
+   (apps/components/scripture-refs.js, which supplies the pill itself). In
+   running text they take the page's gold-brown; in a caption, its colour. */
+p, li, dd { --scripture-ref-color: #7a5a1c; }
+figcaption, .teaching-ref, .bp-ref, .who-ref, .moment-ref { --scripture-ref-color: currentColor; }
+
+/* a row of scripture references */
+.refs {
+  display: flex; flex-wrap: wrap; gap: 8px 6px; margin: 10px 0 0; padding: 0; list-style: none;
+  font-size: .86rem; font-weight: 600; letter-spacing: .01em;
 }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
@@ -222,6 +226,73 @@ main {
 }
 .stats li { display: flex; align-items: baseline; gap: 8px; color: rgb(243 231 210 / 80%); font-size: .95rem; }
 .stats b { font: 400 2.1rem/1 var(--display); color: var(--gold-light); }
+
+/* ---------------------------------------------------------------- filter menu
+   The hero shows its title, its words and the search; the counts and filters
+   wait behind a funnel in its top-right corner, in a menu that pops up over
+   the page (filterMenu() in apps/pages/scripts/study-utils.js). */
+
+.hero:has(> .filter-toggle) :is(h1, .eyebrow) { margin-right: 54px; }
+/* White on red, like the round play buttons on the home page (--action there). */
+.filter-toggle {
+  position: absolute; top: 20px; right: 20px; z-index: 1;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; padding: 0;
+  border: 0; border-radius: 50%;
+  color: var(--action-ink, #fff);
+  background: var(--action, #c62828);
+  box-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.filter-toggle svg { width: 22px; height: 22px; transition: transform .2s ease; }
+.filter-toggle:hover,
+.filter-toggle[aria-expanded="true"] { background: var(--action-hover, #a91f1f); }
+.filter-toggle:hover svg { transform: scale(1.08); }
+.filter-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+/* A dot while a filter narrows the list, so a closed menu never hides that. */
+.filter-toggle.is-filtering::after {
+  content: ''; position: absolute; top: 5px; right: 5px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold-light); box-shadow: 0 0 0 2px var(--navy);
+}
+
+.filter-menu {
+  /* Placed by script under the funnel; these undo the popover's centring. */
+  position: absolute; inset: auto; margin: 0;
+  max-height: min(72vh, 640px); overflow: auto; overscroll-behavior: contain;
+  padding: 14px 18px 20px;
+  border: 1px solid rgb(225 182 93 / 40%); border-radius: 18px;
+  color: var(--cream);
+  /* The hero's own background (the blueprint's grid, say): the menu sits in it. */
+  background: inherit;
+  box-shadow: 0 18px 44px rgb(0 27 52 / 45%);
+}
+.filter-menu-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.filter-menu-title {
+  margin: 0;
+  font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gold-light);
+}
+.filter-menu-close {
+  display: grid; place-items: center;
+  width: 36px; height: 36px; margin-right: -8px; padding: 0;
+  border: 0; border-radius: 50%;
+  font: 400 1.6rem/1 var(--body); color: var(--cream);
+  background: none; cursor: pointer;
+}
+.filter-menu-close:hover { background: rgb(255 255 255 / 12%); }
+.filter-menu-close:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
+.filter-menu .stats { margin: 6px 0 16px; }
+/* Without popovers, the menu opens in the hero, under the search. */
+.filter-menu.is-inline {
+  position: static; margin-top: 16px;
+  background: rgb(255 255 255 / 5%); box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .filter-toggle, .filter-toggle svg { transition: none; }
+  .filter-toggle:hover svg { transform: none; }
+}
 
 /* ---------------------------------------------------------------- in-place detail panel
    A panel that opens inside a grid, directly under the row of the tile that
@@ -308,6 +379,8 @@ main {
   .panel { padding: 16px; }
   .row-panel { padding: 18px 14px 16px; }
   .stats b { font-size: 1.8rem; }
+  .filter-toggle { top: 14px; right: 14px; }
+  .filter-menu { padding: 12px 14px 16px; border-radius: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -13,7 +13,7 @@
  * the map box says so and the list of places stays readable.
  */
 
-import { h, fetchJson, refList, para } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, refList, para, filterMenu } from './study-utils.js?v=20261002-3';
 
 const PEOPLE_DIR = 'assets/peoples/';
 
@@ -270,14 +270,17 @@ function renderList(view, people, navigate) {
   const legend = h('ul', { class: 'legend' },
     GROUPS.map(g => h('li', { class: `g-${g.key}` }, g.name)));
 
+  const filters = filterMenu(chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Peoples of the Bible'),
       h('p', { class: 'lede' },
         'The nations and tribes of Scripture — where they came from, where they lived, ' +
         'how they shaped Israel’s story, and who they are today.'),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     h('section', { class: 'panel overview' },
       h('div', { class: 'panel-head' },
         h('h2', {}, 'Where they lived'),

@@ -29,7 +29,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/study-page.css?v=20260927-1"
+            href="../../assets/styles/study-page.css?v=20261002-3"
         />
         <link
             rel="stylesheet"
@@ -68,7 +68,7 @@
 
         <!-- A plain page: no script, no data file. Scripture is quoted word for
              word from the KJV; everything else is our own words. -->
-        <main class="mission">
+        <main class="mission" data-scripture>
             <section class="hero mission-hero" aria-labelledby="mission-title">
                 <img
                     class="mission-emblem"
@@ -294,5 +294,8 @@
         <footer class="page-footer">
             Scripture quotations from the King James Version.
         </footer>
+
+        <!-- The references in [data-scripture] become pills that open the passage. -->
+        <script type="module" src="../components/scripture-refs.js?v=20261002-1"></script>
     </body>
 </html>

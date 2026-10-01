@@ -1,7 +1,15 @@
 let db = null;
 let sqlJsLoading = null;
+let databaseLoading = null;
 
 const SQL_JS_BASE_URL = "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/";
+
+// The database sits beside this script's folder, so it is found from any
+// page: index.html loads this script, and the Bible passage popup on the
+// study pages (apps/components/verse-popup.js) adds it when first needed.
+const DATABASE_URL = document.currentScript
+    ? new URL("../db/dailygrace.db", document.currentScript.src).href
+    : new URL("assets/db/dailygrace.db", document.baseURI).href;
 
 // ============================================================
 // Initialize sql.js
@@ -51,13 +59,25 @@ function loadSqlJs() {
     return sqlJsLoading;
 }
 
-async function initDatabase() {
+// Opened once and shared: the search and the passage popup both use it.
+function initDatabase() {
+    if (!databaseLoading) {
+        databaseLoading = openBibleDatabase().catch(function (error) {
+            // Allow a later call to try again.
+            databaseLoading = null;
+            throw error;
+        });
+    }
+    return databaseLoading;
+}
+
+async function openBibleDatabase() {
 
     // Load sql.js and the database side by side
 
     const [SQL, response] = await Promise.all([
         loadSqlJs(),
-        fetch("assets/db/dailygrace.db", {
+        fetch(DATABASE_URL, {
             cache: "force-cache",
         }),
     ]);

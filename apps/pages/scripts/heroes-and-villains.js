@@ -8,7 +8,7 @@
  * #david in the URL opens David.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/heroes-and-villains.json';
 
@@ -233,17 +233,21 @@ export async function start(view) {
       para(SIDES[side].intro, 'side-intro')),
     h('div', { class: 'person-grid' }, people.map(p => tile(p, toggle))));
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.heroes), 'heroes'),
+      h('li', {}, h('b', {}, t.villains), 'villains')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Heroes and Villains'),
       h('p', { class: 'lede' },
         'The people of the Bible who stood for God and those who stood against him — their stories, ' +
         'their defining moments, and what they teach us. Tap anyone to read their story.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.heroes), 'heroes'),
-        h('li', {}, h('b', {}, t.villains), 'villains')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     section('hero', data.heroes),
     section('villain', data.villains),

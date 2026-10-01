@@ -10,7 +10,7 @@
  * (rowExpander in study-utils.js). #no-other-gods in the URL opens it.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/commandments-of-god.json';
 
@@ -280,20 +280,24 @@ export async function start(view) {
       h('div', { class: 'cm-grid' }, members.map(e => tile(e, toggle))));
   };
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.entries), 'commandments'),
+      h('li', {}, h('b', {}, t.old), 'Old Testament'),
+      h('li', {}, h('b', {}, t.new), 'New Testament')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Commandments of God'),
       h('p', { class: 'lede' },
         'The Ten Commandments first, then the two Jesus called the greatest, the commands he gave his '
         + 'followers, wisdom for ordinary days from the law and the prophets, and what the apostles taught '
         + 'the first churches. Each one shows where it comes from, what it means, and one step to take '
         + 'today. Tap any one to read it.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.entries), 'commandments'),
-        h('li', {}, h('b', {}, t.old), 'Old Testament'),
-        h('li', {}, h('b', {}, t.new), 'New Testament')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     ...data.groups.map(section),
     empty);

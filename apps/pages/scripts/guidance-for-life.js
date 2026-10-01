@@ -16,7 +16,7 @@
  * its PDF.
  */
 
-import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20260927-1';
+import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from '../../components/card-bookmarks.js?v=20260927-1';
@@ -320,19 +320,23 @@ export async function start(view) {
       h('div', { class: 'gl-grid' }, members.map(t => tile(t, toggle))));
   };
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, tot.topics), 'questions'),
+      h('li', {}, h('b', {}, tot.teachings), 'passages'),
+      h('li', {}, h('b', {}, data.voices.length), 'voices')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Questions We All Ask'),
       h('p', { class: 'lede' },
         'From worry and anger to money, marriage, grief and what comes after, each answered by the ' +
         'whole of Scripture: the teaching of Jesus, the prophets, the apostles, the wisdom books and ' +
         'the Law. Tap a question to read it; hold it for half a second to bookmark it.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, tot.topics), 'questions'),
-        h('li', {}, h('b', {}, tot.teachings), 'passages'),
-        h('li', {}, h('b', {}, data.voices.length), 'voices')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     ...data.sections.map(section),
     empty,

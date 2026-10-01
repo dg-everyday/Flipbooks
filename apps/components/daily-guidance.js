@@ -1,11 +1,15 @@
 /**
  * <daily-guidance> — today's question from Questions We All Ask on a navy card, as a web component.
  *
- * Shows the Daily Grace emblem, the "Today's Question" heading and one
+ * Shows the Daily Grace emblem, the "Today's Guiding Question" heading and one
  * topic from guidance-for-life.json: its question, a short answer, one verse,
  * one thing to try, and a link that opens the topic on the Questions We All Ask
- * page. A different topic is picked at random each time the page is opened,
- * and again when the browser brings the page back from its back/forward cache.
+ * page. A round button in the top-right corner plays or pauses the topic's
+ * narration, <audio-base><id>.webm; the file is only requested when the button
+ * is first pressed, and a new topic stops it. Its Bible references are pills
+ * that open the passage (scripture-refs.js). A different topic is picked at
+ * random each time the page is opened, and again when the browser brings the
+ * page back from its back/forward cache.
  * The last topic shown is remembered in localStorage (when it is available) so
  * the same one never comes up twice in a row.
  *
@@ -25,12 +29,16 @@
  *                  Default: assets/guidance-for-life.json
  *   page-href      the Questions We All Ask page; the topic's id is added as the
  *                  hash. Default: apps/pages/guidance-for-life.html
+ *   audio-base     where the narrations are; the topic's id and .webm are added.
+ *                  Default: https://dailygrace.faith/media/audio/questions-we-all-ask/
  *   bookmarks      Present: no card; show the bookmarked topics, newest first.
  *                  Call showBookmarks() to bring the list up to date.
  *
  * Properties   topic (read-only)  the topic shown, or null until it loads
  *              bookmarks (read-only)  the bookmarked topic ids, newest first
+ *              playing (read-only)  whether the narration is playing
  * Methods      next()  show another topic at random
+ *              play(), pause()  control the narration
  *              showBookmarks()  show the bookmarked topics, newest first
  *              bookmarkedItems()  resolves to the bookmarked topics themselves,
  *                                 newest first, fetching the file if need be
@@ -54,15 +62,22 @@ import { registerFonts } from '../../assets/scripts/fonts.js';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260927-1';
+import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
 
 const DEFAULT_SRC = 'assets/guidance-for-life.json';
 const DEFAULT_PAGE = 'apps/pages/guidance-for-life.html';
+const DEFAULT_AUDIO_BASE = 'https://dailygrace.faith/media/audio/questions-we-all-ask/';
 // The id of the topic shown last, so the next visit shows a different one.
 const LAST_KEY = 'dailygrace:guidance:last';
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const EMBLEM_URL = asset('../../assets/images/dg-icon-02-flat-256.webp');
+
+// Line-art icons, matching the play button on the poster (poster-card.js).
+const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
+const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
 
 // Shared with the Questions We All Ask page (guidance-for-life.js), which uses the same key.
 const bookmarks = bookmarkStore('dailygrace:bookmarks:guidance',
@@ -137,7 +152,28 @@ const STYLES = /* css */ `
   /* A navy glow would not show on the navy card; removing glows cream. The
      ribbon is gold, set in from the rounded corner. */
   article.card.bookmarked { --glow: 243 231 210; }
-  article.card.bookmarked::after { right: 28px; background: var(--guidance-gold); }
+  article.card.bookmarked::after { right: 72px; background: var(--guidance-gold); }
+
+  /* Plays the topic's narration: the red round button of the poster's
+     narration (poster-card.js), from the page's shared --action colours. */
+  .audio {
+    position: absolute; top: 16px; right: 16px; z-index: 2;
+    display: grid; place-items: center;
+    width: 42px; height: 42px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: var(--action, #c62828); color: var(--action-ink, #fff);
+    box-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
+    cursor: pointer;
+    transition: background-color .15s ease;
+  }
+  .audio svg {
+    display: block; width: 18px; height: 18px;
+    transition: transform .2s ease;
+  }
+  .audio:hover,
+  .audio[aria-pressed="true"] { background: var(--action-hover, #a91f1f); }
+  .audio:hover svg { transform: scale(1.08); }
+  .audio:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
   .emblem {
     display: grid;
@@ -316,12 +352,16 @@ const STYLES = /* css */ `
 
   @media (max-width: 650px) {
     article.card { padding: 27px 23px; }
+    .audio { top: 12px; right: 12px; width: 38px; height: 38px; }
+    .audio svg { width: 16px; height: 16px; }
+    article.card.bookmarked::after { right: 62px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .more { transition: none; }
-    .more:hover { transform: none; }
+    .more, .audio, .audio svg { transition: none; }
+    .more:hover, .audio:hover svg { transform: none; }
   }
-${BOOKMARK_STYLES}`;
+${BOOKMARK_STYLES}
+${PILL_STYLES}`;
 
 /** localStorage, which can be missing or throw (private windows, blocked storage). */
 function remember(id) {
@@ -340,7 +380,7 @@ function pickTopic(topics, avoid) {
 const tidy = (text) => (text ?? '').replace(/\s+/g, ' ').trim();
 
 export class DailyGuidance extends HTMLElement {
-  static observedAttributes = ['guidance-src', 'page-href'];
+  static observedAttributes = ['guidance-src', 'page-href', 'audio-base'];
 
   #root;
   #els;
@@ -350,6 +390,7 @@ export class DailyGuidance extends HTMLElement {
   #loading = null;
   #hold;
   #listHold;
+  #audio = null;
   // Coming back with the Back button can restore the page from the
   // back/forward cache without reloading it; show a new topic then too.
   #onPageShow = (event) => {
@@ -364,10 +405,11 @@ export class DailyGuidance extends HTMLElement {
       <article class="card bookmarkable" aria-labelledby="title">
         <span class="star top" aria-hidden="true">✦</span>
         <span class="star bottom" aria-hidden="true">✦</span>
+        <button class="audio" type="button" aria-pressed="false" hidden></button>
         <div class="emblem">
           <img src="${EMBLEM_URL}" alt="Daily Grace" width="78" height="78" />
         </div>
-        <h3 class="title" id="title">Today's Question</h3>
+        <h3 class="title" id="title">Today's Guiding Question</h3>
         <p class="section" hidden></p>
         <p class="question" aria-live="polite">Loading today's question…</p>
         <p class="summary" hidden></p>
@@ -388,21 +430,28 @@ export class DailyGuidance extends HTMLElement {
       section: $('.section'), question: $('.question'), summary: $('.summary'),
       figure: $('figure'), verse: $('blockquote'), reference: $('figcaption'),
       practice: $('.practice'), practiceText: $('.practice span'), more: $('.more'),
+      audio: $('.audio'),
       card: $('.card'), header: $('.bookmarks-header'), summaryLine: $('.bookmarks-summary'),
       list: $('.list'),
     };
     this.#status = $('[role="status"]');
+    this.#els.audio.addEventListener('click', () => {
+      if (this.playing) this.pause();
+      else this.play();
+    });
+    this.#syncAudioButton();
 
     // Holding the card bookmarks today's topic; holding a topic in the list
-    // takes its bookmark off (and puts it back). The links are not held.
+    // takes its bookmark off (and puts it back). The links and the play
+    // button are not held.
     this.#hold = new CardHold(this.#els.card, {
       selector: '.card',
-      exclude: 'a',
+      exclude: 'a, button',
       onHold: (card) => { if (this.#topic) this.#toggle(this.#topic, card); },
     });
     this.#listHold = new CardHold(this.#els.list, {
       selector: '.topic',
-      exclude: 'a',
+      exclude: 'a, button',
       onHold: (card) => {
         const topic = this.#topics.find((t) => t.id === card.dataset.id);
         if (topic) this.#toggle(topic, card);
@@ -424,15 +473,51 @@ export class DailyGuidance extends HTMLElement {
     bookmarks.removeEventListener('change', this.#syncBookmarks);
     this.#hold.cancel();
     this.#listHold.cancel();
+    this.#stopAudio();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue === newValue || !this.isConnected) return;
-    this.#load();
+    // A new audio base only changes where the next play reads from.
+    if (name === 'audio-base') this.#stopAudio();
+    else this.#load();
   }
 
   get topic() {
     return this.#topic;
+  }
+
+  get playing() {
+    return Boolean(this.#audio) && !this.#audio.paused;
+  }
+
+  /** Play the topic's narration, from where it was paused. */
+  play() {
+    if (!this.#topic) return;
+    if (!this.#audio) {
+      const audio = new Audio(this.#audioUrl(this.#topic.id));
+      const sync = () => { if (audio === this.#audio) this.#syncAudioButton(); };
+      audio.addEventListener('play', sync);
+      audio.addEventListener('pause', sync);
+      audio.addEventListener('ended', () => {
+        audio.currentTime = 0;
+        sync();
+      });
+      audio.addEventListener('error', () => {
+        if (audio !== this.#audio) return;
+        this.#audio = null; // the next press tries again
+        this.#syncAudioButton();
+        this.#status.textContent = 'The narration could not be played. Please try again later.';
+      });
+      this.#audio = audio;
+    }
+    this.#audio.play().catch((error) => {
+      if (error.name !== 'AbortError') console.warn("Today's guiding question could not be played:", error);
+    });
+  }
+
+  pause() {
+    this.#audio?.pause();
   }
 
   /** The bookmarked topic ids, newest first. */
@@ -472,7 +557,7 @@ export class DailyGuidance extends HTMLElement {
     if (!topics.length) {
       const message = document.createElement('p');
       message.className = 'message';
-      message.textContent = 'No bookmarked questions yet. Hold “Today’s Question”, '
+      message.textContent = 'No bookmarked questions yet. Hold “Today’s Guiding Question”, '
         + 'or a question on the Questions We All Ask page, for half a second to bookmark it.';
       els.list.replaceChildren(message);
       this.#status.textContent = message.textContent;
@@ -485,6 +570,32 @@ export class DailyGuidance extends HTMLElement {
 
   get #src() {
     return new URL(this.getAttribute('guidance-src') || DEFAULT_SRC, document.baseURI).href;
+  }
+
+  #audioUrl(id) {
+    const base = new URL(this.getAttribute('audio-base') || DEFAULT_AUDIO_BASE, document.baseURI);
+    return new URL(`${encodeURIComponent(id)}.webm`, base).href;
+  }
+
+  /** Stop the narration and let it go, so the next play starts afresh. */
+  #stopAudio() {
+    const audio = this.#audio;
+    if (!audio) return;
+    this.#audio = null;
+    audio.pause();
+    audio.removeAttribute('src');
+    audio.load();
+    this.#syncAudioButton();
+  }
+
+  #syncAudioButton() {
+    const button = this.#els.audio;
+    const playing = this.playing;
+    const label = playing ? 'Pause the narration' : 'Play the narration';
+    button.setAttribute('aria-pressed', String(playing));
+    button.setAttribute('aria-label', label);
+    button.title = label;
+    button.innerHTML = playing ? PAUSE_ICON : PLAY_ICON;
   }
 
   #pageHref(id) {
@@ -536,6 +647,7 @@ export class DailyGuidance extends HTMLElement {
       practice.prepend(line('b', '', 'Try this:'));
       card.append(practice);
     }
+    linkScripture(card);
     const link = line('a', 'topic-link', 'Read the full answer →');
     link.href = this.#pageHref(topic.id);
     link.setAttribute('aria-label', `Read the full answer: ${topic.name}`);
@@ -558,6 +670,8 @@ export class DailyGuidance extends HTMLElement {
         this.#loading = null;          // a bookmarks list can ask again
         this.#topic = null;
         this.#topics = [];
+        this.#stopAudio();
+        this.#els.audio.hidden = true;
         this.#els.question.textContent = "Today's question is unavailable. Please try again later.";
         const message = document.createElement('p');
         message.className = 'message';
@@ -569,23 +683,28 @@ export class DailyGuidance extends HTMLElement {
 
   #show(topic) {
     const els = this.#els;
+    // The narration belongs to the topic it was started on.
+    if (topic !== this.#topic) this.#stopAudio();
     this.#topic = topic;
     remember(topic.id);
     els.section.textContent = topic.section || '';
     els.section.hidden = !topic.section;
     els.question.textContent = topic.question || topic.name;
     els.summary.textContent = tidy(topic.summary);
+    linkScripture(els.summary);
     els.summary.hidden = !topic.summary;
     // The first teaching leads each topic (Jesus' words, where he spoke to it).
     const teaching = topic.teachings?.[0];
     els.verse.textContent = tidy(teaching?.text);
-    els.reference.textContent = teaching?.reference || '';
+    els.reference.replaceChildren(refPill(teaching?.reference || ''));
     els.figure.hidden = !teaching?.text;
     els.practiceText.textContent = tidy(topic.practice);
+    linkScripture(els.practiceText);
     els.practice.hidden = !topic.practice;
     els.more.href = this.#pageHref(topic.id);
     els.more.setAttribute('aria-label', `Read the full answer: ${topic.name}`);
     els.more.hidden = false;
+    els.audio.hidden = false;
     this.#syncBookmarks();
   }
 }

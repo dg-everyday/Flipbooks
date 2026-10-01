@@ -3,10 +3,10 @@
  *
  * Shows the guide's icon, the "Following Today's God Blueprint" heading and one item from
  * following-gods-blueprint.json: its sheet, name and short answer, one verse,
- * one step to build it, the question to ask yourself, a link that opens the
- * item on the Following God's Blueprint page, and a link to the blueprint
- * test. A different item is picked at random each time the page is opened,
- * and again when the browser brings the page back from its back/forward cache.
+ * one step to build it, the question to ask yourself and a link that opens
+ * the item on the Following God's Blueprint page. A different item is picked
+ * at random each time the page is opened, and again when the browser brings
+ * the page back from its back/forward cache.
  * The last item shown is remembered in localStorage (when it is available) so
  * the same one never comes up twice in a row.
  *
@@ -58,7 +58,6 @@ import {
 
 const DEFAULT_SRC = 'assets/following-gods-blueprint.json';
 const DEFAULT_PAGE = 'apps/pages/following-gods-blueprint.html';
-const TEST_ID = 'blueprint-test';
 // The id of the item shown last, so the next visit shows a different one.
 const LAST_KEY = 'dailygrace:blueprint:last';
 
@@ -269,18 +268,7 @@ const STYLES = /* css */ `
     transition: background-color .15s ease, transform .15s ease;
   }
   .more:hover { background: #f0c66c; transform: translateY(-1px); }
-  .test {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    color: var(--blueprint-cream);
-    font: 700 .95rem/1.2 'Strait', 'Roboto', sans-serif;
-    text-decoration: underline;
-    text-decoration-color: rgb(225 182 93 / 60%);
-    text-underline-offset: 4px;
-  }
-  .test:hover { color: #fff; text-decoration-color: currentColor; }
-  .more:focus-visible, .test:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .more:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
   /* A blue glow would not show on the blue card; removing glows cream. The
      ribbon is gold, set in from the rounded corner and clear of the corner mark. */
@@ -422,7 +410,6 @@ export class GodsBlueprint extends HTMLElement {
         </div>
         <p class="links">
           <a class="more" hidden>Open the full plan <span aria-hidden="true">→</span></a>
-          <a class="test" hidden>Take the blueprint test</a>
         </p>
       </article>
       <section class="saved" aria-label="Bookmarked blueprints">
@@ -438,7 +425,7 @@ export class GodsBlueprint extends HTMLElement {
       sheet: $('.sheet'), number: $('.number'), part: $('.part'), name: $('.name'),
       summary: $('.summary'), figure: $('figure'), verse: $('blockquote'), reference: $('figcaption'),
       steps: $('.steps'), build: $('.build span'), buildLine: $('.build'),
-      ask: $('.ask span'), askLine: $('.ask'), more: $('.more'), test: $('.test'),
+      ask: $('.ask span'), askLine: $('.ask'), more: $('.more'),
       card: $('.card'), header: $('.bookmarks-header'), summaryLine: $('.bookmarks-summary'),
       list: $('.list'),
     };
@@ -647,8 +634,6 @@ export class GodsBlueprint extends HTMLElement {
     els.more.href = this.#pageHref(item.id);
     els.more.setAttribute('aria-label', `Open the full plan: ${item.name}`);
     els.more.hidden = false;
-    els.test.href = this.#pageHref(TEST_ID);
-    els.test.hidden = false;
     this.#syncBookmarks();
   }
 }

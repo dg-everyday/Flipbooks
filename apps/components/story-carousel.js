@@ -19,8 +19,9 @@
  *             added as ?story=<id>. Default: apps/pages/stories.html
  *   heading   Text beside the icon above the row. Default: Stories
  *
- * Each story in the list is { id, cover_page, title, description }, plus
- * optional "audio" and "story-book" URLs. Each one given shows as a pill over
+ * Each story in the list is { id, sequence, cover_page, title, description },
+ * plus optional "audio" and "story-book" URLs. The cards are shown in
+ * ascending sequence order. Each one given shows as a pill over
  * the cover. AUDIO plays the story right here, turning into a pause button
  * while it plays; moving on to another story stops it. PDF opens the book in a
  * new tab.
@@ -57,6 +58,12 @@ const DRAG_THRESHOLD = 6;
 // A drag moves on a card once it covers this share of a card, or is flicked.
 const DRAG_COMMIT = 0.15;
 const FLICK_SPEED = 0.4; // px per ms
+
+// The order of the cards. The daily deploy reshuffles the numbers
+// (assets/scripts/update-stories-sequence.mjs); a story without one goes last,
+// and Array.sort keeps ties in file order.
+const sequenceOf = (story) =>
+  (Number.isFinite(story.sequence) ? story.sequence : Number.POSITIVE_INFINITY);
 
 // A clapperboard with a play mark, filled like the heading text.
 const STORIES_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
@@ -374,7 +381,9 @@ export class StoryCarousel extends HTMLElement {
       const response = await fetch(src);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
-      stories = (Array.isArray(data) ? data : []).filter((story) => story?.id && story?.cover_page);
+      stories = (Array.isArray(data) ? data : [])
+        .filter((story) => story?.id && story?.cover_page)
+        .sort((a, b) => sequenceOf(a) - sequenceOf(b));
     } catch (error) {
       console.error(`Unable to load stories from ${src}:`, error);
     }

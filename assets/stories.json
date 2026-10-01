@@ -1,6 +1,7 @@
 [
     {
         "id": "a-great-way-off",
+        "sequence": 4,
         "cover_page": "https://dailygrace.faith/media/stories/a-great-way-off/00.webp",
         "title": "The Father Who Ran",
         "description": "A Son Who Spent Everything, a Speech He Never Finished, and a Brother Who Stayed Outside.",
@@ -9,6 +10,7 @@
     },
     {
         "id": "all-things-new",
+        "sequence": 1,
         "cover_page": "https://dailygrace.faith/media/stories/all-things-new/00.webp",
         "title": "When God Makes Everything New",
         "description": "A New Heaven and a New Earth, a City Coming Down from God, and a River That Runs from the Throne",
@@ -17,6 +19,7 @@
     },
     {
         "id": "and-ruth-with-her",
+        "sequence": 8,
         "cover_page": "https://dailygrace.faith/media/stories/and-ruth-with-her/00.webp",
         "title": "Where You Go, I Will Go",
         "description": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean.",
@@ -25,6 +28,7 @@
     },
     {
         "id": "forbid-them-not",
+        "sequence": 7,
         "cover_page": "https://dailygrace.faith/media/stories/forbid-them-not/00.webp",
         "title": "Let the Children Come",
         "description": "Jesus, His Disciples, and the Young Children Brought to Him.",
@@ -33,6 +37,7 @@
     },
     {
         "id": "into-his-hand",
+        "sequence": 3,
         "cover_page": "https://dailygrace.faith/media/stories/into-his-hand/00.webp",
         "title": "Trusted, Framed, Trusted Again",
         "description": "Joseph in Potiphar's House, the Garment He Left Behind, and the Prison Where It Happened Again.",
@@ -41,6 +46,7 @@
     },
     {
         "id": "one-thing-thou-lackest",
+        "sequence": 6,
         "cover_page": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/00.webp",
         "title": "The Rich Man Who Walked Away",
         "description": "A Question About Eternal Life, the Look That Loved Him, and the One Thing He Could Not Give Up.",
@@ -49,6 +55,7 @@
     },
     {
         "id": "the-fourth-man-in-the-fire",
+        "sequence": 2,
         "cover_page": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/00.webp",
         "title": "The Fourth Man in the Fire",
         "description": "Three Hebrews, One Golden Image, and the Furnace on the Plain of Dura.",
@@ -57,6 +64,7 @@
     },
     {
         "id": "for-his-oaths-sake",
+        "sequence": 5,
         "cover_page": "https://dailygrace.faith/media/stories/for-his-oaths-sake/00.webp",
         "title": "The King Who Kept the Wrong Promise",
         "description": "A Birthday Supper, an Oath Sworn in Front of Everyone, and the Death of John the Baptist.",

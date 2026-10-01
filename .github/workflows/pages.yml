@@ -34,6 +34,9 @@ jobs:
         run: node assets/scripts/check-assets.mjs --warn-remote
       - name: Generate today's social image metadata
         run: node assets/scripts/update-social-image.mjs
+      # Reshuffle the story cards; seeded by the Manila date, so the order changes daily.
+      - name: Shuffle today's story sequence
+        run: node assets/scripts/update-stories-sequence.mjs
       - uses: actions/configure-pages@v5
       - name: Prepare website
         run: |

@@ -9,7 +9,7 @@
  * (rowExpander in study-utils.js). #the-lords-prayer in the URL opens it.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20261002-2';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/bible-prayers.json';
 
@@ -274,19 +274,23 @@ export async function start(view) {
       h('div', { class: 'pr-grid' }, members.map(e => tile(e, toggle))));
   };
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.entries), 'prayers'),
+      h('li', {}, h('b', {}, t.old), 'Old Testament'),
+      h('li', {}, h('b', {}, t.new), 'New Testament')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Prayers in the Bible'),
       h('p', { class: 'lede' },
         'The prayers Jesus taught and prayed, and the prayers of the men and women of Scripture: in joy '
         + 'and in fear, in the morning and at night, for themselves and for others. Read each one, see '
         + 'what it teaches, and find a way to pray it in your own day. Tap any one to read it.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.entries), 'prayers'),
-        h('li', {}, h('b', {}, t.old), 'Old Testament'),
-        h('li', {}, h('b', {}, t.new), 'New Testament')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     ...data.groups.map(section),
     empty);

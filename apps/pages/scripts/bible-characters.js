@@ -9,7 +9,7 @@
  * a tap on one opens that person; #moses in the URL opens Moses.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20261002-2';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/bible-characters.json';
 
@@ -274,19 +274,23 @@ export async function start(view) {
       h('div', { class: 'bc-grid' }, members.map(e => tile(e, toggle))));
   };
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.entries), 'people'),
+      h('li', {}, h('b', {}, t.old), 'Old Testament'),
+      h('li', {}, h('b', {}, t.new), 'New Testament')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Bible Characters'),
       h('p', { class: 'lede' },
         'The people who make up the Bible\'s story, from Adam to the first church: who they were, ' +
         'what they did, how they are connected, and why they matter. Tap anyone to read their story, ' +
         'and tap a family member to go to them.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.entries), 'people'),
-        h('li', {}, h('b', {}, t.old), 'Old Testament'),
-        h('li', {}, h('b', {}, t.new), 'New Testament')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     ...data.groups.map(section),
     empty);

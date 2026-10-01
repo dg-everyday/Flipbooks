@@ -15,7 +15,7 @@
  * #i-am-the-bread-of-life opens that saying; #john-6-35-40 opens that passage.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20261002-2';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/red-letter-quotes.json';
 const COMMENTARY = (book, chapter) => `assets/explanations/${book}/${chapter}.json`;
@@ -278,8 +278,9 @@ export async function start(view) {
     data.themes.map(th => chip('theme', th, th, t.themes[th])));
   const shelfChips = h('div', { class: 'chips', role: 'group', 'aria-label': 'Show one book' },
     data.shelves.map(sh => chip('shelf', sh.id, sh.name, t.shelves[sh.name])));
-  const controls = h('div', { class: 'chip-rows' }, modes, themeChips, shelfChips);
-  controls.addEventListener('click', e => {
+  // The two views stay in the hero; the theme and book chips go in its filter menu.
+  const controls = h('div', { class: 'chip-rows' }, themeChips, shelfChips);
+  const choose = e => {
     const c = e.target.closest('.chip, .mode-button');
     if (!c) return;
     if (c.dataset.filter === 'mode' && state.mode !== c.dataset.value) {
@@ -288,7 +289,9 @@ export async function start(view) {
     }
     state[c.dataset.filter] = c.dataset.value;
     apply();
-  });
+  };
+  modes.addEventListener('click', choose);
+  controls.addEventListener('click', choose);
 
   const count = h('p', { class: 'result-count', 'aria-live': 'polite' });
   const empty = h('p', { class: 'status', hidden: true }, 'Nothing matches that search.');
@@ -321,19 +324,24 @@ export async function start(view) {
           ch.passages.map(p => passageItem(passagesById.get(p.id), sayingsById, openSaying)))));
     }));
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.verses.toLocaleString()), 'verses in red'),
+      h('li', {}, h('b', {}, t.passages), 'passages'),
+      h('li', {}, h('b', {}, t.sayings), 'sayings explained')),
+    controls);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Red-Lettered Quotes'),
       h('p', { class: 'lede' },
         'In many Bibles the words of Jesus are printed in red, a custom that began with Louis ' +
         'Klopsch\'s red-letter New Testament of 1899. Here they are gathered in one place: the ' +
         'best-known sayings explained in plain words, and every red-letter word, book by book.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.verses.toLocaleString()), 'verses in red'),
-        h('li', {}, h('b', {}, t.passages), 'passages'),
-        h('li', {}, h('b', {}, t.sayings), 'sayings explained')),
       h('div', { class: 'finder' }, search),
-      controls),
+      modes,
+      filters.menu),
     count,
     sayingsView,
     allView,

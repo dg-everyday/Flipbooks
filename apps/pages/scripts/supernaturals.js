@@ -11,7 +11,7 @@
  * opens Lazarus, and #what-are-angels the first special topic.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash } from './study-utils.js?v=20261002-2';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/supernaturals.json';
 
@@ -327,22 +327,26 @@ export async function start(view) {
     }, icon(group, 'special-link-icon'), group, h('span', { class: 'chip-count' }, t.groups[group]))));
 
   const events = data.groups.filter(g => !special.has(g));
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.events), 'accounts'),
+      h('li', {}, h('b', {}, t.topics), 'special topics'),
+      h('li', {}, h('b', {}, t.old), 'Old Testament'),
+      h('li', {}, h('b', {}, t.new), 'New Testament')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Supernaturals and Prophecies'),
       h('p', { class: 'lede' },
         'Miracles, healings, the dead raised, demons cast out, the magic and sorcery the Bible ' +
         'warns against, and the prophecies God spoke and kept: what happened, why it matters, ' +
         'and what it teaches. Then two special topics: what the whole Bible says about angels, ' +
         'and about demons. Tap any one to read it.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.events), 'accounts'),
-        h('li', {}, h('b', {}, t.topics), 'special topics'),
-        h('li', {}, h('b', {}, t.old), 'Old Testament'),
-        h('li', {}, h('b', {}, t.new), 'New Testament')),
       shortcuts,
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     ...events.map(section),
     specialHead,

@@ -8,7 +8,7 @@
  * in the URL hash (#genesis), so it can be linked to and survives a reload.
  */
 
-import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20261002-2';
+import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/bible-books.json';
 const fmt = n => n.toLocaleString('en-US');
@@ -211,19 +211,23 @@ export async function start(view) {
         g.key_chapters.map(k => h('li', {}, h('b', {}, k.reference), ` ${k.note}`))),
       h('div', { class: 'book-grid' }, g.books.map(b => tile(b, maxVerses, toggle)))))));
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, fmt(t.books)), 'books'),
+      h('li', {}, h('b', {}, fmt(t.chapters)), 'chapters'),
+      h('li', {}, h('b', {}, fmt(t.verses)), 'verses')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Books of the Bible'),
       h('p', { class: 'lede' },
         'Sixty-six books written over some fifteen centuries, grouped the way they are read: ' +
         'the Law, History, Poetry, the Prophets, the Gospels and the Letters. Tap a book to ' +
         'see who wrote it, when, and what it is about.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, fmt(t.books)), 'books'),
-        h('li', {}, h('b', {}, fmt(t.chapters)), 'chapters'),
-        h('li', {}, h('b', {}, fmt(t.verses)), 'verses')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     ...sections,
     empty);

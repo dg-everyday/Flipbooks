@@ -54,6 +54,92 @@ export function para(text, cls) {
   return text ? h('p', { class: cls }, text) : null;
 }
 
+// A funnel, in the line style of the page's other icons. A fixed string.
+const FUNNEL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+  + 'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 4.5h17l-6.5 8v6l-4 2v-8z"/></svg>';
+const POPOVER = Object.prototype.hasOwnProperty.call(HTMLElement.prototype, 'popover');
+
+/**
+ * The hero's filter menu, so a page opens on its title, its words and its
+ * search, and the rest waits a tap away. Returns { button, menu }: the funnel
+ * button goes first in the hero (it sits in the top-right corner) and the menu
+ * last. The menu holds whatever is passed in, usually the page's counts and
+ * filter chips, and pops up under the button over the page; a tap outside it,
+ * its close button or Escape puts it away. It stays inside the hero in the
+ * document, so the page's own filter code finds its chips as before and the
+ * menu takes the hero's background.
+ *
+ * The button carries a dot while a filter narrows the list: while, in any
+ * group of chips, the one pressed is not the first ("All", "Everything").
+ * Browsers without popovers show the menu in the hero itself, under the button.
+ */
+export function filterMenu(...content) {
+  const id = 'filter-menu';
+  const button = h('button', {
+    type: 'button', class: 'filter-toggle', 'aria-label': 'Filters', title: 'Filters',
+    'aria-controls': id, 'aria-expanded': 'false'
+  });
+  button.innerHTML = FUNNEL_ICON;
+  const close = h('button', { type: 'button', class: 'filter-menu-close', 'aria-label': 'Close filters' }, '×');
+  const menu = h('div', { class: 'filter-menu', id, role: 'dialog', 'aria-label': 'Filters' },
+    h('div', { class: 'filter-menu-head' }, h('p', { class: 'filter-menu-title' }, 'Filters'), close),
+    content);
+
+  const isOpen = () => (POPOVER ? menu.matches(':popover-open') : !menu.hidden);
+  const hide = () => {
+    if (!isOpen()) return;
+    if (POPOVER) menu.hidePopover();
+    else { menu.hidden = true; button.setAttribute('aria-expanded', 'false'); }
+  };
+
+  // Under the button, right-aligned with the hero and no wider than it. The
+  // popover is in the top layer, where absolute positions are on the page.
+  function place() {
+    const hero = button.closest('.hero') || button.parentElement;
+    const area = hero.getBoundingClientRect();
+    const below = button.getBoundingClientRect().bottom + 10;
+    const width = Math.min(area.width, 640);
+    menu.style.width = `${width}px`;
+    menu.style.left = `${area.right - width + window.scrollX}px`;
+    menu.style.top = `${below + window.scrollY}px`;
+  }
+
+  if (POPOVER) {
+    menu.setAttribute('popover', 'auto');
+    button.setAttribute('popovertarget', id);
+    menu.addEventListener('beforetoggle', e => { if (e.newState === 'open') place(); });
+    menu.addEventListener('toggle', e => button.setAttribute('aria-expanded', String(e.newState === 'open')));
+    window.addEventListener('resize', () => { if (isOpen()) place(); });
+  } else {
+    menu.hidden = true;
+    menu.classList.add('is-inline');
+    button.addEventListener('click', () => {
+      menu.hidden = !menu.hidden;
+      button.setAttribute('aria-expanded', String(!menu.hidden));
+    });
+  }
+  close.addEventListener('click', () => { hide(); button.focus(); });
+  // A link in the menu (#blueprint-test) leads somewhere else on the page.
+  menu.addEventListener('click', e => { if (e.target.closest('a[href^="#"]')) hide(); });
+
+  const syncDot = () => {
+    const filtering = [...menu.querySelectorAll('[role="group"]')].some(group => {
+      // A group put away for now (another view's), not the closed menu itself.
+      const away = group.closest('[hidden]');
+      if (away && away !== menu) return false;
+      const chips = [...group.querySelectorAll('[aria-pressed]')];
+      return chips.findIndex(c => c.getAttribute('aria-pressed') === 'true') > 0;
+    });
+    button.classList.toggle('is-filtering', filtering);
+    button.setAttribute('aria-label', filtering ? 'Filters (some are on)' : 'Filters');
+  };
+  new MutationObserver(syncDot).observe(menu,
+    { subtree: true, attributes: true, attributeFilter: ['aria-pressed', 'hidden'] });
+  syncDot();
+
+  return { button, menu };
+}
+
 /**
  * Opens a detail panel inside a grid, directly under the row of the tile that
  * was clicked — never as a popup — and keeps only one open at a time. Used by

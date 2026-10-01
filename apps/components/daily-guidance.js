@@ -154,23 +154,24 @@ const STYLES = /* css */ `
   article.card.bookmarked { --glow: 243 231 210; }
   article.card.bookmarked::after { right: 72px; background: var(--guidance-gold); }
 
-  /* Plays the topic's narration: a gold ring on the navy card, filled while it plays. */
+  /* Plays the topic's narration: the red round button of the poster's
+     narration (poster-card.js), from the page's shared --action colours. */
   .audio {
     position: absolute; top: 16px; right: 16px; z-index: 2;
     display: grid; place-items: center;
     width: 42px; height: 42px; padding: 0;
-    border: 1.5px solid var(--guidance-gold); border-radius: 50%;
-    background: rgb(225 182 93 / 14%); color: var(--guidance-gold);
-    box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+    border: 0; border-radius: 50%;
+    background: var(--action, #c62828); color: var(--action-ink, #fff);
+    box-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
     cursor: pointer;
-    transition: background-color .15s ease, color .15s ease;
+    transition: background-color .15s ease;
   }
   .audio svg {
     display: block; width: 18px; height: 18px;
     transition: transform .2s ease;
   }
   .audio:hover,
-  .audio[aria-pressed="true"] { background: var(--guidance-gold); color: var(--guidance-navy); }
+  .audio[aria-pressed="true"] { background: var(--action-hover, #a91f1f); }
   .audio:hover svg { transform: scale(1.08); }
   .audio:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 

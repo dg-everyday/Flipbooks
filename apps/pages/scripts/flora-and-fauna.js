@@ -8,7 +8,7 @@
  * (rowExpander in study-utils.js). #olive in the URL opens the olive.
  */
 
-import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20261002-2';
+import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 
 const DATA = 'assets/flora-and-fauna.json';
 
@@ -253,17 +253,21 @@ export async function start(view) {
         h('div', { class: 'ff-grid' }, members.map(item => tile(item, toggle))));
     }));
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, t.plants), 'plants'),
+      h('li', {}, h('b', {}, t.animals), 'animals')),
+    chips);
+
   view.replaceChildren(
     h('section', { class: 'hero' },
+      filters.button,
       h('h1', {}, 'Flora and Fauna'),
       h('p', { class: 'lede' },
         'The plants and animals of the Bible: what they were used for, why they are in Scripture, ' +
         'who used them and why they still matter. Tap any one to read about it.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, t.plants), 'plants'),
-        h('li', {}, h('b', {}, t.animals), 'animals')),
       h('div', { class: 'finder' }, search),
-      chips),
+      filters.menu),
     count,
     section('plant', data.plants),
     section('animal', data.animals),

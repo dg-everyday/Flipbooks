@@ -19,7 +19,7 @@
  * its PDF.
  */
 
-import { h, fetchJson, para, rowExpander, followHash } from './study-utils.js?v=20261002-2';
+import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from '../../components/card-bookmarks.js?v=20260927-1';
@@ -431,24 +431,28 @@ export async function start(view) {
   const patternPanel = pattern(data.pattern);
   const testPanel = blueprintTest(data.test);
 
+  const filters = filterMenu(
+    h('ul', { class: 'stats' },
+      h('li', {}, h('b', {}, tot.items), 'parts of the plan'),
+      h('li', {}, h('b', {}, tot.verses), 'passages'),
+      h('li', {}, h('b', {}, tot.questions), 'test questions')),
+    chips,
+    h('p', { class: 'bp-hero-test' },
+      h('a', { href: `#${TEST_ID}`, class: 'bp-test-link' }, drawing(TEST_ICON, 'bp-link-icon'),
+        'Take the blueprint test'),
+      ' Does a decision or a resolution follow the Lord\'s plan?'));
+
   view.replaceChildren(
     h('section', { class: 'hero bp-hero' },
+      filters.button,
       h('p', { class: 'eyebrow' }, 'A study guide'),
       h('h1', {}, 'Following God\'s Blueprint'),
       h('p', { class: 'lede' },
         'The plan God has drawn for his people: the foundation of salvation, the heart of his law, what ' +
         'to do every day, how to solve problems his way, how to read the times, and how to be ready when ' +
         'Jesus comes. Tap any part of the plan to open it; hold it for half a second to bookmark it.'),
-      h('ul', { class: 'stats' },
-        h('li', {}, h('b', {}, tot.items), 'parts of the plan'),
-        h('li', {}, h('b', {}, tot.verses), 'passages'),
-        h('li', {}, h('b', {}, tot.questions), 'test questions')),
       h('div', { class: 'finder' }, search),
-      chips,
-      h('p', { class: 'bp-hero-test' },
-        h('a', { href: `#${TEST_ID}`, class: 'bp-test-link' }, drawing(TEST_ICON, 'bp-link-icon'),
-          'Take the blueprint test'),
-        ' Does a decision or a resolution follow the Lord\'s plan?')),
+      filters.menu),
     patternPanel,
     count,
     ...parts.map(partSection),

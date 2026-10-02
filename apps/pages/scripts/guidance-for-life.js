@@ -40,7 +40,7 @@ const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
 const DOWNLOAD_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // Builds a question's PDF; loaded, with jsPDF and the fonts, on the first download.
-const PDF_MODULE = '../../../assets/scripts/bookmarks-pdf.js?v=20261002-4';
+const PDF_MODULE = '../../../assets/scripts/bookmarks-pdf.js?v=20261002-5';
 
 const RIBBON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>';
 

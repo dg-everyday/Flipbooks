@@ -4,7 +4,10 @@
  * Shows the guide's icon, the "Following Today's God Blueprint" heading and one item from
  * following-gods-blueprint.json: its sheet, name and short answer, one verse,
  * one step to build it, the question to ask yourself and a link that opens
- * the item on the Following God's Blueprint page. Its Bible references are
+ * the item on the Following God's Blueprint page. A round button in the
+ * top-right corner opens the item in full as a PDF in a new tab, made on the
+ * reader's device by assets/scripts/bookmarks-pdf.js, which loads on the
+ * first press (as on "Today's Guiding Question"). Its Bible references are
  * pills that open the passage (scripture-refs.js). A different item is picked
  * at random each time the page is opened, and again when the browser brings
  * the page back from its back/forward cache.
@@ -66,6 +69,31 @@ const LAST_KEY = 'dailygrace:blueprint:last';
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const ICON_URL = asset('../../assets/images/study-guide-icons/following-gods-blueprint.webp');
+
+const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
+// The same URL as script.js's bookmarks PDF, so the page loads the module once.
+const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261002-5');
+
+/**
+ * A new tab for a PDF, opened at once, inside the press: browsers block a tab
+ * opened later, once the PDF is ready. It says what is coming until the PDF
+ * replaces it. As the bookmarks PDF does (script.js).
+ */
+function openPdfTab(title) {
+  const tab = window.open('', '_blank');
+  if (!tab) return null;
+  try {
+    tab.document.title = title;
+    tab.document.body.style.cssText =
+      'margin:0;display:grid;place-items:center;min-height:100vh;'
+      + 'background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif';
+    tab.document.body.textContent = 'Preparing your PDF…';
+  } catch {
+    // Some browsers keep the new tab to themselves; it still loads the PDF.
+  }
+  return tab;
+}
 
 // Shared with the Following God's Blueprint page (following-gods-blueprint.js),
 // which uses the same key.
@@ -275,7 +303,31 @@ const STYLES = /* css */ `
   /* A blue glow would not show on the blue card; removing glows cream. The
      ribbon is gold, set in from the rounded corner and clear of the corner mark. */
   article.card.bookmarked { --glow: 243 231 210; }
-  article.card.bookmarked::after { right: 36px; background: var(--blueprint-gold); }
+  article.card.bookmarked::after { right: 72px; background: var(--blueprint-gold); }
+
+  /* Opens the item as a PDF: the red round button of "Today's Guiding
+     Question" (daily-guidance.js), from the page's shared --action colours. */
+  .pdf {
+    position: absolute; top: 16px; right: 16px; z-index: 2;
+    display: grid; place-items: center;
+    width: 42px; height: 42px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: var(--action, #c62828); color: var(--action-ink, #fff);
+    box-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
+    cursor: pointer;
+    transition: background-color .15s ease;
+  }
+  .pdf svg {
+    display: block; width: 18px; height: 18px;
+    transition: transform .2s ease;
+  }
+  .pdf:hover { background: var(--action-hover, #a91f1f); }
+  .pdf:hover svg { transform: scale(1.08); }
+  .pdf:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  /* While the PDF is being made. */
+  .pdf:disabled { cursor: progress; opacity: .7; }
+  .pdf:disabled svg { animation: pdf-wait 1s ease-in-out infinite; }
+  @keyframes pdf-wait { 50% { transform: translateY(2px); } }
 
   /* A list of bookmarks, in the popup: a header and cards in place of the card. */
   .saved { display: none; }
@@ -351,10 +403,14 @@ const STYLES = /* css */ `
 
   @media (max-width: 650px) {
     article.card { padding: 27px 23px; }
+    .pdf { top: 12px; right: 12px; width: 38px; height: 38px; }
+    .pdf svg { width: 16px; height: 16px; }
+    article.card.bookmarked::after { right: 62px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .more { transition: none; }
-    .more:hover { transform: none; }
+    .more, .pdf, .pdf svg { transition: none; }
+    .more:hover, .pdf:hover svg { transform: none; }
+    .pdf:disabled svg { animation: none; }
   }
 ${BOOKMARK_STYLES}
 ${PILL_STYLES}`;
@@ -399,6 +455,7 @@ export class GodsBlueprint extends HTMLElement {
       <article class="card bookmarkable" aria-labelledby="title">
         <span class="corner tl" aria-hidden="true"></span>
         <span class="corner br" aria-hidden="true"></span>
+        <button class="pdf" type="button" title="Open as a PDF" hidden>${PDF_ICON}</button>
         <div class="emblem">
           <img src="${ICON_URL}" alt="" width="54" height="54" />
         </div>
@@ -428,11 +485,12 @@ export class GodsBlueprint extends HTMLElement {
       sheet: $('.sheet'), number: $('.number'), part: $('.part'), name: $('.name'),
       summary: $('.summary'), figure: $('figure'), verse: $('blockquote'), reference: $('figcaption'),
       steps: $('.steps'), build: $('.build span'), buildLine: $('.build'),
-      ask: $('.ask span'), askLine: $('.ask'), more: $('.more'),
+      ask: $('.ask span'), askLine: $('.ask'), more: $('.more'), pdf: $('.pdf'),
       card: $('.card'), header: $('.bookmarks-header'), summaryLine: $('.bookmarks-summary'),
       list: $('.list'),
     };
     this.#status = $('[role="status"]');
+    this.#els.pdf.addEventListener('click', () => this.#openPdf());
 
     // Holding the card bookmarks today's item; holding an item in the list
     // takes its bookmark off (and puts it back). The links are not held.
@@ -539,6 +597,43 @@ export class GodsBlueprint extends HTMLElement {
       + 'Hold one to remove its bookmark.';
   }
 
+  /** Today's item as a PDF, in a new tab (or downloaded, if the tab is blocked). */
+  async #openPdf() {
+    const item = this.#item;
+    const button = this.#els.pdf;
+    if (!item || button.disabled) return;
+    const tab = openPdfTab(`${item.name} — Following God's Blueprint — Daily Grace`);
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    this.#status.textContent = `Making the PDF of ${item.name}…`;
+    try {
+      const { makeBlueprintPdf } = await import(PDF_MODULE);
+      const { blob, filename } = await makeBlueprintPdf(item);
+      const url = URL.createObjectURL(blob);
+      // Kept long enough for the tab to load it, and to reload it for a while.
+      setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+      if (tab && !tab.closed) {
+        tab.location.href = url;
+        this.#status.textContent = `${item.name}: the PDF has opened in a new tab.`;
+      } else {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        this.shadowRoot.append(link);
+        link.click();
+        link.remove();
+        this.#status.textContent = `${item.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
+      }
+    } catch (error) {
+      tab?.close();
+      console.warn("Today's blueprint could not be made into a PDF:", error);
+      this.#status.textContent = 'The PDF could not be made. Please check your connection and try again.';
+    } finally {
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+    }
+  }
+
   #toggle(item, card) {
     const result = bookmarks.toggle(item.id);
     showBookmarkResult(card, result, bookmarks.limit);
@@ -603,6 +698,7 @@ export class GodsBlueprint extends HTMLElement {
         this.#loading = null;          // a bookmarks list can ask again
         this.#item = null;
         this.#items = [];
+        this.#els.pdf.hidden = true;
         this.#els.name.textContent = "Today's blueprint is unavailable. Please try again later.";
         const message = document.createElement('p');
         message.className = 'message';
@@ -642,6 +738,8 @@ export class GodsBlueprint extends HTMLElement {
     els.more.href = this.#pageHref(item.id);
     els.more.setAttribute('aria-label', `Open the full plan: ${item.name}`);
     els.more.hidden = false;
+    els.pdf.hidden = false;
+    els.pdf.setAttribute('aria-label', `Open as a PDF in a new tab: ${item.name}`);
     this.#syncBookmarks();
   }
 }

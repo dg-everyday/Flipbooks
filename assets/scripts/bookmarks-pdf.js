@@ -28,6 +28,10 @@
  * same way, on pages of its own, and resolves to { blob, filename }; the
  * download button on an open question of the Questions We All Ask page
  * (guidance-for-life.js) saves it.
+ *
+ * makeBlueprintPdf(item) does the same for one part of the plan in
+ * following-gods-blueprint.json; the PDF button on "Following Today's God
+ * Blueprint" (<gods-blueprint>) opens it.
  */
 
 const JSPDF = {
@@ -320,10 +324,11 @@ const guidanceRuns = (topic, { heading = true } = {}) => [
 // sheet and name, the short answer, the plan in plain words, every passage
 // with who spoke it, the Bible example, then what to do. A page may turn
 // before a passage, the example or the steps, never inside one.
-const blueprintRuns = (item) => [
+// Without its heading, the sheet and name are left to the page's header.
+const blueprintRuns = (item, { heading = true } = {}) => [
   { size: 8.5, color: GOLD_DARK, gap: 0.8,
-    text: [item.number, item.part].filter(Boolean).map(clean).join(' · ').toUpperCase() },
-  { font: 'GermaniaOne', size: 13, color: NAVY, text: clean(item.name), gap: 0.8 },
+    text: heading ? [item.number, item.part].filter(Boolean).map(clean).join(' · ').toUpperCase() : '' },
+  { font: 'GermaniaOne', size: 13, color: NAVY, text: heading ? clean(item.name) : '', gap: 0.8 },
   { size: 11.5, color: NAVY, text: clean(item.summary), gap: 1.2 },
   { size: 11, text: clean(item.plain), gap: 2 },
   ...(item.verses || []).flatMap((verse) => [
@@ -434,4 +439,29 @@ export async function makeGuidancePdf(topic) {
 
   const slug = String(topic.id || name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   return { blob: doc.output('blob'), filename: `daily-grace-${slug}.pdf` };
+}
+
+/**
+ * Builds the PDF of one part of Following God's Blueprint, an item of
+ * following-gods-blueprint.json in full: resolves to { blob, filename }.
+ */
+export async function makeBlueprintPdf(item) {
+  const name = clean(item.name);
+  const { doc, emblem } = await newDocument({
+    title: `${name} — Following God's Blueprint — Daily Grace`,
+    subject: clean(item.summary),
+  });
+
+  const writer = new Writer(doc);
+  drawHeader(writer, {
+    emblem,
+    eyebrow: "DAILY GRACE · FOLLOWING GOD'S BLUEPRINT",
+    title: name,
+    subtitle: [clean(item.number), clean(item.part), longDate(new Date())].filter(Boolean).join(' · '),
+  });
+  writer.item(blueprintRuns(item, { heading: false }));
+  drawFooters(doc);
+
+  const slug = String(item.id || name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return { blob: doc.output('blob'), filename: `daily-grace-blueprint-${slug}.pdf` };
 }

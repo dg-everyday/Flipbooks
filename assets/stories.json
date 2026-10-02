@@ -1,7 +1,7 @@
 [
     {
         "id": "a-great-way-off",
-        "sequence": 1,
+        "sequence": 7,
         "cover_page": "https://dailygrace.faith/media/stories/a-great-way-off/00.webp",
         "title": "The Father Who Ran",
         "description": "A Son Who Spent Everything, a Speech He Never Finished, and a Brother Who Stayed Outside.",
@@ -10,7 +10,7 @@
     },
     {
         "id": "all-things-new",
-        "sequence": 3,
+        "sequence": 5,
         "cover_page": "https://dailygrace.faith/media/stories/all-things-new/00.webp",
         "title": "When God Makes Everything New",
         "description": "A New Heaven and a New Earth, a City Coming Down from God, and a River That Runs from the Throne",
@@ -19,7 +19,7 @@
     },
     {
         "id": "and-ruth-with-her",
-        "sequence": 9,
+        "sequence": 8,
         "cover_page": "https://dailygrace.faith/media/stories/and-ruth-with-her/00.webp",
         "title": "Where You Go, I Will Go",
         "description": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean.",
@@ -37,7 +37,7 @@
     },
     {
         "id": "into-his-hand",
-        "sequence": 8,
+        "sequence": 1,
         "cover_page": "https://dailygrace.faith/media/stories/into-his-hand/00.webp",
         "title": "Trusted, Framed, Trusted Again",
         "description": "Joseph in Potiphar's House, the Garment He Left Behind, and the Prison Where It Happened Again.",
@@ -55,7 +55,7 @@
     },
     {
         "id": "the-fourth-man-in-the-fire",
-        "sequence": 7,
+        "sequence": 3,
         "cover_page": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/00.webp",
         "title": "The Fourth Man in the Fire",
         "description": "Three Hebrews, One Golden Image, and the Furnace on the Plain of Dura.",
@@ -64,7 +64,7 @@
     },
     {
         "id": "for-his-oaths-sake",
-        "sequence": 2,
+        "sequence": 9,
         "cover_page": "https://dailygrace.faith/media/stories/for-his-oaths-sake/00.webp",
         "title": "The King Who Kept the Wrong Promise",
         "description": "A Birthday Supper, an Oath Sworn in Front of Everyone, and the Death of John the Baptist.",
@@ -73,12 +73,21 @@
     },
     {
         "id": "help-thou-mine-unbelief",
-        "sequence": 5,
+        "sequence": 2,
         "cover_page": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/00.webp",
         "title": "Help My Unbelief",
         "description": "A Mountain Where His Raiment Shone, a Voice That Said “Hear Him,” and a Father in the Valley Below",
         "audio": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/help-thou-mine-unbelief.webm",
         "story-book": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/help-thou-mine-unbelief-storybook.pdf"
+    },
+    {
+        "id": "how-much-more",
+        "sequence": 10,
+        "cover_page": "https://dailygrace.faith/media/stories/how-much-more/00.webp",
+        "title": "Teach Us to Pray",
+        "description": "The Prayer That Begins “Our Father,” a Friend Knocking at Midnight, and a Father Who Gives Good Gifts",
+        "audio": "https://dailygrace.faith/media/stories/how-much-more/how-much-more.webm",
+        "story-book": "https://dailygrace.faith/media/stories/how-much-more/how-much-more-storybook.pdf"
     }
 
 ]

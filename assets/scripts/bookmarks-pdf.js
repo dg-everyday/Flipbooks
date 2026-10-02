@@ -23,6 +23,11 @@
  *              (<gods-blueprint>.bookmarkedItems(): items of following-gods-blueprint.json)
  * Each list is newest first, as the popup shows it. Rejects if jsPDF or the
  * fonts cannot be loaded.
+ *
+ * makeGuidancePdf(topic) lays out one question of guidance-for-life.json the
+ * same way, on pages of its own, and resolves to { blob, filename }; the
+ * download button on an open question of the Questions We All Ask page
+ * (guidance-for-life.js) saves it.
  */
 
 const JSPDF = {
@@ -227,7 +232,8 @@ class Writer {
   }
 }
 
-function drawHeader(writer, { emblem, date, counts }) {
+/** The emblem, a small capitals line, the title and a line under it. */
+function drawHeader(writer, { emblem, eyebrow, title, subtitle }) {
   const { doc } = writer;
   const size = 17;
   let textX = MARGIN_X;
@@ -238,11 +244,11 @@ function drawHeader(writer, { emblem, date, counts }) {
     textX += size + 5;
   }
   writer.style({ size: 8, color: GOLD_DARK });
-  doc.text('DAILY GRACE · SAVED ON THIS DEVICE', textX, TOP + 1, { baseline: 'top', charSpace: 0.6 });
+  doc.text(eyebrow, textX, TOP + 1, { baseline: 'top', charSpace: 0.6 });
   writer.style({ font: 'GermaniaOne', size: 26, color: NAVY });
-  doc.text('My Bookmarks', textX, TOP + 5, { baseline: 'top' });
+  doc.text(title, textX, TOP + 5, { baseline: 'top' });
   writer.style({ size: 10, color: MUTED });
-  doc.text(`${date} · ${counts}`, textX, TOP + 16, { baseline: 'top' });
+  doc.text(subtitle, textX, TOP + 16, { baseline: 'top' });
 
   writer.y = TOP + size + 6;
   doc.setDrawColor(GOLD);
@@ -294,9 +300,10 @@ const sayingRuns = (saying) => [
 // A guidance topic in full, as on the Questions We All Ask page: the question and
 // its answer, every passage of Scripture with who spoke it, then what to do.
 // A page may turn before a passage or before "Try this", never inside one.
-const guidanceRuns = (topic) => [
-  { size: 8.5, color: GOLD_DARK, text: clean(topic.section).toUpperCase(), gap: 0.8 },
-  { font: 'GermaniaOne', size: 13, color: NAVY, text: clean(topic.name), gap: 0.8 },
+// Without its heading, the section and name are left to the page's header.
+const guidanceRuns = (topic, { heading = true } = {}) => [
+  { size: 8.5, color: GOLD_DARK, text: heading ? clean(topic.section).toUpperCase() : '', gap: 0.8 },
+  { font: 'GermaniaOne', size: 13, color: NAVY, text: heading ? clean(topic.name) : '', gap: 0.8 },
   { size: 11.5, color: NAVY, text: clean(topic.question), gap: 1.2 },
   { size: 11, text: clean(topic.summary), gap: 1.2 },
   { size: 11, text: clean(topic.guidance), gap: 2 },
@@ -353,8 +360,8 @@ function drawFooters(doc) {
 
 // ------------------------------------------------------------------ entry
 
-/** Builds the PDF of the bookmarks: resolves to { blob, filename }. */
-export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], guidance = [], blueprint = [] }) {
+/** An empty A4 document with the site's fonts and the given properties, and the emblem. */
+async function newDocument(properties) {
   const [JsPdf, fonts, emblem] = await Promise.all([
     loadJsPdf(),
     Promise.all(FONTS.map((font) => loadFont(font.url))),
@@ -366,9 +373,18 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], 
     doc.addFileToVFS(font.file, fonts[index]);
     doc.addFont(font.file, font.family, 'normal');
   });
+  // A PDF viewer's tab shows this title rather than the blob URL.
+  doc.viewerPreferences({ DisplayDocTitle: true });
+  doc.setProperties({ author: 'Daily Grace', creator: 'Daily Grace (dailygrace.faith)', ...properties });
+  return { doc, emblem };
+}
 
+const longDate = (date) => date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+/** Builds the PDF of the bookmarks: resolves to { blob, filename }. */
+export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], guidance = [], blueprint = [] }) {
   const now = new Date();
-  const date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const date = longDate(now);
   const counts = [
     verses.length && plural(verses.length, 'verse'),
     facts.length && plural(facts.length, 'fact'),
@@ -376,17 +392,15 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], 
     guidance.length && plural(guidance.length, 'question'),
     blueprint.length && plural(blueprint.length, 'blueprint'),
   ].filter(Boolean).join(', ');
-  // A PDF viewer's tab shows this title rather than the blob URL.
-  doc.viewerPreferences({ DisplayDocTitle: true });
-  doc.setProperties({
+  const { doc, emblem } = await newDocument({
     title: 'My Bookmarks — Daily Grace',
     subject: `Bookmarked verses, facts, sayings, questions and blueprints, saved ${date}`,
-    author: 'Daily Grace',
-    creator: 'Daily Grace (dailygrace.faith)',
   });
 
   const writer = new Writer(doc);
-  drawHeader(writer, { emblem, date, counts });
+  drawHeader(writer, {
+    emblem, eyebrow: 'DAILY GRACE · SAVED ON THIS DEVICE', title: 'My Bookmarks', subtitle: `${date} · ${counts}`,
+  });
   drawSection(writer, 'Bible Verses', verses, verseRuns);
   drawSection(writer, 'Did You Know', facts, factRuns);
   drawSection(writer, 'Bible Sayings', sayings, sayingRuns);
@@ -395,4 +409,29 @@ export async function makeBookmarksPdf({ verses = [], facts = [], sayings = [], 
   drawFooters(doc);
 
   return { blob: doc.output('blob'), filename: `daily-grace-bookmarks-${localDate(now)}.pdf` };
+}
+
+/**
+ * Builds the PDF of one question of Questions We All Ask, a topic of
+ * guidance-for-life.json in full: resolves to { blob, filename }.
+ */
+export async function makeGuidancePdf(topic) {
+  const name = clean(topic.name);
+  const { doc, emblem } = await newDocument({
+    title: `${name} — Questions We All Ask — Daily Grace`,
+    subject: clean(topic.question),
+  });
+
+  const writer = new Writer(doc);
+  drawHeader(writer, {
+    emblem,
+    eyebrow: 'DAILY GRACE · QUESTIONS WE ALL ASK',
+    title: name,
+    subtitle: [clean(topic.section), longDate(new Date())].filter(Boolean).join(' · '),
+  });
+  writer.item(guidanceRuns(topic, { heading: false }));
+  drawFooters(doc);
+
+  const slug = String(topic.id || name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return { blob: doc.output('blob'), filename: `daily-grace-${slug}.pdf` };
 }

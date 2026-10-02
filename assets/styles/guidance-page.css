@@ -92,6 +92,39 @@
 .gl-tile.is-open .gl-meta { color: #fff; }
 .gl-tile.is-open .gl-mark { color: var(--g); background: #fff; border-color: #fff; }
 .gl-tile.is-open .voice-dot { box-shadow: 0 0 0 1.5px #fff; }
+/* Room for the download and play buttons beside the open question's name
+   and question, which they reach down beside. */
+.gl-tile.is-open :is(.gl-name, .gl-question) { padding-right: 78px; }
+
+/* The open question's download (PDF) and narration buttons: white on red,
+   like the home page's play buttons. They lie over the open tile's top-right
+   corner (questionButtons() in guidance-for-life.js), beside the tile in the
+   grid rather than in it. */
+.gl-actions {
+  position: absolute; z-index: 1;
+  display: flex; gap: 8px;
+}
+.gl-actions[hidden] { display: none; }
+.gl-action {
+  display: grid; place-items: center;
+  width: 32px; height: 32px; padding: 0;
+  border: 0; border-radius: 50%;
+  color: var(--action-ink, #fff);
+  background: var(--action, #c62828);
+  box-shadow: var(--action-shadow, 0 4px 10px rgb(0 0 0 / 30%));
+  cursor: pointer;
+  transition: background-color .15s ease, opacity .15s ease;
+}
+.gl-action svg { width: 14px; height: 14px; transition: transform .2s ease; }
+.gl-download svg { width: 16px; height: 16px; }
+.gl-action:hover,
+.gl-play[aria-pressed="true"] { background: var(--action-hover, #a91f1f); }
+.gl-action:hover svg { transform: scale(1.08); }
+.gl-action:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+/* While the PDF is being made. */
+.gl-download:disabled { cursor: progress; opacity: .7; }
+.gl-download:disabled svg { animation: gl-download-wait 1s ease-in-out infinite; }
+@keyframes gl-download-wait { 50% { transform: translateY(2px); } }
 
 /* ---------------------------------------------------------------- open card */
 
@@ -156,6 +189,8 @@
 .gl-bookmark[aria-pressed="true"] { background: #a8810c; border-color: #a8810c; color: #fff; }
 .gl-bookmark[aria-pressed="true"] svg { fill: currentColor; }
 .gl-tile.bookmarked::after { right: 12px; }
+/* Clear of the play button on the open tile. */
+.gl-tile.is-open.bookmarked::after { right: 90px; }
 
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
@@ -171,6 +206,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gl-tile, .gl-bookmark { transition: none; }
+  .gl-tile, .gl-bookmark, .gl-action, .gl-action svg { transition: none; }
+  .gl-action:hover svg, .gl-download:disabled svg { transform: none; animation: none; }
   .gl-tile:hover { transform: none; }
 }

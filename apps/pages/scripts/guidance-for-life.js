@@ -14,6 +14,11 @@
  * The bookmarks are the ones "Today's Question" keeps on the home
  * page (the same localStorage key), so they show in its bookmarks popup and
  * its PDF.
+ *
+ * An open question's tile has two red buttons in its top-right corner: one
+ * opens the question as a PDF in a new tab, made on the reader's device
+ * (assets/scripts/bookmarks-pdf.js), and one plays its narration, the same
+ * recording as the play button on "Today's Guiding Question" on the home page.
  */
 
 import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
@@ -26,6 +31,16 @@ const DATA = 'assets/guidance-for-life.json';
 // The same store as <daily-guidance> on the home page.
 const bookmarks = bookmarkStore('dailygrace:bookmarks:guidance',
   { isId: (id) => typeof id === 'string' && id !== '', limit: 50 });
+
+// Each question's narration, as on the home page's <daily-guidance>.
+const AUDIO_BASE = 'https://dailygrace.faith/media/audio/questions-we-all-ask/';
+// The home page's play and pause icons (poster-card.js, daily-guidance.js).
+const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
+const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
+const DOWNLOAD_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
+// Builds a question's PDF; loaded, with jsPDF and the fonts, on the first download.
+const PDF_MODULE = '../../../assets/scripts/bookmarks-pdf.js?v=20261002-4';
 
 const RIBBON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>';
 
@@ -165,6 +180,163 @@ function detail(topic, onClose, onBookmark) {
             h('span', { class: 'voice-dot', 'aria-hidden': 'true' }), v, h('b', {}, list.length)))),
           h('p', { class: 'testament-note' },
             `${old} from the Old Testament, ${neu} from the New`)))));
+}
+
+// ------------------------------------------------------------------ narration
+
+/**
+ * A new tab for a PDF, opened at once, inside the tap: browsers block a tab
+ * opened later, once the PDF is ready. It says what is coming until the PDF
+ * replaces it. As the home page's bookmarks PDF does (script.js).
+ */
+function openPdfTab(title) {
+  const tab = window.open('', '_blank');
+  if (!tab) return null;
+  try {
+    tab.document.title = title;
+    tab.document.body.style.cssText =
+      'margin:0;display:grid;place-items:center;min-height:100vh;'
+      + 'background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif';
+    tab.document.body.textContent = 'Preparing your PDF…';
+  } catch {
+    // Some browsers keep the new tab to themselves; it still loads the PDF.
+  }
+  return tab;
+}
+
+/** When no tab could be opened (a pop-up blocker), the PDF is saved instead. */
+function saveFile(url, filename) {
+  const link = h('a', { href: url, download: filename, hidden: true });
+  document.body.append(link);
+  link.click();
+  link.remove();
+}
+
+/**
+ * The open question's download and play buttons. The tile is a button itself
+ * and cannot hold others, so these sit beside it in the grid, laid over the
+ * tile's top-right corner. They follow whichever tile is open (aria-expanded,
+ * which rowExpander sets, however the question was opened or closed); a
+ * question closing, or another opening, stops the narration.
+ */
+function questionButtons(view, byId, status) {
+  const download = h('button', { type: 'button', class: 'gl-action gl-download' });
+  download.innerHTML = DOWNLOAD_ICON;      // a fixed string, never data
+  const button = h('button', { type: 'button', class: 'gl-action gl-play' });
+  const actions = h('div', { class: 'gl-actions', hidden: true }, download, button);
+  let tile = null;
+  let audio = null;
+
+  const playing = () => Boolean(audio) && !audio.paused;
+
+  function sync() {
+    const on = playing();
+    const name = tile ? byId.get(tile.dataset.id)?.name : '';
+    button.innerHTML = on ? PAUSE_ICON : PLAY_ICON;   // fixed strings, never data
+    button.setAttribute('aria-pressed', String(on));
+    button.setAttribute('aria-label', `${on ? 'Pause' : 'Play'} the narration: ${name}`);
+    button.title = on ? 'Pause the narration' : 'Play the narration';
+    download.setAttribute('aria-label', `Open as a PDF in a new tab: ${name}`);
+    download.title = 'Open as a PDF';
+  }
+
+  function stop() {
+    if (!audio) return;
+    const old = audio;
+    audio = null;
+    old.pause();
+    old.removeAttribute('src');
+    old.load();
+    sync();
+  }
+
+  // Over the tile's top-right corner. The grid is the tile's offsetParent.
+  function place() {
+    const show = Boolean(tile) && !tile.hidden;
+    if (actions.hidden === show) actions.hidden = !show;
+    if (!show) return;
+    if (actions.parentElement !== tile.parentElement) tile.parentElement.append(actions);
+    const inset = 10;
+    actions.style.left = `${tile.offsetLeft + tile.offsetWidth - actions.offsetWidth - inset}px`;
+    actions.style.top = `${tile.offsetTop + inset}px`;
+  }
+
+  function follow() {
+    const open = view.querySelector('.gl-tile[aria-expanded="true"]');
+    if (open !== tile) {
+      stop();
+      tile = open;
+      sync();
+    }
+    place();
+  }
+
+  button.addEventListener('click', () => {
+    if (!tile) return;
+    if (playing()) {
+      audio.pause();
+      return;
+    }
+    if (!audio) {
+      const player = new Audio(`${AUDIO_BASE}${encodeURIComponent(tile.dataset.id)}.webm`);
+      const update = () => { if (player === audio) sync(); };
+      player.addEventListener('play', update);
+      player.addEventListener('pause', update);
+      player.addEventListener('ended', () => { player.currentTime = 0; update(); });
+      player.addEventListener('error', () => {
+        if (player !== audio) return;
+        audio = null;                       // the next tap tries again
+        sync();
+        status.textContent = 'The narration could not be played. Please try again later.';
+      });
+      audio = player;
+    }
+    audio.play().catch(error => {
+      if (error.name !== 'AbortError') console.warn('The narration could not be played:', error);
+    });
+  });
+
+  download.addEventListener('click', async () => {
+    const topic = tile && byId.get(tile.dataset.id);
+    if (!topic || download.disabled) return;
+    const tab = openPdfTab(`${topic.name} — Questions We All Ask — Daily Grace`);
+    download.disabled = true;
+    download.setAttribute('aria-busy', 'true');
+    status.textContent = `Making the PDF of ${topic.name}…`;
+    try {
+      const { makeGuidancePdf } = await import(PDF_MODULE);
+      const { blob, filename } = await makeGuidancePdf(topic);
+      const url = URL.createObjectURL(blob);
+      // Kept long enough for the tab to load it, and to reload it for a while.
+      setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+      if (tab && !tab.closed) {
+        tab.location.href = url;
+        status.textContent = `${topic.name}: the PDF has opened in a new tab.`;
+      } else {
+        saveFile(url, filename);
+        status.textContent = `${topic.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
+      }
+    } catch (error) {
+      tab?.close();
+      console.error('The PDF could not be made:', error);
+      status.textContent = 'The PDF could not be made. Please check your connection and try again.';
+    } finally {
+      download.disabled = false;
+      download.removeAttribute('aria-busy');
+    }
+  });
+
+  // The buttons are in the view too: their own showing and hiding is not news.
+  new MutationObserver(records => {
+    if (records.some(r => !actions.contains(r.target))) follow();
+  }).observe(view,
+    { subtree: true, attributes: true, attributeFilter: ['aria-expanded', 'hidden'] });
+  let pending = 0;
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(pending);
+    pending = requestAnimationFrame(place);
+  });
+  sync();
 }
 
 // ------------------------------------------------------------------ page
@@ -342,6 +514,8 @@ export async function start(view) {
     empty,
     status);
 
+  // Before followHash, so a question opened from the link gets its buttons too.
+  questionButtons(view, byId, status);
   apply();
   followHash(id => open(id, { smooth: false }));
 }

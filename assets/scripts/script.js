@@ -522,7 +522,7 @@ function updateBookmarkCounts() {
 // with the page, and the whole thing runs on the reader's device.
 const bookmarksPdf = document.getElementById("bookmarks-pdf");
 const bookmarksPdfNote = document.getElementById("bookmarks-pdf-note");
-const BOOKMARKS_PDF_MODULE = new URL("assets/scripts/bookmarks-pdf.js?v=20261002-5", document.baseURI).href;
+const BOOKMARKS_PDF_MODULE = new URL("assets/scripts/bookmarks-pdf.js?v=20261003-1", document.baseURI).href;
 let bookmarksPdfNoteTimer = 0;
 
 function showBookmarksPdfNote(message, { error = false, linger = 0 } = {}) {

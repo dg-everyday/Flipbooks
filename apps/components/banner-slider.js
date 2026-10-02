@@ -215,6 +215,28 @@ const STYLES = /* css */ `
     outline: 2px solid #fff;
     outline-offset: -4px;
   }
+  /* A soft warm glow breathes around the button, a quiet hint that the
+     Flipbook is there. It sits on its own layer so the button's shadow stays. */
+  .flipbook::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: flipbook-glow 2.8s ease-in-out infinite;
+  }
+  .flipbook:hover::after,
+  .flipbook:focus-visible::after { animation-play-state: paused; }
+  @keyframes flipbook-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgb(255 214 140 / 0%), 0 0 4px 0 rgb(255 214 140 / 0%); }
+    50% { box-shadow: 0 0 0 3px rgb(255 214 140 / 55%), 0 0 16px 6px rgb(255 214 140 / 45%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flipbook::after {
+      animation: none;
+      box-shadow: 0 0 0 2px rgb(255 214 140 / 45%), 0 0 10px 3px rgb(255 214 140 / 30%);
+    }
+  }
 
   .reflection {
     display: block;

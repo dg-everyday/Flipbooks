@@ -10,7 +10,10 @@
  * only when it adds something, as in "The good Samaritan"; most names are
  * just the opening words of the quote. Links open the saying, and the whole
  * passage it belongs to, on the Red-Lettered Quotes page. Its Bible
- * references are pills that open the passage (scripture-refs.js).
+ * references are pills that open the passage (scripture-refs.js). A red
+ * round button beside the heading opens the saying in full as a PDF in a new
+ * tab, made on the reader's device by assets/scripts/bookmarks-pdf.js, which
+ * loads on the first press.
  * A different saying is picked at random each time the page is opened, and
  * again when the browser brings the page back from its back/forward cache.
  * The last saying shown is remembered in localStorage (when it is available)
@@ -57,6 +60,29 @@ const ICON_URL = asset('../../assets/images/study-guide-icons/red-lettered-quote
 const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PLACE_ICON = `<svg ${ICON_ATTRS}><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
 const TODAY_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>`;
+const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
+// The same URL as script.js's bookmarks PDF, so the page loads the module once.
+const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
+
+/**
+ * A new tab for a PDF, opened at once, inside the press: browsers block a tab
+ * opened later, once the PDF is ready. It says what is coming until the PDF
+ * replaces it. As the bookmarks PDF does (script.js).
+ */
+function openPdfTab(title) {
+  const tab = window.open('', '_blank');
+  if (!tab) return null;
+  try {
+    tab.document.title = title;
+    tab.document.body.style.cssText =
+      'margin:0;display:grid;place-items:center;min-height:100vh;'
+      + 'background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif';
+    tab.document.body.textContent = 'Preparing your PDF…';
+  } catch {
+    // Some browsers keep the new tab to themselves; it still loads the PDF.
+  }
+  return tab;
+}
 
 // The quotes file is shared by every instance, so it is fetched once.
 const quotesCache = new Map();
@@ -172,7 +198,37 @@ const STYLES = /* css */ `
     box-shadow: 0 0 0 2px var(--red-letter-gold), 0 0 0 7px rgb(225 182 93 / 18%), 0 8px 18px rgb(0 0 0 / 35%);
   }
   .emblem img { display: block; width: 100%; height: 100%; object-fit: contain; }
-  .heading { min-width: 0; }
+  .heading { flex: 1; min-width: 0; }
+
+  /* Opens the saying as a PDF: the red round button of the other cards
+     (gods-blueprint.js, daily-guidance.js), from the page's shared --action
+     colours, with a gilt ring so it stands out on the crimson cover. */
+  .pdf {
+    flex: none;
+    align-self: center;
+    display: grid; place-items: center;
+    width: 42px; height: 42px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: var(--action, #c62828); color: var(--action-ink, #fff);
+    box-shadow: 0 0 0 2px var(--red-letter-gold), var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
+    cursor: pointer;
+    transition: background-color .15s ease;
+  }
+  .pdf svg {
+    display: block; width: 18px; height: 18px;
+    transition: transform .2s ease;
+  }
+  .pdf:hover { background: var(--action-hover, #a91f1f); }
+  .pdf:hover svg { transform: scale(1.08); }
+  .pdf:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  /* While the PDF is being made. */
+  .pdf:disabled { cursor: progress; opacity: .7; }
+  .pdf:disabled svg { animation: pdf-wait 1s ease-in-out infinite; }
+  @keyframes pdf-wait { 50% { transform: translateY(2px); } }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
   .title {
     margin: 0;
     color: #fff;
@@ -340,6 +396,8 @@ const STYLES = /* css */ `
     header::after { left: 22px; right: 22px; }
     .title { font-size: clamp(1.2rem, 1rem + 1.4vw, 1.4rem); }
     .emblem { width: 48px; height: 48px; padding: 7px; }
+    .pdf { width: 38px; height: 38px; }
+    .pdf svg { width: 16px; height: 16px; }
     .body { padding: 18px 22px 26px; }
     figure { padding: 20px 18px 16px 42px; }
     figure::before { left: 10px; top: 8px; font-size: 3.8rem; }
@@ -347,8 +405,9 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .body.enter { animation: none; }
-    .more { transition: none; }
-    .more:hover { transform: none; }
+    .more, .pdf, .pdf svg { transition: none; }
+    .more:hover, .pdf:hover svg { transform: none; }
+    .pdf:disabled svg { animation: none; }
   }
 ${PILL_STYLES}`;
 
@@ -372,6 +431,7 @@ export class RedLetterQuotes extends HTMLElement {
   static observedAttributes = ['quotes-src', 'page-href', 'theme'];
 
   #els;
+  #status;
   #saying = null;
   #sayings = [];
   #loading = null;
@@ -393,6 +453,7 @@ export class RedLetterQuotes extends HTMLElement {
             <h3 class="title" id="title">Jesus' Spoken Words</h3>
             <p class="theme" hidden></p>
           </div>
+          <button class="pdf" type="button" title="Open as a PDF" hidden>${PDF_ICON}</button>
         </header>
         <div class="body">
           <p class="status" aria-live="polite">Loading the words of Jesus…</p>
@@ -408,15 +469,18 @@ export class RedLetterQuotes extends HTMLElement {
             <a class="passage" hidden></a>
           </p>
         </div>
-      </article>`;
+      </article>
+      <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
     const $ = (selector) => root.querySelector(selector);
     this.#els = {
       theme: $('.theme'), body: $('.body'), loading: $('.status'), name: $('.name'),
       setting: $('.setting'), settingText: $('.setting span'), figure: $('figure'),
       quote: $('blockquote'), reference: $('figcaption'), today: $('.today'),
       todayText: $('.today-text'), links: $('.links'), more: $('.more'),
-      passage: $('.passage'),
+      passage: $('.passage'), pdf: $('.pdf'),
     };
+    this.#status = $('[role="status"]');
+    this.#els.pdf.addEventListener('click', () => this.#openPdf());
   }
 
   connectedCallback() {
@@ -455,6 +519,43 @@ export class RedLetterQuotes extends HTMLElement {
     return page.href;
   }
 
+  /** The saying as a PDF, in a new tab (or downloaded, if the tab is blocked). */
+  async #openPdf() {
+    const saying = this.#saying;
+    const button = this.#els.pdf;
+    if (!saying || button.disabled) return;
+    const tab = openPdfTab(`${saying.name} — Red-Lettered Quotes — Daily Grace`);
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    this.#status.textContent = `Making the PDF of ${saying.name}…`;
+    try {
+      const { makeRedLetterPdf } = await import(PDF_MODULE);
+      const { blob, filename } = await makeRedLetterPdf(saying);
+      const url = URL.createObjectURL(blob);
+      // Kept long enough for the tab to load it, and to reload it for a while.
+      setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+      if (tab && !tab.closed) {
+        tab.location.href = url;
+        this.#status.textContent = `${saying.name}: the PDF has opened in a new tab.`;
+      } else {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        this.shadowRoot.append(link);
+        link.click();
+        link.remove();
+        this.#status.textContent = `${saying.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
+      }
+    } catch (error) {
+      tab?.close();
+      console.warn('The words of Jesus could not be made into a PDF:', error);
+      this.#status.textContent = 'The PDF could not be made. Please check your connection and try again.';
+    } finally {
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+    }
+  }
+
   #load() {
     const loading = (this.#loading = readQuotes(this.#src)
       .then((sayings) => {
@@ -472,7 +573,7 @@ export class RedLetterQuotes extends HTMLElement {
         this.#saying = null;
         this.#sayings = [];
         const els = this.#els;
-        for (const el of [els.theme, els.name, els.setting, els.figure, els.today, els.links]) {
+        for (const el of [els.theme, els.pdf, els.name, els.setting, els.figure, els.today, els.links]) {
           el.hidden = true;
         }
         els.loading.textContent = 'The words of Jesus are unavailable. Please try again later.';
@@ -527,6 +628,8 @@ export class RedLetterQuotes extends HTMLElement {
     }
     els.passage.hidden = !more;
     els.links.hidden = false;
+    els.pdf.hidden = false;
+    els.pdf.setAttribute('aria-label', `Open as a PDF in a new tab: ${saying.name}`);
 
     // Ease the new saying in.
     els.body.classList.remove('enter');

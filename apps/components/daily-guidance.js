@@ -83,7 +83,7 @@ const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261002-5');
+const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab

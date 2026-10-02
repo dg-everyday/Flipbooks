@@ -8,7 +8,7 @@
  * (rowExpander in study-utils.js). #olive in the URL opens the olive.
  */
 
-import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
+import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261003-1';
 
 const DATA = 'assets/flora-and-fauna.json';
 

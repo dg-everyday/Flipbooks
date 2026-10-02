@@ -19,7 +19,7 @@
  * its PDF.
  */
 
-import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
+import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261003-1';
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from '../../components/card-bookmarks.js?v=20260927-1';

@@ -73,7 +73,7 @@ const ICON_URL = asset('../../assets/images/study-guide-icons/following-gods-blu
 const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261002-5');
+const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab

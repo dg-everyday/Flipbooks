@@ -21,10 +21,10 @@
  *
  * Each story in the list is { id, sequence, cover_page, title, description },
  * plus optional "audio" and "story-book" URLs. The cards are shown in
- * ascending sequence order. Each one given shows as a pill over
- * the cover. AUDIO plays the story right here, turning into a pause button
- * while it plays; moving on to another story stops it. PDF opens the book in a
- * new tab.
+ * ascending sequence order. Each one given shows as an icon pill over
+ * the cover. The play pill plays the story right here, turning into a pause
+ * button while it plays; moving on to another story stops it. The download
+ * pill opens the book (a PDF) in a new tab.
  *
  * Methods      next(), previous()  scroll one card along
  * Properties   stories (read-only)
@@ -70,10 +70,10 @@ const STORIES_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentC
   <path fill-rule="evenodd" d="M6 2h12a4 4 0 0 1 4 4v1H2V6a4 4 0 0 1 4-4Zm1.2 1.6L9 6.4h2.4L9.6 3.6H7.2Zm5 0L14 6.4h2.4l-1.8-2.8h-2.4Zm5 0L19 6.4h1.3A2.5 2.5 0 0 0 18 3.6h-.8ZM2 8.6h20V18a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8.6Zm8 3.2v6.8l5.6-3.4L10 11.8Z"/>
 </svg>`;
 
-// The AUDIO pill carries both marks; CSS shows the one that fits.
+// The audio pill carries both marks; CSS shows the one that fits.
 const PLAY_ICON = `<svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg>`;
 const PAUSE_ICON = `<svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1.2"/><rect x="14" y="4" width="5" height="16" rx="1.2"/></svg>`;
-// An arrow into a tray, for the PDF pill.
+// An arrow into a tray, for the book's pill.
 const DOWNLOAD_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>`;
 
 const STYLES = /* css */ `
@@ -213,7 +213,8 @@ const STYLES = /* css */ `
     -webkit-user-drag: none;
     cursor: pointer;
   }
-  .pill svg { flex: none; width: 1em; height: 1em; }
+  /* Icons only: the padding keeps the pills wider than they are tall. */
+  .pill svg { flex: none; width: 1.15em; height: 1.15em; }
   .pill .icon-pause,
   .pill.playing .icon-play { display: none; }
   .pill.playing .icon-pause { display: block; }
@@ -407,10 +408,10 @@ export class StoryCarousel extends HTMLElement {
     const tabindex = isCopy ? ' tabindex="-1"' : '';
     // Every copy of a story shares its index, so they all show the same state.
     const audio = story.audio
-      ? `<button type="button" class="pill pill-audio" data-story="${index}" aria-pressed="false" aria-label="Listen to ${title}"${tabindex}>${PLAY_ICON}${PAUSE_ICON}AUDIO</button>`
+      ? `<button type="button" class="pill pill-audio" data-story="${index}" aria-pressed="false" aria-label="Listen to ${title}" title="Listen"${tabindex}>${PLAY_ICON}${PAUSE_ICON}</button>`
       : '';
     const book = story['story-book']
-      ? `<a class="pill" href="${escapeHtml(story['story-book'])}" target="_blank" rel="noopener" draggable="false" aria-label="Read ${title} (PDF)"${tabindex}>${DOWNLOAD_ICON}PDF</a>`
+      ? `<a class="pill" href="${escapeHtml(story['story-book'])}" target="_blank" rel="noopener" draggable="false" aria-label="Read ${title} (PDF)" title="Open the book (PDF)"${tabindex}>${DOWNLOAD_ICON}</a>`
       : '';
     const pills = audio + book;
     return `

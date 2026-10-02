@@ -9,7 +9,7 @@
  * a tap on one opens that person; #moses in the URL opens Moses.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261003-1';
 
 const DATA = 'assets/bible-characters.json';
 

@@ -140,6 +140,75 @@ export function filterMenu(...content) {
   return { button, menu };
 }
 
+// A hold on the scroll ends at the reader's first touch, wheel or key, once
+// the page has been still this long after it settled, or after HOLD_MAX at most.
+const HOLD_INPUTS = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
+const HOLD_QUIET = 600;
+const HOLD_MAX = 6000;
+let releaseHold = null;
+
+/**
+ * Scrolls el to just under the topbar. A click glides there (smooth); arriving
+ * from a link (#ruth) jumps straight there, 'instant' rather than 'auto'
+ * because the page sets scroll-behavior: smooth.
+ *
+ * A jump on arrival is then held in place while the page settles. Fonts swap
+ * in, and the Bible references above el turn into pills (watchScripture), and
+ * each changes the height of everything before it. Chrome keeps the reader's
+ * place through that; Safari does not, so the page jerked and the reader
+ * landed somewhere else.
+ */
+export function scrollUnderTopbar(el, { smooth = true } = {}) {
+  releaseHold?.();
+  const offset = () => (document.querySelector('.topbar')?.offsetHeight || 0) + 12;
+  const glide = smooth && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset(), behavior: glide ? 'smooth' : 'instant' });
+  if (!smooth) holdInView(el, offset);
+}
+
+function holdInView(el, offset) {
+  const root = document.documentElement;
+  const started = performance.now();
+  let still = started;
+  let settled = false;
+  let frame = 0;
+  // Should the browser make its own jump to the #fragment (when el carries
+  // that id), it lands in the same place instead of fighting the hold.
+  const padding = root.style.scrollPaddingTop;
+  root.style.scrollPaddingTop = `${offset()}px`;
+
+  const release = () => {
+    cancelAnimationFrame(frame);
+    for (const type of HOLD_INPUTS) removeEventListener(type, release, true);
+    root.style.scrollPaddingTop = padding;
+    if (releaseHold === release) releaseHold = null;
+  };
+  releaseHold = release;
+  for (const type of HOLD_INPUTS) addEventListener(type, release, { capture: true, passive: true });
+
+  const loaded = document.readyState === 'complete'
+    ? null
+    : new Promise(resolve => addEventListener('load', resolve, { once: true }));
+  Promise.all([document.fonts?.ready, loaded]).then(() => {
+    settled = true;
+    still = performance.now();
+  });
+
+  const tick = now => {
+    if (!el.isConnected) return release();
+    const drift = el.getBoundingClientRect().top - offset();
+    if (Math.abs(drift) > 1) {
+      const before = window.scrollY;
+      window.scrollTo({ top: before + drift, behavior: 'instant' });
+      // Near the foot of the page el may not reach the top; that is still.
+      if (window.scrollY !== before) still = now;
+    }
+    if ((settled && now - still > HOLD_QUIET) || now - started > HOLD_MAX) return release();
+    frame = requestAnimationFrame(tick);
+  };
+  frame = requestAnimationFrame(tick);
+}
+
 /**
  * Opens a detail panel inside a grid, directly under the row of the tile that
  * was clicked — never as a popup — and keeps only one open at a time. Used by
@@ -193,13 +262,8 @@ export function rowExpander({ tileSelector }) {
     tile.classList.add('is-open');
     place();
     history.replaceState(null, '', `#${tile.dataset.id}`);
-    // Keep the tile in view with its details right below it. A click glides
-    // there; arriving from a link (#ruth) jumps straight to it. 'instant', not
-    // 'auto', because the page sets scroll-behavior: smooth.
-    const topbar = document.querySelector('.topbar')?.offsetHeight || 0;
-    const y = tile.getBoundingClientRect().top + window.scrollY - topbar - 12;
-    const glide = smooth && !matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({ top: y, behavior: glide ? 'smooth' : 'instant' });
+    // Keep the tile in view with its details right below it.
+    scrollUnderTopbar(tile, { smooth });
   }
 
   let pending = 0;

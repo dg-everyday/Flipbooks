@@ -15,7 +15,7 @@
  * #i-am-the-bread-of-life opens that saying; #john-6-35-40 opens that passage.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu, scrollUnderTopbar } from './study-utils.js?v=20261003-1';
 
 const DATA = 'assets/red-letter-quotes.json';
 const COMMENTARY = (book, chapter) => `assets/explanations/${book}/${chapter}.json`;
@@ -194,9 +194,7 @@ export async function start(view) {
     const el = document.getElementById(id);
     el.open = true;
     history.replaceState(null, '', `#${id}`);
-    const topbar = document.querySelector('.topbar')?.offsetHeight || 0;
-    const glide = smooth && !matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - topbar - 12, behavior: glide ? 'smooth' : 'instant' });
+    scrollUnderTopbar(el, { smooth });
   }
 
   // --- filters ---------------------------------------------------------------------

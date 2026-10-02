@@ -1,0 +1,51 @@
+{
+    "title": "Gideon's Three Hundred Men",
+    "aspect": "9/16",
+    "pages": [
+        {
+            "id": "id-00",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/00.webp",
+            "caption": "Three Hundred Men, a Loaf of Barley Bread in a Dream, and Hands Too Full to Hold a Sword"
+        },
+        {
+            "id": "id-01",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/01.webp",
+            "caption": "I. Too Many for Me"
+        },
+        {
+            "id": "id-02",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/02.webp",
+            "caption": "II. Down unto the Water"
+        },
+        {
+            "id": "id-03",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/03.webp",
+            "caption": "III. If Thou Fear to Go Down"
+        },
+        {
+            "id": "id-04",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/04.webp",
+            "caption": "IV. A Cake of Barley Bread"
+        },
+        {
+            "id": "id-05",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/05.webp",
+            "caption": "V. Look on Me, and Do Likewise"
+        },
+        {
+            "id": "id-06",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/06.webp",
+            "caption": "VI. The Lamps in Their Left Hands"
+        },
+        {
+            "id": "id-07",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/07.webp",
+            "caption": "VII. Every Man in His Place"
+        },
+        {
+            "id": "id-08",
+            "image": "https://dailygrace.faith/media/stories/too-many-for-me/08.webp",
+            "caption": "VIII. On the Other Side Jordan"
+        }
+    ]
+}

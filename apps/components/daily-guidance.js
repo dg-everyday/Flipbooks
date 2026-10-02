@@ -6,7 +6,10 @@
  * one thing to try, and a link that opens the topic on the Questions We All Ask
  * page. A round button in the top-right corner plays or pauses the topic's
  * narration, <audio-base><id>.webm; the file is only requested when the button
- * is first pressed, and a new topic stops it. Its Bible references are pills
+ * is first pressed, and a new topic stops it. The button beside it opens the
+ * topic as a PDF in a new tab, made on the reader's device by
+ * assets/scripts/bookmarks-pdf.js, which loads on the first press (as on the
+ * Questions We All Ask page). Its Bible references are pills
  * that open the passage (scripture-refs.js). A different topic is picked at
  * random each time the page is opened, and again when the browser brings the
  * page back from its back/forward cache.
@@ -78,6 +81,29 @@ const EMBLEM_URL = asset('../../assets/images/dg-icon-02-flat-256.webp');
 const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
+const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
+// The same URL as script.js's bookmarks PDF, so the page loads the module once.
+const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261002-4');
+
+/**
+ * A new tab for a PDF, opened at once, inside the press: browsers block a tab
+ * opened later, once the PDF is ready. It says what is coming until the PDF
+ * replaces it. As the bookmarks PDF does (script.js).
+ */
+function openPdfTab(title) {
+  const tab = window.open('', '_blank');
+  if (!tab) return null;
+  try {
+    tab.document.title = title;
+    tab.document.body.style.cssText =
+      'margin:0;display:grid;place-items:center;min-height:100vh;'
+      + 'background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif';
+    tab.document.body.textContent = 'Preparing your PDF…';
+  } catch {
+    // Some browsers keep the new tab to themselves; it still loads the PDF.
+  }
+  return tab;
+}
 
 // Shared with the Questions We All Ask page (guidance-for-life.js), which uses the same key.
 const bookmarks = bookmarkStore('dailygrace:bookmarks:guidance',
@@ -152,11 +178,12 @@ const STYLES = /* css */ `
   /* A navy glow would not show on the navy card; removing glows cream. The
      ribbon is gold, set in from the rounded corner. */
   article.card.bookmarked { --glow: 243 231 210; }
-  article.card.bookmarked::after { right: 72px; background: var(--guidance-gold); }
+  article.card.bookmarked::after { right: 120px; background: var(--guidance-gold); }
 
-  /* Plays the topic's narration: the red round button of the poster's
-     narration (poster-card.js), from the page's shared --action colours. */
-  .audio {
+  /* Plays the topic's narration, and opens it as a PDF: the red round button
+     of the poster's narration (poster-card.js), from the page's shared
+     --action colours. */
+  .audio, .pdf {
     position: absolute; top: 16px; right: 16px; z-index: 2;
     display: grid; place-items: center;
     width: 42px; height: 42px; padding: 0;
@@ -166,14 +193,19 @@ const STYLES = /* css */ `
     cursor: pointer;
     transition: background-color .15s ease;
   }
-  .audio svg {
+  .pdf { right: 68px; }
+  .audio svg, .pdf svg {
     display: block; width: 18px; height: 18px;
     transition: transform .2s ease;
   }
-  .audio:hover,
+  .audio:hover, .pdf:hover,
   .audio[aria-pressed="true"] { background: var(--action-hover, #a91f1f); }
-  .audio:hover svg { transform: scale(1.08); }
-  .audio:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .audio:hover svg, .pdf:hover svg { transform: scale(1.08); }
+  .audio:focus-visible, .pdf:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  /* While the PDF is being made. */
+  .pdf:disabled { cursor: progress; opacity: .7; }
+  .pdf:disabled svg { animation: pdf-wait 1s ease-in-out infinite; }
+  @keyframes pdf-wait { 50% { transform: translateY(2px); } }
 
   .emblem {
     display: grid;
@@ -352,13 +384,15 @@ const STYLES = /* css */ `
 
   @media (max-width: 650px) {
     article.card { padding: 27px 23px; }
-    .audio { top: 12px; right: 12px; width: 38px; height: 38px; }
-    .audio svg { width: 16px; height: 16px; }
-    article.card.bookmarked::after { right: 62px; }
+    .audio, .pdf { top: 12px; right: 12px; width: 38px; height: 38px; }
+    .pdf { right: 58px; }
+    .audio svg, .pdf svg { width: 16px; height: 16px; }
+    article.card.bookmarked::after { right: 106px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .more, .audio, .audio svg { transition: none; }
-    .more:hover, .audio:hover svg { transform: none; }
+    .more, .audio, .audio svg, .pdf, .pdf svg { transition: none; }
+    .more:hover, .audio:hover svg, .pdf:hover svg { transform: none; }
+    .pdf:disabled svg { animation: none; }
   }
 ${BOOKMARK_STYLES}
 ${PILL_STYLES}`;
@@ -405,6 +439,7 @@ export class DailyGuidance extends HTMLElement {
       <article class="card bookmarkable" aria-labelledby="title">
         <span class="star top" aria-hidden="true">✦</span>
         <span class="star bottom" aria-hidden="true">✦</span>
+        <button class="pdf" type="button" title="Open as a PDF" hidden>${PDF_ICON}</button>
         <button class="audio" type="button" aria-pressed="false" hidden></button>
         <div class="emblem">
           <img src="${EMBLEM_URL}" alt="Daily Grace" width="78" height="78" />
@@ -430,7 +465,7 @@ export class DailyGuidance extends HTMLElement {
       section: $('.section'), question: $('.question'), summary: $('.summary'),
       figure: $('figure'), verse: $('blockquote'), reference: $('figcaption'),
       practice: $('.practice'), practiceText: $('.practice span'), more: $('.more'),
-      audio: $('.audio'),
+      audio: $('.audio'), pdf: $('.pdf'),
       card: $('.card'), header: $('.bookmarks-header'), summaryLine: $('.bookmarks-summary'),
       list: $('.list'),
     };
@@ -440,6 +475,7 @@ export class DailyGuidance extends HTMLElement {
       else this.play();
     });
     this.#syncAudioButton();
+    this.#els.pdf.addEventListener('click', () => this.#openPdf());
 
     // Holding the card bookmarks today's topic; holding a topic in the list
     // takes its bookmark off (and puts it back). The links and the play
@@ -588,6 +624,43 @@ export class DailyGuidance extends HTMLElement {
     this.#syncAudioButton();
   }
 
+  /** Today's topic as a PDF, in a new tab (or downloaded, if the tab is blocked). */
+  async #openPdf() {
+    const topic = this.#topic;
+    const button = this.#els.pdf;
+    if (!topic || button.disabled) return;
+    const tab = openPdfTab(`${topic.name} — Questions We All Ask — Daily Grace`);
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    this.#status.textContent = `Making the PDF of ${topic.name}…`;
+    try {
+      const { makeGuidancePdf } = await import(PDF_MODULE);
+      const { blob, filename } = await makeGuidancePdf(topic);
+      const url = URL.createObjectURL(blob);
+      // Kept long enough for the tab to load it, and to reload it for a while.
+      setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+      if (tab && !tab.closed) {
+        tab.location.href = url;
+        this.#status.textContent = `${topic.name}: the PDF has opened in a new tab.`;
+      } else {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        this.#root.append(link);
+        link.click();
+        link.remove();
+        this.#status.textContent = `${topic.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
+      }
+    } catch (error) {
+      tab?.close();
+      console.warn("Today's question could not be made into a PDF:", error);
+      this.#status.textContent = 'The PDF could not be made. Please check your connection and try again.';
+    } finally {
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+    }
+  }
+
   #syncAudioButton() {
     const button = this.#els.audio;
     const playing = this.playing;
@@ -672,6 +745,7 @@ export class DailyGuidance extends HTMLElement {
         this.#topics = [];
         this.#stopAudio();
         this.#els.audio.hidden = true;
+        this.#els.pdf.hidden = true;
         this.#els.question.textContent = "Today's question is unavailable. Please try again later.";
         const message = document.createElement('p');
         message.className = 'message';
@@ -705,6 +779,8 @@ export class DailyGuidance extends HTMLElement {
     els.more.setAttribute('aria-label', `Read the full answer: ${topic.name}`);
     els.more.hidden = false;
     els.audio.hidden = false;
+    els.pdf.hidden = false;
+    els.pdf.setAttribute('aria-label', `Open as a PDF in a new tab: ${topic.name}`);
     this.#syncBookmarks();
   }
 }

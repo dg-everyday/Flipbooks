@@ -1157,6 +1157,15 @@ html:has(.about-dialog[open]) { overflow: hidden; }
 .footer-message h2 {
   margin: 0;
   font: 700 clamp(1.4rem, 1.15rem + 1vw, 1.75rem)/1.25 Georgia, 'Times New Roman', serif;
+  /* Each line stays whole; the <br> is the only break. */
+  white-space: nowrap;
+}
+/* "Our Faith Tomorrow." is about 11em wide in Georgia and in Android's Noto
+   Serif, so on a phone, beside the QR tile, the heading shrinks to fit its
+   column instead of wrapping. */
+@supports (container-type: inline-size) {
+  .footer-message { container-type: inline-size; }
+  .footer-message h2 { font-size: min(clamp(1.4rem, 1.15rem + 1vw, 1.75rem), 100cqi / 11.5); }
 }
 .footer-message p {
   margin: 12px 0 16px;

@@ -2,63 +2,136 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 // Shuffle the "sequence" of assets/stories.json before publishing, so the story
-// carousel opens on a different order of cards each day. The shuffle is seeded
-// with today's date in Manila: every deploy on the same day (a push, a rerun)
-// gives the same order, and the next day's scheduled deploy gives a new one.
-const parts = Object.fromEntries(
-    new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Manila",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-    })
-        .formatToParts(new Date())
-        .map(({ type, value }) => [type, value]),
-);
-const today = `${parts.year}-${parts.month}-${parts.day}`;
+// carousel opens on a different order of cards each day. The order depends only
+// on the date in Manila and each story's id: every deploy on the same day (a
+// push, a rerun) gives the same order, the next day's scheduled deploy gives a
+// new one, and the card that leads is never the one that led the day before.
+//
+// Usage
+//   node assets/scripts/update-stories-sequence.mjs [--date YYYY-MM-DD] [--dry-run]
+//     --date     shuffle for that day instead of today in Manila
+//     --dry-run  print the order without writing assets/stories.json
 
-// FNV-1a hash of the date, then mulberry32: small, seeded, good enough to shuffle.
-function seededRandom(text) {
-    let seed = 0x811c9dc5;
-    for (const char of text) {
-        seed = Math.imul(seed ^ char.codePointAt(0), 0x01000193);
+// How many days back the "never the same first card twice running" rule is
+// replayed from; see dailyOrder().
+const LOOKBACK_DAYS = 30;
+
+function parseArgs(argv) {
+    const options = { date: null, dryRun: false };
+    for (let i = 0; i < argv.length; i++) {
+        const arg = argv[i];
+        if (arg === "--dry-run") options.dryRun = true;
+        else if (arg === "--date") options.date = argv[++i];
+        else if (arg.startsWith("--date=")) options.date = arg.slice("--date=".length);
+        else throw new Error(`Unknown argument: ${arg}`);
     }
-    return () => {
-        seed = (seed + 0x6d2b79f5) | 0;
-        let t = Math.imul(seed ^ (seed >>> 15), seed | 1);
-        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
+    if (options.date !== null && !/^\d{4}-\d{2}-\d{2}$/.test(options.date ?? "")) {
+        throw new Error("--date expects YYYY-MM-DD");
+    }
+    return options;
 }
 
-const random = seededRandom(today);
+/** Today's date in Manila, as YYYY-MM-DD. */
+function manilaToday() {
+    const parts = Object.fromEntries(
+        new Intl.DateTimeFormat("en-US", {
+            timeZone: "Asia/Manila",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+        })
+            .formatToParts(new Date())
+            .map(({ type, value }) => [type, value]),
+    );
+    return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+/** The YYYY-MM-DD date `days` days after `date` (before, when negative). */
+function addDays(date, days) {
+    const [year, month, day] = date.split("-").map(Number);
+    return new Date(Date.UTC(year, month - 1, day + days)).toISOString().slice(0, 10);
+}
+
+// FNV-1a, finished with murmur3's fmix32. Without the finish, texts that
+// differ only in their last characters, as consecutive dates do, hash to
+// related values, and some stories came first far more often than others.
+function hash32(text) {
+    let h = 0x811c9dc5;
+    for (const char of text) {
+        h = Math.imul(h ^ char.codePointAt(0), 0x01000193);
+    }
+    h ^= h >>> 16;
+    h = Math.imul(h, 0x85ebca6b);
+    h ^= h >>> 13;
+    h = Math.imul(h, 0xc2b2ae35);
+    h ^= h >>> 16;
+    return h >>> 0;
+}
+
+/**
+ * The ids in the day's order, before the first-card rule: each story is placed
+ * by a hash of the date and its own id, so its place does not depend on where
+ * it sits in the file or on how many stories there are.
+ */
+function rank(ids, date) {
+    return ids
+        .map((id) => [hash32(`${date}|${id}`), id])
+        .sort((a, b) => a[0] - b[0] || (a[1] < b[1] ? -1 : 1))
+        .map(([, id]) => id);
+}
+
+/**
+ * The ids in the day's order, the first never the one that led the day
+ * before: when it would be, the first two change places. Whether yesterday's
+ * first card was itself moved depends on the day before that, so the rule is
+ * replayed from LOOKBACK_DAYS back. Replays started on neighbouring days agree
+ * from the first day whose leader was not moved, which comes within a day or
+ * two. Past days are replayed with today's stories, so on the day a story is
+ * added or removed the rule can, rarely, miss.
+ */
+function dailyOrder(ids, date) {
+    let order = [];
+    let previousFirst = null;
+    for (let back = LOOKBACK_DAYS; back >= 0; back--) {
+        order = rank(ids, addDays(date, -back));
+        if (order.length > 1 && order[0] === previousFirst) {
+            [order[0], order[1]] = [order[1], order[0]];
+        }
+        previousFirst = order[0];
+    }
+    return order;
+}
+
+const options = parseArgs(process.argv.slice(2));
+const date = options.date ?? manilaToday();
 const path = fileURLToPath(new URL("../stories.json", import.meta.url));
 const text = readFileSync(path, "utf8");
 const stories = JSON.parse(text);
 if (!Array.isArray(stories) || stories.length === 0) {
     throw new Error("Expected a non-empty list of stories in assets/stories.json");
 }
-
-// 1..n in a random order (Fisher–Yates).
-const order = stories.map((_, i) => i + 1);
-for (let i = order.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1));
-    [order[i], order[j]] = [order[j], order[i]];
+const ids = stories.map((story) => story?.id);
+for (const [i, id] of ids.entries()) {
+    if (typeof id !== "string" || id === "") throw new Error(`Story ${i + 1} in assets/stories.json has no id`);
+    if (ids.indexOf(id) !== i) throw new Error(`Story id "${id}" appears twice in assets/stories.json`);
 }
+
+const order = dailyOrder(ids, date);
+const sequence = new Map(order.map((id, i) => [id, i + 1]));
+const sequences = ids.map((id) => sequence.get(id));
 
 const field = /("sequence"\s*:\s*)-?\d+(?:\.\d+)?/g;
 let output;
-if (stories.every((story) => Number.isFinite(story?.sequence)) && [...text.matchAll(field)].length === stories.length) {
+if (stories.every((story) => Number.isFinite(story.sequence)) && [...text.matchAll(field)].length === stories.length) {
     // Swap only the numbers so the surrounding formatting survives untouched.
     let index = 0;
-    output = text.replace(field, (_, key) => `${key}${order[index++]}`);
+    output = text.replace(field, (_, key) => `${key}${sequences[index++]}`);
 } else {
     // A story is missing its sequence: rewrite the file, putting it after the id.
     const eol = text.includes("\r\n") ? "\r\n" : "\n";
-    const updated = stories.map(({ id, sequence, ...rest }, i) => ({ id, sequence: order[i], ...rest }));
+    const updated = stories.map(({ id, sequence: _, ...rest }, i) => ({ id, sequence: sequences[i], ...rest }));
     output = JSON.stringify(updated, null, 4).replace(/\n/g, eol) + eol;
 }
-writeFileSync(path, output);
+if (!options.dryRun) writeFileSync(path, output);
 
-const ids = stories.map((story, i) => [order[i], story.id]).sort((a, b) => a[0] - b[0]);
-console.log(`Story sequence for ${today}: ${ids.map(([, id]) => id).join(", ")}`);
+console.log(`Story sequence for ${date}${options.dryRun ? " (dry run, not written)" : ""}: ${order.join(", ")}`);

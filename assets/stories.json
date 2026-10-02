@@ -1,7 +1,7 @@
 [
     {
         "id": "a-great-way-off",
-        "sequence": 7,
+        "sequence": 8,
         "cover_page": "https://dailygrace.faith/media/stories/a-great-way-off/00.webp",
         "title": "The Father Who Ran",
         "description": "A Son Who Spent Everything, a Speech He Never Finished, and a Brother Who Stayed Outside.",
@@ -19,7 +19,7 @@
     },
     {
         "id": "and-ruth-with-her",
-        "sequence": 8,
+        "sequence": 9,
         "cover_page": "https://dailygrace.faith/media/stories/and-ruth-with-her/00.webp",
         "title": "Where You Go, I Will Go",
         "description": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean.",
@@ -28,7 +28,7 @@
     },
     {
         "id": "forbid-them-not",
-        "sequence": 6,
+        "sequence": 7,
         "cover_page": "https://dailygrace.faith/media/stories/forbid-them-not/00.webp",
         "title": "Let the Children Come",
         "description": "Jesus, His Disciples, and the Young Children Brought to Him.",
@@ -64,7 +64,7 @@
     },
     {
         "id": "for-his-oaths-sake",
-        "sequence": 9,
+        "sequence": 10,
         "cover_page": "https://dailygrace.faith/media/stories/for-his-oaths-sake/00.webp",
         "title": "The King Who Kept the Wrong Promise",
         "description": "A Birthday Supper, an Oath Sworn in Front of Everyone, and the Death of John the Baptist.",
@@ -82,12 +82,21 @@
     },
     {
         "id": "how-much-more",
-        "sequence": 10,
+        "sequence": 11,
         "cover_page": "https://dailygrace.faith/media/stories/how-much-more/00.webp",
         "title": "Teach Us to Pray",
         "description": "The Prayer That Begins “Our Father,” a Friend Knocking at Midnight, and a Father Who Gives Good Gifts",
         "audio": "https://dailygrace.faith/media/stories/how-much-more/how-much-more.webm",
         "story-book": "https://dailygrace.faith/media/stories/how-much-more/how-much-more-storybook.pdf"
+    },
+    {
+        "id": "too-many-for-me",
+        "sequence": 6,
+        "cover_page": "https://dailygrace.faith/media/stories/too-many-for-me/00.webp",
+        "title": "Gideon's Three Hundred Men",
+        "description": "Three Hundred Men, a Loaf of Barley Bread in a Dream, and Hands Too Full to Hold a Sword",
+        "audio": "https://dailygrace.faith/media/stories/too-many-for-me/too-many-for-me.webm",
+        "story-book": "https://dailygrace.faith/media/stories/too-many-for-me/too-many-for-me-storybook.pdf"
     }
 
 ]

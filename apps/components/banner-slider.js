@@ -27,8 +27,15 @@
  *
  * "Today" is the Asia/Manila date, when each day's devotional goes live.
  * Files are resolved from the date and its verse:
+ *   <media-base>banner/<month>/daily-grace-<YYYY-MM-DD>.mp4   (optional)
  *   <media-base>banner/<month>/daily-grace-<YYYY-MM-DD>.webp
  *   <media-base>images/symbols/<Book>-symbol.svg
+ *
+ * When a day has a video, it plays over the banner, muted and looping, once
+ * it has started; until then, and for good when there is none or it cannot
+ * play (a missing file, autoplay refused), the banner image shows as before.
+ * The image stays underneath, giving the banner its size and alt text. With
+ * reduced motion preferred, the video is not loaded.
  *
  * Methods      previous(), next()  step a day back or forward, with the slide
  *              goTo(daysAgo)       jump to a day, without it
@@ -140,7 +147,7 @@ const STYLES = /* css */ `
   }
   .stage:focus-visible { outline: none; }
   .stage.dragging { cursor: grabbing; }
-  .stage:focus-visible .banner {
+  .stage:focus-visible .slide {
     outline: 2px solid var(--banner-slider-focus);
     outline-offset: -2px;
   }
@@ -150,6 +157,20 @@ const STYLES = /* css */ `
     height: auto;
     -webkit-user-drag: none;
   }
+  /* The banner and its video, which slide together. */
+  .slide { position: relative; }
+  /* The day's video, over its banner, fading in once it is playing. */
+  .video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+  }
+  .video.playing { opacity: 1; }
   /* Yesterday's banner, just off the left edge, shown only during the swipe hint. */
   .peek {
     position: absolute;
@@ -255,6 +276,7 @@ function devotionalDay(today, daysAgo, mediaBase) {
     iso,
     name: format({ month: 'long', day: 'numeric', year: 'numeric' }),
     banner: `${mediaBase}banner/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.webp`,
+    video: `${mediaBase}banner/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.mp4`,
   };
 }
 
@@ -284,7 +306,9 @@ export class BannerSlider extends HTMLElement {
   #headingText;
   #symbol;
   #stage;
+  #slide;
   #banner;
+  #video;
   #peek;
   #flipbook;
   #reflection;
@@ -323,7 +347,11 @@ export class BannerSlider extends HTMLElement {
       <div class="stage" role="group" aria-roledescription="carousel" tabindex="0"
         aria-label="Daily Grace for the past week. Swipe, or use the arrow keys, to change the day.">
         <img class="peek" alt="" width="1920" height="1024" draggable="false" />
-        <img class="banner" alt="" width="1920" height="1024" fetchpriority="high" draggable="false" />
+        <div class="slide">
+          <img class="banner" alt="" width="1920" height="1024" fetchpriority="high" draggable="false" />
+          <video class="video" width="1920" height="1024" muted loop playsinline preload="auto"
+            disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1"></video>
+        </div>
         <a class="flipbook">${FLIPBOOK_ICON}</a>
       </div>
       <button class="reflection" type="button" aria-expanded="false" disabled>
@@ -333,7 +361,9 @@ export class BannerSlider extends HTMLElement {
     this.#headingText = this.#root.querySelector('.heading-text');
     this.#symbol = this.#root.querySelector('.symbol');
     this.#stage = this.#root.querySelector('.stage');
+    this.#slide = this.#root.querySelector('.slide');
     this.#banner = this.#root.querySelector('.banner');
+    this.#video = this.#root.querySelector('.video');
     this.#peek = this.#root.querySelector('.peek');
     this.#flipbook = this.#root.querySelector('.flipbook');
     this.#reflection = this.#root.querySelector('.reflection');
@@ -342,6 +372,13 @@ export class BannerSlider extends HTMLElement {
 
     this.#symbol.addEventListener('load', () => { this.#symbol.hidden = false; });
     this.#symbol.addEventListener('error', () => { this.#symbol.hidden = true; });
+    // The video shows only once it is playing the day on show; until then,
+    // or if it fails, the banner image beneath it does.
+    this.#video.muted = true;
+    this.#video.addEventListener('playing', () => {
+      if (this.#video.getAttribute('src') === this.#day?.video) this.#video.classList.add('playing');
+    });
+    this.#video.addEventListener('error', () => this.#video.classList.remove('playing'));
     this.#reflection.addEventListener('click', () => {
       this.#setExpanded(this.#reflection.getAttribute('aria-expanded') !== 'true');
     });
@@ -456,6 +493,7 @@ export class BannerSlider extends HTMLElement {
     this.#day = day;
     this.#banner.src = day.banner;
     this.#banner.alt = `Daily Grace devotional for ${day.name}`;
+    this.#showVideo(day);
     this.#headingText.textContent = daysAgo
       ? `Your Daily Grace for ${day.name.replace(/, \d+$/, '')}`
       : 'Your Daily Grace Today';
@@ -478,6 +516,26 @@ export class BannerSlider extends HTMLElement {
     this.#showVerse();
     this.#preloadAround(day.banner, daysAgo);
     this.#emitDay();
+  }
+
+  // Play the day's video over its banner, if it has one. A missing file, or a
+  // browser that refuses to autoplay, leaves the banner image showing.
+  #showVideo(day) {
+    const video = this.#video;
+    video.classList.remove('playing');
+    if (this.#reducedMotion.matches) {
+      if (video.hasAttribute('src')) {
+        video.removeAttribute('src');
+        video.load();
+      }
+      return;
+    }
+    if (video.getAttribute('src') === day.video) {
+      video.play().catch(() => {});
+      return;
+    }
+    video.src = day.video;
+    video.play().catch(() => {});
   }
 
   #verseFor(day) {
@@ -550,7 +608,7 @@ export class BannerSlider extends HTMLElement {
   }
 
   #setOffset(px) {
-    this.#banner.style.transform = px ? `translateX(${px}px)` : '';
+    this.#slide.style.transform = px ? `translateX(${px}px)` : '';
   }
 
   async #step(step, fromOffset = 0) {
@@ -569,7 +627,7 @@ export class BannerSlider extends HTMLElement {
     // Stepping back carries the old banner off to the right and brings the
     // earlier day in from the left, the way a swipe to the right pulls it in.
     const away = (step < 0 ? 1 : -1) * this.#stage.clientWidth;
-    const leaving = this.#banner.animate(
+    const leaving = this.#slide.animate(
       [
         { transform: `translateX(${fromOffset}px)`, opacity: 1 },
         { transform: `translateX(${away}px)`, opacity: 0 },
@@ -588,7 +646,7 @@ export class BannerSlider extends HTMLElement {
       new Promise((resolve) => setTimeout(resolve, DECODE_WAIT)),
     ]);
     leaving.cancel();
-    await this.#banner.animate(
+    await this.#slide.animate(
       [
         { transform: `translateX(${-away}px)`, opacity: 0 },
         { transform: 'none', opacity: 1 },
@@ -601,7 +659,7 @@ export class BannerSlider extends HTMLElement {
   #snapBack(fromOffset) {
     this.#setOffset(0);
     if (!fromOffset || this.#reducedMotion.matches) return;
-    this.#banner.animate(
+    this.#slide.animate(
       [{ transform: `translateX(${fromOffset}px)` }, { transform: 'none' }],
       { duration: 220, easing: 'cubic-bezier(.2, .9, .25, 1)' },
     );
@@ -678,7 +736,7 @@ export class BannerSlider extends HTMLElement {
       { transform: `translateX(${from}px)` },
     ];
     const timing = { duration: 1400 };
-    this.#hintAnimations = [this.#banner.animate(frames(0), timing)];
+    this.#hintAnimations = [this.#slide.animate(frames(0), timing)];
     if (peek.status === 'fulfilled') {
       this.#peek.classList.add('showing');
       this.#hintAnimations.push(this.#peek.animate(frames(-(width + PEEK_GAP)), timing));

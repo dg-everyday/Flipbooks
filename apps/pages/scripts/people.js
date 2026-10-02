@@ -13,7 +13,7 @@
  * the map box says so and the list of places stays readable.
  */
 
-import { h, fetchJson, refList, para, filterMenu } from './study-utils.js?v=20261002-3';
+import { h, fetchJson, refList, para, filterMenu } from './study-utils.js?v=20261003-1';
 
 const PEOPLE_DIR = 'assets/peoples/';
 

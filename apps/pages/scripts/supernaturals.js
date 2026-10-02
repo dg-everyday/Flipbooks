@@ -11,7 +11,7 @@
  * opens Lazarus, and #what-are-angels the first special topic.
  */
 
-import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261002-3';
+import { h, fetchJson, para, refList, rowExpander, followHash, filterMenu } from './study-utils.js?v=20261003-1';
 
 const DATA = 'assets/supernaturals.json';
 

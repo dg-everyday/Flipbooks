@@ -2,7 +2,8 @@
  * <poster-card> — the Daily Grace poster with a comic flip and audio narration.
  *
  * Shows the poster for a day. Activating the poster (click, Enter or Space)
- * turns it like a page to the comic version, and back again. A round button
+ * turns it like a page to the comic version, and back again; a dog-eared
+ * bottom right corner, lifting now and then, hints at it. A round button
  * on the poster plays or pauses that day's narration. Pressing and holding
  * the poster for half a second copies the link to the image on show, poster
  * or comic, so it can be shared.
@@ -146,12 +147,54 @@ const STYLES = /* css */ `
   .audio:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
   .audio:disabled { cursor: default; opacity: .55; }
 
+  /* A dog-eared corner: the poster's bottom right corner folded back, as if
+     something lay under the page. Every few seconds it lifts a little further,
+     then settles. Taps go through it to the poster, which turns to the comic. */
+  .dog-ear {
+    --ear: 30px;
+    position: absolute; right: 0; bottom: 0; z-index: 15;
+    width: var(--ear); height: var(--ear);
+    pointer-events: none;
+    filter: drop-shadow(-2px -2px 3px rgb(0 0 0 / 35%));
+    animation: ear-lift 4.5s ease-in-out 1.5s infinite;
+    transition: opacity .2s ease, width .2s ease, height .2s ease;
+  }
+  /* What the fold uncovers: the card behind the poster. */
+  .dog-ear::before,
+  .dog-ear::after {
+    content: "";
+    position: absolute; inset: 0;
+  }
+  .dog-ear::before {
+    background: var(--poster-card-bg);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  /* The back of the folded corner. */
+  .dog-ear::after {
+    border-top-left-radius: 5px;
+    background: linear-gradient(135deg, #fffaf0 0%, #efe3c8 60%, #d9c49b 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  @media (hover: hover) {
+    .wrap:hover .dog-ear { animation: none; --ear: 40px; }
+  }
+  /* Out of the way while the page turns. */
+  .wrap.turning .dog-ear { opacity: 0; transition-duration: .1s; }
+  @keyframes ear-lift {
+    0%, 62%, 100% { width: var(--ear); height: var(--ear); }
+    74% { width: calc(var(--ear) * 1.6); height: calc(var(--ear) * 1.6); }
+    84% { width: calc(var(--ear) * 1.2); height: calc(var(--ear) * 1.2); }
+    92% { width: calc(var(--ear) * 1.35); height: calc(var(--ear) * 1.35); }
+  }
+
   @media (max-width: 650px) {
     .audio { top: 8px; right: 8px; width: 36px; height: 36px; }
     .audio svg { width: 16px; height: 16px; }
+    .dog-ear { --ear: 24px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .audio svg { transition: none; }
+    .dog-ear { animation: none; }
     .copy-note { animation-name: copy-note-fade; }
     @keyframes copy-note-fade { 0%, 78% { opacity: 1; } 100% { opacity: 0; } }
   }
@@ -211,6 +254,7 @@ export class PosterCard extends HTMLElement {
                loads instead of pushing the page down when it lands. -->
           <img class="poster" alt="" width="941" height="1672" />
         </button>
+        <span class="dog-ear" aria-hidden="true"></span>
         <button class="audio" type="button" aria-pressed="false"></button>
       </div>
       <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
@@ -394,6 +438,7 @@ export class PosterCard extends HTMLElement {
     this.#audio = null;
     this.#flipId++;
     this.#poster.getAnimations().forEach((animation) => animation.cancel());
+    this.#wrap.classList.remove('turning');
     this.#comic = false;
     this.#poster.src = `${this.#posterPath}.webp`;
     this.#syncLabels();
@@ -469,6 +514,7 @@ export class PosterCard extends HTMLElement {
     }
 
     poster.getAnimations().forEach((animation) => animation.cancel());
+    this.#wrap.classList.add('turning');
     const turn = (angle) => `perspective(1400px) rotateY(${angle}deg)`;
     const out = poster.animate(
       [
@@ -482,7 +528,7 @@ export class PosterCard extends HTMLElement {
     if (flipId !== this.#flipId) return;
 
     poster.src = nextSrc;
-    poster.animate(
+    const back = poster.animate(
       [
         { transform: turn(90), opacity: 0.55 },
         { transform: turn(0), opacity: 1 },
@@ -490,6 +536,8 @@ export class PosterCard extends HTMLElement {
       { duration: 300, easing: 'ease-out' },
     );
     out.cancel();
+    await back.finished.catch(() => {});
+    if (flipId === this.#flipId) this.#wrap.classList.remove('turning');
   }
 }
 

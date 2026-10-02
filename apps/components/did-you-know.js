@@ -30,6 +30,10 @@
  *                resolved against the page.
  *                Default: ../../assets/db/didyouknow.db (relative to this file)
  *   count        Facts per batch. Default: 5
+ *   page-href    The Did You Know page, resolved against the page. An open
+ *                fact links to itself there (#fact-<id>), among the rest of
+ *                its book's facts, and a link under the list opens the page.
+ *                Default: apps/pages/did-you-know.html
  *   bookmarks    Present: no banner and no pull tab; show the bookmarked
  *                facts, newest first. Call showBookmarks() to bring the list
  *                up to date.
@@ -83,6 +87,7 @@ const bookSymbolUrl = (mediaBase, book) =>
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 //const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_PAGE = 'apps/pages/did-you-know.html';
 const DEFAULT_COUNT = 5;
 // Pulling for more stops once the list holds this many facts.
 const MAX_FACTS = 20;
@@ -276,6 +281,37 @@ const STYLES = /* css */ `
     font: 400 clamp(.9375rem, .9rem + .2vw, 1rem)/1.4 'Strait', 'Roboto', sans-serif;
   }
   .details { --scripture-ref-color: var(--dyk-reference); }
+  /* The reference, and a link to the fact among the rest of its book's on
+     the Did You Know page. */
+  .fact-foot {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 8px 14px;
+  }
+  .fact-more {
+    color: var(--dyk-navy);
+    font: 600 .9375rem/1.3 'Strait', 'Roboto', sans-serif;
+    text-decoration: underline;
+    text-decoration-color: rgb(0 27 52 / 30%);
+    text-underline-offset: 3px;
+  }
+  .fact-more:hover { text-decoration-color: currentColor; }
+  .fact-more:focus-visible { outline: 2px solid var(--dyk-navy); outline-offset: 3px; border-radius: 3px; }
+
+  /* Every fact, on the Did You Know page. */
+  .see-all {
+    justify-self: center;
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 44px; padding: 8px 20px;
+    border: 1px solid rgb(0 27 52 / 22%); border-radius: 999px;
+    background: rgb(255 255 255 / 40%);
+    color: var(--dyk-navy);
+    font: 600 1rem/1.2 'Strait', 'Roboto', sans-serif;
+    text-decoration: none;
+    transition: background-color .15s ease, border-color .15s ease;
+  }
+  .see-all:hover { background: rgb(255 255 255 / 75%); border-color: rgb(0 27 52 / 40%); }
+  .see-all:focus-visible { outline: 2px solid var(--dyk-navy); outline-offset: 3px; }
+  :host([bookmarks]) .see-all { display: none; }
 
   /* The chevrons tuck up under the last fact rather than sit a full gap away. */
   .pull-tab { margin-top: -14px; }
@@ -289,7 +325,7 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .refresh svg, .refresh.is-spinning svg { transition: none; animation: none; }
-    .fact-chevron, .details, .details-inner { transition: none; }
+    .fact-chevron, .details, .details-inner, .see-all { transition: none; }
   }
 ${BOOKMARK_STYLES}
 ${PULL_TAB_STYLES}
@@ -333,6 +369,7 @@ export class DidYouKnow extends HTMLElement {
                 title="Pull down or tap for more facts">
           ${PULL_TAB_ICON}
         </button>
+        <a class="see-all">Explore every Bible fact <span aria-hidden="true">→</span></a>
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>`;
     this.#list = this.#root.querySelector('.list');
@@ -353,19 +390,20 @@ export class DidYouKnow extends HTMLElement {
     this.#pullTab = new PullTab(this.#root.querySelector('.pull-tab'), { onPull: () => this.more() });
 
     // Tapping a card opens or closes it. A reference pill is a button of its
-    // own and a hold swallows its click, so neither of those toggles the card.
+    // own, its link goes to the Did You Know page and a hold swallows its
+    // click, so none of those toggles the card.
     this.#list.addEventListener('click', (event) => {
       const card = event.target.closest('.fact');
-      if (!card || event.target.closest('.scripture-ref')) return;
+      if (!card || event.target.closest('.scripture-ref, a')) return;
       // Selecting text in an open card should not fold it away.
       if (!event.target.closest('.toggle') && document.getSelection()?.toString()) return;
       this.#setOpen(card, !card.classList.contains('open'));
     });
 
-    // Holding a reference does nothing; it is a button of its own.
+    // Holding a reference or the link does nothing; they have taps of their own.
     this.#hold = new CardHold(this.#list, {
       selector: '.fact',
-      exclude: '.scripture-ref',
+      exclude: '.scripture-ref, a',
       onHold: (card) => {
         const id = Number(card.dataset.id);
         const result = bookmarks.toggle(id);
@@ -380,6 +418,7 @@ export class DidYouKnow extends HTMLElement {
 
   connectedCallback() {
     registerFonts();
+    this.#root.querySelector('.see-all').href = this.#pageHref();
     bookmarks.addEventListener('change', this.#syncBookmarks);
     this.#syncBookmarks();
     if (!this.#facts.length) this.#loadWhenNear();
@@ -417,6 +456,13 @@ export class DidYouKnow extends HTMLElement {
     const facts = await readFacts(new URL(src, document.baseURI).href);
     const byId = new Map(facts.map((fact) => [fact.id, fact]));
     return bookmarks.read().map((id) => byId.get(id)).filter((fact) => fact?.title && fact.text);
+  }
+
+  /** The Did You Know page, opened at hash (a fact's or a book's id) if given. */
+  #pageHref(hash = '') {
+    const page = new URL(this.getAttribute('page-href') || DEFAULT_PAGE, document.baseURI);
+    page.hash = hash;
+    return page.href;
   }
 
   get #mediaBase() {
@@ -549,13 +595,18 @@ export class DidYouKnow extends HTMLElement {
     body.className = 'body';
     body.append(title, details);
 
-    if (fact.reference) {
-      // A pill that opens the passage (scripture-refs.js).
-      const reference = document.createElement('p');
-      reference.className = 'reference';
-      reference.append(refPill(fact.reference));
-      inner.append(reference);
-    }
+    // A pill that opens the passage (scripture-refs.js), and the link to the
+    // fact on the Did You Know page, opened among the rest of its book's.
+    const foot = document.createElement('p');
+    foot.className = 'reference fact-foot';
+    if (fact.reference) foot.append(refPill(fact.reference));
+    const more = document.createElement('a');
+    more.className = 'fact-more';
+    more.href = this.#pageHref(`fact-${fact.id}`);
+    more.textContent = fact.book ? `More from ${fact.book} ` : 'More Bible facts ';
+    more.insertAdjacentHTML('beforeend', '<span aria-hidden="true">→</span>');
+    foot.append(more);
+    inner.append(foot);
 
     card.append(symbol, body);
     this.#setOpen(card, open);

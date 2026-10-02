@@ -32,6 +32,10 @@
  * makeBlueprintPdf(item) does the same for one part of the plan in
  * following-gods-blueprint.json; the PDF button on "Following Today's God
  * Blueprint" (<gods-blueprint>) opens it.
+ *
+ * makeRedLetterPdf(saying) does the same for one saying of
+ * red-letter-quotes.json; the PDF button on "Jesus' Spoken Words"
+ * (<red-letter-quotes>) opens it.
  */
 
 const JSPDF = {
@@ -347,6 +351,27 @@ const blueprintRuns = (item, { heading = true } = {}) => [
   { size: 11, color: MUTED, text: item.ask ? `Ask yourself: ${clean(item.ask)}` : '', gap: 1 },
 ];
 
+// A saying of Jesus in full, as on the Red-Lettered Quotes page: its name,
+// when and where he said it, his words in red (numbered when they run over
+// more than one verse), then what it means and one thing for today.
+const redLetterRuns = (saying) => {
+  const verses = saying.verses?.length ? saying.verses : [{ text: saying.text }];
+  const numbered = verses.length > 1;
+  return [
+    { font: 'GermaniaOne', size: 15, color: NAVY, text: clean(saying.name), gap: 1.2 },
+    { size: 10.5, color: MUTED, text: clean(saying.context), gap: 3 },
+    ...verses.map((verse) => ({
+      size: 12.5, color: RED, indent: 4, gap: 1.2, leading: 1.4,
+      text: `${numbered ? `${verse.v} ` : ''}${clean(verse.text)}` })),
+    { font: 'GermaniaOne', size: 11, color: GOLD_DARK, indent: 4, text: clean(saying.reference), gap: 4 },
+    { font: 'GermaniaOne', size: 12, color: NAVY, text: saying.meaning ? 'What it means' : '', gap: 0.8, breakBefore: true },
+    { size: 11, text: clean(saying.meaning), gap: 2 },
+    { size: 11, color: GOLD_DARK, text: saying.today ? `For today: ${clean(saying.today)}` : '', gap: 1.2, breakBefore: true },
+    { size: 10, color: MUTED, gap: 1,
+      text: saying.also_in?.length ? `Also told in: ${saying.also_in.map(clean).join(', ')}` : '' },
+  ];
+};
+
 function drawFooters(doc) {
   const pages = doc.getNumberOfPages();
   for (let page = 1; page <= pages; page++) {
@@ -464,4 +489,29 @@ export async function makeBlueprintPdf(item) {
 
   const slug = String(item.id || name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   return { blob: doc.output('blob'), filename: `daily-grace-blueprint-${slug}.pdf` };
+}
+
+/**
+ * Builds the PDF of one of Jesus' sayings, a saying of red-letter-quotes.json
+ * with the verses <red-letter-quotes> cuts for it: resolves to { blob, filename }.
+ */
+export async function makeRedLetterPdf(saying) {
+  const name = clean(saying.name);
+  const { doc, emblem } = await newDocument({
+    title: `${name} — Red-Lettered Quotes — Daily Grace`,
+    subject: clean(saying.text),
+  });
+
+  const writer = new Writer(doc);
+  drawHeader(writer, {
+    emblem,
+    eyebrow: 'DAILY GRACE · RED-LETTERED QUOTES',
+    title: "Jesus' Spoken Words",
+    subtitle: [clean(saying.theme), longDate(new Date())].filter(Boolean).join(' · '),
+  });
+  writer.item(redLetterRuns(saying));
+  drawFooters(doc);
+
+  const slug = String(saying.id || name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return { blob: doc.output('blob'), filename: `daily-grace-red-letter-${slug}.pdf` };
 }

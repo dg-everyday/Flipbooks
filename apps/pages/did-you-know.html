@@ -8,30 +8,30 @@
         />
         <meta
             name="description"
-            content="The plan God has drawn for his people: salvation, the heart of his law, what Christians do every day, solving problems God's way, understanding the times, getting ready for Christ's return, and a test for whether a resolution follows the Lord's blueprint."
+            content="Surprising facts from every book of the Bible, each with the verse it comes from."
         />
-        <link rel="canonical" href="https://dailygrace.faith/apps/pages/following-gods-blueprint.html" />
+        <link rel="canonical" href="https://dailygrace.faith/apps/pages/did-you-know.html" />
 
         <!-- Open Graph: how a link to this page looks when it is shared -->
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Daily Grace" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:url" content="https://dailygrace.faith/apps/pages/following-gods-blueprint.html" />
-        <meta property="og:title" content="Following God’s Blueprint — Daily Grace" />
+        <meta property="og:url" content="https://dailygrace.faith/apps/pages/did-you-know.html" />
+        <meta property="og:title" content="Did You Know? — Daily Grace" />
         <meta
             property="og:description"
-            content="The plan God has drawn for his people: salvation, the heart of his law, what Christians do every day, solving problems God's way, understanding the times, getting ready for Christ's return, and a test for whether a resolution follows the Lord's blueprint."
+            content="Surprising facts from every book of the Bible, each with the verse it comes from."
         />
-        <meta property="og:image" content="https://dailygrace.faith/assets/images/share/following-gods-blueprint.jpg" />
+        <meta property="og:image" content="https://dailygrace.faith/assets/images/share/did-you-know.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Following God’s Blueprint, a Daily Grace study guide" />
+        <meta property="og:image:alt" content="Did You Know, a Daily Grace study guide" />
         <!-- X uses og:image for its large card. -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="theme-color" content="#001b34" />
 
-        <title>Daily Grace — Following God's Blueprint</title>
+        <title>Daily Grace — Did You Know?</title>
         <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
         <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png" />
         <link
@@ -54,12 +54,12 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/blueprint-page.css?v=20260930-2"
+            href="../../assets/styles/did-you-know-page.css?v=20261003-1"
         />
     </head>
     <body>
         <div class="topbar">
-            <a class="brand" href="following-gods-blueprint.html" aria-label="Following God's Blueprint">
+            <a class="brand" href="did-you-know.html" aria-label="Did You Know? Bible facts">
                 <img
                     class="brand-logo"
                     src="../../assets/images/daily-grace-white-480.webp"
@@ -67,7 +67,7 @@
                     width="480"
                     height="160"
                 />
-                <span class="brand-pill">Following God's Blueprint</span>
+                <span class="brand-pill">Did You Know?</span>
             </a>
             <a class="home" href="../../index.html" aria-label="Home" title="Home">
                 <svg
@@ -87,23 +87,20 @@
             </a>
         </div>
 
-        <!-- following-gods-blueprint.js renders the plan into this element. A
-             part of the plan opens in place below its row; #born-again opens it,
-             and #blueprint-test goes to the test. -->
+        <!-- did-you-know.js renders the books and their facts into this element.
+             #fact-12 opens that fact; #genesis opens Genesis. -->
         <main id="view">
-            <p class="status">Loading the blueprint…</p>
+            <p class="status">Loading the Bible facts…</p>
         </main>
 
         <footer class="page-footer">
-            Scripture quotations from the King James Version. Words of Jesus are
-            checked against the red-letter text. "In plain words" notes are a
-            simple guide to each passage, not a replacement for it. The blueprint
-            test is a help for prayer and honest thinking, not a verdict; your
-            answers stay on this page and are not saved.
+            Scripture quotations and references from the King James Version.
         </footer>
 
+        <!-- sql.js, which reads the facts database; the passage popup shares it. -->
+        <script src="../../assets/scripts/sql_script.js?v=20261002-2" defer></script>
         <script type="module">
-            import { start } from "./scripts/following-gods-blueprint.js?v=20261003-1";
+            import { start } from "./scripts/did-you-know.js?v=20261003-1";
             start(document.getElementById("view"));
         </script>
     </body>

@@ -1,0 +1,113 @@
+/* Styles for apps/pages/bible-sayings.html, on top of study-page.css,
+   which holds the palette, topbar, hero, chips and the in-place .row-panel. */
+
+/* One colour per theme; --g colours everything inside. */
+.t-faith      { --g: #1f5f8b; --g-soft: rgb(31 95 139 / 11%); }
+.t-wisdom     { --g: #8a6a12; --g-soft: rgb(138 106 18 / 12%); }
+.t-character  { --g: #5d4a8c; --g-soft: rgb(93 74 140 / 11%); }
+.t-speech     { --g: #a2452e; --g-soft: rgb(162 69 46 / 11%); }
+.t-work       { --g: #587a2a; --g-soft: rgb(88 122 42 / 12%); }
+.t-hardship   { --g: #6b5a45; --g-soft: rgb(107 90 69 / 12%); }
+.t-peace      { --g: #2f7a6d; --g-soft: rgb(47 122 109 / 11%); }
+.t-judgment   { --g: #8e1d24; --g-soft: rgb(142 29 36 / 10%); }
+.t-signs      { --g: #b0451b; --g-soft: rgb(176 69 27 / 11%); }
+.t-time       { --g: #4a5b6e; --g-soft: rgb(74 91 110 / 12%); }
+.t-people     { --g: #9a5a1c; --g-soft: rgb(154 90 28 / 11%); }
+
+.chip-rows { display: grid; gap: 10px; }
+
+/* ---------------------------------------------------------------- sections */
+
+/* Not overflow: hidden, which would clip the chevrons as they stretch down
+   on a pull; the header rounds its own top corners instead. */
+.theme-section { margin-top: 18px; padding-top: 0; }
+.theme-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 16px;
+  margin: 0 -20px 16px; padding: 18px 20px 16px;
+  border-radius: 15px 15px 0 0;
+  color: #fff;
+  background:
+    radial-gradient(circle at 95% 0%, rgb(255 255 255 / 20%), transparent 45%),
+    linear-gradient(135deg, var(--g), color-mix(in srgb, var(--g) 70%, #000));
+}
+.theme-head h2 { font: 400 clamp(1.8rem, 1.5rem + 1.4vw, 2.4rem)/1 var(--display); }
+.theme-count { margin: 0; font-weight: 700; font-size: .85rem; opacity: .9; }
+.theme-intro { grid-column: 1 / -1; margin: 6px 0 0; max-width: 75ch; font-size: .96rem; opacity: .95; }
+
+/* ---------------------------------------------------------------- cards */
+
+.sy-grid {
+  position: relative;                 /* tiles' offsetLeft/Top are measured from here */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.sy-tile {
+  display: grid; align-content: start; gap: 3px;
+  min-width: 0;
+  padding: 12px 14px 12px 16px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--g);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit; text-align: left;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.sy-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgb(16 37 59 / 10%); }
+.sy-saying { padding-right: 16px; font: 400 1.3rem/1.1 var(--display); color: var(--navy); overflow-wrap: anywhere; }
+.sy-meaning { font-size: .9rem; line-height: 1.3; color: var(--ink); }
+.sy-meta {
+  margin-top: 3px;
+  font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--g);
+}
+
+.sy-tile.is-open { background: var(--g); border-color: var(--g); color: #fff; box-shadow: 0 8px 18px rgb(16 37 59 / 18%); }
+.sy-tile.is-open .sy-saying,
+.sy-tile.is-open .sy-meaning,
+.sy-tile.is-open .sy-meta { color: #fff; }
+
+/* The chevrons that bring out more of a theme (pull-tab.js); the grid
+   centres them under the cards. */
+.sy-more { display: grid; margin-top: 6px; margin-bottom: -8px; }
+
+/* ---------------------------------------------------------------- open saying */
+
+.row-panel .detail-head h3 { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.5rem); }
+.row-panel .verse { border-left-color: var(--g); }
+.row-panel .verse figcaption { color: var(--g); }
+.row-panel .tags { margin: 0; }
+.row-panel .tags li { background: var(--g); }
+
+/* The open saying's Bookmark button; gold while it is bookmarked. */
+.sy-bookmark {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 36px; margin-top: 12px; padding: 6px 14px 6px 10px;
+  border: 1.5px solid var(--g); border-radius: 999px;
+  background: #fff; color: var(--g);
+  font: 700 .88rem/1 var(--body); cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.sy-bookmark svg { width: 18px; height: 18px; }
+.sy-bookmark:hover { background: var(--g-soft); }
+.sy-bookmark[aria-pressed="true"] { background: #a8810c; border-color: #a8810c; color: #fff; }
+.sy-bookmark[aria-pressed="true"] svg { fill: currentColor; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+/* ---------------------------------------------------------------- small screens */
+
+@media (max-width: 600px) {
+  .theme-head { margin: 0 -16px 14px; padding: 16px; border-radius: 15px 15px 0 0; }
+  .sy-grid { grid-template-columns: 1fr; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sy-tile, .sy-bookmark { transition: none; }
+  .sy-tile:hover { transform: none; }
+}

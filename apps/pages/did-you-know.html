@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="Surprising facts from every book of the Bible, each with the verse it comes from."
+        />
+        <link rel="canonical" href="https://dailygrace.faith/apps/pages/did-you-know.html" />
+
+        <!-- Open Graph: how a link to this page looks when it is shared -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Daily Grace" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:url" content="https://dailygrace.faith/apps/pages/did-you-know.html" />
+        <meta property="og:title" content="Did You Know? — Daily Grace" />
+        <meta
+            property="og:description"
+            content="Surprising facts from every book of the Bible, each with the verse it comes from."
+        />
+        <meta property="og:image" content="https://dailygrace.faith/assets/images/share/did-you-know.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Did You Know, a Daily Grace study guide" />
+        <!-- X uses og:image for its large card. -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="theme-color" content="#001b34" />
+
+        <title>Daily Grace — Did You Know?</title>
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+        <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png" />
+        <link
+            rel="preload"
+            href="../../assets/fonts/GermaniaOne-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Strait-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/study-page.css?v=20261002-3"
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/did-you-know-page.css?v=20261003-1"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="brand" href="did-you-know.html" aria-label="Did You Know? Bible facts">
+                <img
+                    class="brand-logo"
+                    src="../../assets/images/daily-grace-white-480.webp"
+                    alt="Daily Grace"
+                    width="480"
+                    height="160"
+                />
+                <span class="brand-pill">Did You Know?</span>
+            </a>
+            <a class="home" href="../../index.html" aria-label="Home" title="Home">
+                <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m3 10 9-7 9 7"></path>
+                    <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- did-you-know.js renders the books and their facts into this element.
+             #fact-12 opens that fact; #genesis opens Genesis. -->
+        <main id="view">
+            <p class="status">Loading the Bible facts…</p>
+        </main>
+
+        <footer class="page-footer">
+            Scripture quotations and references from the King James Version.
+        </footer>
+
+        <!-- sql.js, which reads the facts database; the passage popup shares it. -->
+        <script src="../../assets/scripts/sql_script.js?v=20261002-2" defer></script>
+        <script type="module">
+            import { start } from "./scripts/did-you-know.js?v=20261003-1";
+            start(document.getElementById("view"));
+        </script>
+    </body>
+</html>

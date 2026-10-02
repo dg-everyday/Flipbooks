@@ -27,6 +27,10 @@
  *   src          URL of the sayings JSON, resolved against the page.
  *                Default: ../../assets/bible-sayings.json (relative to this file)
  *   count        Sayings per batch. Default: 5
+ *   page-href    The Bible Sayings page, resolved against the page. The popup
+ *                links to its saying there (#<id>), among the rest of its
+ *                theme, and a link under the list opens the page.
+ *                Default: apps/pages/bible-sayings.html
  *   bookmarks    Present: no banner and no pull tab; show the bookmarked
  *                sayings, newest first. Call showBookmarks() to bring the
  *                list up to date.
@@ -89,6 +93,7 @@ const bookThumbnailUrl = (mediaBase, book) =>
 const THUMBNAIL_TRIM = 0.985;
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+const DEFAULT_PAGE = 'apps/pages/bible-sayings.html';
 const DEFAULT_COUNT = 5;
 // Pulling for more stops once the list holds this many sayings.
 const MAX_SAYINGS = 20;
@@ -277,6 +282,33 @@ const STYLES = /* css */ `
   .pull-tab { margin-top: 2px; }
   :host([bookmarks]) .pull-tab { display: none; }
 
+  /* Every saying, on the Bible Sayings page. */
+  .see-all {
+    justify-self: center;
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 44px; margin-top: 14px; padding: 8px 20px;
+    border: 1px solid rgb(0 27 52 / 22%); border-radius: 999px;
+    background: rgb(255 255 255 / 40%);
+    color: var(--bs-navy);
+    font: 600 1rem/1.2 'Strait', 'Roboto', sans-serif;
+    text-decoration: none;
+    transition: background-color .15s ease, border-color .15s ease;
+  }
+  .see-all:hover { background: rgb(255 255 255 / 75%); border-color: rgb(0 27 52 / 40%); }
+  .see-all:focus-visible { outline: 2px solid var(--bs-navy); outline-offset: 3px; }
+  :host([bookmarks]) .see-all { display: none; }
+  /* The popup's link to the saying among the rest of its theme. */
+  .detail-more {
+    justify-self: start;
+    color: var(--bs-navy);
+    font: 600 1rem/1.3 'Strait', 'Roboto', sans-serif;
+    text-decoration: underline;
+    text-decoration-color: rgb(0 27 52 / 30%);
+    text-underline-offset: 3px;
+  }
+  .detail-more:hover { text-decoration-color: currentColor; }
+  .detail-more:focus-visible { outline: 2px solid var(--bs-navy); outline-offset: 3px; border-radius: 3px; }
+
   /* Popup */
   dialog:focus { outline: none; }
   dialog {
@@ -367,7 +399,7 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .round svg, .refresh.is-spinning svg { transition: none; animation: none; }
-    .saying { transition: none; }
+    .saying, .see-all { transition: none; }
   }
 ${BOOKMARK_STYLES}
 ${PULL_TAB_STYLES}
@@ -392,6 +424,11 @@ export class BibleSayings extends HTMLElement {
   #showingBookmarks = false;
   #opener = null;
   #previousOverflow = '';
+  // Leaving through the popup's link: close it, so the Back button, which can
+  // bring the page back as it was, does not land on a popup and a locked page.
+  #onPageHide = () => {
+    if (this.#dialog.open) this.#finishClose();
+  };
 
   constructor() {
     super();
@@ -415,6 +452,7 @@ export class BibleSayings extends HTMLElement {
                 title="Pull down or tap for more sayings">
           ${PULL_TAB_ICON}
         </button>
+        <a class="see-all">Explore every Bible saying <span aria-hidden="true">→</span></a>
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>
       <dialog tabindex="-1" aria-labelledby="detail-title">
@@ -461,21 +499,25 @@ export class BibleSayings extends HTMLElement {
       event.preventDefault();
       this.close();
     });
-    // A tap anywhere closes the popup, except on the reference pills.
+    // A tap anywhere closes the popup, except on the reference pills and the
+    // link to the Bible Sayings page.
     this.#dialog.addEventListener('click', (event) => {
-      if (event.composedPath().some((node) => node.nodeName === 'BUTTON')) return;
+      if (event.composedPath().some((node) => node.nodeName === 'BUTTON' || node.nodeName === 'A')) return;
       this.close();
     });
   }
 
   connectedCallback() {
     registerFonts();
+    this.#root.querySelector('.see-all').href = this.#pageHref();
+    addEventListener('pagehide', this.#onPageHide);
     bookmarks.addEventListener('change', this.#syncBookmarks);
     this.#syncBookmarks();
     if (!this.#sayings.length) this.#loadWhenNear();
   }
 
   disconnectedCallback() {
+    removeEventListener('pagehide', this.#onPageHide);
     bookmarks.removeEventListener('change', this.#syncBookmarks);
     this.#hold.cancel();
     this.#nearObserver?.disconnect();
@@ -508,6 +550,13 @@ export class BibleSayings extends HTMLElement {
     const sayings = await readSayings(new URL(src, document.baseURI).href);
     const byId = new Map(sayings.map((saying) => [saying.id, saying]));
     return bookmarks.read().map((id) => byId.get(id)).filter(Boolean);
+  }
+
+  /** The Bible Sayings page, opened at hash (a saying's id) if given. */
+  #pageHref(hash = '') {
+    const page = new URL(this.getAttribute('page-href') || DEFAULT_PAGE, document.baseURI);
+    page.hash = hash;
+    return page.href;
   }
 
   get #mediaBase() {
@@ -730,6 +779,14 @@ export class BibleSayings extends HTMLElement {
       tags.append(item);
     }
     if (tags.childElementCount) parts.push(tags);
+
+    // The saying on the Bible Sayings page, among the rest of its theme.
+    const more = document.createElement('a');
+    more.className = 'detail-more';
+    more.href = this.#pageHref(saying.id);
+    more.textContent = 'More sayings like this ';
+    more.insertAdjacentHTML('beforeend', '<span aria-hidden="true">→</span>');
+    parts.push(more);
 
     this.#detail.replaceChildren(...parts);
   }

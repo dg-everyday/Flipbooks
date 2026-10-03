@@ -71,12 +71,14 @@ function weekLeaves(sunday) {
 }
 
 // Weeks are numbered from the one holding January 1 and named for their
-// Sunday, so a week that runs into a new year keeps one cover throughout:
-// December 27, 2026 – January 2, 2027 is 2026-WEEK53 on every day of it.
+// Saturday, so a week that runs into a new year belongs to the new one and
+// keeps one cover throughout: December 27, 2026 – January 2, 2027 is
+// 2027-WEEK1 on every day of it.
 function coverPaths(sunday) {
-  const year = sunday.getUTCFullYear();
+  const saturday = new Date(sunday.getTime() + 6 * DAY_MS);
+  const year = saturday.getUTCFullYear();
   const start = new Date(Date.UTC(year, 0, 1));
-  const week = Math.floor(((sunday - start) / DAY_MS + start.getUTCDay()) / 7) + 1;
+  const week = Math.floor(((saturday - start) / DAY_MS + start.getUTCDay()) / 7) + 1;
   return [
     `images/coverpages/${year}/${year}-WEEK${week}.webp`,
     `images/coverpages/${year}/${year}-404.webp`

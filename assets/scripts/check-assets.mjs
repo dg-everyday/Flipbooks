@@ -158,7 +158,15 @@ const symbolNames = Object.fromEntries(
 const symbolUrl = (book) =>
     `${mediaBase}images/symbols/${encodeURIComponent(symbolNames[book] ?? book)}-symbol.svg`;
 
-const verses = JSON.parse(readFileSync(resolve(ROOT, "assets/verses.json"), "utf8"));
+// The daily verses, one file per month: assets/verses/<YYYY>/<month>.json.
+const VERSES_DIR = resolve(ROOT, "assets/verses");
+const verses = readdirSync(VERSES_DIR, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .flatMap((year) =>
+        readdirSync(resolve(VERSES_DIR, year.name))
+            .filter((file) => file.endsWith(".json"))
+            .flatMap((file) => JSON.parse(readFileSync(resolve(VERSES_DIR, year.name, file), "utf8"))),
+    );
 const books = [
     ...new Set(verses.map((item) => String(item.verse).replace(/\s+\d.*$/, "").trim())),
 ].sort();

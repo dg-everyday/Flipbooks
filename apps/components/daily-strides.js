@@ -2,16 +2,17 @@
  * <daily-strides> — the day's reflection on a navy card, as a web component.
  *
  * Shows the Daily Grace emblem, the "Reflection for the Day" heading, the
- * day's reflection from verses.json and a closing line, on a navy panel with
- * gold accents.
+ * day's reflection from its month's verse file and a closing line, on a navy
+ * panel with gold accents.
  *
  * Usage
  *   <daily-strides></daily-strides>
  *   <script type="module" src="./apps/components/daily-strides.js"></script>
  *
  * Attributes
- *   verses-src   verses.json with each day's reflection, resolved against the
- *                page. Default: assets/verses.json
+ *   verses-base  Folder of the month files with each day's reflection
+ *                (<YYYY>/<month>.json, see daily-verses.js), resolved against
+ *                the page. Default: assets/verses/
  *   date         Day to show as YYYY-MM-DD. Default: today in Asia/Manila.
  *
  * Properties   reflection (read-only)  the text shown, or '' until it loads
@@ -28,8 +29,8 @@
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
+import { DEFAULT_VERSES_BASE, loadVerses } from './daily-verses.js?v=20261004-1';
 
-const DEFAULT_VERSES_SRC = 'assets/verses.json';
 const TIME_ZONE = 'Asia/Manila';
 
 const asset = (path) => new URL(path, import.meta.url).href;
@@ -128,7 +129,7 @@ const STYLES = /* css */ `
   }
 `;
 
-/** The day as the "Month D, YYYY" id verses.json uses: `date` or today in Manila. */
+/** The day as the "Month D, YYYY" id the verse files use: `date` or today in Manila. */
 function verseId(date) {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date ?? '');
   const day = match
@@ -143,7 +144,7 @@ function verseId(date) {
 }
 
 export class DailyStrides extends HTMLElement {
-  static observedAttributes = ['verses-src', 'date'];
+  static observedAttributes = ['verses-base', 'date'];
 
   #root;
   #text;
@@ -181,16 +182,12 @@ export class DailyStrides extends HTMLElement {
   }
 
   #load() {
-    const src = new URL(this.getAttribute('verses-src') || DEFAULT_VERSES_SRC, document.baseURI).href;
+    const base = new URL(this.getAttribute('verses-base') || DEFAULT_VERSES_BASE, document.baseURI).href;
     const id = verseId(this.getAttribute('date'));
-    const loading = (this.#loading = fetch(src)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
-        return response.json();
-      })
+    const loading = (this.#loading = loadVerses(base, [id])
       .then((verses) => {
-        if (loading !== this.#loading) return; // superseded by a newer src or date
-        const verse = Array.isArray(verses) ? verses.find((item) => item.id === id) : null;
+        if (loading !== this.#loading) return; // superseded by a newer source or date
+        const verse = verses.get(id);
         if (!verse?.reflection) throw new Error(`No reflection found for ${id}`);
         this.#reflection = verse.reflection;
         this.#text.textContent = verse.reflection;

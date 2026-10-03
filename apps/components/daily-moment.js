@@ -17,7 +17,9 @@
  * Attributes
  *   media-base     Base URL for the poster and narration.
  *                  Default: https://dailygrace.faith/media/
- *   verses-src     verses.json, resolved against the page. Default: assets/verses.json
+ *   verses-base    Folder of the month files of verses (<YYYY>/<month>.json,
+ *                  see daily-verses.js), resolved against the page.
+ *                  Default: assets/verses/
  *   date           Day to walk through as YYYY-MM-DD. Default: today in
  *                  Asia/Manila, moving on to the new day after midnight.
  *   poster         id of the page's <poster-card>. On today's Amen screen its
@@ -25,7 +27,7 @@
  *                  share button.
  *   flipbook-href  The Flipbook page. Default: apps/pages/flipbook.html
  *
- * Each day's entry in verses.json gives the verse, text and reflection, and
+ * Each day's entry in its month's verse file gives the verse, text and reflection, and
  * optionally a `question` and a `prayer`; a day without them gets a general
  * question and a prayer naming its verse. A reflection's closing "Let us
  * pray." paragraph is left to the Pray screen rather than shown twice. With
@@ -46,6 +48,7 @@
  */
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
+import { DEFAULT_VERSES_BASE, loadVerses } from './daily-verses.js?v=20261004-1';
 
 // The Daily Grace emblem (a cross on a hill), at the heart of the Pause and Pray screens.
 const EMBLEM_URL = new URL('../../assets/images/dg-icon-03-flat.webp', import.meta.url).href;
@@ -54,7 +57,6 @@ const MOMENT_ICON_URL = new URL('../../assets/images/moment.png', import.meta.ur
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
-const DEFAULT_VERSES_SRC = 'assets/verses.json';
 const DEFAULT_FLIPBOOK_HREF = 'apps/pages/flipbook.html';
 const TIME_ZONE = 'Asia/Manila';
 const DAY_MS = 86400000;
@@ -296,13 +298,24 @@ const STYLES = /* css */ `
   .breathe { color: var(--moment-gold-light); font: 400 1.05rem 'Strait', 'Roboto', sans-serif; }
 
   /* Read */
-  .date { color: var(--moment-muted); font: 400 1.05rem 'Strait', 'Roboto', sans-serif; }
+  .date { margin-top: 10px; color: var(--moment-muted); font: 400 1.05rem/1.3 'Strait', 'Roboto', sans-serif; }
   .verse { margin: 0; color: var(--moment-navy); font: 400 1.9rem/1.35 Georgia, 'Times New Roman', serif; text-wrap: pretty; }
   .reference { color: var(--moment-gold-ink); font: 700 1.35rem Georgia, serif; }
 
-  /* Listen */
+  /* Listen. On a phone the poster takes the full width; the screen scrolls for
+     the rest of it, and the player sticks to the bottom so the play button
+     never leaves view. */
+  .body.listen { gap: 12px; padding: 12px; container-type: size; }
+  .listen-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .listen-head .note { font-size: .9rem; text-align: right; }
+  .body.listen .player {
+    position: sticky; bottom: 8px; z-index: 1;
+    padding: 6px 14px 6px 6px;
+    box-shadow: 0 6px 18px rgb(0 27 52 / 22%);
+  }
   .poster {
     align-self: center;
+    width: 100%;
     padding: 0; border: 0; border-radius: 10px;
     background: #fff;
     box-shadow: 0 14px 30px rgb(0 27 52 / 25%);
@@ -314,12 +327,21 @@ const STYLES = /* css */ `
      at the sides, rather than cropped (which cut off its top and bottom strips). */
   .poster img {
     display: block;
-    width: auto; max-width: 100%;
-    height: min(58vh, 540px);
+    width: 100%; height: auto;
     aspect-ratio: 941 / 1672;
     object-fit: contain;
   }
   .poster:focus-visible { outline: 3px solid var(--moment-gold); outline-offset: 3px; }
+  /* In the 460px popup on larger screens it is as big as fits above the player
+     without scrolling. 116px is the padding, heading row, player and gaps (the
+     vh line, for browsers without container units, also takes off the popup's
+     top bar and Back/Next row). */
+  @media (min-width: 600px) {
+    .poster {
+      width: min(100%, max(220px, calc((min(860px, 100vh - 48px) - 270px) * 941 / 1672)));
+      width: min(100%, max(220px, calc((100cqh - 116px) * 941 / 1672)));
+    }
+  }
   .player {
     display: flex; align-items: center; gap: 14px;
     padding: 10px 16px 10px 10px;
@@ -364,7 +386,7 @@ const STYLES = /* css */ `
 
   /* Pray */
   .emblem.small { width: 72px; height: 72px; box-shadow: 0 6px 16px rgb(0 27 52 / 25%); }
-  .prayer { margin: 0; color: var(--moment-navy); font: italic 400 1.5rem/1.5 Georgia, 'Times New Roman', serif; text-wrap: pretty; }
+  .prayer { margin: 0; color: var(--moment-navy); font: 400 1.5rem/1.5 Georgia, 'Times New Roman', serif; text-wrap: pretty; }
 
   /* Amen */
   .amen { margin: 0; color: var(--moment-gold-light); font: 400 4rem/1 'Germania One', Georgia, serif; }
@@ -488,25 +510,6 @@ function writeStore(key, value) {
 
 /* ---------- Content ---------- */
 
-const versesBySrc = new Map();
-
-/** verses.json by day name, fetched once per source. */
-function loadVerses(src) {
-  if (!versesBySrc.has(src)) {
-    versesBySrc.set(src, fetch(src)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
-        return response.json();
-      })
-      .then((list) => new Map(list.map((item) => [item.id, item])))
-      .catch((error) => {
-        versesBySrc.delete(src);
-        throw error;
-      }));
-  }
-  return versesBySrc.get(src);
-}
-
 /**
  * The reflection as screens: a paragraph each, a long one split at sentence
  * ends, and a closing "Let us pray." left out for the Pray screen.
@@ -540,7 +543,7 @@ const formatTime = (seconds) => {
 };
 
 export class DailyMoment extends HTMLElement {
-  static observedAttributes = ['media-base', 'verses-src', 'date', 'poster', 'flipbook-href'];
+  static observedAttributes = ['media-base', 'verses-base', 'date', 'poster', 'flipbook-href'];
 
   #root;
   #launch;
@@ -558,6 +561,7 @@ export class DailyMoment extends HTMLElement {
   #index = 0;
   #audio = null;
   #comic = false;
+  #flipId = 0;
   #loadId = 0;
   #configurePending = false;
   #today = manilaToday();
@@ -702,10 +706,10 @@ export class DailyMoment extends HTMLElement {
     const requested = /^\d{4}-\d{2}-\d{2}$/.test(this.getAttribute('date') ?? '') ? this.getAttribute('date') : this.#today;
     const day = dayFor(requested);
     const loadId = ++this.#loadId;
-    const src = new URL(this.getAttribute('verses-src') || DEFAULT_VERSES_SRC, document.baseURI).href;
+    const base = new URL(this.getAttribute('verses-base') || DEFAULT_VERSES_BASE, document.baseURI).href;
     let entry = null;
     try {
-      entry = (await loadVerses(src)).get(day.name) ?? null;
+      entry = (await loadVerses(base, [day.name])).get(day.name) ?? null;
     } catch (error) {
       console.warn("The day's Moment could not be loaded:", error);
     }
@@ -791,7 +795,7 @@ export class DailyMoment extends HTMLElement {
     });
     this.#count.textContent = `${stage + 1}/${STAGES.length}`;
 
-    this.#body.className = `body${step.stage === 'pause' || step.stage === 'pray' || step.stage === 'amen' ? ' center' : ''}`;
+    this.#body.className = `body${step.stage === 'pause' || step.stage === 'pray' || step.stage === 'amen' ? ' center' : ''}${step.stage === 'listen' ? ' listen' : ''}`;
     this.#body.innerHTML = this.#screen(step);
     this.#body.scrollTop = 0;
     if (!this.#reducedMotion.matches) {
@@ -834,12 +838,14 @@ export class DailyMoment extends HTMLElement {
           <div class="reference">${escapeHtml(entry.verse)}</div>`;
       case 'listen':
         return `
-          <div class="label" id="step-title" tabindex="-1">Listen</div>
+          <div class="listen-head">
+            <div class="label" id="step-title" tabindex="-1">Listen</div>
+            <p class="note poster-note">${this.#comic ? 'Tap the comic to see the poster.' : 'Tap the poster to see the comic.'}</p>
+          </div>
           <button class="poster${this.#comic ? ' comic' : ''}" type="button"
             aria-label="${this.#comic ? 'Show the regular poster' : 'Show the comic version of this poster'}">
             <img alt="The Daily Grace ${this.#comic ? 'comic' : 'poster'} for ${escapeHtml(day.name)}" src="${escapeHtml(this.#posterUrl(this.#comic))}" />
           </button>
-          <p class="note poster-note">${this.#comic ? 'Tap the comic to see the poster.' : 'Tap the poster to see the comic.'}</p>
           <div class="player">
             <button class="play" type="button" aria-label="Play the narration">${PLAY_ICON}</button>
             <div class="track" aria-hidden="true"><span></span></div>
@@ -972,18 +978,58 @@ export class DailyMoment extends HTMLElement {
     return `${this.#mediaPath('image')}${comic ? ' - Comic' : ''}.webp`;
   }
 
-  #flipPoster() {
+  /**
+   * Turn the poster like a page, as <poster-card> does on the main page: it
+   * swings edge-on, the image swaps while it is invisible, then the other side
+   * swings back in.
+   */
+  async #flipPoster() {
     this.#comic = !this.#comic;
     const poster = this.#body.querySelector('.poster');
     if (!poster) return;
     const image = poster.querySelector('img');
-    image.src = this.#posterUrl(this.#comic);
     image.alt = `The Daily Grace ${this.#comic ? 'comic' : 'poster'} for ${this.#day.name}`;
     poster.classList.toggle('comic', this.#comic);
     this.#body.querySelector('.poster-note').textContent = this.#comic
       ? 'Tap the comic to see the poster.'
       : 'Tap the poster to see the comic.';
     poster.setAttribute('aria-label', this.#comic ? 'Show the regular poster' : 'Show the comic version of this poster');
+
+    const flipId = ++this.#flipId;
+    const nextSrc = this.#posterUrl(this.#comic);
+    // Start loading now so the swap does not show a half-loaded image.
+    const preload = new Image();
+    preload.src = nextSrc;
+    const ready = preload.decode().catch(() => {});
+
+    if (this.#reducedMotion.matches || !poster.animate) {
+      await ready;
+      if (flipId === this.#flipId) image.src = nextSrc;
+      return;
+    }
+
+    poster.getAnimations().forEach((animation) => animation.cancel());
+    const turn = (angle) => `perspective(1400px) rotateY(${angle}deg)`;
+    const out = poster.animate(
+      [
+        { transform: turn(0), opacity: 1 },
+        { transform: turn(-90), opacity: 0.55 },
+      ],
+      { duration: 240, easing: 'ease-in', fill: 'forwards' },
+    );
+    await Promise.all([out.finished.catch(() => {}), ready]);
+    // A newer tap owns the image now; it has already cancelled this turn.
+    if (flipId !== this.#flipId) return;
+
+    image.src = nextSrc;
+    poster.animate(
+      [
+        { transform: turn(90), opacity: 0.55 },
+        { transform: turn(0), opacity: 1 },
+      ],
+      { duration: 300, easing: 'ease-out' },
+    );
+    out.cancel();
   }
 
   #toggleAudio() {

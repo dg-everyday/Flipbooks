@@ -16,24 +16,53 @@ const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // pass its own versesSrc.
 const DEFAULT_VERSES_SRC = '../../assets/verses.json';
 
+// Each day's devotional goes live at midnight here, as on the main page.
+const TIME_ZONE = 'Asia/Manila';
+const DAY_MS = 86400000;
+
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
   'august', 'september', 'october', 'november', 'december'];
 
+/* ---------- Calendar days ---------- */
+
+// Every day here is a Date at UTC midnight, read with the UTC getters and
+// formatted in UTC, so the viewer's own time zone never moves it.
+
+/** Today's calendar date in Asia/Manila. */
+function manilaToday() {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat('en-US', { timeZone: TIME_ZONE, year: 'numeric', month: 'numeric', day: 'numeric' })
+      .formatToParts(new Date())
+      .filter(({ type }) => type !== 'literal')
+      .map(({ type, value }) => [type, Number(value)])
+  );
+  return new Date(Date.UTC(parts.year, parts.month - 1, parts.day));
+}
+
+/** A YYYY-MM-DD string as a day, or null when it is malformed or no real date. */
+function parseDay(text) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(text ?? '');
+  if (!match) return null;
+  const [, year, month, day] = match.map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCMonth() === month - 1 ? date : null;
+}
+
 /* ---------- Week arithmetic ---------- */
 
-// Sunday-based week. Returns one entry per leaf: each day contributes its
-// reflection page and its comic page, in reading order.
-function weekLeaves(today = new Date()) {
-  const startOfWeek = new Date(today);
-  startOfWeek.setDate(today.getDate() - today.getDay());
-  startOfWeek.setHours(0, 0, 0, 0);
+// The Sunday that starts the week `day` falls in.
+function weekStart(day) {
+  return new Date(day.getTime() - day.getUTCDay() * DAY_MS);
+}
 
+// Returns one entry per leaf: each day contributes its reflection page and
+// its comic page, in reading order.
+function weekLeaves(sunday) {
   const leaves = [];
   for (let i = 0; i < 7; i++) {
-    const date = new Date(startOfWeek);
-    date.setDate(startOfWeek.getDate() + i);
+    const date = new Date(sunday.getTime() + i * DAY_MS);
     const label = date.toLocaleDateString('en-US', {
-      month: 'long', day: 'numeric', year: 'numeric'
+      timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric'
     });
     leaves.push({ date, label, comic: false, fileName: `${label}.webp` });
     leaves.push({ date, label, comic: true, fileName: `${label} - Comic.webp` });
@@ -41,36 +70,31 @@ function weekLeaves(today = new Date()) {
   return leaves;
 }
 
-// Sunday-based calendar weeks, matching weekLeaves(). UTC arithmetic avoids DST shifts.
-function coverPaths(today = new Date()) {
-  const year = today.getFullYear();
+// Weeks are numbered from the one holding January 1 and named for their
+// Sunday, so a week that runs into a new year keeps one cover throughout:
+// December 27, 2026 – January 2, 2027 is 2026-WEEK53 on every day of it.
+function coverPaths(sunday) {
+  const year = sunday.getUTCFullYear();
   const start = new Date(Date.UTC(year, 0, 1));
-  const day = Date.UTC(year, today.getMonth(), today.getDate());
-  const week = Math.floor(((day - start.getTime()) / 86400000 + start.getUTCDay()) / 7) + 1;
+  const week = Math.floor(((sunday - start) / DAY_MS + start.getUTCDay()) / 7) + 1;
   return [
     `images/coverpages/${year}/${year}-WEEK${week}.webp`,
     `images/coverpages/${year}/${year}-404.webp`
   ];
 }
 
-function isFutureDate(date, today = new Date()) {
-  const pageDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  const currentDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  return pageDate > currentDate;
-}
-
 /* ---------- Media paths ---------- */
 
 function imagePath(leaf) {
-  const month = MONTHS[leaf.date.getMonth()];
-  return `images/sources/${leaf.date.getFullYear()}/${month}/${leaf.fileName}`;
+  const month = MONTHS[leaf.date.getUTCMonth()];
+  return `images/sources/${leaf.date.getUTCFullYear()}/${month}/${leaf.fileName}`;
 }
 
 function audioUrl(leaf, mediaBase) {
   const baseName = leaf.fileName.replace(/\.[^.]+$/, '');
-  const month = leaf.date.toLocaleString('en-US', { month: 'long' });
+  const month = leaf.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'long' });
   return new URL(
-    `audio/${leaf.date.getFullYear()}/${month}/webm/${baseName}.webm`,
+    `audio/${leaf.date.getUTCFullYear()}/${month}/webm/${baseName}.webm`,
     mediaBase
   ).href;
 }
@@ -113,18 +137,22 @@ async function loadVerses(versesSrc) {
 
 /**
  * @param {Object} [options]
- * @param {Date} [options.date]   Any day in the week to show. Default: today.
- * @param {Date} [options.today]  What counts as today: later pages stay covered.
+ * @param {string} [options.date]  Any day in the week to show, as YYYY-MM-DD.
+ *   A missing, malformed or future date shows this week.
+ * @param {Date} [options.today]   What counts as today, as a Date at UTC
+ *   midnight: later pages stay covered. Default: today in Asia/Manila.
  * @returns {Promise<Array>} FlipPage descriptors ready for <flip-book>.pages
  */
 export async function buildWeekPages({
   mediaBase = DEFAULT_MEDIA_BASE,
   versesSrc = DEFAULT_VERSES_SRC,
-  today = new Date(),
-  date = today
+  today = manilaToday(),
+  date
 } = {}) {
-  const leaves = weekLeaves(date);
-  const [cover, fallbackCover] = coverPaths(date);
+  const requested = parseDay(date);
+  const sunday = weekStart(requested && requested <= today ? requested : today);
+  const leaves = weekLeaves(sunday);
+  const [cover, fallbackCover] = coverPaths(sunday);
 
   const [coverSrc, sources, verses] = await Promise.all([
     probe(cover, mediaBase).then(src => src || probe(fallbackCover, mediaBase)),
@@ -153,7 +181,7 @@ export async function buildWeekPages({
 
     // Artwork is published ahead of its date; the paper keeps it covered
     // until the day arrives.
-    if (isFutureDate(leaf.date, today)) {
+    if (leaf.date > today) {
       page.placeholder = {
         logo: true,
         title: 'DAILY GRACE',

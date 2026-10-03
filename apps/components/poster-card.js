@@ -18,7 +18,7 @@
  *   date         Day to show as YYYY-MM-DD. Default: today in Asia/Manila.
  *
  * Files are resolved from the date:
- *   <media-base>images/sources/<month>/<Month D, YYYY>[ - Comic].webp
+ *   <media-base>images/sources/<YYYY>/<month>/<Month D, YYYY>[ - Comic].webp
  *   <media-base>audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm
  *
  * Methods      toggle()  flip between poster and comic
@@ -431,7 +431,7 @@ export class PosterCard extends HTMLElement {
   /** (Re)point the poster and narration at the current date and media host. */
   #configure() {
     const { monthFolder, month, dateName, year } = dateParts(this.getAttribute('date'));
-    this.#posterPath = `${this.#mediaBase}images/sources/${month}/${dateName}`;
+    this.#posterPath = `${this.#mediaBase}images/sources/${year}/${month}/${dateName}`;
     this.#audioUrl = `${this.#mediaBase}audio/${year}/${monthFolder}/webm/${dateName}.webm`;
 
     this.stop();

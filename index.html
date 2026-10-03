@@ -23,7 +23,7 @@
         <!-- Today's banner: assets/scripts/update-social-image.mjs sets it on each deploy, so keep this one og:image tag. -->
         <meta
             property="og:image"
-            content="https://dailygrace.faith/media/banner/october/daily-grace-2026-10-03.webp"
+            content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-03.webp"
         />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:width" content="1920" />
@@ -64,8 +64,8 @@
                     link.fetchPriority = priority;
                     document.head.append(link);
                 };
-                preload(`${media}banner/${month}/daily-grace-${iso}.webp`, "high");
-                preload(`${media}images/sources/${month}/${dateName}.webp`, "auto");
+                preload(`${media}banner/${parts.year}/${month}/daily-grace-${iso}.webp`, "high");
+                preload(`${media}images/sources/${parts.year}/${month}/${dateName}.webp`, "auto");
             })();
         </script>
     </head>
@@ -1015,8 +1015,8 @@
         <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
         <script src="assets/scripts/sql_script.js?v=20261002-2" defer></script>
         <script src="assets/scripts/script.js?v=20261003-1" defer></script>
-        <script type="module" src="apps/components/banner-slider.js?v=20261003-1"></script>
-        <script type="module" src="apps/components/poster-card.js?v=20261003-1"></script>
+        <script type="module" src="apps/components/banner-slider.js?v=20261003-2"></script>
+        <script type="module" src="apps/components/poster-card.js?v=20261003-2"></script>
         <script type="module" src="apps/components/did-you-know.js?v=20261003-1"></script>
         <script type="module" src="apps/components/daily-guidance.js?v=20261003-1"></script>
         <script type="module" src="apps/components/gods-blueprint.js?v=20261003-1"></script>

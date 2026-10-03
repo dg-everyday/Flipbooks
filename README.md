@@ -110,14 +110,14 @@ Everything below lives on R2 under `https://dailygrace.faith/media/`, with
 filename case and spaces preserved:
 
 ```
-banner/<month>/daily-grace-<YYYY>-<MM>-<DD>.webp   daily social/hero banner
-images/sources/<month>/<Month D, YYYY>.webp        daily poster
-images/sources/<month>/<Month D, YYYY> - Comic.webp
-images/symbols/<Book name>-symbol.svg              66 book symbols
-images/thumbnails/<Book name>_square.webp          66 book tiles, for the trivia
-images/coverpages/<YYYY>/<YYYY>-WEEK<n>.webp       flipbook cover, per week
-images/coverpages/<YYYY>/<YYYY>-404.webp           cover fallback
-audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm     narration
+banner/<YYYY>/<month>/daily-grace-<YYYY>-<MM>-<DD>.webp      daily social/hero banner
+images/sources/<YYYY>/<month>/<Month D, YYYY>.webp           daily poster
+images/sources/<YYYY>/<month>/<Month D, YYYY> - Comic.webp
+images/symbols/<Book name>-symbol.svg                        66 book symbols
+images/thumbnails/<Book name>_square.webp                    66 book tiles, for the trivia
+images/coverpages/<YYYY>/<YYYY>-WEEK<n>.webp                 flipbook cover, per week
+images/coverpages/<YYYY>/<YYYY>-404.webp                     cover fallback
+audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm               narration
 ```
 
 The gold frame inside each thumbnail is not the same size or quite in the same

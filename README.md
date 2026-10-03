@@ -22,8 +22,9 @@ few images that must work even when the media host does not.
   one kind at a time under a segmented switch.
 - **Daily banner** for today's date, with a link to the flipbook.
 - **Reflection strip** — today's reflection, clamped to three lines until tapped.
-- **`<poster-card>`** — today's poster; tap it to flip to the comic version, or
-  press the red button for narration.
+- **`<poster-card>`** — today's poster; tap it to flip to the comic version,
+  press the red play button for narration, or the share button beside it to
+  send the poster or comic as a picture through the phone's share sheet.
 - **`<did-you-know>`** — five random Bible facts, reshuffled by the refresh
   button. Tapping a reference opens that passage in a popup; holding a fact
   bookmarks it.
@@ -48,7 +49,7 @@ documented in a header comment at the top of its file.
 | `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. Holding a fact bookmarks it (up to 50); with the `bookmarks` attribute it lists only those, with no banner. |
 | `<bible-sayings>` | `apps/components/bible-sayings.js` | Sayings from `assets/bible-sayings.json`; tapping one pops up the whole entry. Holding a saying bookmarks it (up to 50); `bookmarks` works as on `<did-you-know>`. |
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
-| `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. |
+| `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
 
 The hold-to-bookmark gesture, glow and ribbon for facts and sayings live in

@@ -15,7 +15,9 @@
  * Attributes
  *   media-base   Base URL for images and audio.
  *                Default: https://dailygrace.faith/media/
- *   date         Day to show as YYYY-MM-DD. Default: today in Asia/Manila.
+ *   date         Day to show as YYYY-MM-DD. Default: today in Asia/Manila,
+ *                moving on to the new day when the page is left open past
+ *                midnight.
  *
  * Files are resolved from the date:
  *   <media-base>images/sources/<YYYY>/<month>/<Month D, YYYY>[ - Comic].webp
@@ -41,6 +43,8 @@
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
 const TIME_ZONE = 'Asia/Manila';
+// How often an open page checks whether midnight has passed.
+const DATE_CHECK_INTERVAL = 60_000;
 
 // The same half-second hold the verse cards and the DG emblem use.
 const HOLD_MS = 500;
@@ -236,6 +240,8 @@ export class PosterCard extends HTMLElement {
   // A copy the browser refused outside a gesture, retried when the finger lifts.
   #pendingCopy = null;
   #posterPath = '';
+  #dateName = '';
+  #dateTimer = 0;
   #audioUrl = '';
   #audio = null;
   #comic = false;
@@ -284,11 +290,23 @@ export class PosterCard extends HTMLElement {
 
   connectedCallback() {
     this.#scheduleConfigure();
+    this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
+    document.addEventListener('visibilitychange', this.#checkDate);
   }
 
   disconnectedCallback() {
     this.stop();
+    clearInterval(this.#dateTimer);
+    document.removeEventListener('visibilitychange', this.#checkDate);
   }
+
+  // Past midnight in Manila, today's poster gives way to the new day's. A
+  // fixed `date` stays put, and narration playing at midnight finishes first.
+  // Background tabs throttle the timer, so coming back into view checks too.
+  #checkDate = () => {
+    if (document.hidden || this.hasAttribute('date') || this.playing) return;
+    if (dateParts(null).dateName !== this.#dateName) this.#scheduleConfigure();
+  };
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue && this.isConnected) this.#scheduleConfigure();
@@ -431,6 +449,7 @@ export class PosterCard extends HTMLElement {
   /** (Re)point the poster and narration at the current date and media host. */
   #configure() {
     const { monthFolder, month, dateName, year } = dateParts(this.getAttribute('date'));
+    this.#dateName = dateName;
     this.#posterPath = `${this.#mediaBase}images/sources/${year}/${month}/${dateName}`;
     this.#audioUrl = `${this.#mediaBase}audio/${year}/${monthFolder}/webm/${dateName}.webm`;
 

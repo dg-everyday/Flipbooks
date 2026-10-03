@@ -25,7 +25,8 @@
  *                   Default: apps/pages/flipbook.html
  *   past-days       How many days back the banner can be swiped. Default: 7
  *
- * "Today" is the Asia/Manila date, when each day's devotional goes live.
+ * "Today" is the Asia/Manila date, when each day's devotional goes live. A
+ * page left open past midnight moves on to the new day by itself.
  * Files are resolved from the date and its verse:
  *   <media-base>banner/<YYYY>/<month>/daily-grace-<YYYY-MM-DD>.mp4   (optional)
  *   <media-base>banner/<YYYY>/<month>/daily-grace-<YYYY-MM-DD>.webp
@@ -71,6 +72,9 @@ const DEFAULT_VERSES_SRC = 'assets/verses.json';
 const DEFAULT_FLIPBOOK_HREF = 'apps/pages/flipbook.html';
 const DEFAULT_PAST_DAYS = 7;
 const TIME_ZONE = 'Asia/Manila';
+// How often an open page checks whether midnight has passed.
+const DATE_CHECK_INTERVAL = 60_000;
+const DAY_MS = 86400000;
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
@@ -338,6 +342,7 @@ export class BannerSlider extends HTMLElement {
   #reflectionAction;
 
   #today = manilaToday();
+  #dateTimer = 0;
   #day = null;
   // verses.json by day name once it arrives; false if it could not be loaded.
   #verses = null;
@@ -425,11 +430,33 @@ export class BannerSlider extends HTMLElement {
   connectedCallback() {
     this.#scheduleConfigure();
     this.#armHint();
+    this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
+    document.addEventListener('visibilitychange', this.#checkDate);
   }
 
   disconnectedCallback() {
     this.#stopHint();
+    clearInterval(this.#dateTimer);
+    document.removeEventListener('visibilitychange', this.#checkDate);
   }
+
+  // Past midnight in Manila, today's banner gives way to the new day's. An
+  // earlier day stays on show, now one more day back, as far as past-days
+  // allows. Background tabs throttle the timer, so coming back into view
+  // checks too.
+  #checkDate = () => {
+    if (document.hidden || this.#sliding || this.#drag) return;
+    const today = manilaToday();
+    const elapsed = Math.round(
+      (Date.UTC(today.year, today.month - 1, today.day) -
+        Date.UTC(this.#today.year, this.#today.month - 1, this.#today.day)) / DAY_MS,
+    );
+    if (!elapsed) return;
+    this.#today = today;
+    this.#preloaded.clear();
+    const daysAgo = this.daysAgo ? Math.min(Math.max(this.daysAgo + elapsed, 0), this.#pastDays) : 0;
+    this.#show(daysAgo);
+  };
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue && this.isConnected) this.#scheduleConfigure();

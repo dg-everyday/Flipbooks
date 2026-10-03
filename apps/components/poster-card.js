@@ -4,9 +4,14 @@
  * Shows the poster for a day. Activating the poster (click, Enter or Space)
  * turns it like a page to the comic version, and back again; a dog-eared
  * bottom right corner, lifting now and then, hints at it. A round button
- * on the poster plays or pauses that day's narration. Pressing and holding
- * the poster for half a second copies the link to the image on show, poster
- * or comic, so it can be shared.
+ * on the poster plays or pauses that day's narration, and one left of it shares
+ * the image on show, poster or comic, as a picture through the phone's share
+ * sheet (Messenger, Viber, Facebook and the rest). Pressing and holding the
+ * poster for half a second copies the link to that image instead.
+ *
+ * Sharing sends a JPEG, which every chat app accepts; the WebP files are not
+ * taken everywhere. A browser that cannot share files shares the image's
+ * link, and one with no share sheet at all copies it.
  *
  * Usage
  *   <poster-card media-base="https://dailygrace.faith/media/"></poster-card>
@@ -25,10 +30,13 @@
  *
  * Methods      toggle()  flip between poster and comic
  *              play(), pause()  control the narration
+ *              share()  share the image on show
  * Properties   comic (read-only), playing (read-only),
  *              imageUrl (read-only)  link to the image on show
  * Events       posterchange  detail: { comic }
  *              copy          the image link was copied, detail: { url, comic }
+ *              share         the share sheet sent it on, detail: { url, comic, as }
+ *                            where `as` is 'image' or 'link'
  *
  * The audio file is only requested when the play button is first pressed.
  * The flip is skipped when the user prefers reduced motion.
@@ -50,11 +58,27 @@ const DATE_CHECK_INTERVAL = 60_000;
 const HOLD_MS = 500;
 const HOLD_SLOP = 10;
 const COPY_NOTES = { copied: 'Link copied', failed: "Couldn't copy the link" };
+// Safari refuses a share that comes too long after the tap, as the first one
+// can while the picture is still being made; by the second tap it is ready.
+const SHARE_RETRY_NOTE = 'Tap share again';
+
+const SITE_URL = 'https://dailygrace.faith/';
+const SHARE_TYPE = 'image/jpeg';
+const SHARE_QUALITY = 0.9;
+// Web Share with files: Chrome on Android and Windows, Safari on iPhone and Mac.
+const CAN_SHARE_FILES = (() => {
+  try {
+    return Boolean(navigator.canShare?.({ files: [new File([''], 'test.jpg', { type: SHARE_TYPE })] }));
+  } catch {
+    return false;
+  }
+})();
 
 // Line-art icons, matching the stroked look of the other round banner buttons.
 const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
+const SHARE_ICON = `<svg ${ICON_ATTRS}><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
 
 const STYLES = /* css */ `
   :host {
@@ -131,7 +155,8 @@ const STYLES = /* css */ `
     overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
   }
 
-  .audio {
+  .audio,
+  .share {
     position: absolute; top: 12px; right: 12px; z-index: 20;
     display: grid; place-items: center;
     width: 42px; height: 42px; padding: 0;
@@ -140,16 +165,25 @@ const STYLES = /* css */ `
     box-shadow: var(--poster-audio-shadow);
     cursor: pointer;
   }
-  .audio svg {
+  /* Left of the play button, a button's width and a gap further in. */
+  .share { right: 64px; }
+  .audio svg,
+  .share svg {
     display: block; width: 18px; height: 18px;
     transition: transform .2s ease;
   }
   .audio:hover,
-  .audio:focus-visible { background: var(--poster-audio-bg-hover); }
+  .audio:focus-visible,
+  .share:hover,
+  .share:focus-visible { background: var(--poster-audio-bg-hover); }
   .audio:hover svg,
-  .audio:focus-visible svg { transform: scale(1.08); }
-  .audio:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
-  .audio:disabled { cursor: default; opacity: .55; }
+  .audio:focus-visible svg,
+  .share:hover svg,
+  .share:focus-visible svg { transform: scale(1.08); }
+  .audio:focus-visible,
+  .share:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+  .audio:disabled,
+  .share:disabled { cursor: default; opacity: .55; }
 
   /* A dog-eared corner: the poster's bottom right corner folded back, as if
      something lay under the page. Every few seconds it lifts a little further,
@@ -192,12 +226,16 @@ const STYLES = /* css */ `
   }
 
   @media (max-width: 650px) {
-    .audio { top: 8px; right: 8px; width: 36px; height: 36px; }
-    .audio svg { width: 16px; height: 16px; }
+    .audio,
+    .share { top: 8px; right: 8px; width: 36px; height: 36px; }
+    .share { right: 52px; }
+    .audio svg,
+    .share svg { width: 16px; height: 16px; }
     .dog-ear { --ear: 24px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .audio svg { transition: none; }
+    .audio svg,
+    .share svg { transition: none; }
     .dog-ear { animation: none; }
     .copy-note { animation-name: copy-note-fade; }
     @keyframes copy-note-fade { 0%, 78% { opacity: 1; } 100% { opacity: 0; } }
@@ -223,6 +261,30 @@ function dateParts(dateAttr) {
   };
 }
 
+/**
+ * The image at `src` as a JPEG file to share, named after it:
+ * "Daily Grace - October 3, 2026 - Comic.jpg".
+ */
+async function shareFile(src) {
+  const response = await fetch(src);
+  if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
+  const bitmap = await createImageBitmap(await response.blob());
+  const canvas = document.createElement('canvas');
+  canvas.width = bitmap.width;
+  canvas.height = bitmap.height;
+  const context = canvas.getContext('2d');
+  // JPEG has no transparency; anything see-through would turn black.
+  context.fillStyle = '#fff';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(bitmap, 0, 0);
+  bitmap.close();
+  const blob = await new Promise((resolve, reject) => {
+    canvas.toBlob((result) => (result ? resolve(result) : reject(new Error('Unable to encode the image'))), SHARE_TYPE, SHARE_QUALITY);
+  });
+  const name = decodeURIComponent(new URL(src).pathname.split('/').pop()).replace(/\.[^.]+$/, '');
+  return new File([blob], `Daily Grace - ${name}.jpg`, { type: SHARE_TYPE });
+}
+
 export class PosterCard extends HTMLElement {
   static observedAttributes = ['media-base', 'date'];
 
@@ -230,6 +292,10 @@ export class PosterCard extends HTMLElement {
   #toggleButton;
   #poster;
   #audioButton;
+  #shareButton;
+  // The images on show today as files to share, by src: { promise, file }.
+  #shareFiles = new Map();
+  #sharing = false;
   #wrap;
   #status;
   #hold = null;
@@ -262,6 +328,7 @@ export class PosterCard extends HTMLElement {
         </button>
         <span class="dog-ear" aria-hidden="true"></span>
         <button class="audio" type="button" aria-pressed="false"></button>
+        <button class="share" type="button">${SHARE_ICON}</button>
       </div>
       <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
     this.#wrap = this.#root.querySelector('.wrap');
@@ -269,6 +336,7 @@ export class PosterCard extends HTMLElement {
     this.#toggleButton = this.#root.querySelector('.toggle');
     this.#poster = this.#root.querySelector('.poster');
     this.#audioButton = this.#root.querySelector('.audio');
+    this.#shareButton = this.#root.querySelector('.share');
 
     this.#toggleButton.addEventListener('click', (event) => {
       if (this.#swallowClick) {
@@ -283,6 +351,15 @@ export class PosterCard extends HTMLElement {
     this.#audioButton.addEventListener('click', () => {
       if (this.playing) this.stop();
       else this.play();
+    });
+    this.#shareButton.addEventListener('click', () => this.share());
+    // Make the file while the reader looks, so a tap can share it at once.
+    this.#poster.addEventListener('load', () => {
+      const src = this.#poster.src;
+      const idle = window.requestIdleCallback ?? ((callback) => setTimeout(callback, 200));
+      idle(() => {
+        if (this.#poster.src === src) this.#shareFileFor(src);
+      });
     });
     this.#syncLabels();
     this.#syncAudioButton();
@@ -403,17 +480,86 @@ export class PosterCard extends HTMLElement {
   }
 
   #showCopyNote(copied, url) {
-    const result = copied ? 'copied' : 'failed';
-    this.#wrap.querySelector('.copy-note')?.remove();
-    const note = document.createElement('span');
-    note.className = `copy-note ${result}`;
-    note.setAttribute('aria-hidden', 'true');
-    note.textContent = COPY_NOTES[result];
-    note.addEventListener('animationend', () => note.remove(), { once: true });
-    this.#wrap.append(note);
-    this.#status.textContent = `${COPY_NOTES[result]}.`;
+    this.#showNote(COPY_NOTES[copied ? 'copied' : 'failed'], !copied);
     if (copied) {
       this.dispatchEvent(new CustomEvent('copy', { detail: { url, comic: this.#comic } }));
+    }
+  }
+
+  /** A pill over the poster's foot that fades out, read out by screen readers too. */
+  #showNote(text, failed = false) {
+    this.#wrap.querySelector('.copy-note')?.remove();
+    const note = document.createElement('span');
+    note.className = `copy-note${failed ? ' failed' : ''}`;
+    note.setAttribute('aria-hidden', 'true');
+    note.textContent = text;
+    note.addEventListener('animationend', () => note.remove(), { once: true });
+    this.#wrap.append(note);
+    this.#status.textContent = `${text}.`;
+  }
+
+  /** The image at `src` as a file to share, made once and kept for the day. */
+  #shareFileFor(src) {
+    if (!CAN_SHARE_FILES || !src) return Promise.resolve(null);
+    let entry = this.#shareFiles.get(src);
+    if (!entry) {
+      entry = { file: null, promise: null };
+      entry.promise = shareFile(src).then(
+        (file) => (entry.file = file),
+        (error) => {
+          // A blip loading the image should not stop a later tap from trying again.
+          console.warn('The poster could not be prepared for sharing:', error);
+          this.#shareFiles.delete(src);
+          return null;
+        },
+      );
+      this.#shareFiles.set(src, entry);
+    }
+    return entry.promise;
+  }
+
+  /**
+   * Share the image on show through the phone's share sheet: as a picture
+   * where the browser can share files, as its link where it can only share
+   * links, and by copying the link where it has no share sheet at all.
+   */
+  async share() {
+    if (this.#sharing) return;
+    const url = this.imageUrl;
+    const comic = this.#comic;
+    const title = `Daily Grace${comic ? ' comic' : ''} for ${this.#dateName}`;
+    const text = `${title} · ${SITE_URL}`;
+    const done = (as) => this.dispatchEvent(new CustomEvent('share', { detail: { url, comic, as } }));
+
+    if (!navigator.share) {
+      this.#showCopyNote(await this.#copy(url), url);
+      return;
+    }
+
+    this.#sharing = true;
+    // Ready already, the file goes straight to share() inside the tap; still
+    // being made, the wait may cost Safari's permission (see the catch).
+    let file = this.#shareFiles.get(url)?.file;
+    try {
+      file ??= await this.#shareFileFor(url);
+      if (file && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title, text });
+        done('image');
+      } else {
+        await navigator.share({ title, text, url });
+        done('link');
+      }
+    } catch (error) {
+      // The reader closed the share sheet without choosing anything.
+      if (error.name === 'AbortError') return;
+      if (error.name === 'NotAllowedError' && file) {
+        this.#showNote(SHARE_RETRY_NOTE);
+        return;
+      }
+      console.warn('The poster could not be shared:', error);
+      this.#showCopyNote(await this.#copy(url), url);
+    } finally {
+      this.#sharing = false;
     }
   }
 
@@ -455,6 +601,7 @@ export class PosterCard extends HTMLElement {
 
     this.stop();
     this.#audio = null;
+    this.#shareFiles.clear();
     this.#flipId++;
     this.#poster.getAnimations().forEach((animation) => animation.cancel());
     this.#wrap.classList.remove('turning');
@@ -467,6 +614,9 @@ export class PosterCard extends HTMLElement {
     const label = this.#comic ? 'Show the regular poster' : 'Show the comic version of this poster';
     this.#toggleButton.setAttribute('aria-label', label);
     this.#toggleButton.title = label;
+    const shareLabel = this.#comic ? 'Share this comic' : 'Share this poster';
+    this.#shareButton.setAttribute('aria-label', shareLabel);
+    this.#shareButton.title = shareLabel;
   }
 
   #syncAudioButton() {

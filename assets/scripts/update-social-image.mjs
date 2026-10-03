@@ -19,7 +19,7 @@ const month = new Intl.DateTimeFormat("en-US", {
 })
     .format(now)
     .toLowerCase();
-const url = `https://dailygrace.faith/media/banner/${month}/daily-grace-${parts.year}-${parts.month}-${parts.day}.webp`;
+const url = `https://dailygrace.faith/media/banner/${parts.year}/${month}/daily-grace-${parts.year}-${parts.month}-${parts.day}.webp`;
 const targets = [
     "../../index.html", 
     "../../apps/pages/flipbook.html"

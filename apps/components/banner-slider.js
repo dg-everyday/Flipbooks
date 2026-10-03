@@ -18,8 +18,9 @@
  * Attributes
  *   media-base      Base URL for the banners and book symbols.
  *                   Default: https://dailygrace.faith/media/
- *   verses-src      verses.json with each day's reflection, resolved against
- *                   the page. Default: assets/verses.json
+ *   verses-base     Folder of the month files with each day's reflection
+ *                   (<YYYY>/<month>.json, see daily-verses.js), resolved
+ *                   against the page. Default: assets/verses/
  *   flipbook-href   The Flipbook page, resolved against the page. An earlier
  *                   day adds ?date=YYYY-MM-DD so it opens on that day's week.
  *                   Default: apps/pages/flipbook.html
@@ -42,11 +43,11 @@
  *              goTo(daysAgo)       jump to a day, without it
  * Properties   daysAgo (read-only), date (read-only, YYYY-MM-DD)
  * Events       daychange  detail: { daysAgo, date, name, verse }
- *                `name` is the day as verses.json keys it ("September 24, 2026")
- *                and `verse` its entry there, or null until verses.json has
+ *                `name` is the day as the verse files key it ("September 24, 2026")
+ *                and `verse` its entry there, or null until its month has
  *                loaded or when it has none. Fires once for today on
  *                connect, on every change of day, and again for the day shown
- *                once verses.json arrives.
+ *                once the verses arrive.
  *
  * Swipe hint: about a second after today's banner is on screen, it nudges
  * right to show the edge of yesterday's, then springs back, so readers learn
@@ -66,9 +67,10 @@
  * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
+import { DEFAULT_VERSES_BASE, loadVerses, versesFileUrl } from './daily-verses.js?v=20261004-1';
+
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
-const DEFAULT_VERSES_SRC = 'assets/verses.json';
 const DEFAULT_FLIPBOOK_HREF = 'apps/pages/flipbook.html';
 const DEFAULT_PAST_DAYS = 7;
 const TIME_ZONE = 'Asia/Manila';
@@ -326,7 +328,7 @@ function writeHintState(state) {
 }
 
 export class BannerSlider extends HTMLElement {
-  static observedAttributes = ['media-base', 'verses-src', 'flipbook-href', 'past-days'];
+  static observedAttributes = ['media-base', 'verses-base', 'flipbook-href', 'past-days'];
 
   #root;
   #headingText;
@@ -344,9 +346,11 @@ export class BannerSlider extends HTMLElement {
   #today = manilaToday();
   #dateTimer = 0;
   #day = null;
-  // verses.json by day name once it arrives; false if it could not be loaded.
+  // The swipeable days' verses by day name once they arrive; false if they
+  // could not be loaded.
   #verses = null;
-  #versesSrc = null;
+  // The source and month files #verses was asked for.
+  #versesKey = null;
   #preloaded = new Set();
   #configurePending = false;
 
@@ -456,6 +460,7 @@ export class BannerSlider extends HTMLElement {
     this.#preloaded.clear();
     const daysAgo = this.daysAgo ? Math.min(Math.max(this.daysAgo + elapsed, 0), this.#pastDays) : 0;
     this.#show(daysAgo);
+    this.#refreshVerses();
   };
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -511,27 +516,35 @@ export class BannerSlider extends HTMLElement {
   #configure() {
     this.#preloaded.clear();
     this.#show(Math.min(this.daysAgo, this.#pastDays));
-    const versesSrc = new URL(this.getAttribute('verses-src') || DEFAULT_VERSES_SRC, document.baseURI).href;
-    if (versesSrc !== this.#versesSrc) {
-      this.#versesSrc = versesSrc;
-      this.#loadVerses(versesSrc);
-    }
+    this.#refreshVerses();
   }
 
-  async #loadVerses(src) {
-    this.#verses = null;
-    this.#showVerse();
+  // Load the month files the swipeable days fall in, which change when the
+  // range crosses into a new month. Only a new source goes back to
+  // "Loading…"; a month joining at midnight leaves the day shown as it is.
+  #refreshVerses() {
+    const base = new URL(this.getAttribute('verses-base') || DEFAULT_VERSES_BASE, document.baseURI).href;
+    const names = Array.from({ length: this.#pastDays + 1 },
+      (_, daysAgo) => devotionalDay(this.#today, daysAgo, this.#mediaBase).name);
+    const key = [base, ...new Set(names.map((name) => versesFileUrl(base, name)))].join('|');
+    if (key === this.#versesKey) return;
+    if (!this.#versesKey?.startsWith(`${base}|`)) {
+      this.#verses = null;
+      this.#showVerse();
+    }
+    this.#versesKey = key;
+    this.#loadVerses(base, names, key);
+  }
+
+  async #loadVerses(base, names, key) {
     let verses;
     try {
-      const response = await fetch(src);
-      if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
-      const list = await response.json();
-      verses = new Map(list.map((item) => [item.id, item]));
+      verses = await loadVerses(base, names);
     } catch (error) {
       console.warn('Daily Grace reflections could not be loaded:', error);
       verses = false;
     }
-    if (src !== this.#versesSrc) return;
+    if (key !== this.#versesKey) return;
     this.#verses = verses;
     this.#showVerse();
     this.#emitDay();

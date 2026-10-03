@@ -9,12 +9,15 @@
  * The component gets the finished list and no rules at all.
  */
 
+import { loadVerses } from '../../components/daily-verses.js?v=20261004-1';
+
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
-// Resolved against the calling PAGE, not this file, so the two dots count up
-// from apps/pages/ and not from this directory. A page at another depth must
-// pass its own versesSrc.
-const DEFAULT_VERSES_SRC = '../../assets/verses.json';
+// The folder of month verse files (<YYYY>/<month>.json). Resolved against the
+// calling PAGE, not this file, so the two dots count up from apps/pages/ and
+// not from this directory. A page at another depth must pass its own
+// versesBase.
+const DEFAULT_VERSES_BASE = '../../assets/verses/';
 
 // Each day's devotional goes live at midnight here, as on the main page.
 const TIME_ZONE = 'Asia/Manila';
@@ -121,14 +124,14 @@ function probe(path, mediaBase) {
   });
 }
 
-async function loadVerses(versesSrc) {
+// The week's verse references by day name. A week can straddle two months,
+// or two years, so this may read two month files.
+async function loadWeekVerses(versesBase, names) {
   try {
-    const response = await fetch(new URL(versesSrc, window.location.href));
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const verses = await response.json();
-    return new Map(verses
-      .filter(item => typeof item?.id === 'string' && typeof item.verse === 'string')
-      .map(item => [item.id, item.verse]));
+    const verses = await loadVerses(new URL(versesBase, window.location.href).href, names);
+    return new Map([...verses]
+      .filter(([, item]) => typeof item?.verse === 'string')
+      .map(([id, item]) => [id, item.verse]));
   } catch (error) {
     console.warn('Unable to load verses:', error);
     return new Map();
@@ -147,7 +150,7 @@ async function loadVerses(versesSrc) {
  */
 export async function buildWeekPages({
   mediaBase = DEFAULT_MEDIA_BASE,
-  versesSrc = DEFAULT_VERSES_SRC,
+  versesBase = DEFAULT_VERSES_BASE,
   today = manilaToday(),
   date
 } = {}) {
@@ -159,7 +162,7 @@ export async function buildWeekPages({
   const [coverSrc, sources, verses] = await Promise.all([
     probe(cover, mediaBase).then(src => src || probe(fallbackCover, mediaBase)),
     Promise.all(leaves.map(leaf => probe(imagePath(leaf), mediaBase))),
-    loadVerses(versesSrc)
+    loadWeekVerses(versesBase, [...new Set(leaves.map(leaf => leaf.label))])
   ]);
 
   const pages = [];

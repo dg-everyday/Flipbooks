@@ -61,6 +61,11 @@ const DAY_MS = 86400000;
 
 const DONE_KEY = 'dailygrace:moment:done';
 const ANSWERS_KEY = 'dailygrace:moment:answers';
+// The day the card's light last played, so it plays at most once a day.
+const HINT_KEY = 'dailygrace:moment:hint';
+// Try again this soon when something (the trivia quiz) covers the card.
+const HINT_RETRY = 1500;
+const HINT_MS = 3600;
 // About a year of finished days, and two months of answers.
 const MAX_DONE = 400;
 const MAX_ANSWERS = 60;
@@ -107,11 +112,13 @@ const STYLES = /* css */ `
      Not yet done: a navy card inviting the reader in, the Moment icon on gold.
      Done: a warm gold card, navy lettering, the icon on cream with a check. */
   .launch {
+    position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 14px;
     width: 100%;
     padding: 16px 18px;
+    overflow: hidden;
     border: 1px solid rgb(225 182 93 / 40%);
     border-radius: 10px;
     background:
@@ -148,6 +155,32 @@ const STYLES = /* css */ `
   .launch-sub { color: #cfd8e6; font: 400 1rem/1.35 'Strait', 'Roboto', sans-serif; }
   .launch-chevron { flex: none; color: var(--moment-gold-light); }
   .launch-chevron svg { display: block; width: 22px; height: 22px; }
+  .launch-row { display: flex; align-items: center; gap: 14px; }
+
+  /* Once a day, the first time the card comes into view while the Moment is
+     still to do, a soft gold light passes across it and a ring breathes out
+     from the icon twice. Then it stays still. */
+  .launch-sheen {
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent 30%, rgb(255 226 160 / 24%) 50%, transparent 70%);
+    transform: translateX(-110%);
+    pointer-events: none;
+  }
+  .launch.hint .launch-sheen { animation: sheen 1.8s ease-in-out .2s both; }
+  @keyframes sheen { to { transform: translateX(110%); } }
+  .launch-icon::after {
+    content: "";
+    position: absolute; inset: 0;
+    border: 2px solid var(--moment-gold-light);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .launch.hint .launch-icon::after { animation: ring 1.5s ease-out .3s 2; }
+  @keyframes ring {
+    from { transform: scale(1); opacity: .9; }
+    to { transform: scale(1.75); opacity: 0; }
+  }
 
   .launch.done {
     border-color: rgb(90 60 10 / 40%);
@@ -163,6 +196,8 @@ const STYLES = /* css */ `
   .launch.done .launch-check { display: grid; }
   .launch.done .launch-sub { color: #2b1d03; }
   .launch.done .launch-chevron { color: var(--moment-navy); }
+  /* Once done, the card goes quiet. */
+  .launch.done .launch-sheen { display: none; }
 
   /* ----- The Moment itself ----- */
   dialog {
@@ -401,7 +436,8 @@ const STYLES = /* css */ `
   }
   @media (prefers-reduced-motion: reduce) {
     .launch, .progress span { transition: none; }
-    .body.enter, .rings { animation: none; }
+    .body.enter, .rings,
+    .launch.hint .launch-sheen, .launch.hint .launch-icon::after { animation: none; }
   }
 `;
 
@@ -526,6 +562,9 @@ export class DailyMoment extends HTMLElement {
   #configurePending = false;
   #today = manilaToday();
   #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  #hintObserver = null;
+  #hintTimer = 0;
+  #inView = false;
 
   constructor() {
     super();
@@ -534,15 +573,18 @@ export class DailyMoment extends HTMLElement {
     this.#root.innerHTML = `
       <style>${STYLES}</style>
       <button class="launch" type="button" aria-haspopup="dialog">
-        <span class="launch-icon">
-          <img src="${MOMENT_ICON_URL}" alt="" width="52" height="52" />
-          <span class="launch-check">${CHECK_ICON}</span>
+        <span class="launch-sheen" aria-hidden="true"></span>
+        <span class="launch-row">
+          <span class="launch-icon">
+            <img src="${MOMENT_ICON_URL}" alt="" width="52" height="52" />
+            <span class="launch-check">${CHECK_ICON}</span>
+          </span>
+          <span class="launch-text">
+            <span class="launch-title"></span>
+            <span class="launch-sub"></span>
+          </span>
+          <span class="launch-chevron">${NEXT_ICON}</span>
         </span>
-        <span class="launch-text">
-          <span class="launch-title"></span>
-          <span class="launch-sub"></span>
-        </span>
-        <span class="launch-chevron">${NEXT_ICON}</span>
       </button>
       <dialog aria-labelledby="step-title">
         <div class="frame">
@@ -587,11 +629,35 @@ export class DailyMoment extends HTMLElement {
     registerFonts();
     this.#scheduleConfigure();
     document.addEventListener('visibilitychange', this.#checkDate);
+    this.#hintObserver = new IntersectionObserver(([entry]) => {
+      this.#inView = entry.isIntersecting;
+      if (this.#inView) this.#tryHint();
+    }, { threshold: 0.6 });
+    this.#hintObserver.observe(this.#launch);
   }
 
   disconnectedCallback() {
     document.removeEventListener('visibilitychange', this.#checkDate);
+    this.#hintObserver?.disconnect();
+    clearTimeout(this.#hintTimer);
     this.#stopAudio();
+  }
+
+  // The once-a-day light across the card: only while the day's Moment is still
+  // to do, the card is in view and uncovered, and motion is welcome.
+  #tryHint() {
+    clearTimeout(this.#hintTimer);
+    if (!this.#inView || !this.#entry || this.done || this.#reducedMotion.matches) return;
+    if (readStore(HINT_KEY, '') === this.#today) return;
+    const box = this.#launch.getBoundingClientRect();
+    const covered = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2) !== this;
+    if (document.hidden || this.#dialog.open || covered) {
+      this.#hintTimer = setTimeout(() => this.#tryHint(), HINT_RETRY);
+      return;
+    }
+    writeStore(HINT_KEY, this.#today);
+    this.#launch.classList.add('hint');
+    this.#hintTimer = setTimeout(() => this.#launch.classList.remove('hint'), HINT_MS);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -664,6 +730,8 @@ export class DailyMoment extends HTMLElement {
     this.#launch.setAttribute('aria-label', done
       ? `${this.#launch.querySelector('.launch-title').textContent}, done. Open it again.`
       : `${this.#launch.querySelector('.launch-title').textContent}, about 5 minutes`);
+    // The card may have just appeared (or a new day begun) while in view.
+    if (!done) queueMicrotask(() => this.#tryHint());
   }
 
   /** Open the Moment at its first screen. */

@@ -241,6 +241,14 @@ document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_UR
 document.getElementById("bible-sayings").setAttribute("media-base", MEDIA_BASE_URL);
 // <poster-card> resolves the poster and narration files for the date itself.
 document.getElementById("poster-card").setAttribute("media-base", MEDIA_BASE_URL);
+// <daily-moment> walks through the day on the banner: today's Moment, or an
+// earlier day's while the reader has swiped back to it.
+const dailyMoment = document.getElementById("daily-moment");
+dailyMoment.setAttribute("media-base", MEDIA_BASE_URL);
+document.getElementById("banner-slider").addEventListener("daychange", (event) => {
+    if (event.detail.daysAgo) dailyMoment.setAttribute("date", event.detail.date);
+    else dailyMoment.removeAttribute("date");
+});
 // <bible-trivia> pops itself up after the page loads; it needs the book thumbnails.
 document.getElementById("bible-trivia").setAttribute("media-base", MEDIA_BASE_URL);
 

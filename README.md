@@ -22,6 +22,9 @@ few images that must work even when the media host does not.
   one kind at a time under a segmented switch.
 - **Daily banner** for today's date, with a link to the flipbook.
 - **Reflection strip** — today's reflection, clamped to three lines until tapped.
+- **`<daily-moment>`** — "Start today's Moment": the day's devotional one
+  screen at a time (pause, verse, poster and narration, reflection, question,
+  prayer, Amen), about five minutes. Follows the day shown on the banner.
 - **`<poster-card>`** — today's poster; tap it to flip to the comic version,
   press the red play button for narration, or the share button beside it to
   send the poster or comic as a picture through the phone's share sheet.
@@ -50,6 +53,7 @@ documented in a header comment at the top of its file.
 | `<bible-sayings>` | `apps/components/bible-sayings.js` | Sayings from `assets/bible-sayings.json`; tapping one pops up the whole entry. Holding a saying bookmarks it (up to 50); `bookmarks` works as on `<did-you-know>`. |
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
 | `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. |
+| `<daily-moment>` | `apps/components/daily-moment.js` | The guided Moment: a navy card that opens a full-screen walk through the day from `verses.json`. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
 
 The hold-to-bookmark gesture, glow and ribbon for facts and sayings live in
@@ -93,7 +97,7 @@ declared inside a shadow root.
 | --- | --- |
 | `assets/db/dailygrace.db` | The complete KJV: 66 books, 1,189 chapters, 31,102 verses (4.7 MB). Tables: `books(book_number, book_id, book_name)` and `verses(docid, book, chapter, verse, text)`, joined on `verses.book = books.book_id`. |
 | `assets/explanations/<book_id>/<chapter>.json` | A commentary note per verse (Jamieson-Fausset-Brown, or John Gill where JFB is silent), keyed by verse number. Kept out of `dailygrace.db` so the search download stays small; `<bible-search-results>` fetches one chapter when a verse's folded corner is tapped. Rebuild with `tools/explanations/`. |
-| `assets/verses.json` | Daily verse, text, and reflection, keyed by date string (`"September 1, 2026"`). Also supplies the verse shown on not-yet-released flipbook pages. |
+| `assets/verses.json` | Daily verse, text, reflection, `question` and `prayer`, keyed by date string (`"September 1, 2026"`). The question and prayer are for the Moment's Respond and Pray screens; a day without them gets a general one. Also supplies the verse shown on not-yet-released flipbook pages. |
 | `assets/db/didyouknow.db` | 1,021 Bible facts in one table, `did_you_know(id, Title, Fact, Reference_verse, Book, Similar_books)`. `Reference_verse` must parse and exist in `dailygrace.db`, since tapping it opens the passage. `Similar_books` holds four books that are never the row's own `Book`; `<bible-trivia>` draws two of them as wrong answers. Add rows with `tools/didyouknow/add_rows.py`. |
 | `assets/did-you-know.json` | The original 501 facts, superseded by `didyouknow.db` and no longer read by anything. |
 | `assets/book-metadata.json` | Fallback `title` / `description` for all 66 books — see below. |

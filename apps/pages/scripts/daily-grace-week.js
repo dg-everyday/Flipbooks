@@ -63,7 +63,7 @@ function isFutureDate(date, today = new Date()) {
 
 function imagePath(leaf) {
   const month = MONTHS[leaf.date.getMonth()];
-  return `images/sources/${month}/${leaf.fileName}`;
+  return `images/sources/${leaf.date.getFullYear()}/${month}/${leaf.fileName}`;
 }
 
 function audioUrl(leaf, mediaBase) {

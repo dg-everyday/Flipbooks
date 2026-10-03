@@ -27,8 +27,8 @@
  *
  * "Today" is the Asia/Manila date, when each day's devotional goes live.
  * Files are resolved from the date and its verse:
- *   <media-base>banner/<month>/daily-grace-<YYYY-MM-DD>.mp4   (optional)
- *   <media-base>banner/<month>/daily-grace-<YYYY-MM-DD>.webp
+ *   <media-base>banner/<YYYY>/<month>/daily-grace-<YYYY-MM-DD>.mp4   (optional)
+ *   <media-base>banner/<YYYY>/<month>/daily-grace-<YYYY-MM-DD>.webp
  *   <media-base>images/symbols/<Book>-symbol.svg
  *
  * When a day has a video, it plays over the banner, muted and looping, once
@@ -297,8 +297,8 @@ function devotionalDay(today, daysAgo, mediaBase) {
     daysAgo,
     iso,
     name: format({ month: 'long', day: 'numeric', year: 'numeric' }),
-    banner: `${mediaBase}banner/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.webp`,
-    video: `${mediaBase}banner/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.mp4`,
+    banner: `${mediaBase}banner/${date.getUTCFullYear()}/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.webp`,
+    video: `${mediaBase}banner/${date.getUTCFullYear()}/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.mp4`,
   };
 }
 

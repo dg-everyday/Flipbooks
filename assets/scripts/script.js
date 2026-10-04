@@ -249,6 +249,8 @@ document.getElementById("banner-slider").addEventListener("daychange", (event) =
     if (event.detail.daysAgo) dailyMoment.setAttribute("date", event.detail.date);
     else dailyMoment.removeAttribute("date");
 });
+// <memory-verse> shows the week's verse with its book's thumbnail, as <bible-sayings> does.
+document.getElementById("memory-verse").setAttribute("media-base", MEDIA_BASE_URL);
 // <bible-trivia> pops itself up after the page loads; it needs the book thumbnails.
 document.getElementById("bible-trivia").setAttribute("media-base", MEDIA_BASE_URL);
 

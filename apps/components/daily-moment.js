@@ -28,6 +28,9 @@
  *                  share() sends the poster on; without one, there is no
  *                  share button.
  *   flipbook-href  The Flipbook page. Default: apps/pages/flipbook.html
+ *   memory-verse   id of the page's <memory-verse>. Today's Amen screen then
+ *                  offers this week's verse, opening its practice once the
+ *                  Moment has closed.
  *
  * Each day's entry in its month's verse file gives the verse, text and reflection, and
  * optionally a `question` and a `prayer`; a day without them gets a general
@@ -543,7 +546,7 @@ const formatTime = (seconds) => {
 };
 
 export class DailyMoment extends HTMLElement {
-  static observedAttributes = ['media-base', 'verses-base', 'date', 'poster', 'flipbook-href'];
+  static observedAttributes = ['media-base', 'verses-base', 'date', 'poster', 'flipbook-href', 'memory-verse'];
 
   #root;
   #launch;
@@ -908,6 +911,7 @@ export class DailyMoment extends HTMLElement {
           ${this.#weekHtml()}
           <div class="actions">
             ${this.#posterCard() ? `<button class="action share" type="button">${SHARE_ICON} Share today's poster</button>` : ''}
+            ${this.#memoryVerse() ? `<button class="action memory" type="button">${BOOK_ICON} Practise this week's verse · 1 min</button>` : ''}
             <a class="action" href="${escapeHtml(this.#flipbookUrl())}">${BOOK_ICON} Open this week's Flipbook</a>
             <button class="action done" type="button">Done</button>
           </div>`;
@@ -936,6 +940,12 @@ export class DailyMoment extends HTMLElement {
       });
     } else if (step.stage === 'amen') {
       this.#body.querySelector('.share')?.addEventListener('click', () => this.#posterCard()?.share());
+      this.#body.querySelector('.memory')?.addEventListener('click', () => {
+        // Only once the Moment has closed, or its closing would unlock the page under the practice.
+        const memory = this.#memoryVerse();
+        this.#dialog.addEventListener('close', () => memory?.open(), { once: true });
+        this.close();
+      });
       this.#body.querySelector('.done').addEventListener('click', () => this.close());
     }
   }
@@ -1096,6 +1106,12 @@ export class DailyMoment extends HTMLElement {
   }
 
   /* ----- Links out ----- */
+
+  #memoryVerse() {
+    if (!this.#isToday) return null;
+    const memory = document.getElementById(this.getAttribute('memory-verse') ?? '');
+    return memory?.ready ? memory : null;
+  }
 
   #posterCard() {
     if (!this.#isToday) return null;

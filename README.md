@@ -35,6 +35,10 @@ few images that must work even when the media host does not.
   one for the whole entry; hold one to bookmark it.
 - **`<bible-trivia>`** — a modal quiz that pops up once the page has loaded,
   asking which book a fact came from. Up to three a day, an hour apart.
+- **`<memory-verse>`** — "This Week’s Memory Verse Challenge", after God's Blueprint: one verse a
+  week to learn by heart, a minute a day, each day's practice a little harder
+  (read it, phrase by phrase, fill a few, fill half, first letters, put it in
+  order, say it). The Moment's Amen screen links to it too.
 - **Reflection card**, footer with a QR code that enlarges on click, and a
   thank-you splash that appears once you scroll to the very bottom.
 
@@ -54,6 +58,7 @@ documented in a header comment at the top of its file.
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
 | `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. |
 | `<daily-moment>` | `apps/components/daily-moment.js` | The guided Moment: a 16:9 card playing `assets/images/moment.mp4` (first frame `moment-poster.webp`; it loops only while in view, and not for reduced motion or Save-Data), with its status in a see-through green band, that opens a full-screen walk through the day from its month's file under `assets/verses/`. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. |
+| `<memory-verse>` | `apps/components/memory-verse.js` | The week's verse (Sunday to Saturday, Asia/Manila): the entry marked `"memory": true` among that week's days in `assets/verses/`, else Sunday's. Seven practices, one step on per day practised (not per calendar day); "I had it" on the last marks it learned and turns the card gold. Days practised and verses learned stay in `localStorage`. `<daily-moment memory-verse="<id>">` adds a button for it on today's Amen screen. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
 
 The hold-to-bookmark gesture, glow and ribbon for facts and sayings live in

@@ -25,6 +25,11 @@ few images that must work even when the media host does not.
 - **`<daily-moment>`** — "Start today's Moment with God": the day's devotional one
   screen at a time (pause, verse, poster and narration, reflection, question,
   prayer, Amen), about five minutes. Follows the day shown on the banner.
+- **`<memory-verse>`** — "This Week’s Memory Verse Challenge", just below the
+  Moment: one verse a week to learn by heart, a minute a day, each day's
+  practice a little harder (read it, phrase by phrase, fill a few, fill half,
+  first letters, put it in order, say it). The Moment's Amen screen links to it
+  too.
 - **`<poster-card>`** — today's poster; tap it to flip to the comic version,
   press the red play button for narration, or the share button beside it to
   send the poster or comic as a picture through the phone's share sheet.
@@ -35,10 +40,6 @@ few images that must work even when the media host does not.
   one for the whole entry; hold one to bookmark it.
 - **`<bible-trivia>`** — a modal quiz that pops up once the page has loaded,
   asking which book a fact came from. Up to three a day, an hour apart.
-- **`<memory-verse>`** — "This Week’s Memory Verse Challenge", after God's Blueprint: one verse a
-  week to learn by heart, a minute a day, each day's practice a little harder
-  (read it, phrase by phrase, fill a few, fill half, first letters, put it in
-  order, say it). The Moment's Amen screen links to it too.
 - **Reflection card**, footer with a QR code that enlarges on click, and a
   thank-you splash that appears once you scroll to the very bottom.
 

@@ -111,7 +111,7 @@ const STYLES = /* css */ `
   [hidden] { display: none !important; }
 
   /* ----- The card on the page -----
-     Dark green with a gold edge, set apart from the blueprint card above it,
+     Dark green with a gold edge, set apart from the navy cards around it,
      showing the whole verse. Learned: warm gold, with a check on the icon. */
   /* The picture beside the title and reference; the verse below them runs
      from under the picture, the arrow on its right; the dots and the status

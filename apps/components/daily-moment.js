@@ -97,7 +97,6 @@ const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20" fill="cur
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>`;
 const CHECK_ICON = `<svg ${ICON_ATTRS}><polyline points="5 12 10 17 19 7"/></svg>`;
 const SHARE_ICON = `<svg ${ICON_ATTRS}><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
-const BOOK_ICON = `<svg ${ICON_ATTRS}><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg>`;
 
 const STYLES = /* css */ `
   :host {
@@ -911,8 +910,8 @@ export class DailyMoment extends HTMLElement {
           ${this.#weekHtml()}
           <div class="actions">
             ${this.#posterCard() ? `<button class="action share" type="button">${SHARE_ICON} Share today's poster</button>` : ''}
-            ${this.#memoryVerse() ? `<button class="action memory" type="button">${BOOK_ICON} Practice this week's memory verse challenge</button>` : ''}
-            <a class="action" href="${escapeHtml(this.#flipbookUrl())}">${BOOK_ICON} Open this week's Flipbook</a>
+            ${this.#memoryVerse() ? `<button class="action memory" type="button">Practice this week's Memory-Verse challenge</button>` : ''}
+            <a class="action" href="${escapeHtml(this.#flipbookUrl())}">Open this week's Flipbook</a>
             <button class="action done" type="button">Done</button>
           </div>`;
       default:

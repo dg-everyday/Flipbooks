@@ -173,10 +173,11 @@ const STYLES = /* css */ `
   .card-ref { color: #fff; font: 400 1.4rem/1.15 'Germania One', Georgia, serif; letter-spacing: .02em; }
   /* Room above and below the verse, so it reads apart from the reference and the dots. */
   .card-snippet {
+    position: relative;
     grid-area: text;
     margin: 22px 0 20px;
-    /* Indented by the same 14px that parts the picture from the title. */
-    padding-left: 14px;
+    /* Room on the left for the big opening quotation mark. */
+    padding-left: 40px;
     color: #e4efe8;
     font: 400 1.15rem/1.4 'Strait', 'Roboto', sans-serif;
     /* The verse stays at Strait's one regular weight, never a made-up bold. */
@@ -203,7 +204,19 @@ const STYLES = /* css */ `
   .card.learned .card-check { display: grid; background: var(--memory-navy); border-color: #e3bc66; }
   .card.learned .card-ref { color: var(--memory-navy); }
   .card.learned .eyebrow, .card.learned .card-status { color: #2b1d03; }
+  /* Big gold quotation marks around the verse: the opening one beside its
+     first line, the closing one after its last word. */
+  .card-snippet::before,
+  .card-snippet::after {
+    color: var(--memory-gold-light);
+    font: 400 4rem/1 Georgia, 'Times New Roman', serif;
+    pointer-events: none;
+  }
+  .card-snippet::before { content: "“"; position: absolute; left: 9px; top: -.12em; }
+  .card-snippet::after { content: "”"; margin-left: 4px; line-height: 0; vertical-align: -.58em; }
   .card.learned .card-snippet { color: #2b1d03; }
+  .card.learned .card-snippet::before,
+  .card.learned .card-snippet::after { color: var(--memory-navy); }
   .card.learned .card-chevron { color: var(--memory-navy); }
 
   /* Seven dots, one per day practised this week. */

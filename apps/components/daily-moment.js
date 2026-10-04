@@ -2,7 +2,9 @@
  * <daily-moment> — the Daily Grace Moment: the day's devotional, one screen at
  * a time, in about five minutes.
  *
- * On the page it is a navy card, "Start today's Moment". Tapping it opens a
+ * On the page it is a 16:9 card playing the "Moment With the LORD" clip, its
+ * status in a green band along the foot ("Pause, read, listen and pray", or
+ * "Done") and a gold arrow nudging toward it. Tapping it opens a
  * full-screen walk through the day: Pause, Read (the verse), Listen (the
  * poster and its narration), Reflect (the reflection, a paragraph or so per
  * screen), Respond (the day's question, with room to answer), Pray (the day's
@@ -52,8 +54,10 @@ import { DEFAULT_VERSES_BASE, loadVerses } from './daily-verses.js?v=20261004-1'
 
 // The Daily Grace emblem (a cross on a hill), at the heart of the Pause and Pray screens.
 const EMBLEM_URL = new URL('../../assets/images/dg-icon-03-flat.webp', import.meta.url).href;
-// The card's icon: a calendar with the sun rising and a clock.
-const MOMENT_ICON_URL = new URL('../../assets/images/moment.png', import.meta.url).href;
+// The card's face: a short looping clip, "Moment With the LORD", and its first
+// frame, shown until the clip plays (or instead of it, when motion is unwelcome).
+const MOMENT_VIDEO_URL = new URL('../../assets/images/moment.mp4', import.meta.url).href;
+const MOMENT_POSTER_URL = new URL('../../assets/images/moment-poster.webp', import.meta.url).href;
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
@@ -85,6 +89,7 @@ const STAGES = ['pause', 'read', 'listen', 'reflect', 'respond', 'pray', 'amen']
 const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const CLOSE_ICON = `<svg ${ICON_ATTRS}><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>`;
 const NEXT_ICON = `<svg ${ICON_ATTRS}><polyline points="9 6 15 12 9 18"/></svg>`;
+const DOUBLE_NEXT_ICON = `<svg ${ICON_ATTRS}><polyline points="5 6 11 12 5 18"/><polyline points="13 6 19 12 13 18"/></svg>`;
 const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20" fill="currentColor"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>`;
 const CHECK_ICON = `<svg ${ICON_ATTRS}><polyline points="5 12 10 17 19 7"/></svg>`;
@@ -95,6 +100,9 @@ const STYLES = /* css */ `
   :host {
     --moment-navy: var(--navy, #001b34);
     --moment-navy-2: var(--navy-2, #062944);
+    /* The card's band (and its colour until the clip's first frame loads),
+       set apart from the navy poster and question cards around it. */
+    --moment-green: #0b3324;
     --moment-gold: var(--gold, #c6922e);
     --moment-gold-light: var(--gold-light, #e1b65d);
     --moment-gold-ink: #7d5a12;
@@ -111,57 +119,76 @@ const STYLES = /* css */ `
   button { font: inherit; }
 
   /* ----- The card on the page -----
-     Not yet done: a navy card inviting the reader in, the Moment icon on gold.
-     Done: a warm gold card, navy lettering, the icon on cream with a check. */
+     The "Moment With the LORD" clip fills a 16:9 card (its title is part of
+     the clip). Across the foot runs a see-through green band with the status:
+     the invitation while the Moment is still to do, "Done" once it is. A gold
+     double arrow on the right nudges toward it until then. */
   .launch {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    display: block;
     width: 100%;
-    padding: 16px 18px;
+    aspect-ratio: 16 / 9;
+    padding: 0;
     overflow: hidden;
     border: 1px solid rgb(225 182 93 / 40%);
     border-radius: 10px;
-    background:
-      radial-gradient(120% 120% at 0% 0%, rgb(225 182 93 / 16%) 0%, transparent 55%),
-      linear-gradient(180deg, var(--moment-navy-2) 0%, var(--moment-navy) 100%);
+    background: var(--moment-green) url("${MOMENT_POSTER_URL}") center / cover no-repeat;
     color: #fff;
     text-align: left;
-    box-shadow: 0 12px 30px rgb(0 27 52 / 28%), inset 0 1px 0 rgb(255 255 255 / 8%);
+    box-shadow: 0 12px 30px rgb(6 38 26 / 30%);
     cursor: pointer;
+    container-type: inline-size;
     transition: transform .15s ease, box-shadow .15s ease;
   }
-  .launch:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgb(0 27 52 / 32%), inset 0 1px 0 rgb(255 255 255 / 8%); }
+  .launch:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgb(6 38 26 / 36%); }
   .launch:focus-visible { outline: 3px solid var(--moment-gold-light); outline-offset: 3px; }
-  .launch-icon {
-    position: relative;
-    display: grid; place-items: center; flex: none;
-    width: 52px; height: 52px;
+  .launch-video {
+    position: absolute; inset: 0;
+    display: block;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  .launch-chevron {
+    position: absolute; right: 3%; top: 50%;
+    translate: 0 -50%;
+    color: var(--moment-gold-light);
+    filter: drop-shadow(0 2px 4px rgb(0 0 0 / 55%));
+  }
+  .launch-chevron svg { display: block; width: clamp(40px, 8.5cqi, 76px); height: auto; aspect-ratio: 1; stroke-width: 3.4; }
+  /* While the Moment is still to do, the arrow keeps nudging toward it. */
+  .launch:not(.done) .launch-chevron { animation: nudge 1.8s ease-in-out infinite; }
+  .launch:not(.done):hover .launch-chevron { animation-duration: .9s; }
+  @keyframes nudge {
+    0%, 60%, 100% { transform: translateX(0); }
+    30% { transform: translateX(6px); }
+  }
+  .launch-band {
+    position: absolute; inset: auto 0 0;
+    display: flex; align-items: center; gap: 10px;
+    padding: clamp(8px, 2.6cqi, 18px) clamp(14px, 3.6cqi, 28px);
+    /* --moment-green at 60% transparency */
+    background: rgb(11 51 36 / 40%);
+  }
+  .launch-sub {
+    min-width: 0;
+    color: #fff;
+    font: 700 clamp(1.05rem, 3.9cqi, 1.9rem)/1.2 'Strait', 'Roboto', sans-serif;
+    text-shadow: 0 1px 3px rgb(0 0 0 / 60%);
+  }
+  .launch-check {
+    display: none; place-items: center; flex: none;
+    width: 1.5em; height: 1.5em;
     border-radius: 50%;
     background: var(--moment-gold-light);
-    box-shadow: 0 0 0 6px rgb(225 182 93 / 16%);
+    color: var(--moment-navy);
+    font-size: clamp(1.05rem, 3.9cqi, 1.9rem);
   }
-  .launch-icon img { display: block; width: 86%; height: 86%; object-fit: contain; }
-  .launch-check {
-    position: absolute; right: -5px; bottom: -5px;
-    display: none; place-items: center;
-    width: 22px; height: 22px;
-    border: 2px solid #fffaf0; border-radius: 50%;
-    background: var(--moment-navy);
-    color: #fff;
-  }
-  .launch-check svg { width: 12px; height: 12px; stroke-width: 3.5; }
-  .launch-text { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
-  .launch-title { font: 400 1.4rem/1.15 'Germania One', Georgia, serif; letter-spacing: .02em; }
-  .launch-sub { color: #cfd8e6; font: 400 1rem/1.35 'Strait', 'Roboto', sans-serif; }
-  .launch-chevron { flex: none; color: var(--moment-gold-light); }
-  .launch-chevron svg { display: block; width: 22px; height: 22px; }
-  .launch-row { display: flex; align-items: center; gap: 14px; }
+  .launch-check svg { width: 62%; height: 62%; stroke-width: 3.5; }
+  .launch.done .launch-check { display: grid; }
 
   /* Once a day, the first time the card comes into view while the Moment is
-     still to do, a soft gold light passes across it and a ring breathes out
-     from the icon twice. Then it stays still. */
+     still to do, a soft gold light passes across it. Then it stays still. */
   .launch-sheen {
     position: absolute; inset: 0;
     background: linear-gradient(105deg, transparent 30%, rgb(255 226 160 / 24%) 50%, transparent 70%);
@@ -170,34 +197,6 @@ const STYLES = /* css */ `
   }
   .launch.hint .launch-sheen { animation: sheen 1.8s ease-in-out .2s both; }
   @keyframes sheen { to { transform: translateX(110%); } }
-  .launch-icon::after {
-    content: "";
-    position: absolute; inset: 0;
-    border: 2px solid var(--moment-gold-light);
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .launch.hint .launch-icon::after { animation: ring 1.5s ease-out .3s 2; }
-  @keyframes ring {
-    from { transform: scale(1); opacity: .9; }
-    to { transform: scale(1.75); opacity: 0; }
-  }
-
-  .launch.done {
-    border-color: rgb(90 60 10 / 40%);
-    background:
-      radial-gradient(120% 120% at 0% 0%, rgb(255 255 255 / 22%) 0%, transparent 55%),
-      linear-gradient(180deg, #d6a74a 0%, #b98522 100%);
-    color: var(--moment-navy);
-    box-shadow: 0 10px 24px rgb(90 60 10 / 28%), inset 0 1px 0 rgb(255 255 255 / 30%);
-  }
-  .launch.done:hover { box-shadow: 0 14px 30px rgb(90 60 10 / 34%), inset 0 1px 0 rgb(255 255 255 / 30%); }
-  .launch.done:focus-visible { outline-color: var(--moment-navy); }
-  .launch.done .launch-icon { background: #fffaf0; box-shadow: 0 0 0 6px rgb(255 255 255 / 30%); }
-  .launch.done .launch-check { display: grid; }
-  .launch.done .launch-sub { color: #2b1d03; }
-  .launch.done .launch-chevron { color: var(--moment-navy); }
   /* Once done, the card goes quiet. */
   .launch.done .launch-sheen { display: none; }
 
@@ -459,7 +458,8 @@ const STYLES = /* css */ `
   @media (prefers-reduced-motion: reduce) {
     .launch, .progress span { transition: none; }
     .body.enter, .rings,
-    .launch.hint .launch-sheen, .launch.hint .launch-icon::after { animation: none; }
+    .launch.hint .launch-sheen,
+    .launch:not(.done) .launch-chevron { animation: none; }
   }
 `;
 
@@ -547,6 +547,7 @@ export class DailyMoment extends HTMLElement {
 
   #root;
   #launch;
+  #video;
   #dialog;
   #progress;
   #count;
@@ -566,9 +567,10 @@ export class DailyMoment extends HTMLElement {
   #configurePending = false;
   #today = manilaToday();
   #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  #hintObserver = null;
+  #viewObserver = null;
   #hintTimer = 0;
   #inView = false;
+  #visible = false;
 
   constructor() {
     super();
@@ -577,17 +579,13 @@ export class DailyMoment extends HTMLElement {
     this.#root.innerHTML = `
       <style>${STYLES}</style>
       <button class="launch" type="button" aria-haspopup="dialog">
+        <video class="launch-video" poster="${MOMENT_POSTER_URL}" muted loop playsinline preload="none"
+          disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
         <span class="launch-sheen" aria-hidden="true"></span>
-        <span class="launch-row">
-          <span class="launch-icon">
-            <img src="${MOMENT_ICON_URL}" alt="" width="52" height="52" />
-            <span class="launch-check">${CHECK_ICON}</span>
-          </span>
-          <span class="launch-text">
-            <span class="launch-title"></span>
-            <span class="launch-sub"></span>
-          </span>
-          <span class="launch-chevron">${NEXT_ICON}</span>
+        <span class="launch-chevron" aria-hidden="true">${DOUBLE_NEXT_ICON}</span>
+        <span class="launch-band">
+          <span class="launch-check" aria-hidden="true">${CHECK_ICON}</span>
+          <span class="launch-sub"></span>
         </span>
       </button>
       <dialog aria-labelledby="step-title">
@@ -605,6 +603,8 @@ export class DailyMoment extends HTMLElement {
         </div>
       </dialog>`;
     this.#launch = this.#root.querySelector('.launch');
+    this.#video = this.#root.querySelector('.launch-video');
+    this.#video.muted = true; // the property too, or some browsers refuse to autoplay
     this.#dialog = this.#root.querySelector('dialog');
     this.#progress = [...this.#root.querySelectorAll('.progress span')];
     this.#count = this.#root.querySelector('.count');
@@ -633,19 +633,39 @@ export class DailyMoment extends HTMLElement {
     registerFonts();
     this.#scheduleConfigure();
     document.addEventListener('visibilitychange', this.#checkDate);
-    this.#hintObserver = new IntersectionObserver(([entry]) => {
-      this.#inView = entry.isIntersecting;
+    document.addEventListener('visibilitychange', this.#syncVideo);
+    // The clip plays while a quarter of the card shows; the light waits for most of it.
+    this.#viewObserver = new IntersectionObserver(([entry]) => {
+      this.#visible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+      this.#inView = entry.intersectionRatio >= 0.6;
+      this.#syncVideo();
       if (this.#inView) this.#tryHint();
-    }, { threshold: 0.6 });
-    this.#hintObserver.observe(this.#launch);
+    }, { threshold: [0, 0.25, 0.6] });
+    this.#viewObserver.observe(this.#launch);
   }
 
   disconnectedCallback() {
     document.removeEventListener('visibilitychange', this.#checkDate);
-    this.#hintObserver?.disconnect();
+    document.removeEventListener('visibilitychange', this.#syncVideo);
+    this.#viewObserver?.disconnect();
     clearTimeout(this.#hintTimer);
     this.#stopAudio();
+    this.#video.pause();
   }
+
+  // The card's clip loops only while the card shows and the Moment is closed,
+  // and not at all when the reader asks for less motion or to save data: the
+  // first frame stands in. It is first fetched when it first plays.
+  #syncVideo = () => {
+    const play = this.#visible && !document.hidden && !this.#dialog.open
+      && !this.#reducedMotion.matches && !navigator.connection?.saveData;
+    if (!play) {
+      this.#video.pause();
+      return;
+    }
+    if (!this.#video.getAttribute('src')) this.#video.src = MOMENT_VIDEO_URL;
+    this.#video.play().catch(() => {});
+  };
 
   // The once-a-day light across the card: only while the day's Moment is still
   // to do, the card is in view and uncovered, and motion is welcome.
@@ -723,17 +743,19 @@ export class DailyMoment extends HTMLElement {
   #renderLaunch() {
     if (!this.#day) return;
     const done = this.done;
-    const when = this.#isToday ? "today's Moment" : `the Moment for ${this.#day.name.replace(/, \d+$/, '')}`;
-    this.#launch.classList.toggle('done', done);
-    this.#launch.querySelector('.launch-title').textContent = done
+    const shortName = this.#day.name.replace(/, \d+$/, '');
+    const when = this.#isToday ? "today's Moment" : `the Moment for ${shortName}`;
+    // The clip shows "Moment With the LORD"; the title is still read out.
+    const title = done
       ? when.charAt(0).toUpperCase() + when.slice(1)
-      : `Start ${when}`;
+      : this.#isToday ? "Start today's Moment with God" : `Start the Moment with God for ${shortName}`;
+    this.#launch.classList.toggle('done', done);
     this.#launch.querySelector('.launch-sub').textContent = done
       ? 'Done. Tap to walk through it again.'
-      : 'Pause, read, listen and pray · about 5 minutes';
+      : 'Pause, read, listen and pray – about 5 minutes';
     this.#launch.setAttribute('aria-label', done
-      ? `${this.#launch.querySelector('.launch-title').textContent}, done. Open it again.`
-      : `${this.#launch.querySelector('.launch-title').textContent}, about 5 minutes`);
+      ? `${title}, done. Open it again.`
+      : `${title}, about 5 minutes`);
     // The card may have just appeared (or a new day begun) while in view.
     if (!done) queueMicrotask(() => this.#tryHint());
   }
@@ -757,6 +779,7 @@ export class DailyMoment extends HTMLElement {
     this.#stopAudio();
     this.#audio = null;
     this.#dialog.showModal();
+    this.#syncVideo();
     // The page underneath stays put while the Moment is open.
     document.documentElement.style.overflow = 'hidden';
     this.#render();
@@ -770,6 +793,7 @@ export class DailyMoment extends HTMLElement {
     this.#stopAudio();
     document.documentElement.style.overflow = '';
     this.#renderLaunch();
+    this.#syncVideo();
     this.#launch.focus({ preventScroll: true });
   }
 

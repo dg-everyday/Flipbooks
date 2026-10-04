@@ -22,7 +22,7 @@ few images that must work even when the media host does not.
   one kind at a time under a segmented switch.
 - **Daily banner** for today's date, with a link to the flipbook.
 - **Reflection strip** — today's reflection, clamped to three lines until tapped.
-- **`<daily-moment>`** — "Start today's Moment": the day's devotional one
+- **`<daily-moment>`** — "Start today's Moment with God": the day's devotional one
   screen at a time (pause, verse, poster and narration, reflection, question,
   prayer, Amen), about five minutes. Follows the day shown on the banner.
 - **`<poster-card>`** — today's poster; tap it to flip to the comic version,
@@ -53,7 +53,7 @@ documented in a header comment at the top of its file.
 | `<bible-sayings>` | `apps/components/bible-sayings.js` | Sayings from `assets/bible-sayings.json`; tapping one pops up the whole entry. Holding a saying bookmarks it (up to 50); `bookmarks` works as on `<did-you-know>`. |
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
 | `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. |
-| `<daily-moment>` | `apps/components/daily-moment.js` | The guided Moment: a navy card that opens a full-screen walk through the day from its month's file under `assets/verses/`. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. |
+| `<daily-moment>` | `apps/components/daily-moment.js` | The guided Moment: a 16:9 card playing `assets/images/moment.mp4` (first frame `moment-poster.webp`; it loops only while in view, and not for reduced motion or Save-Data), with its status in a see-through green band, that opens a full-screen walk through the day from its month's file under `assets/verses/`. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
 
 The hold-to-bookmark gesture, glow and ribbon for facts and sayings live in

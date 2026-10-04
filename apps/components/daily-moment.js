@@ -911,7 +911,7 @@ export class DailyMoment extends HTMLElement {
           ${this.#weekHtml()}
           <div class="actions">
             ${this.#posterCard() ? `<button class="action share" type="button">${SHARE_ICON} Share today's poster</button>` : ''}
-            ${this.#memoryVerse() ? `<button class="action memory" type="button">${BOOK_ICON} Practise this week's verse · 1 min</button>` : ''}
+            ${this.#memoryVerse() ? `<button class="action memory" type="button">${BOOK_ICON} Practice this week’s memory verse</button>` : ''}
             <a class="action" href="${escapeHtml(this.#flipbookUrl())}">${BOOK_ICON} Open this week's Flipbook</a>
             <button class="action done" type="button">Done</button>
           </div>`;

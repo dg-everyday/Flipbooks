@@ -113,8 +113,18 @@ const STYLES = /* css */ `
   /* ----- The card on the page -----
      Dark green with a gold edge, set apart from the blueprint card above it,
      showing the whole verse. Learned: warm gold, with a check on the icon. */
+  /* The picture beside the title and reference; the verse below them runs
+     from under the picture, the arrow on its right; the dots and the status
+     sit centred along the foot. */
   .card {
-    display: flex; align-items: center; gap: 14px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "icon head  arrow"
+      "text text  arrow"
+      "meta meta  meta";
+    align-items: center;
+    column-gap: 14px;
     width: 100%;
     padding: 16px 18px;
     border: 1px solid rgb(225 182 93 / 40%);
@@ -137,8 +147,7 @@ const STYLES = /* css */ `
     position: relative;
     display: grid; place-items: center; flex: none;
     width: 76px; height: 76px; border-radius: 50%;
-    /* Level with the title, not centred on the whole verse. */
-    align-self: flex-start;
+    grid-area: icon;
     background: var(--memory-gold-light); color: var(--memory-green);
   }
   .card-icon > svg { width: 34px; height: 34px; }
@@ -155,7 +164,7 @@ const STYLES = /* css */ `
     background: var(--memory-gold); color: #fff;
   }
   .card-check svg { width: 13px; height: 13px; stroke-width: 3.5; }
-  .card-text { display: flex; flex: 1; flex-direction: column; gap: 3px; min-width: 0; }
+  .card-head { grid-area: head; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
   .eyebrow {
     color: var(--memory-gold-light);
     font: 700 .95rem/1.2 'Strait', 'Roboto', sans-serif;
@@ -164,16 +173,19 @@ const STYLES = /* css */ `
   .card-ref { color: #fff; font: 400 1.4rem/1.15 'Germania One', Georgia, serif; letter-spacing: .02em; }
   /* Room above and below the verse, so it reads apart from the reference and the dots. */
   .card-snippet {
-    margin: 10px 0 8px;
+    grid-area: text;
+    margin: 22px 0 20px;
+    /* Indented by the same 14px that parts the picture from the title. */
+    padding-left: 14px;
     color: #e4efe8;
     font: 400 1.15rem/1.4 'Strait', 'Roboto', sans-serif;
     /* The verse stays at Strait's one regular weight, never a made-up bold. */
     font-synthesis: none;
     text-wrap: pretty;
   }
-  .card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 4px; }
+  .card-meta { grid-area: meta; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
   .card-status { color: #c4dccf; font: 400 .95rem 'Strait', 'Roboto', sans-serif; }
-  .card-chevron { flex: none; color: var(--memory-gold-light); }
+  .card-chevron { grid-area: arrow; color: var(--memory-gold-light); }
   .card-chevron svg { display: block; width: 34px; height: 34px; stroke-width: 3.4; }
   /* Until the verse is learned, the arrow keeps nudging toward it. */
   .card.due .card-chevron { animation: nudge 1.8s ease-in-out infinite; }
@@ -477,14 +489,14 @@ export class MemoryVerse extends HTMLElement {
       <style>${STYLES}</style>
       <button class="card" type="button" aria-haspopup="dialog">
         <span class="card-icon">${BOOK_ICON}<span class="symbol"></span><span class="card-check">${CHECK_ICON}</span></span>
-        <span class="card-text">
+        <span class="card-head">
           <span class="eyebrow">This Week’s Memory Verse Challenge</span>
           <span class="card-ref"></span>
-          <span class="card-snippet"></span>
-          <span class="card-meta">
-            <span class="dots" aria-hidden="true">${'<span></span>'.repeat(7)}</span>
-            <span class="card-status"></span>
-          </span>
+        </span>
+        <span class="card-snippet"></span>
+        <span class="card-meta">
+          <span class="dots" aria-hidden="true">${'<span></span>'.repeat(7)}</span>
+          <span class="card-status"></span>
         </span>
         <span class="card-chevron" aria-hidden="true">${DOUBLE_NEXT_ICON}</span>
       </button>

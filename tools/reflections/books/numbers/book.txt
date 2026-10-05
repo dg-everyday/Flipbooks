@@ -1,0 +1,9 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Numbers
+1-4 | The Census and the Camp
+5-10 | Preparing to Leave Sinai
+11-14 | Complaint and Rebellion
+15-19 | Korah, Aaron's Rod and the Red Heifer
+20-25 | The Road to Moab
+26-30 | A New Generation
+31-36 | Preparing to Enter the Land

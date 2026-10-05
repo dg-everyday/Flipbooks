@@ -30,9 +30,10 @@ few images that must work even when the media host does not.
   practice a little harder (read it, phrase by phrase, fill a few, fill half,
   first letters, put it in order, say it). The Moment's Amen screen links to it
   too.
-- **`<poster-card>`** — today's poster; tap it to flip to the comic version,
-  press the red play button for narration, or the share button beside it to
-  send the poster or comic as a picture through the phone's share sheet.
+- **`<poster-card>`** — today's poster, playing the day's video in its place
+  when there is one; tap it to flip to the comic version, press the red play
+  button for narration, or the share button beside it to send the poster or
+  comic as a picture (never the video) through the phone's share sheet.
 - **`<did-you-know>`** — five random Bible facts, reshuffled by the refresh
   button. Tapping a reference opens that passage in a popup; holding a fact
   bookmarks it.
@@ -57,7 +58,7 @@ documented in a header comment at the top of its file.
 | `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. Holding a fact bookmarks it (up to 50); with the `bookmarks` attribute it lists only those, with no banner. |
 | `<bible-sayings>` | `apps/components/bible-sayings.js` | Sayings from `assets/bible-sayings.json`; tapping one pops up the whole entry. Holding a saying bookmarks it (up to 50); `bookmarks` works as on `<did-you-know>`. |
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
-| `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. |
+| `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. When `images/sources/<YYYY>/<month>/<Month D, YYYY>.mp4` exists it loops muted over the poster while the card is on screen (not on the comic side, nor for reduced motion or Save-Data); without it the poster image shows. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. |
 | `<daily-moment>` | `apps/components/daily-moment.js` | The guided Moment: a 16:9 card playing `assets/images/moment.mp4` (first frame `moment-poster.webp`; it loops only while in view, and not for reduced motion or Save-Data), with its status in a see-through green band, that opens a full-screen walk through the day from its month's file under `assets/verses/`. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. |
 | `<memory-verse>` | `apps/components/memory-verse.js` | The week's verse (Sunday to Saturday, Asia/Manila): the entry marked `"memory": true` among that week's days in `assets/verses/`, else Sunday's. Seven practices, one step on per day practised (not per calendar day); "I had it" on the last marks it learned and turns the card gold. Days practised and verses learned stay in `localStorage`. `<daily-moment memory-verse="<id>">` adds a button for it on today's Amen screen. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |

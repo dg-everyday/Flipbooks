@@ -1,0 +1,9 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Leviticus
+1-7 | The Offerings
+8-10 | The Priesthood Begins
+11-15 | Clean and Unclean
+16-16 | The Day of Atonement
+17-22 | Called to Holy Living
+23-25 | Holy Times and Seasons
+26-27 | Blessings, Warnings and Vows

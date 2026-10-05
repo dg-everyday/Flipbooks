@@ -13,6 +13,12 @@
  * taken everywhere. A browser that cannot share files shares the image's
  * link, and one with no share sheet at all copies it.
  *
+ * When the day has a video, it plays over the poster, muted and looping, as
+ * on <banner-slider>, while the card is on screen. Until it is playing, and
+ * for good when there is none or it cannot play (a missing file, autoplay
+ * refused), the poster image shows as before. The comic side has no video.
+ * Sharing and the long-press copy always send the image, never the video.
+ *
  * Usage
  *   <poster-card media-base="https://dailygrace.faith/media/"></poster-card>
  *   <script type="module" src="./apps/components/poster-card.js"></script>
@@ -26,6 +32,7 @@
  *
  * Files are resolved from the date:
  *   <media-base>images/sources/<YYYY>/<month>/<Month D, YYYY>[ - Comic].webp
+ *   <media-base>images/sources/<YYYY>/<month>/<Month D, YYYY>.mp4   (optional)
  *   <media-base>audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm
  *
  * Methods      toggle()  flip between poster and comic
@@ -38,8 +45,10 @@
  *              share         the share sheet sent it on, detail: { url, comic, as }
  *                            where `as` is 'image' or 'link'
  *
- * The audio file is only requested when the play button is first pressed.
- * The flip is skipped when the user prefers reduced motion.
+ * The audio file is only requested when the play button is first pressed,
+ * and the video when it first plays. The flip is skipped, and the video not
+ * loaded, when the user prefers reduced motion; the video is not loaded with
+ * Save-Data on either.
  *
  * CSS custom properties
  *   --poster-card-padding, --poster-card-bg, --poster-audio-bg,
@@ -112,6 +121,8 @@ const STYLES = /* css */ `
     cursor: pointer;
   }
   .toggle:focus-visible { outline: 2px solid #001b34; outline-offset: -2px; }
+  /* The poster and its video, which turn together. */
+  .face { position: relative; display: block; }
   .poster {
     display: block; width: 100%; height: auto;
     /* A long press copies the link; keep the phone's image menu out of it. */
@@ -119,6 +130,18 @@ const STYLES = /* css */ `
     -webkit-user-select: none;
     user-select: none;
   }
+  /* The day's video, over its poster, fading in once it is playing. */
+  .video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+  }
+  .video.playing { opacity: 1; }
 
   /* A gold glow builds around the poster's edge while it is held. */
   .wrap::after {
@@ -290,7 +313,9 @@ export class PosterCard extends HTMLElement {
 
   #root;
   #toggleButton;
+  #face;
   #poster;
+  #video;
   #audioButton;
   #shareButton;
   // The images on show today as files to share, by src: { promise, file }.
@@ -309,6 +334,9 @@ export class PosterCard extends HTMLElement {
   #dateName = '';
   #dateTimer = 0;
   #audioUrl = '';
+  #videoUrl = '';
+  #visible = false;
+  #viewObserver = null;
   #audio = null;
   #comic = false;
   #flipId = 0;
@@ -324,7 +352,11 @@ export class PosterCard extends HTMLElement {
         <button class="toggle" type="button">
           <!-- The posters' usual size, so the card holds its space while one
                loads instead of pushing the page down when it lands. -->
-          <img class="poster" alt="" width="941" height="1672" />
+          <span class="face">
+            <img class="poster" alt="" width="941" height="1672" />
+            <video class="video" width="941" height="1672" muted loop playsinline preload="auto"
+              disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1"></video>
+          </span>
         </button>
         <span class="dog-ear" aria-hidden="true"></span>
         <button class="audio" type="button" aria-pressed="false"></button>
@@ -334,7 +366,9 @@ export class PosterCard extends HTMLElement {
     this.#wrap = this.#root.querySelector('.wrap');
     this.#status = this.#root.querySelector('[role="status"]');
     this.#toggleButton = this.#root.querySelector('.toggle');
+    this.#face = this.#root.querySelector('.face');
     this.#poster = this.#root.querySelector('.poster');
+    this.#video = this.#root.querySelector('.video');
     this.#audioButton = this.#root.querySelector('.audio');
     this.#shareButton = this.#root.querySelector('.share');
 
@@ -347,6 +381,13 @@ export class PosterCard extends HTMLElement {
       this.toggle();
     });
     this.#poster.draggable = false;
+    // The video shows only once it is playing the day on show; until then,
+    // and when it fails, the poster image beneath stands in.
+    this.#video.muted = true;
+    this.#video.addEventListener('playing', () => {
+      if (this.#video.getAttribute('src') === this.#videoUrl) this.#video.classList.add('playing');
+    });
+    this.#video.addEventListener('error', () => this.#video.classList.remove('playing'));
     this.#listenForHold();
     this.#audioButton.addEventListener('click', () => {
       if (this.playing) this.stop();
@@ -369,13 +410,40 @@ export class PosterCard extends HTMLElement {
     this.#scheduleConfigure();
     this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
     document.addEventListener('visibilitychange', this.#checkDate);
+    document.addEventListener('visibilitychange', this.#syncVideo);
+    this.#viewObserver = new IntersectionObserver(([entry]) => {
+      this.#visible = entry.isIntersecting;
+      this.#syncVideo();
+    });
+    this.#viewObserver.observe(this.#wrap);
   }
 
   disconnectedCallback() {
     this.stop();
     clearInterval(this.#dateTimer);
     document.removeEventListener('visibilitychange', this.#checkDate);
+    document.removeEventListener('visibilitychange', this.#syncVideo);
+    this.#viewObserver?.disconnect();
+    this.#viewObserver = null;
+    this.#video.pause();
   }
+
+  // The day's video loops over the poster while the card is on screen and the
+  // poster, not the comic, is up; not at all when the reader asks for less
+  // motion or to save data. It is first fetched when it first plays. A day
+  // without one fails once and is left alone, the poster image showing.
+  #syncVideo = () => {
+    const video = this.#video;
+    const play = this.#visible && !document.hidden && !this.#comic && this.#videoUrl
+      && !this.#reducedMotion.matches && !navigator.connection?.saveData;
+    if (!play) {
+      video.pause();
+      return;
+    }
+    if (video.getAttribute('src') !== this.#videoUrl) video.src = this.#videoUrl;
+    else if (video.error) return;
+    video.play().catch(() => {});
+  };
 
   // Past midnight in Manila, today's poster gives way to the new day's. A
   // fixed `date` stays put, and narration playing at midnight finishes first.
@@ -598,15 +666,19 @@ export class PosterCard extends HTMLElement {
     this.#dateName = dateName;
     this.#posterPath = `${this.#mediaBase}images/sources/${year}/${month}/${dateName}`;
     this.#audioUrl = `${this.#mediaBase}audio/${year}/${monthFolder}/webm/${dateName}.webm`;
+    this.#videoUrl = `${this.#posterPath}.mp4`;
 
     this.stop();
     this.#audio = null;
     this.#shareFiles.clear();
     this.#flipId++;
-    this.#poster.getAnimations().forEach((animation) => animation.cancel());
+    this.#face.getAnimations().forEach((animation) => animation.cancel());
     this.#wrap.classList.remove('turning');
     this.#comic = false;
     this.#poster.src = `${this.#posterPath}.webp`;
+    this.#video.classList.remove('playing');
+    this.#video.hidden = false;
+    this.#syncVideo();
     this.#syncLabels();
   }
 
@@ -670,22 +742,22 @@ export class PosterCard extends HTMLElement {
 
     const flipId = ++this.#flipId;
     const nextSrc = `${this.#posterPath}${this.#comic ? ' - Comic' : ''}.webp`;
-    const poster = this.#poster;
+    const face = this.#face;
     // Start loading now so the swap does not show a half-loaded image.
     const preload = new Image();
     preload.src = nextSrc;
     const ready = preload.decode().catch(() => {});
 
-    if (this.#reducedMotion.matches || !poster.animate) {
+    if (this.#reducedMotion.matches || !face.animate) {
       await ready;
-      if (flipId === this.#flipId) poster.src = nextSrc;
+      if (flipId === this.#flipId) this.#showSide(nextSrc);
       return;
     }
 
-    poster.getAnimations().forEach((animation) => animation.cancel());
+    face.getAnimations().forEach((animation) => animation.cancel());
     this.#wrap.classList.add('turning');
     const turn = (angle) => `perspective(1400px) rotateY(${angle}deg)`;
-    const out = poster.animate(
+    const out = face.animate(
       [
         { transform: turn(0), opacity: 1 },
         { transform: turn(-90), opacity: 0.55 },
@@ -696,8 +768,8 @@ export class PosterCard extends HTMLElement {
     // A newer toggle owns the image now; it has already cancelled this flip.
     if (flipId !== this.#flipId) return;
 
-    poster.src = nextSrc;
-    const back = poster.animate(
+    this.#showSide(nextSrc);
+    const back = face.animate(
       [
         { transform: turn(90), opacity: 0.55 },
         { transform: turn(0), opacity: 1 },
@@ -707,6 +779,14 @@ export class PosterCard extends HTMLElement {
     out.cancel();
     await back.finished.catch(() => {});
     if (flipId === this.#flipId) this.#wrap.classList.remove('turning');
+  }
+
+  // The swap at the middle of a turn: the comic has no video, so it goes with
+  // the poster and comes back with it, carrying on where it left off.
+  #showSide(src) {
+    this.#poster.src = src;
+    this.#video.hidden = this.#comic;
+    this.#syncVideo();
   }
 }
 

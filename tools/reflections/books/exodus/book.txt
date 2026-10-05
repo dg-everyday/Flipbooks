@@ -1,0 +1,11 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Exodus
+1-2 | Israel in Bondage
+3-4 | The Call of Moses
+5-11 | Moses before Pharaoh
+12-15 | Passover and Deliverance
+16-18 | The Journey to Sinai
+19-24 | The Covenant at Sinai
+25-31 | The Pattern of the Tabernacle
+32-34 | The Golden Calf and Covenant Renewed
+35-40 | The Tabernacle Built

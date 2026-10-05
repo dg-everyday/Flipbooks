@@ -1,0 +1,9 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Genesis
+1-2 | Creation
+3-5 | The Fall and Its Aftermath
+6-9 | The Flood and a New Beginning
+10-11 | The Nations and Babel
+12-24 | Abraham, Friend of God
+25-36 | Isaac, Jacob and Esau
+37-50 | Joseph and God's Providence

@@ -40,8 +40,13 @@
  *
  * Files are resolved from the date, as on <poster-card>:
  *   <media-base>images/sources/<YYYY>/<month>/<Month D, YYYY>[ - Comic].webp
+ *   <media-base>images/sources/<YYYY>/<month>/<Month D, YYYY>.mp4   (optional)
  *   <media-base>audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm
  * The narration is only requested when its play button is first pressed.
+ * When the day has a video, the Listen screen plays it over the poster, muted
+ * and looping, as <poster-card> does; until it plays, and for good when there
+ * is none or it cannot play, the poster image shows. The comic has no video,
+ * and it is not loaded for reduced motion or Save-Data.
  *
  * Kept in localStorage (when it is available), on this device only:
  *   dailygrace:moment:done      the days whose Moment reached Amen
@@ -315,6 +320,7 @@ const STYLES = /* css */ `
     box-shadow: 0 6px 18px rgb(0 27 52 / 22%);
   }
   .poster {
+    position: relative;
     align-self: center;
     width: 100%;
     padding: 0; border: 0; border-radius: 10px;
@@ -332,6 +338,16 @@ const STYLES = /* css */ `
     aspect-ratio: 941 / 1672;
     object-fit: contain;
   }
+  /* The day's video, over the poster, fading in once it is playing. */
+  .poster-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+  }
+  .poster-video.playing { opacity: 1; }
   .poster:focus-visible { outline: 3px solid var(--moment-gold); outline-offset: 3px; }
   /* In the 460px popup on larger screens it is as big as fits above the player
      without scrolling. 116px is the padding, heading row, player and gaps (the
@@ -565,6 +581,9 @@ export class DailyMoment extends HTMLElement {
   #audio = null;
   #comic = false;
   #flipId = 0;
+  // A day's poster video that failed to load, so the Listen screen does not
+  // ask for it again on every visit.
+  #missingVideo = '';
   #loadId = 0;
   #configurePending = false;
   #today = manilaToday();
@@ -636,6 +655,7 @@ export class DailyMoment extends HTMLElement {
     this.#scheduleConfigure();
     document.addEventListener('visibilitychange', this.#checkDate);
     document.addEventListener('visibilitychange', this.#syncVideo);
+    document.addEventListener('visibilitychange', this.#syncPosterVideo);
     // The clip plays while a quarter of the card shows; the light waits for most of it.
     this.#viewObserver = new IntersectionObserver(([entry]) => {
       this.#visible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
@@ -649,6 +669,7 @@ export class DailyMoment extends HTMLElement {
   disconnectedCallback() {
     document.removeEventListener('visibilitychange', this.#checkDate);
     document.removeEventListener('visibilitychange', this.#syncVideo);
+    document.removeEventListener('visibilitychange', this.#syncPosterVideo);
     this.#viewObserver?.disconnect();
     clearTimeout(this.#hintTimer);
     this.#stopAudio();
@@ -793,6 +814,7 @@ export class DailyMoment extends HTMLElement {
 
   #closed() {
     this.#stopAudio();
+    this.#syncPosterVideo();
     document.documentElement.style.overflow = '';
     this.#renderLaunch();
     this.#syncVideo();
@@ -821,6 +843,7 @@ export class DailyMoment extends HTMLElement {
     });
     this.#count.textContent = `${stage + 1}/${STAGES.length}`;
 
+    this.#body.querySelector('.poster-video')?.pause(); // its screen is going
     this.#body.className = `body${step.stage === 'pause' || step.stage === 'pray' || step.stage === 'amen' ? ' center' : ''}${step.stage === 'listen' ? ' listen' : ''}`;
     this.#body.innerHTML = this.#screen(step);
     this.#body.scrollTop = 0;
@@ -871,6 +894,8 @@ export class DailyMoment extends HTMLElement {
           <button class="poster${this.#comic ? ' comic' : ''}" type="button"
             aria-label="${this.#comic ? 'Show the regular poster' : 'Show the comic version of this poster'}">
             <img alt="The Daily Grace ${this.#comic ? 'comic' : 'poster'} for ${escapeHtml(day.name)}" src="${escapeHtml(this.#posterUrl(this.#comic))}" />
+            <video class="poster-video" width="941" height="1672" muted loop playsinline preload="auto"
+              disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1"></video>
           </button>
           <div class="player">
             <button class="play" type="button" aria-label="Play the narration">${PLAY_ICON}</button>
@@ -912,7 +937,7 @@ export class DailyMoment extends HTMLElement {
             ${this.#posterCard() ? `<button class="action share" type="button">${SHARE_ICON} Share today's poster</button>` : ''}
             ${this.#memoryVerse() ? `<button class="action memory" type="button">Practice this week's Memory-Verse challenge</button>` : ''}
             <a class="action" href="${escapeHtml(this.#flipbookUrl())}">Open this week's Flipbook</a>
-            <button class="action done" type="button">Done</button>
+            <button class="action finish" type="button">Done</button>
           </div>`;
       default:
         return '';
@@ -928,6 +953,16 @@ export class DailyMoment extends HTMLElement {
         poster.hidden = true;
         this.#body.querySelector('.poster-note').textContent = "This day's poster isn't available yet.";
       }, { once: true });
+      // The video shows only once it is playing; until then, and when it
+      // fails, the poster image beneath stands in.
+      const video = poster.querySelector('.poster-video');
+      video.muted = true; // the property too, or some browsers refuse to autoplay
+      video.addEventListener('playing', () => video.classList.add('playing'));
+      video.addEventListener('error', () => {
+        video.classList.remove('playing');
+        if (video.getAttribute('src')) this.#missingVideo = video.getAttribute('src');
+      });
+      this.#syncPosterVideo();
       this.#body.querySelector('.play').addEventListener('click', () => this.#toggleAudio());
       this.#syncPlayer();
     } else if (step.stage === 'respond') {
@@ -945,7 +980,7 @@ export class DailyMoment extends HTMLElement {
         this.#dialog.addEventListener('close', () => memory?.open(), { once: true });
         this.close();
       });
-      this.#body.querySelector('.done').addEventListener('click', () => this.close());
+      this.#body.querySelector('.finish').addEventListener('click', () => this.close());
     }
   }
 
@@ -1011,6 +1046,24 @@ export class DailyMoment extends HTMLElement {
     return `${this.#mediaPath('image')}${comic ? ' - Comic' : ''}.webp`;
   }
 
+  // The Listen screen's video loops over the poster while the Moment is open
+  // and in view and the poster, not the comic, is up; not at all when the
+  // reader asks for less motion or to save data.
+  #syncPosterVideo = () => {
+    const video = this.#body.querySelector('.poster-video');
+    if (!video) return;
+    video.hidden = this.#comic;
+    const url = `${this.#mediaPath('image')}.mp4`;
+    const play = this.#dialog.open && !document.hidden && !this.#comic && url !== this.#missingVideo
+      && !this.#reducedMotion.matches && !navigator.connection?.saveData;
+    if (!play) {
+      video.pause();
+      return;
+    }
+    if (video.getAttribute('src') !== url) video.src = url;
+    video.play().catch(() => {});
+  };
+
   /**
    * Turn the poster like a page, as <poster-card> does on the main page: it
    * swings edge-on, the image swaps while it is invisible, then the other side
@@ -1037,7 +1090,10 @@ export class DailyMoment extends HTMLElement {
 
     if (this.#reducedMotion.matches || !poster.animate) {
       await ready;
-      if (flipId === this.#flipId) image.src = nextSrc;
+      if (flipId === this.#flipId) {
+        image.src = nextSrc;
+        this.#syncPosterVideo();
+      }
       return;
     }
 
@@ -1055,6 +1111,8 @@ export class DailyMoment extends HTMLElement {
     if (flipId !== this.#flipId) return;
 
     image.src = nextSrc;
+    // The comic has no video: it goes with the poster and comes back with it.
+    this.#syncPosterVideo();
     poster.animate(
       [
         { transform: turn(90), opacity: 0.55 },

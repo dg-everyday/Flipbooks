@@ -2,7 +2,9 @@
  * <daily-moment> — the Daily Grace Moment: the day's devotional, one screen at
  * a time, in about five minutes.
  *
- * On the page it is a 16:9 card playing the "Moment With the LORD" clip, its
+ * On the page it is a 16:9 card playing the "Moment With the LORD" clip (a
+ * different one each day of the week, assets/images/moment/moment_<day>.mp4
+ * with its first frame as moment_<day>.webp, chosen by the card's date), its
  * status in a green band along the foot ("Pause, read, listen and pray", or
  * "Done") and a gold arrow nudging toward it. Tapping it opens a
  * full-screen walk through the day: Pause, Read (the verse), Listen (the
@@ -62,10 +64,12 @@ import { DEFAULT_VERSES_BASE, loadVerses } from './daily-verses.js?v=20261004-1'
 
 // The Daily Grace emblem (a cross on a hill), at the heart of the Pause and Pray screens.
 const EMBLEM_URL = new URL('../../assets/images/dg-icon-03-flat.webp', import.meta.url).href;
-// The card's face: a short looping clip, "Moment With the LORD", and its first
-// frame, shown until the clip plays (or instead of it, when motion is unwelcome).
-const MOMENT_VIDEO_URL = new URL('../../assets/images/moment.mp4', import.meta.url).href;
-const MOMENT_POSTER_URL = new URL('../../assets/images/moment-poster.webp', import.meta.url).href;
+// The card's face: a short looping clip, "Moment With the LORD", one for each
+// day of the week, and its first frame, shown until the clip plays (or instead
+// of it, when motion is unwelcome).
+const MOMENT_MEDIA_BASE = new URL('../../assets/images/moment/', import.meta.url).href;
+const momentVideoUrl = (weekday) => `${MOMENT_MEDIA_BASE}moment_${weekday.toLowerCase()}.mp4`;
+const momentPosterUrl = (weekday) => `${MOMENT_MEDIA_BASE}moment_${weekday.toLowerCase()}.webp`;
 
 const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
 // const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
@@ -139,7 +143,7 @@ const STYLES = /* css */ `
     overflow: hidden;
     border: 1px solid rgb(225 182 93 / 40%);
     border-radius: 10px;
-    background: var(--moment-green) url("${MOMENT_POSTER_URL}") center / cover no-repeat;
+    background: var(--moment-green) var(--moment-poster, none) center / cover no-repeat;
     color: #fff;
     text-align: left;
     box-shadow: 0 12px 30px rgb(6 38 26 / 30%);
@@ -600,7 +604,7 @@ export class DailyMoment extends HTMLElement {
     this.#root.innerHTML = `
       <style>${STYLES}</style>
       <button class="launch" type="button" aria-haspopup="dialog">
-        <video class="launch-video" poster="${MOMENT_POSTER_URL}" muted loop playsinline preload="none"
+        <video class="launch-video" muted loop playsinline preload="none"
           disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
         <span class="launch-sheen" aria-hidden="true"></span>
         <span class="launch-chevron" aria-hidden="true">${DOUBLE_NEXT_ICON}</span>
@@ -678,17 +682,27 @@ export class DailyMoment extends HTMLElement {
 
   // The card's clip loops only while the card shows and the Moment is closed,
   // and not at all when the reader asks for less motion or to save data: the
-  // first frame stands in. It is first fetched when it first plays.
+  // first frame stands in. It is first fetched when it first plays, and is the
+  // clip for the card's day of the week.
   #syncVideo = () => {
-    const play = this.#visible && !document.hidden && !this.#dialog.open
+    const play = this.#day && this.#visible && !document.hidden && !this.#dialog.open
       && !this.#reducedMotion.matches && !navigator.connection?.saveData;
     if (!play) {
       this.#video.pause();
       return;
     }
-    if (!this.#video.getAttribute('src')) this.#video.src = MOMENT_VIDEO_URL;
+    const url = momentVideoUrl(this.#day.weekday);
+    if (this.#video.getAttribute('src') !== url) this.#video.src = url;
     this.#video.play().catch(() => {});
   };
+
+  // The card's still, the first frame of its day's clip, behind the clip and in its place.
+  #setMomentPoster() {
+    const url = momentPosterUrl(this.#day.weekday);
+    if (this.#video.getAttribute('poster') === url) return;
+    this.#video.poster = url;
+    this.#launch.style.setProperty('--moment-poster', `url("${url}")`);
+  }
 
   // The once-a-day light across the card: only while the day's Moment is still
   // to do, the card is in view and uncovered, and motion is welcome.
@@ -760,7 +774,9 @@ export class DailyMoment extends HTMLElement {
     this.#day = day;
     this.#entry = entry;
     this.hidden = !entry;
+    this.#setMomentPoster();
     this.#renderLaunch();
+    this.#syncVideo(); // a new day brings its own clip
   }
 
   #renderLaunch() {

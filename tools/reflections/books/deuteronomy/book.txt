@@ -1,0 +1,9 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Deuteronomy
+1-4 | Remembering the Journey
+5-11 | The Great Commandment
+12-16 | Worship and the Feasts
+17-21 | Leaders, Justice and War
+22-26 | Laws for Daily Life
+27-30 | Blessing, Curse and Covenant
+31-34 | The Song and Death of Moses

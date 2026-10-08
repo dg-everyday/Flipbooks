@@ -12,12 +12,12 @@
  * collapses it again.
  *
  * Usage
- *   <banner-slider media-base="https://dailygrace.faith/media/"></banner-slider>
+ *   <banner-slider></banner-slider>
  *   <script type="module" src="./apps/components/banner-slider.js"></script>
  *
  * Attributes
  *   media-base      Base URL for the banners and book symbols.
- *                   Default: https://dailygrace.faith/media/
+ *                   Default: media_base_url in apps/settings/appsettings.json
  *   verses-base     Folder of the month files with each day's reflection
  *                   (<YYYY>/<month>.json, see daily-verses.js), resolved
  *                   against the page. Default: assets/verses/
@@ -68,9 +68,9 @@
  */
 
 import { DEFAULT_VERSES_BASE, loadVerses, versesFileUrl } from './daily-verses.js?v=20261004-1';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = 'apps/pages/flipbook.html';
 const DEFAULT_PAST_DAYS = 7;
 const TIME_ZONE = 'Asia/Manila';

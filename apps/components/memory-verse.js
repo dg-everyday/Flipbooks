@@ -29,7 +29,7 @@
  * Attributes
  *   media-base   Base URL for the book thumbnails, the same pictures as on
  *                <bible-sayings> (images/thumbnails/<Book>_square.webp).
- *                Default: https://dailygrace.faith/media/
+ *                Default: media_base_url in apps/settings/appsettings.json
  *   verses-base  Folder of the month verse files (<YYYY>/<month>.json, see
  *                daily-verses.js), resolved against the page.
  *                Default: assets/verses/
@@ -50,9 +50,9 @@ import { registerFonts } from '../../assets/scripts/fonts.js';
 import { DEFAULT_VERSES_BASE, loadVerses } from './daily-verses.js?v=20261004-1';
 import { parseReference } from './scripture-refs.js?v=20261002-1';
 import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 // The book thumbnails, as on <bible-sayings>: .webp on the media host, each
 // blown up until its gold frame alone fills the square (book-thumb-bounds.js).
 const bookThumbnailUrl = (mediaBase, book) =>

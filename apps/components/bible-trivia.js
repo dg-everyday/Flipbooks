@@ -21,7 +21,7 @@
  *   src              URL of the SQLite database holding the did_you_know table.
  *                    Default: ../../assets/db/didyouknow.db (relative to this file)
  *   media-base       Base URL for the book thumbnails.
- *                    Default: https://dailygrace.faith/media/
+ *                    Default: media_base_url in apps/settings/appsettings.json
  *   max-per-day      Quiz appearances allowed per day. Default: 3
  *   min-gap-minutes  Minimum spacing between them. Default: 60
  *   delay            Pause after load before opening, in ms. Default: 800
@@ -55,9 +55,9 @@
 import { registerFonts } from '../../assets/scripts/fonts.js';
 import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
 import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-//const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_MAX_PER_DAY = 3;
 const DEFAULT_MIN_GAP_MINUTES = 60;
 const DEFAULT_DELAY = 800;

@@ -4,36 +4,36 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/00.webp",
+            "image": "media:stories/one-thing-thou-lackest/00.webp",
             "caption": "A Question About Eternal Life, the Look That Loved Him, and the One Thing He Could Not Give Up" },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/01.webp",
+            "image": "media:stories/one-thing-thou-lackest/01.webp",
             "caption": "I. There Came One Running"
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/02.webp",
+            "image": "media:stories/one-thing-thou-lackest/02.webp",
             "caption": "II. Thou Knowest the Commandments"
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/03.webp",
+            "image": "media:stories/one-thing-thou-lackest/03.webp",
             "caption": "III. Beholding Him Loved Him"
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/04.webp",
+            "image": "media:stories/one-thing-thou-lackest/04.webp",
             "caption": "IV. For He Had Great Possessions"
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/05.webp",
+            "image": "media:stories/one-thing-thou-lackest/05.webp",
             "caption": "V. Who Then Can Be Saved?"
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/06.webp",
+            "image": "media:stories/one-thing-thou-lackest/06.webp",
             "caption": "VI. Many That Are First Shall Be Last"
         }
     ]

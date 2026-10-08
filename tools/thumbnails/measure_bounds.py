@@ -25,7 +25,10 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 DYK_DB = os.path.join(ROOT, "assets", "db", "didyouknow.db")
 OUT_JS = os.path.join(ROOT, "apps", "components", "book-thumb-bounds.js")
 
-DEFAULT_MEDIA_BASE = "https://dailygrace.faith/media/"
+SETTINGS = os.path.join(ROOT, "apps", "settings", "appsettings.json")
+
+with open(SETTINGS, encoding="utf-8") as f:
+    DEFAULT_MEDIA_BASE = json.load(f)["media_base_url"]
 SUFFIX = "_square.webp"
 # Some tiles carry a faint coloured halo outside the frame, barely visible but
 # enough to throw the bounds out; take the half-opaque point as the real edge.

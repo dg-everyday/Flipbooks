@@ -33,7 +33,7 @@
  *
  * Attributes
  *   media-base      Base URL for book symbols (images/symbols/<Book>-symbol.svg).
- *                   Default: https://dailygrace.faith/media/
+ *                   Default: media_base_url in apps/settings/appsettings.json
  *   metadata-src    URL of the bundled book metadata used when the symbol SVG
  *                   cannot be read cross-origin (resolved against the page).
  *                   Default: ../../assets/book-metadata.json (relative to this file)
@@ -71,14 +71,14 @@
 import { registerFonts } from '../../assets/scripts/fonts.js';
 import { bookmarkNote, keepBookmarks } from './card-bookmarks.js?v=20260927-1';
 import { PILL_STYLES, linkScripture } from './scripture-refs.js?v=20261002-1';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
 const bookSymbolUrl = (mediaBase, book) =>
   `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-//const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_BATCH_SIZE = 24;
 const DEFAULT_METADATA_SRC = new URL('../../assets/book-metadata.json', import.meta.url).href;
 const DEFAULT_EXPLANATIONS_BASE = new URL('../../assets/explanations/', import.meta.url).href;

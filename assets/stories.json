@@ -1,120 +1,120 @@
 [
     {
         "id": "a-great-way-off",
-        "sequence": 12,
-        "cover_page": "https://dailygrace.faith/media/stories/a-great-way-off/00.webp",
+        "sequence": 3,
+        "cover_page": "media:stories/a-great-way-off/00.webp",
         "title": "The Father Who Ran",
         "description": "A Son Who Spent Everything, a Speech He Never Finished, and a Brother Who Stayed Outside.",
-        "audio": "https://dailygrace.faith/media/stories/a-great-way-off/a-great-way-off.webm",
-        "story-book": "https://dailygrace.faith/media/stories/a-great-way-off/a-great-way-off-storybook.pdf"
+        "audio": "media:stories/a-great-way-off/a-great-way-off.webm",
+        "story-book": "media:stories/a-great-way-off/a-great-way-off-storybook.pdf"
     },
     {
         "id": "all-things-new",
-        "sequence": 13,
-        "cover_page": "https://dailygrace.faith/media/stories/all-things-new/00.webp",
+        "sequence": 8,
+        "cover_page": "media:stories/all-things-new/00.webp",
         "title": "When God Makes Everything New",
         "description": "A New Heaven and a New Earth, a City Coming Down from God, and a River That Runs from the Throne",
-        "audio": "https://dailygrace.faith/media/stories/all-things-new/all-things-new.webm",
-        "story-book": "https://dailygrace.faith/media/stories/all-things-new/all-things-new-storybook.pdf"
+        "audio": "media:stories/all-things-new/all-things-new.webm",
+        "story-book": "media:stories/all-things-new/all-things-new-storybook.pdf"
     },
     {
         "id": "and-ruth-with-her",
-        "sequence": 8,
-        "cover_page": "https://dailygrace.faith/media/stories/and-ruth-with-her/00.webp",
+        "sequence": 13,
+        "cover_page": "media:stories/and-ruth-with-her/00.webp",
         "title": "Where You Go, I Will Go",
         "description": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean.",
-        "audio": "https://dailygrace.faith/media/stories/and-ruth-with-her/and-ruth-with-her.webm",
-        "story-book": "https://dailygrace.faith/media/stories/and-ruth-with-her/and-ruth-with-her-storybook.pdf"
+        "audio": "media:stories/and-ruth-with-her/and-ruth-with-her.webm",
+        "story-book": "media:stories/and-ruth-with-her/and-ruth-with-her-storybook.pdf"
     },
     {
         "id": "forbid-them-not",
-        "sequence": 4,
-        "cover_page": "https://dailygrace.faith/media/stories/forbid-them-not/00.webp",
+        "sequence": 9,
+        "cover_page": "media:stories/forbid-them-not/00.webp",
         "title": "Let the Children Come",
         "description": "Jesus, His Disciples, and the Young Children Brought to Him.",
-        "audio": "https://dailygrace.faith/media/stories/forbid-them-not/forbid-them-not.webm",
-        "story-book": "https://dailygrace.faith/media/stories/forbid-them-not/forbid-them-not-storybook.pdf"
+        "audio": "media:stories/forbid-them-not/forbid-them-not.webm",
+        "story-book": "media:stories/forbid-them-not/forbid-them-not-storybook.pdf"
     },
     {
         "id": "into-his-hand",
-        "sequence": 7,
-        "cover_page": "https://dailygrace.faith/media/stories/into-his-hand/00.webp",
+        "sequence": 4,
+        "cover_page": "media:stories/into-his-hand/00.webp",
         "title": "Trusted, Framed, Trusted Again",
         "description": "Joseph in Potiphar's House, the Garment He Left Behind, and the Prison Where It Happened Again.",
-        "audio": "https://dailygrace.faith/media/stories/into-his-hand/into-his-hand.webm",
-        "story-book": "https://dailygrace.faith/media/stories/into-his-hand/into-his-hand-storybook.pdf"
+        "audio": "media:stories/into-his-hand/into-his-hand.webm",
+        "story-book": "media:stories/into-his-hand/into-his-hand-storybook.pdf"
     },
     {
         "id": "one-thing-thou-lackest",
-        "sequence": 5,
-        "cover_page": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/00.webp",
+        "sequence": 1,
+        "cover_page": "media:stories/one-thing-thou-lackest/00.webp",
         "title": "The Rich Man Who Walked Away",
         "description": "A Question About Eternal Life, the Look That Loved Him, and the One Thing He Could Not Give Up.",
-        "audio": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/one-thing-thou-lackest.webm",
-        "story-book": "https://dailygrace.faith/media/stories/one-thing-thou-lackest/one-thing-thou-lackest-storybook.pdf"
+        "audio": "media:stories/one-thing-thou-lackest/one-thing-thou-lackest.webm",
+        "story-book": "media:stories/one-thing-thou-lackest/one-thing-thou-lackest-storybook.pdf"
     },
     {
         "id": "the-fourth-man-in-the-fire",
-        "sequence": 3,
-        "cover_page": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/00.webp",
+        "sequence": 11,
+        "cover_page": "media:stories/the-fourth-man-in-the-fire/00.webp",
         "title": "The Fourth Man in the Fire",
         "description": "Three Hebrews, One Golden Image, and the Furnace on the Plain of Dura.",
-        "audio": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/the-fourth-man-in-the-fire.webm",
-        "story-book": "https://dailygrace.faith/media/stories/the-fourth-man-in-the-fire/the-fourth-man-in-the-fire-storybook.pdf"
+        "audio": "media:stories/the-fourth-man-in-the-fire/the-fourth-man-in-the-fire.webm",
+        "story-book": "media:stories/the-fourth-man-in-the-fire/the-fourth-man-in-the-fire-storybook.pdf"
     },
     {
         "id": "for-his-oaths-sake",
-        "sequence": 6,
-        "cover_page": "https://dailygrace.faith/media/stories/for-his-oaths-sake/00.webp",
+        "sequence": 7,
+        "cover_page": "media:stories/for-his-oaths-sake/00.webp",
         "title": "The King Who Kept the Wrong Promise",
         "description": "A Birthday Supper, an Oath Sworn in Front of Everyone, and the Death of John the Baptist.",
-        "audio": "https://dailygrace.faith/media/stories/for-his-oaths-sake/for-his-oaths-sake.webm",
-        "story-book": "https://dailygrace.faith/media/stories/for-his-oaths-sake/for-his-oaths-sake-storybook.pdf"
+        "audio": "media:stories/for-his-oaths-sake/for-his-oaths-sake.webm",
+        "story-book": "media:stories/for-his-oaths-sake/for-his-oaths-sake-storybook.pdf"
     },
     {
         "id": "help-thou-mine-unbelief",
-        "sequence": 9,
-        "cover_page": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/00.webp",
+        "sequence": 5,
+        "cover_page": "media:stories/help-thou-mine-unbelief/00.webp",
         "title": "Help My Unbelief",
         "description": "A Mountain Where His Raiment Shone, a Voice That Said “Hear Him,” and a Father in the Valley Below",
-        "audio": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/help-thou-mine-unbelief.webm",
-        "story-book": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/help-thou-mine-unbelief-storybook.pdf"
+        "audio": "media:stories/help-thou-mine-unbelief/help-thou-mine-unbelief.webm",
+        "story-book": "media:stories/help-thou-mine-unbelief/help-thou-mine-unbelief-storybook.pdf"
     },
     {
         "id": "how-much-more",
-        "sequence": 1,
-        "cover_page": "https://dailygrace.faith/media/stories/how-much-more/00.webp",
+        "sequence": 2,
+        "cover_page": "media:stories/how-much-more/00.webp",
         "title": "Teach Us to Pray",
         "description": "The Prayer That Begins “Our Father,” a Friend Knocking at Midnight, and a Father Who Gives Good Gifts",
-        "audio": "https://dailygrace.faith/media/stories/how-much-more/how-much-more.webm",
-        "story-book": "https://dailygrace.faith/media/stories/how-much-more/how-much-more-storybook.pdf"
+        "audio": "media:stories/how-much-more/how-much-more.webm",
+        "story-book": "media:stories/how-much-more/how-much-more-storybook.pdf"
     },
     {
         "id": "too-many-for-me",
-        "sequence": 11,
-        "cover_page": "https://dailygrace.faith/media/stories/too-many-for-me/00.webp",
+        "sequence": 10,
+        "cover_page": "media:stories/too-many-for-me/00.webp",
         "title": "Gideon's Three Hundred Men",
         "description": "Three Hundred Men, a Loaf of Barley Bread in a Dream, and Hands Too Full to Hold a Sword",
-        "audio": "https://dailygrace.faith/media/stories/too-many-for-me/too-many-for-me.webm",
-        "story-book": "https://dailygrace.faith/media/stories/too-many-for-me/too-many-for-me-storybook.pdf"
+        "audio": "media:stories/too-many-for-me/too-many-for-me.webm",
+        "story-book": "media:stories/too-many-for-me/too-many-for-me-storybook.pdf"
     },
     {
         "id": "where-art-thou",
-        "sequence": 10,
-        "cover_page": "https://dailygrace.faith/media/stories/where-art-thou/00.webp",
+        "sequence": 12,
+        "cover_page": "media:stories/where-art-thou/00.webp",
         "title": "Hiding in the Garden",
         "description": "Adam and Eve, a Serpent's Question, and the LORD God Calling “Where Art Thou?”",
-        "audio": "https://dailygrace.faith/media/stories/where-art-thou/where-art-thou.webm",
-        "story-book": "https://dailygrace.faith/media/stories/where-art-thou/where-art-thou-storybook.pdf"
+        "audio": "media:stories/where-art-thou/where-art-thou.webm",
+        "story-book": "media:stories/where-art-thou/where-art-thou-storybook.pdf"
     },
     {
         "id": "while-he-lingered",
-        "sequence": 2,
-        "cover_page": "https://dailygrace.faith/media/stories/while-he-lingered/00.webp",
+        "sequence": 6,
+        "cover_page": "media:stories/while-he-lingered/00.webp",
         "title": "Pulled Out of Sodom",
         "description": "Lot, Two Strangers at the Gate, a Door the Mob Could Not Find, and a Pillar of Salt on the Road to Zoar",
-        "audio": "https://dailygrace.faith/media/stories/while-he-lingered/while-he-lingered.webm",
-        "story-book": "https://dailygrace.faith/media/stories/while-he-lingered/while-he-lingered-storybook.pdf"
+        "audio": "media:stories/while-he-lingered/while-he-lingered.webm",
+        "story-book": "media:stories/while-he-lingered/while-he-lingered-storybook.pdf"
     }
 
 ]

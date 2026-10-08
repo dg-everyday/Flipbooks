@@ -4,37 +4,37 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/for-his-oaths-sake/00.webp",
+            "image": "media:stories/for-his-oaths-sake/00.webp",
             "caption": "A Birthday Supper, an Oath Sworn in Front of Everyone, and the Death of John the Baptist."
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/for-his-oaths-sake/01.webp",
+            "image": "media:stories/for-his-oaths-sake/01.webp",
             "caption": "I. It Is John, Whom I Beheaded"
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/for-his-oaths-sake/02.webp",
+            "image": "media:stories/for-his-oaths-sake/02.webp",
             "caption": "II. It Is Not Lawful"
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/for-his-oaths-sake/03.webp",
+            "image": "media:stories/for-his-oaths-sake/03.webp",
             "caption": "III. He Heard Him Gladly"
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/for-his-oaths-sake/04.webp",
+            "image": "media:stories/for-his-oaths-sake/04.webp",
             "caption": "IV. A Convenient Day"
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/for-his-oaths-sake/05.webp",
+            "image": "media:stories/for-his-oaths-sake/05.webp",
             "caption": "V. By and By in a Charger"
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/for-his-oaths-sake/06.webp",
+            "image": "media:stories/for-his-oaths-sake/06.webp",
             "caption": "VI. And Laid It in a Tomb"
         }
     ]

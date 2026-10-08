@@ -4,37 +4,37 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/how-much-more/00.webp",
+            "image": "media:stories/how-much-more/00.webp",
             "caption": "The Prayer That Begins “Our Father,” a Friend Knocking at Midnight, and a Father Who Gives Good Gifts"
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/how-much-more/01.webp",
+            "image": "media:stories/how-much-more/01.webp",
             "caption": "I. Lord, Teach Us to Pray"
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/how-much-more/02.webp",
+            "image": "media:stories/how-much-more/02.webp",
             "caption": "II. Our Father Which Art in Heaven"
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/how-much-more/03.webp",
+            "image": "media:stories/how-much-more/03.webp",
             "caption": "III. Give Us Day by Day"
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/how-much-more/04.webp",
+            "image": "media:stories/how-much-more/04.webp",
             "caption": "IV. Friend, Lend Me Three Loaves"
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/how-much-more/05.webp",
+            "image": "media:stories/how-much-more/05.webp",
             "caption": "V. Ask, Seek, Knock"
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/how-much-more/06.webp",
+            "image": "media:stories/how-much-more/06.webp",
             "caption": "VI. How Much More"
         }
     ]

@@ -23,7 +23,7 @@
  *
  * Attributes
  *   media-base   Base URL for book thumbnails (images/thumbnails/<Book>_square.webp).
- *                Default: https://dailygrace.faith/media/
+ *                Default: media_base_url in apps/settings/appsettings.json
  *   src          URL of the sayings JSON, resolved against the page.
  *                Default: ../../assets/bible-sayings.json (relative to this file)
  *   count        Sayings per batch. Default: 5
@@ -84,6 +84,7 @@ import {
 } from './card-bookmarks.js?v=20260927-1';
 import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
 import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
 // The thumbnails are .webp on the media host; .svg is not published.
 const bookThumbnailUrl = (mediaBase, book) =>
@@ -92,7 +93,7 @@ const bookThumbnailUrl = (mediaBase, book) =>
 // the files carry a fringe right against the frame.
 const THUMBNAIL_TRIM = 0.985;
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_PAGE = 'apps/pages/bible-sayings.html';
 const DEFAULT_COUNT = 5;
 // Pulling for more stops once the list holds this many sayings.

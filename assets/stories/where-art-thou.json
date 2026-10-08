@@ -4,47 +4,47 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/00.webp",
+            "image": "media:stories/where-art-thou/00.webp",
             "caption": "Adam and Eve, a Serpent's Question, and the LORD God Calling “Where Art Thou?”"
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/01.webp",
+            "image": "media:stories/where-art-thou/01.webp",
             "caption": "I. Naked, and Not Ashamed"
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/02.webp",
+            "image": "media:stories/where-art-thou/02.webp",
             "caption": "II. Neither Shall Ye Touch It"
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/03.webp",
+            "image": "media:stories/where-art-thou/03.webp",
             "caption": "III. The Eyes of Them Both Were Opened"
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/04.webp",
+            "image": "media:stories/where-art-thou/04.webp",
             "caption": "IV. Where Art Thou?"
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/05.webp",
+            "image": "media:stories/where-art-thou/05.webp",
             "caption": "V. And I Did Eat"
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/06.webp",
+            "image": "media:stories/where-art-thou/06.webp",
             "caption": "VI. Thy Seed and Her Seed"
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/07.webp",
+            "image": "media:stories/where-art-thou/07.webp",
             "caption": "VII. Unto Dust Shalt Thou Return"
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/stories/where-art-thou/08.webp",
+            "image": "media:stories/where-art-thou/08.webp",
             "caption": "VIII. The Way of the Tree of Life"
         }
     ]

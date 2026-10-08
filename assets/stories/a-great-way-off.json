@@ -4,47 +4,47 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/00.webp",
+            "image": "media:stories/a-great-way-off/00.webp",
             "caption": "A Son Who Spent Everything, a Speech He Never Finished, and a Brother Who Stayed Outside."
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/01.webp",
+            "image": "media:stories/a-great-way-off/01.webp",
             "caption": "The Son Demands His Inheritance, the Father Runs to Meet Him, and the Brother Stays Outside."
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/02.webp",
+            "image": "media:stories/a-great-way-off/02.webp",
             "caption": "The Father Throws a Feast, the Son Repents, and the Brother Refuses to Join."
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/03.webp",
+            "image": "media:stories/a-great-way-off/03.webp",
             "caption": "The Father Embraces the Son, the Feast Begins, and the Brother Watches from Afar."
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/04.webp",
+            "image": "media:stories/a-great-way-off/04.webp",
             "caption": "The Celebration Continues, the Son is Restored, and the Brother Remains Outside."
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/05.webp",
+            "image": "media:stories/a-great-way-off/05.webp",
             "caption": "The Father Forgives, the Son Rejoices, and the Brother Wrestles with Jealousy."
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/06.webp",
+            "image": "media:stories/a-great-way-off/06.webp",
             "caption": "The Family is Reunited, the Feast is in Full Swing, and the Brother Begins to Understand."
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/07.webp",
+            "image": "media:stories/a-great-way-off/07.webp",
             "caption": "The Father Continues to Show Grace, the Son Learns Humility, and the Brother Slowly Accepts."
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/stories/a-great-way-off/08.webp",
+            "image": "media:stories/a-great-way-off/08.webp",
             "caption": "The Story of Redemption Unfolds, the Family is Healed, and the Brother Finally Joins the Celebration."
         }
     ]

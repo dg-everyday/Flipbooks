@@ -25,7 +25,7 @@
  *
  * Attributes
  *   media-base   Base URL for book symbols (images/symbols/<Book>-symbol.svg).
- *                Default: https://dailygrace.faith/media/
+ *                Default: media_base_url in apps/settings/appsettings.json
  *   src          URL of the SQLite database holding the did_you_know table,
  *                resolved against the page.
  *                Default: ../../assets/db/didyouknow.db (relative to this file)
@@ -79,14 +79,14 @@ import {
 } from './card-bookmarks.js?v=20260927-1';
 import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
 import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
 const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
 const bookSymbolUrl = (mediaBase, book) =>
   `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-//const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_PAGE = 'apps/pages/did-you-know.html';
 const DEFAULT_COUNT = 5;
 // Pulling for more stops once the list holds this many facts.

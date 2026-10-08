@@ -4,47 +4,47 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/00.webp",
+            "image": "media:stories/while-he-lingered/00.webp",
             "caption": "Lot, Two Strangers at the Gate, a Door the Mob Could Not Find, and a Pillar of Salt on the Road to Zoar"
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/01.webp",
+            "image": "media:stories/while-he-lingered/01.webp",
             "caption": "I. At Even"
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/02.webp",
+            "image": "media:stories/while-he-lingered/02.webp",
             "caption": "II. Where Are the Men?"
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/03.webp",
+            "image": "media:stories/while-he-lingered/03.webp",
             "caption": "III. They Wearied Themselves to Find the Door"
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/04.webp",
+            "image": "media:stories/while-he-lingered/04.webp",
             "caption": "IV. As One That Mocked"
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/05.webp",
+            "image": "media:stories/while-he-lingered/05.webp",
             "caption": "V. While He Lingered"
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/06.webp",
+            "image": "media:stories/while-he-lingered/06.webp",
             "caption": "VI. Is It Not a Little One?"
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/07.webp",
+            "image": "media:stories/while-he-lingered/07.webp",
             "caption": "VII. Brimstone and Fire"
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/stories/while-he-lingered/08.webp",
+            "image": "media:stories/while-he-lingered/08.webp",
             "caption": "VIII. God Remembered Abraham"
         }
     ]

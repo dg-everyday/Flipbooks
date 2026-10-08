@@ -1,0 +1,8 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Joshua
+1-5 | Crossing into the Land
+6-8 | Jericho and Ai
+9-12 | The Conquest of the Land
+13-17 | Dividing the Inheritance
+18-21 | Shiloh, the Tribes and the Levites
+22-24 | Covenant and Farewell

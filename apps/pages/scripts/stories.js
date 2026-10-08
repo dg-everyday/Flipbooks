@@ -11,8 +11,11 @@
  * Each entry: { image, caption?, audio?, id?, placeholder? }. Paths are
  * written relative to the SITE ROOT ("assets/stories/..."), not to this file
  * or to the page, so a manifest reads the same wherever it is loaded from.
+ * "media:<path>" is a file on the media host (apps/settings/settings.js).
  * Absolute URLs pass through untouched.
  */
+
+import { resolveMedia } from '../../settings/settings.js?v=20261009-1';
 
 const STORY_DIR = 'assets/stories/';
 
@@ -60,7 +63,7 @@ export async function loadStory(slug) {
 /** Maps a loaded story onto <flip-book> page descriptors. */
 export function toFlipPages(story) {
   const root = siteRoot();
-  const resolve = path => (path ? new URL(path, root).href : null);
+  const resolve = path => (path ? new URL(resolveMedia(path), root).href : null);
 
   return story.pages.map((entry, i) => ({
     src: resolve(entry.image),

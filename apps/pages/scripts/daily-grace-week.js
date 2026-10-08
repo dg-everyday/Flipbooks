@@ -10,9 +10,9 @@
  */
 
 import { loadVerses } from '../../components/daily-verses.js?v=20261004-1';
+import { MEDIA_BASE_URL } from '../../settings/settings.js?v=20261009-1';
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 // The folder of month verse files (<YYYY>/<month>.json). Resolved against the
 // calling PAGE, not this file, so the two dots count up from apps/pages/ and
 // not from this directory. A page at another depth must pass its own

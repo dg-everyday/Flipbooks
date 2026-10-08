@@ -4,27 +4,27 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/forbid-them-not/00.webp",
+            "image": "media:stories/forbid-them-not/00.webp",
             "caption": "Jesus, His Disciples, and the Young Children Brought to Him."
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/forbid-them-not/01.webp",
+            "image": "media:stories/forbid-them-not/01.webp",
             "caption": "Jesus Blesses the Children."
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/forbid-them-not/02.webp",
+            "image": "media:stories/forbid-them-not/02.webp",
             "caption": "The Disciples Try to Turn the Children Away."
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/forbid-them-not/03.webp",
+            "image": "media:stories/forbid-them-not/03.webp",
             "caption": "Jesus Welcomes the Children, Teaching About the Kingdom of God."
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/forbid-them-not/04.webp",
+            "image": "media:stories/forbid-them-not/04.webp",
             "caption": "The Children Continue to Receive Jesus' Blessing."
         }
     ]

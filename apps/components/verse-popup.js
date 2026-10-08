@@ -29,7 +29,7 @@ import { parseReference } from './scripture-refs.js?v=20261002-1';
 
 // Loaded only where the page does not load them itself: the home page has the
 // results panel and the database script already, with its own ?v= tokens.
-const RESULTS_MODULE = './bible-search-results.js?v=20261002-1';
+const RESULTS_MODULE = './bible-search-results.js?v=20261009-1';
 const SQL_SCRIPT = new URL('../../assets/scripts/sql_script.js?v=20261002-1', import.meta.url).href;
 
 // Popups opened from popups, at most; past this the top one is reused.

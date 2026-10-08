@@ -4,47 +4,47 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/00.webp",
+            "image": "media:stories/help-thou-mine-unbelief/00.webp",
             "caption": "A Mountain Where His Raiment Shone, a Voice That Said “Hear Him,” and a Father in the Valley Below"
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/01.webp",
+            "image": "media:stories/help-thou-mine-unbelief/01.webp",
             "caption": "I. Apart by Themselves"
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/02.webp",
+            "image": "media:stories/help-thou-mine-unbelief/02.webp",
             "caption": "II. It Is Good for Us to Be Here"
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/03.webp",
+            "image": "media:stories/help-thou-mine-unbelief/03.webp",
             "caption": "III. Hear Him"
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/04.webp",
+            "image": "media:stories/help-thou-mine-unbelief/04.webp",
             "caption": "IV. What the Rising from the Dead Should Mean"
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/05.webp",
+            "image": "media:stories/help-thou-mine-unbelief/05.webp",
             "caption": "V. And They Could Not"
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/06.webp",
+            "image": "media:stories/help-thou-mine-unbelief/06.webp",
             "caption": "VI. If Thou Canst"
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/07.webp",
+            "image": "media:stories/help-thou-mine-unbelief/07.webp",
             "caption": "VII. Help Thou Mine Unbelief"
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/stories/help-thou-mine-unbelief/08.webp",
+            "image": "media:stories/help-thou-mine-unbelief/08.webp",
             "caption": "VIII. And He Arose"
         }
     ]

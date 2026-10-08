@@ -4,57 +4,57 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/00.webp",
+            "image": "media:stories/all-things-new/00.webp",
             "caption": "A New Heaven and a New Earth, a City Coming Down from God, and a River That Runs from the Throne."
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/01.webp",
+            "image": "media:stories/all-things-new/01.webp",
             "caption": "The old order passes away, and God makes all things new."
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/02.webp",
+            "image": "media:stories/all-things-new/02.webp",
             "caption": "The new creation is revealed, and God's glory fills the earth."
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/03.webp",
+            "image": "media:stories/all-things-new/03.webp",
             "caption": "The river of life flows from the throne, bringing healing to the nations."
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/04.webp",
+            "image": "media:stories/all-things-new/04.webp",
             "caption": "The tree of life bears fruit for the healing of the nations."
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/05.webp",
+            "image": "media:stories/all-things-new/05.webp",
             "caption": "God wipes away every tear, and there is no more death or mourning."
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/06.webp",
+            "image": "media:stories/all-things-new/06.webp",
             "caption": "The city of God is filled with light, and the nations walk by its radiance."
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/07.webp",
+            "image": "media:stories/all-things-new/07.webp",
             "caption": "The servants of God see His face, and His name is on their foreheads."
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/08.webp",
+            "image": "media:stories/all-things-new/08.webp",
             "caption": "There is no more night, and the glory of God illuminates everything."
         },
         {
             "id": "id-09",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/09.webp",
+            "image": "media:stories/all-things-new/09.webp",
             "caption": "The river of life flows from the throne, and the tree of life stands in the city."
         },
         {
             "id": "id-10",
-            "image": "https://dailygrace.faith/media/stories/all-things-new/10.webp",
+            "image": "media:stories/all-things-new/10.webp",
             "caption": "God's people reign with Him forever, and all things are made new."
         }
     ]

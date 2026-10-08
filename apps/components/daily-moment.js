@@ -15,12 +15,12 @@
  * button or Escape; Back and Next (or the arrow keys) move between screens.
  *
  * Usage
- *   <daily-moment media-base="https://dailygrace.faith/media/" poster="poster-card"></daily-moment>
+ *   <daily-moment poster="poster-card"></daily-moment>
  *   <script type="module" src="./apps/components/daily-moment.js"></script>
  *
  * Attributes
  *   media-base     Base URL for the poster and narration.
- *                  Default: https://dailygrace.faith/media/
+ *                  Default: media_base_url in apps/settings/appsettings.json
  *   verses-base    Folder of the month files of verses (<YYYY>/<month>.json,
  *                  see daily-verses.js), resolved against the page.
  *                  Default: assets/verses/
@@ -61,6 +61,7 @@
 
 import { registerFonts } from '../../assets/scripts/fonts.js';
 import { DEFAULT_VERSES_BASE, loadVerses } from './daily-verses.js?v=20261004-1';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
 // The Daily Grace emblem (a cross on a hill), at the heart of the Pause and Pray screens.
 const EMBLEM_URL = new URL('../../assets/images/dg-icon-03-flat.webp', import.meta.url).href;
@@ -71,8 +72,7 @@ const MOMENT_MEDIA_BASE = new URL('../../assets/images/moment/', import.meta.url
 const momentVideoUrl = (weekday) => `${MOMENT_MEDIA_BASE}moment_${weekday.toLowerCase()}.mp4`;
 const momentPosterUrl = (weekday) => `${MOMENT_MEDIA_BASE}moment_${weekday.toLowerCase()}.webp`;
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = 'apps/pages/flipbook.html';
 const TIME_ZONE = 'Asia/Manila';
 const DAY_MS = 86400000;

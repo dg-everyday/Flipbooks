@@ -70,11 +70,17 @@ import it with a `?v=` token; bump it in all three imports when it changes.
 The homepage's bookmarks popup (`#bookmarks-dialog`) holds a compact
 `<bible-search-results>` and a `bookmarks` copy of the other two.
 
-Components take a `media-base` attribute; `assets/scripts/script.js` passes the
-production host to each one on the homepage. Their built-in default is the
-production host too, `https://dailygrace.faith/media/`. To test against a local
-media server, switch the commented-out `http://localhost:9001/media/` line at
-the top of the component (or of `script.js`).
+The media host is set once, as `media_base_url` in
+`apps/settings/appsettings.json`. `apps/settings/settings.js` loads it and
+exports `MEDIA_BASE_URL`; every component and page script that builds a media
+URL defaults to it, and still takes a `media-base` attribute to override it. To
+test against a local media server, change `media_base_url` (for example to
+`http://localhost:9001/media/`). The data files do not repeat the host: a media
+file in `assets/stories.json` and `assets/stories/*.json` is written
+`media:<path>`, and `resolveMedia()` in `settings.js` expands it at runtime.
+`assets/scripts/check-assets.mjs` still reads the host from the
+`MEDIA_BASE_URL` line in `assets/scripts/script.js`, so keep that line in step,
+and the `og:image` tags stay full URLs because crawlers do not run scripts.
 
 Germania One, Strait, and Roboto are registered on the *document* by
 `assets/scripts/fonts.js`, because browsers do not reliably load `@font-face`

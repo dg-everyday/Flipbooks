@@ -43,6 +43,8 @@
  *   --story-dog-ear      size of the folded corner. Default: 48px
  */
 
+import { resolveMedia } from '../settings/settings.js?v=20261009-1';
+
 const DEFAULT_SRC = 'assets/stories.json';
 const DEFAULT_READER = 'apps/pages/stories.html';
 // The story the reader was on, so that coming back from its flipbook (or a
@@ -384,7 +386,14 @@ export class StoryCarousel extends HTMLElement {
       const data = await response.json();
       stories = (Array.isArray(data) ? data : [])
         .filter((story) => story?.id && story?.cover_page)
-        .sort((a, b) => sequenceOf(a) - sequenceOf(b));
+        .sort((a, b) => sequenceOf(a) - sequenceOf(b))
+        // The list names media files as "media:<path>"; see settings.js.
+        .map((story) => ({
+          ...story,
+          cover_page: resolveMedia(story.cover_page),
+          audio: resolveMedia(story.audio),
+          'story-book': resolveMedia(story['story-book']),
+        }));
     } catch (error) {
       console.error(`Unable to load stories from ${src}:`, error);
     }

@@ -25,6 +25,7 @@ import { h, fetchJson, para, rowExpander, followHash, filterMenu } from './study
 import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from '../../components/card-bookmarks.js?v=20260927-1';
+import { MEDIA_BASE_URL } from '../../settings/settings.js?v=20261009-1';
 
 const DATA = 'assets/guidance-for-life.json';
 
@@ -33,7 +34,7 @@ const bookmarks = bookmarkStore('dailygrace:bookmarks:guidance',
   { isId: (id) => typeof id === 'string' && id !== '', limit: 50 });
 
 // Each question's narration, as on the home page's <daily-guidance>.
-const AUDIO_BASE = 'https://dailygrace.faith/media/audio/questions-we-all-ask/';
+const AUDIO_BASE = `${MEDIA_BASE_URL}audio/questions-we-all-ask/`;
 // The home page's play and pause icons (poster-card.js, daily-guidance.js).
 const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;

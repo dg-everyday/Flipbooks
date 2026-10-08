@@ -1,11 +1,13 @@
+// The media host comes from apps/settings/appsettings.json, which the
+// components read for themselves (apps/settings/settings.js). This copy is not
+// used by the page: assets/scripts/check-assets.mjs reads it to find the host
+// it checks, so keep this line's form and keep it in step with appsettings.json.
 const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
-// const MEDIA_BASE_URL = "http://localhost:9001/media/";
 
 const searchForm = document.getElementById("devotional-search");
 const searchQuery = document.getElementById("search-query");
 const searchClear = document.getElementById("search-clear");
 const searchResults = document.getElementById("search-results");
-searchResults.setAttribute("media-base", MEDIA_BASE_URL);
 const bibleBookSuggestions = document.getElementById("bible-books");
 const searchMode = document.getElementById("search-mode");
 const searchQueryLabel = document.querySelector('label[for="search-query"]');
@@ -228,31 +230,16 @@ searchClear.addEventListener("click", () => {
     renderBookSuggestions();
 });
 
-// <banner-slider> shows the day's heading, banner and reflection, and lets the
-// reader swipe back through the past week; the rest of the page stays on today.
-document.getElementById("banner-slider").setAttribute("media-base", MEDIA_BASE_URL);
-
 // <daily-guidance> picks today's Questions We All Ask topic from
 // assets/guidance-for-life.json itself. (The day's reflection is under the banner.)
 
-// <did-you-know> loads its own facts; hand it the same media host used here.
-document.getElementById("did-you-know").setAttribute("media-base", MEDIA_BASE_URL);
-// <bible-sayings> loads its own sayings too; it shows the same book symbols.
-document.getElementById("bible-sayings").setAttribute("media-base", MEDIA_BASE_URL);
-// <poster-card> resolves the poster and narration files for the date itself.
-document.getElementById("poster-card").setAttribute("media-base", MEDIA_BASE_URL);
 // <daily-moment> walks through the day on the banner: today's Moment, or an
 // earlier day's while the reader has swiped back to it.
 const dailyMoment = document.getElementById("daily-moment");
-dailyMoment.setAttribute("media-base", MEDIA_BASE_URL);
 document.getElementById("banner-slider").addEventListener("daychange", (event) => {
     if (event.detail.daysAgo) dailyMoment.setAttribute("date", event.detail.date);
     else dailyMoment.removeAttribute("date");
 });
-// <memory-verse> shows the week's verse with its book's thumbnail, as <bible-sayings> does.
-document.getElementById("memory-verse").setAttribute("media-base", MEDIA_BASE_URL);
-// <bible-trivia> pops itself up after the page loads; it needs the book thumbnails.
-document.getElementById("bible-trivia").setAttribute("media-base", MEDIA_BASE_URL);
 
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -510,7 +497,6 @@ const bookmarkLists = new Map([
     [bookmarkTabs[3], bookmarkGuidance],
     [bookmarkTabs[4], bookmarkBlueprint],
 ]);
-for (const list of bookmarkLists.values()) list.setAttribute("media-base", MEDIA_BASE_URL);
 // The popup opens on the kind of bookmark looked at last.
 let bookmarkTab = bookmarkTabs[0];
 let bookmarksGeneration = 0;

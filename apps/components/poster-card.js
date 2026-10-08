@@ -20,12 +20,12 @@
  * Sharing and the long-press copy always send the image, never the video.
  *
  * Usage
- *   <poster-card media-base="https://dailygrace.faith/media/"></poster-card>
+ *   <poster-card></poster-card>
  *   <script type="module" src="./apps/components/poster-card.js"></script>
  *
  * Attributes
  *   media-base   Base URL for images and audio.
- *                Default: https://dailygrace.faith/media/
+ *                Default: media_base_url in apps/settings/appsettings.json
  *   date         Day to show as YYYY-MM-DD. Default: today in Asia/Manila,
  *                moving on to the new day when the page is left open past
  *                midnight.
@@ -57,8 +57,9 @@
  * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
-const DEFAULT_MEDIA_BASE = 'https://dailygrace.faith/media/';
-// const DEFAULT_MEDIA_BASE = 'http://localhost:9001/media/';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
+
+const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const TIME_ZONE = 'Asia/Manila';
 // How often an open page checks whether midnight has passed.
 const DATE_CHECK_INTERVAL = 60_000;

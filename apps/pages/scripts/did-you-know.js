@@ -24,6 +24,7 @@ import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from '../../components/card-bookmarks.js?v=20260927-1';
 import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from '../../components/book-thumb-bounds.js';
+import { MEDIA_BASE_URL } from '../../settings/settings.js?v=20261009-1';
 
 // The same URL, token and all, as <did-you-know> and <bible-trivia>, so the
 // browser keeps one copy. It is fetched with force-cache: keep the token in
@@ -35,7 +36,7 @@ const FACTS_QUERY = 'SELECT id, Title, Fact, Reference_verse, Book, Similar_book
 const bookmarks = bookmarkStore('dailygrace:bookmarks:facts', { isId: Number.isSafeInteger, limit: 50 });
 
 // The book thumbnails of the home page's cards, framed the same way.
-const MEDIA_BASE = 'https://dailygrace.faith/media/';
+const MEDIA_BASE = MEDIA_BASE_URL;
 const THUMBNAIL_TRIM = 0.985;
 
 const RIBBON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>';

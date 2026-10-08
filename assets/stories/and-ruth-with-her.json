@@ -4,47 +4,47 @@
     "pages": [
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/00.webp",
+            "image": "media:stories/and-ruth-with-her/00.webp",
             "caption": "Naomi Came Home Empty, the Barley Was Just Beginning, and a Moabite Widow Went Out to Glean."
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/01.webp",
+            "image": "media:stories/and-ruth-with-her/01.webp",
             "caption": "Ruth Begins Gleaning in the Fields, and Boaz Takes Notice of Her."
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/02.webp",
+            "image": "media:stories/and-ruth-with-her/02.webp",
             "caption": "Boaz Shows Favor to Ruth, and She Finds Security in His Fields."
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/03.webp",
+            "image": "media:stories/and-ruth-with-her/03.webp",
             "caption": "Ruth Returns to Naomi with a Full Harvest, and Their Hope is Renewed."
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/04.webp",
+            "image": "media:stories/and-ruth-with-her/04.webp",
             "caption": "Boaz Provides for Ruth and Naomi, and Their Future Looks Bright."
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/05.webp",
+            "image": "media:stories/and-ruth-with-her/05.webp",
             "caption": "Ruth and Boaz's Relationship Grows, and God's Providence is Evident."
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/06.webp",
+            "image": "media:stories/and-ruth-with-her/06.webp",
             "caption": "Ruth Marries Boaz, and Naomi's Family is Restored."
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/07.webp",
+            "image": "media:stories/and-ruth-with-her/07.webp",
             "caption": "The Story of Ruth Concludes with Redemption and God's Faithfulness."
         },
         {
             "id": "id-09",
-            "image": "https://dailygrace.faith/media/stories/and-ruth-with-her/09.webp",
+            "image": "media:stories/and-ruth-with-her/09.webp",
             "caption": "The Story of Ruth Concludes with Redemption and God's Faithfulness."
         }
     ]

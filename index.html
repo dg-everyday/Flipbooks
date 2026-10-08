@@ -23,7 +23,7 @@
         <!-- Today's banner: assets/scripts/update-social-image.mjs sets it on each deploy, so keep this one og:image tag. -->
         <meta
             property="og:image"
-            content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-04.webp"
+            content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-09.webp"
         />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:width" content="1920" />
@@ -39,34 +39,39 @@
         <link rel="stylesheet" href="assets/styles/styles.css?v=20261002-4" />
         <link rel="preload" href="assets/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="preload" href="assets/fonts/Strait-Regular.woff2" as="font" type="font/woff2" crossorigin />
+        <!-- The site settings; preloaded so this page's fetch and apps/settings/settings.js share one request. -->
+        <link rel="preload" href="apps/settings/appsettings.json" as="fetch" crossorigin />
         <script>
             // Start today's banner and poster downloading now, instead of once
             // <banner-slider> and <poster-card> have loaded and worked out
-            // their URLs. Keep these URLs in step with those components and
-            // with MEDIA_BASE_URL in assets/scripts/script.js; a mismatch
-            // costs a wasted download, never a broken page.
-            (() => {
-                const media = "https://dailygrace.faith/media/";
-                const parts = {};
-                for (const { type, value } of new Intl.DateTimeFormat("en-US", {
-                    timeZone: "Asia/Manila", year: "numeric", month: "numeric", day: "numeric",
-                }).formatToParts(new Date())) parts[type] = Number(value);
-                const date = new Date(Date.UTC(parts.year, parts.month - 1, parts.day));
-                const format = (options) => date.toLocaleDateString("en-US", { timeZone: "UTC", ...options });
-                const month = format({ month: "long" }).toLowerCase();
-                const iso = date.toISOString().slice(0, 10);
-                const dateName = format({ month: "long", day: "numeric", year: "numeric" });
-                const preload = (href, priority) => {
-                    const link = document.createElement("link");
-                    link.rel = "preload";
-                    link.as = "image";
-                    link.href = href;
-                    link.fetchPriority = priority;
-                    document.head.append(link);
-                };
-                preload(`${media}banner/${parts.year}/${month}/daily-grace-${iso}.webp`, "high");
-                preload(`${media}images/sources/${parts.year}/${month}/${dateName}.webp`, "auto");
-            })();
+            // their URLs. Keep these URLs in step with those components; a
+            // mismatch costs a wasted download, never a broken page. The media
+            // host is media_base_url in apps/settings/appsettings.json.
+            fetch("apps/settings/appsettings.json")
+                .then((response) => response.json())
+                .then(({ media_base_url: media }) => {
+                    const parts = {};
+                    for (const { type, value } of new Intl.DateTimeFormat("en-US", {
+                        timeZone: "Asia/Manila", year: "numeric", month: "numeric", day: "numeric",
+                    }).formatToParts(new Date())) parts[type] = Number(value);
+                    const date = new Date(Date.UTC(parts.year, parts.month - 1, parts.day));
+                    const format = (options) => date.toLocaleDateString("en-US", { timeZone: "UTC", ...options });
+                    const month = format({ month: "long" }).toLowerCase();
+                    const iso = date.toISOString().slice(0, 10);
+                    const dateName = format({ month: "long", day: "numeric", year: "numeric" });
+                    const preload = (href, priority) => {
+                        const link = document.createElement("link");
+                        link.rel = "preload";
+                        link.as = "image";
+                        link.href = href;
+                        link.fetchPriority = priority;
+                        document.head.append(link);
+                    };
+                    preload(`${media}banner/${parts.year}/${month}/daily-grace-${iso}.webp`, "high");
+                    preload(`${media}images/sources/${parts.year}/${month}/${dateName}.webp`, "auto");
+                })
+                // Only a head start: the components fetch the files anyway.
+                .catch(() => {});
         </script>
     </head>
 
@@ -1028,18 +1033,18 @@
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
         <script src="assets/scripts/sql_script.js?v=20261002-2" defer></script>
-        <script src="assets/scripts/script.js?v=20261004-1" defer></script>
-        <script type="module" src="apps/components/banner-slider.js?v=20261004-1"></script>
-        <script type="module" src="apps/components/poster-card.js?v=20261005-1"></script>
-        <script type="module" src="apps/components/daily-moment.js?v=20261007-1"></script>
-        <script type="module" src="apps/components/memory-verse.js?v=20261004-16"></script>
-        <script type="module" src="apps/components/did-you-know.js?v=20261003-1"></script>
-        <script type="module" src="apps/components/daily-guidance.js?v=20261003-1"></script>
+        <script src="assets/scripts/script.js?v=20261009-1" defer></script>
+        <script type="module" src="apps/components/banner-slider.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/poster-card.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/daily-moment.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/memory-verse.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/did-you-know.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/daily-guidance.js?v=20261009-1"></script>
         <script type="module" src="apps/components/gods-blueprint.js?v=20261003-1"></script>
         <script type="module" src="apps/components/red-letter-quotes.js?v=20261003-1"></script>
-        <script type="module" src="apps/components/bible-sayings.js?v=20261003-1"></script>
-        <script type="module" src="apps/components/bible-search-results.js?v=20261002-2"></script>
-        <script type="module" src="apps/components/bible-trivia.js?v=20260929-2"></script>
-        <script type="module" src="apps/components/story-carousel.js?v=20261003-1"></script>
+        <script type="module" src="apps/components/bible-sayings.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/bible-search-results.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/bible-trivia.js?v=20261009-1"></script>
+        <script type="module" src="apps/components/story-carousel.js?v=20261009-1"></script>
     </body>
 </html>

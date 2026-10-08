@@ -33,7 +33,7 @@
  *   page-href      the Questions We All Ask page; the topic's id is added as the
  *                  hash. Default: apps/pages/guidance-for-life.html
  *   audio-base     where the narrations are; the topic's id and .webm are added.
- *                  Default: https://dailygrace.faith/media/audio/questions-we-all-ask/
+ *                  Default: audio/questions-we-all-ask/ on media_base_url (apps/settings/appsettings.json)
  *   bookmarks      Present: no card; show the bookmarked topics, newest first.
  *                  Call showBookmarks() to bring the list up to date.
  *
@@ -66,10 +66,11 @@ import {
   BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
 } from './card-bookmarks.js?v=20260927-1';
 import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
+import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
 
 const DEFAULT_SRC = 'assets/guidance-for-life.json';
 const DEFAULT_PAGE = 'apps/pages/guidance-for-life.html';
-const DEFAULT_AUDIO_BASE = 'https://dailygrace.faith/media/audio/questions-we-all-ask/';
+const DEFAULT_AUDIO_BASE = `${MEDIA_BASE_URL}audio/questions-we-all-ask/`;
 // The id of the topic shown last, so the next visit shows a different one.
 const LAST_KEY = 'dailygrace:guidance:last';
 

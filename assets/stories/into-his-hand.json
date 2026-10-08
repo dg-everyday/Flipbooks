@@ -4,47 +4,47 @@
     "pages": [
         {
             "id": "id-00",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/00.webp",
+            "image": "media:stories/into-his-hand/00.webp",
             "caption": "Joseph in Potiphar's House, the Garment He Left Behind, and the Prison Where It Happened Again."
         },
         {
             "id": "id-01",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/01.webp",
+            "image": "media:stories/into-his-hand/01.webp",
             "caption": "I. Bought"
         },
         {
             "id": "id-02",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/02.webp",
+            "image": "media:stories/into-his-hand/02.webp",
             "caption": "II. All That He Had"
         },
         {
             "id": "id-03",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/03.webp",
+            "image": "media:stories/into-his-hand/03.webp",
             "caption": "III. But He Refused"
         },
         {
             "id": "id-04",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/04.webp",
+            "image": "media:stories/into-his-hand/04.webp",
             "caption": "IV. Day by Day"
         },
         {
             "id": "id-05",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/05.webp",
+            "image": "media:stories/into-his-hand/05.webp",
             "caption": "V. The Garment"
         },
         {
             "id": "id-06",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/06.webp",
+            "image": "media:stories/into-his-hand/06.webp",
             "caption": "VI. See, He Hath Brought In an Hebrew"
         },
         {
             "id": "id-07",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/07.webp",
+            "image": "media:stories/into-his-hand/07.webp",
             "caption": "VII. His Wrath Was Kindled"
         },
         {
             "id": "id-08",
-            "image": "https://dailygrace.faith/media/stories/into-his-hand/08.webp",
+            "image": "media:stories/into-his-hand/08.webp",
             "caption": "VIII. And He Was There"
         }        
     ]

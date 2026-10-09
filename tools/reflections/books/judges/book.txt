@@ -1,0 +1,8 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Judges
+1-2 | The Unfinished Conquest
+3-5 | Othniel, Ehud and Deborah
+6-8 | Gideon
+9-12 | Abimelech to Jephthah
+13-16 | Samson
+17-21 | No King in Israel

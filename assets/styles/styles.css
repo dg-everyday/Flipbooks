@@ -42,6 +42,8 @@
   /* Space between the devotional panels. Each panel is its own block (a banner,
      a poster, a navy card), so the gap alone sets them apart. */
   --panel-gap: 16px;
+  /* The widest the page column gets; wider screens centre it. */
+  --page-width: 720px;
 }
 
 * { box-sizing: border-box; }
@@ -59,7 +61,7 @@ body {
 }
 
 .page {
-  max-width: 720px;
+  max-width: var(--page-width);
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -1258,12 +1260,15 @@ html:has(.about-dialog[open]) { overflow: hidden; }
   .footer-mission { align-items: center; text-align: center; }
 }
 
-/* Menu: the DG icon opens a drawer from the left edge. The study pages sit at
-   the top; Help and About sit at the foot, under a rule. It reuses the Help
-   dialog's header, emblem, close button and round icons. */
+/* Menu: the DG icon opens a drawer from the left edge of the page column, which
+   is the screen's edge on a phone and the top left of the centred page on a
+   desktop or wide tablet. The study pages sit at the top; Help and About sit at
+   the foot, under a rule. It reuses the Help dialog's header, emblem, close
+   button and round icons. While it is open the page has no scrollbar, so 100vw
+   is the width the page is centred in. */
 .menu-dialog {
   position: fixed;
-  inset: 0 auto 0 0;
+  inset: 0 auto 0 max(0px, (100vw - var(--page-width)) / 2);
   width: min(340px, 86vw);
   height: 100vh;
   height: 100dvh;

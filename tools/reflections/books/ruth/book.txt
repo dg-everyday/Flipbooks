@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Ruth
+1-1 | Return from Moab
+2-2 | Gleaning in Boaz's Field
+3-3 | At the Threshing Floor
+4-4 | The Kinsman Redeemer

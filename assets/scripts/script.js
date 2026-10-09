@@ -816,6 +816,13 @@ let menuClosing = false;
 // menu opened by a click or tap leaves no ring, however it is closed.
 let menuOpenedByKeyboard = false;
 
+// On a wide screen the drawer rests at the page column's left edge, not the
+// screen's, so the slide is clipped at that edge: the drawer comes out from
+// behind the page rather than across the space beside it. The clip leaves room
+// for the drawer's shadow on the other three sides.
+const MENU_HIDDEN = { transform: "translateX(-100%)", clipPath: "inset(-80px -80px -80px 100%)" };
+const MENU_SHOWN = { transform: "none", clipPath: "inset(-80px -80px -80px 0)" };
+
 function drawerDialog(dialog, direction) {
     const opening = direction === "open";
     const options = {
@@ -823,9 +830,7 @@ function drawerDialog(dialog, direction) {
         easing: opening ? "cubic-bezier(.22, 1, .36, 1)" : "cubic-bezier(.4, 0, 1, 1)",
         fill: "forwards",
     };
-    const offscreen = { transform: "translateX(-100%)" };
-    const full = { transform: "none" };
-    dialog.animate(opening ? [offscreen, full] : [full, offscreen], options);
+    dialog.animate(opening ? [MENU_HIDDEN, MENU_SHOWN] : [MENU_SHOWN, MENU_HIDDEN], options);
     const backdrop = dialog.animate(
         opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
         { ...options, easing: "ease", pseudoElement: "::backdrop" },
@@ -897,7 +902,7 @@ menuDialog.addEventListener("pointermove", (event) => {
         menuDialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
         swipe.width = menuDialog.getBoundingClientRect().width;
         swipe.animations = [
-            scrubMenu([{ transform: "none" }, { transform: "translateX(-100%)" }]),
+            scrubMenu([MENU_SHOWN, MENU_HIDDEN]),
             scrubMenu([{ opacity: 1 }, { opacity: 0 }], "::backdrop"),
         ];
     }

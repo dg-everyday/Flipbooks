@@ -1,0 +1,9 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+1 Samuel
+1-3 | Hannah, Samuel and Eli
+4-7 | The Ark Taken and Returned
+8-12 | Israel Asks for a King
+13-15 | Saul's Disobedience
+16-20 | David, Goliath and Jonathan
+21-26 | David the Fugitive
+27-31 | The Fall of Saul

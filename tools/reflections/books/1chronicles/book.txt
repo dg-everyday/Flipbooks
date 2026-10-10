@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+1 Chronicles
+1-9 | The Genealogies of God's People
+10-12 | David Becomes King
+13-16 | The Ark Comes to Jerusalem
+17-21 | God's Covenant with David
+22-29 | Preparing for the Temple

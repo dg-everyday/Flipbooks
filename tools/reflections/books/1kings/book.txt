@@ -1,0 +1,8 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+1 Kings
+1-2 | Solomon Becomes King
+3-4 | The Wisdom of Solomon
+5-8 | The Temple Built and Dedicated
+9-11 | Solomon's Glory and Fall
+12-16 | The Kingdom Divided
+17-22 | Elijah and Ahab

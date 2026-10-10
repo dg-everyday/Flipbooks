@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+2 Kings
+1-8 | The Ministry of Elisha
+9-17 | The Fall of Israel
+18-20 | Hezekiah's Reign
+21-23 | Manasseh and Josiah
+24-25 | The Fall of Jerusalem

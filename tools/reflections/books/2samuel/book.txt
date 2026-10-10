@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+2 Samuel
+1-4 | David King over Judah
+5-10 | The Kingdom Established
+11-12 | David and Bathsheba
+13-18 | Absalom's Rebellion
+19-24 | David's Final Years

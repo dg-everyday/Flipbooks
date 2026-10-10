@@ -438,7 +438,7 @@ if (!document[LISTENING]) {
   });
 }
 
-// Static text marked for linking (the mission statement, the About popup).
+// Static text marked for linking (the mission statement).
 function linkMarked() {
   document.querySelectorAll('[data-scripture]').forEach(linkScripture);
 }

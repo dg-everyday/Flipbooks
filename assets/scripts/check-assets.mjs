@@ -117,6 +117,46 @@ if (existsSync(STORY_DIR)) {
     }
 }
 
+// --- Pass 1c: web components point at files we ship -------------------------
+
+// The components build their markup in JS, so their src/href hold ${…} and pass
+// 1 cannot read them. Each resolves its files against its own module through
+// the same helper, asset('…'), so a literal path inside one is checked from
+// apps/components. Paths put together at runtime are left out, except the
+// menu's guides below.
+const COMPONENT_DIR = resolve(ROOT, "apps/components");
+const ASSET_CALL = /\basset\(\s*'([^'$]+)'\s*\)/g;
+let componentFiles = 0;
+for (const file of readdirSync(COMPONENT_DIR)) {
+    if (!file.endsWith(".js")) continue;
+    componentFiles += 1;
+    const source = `apps/components/${file}`;
+    for (const [, raw] of readFileSync(resolve(COMPONENT_DIR, file), "utf8").matchAll(ASSET_CALL)) {
+        const ref = raw.split(/[?#]/)[0];
+        checked += 1;
+        if (!existsSync(resolve(COMPONENT_DIR, ref))) fail(`${source} -> ${raw} (no such file)`);
+    }
+}
+
+// Each guide in the menu names its page and its icon, which the component
+// puts after PAGES and ICONS. Read both prefixes and every entry out of the
+// component rather than restating them here.
+const MENU = "apps/components/study-guide-menu.js";
+const menuSource = readFileSync(resolve(ROOT, MENU), "utf8");
+const menuPrefix = (name) => menuSource.match(new RegExp(`^const ${name} = '([^']+)'`, "m"))?.[1];
+const guides = menuSource.match(/^const GUIDES = \[([\s\S]*?)^\];/m)?.[1];
+const guidePrefixes = { page: menuPrefix("PAGES"), icon: menuPrefix("ICONS") };
+if (!guides || !guidePrefixes.page || !guidePrefixes.icon) {
+    fail(`could not read GUIDES, PAGES and ICONS from ${MENU}`);
+} else {
+    for (const [, key, name] of guides.matchAll(/^\s*(page|icon): '([^']+)'/gm)) {
+        checked += 1;
+        if (!existsSync(resolve(COMPONENT_DIR, guidePrefixes[key] + name))) {
+            fail(`${MENU} guide ${key} -> ${guidePrefixes[key]}${name} (no such file)`);
+        }
+    }
+}
+
 // --- Pass 2: book symbols exist on the media host ---------------------------
 
 // The media library is deployed separately, so its files cannot be checked on
@@ -202,4 +242,4 @@ if (broken.length) {
     console.error(`\n${broken.length} broken reference(s) out of ${checked} checked.`);
     process.exit(1);
 }
-console.log(`${checked} references checked across ${SOURCES.length} files and ${books.length} books; all resolve.`);
+console.log(`${checked} references checked across ${SOURCES.length + componentFiles} files and ${books.length} books; all resolve.`);

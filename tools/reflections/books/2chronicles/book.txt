@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+2 Chronicles
+1-9 | Solomon and the Temple
+10-20 | Rehoboam to Jehoshaphat
+21-28 | Kings Who Turned Aside
+29-32 | Hezekiah's Revival
+33-36 | Josiah, the Exile and the Decree

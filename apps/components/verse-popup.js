@@ -25,35 +25,42 @@
  * The page cannot scroll while a passage is open.
  */
 
-import { parseReference } from './scripture-refs.js?v=20261002-1';
+import { parseReference } from "./scripture-refs.js?v=20261002-1";
 
 // Loaded only where the page does not load them itself: the home page has the
 // results panel and the database script already, with its own ?v= tokens.
-const RESULTS_MODULE = './bible-search-results.js?v=20261009-1';
-const SQL_SCRIPT = new URL('../../assets/scripts/sql_script.js?v=20261002-1', import.meta.url).href;
+const RESULTS_MODULE = "./bible-search-results.js?v=20261009-1";
+const SQL_SCRIPT = new URL(
+    "../../assets/scripts/sql_script.js?v=20261002-1",
+    import.meta.url,
+).href;
 
 // Popups opened from popups, at most; past this the top one is reused.
 const MAX_LAYERS = 6;
 
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 // The same pop as the page's other popups (assets/scripts/script.js).
 function popDialog(dialog, direction) {
-  const opening = direction === 'open';
-  const options = {
-    duration: opening ? 460 : 220,
-    easing: opening ? 'cubic-bezier(.2, .9, .25, 1.2)' : 'cubic-bezier(.4, 0, 1, 1)',
-    fill: 'forwards',
-  };
-  const entering = { transform: 'scale(.82) translateY(28px)', opacity: 0 };
-  const full = { transform: 'none', opacity: 1 };
-  const leaving = { transform: 'scale(.94)', opacity: 0 };
-  dialog.animate(opening ? [entering, full] : [full, leaving], options);
-  const backdrop = dialog.animate(
-    opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
-    { ...options, easing: 'ease', pseudoElement: '::backdrop' },
-  );
-  return backdrop.finished.catch(() => {});
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 460 : 220,
+        easing: opening
+            ? "cubic-bezier(.2, .9, .25, 1.2)"
+            : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    const entering = { transform: "scale(.82) translateY(28px)", opacity: 0 };
+    const full = { transform: "none", opacity: 1 };
+    const leaving = { transform: "scale(.94)", opacity: 0 };
+    dialog.animate(opening ? [entering, full] : [full, leaving], options);
+    const backdrop = dialog.animate(
+        opening
+            ? [{ opacity: 0 }, { opacity: 1 }]
+            : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
 }
 
 // ------------------------------------------------------------------ the verses
@@ -61,50 +68,60 @@ function popDialog(dialog, direction) {
 let databaseReady = null;
 
 function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.onload = () => resolve();
-    script.onerror = () => {
-      script.remove();
-      reject(new Error(`Unable to load ${src}`));
-    };
-    document.head.append(script);
-  });
+    return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.onload = () => resolve();
+        script.onerror = () => {
+            script.remove();
+            reject(new Error(`Unable to load ${src}`));
+        };
+        document.head.append(script);
+    });
 }
 
 /** The Bible database, opened by sql_script.js (added to the page if need be). */
 function database() {
-  if (!databaseReady) {
-    databaseReady = (async () => {
-      if (typeof window.initDatabase !== 'function') await loadScript(SQL_SCRIPT);
-      await window.initDatabase();
-    })().catch((error) => {
-      databaseReady = null;            // the next tap tries again
-      throw error;
-    });
-  }
-  return databaseReady;
+    if (!databaseReady) {
+        databaseReady = (async () => {
+            if (typeof window.initDatabase !== "function") {
+                await loadScript(SQL_SCRIPT);
+            }
+            await window.initDatabase();
+        })().catch((error) => {
+            databaseReady = null; // the next tap tries again
+            throw error;
+        });
+    }
+    return databaseReady;
 }
 
 /** The verses of a reference, in order: [{ docid, book_name, book_id, chapter, verse, text }]. */
 async function versesOf(reference) {
-  const parsed = parseReference(reference);
-  if (!parsed) return null;
-  await database();
-  const chapters = new Map();
-  const rows = new Map();
-  for (const [c1, v1, c2, v2] of parsed.ranges) {
-    for (let chapter = c1; chapter <= c2; chapter++) {
-      if (!chapters.has(chapter)) chapters.set(chapter, window.getVerses(parsed.book, chapter));
-      for (const row of chapters.get(chapter)) {
-        const from = chapter === c1 ? v1 : 1;
-        const to = chapter === c2 ? v2 : Infinity;
-        if (row.verse >= from && row.verse <= to) rows.set(row.docid, row);
-      }
+    const parsed = parseReference(reference);
+    if (!parsed) {
+        return null;
     }
-  }
-  return [...rows.values()].sort((a, b) => a.chapter - b.chapter || a.verse - b.verse);
+    await database();
+    const chapters = new Map();
+    const rows = new Map();
+    for (const [c1, v1, c2, v2] of parsed.ranges) {
+        for (let chapter = c1; chapter <= c2; chapter++) {
+            if (!chapters.has(chapter)) {
+                chapters.set(chapter, window.getVerses(parsed.book, chapter));
+            }
+            for (const row of chapters.get(chapter)) {
+                const from = chapter === c1 ? v1 : 1;
+                const to = chapter === c2 ? v2 : Infinity;
+                if (row.verse >= from && row.verse <= to) {
+                    rows.set(row.docid, row);
+                }
+            }
+        }
+    }
+    return [...rows.values()].sort(
+        (a, b) => a.chapter - b.chapter || a.verse - b.verse,
+    );
 }
 
 // ------------------------------------------------------------------ the popup
@@ -163,122 +180,159 @@ const STYLES = /* css */ `
 `;
 
 export class VersePopup extends HTMLElement {
-  #root;
-  // The open popups, bottom first.
-  #layers = [];
-  #closing = new WeakSet();
-  #savedOverflow = null;
+    #root;
+    // The open popups, bottom first.
+    #layers = [];
+    #closing = new WeakSet();
+    #savedOverflow = null;
 
-  constructor() {
-    super();
-    this.#root = this.attachShadow({ mode: 'open' });
-    this.#root.innerHTML = `<style>${STYLES}</style>`;
-  }
-
-  get open() {
-    return this.#layers.length > 0;
-  }
-
-  /** Show a reference's passage on top of any passage already open. */
-  async show(reference) {
-    if (!customElements.get('bible-search-results')) await import(RESULTS_MODULE);
-    const layer = this.#layers.length >= MAX_LAYERS ? this.#layers.at(-1) : this.#openLayer();
-    const { dialog, results } = layer;
-    const request = (layer.request = (layer.request ?? 0) + 1);
-    dialog.setAttribute('aria-label', `Bible passage: ${reference}`);
-    dialog.scrollTop = 0;
-    results.loading('Loading Bible verses…');
-    try {
-      const rows = await versesOf(reference);
-      if (request !== layer.request || !dialog.open) return;
-      if (rows === null) results.showMessage(`${reference} could not be found in this Bible.`);
-      else if (!rows.length) results.showMessage(`No verses found for ${reference}.`);
-      else results.showVerses(rows);
-    } catch (error) {
-      if (request !== layer.request || !dialog.open) return;
-      console.warn(`Verse lookup failed for ${reference}:`, error);
-      results.showMessage('Bible verses could not be loaded. Please try again.');
+    constructor() {
+        super();
+        this.#root = this.attachShadow({ mode: "open" });
+        this.#root.innerHTML = `<style>${STYLES}</style>`;
     }
-  }
 
-  /** Close the popup on top. */
-  close() {
-    const layer = this.#layers.at(-1);
-    if (layer) this.#closeLayer(layer);
-  }
+    get open() {
+        return this.#layers.length > 0;
+    }
 
-  #openLayer() {
-    const dialog = document.createElement('dialog');
-    const close = document.createElement('button');
-    close.type = 'button';
-    close.className = 'close';
-    close.setAttribute('aria-label', 'Close');
-    close.title = 'Close';
-    close.textContent = '×';
-    const results = document.createElement('bible-search-results');
-    results.setAttribute('compact', '');
-    dialog.append(close, results);
-    const layer = { dialog, results };
+    /** Show a reference's passage on top of any passage already open. */
+    async show(reference) {
+        if (!customElements.get("bible-search-results")) {
+            await import(RESULTS_MODULE);
+        }
+        const layer =
+            this.#layers.length >= MAX_LAYERS
+                ? this.#layers.at(-1)
+                : this.#openLayer();
+        const { dialog, results } = layer;
+        const request = (layer.request = (layer.request ?? 0) + 1);
+        dialog.setAttribute("aria-label", `Bible passage: ${reference}`);
+        dialog.scrollTop = 0;
+        results.loading("Loading Bible verses…");
+        try {
+            const rows = await versesOf(reference);
+            if (request !== layer.request || !dialog.open) {
+                return;
+            }
+            if (rows === null) {
+                results.showMessage(
+                    `${reference} could not be found in this Bible.`,
+                );
+            } else if (!rows.length) {
+                results.showMessage(`No verses found for ${reference}.`);
+            } else {
+                results.showVerses(rows);
+            }
+        } catch (error) {
+            if (request !== layer.request || !dialog.open) {
+                return;
+            }
+            console.warn(`Verse lookup failed for ${reference}:`, error);
+            results.showMessage(
+                "Bible verses could not be loaded. Please try again.",
+            );
+        }
+    }
 
-    // Escape would close instantly; route it through the closing animation instead.
-    dialog.addEventListener('cancel', (event) => {
-      event.preventDefault();
-      this.#closeLayer(layer);
-    });
-    // A click or tap anywhere closes it, except on the panel's own buttons.
-    dialog.addEventListener('click', (event) => {
-      const button = event.composedPath().find((node) => node.nodeName === 'BUTTON');
-      if (button && button !== close) return;
-      this.#closeLayer(layer);
-    });
+    /** Close the popup on top. */
+    close() {
+        const layer = this.#layers.at(-1);
+        if (layer) {
+            this.#closeLayer(layer);
+        }
+    }
 
-    if (!this.#layers.length) this.#lockScroll();
-    this.#layers.push(layer);
-    this.#root.append(dialog);
-    dialog.showModal();
-    if (!reducedMotion.matches) popDialog(dialog, 'open');
-    return layer;
-  }
+    #openLayer() {
+        const dialog = document.createElement("dialog");
+        const close = document.createElement("button");
+        close.type = "button";
+        close.className = "close";
+        close.setAttribute("aria-label", "Close");
+        close.title = "Close";
+        close.textContent = "×";
+        const results = document.createElement("bible-search-results");
+        results.setAttribute("compact", "");
+        dialog.append(close, results);
+        const layer = { dialog, results };
 
-  async #closeLayer(layer) {
-    const { dialog, results } = layer;
-    if (!dialog.open || this.#closing.has(dialog)) return;
-    this.#closing.add(dialog);
-    layer.request = (layer.request ?? 0) + 1;
-    // Anything opened from this popup goes first.
-    const index = this.#layers.indexOf(layer);
-    for (const above of this.#layers.slice(index + 1).reverse()) this.#closeLayer(above);
-    if (!reducedMotion.matches) await popDialog(dialog, 'close');
-    dialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-    dialog.close();
-    results.reset();
-    dialog.remove();
-    this.#layers = this.#layers.filter((open) => open !== layer);
-    if (!this.#layers.length) this.#unlockScroll();
-  }
+        // Escape would close instantly; route it through the closing animation instead.
+        dialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            this.#closeLayer(layer);
+        });
+        // A click or tap anywhere closes it, except on the panel's own buttons.
+        dialog.addEventListener("click", (event) => {
+            const button = event
+                .composedPath()
+                .find((node) => node.nodeName === "BUTTON");
+            if (button && button !== close) {
+                return;
+            }
+            this.#closeLayer(layer);
+        });
 
-  #lockScroll() {
-    const html = document.documentElement;
-    this.#savedOverflow = html.style.overflow;
-    html.style.overflow = 'hidden';
-  }
+        if (!this.#layers.length) {
+            this.#lockScroll();
+        }
+        this.#layers.push(layer);
+        this.#root.append(dialog);
+        dialog.showModal();
+        if (!reducedMotion.matches) {
+            popDialog(dialog, "open");
+        }
+        return layer;
+    }
 
-  #unlockScroll() {
-    document.documentElement.style.overflow = this.#savedOverflow ?? '';
-    this.#savedOverflow = null;
-  }
+    async #closeLayer(layer) {
+        const { dialog, results } = layer;
+        if (!dialog.open || this.#closing.has(dialog)) {
+            return;
+        }
+        this.#closing.add(dialog);
+        layer.request = (layer.request ?? 0) + 1;
+        // Anything opened from this popup goes first.
+        const index = this.#layers.indexOf(layer);
+        for (const above of this.#layers.slice(index + 1).reverse()) {
+            this.#closeLayer(above);
+        }
+        if (!reducedMotion.matches) {
+            await popDialog(dialog, "close");
+        }
+        dialog
+            .getAnimations({ subtree: true })
+            .forEach((animation) => animation.cancel());
+        dialog.close();
+        results.reset();
+        dialog.remove();
+        this.#layers = this.#layers.filter((open) => open !== layer);
+        if (!this.#layers.length) {
+            this.#unlockScroll();
+        }
+    }
+
+    #lockScroll() {
+        const html = document.documentElement;
+        this.#savedOverflow = html.style.overflow;
+        html.style.overflow = "hidden";
+    }
+
+    #unlockScroll() {
+        document.documentElement.style.overflow = this.#savedOverflow ?? "";
+        this.#savedOverflow = null;
+    }
 }
 
-if (!customElements.get('verse-popup')) {
-  customElements.define('verse-popup', VersePopup);
+if (!customElements.get("verse-popup")) {
+    customElements.define("verse-popup", VersePopup);
 }
 
 /** Open a reference's passage in the page's popup, adding the popup if need be. */
 export function showPassage(reference) {
-  let popup = document.querySelector('verse-popup');
-  if (!popup) {
-    popup = document.createElement('verse-popup');
-    document.body.append(popup);
-  }
-  return popup.show(reference);
+    let popup = document.querySelector("verse-popup");
+    if (!popup) {
+        popup = document.createElement("verse-popup");
+        document.body.append(popup);
+    }
+    return popup.show(reference);
 }

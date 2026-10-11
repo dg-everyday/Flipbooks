@@ -53,27 +53,34 @@
  * The last two fall back to --gold-light and --cream from the page.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
+import { registerFonts } from "../../assets/scripts/fonts.js";
 // The same ?v= token as the other components' imports, so the page loads one
 // copy of the module and every list hears every bookmark change.
 import {
-  BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
-} from './card-bookmarks.js?v=20260927-1';
-import { PILL_STYLES, linkScripture } from './scripture-refs.js?v=20261002-1';
+    BOOKMARK_STYLES,
+    CardHold,
+    bookmarkNote,
+    bookmarkStore,
+    showBookmarkResult,
+} from "./card-bookmarks.js?v=20260927-1";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
 
-const DEFAULT_SRC = 'assets/following-gods-blueprint.json';
-const DEFAULT_PAGE = 'apps/pages/following-gods-blueprint.html';
+const DEFAULT_SRC = "assets/following-gods-blueprint.json";
+const DEFAULT_PAGE = "apps/pages/following-gods-blueprint.html";
 // The id of the item shown last, so the next visit shows a different one.
-const LAST_KEY = 'dailygrace:blueprint:last';
+const LAST_KEY = "dailygrace:blueprint:last";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const ICON_URL = asset('../../assets/images/study-guide-icons/following-gods-blueprint.webp');
+const ICON_URL = asset(
+    "../../assets/images/study-guide-icons/following-gods-blueprint.webp",
+);
 
-const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const ICON_ATTRS =
+    'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261003-1");
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab
@@ -81,57 +88,69 @@ const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
  * replaces it. As the bookmarks PDF does (script.js).
  */
 function openPdfTab(title) {
-  const tab = window.open('', '_blank');
-  if (!tab) return null;
-  try {
-    tab.document.title = title;
-    tab.document.body.style.cssText =
-      'margin:0;display:grid;place-items:center;min-height:100vh;'
-      + 'background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif';
-    tab.document.body.textContent = 'Preparing your PDF…';
-  } catch {
-    // Some browsers keep the new tab to themselves; it still loads the PDF.
-  }
-  return tab;
+    const tab = window.open("", "_blank");
+    if (!tab) {
+        return null;
+    }
+    try {
+        tab.document.title = title;
+        tab.document.body.style.cssText =
+            "margin:0;display:grid;place-items:center;min-height:100vh;" +
+            "background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif";
+        tab.document.body.textContent = "Preparing your PDF…";
+    } catch {
+        // Some browsers keep the new tab to themselves; it still loads the PDF.
+    }
+    return tab;
 }
 
 // Shared with the Following God's Blueprint page (following-gods-blueprint.js),
 // which uses the same key.
-const bookmarks = bookmarkStore('dailygrace:bookmarks:blueprint',
-  { isId: (id) => typeof id === 'string' && id !== '', limit: 50 });
+const bookmarks = bookmarkStore("dailygrace:bookmarks:blueprint", {
+    isId: (id) => typeof id === "string" && id !== "",
+    limit: 50,
+});
 
 // The blueprint file is shared by every instance, so it is fetched once.
 const blueprintCache = new Map();
 
 function readBlueprint(url) {
-  if (!blueprintCache.has(url)) {
-    const request = fetch(url)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Unable to load ${url} (${response.status})`);
-        return response.json();
-      })
-      .then((data) => {
-        const items = Array.isArray(data?.items) ? data.items : [];
-        if (!items.length) throw new Error(`No blueprint items in ${url}`);
-        const parts = new Map((data.parts || []).map((part) => [part.name, part]));
-        // Number each item within its sheet, as the page does ("4.6").
-        const seen = new Map();
-        for (const item of items) {
-          const n = (seen.get(item.part) || 0) + 1;
-          seen.set(item.part, n);
-          const sheet = parts.get(item.part)?.sheet;
-          item.number = sheet ? `${sheet}.${n}` : '';
-          item.sheet = sheet;
-        }
-        return items;
-      })
-      .catch((error) => {
-        blueprintCache.delete(url);
-        throw error;
-      });
-    blueprintCache.set(url, request);
-  }
-  return blueprintCache.get(url);
+    if (!blueprintCache.has(url)) {
+        const request = fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(
+                        `Unable to load ${url} (${response.status})`,
+                    );
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const items = Array.isArray(data?.items) ? data.items : [];
+                if (!items.length) {
+                    throw new Error(`No blueprint items in ${url}`);
+                }
+                const parts = new Map(
+                    (data.parts || []).map((part) => [part.name, part]),
+                );
+                // Number each item within its sheet, as the page does ("4.6").
+                const seen = new Map();
+                for (const item of items) {
+                    const n = (seen.get(item.part) || 0) + 1;
+                    seen.set(item.part, n);
+                    const sheet = parts.get(item.part)?.sheet;
+                    item.number = sheet ? `${sheet}.${n}` : "";
+                    item.sheet = sheet;
+                }
+                return items;
+            })
+            .catch((error) => {
+                blueprintCache.delete(url);
+                throw error;
+            });
+        blueprintCache.set(url, request);
+    }
+    return blueprintCache.get(url);
 }
 
 const STYLES = /* css */ `
@@ -417,40 +436,51 @@ ${PILL_STYLES}`;
 
 /** localStorage, which can be missing or throw (private windows, blocked storage). */
 function remember(id) {
-  try { localStorage.setItem(LAST_KEY, id); } catch { /* the pick still works, it may just repeat */ }
+    try {
+        localStorage.setItem(LAST_KEY, id);
+    } catch {
+        /* the pick still works, it may just repeat */
+    }
 }
 function lastShown() {
-  try { return localStorage.getItem(LAST_KEY); } catch { return null; }
+    try {
+        return localStorage.getItem(LAST_KEY);
+    } catch {
+        return null;
+    }
 }
 
 /** An item at random, never the one shown last when there is a choice. */
 function pickItem(items, avoid) {
-  const choices = items.length > 1 ? items.filter((item) => item.id !== avoid) : items;
-  return choices[Math.floor(Math.random() * choices.length)];
+    const choices =
+        items.length > 1 ? items.filter((item) => item.id !== avoid) : items;
+    return choices[Math.floor(Math.random() * choices.length)];
 }
 
-const tidy = (text) => (text ?? '').replace(/\s+/g, ' ').trim();
+const tidy = (text) => (text ?? "").replace(/\s+/g, " ").trim();
 
 export class GodsBlueprint extends HTMLElement {
-  static observedAttributes = ['blueprint-src', 'page-href'];
+    static observedAttributes = ["blueprint-src", "page-href"];
 
-  #els;
-  #status;
-  #item = null;
-  #items = [];
-  #loading = null;
-  #hold;
-  #listHold;
-  // Coming back with the Back button can restore the page from the
-  // back/forward cache without reloading it; show a new item then too.
-  #onPageShow = (event) => {
-    if (event.persisted && !this.hasAttribute('bookmarks')) this.next();
-  };
+    #els;
+    #status;
+    #item = null;
+    #items = [];
+    #loading = null;
+    #hold;
+    #listHold;
+    // Coming back with the Back button can restore the page from the
+    // back/forward cache without reloading it; show a new item then too.
+    #onPageShow = (event) => {
+        if (event.persisted && !this.hasAttribute("bookmarks")) {
+            this.next();
+        }
+    };
 
-  constructor() {
-    super();
-    const root = this.attachShadow({ mode: 'open' });
-    root.innerHTML = `
+    constructor() {
+        super();
+        const root = this.attachShadow({ mode: "open" });
+        root.innerHTML = `
       <style>${STYLES}</style>
       <article class="card bookmarkable" aria-labelledby="title">
         <span class="corner tl" aria-hidden="true"></span>
@@ -480,270 +510,365 @@ export class GodsBlueprint extends HTMLElement {
         <div class="list"><p class="message">Loading your blueprints…</p></div>
       </section>
       <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
-    const $ = (selector) => root.querySelector(selector);
-    this.#els = {
-      sheet: $('.sheet'), number: $('.number'), part: $('.part'), name: $('.name'),
-      summary: $('.summary'), figure: $('figure'), verse: $('blockquote'), reference: $('figcaption'),
-      steps: $('.steps'), build: $('.build span'), buildLine: $('.build'),
-      ask: $('.ask span'), askLine: $('.ask'), more: $('.more'), pdf: $('.pdf'),
-      card: $('.card'), header: $('.bookmarks-header'), summaryLine: $('.bookmarks-summary'),
-      list: $('.list'),
+        const $ = (selector) => root.querySelector(selector);
+        this.#els = {
+            sheet: $(".sheet"),
+            number: $(".number"),
+            part: $(".part"),
+            name: $(".name"),
+            summary: $(".summary"),
+            figure: $("figure"),
+            verse: $("blockquote"),
+            reference: $("figcaption"),
+            steps: $(".steps"),
+            build: $(".build span"),
+            buildLine: $(".build"),
+            ask: $(".ask span"),
+            askLine: $(".ask"),
+            more: $(".more"),
+            pdf: $(".pdf"),
+            card: $(".card"),
+            header: $(".bookmarks-header"),
+            summaryLine: $(".bookmarks-summary"),
+            list: $(".list"),
+        };
+        this.#status = $('[role="status"]');
+        this.#els.pdf.addEventListener("click", () => this.#openPdf());
+
+        // Holding the card bookmarks today's item; holding an item in the list
+        // takes its bookmark off (and puts it back). The links are not held.
+        this.#hold = new CardHold(this.#els.card, {
+            selector: ".card",
+            exclude: "a, button",
+            onHold: (card) => {
+                if (this.#item) {
+                    this.#toggle(this.#item, card);
+                }
+            },
+        });
+        this.#listHold = new CardHold(this.#els.list, {
+            selector: ".entry",
+            exclude: "a, button",
+            onHold: (card) => {
+                const item = this.#items.find((i) => i.id === card.dataset.id);
+                if (item) {
+                    this.#toggle(item, card);
+                }
+            },
+        });
+    }
+
+    connectedCallback() {
+        registerFonts();
+        addEventListener("pageshow", this.#onPageShow);
+        bookmarks.addEventListener("change", this.#syncBookmarks);
+        this.#syncBookmarks();
+        // A bookmarks list waits for showBookmarks() to ask for the file.
+        if (!this.#loading && !this.hasAttribute("bookmarks")) {
+            this.#load();
+        }
+    }
+
+    disconnectedCallback() {
+        removeEventListener("pageshow", this.#onPageShow);
+        bookmarks.removeEventListener("change", this.#syncBookmarks);
+        this.#hold.cancel();
+        this.#listHold.cancel();
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue === newValue || !this.isConnected) {
+            return;
+        }
+        this.#load();
+    }
+
+    get item() {
+        return this.#item;
+    }
+
+    /** The bookmarked item ids, newest first. */
+    get bookmarks() {
+        return bookmarks.read();
+    }
+
+    /** The bookmarked items, newest first, as they are in the blueprint file. */
+    async bookmarkedItems() {
+        const items = await readBlueprint(this.#src);
+        const byId = new Map(items.map((item) => [item.id, item]));
+        return bookmarks
+            .read()
+            .map((id) => byId.get(id))
+            .filter(Boolean);
+    }
+
+    /** Show another item at random. */
+    next() {
+        if (!this.#items.length) {
+            return;
+        }
+        this.#show(pickItem(this.#items, this.#item?.id ?? lastShown()));
+        this.dispatchEvent(
+            new CustomEvent("ready", { detail: { id: this.#item.id } }),
+        );
+    }
+
+    /**
+     * Show the bookmarked items, newest first. An item taken off here keeps its
+     * card, without the ribbon, so holding it again puts the bookmark back.
+     */
+    showBookmarks() {
+        if (!this.#items.length) {
+            // Loaded on first use; the bookmarks show once the items arrive.
+            if (!this.#loading) {
+                this.#load();
+            }
+            return;
+        }
+        const els = this.#els;
+        const items = bookmarks
+            .read()
+            .map((id) => this.#items.find((item) => item.id === id))
+            .filter(Boolean);
+        els.header.hidden = !items.length;
+        if (!items.length) {
+            const message = document.createElement("p");
+            message.className = "message";
+            message.textContent =
+                "No bookmarked blueprints yet. Hold “Following Today’s God Blueprint”, " +
+                "or a part of the plan on the Following God’s Blueprint page, for half a second to bookmark it.";
+            els.list.replaceChildren(message);
+            this.#status.textContent = message.textContent;
+            return;
+        }
+        els.summaryLine.textContent = this.#bookmarksSummary();
+        els.list.replaceChildren(
+            ...items.map((item) => this.#createEntry(item)),
+        );
+        this.#status.textContent = `Bookmarked blueprints. ${this.#bookmarksSummary()}`;
+    }
+
+    get #src() {
+        return new URL(
+            this.getAttribute("blueprint-src") || DEFAULT_SRC,
+            document.baseURI,
+        ).href;
+    }
+
+    #pageHref(id) {
+        const page = new URL(
+            this.getAttribute("page-href") || DEFAULT_PAGE,
+            document.baseURI,
+        );
+        page.hash = id;
+        return page.href;
+    }
+
+    #bookmarksSummary() {
+        return (
+            `${bookmarks.read().length} of ${bookmarks.limit} saved blueprints, newest first. ` +
+            "Hold one to remove its bookmark."
+        );
+    }
+
+    /** Today's item as a PDF, in a new tab (or downloaded, if the tab is blocked). */
+    async #openPdf() {
+        const item = this.#item;
+        const button = this.#els.pdf;
+        if (!item || button.disabled) {
+            return;
+        }
+        const tab = openPdfTab(
+            `${item.name} — Following God's Blueprint — Daily Grace`,
+        );
+        button.disabled = true;
+        button.setAttribute("aria-busy", "true");
+        this.#status.textContent = `Making the PDF of ${item.name}…`;
+        try {
+            const { makeBlueprintPdf } = await import(PDF_MODULE);
+            const { blob, filename } = await makeBlueprintPdf(item);
+            const url = URL.createObjectURL(blob);
+            // Kept long enough for the tab to load it, and to reload it for a while.
+            setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+            if (tab && !tab.closed) {
+                tab.location.href = url;
+                this.#status.textContent = `${item.name}: the PDF has opened in a new tab.`;
+            } else {
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = filename;
+                this.shadowRoot.append(link);
+                link.click();
+                link.remove();
+                this.#status.textContent = `${item.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
+            }
+        } catch (error) {
+            tab?.close();
+            console.warn(
+                "Today's blueprint could not be made into a PDF:",
+                error,
+            );
+            this.#status.textContent =
+                "The PDF could not be made. Please check your connection and try again.";
+        } finally {
+            button.disabled = false;
+            button.removeAttribute("aria-busy");
+        }
+    }
+
+    #toggle(item, card) {
+        const result = bookmarks.toggle(item.id);
+        showBookmarkResult(card, result, bookmarks.limit);
+        this.#status.textContent = `${item.name}: ${bookmarkNote(result, bookmarks.limit)}`;
+        if (result === "added" || result === "removed") {
+            this.dispatchEvent(
+                new CustomEvent("bookmarkchange", {
+                    detail: { id: item.id, result },
+                }),
+            );
+        }
+    }
+
+    #syncBookmarks = () => {
+        const els = this.#els;
+        els.card.classList.toggle(
+            "bookmarked",
+            Boolean(this.#item && bookmarks.has(this.#item.id)),
+        );
+        for (const card of els.list.querySelectorAll(".entry")) {
+            card.classList.toggle("bookmarked", bookmarks.has(card.dataset.id));
+        }
+        if (!els.header.hidden) {
+            els.summaryLine.textContent = this.#bookmarksSummary();
+        }
     };
-    this.#status = $('[role="status"]');
-    this.#els.pdf.addEventListener('click', () => this.#openPdf());
 
-    // Holding the card bookmarks today's item; holding an item in the list
-    // takes its bookmark off (and puts it back). The links are not held.
-    this.#hold = new CardHold(this.#els.card, {
-      selector: '.card',
-      exclude: 'a, button',
-      onHold: (card) => { if (this.#item) this.#toggle(this.#item, card); },
-    });
-    this.#listHold = new CardHold(this.#els.list, {
-      selector: '.entry',
-      exclude: 'a, button',
-      onHold: (card) => {
-        const item = this.#items.find((i) => i.id === card.dataset.id);
-        if (item) this.#toggle(item, card);
-      },
-    });
-  }
-
-  connectedCallback() {
-    registerFonts();
-    addEventListener('pageshow', this.#onPageShow);
-    bookmarks.addEventListener('change', this.#syncBookmarks);
-    this.#syncBookmarks();
-    // A bookmarks list waits for showBookmarks() to ask for the file.
-    if (!this.#loading && !this.hasAttribute('bookmarks')) this.#load();
-  }
-
-  disconnectedCallback() {
-    removeEventListener('pageshow', this.#onPageShow);
-    bookmarks.removeEventListener('change', this.#syncBookmarks);
-    this.#hold.cancel();
-    this.#listHold.cancel();
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue || !this.isConnected) return;
-    this.#load();
-  }
-
-  get item() {
-    return this.#item;
-  }
-
-  /** The bookmarked item ids, newest first. */
-  get bookmarks() {
-    return bookmarks.read();
-  }
-
-  /** The bookmarked items, newest first, as they are in the blueprint file. */
-  async bookmarkedItems() {
-    const items = await readBlueprint(this.#src);
-    const byId = new Map(items.map((item) => [item.id, item]));
-    return bookmarks.read().map((id) => byId.get(id)).filter(Boolean);
-  }
-
-  /** Show another item at random. */
-  next() {
-    if (!this.#items.length) return;
-    this.#show(pickItem(this.#items, this.#item?.id ?? lastShown()));
-    this.dispatchEvent(new CustomEvent('ready', { detail: { id: this.#item.id } }));
-  }
-
-  /**
-   * Show the bookmarked items, newest first. An item taken off here keeps its
-   * card, without the ribbon, so holding it again puts the bookmark back.
-   */
-  showBookmarks() {
-    if (!this.#items.length) {
-      // Loaded on first use; the bookmarks show once the items arrive.
-      if (!this.#loading) this.#load();
-      return;
+    #createEntry(item) {
+        const line = (tag, className, text) => {
+            const element = document.createElement(tag);
+            if (className) {
+                element.className = className;
+            }
+            element.textContent = text;
+            return element;
+        };
+        const labelled = (className, label, text) => {
+            const p = line("p", className, ` ${tidy(text)}`);
+            p.prepend(line("b", "", label));
+            return p;
+        };
+        const card = document.createElement("article");
+        card.className = "entry bookmarkable";
+        card.dataset.id = item.id;
+        card.classList.toggle("bookmarked", bookmarks.has(item.id));
+        const sheet = [
+            item.number,
+            item.sheet ? `Sheet ${item.sheet} · ${item.part}` : item.part,
+        ]
+            .filter(Boolean)
+            .join(" · ");
+        if (sheet) {
+            card.append(line("p", "entry-sheet", sheet));
+        }
+        card.append(line("h4", "entry-name", item.name));
+        if (item.summary) {
+            card.append(line("p", "entry-summary", tidy(item.summary)));
+        }
+        if (item.build?.[0]) {
+            card.append(labelled("entry-build", "Build it:", item.build[0]));
+        }
+        if (item.ask) {
+            card.append(labelled("entry-ask", "Ask yourself:", item.ask));
+        }
+        linkScripture(card);
+        const link = line("a", "entry-link", "Open the full plan →");
+        link.href = this.#pageHref(item.id);
+        link.setAttribute("aria-label", `Open the full plan: ${item.name}`);
+        card.append(link);
+        return card;
     }
-    const els = this.#els;
-    const items = bookmarks.read()
-      .map((id) => this.#items.find((item) => item.id === id))
-      .filter(Boolean);
-    els.header.hidden = !items.length;
-    if (!items.length) {
-      const message = document.createElement('p');
-      message.className = 'message';
-      message.textContent = 'No bookmarked blueprints yet. Hold “Following Today’s God Blueprint”, '
-        + 'or a part of the plan on the Following God’s Blueprint page, for half a second to bookmark it.';
-      els.list.replaceChildren(message);
-      this.#status.textContent = message.textContent;
-      return;
+
+    #load() {
+        const loading = (this.#loading = readBlueprint(this.#src)
+            .then((items) => {
+                if (loading !== this.#loading) {
+                    return;
+                } // superseded by a newer src
+                this.#items = items;
+                this.#item = null;
+                if (this.hasAttribute("bookmarks")) {
+                    this.showBookmarks();
+                } else {
+                    this.next();
+                }
+            })
+            .catch((error) => {
+                if (loading !== this.#loading) {
+                    return;
+                }
+                console.warn("Today's blueprint could not be loaded:", error);
+                this.#loading = null; // a bookmarks list can ask again
+                this.#item = null;
+                this.#items = [];
+                this.#els.pdf.hidden = true;
+                this.#els.name.textContent =
+                    "Today's blueprint is unavailable. Please try again later.";
+                const message = document.createElement("p");
+                message.className = "message";
+                message.textContent =
+                    "Your bookmarked blueprints could not be loaded. Please try again.";
+                this.#els.list.replaceChildren(message);
+                this.dispatchEvent(
+                    new CustomEvent("error", {
+                        detail: { message: error.message },
+                    }),
+                );
+            }));
     }
-    els.summaryLine.textContent = this.#bookmarksSummary();
-    els.list.replaceChildren(...items.map((item) => this.#createEntry(item)));
-    this.#status.textContent = `Bookmarked blueprints. ${this.#bookmarksSummary()}`;
-  }
 
-  get #src() {
-    return new URL(this.getAttribute('blueprint-src') || DEFAULT_SRC, document.baseURI).href;
-  }
-
-  #pageHref(id) {
-    const page = new URL(this.getAttribute('page-href') || DEFAULT_PAGE, document.baseURI);
-    page.hash = id;
-    return page.href;
-  }
-
-  #bookmarksSummary() {
-    return `${bookmarks.read().length} of ${bookmarks.limit} saved blueprints, newest first. `
-      + 'Hold one to remove its bookmark.';
-  }
-
-  /** Today's item as a PDF, in a new tab (or downloaded, if the tab is blocked). */
-  async #openPdf() {
-    const item = this.#item;
-    const button = this.#els.pdf;
-    if (!item || button.disabled) return;
-    const tab = openPdfTab(`${item.name} — Following God's Blueprint — Daily Grace`);
-    button.disabled = true;
-    button.setAttribute('aria-busy', 'true');
-    this.#status.textContent = `Making the PDF of ${item.name}…`;
-    try {
-      const { makeBlueprintPdf } = await import(PDF_MODULE);
-      const { blob, filename } = await makeBlueprintPdf(item);
-      const url = URL.createObjectURL(blob);
-      // Kept long enough for the tab to load it, and to reload it for a while.
-      setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
-      if (tab && !tab.closed) {
-        tab.location.href = url;
-        this.#status.textContent = `${item.name}: the PDF has opened in a new tab.`;
-      } else {
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = filename;
-        this.shadowRoot.append(link);
-        link.click();
-        link.remove();
-        this.#status.textContent = `${item.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
-      }
-    } catch (error) {
-      tab?.close();
-      console.warn("Today's blueprint could not be made into a PDF:", error);
-      this.#status.textContent = 'The PDF could not be made. Please check your connection and try again.';
-    } finally {
-      button.disabled = false;
-      button.removeAttribute('aria-busy');
+    #show(item) {
+        const els = this.#els;
+        this.#item = item;
+        remember(item.id);
+        els.number.textContent = item.number || "";
+        els.number.hidden = !item.number;
+        els.part.textContent = item.sheet
+            ? `Sheet ${item.sheet} · ${item.part}`
+            : item.part || "";
+        els.sheet.hidden = !item.part;
+        els.name.textContent = item.name;
+        els.summary.textContent = tidy(item.summary);
+        linkScripture(els.summary);
+        els.summary.hidden = !item.summary;
+        // The first verse leads each item.
+        const verse = item.verses?.[0];
+        els.verse.textContent = tidy(verse?.text);
+        els.reference.textContent = [verse?.reference, verse?.who]
+            .filter(Boolean)
+            .join(" · ");
+        linkScripture(els.reference);
+        els.figure.classList.toggle("red", Boolean(verse?.red));
+        els.figure.hidden = !verse?.text;
+        const step = item.build?.[0];
+        els.build.textContent = tidy(step);
+        linkScripture(els.build);
+        els.buildLine.hidden = !step;
+        els.ask.textContent = tidy(item.ask);
+        linkScripture(els.ask);
+        els.askLine.hidden = !item.ask;
+        els.steps.hidden = !step && !item.ask;
+        els.more.href = this.#pageHref(item.id);
+        els.more.setAttribute("aria-label", `Open the full plan: ${item.name}`);
+        els.more.hidden = false;
+        els.pdf.hidden = false;
+        els.pdf.setAttribute(
+            "aria-label",
+            `Open as a PDF in a new tab: ${item.name}`,
+        );
+        this.#syncBookmarks();
     }
-  }
-
-  #toggle(item, card) {
-    const result = bookmarks.toggle(item.id);
-    showBookmarkResult(card, result, bookmarks.limit);
-    this.#status.textContent = `${item.name}: ${bookmarkNote(result, bookmarks.limit)}`;
-    if (result === 'added' || result === 'removed') {
-      this.dispatchEvent(new CustomEvent('bookmarkchange', { detail: { id: item.id, result } }));
-    }
-  }
-
-  #syncBookmarks = () => {
-    const els = this.#els;
-    els.card.classList.toggle('bookmarked', Boolean(this.#item && bookmarks.has(this.#item.id)));
-    for (const card of els.list.querySelectorAll('.entry')) {
-      card.classList.toggle('bookmarked', bookmarks.has(card.dataset.id));
-    }
-    if (!els.header.hidden) els.summaryLine.textContent = this.#bookmarksSummary();
-  };
-
-  #createEntry(item) {
-    const line = (tag, className, text) => {
-      const element = document.createElement(tag);
-      if (className) element.className = className;
-      element.textContent = text;
-      return element;
-    };
-    const labelled = (className, label, text) => {
-      const p = line('p', className, ` ${tidy(text)}`);
-      p.prepend(line('b', '', label));
-      return p;
-    };
-    const card = document.createElement('article');
-    card.className = 'entry bookmarkable';
-    card.dataset.id = item.id;
-    card.classList.toggle('bookmarked', bookmarks.has(item.id));
-    const sheet = [item.number, item.sheet ? `Sheet ${item.sheet} · ${item.part}` : item.part]
-      .filter(Boolean).join(' · ');
-    if (sheet) card.append(line('p', 'entry-sheet', sheet));
-    card.append(line('h4', 'entry-name', item.name));
-    if (item.summary) card.append(line('p', 'entry-summary', tidy(item.summary)));
-    if (item.build?.[0]) card.append(labelled('entry-build', 'Build it:', item.build[0]));
-    if (item.ask) card.append(labelled('entry-ask', 'Ask yourself:', item.ask));
-    linkScripture(card);
-    const link = line('a', 'entry-link', 'Open the full plan →');
-    link.href = this.#pageHref(item.id);
-    link.setAttribute('aria-label', `Open the full plan: ${item.name}`);
-    card.append(link);
-    return card;
-  }
-
-  #load() {
-    const loading = (this.#loading = readBlueprint(this.#src)
-      .then((items) => {
-        if (loading !== this.#loading) return; // superseded by a newer src
-        this.#items = items;
-        this.#item = null;
-        if (this.hasAttribute('bookmarks')) this.showBookmarks();
-        else this.next();
-      })
-      .catch((error) => {
-        if (loading !== this.#loading) return;
-        console.warn("Today's blueprint could not be loaded:", error);
-        this.#loading = null;          // a bookmarks list can ask again
-        this.#item = null;
-        this.#items = [];
-        this.#els.pdf.hidden = true;
-        this.#els.name.textContent = "Today's blueprint is unavailable. Please try again later.";
-        const message = document.createElement('p');
-        message.className = 'message';
-        message.textContent = 'Your bookmarked blueprints could not be loaded. Please try again.';
-        this.#els.list.replaceChildren(message);
-        this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
-      }));
-  }
-
-  #show(item) {
-    const els = this.#els;
-    this.#item = item;
-    remember(item.id);
-    els.number.textContent = item.number || '';
-    els.number.hidden = !item.number;
-    els.part.textContent = item.sheet ? `Sheet ${item.sheet} · ${item.part}` : item.part || '';
-    els.sheet.hidden = !item.part;
-    els.name.textContent = item.name;
-    els.summary.textContent = tidy(item.summary);
-    linkScripture(els.summary);
-    els.summary.hidden = !item.summary;
-    // The first verse leads each item.
-    const verse = item.verses?.[0];
-    els.verse.textContent = tidy(verse?.text);
-    els.reference.textContent = [verse?.reference, verse?.who].filter(Boolean).join(' · ');
-    linkScripture(els.reference);
-    els.figure.classList.toggle('red', Boolean(verse?.red));
-    els.figure.hidden = !verse?.text;
-    const step = item.build?.[0];
-    els.build.textContent = tidy(step);
-    linkScripture(els.build);
-    els.buildLine.hidden = !step;
-    els.ask.textContent = tidy(item.ask);
-    linkScripture(els.ask);
-    els.askLine.hidden = !item.ask;
-    els.steps.hidden = !step && !item.ask;
-    els.more.href = this.#pageHref(item.id);
-    els.more.setAttribute('aria-label', `Open the full plan: ${item.name}`);
-    els.more.hidden = false;
-    els.pdf.hidden = false;
-    els.pdf.setAttribute('aria-label', `Open as a PDF in a new tab: ${item.name}`);
-    this.#syncBookmarks();
-  }
 }
 
-if (!customElements.get('gods-blueprint')) {
-  customElements.define('gods-blueprint', GodsBlueprint);
+if (!customElements.get("gods-blueprint")) {
+    customElements.define("gods-blueprint", GodsBlueprint);
 }

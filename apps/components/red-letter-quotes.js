@@ -45,24 +45,27 @@
  * The last falls back to --gold-light from the page.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
-import { PILL_STYLES, linkScripture } from './scripture-refs.js?v=20261002-1';
+import { registerFonts } from "../../assets/scripts/fonts.js";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
 
-const DEFAULT_SRC = 'assets/red-letter-quotes.json';
-const DEFAULT_PAGE = 'apps/pages/red-lettered-quotes.html';
+const DEFAULT_SRC = "assets/red-letter-quotes.json";
+const DEFAULT_PAGE = "apps/pages/red-lettered-quotes.html";
 // The id of the saying shown last, so the next visit shows a different one.
-const LAST_KEY = 'dailygrace:red-letter:last';
+const LAST_KEY = "dailygrace:red-letter:last";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const ICON_URL = asset('../../assets/images/study-guide-icons/red-lettered-quotes.webp');
+const ICON_URL = asset(
+    "../../assets/images/study-guide-icons/red-lettered-quotes.webp",
+);
 
-const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const ICON_ATTRS =
+    'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PLACE_ICON = `<svg ${ICON_ATTRS}><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
 const TODAY_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>`;
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261003-1");
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab
@@ -70,59 +73,87 @@ const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
  * replaces it. As the bookmarks PDF does (script.js).
  */
 function openPdfTab(title) {
-  const tab = window.open('', '_blank');
-  if (!tab) return null;
-  try {
-    tab.document.title = title;
-    tab.document.body.style.cssText =
-      'margin:0;display:grid;place-items:center;min-height:100vh;'
-      + 'background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif';
-    tab.document.body.textContent = 'Preparing your PDF…';
-  } catch {
-    // Some browsers keep the new tab to themselves; it still loads the PDF.
-  }
-  return tab;
+    const tab = window.open("", "_blank");
+    if (!tab) {
+        return null;
+    }
+    try {
+        tab.document.title = title;
+        tab.document.body.style.cssText =
+            "margin:0;display:grid;place-items:center;min-height:100vh;" +
+            "background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif";
+        tab.document.body.textContent = "Preparing your PDF…";
+    } catch {
+        // Some browsers keep the new tab to themselves; it still loads the PDF.
+    }
+    return tab;
 }
 
 // The quotes file is shared by every instance, so it is fetched once.
 const quotesCache = new Map();
 
 /** Words only, for telling whether a saying's name just repeats its quote. */
-const words = (text) => (text ?? '').toLowerCase().replace(/[^a-z ]/g, '').replace(/\s+/g, ' ').trim();
+const words = (text) =>
+    (text ?? "")
+        .toLowerCase()
+        .replace(/[^a-z ]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
 
 function readQuotes(url) {
-  if (!quotesCache.has(url)) {
-    const request = fetch(url)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Unable to load ${url} (${response.status})`);
-        return response.json();
-      })
-      .then((data) => {
-        const sayings = Array.isArray(data?.sayings) ? data.sayings : [];
-        if (!sayings.length) throw new Error(`No sayings in ${url}`);
-        // Each saying keeps the verses it covers, cut from the passage it sits
-        // in, and that passage, so the card can number them and link to it.
-        const passages = (data.shelves || []).flatMap((shelf) => shelf.passages || []);
-        for (const saying of sayings) {
-          const passage = passages.find((p) => p.sayings?.includes(saying.id));
-          const range = saying.reference?.match(/:(\d+)(?:-(\d+))?$/);
-          const from = Number(range?.[1]);
-          const to = Number(range?.[2] || range?.[1]);
-          saying.verses = passage?.verses.filter((v) => v.v >= from && v.v <= to) ?? [];
-          saying.passage = passage
-            ? { id: passage.id, reference: passage.reference, length: passage.verses.length }
-            : null;
-          saying.namesItself = !words(saying.text).includes(words(saying.name));
-        }
-        return sayings;
-      })
-      .catch((error) => {
-        quotesCache.delete(url);
-        throw error;
-      });
-    quotesCache.set(url, request);
-  }
-  return quotesCache.get(url);
+    if (!quotesCache.has(url)) {
+        const request = fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(
+                        `Unable to load ${url} (${response.status})`,
+                    );
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const sayings = Array.isArray(data?.sayings)
+                    ? data.sayings
+                    : [];
+                if (!sayings.length) {
+                    throw new Error(`No sayings in ${url}`);
+                }
+                // Each saying keeps the verses it covers, cut from the passage it sits
+                // in, and that passage, so the card can number them and link to it.
+                const passages = (data.shelves || []).flatMap(
+                    (shelf) => shelf.passages || [],
+                );
+                for (const saying of sayings) {
+                    const passage = passages.find((p) =>
+                        p.sayings?.includes(saying.id),
+                    );
+                    const range = saying.reference?.match(/:(\d+)(?:-(\d+))?$/);
+                    const from = Number(range?.[1]);
+                    const to = Number(range?.[2] || range?.[1]);
+                    saying.verses =
+                        passage?.verses.filter(
+                            (v) => v.v >= from && v.v <= to,
+                        ) ?? [];
+                    saying.passage = passage
+                        ? {
+                              id: passage.id,
+                              reference: passage.reference,
+                              length: passage.verses.length,
+                          }
+                        : null;
+                    saying.namesItself = !words(saying.text).includes(
+                        words(saying.name),
+                    );
+                }
+                return sayings;
+            })
+            .catch((error) => {
+                quotesCache.delete(url);
+                throw error;
+            });
+        quotesCache.set(url, request);
+    }
+    return quotesCache.get(url);
 }
 
 const STYLES = /* css */ `
@@ -413,38 +444,49 @@ ${PILL_STYLES}`;
 
 /** localStorage, which can be missing or throw (private windows, blocked storage). */
 function remember(id) {
-  try { localStorage.setItem(LAST_KEY, id); } catch { /* the pick still works, it may just repeat */ }
+    try {
+        localStorage.setItem(LAST_KEY, id);
+    } catch {
+        /* the pick still works, it may just repeat */
+    }
 }
 function lastShown() {
-  try { return localStorage.getItem(LAST_KEY); } catch { return null; }
+    try {
+        return localStorage.getItem(LAST_KEY);
+    } catch {
+        return null;
+    }
 }
 
 /** A saying at random, never the one shown last when there is a choice. */
 function pickSaying(sayings, avoid) {
-  const choices = sayings.length > 1 ? sayings.filter((s) => s.id !== avoid) : sayings;
-  return choices[Math.floor(Math.random() * choices.length)];
+    const choices =
+        sayings.length > 1 ? sayings.filter((s) => s.id !== avoid) : sayings;
+    return choices[Math.floor(Math.random() * choices.length)];
 }
 
-const tidy = (text) => (text ?? '').replace(/\s+/g, ' ').trim();
+const tidy = (text) => (text ?? "").replace(/\s+/g, " ").trim();
 
 export class RedLetterQuotes extends HTMLElement {
-  static observedAttributes = ['quotes-src', 'page-href', 'theme'];
+    static observedAttributes = ["quotes-src", "page-href", "theme"];
 
-  #els;
-  #status;
-  #saying = null;
-  #sayings = [];
-  #loading = null;
-  // Coming back with the Back button can restore the page from the
-  // back/forward cache without reloading it; show a new saying then too.
-  #onPageShow = (event) => {
-    if (event.persisted) this.next();
-  };
+    #els;
+    #status;
+    #saying = null;
+    #sayings = [];
+    #loading = null;
+    // Coming back with the Back button can restore the page from the
+    // back/forward cache without reloading it; show a new saying then too.
+    #onPageShow = (event) => {
+        if (event.persisted) {
+            this.next();
+        }
+    };
 
-  constructor() {
-    super();
-    const root = this.attachShadow({ mode: 'open' });
-    root.innerHTML = `
+    constructor() {
+        super();
+        const root = this.attachShadow({ mode: "open" });
+        root.innerHTML = `
       <style>${STYLES}</style>
       <article class="card" aria-labelledby="title">
         <header>
@@ -471,173 +513,230 @@ export class RedLetterQuotes extends HTMLElement {
         </div>
       </article>
       <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
-    const $ = (selector) => root.querySelector(selector);
-    this.#els = {
-      theme: $('.theme'), body: $('.body'), loading: $('.status'), name: $('.name'),
-      setting: $('.setting'), settingText: $('.setting span'), figure: $('figure'),
-      quote: $('blockquote'), reference: $('figcaption'), today: $('.today'),
-      todayText: $('.today-text'), links: $('.links'), more: $('.more'),
-      passage: $('.passage'), pdf: $('.pdf'),
-    };
-    this.#status = $('[role="status"]');
-    this.#els.pdf.addEventListener('click', () => this.#openPdf());
-  }
-
-  connectedCallback() {
-    registerFonts();
-    addEventListener('pageshow', this.#onPageShow);
-    if (!this.#loading) this.#load();
-  }
-
-  disconnectedCallback() {
-    removeEventListener('pageshow', this.#onPageShow);
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue || !this.isConnected) return;
-    this.#load();
-  }
-
-  get saying() {
-    return this.#saying;
-  }
-
-  /** Show another saying at random. */
-  next() {
-    if (!this.#sayings.length) return;
-    this.#show(pickSaying(this.#sayings, this.#saying?.id ?? lastShown()));
-    this.dispatchEvent(new CustomEvent('ready', { detail: { id: this.#saying.id } }));
-  }
-
-  get #src() {
-    return new URL(this.getAttribute('quotes-src') || DEFAULT_SRC, document.baseURI).href;
-  }
-
-  #pageHref(id) {
-    const page = new URL(this.getAttribute('page-href') || DEFAULT_PAGE, document.baseURI);
-    page.hash = id;
-    return page.href;
-  }
-
-  /** The saying as a PDF, in a new tab (or downloaded, if the tab is blocked). */
-  async #openPdf() {
-    const saying = this.#saying;
-    const button = this.#els.pdf;
-    if (!saying || button.disabled) return;
-    const tab = openPdfTab(`${saying.name} — Red-Lettered Quotes — Daily Grace`);
-    button.disabled = true;
-    button.setAttribute('aria-busy', 'true');
-    this.#status.textContent = `Making the PDF of ${saying.name}…`;
-    try {
-      const { makeRedLetterPdf } = await import(PDF_MODULE);
-      const { blob, filename } = await makeRedLetterPdf(saying);
-      const url = URL.createObjectURL(blob);
-      // Kept long enough for the tab to load it, and to reload it for a while.
-      setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
-      if (tab && !tab.closed) {
-        tab.location.href = url;
-        this.#status.textContent = `${saying.name}: the PDF has opened in a new tab.`;
-      } else {
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = filename;
-        this.shadowRoot.append(link);
-        link.click();
-        link.remove();
-        this.#status.textContent = `${saying.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
-      }
-    } catch (error) {
-      tab?.close();
-      console.warn('The words of Jesus could not be made into a PDF:', error);
-      this.#status.textContent = 'The PDF could not be made. Please check your connection and try again.';
-    } finally {
-      button.disabled = false;
-      button.removeAttribute('aria-busy');
+        const $ = (selector) => root.querySelector(selector);
+        this.#els = {
+            theme: $(".theme"),
+            body: $(".body"),
+            loading: $(".status"),
+            name: $(".name"),
+            setting: $(".setting"),
+            settingText: $(".setting span"),
+            figure: $("figure"),
+            quote: $("blockquote"),
+            reference: $("figcaption"),
+            today: $(".today"),
+            todayText: $(".today-text"),
+            links: $(".links"),
+            more: $(".more"),
+            passage: $(".passage"),
+            pdf: $(".pdf"),
+        };
+        this.#status = $('[role="status"]');
+        this.#els.pdf.addEventListener("click", () => this.#openPdf());
     }
-  }
 
-  #load() {
-    const loading = (this.#loading = readQuotes(this.#src)
-      .then((sayings) => {
-        if (loading !== this.#loading) return; // superseded by a newer src
-        const theme = this.getAttribute('theme');
-        const inTheme = sayings.filter((s) => s.theme === theme);
-        this.#sayings = inTheme.length ? inTheme : sayings;
-        this.#saying = null;
-        this.next();
-      })
-      .catch((error) => {
-        if (loading !== this.#loading) return;
-        console.warn('The words of Jesus could not be loaded:', error);
-        this.#loading = null;
-        this.#saying = null;
-        this.#sayings = [];
-        const els = this.#els;
-        for (const el of [els.theme, els.pdf, els.name, els.setting, els.figure, els.today, els.links]) {
-          el.hidden = true;
+    connectedCallback() {
+        registerFonts();
+        addEventListener("pageshow", this.#onPageShow);
+        if (!this.#loading) {
+            this.#load();
         }
-        els.loading.textContent = 'The words of Jesus are unavailable. Please try again later.';
-        els.loading.hidden = false;
-        this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
-      }));
-  }
-
-  #show(saying) {
-    const els = this.#els;
-    this.#saying = saying;
-    remember(saying.id);
-    els.loading.hidden = true;
-    els.theme.textContent = saying.theme || '';
-    els.theme.hidden = !saying.theme;
-    // Most names are the quote's own opening words; those would only repeat it.
-    els.name.textContent = saying.name;
-    els.name.hidden = !saying.namesItself;
-    els.settingText.textContent = tidy(saying.context);
-    els.setting.hidden = !saying.context;
-
-    // A group of verses is numbered; a single verse stands on its own.
-    const verses = saying.verses.length ? saying.verses : [{ text: saying.text }];
-    els.quote.replaceChildren(...verses.map((verse) => {
-      const p = document.createElement('p');
-      p.className = 'verse';
-      if (verses.length > 1) {
-        const sup = document.createElement('sup');
-        sup.textContent = verse.v;
-        p.append(sup);
-      }
-      p.append(tidy(verse.text));
-      return p;
-    }));
-    const length = tidy(saying.text).length;
-    els.quote.className = length <= 90 ? 'short' : length <= 220 ? 'medium' : '';
-    els.reference.textContent = saying.reference || '';
-    linkScripture(els.reference);
-    els.figure.hidden = false;
-
-    els.todayText.textContent = tidy(saying.today);
-    els.today.hidden = !saying.today;
-
-    els.more.href = this.#pageHref(saying.id);
-    els.more.setAttribute('aria-label', `What it means: ${saying.name}`);
-    // The whole passage is only worth a link when it says more than the card.
-    const passage = saying.passage;
-    const more = passage && passage.length > saying.verses.length;
-    if (more) {
-      els.passage.href = this.#pageHref(passage.id);
-      els.passage.textContent = `Read all of ${passage.reference}`;
     }
-    els.passage.hidden = !more;
-    els.links.hidden = false;
-    els.pdf.hidden = false;
-    els.pdf.setAttribute('aria-label', `Open as a PDF in a new tab: ${saying.name}`);
 
-    // Ease the new saying in.
-    els.body.classList.remove('enter');
-    void els.body.offsetWidth;
-    els.body.classList.add('enter');
-  }
+    disconnectedCallback() {
+        removeEventListener("pageshow", this.#onPageShow);
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue === newValue || !this.isConnected) {
+            return;
+        }
+        this.#load();
+    }
+
+    get saying() {
+        return this.#saying;
+    }
+
+    /** Show another saying at random. */
+    next() {
+        if (!this.#sayings.length) {
+            return;
+        }
+        this.#show(pickSaying(this.#sayings, this.#saying?.id ?? lastShown()));
+        this.dispatchEvent(
+            new CustomEvent("ready", { detail: { id: this.#saying.id } }),
+        );
+    }
+
+    get #src() {
+        return new URL(
+            this.getAttribute("quotes-src") || DEFAULT_SRC,
+            document.baseURI,
+        ).href;
+    }
+
+    #pageHref(id) {
+        const page = new URL(
+            this.getAttribute("page-href") || DEFAULT_PAGE,
+            document.baseURI,
+        );
+        page.hash = id;
+        return page.href;
+    }
+
+    /** The saying as a PDF, in a new tab (or downloaded, if the tab is blocked). */
+    async #openPdf() {
+        const saying = this.#saying;
+        const button = this.#els.pdf;
+        if (!saying || button.disabled) {
+            return;
+        }
+        const tab = openPdfTab(
+            `${saying.name} — Red-Lettered Quotes — Daily Grace`,
+        );
+        button.disabled = true;
+        button.setAttribute("aria-busy", "true");
+        this.#status.textContent = `Making the PDF of ${saying.name}…`;
+        try {
+            const { makeRedLetterPdf } = await import(PDF_MODULE);
+            const { blob, filename } = await makeRedLetterPdf(saying);
+            const url = URL.createObjectURL(blob);
+            // Kept long enough for the tab to load it, and to reload it for a while.
+            setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+            if (tab && !tab.closed) {
+                tab.location.href = url;
+                this.#status.textContent = `${saying.name}: the PDF has opened in a new tab.`;
+            } else {
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = filename;
+                this.shadowRoot.append(link);
+                link.click();
+                link.remove();
+                this.#status.textContent = `${saying.name}: your browser blocked the new tab, so the PDF was downloaded instead.`;
+            }
+        } catch (error) {
+            tab?.close();
+            console.warn(
+                "The words of Jesus could not be made into a PDF:",
+                error,
+            );
+            this.#status.textContent =
+                "The PDF could not be made. Please check your connection and try again.";
+        } finally {
+            button.disabled = false;
+            button.removeAttribute("aria-busy");
+        }
+    }
+
+    #load() {
+        const loading = (this.#loading = readQuotes(this.#src)
+            .then((sayings) => {
+                if (loading !== this.#loading) {
+                    return;
+                } // superseded by a newer src
+                const theme = this.getAttribute("theme");
+                const inTheme = sayings.filter((s) => s.theme === theme);
+                this.#sayings = inTheme.length ? inTheme : sayings;
+                this.#saying = null;
+                this.next();
+            })
+            .catch((error) => {
+                if (loading !== this.#loading) {
+                    return;
+                }
+                console.warn("The words of Jesus could not be loaded:", error);
+                this.#loading = null;
+                this.#saying = null;
+                this.#sayings = [];
+                const els = this.#els;
+                for (const el of [
+                    els.theme,
+                    els.pdf,
+                    els.name,
+                    els.setting,
+                    els.figure,
+                    els.today,
+                    els.links,
+                ]) {
+                    el.hidden = true;
+                }
+                els.loading.textContent =
+                    "The words of Jesus are unavailable. Please try again later.";
+                els.loading.hidden = false;
+                this.dispatchEvent(
+                    new CustomEvent("error", {
+                        detail: { message: error.message },
+                    }),
+                );
+            }));
+    }
+
+    #show(saying) {
+        const els = this.#els;
+        this.#saying = saying;
+        remember(saying.id);
+        els.loading.hidden = true;
+        els.theme.textContent = saying.theme || "";
+        els.theme.hidden = !saying.theme;
+        // Most names are the quote's own opening words; those would only repeat it.
+        els.name.textContent = saying.name;
+        els.name.hidden = !saying.namesItself;
+        els.settingText.textContent = tidy(saying.context);
+        els.setting.hidden = !saying.context;
+
+        // A group of verses is numbered; a single verse stands on its own.
+        const verses = saying.verses.length
+            ? saying.verses
+            : [{ text: saying.text }];
+        els.quote.replaceChildren(
+            ...verses.map((verse) => {
+                const p = document.createElement("p");
+                p.className = "verse";
+                if (verses.length > 1) {
+                    const sup = document.createElement("sup");
+                    sup.textContent = verse.v;
+                    p.append(sup);
+                }
+                p.append(tidy(verse.text));
+                return p;
+            }),
+        );
+        const length = tidy(saying.text).length;
+        els.quote.className =
+            length <= 90 ? "short" : length <= 220 ? "medium" : "";
+        els.reference.textContent = saying.reference || "";
+        linkScripture(els.reference);
+        els.figure.hidden = false;
+
+        els.todayText.textContent = tidy(saying.today);
+        els.today.hidden = !saying.today;
+
+        els.more.href = this.#pageHref(saying.id);
+        els.more.setAttribute("aria-label", `What it means: ${saying.name}`);
+        // The whole passage is only worth a link when it says more than the card.
+        const passage = saying.passage;
+        const more = passage && passage.length > saying.verses.length;
+        if (more) {
+            els.passage.href = this.#pageHref(passage.id);
+            els.passage.textContent = `Read all of ${passage.reference}`;
+        }
+        els.passage.hidden = !more;
+        els.links.hidden = false;
+        els.pdf.hidden = false;
+        els.pdf.setAttribute(
+            "aria-label",
+            `Open as a PDF in a new tab: ${saying.name}`,
+        );
+
+        // Ease the new saying in.
+        els.body.classList.remove("enter");
+        void els.body.offsetWidth;
+        els.body.classList.add("enter");
+    }
 }
 
-if (!customElements.get('red-letter-quotes')) {
-  customElements.define('red-letter-quotes', RedLetterQuotes);
+if (!customElements.get("red-letter-quotes")) {
+    customElements.define("red-letter-quotes", RedLetterQuotes);
 }

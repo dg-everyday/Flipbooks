@@ -20,12 +20,20 @@ function parseArgs(argv) {
     const options = { date: null, dryRun: false };
     for (let i = 0; i < argv.length; i++) {
         const arg = argv[i];
-        if (arg === "--dry-run") options.dryRun = true;
-        else if (arg === "--date") options.date = argv[++i];
-        else if (arg.startsWith("--date=")) options.date = arg.slice("--date=".length);
-        else throw new Error(`Unknown argument: ${arg}`);
+        if (arg === "--dry-run") {
+            options.dryRun = true;
+        } else if (arg === "--date") {
+            options.date = argv[++i];
+        } else if (arg.startsWith("--date=")) {
+            options.date = arg.slice("--date=".length);
+        } else {
+            throw new Error(`Unknown argument: ${arg}`);
+        }
     }
-    if (options.date !== null && !/^\d{4}-\d{2}-\d{2}$/.test(options.date ?? "")) {
+    if (
+        options.date !== null &&
+        !/^\d{4}-\d{2}-\d{2}$/.test(options.date ?? "")
+    ) {
         throw new Error("--date expects YYYY-MM-DD");
     }
     return options;
@@ -49,7 +57,9 @@ function manilaToday() {
 /** The YYYY-MM-DD date `days` days after `date` (before, when negative). */
 function addDays(date, days) {
     const [year, month, day] = date.split("-").map(Number);
-    return new Date(Date.UTC(year, month - 1, day + days)).toISOString().slice(0, 10);
+    return new Date(Date.UTC(year, month - 1, day + days))
+        .toISOString()
+        .slice(0, 10);
 }
 
 // FNV-1a, finished with murmur3's fmix32. Without the finish, texts that
@@ -108,12 +118,20 @@ const path = fileURLToPath(new URL("../stories.json", import.meta.url));
 const text = readFileSync(path, "utf8");
 const stories = JSON.parse(text);
 if (!Array.isArray(stories) || stories.length === 0) {
-    throw new Error("Expected a non-empty list of stories in assets/stories.json");
+    throw new Error(
+        "Expected a non-empty list of stories in assets/stories.json",
+    );
 }
 const ids = stories.map((story) => story?.id);
 for (const [i, id] of ids.entries()) {
-    if (typeof id !== "string" || id === "") throw new Error(`Story ${i + 1} in assets/stories.json has no id`);
-    if (ids.indexOf(id) !== i) throw new Error(`Story id "${id}" appears twice in assets/stories.json`);
+    if (typeof id !== "string" || id === "") {
+        throw new Error(`Story ${i + 1} in assets/stories.json has no id`);
+    }
+    if (ids.indexOf(id) !== i) {
+        throw new Error(
+            `Story id "${id}" appears twice in assets/stories.json`,
+        );
+    }
 }
 
 const order = dailyOrder(ids, date);
@@ -122,16 +140,27 @@ const sequences = ids.map((id) => sequence.get(id));
 
 const field = /("sequence"\s*:\s*)-?\d+(?:\.\d+)?/g;
 let output;
-if (stories.every((story) => Number.isFinite(story.sequence)) && [...text.matchAll(field)].length === stories.length) {
+if (
+    stories.every((story) => Number.isFinite(story.sequence)) &&
+    [...text.matchAll(field)].length === stories.length
+) {
     // Swap only the numbers so the surrounding formatting survives untouched.
     let index = 0;
     output = text.replace(field, (_, key) => `${key}${sequences[index++]}`);
 } else {
     // A story is missing its sequence: rewrite the file, putting it after the id.
     const eol = text.includes("\r\n") ? "\r\n" : "\n";
-    const updated = stories.map(({ id, sequence: _, ...rest }, i) => ({ id, sequence: sequences[i], ...rest }));
+    const updated = stories.map(({ id, sequence: _, ...rest }, i) => ({
+        id,
+        sequence: sequences[i],
+        ...rest,
+    }));
     output = JSON.stringify(updated, null, 4).replace(/\n/g, eol) + eol;
 }
-if (!options.dryRun) writeFileSync(path, output);
+if (!options.dryRun) {
+    writeFileSync(path, output);
+}
 
-console.log(`Story sequence for ${date}${options.dryRun ? " (dry run, not written)" : ""}: ${order.join(", ")}`);
+console.log(
+    `Story sequence for ${date}${options.dryRun ? " (dry run, not written)" : ""}: ${order.join(", ")}`,
+);

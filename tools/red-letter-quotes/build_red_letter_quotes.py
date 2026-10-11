@@ -180,7 +180,7 @@ def main():
         "sayings": sayings,
         "shelves": shelves,
     }
-    OUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=4) + "\n", encoding="utf-8")
 
     t = doc["totals"]
     print(f"{t['sayings']} sayings, {t['passages']} passages ({t['verses']} verses) "

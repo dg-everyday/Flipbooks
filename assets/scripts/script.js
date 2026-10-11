@@ -2,7 +2,7 @@
 // components read for themselves (apps/settings/settings.js). This copy is not
 // used by the page: assets/scripts/check-assets.mjs reads it to find the host
 // it checks, so keep this line's form and keep it in step with appsettings.json.
-const MEDIA_BASE_URL = 'https://dailygrace.faith/media/';
+const MEDIA_BASE_URL = "https://dailygrace.faith/media/";
 
 const searchForm = document.getElementById("devotional-search");
 const searchQuery = document.getElementById("search-query");
@@ -67,7 +67,9 @@ function renderBookSuggestions() {
         closeBookSuggestions();
         return;
     }
-    const matches = bibleBooks.filter((book) => book.toLocaleLowerCase().includes(query));
+    const matches = bibleBooks.filter((book) =>
+        book.toLocaleLowerCase().includes(query),
+    );
     const options = matches.map((book, index) => {
         const option = document.createElement("li");
         option.id = `bible-book-${index}`;
@@ -93,7 +95,9 @@ function selectBook(option) {
 
 function loadBibleBookSuggestions() {
     // Load the SQLite database only when the search field is first used.
-    if (bibleBooksLoading) return bibleBooksLoading;
+    if (bibleBooksLoading) {
+        return bibleBooksLoading;
+    }
     bibleBooksLoading = initDatabase()
         .then(() => {
             bibleBooks = getBooks();
@@ -109,39 +113,66 @@ function loadBibleBookSuggestions() {
 
 searchQuery.addEventListener("focus", () => {
     renderBookSuggestions();
-    loadBibleBookSuggestions().then(renderBookSuggestions).catch((error) => {
-        console.warn("Bible book suggestions could not be loaded:", error);
-    });
+    loadBibleBookSuggestions()
+        .then(renderBookSuggestions)
+        .catch((error) => {
+            console.warn("Bible book suggestions could not be loaded:", error);
+        });
 });
 searchQuery.addEventListener("click", renderBookSuggestions);
 searchQuery.addEventListener("blur", closeBookSuggestions);
 bibleBookSuggestions.addEventListener("pointerdown", (event) => {
     // Keep input focus while choosing with a mouse or touch screen.
-    if (event.target.closest('[role="option"]')) event.preventDefault();
+    if (event.target.closest('[role="option"]')) {
+        event.preventDefault();
+    }
 });
 bibleBookSuggestions.addEventListener("click", (event) => {
     const option = event.target.closest('[role="option"]');
-    if (option) selectBook(option);
+    if (option) {
+        selectBook(option);
+    }
 });
 searchQuery.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-        if (!bibleBookSuggestions.hidden) event.preventDefault();
+        if (!bibleBookSuggestions.hidden) {
+            event.preventDefault();
+        }
         closeBookSuggestions();
         return;
     }
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-        if (bibleBookSuggestions.hidden) renderBookSuggestions();
+        if (bibleBookSuggestions.hidden) {
+            renderBookSuggestions();
+        }
         const options = [...bibleBookSuggestions.children];
-        if (!options.length) return;
+        if (!options.length) {
+            return;
+        }
         event.preventDefault();
-        activeBookIndex = activeBookIndex < 0
-            ? (event.key === "ArrowDown" ? 0 : options.length - 1)
-            : (activeBookIndex + (event.key === "ArrowDown" ? 1 : -1) + options.length) % options.length;
-        options.forEach((option, index) => option.setAttribute("aria-selected", String(index === activeBookIndex)));
+        activeBookIndex =
+            activeBookIndex < 0
+                ? event.key === "ArrowDown"
+                    ? 0
+                    : options.length - 1
+                : (activeBookIndex +
+                      (event.key === "ArrowDown" ? 1 : -1) +
+                      options.length) %
+                  options.length;
+        options.forEach((option, index) =>
+            option.setAttribute(
+                "aria-selected",
+                String(index === activeBookIndex),
+            ),
+        );
         const activeOption = options[activeBookIndex];
         searchQuery.setAttribute("aria-activedescendant", activeOption.id);
         activeOption.scrollIntoView({ block: "nearest" });
-    } else if (event.key === "Enter" && !bibleBookSuggestions.hidden && activeBookIndex >= 0) {
+    } else if (
+        event.key === "Enter" &&
+        !bibleBookSuggestions.hidden &&
+        activeBookIndex >= 0
+    ) {
         event.preventDefault();
         selectBook(bibleBookSuggestions.children[activeBookIndex]);
     }
@@ -158,7 +189,9 @@ async function searchBibleVerses() {
     const query = searchQuery.value.trim();
     resetBibleSearch();
     closeBookSuggestions();
-    if (!query) return;
+    if (!query) {
+        return;
+    }
     const generation = searchGeneration;
     searchResults.loading("Loading Bible verses…");
     try {
@@ -174,40 +207,58 @@ async function searchBibleVerses() {
             return;
         }
         await loadBibleBookSuggestions();
-        if (generation !== searchGeneration) return;
+        if (generation !== searchGeneration) {
+            return;
+        }
         closeBookSuggestions();
-        const bookName = bibleBooks.find((book) =>
-            book.toLocaleLowerCase() === reference.bookName.toLocaleLowerCase(),
+        const bookName = bibleBooks.find(
+            (book) =>
+                book.toLocaleLowerCase() ===
+                reference.bookName.toLocaleLowerCase(),
         );
         if (!bookName) {
-            searchResults.showMessage("Book not found. Choose a Bible book from the suggestions, or try Ephesians 2:8-9.");
+            searchResults.showMessage(
+                "Book not found. Choose a Bible book from the suggestions, or try Ephesians 2:8-9.",
+            );
             return;
         }
         const rows = getVerses(bookName, reference.chapter, reference.verses);
         if (!rows.length) {
-            searchResults.showMessage("No verses found. Check the chapter and verse numbers and try again.");
+            searchResults.showMessage(
+                "No verses found. Check the chapter and verse numbers and try again.",
+            );
             return;
         }
         searchResults.showVerses(rows);
     } catch (error) {
-        if (generation !== searchGeneration) return;
+        if (generation !== searchGeneration) {
+            return;
+        }
         console.warn("Bible search failed:", error);
-        searchResults.showMessage("Bible verses could not be loaded. Please search again to retry.");
+        searchResults.showMessage(
+            "Bible verses could not be loaded. Please search again to retry.",
+        );
     }
 }
 
 async function searchBibleKeywords(query, generation) {
     const words = parseSearchKeywords(query);
     if (!words.length) {
-        searchResults.showMessage("Type one or more whole words, such as grace faith.");
+        searchResults.showMessage(
+            "Type one or more whole words, such as grace faith.",
+        );
         return;
     }
     await loadBibleBookSuggestions();
-    if (generation !== searchGeneration) return;
+    if (generation !== searchGeneration) {
+        return;
+    }
     const rows = searchVersesByKeywords(words);
     if (!rows.length) {
         const list = words.map((word) => `“${word}”`).join(", ");
-        searchResults.showMessage(`No verses contain all of ${list}. Try fewer or different words.`);
+        searchResults.showMessage(
+            `No verses contain all of ${list}. Try fewer or different words.`,
+        );
         return;
     }
     searchResults.showKeywordResults(rows, words);
@@ -236,10 +287,15 @@ searchClear.addEventListener("click", () => {
 // <daily-moment> walks through the day on the banner: today's Moment, or an
 // earlier day's while the reader has swiped back to it.
 const dailyMoment = document.getElementById("daily-moment");
-document.getElementById("banner-slider").addEventListener("daychange", (event) => {
-    if (event.detail.daysAgo) dailyMoment.setAttribute("date", event.detail.date);
-    else dailyMoment.removeAttribute("date");
-});
+document
+    .getElementById("banner-slider")
+    .addEventListener("daychange", (event) => {
+        if (event.detail.daysAgo) {
+            dailyMoment.setAttribute("date", event.detail.date);
+        } else {
+            dailyMoment.removeAttribute("date");
+        }
+    });
 
 // Leaving for another page and coming back — the Flipbook's home button, the
 // back button, a reload — should land the reader where they left off rather
@@ -271,20 +327,28 @@ function writeScroll() {
 }
 
 let scrollSaveQueued = false;
-addEventListener("scroll", () => {
-    if (scrollSaveQueued) return;
-    scrollSaveQueued = true;
-    requestAnimationFrame(() => {
-        scrollSaveQueued = false;
-        writeScroll();
-    });
-}, { passive: true });
+addEventListener(
+    "scroll",
+    () => {
+        if (scrollSaveQueued) {
+            return;
+        }
+        scrollSaveQueued = true;
+        requestAnimationFrame(() => {
+            scrollSaveQueued = false;
+            writeScroll();
+        });
+    },
+    { passive: true },
+);
 // A frame callback may never run once the page is going away, so take the
 // closing position straight away. pagehide covers both leaving and the phone
 // putting the tab to sleep.
 addEventListener("pagehide", writeScroll);
 addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") writeScroll();
+    if (document.visibilityState === "hidden") {
+        writeScroll();
+    }
 });
 
 function restoreScroll(target) {
@@ -303,28 +367,38 @@ function restoreScroll(target) {
     let deadline;
     let done = false;
     const finish = () => {
-        if (done) return;
+        if (done) {
+            return;
+        }
         done = true;
         observer?.disconnect();
         clearTimeout(settled);
         clearTimeout(deadline);
         root.style.scrollBehavior = smooth;
         root.style.overflowAnchor = anchor;
-        for (const gesture of GESTURES) removeEventListener(gesture, finish);
+        for (const gesture of GESTURES) {
+            removeEventListener(gesture, finish);
+        }
     };
     const attempt = () => {
-        if (done) return;
+        if (done) {
+            return;
+        }
         const reach = document.scrollingElement.scrollHeight - innerHeight;
         scrollTo(0, Math.min(target, Math.max(reach, 0)));
         // The page is tall enough to hold the real position, but a card may
         // still be on its way: wait for the height to hold still before
         // calling it, rather than stopping at the first card that fits.
         clearTimeout(settled);
-        if (reach >= target) settled = setTimeout(finish, SETTLE_DELAY);
+        if (reach >= target) {
+            settled = setTimeout(finish, SETTLE_DELAY);
+        }
     };
 
     // The reader wins: any scrolling of their own ends the restore where it is.
-    for (const gesture of GESTURES) addEventListener(gesture, finish, { passive: true });
+    for (const gesture of GESTURES) {
+        addEventListener(gesture, finish, { passive: true });
+    }
     observer = new ResizeObserver(attempt);
     observer.observe(root);
     deadline = setTimeout(finish, RESTORE_TIMEOUT);
@@ -373,7 +447,9 @@ bookmarkManager.loadVerses = async (ids) => {
 const dgButton = document.getElementById("menu-open");
 // About's closing call to action takes the reader to today.
 document.getElementById("site-menu").addEventListener("begin", () => {
-    document.getElementById("daily-devotional").scrollIntoView({ behavior: "smooth" });
+    document
+        .getElementById("daily-devotional")
+        .scrollIntoView({ behavior: "smooth" });
 });
 
 // Holding the DG emblem for half a second opens the bookmarks instead of the
@@ -389,14 +465,18 @@ let dgHold = null;
 let swallowClick = false;
 
 function cancelDgHold() {
-    if (!dgHold) return;
+    if (!dgHold) {
+        return;
+    }
     clearTimeout(dgHold.timer);
     dgHold = null;
     dgButton.classList.remove("holding");
 }
 
 dgButton.addEventListener("pointerdown", (event) => {
-    if (!event.isPrimary || event.button !== 0) return;
+    if (!event.isPrimary || event.button !== 0) {
+        return;
+    }
     cancelDgHold();
     dgButton.classList.add("holding");
     dgHold = {
@@ -411,7 +491,11 @@ dgButton.addEventListener("pointerdown", (event) => {
     };
 });
 dgButton.addEventListener("pointermove", (event) => {
-    if (dgHold && Math.hypot(event.clientX - dgHold.x, event.clientY - dgHold.y) > HOLD_SLOP) {
+    if (
+        dgHold &&
+        Math.hypot(event.clientX - dgHold.x, event.clientY - dgHold.y) >
+            HOLD_SLOP
+    ) {
         cancelDgHold();
     }
 });
@@ -420,12 +504,26 @@ for (const type of ["pointerup", "pointercancel", "pointerleave"]) {
 }
 // A long press would otherwise open the phone's menu for the emblem's image.
 dgButton.addEventListener("contextmenu", (event) => {
-    if (dgHold || swallowClick) event.preventDefault();
+    if (dgHold || swallowClick) {
+        event.preventDefault();
+    }
 });
-addEventListener("pointerdown", () => { swallowClick = false; }, true);
-addEventListener("click", (event) => {
-    if (!swallowClick) return;
-    swallowClick = false;
-    event.preventDefault();
-    event.stopPropagation();
-}, true);
+addEventListener(
+    "pointerdown",
+    () => {
+        swallowClick = false;
+    },
+    true,
+);
+addEventListener(
+    "click",
+    (event) => {
+        if (!swallowClick) {
+            return;
+        }
+        swallowClick = false;
+        event.preventDefault();
+        event.stopPropagation();
+    },
+    true,
+);

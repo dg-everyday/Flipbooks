@@ -38,23 +38,23 @@
  * inherit into the shadow root.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
+import { registerFonts } from "../../assets/scripts/fonts.js";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const POSTER_URL = asset('../../assets/images/splash.webp');
+const POSTER_URL = asset("../../assets/images/splash.webp");
 
 // Each sponsor's logo links to its site, in a new tab.
 const SPONSORS = [
-  {
-    href: 'https://icountera.com.ph',
-    name: 'iCountera',
-    label: 'iCountera, Emmanuel C. Bulatao, CEO',
-    logo: asset('../../assets/images/sponsors/icountera.webp'),
-    alt: 'Emmanuel C. Bulatao, CEO of iCountera',
-    width: 2171,
-    height: 724,
-  },
+    {
+        href: "https://icountera.com.ph",
+        name: "iCountera",
+        label: "iCountera, Emmanuel C. Bulatao, CEO",
+        logo: asset("../../assets/images/sponsors/icountera.webp"),
+        alt: "Emmanuel C. Bulatao, CEO of iCountera",
+        width: 2171,
+        height: 724,
+    },
 ];
 
 const DOUBLE_TAP_MS = 450;
@@ -154,93 +154,114 @@ const TEMPLATE = /* html */ `
         />
         <section class="splash-sponsors" aria-labelledby="splash-thanks">
             <h2 id="splash-thanks">Thanks To</h2>
-            <ul>${SPONSORS.map(sponsorItem).join('')}
+            <ul>${SPONSORS.map(sponsorItem).join("")}
             </ul>
         </section>
     </div>
 </dialog>`;
 
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
 // Grows in with a little overshoot, as the bookmarks and the verse popup do.
 function popDialog(dialog, direction) {
-  const opening = direction === 'open';
-  const options = {
-    duration: opening ? 460 : 220,
-    // A little overshoot on the way in gives the poster its pop.
-    easing: opening ? 'cubic-bezier(.2, .9, .25, 1.2)' : 'cubic-bezier(.4, 0, 1, 1)',
-    fill: 'forwards',
-  };
-  const entering = { transform: 'scale(.82) translateY(28px)', opacity: 0 };
-  const full = { transform: 'none', opacity: 1 };
-  const leaving = { transform: 'scale(.94)', opacity: 0 };
-  dialog.animate(opening ? [entering, full] : [full, leaving], options);
-  const backdrop = dialog.animate(
-    opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
-    { ...options, easing: 'ease', pseudoElement: '::backdrop' },
-  );
-  return backdrop.finished.catch(() => {});
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 460 : 220,
+        // A little overshoot on the way in gives the poster its pop.
+        easing: opening
+            ? "cubic-bezier(.2, .9, .25, 1.2)"
+            : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    const entering = { transform: "scale(.82) translateY(28px)", opacity: 0 };
+    const full = { transform: "none", opacity: 1 };
+    const leaving = { transform: "scale(.94)", opacity: 0 };
+    dialog.animate(opening ? [entering, full] : [full, leaving], options);
+    const backdrop = dialog.animate(
+        opening
+            ? [{ opacity: 0 }, { opacity: 1 }]
+            : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
 }
 
 // A tap on a sponsor opens its site, and leaves the splash open.
-const onSponsor = (event) => Boolean(event.target.closest?.('.splash-sponsors a'));
+const onSponsor = (event) =>
+    Boolean(event.target.closest?.(".splash-sponsors a"));
 
 export class SponsorSplash extends HTMLElement {
-  #dialog;
-  #closing = false;
-  // When the splash was opened, so a quick second tap can be told from a
-  // later one.
-  #shownAt = 0;
+    #dialog;
+    #closing = false;
+    // When the splash was opened, so a quick second tap can be told from a
+    // later one.
+    #shownAt = 0;
 
-  constructor() {
-    super();
-    const root = this.attachShadow({ mode: 'open' });
-    root.innerHTML = `<style>${STYLES}</style>${TEMPLATE}`;
-    const dialog = root.querySelector('dialog');
-    this.#dialog = dialog;
+    constructor() {
+        super();
+        const root = this.attachShadow({ mode: "open" });
+        root.innerHTML = `<style>${STYLES}</style>${TEMPLATE}`;
+        const dialog = root.querySelector("dialog");
+        this.#dialog = dialog;
 
-    // Escape would close instantly; route it through the closing animation instead.
-    dialog.addEventListener('cancel', (event) => {
-      event.preventDefault();
-      this.close();
-    });
-    dialog.addEventListener('click', (event) => {
-      if (!onSponsor(event)) this.close();
-    });
-    dialog.addEventListener('pointerup', async (event) => {
-      if (onSponsor(event)) return;
-      if (!this.#shownAt || Date.now() - this.#shownAt > DOUBLE_TAP_MS) return;
-      this.#shownAt = 0;
-      await this.close();
-      this.dispatchEvent(new Event('doubletap'));
-    });
-  }
+        // Escape would close instantly; route it through the closing animation instead.
+        dialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            this.close();
+        });
+        dialog.addEventListener("click", (event) => {
+            if (!onSponsor(event)) {
+                this.close();
+            }
+        });
+        dialog.addEventListener("pointerup", async (event) => {
+            if (onSponsor(event)) {
+                return;
+            }
+            if (!this.#shownAt || Date.now() - this.#shownAt > DOUBLE_TAP_MS) {
+                return;
+            }
+            this.#shownAt = 0;
+            await this.close();
+            this.dispatchEvent(new Event("doubletap"));
+        });
+    }
 
-  connectedCallback() {
-    registerFonts();
-  }
+    connectedCallback() {
+        registerFonts();
+    }
 
-  open() {
-    const dialog = this.#dialog;
-    if (dialog.open) return;
-    this.#shownAt = Date.now();
-    dialog.showModal();
-    this.toggleAttribute('open', true);
-    if (!reducedMotion.matches) popDialog(dialog, 'open');
-  }
+    open() {
+        const dialog = this.#dialog;
+        if (dialog.open) {
+            return;
+        }
+        this.#shownAt = Date.now();
+        dialog.showModal();
+        this.toggleAttribute("open", true);
+        if (!reducedMotion.matches) {
+            popDialog(dialog, "open");
+        }
+    }
 
-  async close() {
-    const dialog = this.#dialog;
-    if (!dialog.open || this.#closing) return;
-    this.#closing = true;
-    if (!reducedMotion.matches) await popDialog(dialog, 'close');
-    dialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-    dialog.close();
-    this.toggleAttribute('open', false);
-    this.#closing = false;
-  }
+    async close() {
+        const dialog = this.#dialog;
+        if (!dialog.open || this.#closing) {
+            return;
+        }
+        this.#closing = true;
+        if (!reducedMotion.matches) {
+            await popDialog(dialog, "close");
+        }
+        dialog
+            .getAnimations({ subtree: true })
+            .forEach((animation) => animation.cancel());
+        dialog.close();
+        this.toggleAttribute("open", false);
+        this.#closing = false;
+    }
 }
 
-if (!customElements.get('sponsor-splash')) {
-  customElements.define('sponsor-splash', SponsorSplash);
+if (!customElements.get("sponsor-splash")) {
+    customElements.define("sponsor-splash", SponsorSplash);
 }

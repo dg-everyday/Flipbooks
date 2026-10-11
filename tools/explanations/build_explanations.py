@@ -116,7 +116,7 @@ def main():
         os.makedirs(os.path.join(OUT, book), exist_ok=True)
         path = os.path.join(OUT, book, f"{chapter}.json")
         with open(path, "w", encoding="utf8", newline="\n") as f:
-            json.dump(entry, f, ensure_ascii=False, separators=(",", ":"))
+            json.dump(entry, f, ensure_ascii=False, indent=4)
         total_bytes += os.path.getsize(path)
 
     orphans = [k for src in SOURCES for k in notes[src] if k not in db_keys]

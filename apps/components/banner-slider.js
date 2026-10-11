@@ -40,7 +40,6 @@
  * reduced motion preferred, the video is not loaded.
  *
  * Methods      previous(), next()  step a day back or forward, with the slide
- *              goTo(daysAgo)       jump to a day, without it
  * Properties   daysAgo (read-only), date (read-only, YYYY-MM-DD)
  * Events       daychange  detail: { daysAgo, date, name, verse }
  *                `name` is the day as the verse files key it ("September 24, 2026")
@@ -67,21 +66,25 @@
  * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
-import { DEFAULT_VERSES_BASE, loadVerses, versesFileUrl } from './daily-verses.js?v=20261004-1';
-import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
+import {
+    DEFAULT_VERSES_BASE,
+    loadVerses,
+    versesFileUrl,
+} from "./daily-verses.js?v=20261004-1";
+import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
-const DEFAULT_FLIPBOOK_HREF = 'apps/pages/flipbook.html';
+const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";
 const DEFAULT_PAST_DAYS = 7;
-const TIME_ZONE = 'Asia/Manila';
+const TIME_ZONE = "Asia/Manila";
 // How often an open page checks whether midnight has passed.
 const DATE_CHECK_INTERVAL = 60_000;
 const DAY_MS = 86400000;
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
-const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
+const SYMBOL_BOOK_NAMES = { Psalm: "Psalms" };
 const bookSymbolUrl = (mediaBase, book) =>
-  `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
+    `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
 
 // A press has to move this far, in px, before it counts as a drag.
 const DRAG_SLOP = 8;
@@ -97,7 +100,7 @@ const HINT_DELAY = 1200;
 const HINT_LIMIT = 3;
 // While something covers the banner (the trivia quiz), check again this often.
 const HINT_RETRY = 1000;
-const HINT_STORAGE_KEY = 'dailygrace.banner-hint';
+const HINT_STORAGE_KEY = "dailygrace.banner-hint";
 // Space, in px, between yesterday's banner and today's while they slide.
 const PEEK_GAP = 12;
 
@@ -280,12 +283,17 @@ const STYLES = /* css */ `
 
 /** Today's calendar date in Asia/Manila, as numbers. */
 function manilaToday() {
-  return Object.fromEntries(
-    new Intl.DateTimeFormat('en-US', { timeZone: TIME_ZONE, year: 'numeric', month: 'numeric', day: 'numeric' })
-      .formatToParts(new Date())
-      .filter(({ type }) => type !== 'literal')
-      .map(({ type, value }) => [type, Number(value)]),
-  );
+    return Object.fromEntries(
+        new Intl.DateTimeFormat("en-US", {
+            timeZone: TIME_ZONE,
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+        })
+            .formatToParts(new Date())
+            .filter(({ type }) => type !== "literal")
+            .map(({ type, value }) => [type, Number(value)]),
+    );
 }
 
 /**
@@ -294,82 +302,93 @@ function manilaToday() {
  * clock change.
  */
 function devotionalDay(today, daysAgo, mediaBase) {
-  const date = new Date(Date.UTC(today.year, today.month - 1, today.day - daysAgo));
-  const format = (options) => date.toLocaleDateString('en-US', { timeZone: 'UTC', ...options });
-  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-  const day = String(date.getUTCDate()).padStart(2, '0');
-  const iso = `${date.getUTCFullYear()}-${month}-${day}`;
-  return {
-    daysAgo,
-    iso,
-    name: format({ month: 'long', day: 'numeric', year: 'numeric' }),
-    banner: `${mediaBase}banner/${date.getUTCFullYear()}/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.webp`,
-    video: `${mediaBase}banner/${date.getUTCFullYear()}/${format({ month: 'long' }).toLowerCase()}/daily-grace-${iso}.mp4`,
-  };
+    const date = new Date(
+        Date.UTC(today.year, today.month - 1, today.day - daysAgo),
+    );
+    const format = (options) =>
+        date.toLocaleDateString("en-US", { timeZone: "UTC", ...options });
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(date.getUTCDate()).padStart(2, "0");
+    const iso = `${date.getUTCFullYear()}-${month}-${day}`;
+    return {
+        daysAgo,
+        iso,
+        name: format({ month: "long", day: "numeric", year: "numeric" }),
+        banner: `${mediaBase}banner/${date.getUTCFullYear()}/${format({ month: "long" }).toLowerCase()}/daily-grace-${iso}.webp`,
+        video: `${mediaBase}banner/${date.getUTCFullYear()}/${format({ month: "long" }).toLowerCase()}/daily-grace-${iso}.mp4`,
+    };
 }
 
 // Whether the reader has swiped, and how many visits have shown the hint.
 // Storage can be refused (private mode); the hint then shows once per visit.
 function readHintState() {
-  try {
-    const stored = JSON.parse(localStorage.getItem(HINT_STORAGE_KEY));
-    return { swiped: stored?.swiped === true, shown: Number(stored?.shown) || 0 };
-  } catch {
-    return { swiped: false, shown: 0 };
-  }
+    try {
+        const stored = JSON.parse(localStorage.getItem(HINT_STORAGE_KEY));
+        return {
+            swiped: stored?.swiped === true,
+            shown: Number(stored?.shown) || 0,
+        };
+    } catch {
+        return { swiped: false, shown: 0 };
+    }
 }
 
 function writeHintState(state) {
-  try {
-    localStorage.setItem(HINT_STORAGE_KEY, JSON.stringify(state));
-  } catch {
-    // Unsaved, the hint may show again next visit.
-  }
+    try {
+        localStorage.setItem(HINT_STORAGE_KEY, JSON.stringify(state));
+    } catch {
+        // Unsaved, the hint may show again next visit.
+    }
 }
 
 export class BannerSlider extends HTMLElement {
-  static observedAttributes = ['media-base', 'verses-base', 'flipbook-href', 'past-days'];
+    static observedAttributes = [
+        "media-base",
+        "verses-base",
+        "flipbook-href",
+        "past-days",
+    ];
 
-  #root;
-  #headingText;
-  #symbol;
-  #stage;
-  #slide;
-  #banner;
-  #video;
-  #peek;
-  #flipbook;
-  #reflection;
-  #reflectionText;
-  #reflectionAction;
+    #root;
+    #headingText;
+    #symbol;
+    #stage;
+    #slide;
+    #banner;
+    #video;
+    #peek;
+    #flipbook;
+    #reflection;
+    #reflectionText;
+    #reflectionAction;
 
-  #today = manilaToday();
-  #dateTimer = 0;
-  #day = null;
-  // The swipeable days' verses by day name once they arrive; false if they
-  // could not be loaded.
-  #verses = null;
-  // The source and month files #verses was asked for.
-  #versesKey = null;
-  #preloaded = new Set();
-  #configurePending = false;
+    #today = manilaToday();
+    #dateTimer = 0;
+    #day = null;
+    // The swipeable days' verses by day name once they arrive; false if they
+    // could not be loaded.
+    #verses = null;
+    // The source and month files #verses was asked for.
+    #versesKey = null;
+    #preloaded = new Set();
+    #configurePending = false;
 
-  #drag = null;
-  #sliding = false;
-  #suppressClick = false;
-  #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    #drag = null;
+    #sliding = false;
+    #suppressClick = false;
+    #reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  // The swipe hint: 'idle' until connected, 'armed' while it waits to play,
-  // 'playing', then 'done' for the rest of the page's life.
-  #hint = 'idle';
-  #hintObserver = null;
-  #hintTimer = 0;
-  #hintAnimations = [];
+    // The swipe hint: 'idle' until connected, 'armed' while it waits to play,
+    // 'playing', then 'done' for the rest of the page's life.
+    #hint = "idle";
+    #hintObserver = null;
+    #hintTimer = 0;
+    #hintAnimations = [];
 
-  constructor() {
-    super();
-    this.#root = this.attachShadow({ mode: 'open' });
-    this.#root.innerHTML = `
+    constructor() {
+        super();
+        this.#root = this.attachShadow({ mode: "open" });
+        this.#root.innerHTML = `
       <style>${STYLES}</style>
       <h1 class="heading">
         <img class="symbol" alt="" width="36" height="36" hidden />
@@ -389,477 +408,631 @@ export class BannerSlider extends HTMLElement {
         <span class="reflection-text">Loading today's reflection…</span>
         <span class="reflection-action visually-hidden"></span>
       </button>`;
-    this.#headingText = this.#root.querySelector('.heading-text');
-    this.#symbol = this.#root.querySelector('.symbol');
-    this.#stage = this.#root.querySelector('.stage');
-    this.#slide = this.#root.querySelector('.slide');
-    this.#banner = this.#root.querySelector('.banner');
-    this.#video = this.#root.querySelector('.video');
-    this.#peek = this.#root.querySelector('.peek');
-    this.#flipbook = this.#root.querySelector('.flipbook');
-    this.#reflection = this.#root.querySelector('.reflection');
-    this.#reflectionText = this.#root.querySelector('.reflection-text');
-    this.#reflectionAction = this.#root.querySelector('.reflection-action');
+        this.#headingText = this.#root.querySelector(".heading-text");
+        this.#symbol = this.#root.querySelector(".symbol");
+        this.#stage = this.#root.querySelector(".stage");
+        this.#slide = this.#root.querySelector(".slide");
+        this.#banner = this.#root.querySelector(".banner");
+        this.#video = this.#root.querySelector(".video");
+        this.#peek = this.#root.querySelector(".peek");
+        this.#flipbook = this.#root.querySelector(".flipbook");
+        this.#reflection = this.#root.querySelector(".reflection");
+        this.#reflectionText = this.#root.querySelector(".reflection-text");
+        this.#reflectionAction = this.#root.querySelector(".reflection-action");
 
-    this.#symbol.addEventListener('load', () => { this.#symbol.hidden = false; });
-    this.#symbol.addEventListener('error', () => { this.#symbol.hidden = true; });
-    // The video shows only once it is playing the day on show; until then,
-    // or if it fails, the banner image beneath it does.
-    this.#video.muted = true;
-    this.#video.addEventListener('playing', () => {
-      if (this.#video.getAttribute('src') === this.#day?.video) this.#video.classList.add('playing');
-    });
-    this.#video.addEventListener('error', () => this.#video.classList.remove('playing'));
-    this.#reflection.addEventListener('click', () => {
-      this.#setExpanded(this.#reflection.getAttribute('aria-expanded') !== 'true');
-    });
-    this.#stage.addEventListener('pointerdown', (event) => this.#onPointerDown(event));
-    this.#stage.addEventListener('pointermove', (event) => this.#onPointerMove(event));
-    this.#stage.addEventListener('pointerup', (event) => this.#onPointerEnd(event));
-    this.#stage.addEventListener('pointercancel', (event) => this.#onPointerEnd(event));
-    // A swipe that ends on the Flipbook button is not a tap on it.
-    this.#stage.addEventListener('click', (event) => {
-      if (!this.#suppressClick) return;
-      event.preventDefault();
-      event.stopPropagation();
-    }, true);
-    this.#stage.addEventListener('keydown', (event) => {
-      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-      event.preventDefault();
-      if (event.key === 'ArrowLeft') this.previous();
-      else this.next();
-    });
-  }
-
-  connectedCallback() {
-    this.#scheduleConfigure();
-    this.#armHint();
-    this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
-    document.addEventListener('visibilitychange', this.#checkDate);
-  }
-
-  disconnectedCallback() {
-    this.#stopHint();
-    clearInterval(this.#dateTimer);
-    document.removeEventListener('visibilitychange', this.#checkDate);
-  }
-
-  // Past midnight in Manila, today's banner gives way to the new day's. An
-  // earlier day stays on show, now one more day back, as far as past-days
-  // allows. Background tabs throttle the timer, so coming back into view
-  // checks too.
-  #checkDate = () => {
-    if (document.hidden || this.#sliding || this.#drag) return;
-    const today = manilaToday();
-    const elapsed = Math.round(
-      (Date.UTC(today.year, today.month - 1, today.day) -
-        Date.UTC(this.#today.year, this.#today.month - 1, this.#today.day)) / DAY_MS,
-    );
-    if (!elapsed) return;
-    this.#today = today;
-    this.#preloaded.clear();
-    const daysAgo = this.daysAgo ? Math.min(Math.max(this.daysAgo + elapsed, 0), this.#pastDays) : 0;
-    this.#show(daysAgo);
-    this.#refreshVerses();
-  };
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue !== newValue && this.isConnected) this.#scheduleConfigure();
-  }
-
-  get daysAgo() {
-    return this.#day?.daysAgo ?? 0;
-  }
-
-  get date() {
-    return this.#day?.iso ?? devotionalDay(this.#today, 0, this.#mediaBase).iso;
-  }
-
-  /** Step back a day, sliding the earlier one in from the left. */
-  previous() {
-    return this.#step(-1);
-  }
-
-  /** Step forward a day, toward today. */
-  next() {
-    return this.#step(1);
-  }
-
-  /** Show the day `daysAgo` days before today at once, clamped to the range. */
-  goTo(daysAgo) {
-    const target = Math.min(Math.max(Math.round(Number(daysAgo) || 0), 0), this.#pastDays);
-    this.#stopHint();
-    this.#show(target);
-  }
-
-  get #mediaBase() {
-    const base = this.getAttribute('media-base') || DEFAULT_MEDIA_BASE;
-    return base.endsWith('/') ? base : `${base}/`;
-  }
-
-  get #pastDays() {
-    const days = Number.parseInt(this.getAttribute('past-days') ?? '', 10);
-    return Number.isFinite(days) && days >= 0 ? days : DEFAULT_PAST_DAYS;
-  }
-
-  // Upgrade fires attributeChangedCallback per attribute, then connectedCallback;
-  // coalesce them into a single configure.
-  #scheduleConfigure() {
-    if (this.#configurePending) return;
-    this.#configurePending = true;
-    queueMicrotask(() => {
-      this.#configurePending = false;
-      this.#configure();
-    });
-  }
-
-  #configure() {
-    this.#preloaded.clear();
-    this.#show(Math.min(this.daysAgo, this.#pastDays));
-    this.#refreshVerses();
-  }
-
-  // Load the month files the swipeable days fall in, which change when the
-  // range crosses into a new month. Only a new source goes back to
-  // "Loading…"; a month joining at midnight leaves the day shown as it is.
-  #refreshVerses() {
-    const base = new URL(this.getAttribute('verses-base') || DEFAULT_VERSES_BASE, document.baseURI).href;
-    const names = Array.from({ length: this.#pastDays + 1 },
-      (_, daysAgo) => devotionalDay(this.#today, daysAgo, this.#mediaBase).name);
-    const key = [base, ...new Set(names.map((name) => versesFileUrl(base, name)))].join('|');
-    if (key === this.#versesKey) return;
-    if (!this.#versesKey?.startsWith(`${base}|`)) {
-      this.#verses = null;
-      this.#showVerse();
-    }
-    this.#versesKey = key;
-    this.#loadVerses(base, names, key);
-  }
-
-  async #loadVerses(base, names, key) {
-    let verses;
-    try {
-      verses = await loadVerses(base, names);
-    } catch (error) {
-      console.warn('Daily Grace reflections could not be loaded:', error);
-      verses = false;
-    }
-    if (key !== this.#versesKey) return;
-    this.#verses = verses;
-    this.#showVerse();
-    this.#emitDay();
-  }
-
-  #show(daysAgo) {
-    const day = devotionalDay(this.#today, daysAgo, this.#mediaBase);
-    this.#day = day;
-    this.#banner.src = day.banner;
-    this.#banner.alt = `Daily Grace devotional for ${day.name}`;
-    this.#showVideo(day);
-    this.#headingText.textContent = daysAgo
-      ? `Your Daily Grace for ${day.name.replace(/, \d+$/, '')}`
-      : 'Your Daily Grace Today';
-
-    // An earlier day opens the Flipbook on the week that day belongs to.
-    const href = this.getAttribute('flipbook-href') || DEFAULT_FLIPBOOK_HREF;
-    let link = href;
-    if (daysAgo) {
-      const url = new URL(href, document.baseURI);
-      url.searchParams.set('date', day.iso);
-      link = url.href;
-    }
-    const label = daysAgo
-      ? `Open the Flipbook for the week of ${day.name}`
-      : "Open this week's Flipbook";
-    this.#flipbook.href = link;
-    this.#flipbook.setAttribute('aria-label', label);
-    this.#flipbook.title = label;
-
-    this.#showVerse();
-    this.#preloadAround(day.banner, daysAgo);
-    this.#emitDay();
-  }
-
-  // Play the day's video over its banner, if it has one. A missing file, or a
-  // browser that refuses to autoplay, leaves the banner image showing.
-  #showVideo(day) {
-    const video = this.#video;
-    video.classList.remove('playing');
-    if (this.#reducedMotion.matches) {
-      if (video.hasAttribute('src')) {
-        video.removeAttribute('src');
-        video.load();
-      }
-      return;
-    }
-    if (video.getAttribute('src') === day.video) {
-      video.play().catch(() => {});
-      return;
-    }
-    video.src = day.video;
-    video.play().catch(() => {});
-  }
-
-  #verseFor(day) {
-    return this.#verses ? this.#verses.get(day.name) ?? null : null;
-  }
-
-  #showVerse() {
-    const verse = this.#day && this.#verseFor(this.#day);
-    if (verse) {
-      const book = verse.verse.replace(/\s+\d.*$/, '').trim();
-      const symbol = bookSymbolUrl(this.#mediaBase, book);
-      if (this.#symbol.getAttribute('src') !== symbol) this.#symbol.src = symbol;
-      this.#reflectionText.textContent = verse.reflection;
-      this.#reflection.disabled = false;
-      this.#setExpanded(false);
-      return;
-    }
-    this.#symbol.hidden = true;
-    this.#symbol.removeAttribute('src');
-    this.#reflection.disabled = true;
-    this.#reflection.setAttribute('aria-expanded', 'false');
-    this.#reflectionAction.textContent = '';
-    this.#reflectionText.textContent =
-      this.#verses === null ? "Loading today's reflection…"
-      : this.#verses === false ? "Today's reflection is unavailable. Please try again later."
-      : "This day's reflection is unavailable.";
-  }
-
-  #setExpanded(expanded) {
-    this.#reflection.setAttribute('aria-expanded', String(expanded));
-    this.#reflectionAction.textContent = expanded ? 'Collapse reflection' : 'Expand reflection';
-  }
-
-  #emitDay() {
-    const day = this.#day;
-    this.dispatchEvent(new CustomEvent('daychange', {
-      detail: { daysAgo: day.daysAgo, date: day.iso, name: day.name, verse: this.#verseFor(day) },
-      bubbles: true,
-      composed: true,
-    }));
-  }
-
-  // Warm the cache for the banners one swipe away, so they are ready to slide
-  // in. They wait for the banner on show, and then ask for little, so they
-  // never hold up the day being read or the poster below it.
-  #preloadAround(banner, daysAgo) {
-    this.#banner.decode().catch(() => {}).then(() => {
-      if (this.#day?.banner !== banner) return; // the reader has moved on
-      this.#preload(daysAgo + 1);
-      this.#preload(daysAgo - 1);
-    });
-  }
-
-  #preload(daysAgo) {
-    if (daysAgo < 0 || daysAgo > this.#pastDays) return;
-    const { banner } = devotionalDay(this.#today, daysAgo, this.#mediaBase);
-    if (this.#preloaded.has(banner)) return;
-    this.#preloaded.add(banner);
-    const image = new Image();
-    image.fetchPriority = 'low';
-    image.src = banner;
-  }
-
-  /* ----- Sliding ----- */
-
-  // -1 steps back a day, +1 steps forward.
-  #canStep(step) {
-    const target = this.daysAgo - step;
-    return target >= 0 && target <= this.#pastDays;
-  }
-
-  #setOffset(px) {
-    this.#slide.style.transform = px ? `translateX(${px}px)` : '';
-  }
-
-  async #step(step, fromOffset = 0) {
-    if (this.#sliding || !this.#canStep(step)) return;
-    // The reader has found the swipe; the hint is not needed again.
-    this.#stopHint();
-    const hint = readHintState();
-    if (!hint.swiped) writeHintState({ ...hint, swiped: true });
-    const target = this.daysAgo - step;
-    if (this.#reducedMotion.matches) {
-      this.#setOffset(0);
-      this.#show(target);
-      return;
-    }
-    this.#sliding = true;
-    // Stepping back carries the old banner off to the right and brings the
-    // earlier day in from the left, the way a swipe to the right pulls it in.
-    const away = (step < 0 ? 1 : -1) * this.#stage.clientWidth;
-    const leaving = this.#slide.animate(
-      [
-        { transform: `translateX(${fromOffset}px)`, opacity: 1 },
-        { transform: `translateX(${away}px)`, opacity: 0 },
-      ],
-      { duration: 180, easing: 'cubic-bezier(.4, 0, 1, 1)', fill: 'forwards' },
-    );
-    await leaving.finished.catch(() => {});
-    this.#setOffset(0);
-    this.#show(target);
-    // Hold the new banner off stage until it can be drawn, so it never slides
-    // in half loaded, but only briefly: on a slow connection the reader keeps
-    // swiping and the banner fills in where it lands. A missing banner still
-    // comes in, showing its alt text.
-    await Promise.race([
-      this.#banner.decode().catch(() => {}),
-      new Promise((resolve) => setTimeout(resolve, DECODE_WAIT)),
-    ]);
-    leaving.cancel();
-    await this.#slide.animate(
-      [
-        { transform: `translateX(${-away}px)`, opacity: 0 },
-        { transform: 'none', opacity: 1 },
-      ],
-      { duration: 280, easing: 'cubic-bezier(.2, .9, .25, 1)' },
-    ).finished.catch(() => {});
-    this.#sliding = false;
-  }
-
-  #snapBack(fromOffset) {
-    this.#setOffset(0);
-    if (!fromOffset || this.#reducedMotion.matches) return;
-    this.#slide.animate(
-      [{ transform: `translateX(${fromOffset}px)` }, { transform: 'none' }],
-      { duration: 220, easing: 'cubic-bezier(.2, .9, .25, 1)' },
-    );
-  }
-
-  /* ----- Swipe hint ----- */
-
-  // Wait for the banner to be mostly on screen, then play the hint once.
-  #armHint() {
-    if (this.#hint !== 'idle' || this.#reducedMotion.matches || !this.#pastDays) return;
-    const { swiped, shown } = readHintState();
-    if (swiped || shown >= HINT_LIMIT) return;
-    this.#hint = 'armed';
-    // Scrolled away before the delay is up, it waits for the next time.
-    this.#hintObserver = new IntersectionObserver(([entry]) => {
-      clearTimeout(this.#hintTimer);
-      if (entry.isIntersecting) this.#hintTimer = setTimeout(() => this.#playHint(), HINT_DELAY);
-    }, { threshold: 0.6 });
-    this.#hintObserver.observe(this.#stage);
-  }
-
-  #stopHint() {
-    this.#hint = 'done';
-    this.#hintObserver?.disconnect();
-    this.#hintObserver = null;
-    clearTimeout(this.#hintTimer);
-    for (const animation of this.#hintAnimations) animation.cancel();
-    this.#hintAnimations = [];
-    this.#peek.classList.remove('showing');
-  }
-
-  // True while something else, such as the trivia quiz, sits over the banner.
-  // A dialog in another component's shadow root is found as that component.
-  #covered() {
-    const box = this.#stage.getBoundingClientRect();
-    return document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2) !== this;
-  }
-
-  // Today's banner nudges right, pulling yesterday's in from the left edge,
-  // and springs back: the first part of a swipe, played for the reader.
-  async #playHint() {
-    if (this.#hint !== 'armed') return;
-    // Only on today, and only while nothing else is moving the banner.
-    if (this.daysAgo !== 0 || this.#sliding || this.#drag) {
-      this.#stopHint();
-      return;
-    }
-    if (document.hidden || this.#covered()) {
-      this.#hintTimer = setTimeout(() => this.#playHint(), HINT_RETRY);
-      return;
-    }
-    this.#hint = 'playing';
-    this.#hintObserver.disconnect();
-    this.#hintObserver = null;
-
-    const yesterday = devotionalDay(this.#today, 1, this.#mediaBase).banner;
-    if (this.#peek.getAttribute('src') !== yesterday) this.#peek.src = yesterday;
-    const [today, peek] = await Promise.allSettled([this.#banner.decode(), this.#peek.decode()]);
-    // A touch while the banners decoded has already stopped the hint. With no
-    // banner for today there is nothing to nudge; with none for yesterday the
-    // nudge still shows that the banner moves.
-    if (this.#hint !== 'playing') return;
-    if (today.status === 'rejected') {
-      this.#stopHint();
-      return;
+        this.#symbol.addEventListener("load", () => {
+            this.#symbol.hidden = false;
+        });
+        this.#symbol.addEventListener("error", () => {
+            this.#symbol.hidden = true;
+        });
+        // The video shows only once it is playing the day on show; until then,
+        // or if it fails, the banner image beneath it does.
+        this.#video.muted = true;
+        this.#video.addEventListener("playing", () => {
+            if (this.#video.getAttribute("src") === this.#day?.video) {
+                this.#video.classList.add("playing");
+            }
+        });
+        this.#video.addEventListener("error", () =>
+            this.#video.classList.remove("playing"),
+        );
+        this.#reflection.addEventListener("click", () => {
+            this.#setExpanded(
+                this.#reflection.getAttribute("aria-expanded") !== "true",
+            );
+        });
+        this.#stage.addEventListener("pointerdown", (event) =>
+            this.#onPointerDown(event),
+        );
+        this.#stage.addEventListener("pointermove", (event) =>
+            this.#onPointerMove(event),
+        );
+        this.#stage.addEventListener("pointerup", (event) =>
+            this.#onPointerEnd(event),
+        );
+        this.#stage.addEventListener("pointercancel", (event) =>
+            this.#onPointerEnd(event),
+        );
+        // A swipe that ends on the Flipbook button is not a tap on it.
+        this.#stage.addEventListener(
+            "click",
+            (event) => {
+                if (!this.#suppressClick) {
+                    return;
+                }
+                event.preventDefault();
+                event.stopPropagation();
+            },
+            true,
+        );
+        this.#stage.addEventListener("keydown", (event) => {
+            if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+                return;
+            }
+            event.preventDefault();
+            if (event.key === "ArrowLeft") {
+                this.previous();
+            } else {
+                this.next();
+            }
+        });
     }
 
-    const width = this.#banner.offsetWidth;
-    const nudge = Math.round(Math.min(Math.max(width * 0.14, 48), 140));
-    const frames = (from) => [
-      { transform: `translateX(${from}px)`, easing: 'cubic-bezier(.3, 0, .2, 1)' },
-      { transform: `translateX(${from + nudge}px)`, offset: 0.4 },
-      { transform: `translateX(${from + nudge}px)`, offset: 0.55, easing: 'cubic-bezier(.34, 1.56, .64, 1)' },
-      { transform: `translateX(${from}px)` },
-    ];
-    const timing = { duration: 1400 };
-    this.#hintAnimations = [this.#slide.animate(frames(0), timing)];
-    if (peek.status === 'fulfilled') {
-      this.#peek.classList.add('showing');
-      this.#hintAnimations.push(this.#peek.animate(frames(-(width + PEEK_GAP)), timing));
+    connectedCallback() {
+        this.#scheduleConfigure();
+        this.#armHint();
+        this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
+        document.addEventListener("visibilitychange", this.#checkDate);
     }
-    const state = readHintState();
-    writeHintState({ ...state, shown: state.shown + 1 });
 
-    await Promise.all(this.#hintAnimations.map((animation) => animation.finished)).catch(() => {});
-    if (this.#hint === 'playing') this.#stopHint();
-  }
+    disconnectedCallback() {
+        this.#stopHint();
+        clearInterval(this.#dateTimer);
+        document.removeEventListener("visibilitychange", this.#checkDate);
+    }
 
-  /* ----- Swiping ----- */
+    // Past midnight in Manila, today's banner gives way to the new day's. An
+    // earlier day stays on show, now one more day back, as far as past-days
+    // allows. Background tabs throttle the timer, so coming back into view
+    // checks too.
+    #checkDate = () => {
+        if (document.hidden || this.#sliding || this.#drag) {
+            return;
+        }
+        const today = manilaToday();
+        const elapsed = Math.round(
+            (Date.UTC(today.year, today.month - 1, today.day) -
+                Date.UTC(
+                    this.#today.year,
+                    this.#today.month - 1,
+                    this.#today.day,
+                )) /
+                DAY_MS,
+        );
+        if (!elapsed) {
+            return;
+        }
+        this.#today = today;
+        this.#preloaded.clear();
+        const daysAgo = this.daysAgo
+            ? Math.min(Math.max(this.daysAgo + elapsed, 0), this.#pastDays)
+            : 0;
+        this.#show(daysAgo);
+        this.#refreshVerses();
+    };
 
-  // The reader's finger is followed only once a press has clearly moved
-  // sideways; an upward or downward one is left to scroll the page.
-  #onPointerDown(event) {
-    // A touch mid-hint takes over from it.
-    this.#stopHint();
-    if (this.#sliding || !event.isPrimary || event.button !== 0) return;
-    this.#drag = { id: event.pointerId, x: event.clientX, y: event.clientY, offset: 0, active: false };
-  }
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue && this.isConnected) {
+            this.#scheduleConfigure();
+        }
+    }
 
-  #onPointerMove(event) {
-    const drag = this.#drag;
-    if (!drag || event.pointerId !== drag.id) return;
-    const dx = event.clientX - drag.x;
-    const dy = event.clientY - drag.y;
-    if (!drag.active) {
-      if (Math.abs(dx) < DRAG_SLOP && Math.abs(dy) < DRAG_SLOP) return;
-      if (Math.abs(dy) >= Math.abs(dx)) {
+    get daysAgo() {
+        return this.#day?.daysAgo ?? 0;
+    }
+
+    get date() {
+        return (
+            this.#day?.iso ?? devotionalDay(this.#today, 0, this.#mediaBase).iso
+        );
+    }
+
+    /** Step back a day, sliding the earlier one in from the left. */
+    previous() {
+        return this.#step(-1);
+    }
+
+    /** Step forward a day, toward today. */
+    next() {
+        return this.#step(1);
+    }
+
+    get #mediaBase() {
+        const base = this.getAttribute("media-base") || DEFAULT_MEDIA_BASE;
+        return base.endsWith("/") ? base : `${base}/`;
+    }
+
+    get #pastDays() {
+        const days = Number.parseInt(this.getAttribute("past-days") ?? "", 10);
+        return Number.isFinite(days) && days >= 0 ? days : DEFAULT_PAST_DAYS;
+    }
+
+    // Upgrade fires attributeChangedCallback per attribute, then connectedCallback;
+    // coalesce them into a single configure.
+    #scheduleConfigure() {
+        if (this.#configurePending) {
+            return;
+        }
+        this.#configurePending = true;
+        queueMicrotask(() => {
+            this.#configurePending = false;
+            this.#configure();
+        });
+    }
+
+    #configure() {
+        this.#preloaded.clear();
+        this.#show(Math.min(this.daysAgo, this.#pastDays));
+        this.#refreshVerses();
+    }
+
+    // Load the month files the swipeable days fall in, which change when the
+    // range crosses into a new month. Only a new source goes back to
+    // "Loading…"; a month joining at midnight leaves the day shown as it is.
+    #refreshVerses() {
+        const base = new URL(
+            this.getAttribute("verses-base") || DEFAULT_VERSES_BASE,
+            document.baseURI,
+        ).href;
+        const names = Array.from(
+            { length: this.#pastDays + 1 },
+            (_, daysAgo) =>
+                devotionalDay(this.#today, daysAgo, this.#mediaBase).name,
+        );
+        const key = [
+            base,
+            ...new Set(names.map((name) => versesFileUrl(base, name))),
+        ].join("|");
+        if (key === this.#versesKey) {
+            return;
+        }
+        if (!this.#versesKey?.startsWith(`${base}|`)) {
+            this.#verses = null;
+            this.#showVerse();
+        }
+        this.#versesKey = key;
+        this.#loadVerses(base, names, key);
+    }
+
+    async #loadVerses(base, names, key) {
+        let verses;
+        try {
+            verses = await loadVerses(base, names);
+        } catch (error) {
+            console.warn("Daily Grace reflections could not be loaded:", error);
+            verses = false;
+        }
+        if (key !== this.#versesKey) {
+            return;
+        }
+        this.#verses = verses;
+        this.#showVerse();
+        this.#emitDay();
+    }
+
+    #show(daysAgo) {
+        const day = devotionalDay(this.#today, daysAgo, this.#mediaBase);
+        this.#day = day;
+        this.#banner.src = day.banner;
+        this.#banner.alt = `Daily Grace devotional for ${day.name}`;
+        this.#showVideo(day);
+        this.#headingText.textContent = daysAgo
+            ? `Your Daily Grace for ${day.name.replace(/, \d+$/, "")}`
+            : "Your Daily Grace Today";
+
+        // An earlier day opens the Flipbook on the week that day belongs to.
+        const href =
+            this.getAttribute("flipbook-href") || DEFAULT_FLIPBOOK_HREF;
+        let link = href;
+        if (daysAgo) {
+            const url = new URL(href, document.baseURI);
+            url.searchParams.set("date", day.iso);
+            link = url.href;
+        }
+        const label = daysAgo
+            ? `Open the Flipbook for the week of ${day.name}`
+            : "Open this week's Flipbook";
+        this.#flipbook.href = link;
+        this.#flipbook.setAttribute("aria-label", label);
+        this.#flipbook.title = label;
+
+        this.#showVerse();
+        this.#preloadAround(day.banner, daysAgo);
+        this.#emitDay();
+    }
+
+    // Play the day's video over its banner, if it has one. A missing file, or a
+    // browser that refuses to autoplay, leaves the banner image showing.
+    #showVideo(day) {
+        const video = this.#video;
+        video.classList.remove("playing");
+        if (this.#reducedMotion.matches) {
+            if (video.hasAttribute("src")) {
+                video.removeAttribute("src");
+                video.load();
+            }
+            return;
+        }
+        if (video.getAttribute("src") === day.video) {
+            video.play().catch(() => {});
+            return;
+        }
+        video.src = day.video;
+        video.play().catch(() => {});
+    }
+
+    #verseFor(day) {
+        return this.#verses ? (this.#verses.get(day.name) ?? null) : null;
+    }
+
+    #showVerse() {
+        const verse = this.#day && this.#verseFor(this.#day);
+        if (verse) {
+            const book = verse.verse.replace(/\s+\d.*$/, "").trim();
+            const symbol = bookSymbolUrl(this.#mediaBase, book);
+            if (this.#symbol.getAttribute("src") !== symbol) {
+                this.#symbol.src = symbol;
+            }
+            this.#reflectionText.textContent = verse.reflection;
+            this.#reflection.disabled = false;
+            this.#setExpanded(false);
+            return;
+        }
+        this.#symbol.hidden = true;
+        this.#symbol.removeAttribute("src");
+        this.#reflection.disabled = true;
+        this.#reflection.setAttribute("aria-expanded", "false");
+        this.#reflectionAction.textContent = "";
+        this.#reflectionText.textContent =
+            this.#verses === null
+                ? "Loading today's reflection…"
+                : this.#verses === false
+                  ? "Today's reflection is unavailable. Please try again later."
+                  : "This day's reflection is unavailable.";
+    }
+
+    #setExpanded(expanded) {
+        this.#reflection.setAttribute("aria-expanded", String(expanded));
+        this.#reflectionAction.textContent = expanded
+            ? "Collapse reflection"
+            : "Expand reflection";
+    }
+
+    #emitDay() {
+        const day = this.#day;
+        this.dispatchEvent(
+            new CustomEvent("daychange", {
+                detail: {
+                    daysAgo: day.daysAgo,
+                    date: day.iso,
+                    name: day.name,
+                    verse: this.#verseFor(day),
+                },
+                bubbles: true,
+                composed: true,
+            }),
+        );
+    }
+
+    // Warm the cache for the banners one swipe away, so they are ready to slide
+    // in. They wait for the banner on show, and then ask for little, so they
+    // never hold up the day being read or the poster below it.
+    #preloadAround(banner, daysAgo) {
+        this.#banner
+            .decode()
+            .catch(() => {})
+            .then(() => {
+                if (this.#day?.banner !== banner) {
+                    return;
+                } // the reader has moved on
+                this.#preload(daysAgo + 1);
+                this.#preload(daysAgo - 1);
+            });
+    }
+
+    #preload(daysAgo) {
+        if (daysAgo < 0 || daysAgo > this.#pastDays) {
+            return;
+        }
+        const { banner } = devotionalDay(this.#today, daysAgo, this.#mediaBase);
+        if (this.#preloaded.has(banner)) {
+            return;
+        }
+        this.#preloaded.add(banner);
+        const image = new Image();
+        image.fetchPriority = "low";
+        image.src = banner;
+    }
+
+    /* ----- Sliding ----- */
+
+    // -1 steps back a day, +1 steps forward.
+    #canStep(step) {
+        const target = this.daysAgo - step;
+        return target >= 0 && target <= this.#pastDays;
+    }
+
+    #setOffset(px) {
+        this.#slide.style.transform = px ? `translateX(${px}px)` : "";
+    }
+
+    async #step(step, fromOffset = 0) {
+        if (this.#sliding || !this.#canStep(step)) {
+            return;
+        }
+        // The reader has found the swipe; the hint is not needed again.
+        this.#stopHint();
+        const hint = readHintState();
+        if (!hint.swiped) {
+            writeHintState({ ...hint, swiped: true });
+        }
+        const target = this.daysAgo - step;
+        if (this.#reducedMotion.matches) {
+            this.#setOffset(0);
+            this.#show(target);
+            return;
+        }
+        this.#sliding = true;
+        // Stepping back carries the old banner off to the right and brings the
+        // earlier day in from the left, the way a swipe to the right pulls it in.
+        const away = (step < 0 ? 1 : -1) * this.#stage.clientWidth;
+        const leaving = this.#slide.animate(
+            [
+                { transform: `translateX(${fromOffset}px)`, opacity: 1 },
+                { transform: `translateX(${away}px)`, opacity: 0 },
+            ],
+            {
+                duration: 180,
+                easing: "cubic-bezier(.4, 0, 1, 1)",
+                fill: "forwards",
+            },
+        );
+        await leaving.finished.catch(() => {});
+        this.#setOffset(0);
+        this.#show(target);
+        // Hold the new banner off stage until it can be drawn, so it never slides
+        // in half loaded, but only briefly: on a slow connection the reader keeps
+        // swiping and the banner fills in where it lands. A missing banner still
+        // comes in, showing its alt text.
+        await Promise.race([
+            this.#banner.decode().catch(() => {}),
+            new Promise((resolve) => setTimeout(resolve, DECODE_WAIT)),
+        ]);
+        leaving.cancel();
+        await this.#slide
+            .animate(
+                [
+                    { transform: `translateX(${-away}px)`, opacity: 0 },
+                    { transform: "none", opacity: 1 },
+                ],
+                { duration: 280, easing: "cubic-bezier(.2, .9, .25, 1)" },
+            )
+            .finished.catch(() => {});
+        this.#sliding = false;
+    }
+
+    #snapBack(fromOffset) {
+        this.#setOffset(0);
+        if (!fromOffset || this.#reducedMotion.matches) {
+            return;
+        }
+        this.#slide.animate(
+            [
+                { transform: `translateX(${fromOffset}px)` },
+                { transform: "none" },
+            ],
+            { duration: 220, easing: "cubic-bezier(.2, .9, .25, 1)" },
+        );
+    }
+
+    /* ----- Swipe hint ----- */
+
+    // Wait for the banner to be mostly on screen, then play the hint once.
+    #armHint() {
+        if (
+            this.#hint !== "idle" ||
+            this.#reducedMotion.matches ||
+            !this.#pastDays
+        ) {
+            return;
+        }
+        const { swiped, shown } = readHintState();
+        if (swiped || shown >= HINT_LIMIT) {
+            return;
+        }
+        this.#hint = "armed";
+        // Scrolled away before the delay is up, it waits for the next time.
+        this.#hintObserver = new IntersectionObserver(
+            ([entry]) => {
+                clearTimeout(this.#hintTimer);
+                if (entry.isIntersecting) {
+                    this.#hintTimer = setTimeout(
+                        () => this.#playHint(),
+                        HINT_DELAY,
+                    );
+                }
+            },
+            { threshold: 0.6 },
+        );
+        this.#hintObserver.observe(this.#stage);
+    }
+
+    #stopHint() {
+        this.#hint = "done";
+        this.#hintObserver?.disconnect();
+        this.#hintObserver = null;
+        clearTimeout(this.#hintTimer);
+        for (const animation of this.#hintAnimations) {
+            animation.cancel();
+        }
+        this.#hintAnimations = [];
+        this.#peek.classList.remove("showing");
+    }
+
+    // True while something else, such as the trivia quiz, sits over the banner.
+    // A dialog in another component's shadow root is found as that component.
+    #covered() {
+        const box = this.#stage.getBoundingClientRect();
+        return (
+            document.elementFromPoint(
+                box.left + box.width / 2,
+                box.top + box.height / 2,
+            ) !== this
+        );
+    }
+
+    // Today's banner nudges right, pulling yesterday's in from the left edge,
+    // and springs back: the first part of a swipe, played for the reader.
+    async #playHint() {
+        if (this.#hint !== "armed") {
+            return;
+        }
+        // Only on today, and only while nothing else is moving the banner.
+        if (this.daysAgo !== 0 || this.#sliding || this.#drag) {
+            this.#stopHint();
+            return;
+        }
+        if (document.hidden || this.#covered()) {
+            this.#hintTimer = setTimeout(() => this.#playHint(), HINT_RETRY);
+            return;
+        }
+        this.#hint = "playing";
+        this.#hintObserver.disconnect();
+        this.#hintObserver = null;
+
+        const yesterday = devotionalDay(this.#today, 1, this.#mediaBase).banner;
+        if (this.#peek.getAttribute("src") !== yesterday) {
+            this.#peek.src = yesterday;
+        }
+        const [today, peek] = await Promise.allSettled([
+            this.#banner.decode(),
+            this.#peek.decode(),
+        ]);
+        // A touch while the banners decoded has already stopped the hint. With no
+        // banner for today there is nothing to nudge; with none for yesterday the
+        // nudge still shows that the banner moves.
+        if (this.#hint !== "playing") {
+            return;
+        }
+        if (today.status === "rejected") {
+            this.#stopHint();
+            return;
+        }
+
+        const width = this.#banner.offsetWidth;
+        const nudge = Math.round(Math.min(Math.max(width * 0.14, 48), 140));
+        const frames = (from) => [
+            {
+                transform: `translateX(${from}px)`,
+                easing: "cubic-bezier(.3, 0, .2, 1)",
+            },
+            { transform: `translateX(${from + nudge}px)`, offset: 0.4 },
+            {
+                transform: `translateX(${from + nudge}px)`,
+                offset: 0.55,
+                easing: "cubic-bezier(.34, 1.56, .64, 1)",
+            },
+            { transform: `translateX(${from}px)` },
+        ];
+        const timing = { duration: 1400 };
+        this.#hintAnimations = [this.#slide.animate(frames(0), timing)];
+        if (peek.status === "fulfilled") {
+            this.#peek.classList.add("showing");
+            this.#hintAnimations.push(
+                this.#peek.animate(frames(-(width + PEEK_GAP)), timing),
+            );
+        }
+        const state = readHintState();
+        writeHintState({ ...state, shown: state.shown + 1 });
+
+        await Promise.all(
+            this.#hintAnimations.map((animation) => animation.finished),
+        ).catch(() => {});
+        if (this.#hint === "playing") {
+            this.#stopHint();
+        }
+    }
+
+    /* ----- Swiping ----- */
+
+    // The reader's finger is followed only once a press has clearly moved
+    // sideways; an upward or downward one is left to scroll the page.
+    #onPointerDown(event) {
+        // A touch mid-hint takes over from it.
+        this.#stopHint();
+        if (this.#sliding || !event.isPrimary || event.button !== 0) {
+            return;
+        }
+        this.#drag = {
+            id: event.pointerId,
+            x: event.clientX,
+            y: event.clientY,
+            offset: 0,
+            active: false,
+        };
+    }
+
+    #onPointerMove(event) {
+        const drag = this.#drag;
+        if (!drag || event.pointerId !== drag.id) {
+            return;
+        }
+        const dx = event.clientX - drag.x;
+        const dy = event.clientY - drag.y;
+        if (!drag.active) {
+            if (Math.abs(dx) < DRAG_SLOP && Math.abs(dy) < DRAG_SLOP) {
+                return;
+            }
+            if (Math.abs(dy) >= Math.abs(dx)) {
+                this.#drag = null;
+                return;
+            }
+            drag.active = true;
+            this.#stage.setPointerCapture(event.pointerId);
+            this.#stage.classList.add("dragging");
+        }
+        // Pulling toward a day that is not there gives a little, then resists.
+        const step = dx > 0 ? -1 : 1;
+        drag.offset = this.#canStep(step) ? dx : dx / 4;
+        this.#setOffset(drag.offset);
+    }
+
+    #onPointerEnd(event) {
+        const drag = this.#drag;
+        if (!drag || event.pointerId !== drag.id) {
+            return;
+        }
         this.#drag = null;
-        return;
-      }
-      drag.active = true;
-      this.#stage.setPointerCapture(event.pointerId);
-      this.#stage.classList.add('dragging');
+        if (!drag.active) {
+            return;
+        }
+        this.#stage.classList.remove("dragging");
+        this.#suppressClick = true;
+        setTimeout(() => {
+            this.#suppressClick = false;
+        });
+        const step = drag.offset > 0 ? -1 : 1;
+        const far =
+            Math.abs(drag.offset) >= this.#stage.clientWidth * SWIPE_SHARE;
+        if (event.type === "pointerup" && far && this.#canStep(step)) {
+            this.#step(step, drag.offset);
+        } else {
+            this.#snapBack(drag.offset);
+        }
     }
-    // Pulling toward a day that is not there gives a little, then resists.
-    const step = dx > 0 ? -1 : 1;
-    drag.offset = this.#canStep(step) ? dx : dx / 4;
-    this.#setOffset(drag.offset);
-  }
-
-  #onPointerEnd(event) {
-    const drag = this.#drag;
-    if (!drag || event.pointerId !== drag.id) return;
-    this.#drag = null;
-    if (!drag.active) return;
-    this.#stage.classList.remove('dragging');
-    this.#suppressClick = true;
-    setTimeout(() => { this.#suppressClick = false; });
-    const step = drag.offset > 0 ? -1 : 1;
-    const far = Math.abs(drag.offset) >= this.#stage.clientWidth * SWIPE_SHARE;
-    if (event.type === 'pointerup' && far && this.#canStep(step)) {
-      this.#step(step, drag.offset);
-    } else {
-      this.#snapBack(drag.offset);
-    }
-  }
 }
 
-if (!customElements.get('banner-slider')) {
-  customElements.define('banner-slider', BannerSlider);
+if (!customElements.get("banner-slider")) {
+    customElements.define("banner-slider", BannerSlider);
 }

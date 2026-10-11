@@ -15,7 +15,10 @@
         <meta property="og:site_name" content="Daily Grace" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:url" content="https://dailygrace.faith/" />
-        <meta property="og:title" content="Grace for Today • Our Faith Tomorrow" />
+        <meta
+            property="og:title"
+            content="Grace for Today • Our Faith Tomorrow"
+        />
         <meta
             property="og:description"
             content="A simple place to pause, reflect, and draw closer to God each day. Each day brings a Bible verse, a short reflection, and an encouraging message to remind us that God's grace is sufficient for today and that there is always hope for tomorrow."
@@ -23,24 +26,47 @@
         <!-- Today's banner: assets/scripts/update-social-image.mjs sets it on each deploy, so keep this one og:image tag. -->
         <meta
             property="og:image"
-            content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-10.webp"
+            content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-11.webp"
         />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:width" content="1920" />
         <meta property="og:image:height" content="1024" />
-        <meta property="og:image:alt" content="Today's Daily Grace banner, with the verse of the day" />
+        <meta
+            property="og:image:alt"
+            content="Today's Daily Grace banner, with the verse of the day"
+        />
         <!-- X uses og:image for its large card. -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="theme-color" content="#001b34" />
 
         <title>Grace for Today • Our Faith Tomorrow</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+        <link
+            rel="apple-touch-icon"
+            href="assets/images/apple-touch-icon.png"
+        />
         <link rel="stylesheet" href="assets/styles/styles.css?v=20261010-4" />
-        <link rel="preload" href="assets/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="preload" href="assets/fonts/Strait-Regular.woff2" as="font" type="font/woff2" crossorigin />
+        <link
+            rel="preload"
+            href="assets/fonts/Roboto-Variable.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="assets/fonts/Strait-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
         <!-- The site settings; preloaded so this page's fetch and apps/settings/settings.js share one request. -->
-        <link rel="preload" href="apps/settings/appsettings.json" as="fetch" crossorigin />
+        <link
+            rel="preload"
+            href="apps/settings/appsettings.json"
+            as="fetch"
+            crossorigin
+        />
         <script>
             // Start today's banner and poster downloading now, instead of once
             // <banner-slider> and <poster-card> have loaded and worked out
@@ -51,14 +77,32 @@
                 .then((response) => response.json())
                 .then(({ media_base_url: media }) => {
                     const parts = {};
-                    for (const { type, value } of new Intl.DateTimeFormat("en-US", {
-                        timeZone: "Asia/Manila", year: "numeric", month: "numeric", day: "numeric",
-                    }).formatToParts(new Date())) parts[type] = Number(value);
-                    const date = new Date(Date.UTC(parts.year, parts.month - 1, parts.day));
-                    const format = (options) => date.toLocaleDateString("en-US", { timeZone: "UTC", ...options });
+                    for (const { type, value } of new Intl.DateTimeFormat(
+                        "en-US",
+                        {
+                            timeZone: "Asia/Manila",
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric",
+                        },
+                    ).formatToParts(new Date())) {
+                        parts[type] = Number(value);
+                    }
+                    const date = new Date(
+                        Date.UTC(parts.year, parts.month - 1, parts.day),
+                    );
+                    const format = (options) =>
+                        date.toLocaleDateString("en-US", {
+                            timeZone: "UTC",
+                            ...options,
+                        });
                     const month = format({ month: "long" }).toLowerCase();
                     const iso = date.toISOString().slice(0, 10);
-                    const dateName = format({ month: "long", day: "numeric", year: "numeric" });
+                    const dateName = format({
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                    });
                     const preload = (href, priority) => {
                         const link = document.createElement("link");
                         link.rel = "preload";
@@ -67,8 +111,14 @@
                         link.fetchPriority = priority;
                         document.head.append(link);
                     };
-                    preload(`${media}banner/${parts.year}/${month}/daily-grace-${iso}.webp`, "high");
-                    preload(`${media}images/sources/${parts.year}/${month}/${dateName}.webp`, "auto");
+                    preload(
+                        `${media}banner/${parts.year}/${month}/daily-grace-${iso}.webp`,
+                        "high",
+                    );
+                    preload(
+                        `${media}images/sources/${parts.year}/${month}/${dateName}.webp`,
+                        "auto",
+                    );
                 })
                 // Only a head start: the components fetch the files anyway.
                 .catch(() => {});
@@ -110,10 +160,25 @@
                             title="Locked: search by Bible reference. Tap to search by keywords."
                         >
                             <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path class="shackle-closed" d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
-                                <path class="shackle-open" d="M8 10.5V5.5a4 4 0 0 1 8 0v1" />
-                                <rect x="4.5" y="10.5" width="15" height="11" rx="2.5" />
-                                <path class="lock-letter" d="M10 13v6m0-6h2.25a1.5 1.5 0 0 1 0 3H10m0 0h2.75a1.5 1.5 0 0 1 0 3H10" />
+                                <path
+                                    class="shackle-closed"
+                                    d="M8 10.5V7.5a4 4 0 0 1 8 0v3"
+                                />
+                                <path
+                                    class="shackle-open"
+                                    d="M8 10.5V5.5a4 4 0 0 1 8 0v1"
+                                />
+                                <rect
+                                    x="4.5"
+                                    y="10.5"
+                                    width="15"
+                                    height="11"
+                                    rx="2.5"
+                                />
+                                <path
+                                    class="lock-letter"
+                                    d="M10 13v6m0-6h2.25a1.5 1.5 0 0 1 0 3H10m0 0h2.75a1.5 1.5 0 0 1 0 3H10"
+                                />
                             </svg>
                         </button>
                         <label class="visually-hidden" for="search-query"
@@ -174,13 +239,21 @@
                 <section class="devotional-stack">
                     <banner-slider id="banner-slider"></banner-slider>
                     <poster-card id="poster-card"></poster-card>
-                    <daily-moment id="daily-moment" poster="poster-card" memory-verse="memory-verse" hidden></daily-moment>
+                    <daily-moment
+                        id="daily-moment"
+                        poster="poster-card"
+                        memory-verse="memory-verse"
+                        hidden
+                    ></daily-moment>
                     <memory-verse id="memory-verse" hidden></memory-verse>
                     <daily-guidance id="daily-guidance"></daily-guidance>
                     <did-you-know id="did-you-know" class="card"></did-you-know>
                     <story-carousel id="story-carousel"></story-carousel>
                     <red-letter-quotes id="red-letter"></red-letter-quotes>
-                    <bible-sayings id="bible-sayings" class="card"></bible-sayings>
+                    <bible-sayings
+                        id="bible-sayings"
+                        class="card"
+                    ></bible-sayings>
                     <gods-blueprint id="gods-blueprint"></gods-blueprint>
                 </section>
             </main>
@@ -200,21 +273,69 @@
         <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
         <script src="assets/scripts/sql_script.js?v=20261002-2" defer></script>
         <script src="assets/scripts/script.js?v=20261010-4" defer></script>
-        <script type="module" src="apps/components/banner-slider.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/poster-card.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/daily-moment.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/memory-verse.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/did-you-know.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/daily-guidance.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/gods-blueprint.js?v=20261003-1"></script>
-        <script type="module" src="apps/components/red-letter-quotes.js?v=20261003-1"></script>
-        <script type="module" src="apps/components/bible-sayings.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/bible-search-results.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/bible-trivia.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/story-carousel.js?v=20261009-1"></script>
-        <script type="module" src="apps/components/study-guide-menu.js?v=20261010-3"></script>
-        <script type="module" src="apps/components/bookmark-manager.js?v=20261010-1"></script>
-        <script type="module" src="apps/components/site-footer.js?v=20261010-1"></script>
-        <script type="module" src="apps/components/sponsor-splash.js?v=20261010-1"></script>
+        <script
+            type="module"
+            src="apps/components/banner-slider.js?v=20261011-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/poster-card.js?v=20261009-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/daily-moment.js?v=20261011-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/memory-verse.js?v=20261011-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/did-you-know.js?v=20261009-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/daily-guidance.js?v=20261009-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/gods-blueprint.js?v=20261003-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/red-letter-quotes.js?v=20261003-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/bible-sayings.js?v=20261009-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/bible-search-results.js?v=20261009-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/bible-trivia.js?v=20261009-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/story-carousel.js?v=20261009-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/study-guide-menu.js?v=20261010-3"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/bookmark-manager.js?v=20261010-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/site-footer.js?v=20261010-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/sponsor-splash.js?v=20261010-1"
+        ></script>
     </body>
 </html>

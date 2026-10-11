@@ -72,75 +72,94 @@
  * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
-import { openDatabase, query } from '../../assets/scripts/sqlite-db.js';
+import { registerFonts } from "../../assets/scripts/fonts.js";
+import { openDatabase, query } from "../../assets/scripts/sqlite-db.js";
 import {
-  BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
-} from './card-bookmarks.js?v=20260927-1';
-import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
-import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
-import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
+    BOOKMARK_STYLES,
+    CardHold,
+    bookmarkNote,
+    bookmarkStore,
+    showBookmarkResult,
+} from "./card-bookmarks.js?v=20260927-1";
+import {
+    PULL_TAB_ICON,
+    PULL_TAB_STYLES,
+    PullTab,
+    revealCards,
+} from "./pull-tab.js?v=20260925-1";
+import {
+    PILL_STYLES,
+    linkScripture,
+    refPill,
+} from "./scripture-refs.js?v=20261002-1";
+import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
-const SYMBOL_BOOK_NAMES = { Psalm: 'Psalms' };
+const SYMBOL_BOOK_NAMES = { Psalm: "Psalms" };
 const bookSymbolUrl = (mediaBase, book) =>
-  `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
+    `${mediaBase}images/symbols/${encodeURIComponent(SYMBOL_BOOK_NAMES[book] ?? book)}-symbol.svg`;
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
-const DEFAULT_PAGE = 'apps/pages/did-you-know.html';
+const DEFAULT_PAGE = "apps/pages/did-you-know.html";
 const DEFAULT_COUNT = 5;
 // Pulling for more stops once the list holds this many facts.
 const MAX_FACTS = 20;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const BANNER_URL = asset('../../assets/images/did-you-know-1440.webp');
-const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
+const BANNER_URL = asset("../../assets/images/did-you-know-1440.webp");
+const REFRESH_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
 // The database is fetched with force-cache, so bump the token whenever its rows
 // change. <bible-trivia> uses the same token, so the page caches one copy.
-const DEFAULT_SRC = asset('../../assets/db/didyouknow.db?v=20260929-2');
-const CHEVRON_ICON = '<svg class="fact-chevron" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
-const FACTS_QUERY = 'SELECT id, Title, Fact, Reference_verse, Book FROM did_you_know';
+const DEFAULT_SRC = asset("../../assets/db/didyouknow.db?v=20260929-2");
+const CHEVRON_ICON =
+    '<svg class="fact-chevron" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+const FACTS_QUERY =
+    "SELECT id, Title, Fact, Reference_verse, Book FROM did_you_know";
 
-const bookmarks = bookmarkStore('dailygrace:bookmarks:facts', { isId: Number.isSafeInteger, limit: 50 });
+const bookmarks = bookmarkStore("dailygrace:bookmarks:facts", {
+    isId: Number.isSafeInteger,
+    limit: 50,
+});
 
 // The facts are shared by every instance, so the page's list and its bookmarks
 // popup read the database once between them.
 const factsCache = new Map();
 
 function shuffle(items) {
-  for (let index = items.length - 1; index > 0; index--) {
-    const swap = Math.floor(Math.random() * (index + 1));
-    [items[index], items[swap]] = [items[swap], items[index]];
-  }
-  return items;
+    for (let index = items.length - 1; index > 0; index--) {
+        const swap = Math.floor(Math.random() * (index + 1));
+        [items[index], items[swap]] = [items[swap], items[index]];
+    }
+    return items;
 }
 
 /** Reads every fact out of the database, then closes it again. */
 function readFacts(url) {
-  if (!factsCache.has(url)) {
-    const request = openDatabase(url)
-      .then((database) => {
-        try {
-          return query(database, FACTS_QUERY).map((row) => ({
-            id: row.id,
-            title: row.Title,
-            text: row.Fact,
-            reference: row.Reference_verse,
-            book: row.Book,
-          }));
-        } finally {
-          // The rows are kept in memory; the database file itself is not needed.
-          database.close();
-        }
-      })
-      .catch((error) => {
-        factsCache.delete(url);
-        throw error;
-      });
-    factsCache.set(url, request);
-  }
-  return factsCache.get(url);
+    if (!factsCache.has(url)) {
+        const request = openDatabase(url)
+            .then((database) => {
+                try {
+                    return query(database, FACTS_QUERY).map((row) => ({
+                        id: row.id,
+                        title: row.Title,
+                        text: row.Fact,
+                        reference: row.Reference_verse,
+                        book: row.Book,
+                    }));
+                } finally {
+                    // The rows are kept in memory; the database file itself is not needed.
+                    database.close();
+                }
+            })
+            .catch((error) => {
+                factsCache.delete(url);
+                throw error;
+            });
+        factsCache.set(url, request);
+    }
+    return factsCache.get(url);
 }
 
 const STYLES = /* css */ `
@@ -332,25 +351,25 @@ ${PULL_TAB_STYLES}
 ${PILL_STYLES}`;
 
 export class DidYouKnow extends HTMLElement {
-  static observedAttributes = ['media-base', 'src', 'count'];
+    static observedAttributes = ["media-base", "src", "count"];
 
-  #root;
-  #list;
-  #refreshButton;
-  #status;
-  #bookmarksHeader;
-  #facts = [];
-  #shownIds = new Set();
-  #loading = null;
-  #nearObserver = null;
-  #hold;
-  #pullTab;
-  #showingBookmarks = false;
+    #root;
+    #list;
+    #refreshButton;
+    #status;
+    #bookmarksHeader;
+    #facts = [];
+    #shownIds = new Set();
+    #loading = null;
+    #nearObserver = null;
+    #hold;
+    #pullTab;
+    #showingBookmarks = false;
 
-  constructor() {
-    super();
-    this.#root = this.attachShadow({ mode: 'open' });
-    this.#root.innerHTML = `
+    constructor() {
+        super();
+        this.#root = this.attachShadow({ mode: "open" });
+        this.#root.innerHTML = `
       <style>${STYLES}</style>
       <section role="region" aria-label="Did you know? Essential Bible Facts">
         <div class="banner">
@@ -372,330 +391,446 @@ export class DidYouKnow extends HTMLElement {
         <a class="see-all">Explore every Bible fact <span aria-hidden="true">→</span></a>
         <p class="visually-hidden" role="status" aria-atomic="true"></p>
       </section>`;
-    this.#list = this.#root.querySelector('.list');
-    this.#refreshButton = this.#root.querySelector('.refresh');
-    this.#status = this.#root.querySelector('[role="status"]');
-    this.#bookmarksHeader = this.#root.querySelector('.bookmarks-header');
+        this.#list = this.#root.querySelector(".list");
+        this.#refreshButton = this.#root.querySelector(".refresh");
+        this.#status = this.#root.querySelector('[role="status"]');
+        this.#bookmarksHeader = this.#root.querySelector(".bookmarks-header");
 
-    this.#refreshButton.addEventListener('click', () => {
-      this.refresh();
-      this.#refreshButton.classList.remove('is-spinning');
-      void this.#refreshButton.offsetWidth; // restart the spin on repeat clicks
-      this.#refreshButton.classList.add('is-spinning');
-    });
-    this.#refreshButton.addEventListener('animationend', () => {
-      this.#refreshButton.classList.remove('is-spinning');
-    });
+        this.#refreshButton.addEventListener("click", () => {
+            this.refresh();
+            this.#refreshButton.classList.remove("is-spinning");
+            void this.#refreshButton.offsetWidth; // restart the spin on repeat clicks
+            this.#refreshButton.classList.add("is-spinning");
+        });
+        this.#refreshButton.addEventListener("animationend", () => {
+            this.#refreshButton.classList.remove("is-spinning");
+        });
 
-    this.#pullTab = new PullTab(this.#root.querySelector('.pull-tab'), { onPull: () => this.more() });
+        this.#pullTab = new PullTab(this.#root.querySelector(".pull-tab"), {
+            onPull: () => this.more(),
+        });
 
-    // Tapping a card opens or closes it. A reference pill is a button of its
-    // own, its link goes to the Did You Know page and a hold swallows its
-    // click, so none of those toggles the card.
-    this.#list.addEventListener('click', (event) => {
-      const card = event.target.closest('.fact');
-      if (!card || event.target.closest('.scripture-ref, a')) return;
-      // Selecting text in an open card should not fold it away.
-      if (!event.target.closest('.toggle') && document.getSelection()?.toString()) return;
-      this.#setOpen(card, !card.classList.contains('open'));
-    });
+        // Tapping a card opens or closes it. A reference pill is a button of its
+        // own, its link goes to the Did You Know page and a hold swallows its
+        // click, so none of those toggles the card.
+        this.#list.addEventListener("click", (event) => {
+            const card = event.target.closest(".fact");
+            if (!card || event.target.closest(".scripture-ref, a")) {
+                return;
+            }
+            // Selecting text in an open card should not fold it away.
+            if (
+                !event.target.closest(".toggle") &&
+                document.getSelection()?.toString()
+            ) {
+                return;
+            }
+            this.#setOpen(card, !card.classList.contains("open"));
+        });
 
-    // Holding a reference or the link does nothing; they have taps of their own.
-    this.#hold = new CardHold(this.#list, {
-      selector: '.fact',
-      exclude: '.scripture-ref, a',
-      onHold: (card) => {
-        const id = Number(card.dataset.id);
-        const result = bookmarks.toggle(id);
-        showBookmarkResult(card, result, bookmarks.limit);
-        this.#status.textContent = `${card.querySelector('.title').textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
-        if (result === 'added' || result === 'removed') {
-          this.dispatchEvent(new CustomEvent('bookmarkchange', { detail: { id, result } }));
+        // Holding a reference or the link does nothing; they have taps of their own.
+        this.#hold = new CardHold(this.#list, {
+            selector: ".fact",
+            exclude: ".scripture-ref, a",
+            onHold: (card) => {
+                const id = Number(card.dataset.id);
+                const result = bookmarks.toggle(id);
+                showBookmarkResult(card, result, bookmarks.limit);
+                this.#status.textContent = `${card.querySelector(".title").textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
+                if (result === "added" || result === "removed") {
+                    this.dispatchEvent(
+                        new CustomEvent("bookmarkchange", {
+                            detail: { id, result },
+                        }),
+                    );
+                }
+            },
+        });
+    }
+
+    connectedCallback() {
+        registerFonts();
+        this.#root.querySelector(".see-all").href = this.#pageHref();
+        bookmarks.addEventListener("change", this.#syncBookmarks);
+        this.#syncBookmarks();
+        if (!this.#facts.length) {
+            this.#loadWhenNear();
         }
-      },
-    });
-  }
-
-  connectedCallback() {
-    registerFonts();
-    this.#root.querySelector('.see-all').href = this.#pageHref();
-    bookmarks.addEventListener('change', this.#syncBookmarks);
-    this.#syncBookmarks();
-    if (!this.#facts.length) this.#loadWhenNear();
-  }
-
-  disconnectedCallback() {
-    bookmarks.removeEventListener('change', this.#syncBookmarks);
-    this.#hold.cancel();
-    this.#nearObserver?.disconnect();
-    this.#nearObserver = null;
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue || !this.isConnected) return;
-    if (name === 'src') {
-      this.#facts = [];
-      this.#shownIds = new Set();
-      this.#load();
-    } else if (this.#showingBookmarks) {
-      this.showBookmarks();
-    } else if (this.#facts.length) {
-      // media-base changes symbol URLs; count changes the batch size.
-      this.#render(this.#currentFacts());
     }
-  }
 
-  /** The bookmarked fact ids, newest first. */
-  get bookmarks() {
-    return bookmarks.read();
-  }
+    disconnectedCallback() {
+        bookmarks.removeEventListener("change", this.#syncBookmarks);
+        this.#hold.cancel();
+        this.#nearObserver?.disconnect();
+        this.#nearObserver = null;
+    }
 
-  /** The bookmarked facts, newest first: { id, title, text, reference, book }. */
-  async bookmarkedItems() {
-    const src = this.getAttribute('src') || DEFAULT_SRC;
-    const facts = await readFacts(new URL(src, document.baseURI).href);
-    const byId = new Map(facts.map((fact) => [fact.id, fact]));
-    return bookmarks.read().map((id) => byId.get(id)).filter((fact) => fact?.title && fact.text);
-  }
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue === newValue || !this.isConnected) {
+            return;
+        }
+        if (name === "src") {
+            this.#facts = [];
+            this.#shownIds = new Set();
+            this.#load();
+        } else if (this.#showingBookmarks) {
+            this.showBookmarks();
+        } else if (this.#facts.length) {
+            // media-base changes symbol URLs; count changes the batch size.
+            this.#render(this.#currentFacts());
+        }
+    }
 
-  /** The Did You Know page, opened at hash (a fact's or a book's id) if given. */
-  #pageHref(hash = '') {
-    const page = new URL(this.getAttribute('page-href') || DEFAULT_PAGE, document.baseURI);
-    page.hash = hash;
-    return page.href;
-  }
+    /** The bookmarked fact ids, newest first. */
+    get bookmarks() {
+        return bookmarks.read();
+    }
 
-  get #mediaBase() {
-    const base = this.getAttribute('media-base') || DEFAULT_MEDIA_BASE;
-    return base.endsWith('/') ? base : `${base}/`;
-  }
+    /** The bookmarked facts, newest first: { id, title, text, reference, book }. */
+    async bookmarkedItems() {
+        const src = this.getAttribute("src") || DEFAULT_SRC;
+        const facts = await readFacts(new URL(src, document.baseURI).href);
+        const byId = new Map(facts.map((fact) => [fact.id, fact]));
+        return bookmarks
+            .read()
+            .map((id) => byId.get(id))
+            .filter((fact) => fact?.title && fact.text);
+    }
 
-  get #count() {
-    const count = Number.parseInt(this.getAttribute('count'), 10);
-    return count > 0 ? count : DEFAULT_COUNT;
-  }
+    /** The Did You Know page, opened at hash (a fact's or a book's id) if given. */
+    #pageHref(hash = "") {
+        const page = new URL(
+            this.getAttribute("page-href") || DEFAULT_PAGE,
+            document.baseURI,
+        );
+        page.hash = hash;
+        return page.href;
+    }
 
-  #currentFacts() {
-    const shown = this.#facts.filter((fact) => this.#shownIds.has(fact.id));
-    return shown.length ? shown : this.#pick();
-  }
+    get #mediaBase() {
+        const base = this.getAttribute("media-base") || DEFAULT_MEDIA_BASE;
+        return base.endsWith("/") ? base : `${base}/`;
+    }
 
-  // The database and the sql.js behind it come to over a megabyte, and the
-  // card sits well below the banner and the poster: fetch them only as the
-  // card nears the screen, so they never compete with what is read first. A
-  // bookmarks list waits for showBookmarks() to ask for it.
-  #loadWhenNear() {
-    if (this.#loading || this.#nearObserver || this.hasAttribute('bookmarks')) return;
-    this.#nearObserver = new IntersectionObserver((entries) => {
-      if (!entries.some((entry) => entry.isIntersecting)) return;
-      this.#nearObserver.disconnect();
-      this.#nearObserver = null;
-      if (!this.#loading) this.#load();
-    }, { rootMargin: '100% 0px' });
-    // Until the rest of the page has arrived, every card is short, so even the
-    // last one can sit within a screen of view: wait for the load event first.
-    const observer = this.#nearObserver;
-    const observe = () => {
-      if (observer === this.#nearObserver) observer.observe(this);
-    };
-    if (document.readyState === 'complete') observe();
-    else window.addEventListener('load', observe, { once: true });
-  }
+    get #count() {
+        const count = Number.parseInt(this.getAttribute("count"), 10);
+        return count > 0 ? count : DEFAULT_COUNT;
+    }
 
-  #load() {
-    const src = this.getAttribute('src') || DEFAULT_SRC;
-    const loading = (this.#loading = readFacts(new URL(src, document.baseURI).href)
-      .then((facts) => {
-        if (loading !== this.#loading) return; // superseded by a newer src
-        this.#facts = facts.filter((fact) => fact.title && fact.text);
-        if (!this.#facts.length) throw new Error('No Bible facts are available.');
-        this.#refreshButton.disabled = false;
-        if (this.hasAttribute('bookmarks')) this.showBookmarks();
-        else this.refresh();
-        this.dispatchEvent(new CustomEvent('ready', { detail: { total: this.#facts.length } }));
-      })
-      .catch((error) => {
-        if (loading !== this.#loading) return;
-        console.warn('Bible facts could not be loaded:', error);
-        const message = document.createElement('p');
-        message.className = 'message';
-        message.textContent = 'Bible facts could not be loaded. Please reload the page to try again.';
-        this.#list.replaceChildren(message);
+    #currentFacts() {
+        const shown = this.#facts.filter((fact) => this.#shownIds.has(fact.id));
+        return shown.length ? shown : this.#pick();
+    }
+
+    // The database and the sql.js behind it come to over a megabyte, and the
+    // card sits well below the banner and the poster: fetch them only as the
+    // card nears the screen, so they never compete with what is read first. A
+    // bookmarks list waits for showBookmarks() to ask for it.
+    #loadWhenNear() {
+        if (
+            this.#loading ||
+            this.#nearObserver ||
+            this.hasAttribute("bookmarks")
+        ) {
+            return;
+        }
+        this.#nearObserver = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) {
+                    return;
+                }
+                this.#nearObserver.disconnect();
+                this.#nearObserver = null;
+                if (!this.#loading) {
+                    this.#load();
+                }
+            },
+            { rootMargin: "100% 0px" },
+        );
+        // Until the rest of the page has arrived, every card is short, so even the
+        // last one can sit within a screen of view: wait for the load event first.
+        const observer = this.#nearObserver;
+        const observe = () => {
+            if (observer === this.#nearObserver) {
+                observer.observe(this);
+            }
+        };
+        if (document.readyState === "complete") {
+            observe();
+        } else {
+            window.addEventListener("load", observe, { once: true });
+        }
+    }
+
+    #load() {
+        const src = this.getAttribute("src") || DEFAULT_SRC;
+        const loading = (this.#loading = readFacts(
+            new URL(src, document.baseURI).href,
+        )
+            .then((facts) => {
+                if (loading !== this.#loading) {
+                    return;
+                } // superseded by a newer src
+                this.#facts = facts.filter((fact) => fact.title && fact.text);
+                if (!this.#facts.length) {
+                    throw new Error("No Bible facts are available.");
+                }
+                this.#refreshButton.disabled = false;
+                if (this.hasAttribute("bookmarks")) {
+                    this.showBookmarks();
+                } else {
+                    this.refresh();
+                }
+                this.dispatchEvent(
+                    new CustomEvent("ready", {
+                        detail: { total: this.#facts.length },
+                    }),
+                );
+            })
+            .catch((error) => {
+                if (loading !== this.#loading) {
+                    return;
+                }
+                console.warn("Bible facts could not be loaded:", error);
+                const message = document.createElement("p");
+                message.className = "message";
+                message.textContent =
+                    "Bible facts could not be loaded. Please reload the page to try again.";
+                this.#list.replaceChildren(message);
+                this.#pullTab.hide();
+                this.dispatchEvent(
+                    new CustomEvent("error", {
+                        detail: { message: error.message },
+                    }),
+                );
+            }));
+    }
+
+    /** Draws from facts not in the previous batch, so a refresh never repeats. */
+    #pick() {
+        const count = this.#count;
+        const unseen = this.#unseen();
+        return shuffle(
+            unseen.length >= count ? unseen : this.#facts.slice(),
+        ).slice(0, count);
+    }
+
+    #unseen() {
+        return this.#facts.filter((fact) => !this.#shownIds.has(fact.id));
+    }
+
+    // The tab shows while the list has room for more and there are more to draw.
+    #updatePullTab(options) {
+        const shown = this.#shownIds.size;
+        if (shown < MAX_FACTS && shown < this.#facts.length) {
+            this.#pullTab.show();
+        } else {
+            this.#pullTab.hide(options);
+        }
+    }
+
+    #createFact(fact, { open = false } = {}) {
+        const card = document.createElement("article");
+        card.className = "fact bookmarkable";
+        card.dataset.id = fact.id;
+        card.classList.toggle("bookmarked", bookmarks.has(fact.id));
+
+        const symbol = document.createElement("img");
+        symbol.className = "symbol";
+        symbol.width = 64;
+        symbol.height = 64;
+        symbol.alt = "";
+        symbol.loading = "lazy";
+        // Keep the column width so facts stay aligned when a symbol is missing.
+        symbol.onerror = () => {
+            symbol.style.visibility = "hidden";
+        };
+        if (fact.book) {
+            symbol.src = bookSymbolUrl(this.#mediaBase, fact.book);
+        } else {
+            symbol.style.visibility = "hidden";
+        }
+
+        // Only the question shows at first; the fact and its reference open under it.
+        const detailsId = `fact-${fact.id}-details`;
+        const title = document.createElement("h4");
+        title.className = "title";
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "toggle";
+        toggle.setAttribute("aria-controls", detailsId);
+        const question = document.createElement("span");
+        question.className = "question";
+        question.textContent = fact.title;
+        toggle.append(question);
+        toggle.insertAdjacentHTML("beforeend", CHEVRON_ICON);
+        title.append(toggle);
+
+        const details = document.createElement("div");
+        details.className = "details";
+        details.id = detailsId;
+        const inner = document.createElement("div");
+        inner.className = "details-inner";
+        details.append(inner);
+        const text = document.createElement("p");
+        text.className = "text";
+        text.textContent = fact.text;
+        linkScripture(text);
+        inner.append(text);
+
+        const body = document.createElement("div");
+        body.className = "body";
+        body.append(title, details);
+
+        // A pill that opens the passage (scripture-refs.js), and the link to the
+        // fact on the Did You Know page, opened among the rest of its book's.
+        const foot = document.createElement("p");
+        foot.className = "reference fact-foot";
+        if (fact.reference) {
+            foot.append(refPill(fact.reference));
+        }
+        const more = document.createElement("a");
+        more.className = "fact-more";
+        more.href = this.#pageHref(`fact-${fact.id}`);
+        more.textContent = fact.book
+            ? `More from ${fact.book} `
+            : "More Bible facts ";
+        more.insertAdjacentHTML(
+            "beforeend",
+            '<span aria-hidden="true">→</span>',
+        );
+        foot.append(more);
+        inner.append(foot);
+
+        card.append(symbol, body);
+        this.#setOpen(card, open);
+        return card;
+    }
+
+    #setOpen(card, open) {
+        card.classList.toggle("open", open);
+        card.querySelector(".toggle").setAttribute(
+            "aria-expanded",
+            String(open),
+        );
+    }
+
+    #render(facts) {
+        this.#showingBookmarks = false;
+        this.#bookmarksHeader.hidden = true;
+        this.#shownIds = new Set(facts.map((fact) => fact.id));
+        this.#list.replaceChildren(
+            ...facts.map((fact) => this.#createFact(fact)),
+        );
+        this.#updatePullTab();
+        this.#status.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].title}.`;
+    }
+
+    #bookmarksSummary() {
+        return (
+            `${bookmarks.read().length} of ${bookmarks.limit} saved facts, newest first. ` +
+            "Hold a fact to remove its bookmark."
+        );
+    }
+
+    /**
+     * Show the bookmarked facts, newest first. A fact taken off here keeps its
+     * card, without the ribbon, so holding it again puts the bookmark back.
+     */
+    showBookmarks() {
+        if (!this.#facts.length) {
+            // Loaded on first use; the bookmarks show once the facts arrive.
+            if (!this.#loading) {
+                this.#load();
+            }
+            return;
+        }
+        this.#showingBookmarks = true;
         this.#pullTab.hide();
-        this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
-      }));
-  }
-
-  /** Draws from facts not in the previous batch, so a refresh never repeats. */
-  #pick() {
-    const count = this.#count;
-    const unseen = this.#unseen();
-    return shuffle(unseen.length >= count ? unseen : this.#facts.slice()).slice(0, count);
-  }
-
-  #unseen() {
-    return this.#facts.filter((fact) => !this.#shownIds.has(fact.id));
-  }
-
-  // The tab shows while the list has room for more and there are more to draw.
-  #updatePullTab(options) {
-    const shown = this.#shownIds.size;
-    if (shown < MAX_FACTS && shown < this.#facts.length) this.#pullTab.show();
-    else this.#pullTab.hide(options);
-  }
-
-  #createFact(fact, { open = false } = {}) {
-    const card = document.createElement('article');
-    card.className = 'fact bookmarkable';
-    card.dataset.id = fact.id;
-    card.classList.toggle('bookmarked', bookmarks.has(fact.id));
-
-    const symbol = document.createElement('img');
-    symbol.className = 'symbol';
-    symbol.width = 64;
-    symbol.height = 64;
-    symbol.alt = '';
-    symbol.loading = 'lazy';
-    // Keep the column width so facts stay aligned when a symbol is missing.
-    symbol.onerror = () => { symbol.style.visibility = 'hidden'; };
-    if (fact.book) {
-      symbol.src = bookSymbolUrl(this.#mediaBase, fact.book);
-    } else {
-      symbol.style.visibility = 'hidden';
+        const facts = bookmarks
+            .read()
+            .map((id) => this.#facts.find((fact) => fact.id === id))
+            .filter(Boolean);
+        this.#bookmarksHeader.hidden = !facts.length;
+        if (!facts.length) {
+            const message = document.createElement("p");
+            message.className = "message";
+            message.textContent =
+                "No bookmarked facts yet. Hold a fact in “Did you know?” for half a second to bookmark it.";
+            this.#list.replaceChildren(message);
+            this.#status.textContent = message.textContent;
+            return;
+        }
+        this.#bookmarksHeader.querySelector(".bookmarks-summary").textContent =
+            this.#bookmarksSummary();
+        // Saved facts are there to be reread, so they open already answered.
+        this.#list.replaceChildren(
+            ...facts.map((fact) => this.#createFact(fact, { open: true })),
+        );
+        this.#status.textContent = `Bookmarked facts. ${this.#bookmarksSummary()}`;
     }
 
-    // Only the question shows at first; the fact and its reference open under it.
-    const detailsId = `fact-${fact.id}-details`;
-    const title = document.createElement('h4');
-    title.className = 'title';
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'toggle';
-    toggle.setAttribute('aria-controls', detailsId);
-    const question = document.createElement('span');
-    question.className = 'question';
-    question.textContent = fact.title;
-    toggle.append(question);
-    toggle.insertAdjacentHTML('beforeend', CHEVRON_ICON);
-    title.append(toggle);
+    #syncBookmarks = () => {
+        const saved = new Set(bookmarks.read());
+        for (const card of this.#list.querySelectorAll(".fact")) {
+            card.classList.toggle(
+                "bookmarked",
+                saved.has(Number(card.dataset.id)),
+            );
+        }
+        if (this.#showingBookmarks) {
+            this.#bookmarksHeader.querySelector(
+                ".bookmarks-summary",
+            ).textContent = this.#bookmarksSummary();
+        }
+    };
 
-    const details = document.createElement('div');
-    details.className = 'details';
-    details.id = detailsId;
-    const inner = document.createElement('div');
-    inner.className = 'details-inner';
-    details.append(inner);
-    const text = document.createElement('p');
-    text.className = 'text';
-    text.textContent = fact.text;
-    linkScripture(text);
-    inner.append(text);
-
-    const body = document.createElement('div');
-    body.className = 'body';
-    body.append(title, details);
-
-    // A pill that opens the passage (scripture-refs.js), and the link to the
-    // fact on the Did You Know page, opened among the rest of its book's.
-    const foot = document.createElement('p');
-    foot.className = 'reference fact-foot';
-    if (fact.reference) foot.append(refPill(fact.reference));
-    const more = document.createElement('a');
-    more.className = 'fact-more';
-    more.href = this.#pageHref(`fact-${fact.id}`);
-    more.textContent = fact.book ? `More from ${fact.book} ` : 'More Bible facts ';
-    more.insertAdjacentHTML('beforeend', '<span aria-hidden="true">→</span>');
-    foot.append(more);
-    inner.append(foot);
-
-    card.append(symbol, body);
-    this.#setOpen(card, open);
-    return card;
-  }
-
-  #setOpen(card, open) {
-    card.classList.toggle('open', open);
-    card.querySelector('.toggle').setAttribute('aria-expanded', String(open));
-  }
-
-  #render(facts) {
-    this.#showingBookmarks = false;
-    this.#bookmarksHeader.hidden = true;
-    this.#shownIds = new Set(facts.map((fact) => fact.id));
-    this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact)));
-    this.#updatePullTab();
-    this.#status.textContent = `${facts.length} Bible facts shown, starting with ${facts[0].title}.`;
-  }
-
-  #bookmarksSummary() {
-    return `${bookmarks.read().length} of ${bookmarks.limit} saved facts, newest first. `
-      + 'Hold a fact to remove its bookmark.';
-  }
-
-  /**
-   * Show the bookmarked facts, newest first. A fact taken off here keeps its
-   * card, without the ribbon, so holding it again puts the bookmark back.
-   */
-  showBookmarks() {
-    if (!this.#facts.length) {
-      // Loaded on first use; the bookmarks show once the facts arrive.
-      if (!this.#loading) this.#load();
-      return;
+    /** Show a new batch of facts, none repeated from the previous batch. */
+    refresh() {
+        if (!this.#facts.length) {
+            return;
+        }
+        const facts = this.#pick();
+        this.#render(facts);
+        this.dispatchEvent(
+            new CustomEvent("refresh", {
+                detail: { ids: facts.map((fact) => fact.id) },
+            }),
+        );
     }
-    this.#showingBookmarks = true;
-    this.#pullTab.hide();
-    const facts = bookmarks.read()
-      .map((id) => this.#facts.find((fact) => fact.id === id))
-      .filter(Boolean);
-    this.#bookmarksHeader.hidden = !facts.length;
-    if (!facts.length) {
-      const message = document.createElement('p');
-      message.className = 'message';
-      message.textContent = 'No bookmarked facts yet. Hold a fact in “Did you know?” for half a second to bookmark it.';
-      this.#list.replaceChildren(message);
-      this.#status.textContent = message.textContent;
-      return;
-    }
-    this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
-    // Saved facts are there to be reread, so they open already answered.
-    this.#list.replaceChildren(...facts.map((fact) => this.#createFact(fact, { open: true })));
-    this.#status.textContent = `Bookmarked facts. ${this.#bookmarksSummary()}`;
-  }
 
-  #syncBookmarks = () => {
-    const saved = new Set(bookmarks.read());
-    for (const card of this.#list.querySelectorAll('.fact')) {
-      card.classList.toggle('bookmarked', saved.has(Number(card.dataset.id)));
+    /** Add a batch of facts not yet shown below the list, up to 20 in all. */
+    more() {
+        if (this.#showingBookmarks || !this.#facts.length) {
+            return;
+        }
+        const room = MAX_FACTS - this.#shownIds.size;
+        const facts = shuffle(this.#unseen()).slice(
+            0,
+            Math.min(this.#count, room),
+        );
+        if (!facts.length) {
+            return;
+        }
+        for (const fact of facts) {
+            this.#shownIds.add(fact.id);
+        }
+        const cards = facts.map((fact) => this.#createFact(fact));
+        this.#list.append(...cards);
+        revealCards(cards);
+        this.#updatePullTab({
+            animate: true,
+            focus: cards[0].querySelector("button"),
+        });
+        this.#status.textContent = `${facts.length} more Bible facts shown, starting with ${facts[0].title}.`;
+        this.dispatchEvent(
+            new CustomEvent("more", {
+                detail: { ids: facts.map((fact) => fact.id) },
+            }),
+        );
     }
-    if (this.#showingBookmarks) {
-      this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
-    }
-  };
-
-  /** Show a new batch of facts, none repeated from the previous batch. */
-  refresh() {
-    if (!this.#facts.length) return;
-    const facts = this.#pick();
-    this.#render(facts);
-    this.dispatchEvent(new CustomEvent('refresh', { detail: { ids: facts.map((fact) => fact.id) } }));
-  }
-
-  /** Add a batch of facts not yet shown below the list, up to 20 in all. */
-  more() {
-    if (this.#showingBookmarks || !this.#facts.length) return;
-    const room = MAX_FACTS - this.#shownIds.size;
-    const facts = shuffle(this.#unseen()).slice(0, Math.min(this.#count, room));
-    if (!facts.length) return;
-    for (const fact of facts) this.#shownIds.add(fact.id);
-    const cards = facts.map((fact) => this.#createFact(fact));
-    this.#list.append(...cards);
-    revealCards(cards);
-    this.#updatePullTab({ animate: true, focus: cards[0].querySelector('button') });
-    this.#status.textContent = `${facts.length} more Bible facts shown, starting with ${facts[0].title}.`;
-    this.dispatchEvent(new CustomEvent('more', { detail: { ids: facts.map((fact) => fact.id) } }));
-  }
 }
 
-if (!customElements.get('did-you-know')) {
-  customElements.define('did-you-know', DidYouKnow);
+if (!customElements.get("did-you-know")) {
+    customElements.define("did-you-know", DidYouKnow);
 }

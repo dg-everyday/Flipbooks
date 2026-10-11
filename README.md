@@ -110,7 +110,7 @@ declared inside a shadow root.
 | --- | --- |
 | `assets/db/dailygrace.db` | The complete KJV: 66 books, 1,189 chapters, 31,102 verses (4.7 MB). Tables: `books(book_number, book_id, book_name)` and `verses(docid, book, chapter, verse, text)`, joined on `verses.book = books.book_id`. |
 | `assets/explanations/<book_id>/<chapter>.json` | A commentary note per verse (Jamieson-Fausset-Brown, or John Gill where JFB is silent), keyed by verse number. Kept out of `dailygrace.db` so the search download stays small; `<bible-search-results>` fetches one chapter when a verse's folded corner is tapped. Rebuild with `tools/explanations/`. |
-| `assets/verses/<YYYY>/<month>.json` | Daily verse, text, reflection, `question` and `prayer`, one file per month (`assets/verses/2027/january.json`), each entry keyed by date string (`"January 1, 2027"`). The question and prayer are for the Moment's Respond and Pray screens; a day without them gets a general one. Also supplies the verse shown on not-yet-released flipbook pages. `apps/components/daily-verses.js` loads them, fetching each month once per page; import it with the same `?v=` token everywhere (`banner-slider.js`, `daily-moment.js`, `daily-strides.js`, `apps/pages/scripts/daily-grace-week.js`). |
+| `assets/verses/<YYYY>/<month>.json` | Daily verse, text, reflection, `question` and `prayer`, one file per month (`assets/verses/2027/january.json`), each entry keyed by date string (`"January 1, 2027"`). The question and prayer are for the Moment's Respond and Pray screens; a day without them gets a general one. Also supplies the verse shown on not-yet-released flipbook pages. `apps/components/daily-verses.js` loads them, fetching each month once per page; import it with the same `?v=` token everywhere (`banner-slider.js`, `daily-moment.js`, `memory-verse.js`, `apps/pages/scripts/daily-grace-week.js`). |
 | `assets/db/didyouknow.db` | 1,021 Bible facts in one table, `did_you_know(id, Title, Fact, Reference_verse, Book, Similar_books)`. `Reference_verse` must parse and exist in `dailygrace.db`, since tapping it opens the passage. `Similar_books` holds four books that are never the row's own `Book`; `<bible-trivia>` draws two of them as wrong answers. Add rows with `tools/didyouknow/add_rows.py`. |
 | `assets/did-you-know.json` | The original 501 facts, superseded by `didyouknow.db` and no longer read by anything. |
 | `assets/book-metadata.json` | Fallback `title` / `description` for all 66 books — see below. |
@@ -180,6 +180,10 @@ so midnight is not guaranteed). It runs `update-social-image.mjs`, which rewrite
 the `og:image` meta tag in both HTML files to today's banner URL in
 `Asia/Manila`, then copies `index.html`, `CNAME`, `favicon.ico`, `assets/`, and
 `apps/` into the artifact. The rewritten HTML is deployed, never committed back.
+The JSON is pretty-printed in the repository for reading and diffs; the deploy
+compacts every `.json` file in the published copy, so visitors download the
+smaller form. A file that does not parse ships as it is, with a warning in the
+run's log.
 
 One-time setup: **Settings → Pages → Build and deployment → GitHub Actions**, and
 keep the custom domain set to `dailygrace.faith`. Social platforms cache previews

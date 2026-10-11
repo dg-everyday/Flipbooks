@@ -34,13 +34,13 @@ const HOLD_SLOP = 10;
 
 /** What a hold did, in words: result is what toggle() returned. */
 export function bookmarkNote(result, limit) {
-  return {
-    added: 'Bookmarked',
-    removed: 'Bookmark removed',
-    // Say how to make room, since the list to tidy is somewhere else.
-    full: `Bookmarks full (${limit}). Hold the DG emblem to remove some.`,
-    failed: 'Bookmark not saved',
-  }[result];
+    return {
+        added: "Bookmarked",
+        removed: "Bookmark removed",
+        // Say how to make room, since the list to tidy is somewhere else.
+        full: `Bookmarks full (${limit}). Hold the DG emblem to remove some.`,
+        failed: "Bookmark not saved",
+    }[result];
 }
 
 // Browsers may clear a site's storage to free up space, and Safari clears it
@@ -51,11 +51,14 @@ let persistRequested = false;
 
 /** Asks the browser, once per page, not to clear the bookmarks. Shared with the verse bookmarks. */
 export function keepBookmarks() {
-  if (persistRequested) return;
-  persistRequested = true;
-  navigator.storage?.persisted?.()
-    .then((persisted) => persisted || navigator.storage.persist())
-    .catch(() => {});
+    if (persistRequested) {
+        return;
+    }
+    persistRequested = true;
+    navigator.storage
+        ?.persisted?.()
+        .then((persisted) => persisted || navigator.storage.persist())
+        .catch(() => {});
 }
 
 export const BOOKMARK_STYLES = /* css */ `
@@ -155,71 +158,81 @@ export const BOOKMARK_STYLES = /* css */ `
 `;
 
 class BookmarkStore extends EventTarget {
-  #key;
-  #isId;
-  #limit;
-  // The saved ids, parsed from storage once and kept until they change here or
-  // in another tab, so drawing a list of cards does not re-read storage per card.
-  #ids = null;
+    #key;
+    #isId;
+    #limit;
+    // The saved ids, parsed from storage once and kept until they change here or
+    // in another tab, so drawing a list of cards does not re-read storage per card.
+    #ids = null;
 
-  constructor(key, { isId, limit }) {
-    super();
-    this.#key = key;
-    this.#isId = isId;
-    this.#limit = limit;
-    window.addEventListener('storage', (event) => {
-      if (event.key !== key && event.key !== null) return;
-      this.#ids = null;
-      this.dispatchEvent(new Event('change'));
-    });
-  }
-
-  /** How many ids the store keeps. */
-  get limit() {
-    return this.#limit;
-  }
-
-  /**
-   * Storage can be refused (private browsing, a full quota), so a read falls
-   * back to none.
-   */
-  #saved() {
-    if (!this.#ids) {
-      try {
-        const ids = JSON.parse(localStorage.getItem(this.#key));
-        this.#ids = Array.isArray(ids) ? ids.filter(this.#isId).slice(0, this.#limit) : [];
-      } catch {
-        this.#ids = [];
-      }
+    constructor(key, { isId, limit }) {
+        super();
+        this.#key = key;
+        this.#isId = isId;
+        this.#limit = limit;
+        window.addEventListener("storage", (event) => {
+            if (event.key !== key && event.key !== null) {
+                return;
+            }
+            this.#ids = null;
+            this.dispatchEvent(new Event("change"));
+        });
     }
-    return this.#ids;
-  }
 
-  /** The saved ids, newest first. */
-  read() {
-    return [...this.#saved()];
-  }
-
-  has(id) {
-    return this.#saved().includes(id);
-  }
-
-  /** Adds or removes a bookmark. Returns 'added', 'removed', 'full' or 'failed'. */
-  toggle(id) {
-    const ids = this.#saved();
-    const removing = ids.includes(id);
-    if (!removing && ids.length >= this.#limit) return 'full';
-    const next = removing ? ids.filter((saved) => saved !== id) : [id, ...ids];
-    try {
-      localStorage.setItem(this.#key, JSON.stringify(next));
-    } catch {
-      return 'failed';
+    /** How many ids the store keeps. */
+    get limit() {
+        return this.#limit;
     }
-    this.#ids = next;
-    if (!removing) keepBookmarks();
-    this.dispatchEvent(new Event('change'));
-    return removing ? 'removed' : 'added';
-  }
+
+    /**
+     * Storage can be refused (private browsing, a full quota), so a read falls
+     * back to none.
+     */
+    #saved() {
+        if (!this.#ids) {
+            try {
+                const ids = JSON.parse(localStorage.getItem(this.#key));
+                this.#ids = Array.isArray(ids)
+                    ? ids.filter(this.#isId).slice(0, this.#limit)
+                    : [];
+            } catch {
+                this.#ids = [];
+            }
+        }
+        return this.#ids;
+    }
+
+    /** The saved ids, newest first. */
+    read() {
+        return [...this.#saved()];
+    }
+
+    has(id) {
+        return this.#saved().includes(id);
+    }
+
+    /** Adds or removes a bookmark. Returns 'added', 'removed', 'full' or 'failed'. */
+    toggle(id) {
+        const ids = this.#saved();
+        const removing = ids.includes(id);
+        if (!removing && ids.length >= this.#limit) {
+            return "full";
+        }
+        const next = removing
+            ? ids.filter((saved) => saved !== id)
+            : [id, ...ids];
+        try {
+            localStorage.setItem(this.#key, JSON.stringify(next));
+        } catch {
+            return "failed";
+        }
+        this.#ids = next;
+        if (!removing) {
+            keepBookmarks();
+        }
+        this.dispatchEvent(new Event("change"));
+        return removing ? "removed" : "added";
+    }
 }
 
 // One store per key, so every instance of a component hears every change.
@@ -230,96 +243,122 @@ const stores = new Map();
  * and limit how many are kept.
  */
 export function bookmarkStore(key, options) {
-  if (!stores.has(key)) stores.set(key, new BookmarkStore(key, options));
-  return stores.get(key);
+    if (!stores.has(key)) {
+        stores.set(key, new BookmarkStore(key, options));
+    }
+    return stores.get(key);
 }
 
 /** Flashes a held card and shows a note with the outcome of toggle(). */
 export function showBookmarkResult(card, result, limit) {
-  if (result === 'added' || result === 'removed') navigator.vibrate?.(15);
-  card.querySelector('.bookmark-note')?.remove();
-  const note = document.createElement('span');
-  note.className = `bookmark-note ${result}`;
-  note.setAttribute('aria-hidden', 'true');
-  note.textContent = bookmarkNote(result, limit);
-  note.addEventListener('animationend', () => note.remove(), { once: true });
-  card.append(note);
-  // Restart the flash when the same card is held twice in quick succession.
-  card.removeAttribute('data-flash');
-  void card.offsetWidth;
-  card.dataset.flash = result;
+    if (result === "added" || result === "removed") {
+        navigator.vibrate?.(15);
+    }
+    card.querySelector(".bookmark-note")?.remove();
+    const note = document.createElement("span");
+    note.className = `bookmark-note ${result}`;
+    note.setAttribute("aria-hidden", "true");
+    note.textContent = bookmarkNote(result, limit);
+    note.addEventListener("animationend", () => note.remove(), { once: true });
+    card.append(note);
+    // Restart the flash when the same card is held twice in quick succession.
+    card.removeAttribute("data-flash");
+    void card.offsetWidth;
+    card.dataset.flash = result;
 }
 
 /** Watches a list for cards held for HOLD_MS and hands each one to onHold. */
 export class CardHold {
-  #selector;
-  #exclude;
-  #onHold;
-  #hold = null;
-  // A hold ends with the finger lifting, and the click that follows must not
-  // reach the card: a saying would open its popup.
-  #swallowClick = false;
+    #selector;
+    #exclude;
+    #onHold;
+    #hold = null;
+    // A hold ends with the finger lifting, and the click that follows must not
+    // reach the card: a saying would open its popup.
+    #swallowClick = false;
 
-  constructor(container, { selector, exclude = null, onHold }) {
-    this.#selector = selector;
-    this.#exclude = exclude;
-    this.#onHold = onHold;
-    container.addEventListener('pointerdown', (event) => this.#start(event));
-    container.addEventListener('pointermove', (event) => {
-      const hold = this.#hold;
-      if (hold && event.pointerId === hold.pointerId
-          && Math.hypot(event.clientX - hold.x, event.clientY - hold.y) > HOLD_SLOP) {
-        this.cancel();
-      }
-    });
-    for (const type of ['pointerup', 'pointercancel', 'pointerleave']) {
-      container.addEventListener(type, () => this.cancel());
+    constructor(container, { selector, exclude = null, onHold }) {
+        this.#selector = selector;
+        this.#exclude = exclude;
+        this.#onHold = onHold;
+        container.addEventListener("pointerdown", (event) =>
+            this.#start(event),
+        );
+        container.addEventListener("pointermove", (event) => {
+            const hold = this.#hold;
+            if (
+                hold &&
+                event.pointerId === hold.pointerId &&
+                Math.hypot(event.clientX - hold.x, event.clientY - hold.y) >
+                    HOLD_SLOP
+            ) {
+                this.cancel();
+            }
+        });
+        for (const type of ["pointerup", "pointercancel", "pointerleave"]) {
+            container.addEventListener(type, () => this.cancel());
+        }
+        // Enter and Space still work after a hold that never clicked.
+        container.addEventListener("keydown", () => {
+            this.#swallowClick = false;
+        });
+        // A long press would otherwise open the phone's context menu.
+        container.addEventListener("contextmenu", (event) => {
+            if (this.#hold || this.#swallowClick) {
+                event.preventDefault();
+            }
+        });
+        container.addEventListener(
+            "click",
+            (event) => {
+                if (!this.#swallowClick) {
+                    return;
+                }
+                this.#swallowClick = false;
+                event.preventDefault();
+                event.stopPropagation();
+            },
+            true,
+        );
     }
-    // Enter and Space still work after a hold that never clicked.
-    container.addEventListener('keydown', () => { this.#swallowClick = false; });
-    // A long press would otherwise open the phone's context menu.
-    container.addEventListener('contextmenu', (event) => {
-      if (this.#hold || this.#swallowClick) event.preventDefault();
-    });
-    container.addEventListener('click', (event) => {
-      if (!this.#swallowClick) return;
-      this.#swallowClick = false;
-      event.preventDefault();
-      event.stopPropagation();
-    }, true);
-  }
 
-  cancel() {
-    if (!this.#hold) return;
-    clearTimeout(this.#hold.timer);
-    this.#hold.card.classList.remove('holding');
-    this.#hold = null;
-  }
+    cancel() {
+        if (!this.#hold) {
+            return;
+        }
+        clearTimeout(this.#hold.timer);
+        this.#hold.card.classList.remove("holding");
+        this.#hold = null;
+    }
 
-  #start(event) {
-    this.#swallowClick = false;
-    if (!event.isPrimary || event.button !== 0) return;
-    const card = event.target.closest(this.#selector);
-    if (!card || (this.#exclude && event.target.closest(this.#exclude))) return;
-    this.cancel();
-    const box = card.getBoundingClientRect();
-    card.style.setProperty('--hold-x', `${event.clientX - box.left}px`);
-    card.style.setProperty('--hold-y', `${event.clientY - box.top}px`);
-    card.removeAttribute('data-flash');
-    card.classList.add('holding');
-    this.#hold = {
-      card,
-      pointerId: event.pointerId,
-      x: event.clientX,
-      y: event.clientY,
-      timer: setTimeout(() => this.#complete(card), HOLD_MS),
-    };
-  }
+    #start(event) {
+        this.#swallowClick = false;
+        if (!event.isPrimary || event.button !== 0) {
+            return;
+        }
+        const card = event.target.closest(this.#selector);
+        if (!card || (this.#exclude && event.target.closest(this.#exclude))) {
+            return;
+        }
+        this.cancel();
+        const box = card.getBoundingClientRect();
+        card.style.setProperty("--hold-x", `${event.clientX - box.left}px`);
+        card.style.setProperty("--hold-y", `${event.clientY - box.top}px`);
+        card.removeAttribute("data-flash");
+        card.classList.add("holding");
+        this.#hold = {
+            card,
+            pointerId: event.pointerId,
+            x: event.clientX,
+            y: event.clientY,
+            timer: setTimeout(() => this.#complete(card), HOLD_MS),
+        };
+    }
 
-  #complete(card) {
-    this.#hold = null;
-    card.classList.remove('holding');
-    this.#swallowClick = true;
-    this.#onHold(card);
-  }
+    #complete(card) {
+        this.#hold = null;
+        card.classList.remove("holding");
+        this.#swallowClick = true;
+        this.#onHold(card);
+    }
 }

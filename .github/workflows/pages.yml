@@ -52,6 +52,36 @@ jobs:
           find _site -name '*.html' \
             -exec sed -i -E "s/\?v=[A-Za-z0-9._-]+/?v=$VERSION/g" {} +
           echo "Stamped asset URLs with $VERSION"
+      # The repo keeps JSON pretty for reading and diffs; the site gets it
+      # compact. Only the copy in _site is rewritten. A file that does not
+      # parse ships as it is, with a warning, so it cannot block the daily deploy.
+      - name: Compact JSON in the published copy
+        run: |
+          node <<'EOF'
+          const fs = require("node:fs");
+          const path = require("node:path");
+          let files = 0, before = 0, after = 0;
+          for (const name of fs.readdirSync("_site", { recursive: true })) {
+              if (!name.endsWith(".json")) {
+                  continue;
+              }
+              const file = path.join("_site", name);
+              const text = fs.readFileSync(file, "utf8");
+              let compact;
+              try {
+                  compact = JSON.stringify(JSON.parse(text));
+              } catch (error) {
+                  console.log(`::warning file=${name}::not valid JSON, shipped as is: ${error.message}`);
+                  continue;
+              }
+              fs.writeFileSync(file, compact);
+              files += 1;
+              before += Buffer.byteLength(text);
+              after += Buffer.byteLength(compact);
+          }
+          const kb = (n) => `${Math.round(n / 1024)} KB`;
+          console.log(`Compacted ${files} JSON files: ${kb(before)} -> ${kb(after)}`);
+          EOF
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

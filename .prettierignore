@@ -1,0 +1,10 @@
+# JSON is written by the Python builders in tools/ (json.dump, indent=4) and by
+# assets/scripts/update-stories-sequence.mjs; Prettier would fold short arrays
+# onto one line and the next rebuild would undo it.
+*.json
+
+# Deploy-critical; changed by hand only.
+assets/scripts/update-social-image.mjs
+
+# Python tooling and its content.
+tools/

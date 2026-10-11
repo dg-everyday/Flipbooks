@@ -23,15 +23,15 @@
  * inherit into the shadow root.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
+import { registerFonts } from "../../assets/scripts/fonts.js";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const HOME_URL = asset('../../');
-const PHOTO_URL = asset('../../assets/images/hero-1440.webp');
-const QR_URL = asset('../../assets/images/qr.png');
-const FLIPBOOK_URL = asset('../pages/flipbook.html');
-const MISSION_URL = asset('../pages/mission-statement.html');
+const HOME_URL = asset("../../");
+const PHOTO_URL = asset("../../assets/images/hero-1440.webp");
+const QR_URL = asset("../../assets/images/qr.png");
+const FLIPBOOK_URL = asset("../pages/flipbook.html");
+const MISSION_URL = asset("../pages/mission-statement.html");
 
 const STYLES = /* css */ `
   :host { display: block; }
@@ -238,20 +238,25 @@ const TEMPLATE = /* html */ `
 </footer>`;
 
 export class SiteFooter extends HTMLElement {
-  constructor() {
-    super();
-    const root = this.attachShadow({ mode: 'open' });
-    root.innerHTML = `<style>${STYLES}</style>${TEMPLATE}`;
-    root.querySelector('.footer-qr-button').addEventListener('click', () => {
-      document.getElementById(this.getAttribute('splash') ?? '')?.open?.();
-    });
-  }
+    constructor() {
+        super();
+        const root = this.attachShadow({ mode: "open" });
+        root.innerHTML = `<style>${STYLES}</style>${TEMPLATE}`;
+        root.querySelector(".footer-qr-button").addEventListener(
+            "click",
+            () => {
+                document
+                    .getElementById(this.getAttribute("splash") ?? "")
+                    ?.open?.();
+            },
+        );
+    }
 
-  connectedCallback() {
-    registerFonts();
-  }
+    connectedCallback() {
+        registerFonts();
+    }
 }
 
-if (!customElements.get('site-footer')) {
-  customElements.define('site-footer', SiteFooter);
+if (!customElements.get("site-footer")) {
+    customElements.define("site-footer", SiteFooter);
 }

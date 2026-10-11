@@ -183,7 +183,7 @@ def main():
             red_verses += 1
 
     with open(OUT, "w", encoding="utf8", newline="\n") as f:
-        json.dump(out, f, separators=(",", ":"))
+        json.dump(out, f, indent=4)
         f.write("\n")
     print(f"{red_verses} verses with words of Jesus in {len(out)} books -> {os.path.relpath(OUT, ROOT)}"
           f" ({os.path.getsize(OUT) // 1024} KB)")

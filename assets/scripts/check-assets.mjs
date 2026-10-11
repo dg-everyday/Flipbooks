@@ -69,15 +69,21 @@ for (const source of SOURCES) {
     const text = readFileSync(path, "utf8");
     for (const [, attr, css] of text.matchAll(REFERENCE)) {
         const raw = attr ?? css;
-        if (!raw || EXTERNAL.test(raw)) continue;
+        if (!raw || EXTERNAL.test(raw)) {
+            continue;
+        }
         const ref = raw.split(/[?#]/)[0];
-        if (!ref) continue;
+        if (!ref) {
+            continue;
+        }
         // Root-relative paths resolve from the site root, the rest from the file.
         const target = ref.startsWith("/")
             ? resolve(ROOT, `.${ref}`)
             : resolve(dirname(path), ref);
         checked += 1;
-        if (!existsSync(target)) fail(`${source} -> ${raw} (no such file)`);
+        if (!existsSync(target)) {
+            fail(`${source} -> ${raw} (no such file)`);
+        }
     }
 }
 
@@ -90,11 +96,15 @@ for (const source of SOURCES) {
 const STORY_DIR = resolve(ROOT, "assets/stories");
 if (existsSync(STORY_DIR)) {
     for (const file of readdirSync(STORY_DIR)) {
-        if (!file.endsWith(".json")) continue;
+        if (!file.endsWith(".json")) {
+            continue;
+        }
         const source = `assets/stories/${file}`;
         let manifest;
         try {
-            manifest = JSON.parse(readFileSync(resolve(STORY_DIR, file), "utf8"));
+            manifest = JSON.parse(
+                readFileSync(resolve(STORY_DIR, file), "utf8"),
+            );
         } catch (error) {
             fail(`${source} is not valid JSON (${error.message})`);
             continue;
@@ -107,10 +117,21 @@ if (existsSync(STORY_DIR)) {
         for (const [i, page] of pages.entries()) {
             for (const key of ["image", "audio"]) {
                 const raw = page?.[key];
-                if (!raw || EXTERNAL.test(raw)) continue;
+                if (!raw || EXTERNAL.test(raw)) {
+                    continue;
+                }
                 checked += 1;
-                if (!existsSync(resolve(ROOT, `.${raw.startsWith("/") ? "" : "/"}${raw}`))) {
-                    fail(`${source} page ${i + 1} ${key} -> ${raw} (no such file)`);
+                if (
+                    !existsSync(
+                        resolve(
+                            ROOT,
+                            `.${raw.startsWith("/") ? "" : "/"}${raw}`,
+                        ),
+                    )
+                ) {
+                    fail(
+                        `${source} page ${i + 1} ${key} -> ${raw} (no such file)`,
+                    );
                 }
             }
         }
@@ -125,16 +146,23 @@ if (existsSync(STORY_DIR)) {
 // apps/components. Paths put together at runtime are left out, except the
 // menu's guides below.
 const COMPONENT_DIR = resolve(ROOT, "apps/components");
-const ASSET_CALL = /\basset\(\s*'([^'$]+)'\s*\)/g;
+const ASSET_CALL = /\basset\(\s*['"]([^'"$]+)['"]\s*,?\s*\)/g;
 let componentFiles = 0;
 for (const file of readdirSync(COMPONENT_DIR)) {
-    if (!file.endsWith(".js")) continue;
+    if (!file.endsWith(".js")) {
+        continue;
+    }
     componentFiles += 1;
     const source = `apps/components/${file}`;
-    for (const [, raw] of readFileSync(resolve(COMPONENT_DIR, file), "utf8").matchAll(ASSET_CALL)) {
+    for (const [, raw] of readFileSync(
+        resolve(COMPONENT_DIR, file),
+        "utf8",
+    ).matchAll(ASSET_CALL)) {
         const ref = raw.split(/[?#]/)[0];
         checked += 1;
-        if (!existsSync(resolve(COMPONENT_DIR, ref))) fail(`${source} -> ${raw} (no such file)`);
+        if (!existsSync(resolve(COMPONENT_DIR, ref))) {
+            fail(`${source} -> ${raw} (no such file)`);
+        }
     }
 }
 
@@ -143,16 +171,21 @@ for (const file of readdirSync(COMPONENT_DIR)) {
 // component rather than restating them here.
 const MENU = "apps/components/study-guide-menu.js";
 const menuSource = readFileSync(resolve(ROOT, MENU), "utf8");
-const menuPrefix = (name) => menuSource.match(new RegExp(`^const ${name} = '([^']+)'`, "m"))?.[1];
+const menuPrefix = (name) =>
+    menuSource.match(new RegExp(`^const ${name} = ['"]([^'"]+)['"]`, "m"))?.[1];
 const guides = menuSource.match(/^const GUIDES = \[([\s\S]*?)^\];/m)?.[1];
 const guidePrefixes = { page: menuPrefix("PAGES"), icon: menuPrefix("ICONS") };
 if (!guides || !guidePrefixes.page || !guidePrefixes.icon) {
     fail(`could not read GUIDES, PAGES and ICONS from ${MENU}`);
 } else {
-    for (const [, key, name] of guides.matchAll(/^\s*(page|icon): '([^']+)'/gm)) {
+    for (const [, key, name] of guides.matchAll(
+        /^\s*(page|icon): ['"]([^'"]+)['"]/gm,
+    )) {
         checked += 1;
         if (!existsSync(resolve(COMPONENT_DIR, guidePrefixes[key] + name))) {
-            fail(`${MENU} guide ${key} -> ${guidePrefixes[key]}${name} (no such file)`);
+            fail(
+                `${MENU} guide ${key} -> ${guidePrefixes[key]}${name} (no such file)`,
+            );
         }
     }
 }
@@ -166,7 +199,9 @@ const readScript = (file) => readFileSync(resolve(ROOT, file), "utf8");
 const mediaBase = readScript("assets/scripts/script.js").match(
     /^const MEDIA_BASE_URL = ['"]([^'"]+)['"]/m,
 )?.[1];
-if (!mediaBase) fail("could not read MEDIA_BASE_URL from assets/scripts/script.js");
+if (!mediaBase) {
+    fail("could not read MEDIA_BASE_URL from assets/scripts/script.js");
+}
 
 // The same map is inlined in three files; a mismatch is a bug waiting to ship.
 const MAP_HOLDERS = [
@@ -176,7 +211,9 @@ const MAP_HOLDERS = [
 ];
 const maps = new Map();
 for (const file of MAP_HOLDERS) {
-    const literal = readScript(file).match(/const SYMBOL_BOOK_NAMES = (\{[^}]*\})/)?.[1];
+    const literal = readScript(file).match(
+        /const SYMBOL_BOOK_NAMES = (\{[^}]*\})/,
+    )?.[1];
     if (!literal) {
         fail(`could not read SYMBOL_BOOK_NAMES from ${file}`);
         continue;
@@ -185,16 +222,18 @@ for (const file of MAP_HOLDERS) {
 }
 const distinct = new Set(maps.values());
 if (distinct.size > 1) {
-    fail(`SYMBOL_BOOK_NAMES differs between files: ${[...maps].map(([f, m]) => `${f}=${m}`).join(" | ")}`);
+    fail(
+        `SYMBOL_BOOK_NAMES differs between files: ${[...maps].map(([f, m]) => `${f}=${m}`).join(" | ")}`,
+    );
 }
 
-const symbolNames = Object.fromEntries(
-    [...(distinct.values().next().value ?? "")
+const symbolNames = Object.fromEntries([
+    ...(distinct.values().next().value ?? "")
         .replace(/^\{|\}$/g, "")
         .split(",")
         .filter(Boolean)
-        .map((pair) => pair.split(":"))],
-);
+        .map((pair) => pair.split(":")),
+]);
 const symbolUrl = (book) =>
     `${mediaBase}images/symbols/${encodeURIComponent(symbolNames[book] ?? book)}-symbol.svg`;
 
@@ -205,10 +244,20 @@ const verses = readdirSync(VERSES_DIR, { withFileTypes: true })
     .flatMap((year) =>
         readdirSync(resolve(VERSES_DIR, year.name))
             .filter((file) => file.endsWith(".json"))
-            .flatMap((file) => JSON.parse(readFileSync(resolve(VERSES_DIR, year.name, file), "utf8"))),
+            .flatMap((file) =>
+                JSON.parse(
+                    readFileSync(resolve(VERSES_DIR, year.name, file), "utf8"),
+                ),
+            ),
     );
 const books = [
-    ...new Set(verses.map((item) => String(item.verse).replace(/\s+\d.*$/, "").trim())),
+    ...new Set(
+        verses.map((item) =>
+            String(item.verse)
+                .replace(/\s+\d.*$/, "")
+                .trim(),
+        ),
+    ),
 ].sort();
 
 if (!skipRemote && mediaBase) {
@@ -224,9 +273,13 @@ if (!skipRemote && mediaBase) {
         }),
     );
     for (const { book, url, ok, status } of results) {
-        if (ok) continue;
+        if (ok) {
+            continue;
+        }
         // A host that is down should never block publishing the day's devotional.
-        (warnRemote ? warnings : failures).push(`${book} -> ${url} (${status})`);
+        (warnRemote ? warnings : failures).push(
+            `${book} -> ${url} (${status})`,
+        );
     }
     checked += books.length;
 }
@@ -235,11 +288,19 @@ if (!skipRemote && mediaBase) {
 
 // The same file is often referenced more than once; report each problem once.
 const unique = (list) => [...new Set(list)];
-for (const warning of unique(warnings)) console.warn(`warning: ${warning}`);
+for (const warning of unique(warnings)) {
+    console.warn(`warning: ${warning}`);
+}
 const broken = unique(failures);
 if (broken.length) {
-    for (const failure of broken) console.error(`missing: ${failure}`);
-    console.error(`\n${broken.length} broken reference(s) out of ${checked} checked.`);
+    for (const failure of broken) {
+        console.error(`missing: ${failure}`);
+    }
+    console.error(
+        `\n${broken.length} broken reference(s) out of ${checked} checked.`,
+    );
     process.exit(1);
 }
-console.log(`${checked} references checked across ${SOURCES.length + componentFiles} files and ${books.length} books; all resolve.`);
+console.log(
+    `${checked} references checked across ${SOURCES.length + componentFiles} files and ${books.length} books; all resolve.`,
+);

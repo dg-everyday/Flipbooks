@@ -24,7 +24,9 @@ const DATABASE_URL = document.currentScript
 // ============================================================
 
 function loadSqlJsScript() {
-    if (typeof initSqlJs === "function") return Promise.resolve();
+    if (typeof initSqlJs === "function") {
+        return Promise.resolve();
+    }
 
     return new Promise(function (resolve, reject) {
         const script = document.createElement("script");
@@ -42,19 +44,23 @@ function loadSqlJsScript() {
 }
 
 function loadSqlJs() {
-    if (sqlJsLoading) return sqlJsLoading;
+    if (sqlJsLoading) {
+        return sqlJsLoading;
+    }
 
-    sqlJsLoading = loadSqlJsScript().then(function () {
-        return initSqlJs({
-            locateFile: function (file) {
-                return SQL_JS_BASE_URL + file;
-            },
+    sqlJsLoading = loadSqlJsScript()
+        .then(function () {
+            return initSqlJs({
+                locateFile: function (file) {
+                    return SQL_JS_BASE_URL + file;
+                },
+            });
+        })
+        .catch(function (error) {
+            // Allow a later call to try again.
+            sqlJsLoading = null;
+            throw error;
         });
-    }).catch(function (error) {
-        // Allow a later call to try again.
-        sqlJsLoading = null;
-        throw error;
-    });
 
     return sqlJsLoading;
 }
@@ -72,7 +78,6 @@ function initDatabase() {
 }
 
 async function openBibleDatabase() {
-
     // Load sql.js and the database side by side
 
     const [SQL, response] = await Promise.all([
@@ -174,7 +179,9 @@ function parseBibleReference(reference) {
         const value = part.trim();
 
         if (!/^\d+(?:\s*-\s*\d+)?$/.test(value)) {
-            throw new Error("Use verse numbers separated by commas or a range such as 8-9.");
+            throw new Error(
+                "Use verse numbers separated by commas or a range such as 8-9.",
+            );
         }
 
         // Range (8-9)
@@ -188,25 +195,26 @@ function parseBibleReference(reference) {
             const start = Number(range[0].trim());
             const end = Number(range[1].trim());
 
-            if (!Number.isSafeInteger(start)
-                    || !Number.isSafeInteger(end)
-                    || start < 1 
-                    || end < start) 
-            {
+            if (
+                !Number.isSafeInteger(start) ||
+                !Number.isSafeInteger(end) ||
+                start < 1 ||
+                end < start
+            ) {
                 throw new Error(`Invalid verse range: ${value}`);
             }
 
             // No Bible chapter has a range this large; avoid blocking the UI.
             if (end - start > 1000) {
-                throw new Error("Verse range is too large. Try a book or chapter instead.");
+                throw new Error(
+                    "Verse range is too large. Try a book or chapter instead.",
+                );
             }
 
             for (let verse = start; verse <= end; verse++) {
                 verses.push(verse);
             }
-
         } else {
-
             // Single verse
             const verse = Number(value);
             if (!Number.isSafeInteger(verse) || verse < 1) {
@@ -247,7 +255,8 @@ function parseBibleReference(reference) {
 // ============================================================
 
 const PSALM_HEADING = /\s{3,}Psalm (\d+)\s*(.*?)\s*$/;
-const ACROSTIC = /(?:^|\s+)(?:ALEPH|BETH|GIMEL|DALETH|HE|VAU|ZAIN|CHETH|TETH|JOD|CAPH|LAMED|MEM|NUN|SAMECH|AIN|PE|TZADDI|KOPH|RESH|SCHIN|TAU)\.\s*$/;
+const ACROSTIC =
+    /(?:^|\s+)(?:ALEPH|BETH|GIMEL|DALETH|HE|VAU|ZAIN|CHETH|TETH|JOD|CAPH|LAMED|MEM|NUN|SAMECH|AIN|PE|TZADDI|KOPH|RESH|SCHIN|TAU)\.\s*$/;
 const BROKEN_HYPHEN = /(?<=[A-Za-z])-\s+(?=[a-z])/g;
 
 function splitVerseText(bookId, rawText) {
@@ -259,8 +268,13 @@ function splitVerseText(bookId, rawText) {
         if (heading) {
             text = text.slice(0, heading.index);
             // Psalm 119 has no title, only its first letter.
-            const titleText = heading[2].replace(ACROSTIC, "").replace(/\s+/g, " ").trim();
-            if (titleText) title = { chapter: Number(heading[1]), text: titleText };
+            const titleText = heading[2]
+                .replace(ACROSTIC, "")
+                .replace(/\s+/g, " ")
+                .trim();
+            if (titleText) {
+                title = { chapter: Number(heading[1]), text: titleText };
+            }
         }
         text = text.replace(ACROSTIC, "");
     }
@@ -346,8 +360,12 @@ function getVersesByIds(ids) {
         throw new Error("Database has not been initialized.");
     }
 
-    const docids = [...new Set((ids ?? []).map(Number))].filter(Number.isSafeInteger);
-    if (docids.length === 0) return [];
+    const docids = [...new Set((ids ?? []).map(Number))].filter(
+        Number.isSafeInteger,
+    );
+    if (docids.length === 0) {
+        return [];
+    }
 
     const placeholders = docids.map(() => "?").join(",");
     const query = `
@@ -377,10 +395,11 @@ function getVersesByIds(ids) {
 // ============================================================
 
 function parseSearchKeywords(query) {
-    const words = String(query ?? "")
-        .toLowerCase()
-        .replace(/[’‘]/g, "'")
-        .match(/[a-z0-9']+/g) ?? [];
+    const words =
+        String(query ?? "")
+            .toLowerCase()
+            .replace(/[’‘]/g, "'")
+            .match(/[a-z0-9']+/g) ?? [];
 
     // Drop apostrophes left at the edges by quoting, as in 'grace'
     const cleaned = words
@@ -424,12 +443,17 @@ function searchVersesByKeywords(words) {
 
     stmt.free();
 
-    const patterns = words.map((word) => new RegExp(`\\b${word.replace(/'/g, "['’]")}\\b`, "i"));
-    const matches = (bookName, text) => patterns.every((pattern) => pattern.test(`${bookName} ${text}`));
+    const patterns = words.map(
+        (word) => new RegExp(`\\b${word.replace(/'/g, "['’]")}\\b`, "i"),
+    );
+    const matches = (bookName, text) =>
+        patterns.every((pattern) => pattern.test(`${bookName} ${text}`));
     const results = [];
     for (const row of rows) {
         const { text, title } = splitVerseText(row.book_id, row.text);
-        if (matches(row.book_name, text)) results.push({ ...row, text });
+        if (matches(row.book_name, text)) {
+            results.push({ ...row, text });
+        }
         // A psalm's title is stored on the verse before the psalm, so it
         // comes right after that verse: ahead of the psalm's verse 1. It
         // is verse 0, with no docid, so it cannot be bookmarked.
@@ -466,4 +490,3 @@ function getBooks(asJsonString = false) {
 
     return asJsonString ? JSON.stringify(books) : books;
 }
-

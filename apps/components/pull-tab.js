@@ -26,9 +26,11 @@ const PULL_SLOP = 6;
 const PULL_MAX = 84;
 const PULL_ARM = 44;
 
-const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reducedMotion = () =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-export const PULL_TAB_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="chevron chevron-top" d="M5 4.5l7 7 7-7"/><path class="chevron chevron-bottom" d="M5 11.5l7 7 7-7"/></svg>';
+export const PULL_TAB_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="chevron chevron-top" d="M5 4.5l7 7 7-7"/><path class="chevron chevron-bottom" d="M5 11.5l7 7 7-7"/></svg>';
 
 export const PULL_TAB_STYLES = /* css */ `
   .pull-tab {
@@ -91,118 +93,159 @@ export const PULL_TAB_STYLES = /* css */ `
 
 /** Slides newly added cards into place, one after another. */
 export function revealCards(cards) {
-  if (reducedMotion()) return;
-  cards.forEach((card, index) => {
-    card.animate(
-      [{ opacity: 0, transform: 'translateY(-14px)' }, { opacity: 1, transform: 'none' }],
-      { duration: 380, delay: index * 70, easing: 'cubic-bezier(.2, .8, .3, 1)', fill: 'backwards' },
-    );
-  });
+    if (reducedMotion()) {
+        return;
+    }
+    cards.forEach((card, index) => {
+        card.animate(
+            [
+                { opacity: 0, transform: "translateY(-14px)" },
+                { opacity: 1, transform: "none" },
+            ],
+            {
+                duration: 380,
+                delay: index * 70,
+                easing: "cubic-bezier(.2, .8, .3, 1)",
+                fill: "backwards",
+            },
+        );
+    });
 }
 
 export class PullTab {
-  #tab;
-  #onPull;
-  #pointer = null;
-  // A drag has done its work on pointerup, so the click that follows is not a tap.
-  #dragged = false;
-  #hiding = null;
+    #tab;
+    #onPull;
+    #pointer = null;
+    // A drag has done its work on pointerup, so the click that follows is not a tap.
+    #dragged = false;
+    #hiding = null;
 
-  constructor(tab, { onPull }) {
-    this.#tab = tab;
-    this.#onPull = onPull;
-    tab.addEventListener('pointerdown', this.#down);
-    tab.addEventListener('pointermove', this.#move);
-    tab.addEventListener('pointerup', this.#up);
-    tab.addEventListener('pointercancel', this.#release);
-    tab.addEventListener('click', (event) => {
-      // A keyboard click has no detail, and always counts.
-      if (this.#dragged && event.detail !== 0) {
-        this.#dragged = false;
-        return;
-      }
-      this.#fire();
-    });
-    tab.addEventListener('animationend', (event) => {
-      if (event.animationName === 'pull-fire' && event.target.classList.contains('chevron-bottom')) {
-        tab.classList.remove('fired');
-      }
-    });
-  }
-
-  show() {
-    this.#hiding?.cancel();
-    this.#hiding = null;
-    this.#tab.hidden = false;
-  }
-
-  /**
-   * Hides the tab, folding it away with animate. If it had the focus, the
-   * focus moves to focus rather than drop to the page.
-   */
-  hide({ animate = false, focus = null } = {}) {
-    if (this.#tab.hidden || this.#hiding) return;
-    this.#release();
-    if (this.#tab.getRootNode().activeElement === this.#tab) focus?.focus({ preventScroll: true });
-    if (!animate || reducedMotion()) {
-      this.#tab.hidden = true;
-      return;
+    constructor(tab, { onPull }) {
+        this.#tab = tab;
+        this.#onPull = onPull;
+        tab.addEventListener("pointerdown", this.#down);
+        tab.addEventListener("pointermove", this.#move);
+        tab.addEventListener("pointerup", this.#up);
+        tab.addEventListener("pointercancel", this.#release);
+        tab.addEventListener("click", (event) => {
+            // A keyboard click has no detail, and always counts.
+            if (this.#dragged && event.detail !== 0) {
+                this.#dragged = false;
+                return;
+            }
+            this.#fire();
+        });
+        tab.addEventListener("animationend", (event) => {
+            if (
+                event.animationName === "pull-fire" &&
+                event.target.classList.contains("chevron-bottom")
+            ) {
+                tab.classList.remove("fired");
+            }
+        });
     }
-    const hiding = (this.#hiding = this.#tab.animate(
-      [
-        { opacity: 1, height: `${this.#tab.offsetHeight}px`, transform: 'none' },
-        { opacity: 0, height: '0px', transform: 'scale(.6)' },
-      ],
-      // A short wait first, so the last pull's drop plays before it folds.
-      { duration: 360, delay: 200, easing: 'cubic-bezier(.4, 0, .2, 1)', fill: 'both' },
-    ));
-    hiding.finished
-      .then(() => {
-        if (hiding !== this.#hiding) return;
+
+    show() {
+        this.#hiding?.cancel();
         this.#hiding = null;
-        this.#tab.hidden = true;
-        hiding.cancel();
-      })
-      .catch(() => {}); // cancelled by show()
-  }
+        this.#tab.hidden = false;
+    }
 
-  #fire() {
-    if (this.#tab.hidden || this.#hiding) return;
-    this.#tab.classList.remove('fired');
-    void this.#tab.offsetWidth; // restart the drop on repeat pulls
-    this.#tab.classList.add('fired');
-    this.#onPull();
-  }
+    /**
+     * Hides the tab, folding it away with animate. If it had the focus, the
+     * focus moves to focus rather than drop to the page.
+     */
+    hide({ animate = false, focus = null } = {}) {
+        if (this.#tab.hidden || this.#hiding) {
+            return;
+        }
+        this.#release();
+        if (this.#tab.getRootNode().activeElement === this.#tab) {
+            focus?.focus({ preventScroll: true });
+        }
+        if (!animate || reducedMotion()) {
+            this.#tab.hidden = true;
+            return;
+        }
+        const hiding = (this.#hiding = this.#tab.animate(
+            [
+                {
+                    opacity: 1,
+                    height: `${this.#tab.offsetHeight}px`,
+                    transform: "none",
+                },
+                { opacity: 0, height: "0px", transform: "scale(.6)" },
+            ],
+            // A short wait first, so the last pull's drop plays before it folds.
+            {
+                duration: 360,
+                delay: 200,
+                easing: "cubic-bezier(.4, 0, .2, 1)",
+                fill: "both",
+            },
+        ));
+        hiding.finished
+            .then(() => {
+                if (hiding !== this.#hiding) {
+                    return;
+                }
+                this.#hiding = null;
+                this.#tab.hidden = true;
+                hiding.cancel();
+            })
+            .catch(() => {}); // cancelled by show()
+    }
 
-  #down = (event) => {
-    if (!event.isPrimary || event.button !== 0) return;
-    this.#dragged = false;
-    this.#pointer = { id: event.pointerId, startY: event.clientY };
-    this.#tab.setPointerCapture(event.pointerId);
-  };
+    #fire() {
+        if (this.#tab.hidden || this.#hiding) {
+            return;
+        }
+        this.#tab.classList.remove("fired");
+        void this.#tab.offsetWidth; // restart the drop on repeat pulls
+        this.#tab.classList.add("fired");
+        this.#onPull();
+    }
 
-  #move = (event) => {
-    if (event.pointerId !== this.#pointer?.id) return;
-    const distance = event.clientY - this.#pointer.startY;
-    if (!this.#dragged && distance < PULL_SLOP) return;
-    this.#dragged = true;
-    // The further it goes, the harder it pulls, like a rubber band.
-    const pull = PULL_MAX * (1 - Math.exp(-Math.max(0, distance) / PULL_MAX));
-    this.#tab.classList.add('pulling');
-    this.#tab.classList.toggle('armed', pull >= PULL_ARM);
-    this.#tab.style.setProperty('--pull', `${pull}px`);
-  };
+    #down = (event) => {
+        if (!event.isPrimary || event.button !== 0) {
+            return;
+        }
+        this.#dragged = false;
+        this.#pointer = { id: event.pointerId, startY: event.clientY };
+        this.#tab.setPointerCapture(event.pointerId);
+    };
 
-  #up = (event) => {
-    if (event.pointerId !== this.#pointer?.id) return;
-    const armed = this.#tab.classList.contains('armed');
-    this.#release();
-    if (armed) this.#fire();
-  };
+    #move = (event) => {
+        if (event.pointerId !== this.#pointer?.id) {
+            return;
+        }
+        const distance = event.clientY - this.#pointer.startY;
+        if (!this.#dragged && distance < PULL_SLOP) {
+            return;
+        }
+        this.#dragged = true;
+        // The further it goes, the harder it pulls, like a rubber band.
+        const pull =
+            PULL_MAX * (1 - Math.exp(-Math.max(0, distance) / PULL_MAX));
+        this.#tab.classList.add("pulling");
+        this.#tab.classList.toggle("armed", pull >= PULL_ARM);
+        this.#tab.style.setProperty("--pull", `${pull}px`);
+    };
 
-  #release = () => {
-    this.#pointer = null;
-    this.#tab.classList.remove('pulling', 'armed');
-    this.#tab.style.removeProperty('--pull');
-  };
+    #up = (event) => {
+        if (event.pointerId !== this.#pointer?.id) {
+            return;
+        }
+        const armed = this.#tab.classList.contains("armed");
+        this.#release();
+        if (armed) {
+            this.#fire();
+        }
+    };
+
+    #release = () => {
+        this.#pointer = null;
+        this.#tab.classList.remove("pulling", "armed");
+        this.#tab.style.removeProperty("--pull");
+    };
 }

@@ -46,24 +46,30 @@
  * Events       memorypractice  a practice was finished, detail: { week, day, learned }
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
-import { DEFAULT_VERSES_BASE, loadVerses } from './daily-verses.js?v=20261004-1';
-import { parseReference } from './scripture-refs.js?v=20261002-1';
-import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
-import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
+import { registerFonts } from "../../assets/scripts/fonts.js";
+import {
+    DEFAULT_VERSES_BASE,
+    loadVerses,
+} from "./daily-verses.js?v=20261004-1";
+import { parseReference } from "./scripture-refs.js?v=20261002-1";
+import {
+    BOOK_THUMB_BOUNDS,
+    DEFAULT_THUMB_BOUNDS,
+} from "./book-thumb-bounds.js";
+import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 // The book thumbnails, as on <bible-sayings>: .webp on the media host, each
 // blown up until its gold frame alone fills the square (book-thumb-bounds.js).
 const bookThumbnailUrl = (mediaBase, book) =>
-  `${mediaBase}images/thumbnails/${encodeURIComponent(book)}_square.webp`;
+    `${mediaBase}images/thumbnails/${encodeURIComponent(book)}_square.webp`;
 const THUMBNAIL_TRIM = 0.985;
 
-const TIME_ZONE = 'Asia/Manila';
+const TIME_ZONE = "Asia/Manila";
 const DAY_MS = 86400000;
 
-const PROGRESS_KEY = 'dailygrace:memory:progress';
-const LEARNED_KEY = 'dailygrace:memory:learned';
+const PROGRESS_KEY = "dailygrace:memory:progress";
+const LEARNED_KEY = "dailygrace:memory:learned";
 // About two months of weeks, and a few years of learned verses.
 const MAX_WEEKS = 8;
 const MAX_LEARNED = 200;
@@ -72,16 +78,47 @@ const PHRASE_WORDS = 5;
 const READS = 3;
 
 const PRACTICES = [
-  { kind: 'read', name: 'Read it', hint: 'Read it aloud, slowly. Then read it again.' },
-  { kind: 'phrases', name: 'Phrase by phrase', hint: 'Tap to bring in the next phrase. Say each one as it comes.' },
-  { kind: 'blanks', every: 4, name: 'Fill a few', hint: 'Say the verse, filling in the blanks. Tap a blank to peek.' },
-  { kind: 'blanks', every: 2, name: 'Fill half', hint: 'Half the words are gone. Tap a blank to peek.' },
-  { kind: 'letters', name: 'First letters', hint: 'Only the first letters are left. Tap a word to peek.' },
-  { kind: 'order', name: 'Put it in order', hint: 'Tap the phrases in the order they come.' },
-  { kind: 'say', name: 'Say it', hint: 'Say the verse out loud, or in your heart. Then check.' },
+    {
+        kind: "read",
+        name: "Read it",
+        hint: "Read it aloud, slowly. Then read it again.",
+    },
+    {
+        kind: "phrases",
+        name: "Phrase by phrase",
+        hint: "Tap to bring in the next phrase. Say each one as it comes.",
+    },
+    {
+        kind: "blanks",
+        every: 4,
+        name: "Fill a few",
+        hint: "Say the verse, filling in the blanks. Tap a blank to peek.",
+    },
+    {
+        kind: "blanks",
+        every: 2,
+        name: "Fill half",
+        hint: "Half the words are gone. Tap a blank to peek.",
+    },
+    {
+        kind: "letters",
+        name: "First letters",
+        hint: "Only the first letters are left. Tap a word to peek.",
+    },
+    {
+        kind: "order",
+        name: "Put it in order",
+        hint: "Tap the phrases in the order they come.",
+    },
+    {
+        kind: "say",
+        name: "Say it",
+        hint: "Say the verse out loud, or in your heart. Then check.",
+    },
 ];
 
-const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const ICON_ATTRS =
+    'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const CLOSE_ICON = `<svg ${ICON_ATTRS}><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>`;
 const NEXT_ICON = `<svg ${ICON_ATTRS}><polyline points="9 6 15 12 9 18"/></svg>`;
 const DOUBLE_NEXT_ICON = `<svg ${ICON_ATTRS}><polyline points="5 6 11 12 5 18"/><polyline points="13 6 19 12 13 18"/></svg>`;
@@ -95,7 +132,6 @@ const STYLES = /* css */ `
     --memory-gold-light: var(--gold-light, #e1b65d);
     --memory-gold-ink: #7d5a12;
     --memory-cream: #f6eedf;
-    --memory-paper: #fbf5e9;
     --memory-green: #0b3324;
     --memory-green-2: #145238;
     --memory-ink: var(--ink, #10253b);
@@ -393,112 +429,145 @@ const STYLES = /* css */ `
 /* ---------- Days ---------- */
 
 function manilaToday() {
-  return new Intl.DateTimeFormat('en-CA', { timeZone: TIME_ZONE, year: 'numeric', month: '2-digit', day: '2-digit' })
-    .format(new Date());
+    return new Intl.DateTimeFormat("en-CA", {
+        timeZone: TIME_ZONE,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    }).format(new Date());
 }
 
 const isoOf = (date) => date.toISOString().slice(0, 10);
 
 /** The Sunday-to-Saturday week around a YYYY-MM-DD day, as UTC-midnight Dates. */
 function weekOf(iso) {
-  const [year, month, day] = iso.split('-').map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day));
-  const sunday = date.getTime() - date.getUTCDay() * DAY_MS;
-  return Array.from({ length: 7 }, (_, i) => new Date(sunday + i * DAY_MS));
+    const [year, month, day] = iso.split("-").map(Number);
+    const date = new Date(Date.UTC(year, month - 1, day));
+    const sunday = date.getTime() - date.getUTCDay() * DAY_MS;
+    return Array.from({ length: 7 }, (_, i) => new Date(sunday + i * DAY_MS));
 }
 
 const dayName = (date) =>
-  date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' });
+    date.toLocaleDateString("en-US", {
+        timeZone: "UTC",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+    });
 
 /* ---------- Storage, on this device only ---------- */
 
 function readStore(key, fallback) {
-  try {
-    return JSON.parse(localStorage.getItem(key)) ?? fallback;
-  } catch {
-    return fallback;
-  }
+    try {
+        return JSON.parse(localStorage.getItem(key)) ?? fallback;
+    } catch {
+        return fallback;
+    }
 }
 
 function writeStore(key, value) {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-  } catch {
-    // Private mode or a full store: the practice still works, it just forgets.
-  }
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+        // Private mode or a full store: the practice still works, it just forgets.
+    }
 }
 
 /* ---------- The verse, taken apart ---------- */
 
-const escapeHtml = (text) => String(text ?? '').replace(/[&<>"']/g, (character) => ({
-  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
-})[character]);
+const escapeHtml = (text) =>
+    String(text ?? "").replace(
+        /[&<>"']/g,
+        (character) =>
+            ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;",
+            })[character],
+    );
 
 /** Each word split into its leading marks, the word itself and its trailing marks. */
 function wordsOf(text) {
-  return String(text).trim().split(/\s+/).map((token) => {
-    const [, lead, core, trail] = /^([^\p{L}\p{N}]*)(.*?)([^\p{L}\p{N}]*)$/u.exec(token);
-    return { lead, core, trail };
-  });
+    return String(text)
+        .trim()
+        .split(/\s+/)
+        .map((token) => {
+            const [, lead, core, trail] =
+                /^([^\p{L}\p{N}]*)(.*?)([^\p{L}\p{N}]*)$/u.exec(token);
+            return { lead, core, trail };
+        });
 }
 
 /** The verse in phrases: cut at its punctuation, and long phrases cut again into pieces. */
 function phrasesOf(text) {
-  const phrases = [];
-  for (const part of String(text).trim().split(/(?<=[,;:.!?])\s+/)) {
-    const words = part.split(/\s+/);
-    const pieces = Math.ceil(words.length / PHRASE_WORDS);
-    const size = Math.ceil(words.length / pieces);
-    for (let i = 0; i < words.length; i += size) phrases.push(words.slice(i, i + size).join(' '));
-  }
-  return phrases;
+    const phrases = [];
+    for (const part of String(text)
+        .trim()
+        .split(/(?<=[,;:.!?])\s+/)) {
+        const words = part.split(/\s+/);
+        const pieces = Math.ceil(words.length / PHRASE_WORDS);
+        const size = Math.ceil(words.length / pieces);
+        for (let i = 0; i < words.length; i += size) {
+            phrases.push(words.slice(i, i + size).join(" "));
+        }
+    }
+    return phrases;
 }
 
 /** A shuffle that is the same all week (seeded by its Sunday) and never the verse's own order. */
 function shuffled(items, seed) {
-  let state = [...seed].reduce((hash, character) => (hash * 31 + character.charCodeAt(0)) >>> 0, 7);
-  const random = () => {
-    state = (state * 1664525 + 1013904223) >>> 0;
-    return state / 2 ** 32;
-  };
-  const order = items.map((_, i) => i);
-  for (let attempt = 0; attempt < 5; attempt++) {
-    for (let i = order.length - 1; i > 0; i--) {
-      const j = Math.floor(random() * (i + 1));
-      [order[i], order[j]] = [order[j], order[i]];
+    let state = [...seed].reduce(
+        (hash, character) => (hash * 31 + character.charCodeAt(0)) >>> 0,
+        7,
+    );
+    const random = () => {
+        state = (state * 1664525 + 1013904223) >>> 0;
+        return state / 2 ** 32;
+    };
+    const order = items.map((_, i) => i);
+    for (let attempt = 0; attempt < 5; attempt++) {
+        for (let i = order.length - 1; i > 0; i--) {
+            const j = Math.floor(random() * (i + 1));
+            [order[i], order[j]] = [order[j], order[i]];
+        }
+        if (order.some((value, i) => value !== i)) {
+            break;
+        }
     }
-    if (order.some((value, i) => value !== i)) break;
-  }
-  if (order.length > 1 && order.every((value, i) => value === i)) order.reverse();
-  return order;
+    if (order.length > 1 && order.every((value, i) => value === i)) {
+        order.reverse();
+    }
+    return order;
 }
 
 export class MemoryVerse extends HTMLElement {
-  static observedAttributes = ['media-base', 'verses-base', 'date'];
+    static observedAttributes = ["media-base", "verses-base", "date"];
 
-  #root;
-  #card;
-  #dialog;
-  #progress;
-  #count;
-  #body;
-  #nav;
+    #root;
+    #card;
+    #dialog;
+    #progress;
+    #count;
+    #body;
+    #nav;
 
-  #today = manilaToday();
-  #week = null;      // { sunday, days: [iso…] }
-  #entry = null;
-  #level = 0;        // the practice open now, 0 to 6
-  #screen = 'practice';
-  #state = {};       // the open practice's taps and peeks
-  #loadId = 0;
-  #configurePending = false;
-  #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    #today = manilaToday();
+    #week = null; // { sunday, days: [iso…] }
+    #entry = null;
+    #level = 0; // the practice open now, 0 to 6
+    #screen = "practice";
+    #state = {}; // the open practice's taps and peeks
+    #loadId = 0;
+    #configurePending = false;
+    #reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  constructor() {
-    super();
-    this.hidden = true;
-    this.#root = this.attachShadow({ mode: 'open' });
-    this.#root.innerHTML = `
+    constructor() {
+        super();
+        this.hidden = true;
+        this.#root = this.attachShadow({ mode: "open" });
+        this.#root.innerHTML = `
       <style>${STYLES}</style>
       <button class="card" type="button" aria-haspopup="dialog">
         <span class="card-icon">${BOOK_ICON}<span class="symbol"></span><span class="card-check">${CHECK_ICON}</span></span>
@@ -508,7 +577,7 @@ export class MemoryVerse extends HTMLElement {
         </span>
         <span class="card-snippet"></span>
         <span class="card-meta">
-          <span class="dots" aria-hidden="true">${'<span></span>'.repeat(7)}</span>
+          <span class="dots" aria-hidden="true">${"<span></span>".repeat(7)}</span>
           <span class="card-status"></span>
         </span>
         <span class="card-chevron" aria-hidden="true">${DOUBLE_NEXT_ICON}</span>
@@ -517,432 +586,552 @@ export class MemoryVerse extends HTMLElement {
         <div class="frame">
           <div class="bar">
             <button class="close" type="button" aria-label="Close the practice">${CLOSE_ICON}</button>
-            <div class="progress" aria-hidden="true">${'<span></span>'.repeat(PRACTICES.length)}</div>
+            <div class="progress" aria-hidden="true">${"<span></span>".repeat(PRACTICES.length)}</div>
             <span class="count"></span>
           </div>
           <div class="body"></div>
           <div class="nav"></div>
         </div>
       </dialog>`;
-    this.#card = this.#root.querySelector('.card');
-    this.#dialog = this.#root.querySelector('dialog');
-    this.#progress = [...this.#root.querySelectorAll('.progress span')];
-    this.#count = this.#root.querySelector('.count');
-    this.#body = this.#root.querySelector('.body');
-    this.#nav = this.#root.querySelector('.nav');
+        this.#card = this.#root.querySelector(".card");
+        this.#dialog = this.#root.querySelector("dialog");
+        this.#progress = [...this.#root.querySelectorAll(".progress span")];
+        this.#count = this.#root.querySelector(".count");
+        this.#body = this.#root.querySelector(".body");
+        this.#nav = this.#root.querySelector(".nav");
 
-    this.#card.addEventListener('click', () => this.open());
-    this.#root.querySelector('.close').addEventListener('click', () => this.close());
-    this.#dialog.addEventListener('close', () => this.#closed());
-    this.#dialog.addEventListener('click', (event) => {
-      if (event.target === this.#dialog) this.close();
-    });
-    // The practice's own buttons, wired once for every screen.
-    this.#body.addEventListener('click', (event) => this.#bodyClick(event));
-    this.#nav.addEventListener('click', (event) => {
-      const action = event.target.closest('button')?.dataset.action;
-      if (action) this.#act(action);
-    });
-  }
-
-  connectedCallback() {
-    registerFonts();
-    this.#scheduleConfigure();
-    document.addEventListener('visibilitychange', this.#checkDate);
-  }
-
-  disconnectedCallback() {
-    document.removeEventListener('visibilitychange', this.#checkDate);
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue !== newValue && this.isConnected) this.#scheduleConfigure();
-  }
-
-  // Coming back after midnight may begin a new day, or a new week.
-  #checkDate = () => {
-    if (document.hidden || this.#dialog.open || this.hasAttribute('date')) return;
-    if (manilaToday() !== this.#today) this.#scheduleConfigure();
-  };
-
-  get ready() {
-    return Boolean(this.#entry);
-  }
-
-  get verse() {
-    return this.#entry;
-  }
-
-  #scheduleConfigure() {
-    if (this.#configurePending) return;
-    this.#configurePending = true;
-    queueMicrotask(() => {
-      this.#configurePending = false;
-      this.#configure();
-    });
-  }
-
-  async #configure() {
-    this.#today = manilaToday();
-    const date = this.getAttribute('date');
-    // With a date set, that day stands in for today.
-    if (/^\d{4}-\d{2}-\d{2}$/.test(date ?? '')) this.#today = date;
-    const days = weekOf(this.#today);
-    const names = days.map(dayName);
-    const loadId = ++this.#loadId;
-    const base = new URL(this.getAttribute('verses-base') || DEFAULT_VERSES_BASE, document.baseURI).href;
-    let entry = null;
-    try {
-      const verses = await loadVerses(base, names);
-      const entries = names.map((name) => verses.get(name)).filter(Boolean);
-      entry = entries.find((item) => item.memory === true) ?? verses.get(names[0]) ?? null;
-    } catch (error) {
-      console.warn("This week's memory verse could not be loaded:", error);
+        this.#card.addEventListener("click", () => this.open());
+        this.#root
+            .querySelector(".close")
+            .addEventListener("click", () => this.close());
+        this.#dialog.addEventListener("close", () => this.#closed());
+        this.#dialog.addEventListener("click", (event) => {
+            if (event.target === this.#dialog) {
+                this.close();
+            }
+        });
+        // The practice's own buttons, wired once for every screen.
+        this.#body.addEventListener("click", (event) => this.#bodyClick(event));
+        this.#nav.addEventListener("click", (event) => {
+            const action = event.target.closest("button")?.dataset.action;
+            if (action) {
+                this.#act(action);
+            }
+        });
     }
-    if (loadId !== this.#loadId) return; // a newer date or source took over
-    this.#week = { sunday: isoOf(days[0]), days: days.map(isoOf) };
-    this.#entry = entry;
-    this.hidden = !entry;
-    this.#renderCard();
-  }
 
-  /* ----- Progress ----- */
-
-  /** The days practised this week, in order. */
-  get #practised() {
-    return readStore(PROGRESS_KEY, {})[this.#week.sunday] ?? [];
-  }
-
-  get #practisedToday() {
-    return this.#practised.includes(this.#today);
-  }
-
-  /** Today's practice: one step on for each earlier day practised this week. */
-  get #todaysLevel() {
-    const before = this.#practised.filter((iso) => iso !== this.#today).length;
-    return Math.min(before, PRACTICES.length - 1);
-  }
-
-  get #learned() {
-    return readStore(LEARNED_KEY, []).some((item) => item.week === this.#week.sunday && item.verse === this.#entry?.verse);
-  }
-
-  #recordPractice(learned) {
-    const progress = readStore(PROGRESS_KEY, {});
-    const days = new Set(progress[this.#week.sunday] ?? []);
-    days.add(this.#today);
-    progress[this.#week.sunday] = [...days].sort();
-    const kept = Object.keys(progress).sort().slice(-MAX_WEEKS);
-    writeStore(PROGRESS_KEY, Object.fromEntries(kept.map((week) => [week, progress[week]])));
-    if (learned && !this.#learned) {
-      const list = readStore(LEARNED_KEY, []);
-      list.push({ verse: this.#entry.verse, week: this.#week.sunday });
-      writeStore(LEARNED_KEY, list.slice(-MAX_LEARNED));
+    connectedCallback() {
+        registerFonts();
+        this.#scheduleConfigure();
+        document.addEventListener("visibilitychange", this.#checkDate);
     }
-    this.dispatchEvent(new CustomEvent('memorypractice', {
-      detail: { week: this.#week.sunday, day: this.#today, learned: this.#learned },
-    }));
-  }
 
-  #renderCard() {
-    if (!this.#entry) return;
-    const count = this.#practised.length;
-    const learned = this.#learned;
-    const level = this.#todaysLevel;
-    this.#card.classList.toggle('learned', learned);
-    this.#card.classList.toggle('due', !learned);
-    this.#renderSymbol();
-    this.#card.querySelector('.card-ref').textContent = learned ? `${this.#entry.verse} — learned!` : this.#entry.verse;
-    this.#card.querySelector('.card-snippet').textContent = this.#entry.text;
-    this.#card.querySelectorAll('.dots span').forEach((dot, i) => dot.classList.toggle('on', i < count));
-    const status = learned
-      ? 'Tap to say it again'
-      : this.#practisedToday
-        ? `Practised today · ${count} of 7 days`
-        : `Day ${level + 1} of 7 · ${PRACTICES[level].name} · 1 minute`;
-    this.#card.querySelector('.card-status').textContent = status;
-    this.#card.setAttribute('aria-label', `This Week’s Memory Verse Challenge, ${this.#entry.verse}. ${status}.`);
-  }
+    disconnectedCallback() {
+        document.removeEventListener("visibilitychange", this.#checkDate);
+    }
 
-  /** The verse's book picture, drawn as <bible-sayings> draws it. */
-  #renderSymbol() {
-    const icon = this.#card.querySelector('.card-icon');
-    const symbol = icon.querySelector('.symbol');
-    const book = parseReference(this.#entry.verse)?.book;
-    const base = this.getAttribute('media-base') || DEFAULT_MEDIA_BASE;
-    const url = book ? bookThumbnailUrl(base.endsWith('/') ? base : `${base}/`, book) : '';
-    if (symbol.dataset.url === url) return;
-    symbol.dataset.url = url;
-    symbol.replaceChildren();
-    icon.classList.remove('pictured');
-    icon.style.borderRadius = '';
-    if (!url) return;
-    const image = document.createElement('img');
-    image.alt = '';
-    const [x, y, size, radius] = BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
-    const side = size * THUMBNAIL_TRIM;
-    const inset = (size - side) / 2;
-    image.style.width = `${100 / side}%`;
-    image.style.height = `${100 / side}%`;
-    image.style.left = `${(-(x + inset) / side) * 100}%`;
-    image.style.top = `${(-(y + inset) / side) * 100}%`;
-    image.onload = () => {
-      if (symbol.dataset.url !== url) return;
-      icon.classList.add('pictured');
-      icon.style.borderRadius = `${radius * 100}%`;
-      symbol.style.borderRadius = `${radius * 100}%`;
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue && this.isConnected) {
+            this.#scheduleConfigure();
+        }
+    }
+
+    // Coming back after midnight may begin a new day, or a new week.
+    #checkDate = () => {
+        if (document.hidden || this.#dialog.open || this.hasAttribute("date")) {
+            return;
+        }
+        if (manilaToday() !== this.#today) {
+            this.#scheduleConfigure();
+        }
     };
-    image.src = url;
-    symbol.append(image);
-  }
 
-  /* ----- The practice ----- */
-
-  /** Open today's practice. */
-  open() {
-    if (!this.#entry || this.#dialog.open) return;
-    this.#level = this.#learned ? PRACTICES.length - 1 : this.#todaysLevel;
-    this.#screen = 'practice';
-    this.#state = {};
-    this.#dialog.showModal();
-    document.documentElement.style.overflow = 'hidden';
-    this.#render();
-  }
-
-  close() {
-    if (this.#dialog.open) this.#dialog.close();
-  }
-
-  #closed() {
-    document.documentElement.style.overflow = '';
-    this.#renderCard();
-    this.#card.focus({ preventScroll: true });
-  }
-
-  #render() {
-    const practice = PRACTICES[this.#level];
-    const finished = this.#screen === 'finished';
-    this.#dialog.className = finished ? 'navy' : '';
-    this.#progress.forEach((bar, i) => {
-      bar.className = i < this.#level || (finished && i === this.#level) ? 'past' : i === this.#level ? 'now' : '';
-    });
-    this.#count.textContent = `Day ${this.#level + 1}/7`;
-    this.#body.className = `body${finished || practice.kind === 'say' ? ' center' : ''}`;
-    this.#body.innerHTML = finished ? this.#finishedHtml() : this.#practiceHtml(practice);
-    this.#body.scrollTop = 0;
-    if (!this.#reducedMotion.matches) {
-      void this.#body.offsetWidth; // restart the entrance animation
-      this.#body.classList.add('enter');
+    get ready() {
+        return Boolean(this.#entry);
     }
-    this.#renderNav();
-    this.#body.querySelector('#step-title')?.focus({ preventScroll: true });
-  }
 
-  #practiceHtml(practice) {
-    const entry = this.#entry;
-    const head = `
+    get verse() {
+        return this.#entry;
+    }
+
+    #scheduleConfigure() {
+        if (this.#configurePending) {
+            return;
+        }
+        this.#configurePending = true;
+        queueMicrotask(() => {
+            this.#configurePending = false;
+            this.#configure();
+        });
+    }
+
+    async #configure() {
+        this.#today = manilaToday();
+        const date = this.getAttribute("date");
+        // With a date set, that day stands in for today.
+        if (/^\d{4}-\d{2}-\d{2}$/.test(date ?? "")) {
+            this.#today = date;
+        }
+        const days = weekOf(this.#today);
+        const names = days.map(dayName);
+        const loadId = ++this.#loadId;
+        const base = new URL(
+            this.getAttribute("verses-base") || DEFAULT_VERSES_BASE,
+            document.baseURI,
+        ).href;
+        let entry = null;
+        try {
+            const verses = await loadVerses(base, names);
+            const entries = names
+                .map((name) => verses.get(name))
+                .filter(Boolean);
+            entry =
+                entries.find((item) => item.memory === true) ??
+                verses.get(names[0]) ??
+                null;
+        } catch (error) {
+            console.warn(
+                "This week's memory verse could not be loaded:",
+                error,
+            );
+        }
+        if (loadId !== this.#loadId) {
+            return;
+        } // a newer date or source took over
+        this.#week = { sunday: isoOf(days[0]), days: days.map(isoOf) };
+        this.#entry = entry;
+        this.hidden = !entry;
+        this.#renderCard();
+    }
+
+    /* ----- Progress ----- */
+
+    /** The days practised this week, in order. */
+    get #practised() {
+        return readStore(PROGRESS_KEY, {})[this.#week.sunday] ?? [];
+    }
+
+    get #practisedToday() {
+        return this.#practised.includes(this.#today);
+    }
+
+    /** Today's practice: one step on for each earlier day practised this week. */
+    get #todaysLevel() {
+        const before = this.#practised.filter(
+            (iso) => iso !== this.#today,
+        ).length;
+        return Math.min(before, PRACTICES.length - 1);
+    }
+
+    get #learned() {
+        return readStore(LEARNED_KEY, []).some(
+            (item) =>
+                item.week === this.#week.sunday &&
+                item.verse === this.#entry?.verse,
+        );
+    }
+
+    #recordPractice(learned) {
+        const progress = readStore(PROGRESS_KEY, {});
+        const days = new Set(progress[this.#week.sunday] ?? []);
+        days.add(this.#today);
+        progress[this.#week.sunday] = [...days].sort();
+        const kept = Object.keys(progress).sort().slice(-MAX_WEEKS);
+        writeStore(
+            PROGRESS_KEY,
+            Object.fromEntries(kept.map((week) => [week, progress[week]])),
+        );
+        if (learned && !this.#learned) {
+            const list = readStore(LEARNED_KEY, []);
+            list.push({ verse: this.#entry.verse, week: this.#week.sunday });
+            writeStore(LEARNED_KEY, list.slice(-MAX_LEARNED));
+        }
+        this.dispatchEvent(
+            new CustomEvent("memorypractice", {
+                detail: {
+                    week: this.#week.sunday,
+                    day: this.#today,
+                    learned: this.#learned,
+                },
+            }),
+        );
+    }
+
+    #renderCard() {
+        if (!this.#entry) {
+            return;
+        }
+        const count = this.#practised.length;
+        const learned = this.#learned;
+        const level = this.#todaysLevel;
+        this.#card.classList.toggle("learned", learned);
+        this.#card.classList.toggle("due", !learned);
+        this.#renderSymbol();
+        this.#card.querySelector(".card-ref").textContent = learned
+            ? `${this.#entry.verse} — learned!`
+            : this.#entry.verse;
+        this.#card.querySelector(".card-snippet").textContent =
+            this.#entry.text;
+        this.#card
+            .querySelectorAll(".dots span")
+            .forEach((dot, i) => dot.classList.toggle("on", i < count));
+        const status = learned
+            ? "Tap to say it again"
+            : this.#practisedToday
+              ? `Practised today · ${count} of 7 days`
+              : `Day ${level + 1} of 7 · ${PRACTICES[level].name} · 1 minute`;
+        this.#card.querySelector(".card-status").textContent = status;
+        this.#card.setAttribute(
+            "aria-label",
+            `This Week’s Memory Verse Challenge, ${this.#entry.verse}. ${status}.`,
+        );
+    }
+
+    /** The verse's book picture, drawn as <bible-sayings> draws it. */
+    #renderSymbol() {
+        const icon = this.#card.querySelector(".card-icon");
+        const symbol = icon.querySelector(".symbol");
+        const book = parseReference(this.#entry.verse)?.book;
+        const base = this.getAttribute("media-base") || DEFAULT_MEDIA_BASE;
+        const url = book
+            ? bookThumbnailUrl(base.endsWith("/") ? base : `${base}/`, book)
+            : "";
+        if (symbol.dataset.url === url) {
+            return;
+        }
+        symbol.dataset.url = url;
+        symbol.replaceChildren();
+        icon.classList.remove("pictured");
+        icon.style.borderRadius = "";
+        if (!url) {
+            return;
+        }
+        const image = document.createElement("img");
+        image.alt = "";
+        const [x, y, size, radius] =
+            BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
+        const side = size * THUMBNAIL_TRIM;
+        const inset = (size - side) / 2;
+        image.style.width = `${100 / side}%`;
+        image.style.height = `${100 / side}%`;
+        image.style.left = `${(-(x + inset) / side) * 100}%`;
+        image.style.top = `${(-(y + inset) / side) * 100}%`;
+        image.onload = () => {
+            if (symbol.dataset.url !== url) {
+                return;
+            }
+            icon.classList.add("pictured");
+            icon.style.borderRadius = `${radius * 100}%`;
+            symbol.style.borderRadius = `${radius * 100}%`;
+        };
+        image.src = url;
+        symbol.append(image);
+    }
+
+    /* ----- The practice ----- */
+
+    /** Open today's practice. */
+    open() {
+        if (!this.#entry || this.#dialog.open) {
+            return;
+        }
+        this.#level = this.#learned ? PRACTICES.length - 1 : this.#todaysLevel;
+        this.#screen = "practice";
+        this.#state = {};
+        this.#dialog.showModal();
+        document.documentElement.style.overflow = "hidden";
+        this.#render();
+    }
+
+    close() {
+        if (this.#dialog.open) {
+            this.#dialog.close();
+        }
+    }
+
+    #closed() {
+        document.documentElement.style.overflow = "";
+        this.#renderCard();
+        this.#card.focus({ preventScroll: true });
+    }
+
+    #render() {
+        const practice = PRACTICES[this.#level];
+        const finished = this.#screen === "finished";
+        this.#dialog.className = finished ? "navy" : "";
+        this.#progress.forEach((bar, i) => {
+            bar.className =
+                i < this.#level || (finished && i === this.#level)
+                    ? "past"
+                    : i === this.#level
+                      ? "now"
+                      : "";
+        });
+        this.#count.textContent = `Day ${this.#level + 1}/7`;
+        this.#body.className = `body${finished || practice.kind === "say" ? " center" : ""}`;
+        this.#body.innerHTML = finished
+            ? this.#finishedHtml()
+            : this.#practiceHtml(practice);
+        this.#body.scrollTop = 0;
+        if (!this.#reducedMotion.matches) {
+            void this.#body.offsetWidth; // restart the entrance animation
+            this.#body.classList.add("enter");
+        }
+        this.#renderNav();
+        this.#body.querySelector("#step-title")?.focus({ preventScroll: true });
+    }
+
+    #practiceHtml(practice) {
+        const entry = this.#entry;
+        const head = `
       <div>
         <div class="label">Day ${this.#level + 1} · ${escapeHtml(practice.name)}</div>
         <p class="note">${escapeHtml(practice.hint)}</p>
       </div>
       <div class="rule" aria-hidden="true"></div>`;
-    const reference = `<div class="reference">${escapeHtml(entry.verse)}</div>`;
-    switch (practice.kind) {
-      case 'read': {
-        const reads = this.#state.reads ?? 0;
-        return `${head}
+        const reference = `<div class="reference">${escapeHtml(entry.verse)}</div>`;
+        switch (practice.kind) {
+            case "read": {
+                const reads = this.#state.reads ?? 0;
+                return `${head}
           <blockquote class="verse" id="step-title" tabindex="-1">${escapeHtml(entry.text)}</blockquote>
           ${reference}
-          <div class="reads" aria-label="${reads} of ${READS} readings">${Array.from({ length: READS }, (_, i) =>
-            `<span class="${i < reads ? 'on' : ''}">${i < reads ? CHECK_ICON : ''}</span>`).join('')}</div>`;
-      }
-      case 'phrases': {
-        const phrases = phrasesOf(entry.text);
-        const shown = this.#state.shown ?? 1;
-        return `${head}
-          <blockquote class="verse" id="step-title" tabindex="-1" aria-live="polite">${phrases.map((phrase, i) =>
-            `<span class="${i >= shown ? 'later' : i === shown - 1 && shown > 1 ? 'fresh' : ''}"${i >= shown ? ' aria-hidden="true"' : ''}>${escapeHtml(phrase)}</span>`).join(' ')}</blockquote>
+          <div class="reads" aria-label="${reads} of ${READS} readings">${Array.from(
+              { length: READS },
+              (_, i) =>
+                  `<span class="${i < reads ? "on" : ""}">${i < reads ? CHECK_ICON : ""}</span>`,
+          ).join("")}</div>`;
+            }
+            case "phrases": {
+                const phrases = phrasesOf(entry.text);
+                const shown = this.#state.shown ?? 1;
+                return `${head}
+          <blockquote class="verse" id="step-title" tabindex="-1" aria-live="polite">${phrases
+              .map(
+                  (phrase, i) =>
+                      `<span class="${i >= shown ? "later" : i === shown - 1 && shown > 1 ? "fresh" : ""}"${i >= shown ? ' aria-hidden="true"' : ""}>${escapeHtml(phrase)}</span>`,
+              )
+              .join(" ")}</blockquote>
           ${reference}`;
-      }
-      case 'blanks':
-      case 'letters': {
-        const peeked = this.#state.peeked ?? new Set();
-        const words = wordsOf(entry.text).map(({ lead, core, trail }, i) => {
-          const hide = core && (practice.kind === 'letters' || i % practice.every === practice.every - 1);
-          if (!hide) return escapeHtml(lead + core + trail);
-          const shown = peeked.has(i);
-          const letters = practice.kind === 'letters' && !shown;
-          const label = shown ? core : letters ? `${core[0]}, a hidden word. Tap to peek` : 'A hidden word. Tap to peek';
-          const face = shown ? core : letters ? core[0] : core;
-          // A blank as long as its word; a first letter with a short line after it.
-          const width = letters ? 0.9 + core.length * 0.18 : Math.max(core.length, 2) * 0.62;
-          return `${escapeHtml(lead)}<button class="gap${shown ? ' shown' : ''}${letters ? ' letter' : ''}" type="button" data-word="${i}"
-            style="${shown ? '' : `width:${width.toFixed(2)}em`}" aria-label="${escapeHtml(label)}">${escapeHtml(face)}</button>${escapeHtml(trail)}`;
-        });
-        return `${head}
-          <blockquote class="verse" id="step-title" tabindex="-1">${words.join(' ')}</blockquote>
+            }
+            case "blanks":
+            case "letters": {
+                const peeked = this.#state.peeked ?? new Set();
+                const words = wordsOf(entry.text).map(
+                    ({ lead, core, trail }, i) => {
+                        const hide =
+                            core &&
+                            (practice.kind === "letters" ||
+                                i % practice.every === practice.every - 1);
+                        if (!hide) {
+                            return escapeHtml(lead + core + trail);
+                        }
+                        const shown = peeked.has(i);
+                        const letters = practice.kind === "letters" && !shown;
+                        const label = shown
+                            ? core
+                            : letters
+                              ? `${core[0]}, a hidden word. Tap to peek`
+                              : "A hidden word. Tap to peek";
+                        const face = shown ? core : letters ? core[0] : core;
+                        // A blank as long as its word; a first letter with a short line after it.
+                        const width = letters
+                            ? 0.9 + core.length * 0.18
+                            : Math.max(core.length, 2) * 0.62;
+                        return `${escapeHtml(lead)}<button class="gap${shown ? " shown" : ""}${letters ? " letter" : ""}" type="button" data-word="${i}"
+            style="${shown ? "" : `width:${width.toFixed(2)}em`}" aria-label="${escapeHtml(label)}">${escapeHtml(face)}</button>${escapeHtml(trail)}`;
+                    },
+                );
+                return `${head}
+          <blockquote class="verse" id="step-title" tabindex="-1">${words.join(" ")}</blockquote>
           ${reference}`;
-      }
-      case 'order': {
-        const phrases = phrasesOf(entry.text);
-        this.#state.order ??= shuffled(phrases, this.#week.sunday);
-        const placed = this.#state.placed ?? 0;
-        return `${head}
-          <blockquote class="verse built" id="step-title" tabindex="-1" aria-live="polite">${phrases.slice(0, placed).map(escapeHtml).join(' ')}</blockquote>
-          <div class="tiles">${this.#state.order.filter((i) => i >= placed).map((i) =>
-            `<button class="tile" type="button" data-phrase="${i}">${escapeHtml(phrases[i])}</button>`).join('')}</div>
+            }
+            case "order": {
+                const phrases = phrasesOf(entry.text);
+                if (this.#state.order == null) {
+                    this.#state.order = shuffled(phrases, this.#week.sunday);
+                }
+                const placed = this.#state.placed ?? 0;
+                return `${head}
+          <blockquote class="verse built" id="step-title" tabindex="-1" aria-live="polite">${phrases.slice(0, placed).map(escapeHtml).join(" ")}</blockquote>
+          <div class="tiles">${this.#state.order
+              .filter((i) => i >= placed)
+              .map(
+                  (i) =>
+                      `<button class="tile" type="button" data-phrase="${i}">${escapeHtml(phrases[i])}</button>`,
+              )
+              .join("")}</div>
           ${reference}`;
-      }
-      case 'say':
-        return this.#state.revealed
-          ? `
+            }
+            case "say":
+                return this.#state.revealed
+                    ? `
             <div class="label">Day ${this.#level + 1} · ${escapeHtml(practice.name)}</div>
             <blockquote class="verse" id="step-title" tabindex="-1">${escapeHtml(entry.text)}</blockquote>
             ${reference}
             <p class="note">Did you have it?</p>`
-          : `
+                    : `
             <div class="label">Day ${this.#level + 1} · ${escapeHtml(practice.name)}</div>
             <div class="reference big" id="step-title" tabindex="-1">${escapeHtml(entry.verse)}</div>
             <p class="lead">${escapeHtml(practice.hint)}</p>`;
-      default:
-        return '';
+            default:
+                return "";
+        }
     }
-  }
 
-  #finishedHtml() {
-    const learned = this.#learned;
-    const count = this.#practised.length;
-    const total = readStore(LEARNED_KEY, []).length;
-    return `
+    #finishedHtml() {
+        const learned = this.#learned;
+        const count = this.#practised.length;
+        const total = readStore(LEARNED_KEY, []).length;
+        return `
       <div class="seal" aria-hidden="true">${CHECK_ICON}</div>
       <div>
-        <h2 class="done-title" id="step-title" tabindex="-1">${learned ? 'Learned.' : `Day ${this.#level + 1} done.`}</h2>
-        <p class="lead">${learned
-          ? `${escapeHtml(this.#entry.verse)} is yours to keep.`
-          : this.#level === PRACTICES.length - 1
-            ? 'Nearly there. Say it again tomorrow, or now.'
-            : `Come back tomorrow for ${escapeHtml(PRACTICES[this.#level + 1].name.toLowerCase())}.`}</p>
+        <h2 class="done-title" id="step-title" tabindex="-1">${learned ? "Learned." : `Day ${this.#level + 1} done.`}</h2>
+        <p class="lead">${
+            learned
+                ? `${escapeHtml(this.#entry.verse)} is yours to keep.`
+                : this.#level === PRACTICES.length - 1
+                  ? "Nearly there. Say it again tomorrow, or now."
+                  : `Come back tomorrow for ${escapeHtml(PRACTICES[this.#level + 1].name.toLowerCase())}.`
+        }</p>
       </div>
       <div class="week">
         <div class="note">This week</div>
-        <div class="dots" aria-hidden="true">${Array.from({ length: 7 }, (_, i) => `<span class="${i < count ? 'on' : ''}"></span>`).join('')}</div>
-        <div class="note">${count} of 7 days practised${total ? ` · ${total} ${total === 1 ? 'verse' : 'verses'} learned` : ''}</div>
+        <div class="dots" aria-hidden="true">${Array.from({ length: 7 }, (_, i) => `<span class="${i < count ? "on" : ""}"></span>`).join("")}</div>
+        <div class="note">${count} of 7 days practised${total ? ` · ${total} ${total === 1 ? "verse" : "verses"} learned` : ""}</div>
       </div>`;
-  }
+    }
 
-  #renderNav() {
-    const practice = PRACTICES[this.#level];
-    let buttons;
-    if (this.#screen === 'finished') {
-      const retry = this.#level === PRACTICES.length - 1 && !this.#learned;
-      buttons = `${retry ? '<button class="second" type="button" data-action="again">Say it again</button>' : ''}
+    #renderNav() {
+        const practice = PRACTICES[this.#level];
+        let buttons;
+        if (this.#screen === "finished") {
+            const retry =
+                this.#level === PRACTICES.length - 1 && !this.#learned;
+            buttons = `${retry ? '<button class="second" type="button" data-action="again">Say it again</button>' : ""}
         <button class="main" type="button" data-action="close">Done</button>`;
-    } else if (practice.kind === 'read') {
-      const reads = this.#state.reads ?? 0;
-      buttons = `<button class="main" type="button" data-action="read">I read it · ${reads + 1} of ${READS}</button>`;
-    } else if (practice.kind === 'phrases') {
-      const left = phrasesOf(this.#entry.text).length - (this.#state.shown ?? 1);
-      buttons = left > 0
-        ? `<button class="main" type="button" data-action="phrase">Next phrase ${NEXT_ICON}</button>`
-        : '<button class="main" type="button" data-action="finish">Done</button>';
-    } else if (practice.kind === 'order') {
-      const complete = (this.#state.placed ?? 0) >= phrasesOf(this.#entry.text).length;
-      buttons = complete
-        ? '<button class="main" type="button" data-action="finish">Done</button>'
-        : '<button class="second" type="button" data-action="hint">Show me</button>';
-    } else if (practice.kind === 'say') {
-      buttons = this.#state.revealed
-        ? `<button class="second" type="button" data-action="almost">Almost</button>
+        } else if (practice.kind === "read") {
+            const reads = this.#state.reads ?? 0;
+            buttons = `<button class="main" type="button" data-action="read">I read it · ${reads + 1} of ${READS}</button>`;
+        } else if (practice.kind === "phrases") {
+            const left =
+                phrasesOf(this.#entry.text).length - (this.#state.shown ?? 1);
+            buttons =
+                left > 0
+                    ? `<button class="main" type="button" data-action="phrase">Next phrase ${NEXT_ICON}</button>`
+                    : '<button class="main" type="button" data-action="finish">Done</button>';
+        } else if (practice.kind === "order") {
+            const complete =
+                (this.#state.placed ?? 0) >= phrasesOf(this.#entry.text).length;
+            buttons = complete
+                ? '<button class="main" type="button" data-action="finish">Done</button>'
+                : '<button class="second" type="button" data-action="hint">Show me</button>';
+        } else if (practice.kind === "say") {
+            buttons = this.#state.revealed
+                ? `<button class="second" type="button" data-action="almost">Almost</button>
            <button class="main" type="button" data-action="had">I had it ${CHECK_ICON}</button>`
-        : '<button class="main" type="button" data-action="reveal">Show the verse</button>';
-    } else {
-      buttons = '<button class="main" type="button" data-action="finish">Done</button>';
+                : '<button class="main" type="button" data-action="reveal">Show the verse</button>';
+        } else {
+            buttons =
+                '<button class="main" type="button" data-action="finish">Done</button>';
+        }
+        this.#nav.innerHTML = buttons;
     }
-    this.#nav.innerHTML = buttons;
-  }
 
-  #act(action) {
-    const phrases = () => phrasesOf(this.#entry.text);
-    switch (action) {
-      case 'read':
-        this.#state.reads = (this.#state.reads ?? 0) + 1;
-        if (this.#state.reads >= READS) this.#finish(false);
-        else this.#update();
-        break;
-      case 'phrase':
-        this.#state.shown = Math.min((this.#state.shown ?? 1) + 1, phrases().length);
-        this.#update();
-        break;
-      case 'hint':
-        this.#place(this.#state.placed ?? 0);
-        break;
-      case 'reveal':
-        this.#state.revealed = true;
+    #act(action) {
+        const phrases = () => phrasesOf(this.#entry.text);
+        switch (action) {
+            case "read":
+                this.#state.reads = (this.#state.reads ?? 0) + 1;
+                if (this.#state.reads >= READS) {
+                    this.#finish(false);
+                } else {
+                    this.#update();
+                }
+                break;
+            case "phrase":
+                this.#state.shown = Math.min(
+                    (this.#state.shown ?? 1) + 1,
+                    phrases().length,
+                );
+                this.#update();
+                break;
+            case "hint":
+                this.#place(this.#state.placed ?? 0);
+                break;
+            case "reveal":
+                this.#state.revealed = true;
+                this.#render();
+                break;
+            case "had":
+                this.#finish(true);
+                break;
+            case "almost":
+                this.#finish(false);
+                break;
+            case "again":
+                this.#screen = "practice";
+                this.#state = {};
+                this.#render();
+                break;
+            case "finish":
+                this.#finish(false);
+                break;
+            case "close":
+                this.close();
+                break;
+            default:
+        }
+    }
+
+    #bodyClick(event) {
+        const gap = event.target.closest(".gap");
+        if (gap) {
+            if (this.#state.peeked == null) {
+                this.#state.peeked = new Set();
+            }
+            this.#state.peeked.add(Number(gap.dataset.word));
+            this.#update(
+                gap.dataset.word && `[data-word="${gap.dataset.word}"]`,
+            );
+            return;
+        }
+        const tile = event.target.closest(".tile");
+        if (tile) {
+            const index = Number(tile.dataset.phrase);
+            if (index === (this.#state.placed ?? 0)) {
+                this.#place(index);
+            } else {
+                tile.classList.remove("wrong");
+                void tile.offsetWidth;
+                tile.classList.add("wrong");
+            }
+        }
+    }
+
+    #place(index) {
+        this.#state.placed = index + 1;
+        this.#update(".tile");
+    }
+
+    /** Redraw the open practice in place, without the entrance animation, keeping focus near where it was. */
+    #update(focusSelector) {
+        this.#body.classList.remove("enter");
+        this.#body.innerHTML = this.#practiceHtml(PRACTICES[this.#level]);
+        this.#renderNav();
+        const target =
+            (focusSelector && this.#body.querySelector(focusSelector)) ??
+            this.#nav.querySelector(".main, .second");
+        target?.focus({ preventScroll: true });
+    }
+
+    #finish(learned) {
+        this.#recordPractice(learned);
+        this.#screen = "finished";
         this.#render();
-        break;
-      case 'had':
-        this.#finish(true);
-        break;
-      case 'almost':
-        this.#finish(false);
-        break;
-      case 'again':
-        this.#screen = 'practice';
-        this.#state = {};
-        this.#render();
-        break;
-      case 'finish':
-        this.#finish(false);
-        break;
-      case 'close':
-        this.close();
-        break;
-      default:
     }
-  }
-
-  #bodyClick(event) {
-    const gap = event.target.closest('.gap');
-    if (gap) {
-      (this.#state.peeked ??= new Set()).add(Number(gap.dataset.word));
-      this.#update(gap.dataset.word && `[data-word="${gap.dataset.word}"]`);
-      return;
-    }
-    const tile = event.target.closest('.tile');
-    if (tile) {
-      const index = Number(tile.dataset.phrase);
-      if (index === (this.#state.placed ?? 0)) {
-        this.#place(index);
-      } else {
-        tile.classList.remove('wrong');
-        void tile.offsetWidth;
-        tile.classList.add('wrong');
-      }
-    }
-  }
-
-  #place(index) {
-    this.#state.placed = index + 1;
-    this.#update('.tile');
-  }
-
-  /** Redraw the open practice in place, without the entrance animation, keeping focus near where it was. */
-  #update(focusSelector) {
-    this.#body.classList.remove('enter');
-    this.#body.innerHTML = this.#practiceHtml(PRACTICES[this.#level]);
-    this.#renderNav();
-    const target = (focusSelector && this.#body.querySelector(focusSelector))
-      ?? this.#nav.querySelector('.main, .second');
-    target?.focus({ preventScroll: true });
-  }
-
-  #finish(learned) {
-    this.#recordPractice(learned);
-    this.#screen = 'finished';
-    this.#render();
-  }
 }
 
-if (!customElements.get('memory-verse')) {
-  customElements.define('memory-verse', MemoryVerse);
+if (!customElements.get("memory-verse")) {
+    customElements.define("memory-verse", MemoryVerse);
 }

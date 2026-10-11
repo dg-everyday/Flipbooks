@@ -54,104 +54,104 @@
  * root. The drawer is placed against the page's --page-width.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
-import { PILL_STYLES, linkScripture } from './scripture-refs.js?v=20261002-1';
+import { registerFonts } from "../../assets/scripts/fonts.js";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const EMBLEM_URL = asset('../../assets/images/dg-icon-gold-256.webp');
+const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
 // GUIDES' pages and icons sit under these. assets/scripts/check-assets.mjs reads
 // both lines to check every guide's files, so keep their form.
-const PAGES = '../pages/';
-const ICONS = '../../assets/images/study-guide-icons/';
+const PAGES = "../pages/";
+const ICONS = "../../assets/images/study-guide-icons/";
 
 // The study guides, in menu order: page in apps/pages, icon in
 // assets/images/study-guide-icons.
 const GUIDES = [
-  {
-    page: 'bible-books.html',
-    icon: 'books-of-the-bible.webp',
-    title: 'Books of the Bible',
-    text: 'All 66 books: who wrote them, when, and why',
-  },
-  {
-    page: 'bible-characters.html',
-    icon: 'bible-characters.webp',
-    title: 'Bible Characters',
-    text: 'The people of the Bible, from Adam to the first church, and why they matter',
-  },
-  {
-    page: 'peoples.html',
-    icon: 'peoples-of-the-bible.webp',
-    title: 'Peoples of the Bible',
-    text: 'The nations of Scripture and where they lived',
-  },
-  {
-    page: 'bible-prayers.html',
-    icon: 'prayers-in-the-bible.webp',
-    title: 'Prayers in the Bible',
-    text: 'The prayers Jesus taught and prayed, and how to pray them today',
-  },
-  {
-    page: 'poems-songs-and-wisdom.html',
-    icon: 'poems-songs-and-wisdom.webp',
-    title: 'Poems, Songs and Wisdom',
-    text: "The Bible's poems, songs and proverbs, and what they mean for daily life",
-  },
-  {
-    page: 'red-lettered-quotes.html',
-    icon: 'red-lettered-quotes.webp',
-    title: 'Red-Lettered Quotes',
-    text: 'The words of Jesus, explained in plain words',
-  },
-  {
-    page: 'heroes-and-villains.html',
-    icon: 'heroes-and-villains.webp',
-    title: 'Heroes and Villains',
-    text: 'The people who stood for God, and against him',
-  },
-  {
-    page: 'flora-and-fauna.html',
-    icon: 'flora-and-fauna.webp',
-    title: 'Flora and Fauna',
-    text: 'The plants and animals of the Bible, and why they matter',
-  },
-  {
-    page: 'did-you-know.html',
-    icon: 'did-you-know.svg',
-    title: 'Did You Know',
-    text: 'Surprising facts from every book of the Bible, with the verse behind each one',
-  },
-  {
-    page: 'bible-sayings.html',
-    icon: 'bible-sayings.svg',
-    title: 'Bible Sayings',
-    text: 'Everyday phrases that come from the Bible, and what they mean',
-  },
-  {
-    page: 'supernaturals.html',
-    icon: 'supernaturals-and-prophecies.webp',
-    title: 'Supernaturals and Prophecies',
-    text: 'Miracles, healings, demons cast out, prophecies fulfilled, and special topics on angels and demons',
-  },
-  {
-    page: 'commandments-of-god.html',
-    icon: 'commandments-of-god.webp',
-    title: 'Commandments of God',
-    text: 'The Ten Commandments, and the commands of Jesus and the apostles for daily life',
-  },
-  {
-    page: 'guidance-for-life.html',
-    icon: 'guidance-for-life.webp',
-    title: 'Questions We All Ask',
-    text: 'From worry to what comes after, answered by Jesus, the prophets, the apostles, the wisdom books and the Law',
-  },
-  {
-    page: 'following-gods-blueprint.html',
-    icon: 'following-gods-blueprint.webp',
-    title: "Following God's Blueprint",
-    text: "God's plan to build on: salvation, every day, solving problems his way, and getting ready for Christ's return",
-  },
+    {
+        page: "bible-books.html",
+        icon: "books-of-the-bible.webp",
+        title: "Books of the Bible",
+        text: "All 66 books: who wrote them, when, and why",
+    },
+    {
+        page: "bible-characters.html",
+        icon: "bible-characters.webp",
+        title: "Bible Characters",
+        text: "The people of the Bible, from Adam to the first church, and why they matter",
+    },
+    {
+        page: "peoples.html",
+        icon: "peoples-of-the-bible.webp",
+        title: "Peoples of the Bible",
+        text: "The nations of Scripture and where they lived",
+    },
+    {
+        page: "bible-prayers.html",
+        icon: "prayers-in-the-bible.webp",
+        title: "Prayers in the Bible",
+        text: "The prayers Jesus taught and prayed, and how to pray them today",
+    },
+    {
+        page: "poems-songs-and-wisdom.html",
+        icon: "poems-songs-and-wisdom.webp",
+        title: "Poems, Songs and Wisdom",
+        text: "The Bible's poems, songs and proverbs, and what they mean for daily life",
+    },
+    {
+        page: "red-lettered-quotes.html",
+        icon: "red-lettered-quotes.webp",
+        title: "Red-Lettered Quotes",
+        text: "The words of Jesus, explained in plain words",
+    },
+    {
+        page: "heroes-and-villains.html",
+        icon: "heroes-and-villains.webp",
+        title: "Heroes and Villains",
+        text: "The people who stood for God, and against him",
+    },
+    {
+        page: "flora-and-fauna.html",
+        icon: "flora-and-fauna.webp",
+        title: "Flora and Fauna",
+        text: "The plants and animals of the Bible, and why they matter",
+    },
+    {
+        page: "did-you-know.html",
+        icon: "did-you-know.svg",
+        title: "Did You Know",
+        text: "Surprising facts from every book of the Bible, with the verse behind each one",
+    },
+    {
+        page: "bible-sayings.html",
+        icon: "bible-sayings.svg",
+        title: "Bible Sayings",
+        text: "Everyday phrases that come from the Bible, and what they mean",
+    },
+    {
+        page: "supernaturals.html",
+        icon: "supernaturals-and-prophecies.webp",
+        title: "Supernaturals and Prophecies",
+        text: "Miracles, healings, demons cast out, prophecies fulfilled, and special topics on angels and demons",
+    },
+    {
+        page: "commandments-of-god.html",
+        icon: "commandments-of-god.webp",
+        title: "Commandments of God",
+        text: "The Ten Commandments, and the commands of Jesus and the apostles for daily life",
+    },
+    {
+        page: "guidance-for-life.html",
+        icon: "guidance-for-life.webp",
+        title: "Questions We All Ask",
+        text: "From worry to what comes after, answered by Jesus, the prophets, the apostles, the wisdom books and the Law",
+    },
+    {
+        page: "following-gods-blueprint.html",
+        icon: "following-gods-blueprint.webp",
+        title: "Following God's Blueprint",
+        text: "God's plan to build on: salvation, every day, solving problems his way, and getting ready for Christ's return",
+    },
 ];
 
 const STYLES = /* css */ `
@@ -828,7 +828,8 @@ const STYLES = /* css */ `
   }
 `;
 
-const escapeHtml = (text) => text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+const escapeHtml = (text) =>
+    text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 const guideItem = ({ page, icon, title, text }) => `
             <li>
@@ -853,13 +854,13 @@ const MENU_HTML = /* html */ `
         </div>
     </header>
     <nav class="menu-nav" aria-label="Daily Grace">
-        <ul class="menu-list">${GUIDES.map(guideItem).join('')}
+        <ul class="menu-list">${GUIDES.map(guideItem).join("")}
         </ul>
         <ul class="menu-list menu-foot">
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="help">
                     <span class="help-icon">
-                        <img class="menu-icon" src="${asset('../../assets/images/study-guide-icons/help.webp')}" alt="" width="36" height="36" />
+                        <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="36" height="36" />
                     </span>
                     <span class="menu-text"><strong>Help</strong></span>
                 </button>
@@ -1364,354 +1365,499 @@ const ABOUT_HTML = /* html */ `
     </div>
 </dialog>`;
 
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
 // On a wide screen the drawer rests at the page column's left edge, not the
 // screen's, so the slide is clipped at that edge: the drawer comes out from
 // behind the page rather than across the space beside it. The clip leaves room
 // for the drawer's shadow on the other three sides.
-const MENU_HIDDEN = { transform: 'translateX(-100%)', clipPath: 'inset(-80px -80px -80px 100%)' };
-const MENU_SHOWN = { transform: 'none', clipPath: 'inset(-80px -80px -80px 0)' };
+const MENU_HIDDEN = {
+    transform: "translateX(-100%)",
+    clipPath: "inset(-80px -80px -80px 100%)",
+};
+const MENU_SHOWN = {
+    transform: "none",
+    clipPath: "inset(-80px -80px -80px 0)",
+};
 
 // Swipe left to close: once a touch moves mostly leftward, the drawer and its
 // backdrop follow the finger. On release it slides the rest of the way out if
 // it was dragged past a third of its width or flicked, and springs back
 // otherwise. Vertical moves are left to the browser so the menu still scrolls.
-const SWIPE_SLOP = 10;          // px before a touch counts as a swipe
-const SWIPE_DISTANCE = 1 / 3;   // of the drawer's width
-const SWIPE_FLICK = 0.5;        // px/ms leftward
-const SWIPE_SETTLE = 240;       // ms for a full width, as in drawerDialog()
+const SWIPE_SLOP = 10; // px before a touch counts as a swipe
+const SWIPE_DISTANCE = 1 / 3; // of the drawer's width
+const SWIPE_FLICK = 0.5; // px/ms leftward
+const SWIPE_SETTLE = 240; // ms for a full width, as in drawerDialog()
 
 const ABOUT_TIMING = { open: 560, close: 300 };
 
 /** Fades the backdrop with the dialog's own animation; resolves when both end. */
 function animateDialog(dialog, opening, frames, options) {
-  dialog.animate(opening ? frames : [...frames].reverse(), options);
-  const backdrop = dialog.animate(
-    opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
-    { ...options, easing: 'ease', pseudoElement: '::backdrop' },
-  );
-  return backdrop.finished.catch(() => {});
+    dialog.animate(opening ? frames : [...frames].reverse(), options);
+    const backdrop = dialog.animate(
+        opening
+            ? [{ opacity: 0 }, { opacity: 1 }]
+            : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
 }
 
 // The menu slides in from the left.
 function drawerDialog(dialog, direction) {
-  const opening = direction === 'open';
-  return animateDialog(dialog, opening, [MENU_HIDDEN, MENU_SHOWN], {
-    duration: opening ? 380 : 240,
-    easing: opening ? 'cubic-bezier(.22, 1, .36, 1)' : 'cubic-bezier(.4, 0, 1, 1)',
-    fill: 'forwards',
-  });
+    const opening = direction === "open";
+    return animateDialog(dialog, opening, [MENU_HIDDEN, MENU_SHOWN], {
+        duration: opening ? 380 : 240,
+        easing: opening
+            ? "cubic-bezier(.22, 1, .36, 1)"
+            : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    });
 }
 
 // Help slides in from the right edge, moving left into place, and slides back
 // out the way it came.
 function slideDialog(dialog, direction) {
-  const opening = direction === 'open';
-  // Half the viewport plus half the dialog puts it just past the right edge.
-  const offscreen = { transform: 'translateX(calc(50vw + 50%))', opacity: .6 };
-  return animateDialog(dialog, opening, [offscreen, { transform: 'none', opacity: 1 }], {
-    duration: opening ? 420 : 260,
-    easing: opening ? 'cubic-bezier(.22, 1, .36, 1)' : 'cubic-bezier(.4, 0, 1, 1)',
-    fill: 'forwards',
-  });
+    const opening = direction === "open";
+    // Half the viewport plus half the dialog puts it just past the right edge.
+    const offscreen = {
+        transform: "translateX(calc(50vw + 50%))",
+        opacity: 0.6,
+    };
+    return animateDialog(
+        dialog,
+        opening,
+        [offscreen, { transform: "none", opacity: 1 }],
+        {
+            duration: opening ? 420 : 260,
+            easing: opening
+                ? "cubic-bezier(.22, 1, .36, 1)"
+                : "cubic-bezier(.4, 0, 1, 1)",
+            fill: "forwards",
+        },
+    );
 }
 
 // About grows out of the small control that opened it, and shrinks back in.
-function growDialog(thumb, dialog, direction, { open = 380, close = 240 } = {}) {
-  const opening = direction === 'open';
-  const from = thumb.getBoundingClientRect();
-  const to = dialog.getBoundingClientRect();
-  const dx = from.left + from.width / 2 - (to.left + to.width / 2);
-  const dy = from.top + from.height / 2 - (to.top + to.height / 2);
-  const shrunk = { transform: `translate(${dx}px, ${dy}px) scale(${from.width / to.width})`, opacity: 0 };
-  return animateDialog(dialog, opening, [shrunk, { transform: 'none', opacity: 1 }], {
-    duration: opening ? open : close,
-    easing: opening ? 'cubic-bezier(.2, .9, .25, 1)' : 'cubic-bezier(.4, 0, 1, 1)',
-    fill: 'forwards',
-  });
+function growDialog(
+    thumb,
+    dialog,
+    direction,
+    { open = 380, close = 240 } = {},
+) {
+    const opening = direction === "open";
+    const from = thumb.getBoundingClientRect();
+    const to = dialog.getBoundingClientRect();
+    const dx = from.left + from.width / 2 - (to.left + to.width / 2);
+    const dy = from.top + from.height / 2 - (to.top + to.height / 2);
+    const shrunk = {
+        transform: `translate(${dx}px, ${dy}px) scale(${from.width / to.width})`,
+        opacity: 0,
+    };
+    return animateDialog(
+        dialog,
+        opening,
+        [shrunk, { transform: "none", opacity: 1 }],
+        {
+            duration: opening ? open : close,
+            easing: opening
+                ? "cubic-bezier(.2, .9, .25, 1)"
+                : "cubic-bezier(.4, 0, 1, 1)",
+            fill: "forwards",
+        },
+    );
 }
 
 function finishClose(dialog) {
-  dialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-  dialog.close();
+    dialog
+        .getAnimations({ subtree: true })
+        .forEach((animation) => animation.cancel());
+    dialog.close();
 }
 
 export class StudyGuideMenu extends HTMLElement {
-  #menu;
-  #help;
-  #about;
-  #opener = null;
-  // The dialogs part-way through their closing animation.
-  #closing = new Set();
-  // Closing the menu hands focus back to the opener, and Chrome then draws its
-  // focus ring. Keep the ring only when the menu was opened from the keyboard;
-  // a menu opened by a click or tap leaves no ring, however it is closed.
-  #openedByKeyboard = false;
-  #swipe = null;
-  #swallowClick = false;
-  #aboutObserver;
+    #menu;
+    #help;
+    #about;
+    #opener = null;
+    // The dialogs part-way through their closing animation.
+    #closing = new Set();
+    // Closing the menu hands focus back to the opener, and Chrome then draws its
+    // focus ring. Keep the ring only when the menu was opened from the keyboard;
+    // a menu opened by a click or tap leaves no ring, however it is closed.
+    #openedByKeyboard = false;
+    #swipe = null;
+    #swallowClick = false;
+    #aboutObserver;
 
-  constructor() {
-    super();
-    const root = this.attachShadow({ mode: 'open' });
-    root.innerHTML = `<style>${STYLES}${PILL_STYLES}</style>${MENU_HTML}${HELP_HTML}${ABOUT_HTML}`;
+    constructor() {
+        super();
+        const root = this.attachShadow({ mode: "open" });
+        root.innerHTML = `<style>${STYLES}${PILL_STYLES}</style>${MENU_HTML}${HELP_HTML}${ABOUT_HTML}`;
 
-    const menu = root.querySelector('.menu-dialog');
-    const help = root.querySelector('.help-dialog');
-    const about = root.querySelector('.about-dialog');
-    this.#menu = menu;
-    this.#help = help;
-    this.#about = about;
+        const menu = root.querySelector(".menu-dialog");
+        const help = root.querySelector(".help-dialog");
+        const about = root.querySelector(".about-dialog");
+        this.#menu = menu;
+        this.#help = help;
+        this.#about = about;
 
-    const closers = [
-      [menu, () => this.close()],
-      [help, () => this.#closeHelp()],
-      [about, () => this.#closeAbout()],
-    ];
-    for (const [dialog, close] of closers) {
-      // Escape would close instantly; route it through the closing animation instead.
-      dialog.addEventListener('cancel', (event) => {
-        event.preventDefault();
-        close();
-      });
-      // The dialog has no padding, so a click that lands on it rather than its
-      // contents came from the backdrop.
-      dialog.addEventListener('click', (event) => {
-        if (event.target === dialog) close();
-      });
+        const closers = [
+            [menu, () => this.close()],
+            [help, () => this.#closeHelp()],
+            [about, () => this.#closeAbout()],
+        ];
+        for (const [dialog, close] of closers) {
+            // Escape would close instantly; route it through the closing animation instead.
+            dialog.addEventListener("cancel", (event) => {
+                event.preventDefault();
+                close();
+            });
+            // The dialog has no padding, so a click that lands on it rather than its
+            // contents came from the backdrop.
+            dialog.addEventListener("click", (event) => {
+                if (event.target === dialog) {
+                    close();
+                }
+            });
+        }
+
+        // A swipe that ends over a link or the backdrop must not also count as a tap.
+        menu.addEventListener(
+            "click",
+            (event) => {
+                if (!this.#swallowClick) {
+                    return;
+                }
+                this.#swallowClick = false;
+                event.preventDefault();
+                event.stopImmediatePropagation();
+            },
+            true,
+        );
+        menu.addEventListener("pointerdown", (event) =>
+            this.#swipeStart(event),
+        );
+        menu.addEventListener("pointermove", (event) => this.#swipeMove(event));
+        menu.addEventListener("pointerup", (event) => this.#swipeEnd(event));
+        menu.addEventListener("pointercancel", (event) =>
+            this.#swipeEnd(event),
+        );
+        // Help and About replace the menu rather than stacking on top of it.
+        for (const button of menu.querySelectorAll("[data-show]")) {
+            button.addEventListener("click", async () => {
+                await this.close();
+                if (button.dataset.show === "help") {
+                    this.showHelp();
+                } else {
+                    this.showAbout();
+                }
+            });
+        }
+
+        root.getElementById("help-close").addEventListener("click", () =>
+            this.#closeHelp(),
+        );
+
+        this.#aboutObserver = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    if (!entry.isIntersecting) {
+                        continue;
+                    }
+                    entry.target.classList.add("is-visible");
+                    this.#aboutObserver.unobserve(entry.target);
+                }
+            },
+            { root: about, rootMargin: "0px 0px -10% 0px" },
+        );
+        about.addEventListener("scroll", () => this.#updateAboutScroll(), {
+            passive: true,
+        });
+        root.getElementById("about-close").addEventListener("click", () =>
+            this.#closeAbout(),
+        );
+        // The closing call to action: fold the story away, and let the page take
+        // the reader to today.
+        root.getElementById("about-begin").addEventListener(
+            "click",
+            async () => {
+                await this.#closeAbout();
+                this.dispatchEvent(new Event("begin"));
+            },
+        );
+        linkScripture(about.querySelector(".about-verse cite"));
     }
 
-    // A swipe that ends over a link or the backdrop must not also count as a tap.
-    menu.addEventListener('click', (event) => {
-      if (!this.#swallowClick) return;
-      this.#swallowClick = false;
-      event.preventDefault();
-      event.stopImmediatePropagation();
-    }, true);
-    menu.addEventListener('pointerdown', (event) => this.#swipeStart(event));
-    menu.addEventListener('pointermove', (event) => this.#swipeMove(event));
-    menu.addEventListener('pointerup', (event) => this.#swipeEnd(event));
-    menu.addEventListener('pointercancel', (event) => this.#swipeEnd(event));
-    // Help and About replace the menu rather than stacking on top of it.
-    for (const button of menu.querySelectorAll('[data-show]')) {
-      button.addEventListener('click', async () => {
-        await this.close();
-        if (button.dataset.show === 'help') this.showHelp();
-        else this.showAbout();
-      });
+    connectedCallback() {
+        registerFonts();
+        this.#opener?.removeEventListener("click", this.#onOpenerClick);
+        this.#opener = document.getElementById(
+            this.getAttribute("opener") ?? "",
+        );
+        this.#opener?.addEventListener("click", this.#onOpenerClick);
     }
 
-    root.getElementById('help-close').addEventListener('click', () => this.#closeHelp());
+    disconnectedCallback() {
+        this.#opener?.removeEventListener("click", this.#onOpenerClick);
+        this.#opener = null;
+    }
 
-    this.#aboutObserver = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        entry.target.classList.add('is-visible');
-        this.#aboutObserver.unobserve(entry.target);
-      }
-    }, { root: about, rootMargin: '0px 0px -10% 0px' });
-    about.addEventListener('scroll', () => this.#updateAboutScroll(), { passive: true });
-    root.getElementById('about-close').addEventListener('click', () => this.#closeAbout());
-    // The closing call to action: fold the story away, and let the page take
-    // the reader to today.
-    root.getElementById('about-begin').addEventListener('click', async () => {
-      await this.#closeAbout();
-      this.dispatchEvent(new Event('begin'));
-    });
-    linkScripture(about.querySelector('.about-verse cite'));
-  }
+    // A click from Enter or Space has no pointer behind it, so its detail is 0.
+    #onOpenerClick = (event) => {
+        this.#openedByKeyboard = event.detail === 0;
+        this.open();
+    };
 
-  connectedCallback() {
-    registerFonts();
-    this.#opener?.removeEventListener('click', this.#onOpenerClick);
-    this.#opener = document.getElementById(this.getAttribute('opener') ?? '');
-    this.#opener?.addEventListener('click', this.#onOpenerClick);
-  }
+    // The page's scroll lock follows whichever dialog is open.
+    #syncOpen() {
+        this.toggleAttribute(
+            "open",
+            [this.#menu, this.#help, this.#about].some((dialog) => dialog.open),
+        );
+    }
 
-  disconnectedCallback() {
-    this.#opener?.removeEventListener('click', this.#onOpenerClick);
-    this.#opener = null;
-  }
+    #show(dialog) {
+        if (dialog.open) {
+            return false;
+        }
+        dialog.showModal();
+        this.#syncOpen();
+        return true;
+    }
 
-  // A click from Enter or Space has no pointer behind it, so its detail is 0.
-  #onOpenerClick = (event) => {
-    this.#openedByKeyboard = event.detail === 0;
-    this.open();
-  };
+    /** Runs the closing animation, unless motion is reduced, then closes. */
+    async #hide(dialog, animate) {
+        if (!dialog.open || this.#closing.has(dialog)) {
+            return false;
+        }
+        this.#closing.add(dialog);
+        if (!reducedMotion.matches) {
+            await animate();
+        }
+        finishClose(dialog);
+        this.#closing.delete(dialog);
+        this.#syncOpen();
+        return true;
+    }
 
-  // The page's scroll lock follows whichever dialog is open.
-  #syncOpen() {
-    this.toggleAttribute('open', [this.#menu, this.#help, this.#about].some((dialog) => dialog.open));
-  }
+    // ------------------------------------------------------------------ menu
 
-  #show(dialog) {
-    if (dialog.open) return false;
-    dialog.showModal();
-    this.#syncOpen();
-    return true;
-  }
+    open() {
+        if (!this.#show(this.#menu)) {
+            return;
+        }
+        this.#opener?.setAttribute("aria-expanded", "true");
+        if (!reducedMotion.matches) {
+            drawerDialog(this.#menu, "open");
+        }
+    }
 
-  /** Runs the closing animation, unless motion is reduced, then closes. */
-  async #hide(dialog, animate) {
-    if (!dialog.open || this.#closing.has(dialog)) return false;
-    this.#closing.add(dialog);
-    if (!reducedMotion.matches) await animate();
-    finishClose(dialog);
-    this.#closing.delete(dialog);
-    this.#syncOpen();
-    return true;
-  }
+    async close() {
+        if (
+            await this.#hide(this.#menu, () =>
+                drawerDialog(this.#menu, "close"),
+            )
+        ) {
+            this.#menuClosed();
+        }
+    }
 
-  // ------------------------------------------------------------------ menu
+    #menuClosed() {
+        if (!this.#openedByKeyboard) {
+            this.#opener?.blur();
+        }
+        this.#opener?.setAttribute("aria-expanded", "false");
+    }
 
-  open() {
-    if (!this.#show(this.#menu)) return;
-    this.#opener?.setAttribute('aria-expanded', 'true');
-    if (!reducedMotion.matches) drawerDialog(this.#menu, 'open');
-  }
+    #scrub(keyframes, pseudoElement) {
+        const animation = this.#menu.animate(keyframes, {
+            duration: 1000,
+            easing: "linear",
+            fill: "forwards",
+            pseudoElement,
+        });
+        animation.pause();
+        return animation;
+    }
 
-  async close() {
-    if (await this.#hide(this.#menu, () => drawerDialog(this.#menu, 'close'))) this.#menuClosed();
-  }
+    #swipeStart(event) {
+        this.#swallowClick = false;
+        if (
+            event.pointerType === "mouse" ||
+            !event.isPrimary ||
+            this.#closing.has(this.#menu)
+        ) {
+            return;
+        }
+        this.#swipe = {
+            id: event.pointerId,
+            x: event.clientX,
+            y: event.clientY,
+            dx: 0,
+            t: event.timeStamp,
+            v: 0,
+        };
+    }
 
-  #menuClosed() {
-    if (!this.#openedByKeyboard) this.#opener?.blur();
-    this.#opener?.setAttribute('aria-expanded', 'false');
-  }
+    #swipeMove(event) {
+        const swipe = this.#swipe;
+        if (!swipe || event.pointerId !== swipe.id) {
+            return;
+        }
+        const menu = this.#menu;
+        const dx = event.clientX - swipe.x;
+        const dy = event.clientY - swipe.y;
+        if (!swipe.animations) {
+            if (Math.abs(dx) < SWIPE_SLOP && Math.abs(dy) < SWIPE_SLOP) {
+                return;
+            }
+            if (dx >= 0 || Math.abs(dy) >= Math.abs(dx)) {
+                this.#swipe = null;
+                return;
+            }
+            menu.setPointerCapture(swipe.id);
+            // The opening animation holds its end state; replace it with ones the
+            // finger can scrub.
+            menu.getAnimations({ subtree: true }).forEach((animation) =>
+                animation.cancel(),
+            );
+            swipe.width = menu.getBoundingClientRect().width;
+            swipe.animations = [
+                this.#scrub([MENU_SHOWN, MENU_HIDDEN]),
+                this.#scrub([{ opacity: 1 }, { opacity: 0 }], "::backdrop"),
+            ];
+        }
+        const elapsed = event.timeStamp - swipe.t;
+        if (elapsed > 0) {
+            swipe.v = (dx - swipe.dx) / elapsed;
+        }
+        swipe.dx = dx;
+        swipe.t = event.timeStamp;
+        const progress = Math.min(1, Math.max(0, -dx / swipe.width));
+        swipe.animations.forEach((animation) => {
+            animation.currentTime = progress * 1000;
+        });
+    }
 
-  #scrub(keyframes, pseudoElement) {
-    const animation = this.#menu.animate(keyframes, {
-      duration: 1000, easing: 'linear', fill: 'forwards', pseudoElement,
-    });
-    animation.pause();
-    return animation;
-  }
-
-  #swipeStart(event) {
-    this.#swallowClick = false;
-    if (event.pointerType === 'mouse' || !event.isPrimary || this.#closing.has(this.#menu)) return;
-    this.#swipe = { id: event.pointerId, x: event.clientX, y: event.clientY, dx: 0, t: event.timeStamp, v: 0 };
-  }
-
-  #swipeMove(event) {
-    const swipe = this.#swipe;
-    if (!swipe || event.pointerId !== swipe.id) return;
-    const menu = this.#menu;
-    const dx = event.clientX - swipe.x;
-    const dy = event.clientY - swipe.y;
-    if (!swipe.animations) {
-      if (Math.abs(dx) < SWIPE_SLOP && Math.abs(dy) < SWIPE_SLOP) return;
-      if (dx >= 0 || Math.abs(dy) >= Math.abs(dx)) {
+    async #swipeEnd(event) {
+        const swipe = this.#swipe;
+        if (!swipe || event.pointerId !== swipe.id) {
+            return;
+        }
         this.#swipe = null;
-        return;
-      }
-      menu.setPointerCapture(swipe.id);
-      // The opening animation holds its end state; replace it with ones the
-      // finger can scrub.
-      menu.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-      swipe.width = menu.getBoundingClientRect().width;
-      swipe.animations = [
-        this.#scrub([MENU_SHOWN, MENU_HIDDEN]),
-        this.#scrub([{ opacity: 1 }, { opacity: 0 }], '::backdrop'),
-      ];
+        if (!swipe.animations) {
+            return;
+        }
+        this.#swallowClick = true;
+        const progress = swipe.animations[0].currentTime / 1000;
+        const close =
+            event.type === "pointerup" &&
+            (progress > SWIPE_DISTANCE || swipe.v < -SWIPE_FLICK);
+        if (!close) {
+            const rate = 1000 / SWIPE_SETTLE;
+            swipe.animations.forEach((animation) => {
+                animation.playbackRate = -rate;
+                animation.play();
+            });
+            await Promise.all(
+                swipe.animations.map((animation) =>
+                    animation.finished.catch(() => {}),
+                ),
+            );
+            swipe.animations.forEach((animation) => animation.cancel());
+            return;
+        }
+        // Slide the rest of the way out from where the finger left it.
+        const closed = await this.#hide(this.#menu, async () => {
+            const rate = 1000 / SWIPE_SETTLE;
+            swipe.animations.forEach((animation) => {
+                animation.playbackRate = rate;
+                animation.play();
+            });
+            await Promise.all(
+                swipe.animations.map((animation) =>
+                    animation.finished.catch(() => {}),
+                ),
+            );
+        });
+        if (closed) {
+            this.#menuClosed();
+        }
     }
-    const elapsed = event.timeStamp - swipe.t;
-    if (elapsed > 0) swipe.v = (dx - swipe.dx) / elapsed;
-    swipe.dx = dx;
-    swipe.t = event.timeStamp;
-    const progress = Math.min(1, Math.max(0, -dx / swipe.width));
-    swipe.animations.forEach((animation) => { animation.currentTime = progress * 1000; });
-  }
 
-  async #swipeEnd(event) {
-    const swipe = this.#swipe;
-    if (!swipe || event.pointerId !== swipe.id) return;
-    this.#swipe = null;
-    if (!swipe.animations) return;
-    this.#swallowClick = true;
-    const progress = swipe.animations[0].currentTime / 1000;
-    const close = event.type === 'pointerup'
-      && (progress > SWIPE_DISTANCE || swipe.v < -SWIPE_FLICK);
-    if (!close) {
-      const rate = 1000 / SWIPE_SETTLE;
-      swipe.animations.forEach((animation) => {
-        animation.playbackRate = -rate;
-        animation.play();
-      });
-      await Promise.all(swipe.animations.map((animation) => animation.finished.catch(() => {})));
-      swipe.animations.forEach((animation) => animation.cancel());
-      return;
+    // ------------------------------------------------------------------ help
+
+    showHelp() {
+        if (!this.#show(this.#help)) {
+            return;
+        }
+        this.#help.scrollTop = 0;
+        if (!reducedMotion.matches) {
+            slideDialog(this.#help, "open");
+        }
     }
-    // Slide the rest of the way out from where the finger left it.
-    const closed = await this.#hide(this.#menu, async () => {
-      const rate = 1000 / SWIPE_SETTLE;
-      swipe.animations.forEach((animation) => {
-        animation.playbackRate = rate;
-        animation.play();
-      });
-      await Promise.all(swipe.animations.map((animation) => animation.finished.catch(() => {})));
-    });
-    if (closed) this.#menuClosed();
-  }
 
-  // ------------------------------------------------------------------ help
-
-  showHelp() {
-    if (!this.#show(this.#help)) return;
-    this.#help.scrollTop = 0;
-    if (!reducedMotion.matches) slideDialog(this.#help, 'open');
-  }
-
-  #closeHelp() {
-    return this.#hide(this.#help, () => slideDialog(this.#help, 'close'));
-  }
-
-  // ----------------------------------------------------------------- about
-
-  /** About grows out of the opener; with none, it slides in as Help does. */
-  #aboutMotion(direction) {
-    return this.#opener
-      ? growDialog(this.#opener, this.#about, direction, ABOUT_TIMING)
-      : slideDialog(this.#about, direction);
-  }
-
-  // Fills the progress line, and swaps in the compact header once the big
-  // title has slid up under where it sits.
-  #updateAboutScroll() {
-    const about = this.#about;
-    const { scrollTop, scrollHeight, clientHeight } = about;
-    const scrollable = scrollHeight - clientHeight;
-    const read = scrollable > 0 ? scrollTop / scrollable : 1;
-    about.style.setProperty('--read', Math.min(1, read).toFixed(3));
-    const title = about.querySelector('#about-title');
-    const mini = about.querySelector('.about-mini');
-    const titleGone = title.offsetTop + title.offsetHeight - mini.offsetHeight;
-    about.classList.toggle('condensed', scrollTop > titleGone);
-  }
-
-  showAbout() {
-    const about = this.#about;
-    if (!this.#show(about)) return;
-    about.scrollTop = 0;
-    this.#updateAboutScroll();
-    const animate = !reducedMotion.matches;
-    // Hide the sections afresh each time, so the story unfolds again on every visit.
-    about.classList.toggle('revealing', animate);
-    for (const section of about.querySelectorAll('.about-reveal')) {
-      section.classList.remove('is-visible');
-      if (animate) this.#aboutObserver.observe(section);
+    #closeHelp() {
+        return this.#hide(this.#help, () => slideDialog(this.#help, "close"));
     }
-    if (animate) this.#aboutMotion('open');
-  }
 
-  async #closeAbout() {
-    const closed = await this.#hide(this.#about, () => this.#aboutMotion('close'));
-    if (closed) this.#aboutObserver.disconnect();
-    return closed;
-  }
+    // ----------------------------------------------------------------- about
+
+    /** About grows out of the opener; with none, it slides in as Help does. */
+    #aboutMotion(direction) {
+        return this.#opener
+            ? growDialog(this.#opener, this.#about, direction, ABOUT_TIMING)
+            : slideDialog(this.#about, direction);
+    }
+
+    // Fills the progress line, and swaps in the compact header once the big
+    // title has slid up under where it sits.
+    #updateAboutScroll() {
+        const about = this.#about;
+        const { scrollTop, scrollHeight, clientHeight } = about;
+        const scrollable = scrollHeight - clientHeight;
+        const read = scrollable > 0 ? scrollTop / scrollable : 1;
+        about.style.setProperty("--read", Math.min(1, read).toFixed(3));
+        const title = about.querySelector("#about-title");
+        const mini = about.querySelector(".about-mini");
+        const titleGone =
+            title.offsetTop + title.offsetHeight - mini.offsetHeight;
+        about.classList.toggle("condensed", scrollTop > titleGone);
+    }
+
+    showAbout() {
+        const about = this.#about;
+        if (!this.#show(about)) {
+            return;
+        }
+        about.scrollTop = 0;
+        this.#updateAboutScroll();
+        const animate = !reducedMotion.matches;
+        // Hide the sections afresh each time, so the story unfolds again on every visit.
+        about.classList.toggle("revealing", animate);
+        for (const section of about.querySelectorAll(".about-reveal")) {
+            section.classList.remove("is-visible");
+            if (animate) {
+                this.#aboutObserver.observe(section);
+            }
+        }
+        if (animate) {
+            this.#aboutMotion("open");
+        }
+    }
+
+    async #closeAbout() {
+        const closed = await this.#hide(this.#about, () =>
+            this.#aboutMotion("close"),
+        );
+        if (closed) {
+            this.#aboutObserver.disconnect();
+        }
+        return closed;
+    }
 }
 
-if (!customElements.get('study-guide-menu')) {
-  customElements.define('study-guide-menu', StudyGuideMenu);
+if (!customElements.get("study-guide-menu")) {
+    customElements.define("study-guide-menu", StudyGuideMenu);
 }

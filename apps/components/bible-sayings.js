@@ -77,71 +77,96 @@
  * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
-import { BOOK_THUMB_BOUNDS, DEFAULT_THUMB_BOUNDS } from './book-thumb-bounds.js';
+import { registerFonts } from "../../assets/scripts/fonts.js";
 import {
-  BOOKMARK_STYLES, CardHold, bookmarkNote, bookmarkStore, showBookmarkResult,
-} from './card-bookmarks.js?v=20260927-1';
-import { PULL_TAB_ICON, PULL_TAB_STYLES, PullTab, revealCards } from './pull-tab.js?v=20260925-1';
-import { PILL_STYLES, linkScripture, refPill } from './scripture-refs.js?v=20261002-1';
-import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
+    BOOK_THUMB_BOUNDS,
+    DEFAULT_THUMB_BOUNDS,
+} from "./book-thumb-bounds.js";
+import {
+    BOOKMARK_STYLES,
+    CardHold,
+    bookmarkNote,
+    bookmarkStore,
+    showBookmarkResult,
+} from "./card-bookmarks.js?v=20260927-1";
+import {
+    PULL_TAB_ICON,
+    PULL_TAB_STYLES,
+    PullTab,
+    revealCards,
+} from "./pull-tab.js?v=20260925-1";
+import {
+    PILL_STYLES,
+    linkScripture,
+    refPill,
+} from "./scripture-refs.js?v=20261002-1";
+import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 // The thumbnails are .webp on the media host; .svg is not published.
 const bookThumbnailUrl = (mediaBase, book) =>
-  `${mediaBase}images/thumbnails/${encodeURIComponent(book)}_square.webp`;
+    `${mediaBase}images/thumbnails/${encodeURIComponent(book)}_square.webp`;
 // Shave the outermost hair off each tile, as <bible-trivia> does: a couple of
 // the files carry a fringe right against the frame.
 const THUMBNAIL_TRIM = 0.985;
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
-const DEFAULT_PAGE = 'apps/pages/bible-sayings.html';
+const DEFAULT_PAGE = "apps/pages/bible-sayings.html";
 const DEFAULT_COUNT = 5;
 // Pulling for more stops once the list holds this many sayings.
 const MAX_SAYINGS = 20;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const BANNER_URL = asset('../../assets/images/sayings-1440.webp');
-const REFRESH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
-const DEFAULT_SRC = asset('../../assets/bible-sayings.json');
+const BANNER_URL = asset("../../assets/images/sayings-1440.webp");
+const REFRESH_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 3.5 21 8.5 16 8.5"/><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1L21 8.5"/></svg>';
+const DEFAULT_SRC = asset("../../assets/bible-sayings.json");
 
-const bookmarks = bookmarkStore('dailygrace:bookmarks:sayings',
-  { isId: (id) => typeof id === 'string' && id !== '', limit: 50 });
+const bookmarks = bookmarkStore("dailygrace:bookmarks:sayings", {
+    isId: (id) => typeof id === "string" && id !== "",
+    limit: 50,
+});
 
 // The sayings are shared by every instance, so the page's list and its
 // bookmarks popup fetch the file once between them.
 const sayingsCache = new Map();
 
 function readSayings(url) {
-  if (!sayingsCache.has(url)) {
-    const request = fetch(url)
-      .then(async (response) => {
-        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-        const sayings = await response.json();
-        if (!Array.isArray(sayings)) throw new Error('The sayings file is not a list.');
-        return sayings;
-      })
-      .catch((error) => {
-        sayingsCache.delete(url);
-        throw error;
-      });
-    sayingsCache.set(url, request);
-  }
-  return sayingsCache.get(url);
+    if (!sayingsCache.has(url)) {
+        const request = fetch(url)
+            .then(async (response) => {
+                if (!response.ok) {
+                    throw new Error(
+                        `${response.status} ${response.statusText}`,
+                    );
+                }
+                const sayings = await response.json();
+                if (!Array.isArray(sayings)) {
+                    throw new Error("The sayings file is not a list.");
+                }
+                return sayings;
+            })
+            .catch((error) => {
+                sayingsCache.delete(url);
+                throw error;
+            });
+        sayingsCache.set(url, request);
+    }
+    return sayingsCache.get(url);
 }
 
 function shuffle(items) {
-  for (let index = items.length - 1; index > 0; index--) {
-    const swap = Math.floor(Math.random() * (index + 1));
-    [items[index], items[swap]] = [items[swap], items[index]];
-  }
-  return items;
+    for (let index = items.length - 1; index > 0; index--) {
+        const swap = Math.floor(Math.random() * (index + 1));
+        [items[index], items[swap]] = [items[swap], items[index]];
+    }
+    return items;
 }
 
 const WORDING_LABELS = {
-  exact: 'Word for word in the KJV',
-  adapted: 'Adapted from the KJV',
-  allusion: 'Drawn from a Bible story',
+    exact: "Word for word in the KJV",
+    adapted: "Adapted from the KJV",
+    allusion: "Drawn from a Bible story",
 };
 
 const STYLES = /* css */ `
@@ -407,34 +432,36 @@ ${PULL_TAB_STYLES}
 ${PILL_STYLES}`;
 
 export class BibleSayings extends HTMLElement {
-  static observedAttributes = ['media-base', 'src', 'count'];
+    static observedAttributes = ["media-base", "src", "count"];
 
-  #root;
-  #list;
-  #refreshButton;
-  #status;
-  #dialog;
-  #detail;
-  #bookmarksHeader;
-  #sayings = [];
-  #shownIds = new Set();
-  #loading = null;
-  #nearObserver = null;
-  #hold;
-  #pullTab;
-  #showingBookmarks = false;
-  #opener = null;
-  #previousOverflow = '';
-  // Leaving through the popup's link: close it, so the Back button, which can
-  // bring the page back as it was, does not land on a popup and a locked page.
-  #onPageHide = () => {
-    if (this.#dialog.open) this.#finishClose();
-  };
+    #root;
+    #list;
+    #refreshButton;
+    #status;
+    #dialog;
+    #detail;
+    #bookmarksHeader;
+    #sayings = [];
+    #shownIds = new Set();
+    #loading = null;
+    #nearObserver = null;
+    #hold;
+    #pullTab;
+    #showingBookmarks = false;
+    #opener = null;
+    #previousOverflow = "";
+    // Leaving through the popup's link: close it, so the Back button, which can
+    // bring the page back as it was, does not land on a popup and a locked page.
+    #onPageHide = () => {
+        if (this.#dialog.open) {
+            this.#finishClose();
+        }
+    };
 
-  constructor() {
-    super();
-    this.#root = this.attachShadow({ mode: 'open' });
-    this.#root.innerHTML = `
+    constructor() {
+        super();
+        this.#root = this.attachShadow({ mode: "open" });
+        this.#root.innerHTML = `
       <style>${STYLES}</style>
       <section role="region" aria-label="Bible sayings in everyday English">
         <div class="banner">
@@ -460,463 +487,612 @@ export class BibleSayings extends HTMLElement {
         <img class="banner-image" src="${BANNER_URL}" alt="" width="1440" height="360" loading="lazy" />
         <div class="detail"></div>
       </dialog>`;
-    this.#list = this.#root.querySelector('.list');
-    this.#refreshButton = this.#root.querySelector('.refresh');
-    this.#status = this.#root.querySelector('[role="status"]');
-    this.#dialog = this.#root.querySelector('dialog');
-    this.#detail = this.#root.querySelector('.detail');
-    this.#bookmarksHeader = this.#root.querySelector('.bookmarks-header');
+        this.#list = this.#root.querySelector(".list");
+        this.#refreshButton = this.#root.querySelector(".refresh");
+        this.#status = this.#root.querySelector('[role="status"]');
+        this.#dialog = this.#root.querySelector("dialog");
+        this.#detail = this.#root.querySelector(".detail");
+        this.#bookmarksHeader = this.#root.querySelector(".bookmarks-header");
 
-    this.#refreshButton.addEventListener('click', () => {
-      this.refresh();
-      this.#refreshButton.classList.remove('is-spinning');
-      void this.#refreshButton.offsetWidth; // restart the spin on repeat clicks
-      this.#refreshButton.classList.add('is-spinning');
-    });
-    this.#refreshButton.addEventListener('animationend', () => {
-      this.#refreshButton.classList.remove('is-spinning');
-    });
+        this.#refreshButton.addEventListener("click", () => {
+            this.refresh();
+            this.#refreshButton.classList.remove("is-spinning");
+            void this.#refreshButton.offsetWidth; // restart the spin on repeat clicks
+            this.#refreshButton.classList.add("is-spinning");
+        });
+        this.#refreshButton.addEventListener("animationend", () => {
+            this.#refreshButton.classList.remove("is-spinning");
+        });
 
-    this.#pullTab = new PullTab(this.#root.querySelector('.pull-tab'), { onPull: () => this.more() });
+        this.#pullTab = new PullTab(this.#root.querySelector(".pull-tab"), {
+            onPull: () => this.more(),
+        });
 
-    // The whole card opens the popup, and a hold must not: CardHold swallows
-    // the click that ends it.
-    this.#hold = new CardHold(this.#list, {
-      selector: '.saying',
-      exclude: '.scripture-ref',
-      onHold: (card) => {
-        const { id } = card.dataset;
-        const result = bookmarks.toggle(id);
-        showBookmarkResult(card, result, bookmarks.limit);
-        this.#status.textContent = `${card.querySelector('.open').textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
-        if (result === 'added' || result === 'removed') {
-          this.dispatchEvent(new CustomEvent('bookmarkchange', { detail: { id, result } }));
+        // The whole card opens the popup, and a hold must not: CardHold swallows
+        // the click that ends it.
+        this.#hold = new CardHold(this.#list, {
+            selector: ".saying",
+            exclude: ".scripture-ref",
+            onHold: (card) => {
+                const { id } = card.dataset;
+                const result = bookmarks.toggle(id);
+                showBookmarkResult(card, result, bookmarks.limit);
+                this.#status.textContent = `${card.querySelector(".open").textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
+                if (result === "added" || result === "removed") {
+                    this.dispatchEvent(
+                        new CustomEvent("bookmarkchange", {
+                            detail: { id, result },
+                        }),
+                    );
+                }
+            },
+        });
+
+        // Escape would close instantly; route it through the closing animation instead.
+        this.#dialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            this.close();
+        });
+        // A tap anywhere closes the popup, except on the reference pills and the
+        // link to the Bible Sayings page.
+        this.#dialog.addEventListener("click", (event) => {
+            if (
+                event
+                    .composedPath()
+                    .some(
+                        (node) =>
+                            node.nodeName === "BUTTON" || node.nodeName === "A",
+                    )
+            ) {
+                return;
+            }
+            this.close();
+        });
+    }
+
+    connectedCallback() {
+        registerFonts();
+        this.#root.querySelector(".see-all").href = this.#pageHref();
+        addEventListener("pagehide", this.#onPageHide);
+        bookmarks.addEventListener("change", this.#syncBookmarks);
+        this.#syncBookmarks();
+        if (!this.#sayings.length) {
+            this.#loadWhenNear();
         }
-      },
-    });
-
-    // Escape would close instantly; route it through the closing animation instead.
-    this.#dialog.addEventListener('cancel', (event) => {
-      event.preventDefault();
-      this.close();
-    });
-    // A tap anywhere closes the popup, except on the reference pills and the
-    // link to the Bible Sayings page.
-    this.#dialog.addEventListener('click', (event) => {
-      if (event.composedPath().some((node) => node.nodeName === 'BUTTON' || node.nodeName === 'A')) return;
-      this.close();
-    });
-  }
-
-  connectedCallback() {
-    registerFonts();
-    this.#root.querySelector('.see-all').href = this.#pageHref();
-    addEventListener('pagehide', this.#onPageHide);
-    bookmarks.addEventListener('change', this.#syncBookmarks);
-    this.#syncBookmarks();
-    if (!this.#sayings.length) this.#loadWhenNear();
-  }
-
-  disconnectedCallback() {
-    removeEventListener('pagehide', this.#onPageHide);
-    bookmarks.removeEventListener('change', this.#syncBookmarks);
-    this.#hold.cancel();
-    this.#nearObserver?.disconnect();
-    this.#nearObserver = null;
-    if (this.#dialog.open) this.#finishClose();
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue || !this.isConnected) return;
-    if (name === 'src') {
-      this.#sayings = [];
-      this.#shownIds = new Set();
-      this.#load();
-    } else if (this.#showingBookmarks) {
-      this.showBookmarks();
-    } else if (this.#sayings.length) {
-      // media-base changes symbol URLs; count changes the batch size.
-      this.#render(this.#currentSayings());
     }
-  }
 
-  /** The bookmarked saying ids, newest first. */
-  get bookmarks() {
-    return bookmarks.read();
-  }
+    disconnectedCallback() {
+        removeEventListener("pagehide", this.#onPageHide);
+        bookmarks.removeEventListener("change", this.#syncBookmarks);
+        this.#hold.cancel();
+        this.#nearObserver?.disconnect();
+        this.#nearObserver = null;
+        if (this.#dialog.open) {
+            this.#finishClose();
+        }
+    }
 
-  /** The bookmarked sayings, newest first, as they are in the sayings file. */
-  async bookmarkedItems() {
-    const src = this.getAttribute('src') || DEFAULT_SRC;
-    const sayings = await readSayings(new URL(src, document.baseURI).href);
-    const byId = new Map(sayings.map((saying) => [saying.id, saying]));
-    return bookmarks.read().map((id) => byId.get(id)).filter(Boolean);
-  }
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue === newValue || !this.isConnected) {
+            return;
+        }
+        if (name === "src") {
+            this.#sayings = [];
+            this.#shownIds = new Set();
+            this.#load();
+        } else if (this.#showingBookmarks) {
+            this.showBookmarks();
+        } else if (this.#sayings.length) {
+            // media-base changes symbol URLs; count changes the batch size.
+            this.#render(this.#currentSayings());
+        }
+    }
 
-  /** The Bible Sayings page, opened at hash (a saying's id) if given. */
-  #pageHref(hash = '') {
-    const page = new URL(this.getAttribute('page-href') || DEFAULT_PAGE, document.baseURI);
-    page.hash = hash;
-    return page.href;
-  }
+    /** The bookmarked saying ids, newest first. */
+    get bookmarks() {
+        return bookmarks.read();
+    }
 
-  get #mediaBase() {
-    const base = this.getAttribute('media-base') || DEFAULT_MEDIA_BASE;
-    return base.endsWith('/') ? base : `${base}/`;
-  }
+    /** The bookmarked sayings, newest first, as they are in the sayings file. */
+    async bookmarkedItems() {
+        const src = this.getAttribute("src") || DEFAULT_SRC;
+        const sayings = await readSayings(new URL(src, document.baseURI).href);
+        const byId = new Map(sayings.map((saying) => [saying.id, saying]));
+        return bookmarks
+            .read()
+            .map((id) => byId.get(id))
+            .filter(Boolean);
+    }
 
-  get #count() {
-    const count = Number.parseInt(this.getAttribute('count'), 10);
-    return count > 0 ? count : DEFAULT_COUNT;
-  }
+    /** The Bible Sayings page, opened at hash (a saying's id) if given. */
+    #pageHref(hash = "") {
+        const page = new URL(
+            this.getAttribute("page-href") || DEFAULT_PAGE,
+            document.baseURI,
+        );
+        page.hash = hash;
+        return page.href;
+    }
 
-  #currentSayings() {
-    const shown = this.#sayings.filter((saying) => this.#shownIds.has(saying.id));
-    return shown.length ? shown : this.#pick();
-  }
+    get #mediaBase() {
+        const base = this.getAttribute("media-base") || DEFAULT_MEDIA_BASE;
+        return base.endsWith("/") ? base : `${base}/`;
+    }
 
-  // The sayings file is a third of a megabyte and the card sits at the foot
-  // of the page: fetch it only as the card nears the screen, so it never
-  // competes with what is read first. A bookmarks list waits for
-  // showBookmarks() to ask for it.
-  #loadWhenNear() {
-    if (this.#loading || this.#nearObserver || this.hasAttribute('bookmarks')) return;
-    this.#nearObserver = new IntersectionObserver((entries) => {
-      if (!entries.some((entry) => entry.isIntersecting)) return;
-      this.#nearObserver.disconnect();
-      this.#nearObserver = null;
-      if (!this.#loading) this.#load();
-    }, { rootMargin: '100% 0px' });
-    // Until the rest of the page has arrived, every card is short, so even the
-    // last one can sit within a screen of view: wait for the load event first.
-    const observer = this.#nearObserver;
-    const observe = () => {
-      if (observer === this.#nearObserver) observer.observe(this);
-    };
-    if (document.readyState === 'complete') observe();
-    else window.addEventListener('load', observe, { once: true });
-  }
+    get #count() {
+        const count = Number.parseInt(this.getAttribute("count"), 10);
+        return count > 0 ? count : DEFAULT_COUNT;
+    }
 
-  #load() {
-    const src = this.getAttribute('src') || DEFAULT_SRC;
-    const loading = (this.#loading = readSayings(new URL(src, document.baseURI).href)
-      .then((sayings) => {
-        if (loading !== this.#loading) return; // superseded by a newer src
-        this.#sayings = sayings.filter((saying) => saying.id && saying.saying && saying.meaning);
-        if (!this.#sayings.length) throw new Error('No Bible sayings are available.');
-        this.#refreshButton.disabled = false;
-        if (this.hasAttribute('bookmarks')) this.showBookmarks();
-        else this.refresh();
-        this.dispatchEvent(new CustomEvent('ready', { detail: { total: this.#sayings.length } }));
-      })
-      .catch((error) => {
-        if (loading !== this.#loading) return;
-        console.warn('Bible sayings could not be loaded:', error);
-        const message = document.createElement('p');
-        message.className = 'message';
-        message.textContent = 'Bible sayings could not be loaded. Please reload the page to try again.';
-        this.#list.replaceChildren(message);
+    #currentSayings() {
+        const shown = this.#sayings.filter((saying) =>
+            this.#shownIds.has(saying.id),
+        );
+        return shown.length ? shown : this.#pick();
+    }
+
+    // The sayings file is a third of a megabyte and the card sits at the foot
+    // of the page: fetch it only as the card nears the screen, so it never
+    // competes with what is read first. A bookmarks list waits for
+    // showBookmarks() to ask for it.
+    #loadWhenNear() {
+        if (
+            this.#loading ||
+            this.#nearObserver ||
+            this.hasAttribute("bookmarks")
+        ) {
+            return;
+        }
+        this.#nearObserver = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) {
+                    return;
+                }
+                this.#nearObserver.disconnect();
+                this.#nearObserver = null;
+                if (!this.#loading) {
+                    this.#load();
+                }
+            },
+            { rootMargin: "100% 0px" },
+        );
+        // Until the rest of the page has arrived, every card is short, so even the
+        // last one can sit within a screen of view: wait for the load event first.
+        const observer = this.#nearObserver;
+        const observe = () => {
+            if (observer === this.#nearObserver) {
+                observer.observe(this);
+            }
+        };
+        if (document.readyState === "complete") {
+            observe();
+        } else {
+            window.addEventListener("load", observe, { once: true });
+        }
+    }
+
+    #load() {
+        const src = this.getAttribute("src") || DEFAULT_SRC;
+        const loading = (this.#loading = readSayings(
+            new URL(src, document.baseURI).href,
+        )
+            .then((sayings) => {
+                if (loading !== this.#loading) {
+                    return;
+                } // superseded by a newer src
+                this.#sayings = sayings.filter(
+                    (saying) => saying.id && saying.saying && saying.meaning,
+                );
+                if (!this.#sayings.length) {
+                    throw new Error("No Bible sayings are available.");
+                }
+                this.#refreshButton.disabled = false;
+                if (this.hasAttribute("bookmarks")) {
+                    this.showBookmarks();
+                } else {
+                    this.refresh();
+                }
+                this.dispatchEvent(
+                    new CustomEvent("ready", {
+                        detail: { total: this.#sayings.length },
+                    }),
+                );
+            })
+            .catch((error) => {
+                if (loading !== this.#loading) {
+                    return;
+                }
+                console.warn("Bible sayings could not be loaded:", error);
+                const message = document.createElement("p");
+                message.className = "message";
+                message.textContent =
+                    "Bible sayings could not be loaded. Please reload the page to try again.";
+                this.#list.replaceChildren(message);
+                this.#pullTab.hide();
+                this.dispatchEvent(
+                    new CustomEvent("error", {
+                        detail: { message: error.message },
+                    }),
+                );
+            }));
+    }
+
+    /** Draws from sayings not in the previous batch, so a refresh never repeats. */
+    #pick() {
+        const count = this.#count;
+        const unseen = this.#unseen();
+        return shuffle(
+            unseen.length >= count ? unseen : this.#sayings.slice(),
+        ).slice(0, count);
+    }
+
+    #unseen() {
+        return this.#sayings.filter((saying) => !this.#shownIds.has(saying.id));
+    }
+
+    // The tab shows while the list has room for more and there are more to draw.
+    #updatePullTab(options) {
+        const shown = this.#shownIds.size;
+        if (shown < MAX_SAYINGS && shown < this.#sayings.length) {
+            this.#pullTab.show();
+        } else {
+            this.#pullTab.hide(options);
+        }
+    }
+
+    #createSymbol(book) {
+        const symbol = document.createElement("span");
+        symbol.className = "symbol";
+        // Keep the column width so cards stay aligned when a thumbnail is missing.
+        if (!book) {
+            symbol.style.visibility = "hidden";
+            return symbol;
+        }
+        const image = document.createElement("img");
+        image.alt = "";
+        image.loading = "lazy";
+        image.onerror = () => {
+            symbol.style.visibility = "hidden";
+        };
+        image.src = bookThumbnailUrl(this.#mediaBase, book);
+        const [x, y, size, radius] =
+            BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
+        const side = size * THUMBNAIL_TRIM;
+        const inset = (size - side) / 2;
+        image.style.width = `${100 / side}%`;
+        image.style.height = `${100 / side}%`;
+        image.style.left = `${(-(x + inset) / side) * 100}%`;
+        image.style.top = `${(-(y + inset) / side) * 100}%`;
+        symbol.style.borderRadius = `${radius * 100}%`;
+        symbol.append(image);
+        return symbol;
+    }
+
+    #createSaying(saying) {
+        const card = document.createElement("article");
+        card.className = "saying bookmarkable";
+        card.dataset.id = saying.id;
+        card.classList.toggle("bookmarked", bookmarks.has(saying.id));
+
+        const body = document.createElement("div");
+        body.className = "body";
+        const title = document.createElement("h4");
+        title.className = "title";
+        const open = document.createElement("button");
+        open.type = "button";
+        open.className = "open";
+        open.textContent = saying.saying;
+        open.setAttribute("aria-haspopup", "dialog");
+        open.addEventListener("click", () => this.open(saying.id));
+        title.append(open);
+
+        const meaning = document.createElement("p");
+        meaning.className = "text";
+        meaning.textContent = saying.meaning;
+        linkScripture(meaning);
+        body.append(title, meaning);
+
+        if (saying.reference) {
+            const reference = document.createElement("p");
+            reference.className = "card-reference";
+            reference.append(refPill(saying.reference));
+            body.append(reference);
+        }
+
+        card.append(this.#createSymbol(saying.book), body);
+        return card;
+    }
+
+    #render(sayings) {
+        this.#showingBookmarks = false;
+        this.#bookmarksHeader.hidden = true;
+        this.#shownIds = new Set(sayings.map((saying) => saying.id));
+        this.#list.replaceChildren(
+            ...sayings.map((saying) => this.#createSaying(saying)),
+        );
+        this.#updatePullTab();
+        this.#status.textContent = `${sayings.length} Bible sayings shown, starting with ${sayings[0].saying}.`;
+    }
+
+    #part(label, ...content) {
+        const part = document.createElement("div");
+        part.className = "part";
+        const heading = document.createElement("h4");
+        heading.className = "label";
+        heading.textContent = label;
+        part.append(heading, ...content);
+        return part;
+    }
+
+    #paragraph(text) {
+        const paragraph = document.createElement("p");
+        paragraph.className = "text";
+        paragraph.textContent = text;
+        linkScripture(paragraph);
+        return paragraph;
+    }
+
+    #renderDetail(saying) {
+        const head = document.createElement("div");
+        head.className = "detail-head";
+        const heading = document.createElement("div");
+        const title = document.createElement("h3");
+        title.className = "detail-title";
+        title.id = "detail-title";
+        title.textContent = saying.saying;
+        heading.append(title);
+        if (saying.variants?.length) {
+            const variants = document.createElement("p");
+            variants.className = "variants";
+            variants.textContent = `Also said: ${saying.variants.join(" · ")}`;
+            heading.append(variants);
+        }
+        head.append(this.#createSymbol(saying.book), heading);
+
+        const parts = [
+            head,
+            this.#part("What it means", this.#paragraph(saying.meaning)),
+        ];
+        if (saying.explanation) {
+            parts.push(
+                this.#part(
+                    "Where it comes from",
+                    this.#paragraph(saying.explanation),
+                ),
+            );
+        }
+
+        if (saying.reference) {
+            const scripture = [];
+            if (saying.kjv_text) {
+                const quote = document.createElement("blockquote");
+                quote.className = "scripture";
+                const text = document.createElement("p");
+                text.textContent = saying.kjv_text;
+                quote.append(text);
+                scripture.push(quote);
+            }
+            const references = document.createElement("div");
+            references.className = "references";
+            const all = saying.references?.length
+                ? saying.references
+                : [saying.reference];
+            references.append(...all.map((reference) => refPill(reference)));
+            scripture.push(references);
+            parts.push(this.#part("Scripture (KJV)", ...scripture));
+        }
+
+        const tags = document.createElement("ul");
+        tags.className = "tags";
+        tags.setAttribute("aria-label", "About this saying");
+        for (const tag of [
+            saying.theme,
+            saying.testament && `${saying.testament} Testament`,
+            WORDING_LABELS[saying.wording],
+        ]) {
+            if (!tag) {
+                continue;
+            }
+            const item = document.createElement("li");
+            item.textContent = tag;
+            tags.append(item);
+        }
+        if (tags.childElementCount) {
+            parts.push(tags);
+        }
+
+        // The saying on the Bible Sayings page, among the rest of its theme.
+        const more = document.createElement("a");
+        more.className = "detail-more";
+        more.href = this.#pageHref(saying.id);
+        more.textContent = "More sayings like this ";
+        more.insertAdjacentHTML(
+            "beforeend",
+            '<span aria-hidden="true">→</span>',
+        );
+        parts.push(more);
+
+        this.#detail.replaceChildren(...parts);
+    }
+
+    #pop(direction) {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            return Promise.resolve();
+        }
+        const opening = direction === "open";
+        const options = {
+            duration: opening ? 460 : 220,
+            // A little overshoot on the way in gives the card its pop.
+            easing: opening
+                ? "cubic-bezier(.2, .9, .25, 1.2)"
+                : "cubic-bezier(.4, 0, 1, 1)",
+            fill: "forwards",
+        };
+        const card = this.#dialog.animate(
+            opening
+                ? [
+                      { transform: "scale(.82) translateY(28px)", opacity: 0 },
+                      { transform: "none", opacity: 1 },
+                  ]
+                : [
+                      { transform: "none", opacity: 1 },
+                      { transform: "scale(.94)", opacity: 0 },
+                  ],
+            options,
+        );
+        this.#dialog.animate(
+            opening
+                ? [{ opacity: 0 }, { opacity: 1 }]
+                : [{ opacity: 1 }, { opacity: 0 }],
+            { ...options, easing: "ease", pseudoElement: "::backdrop" },
+        );
+        return card.finished.catch(() => {});
+    }
+
+    /** Pop up the full entry for one saying. */
+    open(id) {
+        const saying = this.#sayings.find((item) => item.id === id);
+        if (!saying || this.#dialog.dataset.closing !== undefined) {
+            return;
+        }
+        this.#renderDetail(saying);
+        this.#dialog.scrollTop = 0;
+        if (!this.#dialog.open) {
+            this.#opener = this.#root.activeElement;
+            this.#previousOverflow = document.documentElement.style.overflow;
+            document.documentElement.style.overflow = "hidden";
+            this.#dialog.showModal();
+            // showModal would otherwise focus the first reference and ring it. The
+            // dialog itself takes the focus instead.
+            this.#dialog.focus();
+            this.#pop("open");
+        }
+        this.dispatchEvent(new CustomEvent("open", { detail: { id } }));
+    }
+
+    async close() {
+        if (!this.#dialog.open || this.#dialog.dataset.closing !== undefined) {
+            return;
+        }
+        this.#dialog.dataset.closing = "";
+        await this.#pop("close");
+        this.#finishClose();
+    }
+
+    #finishClose() {
+        this.#dialog
+            .getAnimations({ subtree: true })
+            .forEach((animation) => animation.cancel());
+        this.#dialog.close();
+        delete this.#dialog.dataset.closing;
+        document.documentElement.style.overflow = this.#previousOverflow;
+        if (this.#opener?.isConnected) {
+            this.#opener.focus({ preventScroll: true });
+        }
+        this.#opener = null;
+    }
+
+    #bookmarksSummary() {
+        return (
+            `${bookmarks.read().length} of ${bookmarks.limit} saved sayings, newest first. ` +
+            "Hold a saying to remove its bookmark."
+        );
+    }
+
+    /**
+     * Show the bookmarked sayings, newest first. A saying taken off here keeps
+     * its card, without the ribbon, so holding it again puts the bookmark back.
+     */
+    showBookmarks() {
+        if (!this.#sayings.length) {
+            // Loaded on first use; the bookmarks show once the sayings arrive.
+            if (!this.#loading) {
+                this.#load();
+            }
+            return;
+        }
+        this.#showingBookmarks = true;
         this.#pullTab.hide();
-        this.dispatchEvent(new CustomEvent('error', { detail: { message: error.message } }));
-      }));
-  }
-
-  /** Draws from sayings not in the previous batch, so a refresh never repeats. */
-  #pick() {
-    const count = this.#count;
-    const unseen = this.#unseen();
-    return shuffle(unseen.length >= count ? unseen : this.#sayings.slice()).slice(0, count);
-  }
-
-  #unseen() {
-    return this.#sayings.filter((saying) => !this.#shownIds.has(saying.id));
-  }
-
-  // The tab shows while the list has room for more and there are more to draw.
-  #updatePullTab(options) {
-    const shown = this.#shownIds.size;
-    if (shown < MAX_SAYINGS && shown < this.#sayings.length) this.#pullTab.show();
-    else this.#pullTab.hide(options);
-  }
-
-  #createSymbol(book) {
-    const symbol = document.createElement('span');
-    symbol.className = 'symbol';
-    // Keep the column width so cards stay aligned when a thumbnail is missing.
-    if (!book) {
-      symbol.style.visibility = 'hidden';
-      return symbol;
-    }
-    const image = document.createElement('img');
-    image.alt = '';
-    image.loading = 'lazy';
-    image.onerror = () => { symbol.style.visibility = 'hidden'; };
-    image.src = bookThumbnailUrl(this.#mediaBase, book);
-    const [x, y, size, radius] = BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
-    const side = size * THUMBNAIL_TRIM;
-    const inset = (size - side) / 2;
-    image.style.width = `${100 / side}%`;
-    image.style.height = `${100 / side}%`;
-    image.style.left = `${(-(x + inset) / side) * 100}%`;
-    image.style.top = `${(-(y + inset) / side) * 100}%`;
-    symbol.style.borderRadius = `${radius * 100}%`;
-    symbol.append(image);
-    return symbol;
-  }
-
-  #createSaying(saying) {
-    const card = document.createElement('article');
-    card.className = 'saying bookmarkable';
-    card.dataset.id = saying.id;
-    card.classList.toggle('bookmarked', bookmarks.has(saying.id));
-
-    const body = document.createElement('div');
-    body.className = 'body';
-    const title = document.createElement('h4');
-    title.className = 'title';
-    const open = document.createElement('button');
-    open.type = 'button';
-    open.className = 'open';
-    open.textContent = saying.saying;
-    open.setAttribute('aria-haspopup', 'dialog');
-    open.addEventListener('click', () => this.open(saying.id));
-    title.append(open);
-
-    const meaning = document.createElement('p');
-    meaning.className = 'text';
-    meaning.textContent = saying.meaning;
-    linkScripture(meaning);
-    body.append(title, meaning);
-
-    if (saying.reference) {
-      const reference = document.createElement('p');
-      reference.className = 'card-reference';
-      reference.append(refPill(saying.reference));
-      body.append(reference);
+        const sayings = bookmarks
+            .read()
+            .map((id) => this.#sayings.find((saying) => saying.id === id))
+            .filter(Boolean);
+        this.#bookmarksHeader.hidden = !sayings.length;
+        if (!sayings.length) {
+            const message = document.createElement("p");
+            message.className = "message";
+            message.textContent =
+                "No bookmarked sayings yet. Hold a saying in the Bible sayings for half a second to bookmark it.";
+            this.#list.replaceChildren(message);
+            this.#status.textContent = message.textContent;
+            return;
+        }
+        this.#bookmarksHeader.querySelector(".bookmarks-summary").textContent =
+            this.#bookmarksSummary();
+        this.#list.replaceChildren(
+            ...sayings.map((saying) => this.#createSaying(saying)),
+        );
+        this.#status.textContent = `Bookmarked sayings. ${this.#bookmarksSummary()}`;
     }
 
-    card.append(this.#createSymbol(saying.book), body);
-    return card;
-  }
-
-  #render(sayings) {
-    this.#showingBookmarks = false;
-    this.#bookmarksHeader.hidden = true;
-    this.#shownIds = new Set(sayings.map((saying) => saying.id));
-    this.#list.replaceChildren(...sayings.map((saying) => this.#createSaying(saying)));
-    this.#updatePullTab();
-    this.#status.textContent = `${sayings.length} Bible sayings shown, starting with ${sayings[0].saying}.`;
-  }
-
-  #part(label, ...content) {
-    const part = document.createElement('div');
-    part.className = 'part';
-    const heading = document.createElement('h4');
-    heading.className = 'label';
-    heading.textContent = label;
-    part.append(heading, ...content);
-    return part;
-  }
-
-  #paragraph(text) {
-    const paragraph = document.createElement('p');
-    paragraph.className = 'text';
-    paragraph.textContent = text;
-    linkScripture(paragraph);
-    return paragraph;
-  }
-
-  #renderDetail(saying) {
-    const head = document.createElement('div');
-    head.className = 'detail-head';
-    const heading = document.createElement('div');
-    const title = document.createElement('h3');
-    title.className = 'detail-title';
-    title.id = 'detail-title';
-    title.textContent = saying.saying;
-    heading.append(title);
-    if (saying.variants?.length) {
-      const variants = document.createElement('p');
-      variants.className = 'variants';
-      variants.textContent = `Also said: ${saying.variants.join(' · ')}`;
-      heading.append(variants);
-    }
-    head.append(this.#createSymbol(saying.book), heading);
-
-    const parts = [head, this.#part('What it means', this.#paragraph(saying.meaning))];
-    if (saying.explanation) {
-      parts.push(this.#part('Where it comes from', this.#paragraph(saying.explanation)));
-    }
-
-    if (saying.reference) {
-      const scripture = [];
-      if (saying.kjv_text) {
-        const quote = document.createElement('blockquote');
-        quote.className = 'scripture';
-        const text = document.createElement('p');
-        text.textContent = saying.kjv_text;
-        quote.append(text);
-        scripture.push(quote);
-      }
-      const references = document.createElement('div');
-      references.className = 'references';
-      const all = saying.references?.length ? saying.references : [saying.reference];
-      references.append(...all.map((reference) => refPill(reference)));
-      scripture.push(references);
-      parts.push(this.#part('Scripture (KJV)', ...scripture));
-    }
-
-    const tags = document.createElement('ul');
-    tags.className = 'tags';
-    tags.setAttribute('aria-label', 'About this saying');
-    for (const tag of [
-      saying.theme,
-      saying.testament && `${saying.testament} Testament`,
-      WORDING_LABELS[saying.wording],
-    ]) {
-      if (!tag) continue;
-      const item = document.createElement('li');
-      item.textContent = tag;
-      tags.append(item);
-    }
-    if (tags.childElementCount) parts.push(tags);
-
-    // The saying on the Bible Sayings page, among the rest of its theme.
-    const more = document.createElement('a');
-    more.className = 'detail-more';
-    more.href = this.#pageHref(saying.id);
-    more.textContent = 'More sayings like this ';
-    more.insertAdjacentHTML('beforeend', '<span aria-hidden="true">→</span>');
-    parts.push(more);
-
-    this.#detail.replaceChildren(...parts);
-  }
-
-  #pop(direction) {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return Promise.resolve();
-    const opening = direction === 'open';
-    const options = {
-      duration: opening ? 460 : 220,
-      // A little overshoot on the way in gives the card its pop.
-      easing: opening ? 'cubic-bezier(.2, .9, .25, 1.2)' : 'cubic-bezier(.4, 0, 1, 1)',
-      fill: 'forwards',
+    #syncBookmarks = () => {
+        const saved = new Set(bookmarks.read());
+        for (const card of this.#list.querySelectorAll(".saying")) {
+            card.classList.toggle("bookmarked", saved.has(card.dataset.id));
+        }
+        if (this.#showingBookmarks) {
+            this.#bookmarksHeader.querySelector(
+                ".bookmarks-summary",
+            ).textContent = this.#bookmarksSummary();
+        }
     };
-    const card = this.#dialog.animate(
-      opening
-        ? [{ transform: 'scale(.82) translateY(28px)', opacity: 0 }, { transform: 'none', opacity: 1 }]
-        : [{ transform: 'none', opacity: 1 }, { transform: 'scale(.94)', opacity: 0 }],
-      options,
-    );
-    this.#dialog.animate(
-      opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
-      { ...options, easing: 'ease', pseudoElement: '::backdrop' },
-    );
-    return card.finished.catch(() => {});
-  }
 
-  /** Pop up the full entry for one saying. */
-  open(id) {
-    const saying = this.#sayings.find((item) => item.id === id);
-    if (!saying || this.#dialog.dataset.closing !== undefined) return;
-    this.#renderDetail(saying);
-    this.#dialog.scrollTop = 0;
-    if (!this.#dialog.open) {
-      this.#opener = this.#root.activeElement;
-      this.#previousOverflow = document.documentElement.style.overflow;
-      document.documentElement.style.overflow = 'hidden';
-      this.#dialog.showModal();
-      // showModal would otherwise focus the first reference and ring it. The
-      // dialog itself takes the focus instead.
-      this.#dialog.focus();
-      this.#pop('open');
+    /** Show a new batch of sayings, none repeated from the previous batch. */
+    refresh() {
+        if (!this.#sayings.length) {
+            return;
+        }
+        const sayings = this.#pick();
+        this.#render(sayings);
+        this.dispatchEvent(
+            new CustomEvent("refresh", {
+                detail: { ids: sayings.map((saying) => saying.id) },
+            }),
+        );
     }
-    this.dispatchEvent(new CustomEvent('open', { detail: { id } }));
-  }
 
-  async close() {
-    if (!this.#dialog.open || this.#dialog.dataset.closing !== undefined) return;
-    this.#dialog.dataset.closing = '';
-    await this.#pop('close');
-    this.#finishClose();
-  }
-
-  #finishClose() {
-    this.#dialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-    this.#dialog.close();
-    delete this.#dialog.dataset.closing;
-    document.documentElement.style.overflow = this.#previousOverflow;
-    if (this.#opener?.isConnected) this.#opener.focus({ preventScroll: true });
-    this.#opener = null;
-  }
-
-  #bookmarksSummary() {
-    return `${bookmarks.read().length} of ${bookmarks.limit} saved sayings, newest first. `
-      + 'Hold a saying to remove its bookmark.';
-  }
-
-  /**
-   * Show the bookmarked sayings, newest first. A saying taken off here keeps
-   * its card, without the ribbon, so holding it again puts the bookmark back.
-   */
-  showBookmarks() {
-    if (!this.#sayings.length) {
-      // Loaded on first use; the bookmarks show once the sayings arrive.
-      if (!this.#loading) this.#load();
-      return;
+    /** Add a batch of sayings not yet shown below the list, up to 20 in all. */
+    more() {
+        if (this.#showingBookmarks || !this.#sayings.length) {
+            return;
+        }
+        const room = MAX_SAYINGS - this.#shownIds.size;
+        const sayings = shuffle(this.#unseen()).slice(
+            0,
+            Math.min(this.#count, room),
+        );
+        if (!sayings.length) {
+            return;
+        }
+        for (const saying of sayings) {
+            this.#shownIds.add(saying.id);
+        }
+        const cards = sayings.map((saying) => this.#createSaying(saying));
+        this.#list.append(...cards);
+        revealCards(cards);
+        this.#updatePullTab({
+            animate: true,
+            focus: cards[0].querySelector(".open"),
+        });
+        this.#status.textContent = `${sayings.length} more Bible sayings shown, starting with ${sayings[0].saying}.`;
+        this.dispatchEvent(
+            new CustomEvent("more", {
+                detail: { ids: sayings.map((saying) => saying.id) },
+            }),
+        );
     }
-    this.#showingBookmarks = true;
-    this.#pullTab.hide();
-    const sayings = bookmarks.read()
-      .map((id) => this.#sayings.find((saying) => saying.id === id))
-      .filter(Boolean);
-    this.#bookmarksHeader.hidden = !sayings.length;
-    if (!sayings.length) {
-      const message = document.createElement('p');
-      message.className = 'message';
-      message.textContent = 'No bookmarked sayings yet. Hold a saying in the Bible sayings for half a second to bookmark it.';
-      this.#list.replaceChildren(message);
-      this.#status.textContent = message.textContent;
-      return;
-    }
-    this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
-    this.#list.replaceChildren(...sayings.map((saying) => this.#createSaying(saying)));
-    this.#status.textContent = `Bookmarked sayings. ${this.#bookmarksSummary()}`;
-  }
-
-  #syncBookmarks = () => {
-    const saved = new Set(bookmarks.read());
-    for (const card of this.#list.querySelectorAll('.saying')) {
-      card.classList.toggle('bookmarked', saved.has(card.dataset.id));
-    }
-    if (this.#showingBookmarks) {
-      this.#bookmarksHeader.querySelector('.bookmarks-summary').textContent = this.#bookmarksSummary();
-    }
-  };
-
-  /** Show a new batch of sayings, none repeated from the previous batch. */
-  refresh() {
-    if (!this.#sayings.length) return;
-    const sayings = this.#pick();
-    this.#render(sayings);
-    this.dispatchEvent(new CustomEvent('refresh', { detail: { ids: sayings.map((saying) => saying.id) } }));
-  }
-
-  /** Add a batch of sayings not yet shown below the list, up to 20 in all. */
-  more() {
-    if (this.#showingBookmarks || !this.#sayings.length) return;
-    const room = MAX_SAYINGS - this.#shownIds.size;
-    const sayings = shuffle(this.#unseen()).slice(0, Math.min(this.#count, room));
-    if (!sayings.length) return;
-    for (const saying of sayings) this.#shownIds.add(saying.id);
-    const cards = sayings.map((saying) => this.#createSaying(saying));
-    this.#list.append(...cards);
-    revealCards(cards);
-    this.#updatePullTab({ animate: true, focus: cards[0].querySelector('.open') });
-    this.#status.textContent = `${sayings.length} more Bible sayings shown, starting with ${sayings[0].saying}.`;
-    this.dispatchEvent(new CustomEvent('more', { detail: { ids: sayings.map((saying) => saying.id) } }));
-  }
 }
 
-if (!customElements.get('bible-sayings')) {
-  customElements.define('bible-sayings', BibleSayings);
+if (!customElements.get("bible-sayings")) {
+    customElements.define("bible-sayings", BibleSayings);
 }

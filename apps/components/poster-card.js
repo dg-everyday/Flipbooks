@@ -57,35 +57,40 @@
  * --action-shadow from the page, the shared look for the round banner buttons.
  */
 
-import { MEDIA_BASE_URL } from '../settings/settings.js?v=20261009-1';
+import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
-const TIME_ZONE = 'Asia/Manila';
+const TIME_ZONE = "Asia/Manila";
 // How often an open page checks whether midnight has passed.
 const DATE_CHECK_INTERVAL = 60_000;
 
 // The same half-second hold the verse cards and the DG emblem use.
 const HOLD_MS = 500;
 const HOLD_SLOP = 10;
-const COPY_NOTES = { copied: 'Link copied', failed: "Couldn't copy the link" };
+const COPY_NOTES = { copied: "Link copied", failed: "Couldn't copy the link" };
 // Safari refuses a share that comes too long after the tap, as the first one
 // can while the picture is still being made; by the second tap it is ready.
-const SHARE_RETRY_NOTE = 'Tap share again';
+const SHARE_RETRY_NOTE = "Tap share again";
 
-const SITE_URL = 'https://dailygrace.faith/';
-const SHARE_TYPE = 'image/jpeg';
+const SITE_URL = "https://dailygrace.faith/";
+const SHARE_TYPE = "image/jpeg";
 const SHARE_QUALITY = 0.9;
 // Web Share with files: Chrome on Android and Windows, Safari on iPhone and Mac.
 const CAN_SHARE_FILES = (() => {
-  try {
-    return Boolean(navigator.canShare?.({ files: [new File([''], 'test.jpg', { type: SHARE_TYPE })] }));
-  } catch {
-    return false;
-  }
+    try {
+        return Boolean(
+            navigator.canShare?.({
+                files: [new File([""], "test.jpg", { type: SHARE_TYPE })],
+            }),
+        );
+    } catch {
+        return false;
+    }
 })();
 
 // Line-art icons, matching the stroked look of the other round banner buttons.
-const ICON_ATTRS = 'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const ICON_ATTRS =
+    'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
 const SHARE_ICON = `<svg ${ICON_ATTRS}><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
@@ -268,21 +273,36 @@ const STYLES = /* css */ `
 
 /** Month and date names for the poster files, in Asia/Manila unless a date is given. */
 function dateParts(dateAttr) {
-  let date = new Date();
-  let timeZone = TIME_ZONE;
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateAttr ?? '');
-  if (match) {
-    // Noon UTC keeps the calendar day stable whatever the viewer's time zone.
-    date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 12));
-    timeZone = 'UTC';
-  }
-  const monthFolder = date.toLocaleString('en-US', { timeZone, month: 'long' });
-  return {
-    monthFolder,
-    month: monthFolder.toLowerCase(),
-    dateName: date.toLocaleDateString('en-US', { timeZone, month: 'long', day: 'numeric', year: 'numeric' }),
-    year: date.toLocaleDateString('en-US', { timeZone, year: 'numeric' }),
-  };
+    let date = new Date();
+    let timeZone = TIME_ZONE;
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateAttr ?? "");
+    if (match) {
+        // Noon UTC keeps the calendar day stable whatever the viewer's time zone.
+        date = new Date(
+            Date.UTC(
+                Number(match[1]),
+                Number(match[2]) - 1,
+                Number(match[3]),
+                12,
+            ),
+        );
+        timeZone = "UTC";
+    }
+    const monthFolder = date.toLocaleString("en-US", {
+        timeZone,
+        month: "long",
+    });
+    return {
+        monthFolder,
+        month: monthFolder.toLowerCase(),
+        dateName: date.toLocaleDateString("en-US", {
+            timeZone,
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+        }),
+        year: date.toLocaleDateString("en-US", { timeZone, year: "numeric" }),
+    };
 }
 
 /**
@@ -290,64 +310,78 @@ function dateParts(dateAttr) {
  * "Daily Grace - October 3, 2026 - Comic.jpg".
  */
 async function shareFile(src) {
-  const response = await fetch(src);
-  if (!response.ok) throw new Error(`Unable to load ${src} (${response.status})`);
-  const bitmap = await createImageBitmap(await response.blob());
-  const canvas = document.createElement('canvas');
-  canvas.width = bitmap.width;
-  canvas.height = bitmap.height;
-  const context = canvas.getContext('2d');
-  // JPEG has no transparency; anything see-through would turn black.
-  context.fillStyle = '#fff';
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  context.drawImage(bitmap, 0, 0);
-  bitmap.close();
-  const blob = await new Promise((resolve, reject) => {
-    canvas.toBlob((result) => (result ? resolve(result) : reject(new Error('Unable to encode the image'))), SHARE_TYPE, SHARE_QUALITY);
-  });
-  const name = decodeURIComponent(new URL(src).pathname.split('/').pop()).replace(/\.[^.]+$/, '');
-  return new File([blob], `Daily Grace - ${name}.jpg`, { type: SHARE_TYPE });
+    const response = await fetch(src);
+    if (!response.ok) {
+        throw new Error(`Unable to load ${src} (${response.status})`);
+    }
+    const bitmap = await createImageBitmap(await response.blob());
+    const canvas = document.createElement("canvas");
+    canvas.width = bitmap.width;
+    canvas.height = bitmap.height;
+    const context = canvas.getContext("2d");
+    // JPEG has no transparency; anything see-through would turn black.
+    context.fillStyle = "#fff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(bitmap, 0, 0);
+    bitmap.close();
+    const blob = await new Promise((resolve, reject) => {
+        canvas.toBlob(
+            (result) => {
+                if (result) {
+                    resolve(result);
+                } else {
+                    reject(new Error("Unable to encode the image"));
+                }
+            },
+            SHARE_TYPE,
+            SHARE_QUALITY,
+        );
+    });
+    const name = decodeURIComponent(
+        new URL(src).pathname.split("/").pop(),
+    ).replace(/\.[^.]+$/, "");
+    return new File([blob], `Daily Grace - ${name}.jpg`, { type: SHARE_TYPE });
 }
 
 export class PosterCard extends HTMLElement {
-  static observedAttributes = ['media-base', 'date'];
+    static observedAttributes = ["media-base", "date"];
 
-  #root;
-  #toggleButton;
-  #face;
-  #poster;
-  #video;
-  #audioButton;
-  #shareButton;
-  // The images on show today as files to share, by src: { promise, file }.
-  #shareFiles = new Map();
-  #sharing = false;
-  #wrap;
-  #status;
-  #hold = null;
-  #pressed = false;
-  // The hold ends with the finger lifting, and the click that follows would
-  // otherwise turn the poster.
-  #swallowClick = false;
-  // A copy the browser refused outside a gesture, retried when the finger lifts.
-  #pendingCopy = null;
-  #posterPath = '';
-  #dateName = '';
-  #dateTimer = 0;
-  #audioUrl = '';
-  #videoUrl = '';
-  #visible = false;
-  #viewObserver = null;
-  #audio = null;
-  #comic = false;
-  #flipId = 0;
-  #configurePending = false;
-  #reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    #root;
+    #toggleButton;
+    #face;
+    #poster;
+    #video;
+    #audioButton;
+    #shareButton;
+    // The images on show today as files to share, by src: { promise, file }.
+    #shareFiles = new Map();
+    #sharing = false;
+    #wrap;
+    #status;
+    #hold = null;
+    #pressed = false;
+    // The hold ends with the finger lifting, and the click that follows would
+    // otherwise turn the poster.
+    #swallowClick = false;
+    // A copy the browser refused outside a gesture, retried when the finger lifts.
+    #pendingCopy = null;
+    #posterPath = "";
+    #dateName = "";
+    #dateTimer = 0;
+    #audioUrl = "";
+    #videoUrl = "";
+    #visible = false;
+    #viewObserver = null;
+    #audio = null;
+    #comic = false;
+    #flipId = 0;
+    #configurePending = false;
+    #reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  constructor() {
-    super();
-    this.#root = this.attachShadow({ mode: 'open' });
-    this.#root.innerHTML = `
+    constructor() {
+        super();
+        this.#root = this.attachShadow({ mode: "open" });
+        this.#root.innerHTML = `
       <style>${STYLES}</style>
       <div class="wrap">
         <button class="toggle" type="button">
@@ -364,433 +398,515 @@ export class PosterCard extends HTMLElement {
         <button class="share" type="button">${SHARE_ICON}</button>
       </div>
       <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
-    this.#wrap = this.#root.querySelector('.wrap');
-    this.#status = this.#root.querySelector('[role="status"]');
-    this.#toggleButton = this.#root.querySelector('.toggle');
-    this.#face = this.#root.querySelector('.face');
-    this.#poster = this.#root.querySelector('.poster');
-    this.#video = this.#root.querySelector('.video');
-    this.#audioButton = this.#root.querySelector('.audio');
-    this.#shareButton = this.#root.querySelector('.share');
+        this.#wrap = this.#root.querySelector(".wrap");
+        this.#status = this.#root.querySelector('[role="status"]');
+        this.#toggleButton = this.#root.querySelector(".toggle");
+        this.#face = this.#root.querySelector(".face");
+        this.#poster = this.#root.querySelector(".poster");
+        this.#video = this.#root.querySelector(".video");
+        this.#audioButton = this.#root.querySelector(".audio");
+        this.#shareButton = this.#root.querySelector(".share");
 
-    this.#toggleButton.addEventListener('click', (event) => {
-      if (this.#swallowClick) {
-        this.#swallowClick = false;
-        event.preventDefault();
-        return;
-      }
-      this.toggle();
-    });
-    this.#poster.draggable = false;
-    // The video shows only once it is playing the day on show; until then,
-    // and when it fails, the poster image beneath stands in.
-    this.#video.muted = true;
-    this.#video.addEventListener('playing', () => {
-      if (this.#video.getAttribute('src') === this.#videoUrl) this.#video.classList.add('playing');
-    });
-    this.#video.addEventListener('error', () => this.#video.classList.remove('playing'));
-    this.#listenForHold();
-    this.#audioButton.addEventListener('click', () => {
-      if (this.playing) this.stop();
-      else this.play();
-    });
-    this.#shareButton.addEventListener('click', () => this.share());
-    // Make the file while the reader looks, so a tap can share it at once.
-    this.#poster.addEventListener('load', () => {
-      const src = this.#poster.src;
-      const idle = window.requestIdleCallback ?? ((callback) => setTimeout(callback, 200));
-      idle(() => {
-        if (this.#poster.src === src) this.#shareFileFor(src);
-      });
-    });
-    this.#syncLabels();
-    this.#syncAudioButton();
-  }
-
-  connectedCallback() {
-    this.#scheduleConfigure();
-    this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
-    document.addEventListener('visibilitychange', this.#checkDate);
-    document.addEventListener('visibilitychange', this.#syncVideo);
-    this.#viewObserver = new IntersectionObserver(([entry]) => {
-      this.#visible = entry.isIntersecting;
-      this.#syncVideo();
-    });
-    this.#viewObserver.observe(this.#wrap);
-  }
-
-  disconnectedCallback() {
-    this.stop();
-    clearInterval(this.#dateTimer);
-    document.removeEventListener('visibilitychange', this.#checkDate);
-    document.removeEventListener('visibilitychange', this.#syncVideo);
-    this.#viewObserver?.disconnect();
-    this.#viewObserver = null;
-    this.#video.pause();
-  }
-
-  // The day's video loops over the poster while the card is on screen and the
-  // poster, not the comic, is up; not at all when the reader asks for less
-  // motion or to save data. It is first fetched when it first plays. A day
-  // without one fails once and is left alone, the poster image showing.
-  #syncVideo = () => {
-    const video = this.#video;
-    const play = this.#visible && !document.hidden && !this.#comic && this.#videoUrl
-      && !this.#reducedMotion.matches && !navigator.connection?.saveData;
-    if (!play) {
-      video.pause();
-      return;
-    }
-    if (video.getAttribute('src') !== this.#videoUrl) video.src = this.#videoUrl;
-    else if (video.error) return;
-    video.play().catch(() => {});
-  };
-
-  // Past midnight in Manila, today's poster gives way to the new day's. A
-  // fixed `date` stays put, and narration playing at midnight finishes first.
-  // Background tabs throttle the timer, so coming back into view checks too.
-  #checkDate = () => {
-    if (document.hidden || this.hasAttribute('date') || this.playing) return;
-    if (dateParts(null).dateName !== this.#dateName) this.#scheduleConfigure();
-  };
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue !== newValue && this.isConnected) this.#scheduleConfigure();
-  }
-
-  #listenForHold() {
-    const toggle = this.#toggleButton;
-    toggle.addEventListener('pointerdown', (event) => {
-      this.#swallowClick = false;
-      this.#pendingCopy = null;
-      if (!event.isPrimary || event.button !== 0) return;
-      this.#pressed = true;
-      this.#cancelHold();
-      this.#wrap.classList.add('holding');
-      this.#hold = {
-        x: event.clientX,
-        y: event.clientY,
-        timer: setTimeout(() => this.#completeHold(), HOLD_MS),
-      };
-    });
-    toggle.addEventListener('pointermove', (event) => {
-      const hold = this.#hold;
-      if (hold && Math.hypot(event.clientX - hold.x, event.clientY - hold.y) > HOLD_SLOP) {
-        this.#cancelHold();
-      }
-    });
-    toggle.addEventListener('pointerup', () => {
-      this.#pressed = false;
-      this.#cancelHold();
-      // Lifting the finger is a fresh gesture, which a strict browser needs.
-      const url = this.#pendingCopy;
-      this.#pendingCopy = null;
-      if (url) this.#copy(url).then((copied) => this.#showCopyNote(copied, url));
-    });
-    for (const type of ['pointercancel', 'pointerleave']) {
-      toggle.addEventListener(type, () => {
-        this.#pressed = false;
-        this.#cancelHold();
-      });
-    }
-    // Enter and Space still turn the poster after a hold that never clicked.
-    toggle.addEventListener('keydown', () => { this.#swallowClick = false; });
-    // A long press would otherwise open the phone's image menu.
-    toggle.addEventListener('contextmenu', (event) => {
-      if (this.#hold || this.#swallowClick) event.preventDefault();
-    });
-  }
-
-  #cancelHold() {
-    if (!this.#hold) return;
-    clearTimeout(this.#hold.timer);
-    this.#hold = null;
-    this.#wrap.classList.remove('holding');
-  }
-
-  async #completeHold() {
-    this.#hold = null;
-    this.#wrap.classList.remove('holding');
-    this.#swallowClick = true;
-    navigator.vibrate?.(15);
-    const url = this.imageUrl;
-    if (await this.#copy(url)) {
-      this.#showCopyNote(true, url);
-    } else if (this.#pressed) {
-      // Safari only allows clipboard writes inside a gesture; try again on release.
-      this.#pendingCopy = url;
-    } else {
-      this.#showCopyNote(false, url);
-    }
-  }
-
-  async #copy(text) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return true;
-    } catch {
-      // No Clipboard API (an insecure origin) or the write was refused: fall
-      // back to the old selection copy.
-      const field = document.createElement('textarea');
-      field.value = text;
-      field.setAttribute('readonly', '');
-      field.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
-      document.body.append(field);
-      field.select();
-      let copied = false;
-      try {
-        copied = document.execCommand('copy');
-      } catch {
-        copied = false;
-      }
-      field.remove();
-      return copied;
-    }
-  }
-
-  #showCopyNote(copied, url) {
-    this.#showNote(COPY_NOTES[copied ? 'copied' : 'failed'], !copied);
-    if (copied) {
-      this.dispatchEvent(new CustomEvent('copy', { detail: { url, comic: this.#comic } }));
-    }
-  }
-
-  /** A pill over the poster's foot that fades out, read out by screen readers too. */
-  #showNote(text, failed = false) {
-    this.#wrap.querySelector('.copy-note')?.remove();
-    const note = document.createElement('span');
-    note.className = `copy-note${failed ? ' failed' : ''}`;
-    note.setAttribute('aria-hidden', 'true');
-    note.textContent = text;
-    note.addEventListener('animationend', () => note.remove(), { once: true });
-    this.#wrap.append(note);
-    this.#status.textContent = `${text}.`;
-  }
-
-  /** The image at `src` as a file to share, made once and kept for the day. */
-  #shareFileFor(src) {
-    if (!CAN_SHARE_FILES || !src) return Promise.resolve(null);
-    let entry = this.#shareFiles.get(src);
-    if (!entry) {
-      entry = { file: null, promise: null };
-      entry.promise = shareFile(src).then(
-        (file) => (entry.file = file),
-        (error) => {
-          // A blip loading the image should not stop a later tap from trying again.
-          console.warn('The poster could not be prepared for sharing:', error);
-          this.#shareFiles.delete(src);
-          return null;
-        },
-      );
-      this.#shareFiles.set(src, entry);
-    }
-    return entry.promise;
-  }
-
-  /**
-   * Share the image on show through the phone's share sheet: as a picture
-   * where the browser can share files, as its link where it can only share
-   * links, and by copying the link where it has no share sheet at all.
-   */
-  async share() {
-    if (this.#sharing) return;
-    const url = this.imageUrl;
-    const comic = this.#comic;
-    const title = `Daily Grace${comic ? ' comic' : ''} for ${this.#dateName}`;
-    const text = `${title} · ${SITE_URL}`;
-    const done = (as) => this.dispatchEvent(new CustomEvent('share', { detail: { url, comic, as } }));
-
-    if (!navigator.share) {
-      this.#showCopyNote(await this.#copy(url), url);
-      return;
+        this.#toggleButton.addEventListener("click", (event) => {
+            if (this.#swallowClick) {
+                this.#swallowClick = false;
+                event.preventDefault();
+                return;
+            }
+            this.toggle();
+        });
+        this.#poster.draggable = false;
+        // The video shows only once it is playing the day on show; until then,
+        // and when it fails, the poster image beneath stands in.
+        this.#video.muted = true;
+        this.#video.addEventListener("playing", () => {
+            if (this.#video.getAttribute("src") === this.#videoUrl) {
+                this.#video.classList.add("playing");
+            }
+        });
+        this.#video.addEventListener("error", () =>
+            this.#video.classList.remove("playing"),
+        );
+        this.#listenForHold();
+        this.#audioButton.addEventListener("click", () => {
+            if (this.playing) {
+                this.stop();
+            } else {
+                this.play();
+            }
+        });
+        this.#shareButton.addEventListener("click", () => this.share());
+        // Make the file while the reader looks, so a tap can share it at once.
+        this.#poster.addEventListener("load", () => {
+            const src = this.#poster.src;
+            const idle =
+                window.requestIdleCallback ??
+                ((callback) => setTimeout(callback, 200));
+            idle(() => {
+                if (this.#poster.src === src) {
+                    this.#shareFileFor(src);
+                }
+            });
+        });
+        this.#syncLabels();
+        this.#syncAudioButton();
     }
 
-    this.#sharing = true;
-    // Ready already, the file goes straight to share() inside the tap; still
-    // being made, the wait may cost Safari's permission (see the catch).
-    let file = this.#shareFiles.get(url)?.file;
-    try {
-      file ??= await this.#shareFileFor(url);
-      if (file && navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title, text });
-        done('image');
-      } else {
-        await navigator.share({ title, text, url });
-        done('link');
-      }
-    } catch (error) {
-      // The reader closed the share sheet without choosing anything.
-      if (error.name === 'AbortError') return;
-      if (error.name === 'NotAllowedError' && file) {
-        this.#showNote(SHARE_RETRY_NOTE);
-        return;
-      }
-      console.warn('The poster could not be shared:', error);
-      this.#showCopyNote(await this.#copy(url), url);
-    } finally {
-      this.#sharing = false;
-    }
-  }
-
-  /** Link to the image on show: the poster, or the comic once turned. */
-  get imageUrl() {
-    return this.#poster.src;
-  }
-
-  get comic() {
-    return this.#comic;
-  }
-
-  get playing() {
-    return Boolean(this.#audio) && !this.#audio.paused;
-  }
-
-  get #mediaBase() {
-    const base = this.getAttribute('media-base') || DEFAULT_MEDIA_BASE;
-    return base.endsWith('/') ? base : `${base}/`;
-  }
-
-  // Upgrade fires attributeChangedCallback per attribute, then connectedCallback;
-  // coalesce them into a single configure.
-  #scheduleConfigure() {
-    if (this.#configurePending) return;
-    this.#configurePending = true;
-    queueMicrotask(() => {
-      this.#configurePending = false;
-      this.#configure();
-    });
-  }
-
-  /** (Re)point the poster and narration at the current date and media host. */
-  #configure() {
-    const { monthFolder, month, dateName, year } = dateParts(this.getAttribute('date'));
-    this.#dateName = dateName;
-    this.#posterPath = `${this.#mediaBase}images/sources/${year}/${month}/${dateName}`;
-    this.#audioUrl = `${this.#mediaBase}audio/${year}/${monthFolder}/webm/${dateName}.webm`;
-    this.#videoUrl = `${this.#posterPath}.mp4`;
-
-    this.stop();
-    this.#audio = null;
-    this.#shareFiles.clear();
-    this.#flipId++;
-    this.#face.getAnimations().forEach((animation) => animation.cancel());
-    this.#wrap.classList.remove('turning');
-    this.#comic = false;
-    this.#poster.src = `${this.#posterPath}.webp`;
-    this.#video.classList.remove('playing');
-    this.#video.hidden = false;
-    this.#syncVideo();
-    this.#syncLabels();
-  }
-
-  #syncLabels() {
-    const label = this.#comic ? 'Show the regular poster' : 'Show the comic version of this poster';
-    this.#toggleButton.setAttribute('aria-label', label);
-    this.#toggleButton.title = label;
-    const shareLabel = this.#comic ? 'Share this comic' : 'Share this poster';
-    this.#shareButton.setAttribute('aria-label', shareLabel);
-    this.#shareButton.title = shareLabel;
-  }
-
-  #syncAudioButton() {
-    const playing = this.playing;
-    const label = playing ? 'Pause narration' : 'Play narration';
-    this.#audioButton.setAttribute('aria-pressed', String(playing));
-    this.#audioButton.setAttribute('aria-label', label);
-    this.#audioButton.title = label;
-    this.#audioButton.innerHTML = playing ? PAUSE_ICON : PLAY_ICON;
-  }
-
-  #ensureAudio() {
-    if (!this.#audio) {
-      const audio = new Audio(this.#audioUrl);
-      const sync = () => this.#syncAudioButton();
-      audio.addEventListener('play', sync);
-      audio.addEventListener('pause', sync);
-      audio.addEventListener('error', sync);
-      audio.addEventListener('ended', () => {
-        audio.currentTime = 0;
-        sync();
-      });
-      this.#audio = audio;
-    }
-    return this.#audio;
-  }
-
-  play() {
-    this.#ensureAudio().play().catch(() => {});
-  }
-
-  pause() {
-    this.#audio?.pause();
-  }
-
-  /** Pause and rewind, so the next play starts from the beginning. */
-  stop() {
-    if (!this.#audio) return;
-    this.#audio.pause();
-    this.#audio.currentTime = 0;
-  }
-
-  /**
-   * Turn the poster like a page: it swings edge-on, the image swaps while it is
-   * invisible, then the other side swings back in.
-   */
-  async toggle() {
-    this.#comic = !this.#comic;
-    this.#syncLabels();
-    this.dispatchEvent(new CustomEvent('posterchange', { detail: { comic: this.#comic } }));
-
-    const flipId = ++this.#flipId;
-    const nextSrc = `${this.#posterPath}${this.#comic ? ' - Comic' : ''}.webp`;
-    const face = this.#face;
-    // Start loading now so the swap does not show a half-loaded image.
-    const preload = new Image();
-    preload.src = nextSrc;
-    const ready = preload.decode().catch(() => {});
-
-    if (this.#reducedMotion.matches || !face.animate) {
-      await ready;
-      if (flipId === this.#flipId) this.#showSide(nextSrc);
-      return;
+    connectedCallback() {
+        this.#scheduleConfigure();
+        this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
+        document.addEventListener("visibilitychange", this.#checkDate);
+        document.addEventListener("visibilitychange", this.#syncVideo);
+        this.#viewObserver = new IntersectionObserver(([entry]) => {
+            this.#visible = entry.isIntersecting;
+            this.#syncVideo();
+        });
+        this.#viewObserver.observe(this.#wrap);
     }
 
-    face.getAnimations().forEach((animation) => animation.cancel());
-    this.#wrap.classList.add('turning');
-    const turn = (angle) => `perspective(1400px) rotateY(${angle}deg)`;
-    const out = face.animate(
-      [
-        { transform: turn(0), opacity: 1 },
-        { transform: turn(-90), opacity: 0.55 },
-      ],
-      { duration: 240, easing: 'ease-in', fill: 'forwards' },
-    );
-    await Promise.all([out.finished.catch(() => {}), ready]);
-    // A newer toggle owns the image now; it has already cancelled this flip.
-    if (flipId !== this.#flipId) return;
+    disconnectedCallback() {
+        this.stop();
+        clearInterval(this.#dateTimer);
+        document.removeEventListener("visibilitychange", this.#checkDate);
+        document.removeEventListener("visibilitychange", this.#syncVideo);
+        this.#viewObserver?.disconnect();
+        this.#viewObserver = null;
+        this.#video.pause();
+    }
 
-    this.#showSide(nextSrc);
-    const back = face.animate(
-      [
-        { transform: turn(90), opacity: 0.55 },
-        { transform: turn(0), opacity: 1 },
-      ],
-      { duration: 300, easing: 'ease-out' },
-    );
-    out.cancel();
-    await back.finished.catch(() => {});
-    if (flipId === this.#flipId) this.#wrap.classList.remove('turning');
-  }
+    // The day's video loops over the poster while the card is on screen and the
+    // poster, not the comic, is up; not at all when the reader asks for less
+    // motion or to save data. It is first fetched when it first plays. A day
+    // without one fails once and is left alone, the poster image showing.
+    #syncVideo = () => {
+        const video = this.#video;
+        const play =
+            this.#visible &&
+            !document.hidden &&
+            !this.#comic &&
+            this.#videoUrl &&
+            !this.#reducedMotion.matches &&
+            !navigator.connection?.saveData;
+        if (!play) {
+            video.pause();
+            return;
+        }
+        if (video.getAttribute("src") !== this.#videoUrl) {
+            video.src = this.#videoUrl;
+        } else if (video.error) {
+            return;
+        }
+        video.play().catch(() => {});
+    };
 
-  // The swap at the middle of a turn: the comic has no video, so it goes with
-  // the poster and comes back with it, carrying on where it left off.
-  #showSide(src) {
-    this.#poster.src = src;
-    this.#video.hidden = this.#comic;
-    this.#syncVideo();
-  }
+    // Past midnight in Manila, today's poster gives way to the new day's. A
+    // fixed `date` stays put, and narration playing at midnight finishes first.
+    // Background tabs throttle the timer, so coming back into view checks too.
+    #checkDate = () => {
+        if (document.hidden || this.hasAttribute("date") || this.playing) {
+            return;
+        }
+        if (dateParts(null).dateName !== this.#dateName) {
+            this.#scheduleConfigure();
+        }
+    };
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue && this.isConnected) {
+            this.#scheduleConfigure();
+        }
+    }
+
+    #listenForHold() {
+        const toggle = this.#toggleButton;
+        toggle.addEventListener("pointerdown", (event) => {
+            this.#swallowClick = false;
+            this.#pendingCopy = null;
+            if (!event.isPrimary || event.button !== 0) {
+                return;
+            }
+            this.#pressed = true;
+            this.#cancelHold();
+            this.#wrap.classList.add("holding");
+            this.#hold = {
+                x: event.clientX,
+                y: event.clientY,
+                timer: setTimeout(() => this.#completeHold(), HOLD_MS),
+            };
+        });
+        toggle.addEventListener("pointermove", (event) => {
+            const hold = this.#hold;
+            if (
+                hold &&
+                Math.hypot(event.clientX - hold.x, event.clientY - hold.y) >
+                    HOLD_SLOP
+            ) {
+                this.#cancelHold();
+            }
+        });
+        toggle.addEventListener("pointerup", () => {
+            this.#pressed = false;
+            this.#cancelHold();
+            // Lifting the finger is a fresh gesture, which a strict browser needs.
+            const url = this.#pendingCopy;
+            this.#pendingCopy = null;
+            if (url) {
+                this.#copy(url).then((copied) =>
+                    this.#showCopyNote(copied, url),
+                );
+            }
+        });
+        for (const type of ["pointercancel", "pointerleave"]) {
+            toggle.addEventListener(type, () => {
+                this.#pressed = false;
+                this.#cancelHold();
+            });
+        }
+        // Enter and Space still turn the poster after a hold that never clicked.
+        toggle.addEventListener("keydown", () => {
+            this.#swallowClick = false;
+        });
+        // A long press would otherwise open the phone's image menu.
+        toggle.addEventListener("contextmenu", (event) => {
+            if (this.#hold || this.#swallowClick) {
+                event.preventDefault();
+            }
+        });
+    }
+
+    #cancelHold() {
+        if (!this.#hold) {
+            return;
+        }
+        clearTimeout(this.#hold.timer);
+        this.#hold = null;
+        this.#wrap.classList.remove("holding");
+    }
+
+    async #completeHold() {
+        this.#hold = null;
+        this.#wrap.classList.remove("holding");
+        this.#swallowClick = true;
+        navigator.vibrate?.(15);
+        const url = this.imageUrl;
+        if (await this.#copy(url)) {
+            this.#showCopyNote(true, url);
+        } else if (this.#pressed) {
+            // Safari only allows clipboard writes inside a gesture; try again on release.
+            this.#pendingCopy = url;
+        } else {
+            this.#showCopyNote(false, url);
+        }
+    }
+
+    async #copy(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            return true;
+        } catch {
+            // No Clipboard API (an insecure origin) or the write was refused: fall
+            // back to the old selection copy.
+            const field = document.createElement("textarea");
+            field.value = text;
+            field.setAttribute("readonly", "");
+            field.style.cssText =
+                "position:fixed;top:0;left:0;opacity:0;pointer-events:none;";
+            document.body.append(field);
+            field.select();
+            let copied = false;
+            try {
+                copied = document.execCommand("copy");
+            } catch {
+                copied = false;
+            }
+            field.remove();
+            return copied;
+        }
+    }
+
+    #showCopyNote(copied, url) {
+        this.#showNote(COPY_NOTES[copied ? "copied" : "failed"], !copied);
+        if (copied) {
+            this.dispatchEvent(
+                new CustomEvent("copy", {
+                    detail: { url, comic: this.#comic },
+                }),
+            );
+        }
+    }
+
+    /** A pill over the poster's foot that fades out, read out by screen readers too. */
+    #showNote(text, failed = false) {
+        this.#wrap.querySelector(".copy-note")?.remove();
+        const note = document.createElement("span");
+        note.className = `copy-note${failed ? " failed" : ""}`;
+        note.setAttribute("aria-hidden", "true");
+        note.textContent = text;
+        note.addEventListener("animationend", () => note.remove(), {
+            once: true,
+        });
+        this.#wrap.append(note);
+        this.#status.textContent = `${text}.`;
+    }
+
+    /** The image at `src` as a file to share, made once and kept for the day. */
+    #shareFileFor(src) {
+        if (!CAN_SHARE_FILES || !src) {
+            return Promise.resolve(null);
+        }
+        let entry = this.#shareFiles.get(src);
+        if (!entry) {
+            entry = { file: null, promise: null };
+            entry.promise = shareFile(src).then(
+                (file) => (entry.file = file),
+                (error) => {
+                    // A blip loading the image should not stop a later tap from trying again.
+                    console.warn(
+                        "The poster could not be prepared for sharing:",
+                        error,
+                    );
+                    this.#shareFiles.delete(src);
+                    return null;
+                },
+            );
+            this.#shareFiles.set(src, entry);
+        }
+        return entry.promise;
+    }
+
+    /**
+     * Share the image on show through the phone's share sheet: as a picture
+     * where the browser can share files, as its link where it can only share
+     * links, and by copying the link where it has no share sheet at all.
+     */
+    async share() {
+        if (this.#sharing) {
+            return;
+        }
+        const url = this.imageUrl;
+        const comic = this.#comic;
+        const title = `Daily Grace${comic ? " comic" : ""} for ${this.#dateName}`;
+        const text = `${title} · ${SITE_URL}`;
+        const done = (as) =>
+            this.dispatchEvent(
+                new CustomEvent("share", { detail: { url, comic, as } }),
+            );
+
+        if (!navigator.share) {
+            this.#showCopyNote(await this.#copy(url), url);
+            return;
+        }
+
+        this.#sharing = true;
+        // Ready already, the file goes straight to share() inside the tap; still
+        // being made, the wait may cost Safari's permission (see the catch).
+        let file = this.#shareFiles.get(url)?.file;
+        try {
+            if (file == null) {
+                file = await this.#shareFileFor(url);
+            }
+            if (file && navigator.canShare({ files: [file] })) {
+                await navigator.share({ files: [file], title, text });
+                done("image");
+            } else {
+                await navigator.share({ title, text, url });
+                done("link");
+            }
+        } catch (error) {
+            // The reader closed the share sheet without choosing anything.
+            if (error.name === "AbortError") {
+                return;
+            }
+            if (error.name === "NotAllowedError" && file) {
+                this.#showNote(SHARE_RETRY_NOTE);
+                return;
+            }
+            console.warn("The poster could not be shared:", error);
+            this.#showCopyNote(await this.#copy(url), url);
+        } finally {
+            this.#sharing = false;
+        }
+    }
+
+    /** Link to the image on show: the poster, or the comic once turned. */
+    get imageUrl() {
+        return this.#poster.src;
+    }
+
+    get comic() {
+        return this.#comic;
+    }
+
+    get playing() {
+        return Boolean(this.#audio) && !this.#audio.paused;
+    }
+
+    get #mediaBase() {
+        const base = this.getAttribute("media-base") || DEFAULT_MEDIA_BASE;
+        return base.endsWith("/") ? base : `${base}/`;
+    }
+
+    // Upgrade fires attributeChangedCallback per attribute, then connectedCallback;
+    // coalesce them into a single configure.
+    #scheduleConfigure() {
+        if (this.#configurePending) {
+            return;
+        }
+        this.#configurePending = true;
+        queueMicrotask(() => {
+            this.#configurePending = false;
+            this.#configure();
+        });
+    }
+
+    /** (Re)point the poster and narration at the current date and media host. */
+    #configure() {
+        const { monthFolder, month, dateName, year } = dateParts(
+            this.getAttribute("date"),
+        );
+        this.#dateName = dateName;
+        this.#posterPath = `${this.#mediaBase}images/sources/${year}/${month}/${dateName}`;
+        this.#audioUrl = `${this.#mediaBase}audio/${year}/${monthFolder}/webm/${dateName}.webm`;
+        this.#videoUrl = `${this.#posterPath}.mp4`;
+
+        this.stop();
+        this.#audio = null;
+        this.#shareFiles.clear();
+        this.#flipId++;
+        this.#face.getAnimations().forEach((animation) => animation.cancel());
+        this.#wrap.classList.remove("turning");
+        this.#comic = false;
+        this.#poster.src = `${this.#posterPath}.webp`;
+        this.#video.classList.remove("playing");
+        this.#video.hidden = false;
+        this.#syncVideo();
+        this.#syncLabels();
+    }
+
+    #syncLabels() {
+        const label = this.#comic
+            ? "Show the regular poster"
+            : "Show the comic version of this poster";
+        this.#toggleButton.setAttribute("aria-label", label);
+        this.#toggleButton.title = label;
+        const shareLabel = this.#comic
+            ? "Share this comic"
+            : "Share this poster";
+        this.#shareButton.setAttribute("aria-label", shareLabel);
+        this.#shareButton.title = shareLabel;
+    }
+
+    #syncAudioButton() {
+        const playing = this.playing;
+        const label = playing ? "Pause narration" : "Play narration";
+        this.#audioButton.setAttribute("aria-pressed", String(playing));
+        this.#audioButton.setAttribute("aria-label", label);
+        this.#audioButton.title = label;
+        this.#audioButton.innerHTML = playing ? PAUSE_ICON : PLAY_ICON;
+    }
+
+    #ensureAudio() {
+        if (!this.#audio) {
+            const audio = new Audio(this.#audioUrl);
+            const sync = () => this.#syncAudioButton();
+            audio.addEventListener("play", sync);
+            audio.addEventListener("pause", sync);
+            audio.addEventListener("error", sync);
+            audio.addEventListener("ended", () => {
+                audio.currentTime = 0;
+                sync();
+            });
+            this.#audio = audio;
+        }
+        return this.#audio;
+    }
+
+    play() {
+        this.#ensureAudio()
+            .play()
+            .catch(() => {});
+    }
+
+    pause() {
+        this.#audio?.pause();
+    }
+
+    /** Pause and rewind, so the next play starts from the beginning. */
+    stop() {
+        if (!this.#audio) {
+            return;
+        }
+        this.#audio.pause();
+        this.#audio.currentTime = 0;
+    }
+
+    /**
+     * Turn the poster like a page: it swings edge-on, the image swaps while it is
+     * invisible, then the other side swings back in.
+     */
+    async toggle() {
+        this.#comic = !this.#comic;
+        this.#syncLabels();
+        this.dispatchEvent(
+            new CustomEvent("posterchange", { detail: { comic: this.#comic } }),
+        );
+
+        const flipId = ++this.#flipId;
+        const nextSrc = `${this.#posterPath}${this.#comic ? " - Comic" : ""}.webp`;
+        const face = this.#face;
+        // Start loading now so the swap does not show a half-loaded image.
+        const preload = new Image();
+        preload.src = nextSrc;
+        const ready = preload.decode().catch(() => {});
+
+        if (this.#reducedMotion.matches || !face.animate) {
+            await ready;
+            if (flipId === this.#flipId) {
+                this.#showSide(nextSrc);
+            }
+            return;
+        }
+
+        face.getAnimations().forEach((animation) => animation.cancel());
+        this.#wrap.classList.add("turning");
+        const turn = (angle) => `perspective(1400px) rotateY(${angle}deg)`;
+        const out = face.animate(
+            [
+                { transform: turn(0), opacity: 1 },
+                { transform: turn(-90), opacity: 0.55 },
+            ],
+            { duration: 240, easing: "ease-in", fill: "forwards" },
+        );
+        await Promise.all([out.finished.catch(() => {}), ready]);
+        // A newer toggle owns the image now; it has already cancelled this flip.
+        if (flipId !== this.#flipId) {
+            return;
+        }
+
+        this.#showSide(nextSrc);
+        const back = face.animate(
+            [
+                { transform: turn(90), opacity: 0.55 },
+                { transform: turn(0), opacity: 1 },
+            ],
+            { duration: 300, easing: "ease-out" },
+        );
+        out.cancel();
+        await back.finished.catch(() => {});
+        if (flipId === this.#flipId) {
+            this.#wrap.classList.remove("turning");
+        }
+    }
+
+    // The swap at the middle of a turn: the comic has no video, so it goes with
+    // the poster and comes back with it, carrying on where it left off.
+    #showSide(src) {
+        this.#poster.src = src;
+        this.#video.hidden = this.#comic;
+        this.#syncVideo();
+    }
 }
 
-if (!customElements.get('poster-card')) {
-  customElements.define('poster-card', PosterCard);
+if (!customElements.get("poster-card")) {
+    customElements.define("poster-card", PosterCard);
 }

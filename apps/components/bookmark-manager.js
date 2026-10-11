@@ -46,20 +46,40 @@
  * root.
  */
 
-import { registerFonts } from '../../assets/scripts/fonts.js';
+import { registerFonts } from "../../assets/scripts/fonts.js";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
-const EMBLEM_URL = asset('../../assets/images/dg-icon-gold-256.webp');
-const PDF_MODULE = asset('../../assets/scripts/bookmarks-pdf.js?v=20261003-1');
+const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261003-1");
 
 // The segments, in order: the list component behind each and its tab label.
 const KINDS = [
-  { key: 'verses', label: 'Bible Verses', list: '<bible-search-results id="bookmark-verses" compact></bible-search-results>' },
-  { key: 'facts', label: 'Did You Know', list: '<did-you-know id="bookmark-facts" bookmarks></did-you-know>' },
-  { key: 'sayings', label: 'Bible Sayings', list: '<bible-sayings id="bookmark-sayings" bookmarks></bible-sayings>' },
-  { key: 'guidance', label: 'Questions', list: '<daily-guidance id="bookmark-guidance" bookmarks></daily-guidance>' },
-  { key: 'blueprint', label: 'Blueprint', list: '<gods-blueprint id="bookmark-blueprint" bookmarks></gods-blueprint>' },
+    {
+        key: "verses",
+        label: "Bible Verses",
+        list: '<bible-search-results id="bookmark-verses" compact></bible-search-results>',
+    },
+    {
+        key: "facts",
+        label: "Did You Know",
+        list: '<did-you-know id="bookmark-facts" bookmarks></did-you-know>',
+    },
+    {
+        key: "sayings",
+        label: "Bible Sayings",
+        list: '<bible-sayings id="bookmark-sayings" bookmarks></bible-sayings>',
+    },
+    {
+        key: "guidance",
+        label: "Questions",
+        list: '<daily-guidance id="bookmark-guidance" bookmarks></daily-guidance>',
+    },
+    {
+        key: "blueprint",
+        label: "Blueprint",
+        list: '<gods-blueprint id="bookmark-blueprint" bookmarks></gods-blueprint>',
+    },
 ];
 
 const STYLES = /* css */ `
@@ -340,286 +360,364 @@ const TEMPLATE = /* html */ `
                 <path d="m6 6 12 12M18 6 6 18" />
             </svg>
         </button>
-        <div class="bookmark-tabs" role="tablist" aria-label="Kind of bookmark">${KINDS.map(({ key, label }, i) => `
-            <button id="bookmarks-tab-${key}" type="button" role="tab" aria-controls="bookmarks-panel-${key}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>
+        <div class="bookmark-tabs" role="tablist" aria-label="Kind of bookmark">${KINDS.map(
+            ({ key, label }, i) => `
+            <button id="bookmarks-tab-${key}" type="button" role="tab" aria-controls="bookmarks-panel-${key}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ""}>
                 ${label} <span class="bookmark-count"></span>
-            </button>`).join('')}
+            </button>`,
+        ).join("")}
         </div>
         <p id="bookmarks-pdf-note" class="bookmarks-pdf-note" role="status" hidden></p>
-    </header>${KINDS.map(({ key, list }, i) => `
-    <section id="bookmarks-panel-${key}" class="bookmarks-panel" role="tabpanel" aria-labelledby="bookmarks-tab-${key}"${i ? ' hidden' : ''}>
+    </header>${KINDS.map(
+        ({ key, list }, i) => `
+    <section id="bookmarks-panel-${key}" class="bookmarks-panel" role="tabpanel" aria-labelledby="bookmarks-tab-${key}"${i ? " hidden" : ""}>
         ${list}
-    </section>`).join('')}
+    </section>`,
+    ).join("")}
 </dialog>`;
 
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
 // Grows in with a little overshoot, as the splash and the verse popup do.
 function popDialog(dialog, direction) {
-  const opening = direction === 'open';
-  const options = {
-    duration: opening ? 460 : 220,
-    easing: opening ? 'cubic-bezier(.2, .9, .25, 1.2)' : 'cubic-bezier(.4, 0, 1, 1)',
-    fill: 'forwards',
-  };
-  const entering = { transform: 'scale(.82) translateY(28px)', opacity: 0 };
-  const full = { transform: 'none', opacity: 1 };
-  const leaving = { transform: 'scale(.94)', opacity: 0 };
-  dialog.animate(opening ? [entering, full] : [full, leaving], options);
-  const backdrop = dialog.animate(
-    opening ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
-    { ...options, easing: 'ease', pseudoElement: '::backdrop' },
-  );
-  return backdrop.finished.catch(() => {});
+    const opening = direction === "open";
+    const options = {
+        duration: opening ? 460 : 220,
+        easing: opening
+            ? "cubic-bezier(.2, .9, .25, 1.2)"
+            : "cubic-bezier(.4, 0, 1, 1)",
+        fill: "forwards",
+    };
+    const entering = { transform: "scale(.82) translateY(28px)", opacity: 0 };
+    const full = { transform: "none", opacity: 1 };
+    const leaving = { transform: "scale(.94)", opacity: 0 };
+    dialog.animate(opening ? [entering, full] : [full, leaving], options);
+    const backdrop = dialog.animate(
+        opening
+            ? [{ opacity: 0 }, { opacity: 1 }]
+            : [{ opacity: 1 }, { opacity: 0 }],
+        { ...options, easing: "ease", pseudoElement: "::backdrop" },
+    );
+    return backdrop.finished.catch(() => {});
 }
 
 // The tab is opened at once, inside the tap: browsers block a tab opened later,
 // once the PDF is ready. It says what is coming until the PDF replaces it.
 function openPdfTab() {
-  const tab = window.open('', '_blank');
-  if (!tab) return null;
-  try {
-    tab.document.title = 'My Bookmarks — Daily Grace';
-    tab.document.body.style.cssText =
-      'margin:0;display:grid;place-items:center;min-height:100vh;'
-      + 'background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif';
-    tab.document.body.textContent = 'Preparing your bookmarks…';
-  } catch {
-    // Some browsers keep the new tab to themselves; it still loads the PDF.
-  }
-  return tab;
+    const tab = window.open("", "_blank");
+    if (!tab) {
+        return null;
+    }
+    try {
+        tab.document.title = "My Bookmarks — Daily Grace";
+        tab.document.body.style.cssText =
+            "margin:0;display:grid;place-items:center;min-height:100vh;" +
+            "background:#f3e7d2;color:#001b34;font:600 1.1rem/1.4 system-ui,sans-serif";
+        tab.document.body.textContent = "Preparing your bookmarks…";
+    } catch {
+        // Some browsers keep the new tab to themselves; it still loads the PDF.
+    }
+    return tab;
 }
 
 // When no tab could be opened (a pop-up blocker), the PDF is saved instead.
 function savePdf(url, filename) {
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.append(link);
-  link.click();
-  link.remove();
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.append(link);
+    link.click();
+    link.remove();
 }
 
 export class BookmarkManager extends HTMLElement {
-  #loadVerses = null;
-  #dialog;
-  #tabs;
-  #lists;
-  #verses;
-  #pdf;
-  #note;
-  #noteTimer = 0;
-  // The popup opens on the kind of bookmark looked at last.
-  #tab;
-  // Bumped on each open and close, so a slow verse load from an earlier
-  // opening does not land in a later one.
-  #generation = 0;
-  #closing = false;
+    #loadVerses = null;
+    #dialog;
+    #tabs;
+    #lists;
+    #verses;
+    #pdf;
+    #note;
+    #noteTimer = 0;
+    // The popup opens on the kind of bookmark looked at last.
+    #tab;
+    // Bumped on each open and close, so a slow verse load from an earlier
+    // opening does not land in a later one.
+    #generation = 0;
+    #closing = false;
 
-  constructor() {
-    super();
-    // The page may set loadVerses before this module has loaded; take the
-    // value over from the plain property it left on the element.
-    if (Object.hasOwn(this, 'loadVerses')) {
-      const loadVerses = this.loadVerses;
-      delete this.loadVerses;
-      this.loadVerses = loadVerses;
+    constructor() {
+        super();
+        // The page may set loadVerses before this module has loaded; take the
+        // value over from the plain property it left on the element.
+        if (Object.hasOwn(this, "loadVerses")) {
+            const loadVerses = this.loadVerses;
+            delete this.loadVerses;
+            this.loadVerses = loadVerses;
+        }
+        const root = this.attachShadow({ mode: "open" });
+        root.innerHTML = `<style>${STYLES}</style>${TEMPLATE}`;
+
+        const dialog = root.querySelector("dialog");
+        this.#dialog = dialog;
+        this.#tabs = [...root.querySelectorAll('[role="tab"]')];
+        // The component behind each tab, whose bookmarks the tab counts.
+        this.#lists = new Map(
+            this.#tabs.map((tab, i) => [
+                tab,
+                root.getElementById(`bookmark-${KINDS[i].key}`),
+            ]),
+        );
+        this.#verses = root.getElementById("bookmark-verses");
+        this.#pdf = root.getElementById("bookmarks-pdf");
+        this.#note = root.getElementById("bookmarks-pdf-note");
+        this.#tab = this.#tabs[0];
+
+        // Escape would close instantly; route it through the closing animation instead.
+        dialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            this.close();
+        });
+        // The dialog has no padding, so a click on it is a click on the backdrop.
+        dialog.addEventListener("click", (event) => {
+            if (event.target === dialog) {
+                this.close();
+            }
+        });
+        root.getElementById("bookmarks-close").addEventListener("click", () =>
+            this.close(),
+        );
+        this.#pdf.addEventListener("click", () => this.#openPdf());
+
+        for (const tab of this.#tabs) {
+            tab.addEventListener("click", () => this.#select(tab));
+        }
+        // The arrow keys move along the switch, as in any tab list.
+        root.querySelector('[role="tablist"]').addEventListener(
+            "keydown",
+            (event) => {
+                const index = this.#tabs.indexOf(this.#tab);
+                const last = this.#tabs.length - 1;
+                const next = {
+                    ArrowLeft: index === 0 ? last : index - 1,
+                    ArrowRight: index === last ? 0 : index + 1,
+                    Home: 0,
+                    End: last,
+                }[event.key];
+                if (next === undefined) {
+                    return;
+                }
+                event.preventDefault();
+                this.#select(this.#tabs[next], { focus: true });
+            },
+        );
+        for (const list of this.#lists.values()) {
+            list.addEventListener("bookmarkchange", () => this.#updateCounts());
+        }
     }
-    const root = this.attachShadow({ mode: 'open' });
-    root.innerHTML = `<style>${STYLES}</style>${TEMPLATE}`;
 
-    const dialog = root.querySelector('dialog');
-    this.#dialog = dialog;
-    this.#tabs = [...root.querySelectorAll('[role="tab"]')];
-    // The component behind each tab, whose bookmarks the tab counts.
-    this.#lists = new Map(this.#tabs.map((tab, i) => [tab, root.getElementById(`bookmark-${KINDS[i].key}`)]));
-    this.#verses = root.getElementById('bookmark-verses');
-    this.#pdf = root.getElementById('bookmarks-pdf');
-    this.#note = root.getElementById('bookmarks-pdf-note');
-    this.#tab = this.#tabs[0];
-
-    // Escape would close instantly; route it through the closing animation instead.
-    dialog.addEventListener('cancel', (event) => {
-      event.preventDefault();
-      this.close();
-    });
-    // The dialog has no padding, so a click on it is a click on the backdrop.
-    dialog.addEventListener('click', (event) => {
-      if (event.target === dialog) this.close();
-    });
-    root.getElementById('bookmarks-close').addEventListener('click', () => this.close());
-    this.#pdf.addEventListener('click', () => this.#openPdf());
-
-    for (const tab of this.#tabs) {
-      tab.addEventListener('click', () => this.#select(tab));
+    connectedCallback() {
+        registerFonts();
     }
-    // The arrow keys move along the switch, as in any tab list.
-    root.querySelector('[role="tablist"]').addEventListener('keydown', (event) => {
-      const index = this.#tabs.indexOf(this.#tab);
-      const last = this.#tabs.length - 1;
-      const next = {
-        ArrowLeft: index === 0 ? last : index - 1,
-        ArrowRight: index === last ? 0 : index + 1,
-        Home: 0,
-        End: last,
-      }[event.key];
-      if (next === undefined) return;
-      event.preventDefault();
-      this.#select(this.#tabs[next], { focus: true });
-    });
-    for (const list of this.#lists.values()) {
-      list.addEventListener('bookmarkchange', () => this.#updateCounts());
+
+    /** (ids) => rows, or a promise of them; see the header. */
+    get loadVerses() {
+        return this.#loadVerses;
     }
-  }
 
-  connectedCallback() {
-    registerFonts();
-  }
-
-  /** (ids) => rows, or a promise of them; see the header. */
-  get loadVerses() {
-    return this.#loadVerses;
-  }
-
-  set loadVerses(loadVerses) {
-    this.#loadVerses = loadVerses;
-  }
-
-  async open() {
-    const generation = ++this.#generation;
-    const dialog = this.#dialog;
-    if (!dialog.open) {
-      dialog.showModal();
-      this.toggleAttribute('open', true);
-      if (!reducedMotion.matches) popDialog(dialog, 'open');
+    set loadVerses(loadVerses) {
+        this.#loadVerses = loadVerses;
     }
-    this.#select(this.#tab);
-    this.#updateCounts();
-    // Bookmarks may have been added on the page since the lists were last drawn.
-    for (const list of this.#lists.values()) {
-      if (list !== this.#verses) list.showBookmarks();
-    }
-    const verses = this.#verses;
-    const ids = verses.bookmarks ?? [];
-    if (!ids.length) {
-      verses.showBookmarks([]);
-      return;
-    }
-    verses.loading('Loading your bookmarks…');
-    try {
-      const rows = await this.#versesFor(ids);
-      if (generation !== this.#generation || !dialog.open) return;
-      verses.showBookmarks(rows);
-    } catch (error) {
-      if (generation !== this.#generation) return;
-      console.warn('Bookmarks could not be loaded:', error);
-      verses.showMessage('Your bookmarks could not be loaded. Please try again.');
-    }
-  }
 
-  async close() {
-    const dialog = this.#dialog;
-    if (!dialog.open || this.#closing) return;
-    this.#closing = true;
-    this.#generation++;
-    if (!reducedMotion.matches) await popDialog(dialog, 'close');
-    dialog.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
-    dialog.close();
-    this.toggleAttribute('open', false);
-    this.#verses.reset();
-    this.#showNote('');
-    this.#closing = false;
-  }
-
-  async #versesFor(ids) {
-    if (typeof this.#loadVerses !== 'function') throw new Error('No loadVerses was given.');
-    return this.#loadVerses(ids);
-  }
-
-  #select(tab, { focus = false } = {}) {
-    this.#tab = tab;
-    for (const other of this.#tabs) {
-      const selected = other === tab;
-      other.setAttribute('aria-selected', String(selected));
-      other.tabIndex = selected ? 0 : -1;
-      this.shadowRoot.getElementById(other.getAttribute('aria-controls')).hidden = !selected;
+    async open() {
+        const generation = ++this.#generation;
+        const dialog = this.#dialog;
+        if (!dialog.open) {
+            dialog.showModal();
+            this.toggleAttribute("open", true);
+            if (!reducedMotion.matches) {
+                popDialog(dialog, "open");
+            }
+        }
+        this.#select(this.#tab);
+        this.#updateCounts();
+        // Bookmarks may have been added on the page since the lists were last drawn.
+        for (const list of this.#lists.values()) {
+            if (list !== this.#verses) {
+                list.showBookmarks();
+            }
+        }
+        const verses = this.#verses;
+        const ids = verses.bookmarks ?? [];
+        if (!ids.length) {
+            verses.showBookmarks([]);
+            return;
+        }
+        verses.loading("Loading your bookmarks…");
+        try {
+            const rows = await this.#versesFor(ids);
+            if (generation !== this.#generation || !dialog.open) {
+                return;
+            }
+            verses.showBookmarks(rows);
+        } catch (error) {
+            if (generation !== this.#generation) {
+                return;
+            }
+            console.warn("Bookmarks could not be loaded:", error);
+            verses.showMessage(
+                "Your bookmarks could not be loaded. Please try again.",
+            );
+        }
     }
-    this.#dialog.scrollTop = 0;
-    if (focus) tab.focus();
-  }
 
-  #updateCounts() {
-    let total = 0;
-    for (const [tab, list] of this.#lists) {
-      const count = list.bookmarks?.length ?? 0;
-      tab.querySelector('.bookmark-count').textContent = count || '';
-      total += count;
+    async close() {
+        const dialog = this.#dialog;
+        if (!dialog.open || this.#closing) {
+            return;
+        }
+        this.#closing = true;
+        this.#generation++;
+        if (!reducedMotion.matches) {
+            await popDialog(dialog, "close");
+        }
+        dialog
+            .getAnimations({ subtree: true })
+            .forEach((animation) => animation.cancel());
+        dialog.close();
+        this.toggleAttribute("open", false);
+        this.#verses.reset();
+        this.#showNote("");
+        this.#closing = false;
     }
-    // Nothing to put in a PDF until something is bookmarked.
-    this.#pdf.disabled = total === 0;
-    this.#pdf.title = total ? 'Open your bookmarks as a PDF' : 'Nothing bookmarked yet';
-  }
 
-  #showNote(message, { error = false, linger = 0 } = {}) {
-    clearTimeout(this.#noteTimer);
-    this.#note.textContent = message;
-    this.#note.classList.toggle('is-error', error);
-    this.#note.hidden = !message;
-    if (message && linger) {
-      this.#noteTimer = setTimeout(() => this.#showNote(''), linger);
+    async #versesFor(ids) {
+        if (typeof this.#loadVerses !== "function") {
+            throw new Error("No loadVerses was given.");
+        }
+        return this.#loadVerses(ids);
     }
-  }
 
-  // The PDF pill: every bookmark, all five kinds, as one PDF opened in a new
-  // tab. The builder and the jsPDF library behind it load on the first tap, not
-  // with the page, and the whole thing runs on the reader's device.
-  async #openPdf() {
-    const pdf = this.#pdf;
-    if (pdf.getAttribute('aria-busy') === 'true') return;
-    const tab = openPdfTab();
-    pdf.setAttribute('aria-busy', 'true');
-    this.#showNote('Preparing your PDF…');
-    try {
-      const lists = Object.fromEntries(KINDS.map(({ key }, i) => [key, this.#lists.get(this.#tabs[i])]));
-      const verseIds = lists.verses.bookmarks;
-      const [verses, facts, sayings, guidance, blueprint, { makeBookmarksPdf }] = await Promise.all([
-        verseIds.length ? this.#versesFor(verseIds) : [],
-        lists.facts.bookmarkedItems(),
-        lists.sayings.bookmarkedItems(),
-        lists.guidance.bookmarkedItems(),
-        lists.blueprint.bookmarkedItems(),
-        import(PDF_MODULE),
-      ]);
-      if (!verses.length && !facts.length && !sayings.length && !guidance.length && !blueprint.length) {
-        tab?.close();
-        this.#showNote('Nothing is bookmarked yet.', { linger: 4000 });
-        return;
-      }
-      const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings, guidance, blueprint });
-      const url = URL.createObjectURL(blob);
-      // Kept long enough for the tab to load it, and to reload it for a while.
-      setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
-      if (tab && !tab.closed) {
-        tab.location.href = url;
-        this.#showNote('Your PDF has opened in a new tab.', { linger: 4000 });
-      } else {
-        savePdf(url, filename);
-        this.#showNote('Your browser blocked the new tab, so the PDF was downloaded instead.',
-          { linger: 6000 });
-      }
-    } catch (error) {
-      tab?.close();
-      console.warn('The bookmarks PDF could not be made:', error);
-      this.#showNote(
-        'The PDF could not be made. Check your connection and try again.',
-        { error: true, linger: 8000 },
-      );
-    } finally {
-      pdf.removeAttribute('aria-busy');
+    #select(tab, { focus = false } = {}) {
+        this.#tab = tab;
+        for (const other of this.#tabs) {
+            const selected = other === tab;
+            other.setAttribute("aria-selected", String(selected));
+            other.tabIndex = selected ? 0 : -1;
+            this.shadowRoot.getElementById(
+                other.getAttribute("aria-controls"),
+            ).hidden = !selected;
+        }
+        this.#dialog.scrollTop = 0;
+        if (focus) {
+            tab.focus();
+        }
     }
-  }
+
+    #updateCounts() {
+        let total = 0;
+        for (const [tab, list] of this.#lists) {
+            const count = list.bookmarks?.length ?? 0;
+            tab.querySelector(".bookmark-count").textContent = count || "";
+            total += count;
+        }
+        // Nothing to put in a PDF until something is bookmarked.
+        this.#pdf.disabled = total === 0;
+        this.#pdf.title = total
+            ? "Open your bookmarks as a PDF"
+            : "Nothing bookmarked yet";
+    }
+
+    #showNote(message, { error = false, linger = 0 } = {}) {
+        clearTimeout(this.#noteTimer);
+        this.#note.textContent = message;
+        this.#note.classList.toggle("is-error", error);
+        this.#note.hidden = !message;
+        if (message && linger) {
+            this.#noteTimer = setTimeout(() => this.#showNote(""), linger);
+        }
+    }
+
+    // The PDF pill: every bookmark, all five kinds, as one PDF opened in a new
+    // tab. The builder and the jsPDF library behind it load on the first tap, not
+    // with the page, and the whole thing runs on the reader's device.
+    async #openPdf() {
+        const pdf = this.#pdf;
+        if (pdf.getAttribute("aria-busy") === "true") {
+            return;
+        }
+        const tab = openPdfTab();
+        pdf.setAttribute("aria-busy", "true");
+        this.#showNote("Preparing your PDF…");
+        try {
+            const lists = Object.fromEntries(
+                KINDS.map(({ key }, i) => [
+                    key,
+                    this.#lists.get(this.#tabs[i]),
+                ]),
+            );
+            const verseIds = lists.verses.bookmarks;
+            const [
+                verses,
+                facts,
+                sayings,
+                guidance,
+                blueprint,
+                { makeBookmarksPdf },
+            ] = await Promise.all([
+                verseIds.length ? this.#versesFor(verseIds) : [],
+                lists.facts.bookmarkedItems(),
+                lists.sayings.bookmarkedItems(),
+                lists.guidance.bookmarkedItems(),
+                lists.blueprint.bookmarkedItems(),
+                import(PDF_MODULE),
+            ]);
+            if (
+                !verses.length &&
+                !facts.length &&
+                !sayings.length &&
+                !guidance.length &&
+                !blueprint.length
+            ) {
+                tab?.close();
+                this.#showNote("Nothing is bookmarked yet.", { linger: 4000 });
+                return;
+            }
+            const { blob, filename } = await makeBookmarksPdf({
+                verses,
+                facts,
+                sayings,
+                guidance,
+                blueprint,
+            });
+            const url = URL.createObjectURL(blob);
+            // Kept long enough for the tab to load it, and to reload it for a while.
+            setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);
+            if (tab && !tab.closed) {
+                tab.location.href = url;
+                this.#showNote("Your PDF has opened in a new tab.", {
+                    linger: 4000,
+                });
+            } else {
+                savePdf(url, filename);
+                this.#showNote(
+                    "Your browser blocked the new tab, so the PDF was downloaded instead.",
+                    { linger: 6000 },
+                );
+            }
+        } catch (error) {
+            tab?.close();
+            console.warn("The bookmarks PDF could not be made:", error);
+            this.#showNote(
+                "The PDF could not be made. Check your connection and try again.",
+                { error: true, linger: 8000 },
+            );
+        } finally {
+            pdf.removeAttribute("aria-busy");
+        }
+    }
 }
 
-if (!customElements.get('bookmark-manager')) {
-  customElements.define('bookmark-manager', BookmarkManager);
+if (!customElements.get("bookmark-manager")) {
+    customElements.define("bookmark-manager", BookmarkManager);
 }

@@ -1,332 +1,486 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto-Variable.woff2') format('woff2'),
-       url('../fonts/Roboto-Variable.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
+    font-family: "Roboto";
+    src:
+        url("../fonts/Roboto-Variable.woff2") format("woff2"),
+        url("../fonts/Roboto-Variable.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Germania One';
-  src: url('../fonts/GermaniaOne-Regular.woff2') format('woff2'),
-       url('../fonts/GermaniaOne-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
+    font-family: "Germania One";
+    src:
+        url("../fonts/GermaniaOne-Regular.woff2") format("woff2"),
+        url("../fonts/GermaniaOne-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Strait';
-  src: url('../fonts/Strait-Regular.woff2') format('woff2'),
-       url('../fonts/Strait-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
+    font-family: "Strait";
+    src:
+        url("../fonts/Strait-Regular.woff2") format("woff2"),
+        url("../fonts/Strait-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
 }
 
 :root {
-  --navy: #001b34;
-  --navy-2: #062944;
-  --gold: #c6922e;
-  --gold-light: #e1b65d;
-  --cream: #f3e7d2;
-  --ink: #10253b;
-  /* One look for every round action button that sits on a banner: the poster
+    --navy: #001b34;
+    --navy-2: #062944;
+    --gold: #c6922e;
+    --gold-light: #e1b65d;
+    --cream: #f3e7d2;
+    --ink: #10253b;
+    /* One look for every round action button that sits on a banner: the poster
      play button, the Flipbook link and the "Did you know?" refresh. Custom
      properties inherit into the shadow DOM, so the components pick these up. */
-  --action: #c62828;
-  --action-hover: #a91f1f;
-  --action-ink: #fff;
-  --action-shadow: 0 5px 14px rgb(0 0 0 / 35%);
-  /* Space between the devotional panels. Each panel is its own block (a banner,
+    --action: #c62828;
+    --action-hover: #a91f1f;
+    --action-ink: #fff;
+    --action-shadow: 0 5px 14px rgb(0 0 0 / 35%);
+    /* Space between the devotional panels. Each panel is its own block (a banner,
      a poster, a navy card), so the gap alone sets them apart. */
-  --panel-gap: 16px;
-  /* The widest the page column gets; wider screens centre it. */
-  --page-width: 720px;
+    --panel-gap: 16px;
+    /* The widest the page column gets; wider screens centre it. */
+    --page-width: 720px;
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 html {
-  scroll-behavior: smooth;
-  /* No rubber-band stretch past the footer on touch scrolling, which shows blank background. */
-  overscroll-behavior-y: none;
+    scroll-behavior: smooth;
+    /* No rubber-band stretch past the footer on touch scrolling, which shows blank background. */
+    overscroll-behavior-y: none;
 }
 
 body {
-  margin: 0;
-  color: var(--ink);
-  background: #f3ead7 url('../images/end-paper.svg') repeat;
-  font-family: Georgia, "Times New Roman", serif;
+    margin: 0;
+    color: var(--ink);
+    background: #f3ead7 url("../images/end-paper.svg") repeat;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .page {
-  max-width: var(--page-width);
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  background: #f3ead7;
+    max-width: var(--page-width);
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #f3ead7;
 }
 
 .hero {
-  padding: 12px 0 0;
-  background: transparent;
-  border: 0;
+    padding: 12px 0 0;
+    background: transparent;
+    border: 0;
 }
 
 .hero-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 4px 10px;
-  border: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 10px;
+    border: 0;
 }
 .hero-icon {
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 .hero-search {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex: 1;
-  min-width: 0;
-  height: 40px;
-  border-radius: 999px;
-  background: #edf3f7;
-  color: #65798b;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    height: 40px;
+    border-radius: 999px;
+    background: #edf3f7;
+    color: #65798b;
 }
 .hero-search button {
-  display: grid;
-  place-items: center;
-  flex: 0 0 40px;
-  min-height: 40px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
+    display: grid;
+    place-items: center;
+    flex: 0 0 40px;
+    min-height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
 }
-.hero-search button[hidden] { display: none; }
+.hero-search button[hidden] {
+    display: none;
+}
 .hero-search svg,
 .hero-search-submit svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
 }
 .hero-search input {
-  width: 100%;
-  min-width: 0;
-  padding: 10px 12px 10px 4px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--ink);
-  font: 1rem 'Roboto', Arial, sans-serif;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px 10px 4px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font:
+        1rem "Roboto",
+        Arial,
+        sans-serif;
 }
-.hero-search input::placeholder { color: #65798b; opacity: 1; }
-.hero-search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.hero-search input::placeholder {
+    color: #65798b;
+    opacity: 1;
+}
+.hero-search input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
 .hero-search-submit {
-  display: grid;
-  place-items: center;
-  flex: 0 0 40px;
-  height: 40px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  color: #65798b;
-  background: transparent;
-  cursor: pointer;
+    display: grid;
+    place-items: center;
+    flex: 0 0 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    color: #65798b;
+    background: transparent;
+    cursor: pointer;
 }
 .hero-search-submit:hover,
-.hero-search-submit:focus-visible { color: var(--navy); }
-.hero-search-submit svg { width: 32px; height: 32px; stroke-width: 3; }
+.hero-search-submit:focus-visible {
+    color: var(--navy);
+}
+.hero-search-submit svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 3;
+}
 /* Clear button: a solid round chip with a white x. The 40px button keeps the tap target large. */
-#search-clear { margin-right: 4px; color: #74889b; transition: color .15s ease, transform .15s ease; }
-#search-clear svg { width: 22px; height: 22px; border-radius: 50%; stroke: none; }
-#search-clear svg circle { fill: currentColor; stroke: none; }
-#search-clear svg path { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; }
-#search-clear:hover { color: #4f6478; }
-#search-clear:active { color: #3b4f61; transform: scale(.92); }
-#search-clear:focus-visible svg { outline: 2px solid var(--navy); outline-offset: 2px; }
-#search-clear:not([hidden]) svg { animation: search-clear-pop .18s ease-out; }
-@keyframes search-clear-pop { from { opacity: 0; scale: .6; } to { opacity: 1; scale: 1; } }
+#search-clear {
+    margin-right: 4px;
+    color: #74889b;
+    transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+#search-clear svg {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    stroke: none;
+}
+#search-clear svg circle {
+    fill: currentColor;
+    stroke: none;
+}
+#search-clear svg path {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+}
+#search-clear:hover {
+    color: #4f6478;
+}
+#search-clear:active {
+    color: #3b4f61;
+    transform: scale(0.92);
+}
+#search-clear:focus-visible svg {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+#search-clear:not([hidden]) svg {
+    animation: search-clear-pop 0.18s ease-out;
+}
+@keyframes search-clear-pop {
+    from {
+        opacity: 0;
+        scale: 0.6;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
 @media (prefers-reduced-motion: reduce) {
-  #search-clear, #search-clear:not([hidden]) svg { transition: none; animation: none; }
+    #search-clear,
+    #search-clear:not([hidden]) svg {
+        transition: none;
+        animation: none;
+    }
 }
 /* Search mode toggle: the padlock is locked for Bible reference search (the
    default) and opens for keyword search. */
-#search-mode { margin-left: 4px; color: #4f6478; transition: color .15s ease, transform .15s ease; }
-#search-mode svg { width: 24px; height: 24px; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-#search-mode .lock-letter { stroke-width: 1.5; }
+#search-mode {
+    margin-left: 4px;
+    color: #4f6478;
+    transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+#search-mode svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+#search-mode .lock-letter {
+    stroke-width: 1.5;
+}
 #search-mode .shackle-open,
-#search-mode[aria-pressed="true"] .shackle-closed { display: none; }
-#search-mode[aria-pressed="true"] .shackle-open { display: inline; }
-#search-mode[aria-pressed="true"] { color: var(--navy); }
-#search-mode:hover { color: var(--navy); }
-#search-mode:active { transform: scale(.92); }
-#search-mode:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
+#search-mode[aria-pressed="true"] .shackle-closed {
+    display: none;
+}
+#search-mode[aria-pressed="true"] .shackle-open {
+    display: inline;
+}
+#search-mode[aria-pressed="true"] {
+    color: var(--navy);
+}
+#search-mode:hover {
+    color: var(--navy);
+}
+#search-mode:active {
+    transform: scale(0.92);
+}
+#search-mode:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: -2px;
+}
 @media (prefers-reduced-motion: reduce) {
-  #search-mode { transition: none; }
+    #search-mode {
+        transition: none;
+    }
 }
 .bible-book-list {
-  position: absolute;
-  z-index: 30;
-  top: calc(100% + 4px);
-  left: 0;
-  width: min(100%, 260px);
-  max-height: 220px;
-  margin: 0;
-  padding: 4px 0;
-  overflow-y: auto;
-  list-style: none;
-  border: 1px solid #d5dfe6;
-  border-radius: 8px;
-  background: #edf3f7;
-  color: var(--ink);
-  scrollbar-color: #9aaab6 #edf3f7;
-  scrollbar-width: thin;
-  box-shadow: 0 6px 18px rgb(0 27 52 / 14%);
-  font: .95rem/1.4 'Roboto', Arial, sans-serif;
+    position: absolute;
+    z-index: 30;
+    top: calc(100% + 4px);
+    left: 0;
+    width: min(100%, 260px);
+    max-height: 220px;
+    margin: 0;
+    padding: 4px 0;
+    overflow-y: auto;
+    list-style: none;
+    border: 1px solid #d5dfe6;
+    border-radius: 8px;
+    background: #edf3f7;
+    color: var(--ink);
+    scrollbar-color: #9aaab6 #edf3f7;
+    scrollbar-width: thin;
+    box-shadow: 0 6px 18px rgb(0 27 52 / 14%);
+    font:
+        0.95rem/1.4 "Roboto",
+        Arial,
+        sans-serif;
 }
-.bible-book-list::-webkit-scrollbar { width: 8px; }
-.bible-book-list::-webkit-scrollbar-track { background: #edf3f7; }
-.bible-book-list::-webkit-scrollbar-thumb { background: #9aaab6; border-radius: 4px; }
-.bible-book-list li { padding: 10px 16px; cursor: pointer; }
+.bible-book-list::-webkit-scrollbar {
+    width: 8px;
+}
+.bible-book-list::-webkit-scrollbar-track {
+    background: #edf3f7;
+}
+.bible-book-list::-webkit-scrollbar-thumb {
+    background: #9aaab6;
+    border-radius: 4px;
+}
+.bible-book-list li {
+    padding: 10px 16px;
+    cursor: pointer;
+}
 .bible-book-list li:hover,
-.bible-book-list li[aria-selected="true"] { background: #dbe6ee; }
+.bible-book-list li[aria-selected="true"] {
+    background: #dbe6ee;
+}
 /* Hold the heading and banner's place until <banner-slider> loads and draws them. */
 banner-slider:not(:defined) {
-  display: block;
-  margin: 60px 10px 0;
-  aspect-ratio: 1920 / 1024;
+    display: block;
+    margin: 60px 10px 0;
+    aspect-ratio: 1920 / 1024;
 }
 /* Use color and underlining for focus without drawing bounding outlines. */
-:focus-visible { outline: none; }
-a:focus-visible { text-decoration: underline; }
-button:focus-visible { filter: brightness(1.2); }
-.hero-search:focus-within { background: #e0eaf1; }
-.hero-search input:focus { outline: none; box-shadow: none; }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
+:focus-visible {
+    outline: none;
 }
-.search-results { margin: 16px 10px 24px; }
+a:focus-visible {
+    text-decoration: underline;
+}
+button:focus-visible {
+    filter: brightness(1.2);
+}
+.hero-search:focus-within {
+    background: #e0eaf1;
+}
+.hero-search input:focus {
+    outline: none;
+    box-shadow: none;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+.search-results {
+    margin: 16px 10px 24px;
+}
 
 @media (max-width: 420px) {
-  .search-results { margin-inline: 8px; }
+    .search-results {
+        margin-inline: 8px;
+    }
 }
 
 .daily-section {
-  padding: 0 0 var(--panel-gap);
-  background: transparent;
+    padding: 0 0 var(--panel-gap);
+    background: transparent;
 }
 
 .devotional-stack {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--panel-gap);
-  align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--panel-gap);
+    align-items: stretch;
 }
 
 .card {
-  position: relative;
-  padding: 34px;
-  background: transparent;
-  border: 0;
+    position: relative;
+    padding: 34px;
+    background: transparent;
+    border: 0;
 }
 .card::before {
-  content: "✦";
-  position: absolute;
-  top: 11px;
-  left: 16px;
-  color: var(--gold);
-  font-size: 1rem;
+    content: "✦";
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    color: var(--gold);
+    font-size: 1rem;
 }
 .card::after {
-  content: "✦";
-  position: absolute;
-  right: 16px;
-  bottom: 11px;
-  color: var(--gold);
-  font-size: 1rem;
+    content: "✦";
+    position: absolute;
+    right: 16px;
+    bottom: 11px;
+    color: var(--gold);
+    font-size: 1rem;
 }
 .card h3 {
-  margin: 0 0 22px;
-  color: var(--navy);
-  font-size: 1.65rem;
-  font-weight: 600;
-  letter-spacing: .02em;
+    margin: 0 0 22px;
+    color: var(--navy);
+    font-size: 1.65rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
-did-you-know.card::before, did-you-know.card::after,
-bible-sayings.card::before, bible-sayings.card::after { content: none; }
+did-you-know.card::before,
+did-you-know.card::after,
+bible-sayings.card::before,
+bible-sayings.card::after {
+    content: none;
+}
 /* These open with their own banner, so the stack gap is all the space they need above and below. */
-did-you-know.card, bible-sayings.card { padding: 0 10px; }
+did-you-know.card,
+bible-sayings.card {
+    padding: 0 10px;
+}
 
 /* The explanation popup lives in the results panel's shadow root, out of reach
    of :has(), so the panel flags itself while the popup is open. */
-html:has(bible-search-results[explaining]) { overflow: hidden; }
+html:has(bible-search-results[explaining]) {
+    overflow: hidden;
+}
 
 /* The DG icon at the top opens the menu (apps/components/study-guide-menu.js);
    About grows out of it. */
 .hero-about {
-  position: relative;
-  display: grid;
-  flex: 0 0 auto;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: none;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  /* Holding the emblem opens the bookmarks: keep the phone's image menu and
+    position: relative;
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    /* Holding the emblem opens the bookmarks: keep the phone's image menu and
      text selection out of the way. */
-  -webkit-touch-callout: none;
-  user-select: none;
-  transition: box-shadow .25s ease;
+    -webkit-touch-callout: none;
+    user-select: none;
+    transition: box-shadow 0.25s ease;
 }
-.hero-about:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
-.hero-about img { -webkit-user-drag: none; }
+.hero-about:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+.hero-about img {
+    -webkit-user-drag: none;
+}
 /* It glows gold as the half-second hold builds (the timing lives in
    assets/scripts/script.js). */
 .hero-about.holding {
-  box-shadow: 0 0 0 3px rgb(168 129 12 / 60%), 0 0 22px 6px rgb(214 170 40 / 55%);
-  transition: box-shadow .5s cubic-bezier(.25, .7, .35, 1);
+    box-shadow:
+        0 0 0 3px rgb(168 129 12 / 60%),
+        0 0 22px 6px rgb(214 170 40 / 55%);
+    transition: box-shadow 0.5s cubic-bezier(0.25, 0.7, 0.35, 1);
 }
 
 @media (max-width: 650px) {
-  .hero { padding: 10px 0 0; }
-  .hero-toolbar { padding-inline: 8px; gap: 8px; }
-  .hero-icon { width: 40px; height: 40px; }
-  .card { padding: 27px 23px; }
+    .hero {
+        padding: 10px 0 0;
+    }
+    .hero-toolbar {
+        padding-inline: 8px;
+        gap: 8px;
+    }
+    .hero-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .card {
+        padding: 27px 23px;
+    }
 }
 
 /* Menu: the DG icon opens <study-guide-menu>, which carries its own styles
    (apps/components/study-guide-menu.js). While the menu, Help or About is
    open, the page behind does not scroll. */
-html:has(study-guide-menu[open]) { overflow: hidden; }
+html:has(study-guide-menu[open]) {
+    overflow: hidden;
+}
 
 /* Bookmarks: holding the DG icon opens <bookmark-manager>, which carries its
    own styles (apps/components/bookmark-manager.js). While it is open, the page
    behind does not scroll. */
-html:has(bookmark-manager[open]) { overflow: hidden; }
+html:has(bookmark-manager[open]) {
+    overflow: hidden;
+}
 
 /* Splash: the footer's QR code opens <sponsor-splash>, which carries its own
    styles (apps/components/sponsor-splash.js), as <site-footer> does
    (apps/components/site-footer.js). While it is open, the page behind does
    not scroll. */
-html:has(sponsor-splash[open]) { overflow: hidden; }
+html:has(sponsor-splash[open]) {
+    overflow: hidden;
+}

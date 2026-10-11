@@ -183,7 +183,11 @@ the `og:image` meta tag in both HTML files to today's banner URL in
 The JSON is pretty-printed in the repository for reading and diffs; the deploy
 compacts every `.json` file in the published copy, so visitors download the
 smaller form. A file that does not parse ships as it is, with a warning in the
-run's log.
+run's log. In the same way the JS and CSS stay readable in the repository and
+are minified in the published copy with esbuild, file by file and without
+bundling, so every file and import keeps its place. A file esbuild cannot read
+ships as it is, with a warning; if esbuild cannot be installed, that step fails
+on its own and the site ships unminified.
 
 One-time setup: **Settings → Pages → Build and deployment → GitHub Actions**, and
 keep the custom domain set to `dailygrace.faith`. Social platforms cache previews

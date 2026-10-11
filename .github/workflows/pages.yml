@@ -82,6 +82,43 @@ jobs:
           const kb = (n) => `${Math.round(n / 1024)} KB`;
           console.log(`Compacted ${files} JSON files: ${kb(before)} -> ${kb(after)}`);
           EOF
+      # The repo keeps JS and CSS readable; the site gets them minified. esbuild
+      # runs file by file, without bundling, so every file and import stays as
+      # it is. Only the copy in _site is rewritten. A file esbuild cannot read
+      # ships as it is, with a warning; if esbuild cannot be installed, the
+      # step fails on its own and the site ships unminified.
+      - name: Minify JS and CSS in the published copy
+        continue-on-error: true
+        run: |
+          npm install --prefix "$RUNNER_TEMP/minify" --no-save --no-audit --no-fund esbuild@0.24.0
+          ESBUILD="$RUNNER_TEMP/minify/node_modules/esbuild" node <<'EOF'
+          const fs = require("node:fs");
+          const path = require("node:path");
+          const { transformSync } = require(process.env.ESBUILD);
+          const LOADERS = { ".js": "js", ".css": "css" };
+          let files = 0, before = 0, after = 0;
+          for (const name of fs.readdirSync("_site", { recursive: true })) {
+              const loader = LOADERS[path.extname(name)];
+              if (!loader) {
+                  continue;
+              }
+              const file = path.join("_site", name);
+              const text = fs.readFileSync(file, "utf8");
+              let code;
+              try {
+                  code = transformSync(text, { loader, minify: true, legalComments: "none" }).code;
+              } catch (error) {
+                  console.log(`::warning file=${name}::not minified: ${error.message.split("\n")[0]}`);
+                  continue;
+              }
+              fs.writeFileSync(file, code);
+              files += 1;
+              before += Buffer.byteLength(text);
+              after += Buffer.byteLength(code);
+          }
+          const kb = (n) => `${Math.round(n / 1024)} KB`;
+          console.log(`Minified ${files} JS and CSS files: ${kb(before)} -> ${kb(after)}`);
+          EOF
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

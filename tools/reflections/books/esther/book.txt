@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Esther
+1-2 | Esther Becomes Queen
+3-5 | For Such a Time as This
+6-8 | The Great Reversal
+9-10 | Purim and Deliverance

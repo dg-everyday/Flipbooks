@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Job
+1-2 | The Testing of Job
+3-31 | Job and His Friends
+32-37 | Elihu Speaks
+38-42 | The LORD Answers

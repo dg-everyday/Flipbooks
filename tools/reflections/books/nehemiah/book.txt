@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Nehemiah
+1-2 | The Call to Rebuild
+3-7 | Building the Wall
+8-10 | The Word and the Covenant
+11-13 | Dedication and Reform

@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Ezra
+1-2 | The Return from Exile
+3-6 | Rebuilding the Temple
+7-10 | Ezra and the Law

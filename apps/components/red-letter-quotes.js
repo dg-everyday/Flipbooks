@@ -19,6 +19,13 @@
  * The last saying shown is remembered in localStorage (when it is available)
  * so the same one never comes up twice in a row.
  *
+ * Holding the card for half a second bookmarks its saying: a gold glow
+ * spreads from the finger and the card takes a ribbon. Holding it again
+ * removes the bookmark. Up to 50 saying ids are kept in localStorage, newest
+ * first (see card-bookmarks.js), shared with the Red-Lettered Quotes page.
+ * With the bookmarks attribute the component shows the bookmarked sayings as
+ * a list instead of the card, which is how the page's bookmarks popup uses it.
+ *
  * Usage
  *   <red-letter-quotes></red-letter-quotes>
  *   <script type="module" src="./apps/components/red-letter-quotes.js"></script>
@@ -30,10 +37,19 @@
  *                  is added as the hash. Default: apps/pages/red-lettered-quotes.html
  *   theme          Only pick sayings from this theme, e.g. "I am" or
  *                  "From the cross". Unknown themes fall back to every saying.
+ *   bookmarks      Present: no card; show the bookmarked sayings, newest
+ *                  first. Call showBookmarks() to bring the list up to date.
  *
  * Properties   saying (read-only)  the saying shown, or null until it loads
+ *              bookmarks (read-only)  the bookmarked saying ids, newest first
  * Methods      next()  show another saying at random
+ *              showBookmarks()  show the bookmarked sayings, newest first
+ *              bookmarkedItems()  resolves to the bookmarked sayings
+ *                                 themselves, newest first, fetching the
+ *                                 file if need be
  * Events       ready   a saying is shown, detail: { id }
+ *              bookmarkchange  a hold added or removed a bookmark,
+ *                              detail: { id, result: 'added' | 'removed' }
  *              error   detail: { message }
  *
  * Fonts: Germania One (title) and Strait (text) are registered on the
@@ -46,6 +62,15 @@
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
+// The same ?v= token as the other components' imports, so the page loads one
+// copy of the module and every list hears every bookmark change.
+import {
+    BOOKMARK_STYLES,
+    CardHold,
+    bookmarkNote,
+    bookmarkStore,
+    showBookmarkResult,
+} from "./card-bookmarks.js?v=20260927-1";
 import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
 
 const DEFAULT_SRC = "assets/red-letter-quotes.json";
@@ -65,7 +90,7 @@ const PLACE_ICON = `<svg ${ICON_ATTRS}><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8
 const TODAY_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>`;
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261003-1");
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261011-2");
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab
@@ -88,6 +113,13 @@ function openPdfTab(title) {
     }
     return tab;
 }
+
+// Shared with the Red-Lettered Quotes page (red-lettered-quotes.js), which
+// uses the same key.
+const bookmarks = bookmarkStore("dailygrace:bookmarks:red-letter", {
+    isId: (id) => typeof id === "string" && id !== "",
+    limit: 50,
+});
 
 // The quotes file is shared by every instance, so it is fetched once.
 const quotesCache = new Map();
@@ -189,8 +221,9 @@ const STYLES = /* css */ `
     color: #fff;
     box-shadow: 0 14px 34px rgb(82 10 13 / 38%), inset 0 1px 0 rgb(255 255 255 / 18%);
   }
-  article.card::before {
-    content: "";
+  /* The gilt frame is an element of its own: the card's ::before is the
+     glow of a hold (card-bookmarks.js). */
+  .frame {
     position: absolute;
     inset: 9px;
     border: 1px solid rgb(225 182 93 / 55%);
@@ -422,6 +455,87 @@ const STYLES = /* css */ `
   .passage:hover { text-decoration-color: currentColor; }
   .passage:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 3px; }
 
+  /* A navy glow would not show on the crimson cover; removing glows cream.
+     The ribbon is gilt, set in from the rounded corner, above the PDF button. */
+  article.card.bookmarked { --glow: 255 230 200; }
+  article.card.bookmarked::after { right: 40px; background: var(--red-letter-gold); }
+
+  /* A list of bookmarks, in the popup: a header and sayings in place of the card. */
+  .saved { display: none; }
+  :host([bookmarks]) { padding-inline: 0; margin-block: 0; }
+  :host([bookmarks]) .card { display: none; }
+  :host([bookmarks]) .saved { display: grid; gap: 10px; }
+  .bookmarks-header {
+    padding: 18px;
+    border: 1px solid rgb(0 27 52 / 20%);
+    border-radius: 8px;
+    background: rgb(255 255 255 / 24%);
+  }
+  .bookmarks-title {
+    margin: 0;
+    color: var(--red-letter-cover);
+    font: 400 1.375rem/1.3 'Strait', 'Roboto', sans-serif;
+  }
+  .bookmarks-summary {
+    margin: 8px 0 0;
+    color: #10253b;
+    font: 400 1.125rem/1.45 'Strait', 'Roboto', sans-serif;
+  }
+  .list { display: grid; gap: 6px; }
+  .message {
+    margin: 0; padding: 16px; color: #4f5c65;
+    font: 1rem/1.5 'Roboto', Arial, sans-serif;
+  }
+  .entry {
+    padding: 18px 20px;
+    border: 1px solid rgb(0 27 52 / 16%);
+    border-left: 4px solid var(--red-letter-ink);
+    border-radius: 6px;
+    background: rgb(255 255 255 / 16%);
+    color: #10253b;
+  }
+  .entry-theme {
+    margin-bottom: 4px;
+    color: var(--red-letter-ink);
+    font: 700 .75rem/1.3 'Strait', 'Roboto', sans-serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .entry-name {
+    margin: 0 0 8px;
+    color: #001b34;
+    font: 400 clamp(1.25rem, 1.1rem + .6vw, 1.5rem)/1.2 'Germania One', Georgia, serif;
+  }
+  .entry-quote {
+    margin: 0;
+    color: var(--red-letter-ink);
+    font: 400 clamp(1.02rem, .98rem + .25vw, 1.15rem)/1.5 Georgia, 'Times New Roman', serif;
+  }
+  .entry-reference {
+    margin-top: 6px;
+    color: #9a7428;
+    font: 700 .78rem/1.3 'Strait', 'Roboto', sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .entry-today {
+    margin-top: 10px;
+    color: #805b18;
+    font: 400 clamp(1rem, .95rem + .3vw, 1.125rem)/1.5 'Strait', 'Roboto', sans-serif;
+  }
+  .entry-today b { color: #001b34; }
+  .entry-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #c62828;
+    font: 400 1rem/1.4 'Strait', 'Roboto', sans-serif;
+    text-decoration: underline;
+    text-decoration-color: rgb(198 40 40 / 35%);
+    text-underline-offset: 3px;
+  }
+  .entry-link:hover { text-decoration-color: currentColor; }
+  .entry-link:focus-visible { outline: 2px solid #c62828; outline-offset: 3px; border-radius: 3px; }
+
   @media (max-width: 650px) {
     header { gap: 12px; padding: 24px 22px 16px; }
     header::after { left: 22px; right: 22px; }
@@ -440,6 +554,7 @@ const STYLES = /* css */ `
     .more:hover, .pdf:hover svg { transform: none; }
     .pdf:disabled svg { animation: none; }
   }
+${BOOKMARK_STYLES}
 ${PILL_STYLES}`;
 
 /** localStorage, which can be missing or throw (private windows, blocked storage). */
@@ -473,12 +588,17 @@ export class RedLetterQuotes extends HTMLElement {
     #els;
     #status;
     #saying = null;
+    // The sayings the card picks from (one theme, or all of them), and every
+    // saying, which is what the bookmarks are looked up in.
     #sayings = [];
+    #all = [];
     #loading = null;
+    #hold;
+    #listHold;
     // Coming back with the Back button can restore the page from the
     // back/forward cache without reloading it; show a new saying then too.
     #onPageShow = (event) => {
-        if (event.persisted) {
+        if (event.persisted && !this.hasAttribute("bookmarks")) {
             this.next();
         }
     };
@@ -488,7 +608,8 @@ export class RedLetterQuotes extends HTMLElement {
         const root = this.attachShadow({ mode: "open" });
         root.innerHTML = `
       <style>${STYLES}</style>
-      <article class="card" aria-labelledby="title">
+      <article class="card bookmarkable" aria-labelledby="title">
+        <span class="frame" aria-hidden="true"></span>
         <header>
           <div class="emblem"><img src="${ICON_URL}" alt="" width="38" height="38" /></div>
           <div class="heading">
@@ -512,6 +633,13 @@ export class RedLetterQuotes extends HTMLElement {
           </p>
         </div>
       </article>
+      <section class="saved" aria-label="Bookmarked sayings of Jesus">
+        <div class="bookmarks-header" hidden>
+          <h3 class="bookmarks-title">Bookmarked sayings of Jesus</h3>
+          <p class="bookmarks-summary"></p>
+        </div>
+        <div class="list"><p class="message">Loading your sayings…</p></div>
+      </section>
       <p class="visually-hidden" role="status" aria-atomic="true"></p>`;
         const $ = (selector) => root.querySelector(selector);
         this.#els = {
@@ -530,21 +658,53 @@ export class RedLetterQuotes extends HTMLElement {
             more: $(".more"),
             passage: $(".passage"),
             pdf: $(".pdf"),
+            card: $(".card"),
+            header: $(".bookmarks-header"),
+            summaryLine: $(".bookmarks-summary"),
+            list: $(".list"),
         };
         this.#status = $('[role="status"]');
         this.#els.pdf.addEventListener("click", () => this.#openPdf());
+
+        // Holding the card bookmarks its saying; holding a saying in the list
+        // takes its bookmark off (and puts it back). The links are not held.
+        this.#hold = new CardHold(this.#els.card, {
+            selector: ".card",
+            exclude: "a, button",
+            onHold: (card) => {
+                if (this.#saying) {
+                    this.#toggle(this.#saying, card);
+                }
+            },
+        });
+        this.#listHold = new CardHold(this.#els.list, {
+            selector: ".entry",
+            exclude: "a, button",
+            onHold: (card) => {
+                const saying = this.#all.find((s) => s.id === card.dataset.id);
+                if (saying) {
+                    this.#toggle(saying, card);
+                }
+            },
+        });
     }
 
     connectedCallback() {
         registerFonts();
         addEventListener("pageshow", this.#onPageShow);
-        if (!this.#loading) {
+        bookmarks.addEventListener("change", this.#syncBookmarks);
+        this.#syncBookmarks();
+        // A bookmarks list waits for showBookmarks() to ask for the file.
+        if (!this.#loading && !this.hasAttribute("bookmarks")) {
             this.#load();
         }
     }
 
     disconnectedCallback() {
         removeEventListener("pageshow", this.#onPageShow);
+        bookmarks.removeEventListener("change", this.#syncBookmarks);
+        this.#hold.cancel();
+        this.#listHold.cancel();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -556,6 +716,59 @@ export class RedLetterQuotes extends HTMLElement {
 
     get saying() {
         return this.#saying;
+    }
+
+    /** The bookmarked saying ids, newest first. */
+    get bookmarks() {
+        return bookmarks.read();
+    }
+
+    /**
+     * The bookmarked sayings, newest first, as the card has them (with the
+     * verses cut for each), whatever its theme.
+     */
+    async bookmarkedItems() {
+        const sayings = await readQuotes(this.#src);
+        const byId = new Map(sayings.map((saying) => [saying.id, saying]));
+        return bookmarks
+            .read()
+            .map((id) => byId.get(id))
+            .filter(Boolean);
+    }
+
+    /**
+     * Show the bookmarked sayings, newest first. A saying taken off here keeps
+     * its place, without the ribbon, so holding it again puts the bookmark back.
+     */
+    showBookmarks() {
+        if (!this.#all.length) {
+            // Loaded on first use; the bookmarks show once the sayings arrive.
+            if (!this.#loading) {
+                this.#load();
+            }
+            return;
+        }
+        const els = this.#els;
+        const sayings = bookmarks
+            .read()
+            .map((id) => this.#all.find((saying) => saying.id === id))
+            .filter(Boolean);
+        els.header.hidden = !sayings.length;
+        if (!sayings.length) {
+            const message = document.createElement("p");
+            message.className = "message";
+            message.textContent =
+                "No bookmarked sayings yet. Hold “Jesus’ Spoken Words”, or a saying " +
+                "on the Red-Lettered Quotes page, for half a second to bookmark it.";
+            els.list.replaceChildren(message);
+            this.#status.textContent = message.textContent;
+            return;
+        }
+        els.summaryLine.textContent = this.#bookmarksSummary();
+        els.list.replaceChildren(
+            ...sayings.map((saying) => this.#createEntry(saying)),
+        );
+        this.#status.textContent = `Bookmarked sayings of Jesus. ${this.#bookmarksSummary()}`;
     }
 
     /** Show another saying at random. */
@@ -583,6 +796,74 @@ export class RedLetterQuotes extends HTMLElement {
         );
         page.hash = id;
         return page.href;
+    }
+
+    #bookmarksSummary() {
+        return (
+            `${bookmarks.read().length} of ${bookmarks.limit} saved sayings, newest first. ` +
+            "Hold one to remove its bookmark."
+        );
+    }
+
+    #toggle(saying, card) {
+        const result = bookmarks.toggle(saying.id);
+        showBookmarkResult(card, result, bookmarks.limit);
+        this.#status.textContent = `${saying.name}: ${bookmarkNote(result, bookmarks.limit)}`;
+        if (result === "added" || result === "removed") {
+            this.dispatchEvent(
+                new CustomEvent("bookmarkchange", {
+                    detail: { id: saying.id, result },
+                }),
+            );
+        }
+    }
+
+    #syncBookmarks = () => {
+        const els = this.#els;
+        els.card.classList.toggle(
+            "bookmarked",
+            Boolean(this.#saying && bookmarks.has(this.#saying.id)),
+        );
+        for (const card of els.list.querySelectorAll(".entry")) {
+            card.classList.toggle("bookmarked", bookmarks.has(card.dataset.id));
+        }
+        if (!els.header.hidden) {
+            els.summaryLine.textContent = this.#bookmarksSummary();
+        }
+    };
+
+    /** A bookmarked saying in the list: its theme, name, words, and one thing for today. */
+    #createEntry(saying) {
+        const line = (tag, className, text) => {
+            const element = document.createElement(tag);
+            element.className = className;
+            element.textContent = text;
+            return element;
+        };
+        const card = document.createElement("article");
+        card.className = "entry bookmarkable";
+        card.dataset.id = saying.id;
+        card.classList.toggle("bookmarked", bookmarks.has(saying.id));
+        if (saying.theme) {
+            card.append(line("p", "entry-theme", saying.theme));
+        }
+        card.append(line("h4", "entry-name", saying.name));
+        card.append(line("blockquote", "entry-quote", tidy(saying.text)));
+        if (saying.reference) {
+            const reference = line("p", "entry-reference", saying.reference);
+            linkScripture(reference);
+            card.append(reference);
+        }
+        if (saying.today) {
+            const today = line("p", "entry-today", ` ${tidy(saying.today)}`);
+            today.prepend(line("b", "", "For today:"));
+            card.append(today);
+        }
+        const link = line("a", "entry-link", "What it means →");
+        link.href = this.#pageHref(saying.id);
+        link.setAttribute("aria-label", `What it means: ${saying.name}`);
+        card.append(link);
+        return card;
     }
 
     /** The saying as a PDF, in a new tab (or downloaded, if the tab is blocked). */
@@ -638,19 +919,30 @@ export class RedLetterQuotes extends HTMLElement {
                 } // superseded by a newer src
                 const theme = this.getAttribute("theme");
                 const inTheme = sayings.filter((s) => s.theme === theme);
+                this.#all = sayings;
                 this.#sayings = inTheme.length ? inTheme : sayings;
                 this.#saying = null;
-                this.next();
+                if (this.hasAttribute("bookmarks")) {
+                    this.showBookmarks();
+                } else {
+                    this.next();
+                }
             })
             .catch((error) => {
                 if (loading !== this.#loading) {
                     return;
                 }
                 console.warn("The words of Jesus could not be loaded:", error);
-                this.#loading = null;
+                this.#loading = null; // a bookmarks list can ask again
                 this.#saying = null;
                 this.#sayings = [];
+                this.#all = [];
                 const els = this.#els;
+                const message = document.createElement("p");
+                message.className = "message";
+                message.textContent =
+                    "Your bookmarked sayings could not be loaded. Please try again.";
+                els.list.replaceChildren(message);
                 for (const el of [
                     els.theme,
                     els.pdf,
@@ -729,6 +1021,7 @@ export class RedLetterQuotes extends HTMLElement {
             "aria-label",
             `Open as a PDF in a new tab: ${saying.name}`,
         );
+        this.#syncBookmarks();
 
         // Ease the new saying in.
         els.body.classList.remove("enter");

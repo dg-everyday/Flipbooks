@@ -13,6 +13,12 @@
  *     fetched when the passage is first opened.
  *
  * #i-am-the-bread-of-life opens that saying; #john-6-35-40 opens that passage.
+ *
+ * Holding a saying's tile for half a second bookmarks it, as on the home page
+ * (card-bookmarks.js). An open saying has a Bookmark button too, and holding
+ * its heading does the same. The bookmarks are the ones "Jesus' Spoken Words"
+ * keeps on the home page (the same localStorage key), so they show in its
+ * bookmarks popup and its PDF.
  */
 
 import {
@@ -25,10 +31,28 @@ import {
     filterMenu,
     scrollUnderTopbar,
 } from "./study-utils.js?v=20261003-1";
+// The same ?v= token as the components' imports, so one copy of the module
+// holds the bookmarks for the whole page.
+import {
+    BOOKMARK_STYLES,
+    CardHold,
+    bookmarkNote,
+    bookmarkStore,
+    showBookmarkResult,
+} from "../../components/card-bookmarks.js?v=20260927-1";
 
 const DATA = "assets/red-letter-quotes.json";
 const COMMENTARY = (book, chapter) =>
     `assets/explanations/${book}/${chapter}.json`;
+// Shared with "Jesus' Spoken Words" on the home page (red-letter-quotes.js).
+const bookmarks = bookmarkStore("dailygrace:bookmarks:red-letter", {
+    isId: (id) => typeof id === "string" && id !== "",
+    limit: 50,
+});
+
+const RIBBON_ICON =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>';
+
 const SOURCES = {
     jfb: "Jamieson, Fausset and Brown (1871)",
     gill: "John Gill (1746–63)",
@@ -62,7 +86,7 @@ function sayingTile(s, onToggle) {
         "button",
         {
             type: "button",
-            class: "rl-tile",
+            class: `rl-tile bookmarkable${bookmarks.has(s.id) ? " bookmarked" : ""}`,
             id: `tile-${s.id}`,
             "data-id": s.id,
             "aria-expanded": "false",
@@ -74,7 +98,30 @@ function sayingTile(s, onToggle) {
     );
 }
 
-function sayingDetail(s, passageOf, showPassage, onClose) {
+// The open saying's Bookmark button: pressed while the saying is bookmarked.
+function bookmarkButton(s, onToggle) {
+    const button = h("button", {
+        type: "button",
+        class: "rl-bookmark",
+        "data-id": s.id,
+        onclick: () => onToggle(s),
+    });
+    button.innerHTML = RIBBON_ICON; // a fixed string, never data
+    button.append(h("span", {}));
+    syncBookmarkButton(button);
+    return button;
+}
+
+function syncBookmarkButton(button) {
+    const saved = bookmarks.has(button.dataset.id);
+    button.setAttribute("aria-pressed", String(saved));
+    button.querySelector("span").textContent = saved
+        ? "Bookmarked"
+        : "Bookmark";
+    button.title = saved ? "Remove the bookmark" : "Bookmark this saying";
+}
+
+function sayingDetail(s, passageOf, showPassage, onClose, onBookmark) {
     const block = (title, ...body) =>
         h("section", { class: "detail-block" }, h("h4", {}, title), body);
     const passage = passageOf(s.id);
@@ -99,9 +146,13 @@ function sayingDetail(s, passageOf, showPassage, onClose) {
         ),
         h(
             "header",
-            { class: "detail-head" },
+            {
+                class: `detail-head bookmarkable${bookmarks.has(s.id) ? " bookmarked" : ""}`,
+                "data-id": s.id,
+            },
             h("p", { class: "detail-group" }, s.theme),
             h("h3", { id: "rl-detail-title" }, s.name),
+            bookmarkButton(s, onBookmark),
         ),
         h(
             "figure",
@@ -339,8 +390,12 @@ export async function start(view) {
         const tl = document.getElementById(`tile-${id}`);
         expander.open(
             tl,
-            sayingDetail(s, passageOf, showPassage, () =>
-                expander.close({ focus: true }),
+            sayingDetail(
+                s,
+                passageOf,
+                showPassage,
+                () => expander.close({ focus: true }),
+                toggleBookmark,
             ),
             options,
         );
@@ -353,6 +408,38 @@ export async function start(view) {
             openSaying(id);
         }
     }
+
+    // --- bookmarks -------------------------------------------------------------
+
+    // The glow, ribbon and note of a held card, from card-bookmarks.js.
+    document.head.append(h("style", {}, BOOKMARK_STYLES));
+    const status = h("p", {
+        class: "visually-hidden",
+        role: "status",
+        "aria-atomic": "true",
+    });
+
+    function toggleBookmark(s, card = document.getElementById(`tile-${s.id}`)) {
+        const result = bookmarks.toggle(s.id);
+        if (card) {
+            showBookmarkResult(card, result, bookmarks.limit);
+        }
+        status.textContent = `${s.name}: ${bookmarkNote(result, bookmarks.limit)}`;
+    }
+
+    // Every tile, the open saying's heading and its button follow the store,
+    // which also changes when another tab bookmarks something.
+    function syncBookmarks() {
+        for (const card of view.querySelectorAll(
+            ".rl-tile, .rl-panel .detail-head",
+        )) {
+            card.classList.toggle("bookmarked", bookmarks.has(card.dataset.id));
+        }
+        for (const button of view.querySelectorAll(".rl-bookmark")) {
+            syncBookmarkButton(button);
+        }
+    }
+    bookmarks.addEventListener("change", syncBookmarks);
 
     function showPassage(id, { smooth = true } = {}) {
         const p = passagesById.get(id);
@@ -655,7 +742,21 @@ export async function start(view) {
         sayingsView,
         allView,
         empty,
+        status,
     );
+
+    // A tile, or the open saying's heading. The tiles are buttons themselves,
+    // so only the heading's own buttons and links are left out.
+    new CardHold(sayingsView, {
+        selector: ".rl-tile, .rl-panel .detail-head",
+        exclude: ".detail-head :is(button, a)",
+        onHold: (card) => {
+            const s = sayingsById.get(card.dataset.id);
+            if (s) {
+                toggleBookmark(s, card);
+            }
+        },
+    });
 
     apply();
     followHash((id) => {

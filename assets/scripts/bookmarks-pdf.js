@@ -1,6 +1,6 @@
 /**
- * Bookmarks as a PDF: the reader's bookmarked verses, facts, sayings, questions
- * and blueprints laid
+ * Bookmarks as a PDF: the reader's bookmarked verses, facts, sayings, questions,
+ * blueprints and sayings of Jesus laid
  * out on A4 pages, returned as a PDF blob named daily-grace-bookmarks-<date>.pdf.
  * script.js opens it in a new tab.
  *
@@ -13,7 +13,7 @@
  *
  * Usage
  *   const { makeBookmarksPdf } = await import('./bookmarks-pdf.js?v=…');
- *   const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings, guidance, blueprint });
+ *   const { blob, filename } = await makeBookmarksPdf({ verses, facts, sayings, guidance, blueprint, redLetter });
  *     verses   [{ book_name, chapter, verse, text }]   (getVersesByIds)
  *     facts    [{ title, text, reference }]            (<did-you-know>.bookmarkedItems())
  *     sayings  [{ saying, meaning, kjv_text, reference }] (<bible-sayings>.bookmarkedItems())
@@ -21,6 +21,8 @@
  *              (<daily-guidance>.bookmarkedItems(): topics of guidance-for-life.json)
  *     blueprint [{ name, part, number, summary, plain, verses, example, build, ask }]
  *              (<gods-blueprint>.bookmarkedItems(): items of following-gods-blueprint.json)
+ *     redLetter [{ name, theme, context, text, verses, reference, meaning, today, also_in }]
+ *              (<red-letter-quotes>.bookmarkedItems(): sayings of red-letter-quotes.json)
  * Each list is newest first, as the popup shows it. Rejects if jsPDF or the
  * fonts cannot be loaded.
  *
@@ -650,6 +652,7 @@ export async function makeBookmarksPdf({
     sayings = [],
     guidance = [],
     blueprint = [],
+    redLetter = [],
 }) {
     const now = new Date();
     const date = longDate(now);
@@ -659,12 +662,14 @@ export async function makeBookmarksPdf({
         sayings.length && plural(sayings.length, "saying"),
         guidance.length && plural(guidance.length, "question"),
         blueprint.length && plural(blueprint.length, "blueprint"),
+        redLetter.length &&
+            plural(redLetter.length, "saying of Jesus", "sayings of Jesus"),
     ]
         .filter(Boolean)
         .join(", ");
     const { doc, emblem } = await newDocument({
         title: "My Bookmarks — Daily Grace",
-        subject: `Bookmarked verses, facts, sayings, questions and blueprints, saved ${date}`,
+        subject: `Bookmarked verses, facts, sayings, questions, blueprints and sayings of Jesus, saved ${date}`,
     });
 
     const writer = new Writer(doc);
@@ -679,6 +684,7 @@ export async function makeBookmarksPdf({
     drawSection(writer, "Bible Sayings", sayings, sayingRuns);
     drawSection(writer, "Questions We All Ask", guidance, guidanceRuns);
     drawSection(writer, "Following God's Blueprint", blueprint, blueprintRuns);
+    drawSection(writer, "Red-Lettered Quotes", redLetter, redLetterRuns);
     drawFooters(doc);
 
     return {

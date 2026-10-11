@@ -2,7 +2,8 @@
  * <bookmark-manager> — every bookmark on this device, in one popup, as a web
  * component.
  *
- * Holding a verse, a fact, a saying, today's question or a blueprint saves
+ * Holding a verse, a fact, a saying, today's question, a blueprint or a
+ * saying of Jesus saves
  * it (each component keeps its own list in localStorage). This popup shows
  * them all, one kind at a time under a segmented switch, with a count on each
  * segment. It opens on the kind looked at last. Unlike the verse popup it is
@@ -10,7 +11,7 @@
  * backdrop or Escape do. It grows in with a little overshoot, as the splash
  * and the verse popup do.
  *
- * The PDF pill opens every bookmark, all five kinds, as one PDF in a new tab
+ * The PDF pill opens every bookmark, all six kinds, as one PDF in a new tab
  * (assets/scripts/bookmarks-pdf.js, loaded on the first tap). The tab is
  * opened inside the tap, since browsers block one opened later; with the tab
  * blocked, the PDF is downloaded instead. A note under the title says how it
@@ -22,8 +23,9 @@
  *   bookmarks.loadVerses = async (ids) => { …; return rows; };
  *   bookmarks.open();
  *
- * The page loads the five list components it shows: <bible-search-results>,
- * <did-you-know>, <bible-sayings>, <daily-guidance> and <gods-blueprint>.
+ * The page loads the six list components it shows: <bible-search-results>,
+ * <did-you-know>, <bible-sayings>, <daily-guidance>, <gods-blueprint> and
+ * <red-letter-quotes>.
  *
  * Attributes
  *   open     Set by the component while the popup is open (read-only); the
@@ -51,7 +53,7 @@ import { registerFonts } from "../../assets/scripts/fonts.js";
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
-const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261003-1");
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261011-2");
 
 // The segments, in order: the list component behind each and its tab label.
 const KINDS = [
@@ -79,6 +81,11 @@ const KINDS = [
         key: "blueprint",
         label: "Blueprint",
         list: '<gods-blueprint id="bookmark-blueprint" bookmarks></gods-blueprint>',
+    },
+    {
+        key: "redLetter",
+        label: "Jesus' Words",
+        list: '<red-letter-quotes id="bookmark-redLetter" bookmarks></red-letter-quotes>',
     },
 ];
 
@@ -176,12 +183,12 @@ const STYLES = /* css */ `
   }
   .bookmarks-pdf-note.is-error { color: var(--action); }
 
-  /* A segmented switch: four equal segments on a sunken track (two rows of two
-     on a phone), the chosen one raised in white with its count in gold. */
+  /* A segmented switch: six equal segments on a sunken track (two rows of
+     three on a phone), the chosen one raised in white with its count in gold. */
   .bookmark-tabs {
     display: grid;
     flex: 1 0 100%;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 4px;
     padding: 4px;
     border-radius: 14px;
@@ -228,10 +235,8 @@ const STYLES = /* css */ `
      with a second scrollbar beside the popup's. */
   #bookmark-verses { --reader-max-height: none; }
   @media (max-width: 560px) {
-    /* Five tabs in two rows: three above, two below. */
-    .bookmark-tabs { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .bookmark-tabs [role="tab"] { grid-column: span 2; }
-    .bookmark-tabs [role="tab"]:nth-child(n + 4) { grid-column: span 3; }
+    /* Six tabs in two rows of three. */
+    .bookmark-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .bookmark-tabs [role="tab"] { min-height: 36px; }
   }
   @media (max-width: 420px) {
@@ -638,7 +643,7 @@ export class BookmarkManager extends HTMLElement {
         }
     }
 
-    // The PDF pill: every bookmark, all five kinds, as one PDF opened in a new
+    // The PDF pill: every bookmark, all six kinds, as one PDF opened in a new
     // tab. The builder and the jsPDF library behind it load on the first tap, not
     // with the page, and the whole thing runs on the reader's device.
     async #openPdf() {
@@ -663,6 +668,7 @@ export class BookmarkManager extends HTMLElement {
                 sayings,
                 guidance,
                 blueprint,
+                redLetter,
                 { makeBookmarksPdf },
             ] = await Promise.all([
                 verseIds.length ? this.#versesFor(verseIds) : [],
@@ -670,6 +676,7 @@ export class BookmarkManager extends HTMLElement {
                 lists.sayings.bookmarkedItems(),
                 lists.guidance.bookmarkedItems(),
                 lists.blueprint.bookmarkedItems(),
+                lists.redLetter.bookmarkedItems(),
                 import(PDF_MODULE),
             ]);
             if (
@@ -677,7 +684,8 @@ export class BookmarkManager extends HTMLElement {
                 !facts.length &&
                 !sayings.length &&
                 !guidance.length &&
-                !blueprint.length
+                !blueprint.length &&
+                !redLetter.length
             ) {
                 tab?.close();
                 this.#showNote("Nothing is bookmarked yet.", { linger: 4000 });
@@ -689,6 +697,7 @@ export class BookmarkManager extends HTMLElement {
                 sayings,
                 guidance,
                 blueprint,
+                redLetter,
             });
             const url = URL.createObjectURL(blob);
             // Kept long enough for the tab to load it, and to reload it for a while.

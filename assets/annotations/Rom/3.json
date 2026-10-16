@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Remains Faithful"
+                    }
+                ],
                 "text": "What, then, is the advantage of being a Jew? Or what is the value of circumcision?"
             }
         },
@@ -102,6 +108,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "There Is No One Righteous",
+                        "refs": "Psalms 14:1–7; Psalms 53:1–6; Isaiah 59:1–17"
+                    }
+                ],
                 "text": "What then? Are we any better? Not at all. For we have already made the charge that Jews and Greeks alike are all under sin."
             }
         },
@@ -246,6 +259,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Righteousness through Faith in Christ",
+                        "refs": "Philippians 3:1–11"
+                    }
+                ],
                 "text": "But now, apart from the law, the righteousness of God has been revealed, as attested by the Law and the Prophets."
             }
         },

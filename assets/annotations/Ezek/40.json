@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Man with a Measuring Rod",
+                        "refs": "Zechariah 2:1–5"
+                    }
+                ],
                 "text": "In the twenty-fifth year of our exile, at the beginning of the year, on the tenth day of the month—in the fourteenth year after Jerusalem had been struck down—on that very day the hand of the LORD was upon me, and He took me there."
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The East Gate"
+                    }
+                ],
                 "text": "And I saw a wall surrounding the temple area. Now the length of the measuring rod in the man’s hand was six long cubits (each measuring a cubit and a handbreadth), and he measured the wall to be one rod thick and one rod high."
             }
         },
@@ -198,6 +211,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Outer Court"
+                    }
+                ],
                 "text": "Then he brought me into the outer court, and there were chambers and a pavement laid out all around the court. Thirty chambers faced the pavement,"
             }
         },
@@ -234,6 +253,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The North Gate"
+                    }
+                ],
                 "text": "He also measured the length and width of the gateway of the outer court facing north."
             }
         },
@@ -282,6 +307,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The South Gate"
+                    }
+                ],
                 "text": "Then he led me to the south side, and I saw a gateway facing south. He measured its side pillars and portico, and they had the same measurements as the others."
             }
         },
@@ -330,6 +361,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Gates of the Inner Court"
+                    }
+                ],
                 "text": "Next he brought me into the inner court through the south gate, and he measured the south gate; it had the same measurements as the others."
             }
         },
@@ -446,6 +483,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Eight Tables for Sacrifices"
+                    }
+                ],
                 "text": "There was a chamber with a doorway by the portico in each of the inner gateways. There the burnt offering was to be washed."
             }
         },
@@ -518,6 +561,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Chambers for Ministry"
+                    }
+                ],
                 "text": "Outside the inner gate, within the inner court, were two chambers, one beside the north gate and facing south, and another beside the south gate and facing north."
             }
         },
@@ -554,6 +603,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Inner Court"
+                    }
+                ],
                 "text": "Next he measured the court. It was square, a hundred cubits long and a hundred cubits wide. And the altar was in front of the temple."
             }
         },

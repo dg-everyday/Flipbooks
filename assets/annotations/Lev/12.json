@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Purification after Childbirth"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

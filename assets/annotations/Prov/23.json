@@ -6,6 +6,17 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "True Riches",
+                        "refs": "1 Timothy 6:17–19; James 5:1–6"
+                    },
+                    {
+                        "level": 2,
+                        "title": "Saying 7"
+                    }
+                ],
                 "text": "When you sit down to dine with a ruler, consider carefully what is set before you,"
             }
         },
@@ -42,6 +53,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 8"
+                    }
+                ],
                 "text": "Do not wear yourself out to get rich; be wise enough to restrain yourself."
             }
         },
@@ -66,6 +83,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 9"
+                    }
+                ],
                 "text": "Do not eat the bread of a stingy man, and do not crave his delicacies;"
             }
         },
@@ -102,6 +125,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 10"
+                    }
+                ],
                 "text": "Do not speak to a fool, for he will despise the wisdom of your words."
             }
         },
@@ -114,6 +143,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 11"
+                    }
+                ],
                 "text": "Do not move an ancient boundary stone or encroach on the fields of the fatherless,"
             }
         },
@@ -138,6 +173,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 12"
+                    }
+                ],
                 "text": "Apply your heart to instruction and your ears to words of knowledge."
             }
         },
@@ -150,6 +191,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 13"
+                    }
+                ],
                 "text": "Do not withhold discipline from a child; although you strike him with a rod, he will not die."
             }
         },
@@ -174,6 +221,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 14"
+                    }
+                ],
                 "text": "My son, if your heart is wise, my own heart will indeed rejoice."
             }
         },
@@ -198,6 +251,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 15"
+                    }
+                ],
                 "text": "Do not let your heart envy sinners, but always continue in the fear of the LORD."
             }
         },
@@ -222,6 +281,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 16"
+                    }
+                ],
                 "text": "Listen, my son, and be wise, and guide your heart on the right course."
             }
         },
@@ -258,6 +323,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 17"
+                    }
+                ],
                 "text": "Listen to your father who gave you life, and do not despise your mother when she is old."
             }
         },
@@ -306,6 +377,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 18"
+                    }
+                ],
                 "text": "My son, give me your heart, and let your eyes delight in my ways."
             }
         },
@@ -342,6 +419,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 19"
+                    }
+                ],
                 "text": "Who has woe? Who has sorrow? Who has contentions? Who has complaints? Who has needless wounds? Who has bloodshot eyes?"
             }
         },

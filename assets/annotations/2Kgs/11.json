@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Athaliah and Joash",
+                        "refs": "2 Chronicles 22:10–12"
+                    }
+                ],
                 "text": "When Athaliah the mother of Ahaziah saw that her son was dead, she proceeded to annihilate all the royal heirs."
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joash Anointed King of Judah",
+                        "refs": "2 Chronicles 23:1–11"
+                    }
+                ],
                 "text": "Then in the seventh year, Jehoiada sent for the commanders of hundreds, the Carites, and the guards, and had them brought into the house of the LORD. There he made a covenant with them and put them under oath. He showed them the king’s son"
             }
         },
@@ -150,6 +164,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Athaliah",
+                        "refs": "2 Chronicles 23:12–15"
+                    }
+                ],
                 "text": "When Athaliah heard the noise from the guards and the people, she went out to the people in the house of the LORD."
             }
         },
@@ -198,6 +219,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoiada Restores the Worship of the LORD",
+                        "refs": "2 Chronicles 23:16–21"
+                    }
+                ],
                 "text": "Then Jehoiada made a covenant between the LORD and the king and the people that they would be the LORD’s people. He also made a covenant between the king and the people."
             }
         },

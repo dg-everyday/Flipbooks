@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nebuchadnezzar Besieges Jerusalem",
+                        "refs": "2 Chronicles 36:15–21; Jeremiah 39:1–10"
+                    }
+                ],
                 "text": "So in the ninth year of Zedekiah’s reign, on the tenth day of the tenth month, Nebuchadnezzar king of Babylon marched against Jerusalem with his entire army. They encamped outside the city and built a siege wall all around it."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple Destroyed",
+                        "refs": "Jeremiah 52:12–23"
+                    }
+                ],
                 "text": "On the seventh day of the fifth month, in the nineteenth year of Nebuchadnezzar’s reign over Babylon, Nebuzaradan captain of the guard, a servant of the king of Babylon, entered Jerusalem."
             }
         },
@@ -166,6 +180,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Captives Carried to Babylon",
+                        "refs": "Jeremiah 52:24–30"
+                    }
+                ],
                 "text": "The captain of the guard also took away Seraiah the chief priest, Zephaniah the priest of second rank, and the three doorkeepers."
             }
         },
@@ -206,6 +227,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gedaliah Governs in Judah",
+                        "refs": "Jeremiah 40:1–16"
+                    }
+                ],
                 "text": "Nebuchadnezzar king of Babylon appointed Gedaliah son of Ahikam, the son of Shaphan, over the people he had left behind in the land of Judah."
             }
         },
@@ -234,6 +262,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Murder of Gedaliah",
+                        "refs": "Jeremiah 41:1–10"
+                    }
+                ],
                 "text": "In the seventh month, however, Ishmael son of Nethaniah, the son of Elishama, who was a member of the royal family, came with ten men and struck down and killed Gedaliah, along with the Judeans and Chaldeans who were with him at Mizpah."
             }
         },
@@ -258,6 +293,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoiachin Released from Prison",
+                        "refs": "Jeremiah 52:31–34"
+                    }
+                ],
                 "text": "On the twenty-seventh day of the twelfth month of the thirty-seventh year of the exile of Judah’s King Jehoiachin, in the year Evil-merodach became king of Babylon, he released King Jehoiachin of Judah from prison."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Intermarriage with Neighboring Peoples",
+                        "refs": "Nehemiah 13:23–31"
+                    }
+                ],
                 "text": "After these things had been accomplished, the leaders approached me and said, “The people of Israel, including the priests and Levites, have not kept themselves separate from the surrounding peoples whose abominations are like those of the Canaanites, Hittites, Perizzites, Jebusites, Ammonites, Moabites, Egyptians, and Amorites."
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezra’s Prayer of Confession"
+                    }
+                ],
                 "text": "At the evening offering, I got up from my humiliation with my tunic and cloak torn, and I fell on my knees, spread out my hands to the LORD my God,"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Timothy Joins Paul and Silas"
+                    }
+                ],
                 "text": "Paul came to Derbe and then to Lystra, where he found a disciple named Timothy, the son of a believing Jewish woman and a Greek father."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Vision of the Macedonian"
+                    }
+                ],
                 "text": "After the Holy Spirit had prevented them from speaking the word in the province of Asia, they traveled through the region of Phrygia and Galatia."
             }
         },
@@ -126,6 +138,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lydia’s Conversion in Philippi",
+                        "refs": "Revelation 2:18–29"
+                    }
+                ],
                 "text": "We sailed from Troas straight to Samothrace, and the following day on to Neapolis."
             }
         },
@@ -186,6 +205,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul and Silas Imprisoned"
+                    }
+                ],
                 "text": "One day as we were going to the place of prayer, we were met by a slave girl with a spirit of divination, who earned a large income for her masters by fortune-telling."
             }
         },
@@ -294,6 +319,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Conversion of the Jailer"
+                    }
+                ],
                 "text": "About midnight Paul and Silas were praying and singing hymns to God, and the other prisoners were listening to them."
             }
         },
@@ -414,6 +445,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Official Apology"
+                    }
+                ],
                 "text": "When daylight came, the magistrates sent their officers with the order: “Release those men.”"
             }
         },

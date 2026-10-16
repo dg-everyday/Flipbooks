@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Tries to Kill David",
+                        "refs": "Psalms 59:1–17"
+                    }
+                ],
                 "text": "Then Saul ordered his son Jonathan and all his servants to kill David. But Jonathan delighted greatly in David,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "After the Battle",
+                        "refs": "Proverbs 21:1–31"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "O LORD, the king rejoices in Your strength. How greatly he exults in Your salvation!"
             }

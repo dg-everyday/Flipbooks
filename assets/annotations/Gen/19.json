@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lot Welcomes the Angels",
+                        "refs": "Judges 19:1–30"
+                    }
+                ],
                 "text": "Now the two angels arrived at Sodom in the evening, and Lot was sitting in the gateway of the city. When Lot saw them, he got up to meet them, bowed facedown,"
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lot Flees to Zoar"
+                    }
+                ],
                 "text": "Then the two men said to Lot, “Do you have anyone else here—a son-in-law, your sons or daughters, or anyone else in the city who belongs to you? Get them out of here,"
             }
         },
@@ -282,6 +295,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Destruction of Sodom and Gomorrah",
+                        "refs": "Luke 17:20–37"
+                    }
+                ],
                 "text": "Then the LORD rained down sulfur and fire on Sodom and Gomorrah—from the LORD out of the heavens."
             }
         },
@@ -354,6 +374,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lot and His Daughters"
+                    }
+                ],
                 "text": "Lot and his two daughters left Zoar and settled in the mountains—for he was afraid to stay in Zoar—where they lived in a cave."
             }
         },

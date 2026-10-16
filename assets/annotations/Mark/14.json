@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot to Kill Jesus",
+                        "refs": "Matthew 26:1–5; Luke 22:1–2; John 11:45–57"
+                    }
+                ],
                 "text": "Now the Passover and the Feast of Unleavened Bread were two days away, and the chief priests and scribes were looking for a covert way to arrest Jesus and kill Him."
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Anointed at Bethany",
+                        "refs": "Matthew 26:6–13; Luke 7:36–50; John 12:1–8"
+                    }
+                ],
                 "text": "While Jesus was in Bethany reclining at the table in the home of Simon the Leper, a woman came with an alabaster jar of expensive perfume, made of pure nard. She broke open the jar and poured it on Jesus’ head."
             }
         },
@@ -114,6 +128,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judas Agrees to Betray Jesus",
+                        "refs": "Matthew 26:14–16; Luke 22:3–6"
+                    }
+                ],
                 "text": "Then Judas Iscariot, one of the Twelve, went to the chief priests to betray Jesus to them."
             }
         },
@@ -138,6 +159,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparing the Passover",
+                        "refs": "Matthew 26:17–19; Luke 22:7–13"
+                    }
+                ],
                 "text": "On the first day of the Feast of Unleavened Bread, when the Passover lamb was to be sacrificed, Jesus’ disciples asked Him, “Where do You want us to prepare for You to eat the Passover?”"
             }
         },
@@ -198,6 +226,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Last Supper",
+                        "refs": "Matthew 26:20–30; Luke 22:14–23; 1 Corinthians 11:17–34"
+                    }
+                ],
                 "text": "When evening came, Jesus arrived with the Twelve."
             }
         },
@@ -318,6 +353,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Predicts Peter’s Denial",
+                        "refs": "Zechariah 13:7–9; Matthew 26:31–35; Luke 22:31–38; John 13:36–38"
+                    }
+                ],
                 "text": "Then Jesus said to them, “You will all fall away, for it is written: ‘I will strike the Shepherd, and the sheep will be scattered.’"
             }
         },
@@ -378,6 +420,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Prays at Gethsemane",
+                        "refs": "Matthew 26:36–46; Luke 22:39–46"
+                    }
+                ],
                 "text": "Then they came to a place called Gethsemane, and Jesus told His disciples, “Sit here while I pray.”"
             }
         },
@@ -510,6 +559,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Betrayal of Jesus",
+                        "refs": "Matthew 26:47–56; Luke 22:47–53; John 18:1–14"
+                    }
+                ],
                 "text": "While Jesus was still speaking, Judas, one of the Twelve, arrived, accompanied by a crowd armed with swords and clubs, sent from the chief priests, scribes, and elders."
             }
         },
@@ -630,6 +686,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus before the Sanhedrin",
+                        "refs": "Matthew 26:57–68; Luke 22:66–71; John 18:19–24"
+                    }
+                ],
                 "text": "They led Jesus away to the high priest, and all the chief priests, elders, and scribes assembled."
             }
         },
@@ -786,6 +849,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter Denies Jesus",
+                        "refs": "Matthew 26:69–75; Luke 22:54–62; John 18:15–18"
+                    }
+                ],
                 "text": "While Peter was in the courtyard below, one of the servant girls of the high priest came down"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lamb and the 144,000"
+                    }
+                ],
                 "text": "Then I looked and saw the Lamb standing on Mount Zion, and with Him 144,000 who had His name and His Father’s name written on their foreheads."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Three Angels and Babylon’s Fall"
+                    }
+                ],
                 "text": "Then I saw another angel flying overhead, with the eternal gospel to proclaim to those who dwell on the earth—to every nation and tribe and tongue and people."
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Harvest of the Earth"
+                    }
+                ],
                 "text": "And I looked and saw a white cloud, and seated on the cloud was One like the Son of Man, with a golden crown on His head and a sharp sickle in His hand."
             }
         },

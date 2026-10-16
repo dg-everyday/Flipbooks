@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua Reviews Israel’s History"
+                    }
+                ],
                 "text": "Then Joshua assembled all the tribes of Israel at Shechem. He summoned the elders, leaders, judges, and officers of Israel, and they presented themselves before God."
             }
         },
@@ -162,6 +168,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Choose Whom You Will Serve",
+                        "refs": "Deuteronomy 10:12–22"
+                    }
+                ],
                 "text": "Now, therefore, fear the LORD and serve Him in sincerity and truth; cast aside the gods your fathers served beyond the Euphrates and in Egypt, and serve the LORD."
             }
         },
@@ -342,6 +355,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua’s Death and Burial",
+                        "refs": "Judges 2:6–9"
+                    }
+                ],
                 "text": "Some time later, Joshua son of Nun, the servant of the LORD, died at the age of 110."
             }
         },

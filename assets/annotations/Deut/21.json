@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Atonement for an Unsolved Murder"
+                    }
+                ],
                 "text": "If one is found slain, lying in a field in the land that the LORD your God is giving you to possess, and it is not known who killed him,"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Marrying a Captive Woman"
+                    }
+                ],
                 "text": "When you go to war against your enemies and the LORD your God delivers them into your hand and you take them captive,"
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Inheritance Rights of the Firstborn"
+                    }
+                ],
                 "text": "If a man has two wives, one beloved and the other unloved, and both bear him sons, but the unloved wife has the firstborn son,"
             }
         },
@@ -210,6 +228,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Rebellious Son",
+                        "refs": "Luke 15:11–32"
+                    }
+                ],
                 "text": "If a man has a stubborn and rebellious son who does not obey his father and mother and does not listen to them when disciplined,"
             }
         },
@@ -258,6 +283,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cursed Is Anyone Hung on a Tree"
+                    }
+                ],
                 "text": "If a man has committed a sin worthy of death, and he is executed, and you hang his body on a tree,"
             }
         },

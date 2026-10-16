@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Stephen’s Address: The Call of Abraham",
+                        "refs": "Genesis 12:1–9"
+                    }
+                ],
                 "text": "Then the high priest asked Stephen, “Are these charges true?”"
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph Sold into Egypt",
+                        "refs": "Genesis 37:12–30"
+                    }
+                ],
                 "text": "Because the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him"
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel Oppressed in Egypt",
+                        "refs": "Exodus 1:8–22"
+                    }
+                ],
                 "text": "So Jacob went down to Egypt, where he and our fathers died."
             }
         },
@@ -234,6 +255,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Birth and Adoption of Moses",
+                        "refs": "Exodus 2:1–10; Hebrews 11:23–29"
+                    }
+                ],
                 "text": "At that time Moses was born, and he was beautiful in the sight of God. For three months he was nurtured in his father’s house."
             }
         },
@@ -270,6 +298,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rejection and Flight of Moses",
+                        "refs": "Exodus 2:11–22"
+                    }
+                ],
                 "text": "When Moses was forty years old, he decided to visit his brothers, the children of Israel."
             }
         },
@@ -354,6 +389,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Call of Moses",
+                        "refs": "Exodus 3:1–22"
+                    }
+                ],
                 "text": "After forty years had passed, an angel appeared to Moses in the flames of a burning bush in the desert near Mount Sinai."
             }
         },
@@ -462,6 +504,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rebellion of Israel",
+                        "refs": "Exodus 32:1–35; Deuteronomy 9:7–29; Amos 5:16–27"
+                    }
+                ],
                 "text": "But our fathers refused to obey him. Instead, they rejected him and in their hearts turned back to Egypt."
             }
         },
@@ -522,6 +571,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tabernacle of the Testimony",
+                        "refs": "Exodus 40:1–33; Hebrews 9:1–10"
+                    }
+                ],
                 "text": "Our fathers had the tabernacle of the Testimony with them in the wilderness. It was constructed exactly as God had directed Moses, according to the pattern he had seen."
             }
         },
@@ -642,6 +698,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Stoning of Stephen"
+                    }
+                ],
                 "text": "On hearing this, the members of the Sanhedrin were enraged, and they gnashed their teeth at him."
             }
         },

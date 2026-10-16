@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Authority Challenged",
+                        "refs": "Matthew 21:23–27; Mark 11:27–33"
+                    }
+                ],
                 "text": "One day as Jesus was teaching the people in the temple courts and proclaiming the gospel, the chief priests and scribes, together with the elders, came up to Him."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Wicked Tenants",
+                        "refs": "Matthew 21:33–46; Mark 12:1–12"
+                    }
+                ],
                 "text": "Then He proceeded to tell the people this parable: “A man planted a vineyard, rented it out to some tenants, and went away for a long time."
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paying Taxes to Caesar",
+                        "refs": "Matthew 22:15–22; Mark 12:13–17"
+                    }
+                ],
                 "text": "When the scribes and chief priests realized that Jesus had spoken this parable against them, they sought to arrest Him that very hour. But they were afraid of the people."
             }
         },
@@ -318,6 +339,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sadducees and the Resurrection",
+                        "refs": "Matthew 22:23–33; Mark 12:18–27"
+                    }
+                ],
                 "text": "Then some of the Sadducees, who say there is no resurrection, came to question Him."
             }
         },
@@ -486,6 +514,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Whose Son Is the Christ?",
+                        "refs": "Matthew 22:41–46; Mark 12:35–37"
+                    }
+                ],
                 "text": "Then Jesus declared, “How can it be said that the Christ is the Son of David?"
             }
         },
@@ -534,6 +569,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Beware of the Scribes",
+                        "refs": "Mark 12:38–40"
+                    }
+                ],
                 "text": "In the hearing of all the people, Jesus said to His disciples,"
             }
         },

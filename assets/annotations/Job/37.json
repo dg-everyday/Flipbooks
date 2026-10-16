@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elihu Proclaims God’s Majesty"
+                    }
+                ],
                 "text": "“At this my heart also pounds and leaps from its place."
             }
         },

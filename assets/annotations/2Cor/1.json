@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Greets the Corinthians",
+                        "refs": "Acts 18:1–11; 1 Corinthians 1:1–3"
+                    }
+                ],
                 "text": "Paul, an apostle of Christ Jesus by the will of God, and Timothy our brother, To the church of God in Corinth, together with all the saints throughout Achaia:"
             }
         },
@@ -30,6 +37,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The God of All Comfort"
+                    }
+                ],
                 "text": "Blessed be the God and Father of our Lord Jesus Christ, the Father of compassion and the God of all comfort,"
             }
         },
@@ -138,6 +151,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Change of Plans"
+                    }
+                ],
                 "text": "For this is our boast: Our conscience testifies that we have conducted ourselves in the world, and especially in relation to you, in the holiness and sincerity that are from God—not in worldly wisdom, but in the grace of God."
             }
         },

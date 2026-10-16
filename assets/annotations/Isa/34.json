@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on the Nations"
+                    }
+                ],
                 "text": "Come near, O nations, to listen; pay attention, O peoples. Let the earth hear, and all that fills it, the world and all that springs from it."
             }
         },
@@ -54,6 +60,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Edom",
+                        "refs": "Isaiah 21:11–12"
+                    }
+                ],
                 "text": "When My sword has drunk its fill in the heavens, then it will come down upon Edom, upon the people I have devoted to destruction."
             }
         },

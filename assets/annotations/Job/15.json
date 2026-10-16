@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Eliphaz: Job Does Not Fear God"
+                    }
+                ],
                 "text": "Then Eliphaz the Temanite replied:"
             }
         },

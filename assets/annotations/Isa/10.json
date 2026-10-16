@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Woe to Tyrants"
+                    }
+                ],
                 "text": "Woe to those who enact unjust statutes and issue oppressive decrees,"
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Assyria"
+                    }
+                ],
                 "text": "Woe to Assyria, the rod of My anger; the staff in their hands is My wrath."
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Remnant Shall Return"
+                    }
+                ],
                 "text": "On that day the remnant of Israel and the survivors of the house of Jacob will no longer depend on him who struck them, but they will truly rely on the LORD, the Holy One of Israel."
             }
         },

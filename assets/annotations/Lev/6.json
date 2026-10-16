@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sins Requiring a Guilt Offering",
+                        "refs": "Leviticus 5:14–19; Leviticus 7:1–10"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burnt Offering",
+                        "refs": "Leviticus 1:1–17"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Grain Offering",
+                        "refs": "Leviticus 2:1–16"
+                    }
+                ],
                 "text": "Now this is the law of the grain offering: Aaron’s sons shall present it before the LORD in front of the altar."
             }
         },
@@ -282,6 +303,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sin Offering",
+                        "refs": "Leviticus 4:1–35; Leviticus 5:1–13"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },

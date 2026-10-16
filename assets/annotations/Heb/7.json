@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Melchizedek and Abraham",
+                        "refs": "Genesis 14:17–24"
+                    }
+                ],
                 "text": "This Melchizedek was king of Salem and priest of God Most High. He met Abraham returning from the slaughter of the kings and blessed him,"
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Superior Priesthood"
+                    }
+                ],
                 "text": "Now if perfection could have been attained through the Levitical priesthood (for on this basis the people received the law), why was there still need for another priest to appear—one in the order of Melchizedek and not in the order of Aaron?"
             }
         },

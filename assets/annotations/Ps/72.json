@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Endow the King with Your Justice",
+                        "refs": "1 Kings 3:1–15; 2 Chronicles 1:1–13; Psalms 45:1–17"
+                    }
+                ],
                 "title": "Of Solomon.",
                 "text": "Endow the king with Your justice, O God, and the son of the king with Your righteousness."
             }

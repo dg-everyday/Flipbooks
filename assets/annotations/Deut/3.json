@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat of Og",
+                        "refs": "Numbers 21:31–35"
+                    }
+                ],
                 "text": "Then we turned and went up the road to Bashan, and Og king of Bashan and his whole army came out to meet us in battle at Edrei."
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Land Division East of the Jordan",
+                        "refs": "Numbers 32:1–42; Joshua 13:8–14"
+                    }
+                ],
                 "text": "So at that time we took possession of this land. To the Reubenites and Gadites I gave the land beyond Aroer along the Arnon Valley, and half the hill country of Gilead, along with its cities."
             }
         },
@@ -270,6 +284,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Forbidden to Cross the Jordan",
+                        "refs": "Numbers 27:12–17"
+                    }
+                ],
                 "text": "At that time I also pleaded with the LORD:"
             }
         },

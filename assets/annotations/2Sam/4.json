@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Murder of Ish-bosheth"
+                    }
+                ],
                 "text": "Now when Ish-bosheth son of Saul heard that Abner had died in Hebron, he lost courage, and all Israel was dismayed."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Execution of Rechab and Baanah"
+                    }
+                ],
                 "text": "But David answered Rechab and his brother Baanah, the sons of Rimmon the Beerothite, “As surely as the LORD lives, who has redeemed my life from all distress,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Triumphal Entry",
+                        "refs": "Zechariah 9:9–13; Mark 11:1–11; Luke 19:28–40; John 12:12–19"
+                    }
+                ],
                 "text": "As they approached Jerusalem and came to Bethphage on the Mount of Olives, Jesus sent out two disciples,"
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Cleanses the Temple",
+                        "refs": "Mark 11:15–19; Luke 19:45–48; John 2:12–25"
+                    }
+                ],
                 "text": "Then Jesus entered the temple courts and drove out all who were buying and selling there. He overturned the tables of the money changers and the seats of those selling doves."
             }
         },
@@ -210,6 +224,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Barren Fig Tree",
+                        "refs": "Mark 11:12–14; Mark 11:20–25"
+                    }
+                ],
                 "text": "In the morning, as Jesus was returning to the city, He was hungry."
             }
         },
@@ -270,6 +291,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Authority Challenged",
+                        "refs": "Mark 11:27–33; Luke 20:1–8"
+                    }
+                ],
                 "text": "When Jesus returned to the temple courts and began to teach, the chief priests and elders of the people came up to Him. “By what authority are You doing these things?” they asked. “And who gave You this authority?”"
             }
         },
@@ -330,6 +358,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Two Sons"
+                    }
+                ],
                 "text": "But what do you think? There was a man who had two sons. He went to the first one and said, ‘Son, go and work today in the vineyard.’"
             }
         },
@@ -390,6 +424,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Wicked Tenants",
+                        "refs": "Mark 12:1–12; Luke 20:9–18"
+                    }
+                ],
                 "text": "Listen to another parable: There was a landowner who planted a vineyard. He put a wall around it, dug a winepress in it, and built a tower. Then he rented it out to some tenants and went away on a journey."
             }
         },

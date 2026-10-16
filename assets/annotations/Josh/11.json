@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Conquest of the Northern Cities"
+                    }
+                ],
                 "text": "Now when Jabin king of Hazor heard about these things, he sent word to Jobab king of Madon; to the kings of Shimron and Achshaph;"
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua Takes the Whole Land"
+                    }
+                ],
                 "text": "So Joshua took this entire region: the hill country, all the Negev, all the land of Goshen, the western foothills, the Arabah, and the mountains of Israel and their foothills,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Greatest Commandment",
+                        "refs": "Matthew 22:34–40; Mark 12:28–34"
+                    }
+                ],
                 "text": "These are the commandments and statutes and ordinances that the LORD your God has instructed me to teach you to follow in the land that you are about to enter and possess,"
             }
         },
@@ -234,6 +241,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Teach Your Children"
+                    }
+                ],
                 "text": "In the future, when your son asks, “What is the meaning of the decrees and statutes and ordinances that the LORD our God has commanded you?”"
             }
         },

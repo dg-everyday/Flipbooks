@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Answer Me When I Call!"
+                    }
+                ],
                 "title": "For the choirmaster. With stringed instruments. A Psalm of David.",
                 "text": "Answer me when I call, O God of my righteousness! You have relieved my distress; show me grace and hear my prayer."
             }

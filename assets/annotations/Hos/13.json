@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Anger against Israel"
+                    }
+                ],
                 "text": "When Ephraim spoke, there was trembling; he was exalted in Israel. But he incurred guilt through Baal, and he died."
             }
         },
@@ -102,6 +108,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Death and Resurrection",
+                        "refs": "1 Corinthians 15:50–58"
+                    }
+                ],
                 "text": "You are destroyed, O Israel, because you are against Me—against your helper."
             }
         },
@@ -174,6 +187,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Samaria"
+                    }
+                ],
                 "text": "Although he flourishes among his brothers, an east wind will come—a wind from the LORD rising up from the desert. His fountain will fail, and his spring will run dry. The wind will plunder his treasury of every precious article."
             }
         },

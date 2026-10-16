@@ -20,16 +20,18 @@ The sources are downloaded outside the repo and passed in as paths:
 | --- | --- | --- |
 | `tools/strongs/kjv_strongs.db` | ~23 MB | offline queries; not committed, not deployed |
 | `tools/strongs/interlinear.json` | ~6.4 MB | `tools/annotations/build_annotations.py`, which copies each verse into its chapter file |
-| `assets/strongs/hebrew/<n>.json` | 87 files, ~20 KB each | the interlinear in the explanation popup (`<bible-search-results>`) |
+| `assets/strongs/hebrew/<n>.json` | 87 files, ~20 KB each | the dictionary entry a word of the explanation popup's interlinear opens (`<bible-search-results>`) |
 | `assets/strongs/greek/<n>.json` | 57 files, ~20 KB each | the same |
 | `tools/strongs/report.txt` | small | the validation report from the last run |
 
 The database is kept out of `assets/` because the site deploys everything in
 `assets/`, and sql.js downloads a whole `.db` file before it can query it. The
 page gets the same data in two lighter forms: each verse's words and numbers
-travel in its chapter's annotation file (fetched for the explanation anyway),
-and the dictionary comes 100 entries to a file, so a verse fetches only the few
-files its numbers fall in.
+travel in its chapter's annotation file, and the dictionary comes 100 entries
+to a file, so a tapped word fetches only the one file its number falls in.
+(The explanation popup's interlinear itself now comes from
+`assets/interlinear/`, the Hebrew or Greek in its own order; see
+`tools/interlinear/README.md`.)
 
 After a rebuild here, run `tools/annotations/build_annotations.py` so the
 chapter files pick up the change.

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prince’s Offerings"
+                    }
+                ],
                 "text": "“This is what the Lord GOD says: ‘The gate of the inner court that faces east must be kept shut during the six days of work, but on the Sabbath day and on the day of the New Moon it shall be opened."
             }
         },
@@ -222,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Courts for Boiling and Baking"
+                    }
+                ],
                 "text": "Then the man brought me through the entrance at the side of the gate into the holy chambers facing north, which belonged to the priests, and he showed me a place there at the far western end"
             }
         },

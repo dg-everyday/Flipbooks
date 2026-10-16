@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Righteous King"
+                    }
+                ],
                 "text": "Behold, a king will reign in righteousness, and princes will rule with justice."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Women of Jerusalem"
+                    }
+                ],
                 "text": "Stand up, you complacent women; listen to me. Give ear to my word, you overconfident daughters."
             }
         },

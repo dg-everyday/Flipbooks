@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Words of Agur"
+                    }
+                ],
                 "text": "These are the words of Agur son of Jakeh—the burden that this man declared to Ithiel: “I am weary, O God, and worn out."
             }
         },

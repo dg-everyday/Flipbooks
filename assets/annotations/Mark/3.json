@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals on the Sabbath",
+                        "refs": "Matthew 12:9–14; Luke 6:6–11"
+                    }
+                ],
                 "text": "Once again Jesus entered the synagogue, and a man with a withered hand was there."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals the Multitudes",
+                        "refs": "Matthew 4:23–25; Luke 6:17–19"
+                    }
+                ],
                 "text": "So Jesus withdrew with His disciples to the sea, accompanied by a large crowd from Galilee, Judea,"
             }
         },
@@ -150,6 +164,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Twelve Apostles",
+                        "refs": "Matthew 10:1–4; Luke 6:12–16"
+                    }
+                ],
                 "text": "Then Jesus went up on the mountain and called for those He wanted, and they came to Him."
             }
         },
@@ -234,6 +255,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A House Divided",
+                        "refs": "Matthew 12:22–30; Luke 11:14–23"
+                    }
+                ],
                 "text": "Then Jesus went home, and once again a crowd gathered, so that He and His disciples could not even eat."
             }
         },
@@ -330,6 +358,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Unpardonable Sin",
+                        "refs": "Matthew 12:31–32"
+                    }
+                ],
                 "text": "Truly I tell you, the sons of men will be forgiven all sins and blasphemies, as many as they utter."
             }
         },
@@ -366,6 +401,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Mother and Brothers",
+                        "refs": "Matthew 12:46–50; Luke 8:19–21"
+                    }
+                ],
                 "text": "Then Jesus’ mother and brothers came and stood outside. They sent someone in to summon Him,"
             }
         },

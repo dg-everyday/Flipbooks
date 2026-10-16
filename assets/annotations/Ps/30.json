@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "You Turned My Mourning into Dancing"
+                    }
+                ],
                 "title": "A Psalm. A song for the dedication of the temple. Of David.",
                 "text": "I will exalt You, O LORD, for You have lifted me up and have not allowed my foes to rejoice over me."
             }

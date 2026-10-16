@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "New Stone Tablets",
+                        "refs": "Deuteronomy 10:1–11"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Chisel out two stone tablets like the originals, and I will write on them the words that were on the first tablets, which you broke."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Renews the Covenant",
+                        "refs": "2 Corinthians 3:7–18"
+                    }
+                ],
                 "text": "And the LORD said, “Behold, I am making a covenant. Before all your people I will perform wonders that have never been done in any nation in all the world. All the people among whom you live will see the LORD’s work, for it is an awesome thing that I am doing with you."
             }
         },

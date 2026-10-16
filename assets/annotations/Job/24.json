@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job: Judgment for the Wicked"
+                    }
+                ],
                 "text": "“Why does the Almighty not reserve times for judgment? Why may those who know Him never see His days?"
             }
         },

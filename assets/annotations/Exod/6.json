@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Promises Deliverance"
+                    }
+                ],
                 "text": "But the LORD said to Moses, “Now you will see what I will do to Pharaoh, for because of My mighty hand he will let the people go; because of My strong hand he will drive them out of his land.”"
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Genealogies of Moses and Aaron"
+                    }
+                ],
                 "text": "These were the heads of their fathers’ houses: The sons of Reuben, the firstborn of Israel, were Hanoch and Pallu, Hezron and Carmi. These were the clans of Reuben."
             }
         },

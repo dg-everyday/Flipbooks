@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joash Repairs the Temple",
+                        "refs": "2 Kings 12:1–16"
+                    }
+                ],
                 "text": "Joash was seven years old when he became king, and he reigned in Jerusalem forty years. His mother’s name was Zibiah; she was from Beersheba."
             }
         },
@@ -170,6 +177,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoiada’s Death and Burial"
+                    }
+                ],
                 "text": "When Jehoiada was old and full of years, he died at the age of 130."
             }
         },
@@ -194,6 +207,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wickedness of Joash"
+                    }
+                ],
                 "text": "After the death of Jehoiada, however, the officials of Judah came and paid homage to the king, and he listened to them."
             }
         },
@@ -266,6 +285,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Joash",
+                        "refs": "2 Kings 12:17–21"
+                    }
+                ],
                 "text": "In the spring, the army of Aram went to war against Joash. They entered Judah and Jerusalem and destroyed all the leaders of the people, and they sent all the plunder to their king in Damascus."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Principles of Marriage"
+                    }
+                ],
                 "text": "Now for the matters you wrote about: It is good to abstain from sexual relations."
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Live Your Calling"
+                    }
+                ],
                 "text": "Regardless, each one should lead the life that the Lord has assigned to him and to which God has called him. This is what I prescribe in all the churches."
             }
         },
@@ -294,6 +306,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Unmarried and Widowed"
+                    }
+                ],
                 "text": "Now about virgins, I have no command from the Lord, but I give a judgment as one who by the Lord’s mercy is trustworthy."
             }
         },

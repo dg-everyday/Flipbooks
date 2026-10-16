@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rebellion against Rehoboam",
+                        "refs": "2 Chronicles 10:1–15"
+                    }
+                ],
                 "text": "Then Rehoboam went to Shechem, for all Israel had gone there to make him king."
             }
         },
@@ -186,6 +193,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Kingdom Divided",
+                        "refs": "2 Chronicles 10:16–19"
+                    }
+                ],
                 "text": "When all Israel saw that the king had refused to listen to them, they answered the king: “What portion do we have in David, and what inheritance in the son of Jesse? To your tents, O Israel! Look now to your own house, O David!” So the Israelites went home,"
             }
         },
@@ -234,6 +248,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shemaiah’s Prophecy",
+                        "refs": "2 Chronicles 11:1–4"
+                    }
+                ],
                 "text": "When all Israel heard that Jeroboam had returned, they summoned him to the assembly and made him king over all Israel. Only the tribe of Judah followed the house of David."
             }
         },
@@ -294,6 +315,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeroboam’s Idolatry"
+                    }
+                ],
                 "text": "Then Jeroboam built Shechem in the hill country of Ephraim and lived there. And from there he went out and built Penuel."
             }
         },

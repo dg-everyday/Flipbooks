@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Thirsting for God",
+                        "refs": "2 Samuel 15:30–37"
+                    }
+                ],
                 "title": "A Psalm of David, when he was in the Wilderness of Judah.",
                 "text": "O God, You are my God. Earnestly I seek You; my soul thirsts for You. My body yearns for You in a dry and weary land without water."
             }

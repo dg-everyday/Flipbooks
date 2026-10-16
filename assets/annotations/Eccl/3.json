@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To Everything There Is a Season"
+                    }
+                ],
                 "text": "To everything there is a season, and a time for every purpose under heaven:"
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Works Remain Forever"
+                    }
+                ],
                 "text": "What does the worker gain from his toil?"
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "From Dust to Dust"
+                    }
+                ],
                 "text": "Furthermore, I saw under the sun that in the place of judgment there is wickedness, and in the place of righteousness there is wickedness."
             }
         },

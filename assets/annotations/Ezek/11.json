@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Evil in High Places"
+                    }
+                ],
                 "text": "Then the Spirit lifted me up and brought me to the gate of the house of the LORD that faces east. And there at the entrance of the gate were twenty-five men. Among them I saw Jaazaniah son of Azzur and Pelatiah son of Benaiah, who were leaders of the people."
             }
         },
@@ -150,6 +156,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Promise of Restoration",
+                        "refs": "Jeremiah 32:36–44"
+                    }
+                ],
                 "text": "Now as I was prophesying, Pelatiah son of Benaiah died. Then I fell facedown and cried out in a loud voice, “Oh, Lord GOD, will You bring the remnant of Israel to a complete end?”"
             }
         },
@@ -258,6 +271,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Glory Leaves Jerusalem"
+                    }
+                ],
                 "text": "Then the cherubim, with the wheels beside them, spread their wings, and the glory of the God of Israel was above them."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Is Our Refuge and Strength",
+                        "refs": "2 Kings 18:13–16; 2 Chronicles 32:1–8"
+                    }
+                ],
                 "title": "For the choirmaster. Of the sons of Korah. According to Alamoth. A song.",
                 "text": "God is our refuge and strength, an ever-present help in times of trouble."
             }

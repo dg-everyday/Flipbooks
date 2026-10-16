@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joab Reproves David"
+                    }
+                ],
                 "text": "Then it was reported to Joab, “The king is weeping and mourning over Absalom.”"
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Restored as King"
+                    }
+                ],
                 "text": "So the king got up and sat in the gate, and all the people were told: “Behold, the king is sitting in the gate.” So they all came before the king. Meanwhile, the Israelites had fled, each man to his home."
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shimei Pardoned"
+                    }
+                ],
                 "text": "Then Shimei son of Gera, a Benjamite from Bahurim, hurried down with the men of Judah to meet King David,"
             }
         },
@@ -282,6 +300,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Mephibosheth Excused"
+                    }
+                ],
                 "text": "Then Mephibosheth, Saul’s grandson, went down to meet the king. He had not cared for his feet or trimmed his mustache or washed his clothes from the day the king had left until the day he returned safely."
             }
         },
@@ -366,6 +390,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Kindness to Barzillai"
+                    }
+                ],
                 "text": "Now Barzillai the Gileadite had come down from Rogelim to cross the Jordan with the king and send him on his way from there."
             }
         },
@@ -486,6 +516,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Contention over the King"
+                    }
+                ],
                 "text": "Soon all the men of Israel came to the king and asked, “Why did our brothers, the men of Judah, take you away secretly and bring the king and his household across the Jordan, together with all of David’s men?”"
             }
         },

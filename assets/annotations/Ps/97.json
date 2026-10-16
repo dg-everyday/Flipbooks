@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Let the Earth Rejoice"
+                    }
+                ],
                 "text": "The LORD reigns, let the earth rejoice; let the distant shores be glad."
             }
         },

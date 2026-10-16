@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Philistines Reject David"
+                    }
+                ],
                 "text": "Now the Philistines brought all their forces together at Aphek, while Israel camped by the spring in Jezreel."
             }
         },

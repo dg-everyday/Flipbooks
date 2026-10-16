@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "How Great Are Your Works!"
+                    }
+                ],
                 "title": "A Psalm. A song for the Sabbath day.",
                 "text": "It is good to praise the LORD, and to sing praises to Your name, O Most High,"
             }

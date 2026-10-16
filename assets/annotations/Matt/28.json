@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Resurrection",
+                        "refs": "Mark 16:1–8; Luke 24:1–12; John 20:1–9"
+                    }
+                ],
                 "text": "After the Sabbath, at dawn on the first day of the week, Mary Magdalene and the other Mary went to see the tomb."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Report of the Guards"
+                    }
+                ],
                 "text": "While the women were on their way, some of the guards went into the city and reported to the chief priests all that had happened."
             }
         },
@@ -186,6 +199,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Great Commission",
+                        "refs": "Mark 16:14–18"
+                    }
+                ],
                 "text": "Meanwhile, the eleven disciples went to Galilee, to the mountain Jesus had designated."
             }
         },

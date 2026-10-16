@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Coming Glory of God’s House"
+                    }
+                ],
                 "text": "On the twenty-first day of the seventh month, the word of the LORD came through Haggai the prophet, saying:"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Blessings for a Defiled People"
+                    }
+                ],
                 "text": "On the twenty-fourth day of the ninth month, in the second year of Darius, the word of the LORD came to Haggai the prophet, saying,"
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Zerubbabel the LORD’s Signet Ring"
+                    }
+                ],
                 "text": "For the second time that day, the twenty-fourth day of the month, the word of the LORD came to Haggai, saying,"
             }
         },

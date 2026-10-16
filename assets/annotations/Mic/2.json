@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Woe to Oppressors"
+                    }
+                ],
                 "text": "Woe to those who devise iniquity and plot evil on their beds! At morning’s light they accomplish it because the power is in their hands."
             }
         },
@@ -66,6 +72,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Reproof of False Prophets",
+                        "refs": "Ezekiel 13:1–16"
+                    }
+                ],
                 "text": "“Do not preach,” they preach. “Do not preach these things; disgrace will not overtake us.”"
             }
         },
@@ -138,6 +151,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Remnant of Israel",
+                        "refs": "Micah 5:7–15"
+                    }
+                ],
                 "text": "I will surely gather all of you, O Jacob; I will collect the remnant of Israel. I will bring them together like sheep in a pen, like a flock in the midst of its pasture—a noisy throng."
             }
         },

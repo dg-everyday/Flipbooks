@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "How Long, O LORD?"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "How long, O LORD? Will You forget me forever? How long will You hide Your face from me?"
             }

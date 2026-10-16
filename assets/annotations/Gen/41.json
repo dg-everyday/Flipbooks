@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Dreams of Pharaoh"
+                    }
+                ],
                 "text": "After two full years had passed, Pharaoh had a dream: He was standing beside the Nile,"
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph Interprets Pharaoh’s Dreams"
+                    }
+                ],
                 "text": "So Pharaoh sent for Joseph, who was quickly brought out of the dungeon. After he had shaved and changed his clothes, he went in before Pharaoh."
             }
         },
@@ -438,6 +450,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph Given Charge of Egypt"
+                    }
+                ],
                 "text": "This proposal pleased Pharaoh and all his officials."
             }
         },
@@ -546,6 +564,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Seven Years of Plenty"
+                    }
+                ],
                 "text": "Now Joseph was thirty years old when he entered the service of Pharaoh king of Egypt. And Joseph left Pharaoh’s presence and traveled throughout the land of Egypt."
             }
         },
@@ -630,6 +654,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Famine Begins"
+                    }
+                ],
                 "text": "When the seven years of abundance in the land of Egypt came to an end,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Beginning of Knowledge",
+                        "refs": "Proverbs 9:1–12"
+                    }
+                ],
                 "text": "These are the proverbs of Solomon son of David, king of Israel,"
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Enticement of Sin"
+                    }
+                ],
                 "text": "Listen, my son, to your father’s instruction, and do not forsake the teaching of your mother."
             }
         },
@@ -234,6 +247,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wisdom Calls Aloud"
+                    }
+                ],
                 "text": "Wisdom calls out in the street, she lifts her voice in the square;"
             }
         },

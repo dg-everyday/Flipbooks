@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Vision of the Flying Scroll"
+                    }
+                ],
                 "text": "Again I lifted up my eyes and saw before me a flying scroll."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Vision of the Woman in a Basket"
+                    }
+                ],
                 "text": "Then the angel who was speaking with me came forward and told me, “Now lift up your eyes and see what is approaching.”"
             }
         },

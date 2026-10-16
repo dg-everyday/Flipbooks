@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel Removed to Babylon"
+                    }
+                ],
                 "text": "In the third year of the reign of Jehoiakim king of Judah, Nebuchadnezzar king of Babylon came to Jerusalem and besieged it."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Faithfulness"
+                    }
+                ],
                 "text": "But Daniel made up his mind that he would not defile himself with the king’s food or wine. So he asked the chief official for permission not to defile himself."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Wisdom"
+                    }
+                ],
                 "text": "To these four young men God gave knowledge and understanding in every kind of literature and wisdom. And Daniel had insight into all kinds of visions and dreams."
             }
         },

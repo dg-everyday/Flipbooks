@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Instructs Joshua",
+                        "refs": "Deuteronomy 11:8–17"
+                    }
+                ],
                 "text": "Now after the death of His servant Moses, the LORD spoke to Joshua son of Nun, Moses’ assistant, saying,"
             }
         },
@@ -114,6 +121,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua Takes Charge"
+                    }
+                ],
                 "text": "Then Joshua commanded the officers of the people:"
             }
         },

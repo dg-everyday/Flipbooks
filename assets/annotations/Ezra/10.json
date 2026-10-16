@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shecaniah’s Encouragement"
+                    }
+                ],
                 "text": "While Ezra prayed and made this confession, weeping and falling facedown before the house of God, a very large assembly of Israelites—men, women, and children—gathered around him, and the people wept bitterly as well."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The People’s Confession of Sin"
+                    }
+                ],
                 "text": "Then Ezra withdrew from before the house of God and walked to the chamber of Jehohanan son of Eliashib. And while he stayed there, he ate no food and drank no water, because he was mourning over the unfaithfulness of the exiles."
             }
         },
@@ -210,6 +222,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Those Guilty of Intermarriage"
+                    }
+                ],
                 "text": "Among the descendants of the priests who had married foreign women were found these descendants of Jeshua son of Jozadak and his brothers: Maaseiah, Eliezer, Jarib, and Gedaliah."
             }
         },

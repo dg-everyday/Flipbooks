@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Loves a Cheerful Giver",
+                        "refs": "1 Corinthians 16:1–4"
+                    }
+                ],
                 "text": "Now about the service to the saints, there is no need for me to write to you."
             }
         },

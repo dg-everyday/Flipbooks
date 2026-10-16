@@ -6,6 +6,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon Admires His Bride"
+                    },
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "How beautiful you are, my darling—how very beautiful! Your eyes are like doves behind your veil. Your hair is like a flock of goats streaming down Mount Gilead."
             }
         },
@@ -186,6 +196,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "Awake, O north wind, and come, O south wind. Breathe on my garden and spread the fragrance of its spices. Let my beloved come into his garden and taste its choicest fruits."
             }
         },

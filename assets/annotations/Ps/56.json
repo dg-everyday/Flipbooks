@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Be Merciful to Me, O God",
+                        "refs": "1 Samuel 21:8–15"
+                    }
+                ],
                 "title": "For the choirmaster. To the tune of “A Dove on Distant Oaks.” A Miktam of David, when the Philistines seized him in Gath.",
                 "text": "Be merciful to me, O God, for men are hounding me; all day they press their attack."
             }

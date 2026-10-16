@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Here Is My Servant",
+                        "refs": "Matthew 12:15–21"
+                    }
+                ],
                 "text": "“Here is My Servant, whom I uphold, My Chosen One, in whom My soul delights. I will put My Spirit on Him, and He will bring justice to the nations."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A New Song of Praise",
+                        "refs": "Psalms 98:1–9; Psalms 149:1–9"
+                    }
+                ],
                 "text": "Sing to the LORD a new song—His praise from the ends of the earth—you who go down to the sea, and all that is in it, you islands, and all who dwell in them."
             }
         },
@@ -210,6 +224,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel Is Deaf and Blind"
+                    }
+                ],
                 "text": "Listen, you deaf ones; look, you blind ones, that you may see!"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Be My Rock of Refuge"
+                    }
+                ],
                 "text": "In You, O LORD, I have taken refuge; let me never be put to shame."
             }
         },

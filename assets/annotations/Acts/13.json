@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s First Missionary Journey Begins",
+                        "refs": "Acts 15:36–41; Acts 18:23–28"
+                    }
+                ],
                 "text": "Now in the church at Antioch there were prophets and teachers: Barnabas, Simeon called Niger, Lucius of Cyrene, Manaen (who had been brought up with Herod the tetrarch), and Saul."
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "On Cyprus"
+                    }
+                ],
                 "text": "So Barnabas and Saul, sent forth by the Holy Spirit, went down to Seleucia and sailed from there to Cyprus."
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "In Pisidian Antioch"
+                    }
+                ],
                 "text": "After setting sail from Paphos, Paul and his companions came to Perga in Pamphylia, where John left them to return to Jerusalem."
             }
         },
@@ -498,6 +517,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Light for the Gentiles",
+                        "refs": "Isaiah 49:1–6"
+                    }
+                ],
                 "text": "As Paul and Barnabas were leaving the synagogue, the people urged them to continue this message on the next Sabbath."
             }
         },

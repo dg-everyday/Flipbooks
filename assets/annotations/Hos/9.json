@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Punishment"
+                    }
+                ],
                 "text": "Do not rejoice, O Israel, with exultation like the nations, for you have played the harlot against your God; you have made love for hire on every threshing floor."
             }
         },

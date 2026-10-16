@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Bildad: Job Should Repent"
+                    }
+                ],
                 "text": "Then Bildad the Shuhite replied:"
             }
         },

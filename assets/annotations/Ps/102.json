@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prayer of the Afflicted"
+                    }
+                ],
                 "title": "A prayer of one who is afflicted, when he grows faint and pours out his lament before the LORD.",
                 "text": "Hear my prayer, O LORD; let my cry for help come before You."
             }

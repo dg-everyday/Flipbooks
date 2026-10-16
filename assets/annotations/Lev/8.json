@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Consecrates Aaron and His Sons",
+                        "refs": "Exodus 29:1–9"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -162,6 +169,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Priests’ Sin Offering"
+                    }
+                ],
                 "text": "Moses then brought the bull near for the sin offering, and Aaron and his sons laid their hands on its head."
             }
         },
@@ -210,6 +223,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Priests’ Burnt Offering"
+                    }
+                ],
                 "text": "Then Moses presented the ram for the burnt offering, and Aaron and his sons laid their hands on its head."
             }
         },
@@ -258,6 +277,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ram of Ordination",
+                        "refs": "Exodus 29:10–30"
+                    }
+                ],
                 "text": "After that, Moses presented the other ram, the ram of ordination, and Aaron and his sons laid their hands on its head."
             }
         },

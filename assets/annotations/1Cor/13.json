@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Love"
+                    }
+                ],
                 "text": "If I speak in the tongues of men and of angels, but have not love, I am only a ringing gong or a clanging cymbal."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Blessed Fear of the LORD",
+                        "refs": "Psalms 112:1–10"
+                    }
+                ],
                 "title": "A song of ascents.",
                 "text": "Blessed are all who fear the LORD, who walk in His ways!"
             }

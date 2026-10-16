@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Will Not Forget His People"
+                    }
+                ],
                 "text": "O LORD, God of vengeance, O God of vengeance, shine forth."
             }
         },

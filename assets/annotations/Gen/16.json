@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hagar and Ishmael"
+                    }
+                ],
                 "text": "Now Abram’s wife Sarai had borne him no children, but she had an Egyptian maidservant named Hagar."
             }
         },

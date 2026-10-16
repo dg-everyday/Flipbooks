@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Korah’s Rebellion"
+                    }
+                ],
                 "text": "Now Korah son of Izhar, the son of Kohath son of Levi, along with some Reubenites—Dathan and Abiram, sons of Eliab, and On son of Peleth—conducted"
             }
         },
@@ -270,6 +276,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Separates the People"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -330,6 +342,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Earth Swallows Korah"
+                    }
+                ],
                 "text": "Then Moses said, “This is how you will know that the LORD has sent me to do all these things, for it was not my own doing:"
             }
         },
@@ -426,6 +444,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Censers Reserved for Holy Use"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -486,6 +510,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Murmuring and Plague",
+                        "refs": "1 Corinthians 10:1–13"
+                    }
+                ],
                 "text": "The next day the whole congregation of Israel grumbled against Moses and Aaron, saying, “You have killed the LORD’s people!”"
             }
         },

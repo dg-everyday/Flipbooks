@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Greeting from Peter",
+                        "refs": "1 Peter 1:1–2"
+                    }
+                ],
                 "text": "Simon Peter, a servant and apostle of Jesus Christ, To those who through the righteousness of our God and Savior Jesus Christ have received a faith as precious as ours:"
             }
         },
@@ -30,6 +37,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Partakers of the Divine Nature"
+                    }
+                ],
                 "text": "His divine power has given us everything we need for life and godliness through the knowledge of Him who called us by His own glory and excellence."
             }
         },
@@ -186,6 +199,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Eyewitnesses of His Majesty",
+                        "refs": "Matthew 17:1–13; Mark 9:1–13; Luke 9:28–36"
+                    }
+                ],
                 "text": "For we did not follow cleverly devised fables when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of His majesty."
             }
         },

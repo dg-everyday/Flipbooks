@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nehemiah Defends the Oppressed"
+                    }
+                ],
                 "text": "About that time there was a great outcry from the people and their wives against their fellow Jews."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nehemiah’s Generosity"
+                    }
+                ],
                 "text": "Furthermore, from the day King Artaxerxes appointed me to be their governor in the land of Judah, from his twentieth year until his thirty-second year (twelve years total), neither I nor my brothers ate the food allotted to the governor."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Exhortation to Obedience",
+                        "refs": "Deuteronomy 11:1–7"
+                    }
+                ],
                 "text": "Hear now, O Israel, the statutes and ordinances I am teaching you to follow, so that you may live and may enter and take possession of the land that the LORD, the God of your fathers, is giving you."
             }
         },
@@ -174,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning against Idolatry",
+                        "refs": "Deuteronomy 12:29–32; Ezekiel 6:1–7"
+                    }
+                ],
                 "text": "So since you saw no form of any kind on the day the LORD spoke to you out of the fire at Horeb, be careful"
             }
         },
@@ -378,6 +392,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Alone Is God"
+                    }
+                ],
                 "text": "Indeed, ask now from one end of the heavens to the other about the days that long preceded you, from the day that God created man on earth: Has anything as great as this ever happened or been reported?"
             }
         },
@@ -486,6 +506,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cities of Refuge",
+                        "refs": "Numbers 35:9–34; Deuteronomy 19:1–14; Joshua 20:1–9"
+                    }
+                ],
                 "text": "Then Moses set aside three cities across the Jordan to the east"
             }
         },
@@ -522,6 +549,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Introduction to the Law"
+                    }
+                ],
                 "text": "This is the law that Moses set before the Israelites."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Timothy’s Visit"
+                    }
+                ],
                 "text": "So when we could bear it no longer, we were willing to be left on our own in Athens."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Timothy’s Encouraging Report"
+                    }
+                ],
                 "text": "But just now, Timothy has returned from his visit with the good news about your faith, your love, and the fond memories you have preserved, longing to see us just as we long to see you."
             }
         },

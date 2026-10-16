@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Release from the Law",
+                        "refs": "Galatians 3:15–25"
+                    }
+                ],
                 "text": "Do you not know, brothers (for I am speaking to those who know the law), that the law has authority over a man only as long as he lives?"
             }
         },
@@ -78,6 +85,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Law Is Holy"
+                    }
+                ],
                 "text": "What then shall we say? Is the law sin? Certainly not! Indeed, I would not have been mindful of sin if not for the law. For I would not have been aware of coveting if the law had not said, “Do not covet.”"
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Struggling with Sin"
+                    }
+                ],
                 "text": "Did that which is good, then, become death to me? Certainly not! But in order that sin might be exposed as sin, it produced death in me through what was good, so that through the commandment sin might become utterly sinful."
             }
         },

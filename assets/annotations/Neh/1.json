@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nehemiah’s Prayer",
+                        "refs": "Deuteronomy 30:1–10"
+                    }
+                ],
                 "text": "These are the words of Nehemiah son of Hacaliah: In the month of Chislev, in the twentieth year, while I was in the citadel of Susa,"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat Reproved by Jehu"
+                    }
+                ],
                 "text": "When Jehoshaphat king of Judah had returned safely to his home in Jerusalem,"
             }
         },
@@ -42,6 +48,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat’s Reforms"
+                    }
+                ],
                 "text": "Jehoshaphat lived in Jerusalem, and once again he went out among the people from Beersheba to the hill country of Ephraim and turned them back to the LORD, the God of their fathers."
             }
         },

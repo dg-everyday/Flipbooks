@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Pashhur Persecutes Jeremiah"
+                    }
+                ],
                 "text": "When Pashhur the priest, the son of Immer and the chief official in the house of the LORD, heard Jeremiah prophesying these things,"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah’s Complaint"
+                    }
+                ],
                 "text": "You have deceived me, O LORD, and I was deceived. You have overcome me and prevailed. I am a laughingstock all day long; everyone mocks me."
             }
         },

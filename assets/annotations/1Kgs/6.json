@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temple Construction Begins",
+                        "refs": "2 Chronicles 3:1–2"
+                    }
+                ],
                 "text": "In the four hundred and eightieth year after the Israelites had come out of the land of Egypt, in the fourth year of Solomon’s reign over Israel, in the month of Ziv, the second month, he began to build the house of the LORD."
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Chambers"
+                    }
+                ],
                 "text": "Against the walls of the temple and the inner sanctuary, Solomon built a chambered structure around the temple, in which he constructed the side rooms."
             }
         },
@@ -126,6 +139,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Promise to Solomon"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Solomon, saying:"
             }
         },
@@ -162,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple’s Interior",
+                        "refs": "2 Chronicles 3:5–9"
+                    }
+                ],
                 "text": "So Solomon built the temple and finished it."
             }
         },
@@ -270,6 +296,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cherubim",
+                        "refs": "2 Chronicles 3:10–13"
+                    }
+                ],
                 "text": "In the inner sanctuary he made two cherubim, each ten cubits high, out of olive wood."
             }
         },
@@ -366,6 +399,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Doors"
+                    }
+                ],
                 "text": "For the entrance to the inner sanctuary, Solomon constructed doors of olive wood with five-sided doorposts."
             }
         },
@@ -426,6 +465,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Courtyard"
+                    }
+                ],
                 "text": "Solomon built the inner courtyard with three rows of dressed stone and one row of trimmed cedar beams."
             }
         },

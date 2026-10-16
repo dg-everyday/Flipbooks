@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Prayer for Wisdom",
+                        "refs": "1 Kings 3:1–15; Psalms 45:1–17; Psalms 72:1–20"
+                    }
+                ],
                 "text": "Now Solomon son of David established himself securely over his kingdom, and the LORD his God was with him and highly exalted him."
             }
         },
@@ -142,6 +149,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Riches",
+                        "refs": "1 Kings 10:26–29"
+                    }
+                ],
                 "text": "Solomon accumulated 1,400 chariots and 12,000 horses, which he stationed in the chariot cities and also with him in Jerusalem."
             }
         },

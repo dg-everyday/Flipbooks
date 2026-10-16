@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Three Visitors"
+                    }
+                ],
                 "text": "Then the LORD appeared to Abraham by the Oaks of Mamre in the heat of the day, while he was sitting at the entrance of his tent."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sarah Laughs at the Promise"
+                    }
+                ],
                 "text": "“Where is your wife Sarah?” they asked. “There, in the tent,” he replied."
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abraham Intercedes for Sodom"
+                    }
+                ],
                 "text": "When the men got up to leave, they looked out over Sodom, and Abraham walked along with them to see them off."
             }
         },

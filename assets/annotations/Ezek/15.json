@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jerusalem the Useless Vine"
+                    }
+                ],
                 "text": "Then the word of the LORD came to me, saying,"
             }
         },

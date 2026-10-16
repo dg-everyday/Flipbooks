@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Josiah Renews the Covenant",
+                        "refs": "2 Chronicles 34:29–33"
+                    }
+                ],
                 "text": "Then the king summoned all the elders of Judah and Jerusalem."
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Josiah Destroys Idolatry",
+                        "refs": "1 Kings 13:1–10; 2 Chronicles 34:3–7"
+                    }
+                ],
                 "text": "Then the king commanded Hilkiah the high priest, the priests second in rank, and the doorkeepers to remove from the temple of the LORD all the articles made for Baal, Asherah, and all the host of heaven. And he burned them outside Jerusalem in the fields of Kidron and carried their ashes to Bethel."
             }
         },
@@ -246,6 +260,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Josiah Restores the Passover",
+                        "refs": "2 Chronicles 35:1–19"
+                    }
+                ],
                 "text": "The king commanded all the people, “Keep the Passover of the LORD your God, as it is written in this Book of the Covenant.”"
             }
         },
@@ -330,6 +351,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Josiah",
+                        "refs": "2 Chronicles 35:20–24"
+                    }
+                ],
                 "text": "As for the rest of the acts of Josiah and all his accomplishments, are they not written in the Book of the Chronicles of the Kings of Judah?"
             }
         },
@@ -366,6 +394,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoahaz Succeeds Josiah",
+                        "refs": "2 Chronicles 36:1–4"
+                    }
+                ],
                 "text": "Jehoahaz was twenty-three years old when he became king, and he reigned in Jerusalem three months. His mother’s name was Hamutal daughter of Jeremiah; she was from Libnah."
             }
         },
@@ -426,6 +461,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoiakim Reigns in Judah",
+                        "refs": "2 Chronicles 36:5–8"
+                    }
+                ],
                 "text": "Jehoiakim was twenty-five years old when he became king, and he reigned in Jerusalem eleven years. His mother’s name was Zebidah daughter of Pedaiah; she was from Rumah."
             }
         },

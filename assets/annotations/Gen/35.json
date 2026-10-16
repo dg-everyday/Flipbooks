@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Returns to Bethel"
+                    }
+                ],
                 "text": "Then God said to Jacob, “Arise, go up to Bethel, and settle there. Build an altar there to the God who appeared to you when you fled from your brother Esau.”"
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Benjamin Born, Rachel Dies"
+                    }
+                ],
                 "text": "Later, they set out from Bethel, and while they were still some distance from Ephrath, Rachel began to give birth, and her labor was difficult."
             }
         },
@@ -246,6 +258,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sons of Jacob",
+                        "refs": "1 Chronicles 2:1–2"
+                    }
+                ],
                 "text": "Israel again set out and pitched his tent beyond the Tower of Eder."
             }
         },
@@ -318,6 +337,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Isaac"
+                    }
+                ],
                 "text": "Jacob returned to his father Isaac at Mamre, near Kiriath-arba (that is, Hebron), where Abraham and Isaac had stayed."
             }
         },

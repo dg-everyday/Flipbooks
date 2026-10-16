@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparations for the Temple",
+                        "refs": "1 Kings 5:1–6"
+                    }
+                ],
                 "text": "Now Solomon purposed to build a house for the Name of the LORD and a royal palace for himself."
             }
         },
@@ -126,6 +133,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hiram’s Reply to Solomon",
+                        "refs": "1 Kings 5:7–12"
+                    }
+                ],
                 "text": "Then Hiram king of Tyre wrote a letter in reply to Solomon: “Because the LORD loves His people, He has set you over them as king.”"
             }
         },

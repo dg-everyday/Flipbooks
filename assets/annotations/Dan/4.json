@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nebuchadnezzar Confesses God’s Kingdom"
+                    }
+                ],
                 "text": "King Nebuchadnezzar, To the people of every nation and language who dwell in all the earth: May your prosperity be multiplied."
             }
         },
@@ -42,6 +48,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nebuchadnezzar’s Dream of a Great Tree"
+                    }
+                ],
                 "text": "I, Nebuchadnezzar, was at ease in my house and flourishing in my palace."
             }
         },
@@ -222,6 +234,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel Interprets the Second Dream"
+                    }
+                ],
                 "text": "For a time, Daniel, who was also known as Belteshazzar, was perplexed, and his thoughts alarmed him. So the king said, “Belteshazzar, do not let the dream or its interpretation alarm you.” “My lord,” replied Belteshazzar, “may the dream apply to those who hate you, and its interpretation to your enemies!"
             }
         },
@@ -326,6 +344,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Second Dream Fulfilled"
+                    }
+                ],
                 "text": "All this happened to King Nebuchadnezzar."
             }
         },
@@ -398,6 +422,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nebuchadnezzar Restored"
+                    }
+                ],
                 "text": "But at the end of those days I, Nebuchadnezzar, looked up to heaven, and my sanity was restored to me. Then I praised the Most High, and I honored and glorified Him who lives forever: “For His dominion is an everlasting dominion, and His kingdom endures from generation to generation."
             }
         },

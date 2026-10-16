@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burden against Tyre",
+                        "refs": "Ezekiel 26:1–21"
+                    }
+                ],
                 "text": "This is the burden against Tyre: Wail, O ships of Tarshish, for Tyre is laid waste, without house or harbor. Word has reached them from the land of Cyprus."
             }
         },

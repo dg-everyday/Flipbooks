@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab and the False Prophets",
+                        "refs": "2 Chronicles 18:1–11"
+                    }
+                ],
                 "text": "Then three years passed without war between Aram and Israel."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Micaiah Prophesies against Ahab",
+                        "refs": "2 Chronicles 18:12–27"
+                    }
+                ],
                 "text": "Then the messenger who had gone to call Micaiah instructed him, “Behold now, with one accord the words of the prophets are favorable to the king. So please let your words be like theirs, and speak favorably.”"
             }
         },
@@ -342,6 +356,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab’s Defeat and Death",
+                        "refs": "2 Chronicles 18:28–34"
+                    }
+                ],
                 "text": "So the king of Israel and Jehoshaphat king of Judah went up to Ramoth-gilead."
             }
         },
@@ -486,6 +507,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat Reigns in Judah",
+                        "refs": "2 Chronicles 20:31–34"
+                    }
+                ],
                 "text": "In the fourth year of Ahab’s reign over Israel, Jehoshaphat son of Asa became king of Judah."
             }
         },
@@ -606,6 +634,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahaziah Reigns in Israel",
+                        "refs": "2 Kings 1:1–16"
+                    }
+                ],
                 "text": "In the seventeenth year of Jehoshaphat’s reign over Judah, Ahaziah son of Ahab became king of Israel, and he reigned in Samaria two years."
             }
         },

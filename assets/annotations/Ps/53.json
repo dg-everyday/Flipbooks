@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fool Says There Is No God",
+                        "refs": "Psalms 14:1–7; Isaiah 59:1–17; Romans 3:9–20"
+                    }
+                ],
                 "title": "For the choirmaster. According to Mahalath. A Maskil of David.",
                 "text": "The fool says in his heart, “There is no God.” They are corrupt; their ways are vile. There is no one who does good."
             }

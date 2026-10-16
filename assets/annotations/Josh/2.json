@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rahab Welcomes the Spies",
+                        "refs": "Hebrews 11:30–31"
+                    }
+                ],
                 "text": "Then Joshua son of Nun secretly sent two spies from Shittim, saying, “Go, inspect the land, especially Jericho.” So they went and entered the house of a prostitute named Rahab and stayed there."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Promise to Rahab"
+                    }
+                ],
                 "text": "Before the spies lay down for the night, Rahab went up on the roof"
             }
         },

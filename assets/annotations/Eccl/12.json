@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Remember Your Creator"
+                    }
+                ],
                 "text": "Remember your Creator in the days of your youth, before the days of adversity come and the years approach of which you will say, “I find no pleasure in them,”"
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Whole Duty of Man"
+                    }
+                ],
                 "text": "Not only was the Teacher wise, but he also taught the people knowledge; he pondered, searched out, and arranged many proverbs."
             }
         },

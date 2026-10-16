@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rejoice in the Lord"
+                    }
+                ],
                 "text": "Therefore, my brothers, whom I love and long for, my joy and crown, that is how you must stand firm in the Lord, my beloved."
             }
         },
@@ -114,6 +120,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Generosity of the Philippians",
+                        "refs": "2 Corinthians 8:1–15"
+                    }
+                ],
                 "text": "Now I rejoice greatly in the Lord that at last you have revived your concern for me. You were indeed concerned, but you had no opportunity to show it."
             }
         },
@@ -246,6 +259,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Final Greetings",
+                        "refs": "Ephesians 6:21–24; 2 Timothy 4:19–22"
+                    }
+                ],
                 "text": "Greet all the saints in Christ Jesus. The brothers who are with me send you greetings."
             }
         },

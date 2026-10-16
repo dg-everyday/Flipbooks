@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Women Minister to Jesus"
+                    }
+                ],
                 "text": "Soon afterward, Jesus traveled from one town and village to another, preaching and proclaiming the good news of the kingdom of God. The Twelve were with Him,"
             }
         },
@@ -42,6 +48,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Sower",
+                        "refs": "Matthew 13:1–23; Mark 4:1–20"
+                    }
+                ],
                 "text": "While a large crowd was gathering and people were coming to Jesus from town after town, He told them this parable:"
             }
         },
@@ -186,6 +199,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lesson of the Lamp",
+                        "refs": "Mark 4:21–25"
+                    }
+                ],
                 "text": "No one lights a lamp and covers it with a jar or puts it under a bed. Instead, he sets it on a stand, so those who enter can see the light."
             }
         },
@@ -222,6 +242,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Mother and Brothers",
+                        "refs": "Matthew 12:46–50; Mark 3:31–35"
+                    }
+                ],
                 "text": "Then Jesus’ mother and brothers came to see Him, but they were unable to reach Him because of the crowd."
             }
         },
@@ -258,6 +285,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Calms the Storm",
+                        "refs": "Psalms 107:1–43; Matthew 8:23–27; Mark 4:35–41"
+                    }
+                ],
                 "text": "One day Jesus said to His disciples, “Let us cross to the other side of the lake.” So He got into a boat with them and set out."
             }
         },
@@ -306,6 +340,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Demons and the Pigs",
+                        "refs": "Matthew 8:28–34; Mark 5:1–20"
+                    }
+                ],
                 "text": "Then they sailed to the region of the Gerasenes, across the lake from Galilee."
             }
         },
@@ -474,6 +515,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Healing Touch of Jesus",
+                        "refs": "Matthew 9:18–26; Mark 5:21–43"
+                    }
+                ],
                 "text": "When Jesus returned, the crowd welcomed Him, for they had all been waiting for Him."
             }
         },

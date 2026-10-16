@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job’s Final Appeal"
+                    }
+                ],
                 "text": "“I have made a covenant with my eyes. How then could I gaze with desire at a virgin?"
             }
         },

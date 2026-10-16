@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Earth Is the LORD’s"
+                    }
+                ],
                 "title": "A Psalm of David.",
                 "text": "The earth is the LORD’s, and the fullness thereof, the world and all who dwell therein."
             }

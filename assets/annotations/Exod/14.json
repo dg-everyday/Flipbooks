@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Pharaoh Pursues the Israelites"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Parting the Red Sea"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Why are you crying out to Me? Tell the Israelites to go forward."
             }
         },

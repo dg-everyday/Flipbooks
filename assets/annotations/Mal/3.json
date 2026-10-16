@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Send My Messenger",
+                        "refs": "Matthew 11:7–19; Luke 7:24–35"
+                    }
+                ],
                 "text": "“Behold, I will send My messenger, who will prepare the way before Me. Then the Lord whom you seek will suddenly come to His temple—the Messenger of the covenant, in whom you delight—see, He is coming,” says the LORD of Hosts."
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Robbing God"
+                    }
+                ],
                 "text": "“Because I, the LORD, do not change, you descendants of Jacob have not been destroyed."
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Book of Remembrance"
+                    }
+                ],
                 "text": "“Your words against Me have been harsh,” says the LORD. “Yet you ask, ‘What have we spoken against You?’"
             }
         },

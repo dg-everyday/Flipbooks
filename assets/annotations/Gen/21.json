@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Birth of Isaac"
+                    }
+                ],
                 "text": "Now the LORD attended to Sarah as He had said, and the LORD did for Sarah what He had promised."
             }
         },
@@ -102,6 +108,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sarah Turns against Hagar",
+                        "refs": "Galatians 4:21–30"
+                    }
+                ],
                 "text": "But Sarah saw that the son whom Hagar the Egyptian had borne to Abraham was mocking her son,"
             }
         },
@@ -258,6 +271,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant at Beersheba"
+                    }
+                ],
                 "text": "At that time Abimelech and Phicol the commander of his army said to Abraham, “God is with you in all that you do."
             }
         },

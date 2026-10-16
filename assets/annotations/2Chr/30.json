@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hezekiah Proclaims a Passover"
+                    }
+                ],
                 "text": "Then Hezekiah sent word throughout all Israel and Judah, and he also wrote letters to Ephraim and Manasseh inviting them to come to the house of the LORD in Jerusalem to keep the Passover of the LORD, the God of Israel."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hezekiah Celebrates the Passover"
+                    }
+                ],
                 "text": "In the second month, a very great assembly gathered in Jerusalem to celebrate the Feast of Unleavened Bread."
             }
         },

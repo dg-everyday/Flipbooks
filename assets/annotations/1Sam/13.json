@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "War with the Philistines"
+                    }
+                ],
                 "text": "Saul was thirty years old when he became king, and he reigned over Israel forty-two years."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul’s Unlawful Sacrifice"
+                    }
+                ],
                 "text": "And Saul waited seven days for the time appointed by Samuel, but Samuel did not come to Gilgal, and the troops began to desert Saul."
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel without Weapons"
+                    }
+                ],
                 "text": "Now Saul and Jonathan his son and the troops with them were staying in Geba of Benjamin, while the Philistines camped at Michmash."
             }
         },

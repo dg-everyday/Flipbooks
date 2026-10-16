@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Genealogy from Benjamin to Saul"
+                    }
+                ],
                 "text": "Benjamin was the father of Bela his firstborn, Ashbel the second, Aharah the third,"
             }
         },
@@ -346,6 +352,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Family of Saul"
+                    }
+                ],
                 "text": "Ner was the father of Kish, Kish was the father of Saul, and Saul was the father of Jonathan, Malchishua, Abinadab, and Esh-baal."
             }
         },

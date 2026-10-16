@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Victory over Betrayal",
+                        "refs": "John 13:18–30"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "Blessed is the one who cares for the poor; the LORD will deliver him in the day of trouble."
             }

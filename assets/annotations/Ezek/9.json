@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Execution of the Idolaters"
+                    }
+                ],
                 "text": "Then I heard Him call out in a loud voice, saying, “Draw near, O executioners of the city, each with a weapon of destruction in hand.”"
             }
         },

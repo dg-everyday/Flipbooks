@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Give Praise, O Servants of the LORD",
+                        "refs": "Psalms 115:1–18"
+                    }
+                ],
                 "text": "Hallelujah! Praise the name of the LORD. Give praise, O servants of the LORD,"
             }
         },

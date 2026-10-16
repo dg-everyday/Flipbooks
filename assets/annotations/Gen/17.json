@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abraham to Father Many Nations"
+                    }
+                ],
                 "text": "When Abram was ninety-nine years old, the LORD appeared to him and said, “I am God Almighty. Walk before Me and be blameless."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant of Circumcision"
+                    }
+                ],
                 "text": "God also said to Abraham, “You must keep My covenant—you and your descendants in the generations after you."
             }
         },

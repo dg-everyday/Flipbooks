@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job’s Honor Turned to Contempt"
+                    }
+                ],
                 "text": "“But now they mock me, men younger than I am, whose fathers I would have refused to put with my sheep dogs."
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job’s Prosperity Becomes Calamity"
+                    }
+                ],
                 "text": "Terrors are turned loose against me; they drive away my dignity as by the wind, and my prosperity has passed like a cloud."
             }
         },

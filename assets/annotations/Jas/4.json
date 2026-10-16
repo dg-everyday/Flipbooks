@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning against Pride"
+                    }
+                ],
                 "text": "What causes conflicts and quarrels among you? Don’t they come from the passions at war within you?"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Drawing Near to God"
+                    }
+                ],
                 "text": "Submit yourselves, then, to God. Resist the devil, and he will flee from you."
             }
         },
@@ -150,6 +162,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Boast about Tomorrow",
+                        "refs": "Proverbs 27:1"
+                    }
+                ],
                 "text": "Come now, you who say, “Today or tomorrow we will go to this or that city, spend a year there, carry on business, and make a profit.”"
             }
         },

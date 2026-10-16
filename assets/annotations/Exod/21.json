@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hebrew Servants",
+                        "refs": "Deuteronomy 15:12–18"
+                    }
+                ],
                 "text": "“These are the ordinances that you are to set before them:"
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Personal Injury Laws"
+                    }
+                ],
                 "text": "Whoever strikes and kills a man must surely be put to death."
             }
         },

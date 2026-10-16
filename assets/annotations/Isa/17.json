@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burden against Damascus",
+                        "refs": "Jeremiah 49:23–27"
+                    }
+                ],
                 "text": "This is the burden against Damascus: “Behold, Damascus is no longer a city; it has become a heap of ruins."
             }
         },

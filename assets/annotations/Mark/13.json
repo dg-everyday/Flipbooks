@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temple Destruction and Other Signs",
+                        "refs": "Matthew 24:1–8; Luke 21:5–9"
+                    }
+                ],
                 "text": "As Jesus was leaving the temple, one of His disciples said to Him, “Teacher, look at the magnificent stones and buildings!”"
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Witnessing to All Nations",
+                        "refs": "Matthew 24:9–14; Luke 21:10–19"
+                    }
+                ],
                 "text": "So be on your guard. You will be delivered over to the councils and beaten in the synagogues. On My account you will stand before governors and kings as witnesses to them."
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Abomination of Desolation",
+                        "refs": "Matthew 24:15–25; Luke 21:20–24"
+                    }
+                ],
                 "text": "So when you see the abomination of desolation standing where it should not be (let the reader understand), then let those who are in Judea flee to the mountains."
             }
         },
@@ -282,6 +303,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Return of the Son of Man",
+                        "refs": "Matthew 24:26–31; Luke 21:25–28"
+                    }
+                ],
                 "text": "But in those days, after that tribulation: ‘The sun will be darkened, and the moon will not give its light;"
             }
         },
@@ -330,6 +358,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lesson of the Fig Tree",
+                        "refs": "Matthew 24:32–35; Luke 21:29–33"
+                    }
+                ],
                 "text": "Now learn this lesson from the fig tree: As soon as its branches become tender and sprout leaves, you know that summer is near."
             }
         },
@@ -378,6 +413,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Readiness at Any Hour",
+                        "refs": "Matthew 24:36–51; Luke 12:35–48"
+                    }
+                ],
                 "text": "No one knows about that day or hour, not even the angels in heaven, nor the Son, but only the Father."
             }
         },

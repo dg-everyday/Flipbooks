@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Bless the LORD, O My Soul"
+                    }
+                ],
                 "title": "Of David.",
                 "text": "Bless the LORD, O my soul; all that is within me, bless His holy name."
             }

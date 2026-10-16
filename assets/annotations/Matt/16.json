@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Demand for a Sign",
+                        "refs": "Mark 8:11–13; Luke 12:54–56"
+                    }
+                ],
                 "text": "Then the Pharisees and Sadducees came and tested Jesus by asking Him to show them a sign from heaven."
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Leaven of the Pharisees and Sadducees",
+                        "refs": "Mark 8:14–21; Luke 12:1–3"
+                    }
+                ],
                 "text": "When they crossed to the other side, the disciples forgot to take bread."
             }
         },
@@ -150,6 +164,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter’s Confession of Christ",
+                        "refs": "Mark 8:27–30; Luke 9:18–20; John 6:67–71"
+                    }
+                ],
                 "text": "When Jesus came to the region of Caesarea Philippi, He questioned His disciples: “Who do people say the Son of Man is?”"
             }
         },
@@ -246,6 +267,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ’s Passion Foretold",
+                        "refs": "Mark 8:31–33; Luke 9:21–22"
+                    }
+                ],
                 "text": "From that time on Jesus began to show His disciples that He must go to Jerusalem and suffer many things at the hands of the elders, chief priests, and scribes, and that He must be killed and on the third day be raised to life."
             }
         },
@@ -282,6 +310,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Take Up Your Cross",
+                        "refs": "Mark 8:34–38; Luke 9:23–27"
+                    }
+                ],
                 "text": "Then Jesus told His disciples, “If anyone wants to come after Me, he must deny himself and take up his cross and follow Me."
             }
         },

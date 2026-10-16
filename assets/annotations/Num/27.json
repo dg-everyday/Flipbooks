@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Daughters of Zelophehad",
+                        "refs": "Numbers 36:1–13"
+                    }
+                ],
                 "text": "Now the daughters of Zelophehad son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, belonged to the clans of Manasseh son of Joseph. These were the names of his daughters: Mahlah, Noah, Hoglah, Milcah, and Tirzah. They approached"
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Requests a Successor",
+                        "refs": "Deuteronomy 3:23–29"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Go up this mountain of the Abarim range and see the land that I have given the Israelites."
             }
         },
@@ -210,6 +224,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua to Succeed Moses",
+                        "refs": "Deuteronomy 31:1–8"
+                    }
+                ],
                 "text": "And the LORD replied to Moses, “Take Joshua son of Nun, a man with the Spirit in him, and lay your hands on him."
             }
         },

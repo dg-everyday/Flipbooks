@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Set No Worthless Thing before My Eyes"
+                    }
+                ],
                 "title": "A Psalm of David.",
                 "text": "I will sing of Your loving devotion and justice; to You, O LORD, I will sing praises."
             }

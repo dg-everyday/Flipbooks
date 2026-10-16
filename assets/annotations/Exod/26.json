@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Curtains for the Tabernacle",
+                        "refs": "Exodus 36:8–13"
+                    }
+                ],
                 "text": "“You are to construct the tabernacle itself with ten curtains of finely spun linen, each with blue, purple, and scarlet yarn, and cherubim skillfully worked into them."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Eleven Curtains of Goat Hair",
+                        "refs": "Exodus 36:14–19"
+                    }
+                ],
                 "text": "You are to make curtains of goat hair for the tent over the tabernacle—eleven curtains in all."
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Frames and Bases",
+                        "refs": "Exodus 36:20–34"
+                    }
+                ],
                 "text": "You are to construct upright frames of acacia wood for the tabernacle."
             }
         },
@@ -366,6 +387,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Veil",
+                        "refs": "Exodus 36:35–36"
+                    }
+                ],
                 "text": "Make a veil of blue, purple, and scarlet yarn, and finely spun linen, with cherubim skillfully worked into it."
             }
         },
@@ -426,6 +454,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Curtain for the Entrance",
+                        "refs": "Exodus 36:37–38"
+                    }
+                ],
                 "text": "For the entrance to the tent, you are to make a curtain embroidered with blue, purple, and scarlet yarn, and finely spun linen."
             }
         },

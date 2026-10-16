@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Living Stone and Chosen People",
+                        "refs": "Isaiah 28:14–22; 1 Corinthians 3:10–15; Ephesians 2:19–22"
+                    }
+                ],
                 "text": "Rid yourselves, therefore, of all malice, deceit, hypocrisy, envy, and slander."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Submission to Authorities",
+                        "refs": "Romans 13:1–7"
+                    }
+                ],
                 "text": "Submit yourselves for the Lord’s sake to every human institution, whether to the king as the supreme authority,"
             }
         },
@@ -246,6 +260,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ’s Example of Suffering",
+                        "refs": "Isaiah 53:1–8"
+                    }
+                ],
                 "text": "For to this you were called, because Christ also suffered for you, leaving you an example, that you should follow in His footsteps:"
             }
         },

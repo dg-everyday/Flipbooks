@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Leper’s Prayer",
+                        "refs": "Leviticus 14:1–32; Mark 1:40–45; Luke 5:12–16"
+                    }
+                ],
                 "text": "When Jesus came down from the mountain, large crowds followed Him."
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of the Centurion",
+                        "refs": "Luke 7:1–10; John 4:43–54"
+                    }
+                ],
                 "text": "When Jesus had entered Capernaum, a centurion came and pleaded with Him,"
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals at Peter’s House",
+                        "refs": "Mark 1:29–34; Luke 4:38–41"
+                    }
+                ],
                 "text": "When Jesus arrived at Peter’s house, He saw Peter’s mother-in-law sick in bed with a fever."
             }
         },
@@ -210,6 +231,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cost of Discipleship",
+                        "refs": "Luke 9:57–62; Luke 14:25–33; John 6:59–66"
+                    }
+                ],
                 "text": "When Jesus saw a large crowd around Him, He gave orders to cross to the other side of the sea."
             }
         },
@@ -270,6 +298,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Calms the Storm",
+                        "refs": "Psalms 107:1–43; Mark 4:35–41; Luke 8:22–25"
+                    }
+                ],
                 "text": "When He got into the boat, His disciples followed Him."
             }
         },
@@ -330,6 +365,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Demons and the Pigs",
+                        "refs": "Mark 5:1–20; Luke 8:26–39"
+                    }
+                ],
                 "text": "When Jesus arrived on the other side in the region of the Gadarenes, He was met by two demon-possessed men coming from the tombs. They were so violent that no one could pass that way."
             }
         },

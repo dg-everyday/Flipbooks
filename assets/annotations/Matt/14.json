@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Beheading of John",
+                        "refs": "Mark 6:14–29; Luke 9:7–9"
+                    }
+                ],
                 "text": "At that time Herod the tetrarch heard the reports about Jesus"
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feeding of the Five Thousand",
+                        "refs": "Mark 6:30–44; Luke 9:10–17; John 6:1–15"
+                    }
+                ],
                 "text": "When Jesus heard about John, He withdrew by boat privately to a solitary place. But the crowds found out about it and followed Him on foot from the towns."
             }
         },
@@ -258,6 +272,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Walks on Water",
+                        "refs": "Mark 6:45–52; John 6:16–21"
+                    }
+                ],
                 "text": "Immediately Jesus made the disciples get into the boat and go on ahead of Him to the other side, while He dismissed the crowds."
             }
         },
@@ -402,6 +423,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals at Gennesaret",
+                        "refs": "Mark 6:53–56"
+                    }
+                ],
                 "text": "When they had crossed over, they landed at Gennesaret."
             }
         },

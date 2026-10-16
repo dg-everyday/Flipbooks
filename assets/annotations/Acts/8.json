@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Persecutes the Church"
+                    }
+                ],
                 "text": "And Saul was there, giving approval to Stephen’s death. On that day a great persecution broke out against the church in Jerusalem, and all except the apostles were scattered throughout Judea and Samaria."
             }
         },
@@ -42,6 +48,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Philip in Samaria"
+                    }
+                ],
                 "text": "Those who had been scattered preached the word wherever they went."
             }
         },
@@ -102,6 +114,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Simon the Sorcerer",
+                        "refs": "Deuteronomy 18:9–14"
+                    }
+                ],
                 "text": "Prior to that time, a man named Simon had practiced sorcery in the city and astounded the people of Samaria. He claimed to be someone great,"
             }
         },
@@ -306,6 +325,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Philip and the Ethiopian",
+                        "refs": "Isaiah 53:1–8"
+                    }
+                ],
                 "text": "Now an angel of the Lord said to Philip, “Get up and go south to the desert road that goes down from Jerusalem to Gaza.”"
             }
         },

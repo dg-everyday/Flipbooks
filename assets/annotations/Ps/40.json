@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Waited Patiently for the LORD",
+                        "refs": "Psalms 70:1–5; Hebrews 10:1–18"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "I waited patiently for the LORD; He inclined to me and heard my cry."
             }

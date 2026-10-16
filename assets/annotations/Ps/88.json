@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Cry Out before You"
+                    }
+                ],
                 "title": "A song. A Psalm of the sons of Korah. For the choirmaster. According to Mahalath Leannoth. A Maskil of Heman the Ezrahite.",
                 "text": "O LORD, the God of my salvation, day and night I cry out before You."
             }

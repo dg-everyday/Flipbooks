@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Law of Liberty",
+                        "refs": "Matthew 7:1–6; Luke 6:37–42"
+                    }
+                ],
                 "text": "Accept him whose faith is weak, without passing judgment on his opinions."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Law of Love",
+                        "refs": "Ezekiel 14:1–11; 1 Corinthians 8:1–13"
+                    }
+                ],
                 "text": "Therefore let us stop judging one another. Instead, make up your mind not to put any stumbling block or obstacle in your brother’s way."
             }
         },

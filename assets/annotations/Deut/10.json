@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "New Stone Tablets",
+                        "refs": "Exodus 34:1–9"
+                    }
+                ],
                 "text": "At that time the LORD said to me, “Chisel out two stone tablets like the originals, come up to Me on the mountain, and make an ark of wood."
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Obedience",
+                        "refs": "Joshua 24:14–28"
+                    }
+                ],
                 "text": "And now, O Israel, what does the LORD your God ask of you but to fear the LORD your God by walking in all His ways, to love Him, to serve the LORD your God with all your heart and with all your soul,"
             }
         },

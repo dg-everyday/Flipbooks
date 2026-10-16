@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sing to the LORD, All the Earth",
+                        "refs": "1 Chronicles 16:23–36"
+                    }
+                ],
                 "text": "Sing to the LORD a new song; sing to the LORD, all the earth."
             }
         },

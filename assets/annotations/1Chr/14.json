@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Family Grows",
+                        "refs": "2 Samuel 5:12–16"
+                    }
+                ],
                 "text": "Now Hiram king of Tyre sent envoys to David, along with cedar logs, stonemasons, and carpenters, to build a palace for him."
             }
         },
@@ -74,6 +81,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Two Victories over the Philistines",
+                        "refs": "2 Samuel 5:17–25"
+                    }
+                ],
                 "text": "When the Philistines heard that David had been anointed king over all Israel, they all went in search of him; but David learned of this and went out to face them."
             }
         },

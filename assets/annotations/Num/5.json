@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cleansing the Camps",
+                        "refs": "Leviticus 13:1–46"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restitution for Trespasses",
+                        "refs": "Luke 19:1–10"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -126,6 +140,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Adultery Test"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

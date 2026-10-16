@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Chosen as King"
+                    }
+                ],
                 "text": "Now there was a Benjamite, a powerful man, whose name was Kish son of Abiel, the son of Zeror, the son of Becorath, the son of Aphiah of Benjamin."
             }
         },

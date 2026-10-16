@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abishag Cares for David"
+                    }
+                ],
                 "text": "Now King David was old and well along in years, and though they covered him with blankets, he could not keep warm."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Adonijah Usurps the Kingdom"
+                    }
+                ],
                 "text": "At that time Adonijah, David’s son by Haggith, began to exalt himself, saying, “I will be king!” And he acquired chariots and horsemen and fifty men to run ahead of him."
             }
         },
@@ -126,6 +138,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nathan and Bathsheba before David"
+                    }
+                ],
                 "text": "Then Nathan said to Bathsheba the mother of Solomon, “Have you not heard that Adonijah son of Haggith has become king, and our lord David does not know it?"
             }
         },
@@ -330,6 +348,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Renews His Oath to Bathsheba"
+                    }
+                ],
                 "text": "Then King David said, “Call in Bathsheba for me.” So she came into the king’s presence and stood before him."
             }
         },
@@ -378,6 +402,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon Anointed King",
+                        "refs": "1 Chronicles 29:21–25"
+                    }
+                ],
                 "text": "Then King David said, “Call in for me Zadok the priest, Nathan the prophet, and Benaiah son of Jehoiada.” So they came before the king."
             }
         },
@@ -486,6 +517,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Adonijah Learns of Solomon’s Kingship"
+                    }
+                ],
                 "text": "Now Adonijah and all his guests were finishing their feast when they heard the sound of the ram’s horn. “Why is the city in such a loud uproar?” asked Joab."
             }
         },

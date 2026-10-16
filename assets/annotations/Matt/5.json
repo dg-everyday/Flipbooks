@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sermon on the Mount"
+                    }
+                ],
                 "text": "When Jesus saw the crowds, He went up on the mountain and sat down. His disciples came to Him,"
             }
         },
@@ -30,6 +36,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Beatitudes",
+                        "refs": "Psalms 1:1–6; Luke 6:20–23"
+                    }
+                ],
                 "text": "“Blessed are the poor in spirit, for theirs is the kingdom of heaven."
             }
         },
@@ -150,6 +163,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Salt and Light",
+                        "refs": "Mark 9:49–50; Luke 14:34–35; Philippians 2:12–18"
+                    }
+                ],
                 "text": "You are the salt of the earth. But if the salt loses its savor, how can it be made salty again? It is no longer good for anything, except to be thrown out and trampled by men."
             }
         },
@@ -198,6 +218,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fulfillment of the Law"
+                    }
+                ],
                 "text": "Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them."
             }
         },
@@ -246,6 +272,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Anger and Reconciliation",
+                        "refs": "Luke 12:57–59"
+                    }
+                ],
                 "text": "You have heard that it was said to the ancients, ‘Do not murder’ and ‘Anyone who murders will be subject to judgment.’"
             }
         },
@@ -318,6 +351,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Adultery",
+                        "refs": "Leviticus 18:1–30"
+                    }
+                ],
                 "text": "You have heard that it was said, ‘Do not commit adultery.’"
             }
         },
@@ -366,6 +406,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Divorce",
+                        "refs": "Deuteronomy 24:1–5; Luke 16:18"
+                    }
+                ],
                 "text": "It has also been said, ‘Whoever divorces his wife must give her a certificate of divorce.’"
             }
         },
@@ -390,6 +437,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Oaths and Vows",
+                        "refs": "Numbers 30:1–16"
+                    }
+                ],
                 "text": "Again, you have heard that it was said to the ancients, ‘Do not break your oath, but fulfill your vows to the Lord.’"
             }
         },
@@ -450,6 +504,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Love Your Enemies",
+                        "refs": "Leviticus 24:17–23; Luke 6:27–36"
+                    }
+                ],
                 "text": "You have heard that it was said, ‘Eye for eye and tooth for tooth.’"
             }
         },

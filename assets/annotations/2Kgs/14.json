@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Amaziah Reigns in Judah",
+                        "refs": "2 Chronicles 25:1–4"
+                    }
+                ],
                 "text": "In the second year of the reign of Jehoash son of Jehoahaz over Israel, Amaziah son of Joash became king of Judah."
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoash Defeats Amaziah",
+                        "refs": "2 Chronicles 25:17–24"
+                    }
+                ],
                 "text": "Then Amaziah sent messengers to the king of Israel Jehoash son of Jehoahaz, the son of Jehu. “Come, let us meet face to face,” he said."
             }
         },
@@ -174,6 +188,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeroboam II Succeeds Jehoash in Israel"
+                    }
+                ],
                 "text": "As for the rest of the acts of Jehoash, along with his accomplishments, his might, and how he waged war against Amaziah king of Judah, are they not written in the Book of the Chronicles of the Kings of Israel?"
             }
         },
@@ -198,6 +218,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Amaziah",
+                        "refs": "2 Chronicles 25:25–28"
+                    }
+                ],
                 "text": "Amaziah son of Joash king of Judah lived for fifteen years after the death of Jehoash son of Jehoahaz king of Israel."
             }
         },
@@ -246,6 +273,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Azariah Succeeds Amaziah in Judah",
+                        "refs": "2 Chronicles 26:1–2"
+                    }
+                ],
                 "text": "Then all the people of Judah took Azariah, who was sixteen years old, and made him king in place of his father Amaziah."
             }
         },
@@ -270,6 +304,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeroboam II Reigns in Israel"
+                    }
+                ],
                 "text": "In the fifteenth year of the reign of Amaziah son of Joash over Judah, Jeroboam son of Jehoash became king of Israel, and he reigned in Samaria forty-one years."
             }
         },

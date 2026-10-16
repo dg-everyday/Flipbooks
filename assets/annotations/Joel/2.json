@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Army of Locusts",
+                        "refs": "Amos 7:1–9"
+                    }
+                ],
                 "text": "Blow the ram’s horn in Zion; sound the alarm on My holy mountain! Let all who dwell in the land tremble, for the Day of the LORD is coming; indeed, it is near—"
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Return with All Your Heart"
+                    }
+                ],
                 "text": "“Yet even now,” declares the LORD, “return to Me with all your heart, with fasting, weeping, and mourning.”"
             }
         },
@@ -210,6 +223,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restoration Promised"
+                    }
+                ],
                 "text": "Then the LORD became jealous for His land, and He spared His people."
             }
         },
@@ -330,6 +349,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Pour Out My Spirit",
+                        "refs": "Acts 2:14–36"
+                    }
+                ],
                 "text": "And afterward, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your old men will dream dreams, your young men will see visions."
             }
         },

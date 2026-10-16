@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The List of Returning Exiles",
+                        "refs": "Nehemiah 7:4–69"
+                    }
+                ],
                 "text": "Now these are the people of the province who came up from the captivity of the exiles carried away to Babylon by Nebuchadnezzar its king. They returned to Jerusalem and Judah, each to his own town,"
             }
         },
@@ -610,6 +617,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings by the Exiles",
+                        "refs": "Exodus 38:21–31; Nehemiah 7:70–73"
+                    }
+                ],
                 "text": "When they arrived at the house of the LORD in Jerusalem, some of the heads of the families gave freewill offerings to rebuild the house of God on its original site."
             }
         },

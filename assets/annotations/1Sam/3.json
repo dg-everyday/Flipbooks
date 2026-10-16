@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Calls Samuel"
+                    }
+                ],
                 "text": "And the boy Samuel ministered to the LORD before Eli. Now in those days the word of the LORD was rare, and visions were scarce."
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samuel Shares the Vision"
+                    }
+                ],
                 "text": "Samuel lay down until the morning; then he opened the doors of the house of the LORD. He was afraid to tell Eli the vision,"
             }
         },

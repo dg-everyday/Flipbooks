@@ -6,6 +6,17 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 0,
+                        "title": "BOOK IV",
+                        "refs": "Psalms 90—106"
+                    },
+                    {
+                        "level": 1,
+                        "title": "From Everlasting to Everlasting"
+                    }
+                ],
                 "title": "A prayer of Moses the man of God.",
                 "text": "Lord, You have been our dwelling place through all generations."
             }

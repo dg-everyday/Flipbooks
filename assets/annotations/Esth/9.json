@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Jews Destroy Their Enemies"
+                    }
+                ],
                 "text": "On the thirteenth day of the twelfth month, the month of Adar, the king’s command and edict were to be executed. On this day the enemies of the Jews had hoped to overpower them, but their plan was overturned and the Jews overpowered those who hated them."
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Haman’s Sons Hanged"
+                    }
+                ],
                 "text": "On that day the number of those killed in the citadel of Susa was reported to the king,"
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Purim Instituted"
+                    }
+                ],
                 "text": "The Jews in Susa, however, had assembled on the thirteenth and the fourteenth days of the month. So they rested on the fifteenth day, making it a day of feasting and joy."
             }
         },

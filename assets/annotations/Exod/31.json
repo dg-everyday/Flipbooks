@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Bezalel and Oholiab",
+                        "refs": "Exodus 35:30–35"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sign of the Sabbath",
+                        "refs": "Numbers 15:32–36"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -210,6 +224,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Receives the Tablets"
+                    }
+                ],
                 "text": "When the LORD had finished speaking with Moses on Mount Sinai, He gave him the two tablets of the Testimony, tablets of stone inscribed by the finger of God."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Freedom in Christ"
+                    }
+                ],
                 "text": "It is for freedom that Christ has set us free. Stand firm, then, and do not be encumbered once more by a yoke of slavery."
             }
         },
@@ -186,6 +192,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Walking by the Spirit",
+                        "refs": "Ezekiel 36:16–38; Romans 8:9–11"
+                    }
+                ],
                 "text": "So I say, walk by the Spirit, and you will not gratify the desires of the flesh."
             }
         },

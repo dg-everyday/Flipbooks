@@ -6,6 +6,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bride and Her Beloved"
+                    },
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "I have come to my garden, my sister, my bride; I have gathered my myrrh with my spice. I have eaten my honeycomb with my honey; I have drunk my wine with my milk. Eat, O friends, and drink; drink freely, O beloved."
             }
         },
@@ -18,6 +28,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    },
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "I sleep, but my heart is awake. A sound! My beloved is knocking: “Open to me, my sister, my darling, my dove, my flawless one. My head is drenched with dew, my hair with the dampness of the night.”"
             }
         },
@@ -102,6 +122,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "How is your beloved better than others, O most beautiful among women? How is your beloved better than another, that you charge us so?"
             }
         },
@@ -114,6 +140,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "My beloved is dazzling and ruddy, outstanding among ten thousand."
             }
         },

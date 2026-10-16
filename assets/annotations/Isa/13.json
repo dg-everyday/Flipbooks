@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burden against Babylon"
+                    }
+                ],
                 "text": "This is the burden against Babylon that Isaiah son of Amoz received:"
             }
         },

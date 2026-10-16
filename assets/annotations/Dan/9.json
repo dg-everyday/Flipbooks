@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Prayer for His People"
+                    }
+                ],
                 "text": "In the first year of Darius son of Xerxes, a Mede by descent, who was made ruler over the kingdom of the Chaldeans—"
             }
         },
@@ -234,6 +240,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gabriel’s Prophecy of the Seventy Weeks"
+                    }
+                ],
                 "text": "While I was speaking, praying, confessing my sin and that of my people Israel, and presenting my petition before the LORD my God concerning His holy mountain—"
             }
         },

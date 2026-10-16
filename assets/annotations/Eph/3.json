@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mystery of the Gospel"
+                    }
+                ],
                 "text": "For this reason I, Paul, the prisoner of Christ Jesus for the sake of you Gentiles..."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Prayer for the Ephesians"
+                    }
+                ],
                 "text": "... for this reason I bow my knees before the Father,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoram Reigns in Judah",
+                        "refs": "2 Kings 8:16–19"
+                    }
+                ],
                 "text": "And Jehoshaphat rested with his fathers and was buried with them in the City of David. And his son Jehoram reigned in his place."
             }
         },
@@ -86,6 +93,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Edom and Libnah Rebel",
+                        "refs": "2 Kings 8:20–24"
+                    }
+                ],
                 "text": "In the days of Jehoram, Edom rebelled against the hand of Judah and appointed their own king."
             }
         },
@@ -126,6 +140,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah’s Letter to Jehoram"
+                    }
+                ],
                 "text": "Then a letter came to Jehoram from Elijah the prophet, which stated: “This is what the LORD, the God of your father David, says: ‘You have not walked in the ways of your father Jehoshaphat or of Asa king of Judah,"
             }
         },
@@ -174,6 +194,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoram’s Disease and Death"
+                    }
+                ],
                 "text": "Then the LORD stirred against Jehoram the spirit of the Philistines and Arabs who lived near the Cushites."
             }
         },

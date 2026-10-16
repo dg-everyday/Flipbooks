@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day of Trouble"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "May the LORD answer you in the day of trouble; may the name of the God of Jacob protect you."
             }

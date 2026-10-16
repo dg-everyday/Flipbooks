@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "How Many Are Your Works, O LORD!"
+                    }
+                ],
                 "text": "Bless the LORD, O my soul! O LORD my God, You are very great; You are clothed with splendor and majesty."
             }
         },

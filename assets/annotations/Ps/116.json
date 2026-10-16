@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Has Heard My Voice"
+                    }
+                ],
                 "text": "I love the LORD, for He has heard my voice—my appeal for mercy."
             }
         },

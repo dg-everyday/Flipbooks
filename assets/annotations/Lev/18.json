@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Unlawful Sexual Relations",
+                        "refs": "Matthew 5:27–30"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

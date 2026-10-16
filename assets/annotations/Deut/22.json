@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Various Laws"
+                    }
+                ],
                 "text": "If you see your brother’s ox or sheep straying, you must not ignore it; be sure to return it to your brother."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Marriage Violations"
+                    }
+                ],
                 "text": "Suppose a man marries a woman, has relations with her, and comes to hate her,"
             }
         },

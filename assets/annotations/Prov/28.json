@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Boldness of the Righteous"
+                    }
+                ],
                 "text": "The wicked flee when no one pursues, but the righteous are as bold as a lion."
             }
         },

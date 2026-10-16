@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mighty Men Join David at Ziklag"
+                    }
+                ],
                 "text": "Now these were the men who came to David at Ziklag, while he was still banished from the presence of Saul son of Kish (they were among the mighty men who helped him in battle;"
             }
         },
@@ -254,6 +260,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Army Grows at Hebron"
+                    }
+                ],
                 "text": "Now these are the numbers of men armed for battle who came to David at Hebron to turn Saul’s kingdom over to him, in accordance with the word of the LORD:"
             }
         },

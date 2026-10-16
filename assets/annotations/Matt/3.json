@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mission of John the Baptist",
+                        "refs": "Isaiah 40:1–5; Mark 1:1–8; Luke 3:1–20; John 1:19–28"
+                    }
+                ],
                 "text": "In those days John the Baptist came, preaching in the wilderness of Judea"
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Baptism of Jesus",
+                        "refs": "Mark 1:9–11; Luke 3:21–22; John 1:29–34"
+                    }
+                ],
                 "text": "At that time Jesus came from Galilee to the Jordan to be baptized by John."
             }
         },

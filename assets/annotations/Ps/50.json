@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mighty One Calls"
+                    }
+                ],
                 "title": "A Psalm of Asaph.",
                 "text": "The Mighty One, God the LORD, speaks and summons the earth from where the sun rises to where it sets."
             }

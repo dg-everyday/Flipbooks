@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Deliverance for Jerusalem"
+                    }
+                ],
                 "text": "Awake, awake, clothe yourself with strength, O Zion! Put on your garments of splendor, O Jerusalem, holy city! For the uncircumcised and unclean will no longer enter you."
             }
         },
@@ -150,6 +156,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Servant Exalted",
+                        "refs": "Philippians 2:5–11"
+                    }
+                ],
                 "text": "Behold, My Servant will prosper; He will be raised and lifted up and highly exalted."
             }
         },

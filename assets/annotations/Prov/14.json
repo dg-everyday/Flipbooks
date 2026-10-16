@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wise Woman"
+                    }
+                ],
                 "text": "Every wise woman builds her house, but a foolish one tears it down with her own hands."
             }
         },

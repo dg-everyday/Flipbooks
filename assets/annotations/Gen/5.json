@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Adam",
+                        "refs": "1 Chronicles 1:1–3"
+                    }
+                ],
                 "text": "This is the book of the generations of Adam. In the day that God created man, He made him in His own likeness."
             }
         },
@@ -210,6 +217,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Takes Up Enoch",
+                        "refs": "Hebrews 11:5"
+                    }
+                ],
                 "text": "When Jared was 162 years old, he became the father of Enoch."
             }
         },
@@ -294,6 +308,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "From Methuselah to Noah"
+                    }
+                ],
                 "text": "When Methuselah was 187 years old, he became the father of Lamech."
             }
         },

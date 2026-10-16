@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezekiel the Watchman for Israel"
+                    }
+                ],
                 "text": "Again the word of the LORD came to me, saying,"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Message of the Watchman"
+                    }
+                ],
                 "text": "Now as for you, son of man, tell the house of Israel that this is what they have said: ‘Our transgressions and our sins are heavy upon us, and we are wasting away because of them! How can we live?’"
             }
         },
@@ -246,6 +258,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Word of Jerusalem’s Fall"
+                    }
+                ],
                 "text": "In the twelfth year of our exile, on the fifth day of the tenth month, a fugitive from Jerusalem came to me and reported, “The city has been taken!”"
             }
         },

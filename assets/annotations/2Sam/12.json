@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nathan Rebukes David",
+                        "refs": "Psalms 51:1–19"
+                    }
+                ],
                 "text": "Then the LORD sent Nathan to David, and when he arrived, he said, “There were two men in a certain city, one rich and the other poor."
             }
         },
@@ -150,6 +157,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Loss and Repentance"
+                    }
+                ],
                 "text": "Then David said to Nathan, “I have sinned against the LORD.” “The LORD has taken away your sin,” Nathan replied. “You will not die."
             }
         },
@@ -282,6 +295,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Birth"
+                    }
+                ],
                 "text": "Then David comforted his wife Bathsheba, and he went to her and lay with her. So she gave birth to a son, and they named him Solomon. Now the LORD loved the child"
             }
         },
@@ -306,6 +325,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Capture of Rabbah",
+                        "refs": "1 Chronicles 20:1–3"
+                    }
+                ],
                 "text": "Meanwhile, Joab fought against Rabbah of the Ammonites and captured the royal fortress."
             }
         },

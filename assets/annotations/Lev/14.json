@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cleansing from Skin Diseases",
+                        "refs": "Matthew 8:1–4; Mark 1:40–45; Luke 5:12–16"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -390,6 +397,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Signs of Home Contamination"
+                    }
+                ],
                 "text": "Then the LORD said to Moses and Aaron,"
             }
         },
@@ -570,6 +583,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cleansing a Home"
+                    }
+                ],
                 "text": "If, however, the priest comes and inspects it, and the mildew has not spread after the house has been replastered, he shall pronounce the house clean, because the mildew is gone."
             }
         },

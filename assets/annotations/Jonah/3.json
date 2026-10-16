@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ninevites Repent",
+                        "refs": "Matthew 12:38–42; Luke 11:29–32"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Jonah a second time:"
             }
         },

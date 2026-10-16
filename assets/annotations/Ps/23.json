@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Is My Shepherd",
+                        "refs": "Ezekiel 34:11–24; John 10:1–21"
+                    }
+                ],
                 "title": "A Psalm of David.",
                 "text": "The LORD is my shepherd; I shall not want."
             }

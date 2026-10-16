@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Humbles Himself before the LORD"
+                    }
+                ],
                 "text": "And the LORD said to Job:"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Challenges Job Again"
+                    }
+                ],
                 "text": "Then the LORD answered Job out of the whirlwind and said:"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant of the Rainbow"
+                    }
+                ],
                 "text": "And God blessed Noah and his sons and said to them, “Be fruitful and multiply and fill the earth."
             }
         },
@@ -210,6 +216,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Noah’s Shame and Canaan’s Curse"
+                    }
+                ],
                 "text": "The sons of Noah who came out of the ark were Shem, Ham, and Japheth. And Ham was the father of Canaan."
             }
         },
@@ -306,6 +318,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shem’s Blessing and Noah’s Death"
+                    }
+                ],
                 "text": "He also declared: “Blessed be the LORD, the God of Shem! May Canaan be the servant of Shem."
             }
         },

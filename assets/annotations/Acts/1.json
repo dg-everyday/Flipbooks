@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prologue",
+                        "refs": "Luke 1:1–4"
+                    }
+                ],
                 "text": "In my first book, O Theophilus, I wrote about all that Jesus began to do and to teach,"
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ascension",
+                        "refs": "Mark 16:19–20; Luke 24:50–53"
+                    }
+                ],
                 "text": "So when they came together, they asked Him, “Lord, will You at this time restore the kingdom to Israel?”"
             }
         },
@@ -138,6 +152,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Matthias Replaces Judas"
+                    }
+                ],
                 "text": "Then they returned to Jerusalem from the Mount of Olives, which is near the city, a Sabbath day’s journey away."
             }
         },

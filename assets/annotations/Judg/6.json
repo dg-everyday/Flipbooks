@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Midian Oppresses Israel"
+                    }
+                ],
                 "text": "Again the Israelites did evil in the sight of the LORD; so He delivered them into the hand of Midian for seven years,"
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Call of Gideon"
+                    }
+                ],
                 "text": "Then the angel of the LORD came and sat down under the oak in Ophrah that belonged to Joash the Abiezrite, where his son Gideon was threshing wheat in a winepress to hide it from the Midianites."
             }
         },
@@ -294,6 +306,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gideon Destroys Baal’s Altar"
+                    }
+                ],
                 "text": "On that very night the LORD said to Gideon, “Take your father’s young bull and a second bull seven years old, tear down your father’s altar to Baal, and cut down the Asherah pole beside it."
             }
         },
@@ -390,6 +408,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sign of the Fleece"
+                    }
+                ],
                 "text": "Then all the Midianites, Amalekites, and other people of the east gathered together, crossed over the Jordan, and camped in the Valley of Jezreel."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings for the Tabernacle",
+                        "refs": "Exodus 35:4–9"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ark of the Covenant",
+                        "refs": "Exodus 37:1–5"
+                    }
+                ],
                 "text": "And they are to construct an ark of acacia wood, two and a half cubits long, a cubit and a half wide, and a cubit and a half high."
             }
         },
@@ -198,6 +212,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mercy Seat",
+                        "refs": "Exodus 37:6–9"
+                    }
+                ],
                 "text": "And you are to construct a mercy seat of pure gold, two and a half cubits long and a cubit and a half wide."
             }
         },
@@ -270,6 +291,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Table of Showbread",
+                        "refs": "Exodus 37:10–16; Leviticus 24:5–9"
+                    }
+                ],
                 "text": "You are also to make a table of acacia wood two cubits long, a cubit wide, and a cubit and a half high."
             }
         },
@@ -366,6 +394,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lampstand",
+                        "refs": "Exodus 37:17–24; Numbers 8:1–4"
+                    }
+                ],
                 "text": "Then you are to make a lampstand of pure, hammered gold. It shall be made of one piece, including its base and shaft, its cups, and its buds and petals."
             }
         },

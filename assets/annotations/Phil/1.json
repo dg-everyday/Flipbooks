@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Greetings from Paul and Timothy",
+                        "refs": "Colossians 1:1–2; Philemon 1:1–3"
+                    }
+                ],
                 "text": "Paul and Timothy, servants of Christ Jesus, To all the saints in Christ Jesus at Philippi, together with the overseers and deacons:"
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Thanksgiving and Prayer",
+                        "refs": "1 Corinthians 1:4–9; Colossians 1:3–14"
+                    }
+                ],
                 "text": "I thank my God every time I remember you."
             }
         },
@@ -138,6 +152,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Trials Advance the Gospel",
+                        "refs": "James 1:2–12"
+                    }
+                ],
                 "text": "Now I want you to know, brothers, that my circumstances have actually served to advance the gospel."
             }
         },
@@ -246,6 +267,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To Live Is Christ"
+                    }
+                ],
                 "text": "For to me, to live is Christ, and to die is gain."
             }
         },
@@ -318,6 +345,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Worthy of the Gospel"
+                    }
+                ],
                 "text": "Nevertheless, conduct yourselves in a manner worthy of the gospel of Christ. Then, whether I come and see you or only hear about you in my absence, I will know that you stand firm in one spirit, contending together as one for the faith of the gospel,"
             }
         },

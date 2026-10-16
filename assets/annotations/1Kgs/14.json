@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahijah’s Prophecy against Jeroboam"
+                    }
+                ],
                 "text": "At that time Abijah son of Jeroboam became ill,"
             }
         },
@@ -222,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nadab Succeeds Jeroboam"
+                    }
+                ],
                 "text": "As for the rest of the acts of Jeroboam, how he waged war and how he reigned, they are indeed written in the Book of the Chronicles of the Kings of Israel."
             }
         },
@@ -246,6 +258,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rehoboam Reigns in Judah",
+                        "refs": "2 Chronicles 12:13–14"
+                    }
+                ],
                 "text": "Meanwhile, Rehoboam son of Solomon reigned in Judah. He was forty-one years old when he became king, and he reigned seventeen years in Jerusalem, the city the LORD had chosen from all the tribes of Israel in which to put His Name. His mother’s name was Naamah the Ammonite."
             }
         },
@@ -294,6 +313,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shishak Raids Jerusalem",
+                        "refs": "2 Chronicles 12:1–12"
+                    }
+                ],
                 "text": "In the fifth year of Rehoboam’s reign, Shishak king of Egypt attacked Jerusalem."
             }
         },

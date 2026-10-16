@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Palace Complex"
+                    }
+                ],
                 "text": "Solomon, however, took thirteen years to complete the construction of his entire palace."
             }
         },
@@ -150,6 +156,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Pillars and Capitals",
+                        "refs": "2 Chronicles 3:14–17"
+                    }
+                ],
                 "text": "Now King Solomon sent to bring Huram from Tyre."
             }
         },
@@ -270,6 +283,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Molten Sea",
+                        "refs": "2 Chronicles 4:1–5"
+                    }
+                ],
                 "text": "He also made the Sea of cast metal. It was circular in shape, measuring ten cubits from rim to rim, five cubits in height, and thirty cubits in circumference."
             }
         },
@@ -318,6 +338,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Bronze Stands"
+                    }
+                ],
                 "text": "In addition, he made ten movable stands of bronze, each four cubits long, four cubits wide, and three cubits high."
             }
         },
@@ -450,6 +476,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Bronze Basins",
+                        "refs": "2 Chronicles 4:6–8"
+                    }
+                ],
                 "text": "He also made ten bronze basins, each holding forty baths and measuring four cubits across, one basin for each of the ten stands."
             }
         },
@@ -474,6 +507,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Completion of the Bronze Works",
+                        "refs": "2 Chronicles 4:11–18"
+                    }
+                ],
                 "text": "Additionally, Huram made the pots, shovels, and sprinkling bowls. So Huram finished all the work that he had undertaken for King Solomon in the house of the LORD:"
             }
         },
@@ -550,6 +590,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Completion of the Gold Furnishings",
+                        "refs": "2 Chronicles 4:19–22"
+                    }
+                ],
                 "text": "Solomon also made all the furnishings for the house of the LORD: the golden altar; the golden table on which was placed the Bread of the Presence;"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Benefits of Wisdom"
+                    }
+                ],
                 "text": "My son, if you accept my words and hide my commandments within you,"
             }
         },

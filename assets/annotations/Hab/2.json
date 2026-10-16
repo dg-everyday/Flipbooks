@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Answers Again"
+                    }
+                ],
                 "text": "I will stand at my guard post and station myself on the ramparts. I will watch to see what He will say to me, and how I should answer when corrected."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Woe to the Chaldeans"
+                    }
+                ],
                 "text": "Will not all of these take up a taunt against him, speaking with mockery and derision: ‘Woe to him who amasses what is not his and makes himself rich with many loans! How long will this go on?’"
             }
         },

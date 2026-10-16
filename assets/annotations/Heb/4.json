@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sabbath Rest",
+                        "refs": "Genesis 2:1–3; Exodus 16:22–30"
+                    }
+                ],
                 "text": "Therefore, while the promise of entering His rest still stands, let us be careful that none of you be deemed to have fallen short of it."
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Living Word",
+                        "refs": "2 Timothy 3:10–17"
+                    }
+                ],
                 "text": "For the word of God is living and active. Sharper than any double-edged sword, it pierces even to dividing soul and spirit, joints and marrow. It judges the thoughts and intentions of the heart."
             }
         },

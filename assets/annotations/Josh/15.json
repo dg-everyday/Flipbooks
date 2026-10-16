@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judah’s Inheritance"
+                    }
+                ],
                 "text": "Now the allotment for the clans of the tribe of Judah extended to the border of Edom, to the Wilderness of Zin at the extreme southern boundary:"
             }
         },
@@ -150,6 +156,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Caleb’s Portion and Conquest",
+                        "refs": "Judges 1:8–26"
+                    }
+                ],
                 "text": "According to the LORD’s command to him, Joshua gave Caleb son of Jephunneh a portion among the sons of Judah—Kiriath-arba, that is, Hebron. (Arba was the forefather of Anak.)"
             }
         },
@@ -234,6 +247,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cities of Judah"
+                    }
+                ],
                 "text": "This is the inheritance of the clans of the tribe of Judah."
             }
         },

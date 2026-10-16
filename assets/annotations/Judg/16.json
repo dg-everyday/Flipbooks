@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samson Escapes Gaza"
+                    }
+                ],
                 "text": "One day Samson went to Gaza, where he saw a prostitute and went in to spend the night with her."
             }
         },
@@ -42,6 +48,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samson and Delilah"
+                    }
+                ],
                 "text": "Some time later, Samson fell in love with a woman in the Valley of Sorek, whose name was Delilah."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Delilah Learns the Secret"
+                    }
+                ],
                 "text": "“How can you say, ‘I love you,’” she asked, “when your heart is not with me? This is the third time you have mocked me and failed to reveal to me the source of your great strength!”"
             }
         },
@@ -270,6 +288,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samson’s Vengeance and Death"
+                    }
+                ],
                 "text": "Now the lords of the Philistines gathered together to offer a great sacrifice to their god Dagon. They rejoiced and said, “Our god has delivered Samson our enemy into our hands.”"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Better Is One Day in Your Courts",
+                        "refs": "John 1:14–18"
+                    }
+                ],
                 "title": "For the choirmaster. According to Gittith. A Psalm of the sons of Korah.",
                 "text": "How lovely is Your dwelling place, O LORD of Hosts!"
             }

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Second Passover",
+                        "refs": "Exodus 12:1–13"
+                    }
+                ],
                 "text": "In the first month of the second year after Israel had come out of the land of Egypt, the LORD spoke to Moses in the Wilderness of Sinai:"
             }
         },
@@ -174,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cloud above the Tabernacle",
+                        "refs": "Exodus 40:34–38"
+                    }
+                ],
                 "text": "On the day that the tabernacle, the Tent of the Testimony, was set up, the cloud covered it and appeared like fire above the tabernacle from evening until morning."
             }
         },

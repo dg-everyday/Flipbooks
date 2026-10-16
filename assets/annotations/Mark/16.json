@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Resurrection",
+                        "refs": "Matthew 28:1–10; Luke 24:1–12; John 20:1–9"
+                    }
+                ],
                 "text": "When the Sabbath was over, Mary Magdalene, Mary the mother of James, and Salome bought spices so they could go and anoint the body of Jesus."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Appears to Mary Magdalene",
+                        "refs": "John 20:10–18"
+                    }
+                ],
                 "text": "Early on the first day of the week, after Jesus had risen, He appeared first to Mary Magdalene, from whom He had driven out seven demons."
             }
         },
@@ -138,6 +152,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Appears to Two Disciples",
+                        "refs": "Luke 24:13–35"
+                    }
+                ],
                 "text": "After this, Jesus appeared in a different form to two of them as they walked along in the country."
             }
         },
@@ -162,6 +183,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Great Commission",
+                        "refs": "Matthew 28:16–20"
+                    }
+                ],
                 "text": "Later, as they were eating, Jesus appeared to the Eleven and rebuked them for their unbelief and hardness of heart, because they did not believe those who had seen Him after He had risen."
             }
         },
@@ -222,6 +250,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ascension",
+                        "refs": "Luke 24:50–53; Acts 1:6–11"
+                    }
+                ],
                 "text": "After the Lord Jesus had spoken to them, He was taken up into heaven and sat down at the right hand of God."
             }
         },

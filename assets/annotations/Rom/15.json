@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Accept One Another"
+                    }
+                ],
                 "text": "We who are strong ought to bear with the shortcomings of the weak and not to please ourselves."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ the Servant of Jews and Gentiles"
+                    }
+                ],
                 "text": "Accept one another, then, just as Christ accepted you, in order to bring glory to God."
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul the Minister to the Gentiles"
+                    }
+                ],
                 "text": "I myself am convinced, my brothers, that you yourselves are full of goodness, brimming with knowledge, and able to instruct one another."
             }
         },
@@ -270,6 +288,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Travel Plans",
+                        "refs": "1 Corinthians 16:5–9"
+                    }
+                ],
                 "text": "But now that there are no further opportunities for me in these regions, and since I have longed for many years to visit you,"
             }
         },

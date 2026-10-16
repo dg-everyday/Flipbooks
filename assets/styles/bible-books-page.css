@@ -207,15 +207,46 @@
     padding: 0;
     list-style: none;
 }
-.outline li {
+/* Each part is a button that opens its chapters in the passage reader
+   (apps/components/passage-reader.js), with a red arrow to say so. */
+.outline-open {
     display: grid;
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 110px 1fr auto;
+    align-items: start;
     gap: 10px;
-    padding: 6px 10px;
+    width: 100%;
+    padding: 8px 10px;
     border-radius: 8px;
     background: #fff;
     border: 1px solid var(--line);
+    color: var(--ink);
+    font: inherit;
     font-size: 0.92rem;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.outline-open:hover {
+    border-color: var(--g);
+    box-shadow: 0 4px 12px rgb(16 37 59 / 8%);
+}
+.outline-open:focus-visible {
+    outline: 2px solid var(--g);
+    outline-offset: 2px;
+}
+.outline-arrow {
+    align-self: center;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 9px solid var(--action, #c62828);
+    transition: transform 0.15s ease;
+}
+.outline-open:hover .outline-arrow {
+    transform: translateX(2px);
 }
 .outline-range {
     font-weight: 700;
@@ -234,17 +265,30 @@
     .book-name {
         font-size: 1.2rem;
     }
-    .outline li {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .outline-open {
+        grid-template-columns: 1fr auto;
+        gap: 0 10px;
+    }
+    .outline-open .outline-range {
+        grid-column: 1;
+    }
+    .outline-open .outline-title {
+        grid-column: 1;
+    }
+    .outline-open .outline-arrow {
+        grid-column: 2;
+        grid-row: 1 / span 2;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .book-tile {
+    .book-tile,
+    .outline-open,
+    .outline-arrow {
         transition: none;
     }
-    .book-tile:hover {
+    .book-tile:hover,
+    .outline-open:hover .outline-arrow {
         transform: none;
     }
 }

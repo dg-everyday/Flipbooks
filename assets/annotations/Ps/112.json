@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Blessed Fear of the LORD",
+                        "refs": "Psalms 128:1–6"
+                    }
+                ],
                 "text": "Hallelujah! Blessed is the man who fears the LORD, who greatly delights in His commandments."
             }
         },

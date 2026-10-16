@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Throne in Heaven"
+                    }
+                ],
                 "text": "After this I looked and saw a door standing open in heaven. And the voice I had previously heard speak to me like a trumpet was saying, “Come up here, and I will show you what must happen after these things.”"
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Worship of the Creator"
+                    }
+                ],
                 "text": "From the throne came flashes of lightning, rumblings, and peals of thunder. Before the throne burned seven torches of fire. These are the seven spirits of God."
             }
         },

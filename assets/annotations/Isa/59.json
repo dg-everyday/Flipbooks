@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sin Separates Us from God",
+                        "refs": "Psalms 14:1–7; Psalms 53:1–6; Romans 3:9–20"
+                    }
+                ],
                 "text": "Surely the arm of the LORD is not too short to save, nor His ear too dull to hear."
             }
         },
@@ -210,6 +217,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant of the Redeemer"
+                    }
+                ],
                 "text": "So He will repay according to their deeds: fury to His enemies, retribution to His foes, and recompense to the islands."
             }
         },

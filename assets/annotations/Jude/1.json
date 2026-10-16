@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Greeting from Jude",
+                        "refs": "James 1:1"
+                    }
+                ],
                 "text": "Jude, a servant of Jesus Christ and a brother of James, To those who are called, loved by God the Father, and kept in Jesus Christ:"
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Judgment on the Ungodly",
+                        "refs": "2 Peter 3:1–7"
+                    }
+                ],
                 "text": "Beloved, although I made every effort to write to you about the salvation we share, I felt it necessary to write and urge you to contend earnestly for the faith entrusted once for all to the saints."
             }
         },
@@ -198,6 +212,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Persevere",
+                        "refs": "Hebrews 10:19–39; 2 Peter 3:1–7"
+                    }
+                ],
                 "text": "But you, beloved, remember what was foretold by the apostles of our Lord Jesus Christ"
             }
         },
@@ -282,6 +303,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Doxology",
+                        "refs": "Romans 16:25–27"
+                    }
+                ],
                 "text": "Now to Him who is able to keep you from stumbling and to present you unblemished in His glorious presence, with great joy—"
             }
         },

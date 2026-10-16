@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Loves the Gates of Zion"
+                    }
+                ],
                 "title": "A Psalm of the sons of Korah. A song.",
                 "text": "He has founded His city on the holy mountains."
             }

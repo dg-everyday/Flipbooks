@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Remainder Divided"
+                    }
+                ],
                 "text": "Then the whole congregation of Israel assembled at Shiloh and set up the Tent of Meeting there. And though the land was subdued before them,"
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Benjamin’s Inheritance"
+                    }
+                ],
                 "text": "The first lot came up for the clans of the tribe of Benjamin. Their allotted territory lay between the tribes of Judah and Joseph:"
             }
         },

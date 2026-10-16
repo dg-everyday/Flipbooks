@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offering Firstfruits and Tithes",
+                        "refs": "Leviticus 27:30–34; Deuteronomy 14:22–29; Nehemiah 13:10–14"
+                    }
+                ],
                 "text": "When you enter the land that the LORD your God is giving you as an inheritance, and you take possession of it and settle in it,"
             }
         },
@@ -186,6 +193,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Obey the LORD’s Commands"
+                    }
+                ],
                 "text": "The LORD your God commands you this day to follow these statutes and ordinances. You must be careful to follow them with all your heart and with all your soul."
             }
         },

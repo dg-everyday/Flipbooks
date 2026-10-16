@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoahaz Reigns in Israel"
+                    }
+                ],
                 "text": "In the twenty-third year of the reign of Joash son of Ahaziah over Judah, Jehoahaz son of Jehu became king of Israel, and he reigned in Samaria seventeen years."
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoash Reigns in Israel"
+                    }
+                ],
                 "text": "In the thirty-seventh year of the reign of Joash over Judah, Jehoash son of Jehoahaz became king of Israel in Samaria, and he reigned sixteen years."
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha’s Final Prophecy"
+                    }
+                ],
                 "text": "When Elisha had fallen sick with the illness from which he would die, Jehoash king of Israel came down to him and wept over him, saying, “My father, my father, the chariots and horsemen of Israel!”"
             }
         },

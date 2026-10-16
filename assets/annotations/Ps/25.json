@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To You I Lift Up My Soul"
+                    }
+                ],
                 "title": "Of David.",
                 "text": "To You, O LORD, I lift up my soul;"
             }

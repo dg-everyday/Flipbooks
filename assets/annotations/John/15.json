@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus the True Vine",
+                        "refs": "Isaiah 27:1–13"
+                    }
+                ],
                 "text": "“I am the true vine, and My Father is the keeper of the vineyard."
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "No Greater Love"
+                    }
+                ],
                 "text": "As the Father has loved Me, so have I loved you. Remain in My love."
             }
         },
@@ -210,6 +223,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Hatred of the World"
+                    }
+                ],
                 "text": "If the world hates you, understand that it hated Me first."
             }
         },

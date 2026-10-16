@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Provision for Priests and Levites",
+                        "refs": "1 Corinthians 9:1–18"
+                    }
+                ],
                 "text": "The Levitical priests—indeed the whole tribe of Levi—shall have no portion or inheritance with Israel. They are to eat the food offerings to the LORD; that is their inheritance."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sorcery Forbidden",
+                        "refs": "Acts 8:9–25"
+                    }
+                ],
                 "text": "When you enter the land that the LORD your God is giving you, do not imitate the detestable ways of the nations there."
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophet Like Moses",
+                        "refs": "Acts 3:11–26"
+                    }
+                ],
                 "text": "The LORD your God will raise up for you a prophet like me from among your brothers. You must listen to him."
             }
         },

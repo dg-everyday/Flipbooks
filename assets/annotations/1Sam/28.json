@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Philistines Gather against Israel"
+                    }
+                ],
                 "text": "Now in those days the Philistines gathered their forces for warfare against Israel. So Achish said to David, “You must understand that you and your men are to go out to battle with me.”"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul and the Medium of Endor"
+                    }
+                ],
                 "text": "Then Saul said to his servants, “Find me a woman who is a medium, so I can go and consult her.” “There is a medium at Endor,” his servants replied."
             }
         },

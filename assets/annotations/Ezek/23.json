@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Two Adulterous Sisters"
+                    }
+                ],
                 "text": "Again the word of the LORD came to me, saying,"
             }
         },
@@ -258,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Oholibah to Be Plagued"
+                    }
+                ],
                 "text": "Therefore, Oholibah, this is what the Lord GOD says: ‘I will incite your lovers against you, those from whom you turned away in disgust. And I will bring them against you from every side—"
             }
         },
@@ -426,6 +438,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Both Sisters"
+                    }
+                ],
                 "text": "Then the LORD said to me: “Son of man, will you pass judgment against Oholah and Oholibah? Then declare to them their abominations."
             }
         },

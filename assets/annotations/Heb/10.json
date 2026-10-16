@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ’s Perfect Sacrifice",
+                        "refs": "Psalms 40:1–17"
+                    }
+                ],
                 "text": "For the law is only a shadow of the good things to come, not the realities themselves. It can never, by the same sacrifices offered year after year, make perfect those who draw near to worship."
             }
         },
@@ -222,6 +229,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Persevere",
+                        "refs": "Jude 1:17–23"
+                    }
+                ],
                 "text": "Therefore, brothers, since we have confidence to enter the Most Holy Place by the blood of Jesus,"
             }
         },

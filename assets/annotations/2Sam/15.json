@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Absalom’s Conspiracy"
+                    }
+                ],
                 "text": "Some time later, Absalom provided for himself a chariot with horses and fifty men to run ahead of him."
             }
         },
@@ -150,6 +156,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Flees Jerusalem",
+                        "refs": "Psalms 3:1–8"
+                    }
+                ],
                 "text": "Then a messenger came to David and reported, “The hearts of the men of Israel are with Absalom.”"
             }
         },
@@ -354,6 +367,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Weeps at the Mount of Olives",
+                        "refs": "Psalms 63:1–11"
+                    }
+                ],
                 "text": "But David continued up the Mount of Olives, weeping as he went up. His head was covered, and he was walking barefoot. And all the people with him covered their heads and went up, weeping as they went."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Destruction of Edom",
+                        "refs": "Jeremiah 49:7–22"
+                    }
+                ],
                 "text": "This is the vision of Obadiah: This is what the Lord GOD says about Edom—We have heard a message from the LORD; an envoy has been sent among the nations to say, “Rise up, and let us go to battle against her!”—"
             }
         },
@@ -174,6 +181,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Deliverance of Israel"
+                    }
+                ],
                 "text": "For the Day of the LORD is near for all the nations. As you have done, it will be done to you; your recompense will return upon your own head."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Shunammite’s Land Restored"
+                    }
+                ],
                 "text": "Now Elisha had said to the woman whose son he had restored to life, “Arise, you and your household; go and live as a foreigner wherever you can. For the LORD has decreed that a seven-year famine will come to the land.”"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hazael Murders Ben-hadad"
+                    }
+                ],
                 "text": "Then Elisha came to Damascus while Ben-hadad king of Aram was sick, and the king was told, “The man of God has come here.”"
             }
         },
@@ -186,6 +198,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoram Reigns in Judah",
+                        "refs": "2 Chronicles 21:1–7"
+                    }
+                ],
                 "text": "In the fifth year of the reign of Joram son of Ahab over Israel, Jehoram son of Jehoshaphat succeeded his father as king of Judah."
             }
         },
@@ -234,6 +253,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Edom and Libnah Rebel",
+                        "refs": "2 Chronicles 21:8–11"
+                    }
+                ],
                 "text": "In the days of Jehoram, Edom rebelled against the hand of Judah and appointed their own king."
             }
         },
@@ -294,6 +320,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahaziah Reigns in Judah",
+                        "refs": "2 Chronicles 22:1–7"
+                    }
+                ],
                 "text": "In the twelfth year of the reign of Joram son of Ahab over Israel, Ahaziah son of Jehoram became king of Judah."
             }
         },

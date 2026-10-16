@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against Israel’s Shepherds"
+                    }
+                ],
                 "text": "Then the word of the LORD came to me, saying,"
             }
         },
@@ -126,6 +132,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Good Shepherd",
+                        "refs": "Psalms 23:1–6; John 10:1–21"
+                    }
+                ],
                 "text": "For this is what the Lord GOD says: ‘Behold, I Myself will search for My flock and seek them out."
             }
         },
@@ -294,6 +307,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant of Peace"
+                    }
+                ],
                 "text": "I will make with them a covenant of peace and rid the land of wild animals, so that they may dwell securely in the wilderness and sleep in the forest."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Righteous Judgment",
+                        "refs": "Psalms 75:1–10"
+                    }
+                ],
                 "text": "You, therefore, have no excuse, you who pass judgment on another. For on whatever grounds you judge the other, you are condemning yourself, because you who pass judgment do the same things."
             }
         },
@@ -198,6 +205,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Jews and the Law"
+                    }
+                ],
                 "text": "Now you, if you call yourself a Jew; if you rely on the law and boast in God;"
             }
         },

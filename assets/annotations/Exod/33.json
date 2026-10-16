@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Command to Leave Sinai",
+                        "refs": "Deuteronomy 1:1–8"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Leave this place, you and the people you brought up out of the land of Egypt, and go to the land that I promised to Abraham, Isaac, and Jacob when I said, ‘I will give it to your descendants.’"
             }
         },
@@ -78,6 +85,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tent of Meeting"
+                    }
+                ],
                 "text": "Now Moses used to take the tent and pitch it at a distance outside the camp. He called it the Tent of Meeting, and anyone inquiring of the LORD would go to the Tent of Meeting outside the camp."
             }
         },
@@ -138,6 +151,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Promise of God’s Presence"
+                    }
+                ],
                 "text": "Then Moses said to the LORD, “Look, You have been telling me, ‘Lead this people up,’ but You have not let me know whom You will send with me. Yet You have said, ‘I know you by name, and you have found favor in My sight.’"
             }
         },

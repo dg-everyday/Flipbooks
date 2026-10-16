@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Exiles Who Returned with Ezra"
+                    }
+                ],
                 "text": "These are the family heads and genealogical records of those who returned with me from Babylon during the reign of King Artaxerxes:"
             }
         },
@@ -130,6 +136,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezra Sends for the Levites"
+                    }
+                ],
                 "text": "Now I assembled these exiles at the canal that flows to Ahava, and we camped there three days. And when I searched among the people and priests, I found no Levites there."
             }
         },
@@ -202,6 +214,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Fasting for Protection"
+                    }
+                ],
                 "text": "And there by the Ahava Canal I proclaimed a fast, so that we might humble ourselves before our God and ask Him for a safe journey for us and our children, with all our possessions."
             }
         },
@@ -238,6 +256,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Priests to Guard the Offerings"
+                    }
+                ],
                 "text": "Then I set apart twelve of the leading priests, together with Sherebiah, Hashabiah, and ten of their brothers,"
             }
         },
@@ -334,6 +358,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Arrival in Jerusalem"
+                    }
+                ],
                 "text": "So we arrived at Jerusalem and rested there for three days."
             }
         },

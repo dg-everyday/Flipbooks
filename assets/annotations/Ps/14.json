@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fool Says There Is No God",
+                        "refs": "Psalms 53:1–6; Isaiah 59:1–17; Romans 3:9–20"
+                    }
+                ],
                 "title": "For the choirmaster. Of David.",
                 "text": "The fool says in his heart, “There is no God.” They are corrupt; their acts are vile. There is no one who does good."
             }

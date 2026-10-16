@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Judgment on the Earth"
+                    }
+                ],
                 "text": "Behold, the LORD lays waste the earth and leaves it in ruins. He will twist its surface and scatter its inhabitants—"
             }
         },

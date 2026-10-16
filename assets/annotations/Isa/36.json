@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sennacherib Threatens Jerusalem",
+                        "refs": "2 Kings 18:13–37; 2 Chronicles 32:1–8"
+                    }
+                ],
                 "text": "In the fourteenth year of Hezekiah’s reign, Sennacherib king of Assyria attacked and captured all the fortified cities of Judah."
             }
         },

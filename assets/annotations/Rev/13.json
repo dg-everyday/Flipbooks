@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Beast from the Sea",
+                        "refs": "Daniel 7:1–8"
+                    }
+                ],
                 "text": "Then I saw a beast with ten horns and seven heads rising out of the sea. There were ten royal crowns on its horns and blasphemous names on its heads."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Beast from the Earth"
+                    }
+                ],
                 "text": "Then I saw another beast rising out of the earth. This beast had two horns like a lamb, but spoke like a dragon."
             }
         },
@@ -186,6 +199,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mark of the Beast"
+                    }
+                ],
                 "text": "And the second beast required all people, small and great, rich and poor, free and slave, to receive a mark on their right hand or on their forehead,"
             }
         },

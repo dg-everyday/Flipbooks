@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Twenty-Four Divisions of Priests"
+                    }
+                ],
                 "text": "These were the divisions of the descendants of Aaron. The sons of Aaron were Nadab, Abihu, Eleazar, and Ithamar."
             }
         },
@@ -190,6 +196,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rest of the Levites"
+                    }
+                ],
                 "text": "Now these were the rest of the descendants of Levi: From the sons of Amram: Shubael; from the sons of Shubael: Jehdeiah."
             }
         },

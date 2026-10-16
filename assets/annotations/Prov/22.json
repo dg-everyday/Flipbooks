@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Good Name"
+                    }
+                ],
                 "text": "A good name is more desirable than great riches; favor is better than silver and gold."
             }
         },
@@ -198,6 +204,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Thirty Sayings of the Wise"
+                    },
+                    {
+                        "level": 2,
+                        "title": "Saying 1"
+                    }
+                ],
                 "text": "Incline your ear and hear the words of the wise—apply your mind to my knowledge—"
             }
         },
@@ -258,6 +274,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 2"
+                    }
+                ],
                 "text": "Do not rob a poor man because he is poor, and do not crush the afflicted at the gate,"
             }
         },
@@ -282,6 +304,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 3"
+                    }
+                ],
                 "text": "Do not make friends with an angry man, and do not associate with a hot-tempered man,"
             }
         },
@@ -306,6 +334,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 4"
+                    }
+                ],
                 "text": "Do not be one who gives pledges, who puts up security for debts."
             }
         },
@@ -330,6 +364,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 5"
+                    }
+                ],
                 "text": "Do not move an ancient boundary stone which your fathers have placed."
             }
         },
@@ -342,6 +382,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 6"
+                    }
+                ],
                 "text": "Do you see a man skilled in his work? He will be stationed in the presence of kings; he will not stand before obscure men."
             }
         },

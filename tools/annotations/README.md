@@ -17,7 +17,11 @@ the `books` table (`Gen`, `Ps`, `John`, `1Sam`, …). Keys are verse numbers:
   "1": {
     "explanation": { "source": "jfb", "text": "Under a metaphor borrowed from scenes of pastoral life…" },
     "translations": {
-      "bsb": { "title": "A Psalm of David.", "text": "The LORD is my shepherd; I shall not want." }
+      "bsb": {
+        "headings": [ { "level": 1, "title": "The LORD Is My Shepherd", "refs": "Ezekiel 34:11–24; John 10:1–21" } ],
+        "title": "A Psalm of David.",
+        "text": "The LORD is my shepherd; I shall not want."
+      }
     },
     "interlinear": "The LORD/H3068 *is my shepherd/H7462 I shall not want/H2637"
   }
@@ -33,9 +37,19 @@ the `books` table (`Gen`, `Ps`, `John`, `1Sam`, …). Keys are verse numbers:
 - `translations.bsb.title` appears only on verse 1 of the 116 psalms that have
   a heading ("A Psalm of David."). The BSB prints it as part of verse 1; here
   it is kept apart, as the KJV verse 1 does not include it.
-- `interlinear` is the verse's KJV words with their Strong's numbers, for the
-  interlinear in the explanation popup: see `tools/strongs/README.md` for the
-  format. Every verse has one.
+- `translations.bsb.headings` lists the BSB section headings that stand
+  before the verse, in order (3,124 in all), for the BSB and Interlinear tabs
+  of the passage reader (`<passage-reader>`). `level` 1 is a section, 2 a
+  subsection, 0 a division of the Psalms ("Book I") and 3 a letter of Psalm
+  119's acrostic ("Aleph"). `refs`, when present, are the parallel passages
+  the BSB prints under the heading. A heading on a verse the BSB leaves out is
+  moved to the next verse.
+- `interlinear` is the verse's KJV words with their Strong's numbers: see
+  `tools/strongs/README.md` for the format. Every verse has one. No page shows
+  it at the moment: the explanation popup's interlinear, like the passage
+  reader's, now lays out the Hebrew or Greek in its own order, from
+  `assets/interlinear/` (`tools/interlinear/`). It is kept for showing which
+  KJV words translate each original word.
 - A verse with none of these is absent, and a chapter with none is `{}`. Every
   chapter has a file, so a fetch never 404s.
 
@@ -69,6 +83,9 @@ line for all 150 psalms.
   "verses": { "Gen": { "1": { "1": "In the beginning God created the heavens and the earth." } } } }
 ```
 
+The section headings are added to `bsb.json` as `headings` by
+`bsb_headings.py`, from the same USFM (see below).
+
 Wherever the app shows BSB text it must be labelled "BSB": the KJV stays the
 app's text, the BSB only helps readers understand it.
 
@@ -79,6 +96,17 @@ Files already cached are skipped.
 
 ```sh
 python tools/annotations/fetch_commentaries.py
+```
+
+## bsb_headings.py
+
+Reads the BSB USFM (the unzipped https://ebible.org/Scriptures/engbsb_usfm.zip,
+kept outside the repo) and writes its section headings into `bsb.json`, keyed
+book → chapter → verse. Run it before `build_annotations.py` when the BSB is
+updated.
+
+```sh
+python tools/annotations/bsb_headings.py <BSB USFM folder>
 ```
 
 ## build_annotations.py

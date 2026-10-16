@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Hardships and God’s Grace"
+                    }
+                ],
                 "text": "As God’s fellow workers, then, we urge you not to receive God’s grace in vain."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Be Unequally Yoked"
+                    }
+                ],
                 "text": "Do not be unequally yoked with unbelievers. For what partnership can righteousness have with wickedness? Or what fellowship does light have with darkness?"
             }
         },

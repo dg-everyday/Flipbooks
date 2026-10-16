@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Banquet",
+                        "refs": "Luke 14:15–24"
+                    }
+                ],
                 "text": "Once again, Jesus spoke to them in parables:"
             }
         },
@@ -174,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paying Taxes to Caesar",
+                        "refs": "Mark 12:13–17; Luke 20:19–26"
+                    }
+                ],
                 "text": "Then the Pharisees went out and conspired to trap Jesus in His words."
             }
         },
@@ -266,6 +280,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sadducees and the Resurrection",
+                        "refs": "Mark 12:18–27; Luke 20:27–40"
+                    }
+                ],
                 "text": "That same day the Sadducees, who say there is no resurrection, came to Jesus and questioned Him."
             }
         },
@@ -398,6 +419,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Greatest Commandment",
+                        "refs": "Deuteronomy 6:1–19; Mark 12:28–34"
+                    }
+                ],
                 "text": "And when the Pharisees heard that Jesus had silenced the Sadducees, they themselves gathered together."
             }
         },
@@ -482,6 +510,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Whose Son Is the Christ?",
+                        "refs": "Mark 12:35–37; Luke 20:41–44"
+                    }
+                ],
                 "text": "While the Pharisees were assembled, Jesus questioned them:"
             }
         },

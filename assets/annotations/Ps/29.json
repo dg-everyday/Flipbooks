@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ascribe Glory to the LORD"
+                    }
+                ],
                 "title": "A Psalm of David.",
                 "text": "Ascribe to the LORD, O heavenly beings, ascribe to the LORD glory and strength."
             }

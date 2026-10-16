@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ben-hadad Attacks Samaria"
+                    }
+                ],
                 "text": "Now Ben-hadad king of Aram assembled his entire army. Accompanied by thirty-two kings with their horses and chariots, he marched up, besieged Samaria, and waged war against it."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab Defeats Ben-hadad"
+                    }
+                ],
                 "text": "Meanwhile a prophet approached Ahab king of Israel and declared, “This is what the LORD says: ‘Do you see this entire great army? Behold, I will deliver it into your hand this very day, and you will know that I am the LORD.’”"
             }
         },
@@ -306,6 +318,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Another War with Ben-hadad"
+                    }
+                ],
                 "text": "In the spring, Ben-hadad mobilized the Arameans and went up to Aphek to fight against Israel."
             }
         },
@@ -366,6 +384,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab Spares Ben-hadad"
+                    }
+                ],
                 "text": "Then the servants of Ben-hadad said to him, “Look now, we have heard that the kings of the house of Israel are merciful. Let us go out to the king of Israel with sackcloth around our waists and ropes around our heads. Perhaps he will spare your life.”"
             }
         },
@@ -414,6 +438,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophet Reproves Ahab"
+                    }
+                ],
                 "text": "Meanwhile, by the word of the LORD, one of the sons of the prophets said to his companion, “Strike me, please!” But the man refused to strike him."
             }
         },

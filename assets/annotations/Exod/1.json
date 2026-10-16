@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Israelites Multiply in Egypt",
+                        "refs": "Genesis 46:7–27"
+                    }
+                ],
                 "text": "These are the names of the sons of Israel who went to Egypt with Jacob, each with his family:"
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Oppression by a New King",
+                        "refs": "Acts 7:15–19"
+                    }
+                ],
                 "text": "Then a new king, who did not know Joseph, came to power in Egypt."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Council at Jerusalem",
+                        "refs": "Acts 15:5–21"
+                    }
+                ],
                 "text": "Fourteen years later I went up again to Jerusalem, accompanied by Barnabas. I took Titus along also."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Confronts Cephas"
+                    }
+                ],
                 "text": "When Cephas came to Antioch, however, I opposed him to his face, because he stood condemned."
             }
         },

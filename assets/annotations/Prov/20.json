@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wine Is a Mocker"
+                    }
+                ],
                 "text": "Wine is a mocker, strong drink is a brawler, and whoever is led astray by them is not wise."
             }
         },

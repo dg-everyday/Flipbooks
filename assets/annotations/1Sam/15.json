@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul’s Disobedience"
+                    }
+                ],
                 "text": "Then Samuel said to Saul, “The LORD sent me to anoint you king over His people Israel. Now therefore, listen to the words of the LORD."
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samuel Denounces Saul"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Samuel, saying,"
             }
         },
@@ -282,6 +294,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul’s Confession"
+                    }
+                ],
                 "text": "Then Saul said to Samuel, “I have sinned; I have transgressed the LORD’s commandment and your instructions, because I feared the people and obeyed their voice."
             }
         },

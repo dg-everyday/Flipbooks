@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Great Flood",
+                        "refs": "2 Peter 3:1–7"
+                    }
+                ],
                 "text": "Then the LORD said to Noah, “Go into the ark, you and all your family, because I have found you righteous in this generation."
             }
         },

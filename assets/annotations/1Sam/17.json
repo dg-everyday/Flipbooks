@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Goliath’s Challenge"
+                    }
+                ],
                 "text": "Now the Philistines gathered their forces for war at Socoh in Judah, and they camped between Socoh and Azekah in Ephes-dammim."
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Accepts the Challenge"
+                    }
+                ],
                 "text": "Now David was the son of a man named Jesse, an Ephrathite from Bethlehem of Judah who had eight sons. And in the days of Saul, Jesse was old and well along in years."
             }
         },
@@ -450,6 +462,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Slays Goliath"
+                    }
+                ],
                 "text": "Then Saul clothed David in his own tunic, put a bronze helmet on his head, and dressed him in armor."
             }
         },

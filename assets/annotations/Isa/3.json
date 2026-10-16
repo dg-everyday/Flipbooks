@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Jerusalem and Judah"
+                    }
+                ],
                 "text": "For behold, the Lord GOD of Hosts is about to remove from Jerusalem and Judah both supply and support: the whole supply of food and water,"
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning to the Daughters of Zion"
+                    }
+                ],
                 "text": "The LORD also says: “Because the daughters of Zion are haughty—walking with heads held high and wanton eyes, prancing and skipping as they go, jingling the bracelets on their ankles—"
             }
         },

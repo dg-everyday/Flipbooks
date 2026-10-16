@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph Reveals His Identity"
+                    }
+                ],
                 "text": "Then Joseph could no longer control himself before all his attendants, and he cried out, “Send everyone away from me!” So none of them were with Joseph when he made himself known to his brothers."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph Sends for His Father"
+                    }
+                ],
                 "text": "Now return quickly to my father and tell him, ‘This is what your son Joseph says: God has made me lord of all Egypt. Come down to me without delay."
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Pharaoh Invites Jacob to Egypt"
+                    }
+                ],
                 "text": "When the news reached Pharaoh’s house that Joseph’s brothers had come, Pharaoh and his servants were pleased."
             }
         },
@@ -294,6 +312,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Revival of Jacob"
+                    }
+                ],
                 "text": "So the brothers went up out of Egypt and came to their father Jacob in the land of Canaan."
             }
         },

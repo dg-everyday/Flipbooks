@@ -6,6 +6,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Together in the Garden"
+                    },
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "Where has your beloved gone, O most beautiful among women? Which way has he turned? We will seek him with you."
             }
         },
@@ -18,6 +28,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "My beloved has gone down to his garden, to the beds of spices, to pasture his flock in the gardens and to gather lilies."
             }
         },
@@ -42,6 +58,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "You are as beautiful, my darling, as Tirzah, as lovely as Jerusalem, as majestic as troops with banners."
             }
         },
@@ -114,6 +136,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "Who is this who shines like the dawn, as fair as the moon, as bright as the sun, as majestic as the stars in procession?"
             }
         },
@@ -126,6 +154,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "I went down to the walnut grove to see the blossoms of the valley, to see if the vines were budding or the pomegranates were in bloom."
             }
         },
@@ -150,6 +184,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "Come back, come back, O Shulammite! Come back, come back, that we may gaze upon you. Why do you look at the Shulammite, as on the dance of Mahanaim?"
             }
         },

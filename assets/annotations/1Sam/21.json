@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Takes the Consecrated Bread",
+                        "refs": "Matthew 12:1–8; Mark 2:23–28; Luke 6:1–5"
+                    }
+                ],
                 "text": "Then David came to Nob, to Ahimelech the priest. And when Ahimelech met David, he trembled and asked him, “Why are you alone? Why is no one with you?”"
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Flees to Gath",
+                        "refs": "Psalms 34:1–22; Psalms 56:1–13"
+                    }
+                ],
                 "text": "Then David asked Ahimelech, “Is there not a spear or sword on hand here? For I have brought neither my sword nor my weapons with me, because the king’s mission was urgent.”"
             }
         },

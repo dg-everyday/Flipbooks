@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "How Lonely Lies the City!",
+                        "refs": "2 Kings 24:10–17"
+                    }
+                ],
                 "text": "How lonely lies the city, once so full of people! She who was great among the nations has become a widow. The princess of the provinces has become a slave."
             }
         },

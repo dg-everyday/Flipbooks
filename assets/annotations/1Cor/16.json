@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Collection for the Saints",
+                        "refs": "2 Corinthians 9:1–15"
+                    }
+                ],
                 "text": "Now about the collection for the saints, you are to do as I directed the churches of Galatia:"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Travel Plans",
+                        "refs": "Romans 15:23–33"
+                    }
+                ],
                 "text": "After I go through Macedonia, however, I will come to you; for I will be going through Macedonia."
             }
         },
@@ -114,6 +128,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Timothy and Apollos",
+                        "refs": "Philippians 2:19–30"
+                    }
+                ],
                 "text": "If Timothy comes, see to it that he has nothing to fear while he is with you, for he is doing the work of the Lord, just as I am."
             }
         },
@@ -150,6 +171,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Concluding Exhortations"
+                    }
+                ],
                 "text": "Be on the alert. Stand firm in the faith. Be men of courage. Be strong."
             }
         },
@@ -222,6 +249,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Signature and Final Greetings",
+                        "refs": "Colossians 4:15–18; 2 Thessalonians 3:16–18"
+                    }
+                ],
                 "text": "The churches in the province of Asia send you greetings. Aquila and Prisca greet you warmly in the Lord, and so does the church that meets at their house."
             }
         },

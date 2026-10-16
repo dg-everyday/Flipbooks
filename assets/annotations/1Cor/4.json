@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Servants of Christ"
+                    }
+                ],
                 "text": "So then, men ought to regard us as servants of Christ and stewards of the mysteries of God."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Fatherly Warning"
+                    }
+                ],
                 "text": "I am not writing this to shame you, but to warn you as my beloved children."
             }
         },

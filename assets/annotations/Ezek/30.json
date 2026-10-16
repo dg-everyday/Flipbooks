@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Lament for Egypt"
+                    }
+                ],
                 "text": "Again the word of the LORD came to me, saying,"
             }
         },
@@ -234,6 +240,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Pharaoh’s Power Broken"
+                    }
+                ],
                 "text": "In the eleventh year, on the seventh day of the first month, the word of the LORD came to me, saying,"
             }
         },

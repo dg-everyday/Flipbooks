@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Presides in the Divine Assembly"
+                    }
+                ],
                 "title": "A Psalm of Asaph.",
                 "text": "God presides in the divine assembly; He renders judgment among the gods:"
             }

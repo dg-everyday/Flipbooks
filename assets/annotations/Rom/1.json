@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Greets the Saints in Rome"
+                    }
+                ],
                 "text": "Paul, a servant of Christ Jesus, called to be an apostle, and set apart for the gospel of God—"
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Unashamed of the Gospel"
+                    }
+                ],
                 "text": "First, I thank my God through Jesus Christ for all of you, because your faith is being proclaimed all over the world."
             }
         },
@@ -210,6 +222,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Wrath against Sin"
+                    }
+                ],
                 "text": "The wrath of God is being revealed from heaven against all the godlessness and wickedness of men who suppress the truth by their wickedness."
             }
         },

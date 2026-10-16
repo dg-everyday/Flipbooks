@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temple Construction Begins",
+                        "refs": "1 Kings 6:1–4"
+                    }
+                ],
                 "text": "Then Solomon began to build the house of the LORD in Jerusalem on Mount Moriah, where the LORD had appeared to his father David. This was the place that David had prepared on the threshing floor of Ornan the Jebusite."
             }
         },
@@ -50,6 +57,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple’s Interior",
+                        "refs": "1 Kings 6:14–22"
+                    }
+                ],
                 "text": "He paneled the main room with cypress, which he overlaid with fine gold and decorated with palm trees and chains."
             }
         },
@@ -102,6 +116,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cherubim",
+                        "refs": "1 Kings 6:23–30"
+                    }
+                ],
                 "text": "In the Most Holy Place he made two cherubim of sculptured work, and he overlaid them with gold."
             }
         },
@@ -134,6 +155,13 @@
     "14": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Veil and Pillars",
+                        "refs": "1 Kings 7:13–22"
+                    }
+                ],
                 "text": "He made the veil of blue, purple, and crimson yarn and fine linen, with cherubim woven into it."
             }
         },

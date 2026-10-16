@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ark Afflicts the Philistines"
+                    }
+                ],
                 "text": "After the Philistines had captured the ark of God, they took it from Ebenezer to Ashdod,"
             }
         },

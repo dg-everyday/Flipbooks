@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Zephaniah Prophesies Judgment on Judah",
+                        "refs": "Matthew 13:36–43"
+                    }
+                ],
                 "text": "This is the word of the LORD that came to Zephaniah son of Cushi, the son of Gedaliah, the son of Amariah, the son of Hezekiah, in the days of Josiah son of Amon king of Judah:"
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day of the LORD",
+                        "refs": "Malachi 4:1–6; 1 Thessalonians 5:1–11; 2 Peter 3:8–13"
+                    }
+                ],
                 "text": "Be silent in the presence of the Lord GOD, for the Day of the LORD is near. Indeed, the LORD has prepared a sacrifice; He has consecrated His guests."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "In the LORD I Take Refuge",
+                        "refs": "Habakkuk 1:12–17"
+                    }
+                ],
                 "title": "For the choirmaster. Of David.",
                 "text": "In the LORD I take refuge. How then can you say to me: “Flee like a bird to your mountain!"
             }

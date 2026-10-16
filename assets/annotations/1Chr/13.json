@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Fetches the Ark",
+                        "refs": "2 Samuel 6:1–4"
+                    }
+                ],
                 "text": "Then David conferred with all his leaders, the commanders of thousands and of hundreds."
             }
         },
@@ -82,6 +89,13 @@
     "8": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Uzzah Touches the Ark",
+                        "refs": "2 Samuel 6:5–11"
+                    }
+                ],
                 "text": "David and all the Israelites were celebrating before God with all their might, with songs and on harps and lyres, with tambourines, cymbals, and trumpets."
             }
         },

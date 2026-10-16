@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Nineveh"
+                    }
+                ],
                 "text": "Woe to the city of blood, full of lies, full of plunder, never without prey."
             }
         },

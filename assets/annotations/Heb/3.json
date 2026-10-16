@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Our Apostle and High Priest"
+                    }
+                ],
                 "text": "Therefore, holy brothers, who share in the heavenly calling, set your focus on Jesus, the apostle and high priest whom we confess."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Harden Your Hearts",
+                        "refs": "Psalms 95:1–11"
+                    }
+                ],
                 "text": "Therefore, as the Holy Spirit says: “Today, if you hear His voice,"
             }
         },
@@ -138,6 +151,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Peril of Unbelief"
+                    }
+                ],
                 "text": "See to it, brothers, that none of you has a wicked heart of unbelief that turns away from the living God."
             }
         },

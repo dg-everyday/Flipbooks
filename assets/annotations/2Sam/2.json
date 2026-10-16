@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Anointed King of Judah"
+                    }
+                ],
                 "text": "Some time later, David inquired of the LORD, “Should I go up to one of the towns of Judah?” “Go up,” the LORD answered. Then David asked, “Where should I go?” “To Hebron,” replied the LORD."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ish-bosheth Made King of Israel"
+                    }
+                ],
                 "text": "Meanwhile, Abner son of Ner, the commander of Saul’s army, took Saul’s son Ish-bosheth, moved him to Mahanaim,"
             }
         },
@@ -138,6 +150,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Battle of Gibeon"
+                    }
+                ],
                 "text": "One day Abner son of Ner and the servants of Ish-bosheth son of Saul marched out from Mahanaim to Gibeon."
             }
         },

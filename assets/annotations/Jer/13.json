@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Linen Loincloth"
+                    }
+                ],
                 "text": "This is what the LORD said to me: “Go and buy yourself a linen loincloth and put it around your waist, but do not let it touch water.”"
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wineskins"
+                    }
+                ],
                 "text": "Therefore you are to tell them that this is what the LORD, the God of Israel, says: ‘Every wineskin shall be filled with wine.’ And when they reply, ‘Don’t we surely know that every wineskin should be filled with wine?’"
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Captivity Threatened"
+                    }
+                ],
                 "text": "Listen and give heed. Do not be arrogant, for the LORD has spoken."
             }
         },

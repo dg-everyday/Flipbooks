@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Supremacy of the Son",
+                        "refs": "Colossians 1:15–23"
+                    }
+                ],
                 "text": "On many past occasions and in many different ways, God spoke to our fathers through the prophets."
             }
         },

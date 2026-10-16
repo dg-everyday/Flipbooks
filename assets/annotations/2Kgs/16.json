@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahaz Reigns in Judah",
+                        "refs": "2 Chronicles 28:1–4"
+                    }
+                ],
                 "text": "In the seventeenth year of Pekah son of Remaliah, Ahaz son of Jotham became king of Judah."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Idolatry of Ahaz",
+                        "refs": "2 Chronicles 28:16–27"
+                    }
+                ],
                 "text": "Then King Ahaz went to Damascus to meet Tiglath-pileser king of Assyria. On seeing the altar in Damascus, King Ahaz sent Uriah the priest a model of the altar and complete plans for its construction."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Make a Joyful Noise",
+                        "refs": "Psalms 66:1–20"
+                    }
+                ],
                 "title": "A Psalm of thanksgiving.",
                 "text": "Make a joyful noise to the LORD, all the earth."
             }

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gideon’s Army of Three Hundred"
+                    }
+                ],
                 "text": "Early in the morning Jerubbaal (that is, Gideon) and all the men with him camped beside the spring of Harod. And the camp of Midian was north of them in the valley near the hill of Moreh."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sword of Gideon"
+                    }
+                ],
                 "text": "That night the LORD said to Gideon, “Get up and go down against the camp, for I have delivered it into your hand."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gideon Defeats Midian"
+                    }
+                ],
                 "text": "When Gideon heard the dream and its interpretation, he bowed in worship. He returned to the camp of Israel and said, “Get up, for the LORD has delivered the camp of Midian into your hand.”"
             }
         },

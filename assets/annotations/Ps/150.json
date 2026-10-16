@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Let Everything That Has Breath Praise the LORD"
+                    }
+                ],
                 "text": "Hallelujah! Praise God in His sanctuary. Praise Him in His mighty heavens."
             }
         },

@@ -6,6 +6,17 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 0,
+                        "title": "BOOK III",
+                        "refs": "Psalms 73—89"
+                    },
+                    {
+                        "level": 1,
+                        "title": "Surely God Is Good to Israel"
+                    }
+                ],
                 "title": "A Psalm of Asaph.",
                 "text": "Surely God is good to Israel, to those who are pure in heart."
             }

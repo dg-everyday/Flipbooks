@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Greeting from the Elder",
+                        "refs": "3 John 1:1–4"
+                    }
+                ],
                 "text": "The elder, To the chosen lady and her children, whom I love in the truth—and not I alone, but also all who know the truth—"
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Walking in the Truth",
+                        "refs": "John 8:30–47"
+                    }
+                ],
                 "text": "I was overjoyed to find some of your children walking in the truth, just as the Father has commanded us."
             }
         },
@@ -78,6 +92,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Beware of Deceivers"
+                    }
+                ],
                 "text": "For many deceivers have gone out into the world, refusing to confess the coming of Jesus Christ in the flesh. Any such person is the deceiver and the antichrist."
             }
         },
@@ -138,6 +158,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Conclusion",
+                        "refs": "3 John 1:13–14"
+                    }
+                ],
                 "text": "I have many things to write to you, but I would prefer not to do so with paper and ink. Instead, I hope to come and speak with you face to face, so that our joy may be complete."
             }
         },

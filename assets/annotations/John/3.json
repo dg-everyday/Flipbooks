@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus and Nicodemus",
+                        "refs": "Genesis 22:1–10; Romans 5:6–11"
+                    }
+                ],
                 "text": "Now there was a man of the Pharisees named Nicodemus, a leader of the Jews."
             }
         },
@@ -258,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "John’s Testimony about Jesus"
+                    }
+                ],
                 "text": "After this, Jesus and His disciples went into the Judean countryside, where He spent some time with them and baptized."
             }
         },

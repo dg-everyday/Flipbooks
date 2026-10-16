@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul before the Sanhedrin"
+                    }
+                ],
                 "text": "Paul looked directly at the Sanhedrin and said, “Brothers, I have conducted myself before God in all good conscience to this day.”"
             }
         },
@@ -138,6 +144,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot to Kill Paul",
+                        "refs": "John 16:1–4"
+                    }
+                ],
                 "text": "When daylight came, the Jews formed a conspiracy and bound themselves with an oath not to eat or drink until they had killed Paul."
             }
         },
@@ -270,6 +283,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Sent to Felix"
+                    }
+                ],
                 "text": "Then he called two of his centurions and said, “Prepare two hundred soldiers, seventy horsemen, and two hundred spearmen to go to Caesarea in the third hour of the night."
             }
         },

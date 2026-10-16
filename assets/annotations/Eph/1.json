@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Greeting to the Ephesians",
+                        "refs": "Acts 19:8–12; Revelation 2:1–7"
+                    }
+                ],
                 "text": "Paul, an apostle of Christ Jesus by the will of God, To the saints in Ephesus, the faithful in Christ Jesus:"
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Spiritual Blessings",
+                        "refs": "Romans 8:28–34"
+                    }
+                ],
                 "text": "Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly realms."
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Spiritual Wisdom",
+                        "refs": "1 Corinthians 2:6–16"
+                    }
+                ],
                 "text": "For this reason, ever since I heard about your faith in the Lord Jesus and your love for all the saints,"
             }
         },

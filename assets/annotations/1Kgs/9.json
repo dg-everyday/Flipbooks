@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD’s Response to Solomon",
+                        "refs": "2 Chronicles 7:11–22"
+                    }
+                ],
                 "text": "Now when Solomon had finished building the house of the LORD and the royal palace, and had achieved all that he had desired to do,"
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Additional Achievements",
+                        "refs": "2 Chronicles 8:1–18"
+                    }
+                ],
                 "text": "Now at the end of the twenty years during which Solomon built these two houses, the house of the LORD and the royal palace,"
             }
         },

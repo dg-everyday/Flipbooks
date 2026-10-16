@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ministry of the Twelve",
+                        "refs": "Matthew 10:5–15; Mark 6:7–13"
+                    }
+                ],
                 "text": "Then Jesus called the Twelve together and gave them power and authority over all demons, and power to cure diseases."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Herod Tries to See Jesus",
+                        "refs": "Matthew 14:1–12; Mark 6:14–29"
+                    }
+                ],
                 "text": "When Herod the tetrarch heard about all that was happening, he was perplexed. For some were saying that John had risen from the dead,"
             }
         },
@@ -114,6 +128,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feeding of the Five Thousand",
+                        "refs": "Matthew 14:13–21; Mark 6:30–44; John 6:1–15"
+                    }
+                ],
                 "text": "Then the apostles returned and reported to Jesus all that they had done. Taking them away privately, He withdrew to a town called Bethsaida."
             }
         },
@@ -210,6 +231,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter’s Confession of Christ",
+                        "refs": "Matthew 16:13–20; Mark 8:27–30; John 6:67–71"
+                    }
+                ],
                 "text": "One day as Jesus was praying in private and the disciples were with Him, He questioned them: “Who do the crowds say I am?”"
             }
         },
@@ -246,6 +274,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ’s Passion Foretold",
+                        "refs": "Matthew 16:21–23; Mark 8:31–33"
+                    }
+                ],
                 "text": "Jesus strictly warned them not to tell this to anyone."
             }
         },
@@ -270,6 +305,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Take Up Your Cross",
+                        "refs": "Matthew 16:24–28; Mark 8:34–38"
+                    }
+                ],
                 "text": "Then Jesus said to all of them, “If anyone wants to come after Me, he must deny himself and take up his cross daily and follow Me."
             }
         },
@@ -330,6 +372,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Transfiguration",
+                        "refs": "Matthew 17:1–13; Mark 9:1–13; 2 Peter 1:16–21"
+                    }
+                ],
                 "text": "About eight days after Jesus had said these things, He took with Him Peter, John, and James, and went up on a mountain to pray."
             }
         },
@@ -438,6 +487,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Boy with an Evil Spirit",
+                        "refs": "Matthew 17:14–18; Mark 9:14–29"
+                    }
+                ],
                 "text": "The next day, when they came down from the mountain, Jesus was met by a large crowd."
             }
         },
@@ -510,6 +566,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Second Prediction of the Passion",
+                        "refs": "Matthew 17:22–23; Mark 9:30–32"
+                    }
+                ],
                 "text": "And they were all astonished at the greatness of God. While everyone was marveling at all that Jesus was doing, He said to His disciples,"
             }
         },
@@ -546,6 +609,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Greatest in the Kingdom",
+                        "refs": "Matthew 18:1–5; Mark 9:33–41"
+                    }
+                ],
                 "text": "Then an argument started among the disciples as to which of them would be the greatest."
             }
         },
@@ -606,6 +676,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Samaritans Reject Jesus"
+                    }
+                ],
                 "text": "As the day of His ascension approached, Jesus resolutely set out for Jerusalem."
             }
         },
@@ -678,6 +754,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cost of Discipleship",
+                        "refs": "Matthew 8:18–22; Luke 14:25–33; John 6:59–66"
+                    }
+                ],
                 "text": "As they were walking along the road, someone said to Jesus, “I will follow You wherever You go.”"
             }
         },

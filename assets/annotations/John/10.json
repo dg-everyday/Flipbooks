@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus the Good Shepherd",
+                        "refs": "Psalms 23:1–6; Ezekiel 34:11–24"
+                    }
+                ],
                 "text": "“Truly, truly, I tell you, whoever does not enter the sheepfold by the gate, but climbs in some other way, is a thief and a robber."
             }
         },
@@ -258,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus at the Feast of Dedication"
+                    }
+                ],
                 "text": "At that time the Feast of Dedication took place in Jerusalem. It was winter,"
             }
         },
@@ -474,6 +487,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "John’s Testimony Confirmed"
+                    }
+                ],
                 "text": "Then Jesus went back across the Jordan to the place where John had first been baptizing, and He stayed there."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Last Song"
+                    }
+                ],
                 "text": "These are the last words of David: “The oracle of David son of Jesse, the oracle of the man raised on high, the one anointed by the God of Jacob, and the sweet psalmist of Israel:"
             }
         },
@@ -90,6 +96,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Mighty Men",
+                        "refs": "1 Chronicles 11:10–47"
+                    }
+                ],
                 "text": "These are the names of David’s mighty men: Josheb-basshebeth the Tahchemonite was chief of the Three. He wielded his spear against eight hundred men, whom he killed at one time."
             }
         },

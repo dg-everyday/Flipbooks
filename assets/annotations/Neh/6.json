@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sanballat’s Conspiracy"
+                    }
+                ],
                 "text": "When Sanballat, Tobiah, Geshem the Arab, and the rest of our enemies heard that I had rebuilt the wall and not a gap was left—though to that time I had not yet installed the doors in the gates—"
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Completion of the Wall"
+                    }
+                ],
                 "text": "So the wall was completed in fifty-two days, on the twenty-fifth of Elul."
             }
         },

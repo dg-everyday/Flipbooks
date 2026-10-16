@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restrictions against the Unclean"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Worthy Offerings"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

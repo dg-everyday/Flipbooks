@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wives and Husbands",
+                        "refs": "Song 1:1–17; Ephesians 5:22–33"
+                    }
+                ],
                 "text": "Wives, in the same way, submit yourselves to your husbands, so that even if they refuse to believe the word, they will be won over without words by the behavior of their wives"
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Turning from Evil"
+                    }
+                ],
                 "text": "Finally, all of you, be like-minded and sympathetic, love as brothers, be tenderhearted and humble."
             }
         },
@@ -162,6 +175,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Suffering for Righteousness"
+                    }
+                ],
                 "text": "But even if you should suffer for what is right, you are blessed. “Do not fear what they fear; do not be shaken.”"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rules about Valuations"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -354,6 +360,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Instruction on Tithes",
+                        "refs": "Deuteronomy 14:22–29; Deuteronomy 26:1–15; Nehemiah 13:10–14"
+                    }
+                ],
                 "text": "Thus any tithe from the land, whether from the seed of the land or the fruit of the trees, belongs to the LORD; it is holy to the LORD."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Submits Himself to the LORD"
+                    }
+                ],
                 "text": "Then Job replied to the LORD:"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Rebukes Job’s Friends"
+                    }
+                ],
                 "text": "After the LORD had spoken these words to Job, He said to Eliphaz the Temanite, “My wrath is kindled against you and your two friends. For you have not spoken about Me accurately, as My servant Job has."
             }
         },
@@ -114,6 +126,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Blesses Job"
+                    }
+                ],
                 "text": "After Job had prayed for his friends, the LORD restored his prosperity and doubled his former possessions."
             }
         },

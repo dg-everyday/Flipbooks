@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Teaching Sound Doctrine"
+                    }
+                ],
                 "text": "But as for you, speak the things that are consistent with sound doctrine."
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Grace Brings Salvation"
+                    }
+                ],
                 "text": "For the grace of God has appeared, bringing salvation to everyone."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Blessed Be the LORD, My Rock"
+                    }
+                ],
                 "title": "Of David.",
                 "text": "Blessed be the LORD, my Rock, who trains my hands for war, my fingers for battle."
             }

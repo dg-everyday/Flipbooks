@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Longing for Her Beloved"
+                    }
+                ],
                 "text": "O that you were to me like a brother who nursed at my mother’s breasts! If I found you outdoors, I would kiss you, and no one would despise me."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "Who is this coming up from the wilderness, leaning on her beloved? I roused you under the apple tree; there your mother conceived you; there she travailed and brought you forth."
             }
         },
@@ -66,6 +78,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all."
             }
         },
@@ -90,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "We have a little sister, and her breasts are not yet grown. What shall we do for our sister on the day she is spoken for?"
             }
         },
@@ -114,6 +138,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "I am a wall, and my breasts are like towers. So I have become in his eyes like one who brings peace."
             }
         },
@@ -150,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "You who dwell in the gardens, my companions are listening for your voice. Let me hear it!"
             }
         },
@@ -162,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "Come away, my beloved, and be like a gazelle or a young stag on the mountains of spices."
             }
         },

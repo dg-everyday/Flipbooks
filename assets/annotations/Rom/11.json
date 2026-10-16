@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Remnant Chosen by Grace"
+                    }
+                ],
                 "text": "I ask then, did God reject His people? Certainly not! I am an Israelite myself, a descendant of Abraham, from the tribe of Benjamin."
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ingrafting of the Gentiles"
+                    }
+                ],
                 "text": "I ask then, did they stumble so as to fall beyond recovery? Certainly not! However, because of their trespass, salvation has come to the Gentiles to make Israel jealous."
             }
         },
@@ -294,6 +306,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "All Israel Will Be Saved"
+                    }
+                ],
                 "text": "I do not want you to be ignorant of this mystery, brothers, so that you will not be conceited: A hardening in part has come to Israel, until the full number of the Gentiles has come in."
             }
         },
@@ -390,6 +408,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Hymn of Praise",
+                        "refs": "Isaiah 40:9–31"
+                    }
+                ],
                 "text": "O, the depth of the riches of the wisdom and knowledge of God! How unsearchable are His judgments, and untraceable His ways!"
             }
         },

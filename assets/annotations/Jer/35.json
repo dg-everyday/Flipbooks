@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Obedience of the Rechabites"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah from the LORD in the days of Jehoiakim son of Josiah king of Judah:"
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judah Rebuked"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Jeremiah:"
             }
         },

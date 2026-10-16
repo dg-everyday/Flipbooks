@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Vision of the Four Chariots"
+                    }
+                ],
                 "text": "And again I lifted up my eyes and saw four chariots coming out from between two mountains—mountains of bronze."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Crown and the Temple"
+                    }
+                ],
                 "text": "The word of the LORD also came to me, saying,"
             }
         },

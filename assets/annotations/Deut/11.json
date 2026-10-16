@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Obedience and Discipline",
+                        "refs": "Deuteronomy 4:1–14"
+                    }
+                ],
                 "text": "You shall therefore love the LORD your God and always keep His charge, His statutes, His ordinances, and His commandments."
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Great Blessings",
+                        "refs": "Joshua 1:1–9"
+                    }
+                ],
                 "text": "You shall therefore keep every commandment I am giving you today, so that you may have the strength to go in and possess the land that you are crossing the Jordan to possess,"
             }
         },
@@ -210,6 +224,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Remember God’s Words"
+                    }
+                ],
                 "text": "Fix these words of mine in your hearts and minds; tie them as reminders on your hands and bind them on your foreheads."
             }
         },
@@ -298,6 +318,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Blessing and a Curse"
+                    }
+                ],
                 "text": "See, today I am setting before you a blessing and a curse—"
             }
         },

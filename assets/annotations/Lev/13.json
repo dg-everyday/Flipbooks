@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws about Skin Diseases",
+                        "refs": "Numbers 5:1–4"
+                    }
+                ],
                 "text": "Then the LORD said to Moses and Aaron,"
             }
         },
@@ -558,6 +565,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws about Mildew"
+                    }
+                ],
                 "text": "If any fabric is contaminated with mildew—any wool or linen garment,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lampstand",
+                        "refs": "Exodus 25:31–40; Exodus 37:17–24"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cleansing the Levites"
+                    }
+                ],
                 "text": "Again the LORD spoke to Moses, saying,"
             }
         },
@@ -270,6 +283,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Retirement for Levites"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },

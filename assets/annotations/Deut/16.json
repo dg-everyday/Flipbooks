@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Passover and the Feast of Unleavened Bread",
+                        "refs": "Exodus 12:14–28; Leviticus 23:4–8; Numbers 28:16–25"
+                    }
+                ],
                 "text": "Observe the month of Abib and celebrate the Passover to the LORD your God, because in the month of Abib the LORD your God brought you out of Egypt by night."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Weeks",
+                        "refs": "Numbers 28:26–31"
+                    }
+                ],
                 "text": "You are to count off seven weeks from the time you first put the sickle to the standing grain."
             }
         },
@@ -150,6 +164,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Tabernacles",
+                        "refs": "Numbers 29:12–40"
+                    }
+                ],
                 "text": "You are to celebrate the Feast of Tabernacles for seven days after you have gathered the produce of your threshing floor and your winepress."
             }
         },
@@ -210,6 +231,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judges and Justice"
+                    }
+                ],
                 "text": "You are to appoint judges and officials for your tribes in every town that the LORD your God is giving you. They are to judge the people with righteous judgment."
             }
         },
@@ -246,6 +273,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Forbidden Forms of Worship"
+                    }
+                ],
                 "text": "Do not set up any wooden Asherah pole next to the altar you will build for the LORD your God,"
             }
         },

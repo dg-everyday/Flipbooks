@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Value of Wisdom"
+                    }
+                ],
                 "text": "A good name is better than fine perfume, and one’s day of death is better than his day of birth."
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Limits of Human Wisdom"
+                    }
+                ],
                 "text": "In my futile life I have seen both of these: A righteous man perishing in his righteousness, and a wicked man living long in his wickedness."
             }
         },

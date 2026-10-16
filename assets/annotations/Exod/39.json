@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ephod",
+                        "refs": "Exodus 28:6–14"
+                    }
+                ],
                 "text": "From the blue, purple, and scarlet yarn they made specially woven garments for ministry in the sanctuary, as well as the holy garments for Aaron, just as the LORD had commanded Moses."
             }
         },
@@ -70,6 +77,13 @@
     "8": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Breastpiece",
+                        "refs": "Exodus 28:15–30"
+                    }
+                ],
                 "text": "He made the breastpiece with the same workmanship as the ephod, with gold, with blue, purple, and scarlet yarn, and with finely spun linen."
             }
         },
@@ -182,6 +196,13 @@
     "22": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Additional Priestly Garments",
+                        "refs": "Exodus 28:31–43"
+                    }
+                ],
                 "text": "They made the robe of the ephod entirely of blue cloth, the work of a weaver,"
             }
         },
@@ -270,6 +291,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Approves the Work"
+                    }
+                ],
                 "text": "So all the work for the tabernacle, the Tent of Meeting, was completed. The Israelites did everything just as the LORD had commanded Moses."
             }
         },

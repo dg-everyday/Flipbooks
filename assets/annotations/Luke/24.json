@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Resurrection",
+                        "refs": "Matthew 28:1–10; Mark 16:1–8; John 20:1–9"
+                    }
+                ],
                 "text": "On the first day of the week, very early in the morning, the women came to the tomb, bringing the spices they had prepared."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Road to Emmaus",
+                        "refs": "Mark 16:12–13"
+                    }
+                ],
                 "text": "That same day two of them were going to a village called Emmaus, about seven miles from Jerusalem."
             }
         },
@@ -426,6 +440,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Appears to the Disciples",
+                        "refs": "John 20:19–23; 1 John 1:1–4"
+                    }
+                ],
                 "text": "While they were describing these events, Jesus Himself stood among them and said, “Peace be with you.”"
             }
         },
@@ -594,6 +615,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ascension",
+                        "refs": "Mark 16:19–20; Acts 1:6–11"
+                    }
+                ],
                 "text": "When Jesus had led them out as far as Bethany, He lifted up His hands and blessed them."
             }
         },

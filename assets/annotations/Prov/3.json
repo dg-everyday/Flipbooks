@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Trust in the LORD with All Your Heart"
+                    }
+                ],
                 "text": "My son, do not forget my teaching, but let your heart keep my commandments;"
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Blessings of Wisdom"
+                    }
+                ],
                 "text": "Blessed is the man who finds wisdom, the man who acquires understanding,"
             }
         },

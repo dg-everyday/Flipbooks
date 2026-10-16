@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elihu Describes God’s Power"
+                    }
+                ],
                 "text": "And Elihu continued:"
             }
         },

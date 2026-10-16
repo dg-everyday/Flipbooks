@@ -6,6 +6,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Envy"
+                    },
+                    {
+                        "level": 2,
+                        "title": "Saying 20"
+                    }
+                ],
                 "text": "Do not envy wicked men or desire their company;"
             }
         },
@@ -30,6 +40,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 21"
+                    }
+                ],
                 "text": "By wisdom a house is built and by understanding it is established;"
             }
         },
@@ -54,6 +70,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 22"
+                    }
+                ],
                 "text": "A wise man is strong, and a man of knowledge enhances his strength."
             }
         },
@@ -78,6 +100,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 23"
+                    }
+                ],
                 "text": "Wisdom is too high for a fool; he does not open his mouth in the meeting place."
             }
         },
@@ -90,6 +118,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 24"
+                    }
+                ],
                 "text": "He who plots evil will be called a schemer."
             }
         },
@@ -114,6 +148,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 25"
+                    }
+                ],
                 "text": "If you faint in the day of distress, how small is your strength!"
             }
         },
@@ -150,6 +190,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 26"
+                    }
+                ],
                 "text": "Eat honey, my son, for it is good, and the honeycomb is sweet to your taste."
             }
         },
@@ -174,6 +220,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 27"
+                    }
+                ],
                 "text": "Do not lie in wait, O wicked man, near the dwelling of the righteous; do not destroy his resting place."
             }
         },
@@ -198,6 +250,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 28"
+                    }
+                ],
                 "text": "Do not gloat when your enemy falls, and do not let your heart rejoice when he stumbles,"
             }
         },
@@ -222,6 +280,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 29"
+                    }
+                ],
                 "text": "Do not fret over evildoers, and do not be envious of the wicked."
             }
         },
@@ -246,6 +310,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "Saying 30"
+                    }
+                ],
                 "text": "My son, fear the LORD and the king, and do not associate with the rebellious."
             }
         },
@@ -270,6 +340,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Further Sayings of the Wise"
+                    }
+                ],
                 "text": "These also are sayings of the wise: To show partiality in judgment is not good."
             }
         },

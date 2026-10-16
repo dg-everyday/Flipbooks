@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sons and Heirs"
+                    }
+                ],
                 "text": "What I am saying is that as long as the heir is a child, he is no different from a slave, although he is the owner of everything."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Concern for the Galatians"
+                    }
+                ],
                 "text": "Formerly, when you did not know God, you were slaves to those who by nature are not gods."
             }
         },
@@ -246,6 +258,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hagar and Sarah",
+                        "refs": "Genesis 21:9–21"
+                    }
+                ],
                 "text": "Tell me, you who want to be under the law, do you not understand what the law says?"
             }
         },

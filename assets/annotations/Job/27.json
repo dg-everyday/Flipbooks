@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Affirms His Integrity"
+                    }
+                ],
                 "text": "Job continued his discourse:"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wicked Man’s Portion"
+                    }
+                ],
                 "text": "May my enemy be like the wicked and my opponent like the unjust."
             }
         },

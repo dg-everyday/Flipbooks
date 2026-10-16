@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Root of Jesse"
+                    }
+                ],
                 "text": "Then a shoot will spring up from the stump of Jesse, and a Branch from his roots will bear fruit."
             }
         },

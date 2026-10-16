@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Vision of the Lampstand and Olive Trees"
+                    }
+                ],
                 "text": "Then the angel who was speaking with me returned and woke me, as a man is awakened from his sleep."
             }
         },

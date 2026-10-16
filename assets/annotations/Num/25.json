@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moab Seduces Israel",
+                        "refs": "1 Corinthians 10:1–13"
+                    }
+                ],
                 "text": "While Israel was staying in Shittim, the men began to indulge in sexual immorality with the daughters of Moab,"
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Zeal of Phinehas"
+                    }
+                ],
                 "text": "Just then an Israelite man brought to his family a Midianite woman in the sight of Moses and the whole congregation of Israel while they were weeping at the entrance to the Tent of Meeting."
             }
         },

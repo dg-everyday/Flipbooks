@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Pilgrimage of the Magi",
+                        "refs": "Micah 5:1–6"
+                    }
+                ],
                 "text": "After Jesus was born in Bethlehem in Judea, during the time of King Herod, Magi from the east arrived in Jerusalem,"
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Flight to Egypt",
+                        "refs": "Hosea 11:1–7"
+                    }
+                ],
                 "text": "When the Magi had gone, an angel of the Lord appeared to Joseph in a dream. “Get up!” he said. “Take the Child and His mother and flee to Egypt. Stay there until I tell you, for Herod is going to search for the Child to kill Him.”"
             }
         },
@@ -186,6 +200,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Weeping and Great Mourning",
+                        "refs": "Jeremiah 31:1–25"
+                    }
+                ],
                 "text": "When Herod saw that he had been outwitted by the Magi, he was filled with rage. Sending orders, he put to death all the boys in Bethlehem and its vicinity who were two years old and under, according to the time he had learned from the Magi."
             }
         },
@@ -222,6 +243,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Return to Nazareth",
+                        "refs": "Luke 2:39–40"
+                    }
+                ],
                 "text": "After Herod died, an angel of the Lord appeared in a dream to Joseph in Egypt."
             }
         },

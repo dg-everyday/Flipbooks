@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Genealogy of Jesus",
+                        "refs": "Ruth 4:18–22; Luke 3:23–38"
+                    }
+                ],
                 "text": "This is the record of the genealogy of Jesus Christ, the son of David, the son of Abraham:"
             }
         },
@@ -202,6 +209,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Birth of Jesus",
+                        "refs": "Isaiah 7:10–16; Luke 2:1–7"
+                    }
+                ],
                 "text": "This is how the birth of Jesus Christ came about: His mother Mary was pledged in marriage to Joseph, but before they came together, she was found to be with child through the Holy Spirit."
             }
         },

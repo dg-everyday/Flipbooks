@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temptations and Trespasses",
+                        "refs": "Matthew 18:6–9; Mark 9:42–48"
+                    }
+                ],
                 "text": "Jesus said to His disciples, “It is inevitable that stumbling blocks will come, but woe to the one through whom they come!"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Power of Faith",
+                        "refs": "Matthew 17:19–20"
+                    }
+                ],
                 "text": "The apostles said to the Lord, “Increase our faith!”"
             }
         },
@@ -126,6 +140,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Lepers",
+                        "refs": "2 Kings 5:1–14"
+                    }
+                ],
                 "text": "While Jesus was on His way to Jerusalem, He was passing between Samaria and Galilee."
             }
         },
@@ -234,6 +255,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Coming of the Kingdom",
+                        "refs": "Genesis 19:24–29"
+                    }
+                ],
                 "text": "When asked by the Pharisees when the kingdom of God would come, Jesus replied, “The kingdom of God will not come with observable signs."
             }
         },

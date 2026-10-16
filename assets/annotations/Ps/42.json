@@ -6,6 +6,17 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 0,
+                        "title": "BOOK II",
+                        "refs": "Psalms 42—72"
+                    },
+                    {
+                        "level": 1,
+                        "title": "As the Deer Pants for the Water"
+                    }
+                ],
                 "title": "For the choirmaster. A Maskil of the sons of Korah.",
                 "text": "As the deer pants for streams of water, so my soul longs after You, O God."
             }

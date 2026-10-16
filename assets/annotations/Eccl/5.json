@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Approaching God with Awe"
+                    }
+                ],
                 "text": "Guard your steps when you go to the house of God. Draw near to listen rather than to offer the sacrifice of fools, who do not know that they do wrong."
             }
         },
@@ -90,6 +96,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Futility of Wealth",
+                        "refs": "Psalms 49:1–20"
+                    }
+                ],
                 "text": "If you see the oppression of the poor and the denial of justice and righteousness in the province, do not be astonished at the matter; for one official is watched by a superior, and others higher still are over them."
             }
         },

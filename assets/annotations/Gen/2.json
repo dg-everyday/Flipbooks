@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Seventh Day",
+                        "refs": "Exodus 16:22–30; Hebrews 4:1–11"
+                    }
+                ],
                 "text": "Thus the heavens and the earth were completed in all their vast array."
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Man and Woman in the Garden"
+                    }
+                ],
                 "text": "This is the account of the heavens and the earth when they were created, in the day that the LORD God made them."
             }
         },

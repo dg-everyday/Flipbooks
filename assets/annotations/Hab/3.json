@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Habakkuk’s Prayer"
+                    }
+                ],
                 "text": "This is a prayer of Habakkuk the prophet, according to Shigionoth:"
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Habakkuk Rejoices"
+                    }
+                ],
                 "text": "Though the fig tree does not bud and no fruit is on the vines, though the olive crop fails and the fields produce no food, though the sheep are cut off from the fold and no cattle are in the stalls,"
             }
         },

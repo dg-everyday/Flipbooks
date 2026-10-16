@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on the Philistines",
+                        "refs": "Zephaniah 2:4–7"
+                    }
+                ],
                 "text": "This is the word of the LORD that came to Jeremiah the prophet about the Philistines before Pharaoh struck down Gaza."
             }
         },

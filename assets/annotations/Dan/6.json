@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot against Daniel"
+                    }
+                ],
                 "text": "Now it pleased Darius to appoint 120 satraps to rule throughout the kingdom,"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel in the Lions’ Den"
+                    }
+                ],
                 "text": "Now when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before."
             }
         },
@@ -294,6 +306,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Darius Honors God"
+                    }
+                ],
                 "text": "Then King Darius wrote to the people of every nation and language throughout the land: “May your prosperity abound."
             }
         },

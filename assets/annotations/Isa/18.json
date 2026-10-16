@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Message to Cush"
+                    }
+                ],
                 "text": "Woe to the land of whirring wings, along the rivers of Cush,"
             }
         },

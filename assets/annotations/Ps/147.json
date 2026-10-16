@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "It Is Good to Sing Praises"
+                    }
+                ],
                 "text": "Hallelujah! How good it is to sing praises to our God, how pleasant and lovely to praise Him!"
             }
         },

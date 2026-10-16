@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul in Macedonia and Greece"
+                    }
+                ],
                 "text": "When the uproar had ended, Paul sent for the disciples. And after encouraging them, he said goodbye to them and left for Macedonia."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Eutychus Revived at Troas",
+                        "refs": "2 Kings 4:18–37"
+                    }
+                ],
                 "text": "On the first day of the week we came together to break bread. Since Paul was ready to leave the next day, he talked to them and kept on speaking until midnight."
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "From Troas to Miletus"
+                    }
+                ],
                 "text": "We went on ahead to the ship and sailed to Assos, where we were to take Paul aboard. He had arranged this because he was going there on foot."
             }
         },
@@ -198,6 +217,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Farewell to the Ephesians"
+                    }
+                ],
                 "text": "From Miletus, Paul sent to Ephesus for the elders of the church."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Babylon Is Fallen",
+                        "refs": "Isaiah 21:1–10"
+                    }
+                ],
                 "text": "After this I saw another angel descending from heaven with great authority, and the earth was illuminated by his glory."
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lament over Babylon"
+                    }
+                ],
                 "text": "Then the kings of the earth who committed sexual immorality and lived in luxury with her will weep and wail at the sight of the smoke rising from the fire that consumes her."
             }
         },
@@ -246,6 +259,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Doom of Babylon"
+                    }
+                ],
                 "text": "Then a mighty angel picked up a stone the size of a great millstone and cast it into the sea, saying: “With such violence the great city of Babylon will be cast down, never to be seen again."
             }
         },

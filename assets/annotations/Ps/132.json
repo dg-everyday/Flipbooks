@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Has Chosen Zion"
+                    }
+                ],
                 "title": "A song of ascents.",
                 "text": "O LORD, remember on behalf of David all the hardships he endured,"
             }

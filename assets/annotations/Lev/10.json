@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sin of Nadab and Abihu",
+                        "refs": "Numbers 3:1–4"
+                    }
+                ],
                 "text": "Now Aaron’s sons Nadab and Abihu took their censers, put fire in them and added incense, and offered unauthorized fire before the LORD, contrary to His command."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restrictions for Priests"
+                    }
+                ],
                 "text": "Then the LORD said to Aaron,"
             }
         },

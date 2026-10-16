@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Lazarus"
+                    }
+                ],
                 "text": "At this time a man named Lazarus was sick. He lived in Bethany, the village of Mary and her sister Martha."
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Comforts Martha and Mary"
+                    }
+                ],
                 "text": "When Jesus arrived, He found that Lazarus had already spent four days in the tomb."
             }
         },
@@ -450,6 +462,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Raises Lazarus",
+                        "refs": "Acts 9:36–43"
+                    }
+                ],
                 "text": "Jesus, once again deeply moved, came to the tomb. It was a cave with a stone laid across the entrance."
             }
         },
@@ -534,6 +553,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot to Kill Jesus",
+                        "refs": "Matthew 26:1–5; Mark 14:1–2; Luke 22:1–2"
+                    }
+                ],
                 "text": "Therefore many of the Jews who had come to Mary, and had seen what Jesus did, believed in Him."
             }
         },

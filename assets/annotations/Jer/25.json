@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Seventy Years of Captivity"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah concerning all the people of Judah in the fourth year of Jehoiakim son of Josiah king of Judah, which was the first year of Nebuchadnezzar king of Babylon."
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cup of God’s Wrath"
+                    }
+                ],
                 "text": "This is what the LORD, the God of Israel, said to me: “Take from My hand this cup of the wine of wrath, and make all the nations to whom I send you drink from it."
             }
         },
@@ -402,6 +414,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cry of the Shepherds"
+                    }
+                ],
                 "text": "Wail, you shepherds, and cry out; roll in the dust, you leaders of the flock. For the days of your slaughter have come; you will fall and be shattered like fine pottery."
             }
         },

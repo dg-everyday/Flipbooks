@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Persistent Widow"
+                    }
+                ],
                 "text": "Then Jesus told them a parable about their need to pray at all times and not lose heart:"
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Pharisee and the Tax Collector"
+                    }
+                ],
                 "text": "To some who trusted in their own righteousness and viewed others with contempt, He also told this parable:"
             }
         },
@@ -174,6 +186,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Blesses the Children",
+                        "refs": "Matthew 19:13–15; Mark 10:13–16"
+                    }
+                ],
                 "text": "Now people were even bringing their babies to Jesus for Him to place His hands on them. And when the disciples saw this, they rebuked those who brought them."
             }
         },
@@ -210,6 +229,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rich Young Ruler",
+                        "refs": "Matthew 19:16–30; Mark 10:17–31"
+                    }
+                ],
                 "text": "Then a certain ruler asked Him, “Good Teacher, what must I do to inherit eternal life?”"
             }
         },
@@ -366,6 +392,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Third Prediction of the Passion",
+                        "refs": "Matthew 20:17–19; Mark 10:32–34"
+                    }
+                ],
                 "text": "Then Jesus took the Twelve aside and said to them, “Look, we are going up to Jerusalem, and everything the prophets have written about the Son of Man will be fulfilled."
             }
         },
@@ -414,6 +447,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals a Blind Beggar",
+                        "refs": "Matthew 20:29–34; Mark 10:46–52"
+                    }
+                ],
                 "text": "As Jesus drew near to Jericho, a blind man was sitting beside the road, begging."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To the Church in Ephesus",
+                        "refs": "Acts 19:8–12; Ephesians 1:1–2"
+                    }
+                ],
                 "text": "“To the angel of the church in Ephesus write: These are the words of Him who holds the seven stars in His right hand and walks among the seven golden lampstands."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To the Church in Smyrna"
+                    }
+                ],
                 "text": "To the angel of the church in Smyrna write: These are the words of the First and the Last, who died and returned to life."
             }
         },
@@ -138,6 +151,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To the Church in Pergamum"
+                    }
+                ],
                 "text": "To the angel of the church in Pergamum write: These are the words of the One who holds the sharp, double-edged sword."
             }
         },
@@ -210,6 +229,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To the Church in Thyatira",
+                        "refs": "Acts 16:11–15"
+                    }
+                ],
                 "text": "To the angel of the church in Thyatira write: These are the words of the Son of God, whose eyes are like a blazing fire and whose feet are like polished bronze."
             }
         },

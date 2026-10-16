@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Triumphant Messiah",
+                        "refs": "Acts 4:23–31"
+                    }
+                ],
                 "text": "Why do the nations rage and the peoples plot in vain?"
             }
         },

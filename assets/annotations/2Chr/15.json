@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prophecy of Azariah"
+                    }
+                ],
                 "text": "Now the Spirit of God came upon Azariah son of Oded."
             }
         },
@@ -90,6 +96,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Asa’s Reforms",
+                        "refs": "1 Kings 15:9–15"
+                    }
+                ],
                 "text": "When Asa heard these words and the prophecy of Azariah son of Oded the prophet, he took courage and removed the detestable idols from the whole land of Judah and Benjamin and from the cities he had captured in the hill country of Ephraim. He then restored the altar of the LORD that was in front of the portico of the LORD’s temple."
             }
         },

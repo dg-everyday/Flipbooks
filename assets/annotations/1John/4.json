@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Testing the Spirits"
+                    }
+                ],
                 "text": "Beloved, do not believe every spirit, but test the spirits to see whether they are from God. For many false prophets have gone out into the world."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Love Comes from God"
+                    }
+                ],
                 "text": "Beloved, let us love one another, because love comes from God. Everyone who loves has been born of God and knows God."
             }
         },

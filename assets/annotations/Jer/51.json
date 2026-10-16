@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Babylon"
+                    }
+                ],
                 "text": "This is what the LORD says: “Behold, I will stir up against Babylon and against the people of Leb-kamai the spirit of a destroyer."
             }
         },
@@ -174,6 +180,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Praise to the God of Jacob",
+                        "refs": "Isaiah 25:1–12"
+                    }
+                ],
                 "text": "The LORD made the earth by His power; He established the world by His wisdom and stretched out the heavens by His understanding."
             }
         },
@@ -234,6 +247,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Babylon’s Punishment"
+                    }
+                ],
                 "text": "“You are My war club, My weapon for battle. With you I shatter nations; with you I bring kingdoms to ruin."
             }
         },
@@ -702,6 +721,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah’s Message to Seraiah"
+                    }
+                ],
                 "text": "This is the message that Jeremiah the prophet gave to the quartermaster Seraiah son of Neriah, the son of Mahseiah, when he went to Babylon with King Zedekiah of Judah in the fourth year of Zedekiah’s reign."
             }
         },

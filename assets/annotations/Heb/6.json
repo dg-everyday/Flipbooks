@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Maturity"
+                    }
+                ],
                 "text": "Therefore let us leave the elementary teachings about Christ and go on to maturity, not laying again the foundation of repentance from dead works, and of faith in God,"
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Unchangeable Promise"
+                    }
+                ],
                 "text": "When God made His promise to Abraham, since He had no one greater to swear by, He swore by Himself,"
             }
         },

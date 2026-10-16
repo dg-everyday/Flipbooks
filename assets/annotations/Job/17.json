@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Prepares for Death"
+                    }
+                ],
                 "text": "“My spirit is broken; my days are extinguished; the grave awaits me."
             }
         },

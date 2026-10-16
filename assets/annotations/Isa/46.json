@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Babylon’s Idols"
+                    }
+                ],
                 "text": "Bel crouches; Nebo cowers. Their idols weigh down beasts and cattle. The images you carry are burdensome, a load to the weary animal."
             }
         },

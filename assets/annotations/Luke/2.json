@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Birth of Jesus",
+                        "refs": "Matthew 1:18–25"
+                    }
+                ],
                 "text": "Now in those days a decree went out from Caesar Augustus that a census should be taken of the whole empire."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Shepherds and the Angels"
+                    }
+                ],
                 "text": "And there were shepherds residing in the fields nearby, keeping watch over their flocks by night."
             }
         },
@@ -246,6 +259,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Presented at the Temple"
+                    }
+                ],
                 "text": "When the eight days before His circumcision had passed, He was named Jesus, the name the angel had given Him before He was conceived."
             }
         },
@@ -294,6 +313,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prophecy of Simeon"
+                    }
+                ],
                 "text": "Now there was a man in Jerusalem named Simeon, who was righteous and devout. He was waiting for the consolation of Israel, and the Holy Spirit was upon him."
             }
         },
@@ -426,6 +451,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prophecy of Anna"
+                    }
+                ],
                 "text": "There was also a prophetess named Anna, the daughter of Phanuel, of the tribe of Asher, who was well along in years. She had been married for seven years,"
             }
         },
@@ -462,6 +493,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Return to Nazareth",
+                        "refs": "Matthew 2:19–23"
+                    }
+                ],
                 "text": "When Jesus’ parents had done everything required by the Law of the Lord, they returned to Galilee, to their own town of Nazareth."
             }
         },
@@ -486,6 +524,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Boy Jesus at the Temple"
+                    }
+                ],
                 "text": "Every year His parents went to Jerusalem for the Feast of the Passover."
             }
         },

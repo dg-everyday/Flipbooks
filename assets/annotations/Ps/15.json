@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Who May Dwell on Your Holy Mountain?"
+                    }
+                ],
                 "title": "A Psalm of David.",
                 "text": "O LORD, who may abide in Your tent? Who may dwell on Your holy mountain?"
             }

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Tell of His Wonders",
+                        "refs": "1 Chronicles 16:7–22"
+                    }
+                ],
                 "text": "Give thanks to the LORD, call upon His name; make known His deeds among the nations."
             }
         },

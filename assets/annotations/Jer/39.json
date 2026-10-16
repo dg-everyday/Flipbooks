@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fall of Jerusalem",
+                        "refs": "2 Kings 25:1–12; 2 Chronicles 36:15–21"
+                    }
+                ],
                 "text": "In the ninth year of Zedekiah king of Judah, in the tenth month, Nebuchadnezzar king of Babylon marched against Jerusalem with his entire army and laid siege to the city."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Delivered"
+                    }
+                ],
                 "text": "Now Nebuchadnezzar king of Babylon had given orders about Jeremiah through Nebuzaradan captain of the guard, saying,"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Heavens Declare the Glory of God"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "The heavens declare the glory of God; the skies proclaim the work of His hands."
             }

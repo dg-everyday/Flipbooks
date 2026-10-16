@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Repentance",
+                        "refs": "Joel 1:13–20; Amos 5:4–15; Luke 13:1–5"
+                    }
+                ],
                 "text": "Gather yourselves, gather together, O shameful nation,"
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on the Philistines",
+                        "refs": "Jeremiah 47:1–7"
+                    }
+                ],
                 "text": "For Gaza will be abandoned, and Ashkelon left in ruins. Ashdod will be driven out at noon, and Ekron will be uprooted."
             }
         },
@@ -90,6 +104,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Moab and Ammon",
+                        "refs": "Isaiah 16:1–14; Jeremiah 48:1–47"
+                    }
+                ],
                 "text": "“I have heard the reproach of Moab and the insults of the Ammonites, who have taunted My people and threatened their borders."
             }
         },
@@ -138,6 +159,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Cush and Assyria"
+                    }
+                ],
                 "text": "“You too, O Cushites, will be slain by My sword.”"
             }
         },

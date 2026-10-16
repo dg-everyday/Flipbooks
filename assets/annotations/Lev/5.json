@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sins Requiring a Sin Offering",
+                        "refs": "Leviticus 4:1–35; Leviticus 6:24–30"
+                    }
+                ],
                 "text": "“If someone sins by failing to testify when he hears a public charge about something he has witnessed, whether he has seen it or learned of it, he shall bear the iniquity."
             }
         },
@@ -162,6 +169,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws for Guilt Offerings",
+                        "refs": "Leviticus 6:1–7; Leviticus 7:1–10"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

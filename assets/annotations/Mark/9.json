@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Transfiguration",
+                        "refs": "Matthew 17:1–13; Luke 9:28–36; 2 Peter 1:16–21"
+                    }
+                ],
                 "text": "Then Jesus said to them, “Truly I tell you, there are some standing here who will not taste death before they see the kingdom of God arrive with power.”"
             }
         },
@@ -162,6 +169,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Boy with an Evil Spirit",
+                        "refs": "Matthew 17:14–18; Luke 9:37–42"
+                    }
+                ],
                 "text": "When they returned to the other disciples, they saw a large crowd around them, and scribes arguing with them."
             }
         },
@@ -354,6 +368,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Second Prediction of the Passion",
+                        "refs": "Matthew 17:22–23; Luke 9:43–45"
+                    }
+                ],
                 "text": "Going on from there, they passed through Galilee. But Jesus did not want anyone to know,"
             }
         },
@@ -390,6 +411,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Greatest in the Kingdom",
+                        "refs": "Matthew 18:1–5; Luke 9:46–50"
+                    }
+                ],
                 "text": "Then they came to Capernaum. While Jesus was in the house, He asked them, “What were you discussing on the way?”"
             }
         },
@@ -498,6 +526,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temptations and Trespasses",
+                        "refs": "Matthew 18:6–9; Luke 17:1–4"
+                    }
+                ],
                 "text": "But if anyone causes one of these little ones who believe in Me to stumble, it would be better for him to have a large millstone hung around his neck and to be thrown into the sea."
             }
         },
@@ -572,6 +607,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Good Salt",
+                        "refs": "Matthew 5:13–16; Luke 14:34–35"
+                    }
+                ],
                 "text": "For everyone will be salted with fire."
             }
         },

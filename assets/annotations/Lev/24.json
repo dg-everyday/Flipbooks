@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Oil for the Lamps",
+                        "refs": "Exodus 27:20–21"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Showbread",
+                        "refs": "Exodus 25:23–30; Exodus 37:10–16"
+                    }
+                ],
                 "text": "You are also to take fine flour and bake twelve loaves, using two-tenths of an ephah for each loaf,"
             }
         },
@@ -114,6 +128,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Punishment for Blasphemy"
+                    }
+                ],
                 "text": "Now the son of an Israelite mother and an Egyptian father went out among the Israelites, and a fight broke out in the camp between him and an Israelite."
             }
         },
@@ -198,6 +218,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Eye for an Eye",
+                        "refs": "Matthew 5:38–48"
+                    }
+                ],
                 "text": "And if a man takes the life of anyone else, he must surely be put to death."
             }
         },

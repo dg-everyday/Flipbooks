@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat at Ai"
+                    }
+                ],
                 "text": "The Israelites, however, acted unfaithfully regarding the things devoted to destruction. Achan son of Carmi, the son of Zabdi, the son of Zerah, of the tribe of Judah, took some of what was set apart. So the anger of the LORD burned against the Israelites."
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sin of Achan"
+                    }
+                ],
                 "text": "So Joshua arose early the next morning and had Israel come forward tribe by tribe, and the tribe of Judah was selected."
             }
         },

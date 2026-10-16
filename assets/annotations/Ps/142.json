@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Lift My Voice to the LORD",
+                        "refs": "1 Samuel 22:1–5; Psalms 57:1–11"
+                    }
+                ],
                 "title": "A Maskil of David, when he was in the cave. A prayer.",
                 "text": "I cry aloud to the LORD; I lift my voice to the LORD for mercy."
             }

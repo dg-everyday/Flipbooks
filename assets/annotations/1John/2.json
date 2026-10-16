@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Our Advocate"
+                    }
+                ],
                 "text": "My little children, I am writing these things to you so that you will not sin. But if anyone does sin, we have an advocate before the Father—Jesus Christ, the Righteous One."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A New Commandment"
+                    }
+                ],
                 "text": "Beloved, I am not writing to you a new commandment, but an old one, which you have had from the beginning. This commandment is the message you have heard."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Love the World"
+                    }
+                ],
                 "text": "Do not love the world or anything in the world. If anyone loves the world, the love of the Father is not in him."
             }
         },
@@ -210,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Beware of Antichrists"
+                    }
+                ],
                 "text": "Children, it is the last hour; and just as you have heard that the antichrist is coming, so now many antichrists have appeared. This is how we know it is the last hour."
             }
         },
@@ -282,6 +306,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Remain in Christ"
+                    }
+                ],
                 "text": "As for you, let what you have heard from the beginning remain in you. If it does, you will also remain in the Son and in the Father."
             }
         },

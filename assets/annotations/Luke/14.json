@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals a Man with Dropsy"
+                    }
+                ],
                 "text": "One Sabbath, Jesus went to eat in the home of a leading Pharisee, and those in attendance were watching Him closely."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Guests"
+                    }
+                ],
                 "text": "When Jesus noticed how the guests chose the places of honor, He told them a parable:"
             }
         },
@@ -174,6 +186,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Banquet",
+                        "refs": "Matthew 22:1–14"
+                    }
+                ],
                 "text": "When one of those reclining with Him heard this, he said to Jesus, “Blessed is everyone who will eat at the feast in the kingdom of God.”"
             }
         },
@@ -294,6 +313,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cost of Discipleship",
+                        "refs": "Matthew 8:18–22; Luke 9:57–62; John 6:59–66"
+                    }
+                ],
                 "text": "Now large crowds were traveling with Jesus, and He turned and said to them,"
             }
         },
@@ -402,6 +428,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Good Salt",
+                        "refs": "Matthew 5:13–16; Mark 9:49–50"
+                    }
+                ],
                 "text": "Salt is good, but if the salt loses its savor, with what will it be seasoned?"
             }
         },

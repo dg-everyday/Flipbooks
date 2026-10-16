@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant at Horeb"
+                    }
+                ],
                 "text": "Then Moses summoned all Israel and said to them: Hear, O Israel, the statutes and ordinances that I declare in your hearing this day. Learn them and observe them carefully."
             }
         },
@@ -54,6 +60,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Commandments",
+                        "refs": "Exodus 20:1–17"
+                    }
+                ],
                 "text": "At that time I was standing between the LORD and you to declare to you the word of the LORD, because you were afraid of the fire and would not go up the mountain. And He said:"
             }
         },
@@ -222,6 +235,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Intercedes for the People",
+                        "refs": "Exodus 20:18–21; Hebrews 12:18–29"
+                    }
+                ],
                 "text": "The LORD spoke these commandments in a loud voice to your whole assembly out of the fire, the cloud, and the deep darkness on the mountain; He added nothing more. And He wrote them on two tablets of stone and gave them to me."
             }
         },

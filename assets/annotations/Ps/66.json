@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Make a Joyful Noise",
+                        "refs": "Psalms 100:1–5"
+                    }
+                ],
                 "title": "For the choirmaster. A song. A Psalm.",
                 "text": "Make a joyful noise to God, all the earth!"
             }

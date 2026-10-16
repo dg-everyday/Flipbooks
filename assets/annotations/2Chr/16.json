@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "War between Asa and Baasha",
+                        "refs": "1 Kings 15:16–22"
+                    }
+                ],
                 "text": "In the thirty-sixth year of Asa’s reign, Baasha king of Israel went up against Judah and fortified Ramah to prevent anyone from leaving or entering the territory of Asa king of Judah."
             }
         },
@@ -62,6 +69,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hanani’s Message to Asa"
+                    }
+                ],
                 "text": "At that time Hanani the seer came to King Asa of Judah and told him, “Because you have relied on the king of Aram and not on the LORD your God, the army of the king of Aram has escaped from your hand."
             }
         },
@@ -110,6 +123,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death and Burial of Asa"
+                    }
+                ],
                 "text": "Now the acts of Asa, from beginning to end, are indeed written in the Book of the Kings of Judah and Israel."
             }
         },

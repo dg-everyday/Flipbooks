@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prayer for the Son"
+                    }
+                ],
                 "text": "When Jesus had spoken these things, He lifted up His eyes to heaven and said, “Father, the hour has come. Glorify Your Son, that Your Son may glorify You."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prayer for the Disciples"
+                    }
+                ],
                 "text": "I have revealed Your name to those You have given Me out of the world. They were Yours; You gave them to Me, and they have kept Your word."
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prayer for All Believers"
+                    }
+                ],
                 "text": "I am not asking on behalf of them alone, but also on behalf of those who will believe in Me through their message,"
             }
         },

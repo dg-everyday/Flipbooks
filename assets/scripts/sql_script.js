@@ -349,6 +349,31 @@ function getVerses(bookName, chapter = null, verses = null) {
 }
 
 // ============================================================
+// Get a psalm's title
+//
+// getPsalmTitle(51)  -> "To the chief Musician, A Psalm of David, …"
+//
+// dailygrace.db keeps a psalm's title on the end of the previous
+// psalm's last verse (see splitVerseText above); null when the
+// psalm has none.
+// ============================================================
+
+function getPsalmTitle(chapter) {
+    if (!db) {
+        throw new Error("Database has not been initialized.");
+    }
+    const psalm = Number(chapter);
+    const stmt = db.prepare(
+        "SELECT text FROM verses WHERE book = 'Ps' AND chapter = ? ORDER BY verse DESC LIMIT 1",
+    );
+    stmt.bind([psalm - 1]);
+    const text = stmt.step() ? stmt.getAsObject().text : "";
+    stmt.free();
+    const { title } = splitVerseText("Ps", text);
+    return title && title.chapter === psalm ? title.text : null;
+}
+
+// ============================================================
 // Get verses by id
 //
 // getVersesByIds([49, 29155])

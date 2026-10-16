@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Name Is Great in Israel"
+                    }
+                ],
                 "title": "For the choirmaster. With stringed instruments. A Psalm of Asaph. A song.",
                 "text": "God is known in Judah; His name is great in Israel."
             }

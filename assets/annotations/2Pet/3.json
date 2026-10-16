@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Coming Judgment",
+                        "refs": "Genesis 7:1–24; Jude 1:17–23"
+                    }
+                ],
                 "text": "Beloved, this is now my second letter to you. Both of them are reminders to stir you to wholesome thinking"
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day of the Lord",
+                        "refs": "Zephaniah 1:7–18; Malachi 4:1–6; 1 Thessalonians 5:1–11"
+                    }
+                ],
                 "text": "Beloved, do not let this one thing escape your notice: With the Lord a day is like a thousand years, and a thousand years are like a day."
             }
         },
@@ -162,6 +176,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Final Exhortations"
+                    }
+                ],
                 "text": "Therefore, beloved, as you anticipate these things, make every effort to be found at peace—spotless and blameless in His sight."
             }
         },

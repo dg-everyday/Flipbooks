@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Future Glory for Zion"
+                    }
+                ],
                 "text": "Arise, shine, for your light has come, and the glory of the LORD rises upon you."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The King’s Heart",
+                        "refs": "Psalms 21:1–13"
+                    }
+                ],
                 "text": "The king’s heart is a waterway in the hand of the LORD; He directs it where He pleases."
             }
         },

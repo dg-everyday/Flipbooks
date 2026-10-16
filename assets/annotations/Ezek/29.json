@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against Pharaoh"
+                    }
+                ],
                 "text": "In the tenth year, on the twelfth day of the tenth month, the word of the LORD came to me, saying,"
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Desolation of Egypt"
+                    }
+                ],
                 "text": "Therefore this is what the Lord GOD says: I will bring a sword against you and cut off from you man and beast."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Egypt the Reward of Nebuchadnezzar"
+                    }
+                ],
                 "text": "In the twenty-seventh year, on the first day of the first month, the word of the LORD came to me, saying,"
             }
         },

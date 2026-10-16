@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat Allies with Ahab",
+                        "refs": "1 Kings 22:1–12"
+                    }
+                ],
                 "text": "Now Jehoshaphat had an abundance of riches and honor, and he allied himself with Ahab by marriage."
             }
         },
@@ -98,6 +105,13 @@
     "12": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Micaiah Prophesies against Ahab",
+                        "refs": "1 Kings 22:13–28"
+                    }
+                ],
                 "text": "Then the messenger who had gone to call Micaiah instructed him, “Behold, with one accord the words of the prophets are favorable to the king. So please let your words be like theirs, and speak favorably.”"
             }
         },
@@ -226,6 +240,13 @@
     "28": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab’s Defeat and Death",
+                        "refs": "1 Kings 22:29–40"
+                    }
+                ],
                 "text": "So the king of Israel and Jehoshaphat king of Judah went up to Ramoth-gilead."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "How Pleasant to Live in Harmony!",
+                        "refs": "1 Corinthians 1:10–17; Ephesians 4:1–16"
+                    }
+                ],
                 "title": "A song of ascents. Of David.",
                 "text": "Behold, how good and pleasant it is when brothers live together in harmony!"
             }

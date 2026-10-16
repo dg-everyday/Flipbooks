@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Daily Offerings",
+                        "refs": "Exodus 29:38–44"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sabbath Offerings"
+                    }
+                ],
                 "text": "On the Sabbath day, present two unblemished year-old male lambs, accompanied by a grain offering of two-tenths of an ephah of fine flour mixed with oil, as well as a drink offering."
             }
         },
@@ -126,6 +139,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Monthly Offerings"
+                    }
+                ],
                 "text": "At the beginning of every month, you are to present to the LORD a burnt offering of two young bulls, one ram, and seven male lambs a year old, all unblemished,"
             }
         },
@@ -178,6 +197,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Passover and the Feast of Unleavened Bread",
+                        "refs": "Exodus 12:14–28; Leviticus 23:4–8; Deuteronomy 16:1–8"
+                    }
+                ],
                 "text": "The fourteenth day of the first month is the LORD’s Passover."
             }
         },
@@ -294,6 +320,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Weeks",
+                        "refs": "Deuteronomy 16:9–12"
+                    }
+                ],
                 "text": "On the day of firstfruits, when you present an offering of new grain to the LORD during the Feast of Weeks, you are to hold a sacred assembly; you must not do any regular work."
             }
         },

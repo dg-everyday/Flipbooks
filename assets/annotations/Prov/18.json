@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Selfishness of the Unfriendly"
+                    }
+                ],
                 "text": "He who isolates himself pursues selfish desires; he rebels against all sound judgment."
             }
         },

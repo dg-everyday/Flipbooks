@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Restoration of Israel and Judah",
+                        "refs": "Ezekiel 28:25–26"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah from the LORD:"
             }
         },

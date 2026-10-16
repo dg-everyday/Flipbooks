@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Holiness Required of Priests"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Speak to Aaron’s sons, the priests, and tell them that a priest is not to defile himself for a dead person among his people,"
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restrictions against Those with Blemishes"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

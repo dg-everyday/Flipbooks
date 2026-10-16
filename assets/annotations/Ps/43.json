@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Send Out Your Light"
+                    }
+                ],
                 "text": "Vindicate me, O God, and plead my case against an ungodly nation; deliver me from deceitful and unjust men."
             }
         },

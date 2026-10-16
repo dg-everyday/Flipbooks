@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Forty-Eight Cities for the Levites",
+                        "refs": "Numbers 35:1–8; 1 Chronicles 6:54–81"
+                    }
+                ],
                 "text": "Now the family heads of the Levites approached Eleazar the priest, Joshua son of Nun, and the heads of the other tribes of Israel"
             }
         },

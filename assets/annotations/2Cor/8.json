@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Generosity Commended",
+                        "refs": "Philippians 4:10–20"
+                    }
+                ],
                 "text": "Now, brothers, we want you to know about the grace that God has given the churches of Macedonia."
             }
         },
@@ -186,6 +193,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Titus Commended",
+                        "refs": "Titus 1:1–4"
+                    }
+                ],
                 "text": "But thanks be to God, who put into the heart of Titus the same devotion I have for you."
             }
         },

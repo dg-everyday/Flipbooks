@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Decree of Darius"
+                    }
+                ],
                 "text": "Thus King Darius ordered a search of the archives stored in the treasury of Babylon."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple Completed"
+                    }
+                ],
                 "text": "In response, Tattenai the governor of the region west of the Euphrates, Shethar-bozenai, and their associates diligently carried out what King Darius had decreed."
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Dedication of the Temple"
+                    }
+                ],
                 "text": "Then the people of Israel—the priests, the Levites, and the rest of the exiles—celebrated the dedication of the house of God with joy."
             }
         },
@@ -222,6 +240,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Returned Exiles Keep the Passover"
+                    }
+                ],
                 "text": "On the fourteenth day of the first month, the exiles kept the Passover."
             }
         },

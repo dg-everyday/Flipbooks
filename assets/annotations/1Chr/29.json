@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings for the Temple"
+                    }
+                ],
                 "text": "Then King David said to the whole assembly, “My son Solomon, the one whom God has chosen, is young and inexperienced. The task is great because this palace is not for man, but for the LORD God."
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Prayer of Blessing"
+                    }
+                ],
                 "text": "Then David blessed the LORD in the sight of all the assembly and said: “May You be blessed, O LORD, God of our father Israel, from everlasting to everlasting."
             }
         },
@@ -246,6 +258,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon Anointed King",
+                        "refs": "1 Kings 1:32–40"
+                    }
+                ],
                 "text": "The next day they offered sacrifices and presented burnt offerings to the LORD: a thousand bulls, a thousand rams, and a thousand lambs, along with their drink offerings, and other sacrifices in abundance for all Israel."
             }
         },
@@ -306,6 +325,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Reign and Death",
+                        "refs": "1 Kings 2:10–12"
+                    }
+                ],
                 "text": "David son of Jesse was king over all Israel."
             }
         },

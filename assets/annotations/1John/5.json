@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Overcoming the World"
+                    }
+                ],
                 "text": "Everyone who believes that Jesus is the Christ has been born of God, and everyone who loves the Father also loves those born of Him."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Testimony about His Son"
+                    }
+                ],
                 "text": "Even if we accept human testimony, the testimony of God is greater. For this is the testimony that God has given about His Son."
             }
         },
@@ -150,6 +162,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Effective Prayer"
+                    }
+                ],
                 "text": "I have written these things to you who believe in the name of the Son of God, so that you may know that you have eternal life."
             }
         },
@@ -210,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The True God"
+                    }
+                ],
                 "text": "We know that anyone born of God does not keep on sinning; the One who was born of God protects him, and the evil one cannot touch him."
             }
         },

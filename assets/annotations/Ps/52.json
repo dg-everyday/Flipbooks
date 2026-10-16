@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Why Do You Boast of Evil?",
+                        "refs": "1 Samuel 22:6–23"
+                    }
+                ],
                 "title": "For the choirmaster. A Maskil of David. After Doeg the Edomite went to Saul and told him, “David has gone to the house of Ahimelech.”",
                 "text": "Why do you boast of evil, O mighty man? The loving devotion of God endures all day long."
             }

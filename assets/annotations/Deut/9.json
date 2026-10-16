@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Assurance of Victory"
+                    }
+                ],
                 "text": "Hear, O Israel: Today you are about to cross the Jordan to go in and dispossess nations greater and stronger than you, with large cities fortified to the heavens."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Golden Calf",
+                        "refs": "Exodus 32:1–35; Acts 7:39–43"
+                    }
+                ],
                 "text": "Remember this, and never forget how you provoked the LORD your God in the wilderness. From the day you left the land of Egypt until you reached this place, you have been rebelling against the LORD."
             }
         },

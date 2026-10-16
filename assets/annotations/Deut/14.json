@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Clean and Unclean Animals",
+                        "refs": "Leviticus 11:1–47; Acts 10:9–16"
+                    }
+                ],
                 "text": "You are sons of the LORD your God; do not cut yourselves or shave your foreheads on behalf of the dead,"
             }
         },
@@ -242,6 +249,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Giving Tithes",
+                        "refs": "Leviticus 27:30–34; Deuteronomy 26:1–15; Nehemiah 13:10–14"
+                    }
+                ],
                 "text": "You must be sure to set aside a tenth of all the produce brought forth each year from your fields."
             }
         },

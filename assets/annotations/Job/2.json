@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Loses His Health"
+                    }
+                ],
                 "text": "On another day the sons of God came to present themselves before the LORD, and Satan also came with them to present himself before Him."
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job’s Three Friends"
+                    }
+                ],
                 "text": "Now when Job’s three friends—Eliphaz the Temanite, Bildad the Shuhite, and Zophar the Naamathite—heard about all this adversity that had come upon him, each of them came from his home, and they met together to go and sympathize with Job and comfort him."
             }
         },

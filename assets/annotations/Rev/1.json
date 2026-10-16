@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prologue",
+                        "refs": "Daniel 12:1–13"
+                    }
+                ],
                 "text": "This is the revelation of Jesus Christ, which God gave Him to show His servants what must soon come to pass. He made it known by sending His angel to His servant John,"
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "John Greets the Seven Churches"
+                    }
+                ],
                 "text": "John, To the seven churches in the province of Asia: Grace and peace to you from Him who is and was and is to come, and from the seven spirits before His throne,"
             }
         },
@@ -102,6 +115,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "John’s Vision on Patmos"
+                    }
+                ],
                 "text": "I, John, your brother and partner in the tribulation and kingdom and perseverance that are in Jesus, was on the island of Patmos because of the word of God and my testimony about Jesus."
             }
         },

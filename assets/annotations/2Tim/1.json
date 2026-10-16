@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Greeting to Timothy",
+                        "refs": "1 Timothy 1:1–2"
+                    }
+                ],
                 "text": "Paul, an apostle of Christ Jesus by the will of God, according to the promise of life in Christ Jesus,"
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Faithfulness under Persecution",
+                        "refs": "Matthew 10:16–25"
+                    }
+                ],
                 "text": "I thank God, whom I serve with a clear conscience as did my forefathers, as I constantly remember you night and day in my prayers."
             }
         },
@@ -150,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Holding to Sound Teaching"
+                    }
+                ],
                 "text": "Hold on to the pattern of sound teaching you have heard from me, with the faith and love that are in Christ Jesus."
             }
         },

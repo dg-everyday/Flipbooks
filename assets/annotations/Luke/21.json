@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Poor Widow’s Offering",
+                        "refs": "Mark 12:41–44"
+                    }
+                ],
                 "text": "Then Jesus looked up and saw the rich putting their gifts into the treasury,"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temple Destruction and Other Signs",
+                        "refs": "Matthew 24:1–8; Mark 13:1–8"
+                    }
+                ],
                 "text": "As some of the disciples were remarking how the temple was adorned with beautiful stones and consecrated gifts, Jesus said,"
             }
         },
@@ -114,6 +128,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Witnessing to All Nations",
+                        "refs": "Matthew 24:9–14; Mark 13:9–13"
+                    }
+                ],
                 "text": "Then He told them, “Nation will rise against nation, and kingdom against kingdom."
             }
         },
@@ -234,6 +255,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Destruction of Jerusalem",
+                        "refs": "Matthew 24:15–25; Mark 13:14–23"
+                    }
+                ],
                 "text": "But when you see Jerusalem surrounded by armies, you will know that her desolation is near."
             }
         },
@@ -294,6 +322,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Return of the Son of Man",
+                        "refs": "Matthew 24:26–31; Mark 13:24–27"
+                    }
+                ],
                 "text": "There will be signs in the sun and moon and stars, and on the earth dismay among the nations, bewildered by the roaring of the sea and the surging of the waves."
             }
         },
@@ -342,6 +377,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lesson of the Fig Tree",
+                        "refs": "Matthew 24:32–35; Mark 13:28–31"
+                    }
+                ],
                 "text": "Then Jesus told them a parable: “Look at the fig tree and all the trees."
             }
         },
@@ -398,6 +440,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Be Watchful for the Day"
+                    }
+                ],
                 "text": "But watch yourselves, or your hearts will be weighed down by dissipation, drunkenness, and the worries of life—and that day will spring upon you suddenly like a snare."
             }
         },

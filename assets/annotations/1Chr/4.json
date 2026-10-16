@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Judah"
+                    }
+                ],
                 "text": "The descendants of Judah: Perez, Hezron, Carmi, Hur, and Shobal."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prayer of Jabez"
+                    }
+                ],
                 "text": "Now Jabez was more honorable than his brothers. His mother had named him Jabez, saying, “Because I bore him in pain.”"
             }
         },
@@ -126,6 +138,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "More Descendants of Judah"
+                    }
+                ],
                 "text": "Chelub the brother of Shuhah was the father of Mehir, who was the father of Eshton."
             }
         },
@@ -282,6 +300,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Simeon"
+                    }
+                ],
                 "text": "The descendants of Simeon: Nemuel, Jamin, Jarib, Zerah, and Shaul."
             }
         },

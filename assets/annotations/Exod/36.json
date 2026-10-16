@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The People Bring More than Enough"
+                    }
+                ],
                 "text": "“So Bezalel, Oholiab, and every skilled person are to carry out everything commanded by the LORD, who has given them skill and ability to know how to perform all the work of constructing the sanctuary.”"
             }
         },
@@ -90,6 +96,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Curtains for the Tabernacle",
+                        "refs": "Exodus 26:1–6"
+                    }
+                ],
                 "text": "All the skilled craftsmen among the workmen made the ten curtains for the tabernacle. They were made of finely spun linen, as well as blue, purple, and scarlet yarn, with cherubim skillfully worked into them."
             }
         },
@@ -138,6 +151,13 @@
     "14": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Eleven Curtains of Goat Hair",
+                        "refs": "Exodus 26:7–14"
+                    }
+                ],
                 "text": "He then made curtains of goat hair for the tent over the tabernacle—eleven curtains in all."
             }
         },
@@ -186,6 +206,13 @@
     "20": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Frames and Bases",
+                        "refs": "Exodus 26:15–30"
+                    }
+                ],
                 "text": "Next, he constructed upright frames of acacia wood for the tabernacle."
             }
         },
@@ -310,6 +337,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Veil",
+                        "refs": "Exodus 26:31–35"
+                    }
+                ],
                 "text": "Next, he made the veil of blue, purple, and scarlet yarn, and finely spun linen, with cherubim skillfully worked into it."
             }
         },
@@ -330,6 +364,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Curtain for the Entrance",
+                        "refs": "Exodus 26:36–37"
+                    }
+                ],
                 "text": "For the entrance to the tent, he made a curtain embroidered with blue, purple, and scarlet yarn, and finely spun linen,"
             }
         },

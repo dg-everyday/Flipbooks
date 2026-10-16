@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Lost Sheep",
+                        "refs": "Matthew 18:10–14"
+                    }
+                ],
                 "text": "Now all the tax collectors and sinners were gathering around to listen to Jesus."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Lost Coin"
+                    }
+                ],
                 "text": "Or what woman who has ten silver coins and loses one of them does not light a lamp, sweep her house, and search carefully until she finds it?"
             }
         },
@@ -126,6 +139,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Prodigal Son",
+                        "refs": "Deuteronomy 21:18–21"
+                    }
+                ],
                 "text": "Then Jesus said, “There was a man who had two sons."
             }
         },

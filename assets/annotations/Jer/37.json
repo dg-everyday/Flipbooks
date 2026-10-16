@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Warns Zedekiah"
+                    }
+                ],
                 "text": "Nebuchadnezzar king of Babylon made Zedekiah son of Josiah the king of Judah, and he reigned in place of Coniah son of Jehoiakim."
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Imprisoned"
+                    }
+                ],
                 "text": "When the Chaldean army withdrew from Jerusalem for fear of Pharaoh’s army,"
             }
         },

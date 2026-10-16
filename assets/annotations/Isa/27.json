@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD’s Vineyard",
+                        "refs": "John 15:1–8"
+                    }
+                ],
                 "text": "In that day the LORD will take His sharp, great, and mighty sword, and bring judgment on Leviathan the fleeing serpent—Leviathan the coiling serpent—and He will slay the dragon of the sea."
             }
         },

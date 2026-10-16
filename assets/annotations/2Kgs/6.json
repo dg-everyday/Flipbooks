@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Axe Head Floats"
+                    }
+                ],
                 "text": "Now the sons of the prophets said to Elisha, “Please take note that the place where we meet with you is too small for us."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha Captures the Blinded Arameans"
+                    }
+                ],
                 "text": "Now the king of Aram was at war against Israel. After consulting with his servants, he said, “My camp will be in such and such a place.”"
             }
         },
@@ -282,6 +294,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Siege and Famine of Samaria"
+                    }
+                ],
                 "text": "Some time later, Ben-hadad king of Aram assembled his entire army and marched up to besiege Samaria."
             }
         },

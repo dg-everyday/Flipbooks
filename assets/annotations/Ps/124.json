@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Our Help Is in the Name of the LORD"
+                    }
+                ],
                 "title": "A song of ascents. Of David.",
                 "text": "If the LORD had not been on our side—let Israel now declare—"
             }

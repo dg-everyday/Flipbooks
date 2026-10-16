@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Anointed King of All Israel",
+                        "refs": "2 Samuel 5:1–5"
+                    }
+                ],
                 "text": "Then all Israel came together to David at Hebron and said, “Here we are, your own flesh and blood."
             }
         },
@@ -34,6 +41,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Conquers Jerusalem",
+                        "refs": "2 Samuel 5:6–11"
+                    }
+                ],
                 "text": "Then David and all the Israelites marched to Jerusalem (that is, Jebus), where the Jebusites inhabited the land."
             }
         },
@@ -90,6 +104,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Mighty Men",
+                        "refs": "2 Samuel 23:8–39"
+                    }
+                ],
                 "text": "Now these were the chiefs of David’s mighty men, who, together with all Israel, bolstered and strengthened his kingdom, according to the word of the LORD concerning Israel."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Sower",
+                        "refs": "Mark 4:1–9; Luke 8:4–8"
+                    }
+                ],
                 "text": "That same day Jesus went out of the house and sat by the sea."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Purpose of Jesus’ Parables",
+                        "refs": "Isaiah 6:1–13; Mark 4:10–12; Luke 8:9–10"
+                    }
+                ],
                 "text": "Then the disciples came to Jesus and asked, “Why do You speak to the people in parables?”"
             }
         },
@@ -210,6 +224,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Sower Explained",
+                        "refs": "Mark 4:13–20; Luke 8:11–15"
+                    }
+                ],
                 "text": "Consider, then, the parable of the sower:"
             }
         },
@@ -282,6 +303,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Weeds",
+                        "refs": "Ezekiel 17:1–10"
+                    }
+                ],
                 "text": "Jesus put before them another parable: “The kingdom of heaven is like a man who sowed good seed in his field."
             }
         },
@@ -366,6 +394,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Mustard Seed",
+                        "refs": "Mark 4:30–34; Luke 13:18–19"
+                    }
+                ],
                 "text": "He put before them another parable: “The kingdom of heaven is like a mustard seed that a man took and planted in his field."
             }
         },
@@ -390,6 +425,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Leaven",
+                        "refs": "Luke 13:20–21"
+                    }
+                ],
                 "text": "He told them still another parable: “The kingdom of heaven is like leaven that a woman took and mixed into three measures of flour, until all of it was leavened.”"
             }
         },
@@ -402,6 +444,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Open My Mouth in Parables",
+                        "refs": "Psalms 78:1–72"
+                    }
+                ],
                 "text": "Jesus spoke all these things to the crowds in parables. He did not tell them anything without using a parable."
             }
         },
@@ -426,6 +475,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Weeds Explained",
+                        "refs": "Zephaniah 1:1–6"
+                    }
+                ],
                 "text": "Then Jesus dismissed the crowds and went into the house. His disciples came to Him and said, “Explain to us the parable of the weeds in the field.”"
             }
         },
@@ -522,6 +578,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parables of the Treasure and the Pearl"
+                    }
+                ],
                 "text": "The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and in his joy he went and sold all he had and bought that field."
             }
         },
@@ -558,6 +620,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Net"
+                    }
+                ],
                 "text": "Once again, the kingdom of heaven is like a net that was cast into the sea and caught all kinds of fish."
             }
         },
@@ -630,6 +698,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rejection at Nazareth",
+                        "refs": "Mark 6:1–6; Luke 4:16–30"
+                    }
+                ],
                 "text": "When Jesus had finished these parables, He withdrew from that place."
             }
         },

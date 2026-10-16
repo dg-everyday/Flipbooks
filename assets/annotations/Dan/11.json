@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Kings of the South and North"
+                    }
+                ],
                 "text": "“And I, in the first year of Darius the Mede, stood up to strengthen and protect him."
             }
         },
@@ -426,6 +432,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The King Who Exalts Himself"
+                    }
+                ],
                 "text": "Then the king will do as he pleases and will exalt and magnify himself above every god, and he will speak monstrous things against the God of gods. He will be successful until the time of wrath is completed, for what has been decreed must be accomplished."
             }
         },

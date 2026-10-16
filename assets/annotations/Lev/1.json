@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws for Burnt Offerings",
+                        "refs": "Leviticus 6:8–13"
+                    }
+                ],
                 "text": "Then the LORD called to Moses and spoke to him from the Tent of Meeting, saying,"
             }
         },

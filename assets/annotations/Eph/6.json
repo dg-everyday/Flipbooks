@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Children and Parents",
+                        "refs": "Colossians 3:18–21"
+                    }
+                ],
                 "text": "Children, obey your parents in the Lord, for this is right."
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Serving with Honor",
+                        "refs": "Colossians 3:22–25; 1 Timothy 6:1–2"
+                    }
+                ],
                 "text": "Slaves, obey your earthly masters with respect and fear and sincerity of heart, just as you would obey Christ."
             }
         },
@@ -114,6 +128,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Full Armor of God"
+                    }
+                ],
                 "text": "Finally, be strong in the Lord and in His mighty power."
             }
         },
@@ -246,6 +266,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Final Greetings",
+                        "refs": "Philippians 4:21–23; 2 Timothy 4:19–22"
+                    }
+                ],
                 "text": "Tychicus, the beloved brother and faithful servant in the Lord, will tell you everything, so that you also may know about me and what I am doing."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sons of Aaron",
+                        "refs": "Leviticus 10:1–7"
+                    }
+                ],
                 "text": "This is the account of Aaron and Moses at the time the LORD spoke with Moses on Mount Sinai."
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Duties of the Levites"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -162,6 +175,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Numbering of the Levites"
+                    }
+                ],
                 "text": "Then the LORD spoke to Moses in the Wilderness of Sinai, saying,"
             }
         },
@@ -246,6 +265,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Gershonites",
+                        "refs": "Numbers 4:21–28; 1 Chronicles 23:7–11"
+                    }
+                ],
                 "text": "From Gershon came the Libnite clan and the Shimeite clan; these were the Gershonite clans."
             }
         },
@@ -318,6 +344,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Kohathites",
+                        "refs": "Numbers 4:1–20; 1 Chronicles 23:12–20"
+                    }
+                ],
                 "text": "From Kohath came the clans of the Amramites, the Izharites, the Hebronites, and the Uzzielites; these were the clans of the Kohathites."
             }
         },
@@ -390,6 +423,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Merarites",
+                        "refs": "Numbers 4:29–33; 1 Chronicles 23:21–23"
+                    }
+                ],
                 "text": "From Merari came the clans of the Mahlites and Mushites; these were the Merarite clans."
             }
         },
@@ -450,6 +490,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses and Aaron"
+                    }
+                ],
                 "text": "Moses, Aaron, and Aaron’s sons were to camp to the east of the tabernacle, toward the sunrise, before the Tent of Meeting. They were to perform the duties of the sanctuary as a service on behalf of the Israelites; but any outsider who approached the sanctuary was to be put to death."
             }
         },
@@ -474,6 +520,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Redemption of the Firstborn"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Number every firstborn male of the Israelites a month old or more, and list their names."
             }
         },

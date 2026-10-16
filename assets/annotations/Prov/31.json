@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sayings for King Lemuel"
+                    }
+                ],
                 "text": "These are the words of King Lemuel—the burden that his mother taught him:"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Virtues of a Noble Woman"
+                    }
+                ],
                 "text": "A wife of noble character, who can find? She is far more precious than rubies."
             }
         },

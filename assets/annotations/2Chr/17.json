@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat Reigns in Judah",
+                        "refs": "1 Kings 15:23–24"
+                    }
+                ],
                 "text": "Asa’s son Jehoshaphat reigned in his place, and he strengthened himself against Israel."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Repentance",
+                        "refs": "Joel 1:13–20; Amos 5:4–15; Zephaniah 2:1–3"
+                    }
+                ],
                 "text": "At that time some of those present told Jesus about the Galileans whose blood Pilate had mixed with their sacrifices."
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Barren Fig Tree",
+                        "refs": "Isaiah 5:1–7"
+                    }
+                ],
                 "text": "Then Jesus told this parable: “A man had a fig tree that was planted in his vineyard. He went to look for fruit on it but did not find any."
             }
         },
@@ -114,6 +128,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals a Disabled Woman"
+                    }
+                ],
                 "text": "One Sabbath Jesus was teaching in one of the synagogues,"
             }
         },
@@ -210,6 +230,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Mustard Seed",
+                        "refs": "Matthew 13:31–32; Mark 4:30–34"
+                    }
+                ],
                 "text": "Then Jesus asked, “What is the kingdom of God like? To what can I compare it?"
             }
         },
@@ -234,6 +261,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Leaven",
+                        "refs": "Matthew 13:33"
+                    }
+                ],
                 "text": "Again He asked, “To what can I compare the kingdom of God?"
             }
         },
@@ -258,6 +292,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Narrow Door",
+                        "refs": "Matthew 7:13–14"
+                    }
+                ],
                 "text": "Then Jesus traveled throughout the towns and villages, teaching as He made His way toward Jerusalem."
             }
         },
@@ -366,6 +407,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lament over Jerusalem",
+                        "refs": "Matthew 23:37–39"
+                    }
+                ],
                 "text": "At that very hour, some Pharisees came to Jesus and told Him, “Leave this place and get away, because Herod wants to kill You.”"
             }
         },

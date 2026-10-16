@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job: God Will Punish the Wicked"
+                    }
+                ],
                 "text": "Then Job answered:"
             }
         },

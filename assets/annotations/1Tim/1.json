@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Greeting to Timothy",
+                        "refs": "2 Timothy 1:1–2"
+                    }
+                ],
                 "text": "Paul, an apostle of Christ Jesus by the command of God our Savior and of Christ Jesus our hope,"
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Correcting False Teachers",
+                        "refs": "Titus 1:10–16"
+                    }
+                ],
                 "text": "As I urged you on my departure to Macedonia, you should stay on at Ephesus to instruct certain men not to teach false doctrines"
             }
         },
@@ -138,6 +152,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Grace to Paul"
+                    }
+                ],
                 "text": "I thank Christ Jesus our Lord, who has strengthened me, that He considered me faithful and appointed me to service."
             }
         },

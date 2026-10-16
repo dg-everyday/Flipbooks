@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judging Others",
+                        "refs": "Luke 6:37–42; Romans 14:1–12"
+                    }
+                ],
                 "text": "“Do not judge, or you will be judged."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ask, Seek, Knock",
+                        "refs": "Luke 11:5–13"
+                    }
+                ],
                 "text": "Ask, and it will be given to you; seek, and you will find; knock, and the door will be opened to you."
             }
         },
@@ -150,6 +164,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Narrow Gate",
+                        "refs": "Luke 13:22–30"
+                    }
+                ],
                 "text": "Enter through the narrow gate. For wide is the gate and broad is the way that leads to destruction, and many enter through it."
             }
         },
@@ -174,6 +195,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Tree and Its Fruit",
+                        "refs": "Luke 6:43–45"
+                    }
+                ],
                 "text": "Beware of false prophets. They come to you in sheep’s clothing, but inwardly they are ravenous wolves."
             }
         },
@@ -282,6 +310,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The House on the Rock",
+                        "refs": "Luke 6:46–49"
+                    }
+                ],
                 "text": "Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock."
             }
         },
@@ -330,6 +365,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Authority of Jesus"
+                    }
+                ],
                 "text": "When Jesus had finished saying these things, the crowds were astonished at His teaching,"
             }
         },

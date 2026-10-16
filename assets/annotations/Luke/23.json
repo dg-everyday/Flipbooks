@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus before Pilate",
+                        "refs": "Matthew 27:11–14; John 18:28–40"
+                    }
+                ],
                 "text": "Then the whole council rose and led Jesus away to Pilate."
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus before Herod"
+                    }
+                ],
                 "text": "When Pilate heard this, he asked if the man was a Galilean."
             }
         },
@@ -150,6 +163,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Crowd Chooses Barabbas",
+                        "refs": "Matthew 27:15–23; Mark 15:6–11"
+                    }
+                ],
                 "text": "Then Pilate called together the chief priests, the rulers, and the people,"
             }
         },
@@ -301,6 +321,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Crucifixion",
+                        "refs": "Psalms 22:1–31; Matthew 27:32–44; Mark 15:21–32; John 19:16–27"
+                    }
+                ],
                 "text": "As the soldiers led Him away, they seized Simon of Cyrene on his way in from the country, and they put the cross on him to carry behind Jesus."
             }
         },
@@ -517,6 +544,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Jesus",
+                        "refs": "Psalms 31:1–24; Matthew 27:45–56; Mark 15:33–41; John 19:28–30"
+                    }
+                ],
                 "text": "It was now about the sixth hour, and darkness came over all the land until the ninth hour."
             }
         },
@@ -589,6 +623,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burial of Jesus",
+                        "refs": "Isaiah 53:9–12; Matthew 27:57–61; Mark 15:42–47; John 19:38–42"
+                    }
+                ],
                 "text": "Now there was a Council member named Joseph, a good and righteous man,"
             }
         },

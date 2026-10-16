@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rejection at Nazareth",
+                        "refs": "Matthew 13:53–58; Luke 4:16–30"
+                    }
+                ],
                 "text": "Jesus went on from there and came to His hometown, accompanied by His disciples."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ministry of the Twelve",
+                        "refs": "Matthew 10:5–15; Luke 9:1–6"
+                    }
+                ],
                 "text": "Then Jesus called the Twelve to Him and began to send them out two by two, giving them authority over unclean spirits."
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Beheading of John",
+                        "refs": "Matthew 14:1–12; Luke 9:7–9"
+                    }
+                ],
                 "text": "Now King Herod heard about this, for Jesus’ name had become well known, and people were saying, “John the Baptist has risen from the dead! That is why miraculous powers are at work in him.”"
             }
         },
@@ -354,6 +375,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feeding of the Five Thousand",
+                        "refs": "Matthew 14:13–21; Luke 9:10–17; John 6:1–15"
+                    }
+                ],
                 "text": "Meanwhile, the apostles gathered around Jesus and brought Him news of all they had done and taught."
             }
         },
@@ -534,6 +562,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Walks on Water",
+                        "refs": "Matthew 14:22–33; John 6:16–21"
+                    }
+                ],
                 "text": "Immediately Jesus made His disciples get into the boat and go on ahead of Him to Bethsaida, while He dismissed the crowd."
             }
         },
@@ -630,6 +665,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals at Gennesaret",
+                        "refs": "Matthew 14:34–36"
+                    }
+                ],
                 "text": "When they had crossed over, they landed at Gennesaret and moored the boat."
             }
         },

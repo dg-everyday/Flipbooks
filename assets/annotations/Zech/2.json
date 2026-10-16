@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Vision of the Measuring Line",
+                        "refs": "Ezekiel 40:1–4"
+                    }
+                ],
                 "text": "Then I lifted up my eyes and saw a man with a measuring line in his hand."
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Redemption of Zion",
+                        "refs": "Hosea 3:1–5"
+                    }
+                ],
                 "text": "“Get up! Get up! Flee from the land of the north,” declares the LORD, “for I have scattered you like the four winds of heaven,” declares the LORD."
             }
         },

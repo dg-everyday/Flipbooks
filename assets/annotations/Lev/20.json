@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Punishments for Disobedience",
+                        "refs": "Leviticus 26:14–39; Deuteronomy 28:15–68"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Punishments for Sexual Immorality",
+                        "refs": "Proverbs 5:1–23; 1 Corinthians 5:1–8"
+                    }
+                ],
                 "text": "If a man commits adultery with another man’s wife—with the wife of his neighbor—both the adulterer and the adulteress must surely be put to death."
             }
         },
@@ -258,6 +272,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Distinguish between Clean and Unclean"
+                    }
+                ],
                 "text": "You are therefore to keep all My statutes and ordinances, so that the land where I am bringing you to live will not vomit you out."
             }
         },

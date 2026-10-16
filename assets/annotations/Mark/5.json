@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Demons and the Pigs",
+                        "refs": "Matthew 8:28–34; Luke 8:26–39"
+                    }
+                ],
                 "text": "On the other side of the sea, they arrived in the region of the Gerasenes."
             }
         },
@@ -246,6 +253,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Healing Touch of Jesus",
+                        "refs": "Matthew 9:18–26; Luke 8:40–56"
+                    }
+                ],
                 "text": "When Jesus had again crossed by boat to the other side, a large crowd gathered around Him beside the sea."
             }
         },

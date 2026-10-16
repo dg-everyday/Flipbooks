@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mountain of the House of the LORD",
+                        "refs": "Micah 4:1–5"
+                    }
+                ],
                 "text": "This is the message that was revealed to Isaiah son of Amoz concerning Judah and Jerusalem:"
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day of Reckoning"
+                    }
+                ],
                 "text": "Come, O house of Jacob, let us walk in the light of the LORD."
             }
         },

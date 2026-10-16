@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Has Chosen Israel"
+                    }
+                ],
                 "text": "But now listen, O Jacob My servant, Israel, whom I have chosen."
             }
         },
@@ -246,6 +252,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jerusalem to Be Restored"
+                    }
+                ],
                 "text": "Remember these things, O Jacob, for you are My servant, O Israel. I have made you, and you are My servant; O Israel, I will never forget you."
             }
         },

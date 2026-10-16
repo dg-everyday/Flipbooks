@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cast Your Bread upon the Waters"
+                    }
+                ],
                 "text": "Cast your bread upon the waters, for after many days you will find it again."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Enjoy Your Years"
+                    }
+                ],
                 "text": "Light is sweet, and it pleases the eyes to see the sun."
             }
         },

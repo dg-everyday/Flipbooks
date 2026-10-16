@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Presence of the LORD",
+                        "refs": "Acts 2:14–36"
+                    }
+                ],
                 "title": "A Miktam of David.",
                 "text": "Preserve me, O God, for in You I take refuge."
             }

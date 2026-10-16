@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Instructs Solomon",
+                        "refs": "Psalms 37:1–40"
+                    }
+                ],
                 "text": "As the time drew near for David to die, he charged his son Solomon,"
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Reign and Death",
+                        "refs": "1 Chronicles 29:26–30"
+                    }
+                ],
                 "text": "Then David rested with his fathers and was buried in the City of David."
             }
         },
@@ -150,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Execution of Adonijah"
+                    }
+                ],
                 "text": "Now Adonijah son of Haggith went to Bathsheba the mother of Solomon, and she asked, “Do you come in peace?” “Yes, in peace,” he replied."
             }
         },
@@ -330,6 +350,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Execution of Joab"
+                    }
+                ],
                 "text": "When the news reached Joab, who had conspired with Adonijah but not with Absalom, he fled to the tent of the LORD and took hold of the horns of the altar."
             }
         },
@@ -426,6 +452,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Execution of Shimei"
+                    }
+                ],
                 "text": "Then the king summoned Shimei and said to him, “Build a house for yourself in Jerusalem and live there, but do not go anywhere else."
             }
         },

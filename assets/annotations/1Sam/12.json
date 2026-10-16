@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samuel’s Farewell Address"
+                    }
+                ],
                 "text": "Then Samuel said to all Israel, “I have listened to your voice in all that you have said to me, and I have set over you a king."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Uproar in Thessalonica"
+                    }
+                ],
                 "text": "When they had passed through Amphipolis and Apollonia, they came to Thessalonica, where there was a Jewish synagogue."
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Character of the Bereans"
+                    }
+                ],
                 "text": "As soon as night had fallen, the brothers sent Paul and Silas away to Berea. On arriving there, they went into the Jewish synagogue."
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul in Athens"
+                    }
+                ],
                 "text": "While Paul was waiting for them in Athens, he was deeply disturbed in his spirit to see that the city was full of idols."
             }
         },
@@ -258,6 +276,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Address in the Areopagus"
+                    }
+                ],
                 "text": "Then Paul stood up in the meeting of the Areopagus and said, “Men of Athens, I see that in every way you are very religious."
             }
         },

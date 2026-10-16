@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Is My Rock",
+                        "refs": "2 Samuel 22:1–51"
+                    }
+                ],
                 "title": "For the choirmaster. Of David the servant of the LORD, who sang this song to the LORD on the day the LORD had delivered him from the hand of all his enemies and from the hand of Saul. He said:",
                 "text": "I love You, O LORD, my strength."
             }

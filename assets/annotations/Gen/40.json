@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cupbearer and the Baker"
+                    }
+                ],
                 "text": "Some time later, the king’s cupbearer and baker offended their master, the king of Egypt."
             }
         },

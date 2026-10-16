@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahaz Reigns in Judah",
+                        "refs": "2 Kings 16:1–9"
+                    }
+                ],
                 "text": "Ahaz was twenty years old when he became king, and he reigned in Jerusalem sixteen years. And unlike David his father, he did not do what was right in the eyes of the LORD."
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Aram Defeats Judah",
+                        "refs": "Isaiah 1:1–9"
+                    }
+                ],
                 "text": "So the LORD his God delivered Ahaz into the hand of the king of Aram, who attacked him and took many captives to Damascus. Ahaz was also delivered into the hand of the king of Israel, who struck him with great force."
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Idolatry of Ahaz",
+                        "refs": "2 Kings 16:10–20"
+                    }
+                ],
                 "text": "At that time King Ahaz sent for help from the king of Assyria."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Fairness and Mercy"
+                    }
+                ],
                 "text": "If there is a dispute between men, they are to go to court to be judged, so that the innocent may be acquitted and the guilty condemned."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Widowhood and Marriage"
+                    }
+                ],
                 "text": "When brothers dwell together and one of them dies without a son, the widow must not marry outside the family. Her husband’s brother is to take her as his wife and fulfill the duty of a brother-in-law for her."
             }
         },
@@ -150,6 +162,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Standard Weights and Measures",
+                        "refs": "Proverbs 11:1–3; Ezekiel 45:10–12"
+                    }
+                ],
                 "text": "You shall not have two differing weights in your bag, one heavy and one light."
             }
         },
@@ -198,6 +217,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Revenge on the Amalekites"
+                    }
+                ],
                 "text": "Remember what the Amalekites did to you along your way from Egypt,"
             }
         },

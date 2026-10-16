@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "You Are My Refuge and My Fortress"
+                    }
+                ],
                 "text": "He who dwells in the shelter of the Most High will abide in the shadow of the Almighty."
             }
         },

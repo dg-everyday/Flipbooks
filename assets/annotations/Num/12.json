@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Complaint of Miriam and Aaron"
+                    }
+                ],
                 "text": "Then Miriam and Aaron criticized Moses because of the Cushite woman he had married, for he had taken a Cushite wife."
             }
         },

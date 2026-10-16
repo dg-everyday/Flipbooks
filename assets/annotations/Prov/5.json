@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Avoiding Immorality",
+                        "refs": "Leviticus 20:10–21; 1 Corinthians 5:1–8"
+                    }
+                ],
                 "text": "My son, pay attention to my wisdom; incline your ear to my insight,"
             }
         },

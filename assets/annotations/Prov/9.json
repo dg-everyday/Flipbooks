@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Way of Wisdom",
+                        "refs": "Proverbs 1:1–7"
+                    }
+                ],
                 "text": "Wisdom has built her house; she has carved out her seven pillars."
             }
         },
@@ -150,6 +157,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Way of Folly"
+                    }
+                ],
                 "text": "The woman named Folly is loud; she is naive and knows nothing."
             }
         },

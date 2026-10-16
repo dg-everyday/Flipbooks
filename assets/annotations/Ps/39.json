@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Watch My Ways"
+                    }
+                ],
                 "title": "For the choirmaster. For Jeduthun. A Psalm of David.",
                 "text": "I said, “I will watch my ways so that I will not sin with my tongue; I will guard my mouth with a muzzle as long as the wicked are present.”"
             }

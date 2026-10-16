@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preach the Word"
+                    }
+                ],
                 "text": "I charge you in the presence of God and of Christ Jesus, who will judge the living and the dead, and in view of His appearing and His kingdom:"
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Personal Concerns"
+                    }
+                ],
                 "text": "Make every effort to come to me quickly,"
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lord Remains Faithful"
+                    }
+                ],
                 "text": "At my first defense, no one stood with me, but everyone deserted me. May it not be charged against them."
             }
         },
@@ -222,6 +240,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Final Greetings",
+                        "refs": "Ephesians 6:21–24; Philippians 4:21–23"
+                    }
+                ],
                 "text": "Greet Prisca and Aquila, as well as the household of Onesiphorus."
             }
         },

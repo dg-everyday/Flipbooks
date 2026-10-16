@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeroboam’s Hand Withers",
+                        "refs": "2 Kings 23:4–20; 2 Chronicles 34:3–7"
+                    }
+                ],
                 "text": "Suddenly, as Jeroboam was standing beside the altar to burn incense, there came a man of God from Judah to Bethel by the word of the LORD."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Old Prophet and the Man of God"
+                    }
+                ],
                 "text": "Now a certain old prophet was living in Bethel, and his sons came and told him all the deeds that the man of God had done that day in Bethel. They also told their father the words that the man had spoken to the king."
             }
         },

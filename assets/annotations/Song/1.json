@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bride Confesses Her Love",
+                        "refs": "Ephesians 5:22–33; 1 Peter 3:1–7"
+                    }
+                ],
                 "text": "This is Solomon’s Song of Songs."
             }
         },
@@ -18,6 +25,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "Let him kiss me with the kisses of his mouth! For your love is more delightful than wine."
             }
         },
@@ -54,6 +67,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    },
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "I am dark, yet lovely, O daughters of Jerusalem, like the tents of Kedar, like the curtains of Solomon."
             }
         },
@@ -90,6 +113,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "If you do not know, O fairest of women, follow the tracks of the flock, and graze your young goats near the tents of the shepherds."
             }
         },
@@ -102,6 +131,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "I compare you, my darling, to a mare among Pharaoh’s chariots."
             }
         },
@@ -126,6 +161,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "We will make you ornaments of gold, studded with beads of silver."
             }
         },
@@ -138,6 +179,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "While the king was at his table, my perfume spread its fragrance."
             }
         },
@@ -174,6 +221,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "How beautiful you are, my darling! Oh, how very beautiful! Your eyes are like doves."
             }
         },
@@ -186,6 +239,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "How handsome you are, my beloved! Oh, how delightful! The soft grass is our bed."
             }
         },
@@ -198,6 +257,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "The beams of our house are cedars; our rafters are fragrant firs."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against Babylon"
+                    }
+                ],
                 "text": "This is the word that the LORD spoke through Jeremiah the prophet concerning Babylon and the land of the Chaldeans:"
             }
         },
@@ -42,6 +48,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hope for Israel and Judah"
+                    }
+                ],
                 "text": "“In those days and at that time, declares the LORD, the children of Israel and the children of Judah will come together, weeping as they come, and will seek the LORD their God."
             }
         },
@@ -126,6 +138,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Babylon’s Fall Is Certain"
+                    }
+                ],
                 "text": "“Because you rejoice, because you sing in triumph—you who plunder My inheritance—because you frolic like a heifer treading grain and neigh like stallions,"
             }
         },
@@ -198,6 +216,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Redemption for God’s People"
+                    }
+                ],
                 "text": "Israel is a scattered flock, chased away by lions. The first to devour him was the king of Assyria; the last to crush his bones was Nebuchadnezzar king of Babylon.”"
             }
         },
@@ -246,6 +270,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Destruction of Babylon"
+                    }
+                ],
                 "text": "Go up against the land of Merathaim, and against the residents of Pekod. Kill them and devote them to destruction. Do all that I have commanded you,” declares the LORD."
             }
         },

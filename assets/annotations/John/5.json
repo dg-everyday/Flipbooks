@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Pool of Bethesda"
+                    }
+                ],
                 "text": "Some time later there was a feast of the Jews, and Jesus went up to Jerusalem."
             }
         },
@@ -181,6 +187,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Father and the Son"
+                    }
+                ],
                 "text": "Now because Jesus was doing these things on the Sabbath, the Jews began to persecute Him."
             }
         },
@@ -361,6 +373,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Testimonies about Jesus"
+                    }
+                ],
                 "text": "If I testify about Myself, My testimony is not valid."
             }
         },
@@ -457,6 +475,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Witness of Scripture",
+                        "refs": "Luke 16:19–31"
+                    }
+                ],
                 "text": "You pore over the Scriptures because you presume that by them you possess eternal life. These are the very words that testify about Me,"
             }
         },

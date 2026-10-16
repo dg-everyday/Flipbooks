@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Sing of His Love Forever"
+                    }
+                ],
                 "title": "A Maskil of Ethan the Ezrahite.",
                 "text": "I will sing of the loving devotion of the LORD forever; with my mouth I will proclaim Your faithfulness to all generations."
             }

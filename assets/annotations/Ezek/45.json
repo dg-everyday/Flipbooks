@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Consecration of the Land"
+                    }
+                ],
                 "text": "“When you divide the land by lot as an inheritance, you are to set aside a portion for the LORD, a holy portion of the land 25,000 cubits long and 20,000 cubits wide. This entire tract of land will be holy."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prince’s Portion"
+                    }
+                ],
                 "text": "Now the prince will have the area bordering each side of the area formed by the holy district and the property of the city, extending westward from the western side and eastward from the eastern side, running lengthwise from the western boundary to the eastern boundary and parallel to one of the tribal portions."
             }
         },
@@ -114,6 +126,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Honest Scales",
+                        "refs": "Deuteronomy 25:13–16; Proverbs 11:1–3"
+                    }
+                ],
                 "text": "You must use honest scales, a just ephah, and a just bath."
             }
         },
@@ -150,6 +169,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings and Feasts"
+                    }
+                ],
                 "text": "This is the contribution you are to offer: a sixth of an ephah from each homer of wheat, and a sixth of an ephah from each homer of barley."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Delivered to Pilate",
+                        "refs": "Matthew 27:1–2"
+                    }
+                ],
                 "text": "Early in the morning, the chief priests, elders, scribes, and the whole Sanhedrin devised a plan. They bound Jesus, led Him away, and handed Him over to Pilate."
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Crowd Chooses Barabbas",
+                        "refs": "Matthew 27:15–23; Luke 23:13–25"
+                    }
+                ],
                 "text": "Now it was Pilate’s custom at the feast to release to the people a prisoner of their choosing."
             }
         },
@@ -138,6 +152,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Pilate Delivers Up Jesus",
+                        "refs": "Matthew 27:24–26"
+                    }
+                ],
                 "text": "So Pilate asked them again, “What then do you want me to do with the One you call the King of the Jews?”"
             }
         },
@@ -186,6 +207,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Soldiers Mock Jesus",
+                        "refs": "Isaiah 50:4–11; Matthew 27:27–31; Luke 22:63–65; John 19:1–15"
+                    }
+                ],
                 "text": "Then the soldiers led Jesus away into the palace (that is, the Praetorium) and called the whole company together."
             }
         },
@@ -246,6 +274,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Crucifixion",
+                        "refs": "Psalms 22:1–31; Matthew 27:32–44; Luke 23:26–43; John 19:16–27"
+                    }
+                ],
                 "text": "Now Simon of Cyrene, the father of Alexander and Rufus, was passing by on his way in from the country, and the soldiers forced him to carry the cross of Jesus."
             }
         },
@@ -385,6 +420,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Jesus",
+                        "refs": "Psalms 22:1–31; Matthew 27:45–56; Luke 23:44–49; John 19:28–30"
+                    }
+                ],
                 "text": "From the sixth hour until the ninth hour darkness came over all the land."
             }
         },
@@ -493,6 +535,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burial of Jesus",
+                        "refs": "Isaiah 53:9–12; Matthew 27:57–61; Luke 23:50–56; John 19:38–42"
+                    }
+                ],
                 "text": "Now it was already evening. Since it was Preparation Day (that is, the day before the Sabbath),"
             }
         },

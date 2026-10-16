@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Blesses His Sons"
+                    }
+                ],
                 "text": "Then Jacob called for his sons and said, “Gather around so that I can tell you what will happen to you in the days to come:"
             }
         },
@@ -342,6 +348,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Jacob"
+                    }
+                ],
                 "text": "Then Jacob instructed them, “I am about to be gathered to my people. Bury me with my fathers in the cave in the field of Ephron the Hittite."
             }
         },

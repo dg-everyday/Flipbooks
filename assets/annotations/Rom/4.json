@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abraham Justified by Faith",
+                        "refs": "Genesis 15:1–7; Psalms 32:1–11; Hebrews 11:8–19"
+                    }
+                ],
                 "text": "What then shall we say that Abraham, our forefather according to the flesh, has discovered?"
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abraham Receives the Promise",
+                        "refs": "Genesis 15:8–21"
+                    }
+                ],
                 "text": "For the promise to Abraham and his offspring that he would be heir of the world was not given through the law, but through the righteousness that comes by faith."
             }
         },

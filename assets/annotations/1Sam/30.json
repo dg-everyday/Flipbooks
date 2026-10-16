@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Amalekites Raid Ziklag"
+                    }
+                ],
                 "text": "On the third day David and his men arrived in Ziklag, and the Amalekites had raided the Negev, attacked Ziklag, and burned it down."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Destroys the Amalekites"
+                    }
+                ],
                 "text": "Then David said to Abiathar the priest, the son of Ahimelech, “Bring me the ephod.” So Abiathar brought it to him,"
             }
         },
@@ -246,6 +258,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Spoils Are Divided"
+                    }
+                ],
                 "text": "When David came to the two hundred men who had been too exhausted to follow him and who were left behind at the Brook of Besor, they came out to meet him and the troops with him. As David approached the men, he greeted them,"
             }
         },

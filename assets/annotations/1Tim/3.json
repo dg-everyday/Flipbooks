@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Qualifications for Overseers",
+                        "refs": "Titus 1:5–9; 1 Peter 5:1–4"
+                    }
+                ],
                 "text": "This is a trustworthy saying: If anyone aspires to be an overseer, he desires a noble task."
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Qualifications for Deacons",
+                        "refs": "Acts 6:1–7"
+                    }
+                ],
                 "text": "Deacons likewise must be dignified, not double-tongued or given to much wine or greedy for money."
             }
         },
@@ -162,6 +176,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mystery of Godliness"
+                    }
+                ],
                 "text": "Although I hope to come to you soon, I am writing you these things"
             }
         },

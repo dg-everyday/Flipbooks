@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Surrounds His People"
+                    }
+                ],
                 "title": "A song of ascents.",
                 "text": "Those who trust in the LORD are like Mount Zion. It cannot be moved; it abides forever."
             }

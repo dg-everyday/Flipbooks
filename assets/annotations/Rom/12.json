@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Living Sacrifices",
+                        "refs": "1 Corinthians 3:16–23; 1 Corinthians 6:18–20"
+                    }
+                ],
                 "text": "Therefore I urge you, brothers, on account of God’s mercy, to offer your bodies as living sacrifices, holy and pleasing to God, which is your spiritual service of worship."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Love, Zeal, Hope, Hospitality",
+                        "refs": "John 13:31–35; 1 John 3:11–24"
+                    }
+                ],
                 "text": "Love must be sincere. Detest what is evil; cling to what is good."
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Forgiveness",
+                        "refs": "Matthew 18:21–35"
+                    }
+                ],
                 "text": "Bless those who persecute you. Bless and do not curse."
             }
         },

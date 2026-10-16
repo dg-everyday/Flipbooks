@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Proclamation of Cyrus",
+                        "refs": "2 Chronicles 36:22–23; Isaiah 45:1–25"
+                    }
+                ],
                 "text": "In the first year of Cyrus king of Persia, to fulfill the word of the LORD spoken through Jeremiah, the LORD stirred the spirit of Cyrus king of Persia to send a proclamation throughout his kingdom and to put it in writing as follows:"
             }
         },
@@ -78,6 +85,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cyrus Restores the Holy Vessels"
+                    }
+                ],
                 "text": "King Cyrus also brought out the articles belonging to the house of the LORD that Nebuchadnezzar had carried away from Jerusalem and placed in the temple of his gods."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Praise Awaits God in Zion"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David. A song.",
                 "text": "Praise awaits You, O God, in Zion; to You our vows will be fulfilled."
             }

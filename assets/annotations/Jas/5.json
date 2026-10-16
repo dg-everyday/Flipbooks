@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning to the Rich",
+                        "refs": "Proverbs 23:1–5; 1 Timothy 6:17–19"
+                    }
+                ],
                 "text": "Come now, you who are rich, weep and wail over the misery to come upon you."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Patience in Suffering",
+                        "refs": "Job 1:1–5"
+                    }
+                ],
                 "text": "Be patient, then, brothers, until the Lord’s coming. See how the farmer awaits the precious fruit of the soil—how patient he is for the fall and spring rains."
             }
         },
@@ -150,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prayer of Faith"
+                    }
+                ],
                 "text": "Is any one of you suffering? He should pray. Is anyone cheerful? He should sing praises."
             }
         },
@@ -222,6 +242,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restoring a Sinner"
+                    }
+                ],
                 "text": "My brothers, if one of you should wander from the truth and someone should bring him back,"
             }
         },

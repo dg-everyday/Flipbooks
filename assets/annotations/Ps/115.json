@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "To Your Name Be the Glory",
+                        "refs": "Psalms 135:1–21"
+                    }
+                ],
                 "text": "Not to us, O LORD, not to us, but to Your name be the glory, because of Your loving devotion, because of Your faithfulness."
             }
         },

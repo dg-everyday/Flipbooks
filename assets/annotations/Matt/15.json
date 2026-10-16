@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tradition of the Elders",
+                        "refs": "Mark 7:1–13"
+                    }
+                ],
                 "text": "Then some Pharisees and scribes came to Jesus from Jerusalem and asked,"
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "What Defiles a Man",
+                        "refs": "Mark 7:14–23"
+                    }
+                ],
                 "text": "Jesus called the crowd to Him and said, “Listen and understand."
             }
         },
@@ -246,6 +260,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of the Canaanite Woman",
+                        "refs": "Mark 7:24–30"
+                    }
+                ],
                 "text": "Leaving that place, Jesus withdrew to the district of Tyre and Sidon."
             }
         },
@@ -342,6 +363,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feeding of the Four Thousand",
+                        "refs": "2 Kings 4:42–44; Mark 8:1–10"
+                    }
+                ],
                 "text": "Moving on from there, Jesus went along the Sea of Galilee. Then He went up on a mountain and sat down."
             }
         },

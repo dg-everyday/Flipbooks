@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Place of Sacrifice"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws against Eating Blood"
+                    }
+                ],
                 "text": "If anyone from the house of Israel or a foreigner living among them eats any blood, I will set My face against that person and cut him off from among his people."
             }
         },

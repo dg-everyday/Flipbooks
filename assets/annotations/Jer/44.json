@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on the Jews in Egypt"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah concerning all the Jews living in the land of Egypt—in Migdol, Tahpanhes, and Memphis—and in the land of Pathros:"
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Stubbornness of the People"
+                    }
+                ],
                 "text": "Then all the men who knew that their wives were burning incense to other gods, and all the women standing by—a great assembly—along with all the people living in the land of Egypt and in Pathros, said to Jeremiah,"
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Calamity for the Jews"
+                    }
+                ],
                 "text": "Then Jeremiah said to all the people, both men and women, who were answering him,"
             }
         },

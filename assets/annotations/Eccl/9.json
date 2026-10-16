@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Death Comes to Good and Bad"
+                    }
+                ],
                 "text": "So I took all this to heart and concluded that the righteous and the wise, as well as their deeds, are in God’s hands. Man does not know what lies ahead, whether love or hate."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Enjoy Your Portion in This Life"
+                    }
+                ],
                 "text": "Go, eat your bread with joy, and drink your wine with a cheerful heart, for God has already approved your works:"
             }
         },
@@ -150,6 +162,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wisdom Is Better than Strength"
+                    }
+                ],
                 "text": "I have also seen this wisdom under the sun, and it was great to me:"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Danites Settle in Laish"
+                    }
+                ],
                 "text": "In those days there was no king in Israel, and the tribe of the Danites was looking for territory to occupy. For up to that time they had not come into an inheritance among the tribes of Israel."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Danites Take Micah’s Idols"
+                    }
+                ],
                 "text": "Then the five men who had gone to spy out the land of Laish said to their brothers, “Did you know that one of these houses has an ephod, household gods, a graven image, and a molten idol? Now think about what you should do.”"
             }
         },

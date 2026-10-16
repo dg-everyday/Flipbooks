@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Resurrection of Christ"
+                    }
+                ],
                 "text": "Now, brothers, I want to remind you of the gospel I preached to you, which you received, and in which you stand firm."
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Resurrection of the Dead"
+                    }
+                ],
                 "text": "But if it is preached that Christ has been raised from the dead, how can some of you say that there is no resurrection of the dead?"
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Order of Resurrection"
+                    }
+                ],
                 "text": "But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep."
             }
         },
@@ -414,6 +432,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Resurrection Body"
+                    }
+                ],
                 "text": "But someone will ask, “How are the dead raised? With what kind of body will they come?”"
             }
         },
@@ -594,6 +618,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Where, O Death, Is Your Victory?",
+                        "refs": "Hosea 13:9–14"
+                    }
+                ],
                 "text": "Now I declare to you, brothers, that flesh and blood cannot inherit the kingdom of God, nor does the perishable inherit the imperishable."
             }
         },

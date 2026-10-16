@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Redeem Us, O God",
+                        "refs": "Romans 8:35–39"
+                    }
+                ],
                 "title": "For the choirmaster. A Maskil of the sons of Korah.",
                 "text": "We have heard with our ears, O God; our fathers have told us the work You did in their days, in the days of old."
             }

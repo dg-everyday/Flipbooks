@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sins of Jerusalem"
+                    }
+                ],
                 "text": "Then the word of the LORD came to me, saying,"
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Refining Furnace"
+                    }
+                ],
                 "text": "Then the word of the LORD came to me, saying,"
             }
         },
@@ -270,6 +282,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Wicked Leaders"
+                    }
+                ],
                 "text": "And the word of the LORD came to me, saying,"
             }
         },

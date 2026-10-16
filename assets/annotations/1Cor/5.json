@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Immorality Rebuked",
+                        "refs": "Leviticus 20:10–21; Proverbs 5:1–23"
+                    }
+                ],
                 "text": "It is actually reported that there is sexual immorality among you, and of a kind that is intolerable even among pagans: A man has his father’s wife."
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Expel the Immoral Brother"
+                    }
+                ],
                 "text": "I wrote you in my letter not to associate with sexually immoral people."
             }
         },

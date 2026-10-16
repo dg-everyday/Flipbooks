@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Signs of the Coming Captivity"
+                    }
+                ],
                 "text": "Then the word of the LORD came to me, saying,"
             }
         },
@@ -246,6 +252,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Presumptuous Proverb"
+                    }
+                ],
                 "text": "Again the word of the LORD came to me, saying,"
             }
         },

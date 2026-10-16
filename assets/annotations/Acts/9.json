@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Road to Damascus",
+                        "refs": "Acts 22:1–21; Acts 26:1–23"
+                    }
+                ],
                 "text": "Meanwhile, Saul was still breathing out murderous threats against the disciples of the Lord. He approached the high priest"
             }
         },
@@ -114,6 +121,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ananias Baptizes Saul"
+                    }
+                ],
                 "text": "In Damascus there was a disciple named Ananias. The Lord spoke to him in a vision, “Ananias!” “Here I am, Lord,” he answered."
             }
         },
@@ -234,6 +247,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Preaches at Damascus"
+                    }
+                ],
                 "text": "Saul promptly began to proclaim Jesus in the synagogues, declaring, “He is the Son of God.”"
             }
         },
@@ -270,6 +289,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Escape from Damascus"
+                    }
+                ],
                 "text": "After many days had passed, the Jews conspired to kill him,"
             }
         },
@@ -306,6 +331,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul in Jerusalem"
+                    }
+                ],
                 "text": "When Saul arrived in Jerusalem, he tried to join the disciples, but they were all afraid of him, not believing that he was a disciple."
             }
         },
@@ -366,6 +397,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Healing of Aeneas"
+                    }
+                ],
                 "text": "Then the church throughout Judea, Galilee, and Samaria experienced a time of peace. It grew in strength and numbers, living in the fear of the Lord and the encouragement of the Holy Spirit."
             }
         },
@@ -426,6 +463,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Raising of Tabitha",
+                        "refs": "John 11:38–44"
+                    }
+                ],
                 "text": "In Joppa there was a disciple named Tabitha (which is translated as Dorcas), who was always occupied with works of kindness and charity."
             }
         },

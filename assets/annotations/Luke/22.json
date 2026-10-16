@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot to Kill Jesus",
+                        "refs": "Matthew 26:1–5; Mark 14:1–2; John 11:45–57"
+                    }
+                ],
                 "text": "Now the Feast of Unleavened Bread, called the Passover, was approaching,"
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judas Agrees to Betray Jesus",
+                        "refs": "Matthew 26:14–16; Mark 14:10–11"
+                    }
+                ],
                 "text": "Then Satan entered Judas Iscariot, who was one of the Twelve."
             }
         },
@@ -78,6 +92,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparing the Passover",
+                        "refs": "Matthew 26:17–19; Mark 14:12–16"
+                    }
+                ],
                 "text": "Then came the day of Unleavened Bread on which the Passover lamb was to be sacrificed."
             }
         },
@@ -162,6 +183,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Last Supper",
+                        "refs": "Matthew 26:20–30; Mark 14:17–26; 1 Corinthians 11:17–34"
+                    }
+                ],
                 "text": "When the hour had come, Jesus reclined at the table with His apostles."
             }
         },
@@ -282,6 +310,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Who Is the Greatest?"
+                    }
+                ],
                 "text": "A dispute also arose among the disciples as to which of them should be considered the greatest."
             }
         },
@@ -366,6 +400,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Predicts Peter’s Denial",
+                        "refs": "Matthew 26:31–35; Mark 14:27–31; John 13:36–38"
+                    }
+                ],
                 "text": "Simon, Simon, Satan has asked to sift all of you like wheat."
             }
         },
@@ -462,6 +503,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Prays on the Mount of Olives",
+                        "refs": "Matthew 26:36–46; Mark 14:32–42"
+                    }
+                ],
                 "text": "Jesus went out as usual to the Mount of Olives, and the disciples followed Him."
             }
         },
@@ -558,6 +606,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Betrayal of Jesus",
+                        "refs": "Matthew 26:47–56; Mark 14:43–52; John 18:1–14"
+                    }
+                ],
                 "text": "While He was still speaking, a crowd arrived, led by the man called Judas, one of the Twelve. He approached Jesus to kiss Him."
             }
         },
@@ -642,6 +697,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter Denies Jesus",
+                        "refs": "Matthew 26:69–75; Mark 14:66–72; John 18:15–18"
+                    }
+                ],
                 "text": "Then they seized Jesus, led Him away, and took Him into the house of the high priest. And Peter followed at a distance."
             }
         },
@@ -750,6 +812,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Soldiers Mock Jesus",
+                        "refs": "Isaiah 50:4–11; Matthew 27:27–31; Mark 15:16–20; John 19:1–15"
+                    }
+                ],
                 "text": "The men who were holding Jesus began to mock Him and beat Him."
             }
         },
@@ -786,6 +855,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus before the Sanhedrin",
+                        "refs": "Matthew 26:57–68; Mark 14:53–65; John 18:19–24"
+                    }
+                ],
                 "text": "At daybreak the council of the elders of the people, both the chief priests and scribes, met together. They led Jesus into their Sanhedrin and said,"
             }
         },

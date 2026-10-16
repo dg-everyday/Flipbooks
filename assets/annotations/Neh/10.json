@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Signers of the Covenant"
+                    }
+                ],
                 "text": "Now these were the ones who sealed the document: Nehemiah the governor, son of Hacaliah, and also Zedekiah,"
             }
         },
@@ -226,6 +232,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Vows of the Covenant"
+                    }
+                ],
                 "text": "“The rest of the people—the priests, Levites, gatekeepers, singers, temple servants, and all who had separated themselves from the people of the land to obey the Law of God—along with their wives and all their sons and daughters who are able to understand,"
             }
         },

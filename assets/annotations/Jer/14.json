@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Drought, Famine, Sword, and Plague"
+                    }
+                ],
                 "text": "This is the word of the LORD that came to Jeremiah concerning the drought:"
             }
         },
@@ -222,6 +228,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prayer for Mercy",
+                        "refs": "Isaiah 63:15–19"
+                    }
+                ],
                 "text": "Have You rejected Judah completely? Do You despise Zion? Why have You stricken us so that we are beyond healing? We hoped for peace, but no good has come, and for the time of healing, but there was only terror."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Song of Moses and the Lamb",
+                        "refs": "Deuteronomy 32:1–47"
+                    }
+                ],
                 "text": "Then I saw another great and marvelous sign in heaven: seven angels with the seven final plagues, with which the wrath of God is completed."
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparation for Judgment"
+                    }
+                ],
                 "text": "After this I looked, and the temple—the tabernacle of the Testimony—was opened in heaven."
             }
         },

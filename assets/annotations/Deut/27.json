@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Altar on Mount Ebal",
+                        "refs": "Joshua 8:30–35"
+                    }
+                ],
                 "text": "Then Moses and the elders of Israel commanded the people: “Keep all the commandments I am giving you today."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Curses Pronounced from Ebal"
+                    }
+                ],
                 "text": "On that day Moses commanded the people:"
             }
         },

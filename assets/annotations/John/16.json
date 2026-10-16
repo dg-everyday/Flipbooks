@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Persecution Foretold",
+                        "refs": "Acts 23:12–22"
+                    }
+                ],
                 "text": "“I have told you these things so that you will not fall away."
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Promise of the Holy Spirit",
+                        "refs": "John 14:15–26"
+                    }
+                ],
                 "text": "Now, however, I am going to Him who sent Me; yet none of you asks Me, ‘Where are You going?’"
             }
         },
@@ -198,6 +212,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Grief Will Turn to Joy"
+                    }
+                ],
                 "text": "Then some of His disciples asked one another, “Why is He telling us, ‘In a little while you will not see Me, and then after a little while you will see Me’ and ‘Because I am going to the Father’?”"
             }
         },
@@ -270,6 +290,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ask in My Name",
+                        "refs": "Matthew 18:19–20"
+                    }
+                ],
                 "text": "In that day you will no longer ask Me anything. Truly, truly, I tell you, whatever you ask the Father in My name, He will give you."
             }
         },

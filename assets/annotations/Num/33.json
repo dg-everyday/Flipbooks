@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Forty-Two Journeys of the Israelites"
+                    }
+                ],
                 "text": "These are the journeys of the Israelites when they came out of the land of Egypt by their divisions under the leadership of Moses and Aaron."
             }
         },
@@ -514,6 +520,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Instructions for Occupying Canaan"
+                    }
+                ],
                 "text": "On the plains of Moab by the Jordan across from Jericho, the LORD said to Moses,"
             }
         },

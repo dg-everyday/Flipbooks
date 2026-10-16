@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Excellence of Wisdom"
+                    }
+                ],
                 "text": "Does not wisdom call out, and understanding raise her voice?"
             }
         },

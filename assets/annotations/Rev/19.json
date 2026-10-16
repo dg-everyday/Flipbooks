@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rejoicing in Heaven"
+                    }
+                ],
                 "text": "After this I heard a sound like the roar of a great multitude in heaven, shouting: “Hallelujah! Salvation and glory and power belong to our God!"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Marriage of the Lamb"
+                    }
+                ],
                 "text": "And I heard a sound like the roar of a great multitude, like the rushing of many waters, and like a mighty rumbling of thunder, crying out: “Hallelujah! For the Lord our God the Almighty reigns."
             }
         },
@@ -126,6 +138,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rider on the White Horse"
+                    }
+                ],
                 "text": "Then I saw heaven standing open, and there before me was a white horse. And its rider is called Faithful and True. With righteousness He judges and wages war."
             }
         },
@@ -198,6 +216,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Defeat of the Beast and False Prophet"
+                    }
+                ],
                 "text": "Then I saw an angel standing in the sun, and he cried out in a loud voice to all the birds flying overhead, “Come, gather together for the great supper of God,"
             }
         },

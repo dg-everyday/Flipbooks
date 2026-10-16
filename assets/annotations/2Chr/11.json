@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shemaiah’s Prophecy",
+                        "refs": "1 Kings 12:20–24"
+                    }
+                ],
                 "text": "When Rehoboam arrived in Jerusalem, he mobilized the house of Judah and Benjamin—180,000 chosen warriors—to fight against Israel and restore the kingdom to Rehoboam."
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rehoboam Fortifies Judah"
+                    }
+                ],
                 "text": "Rehoboam lived in Jerusalem, and he built up cities for defense in Judah."
             }
         },
@@ -138,6 +151,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeroboam Forsakes the Priests and Levites"
+                    }
+                ],
                 "text": "Moreover, the priests and Levites from all their districts throughout Israel stood with Rehoboam."
             }
         },
@@ -198,6 +217,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rehoboam’s Family"
+                    }
+                ],
                 "text": "And Rehoboam married Mahalath, who was the daughter of David’s son Jerimoth and of Abihail, the daughter of Jesse’s son Eliab."
             }
         },

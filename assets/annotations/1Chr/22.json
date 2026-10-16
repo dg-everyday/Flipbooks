@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparations for the Temple"
+                    }
+                ],
                 "text": "Then David said, “Here shall be the house of the LORD God, as well as the altar of burnt offering for Israel.”"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon Anointed to Build the Temple"
+                    }
+                ],
                 "text": "Then David called for his son Solomon and instructed him to build a house for the LORD, the God of Israel."
             }
         },

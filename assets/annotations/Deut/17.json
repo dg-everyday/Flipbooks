@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Detestable Sacrifices"
+                    }
+                ],
                 "text": "You shall not sacrifice to the LORD your God an ox or a sheep with any defect or serious flaw, for that is detestable to the LORD your God."
             }
         },
@@ -18,6 +24,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Purge the Idolater"
+                    }
+                ],
                 "text": "If a man or woman among you in one of the towns that the LORD your God gives you is found doing evil in the sight of the LORD your God by transgressing His covenant"
             }
         },
@@ -90,6 +102,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Courts of Law"
+                    }
+                ],
                 "text": "If a case is too difficult for you to judge, whether the controversy within your gates is regarding bloodshed, lawsuits, or assaults, you must go up to the place the LORD your God will choose."
             }
         },
@@ -162,6 +180,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Guidelines for a King",
+                        "refs": "1 Samuel 8:1–9"
+                    }
+                ],
                 "text": "When you enter the land that the LORD your God is giving you and have taken possession of it and settled in it, and you say, “Let us set a king over us like all the nations around us,”"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Evil in the Last Days"
+                    }
+                ],
                 "text": "But understand this: In the last days terrible times will come."
             }
         },
@@ -114,6 +120,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "All Scripture Is God-Breathed",
+                        "refs": "Hebrews 4:12–16"
+                    }
+                ],
                 "text": "You, however, have observed my teaching, my conduct, my purpose, my faith, my patience, my love, my perseverance,"
             }
         },

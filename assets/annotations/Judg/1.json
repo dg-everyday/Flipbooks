@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Conquest of Canaan Proceeds",
+                        "refs": "Joshua 13:1–7"
+                    }
+                ],
                 "text": "After the death of Joshua, the Israelites inquired of the LORD, “Who will be the first to go up and fight for us against the Canaanites?”"
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Capture of Jerusalem and Hebron",
+                        "refs": "Joshua 15:13–19"
+                    }
+                ],
                 "text": "Then the men of Judah fought against Jerusalem and captured it. They put the city to the sword and set it on fire."
             }
         },
@@ -318,6 +332,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Failure to Complete the Conquest"
+                    }
+                ],
                 "text": "At that time Manasseh failed to drive out the inhabitants of Beth-shean, Taanach, Dor, Ibleam, Megiddo, and their villages; for the Canaanites were determined to dwell in that land."
             }
         },

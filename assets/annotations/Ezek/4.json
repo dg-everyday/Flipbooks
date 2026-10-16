@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Sign of Jerusalem’s Siege"
+                    }
+                ],
                 "text": "“Now you, son of man, take a brick, place it before you, and draw on it the city of Jerusalem."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defiled Bread"
+                    }
+                ],
                 "text": "But take wheat, barley, beans, lentils, millet, and spelt; put them in a single container and make them into bread for yourself. This is what you are to eat during the 390 days you lie on your side."
             }
         },

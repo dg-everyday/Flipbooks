@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Kingdom Blessing",
+                        "refs": "Psalms 57:1–11; Psalms 60:1–12"
+                    }
+                ],
                 "title": "A song. A Psalm of David.",
                 "text": "My heart is steadfast, O God; I will sing and make music with all my being."
             }

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Mourning Turned to Joy",
+                        "refs": "Matthew 2:16–18"
+                    }
+                ],
                 "text": "“At that time,” declares the LORD, “I will be the God of all the families of Israel, and they will be My people.”"
             }
         },
@@ -306,6 +313,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The New Covenant",
+                        "refs": "Hebrews 8:6–13"
+                    }
+                ],
                 "text": "At this I awoke and looked around. My sleep had been most pleasant to me."
             }
         },

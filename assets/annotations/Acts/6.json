@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Choosing of the Seven",
+                        "refs": "1 Timothy 3:8–13"
+                    }
+                ],
                 "text": "In those days when the disciples were increasing in number, the Grecian Jews among them began to grumble against the Hebraic Jews because their widows were being overlooked in the daily distribution of food."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Arrest of Stephen"
+                    }
+                ],
                 "text": "Now Stephen, who was full of grace and power, was performing great wonders and signs among the people."
             }
         },

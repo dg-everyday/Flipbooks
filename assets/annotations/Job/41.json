@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD’s Power Shown in Leviathan"
+                    }
+                ],
                 "text": "“Can you pull in Leviathan with a hook or tie down his tongue with a rope?"
             }
         },

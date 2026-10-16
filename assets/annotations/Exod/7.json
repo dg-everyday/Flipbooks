@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Commands Moses and Aaron"
+                    }
+                ],
                 "text": "The LORD answered Moses, “See, I have made you like God to Pharaoh, and your brother Aaron will be your prophet."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Aaron’s Staff"
+                    }
+                ],
                 "text": "The LORD said to Moses and Aaron,"
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Plague: Blood"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Pharaoh’s heart is unyielding; he refuses to let the people go."
             }
         },

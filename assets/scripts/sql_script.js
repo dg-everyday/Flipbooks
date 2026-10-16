@@ -7,9 +7,12 @@ const SQL_JS_BASE_URL = "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.14.2/";
 // The database sits beside this script's folder, so it is found from any
 // page: index.html loads this script, and the Bible passage popup on the
 // study pages (apps/components/verse-popup.js) adds it when first needed.
+// It is fetched with force-cache, so bump DATABASE_VERSION whenever
+// dailygrace.db changes, or browsers keep the copy they already have.
+const DATABASE_VERSION = "20261016-1";
 const DATABASE_URL = document.currentScript
-    ? new URL("../db/dailygrace.db", document.currentScript.src).href
-    : new URL("assets/db/dailygrace.db", document.baseURI).href;
+    ? new URL(`../db/dailygrace.db?v=${DATABASE_VERSION}`, document.currentScript.src).href
+    : new URL(`assets/db/dailygrace.db?v=${DATABASE_VERSION}`, document.baseURI).href;
 
 // ============================================================
 // Initialize sql.js

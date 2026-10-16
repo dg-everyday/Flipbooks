@@ -17,8 +17,11 @@
  * Usage
  *   import { showPassage } from './verse-popup.js?v=…';
  *   showPassage('John 3:16');          // any reference findReferences() knows
+ *   showPassage('John 3:16', { bsb: true });  // with the BSB wording open
  *
- * Methods      show(reference)  open the passage on top of any already open
+ * Methods      show(reference, { bsb })  open the passage on top of any already
+ *              open; bsb: true opens each verse's Berean Standard Bible
+ *              wording under the KJV (the banner's daily verse)
  *              close()          close the top popup
  * Properties   open (read-only)  whether a passage is showing
  *
@@ -29,9 +32,9 @@ import { parseReference } from "./scripture-refs.js?v=20261002-1";
 
 // Loaded only where the page does not load them itself: the home page has the
 // results panel and the database script already, with its own ?v= tokens.
-const RESULTS_MODULE = "./bible-search-results.js?v=20261009-1";
+const RESULTS_MODULE = "./bible-search-results.js?v=20261016-4";
 const SQL_SCRIPT = new URL(
-    "../../assets/scripts/sql_script.js?v=20261002-1",
+    "../../assets/scripts/sql_script.js?v=20261016-1",
     import.meta.url,
 ).href;
 
@@ -196,8 +199,11 @@ export class VersePopup extends HTMLElement {
         return this.#layers.length > 0;
     }
 
-    /** Show a reference's passage on top of any passage already open. */
-    async show(reference) {
+    /**
+     * Show a reference's passage on top of any passage already open.
+     * bsb: open each verse's Berean Standard Bible wording under the KJV.
+     */
+    async show(reference, { bsb = false } = {}) {
         if (!customElements.get("bible-search-results")) {
             await import(RESULTS_MODULE);
         }
@@ -206,6 +212,7 @@ export class VersePopup extends HTMLElement {
                 ? this.#layers.at(-1)
                 : this.#openLayer();
         const { dialog, results } = layer;
+        results.toggleAttribute("bsb-open", bsb);
         const request = (layer.request = (layer.request ?? 0) + 1);
         dialog.setAttribute("aria-label", `Bible passage: ${reference}`);
         dialog.scrollTop = 0;
@@ -327,12 +334,15 @@ if (!customElements.get("verse-popup")) {
     customElements.define("verse-popup", VersePopup);
 }
 
-/** Open a reference's passage in the page's popup, adding the popup if need be. */
-export function showPassage(reference) {
+/**
+ * Open a reference's passage in the page's popup, adding the popup if need be.
+ * options: { bsb } as for VersePopup.show().
+ */
+export function showPassage(reference, options) {
     let popup = document.querySelector("verse-popup");
     if (!popup) {
         popup = document.createElement("verse-popup");
         document.body.append(popup);
     }
-    return popup.show(reference);
+    return popup.show(reference, options);
 }

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Download the Jamieson-Fausset-Brown and John Gill commentaries from the HelloAO
-Bible API (public domain, CC0) into tools/explanations/cache/, one JSON file per
+Bible API (public domain, CC0) into tools/annotations/cache/, one JSON file per
 chapter. Files already in the cache are skipped, so a rerun only fetches what is
 missing.
 
-    python tools/explanations/fetch_commentaries.py
+    python tools/annotations/fetch_commentaries.py
 """
 import json, os, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor

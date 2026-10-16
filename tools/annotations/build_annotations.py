@@ -1,22 +1,27 @@
 # -*- coding: utf-8 -*-
 """
-Write assets/explanations/<book_id>/<chapter>.json from the commentaries cached
-by fetch_commentaries.py, one file per chapter of the KJV in
-assets/db/dailygrace.db. Jamieson-Fausset-Brown is used where it has a note for
-the verse, John Gill otherwise; verses neither covers are left out.
+Write assets/annotations/<book_id>/<chapter>.json, one file per chapter of the
+KJV in assets/db/dailygrace.db. Each verse can carry:
 
-The output folder is rebuilt from scratch on every run. The database is only
-read, to get the book ids and which verses exist.
+  explanation        from the commentaries cached by fetch_commentaries.py:
+                     Jamieson-Fausset-Brown where it has a note for the verse,
+                     John Gill otherwise
+  translations.bsb   the Berean Standard Bible text of the verse, and on verse 1
+                     of a psalm its heading, from bsb.json beside this script
 
-    python tools/explanations/build_explanations.py
+A verse with neither is left out. The output folder is rebuilt from scratch on
+every run. The database is only read, to get the book ids and which verses exist.
+
+    python tools/annotations/build_annotations.py
 """
 import collections, json, os, re, shutil, sqlite3, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 CACHE = os.path.join(HERE, "cache")
+BSB = os.path.join(HERE, "bsb.json")
 BIBLE_DB = os.path.join(ROOT, "assets", "db", "dailygrace.db")
-OUT = os.path.join(ROOT, "assets", "explanations")
+OUT = os.path.join(ROOT, "assets", "annotations")
 
 SOURCES = {"jfb": "jamieson-fausset-brown", "gill": "john-gill"}
 
@@ -94,6 +99,9 @@ def main():
     verses = con.execute("SELECT book, chapter, verse FROM verses ORDER BY docid").fetchall()
     con.close()
 
+    with open(BSB, encoding="utf8") as f:
+        bsb = json.load(f)
+
     # Every chapter gets a file, even an empty one, so a fetch never 404s
     chapters = collections.defaultdict(dict)
     stats = collections.Counter()
@@ -101,14 +109,27 @@ def main():
     for book, chapter, verse in verses:
         key = (to_helloao[book], int(chapter), int(verse))
         db_keys.add(key)
-        entry = chapters[(book, int(chapter))]
+        entries = chapters[(book, int(chapter))]
+        entry = {}
         for src in SOURCES:
             if key in notes[src]:
-                entry[str(verse)] = {"source": src, "text": notes[src][key]}
+                entry["explanation"] = {"source": src, "text": notes[src][key]}
                 stats[src] += 1
                 break
         else:
             stats["none"] += 1
+        # The BSB leaves out 16 verses (Matthew 17:21, ...): no text, no entry.
+        text = bsb["verses"].get(book, {}).get(str(chapter), {}).get(str(verse))
+        if text:
+            translation = {"text": text}
+            title = bsb["titles"].get(book, {}).get(str(chapter)) if int(verse) == 1 else None
+            if title:
+                translation = {"title": title, **translation}
+                stats["bsb titles"] += 1
+            entry["translations"] = {"bsb": translation}
+            stats["bsb"] += 1
+        if entry:
+            entries[str(verse)] = entry
 
     shutil.rmtree(OUT, ignore_errors=True)
     total_bytes = 0
@@ -120,9 +141,14 @@ def main():
         total_bytes += os.path.getsize(path)
 
     orphans = [k for src in SOURCES for k in notes[src] if k not in db_keys]
-    print(dict(stats), "total", sum(stats.values()))
+    db_verses = {(b, str(c), str(v)) for b, c, v in verses}
+    bsb_orphans = [(b, c, v) for b, chs in bsb["verses"].items() for c, vs in chs.items()
+                   for v in vs if (b, c, v) not in db_verses]
+    print("explanations:", {s: stats[s] for s in (*SOURCES, "none")}, "total", len(verses))
+    print("bsb:", stats["bsb"], "verses,", stats["bsb titles"], "psalm titles")
     print(f"wrote {len(chapters)} chapter files, {total_bytes / 1e6:.1f} MB")
     print("notes with no matching verse in DB:", len(orphans), sorted(orphans)[:15])
+    print("bsb verses with no matching verse in DB:", len(bsb_orphans), bsb_orphans[:15])
 
 
 if __name__ == "__main__":

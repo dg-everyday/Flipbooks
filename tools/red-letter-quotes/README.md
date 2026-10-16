@@ -21,8 +21,8 @@ references exist, and that every 'single-quoted' phrase is word for word in the 
 (`tools/kjv_quotes.py`). It exits non-zero on any problem. Put anything that is not Scripture in
 “double quotes”.
 
-The page shows the older commentary on each passage straight from `assets/explanations/`
-(see `tools/explanations/README.md`); this build does not copy it.
+The page shows the older commentary on each passage straight from `assets/annotations/`
+(see `tools/annotations/README.md`); this build does not copy it.
 
 ## Saying fields
 

@@ -574,55 +574,54 @@ const STYLES = /* css */ `
   }
   .interlinear-credit { margin: 12px 0 0; font-size: .75rem; }
   .il-words {
-    display: flex; flex-wrap: wrap; gap: 6px;
+    display: flex; flex-wrap: wrap; gap: 10px 14px;
     margin: 0; padding: 0;
     list-style: none;
   }
   .il-words[dir="rtl"] { direction: rtl; }
   .il-word {
-    display: flex; flex-direction: column; align-items: center; gap: 1px;
-    min-width: 52px; padding: 5px 8px 6px;
-    border: 1px solid rgb(0 27 52 / 16%); border-radius: 8px;
-    background: rgb(255 255 255 / 40%);
-    color: var(--search-ink);
+    display: flex; flex-direction: column; align-items: center;
+    min-width: 3.2em;
+    margin: -4px -6px; padding: 4px 6px;
+    border: 0; border-radius: 8px;
+    background: transparent;
+    color: inherit;
     text-align: center;
     direction: ltr;
     font: inherit;
   }
-  button.il-word { cursor: pointer; }
-  button.il-word:hover { background: rgb(255 255 255 / 80%); }
-  button.il-word:focus-visible { outline: 2px solid var(--search-navy); outline-offset: 2px; }
-  .il-word[aria-expanded="true"] {
-    border-color: var(--search-gold);
-    background: #fff8e6;
-    box-shadow: 0 0 0 1px var(--search-gold);
-  }
+  /* A word with a Strong's number opens its dictionary entry: no box, only a
+     faint yellow behind it while its entry is open. */
+  button.il-word { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  button.il-word:hover { background: rgb(255 226 140 / 22%); }
+  button.il-word:focus-visible { outline: 2px solid #c6922e; outline-offset: 1px; }
+  button.il-word[aria-expanded="true"] { background: rgb(255 226 140 / 55%); }
   .il-orig {
-    color: var(--search-hebrew);
-    font: 400 1.375rem/1.35 'SBL Hebrew', 'Ezra SIL', 'Gentium Plus', 'Times New Roman', serif;
+    color: var(--search-ink);
+    font: 400 1.45rem/1.35 'SBL Hebrew', 'Ezra SIL', 'Gentium Plus', 'Times New Roman', serif;
   }
-  .il-orig:lang(grc) { font-size: 1.1875rem; }
+  .il-orig:lang(grc) { font-size: 1.2rem; }
   .il-gloss {
     max-width: 9em;
     color: #b05a00;
-    font: 400 .875rem/1.25 'Strait', 'Roboto', sans-serif;
+    font: 400 .82rem/1.25 'Strait', 'Roboto', sans-serif;
   }
-  .il-grammar { color: #4f5c65; font: 400 .625rem/1.3 'Roboto', Arial, sans-serif; }
+  .il-grammar { color: #2f5d8a; font: 400 .62rem/1.3 'Roboto', Arial, sans-serif; }
   /* The glosses in the original's order as one line, so the order is plain
      however the words wrap. */
   .il-reading {
     margin: 10px 0 0;
     color: #5a4a32;
-    font: 400 1rem/1.45 'Strait', 'Roboto', sans-serif;
+    font: 400 .9rem/1.45 'Strait', 'Roboto', sans-serif;
   }
   .il-reading b { color: #b05a00; font-weight: 600; }
-  .il-xlit { color: #4f5c65; font: italic .8125rem/1.3 Georgia, 'Times New Roman', serif; }
-  .il-num {
-    color: #805b18;
-    letter-spacing: .04em;
-    font: 600 .6875rem/1.4 'Roboto', Arial, sans-serif;
-  }
+  .il-xlit { color: #2f5d8a; font: italic 400 .8rem/1.3 Georgia, 'Times New Roman', serif; }
+  .il-num { color: #2f5d8a; font: 400 .66rem/1.3 'Roboto', Arial, sans-serif; }
   .il-entry { margin-top: 10px; }
+  @media (max-width: 600px) {
+    .il-words { gap: 8px 10px; }
+    .il-orig { font-size: 1.3rem; }
+  }
 ${STRONGS_ENTRY_STYLES}
 
   @media (max-width: 420px) {

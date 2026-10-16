@@ -10,6 +10,7 @@
             "Tap a book to open it under its row; tap it again, or another book, to close it.",
             "Use the funnel to show only the Old Testament or only the New.",
             "Search by name to jump straight to a book.",
+            "Tap a part of a book's outline to read those chapters in the King James Version, the Berean Standard Bible or the Interlinear, word by word in the Hebrew or Greek; tap a word there to read about it in Strong's dictionary.",
             "Tap any Bible reference to read the passage in the King James Version."
         ],
         "why": [

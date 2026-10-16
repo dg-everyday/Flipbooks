@@ -9,7 +9,8 @@
                 "title": "A song of ascents.",
                 "text": "Out of the depths I cry to You, O LORD!"
             }
-        }
+        },
+        "interlinear": "Out of the depths/H4615 have I cried/H7121 unto thee O LORD/H3068"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "O Lord, hear my voice; let Your ears be attentive to my plea for mercy."
             }
-        }
+        },
+        "interlinear": "Lord/H136 hear/H8085 my voice/H6963 let thine ears/H241 be attentive/H7183 to the voice/H6963 of my supplications/H8469"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "If You, O LORD, kept track of iniquities, then who, O Lord, could stand?"
             }
-        }
+        },
+        "interlinear": "If thou LORD/H3050 shouldest mark/H8104 iniquities/H5771 O Lord/H136 who shall stand/H5975"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "But with You there is forgiveness, so that You may be feared."
             }
-        }
+        },
+        "interlinear": "But *there *is forgiveness/H5547 with thee that thou mayest be feared/H3372"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "I wait for the LORD; my soul does wait, and in His word I put my hope."
             }
-        }
+        },
+        "interlinear": "I wait/H6960 for the LORD/H3068 my soul/H5315 doth wait/H6960 and in his word/H1697 do I hope/H3176"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "My soul waits for the Lord more than watchmen wait for the morning—more than watchmen wait for the morning."
             }
-        }
+        },
+        "interlinear": "My soul/H5315 *waiteth for the Lord/H136 more than they that watch/H8104 for the morning/H1242 *I *say *more *than they that watch/H8104 for the morning/H1242"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "O Israel, put your hope in the LORD, for with the LORD is loving devotion, and with Him is redemption in abundance."
             }
-        }
+        },
+        "interlinear": "Let Israel/H3478 hope/H3176 in the LORD/H3068 for with the LORD/H3068 *there *is mercy/H2617 and with him *is plenteous/H7235 redemption/H6304"
     },
     "8": {
         "explanation": {
@@ -86,6 +93,7 @@
             "bsb": {
                 "text": "And He will redeem Israel from all iniquity."
             }
-        }
+        },
+        "interlinear": "And he shall redeem/H6299 Israel/H3478 from all his iniquities/H5771"
     }
 }

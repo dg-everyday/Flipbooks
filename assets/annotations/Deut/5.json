@@ -8,7 +8,8 @@
             "bsb": {
                 "text": "Then Moses summoned all Israel and said to them: Hear, O Israel, the statutes and ordinances that I declare in your hearing this day. Learn them and observe them carefully."
             }
-        }
+        },
+        "interlinear": "And Moses/H4872 called/H7121 all Israel/H3478 and said/H559 unto them Hear/H8085 O Israel/H3478 the statutes/H2706 and judgments/H4941 which I speak/H1696 in your ears/H241 this day/H3117 that ye may learn/H3925 them and keep/H8104 and do/H6213 them"
     },
     "2": {
         "explanation": {
@@ -19,7 +20,8 @@
             "bsb": {
                 "text": "The LORD our God made a covenant with us at Horeb."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 our God/H430 made/H3772 a covenant/H1285 with us in Horeb/H2722"
     },
     "3": {
         "explanation": {
@@ -30,7 +32,8 @@
             "bsb": {
                 "text": "He did not make this covenant with our fathers, but with all of us who are alive here today."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 made/H3772 not this covenant/H1285 with our fathers/H1 but with us/H587 *even us who *are all of us/H428 here alive/H2416 this day/H3117"
     },
     "4": {
         "explanation": {
@@ -41,7 +44,8 @@
             "bsb": {
                 "text": "The LORD spoke with you face to face out of the fire on the mountain."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 talked/H1696 with you face/H6440 to face/H6440 in the mount/H2022 out of the midst/H8432 of the fire/H784"
     },
     "5": {
         "explanation": {
@@ -52,7 +56,8 @@
             "bsb": {
                 "text": "At that time I was standing between the LORD and you to declare to you the word of the LORD, because you were afraid of the fire and would not go up the mountain. And He said:"
             }
-        }
+        },
+        "interlinear": "I stood/H5975 between the LORD/H3068 and you at that time/H6256 to shew/H5046 you the word/H1697 of the LORD/H3068 for ye were afraid/H3372 by reason/H6440 of the fire/H784 and went not up/H5927 into the mount/H2022 saying/H559"
     },
     "6": {
         "explanation": {
@@ -63,42 +68,48 @@
             "bsb": {
                 "text": "“I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery."
             }
-        }
+        },
+        "interlinear": "I *am the LORD/H3068 thy God/H430 which brought thee out/H3318 of the land/H776 of Egypt/H4714 from the house/H1004 of bondage/H5650"
     },
     "7": {
         "translations": {
             "bsb": {
                 "text": "You shall have no other gods before Me."
             }
-        }
+        },
+        "interlinear": "Thou shalt have none other/H312 gods/H430 before/H6440 me"
     },
     "8": {
         "translations": {
             "bsb": {
                 "text": "You shall not make for yourself an idol in the form of anything in the heavens above, on the earth below, or in the waters beneath."
             }
-        }
+        },
+        "interlinear": "Thou shalt not make/H6213 thee *any graven image/H6459 *or any likeness/H8544 *of *any *thing that *is in heaven/H8064 above/H4605 or that *is in the earth/H776 beneath or that *is in the waters/H4325 beneath the earth/H776"
     },
     "9": {
         "translations": {
             "bsb": {
                 "text": "You shall not bow down to them or worship them; for I, the LORD your God, am a jealous God, visiting the iniquity of the fathers on their children to the third and fourth generations of those who hate Me,"
             }
-        }
+        },
+        "interlinear": "Thou shalt not bow down/H7812 thyself unto them nor serve/H5647 them for I the LORD/H3068 thy God/H430 *am a jealous/H7067 God/H410 visiting/H6485 the iniquity/H5771 of the fathers/H1 upon the children/H1121 unto the third/H8029 and fourth/H7256 *generation of them that hate/H8130 me"
     },
     "10": {
         "translations": {
             "bsb": {
                 "text": "but showing loving devotion to a thousand generations of those who love Me and keep My commandments."
             }
-        }
+        },
+        "interlinear": "And shewing/H6213 mercy/H2617 unto thousands/H505 of them that love/H157 me and keep/H8104 my commandments/H4687"
     },
     "11": {
         "translations": {
             "bsb": {
                 "text": "You shall not take the name of the LORD your God in vain, for the LORD will not leave anyone unpunished who takes His name in vain."
             }
-        }
+        },
+        "interlinear": "Thou shalt not take/H5375 the name/H8034 of the LORD/H3068 thy God/H430 in vain/H7723 for the LORD/H3068 will not hold *him guiltless/H5352 that taketh/H5375 his name/H8034 in vain/H7723"
     },
     "12": {
         "explanation": {
@@ -109,14 +120,16 @@
             "bsb": {
                 "text": "Observe the Sabbath day by keeping it holy, as the LORD your God has commanded you."
             }
-        }
+        },
+        "interlinear": "Keep/H8104 the sabbath/H7676 day/H3117 to sanctify/H6942 it as the LORD/H3068 thy God/H430 hath commanded/H6680 thee"
     },
     "13": {
         "translations": {
             "bsb": {
                 "text": "Six days you shall labor and do all your work,"
             }
-        }
+        },
+        "interlinear": "Six/H8337 days/H3117 thou shalt labour/H5647 and do/H6213 all thy work/H4399"
     },
     "14": {
         "explanation": {
@@ -127,7 +140,8 @@
             "bsb": {
                 "text": "but the seventh day is a Sabbath to the LORD your God, on which you must not do any work—neither you, nor your son or daughter, nor your manservant or maidservant, nor your ox or donkey or any of your livestock, nor the foreigner within your gates, so that your manservant and maidservant may rest as you do."
             }
-        }
+        },
+        "interlinear": "But the seventh/H7637 day/H3117 *is the sabbath/H7676 of the LORD/H3068 thy God/H430 *in *it thou shalt not do/H6213 any work/H4399 thou nor thy son/H1121 nor thy daughter/H1323 nor thy manservant/H5650 nor thy maidservant/H519 nor thine ox/H7794 nor thine ass/H2543 nor any of thy cattle/H929 nor thy stranger/H1616 that *is within thy gates/H8179 that thy manservant/H5650 and thy maidservant/H519 may rest/H5117 as well as thou"
     },
     "15": {
         "explanation": {
@@ -138,7 +152,8 @@
             "bsb": {
                 "text": "Remember that you were a slave in the land of Egypt, and that the LORD your God brought you out of there with a mighty hand and an outstretched arm. That is why the LORD your God has commanded you to keep the Sabbath day."
             }
-        }
+        },
+        "interlinear": "And remember/H2142 that thou wast a servant/H5650 in the land/H776 of Egypt/H4714 and *that the LORD/H3068 thy God/H430 brought/H3318 thee out thence through a mighty/H2389 hand/H3027 and by a stretched out/H5186 arm/H2220 therefore the LORD/H3068 thy God/H430 commanded/H6680 thee to keep/H6213 the sabbath/H7676 day/H3117"
     },
     "16": {
         "explanation": {
@@ -149,7 +164,8 @@
             "bsb": {
                 "text": "Honor your father and your mother, as the LORD your God has commanded you, so that your days may be long and that it may go well with you in the land that the LORD your God is giving you."
             }
-        }
+        },
+        "interlinear": "Honour/H3513 thy father/H1 and thy mother/H517 as the LORD/H3068 thy God/H430 hath commanded/H6680 thee that thy days/H3117 may be prolonged/H748 and that it may go well/H3190 with thee in the land/H127 which the LORD/H3068 thy God/H430 giveth/H5414 thee"
     },
     "17": {
         "explanation": {
@@ -160,28 +176,32 @@
             "bsb": {
                 "text": "You shall not murder."
             }
-        }
+        },
+        "interlinear": "Thou shalt not kill/H7523"
     },
     "18": {
         "translations": {
             "bsb": {
                 "text": "You shall not commit adultery."
             }
-        }
+        },
+        "interlinear": "Neither shalt thou commit adultery/H5003"
     },
     "19": {
         "translations": {
             "bsb": {
                 "text": "You shall not steal."
             }
-        }
+        },
+        "interlinear": "Neither shalt thou steal/H1589"
     },
     "20": {
         "translations": {
             "bsb": {
                 "text": "You shall not bear false witness against your neighbor."
             }
-        }
+        },
+        "interlinear": "Neither shalt thou bear/H6030 false/H7723 witness/H5707 against thy neighbour/H7453"
     },
     "21": {
         "explanation": {
@@ -192,7 +212,8 @@
             "bsb": {
                 "text": "You shall not covet your neighbor’s wife. You shall not covet your neighbor’s house or field, or his manservant or maidservant, or his ox or donkey, or anything that belongs to your neighbor.”"
             }
-        }
+        },
+        "interlinear": "Neither shalt thou desire/H2530 thy neighbour’s/H7453 wife/H802 neither shalt thou covet/H183 thy neighbour’s/H7453 house/H1004 his field/H7704 or his manservant/H5650 or his maidservant/H519 his ox/H7794 or his ass/H2543 or any *thing that *is thy neighbour’s/H7453"
     },
     "22": {
         "explanation": {
@@ -203,7 +224,8 @@
             "bsb": {
                 "text": "The LORD spoke these commandments in a loud voice to your whole assembly out of the fire, the cloud, and the deep darkness on the mountain; He added nothing more. And He wrote them on two tablets of stone and gave them to me."
             }
-        }
+        },
+        "interlinear": "These words/H1697 the LORD/H3068 spake/H1696 unto all your assembly/H6951 in the mount/H2022 out of the midst/H8432 of the fire/H784 of the cloud/H6051 and of the thick darkness/H6205 with a great/H1419 voice/H6963 and he added no more/H3254 And he wrote/H3789 them in two/H8147 tables/H3871 of stone/H68 and delivered/H5414 them unto me"
     },
     "23": {
         "explanation": {
@@ -214,7 +236,8 @@
             "bsb": {
                 "text": "And when you heard the voice out of the darkness while the mountain was blazing with fire, all the heads of your tribes and your elders approached me,"
             }
-        }
+        },
+        "interlinear": "And it came to pass when ye heard/H8085 the voice/H6963 out of the midst/H8432 of the darkness/H2822 for the mountain/H2022 did burn/H1197 with fire/H784 that ye came near/H7126 unto me *even all the heads/H7218 of your tribes/H7626 and your elders/H2205"
     },
     "24": {
         "explanation": {
@@ -225,7 +248,8 @@
             "bsb": {
                 "text": "and you said, “Behold, the LORD our God has shown us His glory and greatness, and we have heard His voice out of the fire. Today we have seen that a man can live even if God speaks with him."
             }
-        }
+        },
+        "interlinear": "And ye said/H559 Behold the LORD/H3068 our God/H430 hath shewed/H7200 us his glory/H3519 and his greatness/H1433 and we have heard/H8085 his voice/H6963 out of the midst/H8432 of the fire/H784 we have seen/H7200 this day/H3117 that God/H430 doth talk/H1696 with man/H120 and he liveth/H2425"
     },
     "25": {
         "explanation": {
@@ -236,7 +260,8 @@
             "bsb": {
                 "text": "But now, why should we die? For this great fire will consume us, and we will die, if we hear the voice of the LORD our God any longer."
             }
-        }
+        },
+        "interlinear": "Now therefore why should we die/H4191 for this great/H1419 fire/H784 will consume/H398 us if we hear/H8085 the voice/H6963 of the LORD/H3068 our God/H430 any more/H3254 then we shall die/H4191"
     },
     "26": {
         "explanation": {
@@ -247,7 +272,8 @@
             "bsb": {
                 "text": "For who of all flesh has heard the voice of the living God speaking out of the fire, as we have, and survived?"
             }
-        }
+        },
+        "interlinear": "For who *is *there *of all flesh/H1320 that hath heard/H8085 the voice/H6963 of the living/H2416 God/H430 speaking/H1696 out of the midst/H8432 of the fire/H784 as we *have and lived/H2421"
     },
     "27": {
         "explanation": {
@@ -258,7 +284,8 @@
             "bsb": {
                 "text": "Go near and listen to all that the LORD our God says. Then you can tell us everything the LORD our God tells you; we will listen and obey.”"
             }
-        }
+        },
+        "interlinear": "Go thou near/H7126 and hear/H8085 all that the LORD/H3068 our God/H430 shall say/H559 and speak/H1696 thou unto us all that the LORD/H3068 our God/H430 shall speak/H1696 unto thee and we will hear/H8085 *it and do/H6213 *it"
     },
     "28": {
         "explanation": {
@@ -269,7 +296,8 @@
             "bsb": {
                 "text": "And the LORD heard the words you spoke to me, and He said to me, “I have heard the words that these people have spoken to you. They have done well in all that they have spoken."
             }
-        }
+        },
+        "interlinear": "And the LORD/H3068 heard/H8085 the voice/H6963 of your words/H1697 when ye spake/H1696 unto me and the LORD/H3068 said/H559 unto me I have heard/H8085 the voice/H6963 of the words/H1697 of this people/H5971 which they have spoken/H1696 unto thee they have well/H3190 said all that they have spoken/H1696"
     },
     "29": {
         "explanation": {
@@ -280,7 +308,8 @@
             "bsb": {
                 "text": "If only they had such a heart to fear Me and keep all My commandments always, so that it might be well with them and with their children forever."
             }
-        }
+        },
+        "interlinear": "O that there were such/H2088 an/H4310 heart/H3824 in them/H5414 that they would fear/H3372 me and keep/H8104 all my commandments/H4687 always/H3117 that it might be well/H3190 with them and with their children/H1121 for ever/H5769"
     },
     "30": {
         "explanation": {
@@ -291,7 +320,8 @@
             "bsb": {
                 "text": "Go and tell them: ‘Return to your tents.’"
             }
-        }
+        },
+        "interlinear": "Go/H3212 say/H559 to them Get/H7725 you into your tents/H168 again/H7725"
     },
     "31": {
         "explanation": {
@@ -302,7 +332,8 @@
             "bsb": {
                 "text": "But you stand here with Me, that I may speak to you all the commandments and statutes and ordinances you are to teach them to follow in the land that I am giving them to possess.”"
             }
-        }
+        },
+        "interlinear": "But as for thee stand/H5975 thou here by me/H5978 and I will speak/H1696 unto thee all the commandments/H4687 and the statutes/H2706 and the judgments/H4941 which thou shalt teach/H3925 them that they may do/H6213 *them in the land/H776 which I give/H5414 them to possess/H3423 it"
     },
     "32": {
         "explanation": {
@@ -313,7 +344,8 @@
             "bsb": {
                 "text": "So be careful to do as the LORD your God has commanded you; you are not to turn aside to the right or to the left."
             }
-        }
+        },
+        "interlinear": "Ye shall observe/H8104 to do/H6213 therefore as the LORD/H3068 your God/H430 hath commanded/H6680 you ye shall not turn aside/H5493 to the right hand/H3225 or to the left/H8040"
     },
     "33": {
         "explanation": {
@@ -324,6 +356,7 @@
             "bsb": {
                 "text": "You must walk in all the ways that the LORD your God has commanded you, so that you may live and prosper and prolong your days in the land that you will possess."
             }
-        }
+        },
+        "interlinear": "Ye shall walk/H3212 in all the ways/H1870 which the LORD/H3068 your God/H430 hath commanded/H6680 you that ye may live/H2421 and *that *it *may *be well/H2895 with you and *that ye may prolong/H748 *your days/H3117 in the land/H776 which ye shall possess/H3423"
     }
 }

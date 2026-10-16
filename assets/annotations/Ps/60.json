@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. To the tune of “The Lily of the Covenant.” A Miktam of David for instruction. When he fought Aram-naharaim and Aram-zobah, and Joab returned and struck down 12,000 Edomites in the Valley of Salt.",
                 "text": "You have rejected us, O God; You have broken us; You have been angry; restore us!"
             }
-        }
+        },
+        "interlinear": "O God/H430 thou hast cast us off/H2186 thou hast scattered/H6555 us thou hast been displeased/H599 O turn thyself to us again/H7725"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "You have shaken the land and torn it open. Heal its fractures, for it is quaking."
             }
-        }
+        },
+        "interlinear": "Thou hast made the earth/H776 to tremble/H7493 thou hast broken/H6480 it heal/H7495 the breaches/H7667 thereof for it shaketh/H4131"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "You have shown Your people hardship; we are staggered from the wine You made us drink."
             }
-        }
+        },
+        "interlinear": "Thou hast shewed/H7200 thy people/H5971 hard things/H7186 thou hast made us to drink/H8248 the wine/H3196 of astonishment/H8653"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "You have raised a banner for those who fear You, that they may flee the bow. Selah"
             }
-        }
+        },
+        "interlinear": "Thou hast given/H5414 a banner/H5251 to them that fear/H3373 thee that it may be displayed/H5127 because/H6440 of the truth/H7189 Selah/H5542"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "Respond and save us with Your right hand, that Your beloved may be delivered."
             }
-        }
+        },
+        "interlinear": "That thy beloved/H3039 may be delivered/H2502 save/H3467 *with thy right hand/H3225 and hear/H6030 me"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "God has spoken from His sanctuary: “I will triumph! I will parcel out Shechem and apportion the Valley of Succoth."
             }
-        }
+        },
+        "interlinear": "God/H430 hath spoken/H1696 in his holiness/H6944 I will rejoice/H5937 I will divide/H2505 Shechem/H7927 and mete out/H4058 the valley/H6010 of Succoth/H5523"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "Gilead is Mine, and Manasseh is Mine; Ephraim is My helmet, Judah is My scepter."
             }
-        }
+        },
+        "interlinear": "Gilead/H1568 *is mine and Manasseh/H4519 *is mine Ephraim/H669 also *is the strength/H4581 of mine head/H7218 Judah/H3063 *is my lawgiver/H2710"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "Moab is My washbasin; upon Edom I toss My sandal; over Philistia I shout in triumph.”"
             }
-        }
+        },
+        "interlinear": "Moab/H4124 *is my washpot/H5518 over Edom/H123 will I cast out/H7993 my shoe/H5275 Philistia/H6429 triumph/H7321 thou because of me"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "Who will bring me to the fortified city? Who will lead me to Edom?"
             }
-        }
+        },
+        "interlinear": "Who will bring/H2986 me *into the strong/H4692 city/H5892 who will lead/H5148 me into Edom/H123"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "Have You not rejected us, O God? Will You no longer march out, O God, with our armies?"
             }
-        }
+        },
+        "interlinear": "*Wilt not thou O God/H430 *which hadst cast us off/H2186 and *thou O God/H430 *which didst not go out/H3318 with our armies/H6635"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "Give us aid against the enemy, for the help of man is worthless."
             }
-        }
+        },
+        "interlinear": "Give/H3051 us help/H5833 from trouble/H6862 for vain/H7723 *is the help/H8668 of man/H120"
     },
     "12": {
         "explanation": {
@@ -130,6 +141,7 @@
             "bsb": {
                 "text": "With God we will perform with valor, and He will trample our enemies."
             }
-        }
+        },
+        "interlinear": "Through God/H430 we shall do/H6213 valiantly/H2428 for he *it *is *that shall tread down/H947 our enemies/H6862"
     }
 }

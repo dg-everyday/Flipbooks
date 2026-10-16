@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. According to Mahalath. A Maskil of David.",
                 "text": "The fool says in his heart, “There is no God.” They are corrupt; their ways are vile. There is no one who does good."
             }
-        }
+        },
+        "interlinear": "The fool/H5036 hath said/H559 in his heart/H3820 *There *is no God/H430 Corrupt/H7843 are they and have done abominable/H8581 iniquity/H5766 *there *is none that doeth/H6213 good/H2896"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "God looks down from heaven upon the sons of men to see if any understand, if any seek God."
             }
-        }
+        },
+        "interlinear": "God/H430 looked down/H8259 from heaven/H8064 upon the children/H1121 of men/H120 to see/H7200 if there were/H3426 *any that did understand/H7919 that did seek/H1875 God/H430"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "All have turned away, they have together become corrupt; there is no one who does good, not even one."
             }
-        }
+        },
+        "interlinear": "Every one of them is gone back/H5472 they are altogether/H3162 become filthy/H444 *there *is none that doeth/H6213 good/H2896 no not one/H259"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Will the workers of iniquity never learn? They devour my people like bread; they refuse to call upon God."
             }
-        }
+        },
+        "interlinear": "Have the workers/H6466 of iniquity/H205 no knowledge/H3045 who eat up/H398 my people/H5971 *as they eat/H398 bread/H3899 they have not called/H7121 upon God/H430"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "There they are, overwhelmed with dread, where there was nothing to fear. For God has scattered the bones of those who besieged you. You put them to shame, for God has despised them."
             }
-        }
+        },
+        "interlinear": "There were they in great/H6343 fear/H6342 *where no fear/H6343 was for God/H430 hath scattered/H6340 the bones/H6106 of him that encampeth/H2583 *against thee thou hast put *them to shame/H954 because God/H430 hath despised/H3988 them"
     },
     "6": {
         "explanation": {
@@ -64,6 +69,7 @@
             "bsb": {
                 "text": "Oh, that the salvation of Israel would come from Zion! When God restores His captive people, let Jacob rejoice, let Israel be glad!"
             }
-        }
+        },
+        "interlinear": "Oh that/H5414 the salvation/H3444 of Israel/H3478 *were *come out of Zion/H6726 When God/H430 bringeth back/H7725 the captivity/H7622 of his people/H5971 Jacob/H3290 shall rejoice/H1523 *and Israel/H3478 shall be glad/H8055"
     }
 }

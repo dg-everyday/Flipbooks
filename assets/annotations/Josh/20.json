@@ -8,7 +8,8 @@
             "bsb": {
                 "text": "Then the LORD said to Joshua,"
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 also spake/H1696 unto Joshua/H3091 saying/H559"
     },
     "2": {
         "explanation": {
@@ -19,7 +20,8 @@
             "bsb": {
                 "text": "“Tell the Israelites to designate the cities of refuge, as I instructed you through Moses,"
             }
-        }
+        },
+        "interlinear": "Speak/H1696 to the children/H1121 of Israel/H3478 saying/H559 Appoint out/H5414 for you cities/H5892 of refuge/H4733 whereof I spake/H1696 unto you by the hand/H3027 of Moses/H4872"
     },
     "3": {
         "explanation": {
@@ -30,7 +32,8 @@
             "bsb": {
                 "text": "so that anyone who kills another unintentionally or accidentally may flee there. These will be your refuge from the avenger of blood."
             }
-        }
+        },
+        "interlinear": "That the slayer/H7523 that killeth/H5221 *any person/H5315 unawares/H7684 *and unwittingly/H1847 may flee/H5127 thither and they shall be your refuge/H4733 from the avenger/H1350 of blood/H1818"
     },
     "4": {
         "explanation": {
@@ -41,7 +44,8 @@
             "bsb": {
                 "text": "When someone flees to one of these cities, stands at the entrance of the city gate, and states his case before its elders, they are to bring him into the city and give him a place to live among them."
             }
-        }
+        },
+        "interlinear": "And when he that doth flee/H5127 unto one/H259 of those cities/H5892 shall stand/H5975 at the entering/H6607 of the gate/H8179 of the city/H5892 and shall declare/H1696 his cause/H1697 in the ears/H241 of the elders/H2205 of that city/H5892 they shall take/H622 him into the city/H5892 unto them and give/H5414 him a place/H4725 that he may dwell/H3427 among them"
     },
     "5": {
         "explanation": {
@@ -52,7 +56,8 @@
             "bsb": {
                 "text": "Now if the avenger of blood pursues him, they must not surrender the manslayer into his hand, because that man killed his neighbor accidentally without prior malice."
             }
-        }
+        },
+        "interlinear": "And if the avenger/H1350 of blood/H1818 pursue/H7291 after/H310 him then they shall not deliver/H5462 the slayer/H7523 up into his hand/H3027 because he smote/H5221 his neighbour/H7453 unwittingly/H1097 and hated/H8130 him not beforetime/H8543"
     },
     "6": {
         "explanation": {
@@ -63,7 +68,8 @@
             "bsb": {
                 "text": "He is to stay in that city until he stands trial before the assembly and until the death of the high priest serving at that time. Then the manslayer may return to his own home in the city from which he fled.”"
             }
-        }
+        },
+        "interlinear": "And he shall dwell/H3427 in that city/H5892 until he stand/H5975 before/H6440 the congregation/H5712 for judgment/H4941 *and until the death/H4194 of the high/H1419 priest/H3548 that/H834 shall be in those days/H3117 then shall the slayer/H7523 return/H7725 and come/H935 unto his own city/H5892 and unto his own house/H1004 unto the city/H5892 from whence he fled/H5127"
     },
     "7": {
         "explanation": {
@@ -74,7 +80,8 @@
             "bsb": {
                 "text": "So they set apart Kedesh in Galilee in the hill country of Naphtali, Shechem in the hill country of Ephraim, and Kiriath-arba (that is, Hebron) in the hill country of Judah."
             }
-        }
+        },
+        "interlinear": "And they appointed/H6942 Kedesh/H6943 in Galilee/H1551 in mount/H2022 Naphtali/H5321 and Shechem/H7927 in mount/H2022 Ephraim/H669 and Kirjath-arba/H7153 which *is Hebron/H2275 in the mountain/H2022 of Judah/H3063"
     },
     "8": {
         "explanation": {
@@ -85,7 +92,8 @@
             "bsb": {
                 "text": "And beyond the Jordan, east of Jericho, they designated Bezer on the wilderness plateau from the tribe of Reuben, Ramoth in Gilead from the tribe of Gad, and Golan in Bashan from the tribe of Manasseh."
             }
-        }
+        },
+        "interlinear": "And on the other side/H5676 Jordan/H3383 by Jericho/H3405 eastward/H4217 they assigned/H5414 Bezer/H1221 in the wilderness/H4057 upon the plain/H4334 out of the tribe/H4294 of Reuben/H7205 and Ramoth/H7216 in Gilead/H1568 out of the tribe/H4294 of Gad/H1410 and Golan/H1474 in Bashan/H1316 out of the tribe/H4294 of Manasseh/H4519"
     },
     "9": {
         "explanation": {
@@ -96,6 +104,7 @@
             "bsb": {
                 "text": "These are the cities appointed for all the Israelites and foreigners among them, so that anyone who kills a person unintentionally may flee there and not die by the hand of the avenger of blood prior to standing trial before the assembly."
             }
-        }
+        },
+        "interlinear": "These were the cities/H5892 appointed/H4152 for all the children/H1121 of Israel/H3478 and for the stranger/H1616 that sojourneth/H1481 among/H8432 them that whosoever killeth/H5221 *any person/H5315 at unawares/H7684 might flee/H5127 thither and not die/H4191 by the hand/H3027 of the avenger/H1350 of blood/H1818 until he stood/H5975 before/H6440 the congregation/H5712"
     }
 }

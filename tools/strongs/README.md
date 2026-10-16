@@ -19,13 +19,20 @@ The sources are downloaded outside the repo and passed in as paths:
 | output | size | used by |
 | --- | --- | --- |
 | `tools/strongs/kjv_strongs.db` | ~23 MB | offline queries; not committed, not deployed |
-| `assets/strongs/hebrew.json` | ~1.8 MB | nothing yet: kept for a "tap a word" feature |
-| `assets/strongs/greek.json` | ~1.1 MB | nothing yet |
+| `tools/strongs/interlinear.json` | ~6.4 MB | `tools/annotations/build_annotations.py`, which copies each verse into its chapter file |
+| `assets/strongs/hebrew/<n>.json` | 87 files, ~20 KB each | the interlinear in the explanation popup (`<bible-search-results>`) |
+| `assets/strongs/greek/<n>.json` | 57 files, ~20 KB each | the same |
 | `tools/strongs/report.txt` | small | the validation report from the last run |
 
 The database is kept out of `assets/` because the site deploys everything in
-`assets/`, and sql.js downloads a whole `.db` file before it can query it. A
-page that needs the numbers should get a smaller export made from it.
+`assets/`, and sql.js downloads a whole `.db` file before it can query it. The
+page gets the same data in two lighter forms: each verse's words and numbers
+travel in its chapter's annotation file (fetched for the explanation anyway),
+and the dictionary comes 100 entries to a file, so a verse fetches only the few
+files its numbers fall in.
+
+After a rebuild here, run `tools/annotations/build_annotations.py` so the
+chapter files pick up the change.
 
 ## How the words are matched
 
@@ -70,7 +77,20 @@ FROM words w JOIN dg.verses v ON v.docid = w.verse_id
 WHERE w.strongs = 'G5368';   -- after: ATTACH 'assets/db/dailygrace.db' AS dg
 ```
 
-## assets/strongs/*.json
+## tools/strongs/interlinear.json
+
+`{ "Gen": { "1": { "1": "In the beginning/H7225 God/H430 created/H1254 ..." } } }`:
+each verse's words in order, separated by spaces. A word with Strong's
+numbers carries them after a slash, joined by `+` when there are several
+(`whosoever/G3739+G1437`); a word the translators supplied (italic in the KJV)
+starts with `*` (`*was`). Words are letters, apostrophes and hyphens only, so
+these marks cannot be part of one. The same string is each verse's
+`interlinear` in `assets/annotations/`.
+
+## assets/strongs/hebrew/ and greek/
+
+`<n>.json` holds the entries numbered `n*100` to `n*100+99`: `H1`-`H99` in
+`hebrew/0.json`, `H7225` in `hebrew/72.json`, `G5368` in `greek/53.json`.
 
 ```json
 { "H2617": { "lemma": "חֵסֵד", "xlit": "chêçêd", "pron": "kheh'-sed",

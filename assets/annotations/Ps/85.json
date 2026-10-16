@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. A Psalm of the sons of Korah.",
                 "text": "You showed favor to Your land, O LORD; You restored Jacob from captivity."
             }
-        }
+        },
+        "interlinear": "LORD/H3068 thou hast been favourable/H7521 unto thy land/H776 thou hast brought back/H7725 the captivity/H7622 of Jacob/H3290"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "You forgave the iniquity of Your people; You covered all their sin. Selah"
             }
-        }
+        },
+        "interlinear": "Thou hast forgiven/H5375 the iniquity/H5771 of thy people/H5971 thou hast covered/H3680 all their sin/H2403 Selah/H5542"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "You withheld all Your fury; You turned from Your burning anger."
             }
-        }
+        },
+        "interlinear": "Thou hast taken away/H622 all thy wrath/H5678 thou hast turned/H7725 *thyself from the fierceness/H2740 of thine anger/H639"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Restore us, O God of our salvation, and put away Your displeasure toward us."
             }
-        }
+        },
+        "interlinear": "Turn/H7725 us O God/H430 of our salvation/H3468 and cause thine anger/H3708 toward us to cease/H6565"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "Will You be angry with us forever? Will You draw out Your anger to all generations?"
             }
-        }
+        },
+        "interlinear": "Wilt thou be angry/H599 with us for ever/H5769 wilt thou draw out/H4900 thine anger/H639 to all/H1755 generations/H1755"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Will You not revive us again, that Your people may rejoice in You?"
             }
-        }
+        },
+        "interlinear": "Wilt thou not revive/H2421 us again/H7725 that thy people/H5971 may rejoice/H8055 in thee"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "Show us Your loving devotion, O LORD, and grant us Your salvation."
             }
-        }
+        },
+        "interlinear": "Shew/H7200 us thy mercy/H2617 O LORD/H3068 and grant/H5414 us thy salvation/H3468"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "I will listen to what God the LORD will say; for He will surely speak peace to His people and His saints; He will not let them return to folly."
             }
-        }
+        },
+        "interlinear": "I will hear/H8085 what God/H410 the LORD/H3068 will speak/H1696 for he will speak/H1696 peace/H7965 unto his people/H5971 and to his saints/H2623 but let them not turn again/H7725 to folly/H3690"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "Surely His salvation is near to those who fear Him, that His glory may dwell in our land."
             }
-        }
+        },
+        "interlinear": "Surely his salvation/H3468 *is nigh/H7138 them that fear/H3373 him that glory/H3519 may dwell/H7931 in our land/H776"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "Loving devotion and faithfulness have joined together; righteousness and peace have kissed."
             }
-        }
+        },
+        "interlinear": "Mercy/H2617 and truth/H571 are met together/H6298 righteousness/H6664 and peace/H7965 have kissed/H5401 *each *other"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "Faithfulness sprouts from the earth, and righteousness looks down from heaven."
             }
-        }
+        },
+        "interlinear": "Truth/H571 shall spring out/H6779 of the earth/H776 and righteousness/H6664 shall look down/H8259 from heaven/H8064"
     },
     "12": {
         "explanation": {
@@ -130,7 +141,8 @@
             "bsb": {
                 "text": "The LORD will indeed provide what is good, and our land will yield its increase."
             }
-        }
+        },
+        "interlinear": "Yea the LORD/H3068 shall give/H5414 *that *which *is good/H2896 and our land/H776 shall yield/H5414 her increase/H2981"
     },
     "13": {
         "explanation": {
@@ -141,6 +153,7 @@
             "bsb": {
                 "text": "Righteousness will go before Him to prepare the way for His steps."
             }
-        }
+        },
+        "interlinear": "Righteousness/H6664 shall go/H1980 before/H6440 him and shall set/H7760 *us in the way/H1870 of his steps/H6471"
     }
 }

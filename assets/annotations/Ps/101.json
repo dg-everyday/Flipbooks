@@ -9,7 +9,8 @@
                 "title": "A Psalm of David.",
                 "text": "I will sing of Your loving devotion and justice; to You, O LORD, I will sing praises."
             }
-        }
+        },
+        "interlinear": "I will sing/H7891 of mercy/H2617 and judgment/H4941 unto thee O LORD/H3068 will I sing/H2167"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "I will ponder the way that is blameless—when will You come to me? I will walk in my house with integrity of heart."
             }
-        }
+        },
+        "interlinear": "I will behave myself wisely/H7919 in a perfect/H8549 way/H1870 O when wilt thou come/H935 unto me I will walk/H1980 within/H7130 my house/H1004 with a perfect/H8537 heart/H3824"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "I will set no worthless thing before my eyes. I hate the work of those who fall away; it shall not cling to me."
             }
-        }
+        },
+        "interlinear": "I will set/H7896 no wicked/H1100 thing/H1697 before mine eyes/H5869 I hate/H8130 the work/H6213 of them that turn aside/H7750 *it shall not cleave/H1692 to me"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "A perverse heart shall depart from me; I will know nothing of evil."
             }
-        }
+        },
+        "interlinear": "A froward/H6141 heart/H3824 shall depart/H5493 from me I will not know/H3045 a wicked/H7451 *person"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "Whoever slanders his neighbor in secret, I will put to silence; the one with haughty eyes and a proud heart, I will not endure."
             }
-        }
+        },
+        "interlinear": "Whoso privily/H5643 slandereth/H3960 his neighbour/H7453 him will I cut off/H6789 him that hath an high/H1362 look/H5869 and a proud/H7342 heart/H3824 will not I suffer/H3201"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "My eyes favor the faithful of the land, that they may dwell with me; he who walks in the way of integrity shall minister to me."
             }
-        }
+        },
+        "interlinear": "Mine eyes/H5869 *shall *be upon the faithful/H539 of the land/H776 that they may dwell/H3427 with me he that walketh/H1980 in a perfect/H8549 way/H1870 he shall serve/H8334 me"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "No one who practices deceit shall dwell in my house; no one who tells lies shall stand in my presence."
             }
-        }
+        },
+        "interlinear": "He that worketh/H6213 deceit/H7423 shall not dwell/H3427 within/H7130 my house/H1004 he that telleth/H1696 lies/H8267 shall not tarry/H3559 in my sight/H5869"
     },
     "8": {
         "explanation": {
@@ -86,6 +93,7 @@
             "bsb": {
                 "text": "Every morning I will remove all the wicked of the land, that I may cut off every evildoer from the city of the LORD."
             }
-        }
+        },
+        "interlinear": "I will early/H1242 destroy/H6789 all the wicked/H7563 of the land/H776 that I may cut off/H3772 all wicked/H205 doers/H6466 from the city/H5892 of the LORD/H3068"
     }
 }

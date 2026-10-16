@@ -9,7 +9,8 @@
                 "title": "A song of ascents. Of David.",
                 "text": "Behold, how good and pleasant it is when brothers live together in harmony!"
             }
-        }
+        },
+        "interlinear": "Behold how good/H2896 and how pleasant/H5273 *it *is for brethren/H251 to dwell/H3427 together/H3162 in unity/H3162"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "It is like fine oil on the head, running down on the beard, running down Aaron’s beard over the collar of his robes."
             }
-        }
+        },
+        "interlinear": "*It *is like the precious/H2896 ointment/H8081 upon the head/H7218 that ran down/H3381 upon the beard/H2206 *even Aaron’s/H175 beard/H2206 that went down/H3381 to the skirts/H6310 of his garments/H4060"
     },
     "3": {
         "explanation": {
@@ -31,6 +33,7 @@
             "bsb": {
                 "text": "It is like the dew of Hermon falling on the mountains of Zion. For there the LORD has bestowed the blessing of life forevermore."
             }
-        }
+        },
+        "interlinear": "As the dew/H2919 of Hermon/H2768 *and *as *the *dew that descended/H3381 upon the mountains/H2042 of Zion/H6726 for there the LORD/H3068 commanded/H6680 the blessing/H1293 *even life/H2416 for evermore/H5769"
     }
 }

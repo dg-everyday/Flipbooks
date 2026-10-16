@@ -9,7 +9,8 @@
                 "title": "A Psalm of David.",
                 "text": "The LORD said to my Lord: “Sit at My right hand until I make Your enemies a footstool for Your feet.”"
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 said/H5002 unto my Lord/H113 Sit/H3427 thou at my right hand/H3225 until I make/H7896 thine enemies/H341 thy footstool/H1916"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "The LORD extends Your mighty scepter from Zion: “Rule in the midst of Your enemies.”"
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 shall send/H7971 the rod/H4294 of thy strength/H5797 out of Zion/H6726 rule/H7287 thou in the midst/H7130 of thine enemies/H341"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "Your people shall be willing on Your day of battle. Arrayed in holy splendor, from the womb of the dawn, to You belongs the dew of Your youth."
             }
-        }
+        },
+        "interlinear": "Thy people/H5971 *shall *be willing/H5071 in the day/H3117 of thy power/H2428 in the beauties/H1926 of holiness/H6944 from the womb/H7358 of the morning/H4891 thou hast the dew/H2919 of thy youth/H3208"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "The LORD has sworn and will not change His mind: “You are a priest forever in the order of Melchizedek.”"
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 hath sworn/H7650 and will not repent/H5162 Thou *art a priest/H3548 for ever/H5769 after the order/H1700 of Melchizedek/H4442"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "The Lord is at Your right hand; He will crush kings in the day of His wrath."
             }
-        }
+        },
+        "interlinear": "The Lord/H136 at thy right hand/H3225 shall strike/H4272 through kings/H4428 in the day/H3117 of his wrath/H639"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "He will judge the nations, heaping up the dead; He will crush the leaders far and wide."
             }
-        }
+        },
+        "interlinear": "He shall judge/H1777 among the heathen/H1471 he shall fill/H4390 *the *places with the dead bodies/H1472 he shall wound/H4272 the heads/H7218 over many/H7227 countries/H776"
     },
     "7": {
         "explanation": {
@@ -75,6 +81,7 @@
             "bsb": {
                 "text": "He will drink from the brook by the road; therefore He will lift up His head."
             }
-        }
+        },
+        "interlinear": "He shall drink/H8354 of the brook/H5158 in the way/H1870 therefore shall he lift up/H7311 the head/H7218"
     }
 }

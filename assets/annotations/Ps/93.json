@@ -8,7 +8,8 @@
             "bsb": {
                 "text": "The LORD reigns! He is robed in majesty; the LORD has clothed and armed Himself with strength. The world indeed is firmly established; it cannot be moved."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 reigneth/H4427 he is clothed/H3847 with majesty/H1348 the LORD/H3068 is clothed/H3847 with strength/H5797 *wherewith he hath girded/H247 himself the world/H8398 also is stablished/H3559 that it cannot be moved/H4131"
     },
     "2": {
         "explanation": {
@@ -19,7 +20,8 @@
             "bsb": {
                 "text": "Your throne was established long ago; You are from all eternity."
             }
-        }
+        },
+        "interlinear": "Thy throne/H3678 *is established/H3559 of old/H227 thou *art from everlasting/H5769"
     },
     "3": {
         "explanation": {
@@ -30,7 +32,8 @@
             "bsb": {
                 "text": "The floodwaters have risen, O LORD; the rivers have raised their voice; the seas lift up their pounding waves."
             }
-        }
+        },
+        "interlinear": "The floods/H5104 have lifted up/H5375 O LORD/H3068 the floods/H5104 have lifted up/H5375 their voice/H6963 the floods/H5104 lift up/H5375 their waves/H1796"
     },
     "4": {
         "explanation": {
@@ -41,7 +44,8 @@
             "bsb": {
                 "text": "Above the roar of many waters—the mighty breakers of the sea—the LORD on high is majestic."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 on high/H4791 *is mightier/H117 than the noise/H6963 of many/H7227 waters/H4325 *yea *than the mighty/H117 waves/H4867 of the sea/H3220"
     },
     "5": {
         "explanation": {
@@ -52,6 +56,7 @@
             "bsb": {
                 "text": "Your testimonies are fully confirmed; holiness adorns Your house, O LORD, for all the days to come."
             }
-        }
+        },
+        "interlinear": "Thy testimonies/H5713 are very/H3966 sure/H539 holiness/H6944 becometh/H4998 thine house/H1004 O LORD/H3068 for ever/H753"
     }
 }

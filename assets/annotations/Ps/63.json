@@ -9,7 +9,8 @@
                 "title": "A Psalm of David, when he was in the Wilderness of Judah.",
                 "text": "O God, You are my God. Earnestly I seek You; my soul thirsts for You. My body yearns for You in a dry and weary land without water."
             }
-        }
+        },
+        "interlinear": "O God/H430 thou *art my God/H410 early will I seek/H7836 thee my soul/H5315 thirsteth/H6770 for thee my flesh/H1320 longeth/H3642 for thee in a dry/H6723 and thirsty/H5889 land/H776 where no/H1097 water/H4325 is"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "So I have seen You in the sanctuary and beheld Your power and glory."
             }
-        }
+        },
+        "interlinear": "To see/H7200 thy power/H5797 and thy glory/H3519 so *as I have seen/H2372 thee in the sanctuary/H6944"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "Because Your loving devotion is better than life, my lips will glorify You."
             }
-        }
+        },
+        "interlinear": "Because thy lovingkindness/H2617 *is better/H2896 than life/H2416 my lips/H8193 shall praise/H7623 thee"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "So I will bless You as long as I live; in Your name I will lift my hands."
             }
-        }
+        },
+        "interlinear": "Thus will I bless/H1288 thee while I live/H2416 I will lift up/H5375 my hands/H3709 in thy name/H8034"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "My soul is satisfied as with the richest of foods; with joyful lips my mouth will praise You."
             }
-        }
+        },
+        "interlinear": "My soul/H5315 shall be satisfied/H7646 as *with marrow/H2459 and fatness/H1880 and my mouth/H6310 shall praise/H1984 *thee with joyful/H7445 lips/H8193"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "When I remember You on my bed, I think of You through the watches of the night."
             }
-        }
+        },
+        "interlinear": "When I remember/H2142 thee upon my bed/H3326 *and meditate/H1897 on thee in the *night watches/H821"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "For You are my help; I will sing for joy in the shadow of Your wings."
             }
-        }
+        },
+        "interlinear": "Because thou hast been my help/H5833 therefore in the shadow/H6738 of thy wings/H3671 will I rejoice/H7442"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "My soul clings to You; Your right hand upholds me."
             }
-        }
+        },
+        "interlinear": "My soul/H5315 followeth hard/H1692 after/H310 thee thy right hand/H3225 upholdeth/H8551 me"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "But those who seek my life to destroy it will go into the depths of the earth."
             }
-        }
+        },
+        "interlinear": "But those *that seek/H1245 my soul/H5315 to destroy/H7722 *it shall go/H935 into the lower parts/H8482 of the earth/H776"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "They will fall to the power of the sword; they will become a portion for foxes."
             }
-        }
+        },
+        "interlinear": "They shall fall/H5064 by the sword/H3027 they shall be a portion/H4521 for foxes/H7776"
     },
     "11": {
         "explanation": {
@@ -119,6 +129,7 @@
             "bsb": {
                 "text": "But the king will rejoice in God; all who swear by Him will exult, for the mouths of liars will be shut."
             }
-        }
+        },
+        "interlinear": "But the king/H4428 shall rejoice/H8055 in God/H430 every one that sweareth/H7650 by him shall glory/H1984 but the mouth/H6310 of them that speak/H1696 lies/H8267 shall be stopped/H5534"
     }
 }

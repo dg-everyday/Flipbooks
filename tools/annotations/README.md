@@ -18,7 +18,8 @@ the `books` table (`Gen`, `Ps`, `John`, `1Sam`, …). Keys are verse numbers:
     "explanation": { "source": "jfb", "text": "Under a metaphor borrowed from scenes of pastoral life…" },
     "translations": {
       "bsb": { "title": "A Psalm of David.", "text": "The LORD is my shepherd; I shall not want." }
-    }
+    },
+    "interlinear": "The LORD/H3068 *is my shepherd/H7462 I shall not want/H2637"
   }
 }
 ```
@@ -32,7 +33,10 @@ the `books` table (`Gen`, `Ps`, `John`, `1Sam`, …). Keys are verse numbers:
 - `translations.bsb.title` appears only on verse 1 of the 116 psalms that have
   a heading ("A Psalm of David."). The BSB prints it as part of verse 1; here
   it is kept apart, as the KJV verse 1 does not include it.
-- A verse with neither is absent, and a chapter with none is `{}`. Every
+- `interlinear` is the verse's KJV words with their Strong's numbers, for the
+  interlinear in the explanation popup: see `tools/strongs/README.md` for the
+  format. Every verse has one.
+- A verse with none of these is absent, and a chapter with none is `{}`. Every
   chapter has a file, so a fetch never 404s.
 
 The average file is about 26 KB as stored (Psalm 119, the largest, about
@@ -79,7 +83,8 @@ python tools/annotations/fetch_commentaries.py
 
 ## build_annotations.py
 
-Rebuilds `assets/annotations/` from the cache and `bsb.json`. It reads
+Rebuilds `assets/annotations/` from the cache, `bsb.json` and
+`tools/strongs/interlinear.json`. It reads
 `dailygrace.db` only for the book ids and the list of verses; the database is
 not modified.
 

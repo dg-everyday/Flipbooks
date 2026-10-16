@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "May the LORD answer you in the day of trouble; may the name of the God of Jacob protect you."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 hear/H6030 thee in the day/H3117 of trouble/H6869 the name/H8034 of the God/H430 of Jacob/H3290 defend/H7682 thee"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "May He send you help from the sanctuary and sustain you from Zion."
             }
-        }
+        },
+        "interlinear": "Send/H7971 thee help/H5828 from the sanctuary/H6944 and strengthen/H5582 thee out of Zion/H6726"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "May He remember all your gifts and look favorably on your burnt offerings. Selah"
             }
-        }
+        },
+        "interlinear": "Remember/H2142 all thy offerings/H4503 and accept/H1878 thy burnt sacrifice/H5930 Selah/H5542"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "May He give you the desires of your heart and make all your plans succeed."
             }
-        }
+        },
+        "interlinear": "Grant/H5414 thee according to thine own heart/H3824 and fulfil/H4390 all thy counsel/H6098"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "May we shout for joy at your victory and raise a banner in the name of our God. May the LORD grant all your petitions."
             }
-        }
+        },
+        "interlinear": "We will rejoice/H7442 in thy salvation/H3444 and in the name/H8034 of our God/H430 we will set up *our banners/H1713 the LORD/H3068 fulfil/H4390 all thy petitions/H4862"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Now I know that the LORD saves His anointed; He answers him from His holy heaven with the saving power of His right hand."
             }
-        }
+        },
+        "interlinear": "Now know/H3045 I that the LORD/H3068 saveth/H3467 his anointed/H4899 he will hear/H6030 him from his holy/H6944 heaven/H8064 with the saving/H3468 strength/H1369 of his right hand/H3225"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "Some trust in chariots and others in horses, but we trust in the name of the LORD our God."
             }
-        }
+        },
+        "interlinear": "Some *trust in chariots/H7393 and some in horses/H5483 but we will remember/H2142 the name/H8034 of the LORD/H3068 our God/H430"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "They collapse and fall, but we rise up and stand firm."
             }
-        }
+        },
+        "interlinear": "They are brought down/H3766 and fallen/H5307 but we are risen/H6965 and stand upright/H5749"
     },
     "9": {
         "explanation": {
@@ -97,6 +105,7 @@
             "bsb": {
                 "text": "O LORD, save the king. Answer us on the day we call."
             }
-        }
+        },
+        "interlinear": "Save/H3467 LORD/H3068 let the king/H4428 hear/H6030 us when/H3117 we call/H7121"
     }
 }

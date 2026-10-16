@@ -12,8 +12,10 @@ Sources (download them outside the repo; see README.md):
 Writes, rebuilt from scratch on every run:
 
     tools/strongs/kjv_strongs.db     one row per word of dailygrace.db, with its Strong's number
-    assets/strongs/hebrew.json       Strong's Hebrew dictionary, keyed "H1".."H8674"
-    assets/strongs/greek.json        Strong's Greek dictionary, keyed "G1".."G5624"
+    tools/strongs/interlinear.json   each verse's words and numbers, for build_annotations.py
+    assets/strongs/hebrew/<n>.json   Strong's Hebrew dictionary, 100 entries a file:
+                                     H1-H99 in 0.json, H100-H199 in 1.json, ...
+    assets/strongs/greek/<n>.json    Strong's Greek dictionary, the same way
     tools/strongs/report.txt         validation report
 
 The words are those of dailygrace.db, split exactly as the concordance splits
@@ -25,6 +27,7 @@ import glob
 import json
 import os
 import re
+import shutil
 import sqlite3
 import sys
 
@@ -37,6 +40,9 @@ from build_concordance import WORD, clean_verses, tokenize  # noqa: E402
 BIBLE_DB = os.path.join(ROOT, "assets", "db", "dailygrace.db")
 STRONGS_DB = os.path.join(HERE, "kjv_strongs.db")
 DICT_DIR = os.path.join(ROOT, "assets", "strongs")
+INTERLINEAR = os.path.join(HERE, "interlinear.json")
+# Dictionary entries per file: a verse's dozen numbers fetch a few small files.
+DICT_CHUNK = 100
 REPORT = os.path.join(HERE, "report.txt")
 
 # USFM book codes in canonical order; the apocrypha files are skipped.
@@ -288,10 +294,38 @@ def build(usfm_dir, hebrew_js, greek_js):
     con.execute("VACUUM")
     con.close()
 
-    os.makedirs(DICT_DIR, exist_ok=True)
+    # Each verse as one string of its words: "In the beginning/H7225 God/H430
+    # ... *was ...". A word with numbers carries them after a slash, joined by
+    # "+" when there are several; a word the translators supplied (italic in
+    # the KJV) starts with "*". The words are letters, apostrophes and
+    # hyphens only, so none of those marks can be part of one.
+    place = {vid: (book_id[num], str(ch), str(vs)) for vid, num, ch, vs, _ in verses if vs}
+    interlinear = {}
+    for vid, _, word, numbers, added in rows:
+        if vid not in place:
+            continue
+        assert not re.search(r"[\s/*+]", word), word
+        book, ch, vs = place[vid]
+        token = ("*" if added else "") + word + ("/" + numbers.replace(" ", "+") if numbers else "")
+        verse_words = interlinear.setdefault(book, {}).setdefault(ch, {})
+        verse_words[vs] = f"{verse_words[vs]} {token}" if vs in verse_words else token
+    with open(INTERLINEAR, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(interlinear, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+
     for name, data in (("hebrew", hebrew), ("greek", greek)):
-        with open(os.path.join(DICT_DIR, name + ".json"), "w", encoding="utf-8", newline="\n") as f:
-            json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+        folder = os.path.join(DICT_DIR, name)
+        shutil.rmtree(folder, ignore_errors=True)
+        old = os.path.join(DICT_DIR, name + ".json")
+        if os.path.exists(old):
+            os.remove(old)
+        os.makedirs(folder)
+        chunks = {}
+        for key, entry in data.items():
+            chunks.setdefault(int(key[1:]) // DICT_CHUNK, {})[key] = entry
+        for index, chunk in chunks.items():
+            with open(os.path.join(folder, f"{index}.json"), "w", encoding="utf-8", newline="\n") as f:
+                json.dump(chunk, f, ensure_ascii=False, separators=(",", ":"))
 
     def p(s=""):
         report.append(s)
@@ -322,8 +356,13 @@ def build(usfm_dir, hebrew_js, greek_js):
     print("\n".join(report[:14]))
     print(f"verses where the wording differs: {len(unmatched)}; spelling only: {len(spelled)} "
           f"(full lists in {os.path.relpath(REPORT, ROOT)})")
-    for path in [STRONGS_DB] + [os.path.join(DICT_DIR, n + ".json") for n in ("hebrew", "greek")]:
+    for path in (STRONGS_DB, INTERLINEAR):
         print("wrote %s (%d KB)" % (os.path.relpath(path, ROOT), os.path.getsize(path) // 1024))
+    for name in ("hebrew", "greek"):
+        folder = os.path.join(DICT_DIR, name)
+        files = os.listdir(folder)
+        size = sum(os.path.getsize(os.path.join(folder, f)) for f in files)
+        print("wrote %s/ (%d files, %d KB)" % (os.path.relpath(folder, ROOT), len(files), size // 1024))
 
 
 if __name__ == "__main__":

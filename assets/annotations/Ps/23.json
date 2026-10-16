@@ -9,7 +9,8 @@
                 "title": "A Psalm of David.",
                 "text": "The LORD is my shepherd; I shall not want."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 *is my shepherd/H7462 I shall not want/H2637"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "He makes me lie down in green pastures; He leads me beside quiet waters."
             }
-        }
+        },
+        "interlinear": "He maketh me to lie down/H7257 in green/H1877 pastures/H4999 he leadeth/H5095 me beside the still/H4496 waters/H4325"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "He restores my soul; He guides me in the paths of righteousness for the sake of His name."
             }
-        }
+        },
+        "interlinear": "He restoreth/H7725 my soul/H5315 he leadeth/H5148 me in the paths/H4570 of righteousness/H6664 for his name’s/H8034 sake"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for You are with me; Your rod and Your staff, they comfort me."
             }
-        }
+        },
+        "interlinear": "Yea though I walk/H3212 through the valley/H1516 of the shadow of death/H6757 I will fear/H3372 no evil/H7451 for thou *art with me thy rod/H7626 and thy staff/H4938 they comfort/H5162 me"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "You prepare a table before me in the presence of my enemies. You anoint my head with oil; my cup overflows."
             }
-        }
+        },
+        "interlinear": "Thou preparest/H6186 a table/H7979 before/H6440 me in the presence of mine enemies/H6887 thou anointest/H1878 my head/H7218 with oil/H8081 my cup/H3563 runneth over/H7310"
     },
     "6": {
         "explanation": {
@@ -64,6 +69,7 @@
             "bsb": {
                 "text": "Surely goodness and mercy will follow me all the days of my life, and I will dwell in the house of the LORD forever."
             }
-        }
+        },
+        "interlinear": "Surely goodness/H2896 and mercy/H2617 shall follow/H7291 me all the days/H3117 of my life/H2416 and I will dwell/H3427 in the house/H1004 of the LORD/H3068 for ever/H753"
     }
 }

@@ -8,7 +8,8 @@
             "bsb": {
                 "text": "From inside the fish, Jonah prayed to the LORD his God,"
             }
-        }
+        },
+        "interlinear": "Then Jonah/H3124 prayed/H6419 unto the LORD/H3068 his God/H430 out of the fish’s/H1710 belly/H4578"
     },
     "2": {
         "explanation": {
@@ -19,7 +20,8 @@
             "bsb": {
                 "text": "saying: “In my distress I called to the LORD, and He answered me. From the belly of Sheol I called for help, and You heard my voice."
             }
-        }
+        },
+        "interlinear": "And said/H559 I cried/H7121 by reason of mine affliction/H6869 unto the LORD/H3068 and he heard/H6030 me out of the belly/H990 of hell/H7585 cried/H7768 I *and thou heardest/H8085 my voice/H6963"
     },
     "3": {
         "explanation": {
@@ -30,7 +32,8 @@
             "bsb": {
                 "text": "For You cast me into the deep, into the heart of the seas, and the current swirled about me; all Your breakers and waves swept over me."
             }
-        }
+        },
+        "interlinear": "For thou hadst cast/H7993 me into the deep/H4688 in the midst/H3824 of the seas/H3220 and the floods/H5104 compassed/H5437 me about all thy billows/H4867 and thy waves/H1530 passed over/H5674 me"
     },
     "4": {
         "explanation": {
@@ -41,7 +44,8 @@
             "bsb": {
                 "text": "At this, I said, ‘I have been banished from Your sight; yet I will look once more toward Your holy temple.’"
             }
-        }
+        },
+        "interlinear": "Then I said/H559 I am cast out/H1644 of thy sight/H5869 yet I will look/H5027 again/H3254 toward thy holy/H6944 temple/H1964"
     },
     "5": {
         "explanation": {
@@ -52,7 +56,8 @@
             "bsb": {
                 "text": "The waters engulfed me to take my life; the watery depths closed around me; the seaweed wrapped around my head."
             }
-        }
+        },
+        "interlinear": "The waters/H4325 compassed me about/H661 *even to the soul/H5315 the depth/H8415 closed me round about/H5437 the weeds/H5488 were wrapped about/H2280 my head/H7218"
     },
     "6": {
         "explanation": {
@@ -63,7 +68,8 @@
             "bsb": {
                 "text": "To the roots of the mountains I descended; the earth beneath me barred me in forever! But You raised my life from the pit, O LORD my God!"
             }
-        }
+        },
+        "interlinear": "I went down/H3381 to the bottoms/H7095 of the mountains/H2022 the earth/H776 with her bars/H1280 *was about me for ever/H5769 yet hast thou brought up/H5927 my life/H2416 from corruption/H7845 O LORD/H3068 my God/H430"
     },
     "7": {
         "explanation": {
@@ -74,7 +80,8 @@
             "bsb": {
                 "text": "As my life was fading away, I remembered the LORD. My prayer went up to You, to Your holy temple."
             }
-        }
+        },
+        "interlinear": "When my soul/H5315 fainted/H5848 within me I remembered/H2142 the LORD/H3068 and my prayer/H8605 came in/H935 unto thee into thine holy/H6944 temple/H1964"
     },
     "8": {
         "explanation": {
@@ -85,7 +92,8 @@
             "bsb": {
                 "text": "Those who cling to worthless idols forsake His loving devotion."
             }
-        }
+        },
+        "interlinear": "They that observe/H8104 lying/H7723 vanities/H1892 forsake/H5800 their own mercy/H2617"
     },
     "9": {
         "explanation": {
@@ -96,7 +104,8 @@
             "bsb": {
                 "text": "But I, with the voice of thanksgiving, will sacrifice to You. I will fulfill what I have vowed. Salvation is from the LORD!”"
             }
-        }
+        },
+        "interlinear": "But I will sacrifice/H2076 unto thee with the voice/H6963 of thanksgiving/H8426 I will pay/H7999 *that that I have vowed/H5087 Salvation/H3444 *is of the LORD/H3068"
     },
     "10": {
         "explanation": {
@@ -107,6 +116,7 @@
             "bsb": {
                 "text": "And the LORD commanded the fish, and it vomited Jonah onto dry land."
             }
-        }
+        },
+        "interlinear": "And the LORD/H3068 spake/H559 unto the fish/H1709 and it vomited out/H6958 Jonah/H3124 upon the dry/H3004 *land"
     }
 }

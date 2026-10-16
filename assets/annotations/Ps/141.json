@@ -9,7 +9,8 @@
                 "title": "A Psalm of David.",
                 "text": "I call upon You, O LORD; come quickly to me. Hear my voice when I call to You."
             }
-        }
+        },
+        "interlinear": "LORD/H3068 I cry/H7121 unto thee make haste/H2363 unto me give ear/H238 unto my voice/H6963 when I cry/H7121 unto thee"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "May my prayer be set before You like incense; my uplifted hands, like the evening offering."
             }
-        }
+        },
+        "interlinear": "Let my prayer/H8605 be set forth/H3559 before/H6440 thee *as incense/H7004 *and the lifting up/H4864 of my hands/H3709 *as the evening/H6153 sacrifice/H4503"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "Set a guard, O LORD, over my mouth; keep watch at the door of my lips."
             }
-        }
+        },
+        "interlinear": "Set/H7896 a watch/H8108 O LORD/H3068 before my mouth/H6310 keep/H5341 the door/H1817 of my lips/H8193"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Do not let my heart be drawn to any evil thing or take part in works of wickedness with men who do iniquity; let me not feast on their delicacies."
             }
-        }
+        },
+        "interlinear": "Incline/H5186 not my heart/H3820 to *any evil/H7451 thing/H1697 to practise/H5953 wicked/H7562 works/H5949 with men/H376 that work/H6466 iniquity/H205 and let me not eat/H3898 of their dainties/H4516"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "Let the righteous man strike me; let his rebuke be an act of loving devotion. It is oil for my head; let me not refuse it. For my prayer is ever against the deeds of the wicked."
             }
-        }
+        },
+        "interlinear": "Let the righteous/H6662 smite/H1986 me *it *shall *be a kindness/H2617 and let him reprove/H3198 me *it *shall *be an excellent/H7218 oil/H8081 *which shall not break/H5106 my head/H7218 for yet my prayer/H8605 also *shall *be in their calamities/H7451"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "When their rulers are thrown down from the cliffs, the people will listen to my words, for they are pleasant."
             }
-        }
+        },
+        "interlinear": "When their judges/H8199 are overthrown/H8058 in stony/H5553 places/H3027 they shall hear/H8085 my words/H561 for they are sweet/H5276"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "As when one plows and breaks up the soil, so our bones have been scattered at the mouth of Sheol."
             }
-        }
+        },
+        "interlinear": "Our bones/H6106 are scattered/H6340 at the grave’s/H7585 mouth/H6310 as when one cutteth/H6398 and cleaveth/H1234 *wood upon the earth/H776"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "But my eyes are fixed on You, O GOD the Lord. In You I seek refuge; do not leave my soul defenseless."
             }
-        }
+        },
+        "interlinear": "But mine eyes/H5869 *are unto thee O GOD/H3069 the Lord/H136 in thee is my trust/H2620 leave/H6168 not my soul/H5315 destitute/H6168"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "Keep me from the snares they have laid for me, and from the lures of evildoers."
             }
-        }
+        },
+        "interlinear": "Keep/H8104 me from the snares/H3027 *which they have laid/H3369 for me and the gins/H4170 of the workers/H6466 of iniquity/H205"
     },
     "10": {
         "explanation": {
@@ -108,6 +117,7 @@
             "bsb": {
                 "text": "Let the wicked fall into their own nets, while I pass by in safety."
             }
-        }
+        },
+        "interlinear": "Let the wicked/H7563 fall/H5307 into their own nets/H4364 whilst that I withal/H3162 escape/H5674"
     }
 }

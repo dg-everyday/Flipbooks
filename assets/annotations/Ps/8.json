@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. According to Gittith. A Psalm of David.",
                 "text": "O LORD, our Lord, how majestic is Your name in all the earth! You have set Your glory above the heavens."
             }
-        }
+        },
+        "interlinear": "O LORD/H3068 our Lord/H113 how excellent/H117 *is thy name/H8034 in all the earth/H776 who hast set/H5414 thy glory/H1935 above the heavens/H8064"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "From the mouths of children and infants You have ordained praise on account of Your adversaries, to silence the enemy and avenger."
             }
-        }
+        },
+        "interlinear": "Out of the mouth/H6310 of babes/H5768 and sucklings/H3243 hast thou ordained/H3245 strength/H5797 because of thine enemies/H6887 that thou mightest still/H7673 the enemy/H341 and the avenger/H5358"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "When I behold Your heavens, the work of Your fingers, the moon and the stars, which You have set in place—"
             }
-        }
+        },
+        "interlinear": "When I consider/H7200 thy heavens/H8064 the work/H4639 of thy fingers/H676 the moon/H3394 and the stars/H3556 which thou hast ordained/H3559"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "what is man that You are mindful of him, or the son of man that You care for him?"
             }
-        }
+        },
+        "interlinear": "What is man/H582 that thou art mindful/H2142 of him and the son/H1121 of man/H120 that thou visitest/H6485 him"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "You made him a little lower than the angels; You crowned him with glory and honor."
             }
-        }
+        },
+        "interlinear": "For thou hast made him a little/H4592 lower/H2637 than the angels/H430 and hast crowned/H5849 him with glory/H3519 and honour/H1926"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "You made him ruler of the works of Your hands; You have placed everything under his feet:"
             }
-        }
+        },
+        "interlinear": "Thou madest him to have dominion/H4910 over the works/H4639 of thy hands/H3027 thou hast put/H7896 all *things under his feet/H7272"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "all sheep and oxen, and even the beasts of the field,"
             }
-        }
+        },
+        "interlinear": "All sheep/H6792 and oxen/H504 yea and the beasts/H929 of the field/H7704"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "the birds of the air and the fish of the sea, all that swim the paths of the seas."
             }
-        }
+        },
+        "interlinear": "The fowl/H6833 of the air/H8064 and the fish/H1709 of the sea/H3220 *and *whatsoever passeth through/H5674 the paths/H734 of the seas/H3220"
     },
     "9": {
         "explanation": {
@@ -97,6 +105,7 @@
             "bsb": {
                 "text": "O LORD, our Lord, how majestic is Your name in all the earth!"
             }
-        }
+        },
+        "interlinear": "O LORD/H3068 our Lord/H113 how excellent/H117 *is thy name/H8034 in all the earth/H776"
     }
 }

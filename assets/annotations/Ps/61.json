@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. With stringed instruments. Of David.",
                 "text": "Hear my cry, O God; attend to my prayer."
             }
-        }
+        },
+        "interlinear": "Hear/H8085 my cry/H7440 O God/H430 attend/H7181 unto my prayer/H8605"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "From the ends of the earth I call out to You whenever my heart is faint. Lead me to the rock that is higher than I."
             }
-        }
+        },
+        "interlinear": "From the end/H7097 of the earth/H776 will I cry/H7121 unto thee when my heart/H3820 is overwhelmed/H5848 lead/H5148 me to the rock/H6697 *that is higher/H7311 than I"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "For You have been my refuge, a tower of strength against the enemy."
             }
-        }
+        },
+        "interlinear": "For thou hast been a shelter/H4268 for me *and a strong/H5797 tower/H4026 from/H6440 the enemy/H341"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Let me dwell in Your tent forever and take refuge in the shelter of Your wings. Selah"
             }
-        }
+        },
+        "interlinear": "I will abide/H1481 in thy tabernacle/H168 for ever/H5769 I will trust/H2620 in the covert/H5643 of thy wings/H3671 Selah/H5542"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "For You have heard my vows, O God; You have given me the inheritance reserved for those who fear Your name."
             }
-        }
+        },
+        "interlinear": "For thou O God/H430 hast heard/H8085 my vows/H5088 thou hast given/H5414 *me the heritage/H3425 of those that fear/H3373 thy name/H8034"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Increase the days of the king’s life; may his years span many generations."
             }
-        }
+        },
+        "interlinear": "Thou wilt prolong/H3254 the king’s/H4428 life/H3117 *and his years/H8141 as many/H1755 generations/H1755"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "May he sit enthroned in God’s presence forever; appoint Your loving devotion and Your faithfulness to guard him."
             }
-        }
+        },
+        "interlinear": "He shall abide/H3427 before/H6440 God/H430 for ever/H5769 O prepare/H4487 mercy/H2617 and truth/H571 *which may preserve/H5341 him"
     },
     "8": {
         "explanation": {
@@ -86,6 +93,7 @@
             "bsb": {
                 "text": "Then I will ever sing praise to Your name and fulfill my vows day by day."
             }
-        }
+        },
+        "interlinear": "So will I sing/H2167 praise unto thy name/H8034 for ever/H5703 that I may daily/H3117 perform/H7999 my vows/H5088"
     }
 }

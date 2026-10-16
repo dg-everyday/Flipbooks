@@ -9,7 +9,8 @@
                 "title": "A song of ascents. Of David.",
                 "text": "I was glad when they said to me, “Let us go to the house of the LORD.”"
             }
-        }
+        },
+        "interlinear": "I was glad/H8055 when they said/H559 unto me Let us go/H3212 into the house/H1004 of the LORD/H3068"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Our feet are standing in your gates, O Jerusalem."
             }
-        }
+        },
+        "interlinear": "Our feet/H7272 shall stand/H5975 within thy gates/H8179 O Jerusalem/H3389"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "Jerusalem is built up as a city united together,"
             }
-        }
+        },
+        "interlinear": "Jerusalem/H3389 is builded/H1129 as a city/H5892 that is compact/H2266 together/H3162"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "where the tribes go up, the tribes of the LORD, as a testimony for Israel, to give thanks to the name of the LORD."
             }
-        }
+        },
+        "interlinear": "Whither/H8033 the tribes/H7626 go up/H5927 the tribes/H7626 of the LORD/H3050 unto the testimony/H5715 of Israel/H3478 to give thanks/H3034 unto the name/H8034 of the LORD/H3068"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "For there the thrones of judgment stand, the thrones of the house of David."
             }
-        }
+        },
+        "interlinear": "For there are set/H3427 thrones/H3678 of judgment/H4941 the thrones/H3678 of the house/H1004 of David/H1732"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Pray for the peace of Jerusalem: “May those who love you prosper."
             }
-        }
+        },
+        "interlinear": "Pray/H7592 for the peace/H7965 of Jerusalem/H3389 they shall prosper/H7951 that love/H157 thee"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "May there be peace within your walls, and prosperity inside your fortresses.”"
             }
-        }
+        },
+        "interlinear": "Peace/H7965 be within thy walls/H2426 *and prosperity/H7962 within thy palaces/H759"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "For the sake of my brothers and friends, I will say, “Peace be within you.”"
             }
-        }
+        },
+        "interlinear": "For my brethren/H251 and companions’/H7453 sakes I will now say/H1696 Peace/H7965 *be within thee"
     },
     "9": {
         "explanation": {
@@ -97,6 +105,7 @@
             "bsb": {
                 "text": "For the sake of the house of the LORD our God, I will seek your prosperity."
             }
-        }
+        },
+        "interlinear": "Because of the house/H1004 of the LORD/H3068 our God/H430 I will seek/H1245 thy good/H2896"
     }
 }

@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. To the tune of “A Dove on Distant Oaks.” A Miktam of David, when the Philistines seized him in Gath.",
                 "text": "Be merciful to me, O God, for men are hounding me; all day they press their attack."
             }
-        }
+        },
+        "interlinear": "Be merciful/H2603 unto me O God/H430 for man/H582 would swallow me up/H7602 he fighting/H3898 daily/H3117 oppresseth/H3905 me"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "My enemies pursue me all day long, for many proudly assail me."
             }
-        }
+        },
+        "interlinear": "Mine enemies/H8324 would daily/H3117 swallow/H7602 *me up for *they *be many/H7227 that fight/H3898 against me O thou most High/H4791"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "When I am afraid, I put my trust in You."
             }
-        }
+        },
+        "interlinear": "What time/H3117 I am afraid/H3372 I will trust/H982 in thee"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "In God, whose word I praise—in God I trust. I will not be afraid. What can man do to me?"
             }
-        }
+        },
+        "interlinear": "In God/H430 I will praise/H1984 his word/H1697 in God/H430 I have put my trust/H982 I will not fear/H3372 what flesh/H1320 can do/H6213 unto me"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "All day long they twist my words; all their thoughts are on my demise."
             }
-        }
+        },
+        "interlinear": "Every day/H3117 they wrest/H6087 my words/H1697 all their thoughts/H4284 *are against me for evil/H7451"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "They conspire, they lurk, they watch my steps while they wait to take my life."
             }
-        }
+        },
+        "interlinear": "They gather themselves together/H1481 they hide/H6845 themselves they mark/H8104 my steps/H6119 when they wait/H6960 for my soul/H5315"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "In spite of such sin, will they escape? In Your anger, O God, cast down the nations."
             }
-        }
+        },
+        "interlinear": "Shall they escape/H6405 by iniquity/H205 in *thine anger/H639 cast down/H3381 the people/H5971 O God/H430"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "You have taken account of my wanderings. Put my tears in Your bottle—are they not in Your book?"
             }
-        }
+        },
+        "interlinear": "Thou tellest/H5608 my wanderings/H5112 put/H7760 thou my tears/H1832 into thy bottle/H4997 *are *they not in thy book/H5612"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "Then my enemies will retreat on the day I cry for help. By this I will know that God is on my side."
             }
-        }
+        },
+        "interlinear": "When/H3117 I cry/H7121 *unto *thee then shall mine enemies/H341 turn/H7725 back/H268 this I know/H3045 for God/H430 *is for me"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "In God, whose word I praise, in the LORD, whose word I praise,"
             }
-        }
+        },
+        "interlinear": "In God/H430 will I praise/H1984 *his word/H1697 in the LORD/H3068 will I praise/H1984 *his word/H1697"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "in God I trust; I will not be afraid. What can man do to me?"
             }
-        }
+        },
+        "interlinear": "In God/H430 have I put my trust/H982 I will not be afraid/H3372 what man/H120 can do/H6213 unto me"
     },
     "12": {
         "explanation": {
@@ -130,7 +141,8 @@
             "bsb": {
                 "text": "Your vows are upon me, O God; I will render thank offerings to You."
             }
-        }
+        },
+        "interlinear": "Thy vows/H5088 *are upon me O God/H430 I will render/H7999 praises/H8426 unto thee"
     },
     "13": {
         "explanation": {
@@ -141,6 +153,7 @@
             "bsb": {
                 "text": "For You have delivered my soul from death, and my feet from stumbling, that I may walk before God in the light of life."
             }
-        }
+        },
+        "interlinear": "For thou hast delivered/H5337 my soul/H5315 from death/H4194 *wilt not *thou *deliver my feet/H7272 from falling/H1762 that I may walk/H1980 before/H6440 God/H430 in the light/H216 of the living/H2416"
     }
 }

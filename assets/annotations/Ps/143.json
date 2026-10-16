@@ -9,7 +9,8 @@
                 "title": "A Psalm of David.",
                 "text": "O LORD, hear my prayer. In Your faithfulness, give ear to my plea; in Your righteousness, answer me."
             }
-        }
+        },
+        "interlinear": "Hear/H8085 my prayer/H8605 O LORD/H3068 give ear/H238 to my supplications/H8469 in thy faithfulness/H530 answer/H6030 me *and in thy righteousness/H6666"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Do not bring Your servant into judgment, for no one alive is righteous before You."
             }
-        }
+        },
+        "interlinear": "And enter/H935 not into judgment/H4941 with thy servant/H5650 for in thy sight/H6440 shall no man living/H2416 be justified/H6663"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "For the enemy has pursued my soul, crushing my life to the ground, making me dwell in darkness like those long since dead."
             }
-        }
+        },
+        "interlinear": "For the enemy/H341 hath persecuted/H7291 my soul/H5315 he hath smitten/H1792 my life/H2416 down/H1792 to the ground/H776 he hath made me to dwell/H3427 in darkness/H4285 as those that have been long/H5769 dead/H4191"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "My spirit grows faint within me; my heart is dismayed inside me."
             }
-        }
+        },
+        "interlinear": "Therefore is my spirit/H7307 overwhelmed/H5848 within me my heart/H3820 within/H8432 me is desolate/H8074"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "I remember the days of old; I meditate on all Your works; I consider the work of Your hands."
             }
-        }
+        },
+        "interlinear": "I remember/H2142 the days/H3117 of old/H6924 I meditate/H1897 on all thy works/H6467 I muse/H7878 on the work/H4639 of thy hands/H3027"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "I stretch out my hands to You; my soul thirsts for You like a parched land. Selah"
             }
-        }
+        },
+        "interlinear": "I stretch forth/H6566 my hands/H3027 unto thee my soul/H5315 *thirsteth after thee as a thirsty/H5889 land/H776 Selah/H5542"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "Answer me quickly, O LORD; my spirit fails. Do not hide Your face from me, or I will be like those who descend to the Pit."
             }
-        }
+        },
+        "interlinear": "Hear/H6030 me speedily/H4118 O LORD/H3068 my spirit/H7307 faileth/H3615 hide/H5641 not thy face/H6440 from me lest I be like/H4911 unto them that go down/H3381 into the pit/H953"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "Let me hear Your loving devotion in the morning, for I have put my trust in You. Teach me the way I should walk, for to You I lift up my soul."
             }
-        }
+        },
+        "interlinear": "Cause me to hear/H8085 thy lovingkindness/H2617 in the morning/H1242 for in thee do I trust/H982 cause me to know/H3045 the way/H1870 wherein/H2098 I should walk/H3212 for I lift up/H5375 my soul/H5315 unto thee"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "Deliver me from my enemies, O LORD; I flee to You for refuge."
             }
-        }
+        },
+        "interlinear": "Deliver/H5337 me O LORD/H3068 from mine enemies/H341 I flee unto thee to hide/H3680 me"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "Teach me to do Your will, for You are my God. May Your good Spirit lead me on level ground."
             }
-        }
+        },
+        "interlinear": "Teach/H3925 me to do/H6213 thy will/H7522 for thou *art my God/H430 thy spirit/H7307 *is good/H2896 lead/H5148 me into the land/H776 of uprightness/H4334"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "For the sake of Your name, O LORD, revive me. In Your righteousness, bring my soul out of trouble."
             }
-        }
+        },
+        "interlinear": "Quicken/H2421 me O LORD/H3068 for thy name’s/H8034 sake for thy righteousness’/H6666 sake bring/H3318 my soul/H5315 out of trouble/H6869"
     },
     "12": {
         "explanation": {
@@ -130,6 +141,7 @@
             "bsb": {
                 "text": "And in Your loving devotion, cut off my enemies. Destroy all who afflict me, for I am Your servant."
             }
-        }
+        },
+        "interlinear": "And of thy mercy/H2617 cut off/H6789 mine enemies/H341 and destroy/H6 all them that afflict/H6887 my soul/H5315 for I *am thy servant/H5650"
     }
 }

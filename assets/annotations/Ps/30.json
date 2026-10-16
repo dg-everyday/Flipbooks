@@ -9,7 +9,8 @@
                 "title": "A Psalm. A song for the dedication of the temple. Of David.",
                 "text": "I will exalt You, O LORD, for You have lifted me up and have not allowed my foes to rejoice over me."
             }
-        }
+        },
+        "interlinear": "I will extol/H7311 thee O LORD/H3068 for thou hast lifted me up/H1802 and hast not made my foes/H341 to rejoice/H8055 over me"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "O LORD my God, I cried to You for help, and You healed me."
             }
-        }
+        },
+        "interlinear": "O LORD/H3068 my God/H430 I cried/H7768 unto thee and thou hast healed/H7495 me"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "O LORD, You pulled me up from Sheol; You spared me from descending into the Pit."
             }
-        }
+        },
+        "interlinear": "O LORD/H3068 thou hast brought up/H5927 my soul/H5315 from the grave/H7585 thou hast kept me alive/H2421 that I should not go down/H3381 to the pit/H953"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Sing to the LORD, O you His saints, and praise His holy name."
             }
-        }
+        },
+        "interlinear": "Sing/H2167 unto the LORD/H3068 O ye saints/H2623 of his and give thanks/H3034 at the remembrance/H2143 of his holiness/H6944"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "For His anger is fleeting, but His favor lasts a lifetime. Weeping may stay the night, but joy comes in the morning."
             }
-        }
+        },
+        "interlinear": "For his anger/H639 *endureth *but a moment/H7281 in his favour/H7522 *is life/H2416 weeping/H1065 may endure/H3885 for a night/H6153 but joy/H7440 *cometh in the morning/H1242"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "In prosperity I said, “I will never be shaken.”"
             }
-        }
+        },
+        "interlinear": "And in my prosperity/H7959 I said/H559 I shall never/H5769 be moved/H4131"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "O LORD, You favored me; You made my mountain stand strong. When You hid Your face, I was dismayed."
             }
-        }
+        },
+        "interlinear": "LORD/H3068 by thy favour/H7522 thou hast made my mountain/H2042 to stand/H5975 strong/H5797 thou didst hide/H5641 thy face/H6440 *and I was troubled/H926"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "To You, O LORD, I called, and I begged my Lord for mercy:"
             }
-        }
+        },
+        "interlinear": "I cried/H7121 to thee O LORD/H3068 and unto the LORD/H3068 I made supplication/H2603"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "“What gain is there in my bloodshed, in my descent to the Pit? Will the dust praise You? Will it proclaim Your faithfulness?"
             }
-        }
+        },
+        "interlinear": "What profit/H1215 *is *there in my blood/H1818 when I go down/H3381 to the pit/H7845 Shall the dust/H6083 praise/H3034 thee shall it declare/H5046 thy truth/H571"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "Hear me, O LORD, and have mercy; O LORD, be my helper.”"
             }
-        }
+        },
+        "interlinear": "Hear/H8085 O LORD/H3068 and have mercy/H2603 upon me LORD/H3068 be thou my helper/H5826"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "You turned my mourning into dancing; You peeled off my sackcloth and clothed me with joy,"
             }
-        }
+        },
+        "interlinear": "Thou hast turned/H2015 for me my mourning/H4553 into dancing/H4234 thou hast put off/H6605 my sackcloth/H8242 and girded/H247 me with gladness/H8057"
     },
     "12": {
         "explanation": {
@@ -130,6 +141,7 @@
             "bsb": {
                 "text": "that my heart may sing Your praises and not be silent. O LORD my God, I will give thanks forever."
             }
-        }
+        },
+        "interlinear": "To the end that *my glory/H3519 may sing/H2167 praise to thee and not be silent/H1826 O LORD/H3068 my God/H430 I will give thanks/H3034 unto thee for ever/H5769"
     }
 }

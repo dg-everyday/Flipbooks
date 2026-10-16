@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. For Jeduthun. A Psalm of David.",
                 "text": "I said, “I will watch my ways so that I will not sin with my tongue; I will guard my mouth with a muzzle as long as the wicked are present.”"
             }
-        }
+        },
+        "interlinear": "I said/H559 I will take heed/H8104 to my ways/H1870 that I sin/H2398 not with my tongue/H3956 I will keep/H8104 my mouth/H6310 with a bridle/H4269 while the wicked/H7563 is before me"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "I was speechless and still; I remained silent, even from speaking good, and my sorrow was stirred."
             }
-        }
+        },
+        "interlinear": "I was dumb/H481 with silence/H1747 I held my peace/H2814 *even from good/H2896 and my sorrow/H3511 was stirred/H5916"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "My heart grew hot within me; as I mused, the fire burned. Then I spoke with my tongue:"
             }
-        }
+        },
+        "interlinear": "My heart/H3820 was hot/H2552 within/H7130 me while I was musing/H1901 the fire/H784 burned/H1197 *then/H227 spake/H1696 I with my tongue/H3956"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "“Show me, O LORD, my end and the measure of my days. Let me know how fleeting my life is."
             }
-        }
+        },
+        "interlinear": "LORD/H3068 make me to know/H3045 mine end/H7093 and the measure/H4060 of my days/H3117 what it *is *that I may know/H3045 how frail/H2310 I *am"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "You, indeed, have made my days as handbreadths, and my lifetime as nothing before You. Truly each man at his best exists as but a breath. Selah"
             }
-        }
+        },
+        "interlinear": "Behold thou hast made/H5414 my days/H3117 *as an handbreadth/H2947 and mine age/H2465 *is as nothing before thee verily every/H3605 man/H120 at his best state/H5324 *is altogether/H3605 vanity/H1892 Selah/H5542"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Surely every man goes about like a phantom; surely he bustles in vain; he heaps up riches not knowing who will haul them away."
             }
-        }
+        },
+        "interlinear": "Surely every man/H376 walketh/H1980 in a vain shew/H6754 surely they are disquieted/H1993 in vain/H1892 he heapeth up/H6651 *riches and knoweth/H3045 not who shall gather/H622 them"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "And now, O Lord, for what do I wait? My hope is in You."
             }
-        }
+        },
+        "interlinear": "And now Lord/H136 what wait/H6960 I for my hope/H8431 *is in thee"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "Deliver me from all my transgressions; do not make me the reproach of fools."
             }
-        }
+        },
+        "interlinear": "Deliver/H5337 me from all my transgressions/H6588 make/H7760 me not the reproach/H2781 of the foolish/H5036"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "I have become mute; I do not open my mouth because of what You have done."
             }
-        }
+        },
+        "interlinear": "I was dumb/H481 I opened/H6605 not my mouth/H6310 because thou didst/H6213 *it"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "Remove Your scourge from me; I am perishing by the force of Your hand."
             }
-        }
+        },
+        "interlinear": "Remove/H5493 thy stroke/H5061 away/H5493 from me I am consumed/H3615 by the blow/H8409 of thine hand/H3027"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "You discipline and correct a man for his iniquity, consuming like a moth what he holds dear; surely each man is but a vapor. Selah"
             }
-        }
+        },
+        "interlinear": "When thou with rebukes/H8433 dost correct/H3256 man/H376 for iniquity/H5771 thou makest his beauty/H2530 to consume away/H4529 like a moth/H6211 surely every man/H120 *is vanity/H1892 Selah/H5542"
     },
     "12": {
         "explanation": {
@@ -130,7 +141,8 @@
             "bsb": {
                 "text": "Hear my prayer, O LORD, and give ear to my cry for help; do not be deaf to my weeping. For I am a foreigner dwelling with You, a stranger like all my fathers."
             }
-        }
+        },
+        "interlinear": "Hear/H8085 my prayer/H8605 O LORD/H3068 and give ear/H238 unto my cry/H7775 hold not thy peace/H2790 at my tears/H1832 for I *am a stranger/H1616 with thee *and a sojourner/H8453 as all my fathers/H1 *were"
     },
     "13": {
         "explanation": {
@@ -141,6 +153,7 @@
             "bsb": {
                 "text": "Turn Your gaze away from me, that I may again be cheered before I depart and am no more.”"
             }
-        }
+        },
+        "interlinear": "O spare/H8159 me that I may recover strength/H1082 before I go hence/H3212 and be no more"
     }
 }

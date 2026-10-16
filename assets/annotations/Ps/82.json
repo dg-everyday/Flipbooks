@@ -9,7 +9,8 @@
                 "title": "A Psalm of Asaph.",
                 "text": "God presides in the divine assembly; He renders judgment among the gods:"
             }
-        }
+        },
+        "interlinear": "God/H430 standeth/H5324 in the congregation/H5712 of the mighty/H410 he judgeth/H8199 among/H7130 the gods/H430"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "“How long will you judge unjustly and show partiality to the wicked? Selah"
             }
-        }
+        },
+        "interlinear": "How long will ye judge/H8199 unjustly/H5766 and accept/H5375 the persons/H6440 of the wicked/H7563 Selah/H5542"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "Defend the cause of the weak and fatherless; uphold the rights of the afflicted and oppressed."
             }
-        }
+        },
+        "interlinear": "Defend/H8199 the poor/H1800 and fatherless/H3490 do justice/H6663 to the afflicted/H6041 and needy/H7326"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Rescue the weak and needy; save them from the hand of the wicked."
             }
-        }
+        },
+        "interlinear": "Deliver/H6403 the poor/H1800 and needy/H34 rid/H5337 *them out of the hand/H3027 of the wicked/H7563"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "They do not know or understand; they wander in the darkness; all the foundations of the earth are shaken."
             }
-        }
+        },
+        "interlinear": "They know/H3045 not neither will they understand/H995 they walk/H1980 on in darkness/H2825 all the foundations/H4144 of the earth/H776 are out of course/H4131"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "I have said, ‘You are gods; you are all sons of the Most High.’"
             }
-        }
+        },
+        "interlinear": "I have said/H559 Ye *are gods/H430 and all of you *are children/H1121 of the most High/H5945"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "But like mortals you will die, and like rulers you will fall.”"
             }
-        }
+        },
+        "interlinear": "But/H403 ye shall die/H4191 like men/H120 and fall/H5307 like one/H259 of the princes/H8269"
     },
     "8": {
         "explanation": {
@@ -86,6 +93,7 @@
             "bsb": {
                 "text": "Arise, O God, judge the earth, for all the nations are Your inheritance."
             }
-        }
+        },
+        "interlinear": "Arise/H6965 O God/H430 judge/H8199 the earth/H776 for thou shalt inherit/H5157 all nations/H1471"
     }
 }

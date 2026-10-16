@@ -9,7 +9,8 @@
                 "title": "A Psalm of thanksgiving.",
                 "text": "Make a joyful noise to the LORD, all the earth."
             }
-        }
+        },
+        "interlinear": "Make a joyful noise/H7321 unto the LORD/H3068 all ye lands/H776"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Serve the LORD with gladness; come into His presence with joyful songs."
             }
-        }
+        },
+        "interlinear": "Serve/H5647 the LORD/H3068 with gladness/H8057 come/H935 before his presence/H6440 with singing/H7445"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "Know that the LORD is God. It is He who made us, and we are His; we are His people, and the sheep of His pasture."
             }
-        }
+        },
+        "interlinear": "Know/H3045 ye that the LORD/H3068 he *is God/H430 *it *is he *that hath made/H6213 us and not we ourselves *we *are his people/H5971 and the sheep/H6629 of his pasture/H4830"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Enter His gates with thanksgiving and His courts with praise; give thanks to Him and bless His name."
             }
-        }
+        },
+        "interlinear": "Enter/H935 into his gates/H8179 with thanksgiving/H8426 *and into his courts/H2691 with praise/H8416 be thankful/H3034 unto him *and bless/H1288 his name/H8034"
     },
     "5": {
         "explanation": {
@@ -53,6 +57,7 @@
             "bsb": {
                 "text": "For the LORD is good, and His loving devotion endures forever; His faithfulness continues to all generations."
             }
-        }
+        },
+        "interlinear": "For the LORD/H3068 *is good/H2896 his mercy/H2617 *is everlasting/H5769 and his truth/H530 *endureth to all/H1755 generations/H1755"
     }
 }

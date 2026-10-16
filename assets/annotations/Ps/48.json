@@ -9,7 +9,8 @@
                 "title": "A song. A Psalm of the sons of Korah.",
                 "text": "Great is the LORD, and greatly to be praised in the city of our God, His holy mountain."
             }
-        }
+        },
+        "interlinear": "Great/H1419 *is the LORD/H3068 and greatly/H3966 to be praised/H1984 in the city/H5892 of our God/H430 *in the mountain/H2022 of his holiness/H6944"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Beautiful in loftiness, the joy of all the earth, like the peaks of Zaphon is Mount Zion, the city of the great King."
             }
-        }
+        },
+        "interlinear": "Beautiful/H3303 for situation/H5131 the joy/H4885 of the whole earth/H776 *is mount/H2022 Zion/H6726 *on the sides/H3411 of the north/H6828 the city/H7151 of the great/H7227 King/H4428"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "God is in her citadels; He has shown Himself to be a fortress."
             }
-        }
+        },
+        "interlinear": "God/H430 is known/H3045 in her palaces/H759 for a refuge/H4869"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "For behold, the kings assembled; they all advanced together."
             }
-        }
+        },
+        "interlinear": "For lo the kings/H4428 were assembled/H3259 they passed by/H5674 together/H3162"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "They saw and were astounded; they fled in terror."
             }
-        }
+        },
+        "interlinear": "They saw/H7200 *it *and so they marvelled/H8539 they were troubled/H926 *and hasted away/H2648"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Trembling seized them there, anguish like a woman in labor."
             }
-        }
+        },
+        "interlinear": "Fear/H7461 took hold/H270 upon them there *and pain/H2427 as of a woman in travail/H3205"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "With a wind from the east You wrecked the ships of Tarshish."
             }
-        }
+        },
+        "interlinear": "Thou breakest/H7665 the ships/H591 of Tarshish/H8659 with an east/H6921 wind/H7307"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "As we have heard, so we have seen in the city of the LORD of Hosts, in the city of our God: God will establish her forever. Selah"
             }
-        }
+        },
+        "interlinear": "As we have heard/H8085 so have we seen/H7200 in the city/H5892 of the LORD/H3068 of hosts/H6635 in the city/H5892 of our God/H430 God/H430 will establish/H3559 it for/H5704 ever/H5769 Selah/H5542"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "Within Your temple, O God, we contemplate Your loving devotion."
             }
-        }
+        },
+        "interlinear": "We have thought/H1819 of thy lovingkindness/H2617 O God/H430 in the midst/H7130 of thy temple/H1964"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "Your name, O God, like Your praise, reaches to the ends of the earth; Your right hand is full of righteousness."
             }
-        }
+        },
+        "interlinear": "According to thy name/H8034 O God/H430 so *is thy praise/H8416 unto the ends/H7099 of the earth/H776 thy right hand/H3225 is full/H4390 of righteousness/H6664"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "Mount Zion is glad, the daughters of Judah rejoice, on account of Your judgments."
             }
-        }
+        },
+        "interlinear": "Let mount/H2022 Zion/H6726 rejoice/H8055 let the daughters/H1323 of Judah/H3063 be glad/H1523 because of thy judgments/H4941"
     },
     "12": {
         "explanation": {
@@ -130,7 +141,8 @@
             "bsb": {
                 "text": "March around Zion, encircle her, count her towers,"
             }
-        }
+        },
+        "interlinear": "Walk about/H5437 Zion/H6726 and go round about/H5362 her tell/H5608 the towers/H4026 thereof"
     },
     "13": {
         "explanation": {
@@ -141,7 +153,8 @@
             "bsb": {
                 "text": "consider her ramparts, tour her citadels, that you may tell the next generation."
             }
-        }
+        },
+        "interlinear": "Mark/H7896 ye well/H3820 her bulwarks/H2430 consider/H6448 her palaces/H759 that ye may tell/H5608 *it to the generation/H1755 following/H314"
     },
     "14": {
         "explanation": {
@@ -152,6 +165,7 @@
             "bsb": {
                 "text": "For this God is our God forever and ever; He will be our guide even till death."
             }
-        }
+        },
+        "interlinear": "For this God/H430 *is our God/H430 for ever/H5769 and ever/H5703 he will be our guide/H5090 *even unto death/H4192"
     }
 }

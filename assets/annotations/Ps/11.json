@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. Of David.",
                 "text": "In the LORD I take refuge. How then can you say to me: “Flee like a bird to your mountain!"
             }
-        }
+        },
+        "interlinear": "In the LORD/H3068 put I my trust/H2620 How say/H559 ye to my soul/H5315 Flee/H5110 *as a bird/H6833 to your mountain/H2022"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "For behold, the wicked bend their bows. They set their arrow on the string to shoot from the shadows at the upright in heart."
             }
-        }
+        },
+        "interlinear": "For lo the wicked/H7563 bend/H1869 *their bow/H7198 they make ready/H3559 their arrow/H2671 upon the string/H3499 that they may privily/H652 shoot/H3384 at the upright/H3477 in heart/H3820"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "If the foundations are destroyed, what can the righteous do?”"
             }
-        }
+        },
+        "interlinear": "If the foundations/H8356 be destroyed/H2040 what can the righteous/H6662 do/H6466"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "The LORD is in His holy temple; the LORD is on His heavenly throne. His eyes are watching closely; they examine the sons of men."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 *is in his holy/H6944 temple/H1964 the LORD’S/H3068 throne/H3678 *is in heaven/H8064 his eyes/H5869 behold/H2372 his eyelids/H6079 try/H974 the children/H1121 of men/H120"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "The LORD tests the righteous and the wicked; His soul hates the lover of violence."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 trieth/H974 the righteous/H6662 but the wicked/H7563 and him that loveth/H157 violence/H2555 his soul/H5315 hateth/H8130"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "On the wicked He will rain down fiery coals and sulfur; a scorching wind will be their portion."
             }
-        }
+        },
+        "interlinear": "Upon the wicked/H7563 he shall rain/H4305 snares/H6341 fire/H784 and brimstone/H1614 and an horrible/H2152 tempest/H7307 *this *shall *be the portion/H4521 of their cup/H3563"
     },
     "7": {
         "explanation": {
@@ -75,6 +81,7 @@
             "bsb": {
                 "text": "For the LORD is righteous; He loves justice. The upright will see His face."
             }
-        }
+        },
+        "interlinear": "For the righteous/H6662 LORD/H3068 loveth/H157 righteousness/H6666 his countenance/H6440 doth behold/H2372 the upright/H3477"
     }
 }

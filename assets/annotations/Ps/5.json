@@ -9,7 +9,8 @@
                 "title": "For the choirmaster, to be accompanied by flutes. A Psalm of David.",
                 "text": "Give ear to my words, O LORD; consider my groaning."
             }
-        }
+        },
+        "interlinear": "Give ear/H238 to my words/H561 O LORD/H3068 consider/H995 my meditation/H1901"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Attend to the sound of my cry, my King and my God, for to You I pray."
             }
-        }
+        },
+        "interlinear": "Hearken/H7181 unto the voice/H6963 of my cry/H7773 my King/H4428 and my God/H430 for unto thee will I pray/H6419"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "In the morning, O LORD, You hear my voice; at daybreak I lay my plea before You and wait in expectation."
             }
-        }
+        },
+        "interlinear": "My voice/H6963 shalt thou hear/H8085 in the morning/H1242 O LORD/H3068 in the morning/H1242 will I direct/H6186 *my *prayer unto thee and will look up/H6822"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "For You are not a God who delights in wickedness; no evil can dwell with You."
             }
-        }
+        },
+        "interlinear": "For thou *art not a God/H410 that hath pleasure/H2655 in wickedness/H7562 neither shall evil/H7451 dwell/H1481 with thee"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "The boastful cannot stand in Your presence; You hate all workers of iniquity."
             }
-        }
+        },
+        "interlinear": "The foolish/H1984 shall not stand/H3320 in thy sight/H5869 thou hatest/H8130 all workers/H6466 of iniquity/H205"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "You destroy those who tell lies; the LORD abhors the man of bloodshed and deceit."
             }
-        }
+        },
+        "interlinear": "Thou shalt destroy/H6 them that speak/H1696 leasing/H3577 the LORD/H3068 will abhor/H8581 the bloody/H1818 and deceitful/H4820 man/H376"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "But I will enter Your house by the abundance of Your loving devotion; in reverence I will bow down toward Your holy temple."
             }
-        }
+        },
+        "interlinear": "But as for me I will come/H935 *into thy house/H1004 in the multitude/H7230 of thy mercy/H2617 *and in thy fear/H3374 will I worship/H7812 toward thy holy/H6944 temple/H1964"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "Lead me, O LORD, in Your righteousness because of my enemies; make straight Your way before me."
             }
-        }
+        },
+        "interlinear": "Lead/H5148 me O LORD/H3068 in thy righteousness/H6666 because of mine enemies/H8324 make thy way/H1870 straight/H3474 before my face/H6440"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "For not a word they speak can be trusted; destruction lies within them. Their throats are open graves; their tongues practice deceit."
             }
-        }
+        },
+        "interlinear": "For *there *is no faithfulness/H3559 in their mouth/H6310 their inward/H7130 part *is very wickedness/H1942 their throat/H1627 *is an open/H6605 sepulchre/H6913 they flatter/H2505 with their tongue/H3956"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "Declare them guilty, O God; let them fall by their own devices. Drive them out for their many transgressions, for they have rebelled against You."
             }
-        }
+        },
+        "interlinear": "Destroy/H816 thou them O God/H430 let them fall/H5307 by their own counsels/H4156 cast them out/H5080 in the multitude/H7230 of their transgressions/H6588 for they have rebelled/H4784 against thee"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "But let all who take refuge in You rejoice; let them ever shout for joy. May You shelter them, that those who love Your name may rejoice in You."
             }
-        }
+        },
+        "interlinear": "But let all those that put their trust/H2620 in thee rejoice/H8055 let them ever/H5769 shout for joy/H7442 because thou defendest/H5526 them let them also that love/H157 thy name/H8034 be joyful/H5970 in thee"
     },
     "12": {
         "explanation": {
@@ -130,6 +141,7 @@
             "bsb": {
                 "text": "For surely You, O LORD, bless the righteous; You surround them with the shield of Your favor."
             }
-        }
+        },
+        "interlinear": "For thou LORD/H3068 wilt bless/H1288 the righteous/H6662 with favour/H7522 wilt thou compass/H5849 him as *with a shield/H6793"
     }
 }

@@ -9,7 +9,8 @@
                 "title": "A song of ascents.",
                 "text": "Come, bless the LORD, all you servants of the LORD who serve by night in the house of the LORD!"
             }
-        }
+        },
+        "interlinear": "Behold bless/H1288 ye the LORD/H3068 all *ye servants/H5650 of the LORD/H3068 which by night/H3915 stand/H5975 in the house/H1004 of the LORD/H3068"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Lift up your hands to the sanctuary and bless the LORD!"
             }
-        }
+        },
+        "interlinear": "Lift up/H5375 your hands/H3027 *in the sanctuary/H6944 and bless/H1288 the LORD/H3068"
     },
     "3": {
         "explanation": {
@@ -31,6 +33,7 @@
             "bsb": {
                 "text": "May the LORD, the Maker of heaven and earth, bless you from Zion."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 that made/H6213 heaven/H8064 and earth/H776 bless/H1288 thee out of Zion/H6726"
     }
 }

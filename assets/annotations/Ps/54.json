@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. With stringed instruments. A Maskil of David. When the Ziphites went to Saul and said, “Is David not hiding among us?”",
                 "text": "Save me, O God, by Your name, and vindicate me by Your might!"
             }
-        }
+        },
+        "interlinear": "Save/H3467 me O God/H430 by thy name/H8034 and judge/H1777 me by thy strength/H1369"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Hear my prayer, O God; listen to the words of my mouth."
             }
-        }
+        },
+        "interlinear": "Hear/H8085 my prayer/H8605 O God/H430 give ear/H238 to the words/H561 of my mouth/H6310"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "For strangers rise up against me, and ruthless men seek my life—men with no regard for God. Selah"
             }
-        }
+        },
+        "interlinear": "For strangers/H2114 are risen up/H6965 against me and oppressors/H6184 seek/H1245 after my soul/H5315 they have not set/H7760 God/H430 before them Selah/H5542"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Surely God is my helper; the Lord is the sustainer of my soul."
             }
-        }
+        },
+        "interlinear": "Behold God/H430 *is mine helper/H5826 the Lord/H136 *is with them that uphold/H5564 my soul/H5315"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "He will reward my enemies with evil. In Your faithfulness, destroy them."
             }
-        }
+        },
+        "interlinear": "He shall reward/H7725 evil/H7451 unto mine enemies/H8324 cut them off/H6789 in thy truth/H571"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Freely I will sacrifice to You; I will praise Your name, O LORD, for it is good."
             }
-        }
+        },
+        "interlinear": "I will freely/H5071 sacrifice/H2076 unto thee I will praise/H3034 thy name/H8034 O LORD/H3068 for *it *is good/H2896"
     },
     "7": {
         "explanation": {
@@ -75,6 +81,7 @@
             "bsb": {
                 "text": "For He has delivered me from every trouble, and my eyes have looked in triumph on my foes."
             }
-        }
+        },
+        "interlinear": "For he hath delivered/H5337 me out of all trouble/H6869 and mine eye/H5869 hath seen/H7200 *his *desire upon mine enemies/H341"
     }
 }

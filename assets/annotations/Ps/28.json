@@ -9,7 +9,8 @@
                 "title": "Of David.",
                 "text": "To You, O LORD, I call; be not deaf to me, O my Rock. For if You remain silent, I will be like those descending to the Pit."
             }
-        }
+        },
+        "interlinear": "Unto thee will I cry/H7121 O LORD/H3068 my rock/H6697 be not silent/H2814 to me lest *if thou be silent/H2790 to me I become/H4911 like them that go down/H3381 into the pit/H953"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Hear my cry for mercy when I call to You for help, when I lift up my hands toward Your holy sanctuary."
             }
-        }
+        },
+        "interlinear": "Hear/H8085 the voice/H6963 of my supplications/H8469 when I cry/H7768 unto thee when I lift up/H5375 my hands/H3027 toward thy holy/H6944 oracle/H1687"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "Do not drag me away with the wicked, and with the workers of iniquity, who speak peace to their neighbors while malice is in their hearts."
             }
-        }
+        },
+        "interlinear": "Draw me not away/H4900 with the wicked/H7563 and with the workers/H6466 of iniquity/H205 which speak/H1696 peace/H7965 to their neighbours/H7453 but mischief/H7451 *is in their hearts/H3824"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Repay them according to their deeds and for their works of evil. Repay them for what their hands have done; bring back on them what they deserve."
             }
-        }
+        },
+        "interlinear": "Give/H5414 them according to their deeds/H6467 and according to the wickedness/H7455 of their endeavours/H4611 give/H5414 them after the work/H4639 of their hands/H3027 render/H7725 to them their desert/H1576"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "Since they show no regard for the works of the LORD or what His hands have done, He will tear them down and never rebuild them."
             }
-        }
+        },
+        "interlinear": "Because they regard/H995 not the works/H6468 of the LORD/H3068 nor the operation/H4639 of his hands/H3027 he shall destroy/H2040 them and not build them up/H1129"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "Blessed be the LORD, for He has heard my cry for mercy."
             }
-        }
+        },
+        "interlinear": "Blessed/H1288 *be the LORD/H3068 because he hath heard/H8085 the voice/H6963 of my supplications/H8469"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "The LORD is my strength and my shield; my heart trusts in Him, and I am helped. Therefore my heart rejoices, and I give thanks to Him with my song."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 *is my strength/H5797 and my shield/H4043 my heart/H3820 trusted/H982 in him and I am helped/H5826 therefore my heart/H3820 greatly rejoiceth/H5937 and with my song/H7892 will I praise/H3034 him"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "The LORD is the strength of His people, a stronghold of salvation for His anointed."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 *is their strength/H5797 and he *is the saving/H3444 strength/H4581 of his anointed/H4899"
     },
     "9": {
         "explanation": {
@@ -97,6 +105,7 @@
             "bsb": {
                 "text": "Save Your people and bless Your inheritance; shepherd them and carry them forever."
             }
-        }
+        },
+        "interlinear": "Save/H3467 thy people/H5971 and bless/H1288 thine inheritance/H5159 feed/H7462 them also and lift them up/H5375 for ever/H5769"
     }
 }

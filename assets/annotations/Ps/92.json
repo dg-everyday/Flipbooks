@@ -9,7 +9,8 @@
                 "title": "A Psalm. A song for the Sabbath day.",
                 "text": "It is good to praise the LORD, and to sing praises to Your name, O Most High,"
             }
-        }
+        },
+        "interlinear": "*It *is *a good/H2896 *thing to give thanks/H3034 unto the LORD/H3068 and to sing praises/H2167 unto thy name/H8034 O most High/H5945"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "to proclaim Your loving devotion in the morning and Your faithfulness at night"
             }
-        }
+        },
+        "interlinear": "To shew forth/H5046 thy lovingkindness/H2617 in the morning/H1242 and thy faithfulness/H530 every night/H3915"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "with the ten-stringed harp and the melody of the lyre."
             }
-        }
+        },
+        "interlinear": "Upon an instrument of ten strings/H6218 and upon the psaltery/H5035 upon the harp/H3658 with a solemn sound/H1902"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "For You, O LORD, have made me glad by Your deeds; I sing for joy at the works of Your hands."
             }
-        }
+        },
+        "interlinear": "For thou LORD/H3068 hast made me glad/H8055 through thy work/H6467 I will triumph/H7442 in the works/H4639 of thy hands/H3027"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "How great are Your works, O LORD, how deep are Your thoughts!"
             }
-        }
+        },
+        "interlinear": "O LORD/H3068 how great/H1431 are thy works/H4639 *and thy thoughts/H4284 are very/H3966 deep/H6009"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "A senseless man does not know, and a fool does not understand,"
             }
-        }
+        },
+        "interlinear": "A brutish/H1198 man/H376 knoweth/H3045 not neither doth a fool/H3684 understand/H995 this"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "that though the wicked sprout like grass, and all evildoers flourish, they will be forever destroyed."
             }
-        }
+        },
+        "interlinear": "When the wicked/H7563 spring/H6524 as the grass/H6212 and when all the workers/H6466 of iniquity/H205 do flourish/H6692 *it *is that they shall be destroyed/H8045 for ever/H5703"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "But You, O LORD, are exalted forever!"
             }
-        }
+        },
+        "interlinear": "But thou LORD/H3068 *art *most high/H4791 for evermore/H5769"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "For surely Your enemies, O LORD, surely Your enemies will perish; all evildoers will be scattered."
             }
-        }
+        },
+        "interlinear": "For lo thine enemies/H341 O LORD/H3068 for lo thine enemies/H341 shall perish/H6 all the workers/H6466 of iniquity/H205 shall be scattered/H6504"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "But You have exalted my horn like that of a wild ox; with fine oil I have been anointed."
             }
-        }
+        },
+        "interlinear": "But my horn/H7161 shalt thou exalt/H7311 like *the *horn *of an unicorn/H7214 I shall be anointed/H1101 with fresh/H7488 oil/H8081"
     },
     "11": {
         "explanation": {
@@ -119,7 +129,8 @@
             "bsb": {
                 "text": "My eyes see the downfall of my enemies; my ears hear the wailing of my wicked foes."
             }
-        }
+        },
+        "interlinear": "Mine eye/H5869 also shall see/H5027 *my *desire on mine enemies/H7790 *and mine ears/H241 shall hear/H8085 *my *desire of the wicked/H7489 that rise up/H6965 against me"
     },
     "12": {
         "explanation": {
@@ -130,7 +141,8 @@
             "bsb": {
                 "text": "The righteous will flourish like a palm tree, and grow like a cedar in Lebanon."
             }
-        }
+        },
+        "interlinear": "The righteous/H6662 shall flourish/H6524 like the palm tree/H8558 he shall grow/H7685 like a cedar/H730 in Lebanon/H3844"
     },
     "13": {
         "explanation": {
@@ -141,7 +153,8 @@
             "bsb": {
                 "text": "Planted in the house of the LORD, they will flourish in the courts of our God."
             }
-        }
+        },
+        "interlinear": "Those that be planted/H8362 in the house/H1004 of the LORD/H3068 shall flourish/H6524 in the courts/H2691 of our God/H430"
     },
     "14": {
         "explanation": {
@@ -152,7 +165,8 @@
             "bsb": {
                 "text": "In old age they will still bear fruit; healthy and green they will remain,"
             }
-        }
+        },
+        "interlinear": "They shall still bring forth fruit/H5107 in old age/H7872 they shall be fat/H1879 and flourishing/H7488"
     },
     "15": {
         "explanation": {
@@ -163,6 +177,7 @@
             "bsb": {
                 "text": "to proclaim, “The LORD is upright; He is my Rock, and in Him there is no unrighteousness.”"
             }
-        }
+        },
+        "interlinear": "To shew/H5046 that the LORD/H3068 *is upright/H3477 *he *is my rock/H6697 and *there *is no unrighteousness/H5766 in him"
     }
 }

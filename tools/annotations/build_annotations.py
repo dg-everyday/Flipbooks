@@ -8,8 +8,10 @@ KJV in assets/db/dailygrace.db. Each verse can carry:
                      John Gill otherwise
   translations.bsb   the Berean Standard Bible text of the verse, and on verse 1
                      of a psalm its heading, from bsb.json beside this script
+  interlinear        the verse's KJV words with their Strong's numbers, from
+                     tools/strongs/interlinear.json (see tools/strongs)
 
-A verse with neither is left out. The output folder is rebuilt from scratch on
+A verse with none of these is left out. The output folder is rebuilt from scratch on
 every run. The database is only read, to get the book ids and which verses exist.
 
     python tools/annotations/build_annotations.py
@@ -20,6 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 CACHE = os.path.join(HERE, "cache")
 BSB = os.path.join(HERE, "bsb.json")
+INTERLINEAR = os.path.join(ROOT, "tools", "strongs", "interlinear.json")
 BIBLE_DB = os.path.join(ROOT, "assets", "db", "dailygrace.db")
 OUT = os.path.join(ROOT, "assets", "annotations")
 
@@ -101,6 +104,8 @@ def main():
 
     with open(BSB, encoding="utf8") as f:
         bsb = json.load(f)
+    with open(INTERLINEAR, encoding="utf8") as f:
+        interlinear = json.load(f)
 
     # Every chapter gets a file, even an empty one, so a fetch never 404s
     chapters = collections.defaultdict(dict)
@@ -128,6 +133,10 @@ def main():
                 stats["bsb titles"] += 1
             entry["translations"] = {"bsb": translation}
             stats["bsb"] += 1
+        words = interlinear.get(book, {}).get(str(chapter), {}).get(str(verse))
+        if words:
+            entry["interlinear"] = words
+            stats["interlinear"] += 1
         if entry:
             entries[str(verse)] = entry
 
@@ -146,6 +155,7 @@ def main():
                    for v in vs if (b, c, v) not in db_verses]
     print("explanations:", {s: stats[s] for s in (*SOURCES, "none")}, "total", len(verses))
     print("bsb:", stats["bsb"], "verses,", stats["bsb titles"], "psalm titles")
+    print("interlinear:", stats["interlinear"], "verses")
     print(f"wrote {len(chapters)} chapter files, {total_bytes / 1e6:.1f} MB")
     print("notes with no matching verse in DB:", len(orphans), sorted(orphans)[:15])
     print("bsb verses with no matching verse in DB:", len(bsb_orphans), bsb_orphans[:15])

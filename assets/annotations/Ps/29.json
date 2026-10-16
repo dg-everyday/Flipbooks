@@ -9,7 +9,8 @@
                 "title": "A Psalm of David.",
                 "text": "Ascribe to the LORD, O heavenly beings, ascribe to the LORD glory and strength."
             }
-        }
+        },
+        "interlinear": "Give/H3051 unto the LORD/H3068 O ye mighty/H1121 give/H3051 unto the LORD/H3068 glory/H3519 and strength/H5797"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Ascribe to the LORD the glory due His name; worship the LORD in the splendor of His holiness."
             }
-        }
+        },
+        "interlinear": "Give/H3051 unto the LORD/H3068 the glory/H3519 due unto his name/H8034 worship/H7812 the LORD/H3068 in the beauty/H1927 of holiness/H6944"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "The voice of the LORD is over the waters; the God of glory thunders; the LORD is heard over many waters."
             }
-        }
+        },
+        "interlinear": "The voice/H6963 of the LORD/H3068 *is upon the waters/H4325 the God/H410 of glory/H3519 thundereth/H7481 the LORD/H3068 *is upon many/H7227 waters/H4325"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "The voice of the LORD is powerful; the voice of the LORD is majestic."
             }
-        }
+        },
+        "interlinear": "The voice/H6963 of the LORD/H3068 *is powerful/H3581 the voice/H6963 of the LORD/H3068 *is full of majesty/H1926"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "The voice of the LORD breaks the cedars; the LORD shatters the cedars of Lebanon."
             }
-        }
+        },
+        "interlinear": "The voice/H6963 of the LORD/H3068 breaketh/H7665 the cedars/H730 yea the LORD/H3068 breaketh/H7665 the cedars/H730 of Lebanon/H3844"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "He makes Lebanon skip like a calf, and Sirion like a young wild ox."
             }
-        }
+        },
+        "interlinear": "He maketh them also to skip/H7540 like a calf/H5695 Lebanon/H3844 and Sirion/H8303 like a young/H1121 unicorn/H7214"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "The voice of the LORD strikes with flames of fire."
             }
-        }
+        },
+        "interlinear": "The voice/H6963 of the LORD/H3068 divideth/H2672 the flames/H3852 of fire/H784"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "The voice of the LORD shakes the wilderness; the LORD shakes the Wilderness of Kadesh."
             }
-        }
+        },
+        "interlinear": "The voice/H6963 of the LORD/H3068 shaketh/H2342 the wilderness/H4057 the LORD/H3068 shaketh/H2342 the wilderness/H4057 of Kadesh/H6946"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "The voice of the LORD twists the oaks and strips the forests bare. And in His temple all cry, “Glory!”"
             }
-        }
+        },
+        "interlinear": "The voice/H6963 of the LORD/H3068 maketh the hinds/H355 to calve/H2342 and discovereth/H2834 the forests/H3295 and in his temple/H1964 doth every one speak/H559 of *his glory/H3519"
     },
     "10": {
         "explanation": {
@@ -108,7 +117,8 @@
             "bsb": {
                 "text": "The LORD sits enthroned over the flood; the LORD is enthroned as King forever."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 sitteth/H3427 upon the flood/H3999 yea the LORD/H3068 sitteth/H3427 King/H4428 for ever/H5769"
     },
     "11": {
         "explanation": {
@@ -119,6 +129,7 @@
             "bsb": {
                 "text": "The LORD gives His people strength; the LORD blesses His people with peace."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 will give/H5414 strength/H5797 unto his people/H5971 the LORD/H3068 will bless/H1288 his people/H5971 with peace/H7965"
     }
 }

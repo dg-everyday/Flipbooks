@@ -9,7 +9,8 @@
                 "title": "For the choirmaster. With stringed instruments, according to Sheminith. A Psalm of David.",
                 "text": "O LORD, do not rebuke me in Your anger or discipline me in Your wrath."
             }
-        }
+        },
+        "interlinear": "O LORD/H3068 rebuke/H3198 me not in thine anger/H639 neither chasten/H3256 me in thy hot displeasure/H2534"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Be merciful to me, O LORD, for I am frail; heal me, O LORD, for my bones are in agony."
             }
-        }
+        },
+        "interlinear": "Have mercy/H2603 upon me O LORD/H3068 for I *am weak/H536 O LORD/H3068 heal/H7495 me for my bones/H6106 are vexed/H926"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "My soul is deeply distressed. How long, O LORD, how long?"
             }
-        }
+        },
+        "interlinear": "My soul/H5315 is also sore/H3966 vexed/H926 but thou O LORD/H3068 how long"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "Turn, O LORD, and deliver my soul; save me because of Your loving devotion."
             }
-        }
+        },
+        "interlinear": "Return/H7725 O LORD/H3068 deliver/H2502 my soul/H5315 oh save/H3467 me for thy mercies’/H2617 sake"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "For there is no mention of You in death; who can praise You from Sheol?"
             }
-        }
+        },
+        "interlinear": "For in death/H4194 *there *is no remembrance/H2143 of thee in the grave/H7585 who shall give thee thanks/H3034"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "I am weary from groaning; all night I flood my bed with weeping and drench my couch with tears."
             }
-        }
+        },
+        "interlinear": "I am weary/H3021 with my groaning/H585 all the night/H3915 make I my bed/H4296 to swim/H7811 I water/H4529 my couch/H6210 with my tears/H1832"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "My eyes fail from grief; they grow dim because of all my foes."
             }
-        }
+        },
+        "interlinear": "Mine eye/H5869 is consumed/H6244 because of grief/H3708 it waxeth old/H6275 because of all mine enemies/H6887"
     },
     "8": {
         "explanation": {
@@ -86,7 +93,8 @@
             "bsb": {
                 "text": "Depart from me, all you workers of iniquity, for the LORD has heard my weeping."
             }
-        }
+        },
+        "interlinear": "Depart/H5493 from me all ye workers/H6466 of iniquity/H205 for the LORD/H3068 hath heard/H8085 the voice/H6963 of my weeping/H1065"
     },
     "9": {
         "explanation": {
@@ -97,7 +105,8 @@
             "bsb": {
                 "text": "The LORD has heard my cry for mercy; the LORD accepts my prayer."
             }
-        }
+        },
+        "interlinear": "The LORD/H3068 hath heard/H8085 my supplication/H8467 the LORD/H3068 will receive/H3947 my prayer/H8605"
     },
     "10": {
         "explanation": {
@@ -108,6 +117,7 @@
             "bsb": {
                 "text": "All my enemies will be ashamed and dismayed; they will turn back in sudden disgrace."
             }
-        }
+        },
+        "interlinear": "Let all mine enemies/H341 be ashamed/H954 and sore/H3966 vexed/H926 let them return/H7725 *and be ashamed/H954 suddenly/H7281"
     }
 }

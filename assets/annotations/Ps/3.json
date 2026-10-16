@@ -9,7 +9,8 @@
                 "title": "A Psalm of David, when he fled from his son Absalom.",
                 "text": "O LORD, how my foes have increased! How many rise up against me!"
             }
-        }
+        },
+        "interlinear": "LORD/H3068 how are they increased/H7231 that trouble/H6862 me many/H7227 *are they that rise up/H6965 against me"
     },
     "2": {
         "explanation": {
@@ -20,7 +21,8 @@
             "bsb": {
                 "text": "Many say of me, “God will not deliver him.” Selah"
             }
-        }
+        },
+        "interlinear": "Many/H7227 *there *be which say/H559 of my soul/H5315 *There *is no help/H3444 for him in God/H430 Selah/H5542"
     },
     "3": {
         "explanation": {
@@ -31,7 +33,8 @@
             "bsb": {
                 "text": "But You, O LORD, are a shield around me, my glory, and the One who lifts my head."
             }
-        }
+        },
+        "interlinear": "But thou O LORD/H3068 *art a shield/H4043 for me my glory/H3519 and the lifter up/H7311 of mine head/H7218"
     },
     "4": {
         "explanation": {
@@ -42,7 +45,8 @@
             "bsb": {
                 "text": "To the LORD I cry aloud, and He answers me from His holy mountain. Selah"
             }
-        }
+        },
+        "interlinear": "I cried/H7121 unto the LORD/H3068 with my voice/H6963 and he heard/H6030 me out of his holy/H6944 hill/H2022 Selah/H5542"
     },
     "5": {
         "explanation": {
@@ -53,7 +57,8 @@
             "bsb": {
                 "text": "I lie down and sleep; I wake again, for the LORD sustains me."
             }
-        }
+        },
+        "interlinear": "I laid me down/H7901 and slept/H3462 I awaked/H6974 for the LORD/H3068 sustained/H5564 me"
     },
     "6": {
         "explanation": {
@@ -64,7 +69,8 @@
             "bsb": {
                 "text": "I will not fear the myriads set against me on every side."
             }
-        }
+        },
+        "interlinear": "I will not be afraid/H3372 of ten thousands/H7233 of people/H5971 that have set/H7896 *themselves against me round about/H5439"
     },
     "7": {
         "explanation": {
@@ -75,7 +81,8 @@
             "bsb": {
                 "text": "Arise, O LORD! Save me, O my God! Strike all my enemies on the jaw; break the teeth of the wicked."
             }
-        }
+        },
+        "interlinear": "Arise/H6965 O LORD/H3068 save/H3467 me O my God/H430 for thou hast smitten/H5221 all mine enemies/H341 *upon the cheek bone/H3895 thou hast broken/H7665 the teeth/H8127 of the ungodly/H7563"
     },
     "8": {
         "explanation": {
@@ -86,6 +93,7 @@
             "bsb": {
                 "text": "Salvation belongs to the LORD; may Your blessing be on Your people. Selah"
             }
-        }
+        },
+        "interlinear": "Salvation/H3444 *belongeth unto the LORD/H3068 thy blessing/H1293 *is upon thy people/H5971 Selah/H5542"
     }
 }

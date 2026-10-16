@@ -8,7 +8,8 @@
             "bsb": {
                 "text": "Then I saw another great and marvelous sign in heaven: seven angels with the seven final plagues, with which the wrath of God is completed."
             }
-        }
+        },
+        "interlinear": "And/G2532 I saw/G1492 another/G243 sign/G4592 in/G1722 heaven/G3772 great/G3173 and/G2532 marvellous/G2298 seven/G2033 angels/G32 having/G2192 the seven/G2033 last/G2078 plagues/G4127 for/G3754 in/G1722 them/G846 is filled up/G5055 the wrath/G2372 of God/G2316"
     },
     "2": {
         "explanation": {
@@ -19,7 +20,8 @@
             "bsb": {
                 "text": "And I saw something like a sea of glass mixed with fire, beside which stood those who had conquered the beast and its image and the number of its name. They were holding harps from God,"
             }
-        }
+        },
+        "interlinear": "And/G2532 I saw/G1492 as it were/G5613 a sea/G2281 of glass/G5193 mingled/G3396 with fire/G4442 and/G2532 them that/G3588 had gotten the victory/G3528 over/G1537 the beast/G2342 and/G2532 over/G1537 his/G846 image/G1504 and/G2532 over/G1537 his/G846 mark/G5480 *and over/G1537 the number/G706 of his/G846 name/G3686 stand/G2476 on/G1909 the sea/G2281 of glass/G5193 having/G2192 the harps/G2788 of God/G2316"
     },
     "3": {
         "explanation": {
@@ -30,7 +32,8 @@
             "bsb": {
                 "text": "and they sang the song of God’s servant Moses and of the Lamb: “Great and wonderful are Your works, O Lord God Almighty! Just and true are Your ways, O King of the nations!"
             }
-        }
+        },
+        "interlinear": "And/G2532 they sing/G103 the song/G5603 of Moses/G3475 the servant/G3588 of God/G2532 and/G3588 the song/G3588 of the Lamb/G3004 saying/G3173 Great/G2532 and/G2298 marvellous/G3588 *are thy/G2962 works/G4675 Lord/G3588 God/G3588 Almighty/G1342 just/G2532 and/G228 true/G3588 *are thy/G3588 ways/G4675 thou King/G3588 of saints/G40"
     },
     "4": {
         "explanation": {
@@ -41,7 +44,8 @@
             "bsb": {
                 "text": "Who will not fear You, O Lord, and glorify Your name? For You alone are holy. All nations will come and worship before You, for Your righteous acts have been revealed.”"
             }
-        }
+        },
+        "interlinear": "Who/G5101 shall/G5399 not/G3361 fear/G5399 thee/G4571 O Lord/G2962 and/G2532 glorify/G1392 thy/G4675 name/G3686 for/G3754 *thou only/G3441 *art holy/G3741 for/G3754 all/G3956 nations/G1484 shall come/G2240 and/G2532 worship/G4352 before/G1799 thee/G4675 for/G3754 thy/G4675 judgments/G1345 are made manifest/G5319"
     },
     "5": {
         "explanation": {
@@ -52,7 +56,8 @@
             "bsb": {
                 "text": "After this I looked, and the temple—the tabernacle of the Testimony—was opened in heaven."
             }
-        }
+        },
+        "interlinear": "And/G2532 after/G3326 that/G5023 I looked/G1492 and/G2532 behold/G2400 the temple/G3485 of the tabernacle/G4633 of the testimony/G3142 in/G1722 heaven/G3772 was opened/G455"
     },
     "6": {
         "explanation": {
@@ -63,7 +68,8 @@
             "bsb": {
                 "text": "And out of the temple came the seven angels with the seven plagues, dressed in clean and bright linen and girded with golden sashes around their chests."
             }
-        }
+        },
+        "interlinear": "And/G2532 the seven/G2033 angels/G32 came/G1831 out of/G1537 the temple/G3485 having/G2192 the seven/G2033 plagues/G4127 clothed in/G1746 pure/G2513 and/G2532 white/G2986 linen/G3043 and/G2532 having their/G4012 breasts/G4738 girded/G4024 with golden/G5552 girdles/G2223"
     },
     "7": {
         "explanation": {
@@ -74,7 +80,8 @@
             "bsb": {
                 "text": "Then one of the four living creatures gave the seven angels seven golden bowls full of the wrath of God, who lives forever and ever."
             }
-        }
+        },
+        "interlinear": "And/G2532 one/G1520 of/G1537 the four/G5064 beasts/G2226 gave/G1325 unto the seven/G2033 angels/G32 seven/G2033 golden/G5552 vials/G5357 full/G1073 of the wrath/G2372 of God/G2316 who liveth/G2198 for/G1519 ever/G165 and ever/G165"
     },
     "8": {
         "explanation": {
@@ -85,6 +92,7 @@
             "bsb": {
                 "text": "And the temple was filled with smoke from the glory of God and from His power; and no one could enter the temple until the seven plagues of the seven angels were completed."
             }
-        }
+        },
+        "interlinear": "And/G2532 the temple/G3485 was filled/G1072 with smoke/G2586 from/G1537 the glory/G1391 of God/G2316 and/G2532 from/G1537 his/G846 power/G1411 and/G2532 no man/G3762 was able/G1410 to enter/G1525 into/G1519 the temple/G3485 till/G891 the seven/G2033 plagues/G4127 of the seven/G2033 angels/G32 were fulfilled/G5055"
     }
 }

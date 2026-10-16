@@ -5,12 +5,17 @@
  * Opened from the outline of a book on the Books of the Bible page
  * (bible-books.js): "Genesis 1-11, Creation, fall, flood and Babel". The KJV
  * comes from assets/db/dailygrace.db (sql_script.js, added to the page if need
- * be); the BSB, with its section headings and parallel references, from the
+ * be), with the words of Jesus in red (assets/red-letter.json, as in the
+ * search results; tools/red-letter); the BSB, with its section headings and parallel references, from the
  * chapter files in assets/annotations; the interlinear from the chapter files
  * in assets/interlinear (tools/interlinear: STEPBible.org, CC BY 4.0), each
  * word with its Strong's number, transliteration, the original, an English
  * gloss and its grammar, Hebrew right to left, and under them the glosses
- * in that order as one line ("Word for word"). A tab is filled the first time
+ * in that order as one line ("Word for word"). Tapping a word turns it faint
+ * yellow and opens its entry in Strong's dictionary under the verse, as in
+ * the explanation popup (strongs-entry.js). Where the Old Testament turns to
+ * Aramaic (Daniel 2:4-7:28, Ezra 4:8-6:18 and 7:12-26, Jeremiah 10:11) and
+ * back, a note says so; those words are marked "arc" in the data. A tab is filled the first time
  * it is shown, one chapter at a time as the reader scrolls. References in the
  * headings are pills that open the passage on top (scripture-refs.js).
  *
@@ -26,11 +31,13 @@
  */
 
 import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
+import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 const SQL_SCRIPT = asset("../../assets/scripts/sql_script.js?v=20261016-2");
 const ANNOTATIONS = asset("../../assets/annotations/");
 const INTERLINEAR = asset("../../assets/interlinear/");
+const RED_LETTER = asset("../../assets/red-letter.json");
 
 const TABS = [
     { id: "kjv", label: "King James Bible" },
@@ -38,10 +45,10 @@ const TABS = [
     { id: "interlinear", label: "Interlinear" },
 ];
 const CREDITS = {
-    kjv: "King James Version. Public domain.",
+    kjv: "King James Version. Public domain. The words of Jesus are in red.",
     bsb: "Berean Standard Bible, with its section headings. Public domain.",
     interlinear:
-        "Hebrew and Greek words, glosses and grammar from STEPBible.org (Tyndale House, Cambridge), CC BY 4.0. " +
+        "Hebrew, Aramaic and Greek words, glosses and grammar from STEPBible.org (Tyndale House, Cambridge), CC BY 4.0. " +
         "The Greek is the text used by the KJV translators (Scrivener 1894). Each word: Strong's number, " +
         "transliteration, the original, an English gloss, its grammar.",
 };
@@ -118,6 +125,39 @@ function database() {
         });
     }
     return databaseReady;
+}
+
+// Where the words of Jesus fall in each KJV verse: { book_id: { "chapter:verse":
+// [[start, end], …] } }. A file that fails to load leaves the text in black.
+let redLetters = null;
+
+function loadRedLetters() {
+    if (!redLetters) {
+        redLetters = loadJson(RED_LETTER).catch((error) => {
+            console.warn("Red-letter text unavailable:", error);
+            redLetters = null;
+            return {};
+        });
+    }
+    return redLetters;
+}
+
+/** A verse's text as nodes, with the words of Jesus (ranges) in red spans. */
+function redLetterNodes(text, ranges) {
+    if (!ranges?.length) {
+        return [text];
+    }
+    const nodes = [];
+    let last = 0;
+    for (const [start, end] of ranges) {
+        if (start > last) {
+            nodes.push(text.slice(last, start));
+        }
+        nodes.push(el("span", "red-letter", text.slice(start, end)));
+        last = end;
+    }
+    nodes.push(text.slice(last));
+    return nodes;
 }
 
 // Chapter files, shared by every reader: one fetch per file.
@@ -255,6 +295,8 @@ const STYLES = /* css */ `
     font: 400 1.12rem/1.6 'Strait', 'Roboto', sans-serif;
     text-wrap: pretty;
   }
+  /* The words of Jesus, as many printed Bibles set them. */
+  .red-letter { color: #b3261e; }
   sup {
     margin-right: 2px;
     color: #2f5d8a;
@@ -313,9 +355,27 @@ const STYLES = /* css */ `
     flex-direction: column;
     align-items: center;
     min-width: 3.2em;
+    margin: -4px -6px;
+    padding: 4px 6px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
     text-align: center;
     direction: ltr;
+    font: inherit;
   }
+  /* A word with a Strong's number opens its dictionary entry: no box, only a
+     faint yellow behind it while its entry is open. */
+  button.word { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  button.word:hover { background: rgb(255 226 140 / 22%); }
+  button.word:focus-visible { outline: 2px solid #c6922e; outline-offset: 1px; }
+  button.word[aria-expanded="true"] { background: rgb(255 226 140 / 55%); }
+  .entry {
+    flex-basis: 100%;
+    direction: ltr;
+  }
+  .entry .il-entry-item { margin-top: 4px; }
   .word .strong { color: #2f5d8a; font: 400 .66rem/1.3 'Roboto', Arial, sans-serif; }
   .word .xlit { color: #2f5d8a; font: italic 400 .8rem/1.3 Georgia, 'Times New Roman', serif; }
   .word .orig {
@@ -327,6 +387,17 @@ const STYLES = /* css */ `
   .word .grammar { color: #2f5d8a; font: 400 .62rem/1.3 'Roboto', Arial, sans-serif; }
   /* The glosses in the original's order as one line, so the order is plain
      however the words wrap. A line of its own, read left to right. */
+  /* Where the text turns to Aramaic, or back to Hebrew. */
+  .lang-note {
+    margin: 4px 0 14px;
+    padding: 8px 12px;
+    border-left: 3px solid #c6922e;
+    border-radius: 6px;
+    background: rgb(255 226 140 / 22%);
+    color: #5a4a32;
+    font: 400 .95rem/1.45 'Strait', 'Roboto', sans-serif;
+  }
+  .lang-note b { color: #001b34; }
   .reading {
     flex-basis: 100%;
     margin: 2px 0 0;
@@ -345,9 +416,35 @@ const STYLES = /* css */ `
     .words { gap: 8px 10px; }
     .word .orig { font-size: 1.3rem; }
   }
+${STRONGS_ENTRY_STYLES}
 ${PILL_STYLES}`;
 
 // ------------------------------------------------------------------ rendering
+
+const ARAMAIC_NOTE = "a language close to Hebrew, written with the same letters.";
+
+/**
+ * The note where the text changes language: to Aramaic ("arc") or back to
+ * Hebrew ("he"), at the start of the passage, at a verse, or partway through one.
+ */
+function languageNote(language, verse, { first, partway }) {
+    const note = el("p", "lang-note");
+    const name = el("b", null, language === "arc" ? "Aramaic. " : "Hebrew. ");
+    let text;
+    if (language === "arc") {
+        text = first && !partway
+            ? `This part of the book was written in Aramaic, ${ARAMAIC_NOTE}`
+            : partway
+                ? `Partway through verse ${verse} the text turns to Aramaic, ${ARAMAIC_NOTE}`
+                : `From here the text is in Aramaic, ${ARAMAIC_NOTE}`;
+    } else {
+        text = partway
+            ? `Partway through verse ${verse} the text turns back to Hebrew.`
+            : "From here the text is in Hebrew again.";
+    }
+    note.append(name, text);
+    return note;
+}
 
 /** "Word for word: in beginning · he created · God …", the glosses in order. */
 function readingLine(words) {
@@ -440,6 +537,43 @@ export class PassageReader extends HTMLElement {
             tab.addEventListener("click", () => this.#select(tab.dataset.tab));
             tab.addEventListener("keydown", (event) => this.#arrowKeys(event));
         }
+        this.#els.panels.interlinear.addEventListener("click", (event) => {
+            const word = event.target.closest("button.word");
+            if (word) {
+                this.#toggleEntry(word);
+            }
+        });
+    }
+
+    /**
+     * Open (or close) a word's dictionary entry, under its verse's words. One
+     * entry is open at a time.
+     */
+    async #toggleEntry(word) {
+        const panel = this.#els.panels.interlinear;
+        const opening = word.getAttribute("aria-expanded") !== "true";
+        for (const other of panel.querySelectorAll('button.word[aria-expanded="true"]')) {
+            other.setAttribute("aria-expanded", "false");
+        }
+        for (const open of panel.querySelectorAll(".entry")) {
+            open.remove();
+        }
+        if (!opening) {
+            return;
+        }
+        word.setAttribute("aria-expanded", "true");
+        const number = word.dataset.strongs;
+        // A dictionary file that fails to load shows a note in the entry.
+        const entry = await loadStrongsEntry(number).catch(() => null);
+        if (word.getAttribute("aria-expanded") !== "true") {
+            return;
+        }
+        const box = el("div", "entry");
+        box.id = word.getAttribute("aria-controls");
+        box.setAttribute("aria-live", "polite");
+        box.append(strongsEntryNode(number, entry));
+        word.parentElement.append(box);
+        box.scrollIntoView({ block: "nearest", behavior: reducedMotion.matches ? "auto" : "smooth" });
     }
 
     /** Open a passage: { book: "Genesis", range: "1-11", title, tab }. */
@@ -612,7 +746,8 @@ export class PassageReader extends HTMLElement {
     }
 
     async #renderKjv(passage, part) {
-        const rows = await this.#kjvRows(passage, part);
+        const [rows, red] = await Promise.all([this.#kjvRows(passage, part), loadRedLetters()]);
+        const chapterRed = red[passage.bookId] ?? {};
         const nodes = [this.#chapterTitle(passage, part.chapter)];
         if (passage.bookId === "Ps" && part.from === 1 && typeof window.getPsalmTitle === "function") {
             const title = window.getPsalmTitle(part.chapter);
@@ -622,7 +757,11 @@ export class PassageReader extends HTMLElement {
         }
         const text = el("p", "text");
         for (const row of rows) {
-            text.append(verseNumber(row.verse), `${row.text} `);
+            text.append(
+                verseNumber(row.verse),
+                ...redLetterNodes(row.text, chapterRed[`${part.chapter}:${row.verse}`]),
+                " ",
+            );
         }
         nodes.push(text);
         return nodes;
@@ -673,14 +812,35 @@ export class PassageReader extends HTMLElement {
             if (headings?.length) {
                 nodes.push(...headingNodes(headings));
             }
+            // The Old Testament's language so far in this passage: a note
+            // where a verse's words change it.
+            if (rtl) {
+                const languages = interlinear.verses[verse].map((w) => w[5] ?? "he");
+                const current = passage.language ?? "he";
+                const changeAt = languages.findIndex((l) => l !== current);
+                if (changeAt >= 0) {
+                    nodes.push(languageNote(languages[changeAt], verse, {
+                        first: passage.language === undefined,
+                        partway: changeAt > 0,
+                    }));
+                }
+                passage.language = languages.at(-1);
+            }
             const row = el("div", "verse-row");
             row.append(el("span", "num", verse === 0 ? "title" : String(verse)));
             const words = el("div", "words");
             words.dir = rtl ? "rtl" : "ltr";
-            for (const [orig, xlit, gloss, strongs, grammar] of interlinear.verses[verse]) {
-                const word = el("span", "word");
+            const entryId = `entry-${part.chapter}-${verse}`;
+            for (const [orig, xlit, gloss, strongs, grammar, language] of interlinear.verses[verse]) {
+                const word = el(strongs ? "button" : "span", "word");
+                if (strongs) {
+                    word.type = "button";
+                    word.dataset.strongs = strongs;
+                    word.setAttribute("aria-expanded", "false");
+                    word.setAttribute("aria-controls", entryId);
+                }
                 const original = el("span", "orig", orig);
-                original.lang = rtl ? "he" : "grc";
+                original.lang = rtl ? language ?? "he" : "grc";
                 original.dir = rtl ? "rtl" : "ltr";
                 word.append(
                     el("span", "strong", strongs),

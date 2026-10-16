@@ -100,15 +100,29 @@ def hebrew_gloss(gloss, grammar):
         moved = possessive_first(parts[-2], parts[-1])
         if moved:
             parts[-2:] = [moved]
+    # Aramaic's article is a suffix too ("gods/ the", "king/ O"): "the gods", "O king".
+    if (len(parts) == len(segments) >= 2 and segments[-1] == "Ta"
+            and parts[-1] in ("the", "O")):
+        lead = SUPPLIED.match(parts[-2])
+        parts[-2:] = [f"{lead.group(1)}{parts[-1]} {parts[-2][lead.end():]}"]
     return " ".join(p for p in parts if p).replace("<obj.>", "[obj.]")
 
 
 def hebrew_word(fields):
+    """[word, translit, gloss, strongs, grammar], with "arc" added for a word
+    in Aramaic. STEPBible starts the grammar with the language: H Hebrew, A
+    Aramaic (Daniel 2:4-7:28, Ezra 4:8-6:18 and 7:12-26, Jeremiah 10:11)."""
     word, translit, gloss, strongs, grammar = fields[1:6]
     word = CANTILLATION.sub("", word.replace("/", "").replace("\\", ""))
     translit = translit.replace("/", "").replace(".", "·").lower()
-    grammar = re.sub(r"^H", "", grammar)
-    return [word, translit, hebrew_gloss(gloss, grammar), strong_number(strongs, "H"), grammar]
+    # A scribal reading's row can have no grammar: Hebrew, like its text.
+    language, grammar = (grammar[:1], grammar[1:]) if grammar else ("H", "")
+    if language not in ("H", "A"):
+        sys.exit(f"unknown language in the grammar {fields[5]!r} of {fields[0]}")
+    result = [word, translit, hebrew_gloss(gloss, grammar), strong_number(strongs, "H"), grammar]
+    if language == "A":
+        result.append("arc")
+    return result
 
 
 def greek_word(fields):
@@ -159,6 +173,8 @@ def main():
                 word = greek_word(fields) if greek else hebrew_word(fields)
                 chapters[(code, int(chapter))][int(verse)].append(word)
                 kept["greek" if greek else "hebrew"] += 1
+                if not greek and word[5:] == ["arc"]:
+                    kept["aramaic"] += 1
     if len(codes) != len(books):
         sys.exit(f"{len(codes)} STEPBible books for {len(books)} in dailygrace.db")
     book_of = dict(zip(codes, books))
@@ -188,7 +204,7 @@ def main():
 
     lines = [
         f"chapter files: {files_written} (dailygrace.db has {len(db_verses)} chapters), {total_bytes / 1e6:.1f} MB",
-        f"words kept: Hebrew {kept['hebrew']}, Greek {kept['greek']}",
+        f"words kept: Hebrew {kept['hebrew']} (of them Aramaic {kept['aramaic']}), Greek {kept['greek']}",
         f"words left out: Hebrew {dropped['hebrew']} (from the Septuagint), Greek {dropped['greek']} (not in the KJV's Greek)",
         f"psalm titles: {sum(1 for (c, _), vs in chapters.items() if c == 'Psa' and vs.get(0))}",
         f"KJV verses with no words: {len(missing)}",

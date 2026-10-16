@@ -20,7 +20,7 @@ The sources are downloaded outside the repo and passed in as paths:
 | --- | --- | --- |
 | `tools/strongs/kjv_strongs.db` | ~23 MB | offline queries; not committed, not deployed |
 | `tools/strongs/interlinear.json` | ~6.4 MB | `tools/annotations/build_annotations.py`, which copies each verse into its chapter file |
-| `assets/strongs/hebrew/<n>.json` | 87 files, ~20 KB each | the dictionary entry a word of the explanation popup's interlinear opens (`<bible-search-results>`) |
+| `assets/strongs/hebrew/<n>.json` | 87 files, ~20 KB each | the dictionary entry a tapped word opens, in the explanation popup's interlinear (`<bible-search-results>`) and the passage reader's Interlinear tab (`<passage-reader>`), through `apps/components/strongs-entry.js` |
 | `assets/strongs/greek/<n>.json` | 57 files, ~20 KB each | the same |
 | `tools/strongs/report.txt` | small | the validation report from the last run |
 

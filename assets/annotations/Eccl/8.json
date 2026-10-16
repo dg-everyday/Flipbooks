@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Obey the King"
+                    }
+                ],
                 "text": "Who is like the wise man? Who knows the interpretation of a matter? A man’s wisdom brightens his face, and the sternness of his face is changed."
             }
         },
@@ -114,6 +120,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Fear God",
+                        "refs": "Isaiah 8:11–15"
+                    }
+                ],
                 "text": "Then too, I saw the burial of the wicked who used to go in and out of the holy place, and they were praised in the city where they had done so. This too is futile."
             }
         },
@@ -162,6 +175,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Ways Are Mysterious"
+                    }
+                ],
                 "text": "There is a futility that is done on the earth: There are righteous men who get what the actions of the wicked deserve, and there are wicked men who get what the actions of the righteous deserve. I say that this too is futile."
             }
         },

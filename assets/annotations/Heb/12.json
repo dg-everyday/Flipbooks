@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Endurance",
+                        "refs": "2 Timothy 2:1–13"
+                    }
+                ],
                 "text": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off every encumbrance and the sin that so easily entangles, and let us run with endurance the race set out for us."
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Disciplines His Sons"
+                    }
+                ],
                 "text": "In your struggle against sin, you have not yet resisted to the point of shedding your blood."
             }
         },
@@ -162,6 +175,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Holiness",
+                        "refs": "1 Peter 1:13–21"
+                    }
+                ],
                 "text": "Pursue peace with everyone, as well as holiness, without which no one will see the Lord."
             }
         },
@@ -210,6 +230,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Unshakable Kingdom",
+                        "refs": "Exodus 20:18–21; Deuteronomy 5:22–33"
+                    }
+                ],
                 "text": "For you have not come to a mountain that can be touched and that is burning with fire; to darkness, gloom, and storm;"
             }
         },

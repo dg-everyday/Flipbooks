@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jonathan Befriends David"
+                    }
+                ],
                 "text": "After David had finished speaking with Saul, the souls of Jonathan and David were knit together, and Jonathan loved him as himself."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Envies David"
+                    }
+                ],
                 "text": "So David marched out and prospered in everything Saul sent him to do, and Saul set him over the men of war. And this was pleasing in the sight of all the people, and of Saul’s officers as well."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Marries Michal"
+                    }
+                ],
                 "text": "Then Saul said to David, “Here is my older daughter Merab. I will give her to you in marriage. Only be valiant for me and fight the LORD’s battles.” But Saul was thinking, “I need not raise my hand against him; let the hand of the Philistines be against him.”"
             }
         },

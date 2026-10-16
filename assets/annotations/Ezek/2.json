@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezekiel’s Call"
+                    }
+                ],
                 "text": "“Son of man,” He said to me, “stand up on your feet and I will speak to you.”"
             }
         },

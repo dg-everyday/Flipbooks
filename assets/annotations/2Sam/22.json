@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Song of Deliverance",
+                        "refs": "Psalms 18:1–50"
+                    }
+                ],
                 "text": "And David sang this song to the LORD on the day the LORD had delivered him from the hand of all his enemies and from the hand of Saul."
             }
         },

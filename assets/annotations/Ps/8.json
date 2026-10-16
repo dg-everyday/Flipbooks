@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "How Majestic Is Your Name!"
+                    }
+                ],
                 "title": "For the choirmaster. According to Gittith. A Psalm of David.",
                 "text": "O LORD, our Lord, how majestic is Your name in all the earth! You have set Your glory above the heavens."
             }

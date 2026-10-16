@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "In My Distress I Cried to the LORD"
+                    }
+                ],
                 "title": "A song of ascents.",
                 "text": "In my distress I cried to the LORD, and He answered me."
             }

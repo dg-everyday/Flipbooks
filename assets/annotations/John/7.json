@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Teaches at the Feast"
+                    }
+                ],
                 "text": "After this, Jesus traveled throughout Galilee. He did not want to travel in Judea, because the Jews there were trying to kill Him."
             }
         },
@@ -294,6 +300,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Is Jesus the Christ?"
+                    }
+                ],
                 "text": "Then some of the people of Jerusalem began to say, “Isn’t this the man they are trying to kill?"
             }
         },
@@ -438,6 +450,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Living Water"
+                    }
+                ],
                 "text": "On the last and greatest day of the feast, Jesus stood up and called out in a loud voice, “If anyone is thirsty, let him come to Me and drink."
             }
         },
@@ -474,6 +492,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Division over Jesus"
+                    }
+                ],
                 "text": "On hearing these words, some of the people said, “This is truly the Prophet.”"
             }
         },
@@ -534,6 +558,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Unbelief of the Jewish Leaders"
+                    }
+                ],
                 "text": "Then the officers returned to the chief priests and Pharisees, who asked them, “Why didn’t you bring Him in?”"
             }
         },

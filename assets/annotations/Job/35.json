@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elihu Recalls God’s Justice"
+                    }
+                ],
                 "text": "And Elihu went on to say:"
             }
         },

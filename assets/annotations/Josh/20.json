@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Six Cities of Refuge",
+                        "refs": "Numbers 35:9–34; Deuteronomy 4:41–43; Deuteronomy 19:1–14"
+                    }
+                ],
                 "text": "Then the LORD said to Joshua,"
             }
         },

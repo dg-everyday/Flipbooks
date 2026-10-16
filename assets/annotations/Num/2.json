@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Order of the Camps"
+                    }
+                ],
                 "text": "Then the LORD said to Moses and Aaron:"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Vision by the Tigris"
+                    }
+                ],
                 "text": "In the third year of Cyrus king of Persia, a message was revealed to Daniel, who was called Belteshazzar. The message was true, and it concerned a great conflict. And the understanding of the message was given to him in a vision."
             }
         },

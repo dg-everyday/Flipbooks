@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rescue Me from Evil Men"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "Rescue me, O LORD, from evil men. Protect me from men of violence,"
             }

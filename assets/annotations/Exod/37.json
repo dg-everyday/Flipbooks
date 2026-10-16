@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Constructing the Ark",
+                        "refs": "Exodus 25:10–16"
+                    }
+                ],
                 "text": "Bezalel went on to construct the ark of acacia wood, two and a half cubits long, a cubit and a half wide, and a cubit and a half high."
             }
         },
@@ -50,6 +57,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mercy Seat",
+                        "refs": "Exodus 25:17–22"
+                    }
+                ],
                 "text": "He constructed a mercy seat of pure gold, two and a half cubits long and a cubit and a half wide."
             }
         },
@@ -82,6 +96,13 @@
     "10": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Table of Showbread",
+                        "refs": "Exodus 25:23–30; Leviticus 24:5–9"
+                    }
+                ],
                 "text": "He also made the table of acacia wood two cubits long, a cubit wide, and a cubit and a half high."
             }
         },
@@ -142,6 +163,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lampstand",
+                        "refs": "Exodus 25:31–40; Numbers 8:1–4"
+                    }
+                ],
                 "text": "Then he made the lampstand out of pure hammered gold, all of one piece: its base and shaft, its cups, and its buds and petals."
             }
         },
@@ -206,6 +234,13 @@
     "25": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Altar of Incense",
+                        "refs": "Exodus 30:1–10"
+                    }
+                ],
                 "text": "He made the altar of incense out of acacia wood. It was square, a cubit long, a cubit wide, and two cubits high. Its horns were of one piece."
             }
         },

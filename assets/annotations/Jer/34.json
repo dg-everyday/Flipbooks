@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against Zedekiah"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah from the LORD when Nebuchadnezzar king of Babylon, all his army, all the earthly kingdoms under his control, and all the other nations were fighting against Jerusalem and all its surrounding cities."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Freedom for Hebrew Slaves"
+                    }
+                ],
                 "text": "After King Zedekiah had made a covenant with all the people in Jerusalem to proclaim liberty, the word came to Jeremiah from the LORD"
             }
         },

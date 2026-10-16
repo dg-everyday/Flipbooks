@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wisdom and Folly"
+                    }
+                ],
                 "text": "As dead flies bring a stench to the perfumer’s oil, so a little folly outweighs wisdom and honor."
             }
         },

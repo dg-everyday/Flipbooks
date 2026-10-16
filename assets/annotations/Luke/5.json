@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Disciples",
+                        "refs": "Matthew 4:18–22; Mark 1:16–20; John 1:35–42"
+                    }
+                ],
                 "text": "On one occasion, while Jesus was standing by the Lake of Gennesaret with the crowd pressing in on Him to hear the word of God,"
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Leper’s Prayer",
+                        "refs": "Leviticus 14:1–32; Matthew 8:1–4; Mark 1:40–45"
+                    }
+                ],
                 "text": "While Jesus was in one of the towns, a man came along who was covered with leprosy. When he saw Jesus, he fell facedown and begged Him, “Lord, if You are willing, You can make me clean.”"
             }
         },
@@ -198,6 +212,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals a Paralytic",
+                        "refs": "Matthew 9:1–8; Mark 2:1–12"
+                    }
+                ],
                 "text": "One day Jesus was teaching, and the Pharisees and teachers of the law were sitting there. People had come from Jerusalem and from every village of Galilee and Judea, and the power of the Lord was present for Him to heal the sick."
             }
         },
@@ -318,6 +339,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Calls Levi",
+                        "refs": "Matthew 9:9–13; Mark 2:13–17"
+                    }
+                ],
                 "text": "After this, Jesus went out and saw a tax collector named Levi sitting at the tax booth. “Follow Me,” He told him,"
             }
         },
@@ -390,6 +418,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Questions about Fasting",
+                        "refs": "Matthew 9:14–15; Mark 2:18–20"
+                    }
+                ],
                 "text": "Then they said to Him, “John’s disciples and those of the Pharisees frequently fast and pray, but Yours keep on eating and drinking.”"
             }
         },
@@ -426,6 +461,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Patches and the Wineskins",
+                        "refs": "Matthew 9:16–17; Mark 2:21–22"
+                    }
+                ],
                 "text": "He also told them a parable: “No one tears a piece of cloth from a new garment and sews it on an old one. If he does, he will tear the new garment as well, and the patch from the new will not match the old."
             }
         },

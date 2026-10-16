@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Spares Saul"
+                    }
+                ],
                 "text": "After Saul had returned from pursuing the Philistines, he was told, “David is in the wilderness of En-gedi.”"
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Oath to Saul"
+                    }
+                ],
                 "text": "When David had finished saying these things, Saul called back, “Is that your voice, David my son?” Then Saul wept aloud"
             }
         },

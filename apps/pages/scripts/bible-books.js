@@ -17,6 +17,7 @@ import {
     filterMenu,
     titleWithInfo,
 } from "./study-utils.js?v=20261016-5";
+import { showPassageReader } from "../../components/passage-reader.js?v=20261016-1";
 
 const DATA = "assets/bible-books.json";
 const fmt = (n) => n.toLocaleString("en-US");
@@ -85,6 +86,8 @@ function detail(book, group, onClose) {
         ),
     );
 
+    // Each part of the outline opens its chapters in the passage reader: the
+    // KJV, the BSB and the interlinear, in tabs.
     const outline =
         book.outline?.length &&
         h(
@@ -95,13 +98,29 @@ function detail(book, group, onClose) {
                     "li",
                     {},
                     h(
-                        "span",
-                        { class: "outline-range" },
-                        o.chapters.includes(":")
-                            ? o.chapters
-                            : `ch. ${o.chapters}`,
+                        "button",
+                        {
+                            type: "button",
+                            class: "outline-open",
+                            "aria-haspopup": "dialog",
+                            "aria-label": `Read ${book.name} ${o.chapters}: ${o.title}`,
+                            onclick: () =>
+                                showPassageReader({
+                                    book: book.name,
+                                    range: o.chapters,
+                                    title: o.title,
+                                }),
+                        },
+                        h(
+                            "span",
+                            { class: "outline-range" },
+                            o.chapters.includes(":")
+                                ? o.chapters
+                                : `ch. ${o.chapters}`,
+                        ),
+                        h("span", { class: "outline-title" }, o.title),
+                        h("span", { class: "outline-arrow", "aria-hidden": "true" }),
                     ),
-                    h("span", {}, o.title),
                 ),
             ),
         );

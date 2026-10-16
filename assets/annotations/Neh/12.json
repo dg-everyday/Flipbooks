@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Priests and Levites Who Returned"
+                    }
+                ],
                 "text": "Now these are the priests and Levites who went up with Zerubbabel son of Shealtiel and with Jeshua: Seraiah, Jeremiah, Ezra,"
             }
         },
@@ -266,6 +272,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Dedication of the Wall"
+                    }
+                ],
                 "text": "At the dedication of the wall of Jerusalem, the Levites were sought out from all their homes and brought to Jerusalem to celebrate the joyous dedication with thanksgiving and singing, accompanied by cymbals, harps, and lyres."
             }
         },
@@ -470,6 +482,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Provisions for Temple Worship"
+                    }
+                ],
                 "text": "And on that same day men were appointed over the rooms that housed the supplies, contributions, firstfruits, and tithes. The portions specified by the Law for the priests and Levites were gathered into these storerooms from the fields of the villages, because Judah rejoiced over the priests and Levites who were serving."
             }
         },

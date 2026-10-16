@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Jerusalem"
+                    }
+                ],
                 "text": "Woe to the city of oppressors, rebellious and defiled!"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Purification of the Nations"
+                    }
+                ],
                 "text": "“I have cut off the nations; their corner towers are destroyed. I have made their streets deserted with no one to pass through. Their cities are laid waste, with no man, no inhabitant."
             }
         },
@@ -102,6 +114,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Faithful Remnant"
+                    }
+                ],
                 "text": "For then I will restore pure lips to the peoples, that all may call upon the name of the LORD and serve Him shoulder to shoulder."
             }
         },
@@ -162,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Restoration"
+                    }
+                ],
                 "text": "Sing for joy, O Daughter of Zion; shout aloud, O Israel! Be glad and rejoice with all your heart, O Daughter of Jerusalem!"
             }
         },

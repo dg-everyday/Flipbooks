@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning to the Cities of Judah"
+                    }
+                ],
                 "text": "At the beginning of the reign of Jehoiakim son of Josiah king of Judah, this word came from the LORD:"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Threatened with Death"
+                    }
+                ],
                 "text": "Now the priests and prophets and all the people heard Jeremiah speaking these words in the house of the LORD,"
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Spared from Death"
+                    }
+                ],
                 "text": "Then the officials and all the people told the priests and prophets, “This man is not worthy of death, for he has spoken to us in the name of the LORD our God!”"
             }
         },
@@ -234,6 +252,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prophet Uriah"
+                    }
+                ],
                 "text": "Now there was another man prophesying in the name of the LORD, Uriah son of Shemaiah from Kiriath-jearim. He prophesied against this city and against this land the same things that Jeremiah did."
             }
         },

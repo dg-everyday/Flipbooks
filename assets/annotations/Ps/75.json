@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Righteous Judgment",
+                        "refs": "Romans 2:1–16"
+                    }
+                ],
                 "title": "For the choirmaster: To the tune of “Do Not Destroy.” A Psalm of Asaph. A song.",
                 "text": "We give thanks to You, O God; we give thanks, for Your Name is near. The people declare Your wondrous works."
             }

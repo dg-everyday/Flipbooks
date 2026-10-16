@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joash Anointed King of Judah",
+                        "refs": "2 Kings 11:4–12"
+                    }
+                ],
                 "text": "Then in the seventh year, Jehoiada strengthened himself and made a covenant with the commanders of hundreds—with Azariah son of Jeroham, Ishmael son of Jehohanan, Azariah son of Obed, Maaseiah son of Adaiah, and Elishaphat son of Zichri."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Athaliah",
+                        "refs": "2 Kings 11:13–16"
+                    }
+                ],
                 "text": "When Athaliah heard the noise of the people running and cheering the king, she went out to them in the house of the LORD."
             }
         },
@@ -158,6 +172,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoiada Restores the Worship of the LORD",
+                        "refs": "2 Kings 11:17–21"
+                    }
+                ],
                 "text": "Then Jehoiada made a covenant between himself and the king and the people that they would be the LORD’s people."
             }
         },

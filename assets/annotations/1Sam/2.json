@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hannah’s Prayer of Thanksgiving",
+                        "refs": "Luke 1:46–56"
+                    }
+                ],
                 "text": "At that time Hannah prayed: “My heart rejoices in the LORD; my horn is exalted in the LORD. My mouth speaks boldly against my enemies, for I rejoice in Your salvation."
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Eli’s Wicked Sons"
+                    }
+                ],
                 "text": "Now the sons of Eli were wicked men; they had no regard for the LORD"
             }
         },
@@ -318,6 +331,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against the House of Eli"
+                    }
+                ],
                 "text": "Then a man of God came to Eli and told him, “This is what the LORD says: ‘Did I not clearly reveal Myself to your father’s house when they were in Egypt under Pharaoh’s house?"
             }
         },

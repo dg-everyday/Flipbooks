@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Dan and Naphtali"
+                    }
+                ],
                 "text": "When Rachel saw that she was not bearing any children for Jacob, she envied her sister. “Give me children, or I will die!” she said to Jacob."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gad and Asher"
+                    }
+                ],
                 "text": "When Leah saw that she had stopped having children, she gave her servant Zilpah to Jacob as a wife."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Issachar, Zebulun, and Dinah"
+                    }
+                ],
                 "text": "And God listened to Leah, and she conceived and bore a fifth son to Jacob."
             }
         },
@@ -258,6 +276,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph"
+                    }
+                ],
                 "text": "Then God remembered Rachel. He listened to her and opened her womb,"
             }
         },
@@ -294,6 +318,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Prospers"
+                    }
+                ],
                 "text": "Now after Rachel had given birth to Joseph, Jacob said to Laban, “Send me on my way so I can return to my homeland."
             }
         },

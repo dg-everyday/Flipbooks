@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nations Left to Test Israel"
+                    }
+                ],
                 "text": "These are the nations that the LORD left to test all the Israelites who had not known any of the wars in Canaan,"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Othniel"
+                    }
+                ],
                 "text": "So the Israelites did evil in the sight of the LORD; they forgot the LORD their God and served the Baals and the Asherahs."
             }
         },
@@ -138,6 +150,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ehud"
+                    }
+                ],
                 "text": "Once again the Israelites did evil in the sight of the LORD. So He gave Eglon king of Moab power over Israel, because they had done evil in the sight of the LORD."
             }
         },
@@ -366,6 +384,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shamgar"
+                    }
+                ],
                 "text": "After Ehud came Shamgar son of Anath. And he too saved Israel, striking down six hundred Philistines with an oxgoad."
             }
         },

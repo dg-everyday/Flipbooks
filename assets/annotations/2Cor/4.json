@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Light of the Gospel"
+                    }
+                ],
                 "text": "Therefore, since God in His mercy has given us this ministry, we do not lose heart."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Treasure in Jars of Clay",
+                        "refs": "Romans 6:1–14"
+                    }
+                ],
                 "text": "Now we have this treasure in jars of clay to show that this surpassingly great power is from God and not from us."
             }
         },

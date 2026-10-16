@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Covenant with Abram",
+                        "refs": "Romans 4:1–12; Hebrews 11:8–19"
+                    }
+                ],
                 "text": "After these events, the word of the LORD came to Abram in a vision: “Do not be afraid, Abram. I am your shield, your very great reward.”"
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Confirms His Promise",
+                        "refs": "Numbers 34:1–15; Romans 4:13–25"
+                    }
+                ],
                 "text": "But Abram replied, “Lord GOD, how can I know that I will possess it?”"
             }
         },

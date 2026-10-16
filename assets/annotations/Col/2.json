@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Absent in Body, Present in Spirit",
+                        "refs": "Revelation 3:14–22"
+                    }
+                ],
                 "text": "For I want you to know how much I am struggling for you and for those at Laodicea, and for all who have not met me face to face,"
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Alive with Christ",
+                        "refs": "Ephesians 2:1–10"
+                    }
+                ],
                 "text": "Therefore, just as you have received Christ Jesus as Lord, continue to walk in Him,"
             }
         },

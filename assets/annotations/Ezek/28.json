@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against the Ruler of Tyre"
+                    }
+                ],
                 "text": "And the word of the LORD came to me, saying,"
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Lament for the King of Tyre"
+                    }
+                ],
                 "text": "Again the word of the LORD came to me, saying,"
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against Sidon"
+                    }
+                ],
                 "text": "Then the word of the LORD came to me, saying,"
             }
         },
@@ -294,6 +312,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Restoration of Israel",
+                        "refs": "Jeremiah 30:1–17"
+                    }
+                ],
                 "text": "This is what the Lord GOD says: ‘When I gather the house of Israel from the peoples among whom they have been scattered, I will show Myself holy among them in the sight of the nations. Then they will dwell in their own land, which I have given to My servant Jacob."
             }
         },

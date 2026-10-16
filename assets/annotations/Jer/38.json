@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Cast into the Cistern"
+                    }
+                ],
                 "text": "Now Shephatiah son of Mattan, Gedaliah son of Pashhur, Jucal son of Shelemiah, and Pashhur son of Malchijah heard that Jeremiah had been telling all the people:"
             }
         },

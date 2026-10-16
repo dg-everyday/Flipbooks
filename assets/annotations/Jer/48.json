@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Moab",
+                        "refs": "Isaiah 15:1–9"
+                    }
+                ],
                 "text": "Concerning Moab, this is what the LORD of Hosts, the God of Israel, says: “Woe to Nebo, for it will be devastated. Kiriathaim will be captured and disgraced; the fortress will be shattered and dismantled."
             }
         },

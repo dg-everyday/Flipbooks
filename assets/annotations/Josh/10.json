@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day the Sun Stood Still"
+                    }
+                ],
                 "text": "Now Adoni-zedek king of Jerusalem heard that Joshua had captured Ai and devoted it to destruction—doing to Ai and its king as he had done to Jericho and its king—and that the people of Gibeon had made peace with Israel and were living near them."
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Victory at Makkedah"
+                    }
+                ],
                 "text": "Now the five kings had fled and hidden in the cave at Makkedah."
             }
         },
@@ -342,6 +354,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Conquest of the Southern Cities"
+                    }
+                ],
                 "text": "Then Joshua and all Israel with him moved on from Makkedah to Libnah and fought against Libnah."
             }
         },

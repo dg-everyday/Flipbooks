@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Wicked Tenants",
+                        "refs": "Matthew 21:33–46; Luke 20:9–18"
+                    }
+                ],
                 "text": "Then Jesus began to speak to them in parables: “A man planted a vineyard. He put a wall around it, dug a wine vat, and built a watchtower. Then he rented it out to some tenants and went away on a journey."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paying Taxes to Caesar",
+                        "refs": "Matthew 22:15–22; Luke 20:19–26"
+                    }
+                ],
                 "text": "Later, they sent some of the Pharisees and Herodians to catch Jesus in His words."
             }
         },
@@ -210,6 +224,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sadducees and the Resurrection",
+                        "refs": "Matthew 22:23–33; Luke 20:27–40"
+                    }
+                ],
                 "text": "Then the Sadducees, who say there is no resurrection, came to Jesus and questioned Him:"
             }
         },
@@ -330,6 +351,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Greatest Commandment",
+                        "refs": "Deuteronomy 6:1–19; Matthew 22:34–40"
+                    }
+                ],
                 "text": "Now one of the scribes had come up and heard their debate. Noticing how well Jesus had answered them, he asked Him, “Which commandment is the most important of all?”"
             }
         },
@@ -414,6 +442,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Whose Son Is the Christ?",
+                        "refs": "Matthew 22:41–46; Luke 20:41–44"
+                    }
+                ],
                 "text": "While Jesus was teaching in the temple courts, He asked, “How can the scribes say that the Christ is the Son of David?"
             }
         },
@@ -450,6 +485,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Beware of the Scribes",
+                        "refs": "Luke 20:45–47"
+                    }
+                ],
                 "text": "In His teaching Jesus also said, “Watch out for the scribes. They like to walk around in long robes, to receive greetings in the marketplaces,"
             }
         },
@@ -486,6 +528,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Widow’s Offering",
+                        "refs": "Luke 21:1–4"
+                    }
+                ],
                 "text": "As Jesus was sitting opposite the treasury, He watched the crowd putting money into it. And many rich people put in large amounts."
             }
         },

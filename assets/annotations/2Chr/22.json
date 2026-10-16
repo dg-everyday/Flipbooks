@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahaziah Reigns in Judah",
+                        "refs": "2 Kings 8:25–29"
+                    }
+                ],
                 "text": "Then the people of Jerusalem made Ahaziah, the youngest son of Jehoram, king in his place, since the raiders who had come into the camp with the Arabs had killed all the older sons. So Ahaziah son of Jehoram became king of Judah."
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehu Kills the Princes of Judah",
+                        "refs": "2 Kings 9:14–29"
+                    }
+                ],
                 "text": "So while Jehu was executing judgment on the house of Ahab, he found the rulers of Judah and the sons of Ahaziah’s brothers who were serving Ahaziah, and he killed them."
             }
         },
@@ -114,6 +128,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Athaliah and Joash",
+                        "refs": "2 Kings 11:1–3"
+                    }
+                ],
                 "text": "When Athaliah the mother of Ahaziah saw that her son was dead, she proceeded to annihilate all the royal heirs of the house of Judah."
             }
         },

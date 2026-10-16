@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Boaz Redeems Ruth"
+                    }
+                ],
                 "text": "Meanwhile, Boaz went to the gate and sat down there. Soon the kinsman-redeemer of whom he had spoken came along, and Boaz said, “Come over here, my friend, and sit down.” So he went over and sat down."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Boaz Marries Ruth"
+                    }
+                ],
                 "text": "So Boaz took Ruth, and she became his wife. And when he had relations with her, the LORD enabled her to conceive, and she gave birth to a son."
             }
         },
@@ -210,6 +222,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Line of David",
+                        "refs": "Matthew 1:1–17; Luke 3:23–38"
+                    }
+                ],
                 "text": "Now these are the generations of Perez: Perez was the father of Hezron,"
             }
         },

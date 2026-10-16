@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Perfect High Priest",
+                        "refs": "Psalms 110:1–7"
+                    }
+                ],
                 "text": "Every high priest is appointed from among men to represent them in matters relating to God, to offer gifts and sacrifices for sins."
             }
         },
@@ -126,6 +133,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Milk and Solid Food",
+                        "refs": "1 Corinthians 3:1–9"
+                    }
+                ],
                 "text": "We have much to say about this, but it is hard to explain, because you are dull of hearing."
             }
         },

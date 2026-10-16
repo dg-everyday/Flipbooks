@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Excellence of the Restored Nation"
+                    }
+                ],
                 "text": "While Jeremiah was still confined in the courtyard of the guard, the word of the LORD came to him a second time:"
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant with David"
+                    }
+                ],
                 "text": "Behold, the days are coming, declares the LORD, when I will fulfill the gracious promise that I have spoken to the house of Israel and the house of Judah."
             }
         },

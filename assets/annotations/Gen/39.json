@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph and Potiphar’s Wife"
+                    }
+                ],
                 "text": "Meanwhile, Joseph had been taken down to Egypt, where an Egyptian named Potiphar, an officer of Pharaoh and captain of the guard, bought him from the Ishmaelites who had taken him there."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph Falsely Imprisoned"
+                    }
+                ],
                 "text": "When she saw that he had left his cloak in her hand and had run out of the house,"
             }
         },

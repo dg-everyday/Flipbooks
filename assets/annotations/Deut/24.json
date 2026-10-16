@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Marriage and Divorce Laws",
+                        "refs": "Matthew 5:31–32; Luke 16:18"
+                    }
+                ],
                 "text": "If a man marries a woman, but she becomes displeasing to him because he finds some indecency in her, he may write her a certificate of divorce, hand it to her, and send her away from his house."
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Additional Laws"
+                    }
+                ],
                 "text": "Do not take a pair of millstones or even an upper millstone as security for a debt, because that would be taking one’s livelihood as security."
             }
         },

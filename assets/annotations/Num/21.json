@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat of Arad"
+                    }
+                ],
                 "text": "When the Canaanite king of Arad, who lived in the Negev, heard that Israel was coming along the road to Atharim, he attacked Israel and captured some prisoners."
             }
         },
@@ -42,6 +48,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bronze Serpent"
+                    }
+                ],
                 "text": "Then they set out from Mount Hor along the route to the Red Sea, in order to bypass the land of Edom. But the people grew impatient on the journey"
             }
         },
@@ -114,6 +126,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Journey to Moab"
+                    }
+                ],
                 "text": "Then the Israelites set out and camped at Oboth."
             }
         },
@@ -246,6 +264,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat of Sihon",
+                        "refs": "Deuteronomy 2:24–37"
+                    }
+                ],
                 "text": "Then Israel sent messengers to Sihon king of the Amorites, saying,"
             }
         },
@@ -366,6 +391,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat of Og",
+                        "refs": "Deuteronomy 3:1–11"
+                    }
+                ],
                 "text": "So Israel lived in the land of the Amorites."
             }
         },

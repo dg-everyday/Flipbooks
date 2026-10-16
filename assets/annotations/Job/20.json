@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Zophar: Destruction Awaits the Wicked"
+                    }
+                ],
                 "text": "Then Zophar the Naamathite replied:"
             }
         },

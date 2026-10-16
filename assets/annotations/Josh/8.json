@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Conquest of Ai"
+                    }
+                ],
                 "text": "Then the LORD said to Joshua, “Do not be afraid or discouraged. Take the whole army with you, and go up and attack Ai. See, I have delivered into your hand the king of Ai, his people, his city, and his land."
             }
         },
@@ -354,6 +360,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua Renews the Covenant",
+                        "refs": "Deuteronomy 27:1–10"
+                    }
+                ],
                 "text": "At that time Joshua built an altar on Mount Ebal to the LORD, the God of Israel,"
             }
         },

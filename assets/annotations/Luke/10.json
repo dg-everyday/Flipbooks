@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Sends the Seventy-Two",
+                        "refs": "Matthew 9:35–38"
+                    }
+                ],
                 "text": "After this, the Lord appointed seventy-two others and sent them two by two ahead of Him to every town and place He was about to visit."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Woe to the Unrepentant",
+                        "refs": "Matthew 11:20–24"
+                    }
+                ],
                 "text": "Woe to you, Chorazin! Woe to you, Bethsaida! For if the miracles that were performed in you had been performed in Tyre and Sidon, they would have repented long ago, sitting in sackcloth and ashes."
             }
         },
@@ -198,6 +212,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Joyful Return"
+                    }
+                ],
                 "text": "The seventy-two returned with joy and said, “Lord, even the demons submit to us in Your name.”"
             }
         },
@@ -246,6 +266,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Prayer of Thanksgiving",
+                        "refs": "Matthew 11:25–30"
+                    }
+                ],
                 "text": "At that time Jesus rejoiced in the Holy Spirit and declared, “I praise You, Father, Lord of heaven and earth, because You have hidden these things from the wise and learned, and revealed them to little children. Yes, Father, for this was well-pleasing in Your sight."
             }
         },
@@ -294,6 +321,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Good Samaritan"
+                    }
+                ],
                 "text": "One day an expert in the law stood up to test Him. “Teacher,” he asked, “what must I do to inherit eternal life?”"
             }
         },
@@ -450,6 +483,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Martha and Mary"
+                    }
+                ],
                 "text": "As they traveled along, Jesus entered a village where a woman named Martha welcomed Him into her home."
             }
         },

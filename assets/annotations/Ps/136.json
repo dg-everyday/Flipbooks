@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "His Loving Devotion Endures Forever",
+                        "refs": "2 Chronicles 7:1–3"
+                    }
+                ],
                 "text": "Give thanks to the LORD, for He is good. His loving devotion endures forever."
             }
         },

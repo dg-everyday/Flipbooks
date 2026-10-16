@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ravens Feed Elijah"
+                    }
+                ],
                 "text": "Now Elijah the Tishbite, who was among the settlers of Gilead, said to Ahab, “As surely as the LORD, the God of Israel, lives, before whom I stand, there will be neither dew nor rain in these years except at my word!”"
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Widow of Zarephath"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Elijah:"
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah Raises the Widow’s Son"
+                    }
+                ],
                 "text": "Later, the son of the woman who owned the house became ill, and his sickness grew worse and worse, until no breath remained in him."
             }
         },

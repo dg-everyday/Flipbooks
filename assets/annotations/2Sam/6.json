@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Fetches the Ark",
+                        "refs": "1 Chronicles 13:1–7"
+                    }
+                ],
                 "text": "David again assembled the chosen men of Israel, thirty thousand in all."
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Uzzah Touches the Ark",
+                        "refs": "1 Chronicles 13:8–14"
+                    }
+                ],
                 "text": "David and all the house of Israel were celebrating before the LORD with all kinds of wood instruments, harps, stringed instruments, tambourines, sistrums, and cymbals."
             }
         },
@@ -138,6 +152,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ark Brought to Jerusalem",
+                        "refs": "1 Chronicles 15:1–28"
+                    }
+                ],
                 "text": "Now it was reported to King David, “The LORD has blessed the house of Obed-edom and all that belongs to him, because of the ark of God.” So David went and had the ark of God brought up from the house of Obed-edom into the City of David with rejoicing."
             }
         },
@@ -186,6 +207,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Michal’s Contempt for David",
+                        "refs": "1 Chronicles 15:29—16:3"
+                    }
+                ],
                 "text": "As the ark of the LORD was entering the City of David, Saul’s daughter Michal looked down from a window and saw King David leaping and dancing before the LORD, and she despised him in her heart."
             }
         },

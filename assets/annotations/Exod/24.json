@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant Sealed"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Come up to the LORD—you and Aaron, Nadab and Abihu, and seventy of Israel’s elders—and you are to worship at a distance."
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses on the Mountain"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Come up to Me on the mountain and stay here, so that I may give you the tablets of stone, with the law and commandments I have written for their instruction.”"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Feasts and Sabbaths",
+                        "refs": "Exodus 23:14–19"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Passover and the Feast of Unleavened Bread",
+                        "refs": "Exodus 12:14–28; Numbers 28:16–25; Deuteronomy 16:1–8"
+                    }
+                ],
                 "text": "These are the LORD’s appointed feasts, the sacred assemblies you are to proclaim at their appointed times."
             }
         },
@@ -102,6 +116,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Firstfruits"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -174,6 +194,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Weeks",
+                        "refs": "Acts 2:1–13"
+                    }
+                ],
                 "text": "From the day after the Sabbath, the day you brought the sheaf of the wave offering, you are to count off seven full weeks."
             }
         },
@@ -270,6 +297,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Trumpets",
+                        "refs": "Numbers 29:1–6"
+                    }
+                ],
                 "text": "The LORD also said to Moses,"
             }
         },
@@ -306,6 +340,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day of Atonement",
+                        "refs": "Leviticus 16:1–34; Numbers 29:7–11"
+                    }
+                ],
                 "text": "Again the LORD said to Moses,"
             }
         },
@@ -390,6 +431,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Tabernacles",
+                        "refs": "Nehemiah 8:13–18; Zechariah 14:16–21"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah’s Message at the Temple Gate"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah from the LORD, saying,"
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judah’s Idolatry Persists"
+                    }
+                ],
                 "text": "As for you, do not pray for these people, do not offer a plea or petition on their behalf, and do not beg Me, for I will not listen to you."
             }
         },
@@ -354,6 +366,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Valley of Slaughter"
+                    }
+                ],
                 "text": "For the people of Judah have done evil in My sight, declares the LORD. They have set up their abominations in the house that bears My Name, and so have defiled it."
             }
         },

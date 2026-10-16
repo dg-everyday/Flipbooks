@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elkanah and His Wives",
+                        "refs": "Psalms 113:1–9"
+                    }
+                ],
                 "text": "Now there was a man named Elkanah who was from Ramathaim-zophim in the hill country of Ephraim. He was the son of Jeroham, the son of Elihu, the son of Tohu, the son of Zuph, an Ephraimite."
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hannah Prays for a Son"
+                    }
+                ],
                 "text": "So after they had finished eating and drinking in Shiloh, Hannah stood up. Now Eli the priest was sitting on a chair by the doorpost of the temple of the LORD."
             }
         },
@@ -222,6 +235,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Birth of Samuel"
+                    }
+                ],
                 "text": "The next morning they got up early to bow in worship before the LORD, and then they returned home to Ramah. And Elkanah had relations with his wife Hannah, and the LORD remembered her."
             }
         },

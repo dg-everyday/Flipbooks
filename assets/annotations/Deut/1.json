@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Command to Leave Horeb",
+                        "refs": "Exodus 33:1–6"
+                    }
+                ],
                 "text": "These are the words that Moses spoke to all Israel in the wilderness east of the Jordan—in the Arabah opposite Suph—between Paran and Tophel, Laban, Hazeroth, and Dizahab."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Appoints Leaders",
+                        "refs": "Exodus 18:13–27"
+                    }
+                ],
                 "text": "At that time I said to you, “I cannot carry the burden for you alone."
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Twelve Spies Sent Out",
+                        "refs": "Numbers 13:1–33"
+                    }
+                ],
                 "text": "And just as the LORD our God had commanded us, we set out from Horeb and went toward the hill country of the Amorites, through all the vast and terrifying wilderness you have seen. When we reached Kadesh-barnea,"
             }
         },
@@ -306,6 +327,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Rebellion",
+                        "refs": "Numbers 14:1–12"
+                    }
+                ],
                 "text": "But you were unwilling to go up; you rebelled against the command of the LORD your God."
             }
         },
@@ -402,6 +430,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Penalty",
+                        "refs": "Numbers 14:20–35"
+                    }
+                ],
                 "text": "When the LORD heard your words, He grew angry and swore an oath, saying,"
             }
         },
@@ -486,6 +521,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat at Hormah",
+                        "refs": "Numbers 14:40–45"
+                    }
+                ],
                 "text": "“We have sinned against the LORD,” you replied. “We will go up and fight, as the LORD our God has commanded us.” Then each of you put on his weapons of war, thinking it easy to go up into the hill country."
             }
         },

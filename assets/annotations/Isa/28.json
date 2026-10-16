@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Captivity of Ephraim"
+                    }
+                ],
                 "text": "Woe to the majestic crown of Ephraim’s drunkards, to the fading flower of his glorious splendor, set on the summit above the fertile valley, the pride of those overcome by wine."
             }
         },
@@ -162,6 +168,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Cornerstone in Zion",
+                        "refs": "1 Corinthians 3:10–15; Ephesians 2:19–22; 1 Peter 2:1–8"
+                    }
+                ],
                 "text": "Therefore hear the word of the LORD, O scoffers who rule this people in Jerusalem."
             }
         },
@@ -270,6 +283,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Listen and Hear"
+                    }
+                ],
                 "text": "Listen and hear my voice. Pay attention and hear what I say."
             }
         },

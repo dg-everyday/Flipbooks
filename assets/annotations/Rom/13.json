@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Submission to Authorities",
+                        "refs": "1 Peter 2:13–20"
+                    }
+                ],
                 "text": "Everyone must submit himself to the governing authorities, for there is no authority except that which is from God. The authorities that exist have been appointed by God."
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Love Fulfills the Law",
+                        "refs": "Leviticus 19:9–18"
+                    }
+                ],
                 "text": "Be indebted to no one, except to one another in love. For he who loves his neighbor has fulfilled the law."
             }
         },
@@ -126,6 +140,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day Is Near"
+                    }
+                ],
                 "text": "And do this, understanding the occasion. The hour has come for you to wake up from your slumber, for our salvation is nearer now than when we first believed."
             }
         },

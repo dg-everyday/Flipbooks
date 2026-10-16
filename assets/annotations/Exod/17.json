@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Water from the Rock",
+                        "refs": "Numbers 20:1–13"
+                    }
+                ],
                 "text": "Then the whole congregation of Israel left the Desert of Sin, moving from place to place as the LORD commanded. They camped at Rephidim, but there was no water for the people to drink."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat of the Amalekites"
+                    }
+                ],
                 "text": "After this, the Amalekites came and attacked the Israelites at Rephidim."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Loving Discipline and Knowledge"
+                    }
+                ],
                 "text": "Whoever loves discipline loves knowledge, but he who hates correction is stupid."
             }
         },

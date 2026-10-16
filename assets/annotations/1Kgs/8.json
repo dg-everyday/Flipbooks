@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ark Enters the Temple",
+                        "refs": "2 Chronicles 5:1–14"
+                    }
+                ],
                 "text": "At that time Solomon assembled before him in Jerusalem the elders of Israel—all the tribal heads and family leaders of the Israelites—to bring up the ark of the covenant of the LORD from Zion, the City of David."
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon Blesses the LORD",
+                        "refs": "2 Chronicles 6:1–11"
+                    }
+                ],
                 "text": "Then Solomon declared: “The LORD has said that He would dwell in the thick cloud."
             }
         },
@@ -258,6 +272,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Prayer of Dedication",
+                        "refs": "2 Chronicles 6:12–42"
+                    }
+                ],
                 "text": "Then Solomon stood before the altar of the LORD in front of the whole assembly of Israel, spread out his hands toward heaven,"
             }
         },
@@ -642,6 +663,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Benediction"
+                    }
+                ],
                 "text": "Now when Solomon had finished praying this entire prayer and petition to the LORD, he got up before the altar of the LORD, where he had been kneeling with his hands spread out toward heaven."
             }
         },
@@ -738,6 +765,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sacrifices of Dedication",
+                        "refs": "2 Chronicles 7:4–10"
+                    }
+                ],
                 "text": "Then the king and all Israel with him offered sacrifices before the LORD."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temptation of Jesus",
+                        "refs": "Mark 1:12–13; Luke 4:1–13"
+                    }
+                ],
                 "text": "Then Jesus was led by the Spirit into the wilderness to be tempted by the devil."
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Begins His Ministry",
+                        "refs": "Isaiah 9:1–7; Mark 1:14–15; Luke 4:14–15"
+                    }
+                ],
                 "text": "When Jesus heard that John had been imprisoned, He withdrew to Galilee."
             }
         },
@@ -210,6 +224,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Disciples",
+                        "refs": "Mark 1:16–20; Luke 5:1–11; John 1:35–42"
+                    }
+                ],
                 "text": "As Jesus was walking beside the Sea of Galilee, He saw two brothers, Simon called Peter and his brother Andrew. They were casting a net into the sea, for they were fishermen."
             }
         },
@@ -270,6 +291,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals the Multitudes",
+                        "refs": "Mark 3:7–12; Luke 6:17–19"
+                    }
+                ],
                 "text": "Jesus went throughout Galilee, teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness among the people."
             }
         },

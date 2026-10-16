@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Potter and the Clay"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah from the LORD:"
             }
         },
@@ -210,6 +216,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Another Plot against Jeremiah",
+                        "refs": "Jeremiah 11:18–23"
+                    }
+                ],
                 "text": "Then some said, “Come, let us make plans against Jeremiah, for the law will never be lost to the priest, nor counsel to the wise, nor an oracle to the prophet. Come, let us denounce him and pay no heed to any of his words.”"
             }
         },

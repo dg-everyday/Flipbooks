@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prophet’s Afflictions"
+                    }
+                ],
                 "text": "I am the man who has seen affliction under the rod of God’s wrath."
             }
         },
@@ -222,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prophet’s Hope"
+                    }
+                ],
                 "text": "Remember my affliction and wandering, the wormwood and the gall."
             }
         },
@@ -438,6 +450,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Justice"
+                    }
+                ],
                 "text": "Who has spoken and it came to pass, unless the Lord has ordained it?"
             }
         },

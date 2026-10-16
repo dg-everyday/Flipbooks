@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Evanescence of Wealth",
+                        "refs": "Ecclesiastes 5:8–20"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of the sons of Korah.",
                 "text": "Hear this, all you peoples; listen, all inhabitants of the world,"
             }

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Concern for the Jews"
+                    }
+                ],
                 "text": "I speak the truth in Christ; I am not lying, as confirmed by my conscience in the Holy Spirit."
             }
         },
@@ -66,6 +72,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Sovereign Choice",
+                        "refs": "Genesis 25:19–28; Malachi 1:1–5"
+                    }
+                ],
                 "text": "It is not as though God’s word has failed. For not all who are descended from Israel are Israel."
             }
         },
@@ -354,6 +367,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Unbelief"
+                    }
+                ],
                 "text": "What then will we say? That the Gentiles, who did not pursue righteousness, have obtained it, a righteousness that is by faith;"
             }
         },

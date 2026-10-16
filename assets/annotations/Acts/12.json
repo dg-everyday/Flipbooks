@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "James Killed, Peter Imprisoned"
+                    }
+                ],
                 "text": "About that time, King Herod reached out to harm some who belonged to the church."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rescue of Peter"
+                    }
+                ],
                 "text": "So Peter was kept in prison, but the church was fervently praying to God for him."
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Herod"
+                    }
+                ],
                 "text": "Now Herod was in a furious dispute with the people of Tyre and Sidon, and they convened before him. Having secured the support of Blastus, the king’s chamberlain, they asked for peace, because their region depended on the king’s country for food."
             }
         },

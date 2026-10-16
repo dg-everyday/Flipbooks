@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Reproof and Respect"
+                    }
+                ],
                 "text": "Do not rebuke an older man, but appeal to him as to a father. Treat younger men as brothers,"
             }
         },
@@ -30,6 +36,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Honoring True Widows",
+                        "refs": "Ruth 1:1–5"
+                    }
+                ],
                 "text": "Honor the widows who are truly widows."
             }
         },
@@ -198,6 +211,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Honoring Elders"
+                    }
+                ],
                 "text": "Elders who lead effectively are worthy of double honor, especially those who work hard at preaching and teaching."
             }
         },
@@ -246,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Charge to Timothy"
+                    }
+                ],
                 "text": "I solemnly charge you before God and Christ Jesus and the elect angels to maintain these principles without bias, and to do nothing out of partiality."
             }
         },

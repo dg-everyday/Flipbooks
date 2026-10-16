@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jephthah Delivers Israel"
+                    }
+                ],
                 "text": "Now Jephthah the Gileadite was a mighty man of valor; he was the son of a prostitute, and Gilead was his father."
             }
         },
@@ -342,6 +348,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jephthah’s Tragic Vow"
+                    }
+                ],
                 "text": "Then the Spirit of the LORD came upon Jephthah, and he passed through Gilead and Manasseh, then through Mizpah of Gilead. And from there he advanced against the Ammonites."
             }
         },

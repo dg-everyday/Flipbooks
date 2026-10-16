@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Adversaries Hinder the Work"
+                    }
+                ],
                 "text": "When the enemies of Judah and Benjamin heard that the exiles were building a temple for the LORD, the God of Israel,"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Opposition under Xerxes and Artaxerxes"
+                    }
+                ],
                 "text": "At the beginning of the reign of Xerxes, an accusation was lodged against the people of Judah and Jerusalem."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Decree of Artaxerxes"
+                    }
+                ],
                 "text": "Then the king sent this reply: To Rehum the commander, Shimshai the scribe, and the rest of your associates living in Samaria and elsewhere in the region west of the Euphrates: Greetings."
             }
         },

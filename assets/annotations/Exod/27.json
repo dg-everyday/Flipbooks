@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bronze Altar",
+                        "refs": "Exodus 38:1–7"
+                    }
+                ],
                 "text": "“You are to build an altar of acacia wood. The altar must be square, five cubits long, five cubits wide, and three cubits high."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Courtyard",
+                        "refs": "Exodus 38:9–20"
+                    }
+                ],
                 "text": "You are also to make a courtyard for the tabernacle. On the south side of the courtyard make curtains of finely spun linen, a hundred cubits long on one side,"
             }
         },
@@ -234,6 +248,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Oil for the Lamps",
+                        "refs": "Leviticus 24:1–4"
+                    }
+                ],
                 "text": "And you are to command the Israelites to bring you pure oil of pressed olives for the light, to keep the lamps burning continually."
             }
         },

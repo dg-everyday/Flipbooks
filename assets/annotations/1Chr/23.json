@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Divisions of the Levites"
+                    }
+                ],
                 "text": "When David was old and full of years, he installed his son Solomon as king over Israel."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Gershonites",
+                        "refs": "Numbers 3:21–26; Numbers 4:21–28"
+                    }
+                ],
                 "text": "The Gershonites: Ladan and Shimei."
             }
         },
@@ -138,6 +151,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Kohathites",
+                        "refs": "Numbers 3:27–32; Numbers 4:1–20"
+                    }
+                ],
                 "text": "The sons of Kohath: Amram, Izhar, Hebron, and Uzziel—four in all."
             }
         },
@@ -242,6 +262,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Merarites",
+                        "refs": "Numbers 3:33–37; Numbers 4:29–33"
+                    }
+                ],
                 "text": "The sons of Merari: Mahli and Mushi. The sons of Mahli: Eleazar and Kish."
             }
         },
@@ -278,6 +305,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Levite Duties Revised"
+                    }
+                ],
                 "text": "These were the descendants of Levi by their families—the heads of families, registered individually by name—those twenty years of age or older who worked in the service of the house of the LORD."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judah and Tamar",
+                        "refs": "1 Chronicles 2:3–4"
+                    }
+                ],
                 "text": "About that time, Judah left his brothers and settled near a man named Hirah, an Adullamite."
             }
         },
@@ -318,6 +325,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Birth of Perez and Zerah"
+                    }
+                ],
                 "text": "When the time came for Tamar to give birth, there were twins in her womb."
             }
         },

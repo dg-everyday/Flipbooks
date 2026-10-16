@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Mary Anoints Jesus",
+                        "refs": "Matthew 26:6–13; Mark 14:3–9; Luke 7:36–50"
+                    }
+                ],
                 "text": "Six days before the Passover, Jesus came to Bethany, the hometown of Lazarus, whom He had raised from the dead."
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot to Kill Lazarus"
+                    }
+                ],
                 "text": "Meanwhile a large crowd of Jews learned that Jesus was there. And they came not only because of Him, but also to see Lazarus, whom He had raised from the dead."
             }
         },
@@ -138,6 +151,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Triumphal Entry",
+                        "refs": "Zechariah 9:9–13; Matthew 21:1–11; Mark 11:1–11; Luke 19:28–40"
+                    }
+                ],
                 "text": "The next day the great crowd that had come to the feast heard that Jesus was coming to Jerusalem."
             }
         },
@@ -234,6 +254,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Predicts His Death"
+                    }
+                ],
                 "text": "Now there were some Greeks among those who went up to worship at the feast."
             }
         },
@@ -438,6 +464,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Belief and Unbelief"
+                    }
+                ],
                 "text": "Although Jesus had performed so many signs in their presence, they still did not believe in Him."
             }
         },

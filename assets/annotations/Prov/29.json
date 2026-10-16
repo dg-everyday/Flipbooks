@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Flourishing of the Righteous"
+                    }
+                ],
                 "text": "A man who remains stiff-necked after much reproof will suddenly be shattered beyond recovery."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Foreigners Excluded"
+                    }
+                ],
                 "text": "At that time the Book of Moses was read aloud in the hearing of the people, and in it they found the passage stating that no Ammonite or Moabite should ever enter the assembly of God,"
             }
         },
@@ -42,6 +48,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple Cleansed"
+                    }
+                ],
                 "text": "Now before this, Eliashib the priest, a relative of Tobiah, had been put in charge of the storerooms of the house of our God"
             }
         },
@@ -114,6 +126,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Tithes Restored",
+                        "refs": "Leviticus 27:30–34; Deuteronomy 14:22–29; Deuteronomy 26:1–15"
+                    }
+                ],
                 "text": "I also learned that because the portions for the Levites had not been given to them, all the Levites and singers responsible for performing the service had gone back to their own fields."
             }
         },
@@ -174,6 +193,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sabbath Restored",
+                        "refs": "Jeremiah 17:19–27"
+                    }
+                ],
                 "text": "In those days I saw people in Judah treading winepresses on the Sabbath and bringing in grain and loading it on donkeys, along with wine, grapes, and figs. All kinds of goods were being brought into Jerusalem on the Sabbath day. So I warned them against selling food on that day."
             }
         },
@@ -270,6 +296,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Intermarriage Forbidden",
+                        "refs": "Ezra 9:1–4"
+                    }
+                ],
                 "text": "In those days I also saw Jews who had married women from Ashdod, Ammon, and Moab."
             }
         },

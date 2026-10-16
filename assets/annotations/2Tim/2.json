@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Grace and Perseverance",
+                        "refs": "Hebrews 12:1–3"
+                    }
+                ],
                 "text": "You therefore, my child, be strong in the grace that is in Christ Jesus."
             }
         },
@@ -162,6 +169,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lord’s Approved Workman"
+                    }
+                ],
                 "text": "Remind the believers of these things, charging them before God to avoid quarreling over words, which succeeds only in leading the listeners to ruin."
             }
         },

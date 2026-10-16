@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Triumph of Faith"
+                    }
+                ],
                 "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ,"
             }
         },
@@ -66,6 +72,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ’s Sacrifice for the Ungodly",
+                        "refs": "John 3:1–21"
+                    }
+                ],
                 "text": "For at just the right time, while we were still powerless, Christ died for the ungodly."
             }
         },
@@ -138,6 +151,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Death in Adam, Life in Christ",
+                        "refs": "Genesis 3:1–7"
+                    }
+                ],
                 "text": "Therefore, just as sin entered the world through one man, and death through sin, so also death was passed on to all men, because all sinned."
             }
         },

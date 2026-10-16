@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Teachings about Divorce",
+                        "refs": "Matthew 19:1–12"
+                    }
+                ],
                 "text": "Then Jesus left that place and went into the region of Judea, beyond the Jordan. Again the crowds came to Him and He taught them, as was His custom."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Blesses the Children",
+                        "refs": "Matthew 19:13–15; Luke 18:15–17"
+                    }
+                ],
                 "text": "Now people were bringing the little children to Jesus for Him to place His hands on them, and the disciples rebuked those who brought them."
             }
         },
@@ -198,6 +212,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rich Young Man",
+                        "refs": "Matthew 19:16–30; Luke 18:18–30"
+                    }
+                ],
                 "text": "As Jesus started on His way, a man ran up and knelt before Him. “Good Teacher,” he asked, “what must I do to inherit eternal life?”"
             }
         },
@@ -378,6 +399,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Third Prediction of the Passion",
+                        "refs": "Matthew 20:17–19; Luke 18:31–34"
+                    }
+                ],
                 "text": "As they were going up the road to Jerusalem, Jesus was walking ahead of them. The disciples were amazed, but those who followed were afraid. Again Jesus took the Twelve aside and began to tell them what was going to happen to Him:"
             }
         },
@@ -414,6 +442,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Request of James and John",
+                        "refs": "Matthew 20:20–28"
+                    }
+                ],
                 "text": "Then James and John, the sons of Zebedee, came to Jesus and declared, “Teacher, we want You to do for us whatever we ask.”"
             }
         },
@@ -546,6 +581,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals Bartimaeus",
+                        "refs": "Matthew 20:29–34; Luke 18:35–43"
+                    }
+                ],
                 "text": "Next, they came to Jericho. And as Jesus and His disciples were leaving Jericho with a large crowd, a blind beggar named Bartimaeus, the son of Timaeus, was sitting beside the road."
             }
         },

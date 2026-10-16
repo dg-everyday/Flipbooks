@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Food Sacrificed to Idols",
+                        "refs": "Ezekiel 14:1–11; Romans 14:13–23"
+                    }
+                ],
                 "text": "Now about food sacrificed to idols: We know that we all have knowledge. Knowledge puffs up, but love builds up."
             }
         },

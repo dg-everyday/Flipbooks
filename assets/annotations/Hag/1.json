@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Rebuild the Temple",
+                        "refs": "Ezra 5:1–5"
+                    }
+                ],
                 "text": "In the second year of the reign of Darius, on the first day of the sixth month, the word of the LORD came through Haggai the prophet to Zerubbabel son of Shealtiel, governor of Judah, and to Joshua son of Jehozadak, the high priest, stating"
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The People Obey"
+                    }
+                ],
                 "text": "Then Zerubbabel son of Shealtiel and Joshua son of Jehozadak, the high priest, as well as all the remnant of the people, obeyed the voice of the LORD their God and the words of the prophet Haggai, because the LORD their God had sent him. So the people feared the LORD."
             }
         },

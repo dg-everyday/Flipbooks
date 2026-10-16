@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Woman and the Dragon"
+                    }
+                ],
                 "text": "And a great sign appeared in heaven: a woman clothed in the sun, with the moon under her feet and a crown of twelve stars on her head."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The War in Heaven"
+                    }
+                ],
                 "text": "Then a war broke out in heaven: Michael and his angels fought against the dragon, and the dragon and his angels fought back."
             }
         },
@@ -150,6 +162,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Woman Persecuted"
+                    }
+                ],
                 "text": "And when the dragon saw that he had been thrown to the earth, he pursued the woman who had given birth to the male child."
             }
         },

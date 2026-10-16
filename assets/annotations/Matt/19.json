@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Teachings about Divorce",
+                        "refs": "Mark 10:1–12"
+                    }
+                ],
                 "text": "When Jesus had finished saying these things, He left Galilee and went into the region of Judea beyond the Jordan."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Blesses the Children",
+                        "refs": "Mark 10:13–16; Luke 18:15–17"
+                    }
+                ],
                 "text": "Then little children were brought to Jesus for Him to place His hands on them and pray for them. And the disciples rebuked those who brought them."
             }
         },
@@ -186,6 +200,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rich Young Man",
+                        "refs": "Mark 10:17–31; Luke 18:18–30"
+                    }
+                ],
                 "text": "Just then a man came up to Jesus and inquired, “Teacher, what good thing must I do to obtain eternal life?”"
             }
         },

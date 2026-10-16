@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Imitators of God"
+                    }
+                ],
                 "text": "Be imitators of God, therefore, as beloved children,"
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Children of Light"
+                    }
+                ],
                 "text": "For you were once darkness, but now you are light in the Lord. Walk as children of light,"
             }
         },
@@ -246,6 +258,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wives and Husbands",
+                        "refs": "Song 1:1–17; 1 Peter 3:1–7"
+                    }
+                ],
                 "text": "Submit to one another out of reverence for Christ."
             }
         },

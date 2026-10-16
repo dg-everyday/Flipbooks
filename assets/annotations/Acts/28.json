@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ashore on Malta"
+                    }
+                ],
                 "text": "Once we were safely ashore, we learned that the island was called Malta."
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Arrives in Italy"
+                    }
+                ],
                 "text": "After three months we set sail in an Alexandrian ship that had wintered in the island. It had the Twin Brothers as a figurehead."
             }
         },
@@ -186,6 +198,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Preaches at Rome",
+                        "refs": "Isaiah 6:1–13"
+                    }
+                ],
                 "text": "When we arrived in Rome, Paul was permitted to stay by himself, with a soldier to guard him."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Lament for Pharaoh King of Egypt"
+                    }
+                ],
                 "text": "In the twelfth year, on the first day of the twelfth month, the word of the LORD came to me, saying,"
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Egypt Cast into the Pit"
+                    }
+                ],
                 "text": "In the twelfth year, on the fifteenth day of the month, the word of the LORD came to me, saying,"
             }
         },

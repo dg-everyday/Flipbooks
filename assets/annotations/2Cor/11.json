@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul and the False Apostles"
+                    }
+                ],
                 "text": "I hope you will put up with a little of my foolishness, but you are already doing that."
             }
         },
@@ -186,6 +192,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Suffering and Service",
+                        "refs": "Colossians 1:24–29"
+                    }
+                ],
                 "text": "I repeat: Let no one take me for a fool. But if you do, then receive me as a fool, so that I too may boast a little."
             }
         },

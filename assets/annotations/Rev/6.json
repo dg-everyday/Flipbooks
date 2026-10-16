@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Seal: The White Horse"
+                    }
+                ],
                 "text": "Then I watched as the Lamb opened one of the seven seals, and I heard one of the four living creatures say in a voice like thunder, “Come!”"
             }
         },
@@ -30,6 +36,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Second Seal: War"
+                    }
+                ],
                 "text": "And when the Lamb opened the second seal, I heard the second living creature say, “Come!”"
             }
         },
@@ -54,6 +66,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Third Seal: Famine"
+                    }
+                ],
                 "text": "And when the Lamb opened the third seal, I heard the third living creature say, “Come!” Then I looked and saw a black horse, and its rider held in his hand a pair of scales."
             }
         },
@@ -78,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fourth Seal: Death"
+                    }
+                ],
                 "text": "And when the Lamb opened the fourth seal, I heard the voice of the fourth living creature say, “Come!”"
             }
         },
@@ -102,6 +126,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fifth Seal: The Martyrs"
+                    }
+                ],
                 "text": "And when the Lamb opened the fifth seal, I saw under the altar the souls of those who had been slain for the word of God and for the testimony they had upheld."
             }
         },
@@ -138,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sixth Seal: Terror"
+                    }
+                ],
                 "text": "And I watched as the Lamb opened the sixth seal, and there was a great earthquake, and the sun became black like sackcloth of goat hair, and the whole moon turned blood red,"
             }
         },

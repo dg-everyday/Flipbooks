@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cast Your Burden upon the LORD",
+                        "refs": "2 Samuel 17:15–29"
+                    }
+                ],
                 "title": "For the choirmaster. With stringed instruments. A Maskil of David.",
                 "text": "Listen to my prayer, O God, and do not ignore my plea."
             }

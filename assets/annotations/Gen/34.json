@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defiling of Dinah"
+                    }
+                ],
                 "text": "Now Dinah, the daughter Leah had borne to Jacob, went out to visit the daughters of the land."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Revenge of Dinah’s Brothers"
+                    }
+                ],
                 "text": "But because Shechem had defiled their sister Dinah, Jacob’s sons answered him and his father Hamor deceitfully."
             }
         },

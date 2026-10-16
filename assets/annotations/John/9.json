@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals the Man Born Blind"
+                    }
+                ],
                 "text": "Now as Jesus was passing by, He saw a man blind from birth,"
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Pharisees Investigate the Healing"
+                    }
+                ],
                 "text": "They brought to the Pharisees the man who had been blind."
             }
         },
@@ -414,6 +426,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Spiritual Blindness"
+                    }
+                ],
                 "text": "When Jesus heard that they had thrown him out, He found the man and said, “Do you believe in the Son of Man?”"
             }
         },

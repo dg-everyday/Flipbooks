@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Majestic Is His Work"
+                    }
+                ],
                 "text": "Hallelujah! I will give thanks to the LORD with all my heart in the council of the upright and in the assembly."
             }
         },

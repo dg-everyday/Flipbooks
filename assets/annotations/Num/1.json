@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Census of Israel",
+                        "refs": "Numbers 26:1–4"
+                    }
+                ],
                 "text": "On the first day of the second month of the second year after the Israelites had come out of the land of Egypt, the LORD spoke to Moses in the Tent of Meeting in the Wilderness of Sinai. He said:"
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Leaders of the Tribes"
+                    }
+                ],
                 "text": "These are the names of the men who are to assist you: From the tribe of Reuben, Elizur son of Shedeur;"
             }
         },
@@ -198,6 +211,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Number of Every Tribe"
+                    }
+                ],
                 "text": "So Moses and Aaron took these men who had been designated by name,"
             }
         },
@@ -558,6 +577,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Exemption of the Levites"
+                    }
+                ],
                 "text": "The Levites, however, were not numbered along with them by the tribe of their fathers."
             }
         },

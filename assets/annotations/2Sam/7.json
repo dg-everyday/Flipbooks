@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Covenant with David",
+                        "refs": "1 Chronicles 17:1–15"
+                    }
+                ],
                 "text": "After the king had settled into his palace and the LORD had given him rest from all his enemies around him,"
             }
         },
@@ -210,6 +217,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Prayer of Thanksgiving",
+                        "refs": "1 Chronicles 17:16–27"
+                    }
+                ],
                 "text": "Then King David went in, sat before the LORD, and said, “Who am I, O Lord GOD, and what is my house, that You have brought me this far?"
             }
         },

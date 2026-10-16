@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temple Destruction and Other Signs",
+                        "refs": "Mark 13:1–8; Luke 21:5–9"
+                    }
+                ],
                 "text": "As Jesus left the temple and was walking away, His disciples came up to Him to point out its buildings."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Witnessing to All Nations",
+                        "refs": "Mark 13:9–13; Luke 21:10–19"
+                    }
+                ],
                 "text": "Then they will deliver you over to be persecuted and killed, and you will be hated by all nations because of My name."
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Abomination of Desolation",
+                        "refs": "Mark 13:14–23; Luke 21:20–24"
+                    }
+                ],
                 "text": "So when you see standing in the holy place ‘the abomination of desolation,’ spoken of by the prophet Daniel (let the reader understand),"
             }
         },
@@ -306,6 +327,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Return of the Son of Man",
+                        "refs": "Mark 13:24–27; Luke 21:25–28"
+                    }
+                ],
                 "text": "So if they tell you, ‘There He is, in the wilderness,’ do not go out, or, ‘Here He is, in the inner rooms,’ do not believe it."
             }
         },
@@ -378,6 +406,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lesson of the Fig Tree",
+                        "refs": "Mark 13:28–31; Luke 21:29–33"
+                    }
+                ],
                 "text": "Now learn this lesson from the fig tree: As soon as its branches become tender and sprout leaves, you know that summer is near."
             }
         },
@@ -426,6 +461,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Readiness at Any Hour",
+                        "refs": "Genesis 6:1–7; Mark 13:32–37; Luke 12:35–48"
+                    }
+                ],
                 "text": "No one knows about that day or hour, not even the angels in heaven, nor the Son, but only the Father."
             }
         },

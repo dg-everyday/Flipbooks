@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of the Centurion",
+                        "refs": "Matthew 8:5–13; John 4:43–54"
+                    }
+                ],
                 "text": "When Jesus had concluded His discourse in the hearing of the people, He went to Capernaum."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Raises a Widow’s Son"
+                    }
+                ],
                 "text": "Soon afterward, Jesus went to a town called Nain. His disciples went with Him, accompanied by a large crowd."
             }
         },
@@ -210,6 +223,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "John’s Inquiry",
+                        "refs": "Matthew 11:1–6"
+                    }
+                ],
                 "text": "Then John’s disciples informed him about all these things."
             }
         },
@@ -282,6 +302,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Testifies about John",
+                        "refs": "Malachi 3:1–5; Matthew 11:7–19"
+                    }
+                ],
                 "text": "After John’s messengers had left, Jesus began to speak to the crowds about John: “What did you go out into the wilderness to see? A reed swaying in the wind?"
             }
         },
@@ -426,6 +453,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Sinful Woman Anoints Jesus",
+                        "refs": "Matthew 26:6–13; Mark 14:3–9; John 12:1–8"
+                    }
+                ],
                 "text": "Then one of the Pharisees invited Jesus to eat with him, and He entered the Pharisee’s house and reclined at the table."
             }
         },

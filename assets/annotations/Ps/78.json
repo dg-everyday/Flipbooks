@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Open My Mouth in Parables",
+                        "refs": "Matthew 13:34–35"
+                    }
+                ],
                 "title": "A Maskil of Asaph.",
                 "text": "Give ear, O my people, to my instruction; listen to the words of my mouth."
             }

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Seventh Year",
+                        "refs": "Exodus 23:10–13; Leviticus 25:1–7"
+                    }
+                ],
                 "text": "At the end of every seven years you must cancel debts."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Generosity in Lending and Giving",
+                        "refs": "Matthew 6:1–4"
+                    }
+                ],
                 "text": "If there is a poor man among your brothers within any of the gates in the land that the LORD your God is giving you, then you are not to harden your heart or shut your hand from your poor brother."
             }
         },
@@ -138,6 +152,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hebrew Servants",
+                        "refs": "Exodus 21:1–11"
+                    }
+                ],
                 "text": "If a fellow Hebrew, a man or a woman, is sold to you and serves you six years, then in the seventh year you must set him free."
             }
         },
@@ -222,6 +243,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Firstborn Animals",
+                        "refs": "Exodus 13:1–16"
+                    }
+                ],
                 "text": "You must set apart to the LORD your God every firstborn male produced by your herds and flocks. You are not to put the firstborn of your oxen to work, nor are you to shear the firstborn of your flock."
             }
         },

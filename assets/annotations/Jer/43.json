@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Taken to Egypt"
+                    }
+                ],
                 "text": "When Jeremiah had finished telling all the people all the words of the LORD their God—everything that the LORD had sent him to say—"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Heirs of Grace"
+                    }
+                ],
                 "text": "Remind the believers to submit to rulers and authorities, to be obedient and ready for every good work,"
             }
         },
@@ -102,6 +108,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Avoid Divisions",
+                        "refs": "Romans 16:17–20"
+                    }
+                ],
                 "text": "But avoid foolish controversies, genealogies, arguments, and quarrels about the law, because these things are pointless and worthless."
             }
         },
@@ -138,6 +151,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Final Remarks and Greetings"
+                    }
+                ],
                 "text": "As soon as I send Artemas or Tychicus to you, make every effort to come to me at Nicopolis, because I have decided to winter there."
             }
         },

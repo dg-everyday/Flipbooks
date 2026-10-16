@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah’s Letter to the Exiles"
+                    }
+                ],
                 "text": "This is the text of the letter that Jeremiah the prophet sent from Jerusalem to the surviving elders among the exiles and to the priests, the prophets, and all the others Nebuchadnezzar had carried into exile from Jerusalem to Babylon."
             }
         },
@@ -282,6 +288,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Message to Shemaiah"
+                    }
+                ],
                 "text": "You are to tell Shemaiah the Nehelamite that"
             }
         },

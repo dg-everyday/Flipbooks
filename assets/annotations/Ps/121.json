@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Lift Up My Eyes to the Hills"
+                    }
+                ],
                 "title": "A song of ascents.",
                 "text": "I lift up my eyes to the hills. From where does my help come?"
             }

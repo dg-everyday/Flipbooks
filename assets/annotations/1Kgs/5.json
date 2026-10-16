@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparations for the Temple",
+                        "refs": "2 Chronicles 2:1–10"
+                    }
+                ],
                 "text": "Now when Hiram king of Tyre heard that Solomon had been anointed king in his father’s place, he sent envoys to Solomon; for Hiram had always been a friend of David."
             }
         },
@@ -78,6 +85,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hiram’s Reply to Solomon",
+                        "refs": "2 Chronicles 2:11–18"
+                    }
+                ],
                 "text": "When Hiram received Solomon’s message, he rejoiced greatly and said, “Blessed be the LORD this day! He has given David a wise son over this great people!”"
             }
         },
@@ -150,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Labor Force"
+                    }
+                ],
                 "text": "Then King Solomon conscripted a labor force of 30,000 men from all Israel."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning to Judah’s Kings"
+                    }
+                ],
                 "text": "This is what the LORD says: “Go down to the palace of the king of Judah and proclaim this message there,"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning about the Palace"
+                    }
+                ],
                 "text": "For this is what the LORD says concerning the house of the king of Judah: “You are like Gilead to Me, like the summit of Lebanon; but I will surely turn you into a desert, like cities that are uninhabited."
             }
         },
@@ -114,6 +126,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning about Shallum"
+                    }
+                ],
                 "text": "Do not weep for him who is dead; do not mourn his loss. Weep bitterly for him who is exiled, for he will never return to see his native land."
             }
         },
@@ -150,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning about Jehoiakim"
+                    }
+                ],
                 "text": "“Woe to him who builds his palace by unrighteousness, and his upper rooms without justice, who makes his countrymen serve without pay, and fails to pay their wages,"
             }
         },
@@ -282,6 +306,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning to Coniah"
+                    }
+                ],
                 "text": "“As surely as I live,” declares the LORD, “even if you, Coniah son of Jehoiakim king of Judah, were a signet ring on My right hand, I would pull you off."
             }
         },

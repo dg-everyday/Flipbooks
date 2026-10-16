@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Additional Achievements",
+                        "refs": "1 Kings 9:10–28"
+                    }
+                ],
                 "text": "Now at the end of the twenty years during which Solomon had built the house of the LORD and his own palace,"
             }
         },

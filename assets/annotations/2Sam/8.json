@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Triumphs",
+                        "refs": "1 Chronicles 18:1–13; Psalms 60:1–12"
+                    }
+                ],
                 "text": "Some time later, David defeated the Philistines, subdued them, and took Metheg-ammah from the hand of the Philistines."
             }
         },
@@ -174,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Officers",
+                        "refs": "1 Chronicles 18:14–17"
+                    }
+                ],
                 "text": "Thus David reigned over all Israel and administered justice and righteousness for all his people:"
             }
         },

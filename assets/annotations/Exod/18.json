@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Visit of Jethro"
+                    }
+                ],
                 "text": "Now Moses’ father-in-law Jethro, the priest of Midian, heard about all that God had done for Moses and His people Israel, and how the LORD had brought Israel out of Egypt."
             }
         },
@@ -150,6 +156,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jethro Advises Moses",
+                        "refs": "Deuteronomy 1:9–18"
+                    }
+                ],
                 "text": "The next day Moses took his seat to judge the people, and they stood around him from morning until evening."
             }
         },

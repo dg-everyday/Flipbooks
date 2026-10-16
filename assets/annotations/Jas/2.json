@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning against Favoritism"
+                    }
+                ],
                 "text": "My brothers, as you hold out your faith in our glorious Lord Jesus Christ, do not show favoritism."
             }
         },
@@ -162,6 +168,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Faith and Works",
+                        "refs": "Galatians 3:1–9"
+                    }
+                ],
                 "text": "What good is it, my brothers, if someone claims to have faith, but has no deeds? Can such faith save him?"
             }
         },

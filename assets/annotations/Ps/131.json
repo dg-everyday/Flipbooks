@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Have Stilled My Soul"
+                    }
+                ],
                 "title": "A song of ascents. Of David.",
                 "text": "My heart is not proud, O LORD, my eyes are not haughty. I do not aspire to great things or matters too lofty for me."
             }

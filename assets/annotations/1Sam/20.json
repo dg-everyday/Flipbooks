@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jonathan Helps David"
+                    }
+                ],
                 "text": "Then David fled from Naioth in Ramah. He came to Jonathan and asked, “What have I done? What is my iniquity? How have I sinned against your father, that he wants to take my life?”"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jonathan and David Renew Their Covenant"
+                    }
+                ],
                 "text": "Then David asked Jonathan, “Who will tell me if your father answers you harshly?”"
             }
         },
@@ -354,6 +366,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Seeks to Kill Jonathan"
+                    }
+                ],
                 "text": "Then Saul’s anger burned against Jonathan, and he said to him, “You son of a perverse and rebellious woman! Do I not know that you have chosen the son of Jesse to your own shame and to the shame of the mother who bore you?"
             }
         },

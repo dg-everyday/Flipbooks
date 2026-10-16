@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ananias and Sapphira"
+                    }
+                ],
                 "text": "Now a man named Ananias, together with his wife Sapphira, also sold a piece of property."
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Apostles Heal Many"
+                    }
+                ],
                 "text": "The apostles performed many signs and wonders among the people, and with one accord the believers gathered together in Solomon’s Colonnade."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Apostles Arrested and Freed"
+                    }
+                ],
                 "text": "Then the high priest and all his associates, who belonged to the party of the Sadducees, were filled with jealousy. They went out"
             }
         },
@@ -282,6 +300,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Apostles before the Sanhedrin"
+                    }
+                ],
                 "text": "When the captain of the temple guard and the chief priests heard this account, they were perplexed as to what was happening."
             }
         },
@@ -390,6 +414,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gamaliel’s Advice"
+                    }
+                ],
                 "text": "When the Council members heard this, they were enraged, and they resolved to put the apostles to death."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Exalts the Humble",
+                        "refs": "1 Samuel 1:1–8"
+                    }
+                ],
                 "text": "Hallelujah! Give praise, O servants of the LORD; praise the name of the LORD."
             }
         },

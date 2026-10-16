@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Temple Rebuilding Resumes",
+                        "refs": "Haggai 1:1–11"
+                    }
+                ],
                 "text": "Later, the prophets Haggai and Zechariah son of Iddo prophesied to the Jews in Judah and Jerusalem in the name of the God of Israel, who was over them."
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Tattenai’s Letter to Darius"
+                    }
+                ],
                 "text": "This is the text of the letter that Tattenai the governor of the region west of the Euphrates, Shethar-bozenai, and their associates, the officials in the region, sent to King Darius."
             }
         },

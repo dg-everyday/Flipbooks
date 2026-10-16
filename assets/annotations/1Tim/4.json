@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning against Apostasy"
+                    }
+                ],
                 "text": "Now the Spirit expressly states that in later times some will abandon the faith to follow deceitful spirits and the teachings of demons,"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Good Servant of Jesus Christ"
+                    }
+                ],
                 "text": "By pointing out these things to the brothers, you will be a good servant of Christ Jesus, nourished by the words of faith and sound instruction that you have followed."
             }
         },

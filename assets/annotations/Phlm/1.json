@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Greetings from Paul and Timothy",
+                        "refs": "Philippians 1:1–2; Colossians 1:1–2"
+                    }
+                ],
                 "text": "Paul, a prisoner of Christ Jesus, and Timothy our brother, To Philemon our beloved fellow worker,"
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Philemon’s Faith and Love"
+                    }
+                ],
                 "text": "I always thank my God, remembering you in my prayers,"
             }
         },
@@ -90,6 +103,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Appeal for Onesimus"
+                    }
+                ],
                 "text": "So although in Christ I am bold enough to order you to do what is proper,"
             }
         },
@@ -270,6 +289,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Additional Greetings"
+                    }
+                ],
                 "text": "Epaphras, my fellow prisoner in Christ Jesus, sends you greetings,"
             }
         },

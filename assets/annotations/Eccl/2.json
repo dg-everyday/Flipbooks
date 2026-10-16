@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Futility of Pleasure"
+                    }
+                ],
                 "text": "I said to myself, “Come now, I will test you with pleasure; enjoy what is good!” But it proved to be futile."
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wise and the Foolish"
+                    }
+                ],
                 "text": "Then I turned to consider wisdom and madness and folly; for what more can the king’s successor do than what has already been accomplished?"
             }
         },
@@ -210,6 +222,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Futility of Work"
+                    }
+                ],
                 "text": "I hated all for which I had toiled under the sun, because I must leave it to the man who comes after me."
             }
         },

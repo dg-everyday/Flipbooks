@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Queen of Sheba",
+                        "refs": "2 Chronicles 9:1–12"
+                    }
+                ],
                 "text": "Now when the queen of Sheba heard about the fame of Solomon concerning the name of the LORD, she came to test him with difficult questions."
             }
         },
@@ -162,6 +169,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Wealth and Splendor",
+                        "refs": "2 Chronicles 1:14–17; 2 Chronicles 9:13–28"
+                    }
+                ],
                 "text": "The weight of gold that came to Solomon each year was 666 talents,"
             }
         },

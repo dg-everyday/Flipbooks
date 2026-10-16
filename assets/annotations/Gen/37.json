@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph’s Dreams"
+                    }
+                ],
                 "text": "Now Jacob lived in the land where his father had resided, the land of Canaan."
             }
         },
@@ -138,6 +144,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph Sold into Egypt",
+                        "refs": "Acts 7:9–14"
+                    }
+                ],
                 "text": "Some time later, Joseph’s brothers had gone to pasture their father’s flocks near Shechem."
             }
         },
@@ -366,6 +379,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Mourns Joseph"
+                    }
+                ],
                 "text": "Then they took Joseph’s robe, slaughtered a young goat, and dipped the robe in its blood."
             }
         },

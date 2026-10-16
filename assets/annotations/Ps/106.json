@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Give Thanks to the LORD, for He Is Good"
+                    }
+                ],
                 "text": "Hallelujah! Give thanks to the LORD, for He is good; His loving devotion endures forever."
             }
         },

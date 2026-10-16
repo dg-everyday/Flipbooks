@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Spies Explore Canaan",
+                        "refs": "Deuteronomy 1:19–25"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -294,6 +301,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Reports of the Spies"
+                    }
+                ],
                 "text": "After forty days the men returned from spying out the land,"
             }
         },

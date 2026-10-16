@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Josiah Restores the Passover",
+                        "refs": "2 Kings 23:21–27"
+                    }
+                ],
                 "text": "Then Josiah kept the Passover to the LORD in Jerusalem, and the Passover lamb was slaughtered on the fourteenth day of the first month."
             }
         },
@@ -234,6 +241,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Josiah",
+                        "refs": "2 Kings 23:28–30"
+                    }
+                ],
                 "text": "After all this, when Josiah had set the temple in order, Neco king of Egypt marched up to fight at Carchemish by the Euphrates, and Josiah went out to confront him."
             }
         },
@@ -294,6 +308,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laments over Josiah"
+                    }
+                ],
                 "text": "Then Jeremiah lamented over Josiah, and to this day all the male and female singers recite laments over Josiah. They established them as a statute for Israel, and indeed they are written in the Book of Laments."
             }
         },

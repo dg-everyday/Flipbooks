@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Greeting from Peter",
+                        "refs": "2 Peter 1:1–2"
+                    }
+                ],
                 "text": "Peter, an apostle of Jesus Christ, To the elect who are exiles of the Dispersion throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia, chosen"
             }
         },
@@ -30,6 +37,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Living Hope"
+                    }
+                ],
                 "text": "Blessed be the God and Father of our Lord Jesus Christ! By His great mercy He has given us new birth into a living hope through the resurrection of Jesus Christ from the dead,"
             }
         },
@@ -150,6 +163,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Holiness",
+                        "refs": "Hebrews 12:14–17"
+                    }
+                ],
                 "text": "Therefore prepare your minds for action. Be sober-minded. Set your hope fully on the grace to be given you at the revelation of Jesus Christ."
             }
         },
@@ -258,6 +278,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Enduring Word",
+                        "refs": "Isaiah 40:6–8"
+                    }
+                ],
                 "text": "Since you have purified your souls by obedience to the truth so that you have a genuine love for your brothers, love one another deeply, from a pure heart."
             }
         },

@@ -6,6 +6,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bride’s Admiration"
+                    },
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "I am a rose of Sharon, a lily of the valley."
             }
         },
@@ -18,6 +28,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "Like a lily among the thorns is my darling among the maidens."
             }
         },
@@ -30,6 +46,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "Like an apple tree among the trees of the forest is my beloved among the young men. I delight to sit in his shade, and his fruit is sweet to my taste."
             }
         },
@@ -162,6 +184,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    }
+                ],
                 "text": "O my dove in the clefts of the rock, in the crevices of the cliff, let me see your face, let me hear your voice; for your voice is sweet, and your countenance is lovely."
             }
         },
@@ -174,6 +202,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Friends"
+                    }
+                ],
                 "text": "Catch for us the foxes—the little foxes that ruin the vineyards—for our vineyards are in bloom."
             }
         },
@@ -186,6 +220,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "My beloved is mine and I am his; he pastures his flock among the lilies."
             }
         },

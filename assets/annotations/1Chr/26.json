@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Divisions of the Gatekeepers"
+                    }
+                ],
                 "text": "These were the divisions of the gatekeepers: From the Korahites: Meshelemiah son of Kore, one of the sons of Asaph."
             }
         },
@@ -230,6 +236,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Treasurers, Officers, and Judges"
+                    }
+                ],
                 "text": "Now their fellow Levites were in charge of the treasuries of the house of God and the treasuries of the dedicated things."
             }
         },

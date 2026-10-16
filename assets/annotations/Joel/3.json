@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Judges the Nations"
+                    }
+                ],
                 "text": "“Yes, in those days and at that time, when I restore Judah and Jerusalem from captivity,"
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Blessings for God’s People"
+                    }
+                ],
                 "text": "Then you will know that I am the LORD your God, who dwells in Zion, My holy mountain. Jerusalem will be holy, never again to be overrun by foreigners."
             }
         },

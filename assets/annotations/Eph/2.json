@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Alive with Christ",
+                        "refs": "Colossians 2:6–23"
+                    }
+                ],
                 "text": "And you were dead in your trespasses and sins,"
             }
         },
@@ -126,6 +133,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "One in Christ",
+                        "refs": "Philippians 2:1–4"
+                    }
+                ],
                 "text": "Therefore remember that formerly you who are Gentiles in the flesh and called uncircumcised by the so-called circumcision (that done in the body by human hands)—"
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ Our Cornerstone",
+                        "refs": "Isaiah 28:14–22; 1 Corinthians 3:10–15; 1 Peter 2:1–8"
+                    }
+                ],
                 "text": "Therefore you are no longer strangers and foreigners, but fellow citizens with the saints and members of God’s household,"
             }
         },

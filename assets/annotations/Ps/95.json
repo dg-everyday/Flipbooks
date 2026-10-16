@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Harden Your Hearts",
+                        "refs": "Hebrews 3:7–11"
+                    }
+                ],
                 "text": "Come, let us sing for joy to the LORD; let us shout to the Rock of our salvation!"
             }
         },

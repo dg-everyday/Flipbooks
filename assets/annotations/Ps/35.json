@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Contend with My Opponents, O LORD"
+                    }
+                ],
                 "title": "Of David.",
                 "text": "Contend with my opponents, O LORD; fight against those who fight against me."
             }

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Stretch Out My Hands to You"
+                    }
+                ],
                 "title": "A Psalm of David.",
                 "text": "O LORD, hear my prayer. In Your faithfulness, give ear to my plea; in Your righteousness, answer me."
             }

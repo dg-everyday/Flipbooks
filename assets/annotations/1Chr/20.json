@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Capture of Rabbah",
+                        "refs": "2 Samuel 12:26–31"
+                    }
+                ],
                 "text": "In the spring, at the time when kings march out to war, Joab led out the army and ravaged the land of the Ammonites. He came to Rabbah and besieged it, but David remained in Jerusalem. And Joab attacked Rabbah and demolished it."
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Battles against the Philistines",
+                        "refs": "2 Samuel 21:15–22"
+                    }
+                ],
                 "text": "Some time later, war broke out with the Philistines at Gezer. At that time Sibbecai the Hushathite killed Sippai, a descendant of the Rephaim, and the Philistines were subdued."
             }
         },

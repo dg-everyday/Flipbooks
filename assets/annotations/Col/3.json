@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Put On the New Self",
+                        "refs": "Ephesians 4:17–32"
+                    }
+                ],
                 "text": "Therefore, since you have been raised with Christ, strive for the things above, where Christ is seated at the right hand of God."
             }
         },
@@ -210,6 +217,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christian Households",
+                        "refs": "Ephesians 6:1–4"
+                    }
+                ],
                 "text": "Wives, submit to your husbands, as is fitting in the Lord."
             }
         },
@@ -258,6 +272,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Serving with Honor",
+                        "refs": "Ephesians 6:5–9; 1 Timothy 6:1–2"
+                    }
+                ],
                 "text": "Slaves, obey your earthly masters in everything, not only to please them while they are watching, but with sincerity of heart and fear of the Lord."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Vindicate Me, O LORD"
+                    }
+                ],
                 "title": "Of David.",
                 "text": "Vindicate me, O LORD! For I have walked with integrity; I have trusted in the LORD without wavering."
             }

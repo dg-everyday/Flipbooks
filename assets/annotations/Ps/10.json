@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Perils of the Pilgrim"
+                    }
+                ],
                 "text": "Why, O LORD, do You stand far off? Why do You hide in times of trouble?"
             }
         },

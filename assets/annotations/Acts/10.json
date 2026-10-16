@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cornelius Sends for Peter"
+                    }
+                ],
                 "text": "At Caesarea there was a man named Cornelius, a centurion in what was called the Italian Regiment."
             }
         },
@@ -102,6 +108,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter’s Vision",
+                        "refs": "Leviticus 11:1–47; Deuteronomy 14:1–21"
+                    }
+                ],
                 "text": "The next day at about the sixth hour, as the men were approaching the city on their journey, Peter went up on the roof to pray."
             }
         },
@@ -198,6 +211,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter Called to Caesarea"
+                    }
+                ],
                 "text": "While Peter was puzzling over the meaning of the vision, the men sent by Cornelius found Simon’s house and approached the gate."
             }
         },
@@ -282,6 +301,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter Visits Cornelius"
+                    }
+                ],
                 "text": "The following day he arrived in Caesarea, where Cornelius was expecting them and had called together his relatives and close friends."
             }
         },
@@ -402,6 +427,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Good News for the Gentiles"
+                    }
+                ],
                 "text": "Then Peter began to speak: “I now truly understand that God does not show favoritism,"
             }
         },
@@ -522,6 +553,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Gentiles Receive the Holy Spirit",
+                        "refs": "Acts 19:1–7"
+                    }
+                ],
                 "text": "While Peter was still speaking these words, the Holy Spirit fell upon all who heard his message."
             }
         },

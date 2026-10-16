@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "By the Rivers of Babylon",
+                        "refs": "Ezekiel 1:1–3"
+                    }
+                ],
                 "text": "By the rivers of Babylon we sat and wept when we remembered Zion."
             }
         },

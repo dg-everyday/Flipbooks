@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Holy Spirit Received at Ephesus",
+                        "refs": "Acts 10:44–48"
+                    }
+                ],
                 "text": "While Apollos was at Corinth, Paul passed through the interior and came to Ephesus. There he found some disciples"
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Ministers in Ephesus",
+                        "refs": "Ephesians 1:1–2; Revelation 2:1–7"
+                    }
+                ],
                 "text": "Then Paul went into the synagogue and spoke boldly there for three months, arguing persuasively about the kingdom of God."
             }
         },
@@ -150,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Seven Sons of Sceva"
+                    }
+                ],
                 "text": "Now there were some itinerant Jewish exorcists who tried to invoke the name of the Lord Jesus over those with evil spirits. They would say, “I command you by Jesus, whom Paul proclaims.”"
             }
         },
@@ -246,6 +266,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Riot in Ephesus"
+                    }
+                ],
                 "text": "After these things had happened, Paul resolved in the Spirit to go to Jerusalem, passing through Macedonia and Achaia. “After I have been there,” he said, “I must see Rome as well.”"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Complaints of the People"
+                    }
+                ],
                 "text": "Soon the people began to complain about their hardship in the hearing of the LORD, and when He heard them, His anger was kindled, and fire from the LORD blazed among them and consumed the outskirts of the camp."
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Complaint of Moses"
+                    }
+                ],
                 "text": "Then Moses heard the people of family after family weeping at the entrances to their tents, and the anger of the LORD was kindled greatly, and Moses was also displeased."
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Seventy Elders Anointed"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Bring Me seventy of the elders of Israel known to you as leaders and officers of the people. Bring them to the Tent of Meeting and have them stand there with you."
             }
         },
@@ -366,6 +384,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Quail and the Plague"
+                    }
+                ],
                 "text": "Now a wind sent by the LORD came up, drove in quail from the sea, and brought them near the camp, about two cubits above the surface of the ground, for a day’s journey in every direction around the camp."
             }
         },

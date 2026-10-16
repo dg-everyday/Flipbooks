@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezekiel Eats the Scroll",
+                        "refs": "Revelation 10:1–11"
+                    }
+                ],
                 "text": "“Son of man,” He said to me, “eat what you find here. Eat this scroll, then go and speak to the house of Israel.”"
             }
         },
@@ -186,6 +193,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Watchman for Israel"
+                    }
+                ],
                 "text": "At the end of seven days the word of the LORD came to me, saying,"
             }
         },

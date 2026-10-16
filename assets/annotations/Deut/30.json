@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Promise of Restoration",
+                        "refs": "Nehemiah 1:1–11"
+                    }
+                ],
                 "text": "“When all these things come upon you—the blessings and curses I have set before you—and you call them to mind in all the nations to which the LORD your God has banished you,"
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Choice of Life or Death"
+                    }
+                ],
                 "text": "For this commandment I give you today is not too difficult for you or beyond your reach."
             }
         },

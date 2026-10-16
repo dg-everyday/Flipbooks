@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restoration for Israel"
+                    }
+                ],
                 "text": "For the LORD will have compassion on Jacob; once again He will choose Israel and settle them in their own land. The foreigner will join them and unite with the house of Jacob."
             }
         },
@@ -30,6 +36,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fall of the King of Babylon"
+                    }
+                ],
                 "text": "On the day that the LORD gives you rest from your pain and torment, and from the hard labor into which you were forced,"
             }
         },
@@ -282,6 +294,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Purpose against Assyria"
+                    }
+                ],
                 "text": "The LORD of Hosts has sworn: “Surely, as I have planned, so will it be; as I have purposed, so will it stand."
             }
         },
@@ -330,6 +348,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Philistia Will Be Destroyed"
+                    }
+                ],
                 "text": "In the year that King Ahaz died, this burden was received:"
             }
         },

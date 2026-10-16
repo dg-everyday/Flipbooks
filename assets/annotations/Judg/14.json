@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samson’s Marriage"
+                    }
+                ],
                 "text": "One day Samson went down to Timnah, where he saw a young Philistine woman."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samson’s Riddle"
+                    }
+                ],
                 "text": "When Samson returned later to take her, he left the road to see the lion’s carcass, and in it was a swarm of bees, along with their honey."
             }
         },

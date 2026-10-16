@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Altar of Incense",
+                        "refs": "Exodus 37:25–29"
+                    }
+                ],
                 "text": "“You are also to make an altar of acacia wood for the burning of incense."
             }
         },
@@ -126,6 +133,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Census Offering",
+                        "refs": "2 Samuel 24:1–9; 1 Chronicles 21:1–6"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -198,6 +212,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bronze Basin",
+                        "refs": "Exodus 38:8"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -258,6 +279,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Anointing Oil"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -402,6 +429,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Incense"
+                    }
+                ],
                 "text": "The LORD also said to Moses, “Take fragrant spices—gum resin, onycha, galbanum, and pure frankincense—in equal measures,"
             }
         },

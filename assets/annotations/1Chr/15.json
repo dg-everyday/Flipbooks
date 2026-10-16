@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparing to Move the Ark",
+                        "refs": "2 Samuel 6:12–15"
+                    }
+                ],
                 "text": "David constructed buildings for himself in the City of David, and he prepared a place for the ark of God and pitched a tent for it."
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Priests and Levites Carry the Ark"
+                    }
+                ],
                 "text": "So the priests and Levites consecrated themselves to bring up the ark of the LORD, the God of Israel."
             }
         },
@@ -270,6 +283,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moving the Ark to Jerusalem"
+                    }
+                ],
                 "text": "So David, the elders of Israel, and the commanders of thousands went with rejoicing to bring the ark of the covenant of the LORD from the house of Obed-edom."
             }
         },
@@ -318,6 +337,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Michal’s Contempt for David",
+                        "refs": "2 Samuel 6:16"
+                    }
+                ],
                 "text": "As the ark of the covenant of the LORD was entering the City of David, Saul’s daughter Michal looked down from a window and saw King David dancing and celebrating, and she despised him in her heart."
             }
         },

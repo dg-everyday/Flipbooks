@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehu’s Prophecy against Baasha"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Jehu son of Hanani against Baasha, saying:"
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elah Reigns in Israel"
+                    }
+                ],
                 "text": "In the twenty-sixth year of Asa’s reign over Judah, Elah son of Baasha became king of Israel, and he reigned in Tirzah two years."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Zimri Reigns in Israel"
+                    }
+                ],
                 "text": "In the twenty-seventh year of Asa’s reign over Judah, Zimri reigned in Tirzah for seven days. Now the troops were encamped against Gibbethon of the Philistines,"
             }
         },
@@ -246,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Omri Reigns in Israel"
+                    }
+                ],
                 "text": "At that time the people of Israel were divided: Half of the people supported Tibni son of Ginath as king, and half supported Omri."
             }
         },
@@ -342,6 +366,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab Reigns in Israel, Marries Jezebel"
+                    }
+                ],
                 "text": "In the thirty-eighth year of Asa’s reign over Judah, Ahab son of Omri became king of Israel, and he reigned in Samaria twenty-two years."
             }
         },

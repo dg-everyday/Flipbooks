@@ -6,8 +6,10 @@ KJV in assets/db/dailygrace.db. Each verse can carry:
   explanation        from the commentaries cached by fetch_commentaries.py:
                      Jamieson-Fausset-Brown where it has a note for the verse,
                      John Gill otherwise
-  translations.bsb   the Berean Standard Bible text of the verse, and on verse 1
-                     of a psalm its heading, from bsb.json beside this script
+  translations.bsb   the Berean Standard Bible text of the verse, on verse 1 of
+                     a psalm its title, and the BSB's section headings that
+                     stand before the verse, from bsb.json beside this script
+                     (headings from bsb_headings.py)
   interlinear        the verse's KJV words with their Strong's numbers, from
                      tools/strongs/interlinear.json (see tools/strongs)
 
@@ -111,6 +113,8 @@ def main():
     chapters = collections.defaultdict(dict)
     stats = collections.Counter()
     db_keys = set()
+    # A heading on a verse the BSB leaves out moves on to the next verse it has.
+    carried = []
     for book, chapter, verse in verses:
         key = (to_helloao[book], int(chapter), int(verse))
         db_keys.add(key)
@@ -125,14 +129,21 @@ def main():
             stats["none"] += 1
         # The BSB leaves out 16 verses (Matthew 17:21, ...): no text, no entry.
         text = bsb["verses"].get(book, {}).get(str(chapter), {}).get(str(verse))
+        heads = carried + bsb.get("headings", {}).get(book, {}).get(str(chapter), {}).get(str(verse), [])
+        carried = []
         if text:
             translation = {"text": text}
             title = bsb["titles"].get(book, {}).get(str(chapter)) if int(verse) == 1 else None
             if title:
                 translation = {"title": title, **translation}
                 stats["bsb titles"] += 1
+            if heads:
+                translation = {"headings": heads, **translation}
+                stats["bsb headings"] += len(heads)
             entry["translations"] = {"bsb": translation}
             stats["bsb"] += 1
+        else:
+            carried = heads
         words = interlinear.get(book, {}).get(str(chapter), {}).get(str(verse))
         if words:
             entry["interlinear"] = words
@@ -154,7 +165,7 @@ def main():
     bsb_orphans = [(b, c, v) for b, chs in bsb["verses"].items() for c, vs in chs.items()
                    for v in vs if (b, c, v) not in db_verses]
     print("explanations:", {s: stats[s] for s in (*SOURCES, "none")}, "total", len(verses))
-    print("bsb:", stats["bsb"], "verses,", stats["bsb titles"], "psalm titles")
+    print("bsb:", stats["bsb"], "verses,", stats["bsb titles"], "psalm titles,", stats["bsb headings"], "headings")
     print("interlinear:", stats["interlinear"], "verses")
     print(f"wrote {len(chapters)} chapter files, {total_bytes / 1e6:.1f} MB")
     print("notes with no matching verse in DB:", len(orphans), sorted(orphans)[:15])

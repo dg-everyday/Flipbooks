@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Unity in the Body",
+                        "refs": "Psalms 133:1–3; 1 Corinthians 1:10–17"
+                    }
+                ],
                 "text": "As a prisoner in the Lord, then, I urge you to walk in a manner worthy of the calling you have received:"
             }
         },
@@ -198,6 +205,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "New Life in Christ",
+                        "refs": "Colossians 3:1–17"
+                    }
+                ],
                 "text": "So I tell you this, and insist on it in the Lord, that you must no longer walk as the Gentiles do, in the futility of their thinking."
             }
         },

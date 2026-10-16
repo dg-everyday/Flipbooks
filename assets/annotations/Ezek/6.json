@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment against Idolatry",
+                        "refs": "Deuteronomy 4:15–31; Deuteronomy 12:29–32"
+                    }
+                ],
                 "text": "And the word of the LORD came to me, saying,"
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Remnant to Be Blessed"
+                    }
+                ],
                 "text": "Yet I will leave a remnant, for some of you will escape the sword when you are scattered among the nations and throughout the lands."
             }
         },

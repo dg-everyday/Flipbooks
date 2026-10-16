@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against Gog"
+                    }
+                ],
                 "text": "And the word of the LORD came to me, saying,"
             }
         },

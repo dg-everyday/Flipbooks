@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Uncleanness of Men",
+                        "refs": "Deuteronomy 23:9–14"
+                    }
+                ],
                 "text": "And the LORD said to Moses and Aaron,"
             }
         },
@@ -150,6 +157,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cleansing of Men"
+                    }
+                ],
                 "text": "When the man has been cleansed from his discharge, he must count off seven days for his cleansing, wash his clothes, and bathe himself in fresh water, and he shall be clean."
             }
         },
@@ -222,6 +235,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Uncleanness of Women"
+                    }
+                ],
                 "text": "When a woman has a discharge consisting of blood from her body, she will be unclean due to her menstruation for seven days, and anyone who touches her will be unclean until evening."
             }
         },
@@ -330,6 +349,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cleansing of Women"
+                    }
+                ],
                 "text": "When a woman is cleansed of her discharge, she must count off seven days, and after that she will be ceremonially clean."
             }
         },

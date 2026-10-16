@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Consecration of the Priests",
+                        "refs": "Leviticus 8:1–13"
+                    }
+                ],
                 "text": "“Now this is what you are to do to consecrate Aaron and his sons to serve Me as priests: Take a young bull and two rams without blemish,"
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Order of the Sacrifices",
+                        "refs": "Leviticus 8:22–36"
+                    }
+                ],
                 "text": "You are to present the bull at the front of the Tent of Meeting, and Aaron and his sons are to lay their hands on its head."
             }
         },
@@ -366,6 +380,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Food for the Priests"
+                    }
+                ],
                 "text": "You are to take the ram of ordination and boil its flesh in a holy place."
             }
         },
@@ -450,6 +470,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Daily Offerings",
+                        "refs": "Numbers 28:1–8"
+                    }
+                ],
                 "text": "This is what you are to offer regularly on the altar, each day: two lambs that are a year old."
             }
         },
@@ -534,6 +561,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Will Dwell among the People"
+                    }
+                ],
                 "text": "Then I will dwell among the Israelites and be their God."
             }
         },

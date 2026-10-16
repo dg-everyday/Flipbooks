@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Soldiers Mock Jesus",
+                        "refs": "Isaiah 50:4–11; Matthew 27:27–31; Mark 15:16–20; Luke 22:63–65"
+                    }
+                ],
                 "text": "Then Pilate took Jesus and had Him flogged."
             }
         },
@@ -186,6 +193,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Crucifixion",
+                        "refs": "Psalms 22:1–31; Matthew 27:32–44; Mark 15:21–32; Luke 23:26–43"
+                    }
+                ],
                 "text": "Then Pilate handed Jesus over to be crucified, and the soldiers took Him away."
             }
         },
@@ -330,6 +344,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Jesus",
+                        "refs": "Psalms 22:1–31; Matthew 27:45–56; Mark 15:33–41; Luke 23:44–49"
+                    }
+                ],
                 "text": "After this, knowing that everything had now been accomplished, and to fulfill the Scripture, Jesus said, “I am thirsty.”"
             }
         },
@@ -366,6 +387,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Side Is Pierced",
+                        "refs": "Zechariah 12:10–14"
+                    }
+                ],
                 "text": "It was the day of Preparation, and the next day was a High Sabbath. In order that the bodies would not remain on the cross during the Sabbath, the Jews asked Pilate to have the legs broken and the bodies removed."
             }
         },
@@ -450,6 +478,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burial of Jesus",
+                        "refs": "Isaiah 53:9–12; Matthew 27:57–61; Mark 15:42–47; Luke 23:50–56"
+                    }
+                ],
                 "text": "Afterward, Joseph of Arimathea, who was a disciple of Jesus (but secretly for fear of the Jews), asked Pilate to let him remove the body of Jesus. Pilate gave him permission, so he came and removed His body."
             }
         },

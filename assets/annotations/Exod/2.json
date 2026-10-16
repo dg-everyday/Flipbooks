@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Birth and Adoption of Moses",
+                        "refs": "Acts 7:20–22; Hebrews 11:23"
+                    }
+                ],
                 "text": "Now a man of the house of Levi married a Levite woman,"
             }
         },
@@ -126,6 +133,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rejection and Flight of Moses",
+                        "refs": "Acts 7:23–29"
+                    }
+                ],
                 "text": "One day, after Moses had grown up, he went out to his own people and observed their hard labor. He saw an Egyptian beating a Hebrew, one of his own people."
             }
         },
@@ -270,6 +284,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Hears the Cry of the Israelites"
+                    }
+                ],
                 "text": "After a long time, the king of Egypt died. The Israelites groaned and cried out under their burden of slavery, and their cry for deliverance from bondage ascended to God."
             }
         },

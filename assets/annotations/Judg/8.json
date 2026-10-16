@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gideon Defeats Zebah and Zalmunna"
+                    }
+                ],
                 "text": "Then the men of Ephraim said to Gideon, “Why have you done this to us? Why did you fail to call us when you went to fight against Midian?” And they contended with him violently."
             }
         },
@@ -258,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gideon’s Ephod"
+                    }
+                ],
                 "text": "Then the Israelites said to Gideon, “Rule over us—you and your son and grandson—for you have saved us from the hand of Midian.”"
             }
         },
@@ -330,6 +342,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Forty Years of Peace"
+                    }
+                ],
                 "text": "In this way Midian was subdued before the Israelites and did not raise its head again. So the land had rest for forty years in the days of Gideon,"
             }
         },
@@ -378,6 +396,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gideon’s Death"
+                    }
+                ],
                 "text": "Later, Gideon son of Joash died at a ripe old age and was buried in the tomb of his father Joash in Ophrah of the Abiezrites."
             }
         },

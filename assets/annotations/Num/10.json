@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Two Silver Trumpets"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "From Sinai to Paran"
+                    }
+                ],
                 "text": "On the twentieth day of the second month of the second year, the cloud was lifted from above the tabernacle of the Testimony,"
             }
         },

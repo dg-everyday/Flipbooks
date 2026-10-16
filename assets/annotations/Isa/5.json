@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Song of the Vineyard",
+                        "refs": "Luke 13:6–9"
+                    }
+                ],
                 "text": "I will sing for my beloved a song of his vineyard: My beloved had a vineyard on a very fertile hill."
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Woes to the Wicked"
+                    }
+                ],
                 "text": "Woe to you who add house to house and join field to field until no place is left and you live alone in the land."
             }
         },

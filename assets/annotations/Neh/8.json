@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezra Reads the Law",
+                        "refs": "Deuteronomy 31:9–13"
+                    }
+                ],
                 "text": "At that time all the people gathered together in the square before the Water Gate, and they asked Ezra the scribe to bring out the Book of the Law of Moses, which the LORD had commanded for Israel."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Tabernacles",
+                        "refs": "Leviticus 23:33–44; Zechariah 14:16–21"
+                    }
+                ],
                 "text": "On the second day of the month, the heads of all the families, along with the priests and Levites, gathered around Ezra the scribe to study the words of the Law."
             }
         },

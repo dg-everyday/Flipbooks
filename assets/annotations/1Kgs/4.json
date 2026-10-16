@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Princes"
+                    }
+                ],
                 "text": "So King Solomon ruled over Israel,"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Twelve Officers"
+                    }
+                ],
                 "text": "Solomon had twelve governors over all Israel to provide food for the king and his household. Each one would arrange provisions for one month of the year,"
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Prosperity"
+                    }
+                ],
                 "text": "The people of Judah and Israel were as numerous as the sand on the seashore, and they were eating and drinking and rejoicing."
             }
         },
@@ -342,6 +360,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Wisdom"
+                    }
+                ],
                 "text": "And God gave Solomon wisdom, exceedingly deep insight, and understanding beyond measure, like the sand on the seashore."
             }
         },

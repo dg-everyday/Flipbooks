@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Woman Caught in Adultery"
+                    }
+                ],
                 "text": "But Jesus went to the Mount of Olives."
             }
         },
@@ -138,6 +144,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus the Light of the World",
+                        "refs": "1 John 1:5–10"
+                    }
+                ],
                 "text": "Once again, Jesus spoke to the people and said, “I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.”"
             }
         },
@@ -354,6 +367,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Truth Will Set You Free",
+                        "refs": "2 John 1:4–6"
+                    }
+                ],
                 "text": "As Jesus spoke these things, many believed in Him."
             }
         },
@@ -570,6 +590,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Before Abraham Was Born, I Am"
+                    }
+                ],
                 "text": "The Jews answered Him, “Are we not right to say that You are a Samaritan and You have a demon?”"
             }
         },

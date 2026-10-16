@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Lament over Zion"
+                    }
+                ],
                 "text": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people."
             }
         },

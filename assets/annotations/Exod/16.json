@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Manna and Quail from Heaven"
+                    }
+                ],
                 "text": "On the fifteenth day of the second month after they had left the land of Egypt, the whole congregation of Israel set out from Elim and came to the Desert of Sin, which is between Elim and Sinai."
             }
         },
@@ -258,6 +264,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sabbath Observed",
+                        "refs": "Genesis 2:1–3; Hebrews 4:1–11"
+                    }
+                ],
                 "text": "On the sixth day, they gathered twice as much food—two omers per person—and all the leaders of the congregation came and reported this to Moses."
             }
         },
@@ -366,6 +379,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Jar of Manna"
+                    }
+                ],
                 "text": "Now the house of Israel called the bread manna. It was white like coriander seed and tasted like wafers made with honey."
             }
         },

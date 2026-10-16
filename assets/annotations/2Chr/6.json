@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon Blesses the LORD",
+                        "refs": "1 Kings 8:12–21"
+                    }
+                ],
                 "text": "Then Solomon declared: “The LORD has said that He would dwell in the thick cloud."
             }
         },
@@ -94,6 +101,13 @@
     "12": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Prayer of Dedication",
+                        "refs": "1 Kings 8:22–53"
+                    }
+                ],
                 "text": "Then Solomon stood before the altar of the LORD in front of the whole assembly of Israel and spread out his hands."
             }
         },

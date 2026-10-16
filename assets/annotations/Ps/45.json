@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "My Heart Is Stirred by a Noble Theme",
+                        "refs": "1 Kings 3:1–15; 2 Chronicles 1:1–13; Psalms 72:1–20"
+                    }
+                ],
                 "title": "For the choirmaster. To the tune of “The Lilies.” A Maskil of the sons of Korah. A love song.",
                 "text": "My heart is stirred by a noble theme as I recite my verses to the king; my tongue is the pen of a skillful writer."
             }

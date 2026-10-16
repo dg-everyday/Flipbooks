@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Wife for Isaac"
+                    }
+                ],
                 "text": "By now Abraham was old and well along in years, and the LORD had blessed him in every way."
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rebekah Is Chosen"
+                    }
+                ],
                 "text": "Before the servant had finished praying, Rebekah came out with her jar on her shoulder. She was the daughter of Bethuel son of Milcah, the wife of Abraham’s brother Nahor."
             }
         },
@@ -738,6 +750,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Isaac Marries Rebekah"
+                    }
+                ],
                 "text": "Now Isaac had just returned from Beer-lahai-roi, for he was living in the Negev."
             }
         },

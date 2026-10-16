@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Salvation for Zion"
+                    }
+                ],
                 "text": "“Listen to Me, you who pursue righteousness, you who seek the LORD: Look to the rock from which you were cut, and to the quarry from which you were hewn."
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Fury Removed"
+                    }
+                ],
                 "text": "Awake, awake! Rise up, O Jerusalem, you who have drunk from the hand of the LORD the cup of His fury; you who have drained the goblet to the dregs—the cup that makes men stagger."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Living for God’s Glory",
+                        "refs": "1 Corinthians 10:23–33"
+                    }
+                ],
                 "text": "Therefore, since Christ suffered in His body, arm yourselves with the same resolve, because anyone who has suffered in his body is done with sin."
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Suffering as Christians"
+                    }
+                ],
                 "text": "Beloved, do not be surprised at the fiery trial that has come upon you, as though something strange were happening to you."
             }
         },

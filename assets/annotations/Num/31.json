@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Vengeance on Midian"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -294,6 +300,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Division of the Spoils"
+                    }
+                ],
                 "text": "The LORD said to Moses,"
             }
         },
@@ -510,6 +522,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Voluntary Offering"
+                    }
+                ],
                 "text": "Then the officers who were over the units of the army—the commanders of thousands and of hundreds—approached Moses"
             }
         },

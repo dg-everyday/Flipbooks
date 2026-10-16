@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tower of Babel",
+                        "refs": "Deuteronomy 32:8; Acts 2:1–13"
+                    }
+                ],
                 "text": "Now the whole world had one language and a common form of speech."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Genealogy from Shem to Abram",
+                        "refs": "1 Chronicles 1:17–27"
+                    }
+                ],
                 "text": "This is the account of Shem. Two years after the flood, when Shem was 100 years old, he became the father of Arphaxad."
             }
         },
@@ -318,6 +332,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Terah’s Descendants"
+                    }
+                ],
                 "text": "This is the account of Terah. Terah became the father of Abram, Nahor, and Haran. And Haran became the father of Lot."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Twelve Stones from the Jordan"
+                    }
+                ],
                 "text": "When the whole nation had finished crossing the Jordan, the LORD said to Joshua,"
             }
         },
@@ -222,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Camp at Gilgal"
+                    }
+                ],
                 "text": "On the tenth day of the first month the people went up from the Jordan and camped at Gilgal on the eastern border of Jericho."
             }
         },

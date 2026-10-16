@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Transfiguration",
+                        "refs": "Mark 9:1–13; Luke 9:28–36; 2 Peter 1:16–21"
+                    }
+                ],
                 "text": "After six days Jesus took with Him Peter, James, and John the brother of James, and led them up a high mountain by themselves."
             }
         },
@@ -162,6 +169,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Boy with a Demon",
+                        "refs": "Mark 9:14–29; Luke 9:37–42"
+                    }
+                ],
                 "text": "When they came to the crowd, a man came up to Jesus and knelt before Him."
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Power of Faith",
+                        "refs": "Luke 17:5–10"
+                    }
+                ],
                 "text": "Afterward the disciples came to Jesus privately and asked, “Why couldn’t we drive it out?”"
             }
         },
@@ -253,6 +274,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Second Prediction of the Passion",
+                        "refs": "Mark 9:30–32; Luke 9:43–45"
+                    }
+                ],
                 "text": "When they gathered together in Galilee, Jesus told them, “The Son of Man is about to be delivered into the hands of men."
             }
         },
@@ -277,6 +305,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple Tax"
+                    }
+                ],
                 "text": "After they had arrived in Capernaum, the collectors of the two-drachma tax came to Peter and asked, “Does your Teacher pay the two drachmas?”"
             }
         },

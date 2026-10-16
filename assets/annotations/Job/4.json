@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Eliphaz: The Innocent Prosper"
+                    }
+                ],
                 "text": "Then Eliphaz the Temanite replied:"
             }
         },

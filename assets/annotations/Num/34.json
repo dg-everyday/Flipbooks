@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Boundaries of Canaan",
+                        "refs": "Genesis 15:8–21"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -186,6 +193,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Leaders to Divide the Land"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

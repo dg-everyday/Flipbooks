@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elihu Rebukes Job’s Friends"
+                    }
+                ],
                 "text": "So these three men stopped answering Job, because he was righteous in his own eyes."
             }
         },

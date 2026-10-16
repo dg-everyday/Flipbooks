@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Calls Cyrus",
+                        "refs": "2 Chronicles 36:22–23; Ezra 1:1–4"
+                    }
+                ],
                 "text": "This is what the LORD says to Cyrus His anointed, whose right hand I have grasped to subdue nations before him, to disarm kings, to open the doors before him, so that the gates will not be shut:"
             }
         },

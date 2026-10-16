@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "More Proverbs of Solomon"
+                    }
+                ],
                 "text": "These are additional proverbs of Solomon, which were copied by the men of Hezekiah king of Judah:"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Faith and Belief",
+                        "refs": "James 2:14–26"
+                    }
+                ],
                 "text": "O foolish Galatians! Who has bewitched you? Before your very eyes Jesus Christ was clearly portrayed as crucified."
             }
         },
@@ -114,6 +121,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ Has Redeemed Us"
+                    }
+                ],
                 "text": "All who rely on works of the law are under a curse. For it is written: “Cursed is everyone who does not continue to do everything written in the Book of the Law.”"
             }
         },
@@ -174,6 +187,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Purpose of the Law",
+                        "refs": "Romans 7:1–6"
+                    }
+                ],
                 "text": "Brothers, let me put this in human terms. Even a human covenant, once it is ratified, cannot be canceled or amended."
             }
         },
@@ -306,6 +326,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sons through Faith in Christ"
+                    }
+                ],
                 "text": "You are all sons of God through faith in Christ Jesus."
             }
         },

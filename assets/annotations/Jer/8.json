@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judah’s Sin and Punishment"
+                    }
+                ],
                 "text": "“At that time,” declares the LORD, “the bones of the kings of Judah, the bones of the officials, the bones of the priests, the bones of the prophets, and the bones of the people of Jerusalem will be removed from their graves."
             }
         },
@@ -158,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The People Respond"
+                    }
+                ],
                 "text": "Why are we just sitting here? Gather together, let us flee to the fortified cities and perish there, for the LORD our God has doomed us. He has given us poisoned water to drink, because we have sinned against the LORD."
             }
         },
@@ -206,6 +218,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Weeps for His People"
+                    }
+                ],
                 "text": "My sorrow is beyond healing; my heart is faint within me."
             }
         },

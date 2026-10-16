@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Widow’s Oil"
+                    }
+                ],
                 "text": "Now the wife of one of the sons of the prophets cried out to Elisha, “Your servant, my husband, is dead, and you know that your servant feared the LORD. And now his creditor is coming to take my two children as his slaves!”"
             }
         },
@@ -90,6 +96,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Shunammite Woman",
+                        "refs": "Matthew 10:40–42"
+                    }
+                ],
                 "text": "One day Elisha went to Shunem, and a prominent woman who lived there persuaded him to have a meal. So whenever he would pass by, he would stop there to eat."
             }
         },
@@ -210,6 +223,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha Raises the Shunammite’s Son",
+                        "refs": "Acts 20:7–12"
+                    }
+                ],
                 "text": "And the child grew, and one day he went out to his father, who was with the harvesters."
             }
         },
@@ -450,6 +470,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha Purifies the Poisonous Stew"
+                    }
+                ],
                 "text": "When Elisha returned to Gilgal, there was a famine in the land. As the sons of the prophets were sitting at his feet, he said to his attendant, “Put on the large pot and boil some stew for the sons of the prophets.”"
             }
         },
@@ -498,6 +524,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Feeding a Hundred Men",
+                        "refs": "Matthew 15:29–39; Mark 8:1–10"
+                    }
+                ],
                 "text": "Now a man from Baal-shalishah came to the man of God with a sack of twenty loaves of barley bread from the first ripe grain. “Give it to the people to eat,” said Elisha."
             }
         },

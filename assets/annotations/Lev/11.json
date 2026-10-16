@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Clean and Unclean Animals",
+                        "refs": "Deuteronomy 14:1–21; Acts 10:9–16"
+                    }
+                ],
                 "text": "The LORD spoke again to Moses and Aaron, telling them,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Serving with Honor",
+                        "refs": "Ephesians 6:5–9; Colossians 3:22–25"
+                    }
+                ],
                 "text": "All who are under the yoke of slavery should regard their masters as fully worthy of honor, so that God’s name and our teaching will not be discredited."
             }
         },
@@ -30,6 +37,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Reject False Doctrines"
+                    }
+                ],
                 "text": "If anyone teaches another doctrine and disagrees with the sound words of our Lord Jesus Christ and with godly teaching,"
             }
         },
@@ -66,6 +79,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Godliness with Contentment"
+                    }
+                ],
                 "text": "Of course, godliness with contentment is great gain."
             }
         },
@@ -126,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Fight the Good Fight"
+                    }
+                ],
                 "text": "But you, O man of God, flee from these things and pursue righteousness, godliness, faith, love, perseverance, and gentleness."
             }
         },
@@ -198,6 +223,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Charge to the Rich",
+                        "refs": "Proverbs 23:1–5; James 5:1–6"
+                    }
+                ],
                 "text": "Instruct those who are rich in the present age not to be conceited and not to put their hope in the uncertainty of wealth, but in God, who richly provides all things for us to enjoy."
             }
         },
@@ -234,6 +266,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Guard the Faith"
+                    }
+                ],
                 "text": "O Timothy, guard what has been entrusted to you. Avoid irreverent, empty chatter and the opposing arguments of so-called “knowledge,”"
             }
         },

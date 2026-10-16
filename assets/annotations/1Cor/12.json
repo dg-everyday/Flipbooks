@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Spiritual Gifts"
+                    }
+                ],
                 "text": "Now about spiritual gifts, brothers, I do not want you to be uninformed."
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Body of Christ"
+                    }
+                ],
                 "text": "The body is a unit, though it is composed of many parts. And although its parts are many, they all form one body. So it is with Christ."
             }
         },
@@ -318,6 +330,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Greater Gifts"
+                    }
+                ],
                 "text": "Now you are the body of Christ, and each of you is a member of it."
             }
         },

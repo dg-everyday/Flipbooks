@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The East Gate Assigned to the Prince"
+                    }
+                ],
                 "text": "The man then brought me back to the outer gate of the sanctuary that faced east, but it was shut."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Reproof of the Levites"
+                    }
+                ],
                 "text": "Tell the rebellious house of Israel that this is what the Lord GOD says: ‘I have had enough of all your abominations, O house of Israel."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Duties of the Priests"
+                    }
+                ],
                 "text": "But the Levitical priests, who are descended from Zadok and who kept charge of My sanctuary when the Israelites went astray from Me, are to approach Me to minister before Me. They will stand before Me to offer Me fat and blood, declares the Lord GOD."
             }
         },

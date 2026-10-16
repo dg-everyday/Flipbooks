@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah Flees from Jezebel"
+                    }
+                ],
                 "text": "Now Ahab told Jezebel everything that Elijah had done and how he had killed all the prophets with the sword."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Speaks to Elijah at Horeb"
+                    }
+                ],
                 "text": "There Elijah entered a cave and spent the night. And the word of the LORD came to him, saying, “What are you doing here, Elijah?”"
             }
         },
@@ -222,6 +234,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Call of Elisha"
+                    }
+                ],
                 "text": "So Elijah departed and found Elisha son of Shaphat. He was plowing with twelve teams of oxen, and he was with the twelfth team. Elijah passed by him and threw his cloak around him."
             }
         },

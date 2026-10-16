@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Foreign Wives"
+                    }
+                ],
                 "text": "King Solomon, however, loved many foreign women along with the daughter of Pharaoh—women of Moab, Ammon, Edom, and Sidon, as well as Hittite women."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Anger against Solomon"
+                    }
+                ],
                 "text": "Now the LORD grew angry with Solomon, because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice."
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hadad’s Return"
+                    }
+                ],
                 "text": "Then the LORD raised up against Solomon an adversary, Hadad the Edomite, from the royal line of Edom."
             }
         },
@@ -270,6 +288,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rezon’s Hostility"
+                    }
+                ],
                 "text": "And God raised up against Solomon another adversary, Rezon the son of Eliada, who had fled from his master, Hadadezer king of Zobah,"
             }
         },
@@ -306,6 +330,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeroboam’s Rebellion"
+                    }
+                ],
                 "text": "Now Jeroboam son of Nebat was an Ephraimite from Zeredah whose mother was a widow named Zeruah. Jeroboam was a servant of Solomon, but he rebelled against the king,"
             }
         },
@@ -486,6 +516,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Solomon",
+                        "refs": "2 Chronicles 9:29–31"
+                    }
+                ],
                 "text": "As for the rest of the acts of Solomon—all that he did, as well as his wisdom—are they not written in the Book of the Acts of Solomon?"
             }
         },

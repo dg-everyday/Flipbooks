@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Creation",
+                        "refs": "John 1:1–5; Hebrews 11:1–3"
+                    }
+                ],
                 "text": "In the beginning God created the heavens and the earth."
             }
         },
@@ -30,6 +37,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The First Day"
+                    }
+                ],
                 "text": "And God said, “Let there be light,” and there was light."
             }
         },
@@ -66,6 +79,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Second Day"
+                    }
+                ],
                 "text": "And God said, “Let there be an expanse between the waters, to separate the waters from the waters.”"
             }
         },
@@ -102,6 +121,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Third Day"
+                    }
+                ],
                 "text": "And God said, “Let the waters under the sky be gathered into one place, so that the dry land may appear.” And it was so."
             }
         },
@@ -162,6 +187,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Fourth Day"
+                    }
+                ],
                 "text": "And God said, “Let there be lights in the expanse of the sky to distinguish between the day and the night, and let them be signs to mark the seasons and days and years."
             }
         },
@@ -234,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Fifth Day"
+                    }
+                ],
                 "text": "And God said, “Let the waters teem with living creatures, and let birds fly above the earth in the open expanse of the sky.”"
             }
         },
@@ -282,6 +319,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Sixth Day"
+                    }
+                ],
                 "text": "And God said, “Let the earth bring forth living creatures according to their kinds: livestock, land crawlers, and beasts of the earth according to their kinds.” And it was so."
             }
         },

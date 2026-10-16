@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Securing the City"
+                    }
+                ],
                 "text": "When the wall had been rebuilt and I had set the doors in place, the gatekeepers, singers, and Levites were appointed."
             }
         },
@@ -42,6 +48,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The List of Returning Exiles",
+                        "refs": "Ezra 2:1–67"
+                    }
+                ],
                 "text": "Now the city was large and spacious, but there were few people in it, and the houses had not yet been rebuilt."
             }
         },
@@ -586,6 +599,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings by the Exiles",
+                        "refs": "Exodus 38:21–31; Ezra 2:68–70"
+                    }
+                ],
                 "text": "Some of the heads of the families contributed to the project. The governor gave to the treasury 1,000 darics of gold, 50 bowls, and 530 priestly garments."
             }
         },

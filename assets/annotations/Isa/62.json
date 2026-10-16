@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Zion’s Salvation and New Name"
+                    }
+                ],
                 "text": "For Zion’s sake I will not keep silent, and for Jerusalem’s sake I will not keep still, until her righteousness shines like a bright light, her salvation like a blazing torch."
             }
         },

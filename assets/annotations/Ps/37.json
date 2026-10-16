@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Delight Yourself in the LORD",
+                        "refs": "1 Kings 2:1–9"
+                    }
+                ],
                 "title": "Of David.",
                 "text": "Do not fret over those who do evil; do not envy those who do wrong."
             }

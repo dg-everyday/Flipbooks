@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Seeking Vashti’s Successor"
+                    }
+                ],
                 "text": "Some time later, when the anger of King Xerxes had subsided, he remembered Vashti and what she had done, and what had been decreed against her."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esther Finds Favor"
+                    }
+                ],
                 "text": "Now there was at the citadel of Susa a Jewish man from the tribe of Benjamin named Mordecai son of Jair, the son of Shimei, the son of Kish."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esther Becomes Queen"
+                    }
+                ],
                 "text": "And the king loved Esther more than all the other women, and she found grace and favor in his sight more than all of the other virgins. So he placed the royal crown upon her head and made her queen in place of Vashti."
             }
         },
@@ -246,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Mordecai Uncovers a Conspiracy"
+                    }
+                ],
                 "text": "In those days, while Mordecai was sitting at the king’s gate, Bigthan and Teresh, two of the king’s eunuchs who guarded the entrance, grew angry and conspired to assassinate King Xerxes."
             }
         },

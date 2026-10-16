@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Greeting to Titus",
+                        "refs": "2 Corinthians 8:16–24"
+                    }
+                ],
                 "text": "Paul, a servant of God and an apostle of Jesus Christ for the faith of God’s elect and their knowledge of the truth that leads to godliness,"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Appointing Elders on Crete",
+                        "refs": "1 Timothy 3:1–7; 1 Peter 5:1–4"
+                    }
+                ],
                 "text": "The reason I left you in Crete was that you would set in order what was unfinished and appoint elders in every town, as I directed you."
             }
         },
@@ -114,6 +128,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Correcting False Teachers",
+                        "refs": "1 Timothy 1:3–11"
+                    }
+                ],
                 "text": "For many are rebellious and full of empty talk and deception, especially those of the circumcision,"
             }
         },

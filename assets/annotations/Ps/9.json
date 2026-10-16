@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "I Will Give Thanks to the LORD"
+                    }
+                ],
                 "title": "For the choirmaster. To the tune of “The Death of the Son.” A Psalm of David.",
                 "text": "I will give thanks to the LORD with all my heart; I will recount all Your wonders."
             }

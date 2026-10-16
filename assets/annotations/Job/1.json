@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job’s Character and Wealth",
+                        "refs": "James 5:7–12"
+                    }
+                ],
                 "text": "There was a man in the land of Uz whose name was Job. And this man was blameless and upright, fearing God and shunning evil."
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Satan’s First Attack"
+                    }
+                ],
                 "text": "One day the sons of God came to present themselves before the LORD, and Satan also came with them."
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Loses His Children and Possessions"
+                    }
+                ],
                 "text": "One day, while Job’s sons and daughters were eating and drinking wine in their oldest brother’s house,"
             }
         },

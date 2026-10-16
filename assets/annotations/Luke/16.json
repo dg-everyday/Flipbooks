@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Shrewd Manager"
+                    }
+                ],
                 "text": "Jesus also said to His disciples, “There was a rich man whose manager was accused of wasting his possessions."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Law and the Prophets"
+                    }
+                ],
                 "text": "The Pharisees, who were lovers of money, heard all of this and were scoffing at Jesus."
             }
         },
@@ -222,6 +234,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rich Man and Lazarus",
+                        "refs": "John 5:39–47"
+                    }
+                ],
                 "text": "Now there was a rich man dressed in purple and fine linen, who lived each day in joyous splendor."
             }
         },

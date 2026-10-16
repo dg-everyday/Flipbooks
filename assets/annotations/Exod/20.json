@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Commandments",
+                        "refs": "Deuteronomy 5:6–21"
+                    }
+                ],
                 "text": "And God spoke all these words:"
             }
         },
@@ -210,6 +217,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Comforts the People",
+                        "refs": "Deuteronomy 5:22–33; Hebrews 12:18–29"
+                    }
+                ],
                 "text": "When all the people witnessed the thunder and lightning, the sounding of the ram’s horn, and the mountain enveloped in smoke, they trembled and stood at a distance."
             }
         },
@@ -258,6 +272,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Idolatry Forbidden",
+                        "refs": "1 Corinthians 10:14–22"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “This is what you are to tell the Israelites: ‘You have seen for yourselves that I have spoken to you from heaven."
             }
         },

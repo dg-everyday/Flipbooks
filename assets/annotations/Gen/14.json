@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The War of the Kings"
+                    }
+                ],
                 "text": "In those days Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of Goiim"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abram Rescues Lot"
+                    }
+                ],
                 "text": "Now the Valley of Siddim was full of tar pits, and as the kings of Sodom and Gomorrah fled, some men fell into the pits, but the survivors fled to the hill country."
             }
         },
@@ -198,6 +210,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Melchizedek Blesses Abram",
+                        "refs": "Psalms 110:1–7; Hebrews 7:1–10"
+                    }
+                ],
                 "text": "After Abram returned from defeating Chedorlaomer and the kings allied with him, the king of Sodom went out to meet him in the Valley of Shaveh (that is, the King’s Valley)."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Meets Rachel"
+                    }
+                ],
                 "text": "Jacob resumed his journey and came to the land of the people of the east."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Marries Leah and Rachel"
+                    }
+                ],
                 "text": "Then Laban declared, “You are indeed my own flesh and blood.” After Jacob had stayed with him a month,"
             }
         },
@@ -366,6 +378,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Reuben, Simeon, Levi, and Judah"
+                    }
+                ],
                 "text": "When the LORD saw that Leah was unloved, He opened her womb; but Rachel was barren."
             }
         },

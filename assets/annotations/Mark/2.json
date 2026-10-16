@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals a Paralytic",
+                        "refs": "Matthew 9:1–8; Luke 5:17–26"
+                    }
+                ],
                 "text": "A few days later Jesus went back to Capernaum. And when the people heard that He was home,"
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Calls Levi",
+                        "refs": "Matthew 9:9–13; Luke 5:27–32"
+                    }
+                ],
                 "text": "Once again Jesus went out beside the sea. All the people came to Him, and He taught them there."
             }
         },
@@ -210,6 +224,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Questions about Fasting",
+                        "refs": "Matthew 9:14–15; Luke 5:33–35"
+                    }
+                ],
                 "text": "Now John’s disciples and the Pharisees were often fasting. So people came to Jesus and asked, “Why don’t Your disciples fast like John’s disciples and those of the Pharisees?”"
             }
         },
@@ -246,6 +267,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Patches and the Wineskins",
+                        "refs": "Matthew 9:16–17; Luke 5:36–39"
+                    }
+                ],
                 "text": "No one sews a patch of unshrunk cloth on an old garment. If he does, the new piece will pull away from the old, and a worse tear will result."
             }
         },
@@ -270,6 +298,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lord of the Sabbath",
+                        "refs": "1 Samuel 21:1–7; Matthew 12:1–8; Luke 6:1–5"
+                    }
+                ],
                 "text": "One Sabbath Jesus was passing through the grainfields, and His disciples began to pick the heads of grain as they walked along."
             }
         },

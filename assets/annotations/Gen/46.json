@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob’s Journey to Egypt"
+                    }
+                ],
                 "text": "So Israel set out with all that he had, and when he came to Beersheba, he offered sacrifices to the God of his father Isaac."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Those Who Went to Egypt",
+                        "refs": "Exodus 1:1–7"
+                    }
+                ],
                 "text": "Jacob took with him to Egypt his sons and grandsons, and his daughters and granddaughters—all his offspring."
             }
         },
@@ -90,6 +103,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Children of Leah"
+                    }
+                ],
                 "text": "Now these are the names of the sons of Israel (Jacob and his descendants) who went to Egypt: Reuben, Jacob’s firstborn."
             }
         },
@@ -186,6 +205,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Children of Zilpah"
+                    }
+                ],
                 "text": "The sons of Gad: Ziphion, Haggi, Shuni, Ezbon, Eri, Arodi, and Areli."
             }
         },
@@ -222,6 +247,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Children of Rachel"
+                    }
+                ],
                 "text": "The sons of Jacob’s wife Rachel: Joseph and Benjamin."
             }
         },
@@ -270,6 +301,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Children of Bilhah"
+                    }
+                ],
                 "text": "The son of Dan: Hushim."
             }
         },
@@ -330,6 +367,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Arrives in Egypt"
+                    }
+                ],
                 "text": "Now Jacob had sent Judah ahead of him to Joseph to get directions to Goshen. When Jacob’s family arrived in the land of Goshen,"
             }
         },

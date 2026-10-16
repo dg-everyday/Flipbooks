@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Sign against Egypt and Cush"
+                    }
+                ],
                 "text": "Before the year that the chief commander, sent by Sargon king of Assyria, came to Ashdod and attacked and captured it,"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Woman on the Beast"
+                    }
+                ],
                 "text": "Then one of the seven angels with the seven bowls came and said to me, “Come, I will show you the punishment of the great prostitute, who sits on many waters."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mystery Explained"
+                    }
+                ],
                 "text": "I could see that the woman was drunk with the blood of the saints and witnesses for Jesus. And I was utterly amazed at the sight of her."
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Victory of the Lamb"
+                    }
+                ],
                 "text": "They will make war against the Lamb, and the Lamb will triumph over them, because He is Lord of lords and King of kings; and He will be accompanied by His called and chosen and faithful ones.”"
             }
         },

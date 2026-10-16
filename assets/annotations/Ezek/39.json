@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Slaughter of Gog’s Armies"
+                    }
+                ],
                 "text": "“As for you, O son of man, prophesy against Gog and declare that this is what the Lord GOD says: Behold, I am against you, O Gog, chief prince of Meshech and Tubal."
             }
         },
@@ -246,6 +252,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel to Be Restored"
+                    }
+                ],
                 "text": "I will display My glory among the nations, and all the nations will see the judgment that I execute and the hand that I lay upon them."
             }
         },

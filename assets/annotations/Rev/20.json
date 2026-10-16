@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Satan Bound"
+                    }
+                ],
                 "text": "Then I saw an angel coming down from heaven with the key to the Abyss, holding in his hand a great chain."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Satan Cast into the Lake of Fire"
+                    }
+                ],
                 "text": "When the thousand years are complete, Satan will be released from his prison,"
             }
         },
@@ -126,6 +138,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment before the Great White Throne"
+                    }
+                ],
                 "text": "Then I saw a great white throne and the One seated on it. Earth and heaven fled from His presence, and no place was found for them."
             }
         },

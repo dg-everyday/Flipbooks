@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Resurrection",
+                        "refs": "Matthew 28:1–10; Mark 16:1–8; Luke 24:1–12"
+                    }
+                ],
                 "text": "Early on the first day of the week, while it was still dark, Mary Magdalene went to the tomb and saw that the stone had been removed from the entrance."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Appears to Mary Magdalene",
+                        "refs": "Mark 16:9–11"
+                    }
+                ],
                 "text": "Then the disciples returned to their homes."
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Appears to the Disciples",
+                        "refs": "Luke 24:36–49; 1 John 1:1–4"
+                    }
+                ],
                 "text": "It was the first day of the week, and that very evening, while the disciples were together with the doors locked for fear of the Jews, Jesus came and stood among them. “Peace be with you!” He said to them."
             }
         },
@@ -282,6 +303,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Appears to Thomas"
+                    }
+                ],
                 "text": "Now Thomas called Didymus, one of the Twelve, was not with the disciples when Jesus came."
             }
         },
@@ -354,6 +381,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Purpose of John’s Book"
+                    }
+                ],
                 "text": "Jesus performed many other signs in the presence of His disciples, which are not written in this book."
             }
         },

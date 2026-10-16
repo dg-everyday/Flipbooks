@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abijah Reigns in Judah",
+                        "refs": "1 Kings 15:1–8"
+                    }
+                ],
                 "text": "In the eighteenth year of Jeroboam’s reign, Abijah became king of Judah,"
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Civil War against Jeroboam"
+                    }
+                ],
                 "text": "Then Abijah stood on Mount Zemaraim in the hill country of Ephraim and said, “Hear me, O Jeroboam and all Israel!"
             }
         },

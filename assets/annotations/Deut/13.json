@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Idolaters to Be Put to Death"
+                    }
+                ],
                 "text": "If a prophet or dreamer of dreams arises among you and proclaims a sign or wonder to you,"
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Idolatrous Cities to Be Destroyed"
+                    }
+                ],
                 "text": "If, regarding one of the cities the LORD your God is giving you to inhabit, you hear it said"
             }
         },

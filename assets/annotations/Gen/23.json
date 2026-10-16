@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death and Burial of Sarah"
+                    }
+                ],
                 "text": "Now Sarah lived to be 127 years old."
             }
         },

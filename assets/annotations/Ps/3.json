@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Deliver Me, O LORD!",
+                        "refs": "2 Samuel 15:13–29"
+                    }
+                ],
                 "title": "A Psalm of David, when he fled from his son Absalom.",
                 "text": "O LORD, how my foes have increased! How many rise up against me!"
             }

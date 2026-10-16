@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Dead to Sin, Alive to God",
+                        "refs": "2 Corinthians 4:7–18"
+                    }
+                ],
                 "text": "What then shall we say? Shall we continue in sin so that grace may increase?"
             }
         },
@@ -174,6 +181,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wages of Sin"
+                    }
+                ],
                 "text": "What then? Shall we sin because we are not under law, but under grace? Certainly not!"
             }
         },

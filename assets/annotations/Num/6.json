@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Nazirite Vow",
+                        "refs": "Judges 13:1–25"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -258,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Aaron’s Blessing"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

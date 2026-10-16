@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah Denounces Ahaziah",
+                        "refs": "1 Kings 22:51–53"
+                    }
+                ],
                 "text": "After the death of Ahab, Moab rebelled against Israel."
             }
         },
@@ -198,6 +205,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoram Succeeds Ahaziah"
+                    }
+                ],
                 "text": "So Ahaziah died according to the word of the LORD that Elijah had spoken. And since he had no son, Jehoram succeeded him in the second year of the reign of Jehoram son of Jehoshaphat over Judah."
             }
         },

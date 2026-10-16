@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christ’s Eternal Priesthood"
+                    }
+                ],
                 "text": "The point of what we are saying is this: We do have such a high priest, who sat down at the right hand of the throne of the Majesty in heaven,"
             }
         },
@@ -66,6 +72,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The New Covenant",
+                        "refs": "Jeremiah 31:26–40"
+                    }
+                ],
                 "text": "Now, however, Jesus has received a much more excellent ministry, just as the covenant He mediates is better and is founded on better promises."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Zophar Rebukes Job"
+                    }
+                ],
                 "text": "Then Zophar the Naamathite replied:"
             }
         },

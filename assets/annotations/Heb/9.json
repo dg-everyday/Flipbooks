@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Earthly Tabernacle",
+                        "refs": "Exodus 40:1–33; Acts 7:44–47"
+                    }
+                ],
                 "text": "Now the first covenant had regulations for worship and also an earthly sanctuary."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Redemption through His Blood"
+                    }
+                ],
                 "text": "But when Christ came as high priest of the good things that have come, He went through the greater and more perfect tabernacle that is not made by hands and is not a part of this creation."
             }
         },

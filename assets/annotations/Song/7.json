@@ -6,6 +6,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bridegroom"
+                    },
+                    {
+                        "level": 1,
+                        "title": "Admiration by the Bridegroom"
+                    }
+                ],
                 "text": "How beautiful are your sandaled feet, O daughter of the prince! The curves of your thighs are like jewels, the handiwork of a master."
             }
         },
@@ -114,6 +124,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Bride"
+                    }
+                ],
                 "text": "I belong to my beloved, and his desire is for me."
             }
         },

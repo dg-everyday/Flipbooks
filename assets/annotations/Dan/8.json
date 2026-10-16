@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Vision of the Ram and the Goat"
+                    }
+                ],
                 "text": "In the third year of the reign of King Belshazzar, a vision appeared to me, Daniel, subsequent to the one that had appeared to me earlier."
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gabriel Interprets Daniel’s Vision"
+                    }
+                ],
                 "text": "While I, Daniel, was watching the vision and trying to understand it, there stood before me one having the appearance of a man."
             }
         },

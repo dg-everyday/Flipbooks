@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Issachar"
+                    }
+                ],
                 "text": "The sons of Issachar: Tola, Puah, Jashub, and Shimron—four in all."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Benjamin"
+                    }
+                ],
                 "text": "The three sons of Benjamin: Bela, Becher, and Jediael."
             }
         },
@@ -150,6 +162,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Naphtali"
+                    }
+                ],
                 "text": "The sons of Naphtali: Jahziel, Guni, Jezer, and Shallum—the descendants of Bilhah."
             }
         },
@@ -162,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Manasseh"
+                    }
+                ],
                 "text": "The descendants of Manasseh: Asriel through his Aramean concubine. She also gave birth to Machir the father of Gilead."
             }
         },
@@ -234,6 +258,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Ephraim"
+                    }
+                ],
                 "text": "The descendants of Ephraim: Shuthelah, Bered his son, Tahath his son, Eleadah his son, Tahath his son,"
             }
         },
@@ -346,6 +376,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Asher"
+                    }
+                ],
                 "text": "The children of Asher: Imnah, Ishvah, Ishvi, Beriah, and their sister Serah."
             }
         },

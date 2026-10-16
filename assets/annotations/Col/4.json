@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prayerful Speech and Actions"
+                    }
+                ],
                 "text": "Masters, supply your slaves with what is right and fair, since you know that you also have a Master in heaven."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Greetings from Paul’s Fellow Workers",
+                        "refs": "Romans 16:21–23"
+                    }
+                ],
                 "text": "Tychicus will tell you all the news about me. He is a beloved brother, a faithful minister, and a fellow servant in the Lord."
             }
         },
@@ -174,6 +187,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Signature and Final Instructions",
+                        "refs": "1 Corinthians 16:19–24; 2 Thessalonians 3:16–18"
+                    }
+                ],
                 "text": "Greet the brothers in Laodicea, as well as Nympha and the church that meets at her house."
             }
         },

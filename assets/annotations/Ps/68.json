@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Enemies Are Scattered"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David. A song.",
                 "text": "God arises. His enemies are scattered, and those who hate Him flee His presence."
             }

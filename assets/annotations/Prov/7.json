@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Warnings about the Adulteress"
+                    }
+                ],
                 "text": "My son, keep my words and treasure my commandments within you."
             }
         },

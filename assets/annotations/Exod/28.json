@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Garments for the Priests"
+                    }
+                ],
                 "text": "“Next, have your brother Aaron brought to you from among the Israelites, along with his sons Nadab, Abihu, Eleazar, and Ithamar, to serve Me as priests."
             }
         },
@@ -66,6 +72,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ephod",
+                        "refs": "Exodus 39:1–7"
+                    }
+                ],
                 "text": "They are to make the ephod of finely spun linen embroidered with gold, and with blue, purple, and scarlet yarn."
             }
         },
@@ -174,6 +187,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Breastpiece",
+                        "refs": "Exodus 39:8–21"
+                    }
+                ],
                 "text": "You are also to make a breastpiece of judgment with the same workmanship as the ephod. Construct it with gold, with blue, purple, and scarlet yarn, and with finely spun linen."
             }
         },
@@ -366,6 +386,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Additional Priestly Garments",
+                        "refs": "Exodus 39:22–31"
+                    }
+                ],
                 "text": "You are to make the robe of the ephod entirely of blue cloth,"
             }
         },

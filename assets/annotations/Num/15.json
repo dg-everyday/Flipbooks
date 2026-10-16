@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws about Offerings"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -258,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings for Unintentional Sins"
+                    }
+                ],
                 "text": "Now if you stray unintentionally and do not obey all these commandments that the LORD has spoken to Moses—"
             }
         },
@@ -378,6 +390,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Sabbath-Breaker Stoned",
+                        "refs": "Exodus 31:12–17"
+                    }
+                ],
                 "text": "While the Israelites were in the wilderness, a man was found gathering wood on the Sabbath day."
             }
         },
@@ -438,6 +457,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Law of Tassels"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },

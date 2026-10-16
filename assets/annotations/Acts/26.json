@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Testimony to Agrippa",
+                        "refs": "Acts 9:1–19; Acts 22:1–21"
+                    }
+                ],
                 "text": "Agrippa said to Paul, “You have permission to speak for yourself.” Then Paul stretched out his hand and began his defense:"
             }
         },
@@ -282,6 +289,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Festus Interrupts Paul’s Defense"
+                    }
+                ],
                 "text": "At this stage of Paul’s defense, Festus exclaimed in a loud voice, “You are insane, Paul! Your great learning is driving you to madness!”"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Drive Out the Nations"
+                    }
+                ],
                 "text": "When the LORD your God brings you into the land that you are entering to possess, and He drives out before you many nations—the Hittites, Girgashites, Amorites, Canaanites, Perizzites, Hivites, and Jebusites, seven nations larger and stronger than you—"
             }
         },
@@ -138,6 +144,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Promises of God",
+                        "refs": "Exodus 23:20–33"
+                    }
+                ],
                 "text": "If you listen to these ordinances and keep them carefully, then the LORD your God will keep His covenant and the loving devotion that He swore to your fathers."
             }
         },

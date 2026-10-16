@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Word Brings Salvation",
+                        "refs": "Isaiah 65:1–16"
+                    }
+                ],
                 "text": "Brothers, my heart’s desire and prayer to God for the Israelites is for their salvation."
             }
         },

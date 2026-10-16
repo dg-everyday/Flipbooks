@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wanderings in the Wilderness"
+                    }
+                ],
                 "text": "Then we turned back and headed for the wilderness by way of the Red Sea, as the LORD had instructed me, and for many days we wandered around Mount Seir."
             }
         },
@@ -282,6 +288,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat of Sihon",
+                        "refs": "Numbers 21:21–30"
+                    }
+                ],
                 "text": "“Arise, set out, and cross the Arnon Valley. See, I have delivered into your hand Sihon the Amorite, king of Heshbon, and his land. Begin to take possession of it and engage him in battle."
             }
         },

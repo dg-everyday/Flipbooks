@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses’ Staff"
+                    }
+                ],
                 "text": "Then Moses answered, “What if they do not believe me or listen to my voice? For they may say, ‘The LORD has not appeared to you.’”"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses’ Hand"
+                    }
+                ],
                 "text": "Furthermore, the LORD said to Moses, “Put your hand inside your cloak.” So he put his hand inside his cloak, and when he took it out, his hand was leprous, white as snow."
             }
         },
@@ -114,6 +126,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Appointment of Aaron"
+                    }
+                ],
                 "text": "“Please, Lord,” Moses replied, “I have never been eloquent, neither in the past nor since You have spoken to Your servant, for I am slow of speech and tongue.”"
             }
         },
@@ -210,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Leaves for Egypt"
+                    }
+                ],
                 "text": "Then Moses went back to his father-in-law Jethro and said to him, “Please let me return to my brothers in Egypt to see if they are still alive.” “Go in peace,” Jethro replied."
             }
         },
@@ -318,6 +342,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The People Believe Moses and Aaron"
+                    }
+                ],
                 "text": "Meanwhile, the LORD had said to Aaron, “Go and meet Moses in the wilderness.” So he went and met Moses at the mountain of God and kissed him."
             }
         },

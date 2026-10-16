@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Revelation"
+                    }
+                ],
                 "text": "I must go on boasting. Although there is nothing to gain, I will go on to visions and revelations from the Lord."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Thorn and God’s Grace"
+                    }
+                ],
                 "text": "I will boast about such a man, but I will not boast about myself, except in my weaknesses."
             }
         },
@@ -126,6 +138,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Concern for the Corinthians"
+                    }
+                ],
                 "text": "I have become a fool, but you drove me to it. In fact, you should have commended me, since I am in no way inferior to those “super-apostles,” even though I am nothing."
             }
         },

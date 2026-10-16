@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha’s Prophecy of Plenty"
+                    }
+                ],
                 "text": "Then Elisha said, “Hear the word of the LORD! This is what the LORD says: ‘About this time tomorrow at the gate of Samaria, a seah of fine flour will sell for a shekel, and two seahs of barley will sell for a shekel.’”"
             }
         },
@@ -30,6 +36,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Syrians Flee"
+                    }
+                ],
                 "text": "Now there were four men with leprosy at the entrance of the city gate, and they said to one another, “Why just sit here until we die?"
             }
         },
@@ -186,6 +198,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha’s Prophecy Fulfilled"
+                    }
+                ],
                 "text": "Then the people went out and plundered the camp of the Arameans. It was then that a seah of fine flour sold for a shekel, and two seahs of barley sold for a shekel, according to the word of the LORD."
             }
         },

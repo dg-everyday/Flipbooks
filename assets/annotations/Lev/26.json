@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Additional Blessings of Obedience"
+                    }
+                ],
                 "text": "“You must not make idols for yourselves or set up a carved image or sacred pillar; you must not place a sculpted stone in your land to bow down to it. For I am the LORD your God."
             }
         },
@@ -162,6 +168,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Punishments for Disobedience",
+                        "refs": "Leviticus 20:1–9; Deuteronomy 28:15–68"
+                    }
+                ],
                 "text": "If, however, you fail to obey Me and to carry out all these commandments,"
             }
         },
@@ -474,6 +487,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Remembers Those Who Repent"
+                    }
+                ],
                 "text": "But if they will confess their iniquity and that of their fathers in the unfaithfulness that they practiced against Me, by which they have also walked in hostility toward Me—"
             }
         },

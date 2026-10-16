@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Triumphs",
+                        "refs": "2 Samuel 8:1–14; Psalms 60:1–12"
+                    }
+                ],
                 "text": "Some time later, David defeated the Philistines, subdued them, and took Gath and its villages from the hand of the Philistines."
             }
         },
@@ -130,6 +137,13 @@
     "14": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Officers",
+                        "refs": "2 Samuel 8:15–18"
+                    }
+                ],
                 "text": "Thus David reigned over all Israel and administered justice and righteousness for all his people:"
             }
         },

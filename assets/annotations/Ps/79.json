@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prayer for Deliverance",
+                        "refs": "Psalms 74:1–23; Jeremiah 52:1–11"
+                    }
+                ],
                 "title": "A Psalm of Asaph.",
                 "text": "The nations, O God, have invaded Your inheritance; they have defiled Your holy temple and reduced Jerusalem to rubble."
             }

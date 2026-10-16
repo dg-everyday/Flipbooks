@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehu Anointed King of Israel"
+                    }
+                ],
                 "text": "Now Elisha the prophet summoned one of the sons of the prophets and said to him, “Tuck your cloak under your belt, take this flask of oil, and go to Ramoth-gilead."
             }
         },
@@ -162,6 +168,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehu Kills Joram and Ahaziah",
+                        "refs": "2 Chronicles 22:8–9"
+                    }
+                ],
                 "text": "Thus Jehu son of Jehoshaphat, the son of Nimshi, conspired against Joram. (Now Joram and all Israel had been defending Ramoth-gilead against Hazael king of Aram,"
             }
         },
@@ -354,6 +367,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jezebel’s Violent Death"
+                    }
+                ],
                 "text": "Now when Jehu arrived in Jezreel, Jezebel heard of it. So she painted her eyes, adorned her head, and looked down from a window."
             }
         },

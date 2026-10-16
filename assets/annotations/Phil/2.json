@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "One in Christ",
+                        "refs": "Ephesians 2:11–18"
+                    }
+                ],
                 "text": "Therefore if you have any encouragement in Christ, if any comfort from His love, if any fellowship with the Spirit, if any affection and compassion,"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mind of Christ",
+                        "refs": "Isaiah 52:13–15"
+                    }
+                ],
                 "text": "Let this mind be in you which was also in Christ Jesus:"
             }
         },
@@ -138,6 +152,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lights in the World",
+                        "refs": "Matthew 5:13–16"
+                    }
+                ],
                 "text": "Therefore, my beloved, just as you have always obeyed, not only in my presence, but now even more in my absence, continue to work out your salvation with fear and trembling."
             }
         },
@@ -222,6 +243,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Timothy and Epaphroditus",
+                        "refs": "1 Corinthians 16:10–12"
+                    }
+                ],
                 "text": "Now I hope in the Lord Jesus to send Timothy to you soon, that I also may be cheered when I learn how you are doing."
             }
         },

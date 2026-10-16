@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD’s Love for Israel",
+                        "refs": "Genesis 25:19–28; Romans 9:6–29"
+                    }
+                ],
                 "text": "This is the burden of the word of the LORD to Israel through Malachi:"
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Polluted Offerings"
+                    }
+                ],
                 "text": "“A son honors his father, and a servant his master. But if I am a father, where is My honor? And if I am a master, where is your fear of Me?” says the LORD of Hosts to you priests who despise My name. “But you ask, ‘How have we despised Your name?’"
             }
         },

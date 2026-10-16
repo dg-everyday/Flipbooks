@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Idolatrous Elders Condemned",
+                        "refs": "Romans 14:13–23; 1 Corinthians 8:1–13"
+                    }
+                ],
                 "text": "Then some of the elders of Israel came and sat down before me."
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Four Dire Judgments"
+                    }
+                ],
                 "text": "And the word of the LORD came to me, saying,"
             }
         },

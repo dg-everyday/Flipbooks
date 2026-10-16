@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Waiting on God"
+                    }
+                ],
                 "title": "For the choirmaster. According to Jeduthun. A Psalm of David.",
                 "text": "In God alone my soul finds rest; my salvation comes from Him."
             }

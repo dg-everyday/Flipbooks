@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel Rebuked at Bochim"
+                    }
+                ],
                 "text": "Now the angel of the LORD went up from Gilgal to Bochim and said, “I brought you up out of Egypt and led you into the land that I had promised to your fathers, and I said, ‘I will never break My covenant with you,"
             }
         },
@@ -66,6 +72,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua’s Death and Burial",
+                        "refs": "Joshua 24:29–33"
+                    }
+                ],
                 "text": "After Joshua had dismissed the people, the Israelites went out to take possession of the land, each to his own inheritance."
             }
         },
@@ -114,6 +127,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Unfaithfulness",
+                        "refs": "Isaiah 43:22–28; Jeremiah 2:23–37"
+                    }
+                ],
                 "text": "After that whole generation had also been gathered to their fathers, another generation rose up who did not know the LORD or the works that He had done for Israel."
             }
         },
@@ -186,6 +206,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judges Raised Up"
+                    }
+                ],
                 "text": "Then the LORD raised up judges, who saved them from the hands of those who plundered them."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Angel and the Small Scroll",
+                        "refs": "Ezekiel 3:1–15"
+                    }
+                ],
                 "text": "Then I saw another mighty angel coming down from heaven, wrapped in a cloud, with a rainbow above his head. His face was like the sun, and his legs were like pillars of fire."
             }
         },

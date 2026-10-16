@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Message by the Spirit’s Power"
+                    }
+                ],
                 "text": "When I came to you, brothers, I did not come with eloquence or wisdom as I proclaimed to you the testimony about God."
             }
         },
@@ -66,6 +72,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Spiritual Wisdom",
+                        "refs": "Ephesians 1:15–23"
+                    }
+                ],
                 "text": "Among the mature, however, we speak a message of wisdom—but not the wisdom of this age or of the rulers of this age, who are coming to nothing."
             }
         },

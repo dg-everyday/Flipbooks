@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Greeting from James",
+                        "refs": "Jude 1:1–2"
+                    }
+                ],
                 "text": "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes of the Dispersion: Greetings."
             }
         },
@@ -18,6 +25,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rejoicing in Trials",
+                        "refs": "Philippians 1:12–20"
+                    }
+                ],
                 "text": "Consider it pure joy, my brothers, when you encounter trials of many kinds,"
             }
         },
@@ -150,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Good and Perfect Gifts"
+                    }
+                ],
                 "text": "When tempted, no one should say, “God is tempting me.” For God cannot be tempted by evil, nor does He tempt anyone."
             }
         },
@@ -222,6 +242,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hearing and Doing"
+                    }
+                ],
                 "text": "My beloved brothers, understand this: Everyone should be quick to listen, slow to speak, and slow to anger,"
             }
         },

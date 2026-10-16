@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rebellion against Rehoboam",
+                        "refs": "1 Kings 12:1–15"
+                    }
+                ],
                 "text": "Then Rehoboam went to Shechem, for all Israel had gone there to make him king."
             }
         },
@@ -142,6 +149,13 @@
     "16": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Kingdom Divided",
+                        "refs": "1 Kings 12:16–19"
+                    }
+                ],
                 "text": "When all Israel saw that the king had refused to listen to them, they answered the king: “What portion do we have in David, and what inheritance in the son of Jesse? To your tents, O Israel! Look now to your own house, O David!” So all the Israelites went home,"
             }
         },

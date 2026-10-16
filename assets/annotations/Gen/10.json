@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Table of Nations",
+                        "refs": "1 Chronicles 1:4–27"
+                    }
+                ],
                 "text": "This is the account of Noah’s sons Shem, Ham, and Japheth, who also had sons after the flood."
             }
         },
@@ -18,6 +25,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Japhethites"
+                    }
+                ],
                 "text": "The sons of Japheth: Gomer, Magog, Madai, Javan, Tubal, Meshech, and Tiras."
             }
         },
@@ -66,6 +79,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Hamites"
+                    }
+                ],
                 "text": "The sons of Ham: Cush, Mizraim, Put, and Canaan."
             }
         },
@@ -246,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 2,
+                        "title": "The Semites"
+                    }
+                ],
                 "text": "And sons were also born to Shem, the older brother of Japheth; Shem was the forefather of all the sons of Eber."
             }
         },

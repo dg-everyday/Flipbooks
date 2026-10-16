@@ -1,0 +1,6 @@
+chapter files: 1189 (dailygrace.db has 1189 chapters), 26.2 MB
+words kept: Hebrew 305496, Greek 136427
+words left out: Hebrew 152 (from the Septuagint), Greek 5669 (not in the KJV's Greek)
+psalm titles: 116
+KJV verses with no words: 0
+verses in STEPBible but not in dailygrace.db: 0

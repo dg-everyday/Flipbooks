@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Roles in Worship"
+                    }
+                ],
                 "text": "You are to imitate me, just as I imitate Christ."
             }
         },
@@ -198,6 +204,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sharing in the Lord’s Supper",
+                        "refs": "Matthew 26:20–30; Mark 14:17–26; Luke 22:14–23"
+                    }
+                ],
                 "text": "In the following instructions I have no praise to offer, because your gatherings do more harm than good."
             }
         },

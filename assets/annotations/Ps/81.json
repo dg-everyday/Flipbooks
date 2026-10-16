@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sing for Joy to God Our Strength"
+                    }
+                ],
                 "title": "For the choirmaster. According to Gittith. Of Asaph.",
                 "text": "Sing for joy to God our strength; make a joyful noise to the God of Jacob."
             }

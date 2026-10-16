@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph’s Brothers Sent to Egypt"
+                    }
+                ],
                 "text": "When Jacob learned that there was grain in Egypt, he said to his sons, “Why are you staring at one another?”"
             }
         },
@@ -294,6 +300,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph’s Brothers Return to Canaan"
+                    }
+                ],
                 "text": "Then Joseph gave orders to fill their bags with grain, to return each man’s silver to his sack, and to give them provisions for their journey. This order was carried out,"
             }
         },

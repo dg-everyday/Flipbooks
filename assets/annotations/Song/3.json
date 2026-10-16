@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bride’s Dream"
+                    }
+                ],
                 "text": "On my bed at night I sought the one I love; I sought him, but did not find him."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon Arrives on His Wedding Day"
+                    }
+                ],
                 "text": "Who is this coming up from the wilderness like a column of smoke, scented with myrrh and frankincense from all the spices of the merchant?"
             }
         },

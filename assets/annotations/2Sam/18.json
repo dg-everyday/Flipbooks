@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Absalom Killed"
+                    }
+                ],
                 "text": "Then David reviewed his troops and appointed over them commanders of thousands and of hundreds."
             }
         },
@@ -222,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Mourns for Absalom"
+                    }
+                ],
                 "text": "Then Ahimaaz son of Zadok said, “Please let me run and tell the king the good news that the LORD has avenged him of his enemies.”"
             }
         },

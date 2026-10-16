@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Work Ridiculed"
+                    }
+                ],
                 "text": "Now when Sanballat heard that we were rebuilding the wall, he was furious and filled with indignation. He ridiculed the Jews"
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Discouragement Overcome"
+                    }
+                ],
                 "text": "So we prayed to our God and posted a guard against them day and night."
             }
         },

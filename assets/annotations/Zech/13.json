@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An End to Idolatry"
+                    }
+                ],
                 "text": "“On that day a fountain will be opened to the house of David and the people of Jerusalem, to cleanse them from sin and impurity."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Shepherd Struck, the Sheep Scattered",
+                        "refs": "Matthew 26:31–35; Mark 14:27–31"
+                    }
+                ],
                 "text": "Awake, O sword, against My Shepherd, against the man who is My Companion, declares the LORD of Hosts. Strike the Shepherd, and the sheep will be scattered, and I will turn My hand against the little ones."
             }
         },

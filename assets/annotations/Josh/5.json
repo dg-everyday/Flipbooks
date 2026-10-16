@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Circumcision and Passover at Gilgal"
+                    }
+                ],
                 "text": "Now when all the Amorite kings west of the Jordan and all the Canaanite kings along the coast heard how the LORD had dried up the waters of the Jordan before the Israelites until they had crossed over, their hearts melted and their spirits failed for fear of the Israelites."
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Commander of the LORD’s Army"
+                    }
+                ],
                 "text": "Now when Joshua was near Jericho, he looked up and saw a man standing in front of him with a drawn sword in His hand. Joshua approached Him and asked, “Are You for us or for our enemies?”"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Father’s Instruction"
+                    }
+                ],
                 "text": "Listen, my sons, to a father’s instruction; pay attention and gain understanding."
             }
         },

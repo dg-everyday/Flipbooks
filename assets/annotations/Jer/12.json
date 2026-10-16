@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prosperity of the Wicked"
+                    }
+                ],
                 "text": "Righteous are You, O LORD, when I plead before You. Yet about Your judgments I wish to contend with You: Why does the way of the wicked prosper? Why do all the faithless live at ease?"
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Answer to Jeremiah"
+                    }
+                ],
                 "text": "“If you have raced with men on foot and they have worn you out, how can you compete with horses? If you stumble in a peaceful land, how will you do in the thickets of the Jordan?"
             }
         },
@@ -162,6 +174,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Message for Israel’s Neighbors",
+                        "refs": "Amos 1:1–15"
+                    }
+                ],
                 "text": "This is what the LORD says: “As for all My evil neighbors who attack the inheritance that I bequeathed to My people Israel, I am about to uproot them from their land, and I will uproot the house of Judah from among them."
             }
         },

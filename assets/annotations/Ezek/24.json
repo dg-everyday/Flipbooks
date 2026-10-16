@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Cooking Pot"
+                    }
+                ],
                 "text": "In the ninth year, on the tenth day of the tenth month, the word of the LORD came to me, saying,"
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezekiel’s Wife Dies"
+                    }
+                ],
                 "text": "Then the word of the LORD came to me, saying,"
             }
         },

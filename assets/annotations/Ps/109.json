@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Song of the Slandered"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "O God of my praise, be not silent."
             }

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Babylon Is Fallen",
+                        "refs": "Revelation 18:1–8"
+                    }
+                ],
                 "text": "This is the burden against the Desert by the Sea: Like whirlwinds sweeping through the Negev, an invader comes from the desert, from a land of terror."
             }
         },
@@ -126,6 +133,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burden against Edom",
+                        "refs": "Isaiah 34:5–17"
+                    }
+                ],
                 "text": "This is the burden against Dumah: One calls to me from Seir, “Watchman, what is left of the night? Watchman, what is left of the night?”"
             }
         },
@@ -150,6 +164,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Burden against Arabia"
+                    }
+                ],
                 "text": "This is the burden against Arabia: In the thickets of Arabia you must lodge, O caravans of Dedanites."
             }
         },

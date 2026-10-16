@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Everything Is Futile"
+                    }
+                ],
                 "text": "These are the words of the Teacher, the son of David, king in Jerusalem:"
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "With Wisdom Comes Sorrow"
+                    }
+                ],
                 "text": "I, the Teacher, was king over Israel in Jerusalem."
             }
         },

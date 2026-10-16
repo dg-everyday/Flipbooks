@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Flees from Laban"
+                    }
+                ],
                 "text": "Now Jacob heard that Laban’s sons were saying, “Jacob has taken away all that belonged to our father and built all this wealth at our father’s expense.”"
             }
         },
@@ -258,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laban Pursues Jacob"
+                    }
+                ],
                 "text": "On the third day Laban was informed that Jacob had fled."
             }
         },
@@ -510,6 +522,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob’s Covenant with Laban"
+                    }
+                ],
                 "text": "But Laban answered Jacob, “These daughters are my daughters, these sons are my sons, and these flocks are my flocks! Everything you see is mine! Yet what can I do today about these daughters of mine or the children they have borne?"
             }
         },

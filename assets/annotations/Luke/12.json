@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Leaven of the Pharisees",
+                        "refs": "Matthew 16:5–12; Mark 8:14–21"
+                    }
+                ],
                 "text": "In the meantime, a crowd of many thousands had gathered, so that they were trampling one another. Jesus began to speak first to His disciples: “Beware of the leaven of the Pharisees, which is hypocrisy."
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Fear God Alone",
+                        "refs": "Matthew 10:26–31"
+                    }
+                ],
                 "text": "I tell you, My friends, do not be afraid of those who kill the body and after that can do no more."
             }
         },
@@ -90,6 +104,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Confessing Christ",
+                        "refs": "Matthew 10:32–33"
+                    }
+                ],
                 "text": "I tell you, everyone who confesses Me before men, the Son of Man will also confess him before the angels of God."
             }
         },
@@ -150,6 +171,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Rich Fool"
+                    }
+                ],
                 "text": "Someone in the crowd said to Him, “Teacher, tell my brother to divide the inheritance with me.”"
             }
         },
@@ -258,6 +285,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Worry",
+                        "refs": "Matthew 6:25–34"
+                    }
+                ],
                 "text": "Then Jesus said to His disciples, “Therefore I tell you, do not worry about your life, what you will eat, or about your body, what you will wear."
             }
         },
@@ -378,6 +412,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Treasures in Heaven",
+                        "refs": "Matthew 6:19–21"
+                    }
+                ],
                 "text": "Do not be afraid, little flock, for your Father is pleased to give you the kingdom."
             }
         },
@@ -414,6 +455,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Readiness at Any Hour",
+                        "refs": "Matthew 24:36–51; Mark 13:32–37"
+                    }
+                ],
                 "text": "Be dressed for service and keep your lamps burning."
             }
         },
@@ -582,6 +630,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Not Peace but Division",
+                        "refs": "Micah 7:1–6; Matthew 10:34–39"
+                    }
+                ],
                 "text": "I have come to ignite a fire on the earth, and how I wish it were already kindled!"
             }
         },
@@ -642,6 +697,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Interpreting the Present Time",
+                        "refs": "Matthew 16:1–4; Mark 8:11–13"
+                    }
+                ],
                 "text": "Then Jesus said to the crowds, “As soon as you see a cloud rising in the west, you say, ‘A shower is coming,’ and that is what happens."
             }
         },
@@ -678,6 +740,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Reconciling with an Adversary",
+                        "refs": "Matthew 5:21–26"
+                    }
+                ],
                 "text": "And why don’t you judge for yourselves what is right?"
             }
         },

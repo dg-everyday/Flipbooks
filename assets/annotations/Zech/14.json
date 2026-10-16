@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Destroyers of Jerusalem Destroyed"
+                    }
+                ],
                 "text": "Behold, a day of the LORD is coming when your plunder will be divided in your presence."
             }
         },
@@ -186,6 +192,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "All Nations Will Worship the King",
+                        "refs": "Leviticus 23:33–44; Nehemiah 8:13–18"
+                    }
+                ],
                 "text": "Then all the survivors from the nations that came against Jerusalem will go up year after year to worship the King, the LORD of Hosts, and to celebrate the Feast of Tabernacles."
             }
         },

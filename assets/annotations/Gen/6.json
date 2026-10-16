@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Corruption on the Earth",
+                        "refs": "Matthew 24:36–51"
+                    }
+                ],
                 "text": "Now when men began to multiply on the face of the earth and daughters were born to them,"
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Noah’s Favor with God"
+                    }
+                ],
                 "text": "Noah, however, found favor in the eyes of the LORD."
             }
         },
@@ -150,6 +163,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparing the Ark",
+                        "refs": "Hebrews 11:7"
+                    }
+                ],
                 "text": "Then God said to Noah, “The end of all living creatures has come before Me, because through them the earth is full of violence. Now behold, I will destroy both them and the earth."
             }
         },

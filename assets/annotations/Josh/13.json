@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lands Yet Unconquered",
+                        "refs": "Judges 1:1–7"
+                    }
+                ],
                 "text": "Now Joshua was old and well along in years, and the LORD said to him, “You are old and well along in years, but very much of the land remains to be possessed."
             }
         },
@@ -90,6 +97,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Inheritance East of the Jordan",
+                        "refs": "Numbers 32:1–42; Deuteronomy 3:12–22"
+                    }
+                ],
                 "text": "The other half of Manasseh, along with the Reubenites and Gadites, had received the inheritance Moses had given them beyond the Jordan to the east, just as Moses the servant of the LORD had assigned to them:"
             }
         },
@@ -174,6 +188,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Reuben’s Inheritance"
+                    }
+                ],
                 "text": "This is what Moses had given to the clans of the tribe of Reuben:"
             }
         },
@@ -282,6 +302,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gad’s Inheritance"
+                    }
+                ],
                 "text": "This is what Moses had given to the clans of the tribe of Gad:"
             }
         },
@@ -342,6 +368,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Manasseh’s Eastern Inheritance"
+                    }
+                ],
                 "text": "This is what Moses had given to the clans of the half-tribe of Manasseh, that is, to half the tribe of the descendants of Manasseh:"
             }
         },

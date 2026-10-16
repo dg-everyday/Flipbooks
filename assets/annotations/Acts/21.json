@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Journey to Jerusalem"
+                    }
+                ],
                 "text": "After we had torn ourselves away from them, we sailed directly to Cos, and the next day on to Rhodes, and from there to Patara."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Visits Philip the Evangelist"
+                    }
+                ],
                 "text": "Leaving the next day, we went on to Caesarea and stayed at the home of Philip the evangelist, who was one of the Seven."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Arrival at Jerusalem"
+                    }
+                ],
                 "text": "When we arrived in Jerusalem, the brothers welcomed us joyfully."
             }
         },
@@ -318,6 +336,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Seized at the Temple"
+                    }
+                ],
                 "text": "When the seven days were almost over, some Jews from the province of Asia saw Paul at the temple. They stirred up the whole crowd and seized him,"
             }
         },
@@ -438,6 +462,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Addresses the Crowd"
+                    }
+                ],
                 "text": "As they were about to take Paul into the barracks, he asked the commander, “May I say something to you?” “Do you speak Greek?” he replied."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals a Paralytic",
+                        "refs": "Mark 2:1–12; Luke 5:17–26"
+                    }
+                ],
                 "text": "Jesus got into a boat, crossed over, and came to His own town."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Calls Matthew",
+                        "refs": "Mark 2:13–17; Luke 5:27–32"
+                    }
+                ],
                 "text": "As Jesus went on from there, He saw a man named Matthew sitting at the tax booth. “Follow Me,” He told him, and Matthew got up and followed Him."
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Questions about Fasting",
+                        "refs": "Mark 2:18–20; Luke 5:33–35"
+                    }
+                ],
                 "text": "Then John’s disciples came to Jesus and asked, “Why is it that we and the Pharisees fast so often, but Your disciples do not fast?”"
             }
         },
@@ -186,6 +207,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Patches and the Wineskins",
+                        "refs": "Mark 2:21–22; Luke 5:36–39"
+                    }
+                ],
                 "text": "No one sews a patch of unshrunk cloth on an old garment. For the patch will pull away from the garment, and a worse tear will result."
             }
         },
@@ -210,6 +238,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Healing Touch of Jesus",
+                        "refs": "Mark 5:21–43; Luke 8:40–56"
+                    }
+                ],
                 "text": "While Jesus was saying these things, a synagogue leader came and knelt before Him. “My daughter has just died,” he said. “But come and place Your hand on her, and she will live.”"
             }
         },
@@ -318,6 +353,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals the Blind and Mute",
+                        "refs": "Mark 7:31–37"
+                    }
+                ],
                 "text": "As Jesus went on from there, two blind men followed Him, crying out, “Have mercy on us, Son of David!”"
             }
         },
@@ -414,6 +456,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lord of the Harvest",
+                        "refs": "Luke 10:1–12"
+                    }
+                ],
                 "text": "Jesus went through all the towns and villages, teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness."
             }
         },

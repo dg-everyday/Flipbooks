@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bronze Altar",
+                        "refs": "Exodus 27:1–8"
+                    }
+                ],
                 "text": "Bezalel constructed the altar of burnt offering from acacia wood. It was square, five cubits long, five cubits wide, and three cubits high."
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bronze Basin",
+                        "refs": "Exodus 30:17–21"
+                    }
+                ],
                 "text": "Next he made the bronze basin and its stand from the mirrors of the women who served at the entrance to the Tent of Meeting."
             }
         },
@@ -78,6 +92,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Courtyard",
+                        "refs": "Exodus 27:9–19"
+                    }
+                ],
                 "text": "Then he constructed the courtyard. The south side of the courtyard was a hundred cubits long and had curtains of finely spun linen,"
             }
         },
@@ -194,6 +215,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Inventory of Materials",
+                        "refs": "Ezra 2:68–70; Nehemiah 7:70–73"
+                    }
+                ],
                 "text": "This is the inventory for the tabernacle, the tabernacle of the Testimony, as recorded at Moses’ command by the Levites under the direction of Ithamar son of Aaron the priest."
             }
         },

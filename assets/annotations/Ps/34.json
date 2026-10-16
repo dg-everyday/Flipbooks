@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Taste and See That the LORD Is Good",
+                        "refs": "1 Samuel 21:8–15"
+                    }
+                ],
                 "title": "Of David, when he pretended to be insane before Abimelech, so that the king drove him away.",
                 "text": "I will bless the LORD at all times; His praise will always be on my lips."
             }

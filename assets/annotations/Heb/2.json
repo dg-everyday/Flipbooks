@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Salvation Confirmed"
+                    }
+                ],
                 "text": "We must pay closer attention, therefore, to what we have heard, so that we do not drift away."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus like His Brothers"
+                    }
+                ],
                 "text": "For it is not to angels that He has subjected the world to come, about which we are speaking."
             }
         },

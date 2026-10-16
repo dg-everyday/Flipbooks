@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Righteousness through Faith in Christ",
+                        "refs": "Romans 3:21–31"
+                    }
+                ],
                 "text": "Finally, my brothers, rejoice in the Lord. It is no trouble for me to write the same things to you again, and it is a safeguard for you."
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Pressing on toward the Goal"
+                    }
+                ],
                 "text": "Not that I have already obtained all this, or have already been made perfect, but I press on to take hold of that for which Christ Jesus took hold of me."
             }
         },
@@ -198,6 +211,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Citizenship in Heaven"
+                    }
+                ],
                 "text": "Join one another in following my example, brothers, and carefully observe those who walk according to the pattern we set for you."
             }
         },

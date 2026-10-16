@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Reigns!",
+                        "refs": "Psalms 99:1–9"
+                    }
+                ],
                 "text": "The LORD reigns! He is robed in majesty; the LORD has clothed and armed Himself with strength. The world indeed is firmly established; it cannot be moved."
             }
         },

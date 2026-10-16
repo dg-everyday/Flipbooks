@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Ministry"
+                    }
+                ],
                 "text": "You yourselves know, brothers, that our visit to you was not in vain."
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Longing to Visit"
+                    }
+                ],
                 "text": "Brothers, although we were torn away from you for a short time (in person, not in heart), our desire to see you face to face was even more intense."
             }
         },

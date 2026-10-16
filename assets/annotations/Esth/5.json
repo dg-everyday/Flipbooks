@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esther Approaches the King"
+                    }
+                ],
                 "text": "On the third day, Esther put on her royal robes and stood in the inner court of the palace across from the king’s quarters. The king was sitting on his royal throne in the royal courtroom, facing the entrance."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Haman’s Plot against Mordecai"
+                    }
+                ],
                 "text": "That day Haman went out full of joy and glad of heart. At the king’s gate, however, he saw Mordecai, who did not rise or tremble in fear at his presence. And Haman was filled with rage toward Mordecai."
             }
         },

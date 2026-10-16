@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob’s Departure"
+                    }
+                ],
                 "text": "So Isaac called for Jacob and blessed him. “Do not take a wife from the Canaanite women,” he commanded."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esau Marries Mahalath"
+                    }
+                ],
                 "text": "Now Esau learned that Isaac had blessed Jacob and sent him to Paddan-aram to take a wife there, commanding him, “Do not marry a Canaanite woman,”"
             }
         },
@@ -114,6 +126,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob’s Ladder"
+                    }
+                ],
                 "text": "Meanwhile Jacob left Beersheba and set out for Haran."
             }
         },
@@ -210,6 +228,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Stone of Bethel"
+                    }
+                ],
                 "text": "Early the next morning, Jacob took the stone that he had placed under his head, and he set it up as a pillar. He poured oil on top of it,"
             }
         },

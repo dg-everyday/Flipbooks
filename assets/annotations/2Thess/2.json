@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Man of Lawlessness"
+                    }
+                ],
                 "text": "Now concerning the coming of our Lord Jesus Christ and our being gathered together to Him, we ask you, brothers,"
             }
         },
@@ -150,6 +156,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Stand Firm"
+                    }
+                ],
                 "text": "But we should always thank God for you, brothers who are loved by the Lord, because God chose you from the beginning to be saved by the sanctification of the Spirit and by faith in the truth."
             }
         },

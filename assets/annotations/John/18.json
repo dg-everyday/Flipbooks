@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Betrayal of Jesus",
+                        "refs": "Matthew 26:47–56; Mark 14:43–52; Luke 22:47–53"
+                    }
+                ],
                 "text": "After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden."
             }
         },
@@ -174,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter’s First Denial",
+                        "refs": "Matthew 26:69–70; Mark 14:66–68; Luke 22:54–57"
+                    }
+                ],
                 "text": "Now Simon Peter and another disciple were following Jesus. Since that disciple was known to the high priest, he also went with Jesus into the courtyard of the high priest."
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus before the High Priest",
+                        "refs": "Matthew 26:57–68; Mark 14:53–65; Luke 22:66–71"
+                    }
+                ],
                 "text": "Meanwhile, the high priest questioned Jesus about His disciples and His teaching."
             }
         },
@@ -294,6 +315,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter’s Second and Third Denials",
+                        "refs": "Matthew 26:71–75; Mark 14:69–72; Luke 22:58–62"
+                    }
+                ],
                 "text": "Simon Peter was still standing and warming himself. So they asked him, “Aren’t you also one of His disciples?” He denied it and said, “I am not.”"
             }
         },
@@ -330,6 +358,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus before Pilate",
+                        "refs": "Matthew 27:11–14; Luke 23:1–5"
+                    }
+                ],
                 "text": "Then they led Jesus away from Caiaphas into the Praetorium. By now it was early morning, and the Jews did not enter the Praetorium, to avoid being defiled and unable to eat the Passover."
             }
         },

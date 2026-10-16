@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Bronze Altar and Molten Sea",
+                        "refs": "1 Kings 7:23–26"
+                    }
+                ],
                 "text": "He made a bronze altar twenty cubits long, twenty cubits wide, and ten cubits high."
             }
         },
@@ -58,6 +65,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Ten Basins, Lampstands, and Tables",
+                        "refs": "1 Kings 7:38–39"
+                    }
+                ],
                 "text": "He also made ten basins for washing and placed five on the south side and five on the north. The parts of the burnt offering were rinsed in them, but the priests used the Sea for washing."
             }
         },
@@ -86,6 +100,12 @@
     "9": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Courts"
+                    }
+                ],
                 "text": "He made the courtyard of the priests and the large court with its doors, and he overlaid the doors with bronze."
             }
         },
@@ -106,6 +126,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Completion of the Bronze Works",
+                        "refs": "1 Kings 7:40–47"
+                    }
+                ],
                 "text": "Additionally, Huram made the pots, shovels, and sprinkling bowls. So Huram finished the work that he had undertaken for King Solomon in the house of God:"
             }
         },
@@ -170,6 +197,13 @@
     "19": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Completion of the Gold Furnishings",
+                        "refs": "1 Kings 7:48–51"
+                    }
+                ],
                 "text": "Solomon also made all the furnishings for the house of God: the golden altar; the tables on which was placed the Bread of the Presence;"
             }
         },

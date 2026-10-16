@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sabbath"
+                    }
+                ],
                 "text": "Then Moses assembled the whole congregation of Israel and said to them, “These are the things that the LORD has commanded you to do:"
             }
         },
@@ -42,6 +48,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings for the Tabernacle",
+                        "refs": "Exodus 25:1–9"
+                    }
+                ],
                 "text": "Moses also told the whole congregation of Israel, “This is what the LORD has commanded:"
             }
         },
@@ -98,6 +111,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Skilled Craftsmen"
+                    }
+                ],
                 "text": "Let every skilled craftsman among you come and make everything that the LORD has commanded:"
             }
         },
@@ -218,6 +237,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The People Offer Gifts"
+                    }
+                ],
                 "text": "Then the whole congregation of Israel withdrew from the presence of Moses."
             }
         },
@@ -338,6 +363,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Bezalel and Oholiab",
+                        "refs": "Exodus 31:1–11"
+                    }
+                ],
                 "text": "Then Moses said to the Israelites, “See, the LORD has called by name Bezalel son of Uri, the son of Hur, of the tribe of Judah."
             }
         },

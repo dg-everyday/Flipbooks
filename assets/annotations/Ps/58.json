@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Judges the Earth"
+                    }
+                ],
                 "title": "For the choirmaster. To the tune of “Do Not Destroy.” A Miktam of David.",
                 "text": "Do you indeed speak justly, O rulers? Do you judge uprightly, O sons of men?"
             }

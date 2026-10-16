@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy to the Mountains of Israel"
+                    }
+                ],
                 "text": "“And you, son of man, prophesy to the mountains of Israel and say: O mountains of Israel, hear the word of the LORD."
             }
         },
@@ -186,6 +192,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A New Heart and a New Spirit",
+                        "refs": "Romans 8:9–11; Galatians 5:16–26"
+                    }
+                ],
                 "text": "Again the word of the LORD came to me, saying,"
             }
         },

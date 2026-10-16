@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Balak Summons Balaam"
+                    }
+                ],
                 "text": "Then the Israelites traveled on and camped in the plains of Moab near the Jordan, across from Jericho."
             }
         },
@@ -258,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Angel and Balaam’s Donkey"
+                    }
+                ],
                 "text": "Then God’s anger was kindled because Balaam was going along, and the angel of the LORD stood in the road to oppose him. Balaam was riding his donkey, and his two servants were with him."
             }
         },

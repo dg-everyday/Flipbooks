@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lord’s Prayer",
+                        "refs": "Matthew 6:5–15"
+                    }
+                ],
                 "text": "One day in a place where Jesus had just finished praying, one of His disciples requested, “Lord, teach us to pray, just as John taught his disciples.”"
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ask, Seek, Knock",
+                        "refs": "Matthew 7:7–12"
+                    }
+                ],
                 "text": "Then Jesus said to them, “Suppose one of you goes to his friend at midnight and says, ‘Friend, lend me three loaves of bread,"
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A House Divided",
+                        "refs": "Matthew 12:22–30; Mark 3:20–27"
+                    }
+                ],
                 "text": "One day Jesus was driving out a demon that was mute. And when the demon was gone, the man who had been mute spoke. The crowds were amazed,"
             }
         },
@@ -282,6 +303,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Unclean Spirit Returns",
+                        "refs": "Matthew 12:43–45"
+                    }
+                ],
                 "text": "When an unclean spirit comes out of a man, it passes through arid places seeking rest and does not find it. Then it says, ‘I will return to the house I left.’"
             }
         },
@@ -318,6 +346,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "True Blessedness"
+                    }
+                ],
                 "text": "As Jesus was saying these things, a woman in the crowd raised her voice and said, “Blessed is the womb that bore You, and blessed are the breasts that nursed You!”"
             }
         },
@@ -342,6 +376,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sign of Jonah",
+                        "refs": "Jonah 3:1–10; Matthew 12:38–42"
+                    }
+                ],
                 "text": "As the crowds were increasing, Jesus said, “This is a wicked generation. It demands a sign, but none will be given it except the sign of Jonah."
             }
         },
@@ -390,6 +431,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lamp of the Body",
+                        "refs": "Matthew 6:22–24"
+                    }
+                ],
                 "text": "No one lights a lamp and puts it in a cellar or under a basket. Instead, he sets it on a stand, so those who enter can see the light."
             }
         },
@@ -438,6 +486,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Woes to Pharisees and Experts in the Law",
+                        "refs": "Matthew 23:1–36"
+                    }
+                ],
                 "text": "As Jesus was speaking, a Pharisee invited Him to dine with him; so He went in and reclined at the table."
             }
         },

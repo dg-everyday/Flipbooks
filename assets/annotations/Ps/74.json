@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Why Have You Rejected Us Forever?",
+                        "refs": "Psalms 79:1–13; Jeremiah 52:1–11"
+                    }
+                ],
                 "title": "A Maskil of Asaph.",
                 "text": "Why have You rejected us forever, O God? Why does Your anger smolder against the sheep of Your pasture?"
             }

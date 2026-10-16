@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temptation of Jesus",
+                        "refs": "Matthew 4:1–11; Mark 1:12–13"
+                    }
+                ],
                 "text": "Then Jesus, full of the Holy Spirit, returned from the Jordan and was led by the Spirit into the wilderness,"
             }
         },
@@ -158,6 +165,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Begins His Ministry",
+                        "refs": "Isaiah 9:1–7; Matthew 4:12–17; Mark 1:14–15"
+                    }
+                ],
                 "text": "Jesus returned to Galilee in the power of the Spirit, and the news about Him spread throughout the surrounding region."
             }
         },
@@ -182,6 +196,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rejection at Nazareth",
+                        "refs": "Isaiah 61:1–11; Matthew 13:53–58; Mark 6:1–6"
+                    }
+                ],
                 "text": "Then Jesus came to Nazareth, where He had been brought up. As was His custom, He entered the synagogue on the Sabbath. And when He stood up to read,"
             }
         },
@@ -362,6 +383,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Expels an Unclean Spirit",
+                        "refs": "Mark 1:21–28"
+                    }
+                ],
                 "text": "Then He went down to Capernaum, a town in Galilee, and on the Sabbath He began to teach the people."
             }
         },
@@ -446,6 +474,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals at Peter’s House",
+                        "refs": "Matthew 8:14–17; Mark 1:29–34"
+                    }
+                ],
                 "text": "After Jesus had left the synagogue, He went to the home of Simon, whose mother-in-law was suffering from a high fever. So they appealed to Jesus on her behalf,"
             }
         },
@@ -494,6 +529,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Preaches in Judea",
+                        "refs": "Mark 1:35–39"
+                    }
+                ],
                 "text": "At daybreak, Jesus went out to a solitary place, and the crowds were looking for Him. They came to Him and tried to keep Him from leaving."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah’s Scroll Read in the Temple"
+                    }
+                ],
                 "text": "In the fourth year of Jehoiakim son of Josiah king of Judah, this word came to Jeremiah from the LORD:"
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah’s Scroll Read in the Palace"
+                    }
+                ],
                 "text": "When Micaiah son of Gemariah, the son of Shaphan, heard all the words of the LORD from the scroll,"
             }
         },
@@ -234,6 +246,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoiakim Burns the Scroll"
+                    }
+                ],
                 "text": "So the officials went to the king in the courtyard. And having stored the scroll in the chamber of Elishama the scribe, they reported everything to the king."
             }
         },
@@ -318,6 +336,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Rewrites the Scroll"
+                    }
+                ],
                 "text": "After the king had burned the scroll containing the words that Baruch had written at Jeremiah’s dictation, the word of the LORD came to Jeremiah:"
             }
         },

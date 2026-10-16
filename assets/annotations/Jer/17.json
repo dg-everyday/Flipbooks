@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sin and Punishment of Judah"
+                    }
+                ],
                 "text": "“The sin of Judah is written with an iron stylus, engraved with a diamond point on the tablets of their hearts and on the horns of their altars."
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah’s Prayer for Deliverance"
+                    }
+                ],
                 "text": "A glorious throne, exalted from the beginning, is the place of our sanctuary."
             }
         },
@@ -222,6 +234,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Restoring the Sabbath",
+                        "refs": "Nehemiah 13:15–22"
+                    }
+                ],
                 "text": "This is what the LORD said to me: “Go and stand at the gate of the people, through which the kings of Judah go in and out; and stand at all the other gates of Jerusalem."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Into Your Hands I Commit My Spirit",
+                        "refs": "Luke 23:44–49"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of David.",
                 "text": "In You, O LORD, I have taken refuge; let me never be put to shame; save me by Your righteousness."
             }

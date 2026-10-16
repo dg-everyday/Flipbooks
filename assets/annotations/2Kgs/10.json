@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab’s Seventy Sons Killed"
+                    }
+                ],
                 "text": "Now Ahab had seventy sons in Samaria. So Jehu wrote letters and sent them to Samaria to the officials of Jezreel, to the elders, and to the guardians of the sons of Ahab, saying:"
             }
         },
@@ -210,6 +216,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehu Kills the Priests of Baal"
+                    }
+                ],
                 "text": "Then Jehu brought all the people together and said, “Ahab served Baal a little, but Jehu will serve him a lot."
             }
         },
@@ -330,6 +342,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehu Repeats Jeroboam’s Sins"
+                    }
+                ],
                 "text": "Thus Jehu eradicated Baal from Israel,"
             }
         },
@@ -402,6 +420,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoahaz Succeeds Jehu in Israel"
+                    }
+                ],
                 "text": "As for the rest of the acts of Jehu, along with all his accomplishments and all his might, are they not written in the Book of the Chronicles of the Kings of Israel?"
             }
         },

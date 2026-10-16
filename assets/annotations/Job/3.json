@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Laments His Birth"
+                    }
+                ],
                 "text": "After this, Job opened his mouth and cursed the day of his birth."
             }
         },

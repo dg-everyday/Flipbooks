@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezekiel’s Vision by the River Kebar",
+                        "refs": "Psalms 137:1–9"
+                    }
+                ],
                 "text": "In the thirtieth year, on the fifth day of the fourth month, while I was among the exiles by the River Kebar, the heavens opened and I saw visions of God."
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Four Living Creatures"
+                    }
+                ],
                 "text": "I looked and saw a whirlwind coming from the north, a great cloud with fire flashing back and forth and brilliant light all around it. In the center of the fire was a gleam like amber,"
             }
         },
@@ -174,6 +187,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Four Wheels"
+                    }
+                ],
                 "text": "When I looked at the living creatures, I saw a wheel on the ground beside each creature with its four faces."
             }
         },
@@ -258,6 +277,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Divine Glory"
+                    }
+                ],
                 "text": "Spread out above the heads of the living creatures was the likeness of an awesome expanse, gleaming like crystal."
             }
         },

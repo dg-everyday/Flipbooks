@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Giving to the Needy",
+                        "refs": "Deuteronomy 15:7–11"
+                    }
+                ],
                 "text": "“Be careful not to perform your righteous acts before men to be seen by them. If you do, you will have no reward from your Father in heaven."
             }
         },
@@ -54,6 +61,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lord’s Prayer",
+                        "refs": "Luke 11:1–4"
+                    }
+                ],
                 "text": "And when you pray, do not be like the hypocrites. For they love to pray standing in the synagogues and on the street corners to be seen by men. Truly I tell you, they already have their full reward."
             }
         },
@@ -186,6 +200,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Proper Fasting"
+                    }
+                ],
                 "text": "When you fast, do not be somber like the hypocrites, for they disfigure their faces to show men they are fasting. Truly I tell you, they already have their full reward."
             }
         },
@@ -222,6 +242,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Treasures in Heaven",
+                        "refs": "Luke 12:32–34"
+                    }
+                ],
                 "text": "Do not store up for yourselves treasures on earth, where moth and rust destroy, and where thieves break in and steal."
             }
         },
@@ -258,6 +285,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lamp of the Body",
+                        "refs": "Luke 11:33–36"
+                    }
+                ],
                 "text": "The eye is the lamp of the body. If your eyes are good, your whole body will be full of light."
             }
         },
@@ -294,6 +328,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Worry",
+                        "refs": "Luke 12:22–31"
+                    }
+                ],
                 "text": "Therefore I tell you, do not worry about your life, what you will eat or drink; or about your body, what you will wear. Is not life more than food, and the body more than clothes?"
             }
         },

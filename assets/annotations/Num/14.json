@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Rebellion",
+                        "refs": "Deuteronomy 1:26–33"
+                    }
+                ],
                 "text": "Then the whole congregation lifted up their voices and cried out, and that night the people wept."
             }
         },
@@ -150,6 +157,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Intercedes for Israel"
+                    }
+                ],
                 "text": "But Moses said to the LORD, “The Egyptians will hear of it, for by Your strength You brought this people from among them."
             }
         },
@@ -234,6 +247,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Forgiveness and Judgment",
+                        "refs": "Deuteronomy 1:34–40"
+                    }
+                ],
                 "text": "“I have pardoned them as you requested,” the LORD replied."
             }
         },
@@ -426,6 +446,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plague on the Ten Spies"
+                    }
+                ],
                 "text": "So the men Moses had sent to spy out the land, who had returned and made the whole congregation grumble against him by bringing out a bad report about the land—"
             }
         },
@@ -474,6 +500,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Defeat at Hormah",
+                        "refs": "Deuteronomy 1:41–46"
+                    }
+                ],
                 "text": "Early the next morning they got up and went up toward the ridge of the hill country. “We have indeed sinned,” they said, “but we will go to the place the LORD has promised.”"
             }
         },

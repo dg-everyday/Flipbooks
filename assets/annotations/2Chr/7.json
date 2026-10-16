@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Fire from Heaven",
+                        "refs": "Psalms 136:1–26"
+                    }
+                ],
                 "text": "When Solomon had finished praying, fire came down from heaven and consumed the burnt offering and the sacrifices, and the glory of the LORD filled the temple."
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sacrifices of Dedication",
+                        "refs": "1 Kings 8:62–66"
+                    }
+                ],
                 "text": "Then the king and all the people offered sacrifices before the LORD."
             }
         },
@@ -122,6 +136,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD’s Response to Solomon",
+                        "refs": "1 Kings 9:1–9"
+                    }
+                ],
                 "text": "When Solomon had finished the house of the LORD and the royal palace, successfully carrying out all that was in his heart to do for the house of the LORD and for his own palace,"
             }
         },

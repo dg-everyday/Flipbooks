@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Chambers for the Priests"
+                    }
+                ],
                 "text": "Then the man led me out northward into the outer court, and he brought me to the group of chambers opposite the temple courtyard and the outer wall on the north side."
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Outer Measurements"
+                    }
+                ],
                 "text": "Now when the man had finished measuring the interior of the temple area, he led me out by the gate that faced east, and he measured the area all around:"
             }
         },

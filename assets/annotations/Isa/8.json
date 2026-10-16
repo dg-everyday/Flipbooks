@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Assyrian Invasion Prophesied"
+                    }
+                ],
                 "text": "Then the LORD said to me, “Take a large scroll and write on it with an ordinary stylus: Maher-shalal-hash-baz."
             }
         },
@@ -126,6 +132,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Fear God",
+                        "refs": "Ecclesiastes 8:10–13"
+                    }
+                ],
                 "text": "For this is what the LORD has spoken to me with a strong hand, instructing me not to walk in the way of this people:"
             }
         },
@@ -222,6 +235,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Darkness and Light"
+                    }
+                ],
                 "text": "When men tell you to consult mediums and spiritists who whisper and mutter, shouldn’t a people consult their God instead? Why consult the dead on behalf of the living?"
             }
         },

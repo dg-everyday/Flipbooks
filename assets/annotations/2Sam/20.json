@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sheba’s Rebellion"
+                    }
+                ],
                 "text": "Now a worthless man named Sheba son of Bichri, a Benjamite, happened to be there, and he blew the ram’s horn and shouted: “We have no share in David, no inheritance in Jesse’s son. Every man to his tent, O Israel!”"
             }
         },

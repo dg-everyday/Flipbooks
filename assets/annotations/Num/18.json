@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Duties of Priests and Levites"
+                    }
+                ],
                 "text": "So the LORD said to Aaron, “You and your sons and your father’s house must bear the iniquity involving the sanctuary. And you and your sons alone must bear the iniquity involving your priesthood."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Offerings for Priests and Levites"
+                    }
+                ],
                 "text": "Then the LORD said to Aaron, “Behold, I have put you in charge of My offerings. As for all the sacred offerings of the Israelites, I have given them to you and your sons as a portion and a permanent statute."
             }
         },

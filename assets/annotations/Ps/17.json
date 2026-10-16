@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hear My Righteous Plea"
+                    }
+                ],
                 "title": "A prayer of David.",
                 "text": "Hear, O LORD, my righteous plea; listen to my cry. Give ear to my prayer—it comes from lips free of deceit."
             }

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws about Vows",
+                        "refs": "Matthew 5:33–37"
+                    }
+                ],
                 "text": "Then Moses said to the heads of the tribes of Israel, “This is what the LORD has commanded:"
             }
         },

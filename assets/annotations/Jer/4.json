@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Plea to Return"
+                    }
+                ],
                 "text": "“If you will return, O Israel, return to Me,” declares the LORD. “If you will remove your detestable idols from My sight and no longer waver,"
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Disaster from the North"
+                    }
+                ],
                 "text": "Announce in Judah, proclaim in Jerusalem, and say: “Blow the ram’s horn throughout the land. Cry aloud and say, ‘Assemble yourselves and let us flee to the fortified cities.’"
             }
         },
@@ -222,6 +234,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lamentation for Judah"
+                    }
+                ],
                 "text": "My anguish, my anguish! I writhe in pain! Oh, the pain in my chest! My heart pounds within me; I cannot be silent. For I have heard the sound of the horn, the alarm of battle."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Praise the LORD, O My Soul"
+                    }
+                ],
                 "text": "Hallelujah! Praise the LORD, O my soul."
             }
         },

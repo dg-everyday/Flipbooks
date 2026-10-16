@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nehemiah Sent to Jerusalem"
+                    }
+                ],
                 "text": "Now in the month of Nisan, in the twentieth year of King Artaxerxes, when wine was set before him, I took the wine and gave it to the king. I had never been sad in his presence,"
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nehemiah Inspects the Walls"
+                    }
+                ],
                 "text": "After I had arrived in Jerusalem and had been there three days,"
             }
         },

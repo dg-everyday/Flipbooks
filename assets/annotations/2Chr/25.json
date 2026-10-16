@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Amaziah Reigns in Judah",
+                        "refs": "2 Kings 14:1–7"
+                    }
+                ],
                 "text": "Amaziah was twenty-five years old when he became king, and he reigned in Jerusalem twenty-nine years. His mother’s name was Jehoaddan; she was from Jerusalem."
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Amaziah’s Victories"
+                    }
+                ],
                 "text": "Then Amaziah gathered the people of Judah and assigned them according to their families to commanders of thousands and of hundreds. And he numbered those twenty years of age or older throughout Judah and Benjamin and found 300,000 chosen men able to serve in the army, bearing the spear and shield."
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Amaziah Rebuked for Idolatry"
+                    }
+                ],
                 "text": "When Amaziah returned from the slaughter of the Edomites, he brought back the gods of the Seirites, set them up as his own gods, bowed before them, and burned sacrifices to them."
             }
         },
@@ -186,6 +205,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoash Defeats Amaziah",
+                        "refs": "2 Kings 14:8–14"
+                    }
+                ],
                 "text": "Then Amaziah king of Judah took counsel and sent word to the king of Israel Jehoash son of Jehoahaz, the son of Jehu. “Come, let us meet face to face,” he said."
             }
         },
@@ -254,6 +280,13 @@
     "25": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Amaziah",
+                        "refs": "2 Kings 14:17–20"
+                    }
+                ],
                 "text": "Amaziah son of Joash king of Judah lived for fifteen years after the death of Jehoash son of Jehoahaz king of Israel."
             }
         },

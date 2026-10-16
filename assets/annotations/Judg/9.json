@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abimelech’s Conspiracy"
+                    }
+                ],
                 "text": "Now Abimelech son of Jerubbaal went to his mother’s brothers at Shechem and said to them and to all the clan of his mother,"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jotham’s Parable"
+                    }
+                ],
                 "text": "When this was reported to Jotham, he climbed to the top of Mount Gerizim, raised his voice, and cried out: “Listen to me, O leaders of Shechem, and may God listen to you."
             }
         },
@@ -258,6 +270,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gaal Conspires with the Shechemites"
+                    }
+                ],
                 "text": "After Abimelech had reigned over Israel for three years,"
             }
         },
@@ -354,6 +372,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fall of Shechem"
+                    }
+                ],
                 "text": "When Zebul the governor of the city heard the words of Gaal son of Ebed, he burned with anger."
             }
         },
@@ -594,6 +618,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abimelech’s Punishment"
+                    }
+                ],
                 "text": "Then Abimelech went to Thebez, encamped against it, and captured it."
             }
         },

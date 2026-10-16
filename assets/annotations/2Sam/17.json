@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hushai Counters Ahithophel’s Advice"
+                    }
+                ],
                 "text": "Furthermore, Ahithophel said to Absalom, “Let me choose twelve thousand men and set out tonight in pursuit of David."
             }
         },
@@ -174,6 +180,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hushai’s Warning Saves David",
+                        "refs": "Psalms 55:1–23"
+                    }
+                ],
                 "text": "So Hushai told Zadok and Abiathar, the priests, “This is what Ahithophel has advised Absalom and the elders of Israel, and this is what I have advised."
             }
         },

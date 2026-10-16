@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Manasseh Reigns in Judah",
+                        "refs": "2 Kings 21:1–9"
+                    }
+                ],
                 "text": "Manasseh was twelve years old when he became king, and he reigned in Jerusalem fifty-five years."
             }
         },
@@ -82,6 +89,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Manasseh’s Repentance and Restoration",
+                        "refs": "2 Kings 21:10–18"
+                    }
+                ],
                 "text": "And the LORD spoke to Manasseh and his people, but they did not listen."
             }
         },
@@ -210,6 +224,13 @@
     "21": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Amon Reigns in Judah",
+                        "refs": "2 Kings 21:19–26"
+                    }
+                ],
                 "text": "Amon was twenty-two years old when he became king, and he reigned in Jerusalem two years."
             }
         },

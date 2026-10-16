@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Song of Moses",
+                        "refs": "Revelation 15:1–4"
+                    }
+                ],
                 "text": "Give ear, O heavens, and I will speak; hear, O earth, the words of my mouth."
             }
         },
@@ -570,6 +577,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses’ Death Foretold"
+                    }
+                ],
                 "text": "On that same day the LORD said to Moses,"
             }
         },

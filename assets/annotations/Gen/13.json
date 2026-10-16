@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abram and Lot Part Ways"
+                    }
+                ],
                 "text": "So Abram went up out of Egypt into the Negev—he and his wife and all his possessions—and Lot was with him."
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lot Proceeds toward Sodom"
+                    }
+                ],
                 "text": "And Lot looked out and saw that the whole plain of the Jordan, all the way to Zoar, was well watered like the garden of the LORD, like the land of Egypt. (This was before the LORD destroyed Sodom and Gomorrah.)"
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Renews the Promise to Abram"
+                    }
+                ],
                 "text": "After Lot had departed, the LORD said to Abram, “Now lift up your eyes from the place where you are, and look to the north and south and east and west,"
             }
         },

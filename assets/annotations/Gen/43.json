@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Return to Egypt with Benjamin"
+                    }
+                ],
                 "text": "Now the famine was still severe in the land."
             }
         },
@@ -182,6 +188,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joseph’s Hospitality to His Brothers"
+                    }
+                ],
                 "text": "When Joseph saw Benjamin with his brothers, he said to the steward of his house, “Take these men to my house. Slaughter an animal and prepare it, for they shall dine with me at noon.”"
             }
         },

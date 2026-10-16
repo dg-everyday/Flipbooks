@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Joy of Forgiveness",
+                        "refs": "Romans 4:1–12"
+                    }
+                ],
                 "title": "Of David. A Maskil.",
                 "text": "Blessed is he whose transgressions are forgiven, whose sins are covered."
             }

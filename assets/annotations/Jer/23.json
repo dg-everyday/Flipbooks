@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Righteous Branch"
+                    }
+                ],
                 "text": "“Woe to the shepherds who destroy and scatter the sheep of My pasture!” declares the LORD."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lying Prophets"
+                    }
+                ],
                 "text": "As for the prophets: My heart is broken within me, and all my bones tremble. I have become like a drunkard, like a man overcome by wine, because of the LORD, because of His holy words."
             }
         },
@@ -390,6 +402,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "False Prophecies"
+                    }
+                ],
                 "text": "“Now when this people or a prophet or priest asks you, ‘What is the burden of the LORD?’ you are to say to them, ‘What burden? I will forsake you, declares the LORD.’"
             }
         },

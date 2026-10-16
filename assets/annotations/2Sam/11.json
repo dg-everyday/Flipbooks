@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David and Bathsheba"
+                    }
+                ],
                 "text": "In the spring, at the time when kings march out to war, David sent out Joab and his servants with the whole army of Israel. They destroyed the Ammonites and besieged Rabbah, but David remained in Jerusalem."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Arranges Uriah’s Death"
+                    }
+                ],
                 "text": "The next morning David wrote a letter to Joab and sent it with Uriah."
             }
         },
@@ -306,6 +318,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Marries Bathsheba"
+                    }
+                ],
                 "text": "When Uriah’s wife heard that her husband was dead, she mourned for him."
             }
         },

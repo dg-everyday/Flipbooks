@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel at Mount Sinai"
+                    }
+                ],
                 "text": "In the third month, on the same day of the month that the Israelites had left the land of Egypt, they came to the Wilderness of Sinai."
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Visits Sinai"
+                    }
+                ],
                 "text": "On the third day, when morning came, there was thunder and lightning. A thick cloud was upon the mountain, and a very loud blast of the ram’s horn went out, so that all the people in the camp trembled."
             }
         },

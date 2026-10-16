@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sennacherib Invades Judah",
+                        "refs": "2 Kings 18:13–16; Psalms 46:1–11"
+                    }
+                ],
                 "text": "After all these acts of faithfulness, Sennacherib king of Assyria came and invaded Judah. He laid siege to the fortified cities, intending to conquer them for himself."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sennacherib Threatens Jerusalem",
+                        "refs": "2 Kings 18:17–37; Isaiah 36:1–22"
+                    }
+                ],
                 "text": "Later, as Sennacherib king of Assyria and all his forces besieged Lachish, he sent his servants to Jerusalem with a message for King Hezekiah of Judah and all the people of Judah who were in Jerusalem:"
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jerusalem Delivered from the Assyrians",
+                        "refs": "2 Kings 19:35–37; Isaiah 37:36–38"
+                    }
+                ],
                 "text": "In response, King Hezekiah and the prophet Isaiah son of Amoz cried out to heaven in prayer,"
             }
         },
@@ -270,6 +291,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hezekiah’s Illness and Recovery",
+                        "refs": "2 Kings 20:1–11; Isaiah 38:1–8"
+                    }
+                ],
                 "text": "In those days Hezekiah became mortally ill. So he prayed to the LORD, who spoke to him and gave him a sign."
             }
         },
@@ -366,6 +394,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hezekiah’s Death"
+                    }
+                ],
                 "text": "As for the rest of the acts of Hezekiah and his deeds of loving devotion, they are indeed written in the vision of the prophet Isaiah son of Amoz in the Book of the Kings of Judah and Israel."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "One Place for Worship"
+                    }
+                ],
                 "text": "These are the statutes and ordinances you must be careful to follow all the days you live in the land that the LORD, the God of your fathers, has given you to possess."
             }
         },
@@ -342,6 +348,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Warning against Idolatry",
+                        "refs": "Deuteronomy 4:15–31; Ezekiel 6:1–7"
+                    }
+                ],
                 "text": "When the LORD your God cuts off before you the nations you are entering to dispossess, and you drive them out and live in their land,"
             }
         },

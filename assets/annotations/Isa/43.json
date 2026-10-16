@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Only Savior"
+                    }
+                ],
                 "text": "But now, this is what the LORD says—He who created you, O Jacob, and He who formed you, O Israel: “Do not fear, for I have redeemed you; I have called you by your name; you are Mine!"
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Way in the Wilderness"
+                    }
+                ],
                 "text": "Thus says the LORD your Redeemer, the Holy One of Israel: “For your sake, I will send to Babylon and bring them all as fugitives, even the Chaldeans, in the ships in which they rejoice."
             }
         },
@@ -258,6 +270,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel’s Unfaithfulness",
+                        "refs": "Judges 2:10–15; Jeremiah 2:23–37"
+                    }
+                ],
                 "text": "But you have not called on Me, O Jacob, because you have grown weary of Me, O Israel."
             }
         },

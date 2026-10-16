@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Commandments for Holiness"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -102,6 +108,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Love Your Neighbor",
+                        "refs": "Romans 13:8–10"
+                    }
+                ],
                 "text": "When you reap the harvest of your land, you are not to reap to the very edges of your field or gather the gleanings of your harvest."
             }
         },
@@ -222,6 +235,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Keep My Statutes"
+                    }
+                ],
                 "text": "You are to keep My statutes. You shall not crossbreed two different kinds of livestock; you shall not sow your fields with two kinds of seed; and you shall not wear clothing made of two kinds of material."
             }
         },

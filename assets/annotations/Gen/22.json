@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Offering of Isaac",
+                        "refs": "John 3:1–21"
+                    }
+                ],
                 "text": "Some time later God tested Abraham and said to him, “Abraham!” “Here I am,” he answered."
             }
         },
@@ -126,6 +133,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Provides the Sacrifice"
+                    }
+                ],
                 "text": "Just then the angel of the LORD called out to him from heaven, “Abraham, Abraham!” “Here I am,” he replied."
             }
         },
@@ -234,6 +247,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sons of Nahor"
+                    }
+                ],
                 "text": "Some time later, Abraham was told, “Milcah has also borne sons to your brother Nahor:"
             }
         },

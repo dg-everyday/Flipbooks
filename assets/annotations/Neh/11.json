@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jerusalem’s New Settlers"
+                    }
+                ],
                 "text": "Now the leaders of the people settled in Jerusalem, and the rest of the people cast lots to bring one out of ten to live in the holy city of Jerusalem, while the remaining nine were to dwell in their own towns."
             }
         },
@@ -234,6 +240,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Residents Outside Jerusalem"
+                    }
+                ],
                 "text": "The rest of the Israelites, with the priests and Levites, were in all the villages of Judah, each on his own inheritance."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sovereignty of God"
+                    }
+                ],
                 "text": "Hear the word that the LORD speaks to you, O house of Israel."
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Coming Captivity of Judah"
+                    }
+                ],
                 "text": "Gather up your belongings from this land, you who live under siege."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "War against Jehoshaphat"
+                    }
+                ],
                 "text": "After this, the Moabites and Ammonites, together with some of the Meunites, came to make war against Jehoshaphat."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat’s Prayer"
+                    }
+                ],
                 "text": "Then Jehoshaphat stood in the assembly of Judah and Jerusalem in the house of the LORD in front of the new courtyard"
             }
         },
@@ -162,6 +174,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Prophecy of Jahaziel"
+                    }
+                ],
                 "text": "Then the Spirit of the LORD came upon Jahaziel son of Zechariah, the son of Benaiah, the son of Jeiel, the son of Mattaniah, a Levite from Asaph’s descendants, as he stood in the midst of the assembly."
             }
         },
@@ -234,6 +252,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Enemies Destroy Themselves"
+                    }
+                ],
                 "text": "Early in the morning they got up and left for the Wilderness of Tekoa. As they set out, Jehoshaphat stood up and said, “Hear me, O people of Judah and Jerusalem. Believe in the LORD your God, and you will be upheld; believe in His prophets, and you will succeed.”"
             }
         },
@@ -306,6 +330,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Joyful Return"
+                    }
+                ],
                 "text": "On the fourth day they assembled in the Valley of Beracah, where they blessed the LORD. Therefore that place is called the Valley of Beracah to this day."
             }
         },
@@ -366,6 +396,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Summary of Jehoshaphat’s Reign",
+                        "refs": "1 Kings 22:41–50"
+                    }
+                ],
                 "text": "So Jehoshaphat reigned over Judah. He was thirty-five years old when he became king, and he reigned in Jerusalem twenty-five years. His mother’s name was Azubah daughter of Shilhi."
             }
         },
@@ -414,6 +451,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat’s Fleet Is Wrecked"
+                    }
+                ],
                 "text": "Later, Jehoshaphat king of Judah made an alliance with Ahaziah king of Israel, who acted wickedly."
             }
         },

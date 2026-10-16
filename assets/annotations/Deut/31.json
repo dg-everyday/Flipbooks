@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua to Succeed Moses",
+                        "refs": "Numbers 27:18–23"
+                    }
+                ],
                 "text": "When Moses had finished speaking these words to all Israel,"
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Reading of the Law",
+                        "refs": "Nehemiah 8:1–8"
+                    }
+                ],
                 "text": "So Moses wrote down this law and gave it to the priests, the sons of Levi, who carried the ark of the covenant of the LORD, and to all the elders of Israel."
             }
         },
@@ -162,6 +176,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Commissions Joshua"
+                    }
+                ],
                 "text": "Then the LORD said to Moses, “Behold, the time of your death is near. Call Joshua and present yourselves at the Tent of Meeting, so that I may commission him.” So Moses and Joshua went and presented themselves at the Tent of Meeting."
             }
         },
@@ -282,6 +302,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Law Placed in the Ark"
+                    }
+                ],
                 "text": "When Moses had finished writing in a book the words of this law from beginning to end,"
             }
         },
@@ -354,6 +380,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Begins His Song"
+                    }
+                ],
                 "text": "Then Moses recited aloud to the whole assembly of Israel the words of this song from beginning to end:"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Setting Up the Tabernacle",
+                        "refs": "Acts 7:44–47; Hebrews 9:1–10"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -386,6 +393,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Cloud and the Glory",
+                        "refs": "Numbers 9:15–23"
+                    }
+                ],
                 "text": "Then the cloud covered the Tent of Meeting, and the glory of the LORD filled the tabernacle."
             }
         },

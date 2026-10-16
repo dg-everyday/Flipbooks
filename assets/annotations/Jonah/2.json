@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jonah’s Prayer"
+                    }
+                ],
                 "text": "From inside the fish, Jonah prayed to the LORD his God,"
             }
         },

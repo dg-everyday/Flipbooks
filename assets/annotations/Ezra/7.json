@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezra Arrives in Jerusalem"
+                    }
+                ],
                 "text": "Many years later, during the reign of Artaxerxes king of Persia, Ezra son of Seraiah, the son of Azariah, the son of Hilkiah,"
             }
         },
@@ -110,6 +116,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Artaxerxes’ Letter for Ezra"
+                    }
+                ],
                 "text": "This is the text of the letter King Artaxerxes had given to Ezra the priest and scribe, an expert in the commandments and statutes of the LORD to Israel:"
             }
         },
@@ -302,6 +314,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ezra Blesses God"
+                    }
+                ],
                 "text": "Blessed be the LORD, the God of our fathers, who has put into the heart of the king to so honor the house of the LORD in Jerusalem,"
             }
         },

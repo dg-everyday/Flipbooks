@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prophecy and Tongues"
+                    }
+                ],
                 "text": "Earnestly pursue love and eagerly desire spiritual gifts, especially the gift of prophecy."
             }
         },
@@ -306,6 +312,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Orderly Worship"
+                    }
+                ],
                 "text": "What then shall we say, brothers? When you come together, everyone has a psalm or a teaching, a revelation, a tongue, or an interpretation. All of these must be done to build up the church."
             }
         },

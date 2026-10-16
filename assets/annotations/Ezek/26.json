@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Prophecy against Tyre",
+                        "refs": "Isaiah 23:1–18"
+                    }
+                ],
                 "text": "In the eleventh month of the twelfth year, on the first day of the month, the word of the LORD came to me, saying,"
             }
         },

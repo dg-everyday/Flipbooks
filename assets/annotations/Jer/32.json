@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Buys Hanamel’s Field"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah from the LORD in the tenth year of Zedekiah king of Judah, which was the eighteenth year of Nebuchadnezzar."
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Prays for Understanding"
+                    }
+                ],
                 "text": "After I had given the deed of purchase to Baruch son of Neriah, I prayed to the LORD:"
             }
         },
@@ -306,6 +318,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Answers Jeremiah"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Jeremiah:"
             }
         },
@@ -426,6 +444,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Promise of Restoration",
+                        "refs": "Ezekiel 11:13–21"
+                    }
+                ],
                 "text": "Now therefore, about this city of which you say, ‘It will be delivered into the hand of the king of Babylon by sword and famine and plague,’ this is what the LORD, the God of Israel, says:"
             }
         },

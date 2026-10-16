@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Crossing the Jordan"
+                    }
+                ],
                 "text": "Early the next morning Joshua got up and left Shittim with all the Israelites. They went as far as the Jordan, where they camped before crossing over."
             }
         },

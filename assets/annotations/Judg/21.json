@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wives for the Benjamites"
+                    }
+                ],
                 "text": "Now the men of Israel had sworn an oath at Mizpah, saying, “Not one of us will give his daughter in marriage to a Benjamite.”"
             }
         },

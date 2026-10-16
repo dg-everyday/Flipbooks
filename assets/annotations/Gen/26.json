@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Promise to Isaac",
+                        "refs": "Genesis 12:1–9"
+                    }
+                ],
                 "text": "Now there was another famine in the land, subsequent to the one that had occurred in Abraham’s time. And Isaac went to Abimelech king of the Philistines at Gerar."
             }
         },
@@ -66,6 +73,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Isaac Deceives Abimelech"
+                    }
+                ],
                 "text": "So Isaac settled in Gerar."
             }
         },
@@ -138,6 +151,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Isaac’s Prosperity"
+                    }
+                ],
                 "text": "Now Isaac sowed seed in the land, and that very year he reaped a hundredfold. And the LORD blessed him,"
             }
         },
@@ -306,6 +325,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Isaac’s Covenant with Abimelech"
+                    }
+                ],
                 "text": "Later, Abimelech came to Isaac from Gerar, with Ahuzzath his adviser and Phicol the commander of his army."
             }
         },
@@ -402,6 +427,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esau’s Wives"
+                    }
+                ],
                 "text": "When Esau was forty years old, he took as his wives Judith daughter of Beeri the Hittite and Basemath daughter of Elon the Hittite."
             }
         },

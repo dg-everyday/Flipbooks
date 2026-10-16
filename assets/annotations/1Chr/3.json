@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of David",
+                        "refs": "2 Samuel 3:1–5"
+                    }
+                ],
                 "text": "These were the sons of David who were born to him in Hebron: The firstborn was Amnon by Ahinoam of Jezreel; the second was Daniel by Abigail of Carmel;"
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Solomon"
+                    }
+                ],
                 "text": "Solomon’s son was Rehoboam: Abijah was his son, Asa his son, Jehoshaphat his son,"
             }
         },
@@ -170,6 +183,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Royal Line After the Exile"
+                    }
+                ],
                 "text": "The descendants of Jeconiah the captive: Shealtiel his son,"
             }
         },

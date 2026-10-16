@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Come Quickly to Me",
+                        "refs": "Psalms 70:1–5"
+                    }
+                ],
                 "title": "A Psalm of David.",
                 "text": "I call upon You, O LORD; come quickly to me. Hear my voice when I call to You."
             }

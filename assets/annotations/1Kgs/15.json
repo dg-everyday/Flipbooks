@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abijam Reigns in Judah",
+                        "refs": "2 Chronicles 13:1–3"
+                    }
+                ],
                 "text": "In the eighteenth year of the reign of Jeroboam son of Nebat, Abijam became king of Judah,"
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Asa Reigns in Judah",
+                        "refs": "2 Chronicles 14:1–15; 2 Chronicles 15:8–19"
+                    }
+                ],
                 "text": "In the twentieth year of Jeroboam’s reign over Israel, Asa became king of Judah,"
             }
         },
@@ -186,6 +200,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "War between Asa and Baasha",
+                        "refs": "2 Chronicles 16:1–6"
+                    }
+                ],
                 "text": "Now there was war between Asa and Baasha king of Israel throughout their days."
             }
         },
@@ -270,6 +291,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoshaphat Succeeds Asa",
+                        "refs": "2 Chronicles 17:1–19"
+                    }
+                ],
                 "text": "Now the rest of the acts of Asa, along with all his might, all his accomplishments, and the cities he built, are they not written in the Book of the Chronicles of the Kings of Judah? In his old age, however, he became diseased in his feet."
             }
         },
@@ -294,6 +322,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nadab Reigns in Israel"
+                    }
+                ],
                 "text": "In the second year of Asa’s reign over Judah, Nadab son of Jeroboam became king of Israel, and he reigned two years."
             }
         },
@@ -390,6 +424,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Baasha Reigns in Israel"
+                    }
+                ],
                 "text": "In the third year of Asa’s reign over Judah, Baasha son of Ahijah became king of all Israel, and he reigned in Tirzah twenty-four years."
             }
         },

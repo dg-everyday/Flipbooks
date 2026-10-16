@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Message to Ahaz"
+                    }
+                ],
                 "text": "Now in the days that Ahaz son of Jotham, the son of Uzziah, was king of Judah, Rezin king of Aram marched up to wage war against Jerusalem. He was accompanied by Pekah son of Remaliah the king of Israel, but he could not overpower the city."
             }
         },
@@ -114,6 +120,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sign of Immanuel",
+                        "refs": "Matthew 1:18–25"
+                    }
+                ],
                 "text": "Again the LORD spoke to Ahaz, saying,"
             }
         },
@@ -198,6 +211,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment to Come",
+                        "refs": "Micah 1:1–7"
+                    }
+                ],
                 "text": "The LORD will bring on you and on your people and on the house of your father a time unlike any since the day Ephraim separated from Judah—He will bring the king of Assyria.”"
             }
         },

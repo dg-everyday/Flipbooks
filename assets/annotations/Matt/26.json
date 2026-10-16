@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot to Kill Jesus",
+                        "refs": "Mark 14:1–2; Luke 22:1–2; John 11:45–57"
+                    }
+                ],
                 "text": "When Jesus had finished saying all these things, He told His disciples,"
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Anointed at Bethany",
+                        "refs": "Mark 14:3–9; Luke 7:36–50; John 12:1–8"
+                    }
+                ],
                 "text": "While Jesus was in Bethany in the home of Simon the Leper,"
             }
         },
@@ -162,6 +176,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judas Agrees to Betray Jesus",
+                        "refs": "Mark 14:10–11; Luke 22:3–6"
+                    }
+                ],
                 "text": "Then one of the Twelve, the one called Judas Iscariot, went to the chief priests"
             }
         },
@@ -198,6 +219,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Preparing the Passover",
+                        "refs": "Mark 14:12–16; Luke 22:7–13"
+                    }
+                ],
                 "text": "On the first day of the Feast of Unleavened Bread, the disciples came to Jesus and asked, “Where do You want us to prepare for You to eat the Passover?”"
             }
         },
@@ -234,6 +262,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Last Supper",
+                        "refs": "Mark 14:17–26; Luke 22:14–23; 1 Corinthians 11:17–34"
+                    }
+                ],
                 "text": "When evening came, Jesus was reclining with the twelve disciples."
             }
         },
@@ -366,6 +401,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Predicts Peter’s Denial",
+                        "refs": "Zechariah 13:7–9; Mark 14:27–31; Luke 22:31–38; John 13:36–38"
+                    }
+                ],
                 "text": "Then Jesus said to them, “This very night you will all fall away on account of Me. For it is written: ‘I will strike the Shepherd, and the sheep of the flock will be scattered.’"
             }
         },
@@ -426,6 +468,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Prays at Gethsemane",
+                        "refs": "Mark 14:32–42; Luke 22:39–46"
+                    }
+                ],
                 "text": "Then Jesus went with His disciples to a place called Gethsemane, and He told them, “Sit here while I go over there and pray.”"
             }
         },
@@ -558,6 +607,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Betrayal of Jesus",
+                        "refs": "Mark 14:43–52; Luke 22:47–53; John 18:1–14"
+                    }
+                ],
                 "text": "While Jesus was still speaking, Judas, one of the Twelve, arrived, accompanied by a large crowd armed with swords and clubs, sent from the chief priests and elders of the people."
             }
         },
@@ -678,6 +734,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus before the Sanhedrin",
+                        "refs": "Mark 14:53–65; Luke 22:66–71; John 18:19–24"
+                    }
+                ],
                 "text": "Those who had arrested Jesus led Him away to the house of Caiaphas the high priest, where the scribes and elders had gathered."
             }
         },
@@ -822,6 +885,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter Denies Jesus",
+                        "refs": "Mark 14:66–72; Luke 22:54–62; John 18:15–18"
+                    }
+                ],
                 "text": "Meanwhile, Peter was sitting out in the courtyard, and a servant girl came up to him. “You also were with Jesus the Galilean,” she said."
             }
         },

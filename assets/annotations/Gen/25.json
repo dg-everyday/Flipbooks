@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abraham and Keturah",
+                        "refs": "1 Chronicles 1:32–33"
+                    }
+                ],
                 "text": "Now Abraham had taken another wife, named Keturah,"
             }
         },
@@ -78,6 +85,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Abraham"
+                    }
+                ],
                 "text": "Abraham lived a total of 175 years."
             }
         },
@@ -138,6 +151,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Ishmael",
+                        "refs": "1 Chronicles 1:28–31"
+                    }
+                ],
                 "text": "This is the account of Abraham’s son Ishmael, whom Hagar the Egyptian, Sarah’s maidservant, bore to Abraham."
             }
         },
@@ -222,6 +242,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob and Esau",
+                        "refs": "Malachi 1:1–5; Romans 9:6–29"
+                    }
+                ],
                 "text": "This is the account of Abraham’s son Isaac. Abraham became the father of Isaac,"
             }
         },
@@ -342,6 +369,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esau Sells His Birthright"
+                    }
+                ],
                 "text": "One day, while Jacob was cooking some stew, Esau came in from the field and was famished."
             }
         },

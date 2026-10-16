@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Ten Virgins"
+                    }
+                ],
                 "text": "“At that time the kingdom of heaven will be like ten virgins who took their lamps and went out to meet the bridegroom."
             }
         },
@@ -162,6 +168,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Talents",
+                        "refs": "Luke 19:11–27"
+                    }
+                ],
                 "text": "For it is just like a man going on a journey, who called his servants and entrusted them with his possessions."
             }
         },
@@ -366,6 +379,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sheep and the Goats"
+                    }
+                ],
                 "text": "When the Son of Man comes in His glory, and all the angels with Him, He will sit on His glorious throne."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Samuel"
+                    }
+                ],
                 "text": "When Samuel died, all Israel gathered to mourn for him; and they buried him at his home in Ramah. Then David set out and went down to the Wilderness of Paran."
             }
         },
@@ -18,6 +24,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David, Nabal, and Abigail"
+                    }
+                ],
                 "text": "Now there was a man in Maon whose business was in Carmel. He was a very wealthy man with a thousand goats and three thousand sheep, which he was shearing in Carmel."
             }
         },
@@ -210,6 +222,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abigail Intercedes for Nabal"
+                    }
+                ],
                 "text": "Then Abigail hurried and took two hundred loaves of bread, two skins of wine, five butchered sheep, five seahs of roasted grain, a hundred clusters of raisins, and two hundred cakes of figs. She loaded them on donkeys"
             }
         },
@@ -462,6 +480,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Marries Abigail"
+                    }
+                ],
                 "text": "On hearing that Nabal was dead, David said, “Blessed be the LORD, who has upheld my cause against the reproach of Nabal and has restrained His servant from evil. For the LORD has brought the wickedness of Nabal down upon his own head.” Then David sent word to Abigail, asking her to become his wife."
             }
         },

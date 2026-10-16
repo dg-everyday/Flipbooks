@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Holy Spirit at Pentecost",
+                        "refs": "Genesis 11:1–9; Leviticus 23:15–22"
+                    }
+                ],
                 "text": "When the day of Pentecost came, they were all together in one place."
             }
         },
@@ -162,6 +169,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter Addresses the Crowd",
+                        "refs": "Psalms 16:1–11; Joel 2:28–32"
+                    }
+                ],
                 "text": "Then Peter stood up with the Eleven, lifted up his voice, and addressed the crowd: “Men of Judea and all who dwell in Jerusalem, let this be known to you, and listen carefully to my words."
             }
         },
@@ -438,6 +452,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Three Thousand Believe"
+                    }
+                ],
                 "text": "When the people heard this, they were cut to the heart and asked Peter and the other apostles, “Brothers, what shall we do?”"
             }
         },
@@ -498,6 +518,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fellowship of Believers",
+                        "refs": "Acts 4:32–37"
+                    }
+                ],
                 "text": "They devoted themselves to the apostles’ teaching and to the fellowship, to the breaking of bread and to prayer."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Nebuchadnezzar’s Golden Statue"
+                    }
+                ],
                 "text": "King Nebuchadnezzar made a golden statue sixty cubits high and six cubits wide, and he set it up on the plain of Dura in the province of Babylon."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Shadrach, Meshach, and Abednego Accused"
+                    }
+                ],
                 "text": "At this time some astrologers came forward and maliciously accused the Jews,"
             }
         },
@@ -222,6 +234,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fiery Furnace"
+                    }
+                ],
                 "text": "At this, Nebuchadnezzar was filled with rage, and the expression on his face changed toward Shadrach, Meshach, and Abednego. He gave orders to heat the furnace seven times hotter than usual,"
             }
         },

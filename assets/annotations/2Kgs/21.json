@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Manasseh Reigns in Judah",
+                        "refs": "2 Chronicles 33:1–9"
+                    }
+                ],
                 "text": "Manasseh was twelve years old when he became king, and he reigned in Jerusalem fifty-five years. His mother’s name was Hephzibah."
             }
         },
@@ -114,6 +121,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Manasseh’s Idolatries Rebuked",
+                        "refs": "2 Chronicles 33:10–20"
+                    }
+                ],
                 "text": "And the LORD spoke through His servants the prophets, saying,"
             }
         },
@@ -222,6 +236,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Amon Reigns in Judah",
+                        "refs": "2 Chronicles 33:21–25"
+                    }
+                ],
                 "text": "Amon was twenty-two years old when he became king, and he reigned in Jerusalem two years. His mother’s name was Meshullemeth daughter of Haruz; she was from Jotbah."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Belshazzar’s Feast"
+                    }
+                ],
                 "text": "Later, King Belshazzar held a great feast for a thousand of his nobles, and he drank wine with them."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Handwriting on the Wall"
+                    }
+                ],
                 "text": "At that moment the fingers of a human hand appeared and wrote on the plaster of the wall, near the lampstand in the royal palace. As the king watched the hand that was writing,"
             }
         },
@@ -150,6 +162,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel Interprets the Handwriting"
+                    }
+                ],
                 "text": "So Daniel was brought before the king, who asked him, “Are you Daniel, one of the exiles my father the king brought from Judah?"
             }
         },

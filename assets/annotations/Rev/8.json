@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Seventh Seal"
+                    }
+                ],
                 "text": "When the Lamb opened the seventh seal, there was silence in heaven for about half an hour."
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Four Trumpets"
+                    }
+                ],
                 "text": "And the seven angels with the seven trumpets prepared to sound them."
             }
         },

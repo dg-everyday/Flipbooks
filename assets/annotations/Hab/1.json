@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Habakkuk’s First Complaint"
+                    }
+                ],
                 "text": "This is the burden that Habakkuk the prophet received in a vision:"
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD’s Answer"
+                    }
+                ],
                 "text": "“Look at the nations and observe—be utterly astounded! For I am doing a work in your days that you would never believe even if someone told you."
             }
         },
@@ -138,6 +150,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Habakkuk’s Second Complaint",
+                        "refs": "Psalms 11:1–7"
+                    }
+                ],
                 "text": "Are You not from everlasting, O LORD, my God, my Holy One? We will not die. O LORD, You have appointed them to execute judgment; O Rock, You have established them for correction."
             }
         },

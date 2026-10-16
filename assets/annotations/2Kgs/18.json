@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hezekiah Destroys Idolatry in Judah",
+                        "refs": "2 Chronicles 29:1–2"
+                    }
+                ],
                 "text": "In the third year of the reign of Hoshea son of Elah over Israel, Hezekiah son of Ahaz became king of Judah."
             }
         },
@@ -150,6 +157,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sennacherib Invades Judah",
+                        "refs": "2 Chronicles 32:1–8; Psalms 46:1–11"
+                    }
+                ],
                 "text": "In the fourteenth year of Hezekiah’s reign, Sennacherib king of Assyria attacked and captured all the fortified cities of Judah."
             }
         },
@@ -198,6 +212,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sennacherib Threatens Jerusalem",
+                        "refs": "2 Chronicles 32:9–19; Isaiah 36:1–22"
+                    }
+                ],
                 "text": "Nevertheless, the king of Assyria sent the Tartan, the Rabsaris, and the Rabshakeh, along with a great army, from Lachish to King Hezekiah at Jerusalem. They advanced up to Jerusalem and stationed themselves by the aqueduct of the upper pool, on the road to the Launderer’s Field."
             }
         },

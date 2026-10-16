@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Micah’s Idolatry"
+                    }
+                ],
                 "text": "Now a man named Micah from the hill country of Ephraim"
             }
         },

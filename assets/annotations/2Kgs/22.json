@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Josiah Reigns in Judah",
+                        "refs": "2 Chronicles 34:1–2"
+                    }
+                ],
                 "text": "Josiah was eight years old when he became king, and he reigned in Jerusalem thirty-one years. His mother’s name was Jedidah daughter of Adaiah; she was from Bozkath."
             }
         },
@@ -30,6 +37,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Funding the Temple Repairs",
+                        "refs": "2 Chronicles 34:8–13"
+                    }
+                ],
                 "text": "Now in the eighteenth year of his reign, King Josiah sent the scribe, Shaphan son of Azaliah, the son of Meshullam, to the house of the LORD, saying,"
             }
         },
@@ -90,6 +104,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hilkiah Finds the Book of the Law",
+                        "refs": "2 Chronicles 34:14–21"
+                    }
+                ],
                 "text": "Then Hilkiah the high priest said to Shaphan the scribe, “I have found the Book of the Law in the house of the LORD!” And he gave it to Shaphan, who read it."
             }
         },
@@ -162,6 +183,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Huldah’s Prophecy",
+                        "refs": "2 Chronicles 34:22–28"
+                    }
+                ],
                 "text": "So Hilkiah the priest, Ahikam, Achbor, Shaphan, and Asaiah went and spoke to Huldah the prophetess, the wife of Shallum son of Tikvah, the son of Harhas, the keeper of the wardrobe. She lived in Jerusalem, in the Second District."
             }
         },

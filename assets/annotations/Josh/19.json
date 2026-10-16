@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Simeon’s Inheritance"
+                    }
+                ],
                 "text": "The second lot came out for the clans of the tribe of Simeon: Their inheritance lay within the territory of Judah"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Zebulun’s Inheritance"
+                    }
+                ],
                 "text": "The third lot came up for the clans of the tribe of Zebulun: The border of their inheritance stretched as far as Sarid."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Issachar’s Inheritance"
+                    }
+                ],
                 "text": "The fourth lot came out for the clans of the tribe of Issachar:"
             }
         },
@@ -282,6 +300,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Asher’s Inheritance"
+                    }
+                ],
                 "text": "The fifth lot came out for the clans of the tribe of Asher:"
             }
         },
@@ -378,6 +402,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Naphtali’s Inheritance"
+                    }
+                ],
                 "text": "The sixth lot came out for the clans of the tribe of Naphtali:"
             }
         },
@@ -474,6 +504,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Dan’s Inheritance"
+                    }
+                ],
                 "text": "The seventh lot came out for the clans of the tribe of Dan:"
             }
         },
@@ -582,6 +618,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joshua’s Inheritance"
+                    }
+                ],
                 "text": "When they had finished distributing the land into its territories, the Israelites gave Joshua son of Nun an inheritance among them,"
             }
         },

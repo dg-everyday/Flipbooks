@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Faith and Assurance",
+                        "refs": "Genesis 1:1–2; John 1:1–5"
+                    }
+                ],
                 "text": "Now faith is the assurance of what we hope for and the certainty of what we do not see."
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of Abel, Enoch, Noah",
+                        "refs": "Genesis 4—9"
+                    }
+                ],
                 "text": "By faith Abel offered God a better sacrifice than Cain did. By faith he was commended as righteous when God gave approval to his gifts. And by faith he still speaks, even though he is dead."
             }
         },
@@ -90,6 +104,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of Abraham and Sarah",
+                        "refs": "Genesis 15—22; Romans 4:1–12"
+                    }
+                ],
                 "text": "By faith Abraham, when called to go to a place he would later receive as his inheritance, obeyed and went, without knowing where he was going."
             }
         },
@@ -234,6 +255,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of Isaac, Jacob, and Joseph",
+                        "refs": "Genesis 27—50"
+                    }
+                ],
                 "text": "By faith Isaac blessed Jacob and Esau concerning the future."
             }
         },
@@ -270,6 +298,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of Moses",
+                        "refs": "Exodus 2—15; Acts 7:20–22"
+                    }
+                ],
                 "text": "By faith Moses’ parents hid him for three months after his birth, because they saw that he was a beautiful child, and they were unafraid of the king’s edict."
             }
         },
@@ -354,6 +389,16 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Faith of Many"
+                    },
+                    {
+                        "level": 1,
+                        "title": "(Joshua–Malachi)"
+                    }
+                ],
                 "text": "By faith the walls of Jericho fell, after the people had marched around them for seven days."
             }
         },

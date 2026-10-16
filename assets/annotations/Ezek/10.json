@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Glory Exits the Temple"
+                    }
+                ],
                 "text": "And I looked and saw above the expanse, above the heads of the cherubim, the likeness of a throne of sapphire."
             }
         },

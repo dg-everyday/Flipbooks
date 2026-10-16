@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Call of Abram",
+                        "refs": "Genesis 26:1–5; Acts 7:1–8"
+                    }
+                ],
                 "text": "Then the LORD said to Abram, “Leave your country, your kindred, and your father’s household, and go to the land I will show you."
             }
         },
@@ -114,6 +121,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Abram and Sarai in Egypt"
+                    }
+                ],
                 "text": "Now there was a famine in the land. So Abram went down to Egypt to live there for a while because the famine was severe."
             }
         },

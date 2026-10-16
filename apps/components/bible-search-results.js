@@ -13,9 +13,12 @@
  * words of Jesus are printed in red, from the ranges in red-letter-src.
  *
  * Below the commentary the explanation popup lays the verse out word by word,
- * an interlinear: each group of KJV words over its Strong's number and the
- * Hebrew or Greek word behind it (annotations' "interlinear"); tapping one
- * opens its entry in Strong's dictionary, fetched from strongs-base.
+ * an interlinear in the original's order (Hebrew right to left), as the
+ * passage reader's Interlinear tab does: each word's Strong's number,
+ * transliteration, the Hebrew or Greek, a gloss and its grammar, from the
+ * chapter files in interlinear-base, and under them the glosses in that
+ * order as one line ("Word for word"). Tapping a word opens its entry in
+ * Strong's dictionary, fetched from strongs-base.
  *
  * Each verse opens with a "KJV" pill, and under it a "BSB" pill with an arrow
  * shows the Berean Standard Bible wording after it, from the same chapter file
@@ -60,6 +63,10 @@
  *                   in red (see tools/red-letter). Rows without a book_id, or
  *                   a file that fails to load, leave the text in black.
  *                   Default: ../../assets/red-letter.json (relative to this file)
+ *   interlinear-base  Folder of <book_id>/<chapter>.json interlinear files,
+ *                   each verse's words in the Hebrew or Greek (see
+ *                   tools/interlinear). Default: ../../assets/interlinear/
+ *                   (relative to this file)
  *   strongs-base    Folder of Strong's dictionary files, hebrew/<n>.json and
  *                   greek/<n>.json, 100 entries each (see tools/strongs).
  *                   Default: ../../assets/strongs/ (relative to this file)
@@ -103,6 +110,10 @@ const DEFAULT_METADATA_SRC = new URL(
 ).href;
 const DEFAULT_ANNOTATIONS_BASE = new URL(
     "../../assets/annotations/",
+    import.meta.url,
+).href;
+const DEFAULT_INTERLINEAR_BASE = new URL(
+    "../../assets/interlinear/",
     import.meta.url,
 ).href;
 const DEFAULT_STRONGS_BASE = new URL(
@@ -549,8 +560,9 @@ const STYLES = /* css */ `
   .explanation-close:hover { background: rgb(0 27 52 / 8%); }
   .explanation-close:focus-visible { outline: 2px solid var(--search-navy); outline-offset: 2px; }
 
-  /* The interlinear: the verse's KJV words in groups, each over its Strong's
-     number and the Hebrew or Greek word behind it; a tap opens the entry. */
+  /* The interlinear: the verse's Hebrew or Greek words in their own order
+     (right to left for Hebrew), laid out as in <passage-reader>; a tap opens
+     the word's dictionary entry. */
   .interlinear {
     margin-top: 16px; padding-top: 12px;
     border-top: 1px solid rgb(128 91 24 / 25%);
@@ -571,6 +583,7 @@ const STYLES = /* css */ `
     margin: 0; padding: 0;
     list-style: none;
   }
+  .il-words[dir="rtl"] { direction: rtl; }
   .il-word {
     display: flex; flex-direction: column; align-items: center; gap: 1px;
     min-width: 52px; padding: 5px 8px 6px;
@@ -578,6 +591,7 @@ const STYLES = /* css */ `
     background: rgb(255 255 255 / 40%);
     color: var(--search-ink);
     text-align: center;
+    direction: ltr;
     font: inherit;
   }
   button.il-word { cursor: pointer; }
@@ -588,13 +602,25 @@ const STYLES = /* css */ `
     background: #fff8e6;
     box-shadow: 0 0 0 1px var(--search-gold);
   }
-  .il-kjv { font: 400 1.0625rem/1.25 'Strait', 'Roboto', sans-serif; }
-  /* Words the translators supplied, set in italics as the KJV prints them. */
-  .il-kjv i { color: #5d6b78; }
   .il-orig {
     color: var(--search-hebrew);
-    font: 400 1.1875rem/1.35 'SBL Hebrew', 'Ezra SIL', 'Gentium Plus', 'Times New Roman', serif;
+    font: 400 1.375rem/1.35 'SBL Hebrew', 'Ezra SIL', 'Gentium Plus', 'Times New Roman', serif;
   }
+  .il-orig:lang(grc) { font-size: 1.1875rem; }
+  .il-gloss {
+    max-width: 9em;
+    color: #b05a00;
+    font: 400 .875rem/1.25 'Strait', 'Roboto', sans-serif;
+  }
+  .il-grammar { color: #4f5c65; font: 400 .625rem/1.3 'Roboto', Arial, sans-serif; }
+  /* The glosses in the original's order as one line, so the order is plain
+     however the words wrap. */
+  .il-reading {
+    margin: 10px 0 0;
+    color: #5a4a32;
+    font: 400 1rem/1.45 'Strait', 'Roboto', sans-serif;
+  }
+  .il-reading b { color: #b05a00; font-weight: 600; }
   .il-xlit { color: #4f5c65; font: italic .8125rem/1.3 Georgia, 'Times New Roman', serif; }
   .il-num {
     color: #805b18;
@@ -664,27 +690,28 @@ async function getSvgMetadataFromUrl(url, signal) {
     return getSvgMetadata(await response.text());
 }
 
-// Annotations are shared by every instance: one fetch per chapter file.
-const annotationCache = new Map();
+// Annotation and interlinear chapter files are shared by every instance: one
+// fetch per file.
+const chapterFileCache = new Map();
 
-function loadChapterAnnotations(url) {
-    if (!annotationCache.has(url)) {
+function loadChapterFile(url) {
+    if (!chapterFileCache.has(url)) {
         const request = fetch(url)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
-                        `Failed to fetch annotations: ${response.status}`,
+                        `Failed to fetch ${url}: ${response.status}`,
                     );
                 }
                 return response.json();
             })
             .catch((error) => {
-                annotationCache.delete(url);
+                chapterFileCache.delete(url);
                 throw error;
             });
-        annotationCache.set(url, request);
+        chapterFileCache.set(url, request);
     }
-    return annotationCache.get(url);
+    return chapterFileCache.get(url);
 }
 
 function bsbMessage(message) {
@@ -720,42 +747,6 @@ function loadStrongsEntry(base, number) {
         strongsCache.set(url, request);
     }
     return strongsCache.get(url).then((entries) => entries[number] ?? null);
-}
-
-/**
- * A verse's interlinear, "In the beginning/H7225 God/H430 *was ...", as groups
- * of words that share their Strong's numbers: [{ words: [{ text, added }],
- * numbers: ["H7225"] }]. A word without a number ("In", "the") joins the next
- * one that has one, so each group reads as a phrase; words ending the verse
- * without one join the last group. "*" marks a word the translators supplied.
- */
-function interlinearGroups(text) {
-    const groups = [];
-    let pending = [];
-    for (const token of text.split(" ")) {
-        const [raw, tags = ""] = token.split("/");
-        const word = { text: raw.replace(/^\*/, ""), added: raw.startsWith("*") };
-        const numbers = tags ? tags.split("+") : [];
-        if (!numbers.length) {
-            pending.push(word);
-            continue;
-        }
-        const last = groups.at(-1);
-        if (last && !pending.length && last.numbers.join() === numbers.join()) {
-            last.words.push(word);
-            continue;
-        }
-        groups.push({ words: [...pending, word], numbers });
-        pending = [];
-    }
-    if (pending.length) {
-        if (groups.length) {
-            groups.at(-1).words.push(...pending);
-        } else {
-            groups.push({ words: pending, numbers: [] });
-        }
-    }
-    return groups;
 }
 
 /** One Strong's dictionary entry, for the interlinear's entry panel. */
@@ -1008,10 +999,11 @@ export class BibleSearchResults extends HTMLElement {
             <p class="explanation-source" hidden></p>
             <section class="interlinear" aria-labelledby="interlinear-title" hidden>
               <h3 class="interlinear-title" id="interlinear-title">Interlinear</h3>
-              <p class="interlinear-hint">The KJV words with their Strong's numbers and the Hebrew or Greek behind them. Tap a word for its meaning.</p>
+              <p class="interlinear-hint"></p>
               <ol class="il-words"></ol>
+              <p class="il-reading"><b>Word for word: </b><span></span></p>
               <div class="il-entry" id="interlinear-entry" aria-live="polite" hidden></div>
-              <p class="interlinear-credit">Strong's numbers: the KJV of eBible.org (public domain). Dictionary: James Strong, from Open Scriptures (CC BY-SA).</p>
+              <p class="interlinear-credit">Hebrew and Greek words, glosses and grammar from STEPBible.org (Tyndale House, Cambridge), CC BY 4.0; the Greek is the text used by the KJV translators (Scrivener 1894). Dictionary: James Strong, from Open Scriptures (CC BY-SA).</p>
             </section>
           </div>
           <button type="button" class="explanation-close" aria-label="Close explanation">×</button>
@@ -1124,6 +1116,15 @@ export class BibleSearchResults extends HTMLElement {
         const base = this.getAttribute("annotations-base");
         if (!base) {
             return DEFAULT_ANNOTATIONS_BASE;
+        }
+        return new URL(base.endsWith("/") ? base : `${base}/`, document.baseURI)
+            .href;
+    }
+
+    get #interlinearBase() {
+        const base = this.getAttribute("interlinear-base");
+        if (!base) {
+            return DEFAULT_INTERLINEAR_BASE;
         }
         return new URL(base.endsWith("/") ? base : `${base}/`, document.baseURI)
             .href;
@@ -1602,7 +1603,7 @@ export class BibleSearchResults extends HTMLElement {
                 `${encodeURIComponent(row.book_id)}/${Number(row.chapter)}.json`,
                 this.#annotationsBase,
             ).href;
-            const bsb = (await loadChapterAnnotations(url))[String(row.verse)]
+            const bsb = (await loadChapterFile(url))[String(row.verse)]
                 ?.translations?.bsb;
             if (!bsb?.text) {
                 // The BSB leaves out a few verses (Matthew 17:21, …): the pill
@@ -1689,7 +1690,7 @@ export class BibleSearchResults extends HTMLElement {
                 `${encodeURIComponent(row.book_id)}/${Number(row.chapter)}.json`,
                 this.#annotationsBase,
             ).href;
-            const annotations = (await loadChapterAnnotations(url))[
+            const annotations = (await loadChapterFile(url))[
                 String(row.verse)
             ];
             if (request !== this.#explanationRequest) {
@@ -1712,9 +1713,7 @@ export class BibleSearchResults extends HTMLElement {
                     "There is no explanation for this verse yet.",
                 );
             }
-            if (annotations?.interlinear) {
-                await this.#showInterlinear(annotations.interlinear, request);
-            }
+            await this.#showInterlinear(row, request);
         } catch (error) {
             if (request !== this.#explanationRequest) {
                 return;
@@ -1729,93 +1728,85 @@ export class BibleSearchResults extends HTMLElement {
         }
     }
 
-    /** Lay out the verse's words with their Strong's numbers and originals. */
-    async #showInterlinear(text, request) {
+    /**
+     * Lay out the verse word by word in the Hebrew or Greek. A chapter file
+     * that fails to load leaves the interlinear hidden, not the explanation.
+     */
+    async #showInterlinear(row, request) {
         const section = this.#explanation.querySelector(".interlinear");
         const list = section.querySelector(".il-words");
         const panel = section.querySelector(".il-entry");
         panel.hidden = true;
         panel.replaceChildren();
-        const groups = interlinearGroups(text);
-        const numbers = [...new Set(groups.flatMap((group) => group.numbers))];
-        // A dictionary file that fails to load leaves its words with their
-        // numbers only.
-        const entries = new Map(
-            await Promise.all(
-                numbers.map(async (number) => [
-                    number,
-                    await loadStrongsEntry(this.#strongsBase, number).catch(
-                        () => null,
-                    ),
-                ]),
-            ),
-        );
-        if (request !== this.#explanationRequest) {
+        const url = new URL(
+            `${encodeURIComponent(row.book_id)}/${Number(row.chapter)}.json`,
+            this.#interlinearBase,
+        ).href;
+        let chapter;
+        try {
+            chapter = await loadChapterFile(url);
+        } catch (error) {
+            console.warn("Interlinear unavailable:", error);
             return;
         }
+        const words = chapter.verses?.[String(row.verse)];
+        if (request !== this.#explanationRequest || !words?.length) {
+            return;
+        }
+        const lang = chapter.lang === "he" ? "he" : "grc";
+        section.querySelector(".interlinear-hint").textContent =
+            lang === "he"
+                ? "The verse word by word in the Hebrew, read right to left: each word's Strong's number, how it sounds, the Hebrew, its meaning and its grammar. Tap a word for its dictionary entry."
+                : "The verse word by word in the Greek: each word's Strong's number, how it sounds, the Greek, its meaning and its grammar. Tap a word for its dictionary entry.";
+        list.dir = lang === "he" ? "rtl" : "ltr";
+        section.querySelector(".il-reading span").textContent = words
+            .map((word) => word[2])
+            .filter(Boolean)
+            .join(" · ");
         list.replaceChildren(
-            ...groups.map((group) => {
+            ...words.map((word) => {
                 const item = document.createElement("li");
-                item.append(this.#interlinearWord(group, entries));
+                item.append(this.#interlinearWord(word, lang));
                 return item;
             }),
         );
         section.hidden = false;
     }
 
-    /** One group of KJV words: a button over its numbers, or plain words without one. */
-    #interlinearWord(group, entries) {
-        const word = document.createElement(
-            group.numbers.length ? "button" : "span",
-        );
+    /** One word: a button opening its Strong's entry, or plain without a number. */
+    #interlinearWord([orig, xlit, gloss, strongs, grammar], lang) {
+        const word = document.createElement(strongs ? "button" : "span");
         word.className = "il-word";
-        const kjv = document.createElement("span");
-        kjv.className = "il-kjv";
-        group.words.forEach((part, index) => {
-            if (index) {
-                kjv.append(" ");
-            }
-            if (part.added) {
-                const italic = document.createElement("i");
-                italic.textContent = part.text;
-                kjv.append(italic);
-            } else {
-                kjv.append(part.text);
-            }
-        });
-        word.append(kjv);
-        if (!group.numbers.length) {
+        const part = (className, text) => {
+            const node = document.createElement("span");
+            node.className = className;
+            node.textContent = text;
+            return node;
+        };
+        const original = part("il-orig", orig);
+        original.lang = lang;
+        original.dir = lang === "he" ? "rtl" : "ltr";
+        word.append(
+            part("il-num", strongs),
+            part("il-xlit", xlit),
+            original,
+            part("il-gloss", gloss),
+            part("il-grammar", grammar),
+        );
+        if (!strongs) {
             return word;
         }
         word.type = "button";
         word.setAttribute("aria-expanded", "false");
         word.setAttribute("aria-controls", "interlinear-entry");
-        const found = group.numbers
-            .map((number) => [number, entries.get(number)])
-            .filter(([, entry]) => entry);
-        if (found.length) {
-            const orig = document.createElement("span");
-            orig.className = "il-orig";
-            orig.lang = group.numbers[0][0] === "H" ? "he" : "grc";
-            orig.dir = orig.lang === "he" ? "rtl" : "ltr";
-            orig.textContent = found.map(([, entry]) => entry.lemma).join(" + ");
-            const xlit = document.createElement("span");
-            xlit.className = "il-xlit";
-            xlit.textContent = found.map(([, entry]) => entry.xlit).join(" + ");
-            word.append(orig, xlit);
-        }
-        const number = document.createElement("span");
-        number.className = "il-num";
-        number.textContent = group.numbers.join(" + ");
-        word.append(number);
         word.addEventListener("click", () =>
-            this.#toggleStrongsEntry(word, group, entries),
+            this.#toggleStrongsEntry(word, strongs),
         );
         return word;
     }
 
-    /** Open (or close) the dictionary entries for one group's numbers. */
-    #toggleStrongsEntry(word, group, entries) {
+    /** Open (or close) the dictionary entry for one word's Strong's number. */
+    async #toggleStrongsEntry(word, number) {
         const section = this.#explanation.querySelector(".interlinear");
         const panel = section.querySelector(".il-entry");
         const opening = word.getAttribute("aria-expanded") !== "true";
@@ -1829,11 +1820,14 @@ export class BibleSearchResults extends HTMLElement {
             return;
         }
         word.setAttribute("aria-expanded", "true");
-        panel.replaceChildren(
-            ...group.numbers.map((number) =>
-                strongsEntryNode(number, entries.get(number)),
-            ),
+        // A dictionary file that fails to load shows a note in the panel.
+        const entry = await loadStrongsEntry(this.#strongsBase, number).catch(
+            () => null,
         );
+        if (word.getAttribute("aria-expanded") !== "true") {
+            return;
+        }
+        panel.replaceChildren(strongsEntryNode(number, entry));
         panel.hidden = false;
         panel.scrollIntoView({
             block: "nearest",

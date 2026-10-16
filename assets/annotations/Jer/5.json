@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "No One Is Just"
+                    }
+                ],
                 "text": "“Go up and down the streets of Jerusalem. Look now and take note; search her squares. If you can find a single person, anyone who acts justly, anyone who seeks the truth, then I will forgive the city."
             }
         },
@@ -162,6 +168,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment Proclaimed"
+                    }
+                ],
                 "text": "Therefore this is what the LORD God of Hosts says: “Because you have spoken this word, I will make My words a fire in your mouth and this people the wood it consumes."
             }
         },

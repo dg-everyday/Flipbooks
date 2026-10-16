@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Suffering Servant",
+                        "refs": "Acts 8:26–40; 1 Peter 2:21–25"
+                    }
+                ],
                 "text": "Who has believed our message? And to whom has the arm of the LORD been revealed?"
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Grave Assigned",
+                        "refs": "Matthew 27:57–61; Mark 15:42–47; Luke 23:50–56; John 19:38–42"
+                    }
+                ],
                 "text": "He was assigned a grave with the wicked, and with a rich man in His death, although He had done no violence, nor was any deceit in His mouth."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Unto Us a Child Is Born",
+                        "refs": "Matthew 4:12–17; Mark 1:14–15; Luke 4:14–15"
+                    }
+                ],
                 "text": "Nevertheless, there will be no more gloom for those in distress. In the past He humbled the land of Zebulun and the land of Naphtali, but in the future He will honor the Way of the Sea, beyond the Jordan, Galilee of the nations:"
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment against Israel’s Pride"
+                    }
+                ],
                 "text": "The Lord has sent a message against Jacob, and it has fallen upon Israel."
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment against Israel’s Hypocrisy"
+                    }
+                ],
                 "text": "But the people did not return to Him who struck them; they did not seek the LORD of Hosts."
             }
         },
@@ -210,6 +229,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment against Israel’s Unrepentance"
+                    }
+                ],
                 "text": "For wickedness burns like a fire that consumes the thorns and briers and kindles the forest thickets, which roll upward in billows of smoke."
             }
         },

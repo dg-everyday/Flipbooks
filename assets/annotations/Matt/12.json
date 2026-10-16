@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lord of the Sabbath",
+                        "refs": "1 Samuel 21:1–7; Mark 2:23–28; Luke 6:1–5"
+                    }
+                ],
                 "text": "At that time Jesus went through the grainfields on the Sabbath. His disciples were hungry and began to pick the heads of grain and eat them."
             }
         },
@@ -102,6 +109,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals on the Sabbath",
+                        "refs": "Mark 3:1–6; Luke 6:6–11"
+                    }
+                ],
                 "text": "Moving on from there, Jesus entered their synagogue,"
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Chosen Servant",
+                        "refs": "Isaiah 42:1–9"
+                    }
+                ],
                 "text": "Aware of this, Jesus withdrew from that place. Large crowds followed Him, and He healed them all,"
             }
         },
@@ -258,6 +279,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A House Divided",
+                        "refs": "Mark 3:20–27; Luke 11:14–23"
+                    }
+                ],
                 "text": "Then a demon-possessed man who was blind and mute was brought to Jesus, and He healed the man so that he could speak and see."
             }
         },
@@ -366,6 +394,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Unpardonable Sin",
+                        "refs": "Mark 3:28–30"
+                    }
+                ],
                 "text": "Therefore I tell you, every sin and blasphemy will be forgiven men, but the blasphemy against the Spirit will not be forgiven."
             }
         },
@@ -390,6 +425,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Good and Bad Fruit",
+                        "refs": "Luke 6:43–45"
+                    }
+                ],
                 "text": "Make a tree good and its fruit will be good, or make a tree bad and its fruit will be bad, for a tree is known by its fruit."
             }
         },
@@ -450,6 +492,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Sign of Jonah",
+                        "refs": "Jonah 3:1–10; Luke 11:29–32"
+                    }
+                ],
                 "text": "Then some of the scribes and Pharisees said to Him, “Teacher, we want to see a sign from You.”"
             }
         },
@@ -510,6 +559,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Unclean Spirit Returns",
+                        "refs": "Luke 11:24–26"
+                    }
+                ],
                 "text": "When an unclean spirit comes out of a man, it passes through arid places seeking rest and does not find it."
             }
         },
@@ -546,6 +602,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Mother and Brothers",
+                        "refs": "Mark 3:31–35; Luke 8:19–21"
+                    }
+                ],
                 "text": "While Jesus was still speaking to the crowds, His mother and brothers stood outside, wanting to speak to Him."
             }
         },

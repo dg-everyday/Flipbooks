@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Proverbs: The Wise Son"
+                    }
+                ],
                 "text": "The proverbs of Solomon: A wise son brings joy to his father, but a foolish son grief to his mother."
             }
         },

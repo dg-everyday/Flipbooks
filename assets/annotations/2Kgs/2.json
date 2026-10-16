@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah Taken Up to Heaven"
+                    }
+                ],
                 "text": "Shortly before the LORD took Elijah up to heaven in a whirlwind, Elijah and Elisha were on their way from Gilgal,"
             }
         },
@@ -174,6 +180,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha Succeeds Elijah"
+                    }
+                ],
                 "text": "When the sons of the prophets who were watching him from Jericho saw what had happened, they said, “The spirit of Elijah rests on Elisha.” And they went to meet him and bowed down to the ground before him."
             }
         },
@@ -222,6 +234,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha Heals the Waters of Jericho"
+                    }
+                ],
                 "text": "Then the men of the city said to Elisha, “Please note, our lord, that the city’s location is good, as you can see. But the water is bad and the land is unfruitful.”"
             }
         },
@@ -270,6 +288,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elisha Mocked"
+                    }
+                ],
                 "text": "From there, Elisha went up to Bethel, and as he was walking up the road, a group of boys came out of the city and jeered at him, chanting, “Go up, you baldhead! Go up, you baldhead!”"
             }
         },

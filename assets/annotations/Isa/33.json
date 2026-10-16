@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Is Exalted"
+                    }
+                ],
                 "text": "Woe to you, O destroyer never destroyed, O traitor never betrayed! When you have finished destroying, you will be destroyed. When you have finished betraying, you will be betrayed."
             }
         },

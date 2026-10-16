@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Call to Repentance",
+                        "refs": "Jeremiah 3:11–25; Zechariah 1:1–6"
+                    }
+                ],
                 "text": "Return, O Israel, to the LORD your God, for you have stumbled by your iniquity."
             }
         },
@@ -42,6 +49,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Promise of God’s Blessing"
+                    }
+                ],
                 "text": "I will heal their apostasy; I will freely love them, for My anger has turned away from them."
             }
         },

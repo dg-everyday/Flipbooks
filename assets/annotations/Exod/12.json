@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Passover",
+                        "refs": "Numbers 9:1–14"
+                    }
+                ],
                 "text": "Now the LORD said to Moses and Aaron in the land of Egypt,"
             }
         },
@@ -162,6 +169,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feast of Unleavened Bread",
+                        "refs": "Leviticus 23:4–8; Numbers 28:16–25; Deuteronomy 16:1–8"
+                    }
+                ],
                 "text": "And this day will be a memorial for you, and you are to celebrate it as a feast to the LORD, as a permanent statute for the generations to come."
             }
         },
@@ -342,6 +356,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tenth Plague: Death of the Firstborn"
+                    }
+                ],
                 "text": "Now at midnight the LORD struck down every firstborn male in the land of Egypt, from the firstborn of Pharaoh, who sat on his throne, to the firstborn of the prisoner in the dungeon, as well as all the firstborn among the livestock."
             }
         },
@@ -366,6 +386,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Exodus Begins"
+                    }
+                ],
                 "text": "Then Pharaoh summoned Moses and Aaron by night and said, “Get up, leave my people, both you and the Israelites! Go, worship the LORD as you have requested."
             }
         },
@@ -510,6 +536,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Instructions for the Passover"
+                    }
+                ],
                 "text": "And the LORD said to Moses and Aaron, “This is the statute of the Passover: No foreigner is to eat of it."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Joyful Thanksgiving"
+                    }
+                ],
                 "text": "In that day you will say: “O LORD, I will praise You. Although You were angry with me, Your anger has turned away, and You have comforted me."
             }
         },

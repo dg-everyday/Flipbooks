@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Triumphal Entry",
+                        "refs": "Zechariah 9:9–13; Matthew 21:1–11; Luke 19:28–40; John 12:12–19"
+                    }
+                ],
                 "text": "As they approached Jerusalem and came to Bethphage and Bethany at the Mount of Olives, Jesus sent out two of His disciples"
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Curses the Fig Tree",
+                        "refs": "Matthew 21:18–22; Mark 11:20–25"
+                    }
+                ],
                 "text": "The next day, when they had left Bethany, Jesus was hungry."
             }
         },
@@ -174,6 +188,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Cleanses the Temple",
+                        "refs": "Matthew 21:12–17; Luke 19:45–48; John 2:12–25"
+                    }
+                ],
                 "text": "When they arrived in Jerusalem, Jesus entered the temple courts and began to drive out those who were buying and selling there. He overturned the tables of the money changers and the seats of those selling doves."
             }
         },
@@ -234,6 +255,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Withered Fig Tree",
+                        "refs": "Matthew 21:18–22; Mark 11:12–14"
+                    }
+                ],
                 "text": "As they were walking back in the morning, they saw the fig tree withered from its roots."
             }
         },
@@ -313,6 +341,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus’ Authority Challenged",
+                        "refs": "Matthew 21:23–27; Luke 20:1–8"
+                    }
+                ],
                 "text": "After their return to Jerusalem, Jesus was walking in the temple courts, and the chief priests, scribes, and elders came up to Him."
             }
         },

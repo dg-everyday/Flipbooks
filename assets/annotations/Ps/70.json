@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hurry, O LORD, to Help Me!",
+                        "refs": "Psalms 40:1–17; Psalms 141:1–10"
+                    }
+                ],
                 "title": "For the choirmaster. Of David. To bring remembrance.",
                 "text": "Make haste, O God, to deliver me! Hurry, O LORD, to help me!"
             }

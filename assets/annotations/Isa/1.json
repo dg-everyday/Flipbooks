@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judah’s Rebellion",
+                        "refs": "2 Chronicles 28:5–15"
+                    }
+                ],
                 "text": "This is the vision concerning Judah and Jerusalem that Isaiah son of Amoz saw during the reigns of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah."
             }
         },
@@ -114,6 +121,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Meaningless Offerings"
+                    }
+                ],
                 "text": "Hear the word of the LORD, you rulers of Sodom; listen to the instruction of our God, you people of Gomorrah!"
             }
         },
@@ -246,6 +259,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Corruption of Zion"
+                    }
+                ],
                 "text": "See how the faithful city has become a harlot! She once was full of justice; righteousness resided within her, but now only murderers!"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Call of Jeremiah"
+                    }
+                ],
                 "text": "These are the words of Jeremiah son of Hilkiah, one of the priests in Anathoth in the territory of Benjamin."
             }
         },

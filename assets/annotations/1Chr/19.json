@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Messengers Disgraced",
+                        "refs": "2 Samuel 10:1–8"
+                    }
+                ],
                 "text": "Some time later, Nahash king of the Ammonites died and was succeeded by his son."
             }
         },
@@ -102,6 +109,13 @@
     "10": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Defeats Ammon and Aram",
+                        "refs": "2 Samuel 10:9–19"
+                    }
+                ],
                 "text": "When Joab saw the battle lines before him and behind him, he selected some of the best men of Israel and arrayed them against the Arameans."
             }
         },

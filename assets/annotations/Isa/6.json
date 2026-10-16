@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Isaiah’s Commission",
+                        "refs": "Matthew 13:10–17; Mark 4:10–12; Acts 28:16–31"
+                    }
+                ],
                 "text": "In the year that King Uzziah died, I saw the Lord seated on a throne, high and exalted; and the train of His robe filled the temple."
             }
         },

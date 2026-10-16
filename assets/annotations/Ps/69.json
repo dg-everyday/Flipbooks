@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Waters Are up to My Neck"
+                    }
+                ],
                 "title": "For the choirmaster. To the tune of “Lilies.” Of David.",
                 "text": "Save me, O God, for the waters are up to my neck."
             }

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rulers and Prophets Condemned"
+                    }
+                ],
                 "text": "Then I said: “Hear now, O leaders of Jacob, you rulers of the house of Israel. Should you not know justice?"
             }
         },

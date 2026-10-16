@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hezekiah Cleanses the Temple",
+                        "refs": "2 Kings 18:1–12"
+                    }
+                ],
                 "text": "Hezekiah was twenty-five years old when he became king, and he reigned in Jerusalem twenty-nine years. His mother’s name was Abijah, the daughter of Zechariah."
             }
         },
@@ -222,6 +229,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Hezekiah Restores Temple Worship"
+                    }
+                ],
                 "text": "Early the next morning King Hezekiah gathered the city officials and went up to the house of the LORD."
             }
         },

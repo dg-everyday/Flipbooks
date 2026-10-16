@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Feeding of the Five Thousand",
+                        "refs": "Matthew 14:13–21; Mark 6:30–44; Luke 9:10–17"
+                    }
+                ],
                 "text": "After this, Jesus crossed to the other side of the Sea of Galilee (that is, the Sea of Tiberias)."
             }
         },
@@ -186,6 +193,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Walks on Water",
+                        "refs": "Matthew 14:22–33; Mark 6:45–52"
+                    }
+                ],
                 "text": "When evening came, His disciples went down to the sea,"
             }
         },
@@ -258,6 +272,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus the Bread of Life"
+                    }
+                ],
                 "text": "The next day, the crowd that had remained on the other side of the sea realized that only one boat had been there, and that Jesus had not boarded it with His disciples, but they had gone away alone."
             }
         },
@@ -702,6 +722,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Many Disciples Turn Back",
+                        "refs": "Matthew 8:18–22; Luke 9:57–62; Luke 14:25–33"
+                    }
+                ],
                 "text": "Jesus said this while teaching in the synagogue in Capernaum."
             }
         },
@@ -798,6 +825,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peter’s Confession of Faith",
+                        "refs": "Matthew 16:13–20; Mark 8:27–30; Luke 9:18–20"
+                    }
+                ],
                 "text": "So Jesus asked the Twelve, “Do you want to leave too?”"
             }
         },

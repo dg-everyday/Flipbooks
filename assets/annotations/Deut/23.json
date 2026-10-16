@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Exclusion from the Congregation"
+                    }
+                ],
                 "text": "No man with crushed or severed genitals may enter the assembly of the LORD."
             }
         },
@@ -102,6 +108,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Uncleanness in the Camp",
+                        "refs": "Leviticus 15:1–12"
+                    }
+                ],
                 "text": "When you are encamped against your enemies, then you shall keep yourself from every wicked thing."
             }
         },
@@ -174,6 +187,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Miscellaneous Laws"
+                    }
+                ],
                 "text": "Do not return a slave to his master if he has taken refuge with you."
             }
         },

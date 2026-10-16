@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Mission of John the Baptist",
+                        "refs": "Isaiah 40:1–5; Matthew 3:1–12; Mark 1:1–8; John 1:19–28"
+                    }
+                ],
                 "text": "In the fifteenth year of the reign of Tiberius Caesar, while Pontius Pilate was governor of Judea, Herod tetrarch of Galilee, his brother Philip tetrarch of Ituraea and Trachonitis, and Lysanias tetrarch of Abilene,"
             }
         },
@@ -246,6 +253,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Baptism of Jesus",
+                        "refs": "Matthew 3:13–17; Mark 1:9–11; John 1:29–34"
+                    }
+                ],
                 "text": "When all the people were being baptized, Jesus was baptized too. And as He was praying, heaven was opened,"
             }
         },
@@ -270,6 +284,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Genealogy of Jesus",
+                        "refs": "Ruth 4:18–22; Matthew 1:1–17"
+                    }
+                ],
                 "text": "Jesus Himself was about thirty years old when He began His ministry. He was regarded as the son of Joseph, the son of Heli,"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job Laments the Finality of Death"
+                    }
+                ],
                 "text": "“Man, who is born of woman, is short of days and full of trouble."
             }
         },

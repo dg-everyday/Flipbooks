@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Is My Salvation"
+                    }
+                ],
                 "title": "Of David.",
                 "text": "The LORD is my light and my salvation—whom shall I fear? The LORD is the stronghold of my life—whom shall I dread?"
             }

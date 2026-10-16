@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Military Census",
+                        "refs": "Exodus 30:11–16; 2 Samuel 24:1–9"
+                    }
+                ],
                 "text": "Then Satan rose up against Israel and incited David to take a census of Israel."
             }
         },
@@ -66,6 +73,13 @@
     "7": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment for David’s Sin",
+                        "refs": "2 Samuel 24:10–14"
+                    }
+                ],
                 "text": "This command was also evil in the sight of God; so He struck Israel."
             }
         },
@@ -138,6 +152,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Plague on Israel",
+                        "refs": "2 Samuel 24:15–17"
+                    }
+                ],
                 "text": "So the LORD sent a plague upon Israel, and seventy thousand men of Israel fell dead."
             }
         },
@@ -182,6 +203,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Builds an Altar",
+                        "refs": "2 Samuel 24:18–25"
+                    }
+                ],
                 "text": "Then the angel of the LORD ordered Gad to tell David to go up and build an altar to the LORD on the threshing floor of Ornan the Jebusite."
             }
         },

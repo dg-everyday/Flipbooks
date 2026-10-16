@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Trial before Festus"
+                    }
+                ],
                 "text": "Three days after his arrival in the province, Festus went up from Caesarea to Jerusalem,"
             }
         },
@@ -114,6 +120,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Appeals to Caesar"
+                    }
+                ],
                 "text": "Paul replied, “I am standing before the judgment seat of Caesar, where I ought to be tried. I have done nothing wrong to the Jews, as you yourself know very well."
             }
         },
@@ -150,6 +162,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Festus Consults Agrippa"
+                    }
+                ],
                 "text": "After several days had passed, King Agrippa and Bernice came down to Caesarea to pay their respects to Festus."
             }
         },
@@ -270,6 +288,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul before Agrippa and Bernice"
+                    }
+                ],
                 "text": "The next day Agrippa and Bernice came with great pomp and entered the auditorium, along with the commanders and leading men of the city. And Festus ordered that Paul be brought in."
             }
         },

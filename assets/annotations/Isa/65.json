@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgments and Promises",
+                        "refs": "Romans 10:1–21"
+                    }
+                ],
                 "text": "“I revealed Myself to those who did not ask for Me; I was found by those who did not seek Me. To a nation that did not call My name, I said, ‘Here I am! Here I am!’"
             }
         },
@@ -198,6 +205,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A New Heaven and a New Earth",
+                        "refs": "Revelation 21:1–8"
+                    }
+                ],
                 "text": "For behold, I will create new heavens and a new earth. The former things will not be remembered, nor will they come to mind."
             }
         },

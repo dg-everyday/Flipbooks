@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Twelve Captains for Twelve Months"
+                    }
+                ],
                 "text": "This is the list of the Israelites—the heads of families, the commanders of thousands and of hundreds, and their officers who served the king in every matter concerning the divisions on rotating military duty each month throughout the year. There were 24,000 men in each division:"
             }
         },
@@ -142,6 +148,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Leaders of the Twelve Tribes"
+                    }
+                ],
                 "text": "These officers were in charge of the tribes of Israel: Over the Reubenites was Eliezer son of Zichri; over the Simeonites was Shephatiah son of Maacah;"
             }
         },
@@ -230,6 +242,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David’s Various Overseers"
+                    }
+                ],
                 "text": "Azmaveth son of Adiel was in charge of the royal storehouses. Jonathan son of Uzziah was in charge of the storehouses in the country, in the cities, in the villages, and in the fortresses."
             }
         },
@@ -306,6 +324,12 @@
     "32": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Counselors"
+                    }
+                ],
                 "text": "David’s uncle Jonathan was a counselor; he was a man of insight and a scribe. Jehiel son of Hachmoni attended to the sons of the king."
             }
         },

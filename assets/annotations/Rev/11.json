@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Two Witnesses"
+                    }
+                ],
                 "text": "Then I was given a measuring rod like a staff and was told, “Go and measure the temple of God and the altar, and count the number of worshipers there."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Witnesses Killed and Raised"
+                    }
+                ],
                 "text": "When the two witnesses have finished their testimony, the beast that comes up from the Abyss will wage war with them, and will overpower and kill them."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Seventh Trumpet"
+                    }
+                ],
                 "text": "Then the seventh angel sounded his trumpet, and loud voices called out in heaven: “The kingdom of the world has become the kingdom of our Lord and of His Christ, and He will reign forever and ever.”"
             }
         },

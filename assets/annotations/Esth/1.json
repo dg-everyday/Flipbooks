@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Xerxes’ Royal Feast"
+                    }
+                ],
                 "text": "This is what happened in the days of Xerxes, who reigned over 127 provinces from India to Cush."
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Queen Vashti’s Refusal"
+                    }
+                ],
                 "text": "Queen Vashti also gave a banquet for the women in the royal palace of King Xerxes."
             }
         },
@@ -150,6 +162,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Queen Vashti Deposed"
+                    }
+                ],
                 "text": "Then the king consulted the wise men who knew the times, for it was customary for him to confer with the experts in law and justice."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Rights of an Apostle",
+                        "refs": "Deuteronomy 18:1–8"
+                    }
+                ],
                 "text": "Am I not free? Am I not an apostle? Have I not seen Jesus our Lord? Are you yourselves not my workmanship in the Lord?"
             }
         },
@@ -222,6 +229,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul the Servant to All"
+                    }
+                ],
                 "text": "Though I am free of obligation to anyone, I make myself a slave to everyone, to win as many as possible."
             }
         },
@@ -282,6 +295,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Run Your Race to Win"
+                    }
+                ],
                 "text": "Do you not know that in a race all the runners run, but only one receives the prize? Run in such a way as to take the prize."
             }
         },

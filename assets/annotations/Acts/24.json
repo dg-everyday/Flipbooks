@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Tertullus Prosecutes Paul"
+                    }
+                ],
                 "text": "Five days later the high priest Ananias came down with some elders and a lawyer named Tertullus, who presented to the governor their case against Paul."
             }
         },
@@ -109,6 +115,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Defense to Felix"
+                    }
+                ],
                 "text": "When the governor motioned for Paul to speak, he began his response: “Knowing that you have been a judge over this nation for many years, I gladly make my defense."
             }
         },
@@ -253,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Verdict Postponed"
+                    }
+                ],
                 "text": "Then Felix, who was well informed about the Way, adjourned the hearing and said, “When Lysias the commander comes, I will decide your case.”"
             }
         },

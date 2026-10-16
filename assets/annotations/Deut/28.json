@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Blessings of Obedience",
+                        "refs": "Leviticus 25:18–22"
+                    }
+                ],
                 "text": "“Now if you faithfully obey the voice of the LORD your God and are careful to follow all His commandments I am giving you today, the LORD your God will set you high above all the nations of the earth."
             }
         },
@@ -174,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Curses of Disobedience",
+                        "refs": "Leviticus 20:1–9; Leviticus 26:14–39"
+                    }
+                ],
                 "text": "If, however, you do not obey the LORD your God by carefully following all His commandments and statutes I am giving you today, all these curses will come upon you and overtake you:"
             }
         },

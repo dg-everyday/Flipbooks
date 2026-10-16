@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Queen of Sheba",
+                        "refs": "1 Kings 10:1–13"
+                    }
+                ],
                 "text": "Now when the queen of Sheba heard about the fame of Solomon, she came to test him with difficult questions. She arrived in Jerusalem with a very large caravan—with camels bearing spices, gold in abundance, and precious stones. And she came to Solomon and spoke with him about all that was on her mind."
             }
         },
@@ -106,6 +113,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Solomon’s Wealth and Splendor",
+                        "refs": "1 Kings 10:14–29"
+                    }
+                ],
                 "text": "The weight of gold that came to Solomon each year was 666 talents,"
             }
         },
@@ -246,6 +260,13 @@
     "29": {
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Death of Solomon",
+                        "refs": "1 Kings 11:41–43"
+                    }
+                ],
                 "text": "As for the rest of the acts of Solomon, from beginning to end, are they not written in the Records of Nathan the Prophet, in the Prophecy of Ahijah the Shilonite, and in the Visions of Iddo the Seer concerning Jeroboam son of Nebat?"
             }
         },

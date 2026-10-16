@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Praise to the Creator",
+                        "refs": "Psalms 148:1–14"
+                    }
+                ],
                 "text": "Rejoice in the LORD, O righteous ones; it is fitting for the upright to praise Him."
             }
         },

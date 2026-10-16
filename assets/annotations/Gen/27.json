@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Isaac Blesses Jacob",
+                        "refs": "Hebrews 11:20"
+                    }
+                ],
                 "text": "When Isaac was old and his eyes were so weak that he could no longer see, he called his older son Esau and said to him, “My son.” “Here I am,” Esau replied."
             }
         },
@@ -354,6 +361,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esau’s Lost Hope"
+                    }
+                ],
                 "text": "As soon as Isaac had finished blessing him and Jacob had left his father’s presence, his brother Esau returned from the hunt."
             }
         },

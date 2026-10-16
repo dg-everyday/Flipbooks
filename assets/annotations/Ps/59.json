@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Deliver Me from My Enemies",
+                        "refs": "1 Samuel 19:1–24"
+                    }
+                ],
                 "title": "For the choirmaster. To the tune of “Do Not Destroy.” A Miktam of David, when Saul sent men to watch David’s house in order to kill him.",
                 "text": "Deliver me from my enemies, O my God; protect me from those who rise against me."
             }

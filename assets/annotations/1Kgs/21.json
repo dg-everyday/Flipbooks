@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Naboth’s Vineyard"
+                    }
+                ],
                 "text": "Some time after these events, Naboth the Jezreelite owned a vineyard in Jezreel next to the palace of Ahab king of Samaria."
             }
         },
@@ -90,6 +96,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jezebel’s Plot"
+                    }
+                ],
                 "text": "Then Jezebel wrote letters in Ahab’s name, sealed them with his seal, and sent them to the elders and nobles who lived with Naboth in his city."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah Denounces Ahab and Jezebel"
+                    }
+                ],
                 "text": "Then the word of the LORD came to Elijah the Tishbite, saying,"
             }
         },
@@ -294,6 +312,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Ahab’s Repentance"
+                    }
+                ],
                 "text": "(Surely there was never one like Ahab, who sold himself to do evil in the sight of the LORD, incited by his wife Jezebel."
             }
         },

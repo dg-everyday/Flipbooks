@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Serpent’s Deception",
+                        "refs": "Romans 5:12–21"
+                    }
+                ],
                 "text": "Now the serpent was more crafty than any beast of the field that the LORD God had made. And he said to the woman, “Did God really say, ‘You must not eat from any tree in the garden?’”"
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Arraigns Adam and Eve"
+                    }
+                ],
                 "text": "Then the man and his wife heard the voice of the LORD God walking in the garden in the breeze of the day, and they hid themselves from the presence of the LORD God among the trees of the garden."
             }
         },
@@ -162,6 +175,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fate of the Serpent"
+                    }
+                ],
                 "text": "So the LORD God said to the serpent: “Because you have done this, cursed are you above all livestock and every beast of the field! On your belly will you go, and dust you will eat, all the days of your life."
             }
         },
@@ -186,6 +205,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Punishment of Mankind"
+                    }
+                ],
                 "text": "To the woman He said: “I will sharply increase your pain in childbirth; in pain you will bring forth children. Your desire will be for your husband, and he will rule over you.”"
             }
         },
@@ -246,6 +271,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Expulsion from Paradise"
+                    }
+                ],
                 "text": "And the LORD God made garments of skin for Adam and his wife, and He clothed them."
             }
         },

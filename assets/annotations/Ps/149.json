@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sing to the LORD a New Song",
+                        "refs": "Psalms 98:1–9; Isaiah 42:10–17"
+                    }
+                ],
                 "text": "Hallelujah! Sing to the LORD a new song—His praise in the assembly of the godly."
             }
         },

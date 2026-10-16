@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Second Census of Israel",
+                        "refs": "Numbers 1:1–4"
+                    }
+                ],
                 "text": "After the plague had ended, the LORD said to Moses and Eleazar son of Aaron the priest,"
             }
         },
@@ -54,6 +61,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Reuben"
+                    }
+                ],
                 "text": "Reuben was the firstborn of Israel. These were the descendants of Reuben: The Hanochite clan from Hanoch, the Palluite clan from Pallu,"
             }
         },
@@ -134,6 +147,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Simeon"
+                    }
+                ],
                 "text": "These were the descendants of Simeon by their clans: The Nemuelite clan from Nemuel, the Jaminite clan from Jamin, the Jachinite clan from Jachin,"
             }
         },
@@ -162,6 +181,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Gad"
+                    }
+                ],
                 "text": "These were the descendants of Gad by their clans: The Zephonite clan from Zephon, the Haggite clan from Haggi, the Shunite clan from Shuni,"
             }
         },
@@ -198,6 +223,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Judah"
+                    }
+                ],
                 "text": "The sons of Judah were Er and Onan, but they died in the land of Canaan."
             }
         },
@@ -234,6 +265,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Issachar"
+                    }
+                ],
                 "text": "These were the descendants of Issachar by their clans: The Tolaite clan from Tola, the Punite clan from Puvah,"
             }
         },
@@ -262,6 +299,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Zebulun"
+                    }
+                ],
                 "text": "These were the descendants of Zebulun by their clans: The Seredite clan from Sered, the Elonite clan from Elon, and the Jahleelite clan from Jahleel."
             }
         },
@@ -282,6 +325,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Manasseh"
+                    }
+                ],
                 "text": "The descendants of Joseph included the clans of Manasseh and Ephraim."
             }
         },
@@ -342,6 +391,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Ephraim"
+                    }
+                ],
                 "text": "These were the descendants of Ephraim by their clans: The Shuthelahite clan from Shuthelah, the Becherite clan from Becher, and the Tahanite clan from Tahan."
             }
         },
@@ -370,6 +425,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Benjamin"
+                    }
+                ],
                 "text": "These were the descendants of Benjamin by their clans: The Belaite clan from Bela, the Ashbelite clan from Ashbel, the Ahiramite clan from Ahiram,"
             }
         },
@@ -406,6 +467,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Dan"
+                    }
+                ],
                 "text": "These were the descendants of Dan by their clans: The Shuhamite clan from Shuham. These were the clans of Dan."
             }
         },
@@ -426,6 +493,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Asher"
+                    }
+                ],
                 "text": "These were the descendants of Asher by their clans: The Imnite clan from Imnah, the Ishvite clan from Ishvi, and the Beriite clan from Beriah."
             }
         },
@@ -462,6 +535,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Tribe of Naphtali"
+                    }
+                ],
                 "text": "These were the descendants of Naphtali by their clans: The Jahzeelite clan from Jahzeel, the Gunite clan from Guni,"
             }
         },
@@ -502,6 +581,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Inheritance by Lot"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },
@@ -562,6 +647,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Levites Numbered"
+                    }
+                ],
                 "text": "Now these were the Levites numbered by their clans: The Gershonite clan from Gershon, the Kohathite clan from Kohath, and the Merarite clan from Merari."
             }
         },
@@ -622,6 +713,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Only Caleb and Joshua Remain"
+                    }
+                ],
                 "text": "These were the ones numbered by Moses and Eleazar the priest when they counted the Israelites on the plains of Moab by the Jordan, across from Jericho."
             }
         },

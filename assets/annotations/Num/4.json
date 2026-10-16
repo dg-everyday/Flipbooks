@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Duties of the Kohathites",
+                        "refs": "Numbers 3:27–32; 1 Chronicles 23:12–20"
+                    }
+                ],
                 "text": "Then the LORD said to Moses and Aaron,"
             }
         },
@@ -246,6 +253,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Duties of the Gershonites",
+                        "refs": "Numbers 3:21–26; 1 Chronicles 23:7–11"
+                    }
+                ],
                 "text": "And the LORD said to Moses,"
             }
         },
@@ -342,6 +356,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Duties of the Merarites",
+                        "refs": "Numbers 3:33–37; 1 Chronicles 23:21–23"
+                    }
+                ],
                 "text": "As for the sons of Merari, you are to number them by their clans and families,"
             }
         },
@@ -402,6 +423,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Numbering of the Levite Clans"
+                    }
+                ],
                 "text": "So Moses, Aaron, and the leaders of the congregation numbered the Kohathites by their clans and families,"
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Greetings from Paul and Sosthenes",
+                        "refs": "Acts 18:1–11; 2 Corinthians 1:1–2"
+                    }
+                ],
                 "text": "Paul, called to be an apostle of Christ Jesus by the will of God, and our brother Sosthenes,"
             }
         },
@@ -42,6 +49,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Thanksgiving",
+                        "refs": "Philippians 1:3–11; Colossians 1:3–14"
+                    }
+                ],
                 "text": "I always thank my God for you because of the grace He has given you in Christ Jesus."
             }
         },
@@ -114,6 +128,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Unity in the Church",
+                        "refs": "Psalms 133:1–3; Ephesians 4:1–16"
+                    }
+                ],
                 "text": "I appeal to you, brothers, in the name of our Lord Jesus Christ, that all of you agree together, so that there may be no divisions among you and that you may be united in mind and conviction."
             }
         },
@@ -210,6 +231,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Message of the Cross"
+                    }
+                ],
                 "text": "For the message of the cross is foolishness to those who are perishing, but to us who are being saved it is the power of God."
             }
         },
@@ -306,6 +333,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Wisdom from God"
+                    }
+                ],
                 "text": "Brothers, consider the time of your calling: Not many of you were wise by human standards; not many were powerful; not many were of noble birth."
             }
         },

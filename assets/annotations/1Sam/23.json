@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Delivers Keilah"
+                    }
+                ],
                 "text": "Now it was reported to David, “Look, the Philistines are fighting against Keilah and looting the threshing floors.”"
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Pursues David",
+                        "refs": "Psalms 54:1–7"
+                    }
+                ],
                 "text": "When Saul was told that David had gone to Keilah, he said, “God has delivered him into my hand, for he has trapped himself by entering a town with gates and bars.”"
             }
         },

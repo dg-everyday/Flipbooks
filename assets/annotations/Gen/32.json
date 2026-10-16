@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Prepares to Meet Esau"
+                    }
+                ],
                 "text": "Jacob also went on his way, and the angels of God met him."
             }
         },
@@ -258,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jacob Wrestles with God"
+                    }
+                ],
                 "text": "During the night Jacob got up and took his two wives, his two maidservants, and his eleven sons, and crossed the ford of the Jabbok."
             }
         },

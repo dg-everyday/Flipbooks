@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Fall of Jerusalem Recounted",
+                        "refs": "Psalms 74:1–23; Psalms 79:1–13; 2 Kings 24:18–20; 2 Chronicles 36:11–14"
+                    }
+                ],
                 "text": "Zedekiah was twenty-one years old when he became king, and he reigned in Jerusalem eleven years. His mother’s name was Hamutal daughter of Jeremiah; she was from Libnah."
             }
         },
@@ -138,6 +145,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple Destroyed",
+                        "refs": "2 Kings 25:8–17"
+                    }
+                ],
                 "text": "On the tenth day of the fifth month, in the nineteenth year of Nebuchadnezzar’s reign over Babylon, Nebuzaradan captain of the guard, a servant of the king of Babylon, entered Jerusalem."
             }
         },
@@ -282,6 +296,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Captives Carried to Babylon",
+                        "refs": "2 Kings 25:18–21"
+                    }
+                ],
                 "text": "The captain of the guard also took away Seraiah the chief priest, Zephaniah the priest of second rank, and the three doorkeepers."
             }
         },
@@ -366,6 +387,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jehoiachin Released from Prison",
+                        "refs": "2 Kings 25:27–30"
+                    }
+                ],
                 "text": "On the twenty-fifth day of the twelfth month of the thirty-seventh year of the exile of Jehoiachin king of Judah, in the first year of the reign of Evil-merodach king of Babylon, he pardoned Jehoiachin king of Judah and released him from prison."
             }
         },

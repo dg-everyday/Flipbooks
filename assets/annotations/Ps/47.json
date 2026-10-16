@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Clap Your Hands, All You Peoples"
+                    }
+                ],
                 "title": "For the choirmaster. A Psalm of the sons of Korah.",
                 "text": "Clap your hands, all you peoples; shout unto God with a voice of triumph."
             }

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Heaven Is My Throne"
+                    }
+                ],
                 "text": "This is what the LORD says: “Heaven is My throne, and earth is My footstool. What kind of house will you build for Me? Or where will My place of repose be?"
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Rejoice with Jerusalem"
+                    }
+                ],
                 "text": "“Before she was in labor, she gave birth; before she was in pain, she delivered a boy."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Final Judgments against the Wicked"
+                    }
+                ],
                 "text": "For behold, the LORD will come with fire—His chariots are like a whirlwind—to execute His anger with fury and His rebuke with flames of fire."
             }
         },

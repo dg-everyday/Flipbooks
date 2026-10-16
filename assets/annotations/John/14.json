@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "In My Father’s House Are Many Rooms"
+                    }
+                ],
                 "text": "“Do not let your hearts be troubled. You believe in God; believe in Me as well."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Way, the Truth, and the Life"
+                    }
+                ],
                 "text": "“Lord,” said Thomas, “we do not know where You are going, so how can we know the way?”"
             }
         },
@@ -174,6 +186,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Promises the Holy Spirit",
+                        "refs": "John 16:5–16"
+                    }
+                ],
                 "text": "If you love Me, you will keep My commandments."
             }
         },
@@ -318,6 +337,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Peace I Leave with You"
+                    }
+                ],
                 "text": "Peace I leave with you; My peace I give to you. I do not give to you as the world gives. Do not let your hearts be troubled; do not be afraid."
             }
         },

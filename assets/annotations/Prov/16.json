@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Reply of the Tongue Is from the LORD"
+                    }
+                ],
                 "text": "The plans of the heart belong to man, but the reply of the tongue is from the LORD."
             }
         },

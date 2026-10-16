@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Personal Greetings and Love"
+                    }
+                ],
                 "text": "I commend to you our sister Phoebe, a servant of the church in Cenchrea."
             }
         },
@@ -198,6 +204,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Avoid Divisions",
+                        "refs": "Titus 3:9–11"
+                    }
+                ],
                 "text": "Now I urge you, brothers, to watch out for those who create divisions and obstacles that are contrary to the teaching you have learned. Turn away from them."
             }
         },
@@ -246,6 +259,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Greetings from Paul’s Fellow Workers",
+                        "refs": "Colossians 4:7–14"
+                    }
+                ],
                 "text": "Timothy, my fellow worker, sends you greetings, as do Lucius, Jason, and Sosipater, my fellow countrymen."
             }
         },
@@ -289,6 +309,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Doxology",
+                        "refs": "Jude 1:24–25"
+                    }
+                ],
                 "text": "Now to Him who is able to strengthen you by my gospel and by the proclamation of Jesus Christ, according to the revelation of the mystery concealed for ages past"
             }
         },

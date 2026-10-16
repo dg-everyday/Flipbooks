@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Reuben"
+                    }
+                ],
                 "text": "These were the sons of Reuben the firstborn of Israel. Though he was the firstborn, his birthright was given to the sons of Joseph son of Israel, because Reuben defiled his father’s bed. So he is not reckoned according to birthright."
             }
         },
@@ -122,6 +128,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Descendants of Gad"
+                    }
+                ],
                 "text": "The descendants of Gad lived next to the Reubenites in the land of Bashan, as far as Salecah:"
             }
         },
@@ -266,6 +278,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Half-Tribe of Manasseh"
+                    }
+                ],
                 "text": "Now the people of the half-tribe of Manasseh were numerous. They settled in the land from Bashan to Baal-hermon (that is, Senir, also known as Mount Hermon)."
             }
         },

@@ -6,6 +6,18 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 0,
+                        "title": "BOOK I",
+                        "refs": "Psalms 1—41"
+                    },
+                    {
+                        "level": 1,
+                        "title": "The Two Paths",
+                        "refs": "Matthew 5:3–12; Luke 6:20–23"
+                    }
+                ],
                 "text": "Blessed is the man who does not walk in the counsel of the wicked, or set foot on the path of sinners, or sit in the seat of mockers."
             }
         },

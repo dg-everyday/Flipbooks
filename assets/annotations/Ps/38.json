@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Rebuke Me in Your Anger",
+                        "refs": "Psalms 6:1–10"
+                    }
+                ],
                 "title": "A Psalm of David, for remembrance.",
                 "text": "O LORD, do not rebuke me in Your anger or discipline me in Your wrath."
             }

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Prepare the Way for the LORD",
+                        "refs": "Matthew 3:1–12; Mark 1:1–8; Luke 3:1–20; John 1:19–28"
+                    }
+                ],
                 "text": "“Comfort, comfort My people,” says your God."
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Enduring Word",
+                        "refs": "1 Peter 1:22–25"
+                    }
+                ],
                 "text": "A voice says, “Cry out!” And I asked, “What should I cry out?” “All flesh is like grass, and all its glory like the flowers of the field."
             }
         },
@@ -102,6 +116,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Here Is Your God!",
+                        "refs": "Romans 11:33–36"
+                    }
+                ],
                 "text": "Go up on a high mountain, O Zion, herald of good news. Raise your voice loudly, O Jerusalem, herald of good news. Lift it up, do not be afraid! Say to the cities of Judah, “Here is your God!”"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Job’s Plea to God"
+                    }
+                ],
                 "text": "“I loathe my own life; I will express my complaint and speak in the bitterness of my soul."
             }
         },

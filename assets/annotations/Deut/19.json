@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Cities of Refuge",
+                        "refs": "Numbers 35:9–34; Deuteronomy 4:41–43; Joshua 20:1–9"
+                    }
+                ],
                 "text": "When the LORD your God has cut off the nations whose land He is giving you, and when you have driven them out and settled in their cities and houses,"
             }
         },
@@ -174,6 +181,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Testimony of Two or Three Witnesses",
+                        "refs": "Matthew 18:15–20"
+                    }
+                ],
                 "text": "A lone witness is not sufficient to establish any wrongdoing or sin against a man, regardless of what offense he may have committed. A matter must be established by the testimony of two or three witnesses."
             }
         },

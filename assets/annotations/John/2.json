@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wedding at Cana"
+                    }
+                ],
                 "text": "On the third day a wedding took place at Cana in Galilee. Jesus’ mother was there,"
             }
         },
@@ -138,6 +144,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Cleanses the Temple",
+                        "refs": "Matthew 21:12–17; Mark 11:15–19; Luke 19:45–48"
+                    }
+                ],
                 "text": "After this, He went down to Capernaum with His mother and brothers and His disciples, and they stayed there a few days."
             }
         },

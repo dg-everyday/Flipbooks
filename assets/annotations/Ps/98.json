@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Sing to the LORD a New Song",
+                        "refs": "Psalms 149:1–9; Isaiah 42:10–17"
+                    }
+                ],
                 "title": "A Psalm.",
                 "text": "Sing to the LORD a new song, for He has done wonders; His right hand and holy arm have gained Him the victory."
             }

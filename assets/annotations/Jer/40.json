@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jeremiah Remains in Judah"
+                    }
+                ],
                 "text": "This is the word that came to Jeremiah from the LORD after Nebuzaradan captain of the guard had released him at Ramah, having found him bound in chains among all the captives of Jerusalem and Judah who were being exiled to Babylon."
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Gedaliah Governs in Judah",
+                        "refs": "2 Kings 25:22–24"
+                    }
+                ],
                 "text": "When all the commanders and men of the armies in the field heard that the king of Babylon had appointed Gedaliah son of Ahikam over the land and that he had put him in charge of the men, women, and children who were the poorest of the land and had not been exiled to Babylon,"
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Plot against Gedaliah"
+                    }
+                ],
                 "text": "Meanwhile, Johanan son of Kareah and all the commanders of the armies in the field came to Gedaliah at Mizpah"
             }
         },

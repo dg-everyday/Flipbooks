@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Eliphaz Continues: God Blesses those Who Seek Him"
+                    }
+                ],
                 "text": "“Call out if you please, but who will answer? To which of the holy ones will you turn?"
             }
         },

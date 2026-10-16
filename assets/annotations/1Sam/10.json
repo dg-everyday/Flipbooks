@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samuel Anoints Saul"
+                    }
+                ],
                 "text": "Then Samuel took a flask of oil, poured it on Saul’s head, kissed him, and said, “Has not the LORD anointed you ruler over His inheritance?"
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samuel’s Signs Fulfilled"
+                    }
+                ],
                 "text": "As Saul turned to leave Samuel, God changed Saul’s heart, and all the signs came to pass that day."
             }
         },
@@ -198,6 +210,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Proclaimed King"
+                    }
+                ],
                 "text": "After this, Samuel summoned the people to the LORD at Mizpah"
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Moses Blesses the Twelve Tribes"
+                    }
+                ],
                 "text": "This is the blessing that Moses the man of God pronounced upon the Israelites before his death."
             }
         },

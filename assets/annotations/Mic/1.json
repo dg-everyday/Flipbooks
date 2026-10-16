@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment to Come",
+                        "refs": "Isaiah 7:17–25"
+                    }
+                ],
                 "text": "This is the word of the LORD that came to Micah the Moreshite in the days of Jotham, Ahaz, and Hezekiah, kings of Judah—what he saw regarding Samaria and Jerusalem:"
             }
         },
@@ -90,6 +97,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Weeping and Mourning"
+                    }
+                ],
                 "text": "Because of this I will lament and wail; I will walk barefoot and naked. I will howl like a jackal and mourn like an ostrich."
             }
         },

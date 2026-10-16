@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The First Six Bowls of Wrath"
+                    }
+                ],
                 "text": "Then I heard a loud voice from the temple saying to the seven angels, “Go, pour out on the earth the seven bowls of God’s wrath.”"
             }
         },
@@ -198,6 +204,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Seventh Bowl of Wrath"
+                    }
+                ],
                 "text": "Then the seventh angel poured out his bowl into the air, and a loud voice came from the throne in the temple, saying, “It is done!”"
             }
         },

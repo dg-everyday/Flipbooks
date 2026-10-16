@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Laws for Sin Offerings",
+                        "refs": "Leviticus 5:1–13; Leviticus 6:24–30"
+                    }
+                ],
                 "text": "Then the LORD said to Moses,"
             }
         },

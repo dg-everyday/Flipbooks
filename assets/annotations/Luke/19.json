@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus and Zacchaeus",
+                        "refs": "Numbers 5:5–10"
+                    }
+                ],
                 "text": "Then Jesus entered Jericho and was passing through."
             }
         },
@@ -126,6 +133,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Ten Minas",
+                        "refs": "Matthew 25:14–30"
+                    }
+                ],
                 "text": "While the people were listening to this, Jesus proceeded to tell them a parable, because He was near Jerusalem and they thought the kingdom of God would appear imminently."
             }
         },
@@ -330,6 +344,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Triumphal Entry",
+                        "refs": "Zechariah 9:9–13; Matthew 21:1–11; Mark 11:1–11; John 12:12–19"
+                    }
+                ],
                 "text": "After Jesus had said this, He went on ahead, going up to Jerusalem."
             }
         },
@@ -486,6 +507,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Weeps over Jerusalem",
+                        "refs": "Isaiah 29:1–16"
+                    }
+                ],
                 "text": "As Jesus approached Jerusalem and saw the city, He wept over it"
             }
         },
@@ -534,6 +562,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Cleanses the Temple",
+                        "refs": "Matthew 21:12–17; Mark 11:15–19; John 2:12–25"
+                    }
+                ],
                 "text": "Then Jesus entered the temple courts and began to drive out those who were selling there."
             }
         },

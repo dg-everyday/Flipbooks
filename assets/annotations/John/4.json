@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus and the Samaritan Woman"
+                    }
+                ],
                 "text": "When Jesus realized that the Pharisees were aware He was gaining and baptizing more disciples than John"
             }
         },
@@ -318,6 +324,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Disciples Return and Marvel"
+                    }
+                ],
                 "text": "Just then His disciples returned and were surprised that He was speaking with a woman. But no one asked Him, “What do You want from her?” or “Why are You talking with her?”"
             }
         },
@@ -462,6 +474,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Many Samaritans Believe"
+                    }
+                ],
                 "text": "Many of the Samaritans from that town believed in Jesus because of the woman’s testimony, “He told me everything I ever did.”"
             }
         },
@@ -510,6 +528,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jesus Heals the Official’s Son",
+                        "refs": "Matthew 8:5–13; Luke 7:1–10"
+                    }
+                ],
                 "text": "After two days, Jesus left for Galilee."
             }
         },

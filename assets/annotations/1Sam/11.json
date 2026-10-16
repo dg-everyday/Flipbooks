@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Defeats the Ammonites"
+                    }
+                ],
                 "text": "Then Nahash the Ammonite came up and laid siege to Jabesh-gilead. All the men of Jabesh said to him, “Make a treaty with us, and we will serve you.”"
             }
         },
@@ -138,6 +144,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Confirmed as King"
+                    }
+                ],
                 "text": "Then the people said to Samuel, “Who said that Saul should not reign over us? Bring those men here so we can kill them!”"
             }
         },

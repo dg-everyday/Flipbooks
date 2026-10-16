@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Do Not Boast about Tomorrow",
+                        "refs": "James 4:13–17"
+                    }
+                ],
                 "text": "Do not boast about tomorrow, for you do not know what a day may bring."
             }
         },

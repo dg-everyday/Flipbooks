@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah’s Message to Ahab"
+                    }
+                ],
                 "text": "After a long time, in the third year of the drought, the word of the LORD came to Elijah: “Go and present yourself to Ahab, and I will send rain upon the face of the earth.”"
             }
         },
@@ -186,6 +192,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah on Mount Carmel"
+                    }
+                ],
                 "text": "So Obadiah went to inform Ahab, who went to meet Elijah."
             }
         },
@@ -426,6 +438,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Elijah’s Prayer"
+                    }
+                ],
                 "text": "At the time of the evening sacrifice, Elijah the prophet approached the altar and said, “O LORD, God of Abraham, Isaac, and Israel, let it be known this day that You are God in Israel and that I am Your servant and have done all these things at Your command."
             }
         },
@@ -486,6 +504,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Sends Rain"
+                    }
+                ],
                 "text": "And Elijah said to Ahab, “Go up, eat and drink, for there is the sound of a heavy rain.”"
             }
         },

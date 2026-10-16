@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Lawsuits among Believers"
+                    }
+                ],
                 "text": "If any of you has a grievance against another, how dare he go to law before the unrighteous instead of before the saints!"
             }
         },
@@ -102,6 +108,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Members of Christ"
+                    }
+                ],
                 "text": "Do you not know that the wicked will not inherit the kingdom of God? Do not be deceived: Neither the sexually immoral, nor idolaters, nor adulterers, nor men who submit to or perform homosexual acts,"
             }
         },
@@ -210,6 +222,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Temple of the Holy Spirit",
+                        "refs": "Romans 12:1–8; 1 Corinthians 3:16–23"
+                    }
+                ],
                 "text": "Flee from sexual immorality. Every other sin a man can commit is outside his body, but he who sins sexually sins against his own body."
             }
         },

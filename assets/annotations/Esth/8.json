@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Esther Appeals for the Jews"
+                    }
+                ],
                 "text": "That same day King Xerxes awarded Queen Esther the estate of Haman, the enemy of the Jews. And Mordecai entered the king’s presence because Esther had revealed his relation to her."
             }
         },
@@ -78,6 +84,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Decree of Xerxes"
+                    }
+                ],
                 "text": "So King Xerxes said to Esther the Queen and Mordecai the Jew, “Behold, I have given Haman’s estate to Esther, and he was hanged on the gallows because he attacked the Jews."
             }
         },

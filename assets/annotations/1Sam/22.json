@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Flees to Adullam and Mizpeh",
+                        "refs": "Psalms 57:1–11; Psalms 142:1–7"
+                    }
+                ],
                 "text": "So David left Gath and took refuge in the cave of Adullam. When his brothers and the rest of his father’s household heard about it, they went down to him there."
             }
         },
@@ -66,6 +73,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Saul Slays the Priests of Nob",
+                        "refs": "Psalms 52:1–9"
+                    }
+                ],
                 "text": "Soon Saul learned that David and his men had been discovered. At that time Saul was sitting under the tamarisk tree on the hill at Gibeah, with his spear in hand and all his servants standing around him."
             }
         },

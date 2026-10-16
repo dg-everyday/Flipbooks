@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on the Ammonites"
+                    }
+                ],
                 "text": "Concerning the Ammonites, this is what the LORD says: “Has Israel no sons? Is he without heir? Why then has Milcom taken possession of Gad? Why have his people settled in their cities?"
             }
         },
@@ -78,6 +84,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Edom",
+                        "refs": "Obadiah 1:1–14"
+                    }
+                ],
                 "text": "Concerning Edom, this is what the LORD of Hosts says: “Is there no longer wisdom in Teman? Has counsel perished from the prudent? Has their wisdom decayed?"
             }
         },
@@ -270,6 +283,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Damascus",
+                        "refs": "Isaiah 17:1–14"
+                    }
+                ],
                 "text": "Concerning Damascus: “Hamath and Arpad are put to shame, for they have heard a bad report; they are agitated like the sea; their anxiety cannot be calmed."
             }
         },
@@ -330,6 +350,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Kedar and Hazor"
+                    }
+                ],
                 "text": "Concerning Kedar and the kingdoms of Hazor, which Nebuchadnezzar king of Babylon defeated, this is what the LORD says: “Rise up, advance against Kedar, and destroy the people of the east!"
             }
         },
@@ -402,6 +428,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Elam"
+                    }
+                ],
                 "text": "This is the word of the LORD that came to Jeremiah the prophet concerning Elam at the beginning of the reign of Zedekiah king of Judah."
             }
         },

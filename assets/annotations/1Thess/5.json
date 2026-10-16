@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Day of the Lord",
+                        "refs": "Zephaniah 1:7–18; Malachi 4:1–6; 2 Peter 3:8–13"
+                    }
+                ],
                 "text": "Now about the times and seasons, brothers, we do not need to write to you."
             }
         },
@@ -138,6 +145,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Christian Living"
+                    }
+                ],
                 "text": "But we ask you, brothers, to acknowledge those who work diligently among you, who care for you in the Lord and who admonish you."
             }
         },
@@ -270,6 +283,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Final Blessings and Instructions"
+                    }
+                ],
                 "text": "Now may the God of peace Himself sanctify you completely, and may your entire spirit, soul, and body be kept blameless at the coming of our Lord Jesus Christ."
             }
         },

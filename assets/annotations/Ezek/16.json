@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jerusalem’s Unfaithfulness"
+                    }
+                ],
                 "text": "Again the word of the LORD came to me, saying,"
             }
         },
@@ -414,6 +420,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Judgment on Jerusalem"
+                    }
+                ],
                 "text": "Therefore, O prostitute, hear the word of the LORD!"
             }
         },
@@ -702,6 +714,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Covenant Remembered"
+                    }
+                ],
                 "text": "For this is what the Lord GOD says: I will deal with you according to your deeds, since you have despised the oath by breaking the covenant."
             }
         },

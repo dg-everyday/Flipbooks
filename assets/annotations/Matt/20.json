@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Parable of the Workers"
+                    }
+                ],
                 "text": "“For the kingdom of heaven is like a landowner who went out early in the morning to hire workers for his vineyard."
             }
         },
@@ -198,6 +204,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Third Prediction of the Passion",
+                        "refs": "Mark 10:32–34; Luke 18:31–34"
+                    }
+                ],
                 "text": "As Jesus was going up to Jerusalem, He took the twelve disciples aside and said,"
             }
         },
@@ -234,6 +247,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "A Mother’s Request",
+                        "refs": "Mark 10:35–45"
+                    }
+                ],
                 "text": "Then the mother of Zebedee’s sons came to Jesus with her sons and knelt down to make a request of Him."
             }
         },
@@ -342,6 +362,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Blind Men by the Road",
+                        "refs": "Mark 10:46–52; Luke 18:35–43"
+                    }
+                ],
                 "text": "As they were leaving Jericho, a large crowd followed Him."
             }
         },

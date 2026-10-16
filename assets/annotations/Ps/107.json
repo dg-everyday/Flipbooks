@@ -6,6 +6,18 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 0,
+                        "title": "BOOK V",
+                        "refs": "Psalms 107—150"
+                    },
+                    {
+                        "level": 1,
+                        "title": "Thanksgiving for Deliverance",
+                        "refs": "Matthew 8:23–27; Mark 4:35–41; Luke 8:22–25"
+                    }
+                ],
                 "text": "Give thanks to the LORD, for He is good; His loving devotion endures forever."
             }
         },

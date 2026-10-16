@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Jerusalem’s Final Warning"
+                    }
+                ],
                 "text": "“Run for cover, O sons of Benjamin; flee from Jerusalem! Sound the ram’s horn in Tekoa; send up a signal over Beth-haccherem, for disaster looms from the north, even great destruction."
             }
         },
@@ -258,6 +264,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "An Invasion from the North"
+                    }
+                ],
                 "text": "This is what the LORD says: “Behold, an army is coming from the land of the north; a great nation is stirred up from the ends of the earth."
             }
         },

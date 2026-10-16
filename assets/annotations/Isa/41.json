@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God’s Help to Israel"
+                    }
+                ],
                 "text": "“Be silent before Me, O islands, and let the peoples renew their strength. Let them come forward and testify; let us together draw near for judgment."
             }
         },
@@ -246,6 +252,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Meaningless Idols"
+                    }
+                ],
                 "text": "“Present your case,” says the LORD. “Submit your arguments,” says the King of Jacob."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Vision of the Four Beasts",
+                        "refs": "Revelation 13:1–10"
+                    }
+                ],
                 "text": "In the first year of the reign of Belshazzar over Babylon, Daniel had a dream, and visions passed through his mind as he lay on his bed. He wrote down the dream, and this is the summary of his account."
             }
         },
@@ -102,6 +109,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Vision of the Ancient of Days"
+                    }
+                ],
                 "text": "As I continued to watch, thrones were set in place, and the Ancient of Days took His seat. His clothing was white as snow, and the hair of His head was like pure wool. His throne was flaming with fire, and its wheels were all ablaze."
             }
         },
@@ -150,6 +163,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Vision of the Son of Man"
+                    }
+                ],
                 "text": "In my vision in the night I continued to watch, and I saw One like the Son of Man coming with the clouds of heaven. He approached the Ancient of Days and was led into His presence."
             }
         },
@@ -174,6 +193,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Daniel’s Visions Interpreted"
+                    }
+                ],
                 "text": "I, Daniel, was grieved in my spirit, and the visions in my mind alarmed me."
             }
         },

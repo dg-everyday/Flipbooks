@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Taming the Tongue",
+                        "refs": "Psalms 64:1–10"
+                    }
+                ],
                 "text": "Not many of you should become teachers, my brothers, because you know that we who teach will be judged more strictly."
             }
         },
@@ -150,6 +157,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Wisdom from Above"
+                    }
+                ],
                 "text": "Who is wise and understanding among you? Let him show it by his good conduct, by deeds done in the humility that comes from wisdom."
             }
         },

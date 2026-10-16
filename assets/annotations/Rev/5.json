@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lamb Takes the Scroll"
+                    }
+                ],
                 "text": "Then I saw a scroll in the right hand of the One seated on the throne. It had writing on both sides and was sealed with seven seals."
             }
         },
@@ -126,6 +132,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Lamb Exalted"
+                    }
+                ],
                 "text": "Then I looked, and I heard the voices of many angels encircling the throne, and the living creatures and the elders. And their number was myriads of myriads and thousands of thousands."
             }
         },

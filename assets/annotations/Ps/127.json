@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Children Are a Heritage from the LORD"
+                    }
+                ],
                 "title": "A song of ascents. Of Solomon.",
                 "text": "Unless the LORD builds the house, its builders labor in vain; unless the LORD protects the city, its watchmen stand guard in vain."
             }

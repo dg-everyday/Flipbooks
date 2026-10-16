@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Inside the Temple"
+                    }
+                ],
                 "text": "Then the man brought me into the outer sanctuary and measured the side pillars to be six cubits wide on each side."
             }
         },
@@ -54,6 +60,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Outside the Temple"
+                    }
+                ],
                 "text": "Next he measured the wall of the temple to be six cubits thick, and the width of each side room around the temple was four cubits."
             }
         },
@@ -174,6 +186,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The Interior Structures"
+                    }
+                ],
                 "text": "Next he measured the length of the building facing the temple courtyard at the rear of the temple, including its galleries on each side; it was a hundred cubits. The outer sanctuary, the inner sanctuary, and the porticoes facing the court,"
             }
         },

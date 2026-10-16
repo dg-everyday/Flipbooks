@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Pray for the Peace of Jerusalem"
+                    }
+                ],
                 "title": "A song of ascents. Of David.",
                 "text": "I was glad when they said to me, “Let us go to the house of the LORD.”"
             }

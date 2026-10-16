@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "David Avenges the Gibeonites"
+                    }
+                ],
                 "text": "During the reign of David there was a famine for three successive years, and David sought the face of the LORD. And the LORD said, “It is because of the blood shed by Saul and his family, because he killed the Gibeonites.”"
             }
         },
@@ -174,6 +180,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Four Battles against the Philistines",
+                        "refs": "1 Chronicles 20:4–8"
+                    }
+                ],
                 "text": "Once again the Philistines waged war against Israel, and David and his servants went down and fought against the Philistines. But David became exhausted."
             }
         },

@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul’s Greeting to the Galatians"
+                    }
+                ],
                 "text": "Paul, an apostle—sent not from men nor by man, but by Jesus Christ and God the Father, who raised Him from the dead—"
             }
         },
@@ -66,6 +72,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "No Other Gospel"
+                    }
+                ],
                 "text": "I am amazed how quickly you are deserting the One who called you by the grace of Christ and are turning to a different gospel—"
             }
         },
@@ -114,6 +126,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Paul Preaches the Gospel"
+                    }
+                ],
                 "text": "Am I now seeking the approval of men, or of God? Or am I striving to please men? If I were still trying to please men, I would not be a servant of Christ."
             }
         },

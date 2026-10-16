@@ -6,6 +6,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "The LORD Is on My Side"
+                    }
+                ],
                 "text": "Give thanks to the LORD, for He is good; His loving devotion endures forever."
             }
         },

@@ -6,6 +6,13 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Israel Demands a King",
+                        "refs": "Deuteronomy 17:14–20"
+                    }
+                ],
                 "text": "When Samuel grew old, he appointed his sons as judges over Israel."
             }
         },
@@ -114,6 +121,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "Samuel’s Warning"
+                    }
+                ],
                 "text": "So Samuel spoke all the words of the LORD to the people who were asking him for a king."
             }
         },
@@ -222,6 +235,12 @@
         },
         "translations": {
             "bsb": {
+                "headings": [
+                    {
+                        "level": 1,
+                        "title": "God Grants the Request"
+                    }
+                ],
                 "text": "Nevertheless, the people refused to listen to Samuel. “No!” they said. “We must have a king over us."
             }
         },

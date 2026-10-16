@@ -30,7 +30,7 @@ import {
     followHash,
     filterMenu,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261003-1";
+} from "./study-utils.js?v=20261016-1";
 // The same ?v= token as the components' imports, so one copy of the module
 // holds the bookmarks for the whole page.
 import {

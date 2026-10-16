@@ -23,7 +23,7 @@ import {
     followHash,
     filterMenu,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261003-1";
+} from "./study-utils.js?v=20261016-1";
 import { openDatabase, query } from "../../../assets/scripts/sqlite-db.js";
 import {
     BOOKMARK_STYLES,

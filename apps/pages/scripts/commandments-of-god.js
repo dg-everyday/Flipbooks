@@ -18,7 +18,7 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261003-1";
+} from "./study-utils.js?v=20261016-1";
 
 const DATA = "assets/commandments-of-god.json";
 

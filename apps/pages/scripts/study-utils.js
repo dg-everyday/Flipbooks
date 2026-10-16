@@ -320,14 +320,32 @@ function holdInView(el, offset) {
 export function rowExpander({ tileSelector }) {
     let tile = null;
     let panel = null;
+    // The grid's width when the panel was last placed: the tiles per row, and
+    // so where the panel belongs, depend on nothing else.
+    let placedWidth = 0;
+    // Where the open panel sat on screen when the reader last scrolled. A new
+    // width rewraps everything above the panel before any resize handler runs,
+    // so its place has to be known from before.
+    let readingTop = null;
+    const notePlace = () => {
+        readingTop = panel?.isConnected ? panel.getBoundingClientRect().top : null;
+    };
+    window.addEventListener("scroll", notePlace, { passive: true });
 
     // Put the panel straight after the last visible tile on the open tile's
-    // row, so it spans the grid right under that row. Re-run on resize, since
-    // the number of tiles per row changes with the width.
-    function place() {
+    // row, so it spans the grid right under that row. Re-run when the width
+    // changes, since the number of tiles per row changes with it.
+    //
+    // keepPlace: the reader is in the middle of the page, so after the panel
+    // moves, scroll it back to where it was on screen when they last scrolled.
+    // Taking the panel out to measure shortens the page for a moment, and the
+    // browser would otherwise pull the scroll position up with it and leave
+    // the reader screens away.
+    function place({ keepPlace = false } = {}) {
         if (!tile) {
             return;
         }
+        const before = keepPlace ? readingTop : null;
         // Measure rows without the panel: while it sits in the grid it forces the
         // tiles after it onto a new line, which would hide where the row ends.
         panel.remove();
@@ -349,6 +367,14 @@ export function rowExpander({ tileSelector }) {
             "--notch-x",
             `${tile.offsetLeft + tile.offsetWidth / 2}px`,
         );
+        placedWidth = tile.parentElement.clientWidth;
+        if (before !== null) {
+            const moved = panel.getBoundingClientRect().top - before;
+            if (Math.abs(moved) > 1) {
+                window.scrollBy({ top: moved, behavior: "instant" });
+            }
+        }
+        notePlace();
     }
 
     function close({ keepHash = false, focus = false } = {}) {
@@ -380,10 +406,18 @@ export function rowExpander({ tileSelector }) {
         scrollUnderTopbar(tile, { smooth });
     }
 
+    // A phone resizes the window every time its address bar slides in or out,
+    // which is all the time while the reader scrolls. Only the height changes
+    // then, and the rows stay as they are, so the panel is left alone: moving
+    // it threw the reader thousands of pixels from what they were reading.
     let pending = 0;
     window.addEventListener("resize", () => {
         cancelAnimationFrame(pending);
-        pending = requestAnimationFrame(place);
+        pending = requestAnimationFrame(() => {
+            if (tile && tile.parentElement.clientWidth !== placedWidth) {
+                place({ keepPlace: true });
+            }
+        });
     });
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && tile) {

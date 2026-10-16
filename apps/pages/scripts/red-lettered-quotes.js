@@ -29,8 +29,9 @@ import {
     rowExpander,
     followHash,
     filterMenu,
+    titleWithInfo,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261016-1";
+} from "./study-utils.js?v=20261016-5";
 // The same ?v= token as the components' imports, so one copy of the module
 // holds the bookmarks for the whole page.
 import {
@@ -727,7 +728,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Red-Lettered Quotes"),
+            h("h1", {}, titleWithInfo("Red-Lettered Quotes", filters.info)),
             h(
                 "p",
                 { class: "lede" },

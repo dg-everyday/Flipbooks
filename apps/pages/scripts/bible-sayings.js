@@ -27,7 +27,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 import {
     BOOKMARK_STYLES,
     CardHold,
@@ -588,7 +589,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Bible Sayings"),
+            h("h1", {}, titleWithInfo("Bible Sayings", filters.info)),
             h(
                 "p",
                 { class: "lede" },

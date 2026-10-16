@@ -1,0 +1,307 @@
+{
+    "bible-books.html": {
+        "title": "Books of the Bible",
+        "summary": "A guided tour of all 66 books: who wrote each one, when, and what it is about.",
+        "inside": [
+            "Every book of the Bible, from Genesis to Revelation, grouped the way they are read: the Law, History, Poetry, the Prophets, the Gospels and the Letters.",
+            "Each book opens to show who wrote it, when and for whom, what it is about, and the verses that sum it up."
+        ],
+        "use": [
+            "Tap a book to open it under its row; tap it again, or another book, to close it.",
+            "Use the funnel to show only the Old Testament or only the New.",
+            "Search by name to jump straight to a book.",
+            "Tap any Bible reference to read the passage in the King James Version."
+        ],
+        "why": [
+            "The Bible is a library, not a single book. Knowing who wrote each part, and why, makes every passage easier to understand, and shows how one story runs from the first page to the last.",
+            "Read a book's overview before you start it, and its message will open up as you go."
+        ],
+        "verse": {
+            "ref": "2 Timothy 3:16",
+            "text": "All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness:"
+        }
+    },
+    "bible-characters.html": {
+        "title": "Bible Characters",
+        "summary": "The men and women of the Bible's story, from Adam to the first church.",
+        "inside": [
+            "More than a hundred people of Scripture, in the order their stories happen: from the beginning, through the patriarchs, the judges and the kings, to the life of Jesus and the early church.",
+            "Each one shows who they were, what they did, how they are related to others, and why they matter."
+        ],
+        "use": [
+            "Tap anyone to read their story; tap a family member in it to go straight to them.",
+            "Use the funnel to show one era, or one Testament.",
+            "Search by name to find someone quickly.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "God's word is told through real lives. Their faith, their failures and God's faithfulness to them are written to teach and encourage the reader today.",
+            "Knowing the people also makes the rest of the Bible easier to follow, since their names come back again and again."
+        ],
+        "verse": {
+            "ref": "Romans 15:4",
+            "text": "For whatsoever things were written aforetime were written for our learning, that we through patience and comfort of the scriptures might have hope."
+        }
+    },
+    "peoples.html": {
+        "title": "Peoples of the Bible",
+        "summary": "The nations and tribes of Scripture, where they lived, and how they shaped Israel's story.",
+        "inside": [
+            "The peoples the Bible names, from the nations of Canaan and Israel's neighbours and kin to the great empires of Egypt, Assyria, Babylon, Persia and Rome.",
+            "Each one tells where they came from, where they lived, how they met Israel, and who they are today, with maps of their lands."
+        ],
+        "use": [
+            "Start with the map of where they all lived, then tap a people to open its own page; the back button brings you back to the list.",
+            "Use the funnel to show one group of peoples.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "Names like the Philistines, the Moabites or the Babylonians appear on almost every page of the Old Testament. Knowing who they were turns those names into real neighbours, enemies and empires, and makes the stories easier to follow.",
+            "It also shows God at work among all nations, not only one."
+        ],
+        "verse": {
+            "ref": "Acts 17:26",
+            "text": "And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation;"
+        }
+    },
+    "bible-prayers.html": {
+        "title": "Prayers in the Bible",
+        "summary": "The prayers Jesus taught and prayed, and the prayers of the men and women of Scripture.",
+        "inside": [
+            "Fifty prayers: the prayer Jesus taught his disciples, his own prayers, and the prayers of the patriarchs, Moses, kings, prophets, exiles, the psalms and the early church.",
+            "Each prayer shows its words, the story behind it, what it teaches, and a way to pray it in your own day."
+        ],
+        "use": [
+            "Tap a prayer to read it.",
+            "Use the funnel to show one kind of prayer, or one Testament.",
+            "Search for a person, a need or a word.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "Prayer is talking with God, and these prayers show how: with praise, honesty, confession, thanks and trust, in joy and in fear.",
+            "Praying the way the Bible prays can bring peace in place of worry, and help you find words when you have none of your own."
+        ],
+        "verse": {
+            "ref": "Philippians 4:6",
+            "text": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."
+        }
+    },
+    "poems-songs-and-wisdom.html": {
+        "title": "Poems, Songs and Wisdom",
+        "summary": "The poetry of the Bible: poems, songs and proverbs to read, sing and remember.",
+        "inside": [
+            "Some of the best known and most loved poetry of Scripture: the poems of the prophets and apostles, the songs God's people sang from the Red Sea to heaven, and the wisdom of Proverbs, Job, Ecclesiastes and Jesus.",
+            "Each one gives the words, the story behind them, and what they mean for daily life."
+        ],
+        "use": [
+            "Tap a poem, song or saying of wisdom to read it.",
+            "Use the funnel to show poems, songs or wisdom, one group, or one Testament.",
+            "Search for a word or a theme.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "Much of the Bible was written to be sung and remembered. These words have given comfort in grief, courage in trouble and words of praise for thousands of years.",
+            "Proverbs and the other wisdom books also give plain, practical guidance for work, speech, money, friendship and rest."
+        ],
+        "verse": {
+            "ref": "Colossians 3:16",
+            "text": "Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord."
+        }
+    },
+    "red-lettered-quotes.html": {
+        "title": "Red-Lettered Quotes",
+        "summary": "The words of Jesus, gathered in one place and explained in plain words.",
+        "inside": [
+            "The best-known sayings of Jesus, grouped by theme: the \"I am\" sayings, the Sermon on the Mount, the parables, his invitations and promises, his commands, his prayers, and his words from the cross, after the resurrection and from heaven.",
+            "Then every red-letter word, book by book, with the older commentary on each passage."
+        ],
+        "use": [
+            "Tap a saying to read its meaning; hold it for half a second to bookmark it.",
+            "Use the funnel to show one theme, or one book.",
+            "Switch to \"Every red-letter word\" to read all his words, book by book.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "Many Bibles print the words of Jesus in red so they stand out. Gathered here, they show what he taught about God, about himself and about how to live, in his own words.",
+            "Reading them often is one of the surest ways to come to know him."
+        ],
+        "verse": {
+            "ref": "John 6:63",
+            "text": "It is the spirit that quickeneth; the flesh profiteth nothing: the words that I speak unto you, they are spirit, and they are life."
+        }
+    },
+    "heroes-and-villains.html": {
+        "title": "Heroes and Villains",
+        "summary": "The people who stood for God, and those who stood against him.",
+        "inside": [
+            "The heroes and villains of the Bible: their stories, their defining moments, and what they teach.",
+            "Each one shows where their story is found, what they did, and the lesson to take from it."
+        ],
+        "use": [
+            "Tap anyone to read their story.",
+            "Use the funnel to show heroes or villains, or one Testament.",
+            "Search by name.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "The Bible does not hide the failings of its people. The faith of its heroes encourages, and the choices of its villains warn, so the reader can learn from both.",
+            "Their stories show that what we choose, every day, matters to God."
+        ],
+        "verse": {
+            "ref": "1 Corinthians 10:11",
+            "text": "Now all these things happened unto them for ensamples: and they are written for our admonition, upon whom the ends of the world are come."
+        }
+    },
+    "flora-and-fauna.html": {
+        "title": "Flora and Fauna",
+        "summary": "The plants and animals of the Bible, and why they matter.",
+        "inside": [
+            "The trees, grains, herbs and flowers, and the animals, birds and creatures of Scripture.",
+            "Each one tells what it was used for, why it is in the Bible, who used it, and why it still matters."
+        ],
+        "use": [
+            "Tap a plant or an animal to read about it.",
+            "Use the funnel to show only plants or only animals.",
+            "Search by name.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "Jesus and the prophets taught with the world around them: the mustard seed, the vine, the lilies, the sheep and the sparrow. Knowing these things as the first hearers knew them brings the teaching back to life.",
+            "It is also a reminder that the Creator cares for all he has made."
+        ],
+        "verse": {
+            "ref": "Job 12:7",
+            "text": "But ask now the beasts, and they shall teach thee; and the fowls of the air, and they shall tell thee:"
+        }
+    },
+    "did-you-know.html": {
+        "title": "Did You Know?",
+        "summary": "Surprising facts from every book of the Bible, with the verse behind each one.",
+        "inside": [
+            "More than 1,600 facts from all 66 books, each with the verse it comes from, grouped by book from the Law to Revelation."
+        ],
+        "use": [
+            "Open a book, then tap a question to read the answer.",
+            "Hold a question for half a second to bookmark it.",
+            "Use the funnel to show one Testament, or one group of books.",
+            "Tap the verse to read it in its place."
+        ],
+        "why": [
+            "Every fact is a doorway into Scripture: a small surprise that sends you to the verse, and from the verse into the story around it.",
+            "They are also easy to remember and share, a good way to start a conversation about the Bible."
+        ],
+        "verse": {
+            "ref": "Proverbs 25:2",
+            "text": "It is the glory of God to conceal a thing: but the honour of kings is to search out a matter."
+        }
+    },
+    "bible-sayings.html": {
+        "title": "Bible Sayings",
+        "summary": "Everyday phrases that come from the Bible, and what they mean.",
+        "inside": [
+            "More than 500 sayings still in use today, like \"the writing on the wall\" or \"a drop in the bucket\", grouped by theme.",
+            "Each one gives what it means, where it comes from, and the King James words behind it."
+        ],
+        "use": [
+            "Tap a saying to read it; hold it for half a second to bookmark it.",
+            "Use the funnel to show one theme, or one Testament.",
+            "Search for a word or phrase you have heard.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "The King James Bible shaped the English language. Many words people use every day without a thought came from its pages.",
+            "Knowing where they come from adds meaning to ordinary speech, and turns a familiar phrase into a way back to Scripture."
+        ],
+        "verse": {
+            "ref": "Proverbs 25:11",
+            "text": "A word fitly spoken is like apples of gold in pictures of silver."
+        }
+    },
+    "supernaturals.html": {
+        "title": "Supernaturals and Prophecies",
+        "summary": "Miracles, healings, prophecies fulfilled, and what the Bible says about angels and demons.",
+        "inside": [
+            "The miracles of Scripture: power over nature, food and plenty, healings, the dead raised and demons cast out, together with the magic and sorcery the Bible warns against, and the prophecies God spoke and kept.",
+            "Then two special topics: what the whole Bible says about angels, and about demons."
+        ],
+        "use": [
+            "Tap any account to read what happened, why it matters and what it teaches.",
+            "Use the funnel to show one kind, or one Testament.",
+            "Search for a person, place or event.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "The miracles and fulfilled prophecies were written so that the reader might believe. They show God's power over sickness, nature, death and evil, and that he keeps his word.",
+            "Knowing what Scripture says about the unseen world also guards against fear, and against what it forbids."
+        ],
+        "verse": {
+            "ref": "John 20:31",
+            "text": "But these are written, that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name."
+        }
+    },
+    "commandments-of-god.html": {
+        "title": "Commandments of God",
+        "summary": "The Ten Commandments, the commands of Jesus and the apostles, and wisdom for daily life.",
+        "inside": [
+            "The Ten Commandments first, then the two Jesus called the greatest, the commands he gave his followers, wisdom for ordinary days from the law and the prophets, and what the apostles taught the first churches."
+        ],
+        "use": [
+            "Tap a commandment to read where it comes from, what it means, and one step to take today.",
+            "Use the funnel to show one kind, or one Testament.",
+            "Search for a word or a topic.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "God's commandments are not a burden but a guide to a good life: they protect our relationships, our homes, our health and our peace.",
+            "Each one ends with a small, practical step, so it can be lived out the same day it is read."
+        ],
+        "verse": {
+            "ref": "John 14:15",
+            "text": "If ye love me, keep my commandments."
+        }
+    },
+    "guidance-for-life.html": {
+        "title": "Questions We All Ask",
+        "summary": "Life's real questions, from worry and anger to money, marriage and grief, answered from Scripture.",
+        "inside": [
+            "Questions about the heart and mind, relationships, work and money, walking with God, hard times and the future.",
+            "Each is answered by the whole of Scripture: the teaching of Jesus, the prophets, the apostles, the wisdom books and the Law, with the passages to read."
+        ],
+        "use": [
+            "Tap a question to read it; hold it for half a second to bookmark it.",
+            "Press play to listen to a question read aloud, or open it as a PDF to keep or share.",
+            "Use the funnel to show one part of life, or only the questions where one voice speaks.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "Everyone faces worry, anger, loss and hard choices. The Bible speaks to each of them plainly, and its answers bring peace of mind, steadier relationships and hope for what comes next.",
+            "Come back to a question whenever life raises it again."
+        ],
+        "verse": {
+            "ref": "James 1:5",
+            "text": "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him."
+        }
+    },
+    "following-gods-blueprint.html": {
+        "title": "Following God's Blueprint",
+        "summary": "God's plan for his people, drawn like a builder's blueprint.",
+        "inside": [
+            "The plan in six sheets: the foundation of salvation, the heart of his law beyond the Ten, what to do every day, how to solve problems his way, how to read the times, and how to be ready for his return.",
+            "Then the blueprint test: questions to check a decision or a resolution against the Lord's plan."
+        ],
+        "use": [
+            "Tap any part of the plan to open it; hold it for half a second to bookmark it.",
+            "Use the funnel to show one sheet of the plan.",
+            "Take the blueprint test before a big decision.",
+            "Tap any Bible reference to read the passage."
+        ],
+        "why": [
+            "A house built without a plan does not stand. This guide lays out, from Scripture, the plan God has given for building a life that lasts.",
+            "The test turns it into practice: a way to weigh choices by his word before making them."
+        ],
+        "verse": {
+            "ref": "Matthew 7:24",
+            "text": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:"
+        }
+    }
+}

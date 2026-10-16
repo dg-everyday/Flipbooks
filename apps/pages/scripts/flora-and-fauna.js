@@ -15,7 +15,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const DATA = "assets/flora-and-fauna.json";
 
@@ -502,7 +503,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Flora and Fauna"),
+            h("h1", {}, titleWithInfo("Flora and Fauna", filters.info)),
             h(
                 "p",
                 { class: "lede" },

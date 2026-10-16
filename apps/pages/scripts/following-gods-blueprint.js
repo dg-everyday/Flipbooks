@@ -26,7 +26,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 import {
     BOOKMARK_STYLES,
     CardHold,
@@ -847,7 +848,7 @@ export async function start(view) {
             { class: "hero bp-hero" },
             filters.button,
             h("p", { class: "eyebrow" }, "A study guide"),
-            h("h1", {}, "Following God's Blueprint"),
+            h("h1", {}, titleWithInfo("Following God's Blueprint", filters.info)),
             h(
                 "p",
                 { class: "lede" },

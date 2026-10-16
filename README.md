@@ -114,6 +114,7 @@ declared inside a shadow root.
 | `assets/db/didyouknow.db` | 1,021 Bible facts in one table, `did_you_know(id, Title, Fact, Reference_verse, Book, Similar_books)`. `Reference_verse` must parse and exist in `dailygrace.db`, since tapping it opens the passage. `Similar_books` holds four books that are never the row's own `Book`; `<bible-trivia>` draws two of them as wrong answers. Add rows with `tools/didyouknow/add_rows.py`. |
 | `assets/did-you-know.json` | The original 501 facts, superseded by `didyouknow.db` and no longer read by anything. |
 | `assets/book-metadata.json` | Fallback `title` / `description` for all 66 books — see below. |
+| `assets/guide-info.json` | The "About this guide" popup of each study guide (the ⓘ beside the funnel), keyed by page file (`bible-books.html`): `title`, `summary`, `inside`, `use` and `why` (lists of paragraphs or steps) and a KJV `verse` (`ref`, `text`, word for word as in `dailygrace.db`). Fetched on the first tap by `guideInfoButton()` in `apps/pages/scripts/study-utils.js`. Update it when a guide gains or loses a feature. |
 
 Book symbols load from `<media-base>images/symbols/<Book name>-symbol.svg`. The
 book overview in search results is read from that SVG's `title#title` and

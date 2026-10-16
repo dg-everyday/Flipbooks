@@ -19,7 +19,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const DATA = "assets/supernaturals.json";
 
@@ -605,7 +606,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Supernaturals and Prophecies"),
+            h("h1", {}, titleWithInfo("Supernaturals and Prophecies", filters.info)),
             h(
                 "p",
                 { class: "lede" },

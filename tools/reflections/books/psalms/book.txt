@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Psalms
+1-41 | Book One: Blessed Is the Man
+42-72 | Book Two: As the Hart Panteth
+73-89 | Book Three: Truly God Is Good
+90-106 | Book Four: From Everlasting to Everlasting
+107-150 | Book Five: O Give Thanks unto the LORD

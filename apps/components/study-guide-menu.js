@@ -1019,7 +1019,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h11l5 5v13H4zM15 3v5h5" /></svg>
                 </span>
-                <p><strong>Understand a verse.</strong> Tap the folded corner of a verse to read its explanation. The words of Jesus are printed in red.</p>
+                <p><strong>Understand a verse.</strong> Tap the folded corner of a verse to read its explanation. The words of Jesus are printed in red. Under the explanation, the Interlinear shows the verse word by word in the Hebrew or Greek it was written in, with each word in English; tap a word to read about it in Strong's dictionary.</p>
             </li>
         </ul>
 
@@ -1035,7 +1035,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                 </span>
-                <p><strong>Books of the Bible.</strong> All 66 books, grouped as the Law, History, Poetry, the Prophets, the Gospels and the Letters, with the number of chapters and verses in each. Tap a book to open its details right below it: who wrote it, when, what it contains and its key verses. Tap another book to switch, or search by book, author or theme.</p>
+                <p><strong>Books of the Bible.</strong> All 66 books, grouped as the Law, History, Poetry, the Prophets, the Gospels and the Letters, with the number of chapters and verses in each. Tap a book to open its details right below it: who wrote it, when, what it contains and its key verses. Tap a part of its outline to read those chapters in the King James Version, the Berean Standard Bible or the Interlinear, word by word in the Hebrew or Greek. Tap another book to switch, or search by book, author or theme.</p>
             </li>
             <li>
                 <span class="help-icon">

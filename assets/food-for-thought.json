@@ -1,0 +1,2869 @@
+{
+    "totals": {
+        "entries": 81,
+        "areas": {
+            "Mind": 42,
+            "Body": 31,
+            "Spirit": 38
+        },
+        "sections": {
+            "The daily diet": 10,
+            "Feeding the mind": 11,
+            "Keeping the body fit": 13,
+            "Armour for the fight": 10,
+            "Junk food for the soul": 15,
+            "Staying in shape": 14,
+            "Lessons from the Bible's table": 8
+        }
+    },
+    "areas": [
+        "Mind",
+        "Body",
+        "Spirit"
+    ],
+    "sections": [
+        {
+            "name": "The daily diet",
+            "intro": "Feeding the spirit: the staple food a soul cannot do without."
+        },
+        {
+            "name": "Feeding the mind",
+            "intro": "What we let into our thoughts shapes what we do."
+        },
+        {
+            "name": "Keeping the body fit",
+            "intro": "What Scripture says about self-control, soberness, rest and diligence."
+        },
+        {
+            "name": "Armour for the fight",
+            "intro": "Defences to have in place before temptation comes."
+        },
+        {
+            "name": "Junk food for the soul",
+            "intro": "What tastes sweet at first but poisons the soul."
+        },
+        {
+            "name": "Staying in shape",
+            "intro": "Regular check-ups, training and getting back up."
+        },
+        {
+            "name": "Lessons from the Bible's table",
+            "intro": "People who ate well, and people who fed the wrong appetite."
+        }
+    ],
+    "entries": [
+        {
+            "id": "not-by-bread-alone",
+            "section": "The daily diet",
+            "name": "Not by bread alone",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Matthew 4:4",
+                    "text": "But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God."
+                }
+            ],
+            "read": [
+                "Matthew 4:1-4",
+                "Deuteronomy 8:3"
+            ],
+            "guards": "Spiritual starvation; living on the world's bread only",
+            "feeds": "Jesus was hungry after forty days without food, yet he answered the tempter with Scripture: man lives 'by every word that proceedeth out of the mouth of God.' The body needs bread; the soul needs God's word just as surely, and every day.",
+            "serving": "Before your first meal today, read one verse and carry it with you until the next meal.",
+            "hunger": [
+                "Days pass without opening the Bible, and it is not missed.",
+                "The news, the feed or the shows get your first and last thoughts.",
+                "You feel busy and full, yet empty inside."
+            ],
+            "chew": "If your soul ate only what it ate this week, would it be strong or starving?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "daily-bread-daily-prayer",
+                    "name": "Daily bread, daily prayer"
+                },
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "reading-the-bible",
+                    "name": "Reading the Bible"
+                }
+            ]
+        },
+        {
+            "id": "desire-the-sincere-milk-of-the-word",
+            "section": "The daily diet",
+            "name": "Desire the sincere milk of the word",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "1 Peter 2:2",
+                    "text": "As newborn babes, desire the sincere milk of the word, that ye may grow thereby:"
+                }
+            ],
+            "read": [
+                "1 Peter 2:1-3"
+            ],
+            "guards": "Malice, guile, hypocrisies, envy, evil speaking",
+            "feeds": "A newborn does not need to be taught to want milk. Peter says we are to want the word in the same way, 'that ye may grow thereby.' The verse before lists what must be laid aside to make room for it: 'all malice, and all guile, and hypocrisies, and envies, and all evil speakings.'",
+            "serving": "Name one thing from Peter's list you will lay aside today, and replace it with a verse you can recall.",
+            "hunger": [
+                "The Bible feels like duty, never like appetite.",
+                "Sharp words and envy come easily.",
+                "You have not grown in years, and have stopped expecting to."
+            ],
+            "chew": "What would it take for you to want God's word the way a hungry baby wants milk?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "reading-the-bible",
+                    "name": "Reading the Bible"
+                }
+            ]
+        },
+        {
+            "id": "from-milk-to-strong-meat",
+            "section": "The daily diet",
+            "name": "From milk to strong meat",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Hebrews 5:14",
+                    "text": "But strong meat belongeth to them that are of full age, even those who by reason of use have their senses exercised to discern both good and evil."
+                }
+            ],
+            "read": [
+                "Hebrews 5:12-14"
+            ],
+            "guards": "Staying immature; not knowing good from evil",
+            "feeds": "Milk is right for a beginner, but a believer is meant to grow. 'Strong meat belongeth to them that are of full age', to those whose senses are 'exercised to discern both good and evil.' The way to grow is use: reading, thinking and obeying, until telling right from wrong becomes second nature.",
+            "serving": "Read a whole chapter today instead of a single verse, and write down one thing it asks of you.",
+            "hunger": [
+                "You still need someone else to tell you what the Bible says.",
+                "Hard passages are skipped rather than wrestled with.",
+                "Right and wrong feel blurry in everyday choices."
+            ],
+            "chew": "Is there a part of the Bible you avoid because it is too hard to chew?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "search-the-scriptures-daily",
+                    "name": "Search the Scriptures daily"
+                }
+            ]
+        },
+        {
+            "id": "hidden-in-the-heart",
+            "section": "The daily diet",
+            "name": "Hidden in the heart",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 119:11",
+                    "text": "Thy word have I hid in mine heart, that I might not sin against thee."
+                }
+            ],
+            "read": [
+                "Psalms 119:9-11"
+            ],
+            "guards": "Sinning against God unawares",
+            "feeds": "'Wherewithal shall a young man cleanse his way? by taking heed thereto according to thy word.' The psalmist did more than read the word; he stored it: 'Thy word have I hid in mine heart, that I might not sin against thee.' A verse learned by heart is there when temptation comes and no Bible is at hand.",
+            "serving": "Learn one verse by heart today: say it aloud three times, morning, noon and night.",
+            "hunger": [
+                "You cannot recall a single verse when you need one.",
+                "The same sins catch you off guard again and again.",
+                "God's word feels far away the moment the Bible is closed."
+            ],
+            "chew": "Which verse would you most want ready the next time you are tempted?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "thy-word-is-a-lamp",
+                    "name": "Thy word is a lamp"
+                }
+            ]
+        },
+        {
+            "id": "meditate-day-and-night",
+            "section": "The daily diet",
+            "name": "Meditate day and night",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 1:2",
+                    "text": "But his delight is in the law of the LORD; and in his law doth he meditate day and night."
+                }
+            ],
+            "read": [
+                "Psalms 1:1-3",
+                "Joshua 1:8"
+            ],
+            "guards": "Walking in the counsel of the ungodly",
+            "feeds": "The blessed man does not drift into 'the counsel of the ungodly'; his 'delight is in the law of the LORD; and in his law doth he meditate day and night.' To meditate is to turn a word over and over, as a cow chews its cud. Such a person grows 'like a tree planted by the rivers of water'.",
+            "serving": "Choose one short verse this morning and come back to it at midday and again before you sleep.",
+            "hunger": [
+                "Your thoughts run to worry or gossip whenever they are free.",
+                "Advice from people who do not know God shapes your choices.",
+                "Scripture is read but never thought about again."
+            ],
+            "chew": "Whose counsel do you hear most in a week, and is it rooted by the rivers of water?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "the-two-ways",
+                    "name": "The two ways"
+                }
+            ]
+        },
+        {
+            "id": "my-meat-is-to-do-his-will",
+            "section": "The daily diet",
+            "name": "My meat is to do his will",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "John 4:34",
+                    "text": "Jesus saith unto them, My meat is to do the will of him that sent me, and to finish his work."
+                }
+            ],
+            "read": [
+                "John 4:31-34"
+            ],
+            "guards": "Self-will; living only for self",
+            "feeds": "His disciples brought Jesus food, but he said, 'My meat is to do the will of him that sent me, and to finish his work.' Doing what God asks is itself nourishing. A life spent only on our own wants leaves us hungry; a life given to God's will fills.",
+            "serving": "Do one thing today that you know God wants done, and that no one will thank you for.",
+            "hunger": [
+                "Your plans are made without asking what God wants.",
+                "Serving others feels like losing, not gaining.",
+                "Unfinished good works pile up while personal wants come first."
+            ],
+            "chew": "What work has God given you that you have left unfinished?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "deny-yourself-and-follow-me",
+                    "name": "Deny yourself and follow me"
+                }
+            ]
+        },
+        {
+            "id": "hunger-and-thirst-after-righteousness",
+            "section": "The daily diet",
+            "name": "Hunger and thirst after righteousness",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Matthew 5:6",
+                    "text": "Blessed are they which do hunger and thirst after righteousness: for they shall be filled."
+                }
+            ],
+            "read": [
+                "Matthew 5:1-6"
+            ],
+            "guards": "Spiritual complacency",
+            "feeds": "Jesus blesses not those who are already full but those who 'hunger and thirst after righteousness: for they shall be filled.' Hunger is a good sign; it means the soul is alive. The danger is to feel satisfied with ourselves and stop wanting more of God.",
+            "serving": "Pray in your own words for one area of your life where you want to be more right with God.",
+            "hunger": [
+                "You feel you are good enough already.",
+                "Prayers are about comfort, never about change.",
+                "Wrong in your own life no longer troubles you."
+            ],
+            "chew": "What do you hunger for most, and does righteousness make the list?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "the-beatitudes",
+                    "name": "The Beatitudes"
+                }
+            ]
+        },
+        {
+            "id": "he-satisfieth-the-longing-soul",
+            "section": "The daily diet",
+            "name": "He satisfieth the longing soul",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 107:9",
+                    "text": "For he satisfieth the longing soul, and filleth the hungry soul with goodness."
+                }
+            ],
+            "read": [
+                "Psalms 107:4-9"
+            ],
+            "guards": "Empty cravings that nothing fills",
+            "feeds": "The psalm tells of people lost in the wilderness, 'Hungry and thirsty, their soul fainted in them.' They cried to the LORD, and he led them home, 'For he satisfieth the longing soul, and filleth the hungry soul with goodness.' The ache we try to fill with things is meant to bring us to him.",
+            "serving": "When a craving comes today, pause and tell God what you are really longing for.",
+            "hunger": [
+                "You keep buying, scrolling or snacking to fill a gap.",
+                "Nothing satisfies for long.",
+                "You rarely bring your longings to God in prayer."
+            ],
+            "chew": "What longing have you been trying to fill without God?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "contentment",
+                    "name": "Contentment"
+                }
+            ]
+        },
+        {
+            "id": "how-sweet-are-thy-words-unto-my-taste",
+            "section": "The daily diet",
+            "name": "How sweet are thy words unto my taste",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 119:103",
+                    "text": "How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!"
+                }
+            ],
+            "read": [
+                "Psalms 119:97-104"
+            ],
+            "guards": "A taste for lesser things; every false way",
+            "feeds": "'How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!' Taste grows with what we eat. The psalmist adds, 'Through thy precepts I get understanding: therefore I hate every false way.' The more we enjoy God's word, the less false ways appeal.",
+            "serving": "Read Psalm 119:97-104 slowly and underline the line that tastes sweetest to you.",
+            "hunger": [
+                "Reading the Bible feels dry and tasteless.",
+                "Lesser things, like gossip or empty entertainment, taste better.",
+                "You read only to finish, never to enjoy."
+            ],
+            "chew": "When did a verse last taste sweet to you, and what made it so?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "thy-word-is-a-lamp",
+                    "name": "Thy word is a lamp"
+                }
+            ]
+        },
+        {
+            "id": "the-meat-which-endureth",
+            "section": "The daily diet",
+            "name": "The meat which endureth",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "John 6:27",
+                    "text": "Labour not for the meat which perisheth, but for that meat which endureth unto everlasting life, which the Son of man shall give unto you: for him hath God the Father sealed."
+                }
+            ],
+            "read": [
+                "John 6:26-35"
+            ],
+            "guards": "Living for what perishes",
+            "feeds": "The crowd followed Jesus for loaves. He told them, 'Labour not for the meat which perisheth, but for that meat which endureth unto everlasting life'. Then he said, 'I am the bread of life'. Work and food matter, but they spoil; only what we have in him lasts.",
+            "serving": "Give some of today's effort to something that will last: a prayer, a kind word, a verse shared.",
+            "hunger": [
+                "All your energy goes to things that will not last.",
+                "Thoughts of eternity seldom cross your mind.",
+                "You come to Jesus only for what he can give today."
+            ],
+            "chew": "How much of this week's labour was for meat that perishes?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "seek-first-the-kingdom-of-god",
+                    "name": "Seek first the kingdom of God"
+                }
+            ]
+        },
+        {
+            "id": "be-renewed-in-your-mind",
+            "section": "Feeding the mind",
+            "name": "Be renewed in your mind",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Romans 12:2",
+                    "text": "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God."
+                }
+            ],
+            "read": [
+                "Romans 12:1-2"
+            ],
+            "guards": "Being conformed to this world",
+            "feeds": "The world presses everyone into its own shape. Paul says, 'be not conformed to this world: but be ye transformed by the renewing of your mind'. Change starts in the mind, as God's word replaces old ways of thinking, and the life follows.",
+            "serving": "Notice one thought today that came from the world's way of thinking, and answer it with a verse.",
+            "hunger": [
+                "Your opinions change with whatever is popular.",
+                "You think like everyone around you, with nothing to set you apart.",
+                "God's will feels unknowable."
+            ],
+            "chew": "Which of your habits of thought would change if you let Scripture reshape them?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "love-not-the-world",
+                    "name": "Love not the world"
+                },
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "in-the-world-not-of-it",
+                    "name": "In the world, not of it"
+                }
+            ]
+        },
+        {
+            "id": "every-thought-into-captivity",
+            "section": "Feeding the mind",
+            "name": "Every thought into captivity",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "2 Corinthians 10:5",
+                    "text": "Casting down imaginations, and every high thing that exalteth itself against the knowledge of God, and bringing into captivity every thought to the obedience of Christ;"
+                }
+            ],
+            "read": [
+                "2 Corinthians 10:3-5"
+            ],
+            "guards": "Runaway thoughts and imaginations",
+            "feeds": "Thoughts are not to be left to roam. Paul speaks of 'Casting down imaginations' and 'bringing into captivity every thought to the obedience of Christ'. A thought taken captive early cannot grow into a deed.",
+            "serving": "When an unkind, fearful or impure thought comes today, stop it, name it, and hand it over to Christ in prayer.",
+            "hunger": [
+                "Daydreams run where they please.",
+                "You replay old wrongs or imagine new ones.",
+                "Thoughts you would be ashamed to say aloud are left unchallenged."
+            ],
+            "chew": "Which kind of thought is hardest for you to take captive?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "guard-your-words-and-thoughts",
+                    "name": "Guard your words and thoughts"
+                },
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "think-on-these-things",
+                    "name": "Think on these things"
+                }
+            ]
+        },
+        {
+            "id": "a-sound-mind",
+            "section": "Feeding the mind",
+            "name": "A sound mind",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "2 Timothy 1:7",
+                    "text": "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind."
+                }
+            ],
+            "read": [
+                "2 Timothy 1:6-8"
+            ],
+            "guards": "Fear and timidity",
+            "feeds": "Paul reminds a timid young Timothy, 'God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.' Fear clouds judgement; God gives a mind that is steady, clear and able to think straight in hard moments.",
+            "serving": "Write down one fear you carry today, then write 2 Timothy 1:7 beside it.",
+            "hunger": [
+                "Fear makes your decisions for you.",
+                "You avoid doing right because of what others may say.",
+                "Your mind races and cannot settle."
+            ],
+            "chew": "Which decision are you letting fear make for you?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "fear-and-courage",
+                    "name": "Fear and courage"
+                }
+            ]
+        },
+        {
+            "id": "gird-up-the-loins-of-your-mind",
+            "section": "Feeding the mind",
+            "name": "Gird up the loins of your mind",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "1 Peter 1:13",
+                    "text": "Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ;"
+                }
+            ],
+            "read": [
+                "1 Peter 1:13-16"
+            ],
+            "guards": "Going back to former lusts",
+            "feeds": "In Bible times a man tucked up his long robe to run or work. Peter says, 'gird up the loins of your mind, be sober', so that we are 'not fashioning yourselves according to the former lusts'. A mind that is ready and alert does not slide back into old ways.",
+            "serving": "Before a situation where you used to fall, decide now what you will think and do instead.",
+            "hunger": [
+                "Old habits creep back whenever you relax.",
+                "You drift through the day without thought.",
+                "Holiness feels like someone else's calling."
+            ],
+            "chew": "Which former way keeps calling you back, and how can you get ready for it?",
+            "see_also": []
+        },
+        {
+            "id": "set-your-affection-on-things-above",
+            "section": "Feeding the mind",
+            "name": "Set your affection on things above",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Colossians 3:2",
+                    "text": "Set your affection on things above, not on things on the earth."
+                }
+            ],
+            "read": [
+                "Colossians 3:1-5"
+            ],
+            "guards": "Earthly cravings and covetousness",
+            "feeds": "What the mind loves, the life follows. 'Set your affection on things above, not on things on the earth.' Paul goes on to name what must be put to death, ending with 'covetousness, which is idolatry'. Wanting more and more is worship of the wrong thing.",
+            "serving": "Spend five minutes today thanking God for something heavenly rather than earthly.",
+            "hunger": [
+                "Your thoughts circle around what you want to own.",
+                "Heaven seldom crosses your mind.",
+                "Contentment slips away when you see what others have."
+            ],
+            "chew": "What earthly thing takes most of your affection right now?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "do-not-covet",
+                    "name": "Do not covet"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "love-not-the-world",
+                    "name": "Love not the world"
+                }
+            ]
+        },
+        {
+            "id": "the-light-of-the-body-is-the-eye",
+            "section": "Feeding the mind",
+            "name": "The light of the body is the eye",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Matthew 6:22",
+                    "text": "The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light."
+                }
+            ],
+            "read": [
+                "Matthew 6:22-23"
+            ],
+            "guards": "What we let in through our eyes",
+            "feeds": "'The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light.' What we look at fills us, for good or ill. A single eye, set on God, lets in light; a wandering eye lets darkness in.",
+            "serving": "Before you open a screen today, ask whether what you are about to see will fill you with light.",
+            "hunger": [
+                "You watch things you would not want Jesus to watch with you.",
+                "Images linger in your mind long after.",
+                "Your eyes go first to what stirs envy or lust."
+            ],
+            "chew": "What have your eyes been feeding you this week?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "guard-your-heart",
+                    "name": "Guard your heart"
+                }
+            ]
+        },
+        {
+            "id": "a-covenant-with-mine-eyes",
+            "section": "Feeding the mind",
+            "name": "A covenant with mine eyes",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Job 31:1",
+                    "text": "I made a covenant with mine eyes; why then should I think upon a maid?"
+                }
+            ],
+            "read": [
+                "Job 31:1-4"
+            ],
+            "guards": "Lustful looking",
+            "feeds": "Job settled the matter before temptation came: 'I made a covenant with mine eyes; why then should I think upon a maid?' He did not leave his eyes free to wander and then hope for the best; he decided in advance where they would not go.",
+            "serving": "Make your own promise to God today about one thing your eyes will not look at.",
+            "hunger": [
+                "A second look comes easily.",
+                "You put yourself where your eyes will be tempted.",
+                "Purity feels like something only for others."
+            ],
+            "chew": "What promise could you make with your eyes, and keep?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "purity",
+                    "name": "Purity"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "do-not-commit-adultery",
+                    "name": "Do not commit adultery"
+                }
+            ]
+        },
+        {
+            "id": "perfect-peace-a-mind-stayed-on-thee",
+            "section": "Feeding the mind",
+            "name": "Perfect peace, a mind stayed on thee",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Isaiah 26:3",
+                    "text": "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee."
+                }
+            ],
+            "read": [
+                "Isaiah 26:3-4"
+            ],
+            "guards": "A restless, scattered mind",
+            "feeds": "'Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.' A mind stayed on God is like a boat at anchor: the waves still come, but it does not drift. Peace grows from trust, and trust grows as the mind keeps returning to him.",
+            "serving": "Three times today, stop for one minute and bring your mind back to God.",
+            "hunger": [
+                "Your thoughts jump from worry to worry.",
+                "Silence makes you restless.",
+                "Peace lasts only while things go your way."
+            ],
+            "chew": "Where does your mind go when it is left alone?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "worry-and-anxiety",
+                    "name": "Worry and anxiety"
+                }
+            ]
+        },
+        {
+            "id": "to-be-spiritually-minded",
+            "section": "Feeding the mind",
+            "name": "To be spiritually minded",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Romans 8:6",
+                    "text": "For to be carnally minded is death; but to be spiritually minded is life and peace."
+                }
+            ],
+            "read": [
+                "Romans 8:5-6"
+            ],
+            "guards": "The carnal mind",
+            "feeds": "Paul draws two lines: 'they that are after the flesh do mind the things of the flesh; but they that are after the Spirit the things of the Spirit.' Then he names where each leads: 'to be carnally minded is death; but to be spiritually minded is life and peace.'",
+            "serving": "At the end of today, ask which way your thoughts mostly ran: the flesh or the Spirit.",
+            "hunger": [
+                "Comfort, pleasure and appearance fill most of your thoughts.",
+                "Spiritual things feel unreal or dull.",
+                "Peace is missing even when life is easy."
+            ],
+            "chew": "What does your mind “mind” most of the time?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "walk-in-the-spirit",
+                    "name": "Walk in the Spirit"
+                }
+            ]
+        },
+        {
+            "id": "secret-faults-and-presumptuous-sins",
+            "section": "Feeding the mind",
+            "name": "Secret faults and presumptuous sins",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 19:13",
+                    "text": "Keep back thy servant also from presumptuous sins; let them not have dominion over me: then shall I be upright, and I shall be innocent from the great transgression."
+                }
+            ],
+            "read": [
+                "Psalms 19:12-14"
+            ],
+            "guards": "Hidden sins and wilful ones; careless thoughts",
+            "feeds": "David asked God for help with two kinds of sin: the ones he could not see, 'cleanse thou me from secret faults', and the ones he might choose with open eyes, 'Keep back thy servant also from presumptuous sins'. He ends by asking that even his thoughts be acceptable to God.",
+            "serving": "Pray David's prayer in Psalm 19:12-14 today, slowly, in your own words.",
+            "hunger": [
+                "You are sure you have no blind spots.",
+                "You do wrong on purpose and promise to repent later.",
+                "Your private thoughts never come before God."
+            ],
+            "chew": "Is there a sin you have been choosing, knowing it was wrong?",
+            "see_also": []
+        },
+        {
+            "id": "no-wicked-thing-before-mine-eyes",
+            "section": "Feeding the mind",
+            "name": "No wicked thing before mine eyes",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 101:3",
+                    "text": "I will set no wicked thing before mine eyes: I hate the work of them that turn aside; it shall not cleave to me."
+                }
+            ],
+            "read": [
+                "Psalms 101:2-3",
+                "Psalms 119:37"
+            ],
+            "guards": "What we choose to watch",
+            "feeds": "David made a rule for his own house: 'I will set no wicked thing before mine eyes'. Elsewhere the psalmist prays, 'Turn away mine eyes from beholding vanity'. What we choose to watch is in our hands; when it is hard, we can ask God to turn our eyes.",
+            "serving": "Remove one thing from your screen, feed or shelf that sets a wicked thing before your eyes.",
+            "hunger": [
+                "You watch things you would turn off if someone walked in.",
+                "Violence or impurity no longer shocks you.",
+                "Hours go to things that leave you emptier."
+            ],
+            "chew": "What would change if you let God choose what you watch?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "guard-your-heart",
+                    "name": "Guard your heart"
+                }
+            ]
+        },
+        {
+            "id": "your-body-is-the-temple",
+            "section": "Keeping the body fit",
+            "name": "Your body is the temple",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "1 Corinthians 6:19",
+                    "text": "What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?"
+                }
+            ],
+            "read": [
+                "1 Corinthians 6:18-20"
+            ],
+            "guards": "Sexual sin; misusing the body",
+            "feeds": "'Flee fornication', Paul writes, because 'he that committeth fornication sinneth against his own body.' Then he gives the reason the body matters so much: 'your body is the temple of the Holy Ghost which is in you'. We are 'bought with a price: therefore glorify God in your body'.",
+            "serving": "As you get ready today, thank God that your body is his, and ask him to keep it clean.",
+            "hunger": [
+                "You treat your body as yours to use however you like.",
+                "Sexual temptation is entertained rather than fled.",
+                "Honouring God seems to have nothing to do with your body."
+            ],
+            "chew": "How would you treat your body differently if you saw it as God's house?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "flee-sexual-sin",
+                    "name": "Flee sexual sin"
+                },
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "purity",
+                    "name": "Purity"
+                }
+            ]
+        },
+        {
+            "id": "keep-under-my-body",
+            "section": "Keeping the body fit",
+            "name": "Keep under my body",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "1 Corinthians 9:27",
+                    "text": "But I keep under my body, and bring it into subjection: lest that by any means, when I have preached to others, I myself should be a castaway."
+                }
+            ],
+            "read": [
+                "1 Corinthians 9:24-27"
+            ],
+            "guards": "Lack of self-discipline",
+            "feeds": "Paul compares the life of faith to an athlete's: 'every man that striveth for the mastery is temperate in all things.' So he says, 'I keep under my body, and bring it into subjection'. The body is a good servant but a bad master.",
+            "serving": "Say no to one small want of the body today, simply to practise being its master.",
+            "hunger": [
+                "Your body's wants decide your day.",
+                "You start good habits but never keep them.",
+                "Self-control feels impossible, so you stop trying."
+            ],
+            "chew": "In what area does your body give the orders instead of taking them?",
+            "see_also": []
+        },
+        {
+            "id": "not-brought-under-the-power-of-any",
+            "section": "Keeping the body fit",
+            "name": "Not brought under the power of any",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "1 Corinthians 6:12",
+                    "text": "All things are lawful unto me, but all things are not expedient: all things are lawful for me, but I will not be brought under the power of any."
+                }
+            ],
+            "read": [
+                "1 Corinthians 6:12-13"
+            ],
+            "guards": "Habits and addictions",
+            "feeds": "Some things may be allowed and still not be good for us. 'All things are lawful unto me, but all things are not expedient: all things are lawful for me, but I will not be brought under the power of any.' Freedom used badly becomes slavery to a habit.",
+            "serving": "Pick one habit that has too much hold on you, and go without it for today.",
+            "hunger": [
+                "You reach for something without thinking, many times a day.",
+                "Going without it makes you anxious or angry.",
+                "You defend a habit by saying it is allowed."
+            ],
+            "chew": "Is there anything that has power over you, even though it is not wrong in itself?",
+            "see_also": []
+        },
+        {
+            "id": "temperance",
+            "section": "Keeping the body fit",
+            "name": "Temperance",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Galatians 5:22-23",
+                    "text": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law."
+                }
+            ],
+            "read": [
+                "Galatians 5:22-23",
+                "Proverbs 25:28"
+            ],
+            "guards": "Excess; a spirit without rule",
+            "feeds": "Temperance, or self-control, closes the list of 'the fruit of the Spirit'. It is fruit, grown by God in us, not only willpower. Proverbs shows what life without it is like: 'He that hath no rule over his own spirit is like a city that is broken down, and without walls.'",
+            "serving": "Ask God this morning for the fruit of temperance in the one area where you most need it.",
+            "hunger": [
+                "You overdo things you enjoy, again and again.",
+                "Moods sweep you away.",
+                "Your defences are down, like a city without walls."
+            ],
+            "chew": "Where are the broken walls in your life?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "the-fruit-of-the-spirit",
+                    "name": "The fruit of the Spirit"
+                },
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "he-that-ruleth-his-spirit",
+                    "name": "He that ruleth his spirit"
+                }
+            ]
+        },
+        {
+            "id": "be-sober-be-vigilant",
+            "section": "Keeping the body fit",
+            "name": "Be sober, be vigilant",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "1 Peter 5:8",
+                    "text": "Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:"
+                }
+            ],
+            "read": [
+                "1 Peter 5:8-9"
+            ],
+            "guards": "Drunkenness and carelessness",
+            "feeds": "'Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour'. A lion picks off the one that is not paying attention. A clear head and watchful eyes are part of resisting him, 'stedfast in the faith'.",
+            "serving": "Notice today the times you are most careless, and plan to be most watchful then.",
+            "hunger": [
+                "You let your guard down when tired, bored or alone.",
+                "You put yourself where it is hard to think clearly.",
+                "Spiritual danger seems unreal."
+            ],
+            "chew": "When is the lion most likely to find you off guard?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "watch-and-pray",
+                    "name": "Watch and pray"
+                }
+            ]
+        },
+        {
+            "id": "godliness-is-profitable-unto-all-things",
+            "section": "Keeping the body fit",
+            "name": "Godliness is profitable unto all things",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "1 Timothy 4:8",
+                    "text": "For bodily exercise profiteth little: but godliness is profitable unto all things, having promise of the life that now is, and of that which is to come."
+                }
+            ],
+            "read": [
+                "1 Timothy 4:7-8"
+            ],
+            "guards": "Caring for the body but neglecting the soul",
+            "feeds": "Paul does not despise the body: 'bodily exercise profiteth little'. But he sets it beside something greater: 'godliness is profitable unto all things, having promise of the life that now is, and of that which is to come.' The body's training lasts a lifetime; the soul's, for ever.",
+            "serving": "Give as much time today to training your soul as you give to caring for your body.",
+            "hunger": [
+                "Your appearance gets more attention than your character.",
+                "There is time for everything except prayer and Scripture.",
+                "You feel strong in body but weak in faith."
+            ],
+            "chew": "If your soul were as fit as you try to keep your body, what would be different?",
+            "see_also": []
+        },
+        {
+            "id": "the-field-of-the-slothful",
+            "section": "Keeping the body fit",
+            "name": "The field of the slothful",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 24:33-34",
+                    "text": "Yet a little sleep, a little slumber, a little folding of the hands to sleep: So shall thy poverty come as one that travelleth; and thy want as an armed man."
+                }
+            ],
+            "read": [
+                "Proverbs 24:30-34"
+            ],
+            "guards": "Laziness and neglect",
+            "feeds": "The writer walked past a lazy man's field: 'it was all grown over with thorns, and nettles had covered the face thereof'. No one decided to ruin it; it was 'a little sleep, a little slumber, a little folding of the hands'. Neglect is small every day and large in the end.",
+            "serving": "Do one task today that you have been putting off, before anything you enjoy.",
+            "hunger": [
+                "Small jobs pile up into big ones.",
+                "You say a little rest more often than you rest.",
+                "Your field, at home or at work, shows the thorns."
+            ],
+            "chew": "What part of your life is quietly growing thorns?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "go-to-the-ant",
+                    "name": "Go to the ant"
+                },
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "work",
+                    "name": "Work"
+                }
+            ]
+        },
+        {
+            "id": "a-living-sacrifice",
+            "section": "Keeping the body fit",
+            "name": "A living sacrifice",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Romans 12:1",
+                    "text": "I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service."
+                }
+            ],
+            "read": [
+                "Romans 12:1-2"
+            ],
+            "guards": "Treating the body as one's own to use as one likes",
+            "feeds": "In the old covenant animals were offered dead on the altar. Paul asks for something new: 'present your bodies a living sacrifice, holy, acceptable unto God'. Every day the body is given back to God, to be used for him, and he calls it 'your reasonable service.'",
+            "serving": "Before you start your day, offer your hands, feet, eyes and tongue to God for his use.",
+            "hunger": [
+                "Your body is used only for what you want.",
+                "Worship stops at the end of the song or the prayer.",
+                "Daily life feels unrelated to God."
+            ],
+            "chew": "Which part of your body have you not yet given back to God?",
+            "see_also": []
+        },
+        {
+            "id": "instruments-of-righteousness",
+            "section": "Keeping the body fit",
+            "name": "Instruments of righteousness",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Romans 6:13",
+                    "text": "Neither yield ye your members as instruments of unrighteousness unto sin: but yield yourselves unto God, as those that are alive from the dead, and your members as instruments of righteousness unto God."
+                }
+            ],
+            "read": [
+                "Romans 6:11-14"
+            ],
+            "guards": "Letting sin reign in the body",
+            "feeds": "'Let not sin therefore reign in your mortal body'. Our members, hands, eyes and tongue, are tools; they can be 'instruments of unrighteousness unto sin' or 'instruments of righteousness unto God.' Each day we choose whose hand holds the tools.",
+            "serving": "Use your hands today to do one deliberate good for someone.",
+            "hunger": [
+                "Your tongue or hands hurt others more than they help.",
+                "Sin feels like it is in charge.",
+                "You forget that you can choose otherwise."
+            ],
+            "chew": "Which of your members most often serves sin, and how could it serve God instead?",
+            "see_also": []
+        },
+        {
+            "id": "possess-his-vessel-in-honour",
+            "section": "Keeping the body fit",
+            "name": "Possess his vessel in honour",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "1 Thessalonians 4:4",
+                    "text": "That every one of you should know how to possess his vessel in sanctification and honour;"
+                }
+            ],
+            "read": [
+                "1 Thessalonians 4:3-7"
+            ],
+            "guards": "The lust of concupiscence",
+            "feeds": "'This is the will of God, even your sanctification, that ye should abstain from fornication'. Each one is to 'know how to possess his vessel in sanctification and honour; Not in the lust of concupiscence'. Self-control in the body is a matter of honour, not only of rules.",
+            "serving": "Decide in advance how you will honour God with your body in a place where you are tempted.",
+            "hunger": [
+                "Lust is treated as harmless as long as no one knows.",
+                "You let desire lead you, not honour.",
+                "God's will about purity feels unclear or optional."
+            ],
+            "chew": "What does honour look like in your body this week?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "purity",
+                    "name": "Purity"
+                }
+            ]
+        },
+        {
+            "id": "love-not-sleep-he-giveth-his-beloved-sleep",
+            "section": "Keeping the body fit",
+            "name": "Love not sleep; he giveth his beloved sleep",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 20:13",
+                    "text": "Love not sleep, lest thou come to poverty; open thine eyes, and thou shalt be satisfied with bread."
+                },
+                {
+                    "reference": "Psalms 127:2",
+                    "text": "It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep."
+                }
+            ],
+            "read": [
+                "Proverbs 20:13",
+                "Psalms 127:1-2"
+            ],
+            "guards": "Oversleeping, and anxious overwork",
+            "feeds": "Scripture warns both ways. 'Love not sleep, lest thou come to poverty'. But it is also 'vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep.' Rest is a gift for those who trust God; neither laziness nor anxious toil is his way.",
+            "serving": "Go to bed tonight trusting God with what is unfinished, and rise when you planned.",
+            "hunger": [
+                "You sleep to escape what needs doing.",
+                "Or you work late because you trust only your own effort.",
+                "Rest leaves you guilty instead of thankful."
+            ],
+            "chew": "Which is your danger, loving sleep or refusing the rest God gives?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "rest",
+                    "name": "Rest"
+                }
+            ]
+        },
+        {
+            "id": "riotous-eaters-and-winebibbers",
+            "section": "Keeping the body fit",
+            "name": "Riotous eaters and winebibbers",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 23:20-21",
+                    "text": "Be not among winebibbers; among riotous eaters of flesh: For the drunkard and the glutton shall come to poverty: and drowsiness shall clothe a man with rags."
+                }
+            ],
+            "read": [
+                "Proverbs 23:19-21"
+            ],
+            "guards": "Gluttony and drunkenness",
+            "feeds": "A father tells his son, 'guide thine heart in the way. Be not among winebibbers; among riotous eaters of flesh'. The warning is about excess and the company that keeps it: 'the drunkard and the glutton shall come to poverty: and drowsiness shall clothe a man with rags.'",
+            "serving": "At your next meal, stop when you have had enough, and give thanks.",
+            "hunger": [
+                "Food or drink is used to numb feelings.",
+                "You spend time with people whose habits pull you into excess.",
+                "Moderation feels like missing out."
+            ],
+            "chew": "Whose company makes excess easier for you?",
+            "see_also": []
+        },
+        {
+            "id": "not-drunk-with-wine-but-filled-with-the-spirit",
+            "section": "Keeping the body fit",
+            "name": "Not drunk with wine, but filled with the Spirit",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Ephesians 5:18",
+                    "text": "And be not drunk with wine, wherein is excess; but be filled with the Spirit;"
+                }
+            ],
+            "read": [
+                "Ephesians 5:15-20"
+            ],
+            "guards": "Excess; filling the emptiness the wrong way",
+            "feeds": "'Be not drunk with wine, wherein is excess; but be filled with the Spirit'. Paul sets two kinds of filling side by side. One takes away self-control; the other brings 'psalms and hymns and spiritual songs', and thanks to God 'always for all things'.",
+            "serving": "When you feel empty today, sing or hum a song of praise instead of reaching for something to fill you.",
+            "hunger": [
+                "You look to substances or excess to change how you feel.",
+                "Joy depends on what you take in.",
+                "Thanksgiving is rare."
+            ],
+            "chew": "What do you reach for to fill the empty moments?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "psalms-hymns-and-spiritual-songs",
+                    "name": "Psalms, hymns and spiritual songs"
+                }
+            ]
+        },
+        {
+            "id": "the-whole-armour-of-god",
+            "section": "Armour for the fight",
+            "name": "The whole armour of God",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Ephesians 6:11",
+                    "text": "Put on the whole armour of God, that ye may be able to stand against the wiles of the devil."
+                }
+            ],
+            "read": [
+                "Ephesians 6:10-18"
+            ],
+            "guards": "The wiles of the devil",
+            "feeds": "'Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.' The armour is truth, righteousness, the gospel of peace, faith, salvation, and 'the sword of the Spirit, which is the word of God', all worn with prayer. It is put on before the battle, not during it.",
+            "serving": "As you dress this morning, name each piece of the armour and ask God to put it on you.",
+            "hunger": [
+                "You face each day without thinking of the spiritual battle.",
+                "Faith is left at home when you go out.",
+                "Prayer comes only after the fight is lost."
+            ],
+            "chew": "Which piece of the armour do you most often forget?",
+            "see_also": []
+        },
+        {
+            "id": "it-is-written",
+            "section": "Armour for the fight",
+            "name": "It is written",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Matthew 4:10",
+                    "text": "Then saith Jesus unto him, Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve."
+                }
+            ],
+            "read": [
+                "Matthew 4:1-11"
+            ],
+            "guards": "Temptation in the moment",
+            "feeds": "Three times the devil tempted Jesus, and three times he answered, 'It is written'. He did not argue or bargain; he quoted the word of God and stood on it. The last answer sent the tempter away: 'Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve.'",
+            "serving": "Pick the temptation you face most, and find one verse to answer it with.",
+            "hunger": [
+                "You argue with temptation instead of answering it with Scripture.",
+                "You know verses but forget them when it matters.",
+                "Temptation wins before you think of God's word."
+            ],
+            "chew": "What would you say, starting with “it is written”, to your strongest temptation?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "temptation",
+                    "name": "Temptation"
+                }
+            ]
+        },
+        {
+            "id": "resist-the-devil",
+            "section": "Armour for the fight",
+            "name": "Resist the devil",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "James 4:7",
+                    "text": "Submit yourselves therefore to God. Resist the devil, and he will flee from you."
+                }
+            ],
+            "read": [
+                "James 4:6-10"
+            ],
+            "guards": "Giving in; drifting from God",
+            "feeds": "'Submit yourselves therefore to God. Resist the devil, and he will flee from you. Draw nigh to God, and he will draw nigh to you.' Resisting starts with submitting: we stand against evil by standing close to God.",
+            "serving": "When temptation comes today, turn toward God in a short prayer before you do anything else.",
+            "hunger": [
+                "You try to resist in your own strength.",
+                "God feels far away when you are tempted.",
+                "You give in without a fight."
+            ],
+            "chew": "What would drawing near to God look like at the moment you are tempted?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "temptation",
+                    "name": "Temptation"
+                }
+            ]
+        },
+        {
+            "id": "a-way-to-escape",
+            "section": "Armour for the fight",
+            "name": "A way to escape",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "1 Corinthians 10:13",
+                    "text": "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape, that ye may be able to bear it."
+                }
+            ],
+            "read": [
+                "1 Corinthians 10:12-13"
+            ],
+            "guards": "The excuse “I had no choice”",
+            "feeds": "'There hath no temptation taken you but such as is common to man'. No temptation is unique, and none is too strong: God 'will not suffer you to be tempted above that ye are able; but will with the temptation also make a way to escape'. There is always a door; we must look for it and take it.",
+            "serving": "Think of your hardest temptation and plan your way of escape before it comes.",
+            "hunger": [
+                "You tell yourself you had no choice.",
+                "You think your struggle is unlike anyone else's.",
+                "You look for the door only after you have fallen."
+            ],
+            "chew": "What is the way of escape God has already given you?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "temptation",
+                    "name": "Temptation"
+                }
+            ]
+        },
+        {
+            "id": "flee-youthful-lusts",
+            "section": "Armour for the fight",
+            "name": "Flee youthful lusts",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "2 Timothy 2:22",
+                    "text": "Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart."
+                }
+            ],
+            "read": [
+                "2 Timothy 2:20-22"
+            ],
+            "guards": "Youthful lusts",
+            "feeds": "Some battles are won by running. 'Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart.' We run away from one thing and toward another, and we do not run alone.",
+            "serving": "Leave one situation today the moment you feel it pulling you toward wrong.",
+            "hunger": [
+                "You stay close to temptation to prove you are strong.",
+                "You have no friends running the same way.",
+                "Fleeing feels weak rather than wise."
+            ],
+            "chew": "What should you run from, and who could you run with?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "flee-sexual-sin",
+                    "name": "Flee sexual sin"
+                }
+            ]
+        },
+        {
+            "id": "make-not-provision-for-the-flesh",
+            "section": "Armour for the fight",
+            "name": "Make not provision for the flesh",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Romans 13:14",
+                    "text": "But put ye on the Lord Jesus Christ, and make not provision for the flesh, to fulfil the lusts thereof."
+                }
+            ],
+            "read": [
+                "Romans 13:12-14"
+            ],
+            "guards": "Rioting, drunkenness, strife and envying",
+            "feeds": "'Put ye on the Lord Jesus Christ, and make not provision for the flesh, to fulfil the lusts thereof.' To make provision is to plan ahead and stock up. Paul says to do the opposite: do not leave room, time or means for the flesh to have its way.",
+            "serving": "Remove one provision you keep for the flesh: an app, a stash, a route, or a habit of being alone with it.",
+            "hunger": [
+                "You keep a way open just in case.",
+                "Temptation is easy because you planned for it.",
+                "Putting on Christ is something you think about, not something you do."
+            ],
+            "chew": "What provision for the flesh is still in your house or your phone?",
+            "see_also": []
+        },
+        {
+            "id": "evil-communications-corrupt-good-manners",
+            "section": "Armour for the fight",
+            "name": "Evil communications corrupt good manners",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "1 Corinthians 15:33",
+                    "text": "Be not deceived: evil communications corrupt good manners."
+                }
+            ],
+            "read": [
+                "1 Corinthians 15:33-34"
+            ],
+            "guards": "Bad company",
+            "feeds": "'Be not deceived: evil communications corrupt good manners.' The company we keep, and the talk we take in, shapes our character more than we think. We become like the people we spend our time with.",
+            "serving": "Spend time today with someone whose faith makes you better.",
+            "hunger": [
+                "You pick up the language and habits of those around you.",
+                "Your closest friends pull you away from God.",
+                "You think you are too strong to be influenced."
+            ],
+            "chew": "Who is shaping you most right now, and in which direction?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "friendship",
+                    "name": "Friendship"
+                }
+            ]
+        },
+        {
+            "id": "when-lust-hath-conceived",
+            "section": "Armour for the fight",
+            "name": "When lust hath conceived",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "James 1:14-15",
+                    "text": "But every man is tempted, when he is drawn away of his own lust, and enticed. Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death."
+                }
+            ],
+            "read": [
+                "James 1:12-15"
+            ],
+            "guards": "Letting a desire grow until it becomes sin",
+            "feeds": "James traces sin like a birth: 'every man is tempted, when he is drawn away of his own lust, and enticed. Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.' The time to stop it is early, before a desire is welcomed and fed.",
+            "serving": "Catch one wrong desire early today, and turn your mind away before it grows.",
+            "hunger": [
+                "You entertain a desire, thinking you will stop in time.",
+                "You blame God or others for your temptation.",
+                "Small compromises have grown into bigger ones."
+            ],
+            "chew": "Which desire are you feeding that you should be starving?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "temptation",
+                    "name": "Temptation"
+                }
+            ]
+        },
+        {
+            "id": "the-spirit-is-willing-the-flesh-is-weak",
+            "section": "Armour for the fight",
+            "name": "The spirit is willing, the flesh is weak",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Matthew 26:41",
+                    "text": "Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak."
+                }
+            ],
+            "read": [
+                "Matthew 26:36-41"
+            ],
+            "guards": "Overconfidence; meaning well but falling",
+            "feeds": "In Gethsemane the disciples meant well, but they slept. Jesus told them, 'Watch and pray, that ye enter not into temptation: the spirit indeed is willing, but the flesh is weak.' Good intentions are not enough; watching and praying are what keep us.",
+            "serving": "Pray specifically today for strength at the time you know you are weakest.",
+            "hunger": [
+                "You trust your good intentions to carry you.",
+                "Prayer is skipped when you are tired.",
+                "You are surprised by your own weakness."
+            ],
+            "chew": "Where does your willing spirit keep meeting weak flesh?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "watch-and-pray",
+                    "name": "Watch and pray"
+                }
+            ]
+        },
+        {
+            "id": "tempted-like-as-we-are-yet-without-sin",
+            "section": "Armour for the fight",
+            "name": "Tempted like as we are, yet without sin",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Hebrews 4:15-16",
+                    "text": "For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin. Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need."
+                }
+            ],
+            "read": [
+                "Hebrews 4:14-16"
+            ],
+            "guards": "Facing temptation alone and ashamed",
+            "feeds": "Jesus 'was in all points tempted like as we are, yet without sin.' He understands, and he does not turn us away. So we may 'come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.' Shame says hide; the gospel says come.",
+            "serving": "Bring your temptation to Jesus in prayer today, plainly and without shame.",
+            "hunger": [
+                "You hide your struggles even from God.",
+                "Shame keeps you from praying.",
+                "You feel no one could understand."
+            ],
+            "chew": "What would change if you came boldly to the throne of grace with your temptation?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "guilt-and-shame",
+                    "name": "Guilt and shame"
+                }
+            ]
+        },
+        {
+            "id": "stolen-waters-are-sweet",
+            "section": "Junk food for the soul",
+            "name": "Stolen waters are sweet",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 9:17-18",
+                    "text": "Stolen waters are sweet, and bread eaten in secret is pleasant. But he knoweth not that the dead are there; and that her guests are in the depths of hell."
+                }
+            ],
+            "read": [
+                "Proverbs 9:13-18"
+            ],
+            "guards": "The lure of forbidden pleasure",
+            "feeds": "Folly calls out to passers-by, 'Stolen waters are sweet, and bread eaten in secret is pleasant.' Part of the thrill is that it is forbidden. But the next verse tells what she leaves out: 'he knoweth not that the dead are there'.",
+            "serving": "When something tempts you because it is secret or forbidden, ask what the next verse of its story would be.",
+            "hunger": [
+                "Secrecy makes a thing more attractive.",
+                "You think about the pleasure, never the price.",
+                "You keep part of your life hidden."
+            ],
+            "chew": "What stolen water looks sweet to you, and what does it hide?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "temptation",
+                    "name": "Temptation"
+                }
+            ]
+        },
+        {
+            "id": "the-bread-of-deceit",
+            "section": "Junk food for the soul",
+            "name": "The bread of deceit",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 20:17",
+                    "text": "Bread of deceit is sweet to a man; but afterwards his mouth shall be filled with gravel."
+                }
+            ],
+            "read": [
+                "Proverbs 20:17"
+            ],
+            "guards": "Dishonest gain",
+            "feeds": "'Bread of deceit is sweet to a man; but afterwards his mouth shall be filled with gravel.' A lie or a shortcut may taste good at first: money gained, trouble avoided. Later it grinds like grit in the teeth.",
+            "serving": "Correct one small untruth today, even if it costs you.",
+            "hunger": [
+                "Small lies come easily.",
+                "You excuse shortcuts because everyone takes them.",
+                "Gains that came dishonestly still sit with you."
+            ],
+            "chew": "Is there any bread of deceit on your table that will turn to gravel?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "honesty",
+                    "name": "Honesty"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "do-not-bear-false-witness",
+                    "name": "Do not bear false witness"
+                }
+            ]
+        },
+        {
+            "id": "words-that-go-down-into-the-belly",
+            "section": "Junk food for the soul",
+            "name": "Words that go down into the belly",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 18:8",
+                    "text": "The words of a talebearer are as wounds, and they go down into the innermost parts of the belly."
+                }
+            ],
+            "read": [
+                "Proverbs 18:8",
+                "Proverbs 26:20-22"
+            ],
+            "guards": "Gossip and talebearing",
+            "feeds": "'The words of a talebearer are as wounds, and they go down into the innermost parts of the belly.' Gossip is swallowed easily and stays inside, hurting the one it is about and the one who takes it in. Where there is no talebearer, 'the strife ceaseth.'",
+            "serving": "When gossip starts today, change the subject or say something kind about the person.",
+            "hunger": [
+                "You enjoy hearing about others' failures.",
+                "You pass on stories you cannot check.",
+                "Conversations feel dull without a little scandal."
+            ],
+            "chew": "Whose story have you been eating, or serving to others?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "words-and-the-tongue",
+                    "name": "Words and the tongue"
+                },
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "guard-your-words-and-thoughts",
+                    "name": "Guard your words and thoughts"
+                }
+            ]
+        },
+        {
+            "id": "the-root-of-bitterness",
+            "section": "Junk food for the soul",
+            "name": "The root of bitterness",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Hebrews 12:15",
+                    "text": "Looking diligently lest any man fail of the grace of God; lest any root of bitterness springing up trouble you, and thereby many be defiled;"
+                }
+            ],
+            "read": [
+                "Hebrews 12:14-15"
+            ],
+            "guards": "Resentment",
+            "feeds": "'Looking diligently lest any man fail of the grace of God; lest any root of bitterness springing up trouble you, and thereby many be defiled'. Bitterness starts small and underground, but it grows and spreads, poisoning more than the one who holds it.",
+            "serving": "Name one person you resent, and pray for their good today.",
+            "hunger": [
+                "Old hurts are replayed again and again.",
+                "You speak of someone with an edge in your voice.",
+                "Others are drawn into your grudge."
+            ],
+            "chew": "Is there a root of bitterness you need to dig out before it spreads?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "forgiveness",
+                    "name": "Forgiveness"
+                }
+            ]
+        },
+        {
+            "id": "envy-the-rottenness-of-the-bones",
+            "section": "Junk food for the soul",
+            "name": "Envy, the rottenness of the bones",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 14:30",
+                    "text": "A sound heart is the life of the flesh: but envy the rottenness of the bones."
+                }
+            ],
+            "read": [
+                "Proverbs 14:30"
+            ],
+            "guards": "Envy and comparing",
+            "feeds": "'A sound heart is the life of the flesh: but envy the rottenness of the bones.' Envy does not hurt the person envied; it eats away at the one who envies, from the inside out. A heart at peace is life to the whole person.",
+            "serving": "When you catch yourself comparing today, thank God for one thing he has given you instead.",
+            "hunger": [
+                "Others' success leaves you sour.",
+                "You measure yourself against the people around you.",
+                "Good news for others feels like bad news for you."
+            ],
+            "chew": "Whose life are you comparing with your own, and what is it doing to you?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "contentment",
+                    "name": "Contentment"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "do-not-covet",
+                    "name": "Do not covet"
+                }
+            ]
+        },
+        {
+            "id": "the-leaven-of-malice",
+            "section": "Junk food for the soul",
+            "name": "The leaven of malice",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "1 Corinthians 5:8",
+                    "text": "Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth."
+                }
+            ],
+            "read": [
+                "1 Corinthians 5:6-8"
+            ],
+            "guards": "Malice and wickedness",
+            "feeds": "A little leaven works through the whole lump of dough. Paul says to keep the feast 'not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.' Malice spreads; sincerity and truth keep the bread pure.",
+            "serving": "Replace one unkind thought about someone today with an honest, kind one.",
+            "hunger": [
+                "Ill will toward someone colours everything.",
+                "You hope quietly that someone fails.",
+                "Your words are not quite sincere."
+            ],
+            "chew": "Is there old leaven in your heart that needs to be cleared out?",
+            "see_also": []
+        },
+        {
+            "id": "vain-babblings",
+            "section": "Junk food for the soul",
+            "name": "Vain babblings",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "2 Timothy 2:16",
+                    "text": "But shun profane and vain babblings: for they will increase unto more ungodliness."
+                }
+            ],
+            "read": [
+                "2 Timothy 2:14-16"
+            ],
+            "guards": "Empty, ungodly talk",
+            "feeds": "'Shun profane and vain babblings: for they will increase unto more ungodliness.' Empty talk is never quite empty: it fills the time and the mind, and it grows. Paul's advice is to stay away from it and rightly handle 'the word of truth.'",
+            "serving": "Spend ten minutes today on words that build up, instead of endless chatter or scrolling.",
+            "hunger": [
+                "Hours go to talk or reading that leaves nothing behind.",
+                "Arguments about nothing draw you in.",
+                "Godly conversation feels awkward."
+            ],
+            "chew": "How much of what you hear and say each day is worth keeping?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "the-tongue-is-a-fire",
+                    "name": "The tongue is a fire"
+                }
+            ]
+        },
+        {
+            "id": "a-dry-morsel-with-quietness",
+            "section": "Junk food for the soul",
+            "name": "A dry morsel with quietness",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 17:1",
+                    "text": "Better is a dry morsel, and quietness therewith, than an house full of sacrifices with strife."
+                }
+            ],
+            "read": [
+                "Proverbs 17:1"
+            ],
+            "guards": "Strife at home",
+            "feeds": "'Better is a dry morsel, and quietness therewith, than an house full of sacrifices with strife.' A simple meal in peace is worth more than a feast with quarrels. What we feed a home matters less than the spirit it is served in.",
+            "serving": "At your next meal with others, keep the talk peaceful, even if you must let something go.",
+            "hunger": [
+                "Meals at home are tense.",
+                "You win arguments and lose peace.",
+                "Plenty has not brought contentment."
+            ],
+            "chew": "What would bring more quietness to your table?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "a-soft-answer",
+                    "name": "A soft answer"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "love-at-home",
+                    "name": "Love at home"
+                }
+            ]
+        },
+        {
+            "id": "that-which-is-not-bread",
+            "section": "Junk food for the soul",
+            "name": "That which is not bread",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Isaiah 55:2",
+                    "text": "Wherefore do ye spend money for that which is not bread? and your labour for that which satisfieth not? hearken diligently unto me, and eat ye that which is good, and let your soul delight itself in fatness."
+                }
+            ],
+            "read": [
+                "Isaiah 55:1-3"
+            ],
+            "guards": "Spending life on what does not satisfy",
+            "feeds": "'Wherefore do ye spend money for that which is not bread? and your labour for that which satisfieth not?' God offers better food freely: 'hearken diligently unto me, and eat ye that which is good, and let your soul delight itself in fatness.'",
+            "serving": "Look at where your money and time went this week, and give a little of each to what truly feeds.",
+            "hunger": [
+                "You work hard for things that never satisfy.",
+                "Each new purchase disappoints sooner.",
+                "God's free invitation goes unanswered."
+            ],
+            "chew": "What are you spending your life on that is not bread?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "ho-every-one-that-thirsteth",
+                    "name": "Ho, every one that thirsteth"
+                }
+            ]
+        },
+        {
+            "id": "the-bread-of-wickedness",
+            "section": "Junk food for the soul",
+            "name": "The bread of wickedness",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 4:17",
+                    "text": "For they eat the bread of wickedness, and drink the wine of violence."
+                }
+            ],
+            "read": [
+                "Proverbs 4:14-19"
+            ],
+            "guards": "Feeding on wrongdoing; the path of the wicked",
+            "feeds": "'Enter not into the path of the wicked, and go not in the way of evil men. Avoid it, pass not by it, turn from it, and pass away.' Some people live on wrongdoing: 'they eat the bread of wickedness, and drink the wine of violence.' The way to stay clear is not to start down their road.",
+            "serving": "Avoid one place, show or conversation today that feeds on wrongdoing.",
+            "hunger": [
+                "Stories of cruelty or crime entertain you.",
+                "You walk near the edge of wrong to see what it is like.",
+                "Evil company no longer bothers you."
+            ],
+            "chew": "Is there a path you keep walking past that you should avoid altogether?",
+            "see_also": []
+        },
+        {
+            "id": "the-bread-of-him-that-hath-an-evil-eye",
+            "section": "Junk food for the soul",
+            "name": "The bread of him that hath an evil eye",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 23:6-7",
+                    "text": "Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats: For as he thinketh in his heart, so is he: Eat and drink, saith he to thee; but his heart is not with thee."
+                }
+            ],
+            "read": [
+                "Proverbs 23:6-8"
+            ],
+            "guards": "False friendship and a grudging host",
+            "feeds": "'Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats'. The grudging host says, 'Eat and drink', 'but his heart is not with thee.' Kindness with strings attached sours; what he gives you, you will regret.",
+            "serving": "Be a host today whose heart goes with what you give: offer something freely, expecting nothing back.",
+            "hunger": [
+                "You accept favours that come with strings.",
+                "You give to get something back.",
+                "Friendships are measured by what they gain you."
+            ],
+            "chew": "Is there a friendship in your life where the heart is not with the gift?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "friendship",
+                    "name": "Friendship"
+                }
+            ]
+        },
+        {
+            "id": "smoother-than-butter",
+            "section": "Junk food for the soul",
+            "name": "Smoother than butter",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 55:21",
+                    "text": "The words of his mouth were smoother than butter, but war was in his heart: his words were softer than oil, yet were they drawn swords."
+                }
+            ],
+            "read": [
+                "Psalms 55:12-14",
+                "Psalms 55:20-22"
+            ],
+            "guards": "Flattery and two-faced words",
+            "feeds": "David was betrayed by a friend: 'The words of his mouth were smoother than butter, but war was in his heart: his words were softer than oil, yet were they drawn swords.' Flattery tastes smooth but hides a blade. God's people are to speak plainly, and to cast their burden on the LORD.",
+            "serving": "Say only what you mean today: no flattery, and no words that hide another purpose.",
+            "hunger": [
+                "You say nice things you do not mean.",
+                "Flattery makes you lower your guard.",
+                "Your words and your heart go different ways."
+            ],
+            "chew": "Have your words been smoother than your heart?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "words-and-the-tongue",
+                    "name": "Words and the tongue"
+                }
+            ]
+        },
+        {
+            "id": "he-feedeth-on-ashes",
+            "section": "Junk food for the soul",
+            "name": "He feedeth on ashes",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Isaiah 44:20",
+                    "text": "He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?"
+                }
+            ],
+            "read": [
+                "Isaiah 44:16-20"
+            ],
+            "guards": "A deceived heart; trusting what cannot save",
+            "feeds": "Isaiah describes a man who burns half a log for a fire and carves the other half into a god to pray to. 'He feedeth on ashes: a deceived heart hath turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?' Trust in anything less than God is a meal of ashes.",
+            "serving": "Name one thing you lean on for security instead of God, and tell him so in prayer.",
+            "hunger": [
+                "Your sense of safety rests on money, people or plans.",
+                "You never ask whether what you trust can save.",
+                "God is one source of help among many."
+            ],
+            "chew": "Is there a lie in your right hand that you have not noticed?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "no-other-gods",
+                    "name": "No other gods"
+                }
+            ]
+        },
+        {
+            "id": "the-fathers-have-eaten-sour-grapes",
+            "section": "Junk food for the soul",
+            "name": "The fathers have eaten sour grapes",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Ezekiel 18:2-3",
+                    "text": "What mean ye, that ye use this proverb concerning the land of Israel, saying, The fathers have eaten sour grapes, and the children’s teeth are set on edge? As I live, saith the Lord GOD, ye shall not have occasion any more to use this proverb in Israel."
+                }
+            ],
+            "read": [
+                "Ezekiel 18:1-4",
+                "Ezekiel 18:30-32"
+            ],
+            "guards": "Blaming others for one's own sin",
+            "feeds": "Israel had a saying that blamed their troubles on their parents: 'The fathers have eaten sour grapes, and the children’s teeth are set on edge'. God put an end to it: 'ye shall not have occasion any more to use this proverb'. Each one answers for his own life, and each one can turn: 'make you a new heart'.",
+            "serving": "Take responsibility for one thing today that you have been blaming on someone else.",
+            "hunger": [
+                "Your failures are always someone else's fault.",
+                "You use your past as an excuse not to change.",
+                "Turning to God feels pointless because of what was done to you."
+            ],
+            "chew": "What are you blaming on others that God is asking you to own?",
+            "see_also": []
+        },
+        {
+            "id": "the-bread-of-idleness",
+            "section": "Junk food for the soul",
+            "name": "The bread of idleness",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 31:27",
+                    "text": "She looketh well to the ways of her household, and eateth not the bread of idleness."
+                }
+            ],
+            "read": [
+                "Proverbs 31:25-31"
+            ],
+            "guards": "Idleness",
+            "feeds": "The woman of Proverbs 31 'looketh well to the ways of her household, and eateth not the bread of idleness.' She works with care and strength, and 'her own works praise her in the gates.' Idleness is bread that does not feed; honest work does.",
+            "serving": "Give your full effort today to one task you would usually do half-heartedly.",
+            "hunger": [
+                "Time slips away with nothing done.",
+                "You wait for others to do what you could do.",
+                "Work feels like something to escape."
+            ],
+            "chew": "Where in your week are you eating the bread of idleness?",
+            "see_also": [
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "the-virtuous-woman",
+                    "name": "The virtuous woman"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "work-with-your-hands",
+                    "name": "Work with your hands"
+                }
+            ]
+        },
+        {
+            "id": "examine-yourselves",
+            "section": "Staying in shape",
+            "name": "Examine yourselves",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "2 Corinthians 13:5",
+                    "text": "Examine yourselves, whether ye be in the faith; prove your own selves. Know ye not your own selves, how that Jesus Christ is in you, except ye be reprobates?"
+                }
+            ],
+            "read": [
+                "2 Corinthians 13:5"
+            ],
+            "guards": "Self-deception",
+            "feeds": "'Examine yourselves, whether ye be in the faith; prove your own selves.' A regular check-up catches trouble early. Paul does not ask the Corinthians to examine everyone else, but themselves.",
+            "serving": "Set aside five quiet minutes tonight to look honestly at your day before God.",
+            "hunger": [
+                "You are quick to judge others and slow to look at yourself.",
+                "You assume all is well without checking.",
+                "Questions about your faith are pushed away."
+            ],
+            "chew": "If you examined yourself honestly today, what would you find?",
+            "see_also": [
+                {
+                    "page": "following-gods-blueprint.html",
+                    "guide": "Following God's Blueprint",
+                    "id": "look-at-yourself-first",
+                    "name": "Look at yourself first"
+                }
+            ]
+        },
+        {
+            "id": "search-me-o-god",
+            "section": "Staying in shape",
+            "name": "Search me, O God",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Psalms 139:23",
+                    "text": "Search me, O God, and know my heart: try me, and know my thoughts:"
+                }
+            ],
+            "read": [
+                "Psalms 139:23-24"
+            ],
+            "guards": "Hidden faults",
+            "feeds": "We cannot see all of our own hearts, so David asks God to look: 'Search me, O God, and know my heart: try me, and know my thoughts'. He asks to be shown any 'wicked way in me', and to be led 'in the way everlasting.'",
+            "serving": "Pray Psalm 139:23-24 slowly today, and listen for anything God brings to mind.",
+            "hunger": [
+                "You avoid quiet because of what it might show you.",
+                "You are sure you know your own heart.",
+                "You ask God to change others but not you."
+            ],
+            "chew": "What might God find if you asked him to search your heart today?",
+            "see_also": []
+        },
+        {
+            "id": "exercise-thyself-unto-godliness",
+            "section": "Staying in shape",
+            "name": "Exercise thyself unto godliness",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "1 Timothy 4:7",
+                    "text": "But refuse profane and old wives’ fables, and exercise thyself rather unto godliness."
+                }
+            ],
+            "read": [
+                "1 Timothy 4:6-8"
+            ],
+            "guards": "Drifting",
+            "feeds": "Paul tells Timothy to 'refuse profane and old wives’ fables, and exercise thyself rather unto godliness.' The word is the same as training for a race. Godliness grows by steady practice, not by accident.",
+            "serving": "Choose one spiritual exercise for this week, prayer, reading or giving, and do it at the same time each day.",
+            "hunger": [
+                "Your faith depends on how you feel that day.",
+                "You have no regular time with God.",
+                "Fables and rumours interest you more than the truth."
+            ],
+            "chew": "What does your spiritual training plan look like, if you have one?",
+            "see_also": []
+        },
+        {
+            "id": "add-to-your-faith",
+            "section": "Staying in shape",
+            "name": "Add to your faith",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "2 Peter 1:5-7",
+                    "text": "And beside this, giving all diligence, add to your faith virtue; and to virtue knowledge; And to knowledge temperance; and to temperance patience; and to patience godliness; And to godliness brotherly kindness; and to brotherly kindness charity."
+                }
+            ],
+            "read": [
+                "2 Peter 1:3-8"
+            ],
+            "guards": "A barren, unfruitful faith",
+            "feeds": "Peter lists what to build on faith, one on another: virtue, knowledge, temperance, patience, godliness, brotherly kindness and charity. 'If these things be in you, and abound, they make you that ye shall neither be barren nor unfruitful'. Faith is the start, not the finish.",
+            "serving": "Pick the quality in Peter's list you most lack, and practise it once today.",
+            "hunger": [
+                "Your faith has not grown in years.",
+                "You know a lot but practise little.",
+                "Kindness and patience are hard to find in you."
+            ],
+            "chew": "Which step on Peter's ladder are you stuck on?",
+            "see_also": []
+        },
+        {
+            "id": "lay-aside-every-weight",
+            "section": "Staying in shape",
+            "name": "Lay aside every weight",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Hebrews 12:1",
+                    "text": "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us,"
+                }
+            ],
+            "read": [
+                "Hebrews 12:1-2"
+            ],
+            "guards": "The sin which doth so easily beset us",
+            "feeds": "A runner does not race carrying a heavy bag. 'Let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us, Looking unto Jesus'. Some weights are not sins, only things that slow us down.",
+            "serving": "Put down one weight today: a habit, a commitment or a distraction that slows your walk with God.",
+            "hunger": [
+                "You feel heavy and slow in your faith.",
+                "A familiar sin trips you again and again.",
+                "Your eyes are on others in the race, not on Jesus."
+            ],
+            "chew": "What weight, not wrong in itself, is still slowing you down?",
+            "see_also": []
+        },
+        {
+            "id": "iron-sharpeneth-iron",
+            "section": "Staying in shape",
+            "name": "Iron sharpeneth iron",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 27:17",
+                    "text": "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend."
+                }
+            ],
+            "read": [
+                "Proverbs 27:17"
+            ],
+            "guards": "Isolation; no one to keep you accountable",
+            "feeds": "'Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.' We are kept sharp by friends who speak the truth to us. Alone, we grow dull without noticing.",
+            "serving": "Contact one friend in the faith today, and ask how you can pray for each other.",
+            "hunger": [
+                "No one knows your real struggles.",
+                "You avoid friends who might challenge you.",
+                "You feel you can manage your faith alone."
+            ],
+            "chew": "Who sharpens you, and whom do you sharpen?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "friendship",
+                    "name": "Friendship"
+                },
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "two-are-better-than-one",
+                    "name": "Two are better than one"
+                }
+            ]
+        },
+        {
+            "id": "a-just-man-falleth-seven-times",
+            "section": "Staying in shape",
+            "name": "A just man falleth seven times",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 24:16",
+                    "text": "For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief."
+                }
+            ],
+            "read": [
+                "Proverbs 24:15-16"
+            ],
+            "guards": "Giving up after a fall",
+            "feeds": "'A just man falleth seven times, and riseth up again'. The righteous are not people who never fall, but people who get back up. Falling is not the end; staying down is.",
+            "serving": "If you fell yesterday, get up today: confess it, and take one step in the right direction.",
+            "hunger": [
+                "One failure makes you want to give up.",
+                "You feel too ashamed to try again.",
+                "You think the righteous never stumble."
+            ],
+            "chew": "Where have you stayed down instead of rising up again?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "failure",
+                    "name": "Failure"
+                }
+            ]
+        },
+        {
+            "id": "confess-and-forsake",
+            "section": "Staying in shape",
+            "name": "Confess and forsake",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 28:13",
+                    "text": "He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy."
+                },
+                {
+                    "reference": "1 John 1:9",
+                    "text": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."
+                }
+            ],
+            "read": [
+                "Proverbs 28:13",
+                "1 John 1:8-9"
+            ],
+            "guards": "Covering sin",
+            "feeds": "'He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy.' John adds the promise: 'If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.' Hidden sin festers; confessed sin is forgiven.",
+            "serving": "Name one sin plainly to God today, ask his forgiveness, and decide to leave it behind.",
+            "hunger": [
+                "You hide, excuse or explain your sins away.",
+                "Guilt hangs over you for a long time.",
+                "Confession feels unnecessary or frightening."
+            ],
+            "chew": "Is there anything you are covering that God is waiting for you to confess?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "guilt-and-shame",
+                    "name": "Guilt and shame"
+                }
+            ]
+        },
+        {
+            "id": "ponder-the-path-of-thy-feet",
+            "section": "Staying in shape",
+            "name": "Ponder the path of thy feet",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Proverbs 4:26",
+                    "text": "Ponder the path of thy feet, and let all thy ways be established."
+                }
+            ],
+            "read": [
+                "Proverbs 4:23-27"
+            ],
+            "guards": "Drifting; careless steps",
+            "feeds": "'Let thine eyes look right on'. 'Ponder the path of thy feet, and let all thy ways be established. Turn not to the right hand nor to the left: remove thy foot from evil.' Most falls begin with steps taken without thought.",
+            "serving": "Before each choice today, pause and ask where this step leads.",
+            "hunger": [
+                "You drift into places without deciding to go.",
+                "Your eyes wander off the path.",
+                "You rarely think about where your habits lead."
+            ],
+            "chew": "Where is your current path heading, if you keep walking it?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "guard-your-heart",
+                    "name": "Guard your heart"
+                }
+            ]
+        },
+        {
+            "id": "press-toward-the-mark",
+            "section": "Staying in shape",
+            "name": "Press toward the mark",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Philippians 3:13-14",
+                    "text": "Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize of the high calling of God in Christ Jesus."
+                }
+            ],
+            "read": [
+                "Philippians 3:12-14"
+            ],
+            "guards": "Living in past failures",
+            "feeds": "Paul had a past to regret, yet he wrote, 'this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize of the high calling of God in Christ Jesus.'",
+            "serving": "Let go of one past failure today, and set your mind on one step forward.",
+            "hunger": [
+                "Old failures replay in your mind.",
+                "You feel disqualified by your past.",
+                "You have stopped aiming for anything."
+            ],
+            "chew": "What do you need to forget so that you can reach forward?",
+            "see_also": []
+        },
+        {
+            "id": "not-weary-in-well-doing",
+            "section": "Staying in shape",
+            "name": "Not weary in well doing",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Galatians 6:9",
+                    "text": "And let us not be weary in well doing: for in due season we shall reap, if we faint not."
+                }
+            ],
+            "read": [
+                "Galatians 6:7-10"
+            ],
+            "guards": "Tiring of doing right",
+            "feeds": "Doing good can be tiring, and the harvest can seem slow. 'Let us not be weary in well doing: for in due season we shall reap, if we faint not.' The seed is in the ground; the season will come.",
+            "serving": "Keep going today in one good thing you have been tempted to give up.",
+            "hunger": [
+                "You wonder why you bother doing right.",
+                "Others seem to gain more by cutting corners.",
+                "Your patience for good works has run out."
+            ],
+            "chew": "Which good work are you most tempted to quit?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "discouragement-and-doubt",
+                    "name": "Discouragement and doubt"
+                }
+            ]
+        },
+        {
+            "id": "come-ye-apart-and-rest-a-while",
+            "section": "Staying in shape",
+            "name": "Come ye apart and rest a while",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Mark 6:31",
+                    "text": "And he said unto them, Come ye yourselves apart into a desert place, and rest a while: for there were many coming and going, and they had no leisure so much as to eat."
+                }
+            ],
+            "read": [
+                "Mark 6:30-32",
+                "Mark 1:35"
+            ],
+            "guards": "Burnout and constant busyness",
+            "feeds": "The disciples were so busy 'they had no leisure so much as to eat.' Jesus said, 'Come ye yourselves apart into a desert place, and rest a while'. He did the same himself: 'rising up a great while before day, he went out, and departed into a solitary place, and there prayed.'",
+            "serving": "Find fifteen minutes alone today, away from noise and screens, to rest and pray.",
+            "hunger": [
+                "You are always busy and never still.",
+                "Rest makes you feel guilty.",
+                "Prayer is squeezed out by the day's demands."
+            ],
+            "chew": "When did you last go apart with Jesus and rest?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "rest",
+                    "name": "Rest"
+                },
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "prayer",
+                    "name": "Prayer"
+                }
+            ]
+        },
+        {
+            "id": "when-ye-fast",
+            "section": "Staying in shape",
+            "name": "When ye fast",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Matthew 6:17-18",
+                    "text": "But thou, when thou fastest, anoint thine head, and wash thy face; That thou appear not unto men to fast, but unto thy Father which is in secret: and thy Father, which seeth in secret, shall reward thee openly."
+                }
+            ],
+            "read": [
+                "Matthew 6:16-18"
+            ],
+            "guards": "An appetite in charge; doing good to be seen",
+            "feeds": "Jesus speaks of fasting as something his hearers would do, and warns only against doing it for show: 'when ye fast, be not, as the hypocrites, of a sad countenance'. Going without, quietly, shows that the body's appetite is not in charge, and it is done 'unto thy Father which is in secret'.",
+            "serving": "Go without one small comfort today, tell no one, and use the moment to pray.",
+            "hunger": [
+                "Your appetites have never been told no.",
+                "You like your good deeds to be noticed.",
+                "Prayer is easier to skip than a meal."
+            ],
+            "chew": "Which of your appetites has never been told no?",
+            "see_also": []
+        },
+        {
+            "id": "no-chastening-seemeth-joyous",
+            "section": "Staying in shape",
+            "name": "No chastening seemeth joyous",
+            "areas": [
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Hebrews 12:11",
+                    "text": "Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby."
+                }
+            ],
+            "read": [
+                "Hebrews 12:5-11"
+            ],
+            "guards": "Resenting correction",
+            "feeds": "'No chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.' Like training, correction hurts now and strengthens later. God corrects us because we are his children.",
+            "serving": "Accept one correction today, from God or from a person, without defending yourself.",
+            "hunger": [
+                "You bristle at every correction.",
+                "Hard times only make you bitter.",
+                "You see no purpose in difficulty."
+            ],
+            "chew": "What hard lesson might God be training you through right now?",
+            "see_also": [
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "suffering",
+                    "name": "Suffering"
+                }
+            ]
+        },
+        {
+            "id": "good-for-food-pleasant-to-the-eyes",
+            "section": "Lessons from the Bible's table",
+            "name": "Good for food, pleasant to the eyes",
+            "person": "Eve",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Genesis 3:6",
+                    "text": "And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat."
+                }
+            ],
+            "read": [
+                "Genesis 3:1-6",
+                "1 John 2:15-17"
+            ],
+            "guards": "The lust of the flesh, the eyes, and the pride of life",
+            "feeds": "Eve 'saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise'. John names the same three pulls in every age: 'the lust of the flesh, and the lust of the eyes, and the pride of life'. Temptation still comes through appetite, sight and pride.",
+            "serving": "When something tempts you today, ask which of the three it appeals to.",
+            "hunger": [
+                "You doubt that God's limits are good for you.",
+                "What looks good decides what you do.",
+                "You want to be wise on your own terms."
+            ],
+            "chew": "Which of the three pulls, flesh, eyes or pride, catches you most?",
+            "see_also": [
+                {
+                    "page": "bible-characters.html",
+                    "guide": "Bible Characters",
+                    "id": "eve",
+                    "name": "Eve"
+                },
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "temptation",
+                    "name": "Temptation"
+                }
+            ]
+        },
+        {
+            "id": "one-morsel-of-meat",
+            "section": "Lessons from the Bible's table",
+            "name": "One morsel of meat",
+            "person": "Esau",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Hebrews 12:16",
+                    "text": "Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright."
+                }
+            ],
+            "read": [
+                "Genesis 25:29-34",
+                "Hebrews 12:16-17"
+            ],
+            "guards": "Trading what lasts for what is wanted now",
+            "feeds": "Esau came in hungry and traded his birthright for a bowl of stew: 'what profit shall this birthright do to me?' Hebrews remembers him as the one 'who for one morsel of meat sold his birthright.' A moment's appetite cost him what could not be bought back.",
+            "serving": "Before a choice today, ask what you would be giving up for what you want right now.",
+            "hunger": [
+                "Instant satisfaction wins over lasting good.",
+                "You think, it is only this once.",
+                "Spiritual blessings feel less real than present wants."
+            ],
+            "chew": "What birthright might you be trading for a bowl of stew?",
+            "see_also": [
+                {
+                    "page": "bible-characters.html",
+                    "guide": "Bible Characters",
+                    "id": "esau",
+                    "name": "Esau"
+                }
+            ]
+        },
+        {
+            "id": "i-saw-i-coveted-i-took",
+            "section": "Lessons from the Bible's table",
+            "name": "I saw, I coveted, I took",
+            "person": "Achan",
+            "areas": [
+                "Mind"
+            ],
+            "food": [
+                {
+                    "reference": "Joshua 7:21",
+                    "text": "When I saw among the spoils a goodly Babylonish garment, and two hundred shekels of silver, and a wedge of gold of fifty shekels weight, then I coveted them, and took them; and, behold, they are hid in the earth in the midst of my tent, and the silver under it."
+                }
+            ],
+            "read": [
+                "Joshua 7:19-21"
+            ],
+            "guards": "The steps from looking to hiding",
+            "feeds": "Achan's confession shows how sin grows: 'When I saw among the spoils a goodly Babylonish garment… then I coveted them, and took them; and, behold, they are hid in the earth in the midst of my tent'. Seeing, wanting, taking, hiding: each step was a chance to stop.",
+            "serving": "If you catch yourself wanting something that is not yours today, stop at the first step.",
+            "hunger": [
+                "You let your eyes linger on what you should not have.",
+                "Wanting turns into planning.",
+                "There is something hidden in your tent."
+            ],
+            "chew": "At which step, seeing, wanting, taking or hiding, do you usually stop, if you stop at all?",
+            "see_also": [
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "do-not-covet",
+                    "name": "Do not covet"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "do-not-steal",
+                    "name": "Do not steal"
+                }
+            ]
+        },
+        {
+            "id": "from-the-roof-he-saw",
+            "section": "Lessons from the Bible's table",
+            "name": "From the roof he saw",
+            "person": "David",
+            "areas": [
+                "Mind",
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "2 Samuel 11:2",
+                    "text": "And it came to pass in an eveningtide, that David arose from off his bed, and walked upon the roof of the king’s house: and from the roof he saw a woman washing herself; and the woman was very beautiful to look upon."
+                }
+            ],
+            "read": [
+                "2 Samuel 11:1-4",
+                "Psalms 51:1-4"
+            ],
+            "guards": "Idleness and wandering eyes",
+            "feeds": "'At the time when kings go forth to battle', 'David tarried still at Jerusalem.' He was idle, he looked, and 'from the roof he saw a woman washing herself'. He kept looking, enquired, and sent for her. The fall of a great man began with being in the wrong place with nothing to do.",
+            "serving": "Fill one idle stretch of today with something useful or good.",
+            "hunger": [
+                "Idle time leads your eyes and thoughts astray.",
+                "You keep looking after the first glance.",
+                "You feel too strong or too important to fall."
+            ],
+            "chew": "Where are you when you should be at the battle?",
+            "see_also": [
+                {
+                    "page": "heroes-and-villains.html",
+                    "guide": "Heroes and Villains",
+                    "id": "david",
+                    "name": "David"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "do-not-commit-adultery",
+                    "name": "Do not commit adultery"
+                },
+                {
+                    "page": "poems-songs-and-wisdom.html",
+                    "guide": "Poems, Songs and Wisdom",
+                    "id": "create-in-me-a-clean-heart",
+                    "name": "Create in me a clean heart"
+                }
+            ]
+        },
+        {
+            "id": "he-wist-not",
+            "section": "Lessons from the Bible's table",
+            "name": "He wist not",
+            "person": "Samson",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Judges 16:20",
+                    "text": "And she said, The Philistines be upon thee, Samson. And he awoke out of his sleep, and said, I will go out as at other times before, and shake myself. And he wist not that the LORD was departed from him."
+                }
+            ],
+            "read": [
+                "Judges 16:15-20"
+            ],
+            "guards": "Playing with temptation until strength is gone",
+            "feeds": "Delilah pressed Samson 'daily with her words', and he played along until he told her everything. When he woke, he said he would go out 'as at other times before'. 'And he wist not that the LORD was departed from him.' Play with temptation long enough, and strength goes without our noticing.",
+            "serving": "Name one temptation you have been playing with, and end the game today.",
+            "hunger": [
+                "You think you can stop whenever you choose.",
+                "You stay close to what weakens you.",
+                "You count on past strength to carry you."
+            ],
+            "chew": "What are you toying with that could cost you your strength?",
+            "see_also": [
+                {
+                    "page": "bible-characters.html",
+                    "guide": "Bible Characters",
+                    "id": "samson",
+                    "name": "Samson"
+                }
+            ]
+        },
+        {
+            "id": "followed-afar-off",
+            "section": "Lessons from the Bible's table",
+            "name": "Followed afar off",
+            "person": "Peter",
+            "areas": [
+                "Mind",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Luke 22:54",
+                    "text": "Then took they him, and led him, and brought him into the high priest’s house. And Peter followed afar off."
+                }
+            ],
+            "read": [
+                "Matthew 26:33-35",
+                "Luke 22:54-62"
+            ],
+            "guards": "Overconfidence and drifting from Jesus",
+            "feeds": "Peter promised, 'Though I should die with thee, yet will I not deny thee.' That night 'Peter followed afar off', sat down with the crowd by the fire, and denied Jesus three times. The fall began with distance. Yet when 'the Lord turned, and looked upon Peter', he wept, and was later restored.",
+            "serving": "Close one gap today between you and Jesus: a prayer, a confession or a public word for him.",
+            "hunger": [
+                "You are sure you would never fall.",
+                "You follow Jesus at a safe distance.",
+                "You blend in with the crowd to avoid trouble."
+            ],
+            "chew": "In what part of life are you following Jesus from far off?",
+            "see_also": [
+                {
+                    "page": "heroes-and-villains.html",
+                    "guide": "Heroes and Villains",
+                    "id": "peter",
+                    "name": "Peter"
+                },
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "standing-for-your-faith",
+                    "name": "Standing for your faith"
+                }
+            ]
+        },
+        {
+            "id": "how-then-can-i-do-this-great-wickedness",
+            "section": "Lessons from the Bible's table",
+            "name": "How then can I do this great wickedness",
+            "person": "Joseph",
+            "areas": [
+                "Body"
+            ],
+            "food": [
+                {
+                    "reference": "Genesis 39:9",
+                    "text": "There is none greater in this house than I; neither hath he kept back any thing from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?"
+                }
+            ],
+            "read": [
+                "Genesis 39:7-12"
+            ],
+            "guards": "Staying near temptation",
+            "feeds": "Joseph was tempted 'day by day', yet he refused: 'how then can I do this great wickedness, and sin against God?' He saw sin as against God first. When he was caught and cornered, he did not argue; he 'left his garment in her hand, and fled'.",
+            "serving": "Decide today what you will do, and where you will go, the moment a familiar temptation corners you.",
+            "hunger": [
+                "Sin feels like it hurts no one.",
+                "You stay to argue with temptation.",
+                "Daily pressure is wearing you down."
+            ],
+            "chew": "What would it mean for you to leave your garment and run?",
+            "see_also": [
+                {
+                    "page": "heroes-and-villains.html",
+                    "guide": "Heroes and Villains",
+                    "id": "joseph",
+                    "name": "Joseph"
+                },
+                {
+                    "page": "commandments-of-god.html",
+                    "guide": "Commandments of God",
+                    "id": "flee-sexual-sin",
+                    "name": "Flee sexual sin"
+                }
+            ]
+        },
+        {
+            "id": "purposed-in-his-heart",
+            "section": "Lessons from the Bible's table",
+            "name": "Purposed in his heart",
+            "person": "Daniel",
+            "areas": [
+                "Body",
+                "Spirit"
+            ],
+            "food": [
+                {
+                    "reference": "Daniel 1:8",
+                    "text": "But Daniel purposed in his heart that he would not defile himself with the portion of the king’s meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself."
+                }
+            ],
+            "read": [
+                "Daniel 1:8-16"
+            ],
+            "guards": "Compromise; deciding beforehand",
+            "feeds": "A captive in Babylon, offered the king's food, 'Daniel purposed in his heart that he would not defile himself with the portion of the king’s meat'. He decided before the plate was set in front of him, and asked respectfully for another way. God honoured him for it.",
+            "serving": "Settle one matter in your heart today, before the pressure comes.",
+            "hunger": [
+                "You decide in the moment, under pressure.",
+                "You go along with what everyone else does.",
+                "You have never settled what you will not do."
+            ],
+            "chew": "What have you purposed in your heart, and what have you left undecided?",
+            "see_also": [
+                {
+                    "page": "heroes-and-villains.html",
+                    "guide": "Heroes and Villains",
+                    "id": "daniel",
+                    "name": "Daniel"
+                },
+                {
+                    "page": "guidance-for-life.html",
+                    "guide": "Questions We All Ask",
+                    "id": "standing-for-your-faith",
+                    "name": "Standing for your faith"
+                }
+            ]
+        }
+    ]
+}

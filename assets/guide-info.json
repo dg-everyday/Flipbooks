@@ -303,5 +303,28 @@
             "ref": "Matthew 7:24",
             "text": "Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:"
         }
+    },
+    "food-for-thought.html": {
+        "title": "Food for Thought",
+        "summary": "Bible verses to feed our mind, body and spirit, taken in daily like food.",
+        "inside": [
+            "Eighty-one topics in seven sections: the daily diet, feeding the mind, keeping the body fit, armour for the fight, junk food for the soul, staying in shape, and lessons from the Bible's table.",
+            "Each topic gives its verse (the food), what it guards against, how it feeds you, one serving for today, the signs of hunger, and a question to chew on."
+        ],
+        "use": [
+            "Tap a topic to open it under its row; tap it again, or another, to close it.",
+            "Use the funnel to show what feeds the mind, the body or the spirit, or one section.",
+            "Search for a word, a verse or a need.",
+            "Try the day's serving, and come back to the question during the day.",
+            "Tap any Bible reference to read the passage, and follow See also to the same subject in other guides."
+        ],
+        "why": [
+            "Food keeps the body strong; the truths of Scripture, taken in daily, keep the soul strong. This guide works before temptation comes rather than after something has gone wrong, building strength in our thoughts, our bodies and our walk with God.",
+            "The body topics stay with what Scripture says about self-control, soberness, rest and diligence; they are not health or diet advice."
+        ],
+        "verse": {
+            "ref": "Jeremiah 15:16",
+            "text": "Thy words were found, and I did eat them; and thy word was unto me the joy and rejoicing of mine heart: for I am called by thy name, O LORD God of hosts."
+        }
     }
 }

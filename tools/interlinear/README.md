@@ -23,7 +23,12 @@ the `books` table of `dailygrace.db` (`Gen`, `Ps`, `John`, …):
 
 - `lang` is `he` (Hebrew, read right to left) or `grc` (Greek, left to right).
 - Each word is `[original, transliteration, gloss, strongs, grammar]`, in the
-  order of the original. `strongs` is empty where STEPBible gives no ordinary
+  order of the original, with a sixth item `"arc"` for a word in Aramaic: the
+  4,826 words of Daniel 2:4–7:28 (from partway through 2:4), Ezra 4:8–6:18
+  and 7:12–26, and Jeremiah 10:11. Aramaic is written with the Hebrew letters
+  and reads right to left, so these chapters keep `lang` `he`. The reader
+  notes where the text turns to Aramaic and back; the explanation popup says
+  "in the Aramaic" above such a verse. `strongs` is empty where STEPBible gives no ordinary
   Strong's number. `grammar` is STEPBible's morphology code.
 - Verses are numbered as in the KJV, so a verse of `dailygrace.db` always finds
   its words. A psalm's title is verse `"0"` (116 psalms).
@@ -48,6 +53,9 @@ What is kept:
 - **Greek:** only the words "used by the KJV translators" (type `K`, Scrivener's
   1894 text). That leaves out 5,669 words found only in the modern critical
   editions, so the interlinear follows the Greek behind the KJV.
+- **Grammar:** STEPBible starts each Old Testament code with its language,
+  `H` or `A`; the build takes it off (`HVqp3ms` is `Vqp3ms`) and marks the
+  Aramaic words `"arc"` instead.
 
 The Hebrew glosses are put in English order. STEPBible glosses each part of
 a word in the Hebrew's order, so a noun's pronoun suffix comes last: וּלְבָבִי is
@@ -55,7 +63,9 @@ a word in the Hebrew's order, so a noun's pronoun suffix comes last: וּלְב�
 their) before its noun: "and my heart", "[is] in your gates", "[the] place of
 his head", "your [male] servant". It is left where English keeps the order
 ("blood of your") and after verbs and prepositions ("he put him", "to them").
-About 22,700 glosses change.
+About 22,700 glosses change. Aramaic's article is a suffix as well
+("gods/ the", "king/ O"); it is moved before its word the same way ("the
+gods", "O king"), 866 glosses.
 
 The reader and the explanation popup also print the glosses in order as one
 line under the words ("Word for word: …"), so the order is plain however the

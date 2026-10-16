@@ -95,6 +95,7 @@
 import { registerFonts } from "../../assets/scripts/fonts.js";
 import { bookmarkNote, keepBookmarks } from "./card-bookmarks.js?v=20260927-1";
 import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
+import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 // Citations use "Psalm"; the symbol library files that book under its plural name.
@@ -116,12 +117,6 @@ const DEFAULT_INTERLINEAR_BASE = new URL(
     "../../assets/interlinear/",
     import.meta.url,
 ).href;
-const DEFAULT_STRONGS_BASE = new URL(
-    "../../assets/strongs/",
-    import.meta.url,
-).href;
-// Strong's dictionary entries per file (tools/strongs/build_strongs.py).
-const STRONGS_CHUNK = 100;
 const DEFAULT_RED_LETTER_SRC = new URL(
     "../../assets/red-letter.json",
     import.meta.url,
@@ -628,22 +623,7 @@ const STYLES = /* css */ `
     font: 600 .6875rem/1.4 'Roboto', Arial, sans-serif;
   }
   .il-entry { margin-top: 10px; }
-  .il-entry-item {
-    margin-top: 8px; padding: 10px 12px;
-    border-left: 3px solid var(--search-gold); border-radius: 6px;
-    background: rgb(255 255 255 / 50%);
-    font: 400 1rem/1.45 'Strait', 'Roboto', sans-serif;
-  }
-  .il-entry-item h4 {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px;
-    margin: 0 0 4px;
-    font: 400 1rem/1.3 'Roboto', Arial, sans-serif;
-  }
-  .il-entry-item h4 .il-num { font-size: .8125rem; }
-  .il-entry-item h4 .il-orig { font-size: 1.5rem; }
-  .il-entry-item p { margin: 0 0 4px; }
-  .il-entry-item p:last-child { margin-bottom: 0; }
-  .il-entry-item .il-derivation { color: #4f5c65; font-size: .9375rem; }
+${STRONGS_ENTRY_STYLES}
 
   @media (max-width: 420px) {
     /* Too narrow for the symbol column: give the commentary the full width. */
@@ -721,78 +701,25 @@ function bsbMessage(message) {
     return note;
 }
 
-// Strong's dictionary entries come 100 to a file: one fetch per file, shared
-// by every instance.
-const strongsCache = new Map();
-
-/** The dictionary entry for "H7225" or "G26", or null if there is none. */
-function loadStrongsEntry(base, number) {
-    const folder = number[0] === "H" ? "hebrew" : "greek";
-    const file = Math.floor(Number(number.slice(1)) / STRONGS_CHUNK);
-    const url = new URL(`${folder}/${file}.json`, base).href;
-    if (!strongsCache.has(url)) {
-        const request = fetch(url)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(
-                        `Failed to fetch Strong's entries: ${response.status}`,
-                    );
-                }
-                return response.json();
-            })
-            .catch((error) => {
-                strongsCache.delete(url);
-                throw error;
-            });
-        strongsCache.set(url, request);
+/**
+ * The line above a verse's interlinear: its language and how to read it. A
+ * few Old Testament passages are in Aramaic (words marked "arc"); Daniel 2:4
+ * turns to it partway through.
+ */
+function interlinearHint(lang, words) {
+    const tap = "Tap a word for its dictionary entry.";
+    if (lang === "grc") {
+        return `The verse word by word in the Greek: each word's Strong's number, how it sounds, the Greek, its meaning and its grammar. ${tap}`;
     }
-    return strongsCache.get(url).then((entries) => entries[number] ?? null);
-}
-
-/** One Strong's dictionary entry, for the interlinear's entry panel. */
-function strongsEntryNode(number, entry) {
-    const item = document.createElement("article");
-    item.className = "il-entry-item";
-    const heading = document.createElement("h4");
-    const label = document.createElement("span");
-    label.className = "il-num";
-    label.textContent = number;
-    heading.append(label);
-    if (!entry) {
-        const missing = document.createElement("p");
-        missing.textContent = "This dictionary entry could not be loaded.";
-        item.append(heading, missing);
-        return item;
+    const aramaic = words.filter((word) => word[5] === "arc").length;
+    if (!aramaic) {
+        return `The verse word by word in the Hebrew, read right to left: each word's Strong's number, how it sounds, the Hebrew, its meaning and its grammar. ${tap}`;
     }
-    const orig = document.createElement("span");
-    orig.className = "il-orig";
-    orig.lang = number[0] === "H" ? "he" : "grc";
-    orig.dir = orig.lang === "he" ? "rtl" : "ltr";
-    orig.textContent = entry.lemma;
-    const xlit = document.createElement("span");
-    xlit.className = "il-xlit";
-    xlit.textContent = entry.pron ? `${entry.xlit} (${entry.pron})` : entry.xlit;
-    heading.append(orig, xlit);
-    item.append(heading);
-    if (entry.def) {
-        const def = document.createElement("p");
-        def.textContent = entry.def;
-        item.append(def);
+    const about = "Aramaic is a language close to Hebrew, written with the same letters.";
+    if (aramaic === words.length) {
+        return `The verse word by word in the Aramaic, read right to left: each word's Strong's number, how it sounds, the Aramaic, its meaning and its grammar. ${about} ${tap}`;
     }
-    if (entry.kjv) {
-        const kjv = document.createElement("p");
-        const name = document.createElement("strong");
-        name.textContent = "In the KJV: ";
-        kjv.append(name, entry.kjv);
-        item.append(kjv);
-    }
-    if (entry.derivation) {
-        const derivation = document.createElement("p");
-        derivation.className = "il-derivation";
-        derivation.textContent = entry.derivation;
-        item.append(derivation);
-    }
-    return item;
+    return `The verse word by word, read right to left: it begins in Hebrew and turns to Aramaic partway through. Each word's Strong's number, how it sounds, the original, its meaning and its grammar. ${about} ${tap}`;
 }
 
 // "etc." ("&c." in the commentaries themselves) only marks where the quoted
@@ -1003,7 +930,7 @@ export class BibleSearchResults extends HTMLElement {
               <ol class="il-words"></ol>
               <p class="il-reading"><b>Word for word: </b><span></span></p>
               <div class="il-entry" id="interlinear-entry" aria-live="polite" hidden></div>
-              <p class="interlinear-credit">Hebrew and Greek words, glosses and grammar from STEPBible.org (Tyndale House, Cambridge), CC BY 4.0; the Greek is the text used by the KJV translators (Scrivener 1894). Dictionary: James Strong, from Open Scriptures (CC BY-SA).</p>
+              <p class="interlinear-credit">Hebrew, Aramaic and Greek words, glosses and grammar from STEPBible.org (Tyndale House, Cambridge), CC BY 4.0; the Greek is the text used by the KJV translators (Scrivener 1894). Dictionary: James Strong, from Open Scriptures (CC BY-SA).</p>
             </section>
           </div>
           <button type="button" class="explanation-close" aria-label="Close explanation">×</button>
@@ -1133,7 +1060,7 @@ export class BibleSearchResults extends HTMLElement {
     get #strongsBase() {
         const base = this.getAttribute("strongs-base");
         if (!base) {
-            return DEFAULT_STRONGS_BASE;
+            return undefined;
         }
         return new URL(base.endsWith("/") ? base : `${base}/`, document.baseURI)
             .href;
@@ -1754,10 +1681,10 @@ export class BibleSearchResults extends HTMLElement {
             return;
         }
         const lang = chapter.lang === "he" ? "he" : "grc";
-        section.querySelector(".interlinear-hint").textContent =
-            lang === "he"
-                ? "The verse word by word in the Hebrew, read right to left: each word's Strong's number, how it sounds, the Hebrew, its meaning and its grammar. Tap a word for its dictionary entry."
-                : "The verse word by word in the Greek: each word's Strong's number, how it sounds, the Greek, its meaning and its grammar. Tap a word for its dictionary entry.";
+        section.querySelector(".interlinear-hint").textContent = interlinearHint(
+            lang,
+            words,
+        );
         list.dir = lang === "he" ? "rtl" : "ltr";
         section.querySelector(".il-reading span").textContent = words
             .map((word) => word[2])
@@ -1766,7 +1693,7 @@ export class BibleSearchResults extends HTMLElement {
         list.replaceChildren(
             ...words.map((word) => {
                 const item = document.createElement("li");
-                item.append(this.#interlinearWord(word, lang));
+                item.append(this.#interlinearWord(word, word[5] ?? lang));
                 return item;
             }),
         );
@@ -1775,6 +1702,7 @@ export class BibleSearchResults extends HTMLElement {
 
     /** One word: a button opening its Strong's entry, or plain without a number. */
     #interlinearWord([orig, xlit, gloss, strongs, grammar], lang) {
+        // lang: "he", "arc" (Aramaic) or "grc".
         const word = document.createElement(strongs ? "button" : "span");
         word.className = "il-word";
         const part = (className, text) => {
@@ -1785,7 +1713,7 @@ export class BibleSearchResults extends HTMLElement {
         };
         const original = part("il-orig", orig);
         original.lang = lang;
-        original.dir = lang === "he" ? "rtl" : "ltr";
+        original.dir = lang === "grc" ? "ltr" : "rtl";
         word.append(
             part("il-num", strongs),
             part("il-xlit", xlit),
@@ -1821,7 +1749,7 @@ export class BibleSearchResults extends HTMLElement {
         }
         word.setAttribute("aria-expanded", "true");
         // A dictionary file that fails to load shows a note in the panel.
-        const entry = await loadStrongsEntry(this.#strongsBase, number).catch(
+        const entry = await loadStrongsEntry(number, this.#strongsBase).catch(
             () => null,
         );
         if (word.getAttribute("aria-expanded") !== "true") {

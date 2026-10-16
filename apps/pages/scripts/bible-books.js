@@ -17,7 +17,7 @@ import {
     filterMenu,
     titleWithInfo,
 } from "./study-utils.js?v=20261016-5";
-import { showPassageReader } from "../../components/passage-reader.js?v=20261016-1";
+import { showPassageReader } from "../../components/passage-reader.js?v=20261016-2";
 
 const DATA = "assets/bible-books.json";
 const fmt = (n) => n.toLocaleString("en-US");

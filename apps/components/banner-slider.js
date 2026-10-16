@@ -11,6 +11,11 @@
  * keys do the same. Tapping the reflection expands it; changing the day
  * collapses it again.
  *
+ * Tapping the banner (or Enter with it focused) opens the day's verse in the
+ * page's passage popup (verse-popup.js): the KJV, with the Berean Standard
+ * Bible wording open under each verse. A swipe is not a tap, and the Flipbook
+ * button keeps its own.
+ *
  * Usage
  *   <banner-slider></banner-slider>
  *   <script type="module" src="./apps/components/banner-slider.js"></script>
@@ -72,6 +77,10 @@ import {
     versesFileUrl,
 } from "./daily-verses.js?v=20261004-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
+
+// The passage popup, loaded on the first tap. Its ?v= token is not stamped by
+// the deploy, so bump it here when verse-popup.js changes.
+const POPUP_MODULE = "./verse-popup.js?v=20261016-5";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";
@@ -155,6 +164,8 @@ const STYLES = /* css */ `
     -webkit-user-select: none;
   }
   .stage:focus-visible { outline: none; }
+  /* A tap on the banner opens the day's verse. */
+  .stage.has-verse { cursor: pointer; }
   .stage.dragging { cursor: grabbing; }
   .stage:focus-visible .slide {
     outline: 2px solid var(--banner-slider-focus);
@@ -395,7 +406,7 @@ export class BannerSlider extends HTMLElement {
         <span class="heading-text" aria-live="polite">Your Daily Grace Today</span>
       </h1>
       <div class="stage" role="group" aria-roledescription="carousel" tabindex="0"
-        aria-label="Daily Grace for the past week. Swipe, or use the arrow keys, to change the day.">
+        aria-label="Daily Grace for the past week. Swipe, or use the arrow keys, to change the day. Tap the banner, or press Enter, to read the day's verse.">
         <img class="peek" alt="" width="1920" height="1024" draggable="false" />
         <div class="slide">
           <img class="banner" alt="" width="1920" height="1024" fetchpriority="high" draggable="false" />
@@ -466,7 +477,22 @@ export class BannerSlider extends HTMLElement {
             },
             true,
         );
+        // A tap on the banner, not a swipe and not the Flipbook button, opens the verse.
+        this.#stage.addEventListener("click", (event) => {
+            if (
+                this.#suppressClick ||
+                event.composedPath().includes(this.#flipbook)
+            ) {
+                return;
+            }
+            this.#openVerse();
+        });
         this.#stage.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" && event.target === this.#stage) {
+                event.preventDefault();
+                this.#openVerse();
+                return;
+            }
             if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
                 return;
             }
@@ -676,6 +702,19 @@ export class BannerSlider extends HTMLElement {
         return this.#verses ? (this.#verses.get(day.name) ?? null) : null;
     }
 
+    async #openVerse() {
+        const reference = this.#day && this.#verseFor(this.#day)?.verse;
+        if (!reference) {
+            return;
+        }
+        try {
+            const { showPassage } = await import(POPUP_MODULE);
+            showPassage(reference, { bsb: true });
+        } catch (error) {
+            console.warn(`The verse popup could not open ${reference}:`, error);
+        }
+    }
+
     #showVerse() {
         const verse = this.#day && this.#verseFor(this.#day);
         if (verse) {
@@ -687,8 +726,10 @@ export class BannerSlider extends HTMLElement {
             this.#reflectionText.textContent = verse.reflection;
             this.#reflection.disabled = false;
             this.#setExpanded(false);
+            this.#stage.classList.add("has-verse");
             return;
         }
+        this.#stage.classList.remove("has-verse");
         this.#symbol.hidden = true;
         this.#symbol.removeAttribute("src");
         this.#reflection.disabled = true;

@@ -37,13 +37,13 @@
  * module (and of the popup it opens); bump them all together.
  */
 
-const POPUP_MODULE = "./verse-popup.js?v=20261002-1";
+const POPUP_MODULE = "./verse-popup.js?v=20261016-5";
 
 // [name, chapters, ...abbreviations]. The names, "Psalm" and "Song of Songs"
 // may be cited by chapter alone ("Psalm 23"); an abbreviation only counts with
 // a verse ("Pro 8:22"), so words such as "Job" or "Mark" before a number in
 // the commentaries are not mistaken for a book's abbreviation. The
-// abbreviations are the ones in the commentaries (assets/explanations): the
+// abbreviations are the ones in the commentaries (assets/annotations): the
 // short forms of dailygrace.db's book ids, the three-letter ones ("Co1"), the
 // JFB headings' ("1Ch.") and Gill's ("De").
 const BOOKS = [

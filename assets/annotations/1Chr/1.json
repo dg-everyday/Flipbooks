@@ -1,0 +1,510 @@
+{
+    "1": {
+        "explanation": {
+            "source": "jfb",
+            "text": "ADAM'S LINE TO NOAH. (1Ch. 1:1-23)\n\nAdam, etc.--\"Begat\" must be understood. Only that one member of the family is mentioned, who came in the direct order of succession."
+        },
+        "translations": {
+            "bsb": {
+                "text": "Adam, Seth, Enosh,"
+            }
+        },
+        "interlinear": "Adam/H121 Sheth/H8352 Enosh/H583"
+    },
+    "2": {
+        "translations": {
+            "bsb": {
+                "text": "Kenan, Mahalalel, Jared,"
+            }
+        },
+        "interlinear": "Kenan/H7018 Mahalaleel/H4111 Jered/H3382"
+    },
+    "3": {
+        "translations": {
+            "bsb": {
+                "text": "Enoch, Methuselah, Lamech, Noah."
+            }
+        },
+        "interlinear": "Henoch/H2585 Methuselah/H4968 Lamech/H3929"
+    },
+    "4": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Noah, Shem, Ham, and Japheth--The three sons of this patriarch are enumerated, partly because they were the founders of the new world, and partly because the fulfilment of Noah's prophecy (Gen 9:25-27) could not otherwise appear to have been verified."
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Noah: Shem, Ham, and Japheth."
+            }
+        },
+        "interlinear": "Noah/H5146 Shem/H8035 Ham/H2526 and Japheth/H3315"
+    },
+    "5": {
+        "explanation": {
+            "source": "gill",
+            "text": "The sons of Japheth, Gomer,.... Here begins the genealogy of the sons of Noah after the flood; of the sons of Japheth the elder, in this and the two following verses; next of the sons of Ham, the younger brother, 1 Chronicles 1:8, then of Shem, whose posterity are mentioned last, because from him, in the line of Heber, sprang Abraham, the ancestor of the Jewish nation, of whom the Messiah was to come, for whose sake this genealogy is given, 1 Chronicles 1:17. The whole is the same with the account in"
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Japheth: Gomer, Magog, Madai, Javan, Tubal, Meshech, and Tiras."
+            }
+        },
+        "interlinear": "The sons/H1121 of Japheth/H3315 Gomer/H1586 and Magog/H4031 and Madai/H4074 and Javan/H3120 and Tubal/H8422 and Meshech/H4902 and Tiras/H8494"
+    },
+    "6": {
+        "translations": {
+            "bsb": {
+                "text": "The sons of Gomer: Ashkenaz, Riphath, and Togarmah."
+            }
+        },
+        "interlinear": "And the sons/H1121 of Gomer/H1586 Ashchenaz/H813 and Riphath/H7384 and Togarmah/H8425"
+    },
+    "7": {
+        "translations": {
+            "bsb": {
+                "text": "And the sons of Javan: Elishah, Tarshish, the Kittites, and the Rodanites."
+            }
+        },
+        "interlinear": "And the sons/H1121 of Javan/H3120 Elishah/H473 and Tarshish/H8659 Kittim/H3794 and Dodanim/H1721"
+    },
+    "8": {
+        "translations": {
+            "bsb": {
+                "text": "The sons of Ham: Cush, Mizraim, Put, and Canaan."
+            }
+        },
+        "interlinear": "The sons/H1121 of Ham/H2526 Cush/H3568 and Mizraim/H4714 Put/H6316 and Canaan/H3667"
+    },
+    "9": {
+        "translations": {
+            "bsb": {
+                "text": "The sons of Cush: Seba, Havilah, Sabta, Raamah, and Sabteca. The sons of Raamah: Sheba and Dedan."
+            }
+        },
+        "interlinear": "And the sons/H1121 of Cush/H3568 Seba/H5434 and Havilah/H2341 and Sabta/H5454 and Raamah/H7484 and Sabtecha/H5455 And the sons/H1121 of Raamah/H7484 Sheba/H7614 and Dedan/H1719"
+    },
+    "10": {
+        "translations": {
+            "bsb": {
+                "text": "Cush was the father of Nimrod, who began to be a mighty one on the earth."
+            }
+        },
+        "interlinear": "And Cush/H3568 begat/H3205 Nimrod/H5248 he began/H2490 to be mighty/H1368 upon the earth/H776"
+    },
+    "11": {
+        "translations": {
+            "bsb": {
+                "text": "Mizraim was the father of the Ludites, the Anamites, the Lehabites, the Naphtuhites,"
+            }
+        },
+        "interlinear": "And Mizraim/H4714 begat/H3205 Ludim/H3866 and Anamim/H6047 and Lehabim/H3853 and Napthtuhim/H5320"
+    },
+    "12": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Casluhim (of whom came the Philistines), and Caphtorim--a better rendering is, \"and Casluhim, of whom came the Philistim and Caphtorim.\" They were brethren, the sons of Casluhim, and at first dwelt together, whence their names are used interchangeably. The Caphtorim are described as inhabiting Azzah, or Gaza, the seat of the Philistines."
+        },
+        "translations": {
+            "bsb": {
+                "text": "the Pathrusites, the Casluhites (from whom the Philistines came), and the Caphtorites."
+            }
+        },
+        "interlinear": "And Pathrusim/H6625 and Casluhim/H3695 of whom came/H3318 the Philistines/H6430 and Caphthorim/H3732"
+    },
+    "13": {
+        "translations": {
+            "bsb": {
+                "text": "And Canaan was the father of Sidon his firstborn, and of the Hittites,"
+            }
+        },
+        "interlinear": "And Canaan/H3667 begat/H3205 Zidon/H6721 his firstborn/H1060 and Heth/H2845"
+    },
+    "14": {
+        "explanation": {
+            "source": "jfb",
+            "text": "the Jebusite, etc.--At Ch1 1:14-17 the names are not those of individuals, but of people who all sprang from Canaan; and as several of them became extinct or were amalgamated with their brethren, their national appellations are given instead of the personal names of their ancestors."
+        },
+        "translations": {
+            "bsb": {
+                "text": "the Jebusites, the Amorites, the Girgashites,"
+            }
+        },
+        "interlinear": "The Jebusite/H2983 also and the Amorite/H567 and the Girgashite/H1622"
+    },
+    "15": {
+        "translations": {
+            "bsb": {
+                "text": "the Hivites, the Arkites, the Sinites,"
+            }
+        },
+        "interlinear": "And the Hivite/H2340 and the Arkite/H6208 and the Sinite/H5513"
+    },
+    "16": {
+        "translations": {
+            "bsb": {
+                "text": "the Arvadites, the Zemarites, and the Hamathites."
+            }
+        },
+        "interlinear": "And the Arvadite/H721 and the Zemarite/H6786 and the Hamathite/H2577"
+    },
+    "17": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Uz, and Hul, and Gether, and Meshech--or, \"Mash\"; these were the children of Aram, and grandsons of Shem (Gen 10:23)."
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Shem: Elam, Asshur, Arphaxad, Lud, and Aram. The sons of Aram: Uz, Hul, Gether, and Meshech."
+            }
+        },
+        "interlinear": "The sons/H1121 of Shem/H8035 Elam/H5867 and Asshur/H804 and Arphaxad/H775 and Lud/H3865 and Aram/H758 and Uz/H5780 and Hul/H2343 and Gether/H1666 and Meshech/H4902"
+    },
+    "18": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Arphaxad begat Shelah--Cainan, the father's name, is omitted here. (See Luk 3:36)."
+        },
+        "translations": {
+            "bsb": {
+                "text": "Arphaxad was the father of Shelah, and Shelah was the father of Eber."
+            }
+        },
+        "interlinear": "And Arphaxad/H775 begat/H3205 Shelah/H7974 and Shelah/H7974 begat/H3205 Eber/H5677"
+    },
+    "19": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Peleg--(See on Gen 10:25)."
+        },
+        "translations": {
+            "bsb": {
+                "text": "Two sons were born to Eber: One was named Peleg, because in his days the earth was divided, and his brother was named Joktan."
+            }
+        },
+        "interlinear": "And unto Eber/H5677 were born/H3205 two/H8147 sons/H1121 the name/H8034 of the one/H259 *was Peleg/H6389 because in his days/H3117 the earth/H776 was divided/H6385 and his brother’s/H251 name/H8034 *was Joktan/H3355"
+    },
+    "20": {
+        "translations": {
+            "bsb": {
+                "text": "And Joktan was the father of Almodad, Sheleph, Hazarmaveth, Jerah,"
+            }
+        },
+        "interlinear": "And Joktan/H3355 begat/H3205 Almodad/H486 and Sheleph/H8026 and Hazarmaveth/H2700 and Jerah/H3392"
+    },
+    "21": {
+        "translations": {
+            "bsb": {
+                "text": "Hadoram, Uzal, Diklah,"
+            }
+        },
+        "interlinear": "Hadoram/H1913 also and Uzal/H187 and Diklah/H1853"
+    },
+    "22": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Ebal--or, \"Obal\" (Gen 10:28)."
+        },
+        "translations": {
+            "bsb": {
+                "text": "Obal, Abimael, Sheba,"
+            }
+        },
+        "interlinear": "And Ebal/H5858 and Abimael/H39 and Sheba/H7614"
+    },
+    "23": {
+        "translations": {
+            "bsb": {
+                "text": "Ophir, Havilah, and Jobab. All these were sons of Joktan."
+            }
+        },
+        "interlinear": "And Ophir/H211 and Havilah/H2341 and Jobab/H3103 All these *were the sons/H1121 of Joktan/H3355"
+    },
+    "24": {
+        "explanation": {
+            "source": "jfb",
+            "text": "SHEM'S LINE TO ABRAHAM. (Ch1 1:24-28)\n\nShem, etc.--This comprises a list of ten, inclusive of Abraham."
+        },
+        "translations": {
+            "bsb": {
+                "text": "So from Shem came Arphaxad, Shelah,"
+            }
+        },
+        "interlinear": "Shem/H8035 Arphaxad/H775 Shelah/H7974"
+    },
+    "25": {
+        "translations": {
+            "bsb": {
+                "text": "Eber, Peleg, Reu,"
+            }
+        },
+        "interlinear": "Eber/H5677 Peleg/H6389 Reu/H7466"
+    },
+    "26": {
+        "translations": {
+            "bsb": {
+                "text": "Serug, Nahor, Terah,"
+            }
+        },
+        "interlinear": "Serug/H8286 Nahor/H5152 Terah/H8646"
+    },
+    "27": {
+        "translations": {
+            "bsb": {
+                "text": "and Abram (that is, Abraham)."
+            }
+        },
+        "interlinear": "Abram/H87 the same *is Abraham/H85"
+    },
+    "28": {
+        "explanation": {
+            "source": "gill",
+            "text": "The sons of Abraham,.... The famous and well known ancestor of the Jews; of Ishmael his firstborn, and his posterity; of his sons by Keturah; and of Isaac and his sons, an account is given from hence to the end of 1 Chronicles 1:34 entirely agreeing with that in Genesis 25:1."
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Abraham were Isaac and Ishmael."
+            }
+        },
+        "interlinear": "The sons/H1121 of Abraham/H85 Isaac/H3327 and Ishmael/H3458"
+    },
+    "29": {
+        "explanation": {
+            "source": "jfb",
+            "text": "SONS OF ISHMAEL. (Ch1 1:29-31)\n\nThese are their generations--the heads of his twelve tribes. The great northern desert of Arabia, including the entire neck, was colonized by these tribes; and if we can recover, in the modern geography of this part of the country, Arab tribes bearing the names of those patriarchs, that is, names corresponding with those preserved in the original catalogue of Scripture, we obtain at once so many evidences, not of mere similarity, but of absolute identification [FORSTER].\n\nNebaioth--gave rise to the Nabathæans of the classic, and the Beni Nabat of Oriental writers.\n\nKedar--the Arab tribe, El Khedeyre, on the coast of Hedgar.\n\nAbdeel--Abdilla, the name of a tribe in Yemen."
+        },
+        "translations": {
+            "bsb": {
+                "text": "These are their genealogies: Nebaioth the firstborn of Ishmael, then Kedar, Adbeel, Mibsam,"
+            }
+        },
+        "interlinear": "These *are their generations/H8435 The firstborn/H1060 of Ishmael/H3458 Nebaioth/H5032 then Kedar/H6938 and Adbeel/H110 and Mibsam/H4017"
+    },
+    "30": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Dumah--Dumah and Tema, the great Arab tribes of Beni Teman. Thus this writer [Historical Geography of Arabia] traces the names of all the heads of the twelve tribes of Ishmael as perpetuated in the clans or tribes of the Arabs in the present day."
+        },
+        "translations": {
+            "bsb": {
+                "text": "Mishma, Dumah, Massa, Hadad, Tema,"
+            }
+        },
+        "interlinear": "Mishma/H4927 and Dumah/H1746 Massa/H4854 Hadad/H2301 and Tema/H8485"
+    },
+    "31": {
+        "translations": {
+            "bsb": {
+                "text": "Jetur, Naphish, and Kedemah. These were the sons of Ishmael."
+            }
+        },
+        "interlinear": "Jetur/H3195 Naphish/H5305 and Kedemah/H6929 These are the sons/H1121 of Ishmael/H3458"
+    },
+    "32": {
+        "explanation": {
+            "source": "jfb",
+            "text": "SONS OF KETURAH. (Ch1 1:32-33)\n\nsons of Keturah--These became founders of nomadic tribes in the north of Arabia and Syria, as Midian of the Midianites (Gen 36:35; Jdg 6:2).\n\nand Shuah--from whom Bildad sprang (Job 2:11)."
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons born to Keturah, Abraham’s concubine: Zimran, Jokshan, Medan, Midian, Ishbak, and Shuah. The sons of Jokshan: Sheba and Dedan."
+            }
+        },
+        "interlinear": "Now the sons/H1121 of Keturah/H6989 Abraham’s/H85 concubine/H6370 she bare/H3205 Zimran/H2175 and Jokshan/H3370 and Medan/H4091 and Midian/H4080 and Ishbak/H3435 and Shuah/H7744 And the sons/H1121 of Jokshan/H3370 Sheba/H7614 and Dedan/H1719"
+    },
+    "33": {
+        "translations": {
+            "bsb": {
+                "text": "The sons of Midian: Ephah, Epher, Hanoch, Abida, and Eldaah. All of these were Keturah’s sons."
+            }
+        },
+        "interlinear": "And the sons/H1121 of Midian/H4080 Ephah/H5891 and Epher/H6081 and Henoch/H2585 and Abida/H28 and Eldaah/H420 All these *are the sons/H1121 of Keturah/H6989"
+    },
+    "34": {
+        "translations": {
+            "bsb": {
+                "text": "Abraham was the father of Isaac. The sons of Isaac: Esau and Israel."
+            }
+        },
+        "interlinear": "And Abraham/H85 begat/H3205 Isaac/H3327 The sons/H1121 of Isaac/H3327 Esau/H6215 and Israel/H3478"
+    },
+    "35": {
+        "explanation": {
+            "source": "gill",
+            "text": "The sons of Esau,.... The firstborn of Isaac; his posterity are named in this and the two following verses, as in Genesis 36:1 only it should be observed, that Timna, 1 Chronicles 1:36 is not the name of a man, but was the concubine of Eliphaz, the eldest son of Esau, and the mother of Amalek, Genesis 36:12, and so in the Arabic version it is read,\"and Timna, which was the concubine of Eliphaz, the son of Esau, bare him Amalek;''and so the Alexandrian copy of the Septuagint."
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Esau: Eliphaz, Reuel, Jeush, Jalam, and Korah."
+            }
+        },
+        "interlinear": "The sons/H1121 of Esau/H6215 Eliphaz/H464 Reuel/H7467 and Jeush/H3266 and Jaalam/H3281 and Korah/H7141"
+    },
+    "36": {
+        "explanation": {
+            "source": "jfb",
+            "text": "POSTERITY OF ABRAHAM BY ESAU. (Ch1 1:34-42)\n\nsons of Eliphaz--the tribe Adites, in the center country of the Saracens, so called from his mother, Adah (Gen 36:10).\n\nTeman--gave rise to the land of Teman, near the head of the Red Sea.\n\nOmar--the tribe Beni-Amma, settled at the northern point of Djebel Shera (Mount Seir).\n\nZephi--the tribe Dzaf.\n\nGatam--Katam, inhabited by the tribe Al Saruat, or \"people of Sarah.\"\n\nKenaz--the tribe Aenezes, a tribe whose settlement lies in the neighborhood of Syria.\n\nAmalek--the Beni Malak of Zohran, and the Beni Maledj of the Shat el Arab."
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Eliphaz: Teman, Omar, Zepho, Gatam, and Kenaz; and by Timna, Amalek."
+            }
+        },
+        "interlinear": "The sons/H1121 of Eliphaz/H464 Teman/H8487 and Omar/H201 Zephi/H6825 and Gatam/H1609 Kenaz/H7073 and Timna/H8555 and Amalek/H6002"
+    },
+    "37": {
+        "explanation": {
+            "source": "jfb",
+            "text": "Reuel--a powerful branch of the great Aeneze tribe, the Rowalla Arabs.\n\nShammah--the great tribe Beni Shammar. In the same way, the names of the other kings and dukes are traced in the modern tribes of Arabia. But it is unnecessary to mention any more of these obscure nomads, except to notice that Jobab (Ch1 1:44), one of the kings of Edom, is considered to be Job, and that his seat was in the royal city of Dinahab (Gen 36:32; Ch1 1:43), identified with O'Daeb, a well-known town in the center of Al Dahna, a great northern desert in the direction of Chaldea and the Euphrates [FORSTER].\n\nNext: 1 Chronicles Chapter 2"
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Reuel: Nahath, Zerah, Shammah, and Mizzah."
+            }
+        },
+        "interlinear": "The sons/H1121 of Reuel/H7467 Nahath/H5184 Zerah/H2226 Shammah/H8048 and Mizzah/H4199"
+    },
+    "38": {
+        "explanation": {
+            "source": "gill",
+            "text": "And the sons of Seir,.... This man and his posterity were not of the race of Esau, but are mentioned because they were a family into which Esau, and a son of his, married, and whose possessions he and his obtained. The account from hence, to the end of 1 Chronicles 1:42 is the same with Genesis 36:20, with some little variation of names."
+        },
+        "translations": {
+            "bsb": {
+                "text": "The sons of Seir: Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, and Dishan."
+            }
+        },
+        "interlinear": "And the sons/H1121 of Seir/H8165 Lotan/H3877 and Shobal/H7732 and Zibeon/H6649 and Anah/H6034 and Dishon/H1787 and Ezar/H687 and Dishan/H1789"
+    },
+    "39": {
+        "translations": {
+            "bsb": {
+                "text": "The sons of Lotan: Hori and Homam. Timna was Lotan’s sister."
+            }
+        },
+        "interlinear": "And the sons/H1121 of Lotan/H3877 Hori/H2753 and Homam/H1950 and Timna/H8555 *was Lotan’s/H3877 sister/H269"
+    },
+    "40": {
+        "translations": {
+            "bsb": {
+                "text": "The sons of Shobal: Alvan, Manahath, Ebal, Shepho, and Onam. The sons of Zibeon: Aiah and Anah."
+            }
+        },
+        "interlinear": "The sons/H1121 of Shobal/H7732 Alian/H5935 and Manahath/H4506 and Ebal/H5858 Shephi/H8195 and Onam/H208 And the sons/H1121 of Zibeon/H6649 Aiah/H345 and Anah/H6034"
+    },
+    "41": {
+        "translations": {
+            "bsb": {
+                "text": "The son of Anah: Dishon. The sons of Dishon: Hemdan, Eshban, Ithran, and Cheran."
+            }
+        },
+        "interlinear": "The sons/H1121 of Anah/H6034 Dishon/H1787 And the sons/H1121 of Dishon/H1787 Amram/H2566 and Eshban/H790 and Ithran/H3506 and Cheran/H3763"
+    },
+    "42": {
+        "translations": {
+            "bsb": {
+                "text": "The sons of Ezer: Bilhan, Zaavan, and Akan. The sons of Dishan: Uz and Aran."
+            }
+        },
+        "interlinear": "The sons/H1121 of Ezer/H687 Bilhan/H1092 and Zavan/H2190 *and Jakan/H3292 The sons/H1121 of Dishan/H1789 Uz/H5780 and Aran/H765"
+    },
+    "43": {
+        "explanation": {
+            "source": "gill",
+            "text": "Now these are the kings that reigned in the land of Edom,.... Which had its name from Esau, who was so called, Genesis 25:30. From hence, to the end of the chapter, an account is given of the kings and dukes of Edom, in the same order as in Genesis 30:31."
+        },
+        "translations": {
+            "bsb": {
+                "text": "These are the kings who reigned in the land of Edom before any king reigned over the Israelites: Bela son of Beor. His city was named Dinhabah."
+            }
+        },
+        "interlinear": "Now these *are the kings/H4428 that reigned/H4427 in the land/H776 of Edom/H123 before/H6440 *any king/H4428 reigned/H4427 over the children/H1121 of Israel/H3478 Bela/H1106 the son/H1121 of Beor/H1160 and the name/H8034 of his city/H5892 *was Dinhabah/H1838"
+    },
+    "44": {
+        "translations": {
+            "bsb": {
+                "text": "When Bela died, Jobab son of Zerah from Bozrah reigned in his place."
+            }
+        },
+        "interlinear": "And when Bela/H1106 was dead/H4191 Jobab/H3103 the son/H1121 of Zerah/H2226 of Bozrah/H1224 reigned/H4427 in his stead"
+    },
+    "45": {
+        "translations": {
+            "bsb": {
+                "text": "When Jobab died, Husham from the land of the Temanites reigned in his place."
+            }
+        },
+        "interlinear": "And when Jobab/H3103 was dead/H4191 Husham/H2367 of the land/H776 of the Temanites/H8489 reigned/H4427 in his stead"
+    },
+    "46": {
+        "translations": {
+            "bsb": {
+                "text": "When Husham died, Hadad son of Bedad, who defeated Midian in the country of Moab, reigned in his place. And the name of his city was Avith."
+            }
+        },
+        "interlinear": "And when Husham/H2367 was dead/H4191 Hadad/H1908 the son/H1121 of Bedad/H911 which smote/H5221 Midian/H4080 in the field/H7704 of Moab/H4124 reigned/H4427 in his stead and the name/H8034 of his city/H5892 *was Avith/H5762"
+    },
+    "47": {
+        "translations": {
+            "bsb": {
+                "text": "When Hadad died, Samlah from Masrekah reigned in his place."
+            }
+        },
+        "interlinear": "And when Hadad/H1908 was dead/H4191 Samlah/H8072 of Masrekah/H4957 reigned/H4427 in his stead"
+    },
+    "48": {
+        "translations": {
+            "bsb": {
+                "text": "When Samlah died, Shaul from Rehoboth on the Euphrates reigned in his place."
+            }
+        },
+        "interlinear": "And when Samlah/H8072 was dead/H4191 Shaul/H7586 of Rehoboth/H7344 by the river/H5104 reigned/H4427 in his stead"
+    },
+    "49": {
+        "translations": {
+            "bsb": {
+                "text": "When Shaul died, Baal-hanan son of Achbor reigned in his place."
+            }
+        },
+        "interlinear": "And when Shaul/H7586 was dead/H4191 Baal-hanan/H1177 the son/H1121 of Achbor/H5907 reigned/H4427 in his stead"
+    },
+    "50": {
+        "translations": {
+            "bsb": {
+                "text": "When Baal-hanan died, Hadad reigned in his place. His city was named Pau, and his wife’s name was Mehetabel daughter of Matred, the daughter of Me-zahab."
+            }
+        },
+        "interlinear": "And when Baal-hanan/H1177 was dead/H4191 Hadad/H1908 reigned/H4427 in his stead and the name/H8034 of his city/H5892 *was Pai/H6464 and his wife’s/H802 name/H8034 *was Mehetabel/H4105 the daughter/H1323 of Matred/H4308 the daughter/H1323 of Mezahab/H4314"
+    },
+    "51": {
+        "translations": {
+            "bsb": {
+                "text": "Then Hadad died. Now the chiefs of Edom were Timna, Alvah, Jetheth,"
+            }
+        },
+        "interlinear": "Hadad/H1908 died/H4191 also And the dukes/H441 of Edom/H123 were duke/H441 Timnah/H8555 duke/H441 Aliah/H5933 duke/H441 Jetheth/H3509"
+    },
+    "52": {
+        "translations": {
+            "bsb": {
+                "text": "Oholibamah, Elah, Pinon,"
+            }
+        },
+        "interlinear": "Duke/H441 Aholibamah/H173 duke/H441 Elah/H425 duke/H441 Pinon/H6373"
+    },
+    "53": {
+        "translations": {
+            "bsb": {
+                "text": "Kenaz, Teman, Mibzar,"
+            }
+        },
+        "interlinear": "Duke/H441 Kenaz/H7073 duke/H441 Teman/H8487 duke/H441 Mibzar/H4014"
+    },
+    "54": {
+        "translations": {
+            "bsb": {
+                "text": "Magdiel, and Iram. These were the chiefs of Edom."
+            }
+        },
+        "interlinear": "Duke/H441 Magdiel/H4025 duke/H441 Iram/H5902 These *are the dukes/H441 of Edom/H123"
+    }
+}

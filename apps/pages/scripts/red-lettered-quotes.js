@@ -9,7 +9,7 @@
  *     explanation. A saying opens in place under its row (rowExpander).
  *   - Every red-letter word: every red-letter passage, book by book. A passage
  *     opens to show its red words, the plain explanation of any saying inside
- *     it, and the older commentary on its verses from assets/explanations/,
+ *     it, and the older commentary on its verses from assets/annotations/,
  *     fetched when the passage is first opened.
  *
  * #i-am-the-bread-of-life opens that saying; #john-6-35-40 opens that passage.
@@ -42,8 +42,9 @@ import {
 } from "../../components/card-bookmarks.js?v=20260927-1";
 
 const DATA = "assets/red-letter-quotes.json";
+// Each verse's { explanation, translations } (see tools/annotations).
 const COMMENTARY = (book, chapter) =>
-    `assets/explanations/${book}/${chapter}.json`;
+    `assets/annotations/${book}/${chapter}.json`;
 // Shared with "Jesus' Spoken Words" on the home page (red-letter-quotes.js).
 const bookmarks = bookmarkStore("dailygrace:bookmarks:red-letter", {
     isId: (id) => typeof id === "string" && id !== "",
@@ -214,9 +215,9 @@ async function loadCommentary(p, holder) {
         h("p", { class: "muted" }, "Loading the older commentary…"),
     );
     try {
-        const notes = await fetchJson(COMMENTARY(p.book, p.chapter));
+        const annotations = await fetchJson(COMMENTARY(p.book, p.chapter));
         const entries = p.verses
-            .map((v) => [v.v, notes[String(v.v)]])
+            .map((v) => [v.v, annotations[String(v.v)]?.explanation])
             .filter(([, n]) => n);
         if (!entries.length) {
             holder.replaceChildren(

@@ -152,6 +152,12 @@ const GUIDES = [
         title: "Following God's Blueprint",
         text: "God's plan to build on: salvation, every day, solving problems his way, and getting ready for Christ's return",
     },
+    {
+        page: "food-for-thought.html",
+        icon: "food-for-thought.svg",
+        title: "Food for Thought",
+        text: "Bible verses to feed our mind, body and spirit",
+    },
 ];
 
 const STYLES = /* css */ `
@@ -947,6 +953,12 @@ const HELP_HTML = /* html */ `
             </li>
             <li>
                 <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16a8 8 0 0 1-16 0z" /><path d="M9 7.5c0-1 1-1.5 1-2.5M13 7.5c0-1 1-1.5 1-2.5" /></svg>
+                </span>
+                <p><strong>Today's Food for Thought.</strong> The "Today's Food for Thought" card, under its banner, serves one topic a day from the Food for Thought guide: a verse, a serving for today and a question to chew on. Everyone gets the same one each day. Tap "Read the full serving" to open it in the guide.</p>
+            </li>
+            <li>
+                <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2 5-5 2 2-5z" /></svg>
                 </span>
                 <p><strong>Today's guiding question.</strong> Further down the page, "Today's Guiding Question" answers one of life's questions from Scripture, with a verse and one thing to try. A different one appears each time you open the page. Tap the play button in its corner to hear it read aloud, tap "Read the full answer" to open it on the Questions We All Ask page, or press and hold the card to bookmark it.</p>
@@ -1102,6 +1114,12 @@ const HELP_HTML = /* html */ `
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21 21 3v18z" /><path d="M8 21v-2M12 21v-3M16 21v-2M21 16h-2M21 12h-3M21 8h-2" /></svg>
                 </span>
                 <p><strong>Following God's Blueprint.</strong> The plan God has drawn for his people, sheet by sheet: the foundation of salvation, the heart of his law beyond the Ten Commandments, what to do every day, how to solve problems his way, how to understand the times, and how to be ready when Jesus comes. Tap any part of the plan to read it in the King James words and in plain words, with steps to build it and a question to ask yourself. At the end, the blueprint test helps you check whether a decision or a resolution follows the Lord's plan.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16a8 8 0 0 1-16 0z" /><path d="M9 7.5c0-1 1-1.5 1-2.5M13 7.5c0-1 1-1.5 1-2.5" /></svg>
+                </span>
+                <p><strong>Food for Thought.</strong> Bible verses to feed your mind, body and spirit, in seven sections: the daily diet, feeding the mind, keeping the body fit, armour for the fight, junk food for the soul, staying in shape, and lessons from the Bible's table. Tap any topic to read its verse, what it guards against, how it feeds you, a serving for today, the signs of hunger and a question to chew on. Filter by mind, body or spirit.</p>
             </li>
             <li>
                 <span class="help-icon">

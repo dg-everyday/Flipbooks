@@ -11,7 +11,7 @@
  * backdrop or Escape do. It grows in with a little overshoot, as the splash
  * and the verse popup do.
  *
- * The PDF pill opens every bookmark, all six kinds, as one PDF in a new tab
+ * The PDF button opens every bookmark, all six kinds, as one PDF in a new tab
  * (assets/scripts/bookmarks-pdf.js, loaded on the first tap). The tab is
  * opened inside the tap, since browsers block one opened later; with the tab
  * blocked, the PDF is downloaded instead. A note under the title says how it
@@ -136,22 +136,21 @@ const STYLES = /* css */ `
     font: 400 clamp(1.5rem, 1.3rem + 1vw, 1.875rem)/1.05 'Germania One', Georgia, serif;
     letter-spacing: .02em;
   }
-  /* The title with the PDF pill beside it. */
+  /* The title with the round PDF button beside it. */
   .bookmarks-title { display: flex; align-items: center; gap: 10px; }
   .bookmarks-pdf {
     display: inline-flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 4px;
-    min-height: 28px;
-    padding: 4px 11px 4px 8px;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
     border: 0;
-    border-radius: 999px;
+    border-radius: 50%;
     background: var(--action);
     color: var(--action-ink);
     box-shadow: 0 3px 8px rgb(0 0 0 / 22%);
-    font: 700 .75rem/1 'Roboto', Arial, sans-serif;
-    letter-spacing: .06em;
     cursor: pointer;
     transition: background-color .15s ease, transform .15s ease;
   }
@@ -349,7 +348,6 @@ const TEMPLATE = /* html */ `
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14" />
                     </svg>
-                    <span>PDF</span>
                 </button>
             </div>
         </div>
@@ -643,7 +641,7 @@ export class BookmarkManager extends HTMLElement {
         }
     }
 
-    // The PDF pill: every bookmark, all six kinds, as one PDF opened in a new
+    // The PDF button: every bookmark, all six kinds, as one PDF opened in a new
     // tab. The builder and the jsPDF library behind it load on the first tap, not
     // with the page, and the whole thing runs on the reader's device.
     async #openPdf() {

@@ -18,7 +18,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const DATA = "assets/commandments-of-god.json";
 
@@ -553,7 +554,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Commandments of God"),
+            h("h1", {}, titleWithInfo("Commandments of God", filters.info)),
             h(
                 "p",
                 { class: "lede" },

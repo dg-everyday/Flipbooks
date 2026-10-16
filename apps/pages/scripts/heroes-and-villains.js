@@ -16,7 +16,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const DATA = "assets/heroes-and-villains.json";
 
@@ -517,7 +518,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Heroes and Villains"),
+            h("h1", {}, titleWithInfo("Heroes and Villains", filters.info)),
             h(
                 "p",
                 { class: "lede" },

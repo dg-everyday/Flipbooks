@@ -77,12 +77,179 @@ const POPOVER = Object.prototype.hasOwnProperty.call(
     HTMLElement.prototype,
     "popover",
 );
+// What each guide holds, how to use it and why it matters, keyed by page file.
+const GUIDE_INFO = "assets/guide-info.json";
+
+let guideInfoData = null;
+let guideInfoDialog = null;
+
+/**
+ * The hero's "About this guide" button: a red "i" after the guide's title
+ * (filterMenu() returns it as info; titleWithInfo() puts it in the title). A
+ * tap opens a popup telling what the guide holds, how to use it, why it
+ * matters, and a verse for it, from assets/guide-info.json under the page's
+ * file name, fetched on the first tap.
+ */
+export function guideInfoButton() {
+    const button = h(
+        "button",
+        {
+            type: "button",
+            class: "guide-info-toggle",
+            "aria-label": "About this guide",
+            title: "About this guide",
+            "aria-haspopup": "dialog",
+        },
+        h("span", { "aria-hidden": "true" }, "i"),
+    );
+    button.addEventListener("click", openGuideInfo);
+    return button;
+}
+
+/**
+ * A hero title with the guide's info button after its last word, for h1:
+ * h("h1", {}, titleWithInfo("Books of the Bible", filters.info)). The last
+ * word and the button are kept together, so the "i" never wraps on its own.
+ */
+export function titleWithInfo(title, info) {
+    const at = title.lastIndexOf(" ") + 1;
+    return [
+        title.slice(0, at),
+        h("span", { class: "title-end" }, title.slice(at), info),
+    ];
+}
+
+function loadGuideInfo() {
+    if (!guideInfoData) {
+        guideInfoData = fetchJson(GUIDE_INFO).catch((error) => {
+            guideInfoData = null; // the next tap tries again
+            throw error;
+        });
+    }
+    return guideInfoData;
+}
+
+function createGuideInfoDialog() {
+    const close = h(
+        "button",
+        { type: "button", class: "guide-info-close", "aria-label": "Close" },
+        "×",
+    );
+    const title = h(
+        "h2",
+        { id: "guide-info-title" },
+        document.querySelector(".hero h1")?.textContent || "This guide",
+    );
+    const body = h("div", { class: "guide-info-body" });
+    const dialog = h(
+        "dialog",
+        { class: "guide-info", "aria-labelledby": "guide-info-title" },
+        h(
+            "article",
+            { class: "guide-info-card" },
+            close,
+            h(
+                "header",
+                { class: "guide-info-head" },
+                h("p", { class: "guide-info-eyebrow" }, "About this guide"),
+                title,
+            ),
+            body,
+        ),
+    );
+    close.addEventListener("click", () => dialog.close());
+    // A tap on the dimmed page around the card closes it too.
+    dialog.addEventListener("click", (e) => {
+        if (e.target === dialog) {
+            dialog.close();
+        }
+    });
+    // The page behind stays put while the popup is open.
+    dialog.addEventListener("close", () => {
+        document.documentElement.classList.remove("guide-info-open");
+    });
+    document.body.append(dialog);
+    return { dialog, title, body };
+}
+
+function guideInfoContent(info) {
+    return [
+        para(info.summary, "guide-info-summary"),
+        h(
+            "section",
+            {},
+            h("h3", {}, "What's inside"),
+            info.inside.map((text) => h("p", {}, text)),
+        ),
+        h(
+            "section",
+            {},
+            h("h3", {}, "How to use it"),
+            h(
+                "ul",
+                {},
+                info.use.map((text) => h("li", {}, text)),
+            ),
+        ),
+        h(
+            "section",
+            {},
+            h("h3", {}, "Why it matters"),
+            info.why.map((text) => h("p", {}, text)),
+        ),
+        info.verse &&
+            h(
+                "blockquote",
+                { class: "guide-info-verse" },
+                h("p", {}, `“${info.verse.text}”`),
+                // In a quotation only a <cite> is linked (scripture-refs.js),
+                // so the reference becomes a pill that opens the passage.
+                h("cite", {}, info.verse.ref),
+            ),
+    ];
+}
+
+async function openGuideInfo() {
+    if (!guideInfoDialog) {
+        guideInfoDialog = createGuideInfoDialog();
+    }
+    const { dialog, title, body } = guideInfoDialog;
+    if (!dialog.open) {
+        dialog.showModal();
+        dialog.scrollTop = 0;
+        document.documentElement.classList.add("guide-info-open");
+    }
+    if (body.dataset.loaded) {
+        return;
+    }
+    body.replaceChildren(h("p", { class: "guide-info-message" }, "Loading…"));
+    const page = location.pathname.split("/").pop();
+    try {
+        const info = (await loadGuideInfo())[page];
+        if (!info) {
+            throw new Error(`No guide information for ${page}`);
+        }
+        title.textContent = info.title;
+        body.replaceChildren(...guideInfoContent(info).filter(Boolean));
+        body.dataset.loaded = "true";
+    } catch (error) {
+        console.warn("The guide information could not be loaded:", error);
+        body.replaceChildren(
+            h(
+                "p",
+                { class: "guide-info-message" },
+                "This guide's description could not be loaded. Please try again.",
+            ),
+        );
+    }
+}
 
 /**
  * The hero's filter menu, so a page opens on its title, its words and its
- * search, and the rest waits a tap away. Returns { button, menu }: the funnel
- * button goes first in the hero (it sits in the top-right corner) and the menu
- * last. The menu holds whatever is passed in, usually the page's counts and
+ * search, and the rest waits a tap away. Returns { button, menu, info }: the
+ * funnel goes first in the hero (it sits in the top-right corner), the menu
+ * last, and the info button (guideInfoButton) at the end of the title, by
+ * titleWithInfo(). The menu holds whatever is passed in, usually the page's counts and
  * filter chips, and pops up under the button over the page; a tap outside it,
  * its close button or Escape puts it away. It stays inside the hero in the
  * document, so the page's own filter code finds its chips as before and the
@@ -214,7 +381,7 @@ export function filterMenu(...content) {
     });
     syncDot();
 
-    return { button, menu };
+    return { button, menu, info: guideInfoButton() };
 }
 
 // A hold on the scroll ends at the reader's first touch, wheel or key, once

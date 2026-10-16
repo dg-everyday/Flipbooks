@@ -29,7 +29,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 import {
     BOOKMARK_STYLES,
     CardHold,
@@ -796,7 +797,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Questions We All Ask"),
+            h("h1", {}, titleWithInfo("Questions We All Ask", filters.info)),
             h(
                 "p",
                 { class: "lede" },

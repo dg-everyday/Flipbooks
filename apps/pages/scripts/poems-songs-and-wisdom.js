@@ -21,7 +21,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const DATA = "assets/poems-songs-and-wisdom.json";
 
@@ -624,7 +625,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Poems, Songs and Wisdom"),
+            h("h1", {}, titleWithInfo("Poems, Songs and Wisdom", filters.info)),
             h(
                 "p",
                 { class: "lede" },

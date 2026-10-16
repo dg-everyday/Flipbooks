@@ -465,6 +465,186 @@ figcaption,
     box-shadow: 0 0 0 2px var(--navy);
 }
 
+/* ---------------------------------------------------------------- about this guide
+   A red "i" after the guide's title opens a popup telling what the guide
+   holds, how to use it and why it matters (guideInfoButton() and
+   titleWithInfo() in apps/pages/scripts/study-utils.js, text in
+   assets/guide-info.json). The one italic on these pages: it is drawn like
+   the information sign, not set as text. */
+
+/* The title's last word and the "i" stay on one line together. */
+.title-end {
+    white-space: nowrap;
+}
+.guide-info-toggle {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.02em;
+    padding: 0 0.04em;
+    border: 0;
+    border-radius: 6px;
+    vertical-align: 0.5em;
+    font: italic 700 0.5em/1 Georgia, "Times New Roman", serif;
+    color: #ef4b3b;
+    background: none;
+    cursor: pointer;
+    transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+/* A 44px tap target around the small letter. */
+.guide-info-toggle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+}
+.guide-info-toggle:hover {
+    color: #ff6a55;
+    transform: scale(1.12);
+}
+.guide-info-toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.guide-info {
+    width: min(620px, 92vw);
+    max-height: 88vh;
+    max-height: 88dvh;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    color: var(--ink);
+    background: var(--paper);
+    box-shadow: 0 24px 60px rgb(0 27 52 / 40%);
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+.guide-info::backdrop {
+    background: rgb(0 27 52 / 60%);
+    backdrop-filter: blur(3px);
+}
+.guide-info[open] {
+    animation: guide-info-in 0.35s cubic-bezier(0.2, 0.9, 0.25, 1.1);
+}
+@keyframes guide-info-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+}
+/* The page behind stays put while the popup is open. */
+html.guide-info-open {
+    overflow: hidden;
+}
+.guide-info-card {
+    position: relative;
+    padding-bottom: 22px;
+}
+/* The guide's own hero, in small: navy, with the title in gold. */
+.guide-info-head {
+    padding: 24px 64px 18px 24px;
+    color: var(--cream);
+    background: radial-gradient(
+            circle at 90% -10%,
+            rgb(225 182 93 / 28%),
+            transparent 45%
+        ),
+        linear-gradient(135deg, var(--navy), var(--navy-2));
+}
+.guide-info-eyebrow {
+    margin: 0 0 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(243 231 210 / 80%);
+}
+.guide-info h2 {
+    margin: 0;
+    font: 400 clamp(1.9rem, 1.5rem + 2vw, 2.6rem) / 1.05 var(--display);
+    color: var(--gold-light);
+}
+.guide-info-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    font: 400 1.7rem/1 var(--body);
+    color: var(--cream);
+    background: rgb(255 255 255 / 10%);
+    cursor: pointer;
+}
+.guide-info-close:hover {
+    background: rgb(255 255 255 / 20%);
+}
+.guide-info-close:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 2px;
+}
+.guide-info-body {
+    padding: 18px 24px 0;
+    font-size: 1.0625rem;
+    line-height: 1.45;
+}
+.guide-info-summary {
+    margin: 0 0 4px;
+    font-size: 1.1875rem;
+    color: var(--navy);
+}
+.guide-info-body section {
+    margin-top: 16px;
+}
+.guide-info-body h3 {
+    margin: 0 0 6px;
+    font: 400 1.35rem/1.2 var(--display);
+    color: var(--navy);
+}
+.guide-info-body p {
+    margin: 0 0 8px;
+}
+.guide-info-body ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.guide-info-body li {
+    margin-bottom: 5px;
+}
+.guide-info-body li::marker {
+    color: var(--gold);
+}
+.guide-info-verse {
+    margin: 20px 0 0;
+    padding: 14px 16px;
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    background: rgb(225 182 93 / 14%);
+}
+.guide-info-verse p {
+    margin: 0 0 8px;
+    font-size: 1.125rem;
+    color: var(--navy);
+}
+/* Upright like the rest of the page: the reference, as a pill. */
+.guide-info-verse cite {
+    display: block;
+    font-style: normal;
+}
+.guide-info-message {
+    color: var(--muted);
+}
+
 .filter-menu {
     /* Placed by script under the funnel; these undo the popover's centring. */
     position: absolute;
@@ -528,8 +708,12 @@ figcaption,
 }
 @media (prefers-reduced-motion: reduce) {
     .filter-toggle,
-    .filter-toggle svg {
+    .filter-toggle svg,
+    .guide-info-toggle {
         transition: none;
+    }
+    .guide-info[open] {
+        animation: none;
     }
     .filter-toggle:hover svg {
         transform: none;
@@ -750,6 +934,12 @@ figcaption,
     .filter-toggle {
         top: 14px;
         right: 14px;
+    }
+    .guide-info-head {
+        padding: 20px 58px 16px 18px;
+    }
+    .guide-info-body {
+        padding: 16px 18px 0;
     }
     .filter-menu {
         padding: 12px 14px 16px;

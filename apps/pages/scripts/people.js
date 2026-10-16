@@ -19,7 +19,8 @@ import {
     refList,
     para,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const PEOPLE_DIR = "assets/peoples/";
 
@@ -403,7 +404,7 @@ function renderList(view, people, navigate) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Peoples of the Bible"),
+            h("h1", {}, titleWithInfo("Peoples of the Bible", filters.info)),
             h(
                 "p",
                 { class: "lede" },

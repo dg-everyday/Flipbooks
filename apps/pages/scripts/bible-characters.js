@@ -17,7 +17,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const DATA = "assets/bible-characters.json";
 
@@ -518,7 +519,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Bible Characters"),
+            h("h1", {}, titleWithInfo("Bible Characters", filters.info)),
             h(
                 "p",
                 { class: "lede" },

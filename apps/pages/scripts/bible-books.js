@@ -15,7 +15,8 @@ import {
     rowExpander,
     followHash,
     filterMenu,
-} from "./study-utils.js?v=20261016-1";
+    titleWithInfo,
+} from "./study-utils.js?v=20261016-5";
 
 const DATA = "assets/bible-books.json";
 const fmt = (n) => n.toLocaleString("en-US");
@@ -466,7 +467,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Books of the Bible"),
+            h("h1", {}, titleWithInfo("Books of the Bible", filters.info)),
             h(
                 "p",
                 { class: "lede" },

@@ -22,8 +22,9 @@ import {
     h,
     followHash,
     filterMenu,
+    titleWithInfo,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261016-1";
+} from "./study-utils.js?v=20261016-5";
 import { openDatabase, query } from "../../../assets/scripts/sqlite-db.js";
 import {
     BOOKMARK_STYLES,
@@ -701,7 +702,7 @@ export async function start(view) {
             "section",
             { class: "hero" },
             filters.button,
-            h("h1", {}, "Did You Know?"),
+            h("h1", {}, titleWithInfo("Did You Know?", filters.info)),
             h(
                 "p",
                 { class: "lede" },

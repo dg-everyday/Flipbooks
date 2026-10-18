@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Proverbs
+1-9 | Wisdom Calls
+10-24 | The Proverbs of Solomon
+25-29 | Copied by the Men of Hezekiah
+30-31 | The Words of Agur and Lemuel

@@ -55,7 +55,7 @@
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
-import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261018-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -929,6 +929,12 @@ const HELP_HTML = /* html */ `
             </li>
             <li>
                 <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" /></svg>
+                </span>
+                <p><strong>Collect stickers.</strong> Stickers are gifts for what you do in Daily Grace: your first Daily Moment and then every tenth, each memory verse you learn, faithful weeks, right answers in Bible Trivia, Food for Thought, Bible stories read to the end, and each book of the Bible you meet. A new sticker pops up when you finish. Tap the DG emblem at the top of the page for My Sticker Album, or for How to earn stickers, a guide to every series with how close you are to the next one. The "My Sticker Album" card, near the bottom of the page after "Following Today's God Blueprint", opens the album too. Tap a sticker there to read its verse or save it full size. Your stickers stay on this device.</p>
+            </li>
+            <li>
+                <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 2 12l5 5M17 7l5 5-5 5M2 12h20" /></svg>
                 </span>
                 <p><strong>Swipe through the week.</strong> Swipe the banner right to go back a day, up to a week. Swipe left to come forward again.</p>
@@ -1013,7 +1019,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5" /><circle class="help-fill" cx="8" cy="12" r="1.8" /></svg>
                 </span>
-                <p><strong>Show your bookmarks.</strong> Press and hold the DG emblem at the top left for half a second; it glows gold, then your bookmarks open. Tap Bible Verses, Did You Know, Bible Sayings, Questions or Blueprint at the top to switch between them. Hold a bookmark there to remove it, which makes room when a list is full. Bookmarks are saved on this device. Tap the red PDF button beside the title to open all of them as one PDF, ready to save, print or share.</p>
+                <p><strong>Show your bookmarks.</strong> Tap the DG emblem at the top of the page, then My Bookmarks. Tap Bible Verses, Did You Know, Bible Sayings, Questions or Blueprint at the top to switch between them. Hold a bookmark there to remove it, which makes room when a list is full. Bookmarks are saved on this device. Tap the red PDF button beside the title to open all of them as one PDF, ready to save, print or share.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1027,9 +1033,15 @@ const HELP_HTML = /* html */ `
         <ul class="help-list">
             <li>
                 <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16" /></svg>
+                </span>
+                <p><strong>Open the menu.</strong> Tap the three lines at the top left of the page to open the Bible Study Guides, with Help and About. The menu slides in from the left. To close it, swipe it to the left, tap the page beside it or press Escape.</p>
+            </li>
+            <li>
+                <span class="help-icon">
                     <img src="${EMBLEM_URL}" alt="" width="26" height="26" />
                 </span>
-                <p><strong>Open the menu.</strong> Tap the DG emblem at the top left of the page (holding it opens your bookmarks instead). The menu slides in from the left. To close it, swipe it to the left, tap the page beside it or press Escape.</p>
+                <p><strong>Your own things.</strong> Tap the DG emblem beside the three lines for My Bookmarks, My Sticker Album, Bookmarking 101 (a short guide to keeping verses and cards) and How to earn stickers. Tap outside the little menu or press Escape to close it.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1141,7 +1153,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon gold">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
                 </span>
-                <p><strong>Bookmark facts, sayings, questions and blueprints.</strong> Press and hold a fact, a saying, "Today's Guiding Question" or "Following Today's God Blueprint" for half a second to bookmark it; on the Questions We All Ask and Following God's Blueprint pages, hold a tile or tap its Bookmark button. They are kept with your verses: press and hold the DG emblem to see them. You can keep up to 50 of each.</p>
+                <p><strong>Bookmark facts, sayings, questions and blueprints.</strong> Press and hold a fact, a saying, "Today's Guiding Question" or "Following Today's God Blueprint" for half a second to bookmark it; on the Questions We All Ask and Following God's Blueprint pages, hold a tile or tap its Bookmark button. They are kept with your verses: tap the DG emblem, then My Bookmarks, to see them. You can keep up to 50 of each.</p>
             </li>
             <li>
                 <span class="help-icon gold">

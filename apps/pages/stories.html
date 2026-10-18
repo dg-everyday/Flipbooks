@@ -92,17 +92,22 @@
                 label="Daily Grace story"
             ></flip-book>
         </div>
+        <!-- Shows a sticker earned for reading to the last page. -->
+        <sticker-gifts album-href="stickers.html"></sticker-gifts>
 
         <script type="module">
             // Same component as the flipbook, different content entirely. Which
             // story to show comes from the query string: ?story=daniel3 reads
             // assets/stories/daniel3.json.
-            import "../../apps/components/flip-book.js?v=20260925-1";
+            import "../../apps/components/flip-book.js?v=20261017-1";
             import {
                 storySlug,
                 loadStory,
                 toFlipPages,
             } from "./scripts/stories.js?v=20261009-1";
+            import { recordStory } from "../../assets/scripts/sticker-progress.js?v=20261018-1";
+            // A sticker earned here is shown as a gift on this page.
+            import "../../apps/components/sticker-gifts.js?v=20261018-1";
 
             const reader = document.getElementById("reader");
             const storyName = document.getElementById("storyName");
@@ -135,6 +140,8 @@
                     if (story.pages.length === 0) {
                         showNothing("That story has no pages yet.");
                     } else {
+                        // Reading to the last page counts toward the stickers.
+                        reader.addEventListener("finish", () => recordStory(slug));
                         reader.pages = toFlipPages(story);
                     }
                 } catch (error) {

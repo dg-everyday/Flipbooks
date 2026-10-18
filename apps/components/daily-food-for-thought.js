@@ -29,6 +29,8 @@
  * Methods      show(date)  show the topic for another day ("YYYY-MM-DD"),
  *                         or today's when date is left out
  * Events       ready   a topic is shown, detail: { id, date }
+ *              read    the reader opened the topic, with "Read the full
+ *                      serving" or its verse pill, detail: { id, date }
  *              error   detail: { message }
  *
  * Fonts: Germania One (title) and Strait (text) are registered on the
@@ -43,7 +45,7 @@
 import { registerFonts } from "../../assets/scripts/fonts.js";
 // The same ?v= token as the other components' imports, so the page loads one
 // copy of the module.
-import { PILL_STYLES, refPill } from "./scripture-refs.js?v=20261002-1";
+import { PILL_STYLES, refPill } from "./scripture-refs.js?v=20261018-1";
 
 const DEFAULT_SRC = "assets/food-for-thought.json";
 const DEFAULT_PAGE = "apps/pages/food-for-thought.html";
@@ -345,6 +347,13 @@ export class DailyFoodForThought extends HTMLElement {
             chewText: $(".chew .text"),
             more: $(".more"),
         };
+        // Opening the topic counts as reading it; the card alone does not.
+        this.#els.more.addEventListener("click", () => this.#read());
+        this.#els.reference.addEventListener("click", (event) => {
+            if (event.target.closest("button")) {
+                this.#read();
+            }
+        });
     }
 
     connectedCallback() {
@@ -416,6 +425,17 @@ export class DailyFoodForThought extends HTMLElement {
         if (this.#pinned === null && this.#date && manilaToday() !== this.#date) {
             this.show();
         }
+    }
+
+    #read() {
+        if (!this.#topic) {
+            return;
+        }
+        this.dispatchEvent(
+            new CustomEvent("read", {
+                detail: { id: this.#topic.id, date: this.#date },
+            }),
+        );
     }
 
     #showMessage(message) {

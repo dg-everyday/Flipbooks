@@ -88,7 +88,7 @@ import {
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "./card-bookmarks.js?v=20260927-1";
+} from "./card-bookmarks.js?v=20261018-1";
 import {
     PULL_TAB_ICON,
     PULL_TAB_STYLES,
@@ -99,7 +99,7 @@ import {
     PILL_STYLES,
     linkScripture,
     refPill,
-} from "./scripture-refs.js?v=20261002-1";
+} from "./scripture-refs.js?v=20261018-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 // The thumbnails are .webp on the media host; .svg is not published.

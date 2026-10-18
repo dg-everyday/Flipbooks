@@ -2,7 +2,7 @@
  * Small helpers shared by the study pages (peoples.html, bible-books.html).
  */
 
-import { watchScripture } from "../../components/scripture-refs.js?v=20261002-1";
+import { watchScripture } from "../../components/scripture-refs.js?v=20261018-1";
 
 // Every study page imports this file, so every Bible reference the pages
 // render, now or later (an opened panel, a filter, the blueprint test), is a

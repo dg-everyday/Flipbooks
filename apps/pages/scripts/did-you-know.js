@@ -24,7 +24,7 @@ import {
     filterMenu,
     titleWithInfo,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261016-5";
+} from "./study-utils.js?v=20261018-1";
 import { openDatabase, query } from "../../../assets/scripts/sqlite-db.js";
 import {
     BOOKMARK_STYLES,
@@ -32,7 +32,7 @@ import {
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20260927-1";
+} from "../../components/card-bookmarks.js?v=20261018-1";
 import {
     BOOK_THUMB_BOUNDS,
     DEFAULT_THUMB_BOUNDS,

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="My Sticker Album — the Daily Grace stickers you have earned: gifts for your Daily Moments, memory verses, Bible Trivia, Food for Thought and more."
+        />
+        <link
+            rel="canonical"
+            href="https://dailygrace.faith/apps/pages/stickers.html"
+        />
+        <!-- The album is the reader's own, kept on their device: nothing here
+             to index or share. -->
+        <meta name="robots" content="noindex" />
+        <meta name="theme-color" content="#001b34" />
+
+        <title>Daily Grace — My Sticker Album</title>
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            href="../../assets/images/apple-touch-icon.png"
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/GermaniaOne-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Strait-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/study-page.css?v=20261016-6"
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/stickers-page.css?v=20261018-1"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="brand" href="stickers.html" aria-label="My Sticker Album">
+                <img
+                    class="brand-logo"
+                    src="../../assets/images/daily-grace-white-480.webp"
+                    alt="Daily Grace"
+                    width="480"
+                    height="160"
+                />
+                <span class="brand-pill">My Stickers</span>
+            </a>
+            <a
+                class="home"
+                href="../../index.html"
+                aria-label="Home"
+                title="Home"
+            >
+                <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m3 10 9-7 9 7"></path>
+                    <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- stickers.js renders the album into this element: the count, the
+             next gifts, then a shelf for each series. #HB-01 opens that
+             sticker, when it has been earned. -->
+        <main id="view">
+            <p class="status">Opening your sticker album…</p>
+        </main>
+
+        <!-- One sticker, opened from its shelf. -->
+        <dialog id="sticker" class="sticker-dialog" aria-labelledby="sticker-title">
+            <div class="sticker-frame">
+                <button
+                    class="sticker-close"
+                    type="button"
+                    aria-label="Close"
+                    data-close
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 6l12 12M18 6 6 18"></path>
+                    </svg>
+                </button>
+                <div class="sticker-body"></div>
+            </div>
+        </dialog>
+
+        <footer class="page-footer">
+            Your stickers are kept on this device. Scripture quotations from
+            the King James Version.
+        </footer>
+
+        <script type="module">
+            import { start } from "./scripts/stickers.js?v=20261018-1";
+            start(
+                document.getElementById("view"),
+                document.getElementById("sticker"),
+            );
+        </script>
+    </body>
+</html>

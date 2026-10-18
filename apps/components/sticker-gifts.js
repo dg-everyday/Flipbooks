@@ -18,14 +18,24 @@
  *   Thursday–Friday    my-sticker-album-banner.webp             navy
  *   Saturday–Sunday    my-sticker-album-banner-apple-red.webp   apple red
  *
+ * With `invite-after`, a reader who leaves the page untouched that many
+ * minutes (no tap, key, scroll or mouse move) is invited to earn stickers:
+ * "You can earn a sticker while using the Daily Grace App", with their next
+ * goal. It waits while the page is hidden, a dialog is open or narration is
+ * playing, comes at most once a visit, and not at all once every sticker is
+ * earned. It has no buttons: a tap on it or anywhere on the page, or
+ * Escape, closes it.
+ *
  * Usage
- *   <sticker-gifts card></sticker-gifts>
+ *   <sticker-gifts card invite-after="5"></sticker-gifts>
  *   <script type="module" src="./apps/components/sticker-gifts.js"></script>
  *
  * Attributes
- *   card        show the album card on the page
- *   album-href  the Sticker Album page, resolved against the page.
- *               Default: apps/pages/stickers.html
+ *   card          show the album card on the page
+ *   album-href    the Sticker Album page, resolved against the page.
+ *                 Default: apps/pages/stickers.html
+ *   invite-after  minutes untouched before the invitation; none without it.
+ *                 Read when the element is connected.
  *
  * Methods      reveal()  show any stickers not yet shown, now
  * Events       giftshown  detail: { ids }
@@ -52,6 +62,16 @@ import { readProgress } from "../../assets/scripts/sticker-progress.js?v=2026101
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const DEFAULT_ALBUM = "apps/pages/stickers.html";
+const STICKERS_ICON = asset("../../assets/images/study-guide-icons/stickers.svg");
+// What counts as the reader using the page, for the invitation.
+const ACTIVITY_EVENTS = [
+    "pointerdown",
+    "pointermove",
+    "keydown",
+    "wheel",
+    "scroll",
+    "touchstart",
+];
 // The banners, each with the colour of its plain right-hand side, which the
 // card below the banner takes so the two read as one piece.
 const BANNERS = {
@@ -306,14 +326,51 @@ const STYLES = /* css */ `
   .second { flex: none; border: 1.5px solid rgb(255 255 255 / 35%); background: none; color: #fff; }
   .main:focus-visible, .second:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
 
+  /* ----- The invitation: a card in the middle of the screen, on any size,
+     with the album's star over its rays of light. ----- */
+  dialog.invite {
+    width: min(380px, calc(100% - 32px));
+    /* A modal dialog is pinned to every edge, so "auto" would fill the screen. */
+    height: fit-content;
+    max-height: calc(100% - 32px);
+    margin: auto;
+    border-radius: 24px;
+    /* The album banner's apple red, glowing lighter behind the star. */
+    background:
+      radial-gradient(90% 60% at 50% 25%, #c21f2a 0%, transparent 70%),
+      ${BANNERS.appleRed.colour};
+    box-shadow: 0 30px 80px rgb(0 0 0 / 45%);
+    overflow-y: auto;
+  }
+  .invite { cursor: pointer; }
+  .invite .lead { color: #f7e3e4; }
+  .invite[open] { animation: rise .3s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px) scale(.97); } }
+  .invite .body { gap: 12px; padding: 28px 24px 24px; overflow: visible; }
+  .invite .burst { width: 132px; margin-bottom: 4px; }
+  .invite .heading { font-size: 1.95rem; }
+
   @media (prefers-reduced-motion: reduce) {
     .card { transition: none; }
-    .chevron, .burst::before, .burst img, .grid img { animation: none; }
+    .chevron, .burst::before, .burst img, .grid img, .invite[open] { animation: none; }
   }
 `;
 
 const escapeHtml = (text) =>
     String(text ?? "").replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+
+/** Whether a component on the page is playing narration (its `playing` is true). */
+function anyPlaying(root = document) {
+    for (const element of root.querySelectorAll("*")) {
+        if (element.playing === true) {
+            return true;
+        }
+        if (element.shadowRoot && anyPlaying(element.shadowRoot)) {
+            return true;
+        }
+    }
+    return false;
+}
 
 /** Whether any dialog is open on the page, in a component's shadow root or not. */
 function anyDialogOpen(root = document) {
@@ -337,11 +394,28 @@ export class StickerGifts extends HTMLElement {
     #timer = 0;
     #quietLooks = 0;
     #checking = null;
-    #onProgress = () => this.#check();
+    #invite;
+    #inviteAfter = 0;
+    #inviteTimer = 0;
+    #invited = false;
+    #lastActive = 0;
+    #onActivity = () => {
+        this.#lastActive = Date.now();
+    };
+    // Progress made while the page is still loading is checked once it has
+    // loaded (#onLoad), with everything else.
+    #onProgress = () => {
+        if (document.readyState === "complete") {
+            this.#check();
+        }
+    };
+    #onLoad = () => this.#check();
     // Coming back to the page on another day may bring another banner.
     #onVisible = () => {
         if (document.visibilityState === "visible") {
             this.#showBanner();
+            // Coming back to the page counts as using it.
+            this.#onActivity();
         }
     };
 
@@ -376,10 +450,23 @@ export class StickerGifts extends HTMLElement {
             <a class="main">Open my album</a>
           </div>
         </div>
+      </dialog>
+      <dialog class="invite" aria-labelledby="invite-title" aria-describedby="invite-lead">
+        <div class="body">
+          <div class="burst"><img src="${STICKERS_ICON}" alt="" width="132" height="132" loading="lazy" /></div>
+          <p class="label">Stickers to collect</p>
+          <h2 class="heading" id="invite-title" tabindex="-1">You can earn a sticker!</h2>
+          <p class="lead" id="invite-lead">You can earn a sticker while using the Daily Grace App. Each one goes into your own Sticker Album.</p>
+          <p class="why invite-next" hidden></p>
+        </div>
       </dialog>`;
         this.#card = this.#root.querySelector(".card");
         this.#dialog = this.#root.querySelector("dialog");
-        for (const button of this.#root.querySelectorAll(".close, .second")) {
+        this.#invite = this.#root.querySelector(".invite");
+        // A tap on the invitation or anywhere around it closes it (a modal
+        // dialog takes every tap on the page); Escape does too.
+        this.#invite.addEventListener("click", () => this.#invite.close());
+        for (const button of this.#dialog.querySelectorAll(".close, .second")) {
             button.addEventListener("click", () => this.#dialog.close());
         }
         this.#dialog.addEventListener("click", (event) => {
@@ -393,18 +480,34 @@ export class StickerGifts extends HTMLElement {
         registerFonts();
         document.addEventListener("stickerprogress", this.#onProgress);
         document.addEventListener("visibilitychange", this.#onVisible);
-        this.#check();
+        // Working out the awards reads the sticker list and the month's verses,
+        // so it waits for the page to finish loading first.
+        if (document.readyState === "complete") {
+            this.#check();
+        } else {
+            window.addEventListener("load", this.#onLoad, { once: true });
+        }
+        this.#watchIdle();
     }
 
     disconnectedCallback() {
         document.removeEventListener("stickerprogress", this.#onProgress);
         document.removeEventListener("visibilitychange", this.#onVisible);
+        window.removeEventListener("load", this.#onLoad);
         clearTimeout(this.#timer);
         this.#timer = 0;
+        this.#stopWatchingIdle();
     }
 
+    // Upgrade calls this for the attributes already set, before
+    // connectedCallback; until the page has loaded, the first check draws the
+    // card instead.
     attributeChangedCallback(name, oldValue, newValue) {
-        if (oldValue !== newValue && this.isConnected) {
+        if (
+            oldValue !== newValue &&
+            this.isConnected &&
+            document.readyState === "complete"
+        ) {
             this.#renderCard();
         }
     }
@@ -540,6 +643,88 @@ export class StickerGifts extends HTMLElement {
           <h2 class="heading" id="gift-title" tabindex="-1">${heading}</h2>
           ${lead}
           <ul class="grid">${items}</ul>`;
+    }
+
+    /* ----- The invitation ----- */
+
+    // Watch for the reader leaving the page untouched for `invite-after`
+    // minutes. Activity only notes the time; a single timer looks again when
+    // the quiet would be up.
+    #watchIdle() {
+        const minutes = Number.parseFloat(this.getAttribute("invite-after"));
+        if (this.#invited || !(minutes > 0)) {
+            return;
+        }
+        this.#inviteAfter = minutes * 60_000;
+        this.#onActivity();
+        for (const type of ACTIVITY_EVENTS) {
+            document.addEventListener(type, this.#onActivity, {
+                capture: true,
+                passive: true,
+            });
+        }
+        this.#scheduleIdleCheck(this.#inviteAfter);
+    }
+
+    #stopWatchingIdle() {
+        for (const type of ACTIVITY_EVENTS) {
+            document.removeEventListener(type, this.#onActivity, {
+                capture: true,
+            });
+        }
+        clearTimeout(this.#inviteTimer);
+        this.#inviteTimer = 0;
+    }
+
+    #scheduleIdleCheck(delay) {
+        clearTimeout(this.#inviteTimer);
+        this.#inviteTimer = setTimeout(() => this.#checkIdle(), delay);
+    }
+
+    #checkIdle() {
+        const left = this.#inviteAfter - (Date.now() - this.#lastActive);
+        if (left > 0) {
+            this.#scheduleIdleCheck(left);
+            return;
+        }
+        // Reading the Moment, listening to narration or being away from the
+        // page is not idling: the quiet starts over.
+        if (document.hidden || anyDialogOpen() || anyPlaying()) {
+            this.#onActivity();
+            this.#scheduleIdleCheck(this.#inviteAfter);
+            return;
+        }
+        this.#showInvite();
+    }
+
+    /** Invite the reader to earn stickers, with their next goal. */
+    async #showInvite() {
+        this.#invited = true;
+        this.#stopWatchingIdle();
+        const next = this.#invite.querySelector(".invite-next");
+        try {
+            const stickers = await loadStickers();
+            const goal = pickGoal(
+                goals(readProgress(), readCollection(), stickers),
+            );
+            if (!goal) {
+                return; // every sticker is earned
+            }
+            next.textContent = `Next: ${goal.text}.`;
+            next.hidden = false;
+        } catch {
+            next.hidden = true;
+        }
+        // Something opened while the stickers loaded: wait for another quiet.
+        if (!this.isConnected || anyDialogOpen()) {
+            this.#invited = false;
+            if (this.isConnected) {
+                this.#watchIdle();
+            }
+            return;
+        }
+        this.#invite.showModal();
+        this.#invite.querySelector(".heading").focus();
     }
 
     /** Today's banner, with the card in its colour. */

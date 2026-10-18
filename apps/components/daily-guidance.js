@@ -451,6 +451,7 @@ export class DailyGuidance extends HTMLElement {
     #topic = null;
     #topics = [];
     #loading = null;
+    #nearObserver = null;
     #hold;
     #listHold;
     #audio = null;
@@ -473,7 +474,7 @@ export class DailyGuidance extends HTMLElement {
         <button class="pdf" type="button" title="Open as a PDF" hidden>${PDF_ICON}</button>
         <button class="audio" type="button" aria-pressed="false" hidden></button>
         <div class="emblem">
-          <img src="${EMBLEM_URL}" alt="Daily Grace" width="78" height="78" />
+          <img src="${EMBLEM_URL}" alt="Daily Grace" width="78" height="78" loading="lazy" />
         </div>
         <h3 class="title" id="title">Today's Guiding Question</h3>
         <p class="section" hidden></p>
@@ -551,10 +552,7 @@ export class DailyGuidance extends HTMLElement {
         addEventListener("pageshow", this.#onPageShow);
         bookmarks.addEventListener("change", this.#syncBookmarks);
         this.#syncBookmarks();
-        // A bookmarks list waits for showBookmarks() to ask for the file.
-        if (!this.#loading && !this.hasAttribute("bookmarks")) {
-            this.#load();
-        }
+        this.#loadWhenNear();
     }
 
     disconnectedCallback() {
@@ -562,6 +560,8 @@ export class DailyGuidance extends HTMLElement {
         bookmarks.removeEventListener("change", this.#syncBookmarks);
         this.#hold.cancel();
         this.#listHold.cancel();
+        this.#nearObserver?.disconnect();
+        this.#nearObserver = null;
         this.#stopAudio();
     }
 
@@ -853,6 +853,46 @@ export class DailyGuidance extends HTMLElement {
         link.setAttribute("aria-label", `Read the full answer: ${topic.name}`);
         card.append(link);
         return card;
+    }
+
+    // The guidance file is a fifth of a megabyte, and the card sits below
+    // the banner and the poster: fetch it only as the card nears the screen, so
+    // it never competes with what is read first. A bookmarks list waits for
+    // showBookmarks() to ask for it.
+    #loadWhenNear() {
+        if (
+            this.#loading ||
+            this.#nearObserver ||
+            this.hasAttribute("bookmarks")
+        ) {
+            return;
+        }
+        this.#nearObserver = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) {
+                    return;
+                }
+                this.#nearObserver.disconnect();
+                this.#nearObserver = null;
+                if (!this.#loading) {
+                    this.#load();
+                }
+            },
+            { rootMargin: "100% 0px" },
+        );
+        // Until the rest of the page has arrived, every card is short, so even the
+        // last one can sit within a screen of view: wait for the load event first.
+        const observer = this.#nearObserver;
+        const observe = () => {
+            if (observer === this.#nearObserver) {
+                observer.observe(this);
+            }
+        };
+        if (document.readyState === "complete") {
+            observe();
+        } else {
+            window.addEventListener("load", observe, { once: true });
+        }
     }
 
     #load() {

@@ -45,10 +45,11 @@
             rel="apple-touch-icon"
             href="assets/images/apple-touch-icon.png"
         />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20261018-1" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20261018-2" />
+        <!-- Roboto's Latin subset; the full font loads only for other scripts. -->
         <link
             rel="preload"
-            href="assets/fonts/Roboto-Variable.woff2"
+            href="assets/fonts/Roboto-Variable-Latin.woff2"
             as="font"
             type="font/woff2"
             crossorigin
@@ -103,21 +104,29 @@
                         day: "numeric",
                         year: "numeric",
                     });
-                    const preload = (href, priority) => {
+                    const preload = (href, priority, crossOrigin) => {
                         const link = document.createElement("link");
                         link.rel = "preload";
                         link.as = "image";
                         link.href = href;
                         link.fetchPriority = priority;
+                        // Must match the <img>, or the preload goes unused.
+                        if (crossOrigin) {
+                            link.crossOrigin = crossOrigin;
+                        }
                         document.head.append(link);
                     };
                     preload(
                         `${media}banner/${parts.year}/${month}/daily-grace-${iso}.webp`,
                         "high",
                     );
+                    // <poster-card> loads the poster with CORS, for sharing. On
+                    // a phone the poster is the largest thing on the first
+                    // screen, so it is wanted as soon as the banner.
                     preload(
                         `${media}images/sources/${parts.year}/${month}/${dateName}.webp`,
-                        "auto",
+                        "high",
+                        "anonymous",
                     );
                 })
                 // Only a head start: the components fetch the files anyway.
@@ -273,7 +282,11 @@
                         class="card"
                     ></bible-sayings>
                     <gods-blueprint id="gods-blueprint"></gods-blueprint>
-                    <sticker-gifts id="sticker-gifts" card></sticker-gifts>
+                    <sticker-gifts
+                        id="sticker-gifts"
+                        card
+                        invite-after="5"
+                    ></sticker-gifts>
                 </section>
             </main>
 
@@ -292,24 +305,35 @@
              (apps/components/sponsor-splash.js). -->
         <sponsor-splash id="splash"></sponsor-splash>
         <bible-trivia id="bible-trivia" auto></bible-trivia>
-        <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
-        <script src="assets/scripts/sql_script.js?v=20261017-1" defer></script>
-        <script src="assets/scripts/script.js?v=20261018-1" defer></script>
+        <!-- sql.js is fetched by sql_script.js when a database is first opened.
+             The modules below run only after these two, in order, so they are
+             fetched at high priority: deferred scripts default to low, which
+             left every component waiting on two small files. -->
         <script
-            type="module"
-            src="apps/components/banner-slider.js?v=20261018-1"
+            src="assets/scripts/sql_script.js?v=20261017-1"
+            defer
+            fetchpriority="high"
+        ></script>
+        <script
+            src="assets/scripts/script.js?v=20261018-1"
+            defer
+            fetchpriority="high"
         ></script>
         <script
             type="module"
-            src="apps/components/poster-card.js?v=20261018-1"
+            src="apps/components/banner-slider.js?v=20261018-2"
         ></script>
         <script
             type="module"
-            src="apps/components/daily-moment.js?v=20261017-1"
+            src="apps/components/poster-card.js?v=20261018-2"
         ></script>
         <script
             type="module"
-            src="apps/components/memory-verse.js?v=20261018-1"
+            src="apps/components/daily-moment.js?v=20261018-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/memory-verse.js?v=20261018-2"
         ></script>
         <script
             type="module"
@@ -317,19 +341,19 @@
         ></script>
         <script
             type="module"
-            src="apps/components/daily-guidance.js?v=20261018-1"
+            src="apps/components/daily-guidance.js?v=20261018-2"
         ></script>
         <script
             type="module"
-            src="apps/components/daily-food-for-thought.js?v=20261018-1"
+            src="apps/components/daily-food-for-thought.js?v=20261018-2"
         ></script>
         <script
             type="module"
-            src="apps/components/gods-blueprint.js?v=20261018-1"
+            src="apps/components/gods-blueprint.js?v=20261018-2"
         ></script>
         <script
             type="module"
-            src="apps/components/red-letter-quotes.js?v=20261018-1"
+            src="apps/components/red-letter-quotes.js?v=20261018-2"
         ></script>
         <script
             type="module"
@@ -347,11 +371,11 @@
              shows the album card; it loads sticker-progress.js itself. -->
         <script
             type="module"
-            src="apps/components/sticker-gifts.js?v=20261018-2"
+            src="apps/components/sticker-gifts.js?v=20261018-7"
         ></script>
         <script
             type="module"
-            src="apps/components/dg-menu.js?v=20261018-1"
+            src="apps/components/dg-menu.js?v=20261018-3"
         ></script>
         <script
             type="module"
@@ -359,11 +383,11 @@
         ></script>
         <script
             type="module"
-            src="apps/components/study-guide-menu.js?v=20261018-1"
+            src="apps/components/study-guide-menu.js?v=20261018-2"
         ></script>
         <script
             type="module"
-            src="apps/components/bookmark-manager.js?v=20261016-1"
+            src="apps/components/bookmark-manager.js?v=20261018-1"
         ></script>
         <script
             type="module"

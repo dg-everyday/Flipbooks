@@ -58,7 +58,7 @@ documented in a header comment at the top of its file.
 | `<did-you-know>` | `apps/components/did-you-know.js` | Reads the facts from `assets/db/didyouknow.db` through sql.js; a refresh never repeats the previous batch. Emits `verse-request` when a reference is tapped. Holding a fact bookmarks it (up to 50); with the `bookmarks` attribute it lists only those, with no banner. |
 | `<bible-sayings>` | `apps/components/bible-sayings.js` | Sayings from `assets/bible-sayings.json`; tapping one pops up the whole entry. Holding a saying bookmarks it (up to 50); `bookmarks` works as on `<did-you-know>`. |
 | `<bible-trivia>` | `apps/components/bible-trivia.js` | Modal trivia popup built from one random `did_you_know` row: its `Book` is the answer, two of its `Similar_books` are the decoys. Cannot be dismissed until answered; then it glows green or red, plays a sound and closes on the next tap or after three seconds. |
-| `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. When `images/sources/<YYYY>/<month>/<Month D, YYYY>.mp4` exists it loops muted over the poster while the card is on screen (not on the comic side, nor for reduced motion or Save-Data); without it the poster image shows. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. |
+| `<poster-card>` | `apps/components/poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. When `images/sources/<YYYY>/<month>/<Month D, YYYY>.mp4` exists it loops muted over the poster while the card is on screen, once the page has loaded (not on the comic side, nor for reduced motion or Save-Data); without it the poster image shows. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. The poster is loaded with CORS (`crossorigin="anonymous"`) so the share file is drawn from it rather than downloaded again. |
 | `<daily-moment>` | `apps/components/daily-moment.js` | The guided Moment: a 16:9 card playing the day of the week's clip, `assets/images/moment/moment_<day>.mp4` (e.g. `moment_monday.mp4`; first frame `moment_<day>.webp`; it loops only while in view, and not for reduced motion or Save-Data), with its status in a see-through green band, that opens a full-screen walk through the day from its month's file under `assets/verses/`. The Listen screen plays the day's poster video over the poster when there is one, as `<poster-card>` does. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. |
 | `<memory-verse>` | `apps/components/memory-verse.js` | The week's verse (Sunday to Saturday, Asia/Manila): the entry marked `"memory": true` among that week's days in `assets/verses/`, else Sunday's. Seven practices, one step on per day practised (not per calendar day); "I had it" on the last marks it learned and turns the card gold. Days practised and verses learned stay in `localStorage`. `<daily-moment memory-verse="<id>">` adds a button for it on today's Amen screen. |
 | `<daily-food-for-thought>` | `apps/components/daily-food-for-thought.js` | Today's serving from the Food for Thought guide, on a parchment card under its banner (`assets/images/food-for-thought-assets/fft-banner.webp`): the topic's section and areas (with their badges), its name, what it guards against, its verse, the serving for today and a question to chew on, and a link to the topic on `apps/pages/food-for-thought.html`. One topic per Asia/Manila day, the same for everyone, in the guide's order, starting again after the last; `show("YYYY-MM-DD")` shows another day's. |
@@ -87,6 +87,28 @@ and the `og:image` tags stay full URLs because crawlers do not run scripts.
 Germania One, Strait, and Roboto are registered on the *document* by
 `assets/scripts/fonts.js`, because browsers do not reliably load `@font-face`
 declared inside a shadow root.
+
+Roboto comes in two files: `Roboto-Variable-Latin.woff2` (52 KB, the Latin
+alphabet and punctuation, preloaded by `index.html`) and the full
+`Roboto-Variable.woff2` (139 KB), which a browser fetches only for a letter
+outside the subset that Roboto has, such as Greek or Cyrillic. Both
+`@font-face` pairs (`assets/styles/styles.css` and `fonts.js`) carry the same
+`unicode-range`s. Rebuild the subset, in `assets/fonts/`, with:
+
+```sh
+pyftsubset Roboto-Variable.woff2 --layout-features='*' --flavor=woff2 \
+  --output-file=Roboto-Variable-Latin.woff2 \
+  --unicodes="U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+```
+
+On the homepage the extras wait for the page to finish loading, so the banner
+and the poster have the connection to themselves: the banner and poster
+videos, the banners a swipe away, the swipe hint and the sticker check. The
+Guiding Question, Jesus' Spoken Words and God's Blueprint cards, like Did You
+Know? and Bible Sayings, fetch their files only as they near the screen.
+`banner-slider` and `poster-card` hold their space in `styles.css` until their
+scripts run (`:not(:defined)`), so keep those sizes in step with the
+components.
 
 ## Scripts
 

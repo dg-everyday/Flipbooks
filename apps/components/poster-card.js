@@ -46,9 +46,14 @@
  *                            where `as` is 'image' or 'link'
  *
  * The audio file is only requested when the play button is first pressed,
- * and the video when it first plays. The flip is skipped, and the video not
- * loaded, when the user prefers reduced motion; the video is not loaded with
- * Save-Data on either.
+ * and the video when it first plays, which waits for the page to finish
+ * loading so the poster has the connection to itself. The flip is skipped,
+ * and the video not loaded, when the user prefers reduced motion; the video
+ * is not loaded with Save-Data on either.
+ *
+ * The poster is requested with CORS (crossorigin="anonymous"), the way the
+ * share button fetches it, so the two share one download; the media host
+ * answers with Vary: Origin, which keeps a plain request's copy apart.
  *
  * CSS custom properties
  *   --poster-card-padding, --poster-card-bg, --poster-audio-bg,
@@ -306,15 +311,32 @@ function dateParts(dateAttr) {
 }
 
 /**
- * The image at `src` as a JPEG file to share, named after it:
- * "Daily Grace - October 3, 2026 - Comic.jpg".
+ * The image at `src`, ready to draw. The card's own <img> is used when it
+ * already shows `src`: it is loaded with CORS, so a canvas may read it, and
+ * the media host's files are not kept in the HTTP cache, so fetching would
+ * download the poster a second time. Otherwise it is fetched.
  */
-async function shareFile(src) {
+async function imageBitmap(src, image) {
+    if (image?.complete && image.naturalWidth && image.src === src) {
+        try {
+            return await createImageBitmap(image);
+        } catch {
+            // Not readable after all (no CORS): fetch it instead.
+        }
+    }
     const response = await fetch(src);
     if (!response.ok) {
         throw new Error(`Unable to load ${src} (${response.status})`);
     }
-    const bitmap = await createImageBitmap(await response.blob());
+    return createImageBitmap(await response.blob());
+}
+
+/**
+ * The image at `src` as a JPEG file to share, named after it:
+ * "Daily Grace - October 3, 2026 - Comic.jpg". `image` is the card's <img>.
+ */
+async function shareFile(src, image) {
+    const bitmap = await imageBitmap(src, image);
     const canvas = document.createElement("canvas");
     canvas.width = bitmap.width;
     canvas.height = bitmap.height;
@@ -388,7 +410,7 @@ export class PosterCard extends HTMLElement {
           <!-- The posters' usual size, so the card holds its space while one
                loads instead of pushing the page down when it lands. -->
           <span class="face">
-            <img class="poster" alt="" width="941" height="1672" />
+            <img class="poster" alt="" width="941" height="1672" crossorigin="anonymous" />
             <video class="video" width="941" height="1672" muted loop playsinline preload="auto"
               disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1"></video>
           </span>
@@ -462,6 +484,9 @@ export class PosterCard extends HTMLElement {
             this.#syncVideo();
         });
         this.#viewObserver.observe(this.#wrap);
+        if (document.readyState !== "complete") {
+            window.addEventListener("load", this.#syncVideo, { once: true });
+        }
     }
 
     disconnectedCallback() {
@@ -469,6 +494,7 @@ export class PosterCard extends HTMLElement {
         clearInterval(this.#dateTimer);
         document.removeEventListener("visibilitychange", this.#checkDate);
         document.removeEventListener("visibilitychange", this.#syncVideo);
+        window.removeEventListener("load", this.#syncVideo);
         this.#viewObserver?.disconnect();
         this.#viewObserver = null;
         this.#video.pause();
@@ -476,11 +502,13 @@ export class PosterCard extends HTMLElement {
 
     // The day's video loops over the poster while the card is on screen and the
     // poster, not the comic, is up; not at all when the reader asks for less
-    // motion or to save data. It is first fetched when it first plays. A day
-    // without one fails once and is left alone, the poster image showing.
+    // motion or to save data. It is first fetched when it first plays, once the
+    // page has finished loading. A day without one fails once and is left
+    // alone, the poster image showing.
     #syncVideo = () => {
         const video = this.#video;
         const play =
+            document.readyState === "complete" &&
             this.#visible &&
             !document.hidden &&
             !this.#comic &&
@@ -657,7 +685,7 @@ export class PosterCard extends HTMLElement {
         let entry = this.#shareFiles.get(src);
         if (!entry) {
             entry = { file: null, promise: null };
-            entry.promise = shareFile(src).then(
+            entry.promise = shareFile(src, this.#poster).then(
                 (file) => (entry.file = file),
                 (error) => {
                     // A blip loading the image should not stop a later tap from trying again.

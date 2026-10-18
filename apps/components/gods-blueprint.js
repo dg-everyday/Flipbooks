@@ -467,6 +467,7 @@ export class GodsBlueprint extends HTMLElement {
     #item = null;
     #items = [];
     #loading = null;
+    #nearObserver = null;
     #hold;
     #listHold;
     // Coming back with the Back button can restore the page from the
@@ -487,7 +488,7 @@ export class GodsBlueprint extends HTMLElement {
         <span class="corner br" aria-hidden="true"></span>
         <button class="pdf" type="button" title="Open as a PDF" hidden>${PDF_ICON}</button>
         <div class="emblem">
-          <img src="${ICON_URL}" alt="" width="54" height="54" />
+          <img src="${ICON_URL}" alt="" width="54" height="54" loading="lazy" />
         </div>
         <h3 class="title" id="title">Following Today's God Blueprint</h3>
         <p class="sheet" hidden><span class="number"></span><span class="part"></span></p>
@@ -563,10 +564,7 @@ export class GodsBlueprint extends HTMLElement {
         addEventListener("pageshow", this.#onPageShow);
         bookmarks.addEventListener("change", this.#syncBookmarks);
         this.#syncBookmarks();
-        // A bookmarks list waits for showBookmarks() to ask for the file.
-        if (!this.#loading && !this.hasAttribute("bookmarks")) {
-            this.#load();
-        }
+        this.#loadWhenNear();
     }
 
     disconnectedCallback() {
@@ -574,6 +572,8 @@ export class GodsBlueprint extends HTMLElement {
         bookmarks.removeEventListener("change", this.#syncBookmarks);
         this.#hold.cancel();
         this.#listHold.cancel();
+        this.#nearObserver?.disconnect();
+        this.#nearObserver = null;
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -786,6 +786,46 @@ export class GodsBlueprint extends HTMLElement {
         link.setAttribute("aria-label", `Open the full plan: ${item.name}`);
         card.append(link);
         return card;
+    }
+
+    // The blueprint file is about 150 KB, and the card sits below
+    // the banner and the poster: fetch it only as the card nears the screen, so
+    // it never competes with what is read first. A bookmarks list waits for
+    // showBookmarks() to ask for it.
+    #loadWhenNear() {
+        if (
+            this.#loading ||
+            this.#nearObserver ||
+            this.hasAttribute("bookmarks")
+        ) {
+            return;
+        }
+        this.#nearObserver = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) {
+                    return;
+                }
+                this.#nearObserver.disconnect();
+                this.#nearObserver = null;
+                if (!this.#loading) {
+                    this.#load();
+                }
+            },
+            { rootMargin: "100% 0px" },
+        );
+        // Until the rest of the page has arrived, every card is short, so even the
+        // last one can sit within a screen of view: wait for the load event first.
+        const observer = this.#nearObserver;
+        const observe = () => {
+            if (observer === this.#nearObserver) {
+                observer.observe(this);
+            }
+        };
+        if (document.readyState === "complete") {
+            observe();
+        } else {
+            window.addEventListener("load", observe, { once: true });
+        }
     }
 
     #load() {

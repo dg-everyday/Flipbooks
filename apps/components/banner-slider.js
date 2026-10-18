@@ -41,8 +41,10 @@
  * When a day has a video, it plays over the banner, muted and looping, once
  * it has started; until then, and for good when there is none or it cannot
  * play (a missing file, autoplay refused), the banner image shows as before.
- * The image stays underneath, giving the banner its size and alt text. With
- * reduced motion preferred, the video is not loaded.
+ * The image stays underneath, giving the banner its size and alt text. The
+ * video waits for the page to finish loading, so it never shares the
+ * connection with the banner and poster being read; with reduced motion
+ * preferred, or Save-Data on, it is not loaded.
  *
  * Methods      previous(), next()  step a day back or forward, with the slide
  * Properties   daysAgo (read-only), date (read-only, YYYY-MM-DD)
@@ -77,6 +79,16 @@ import {
     versesFileUrl,
 } from "./daily-verses.js?v=20261004-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
+
+// Settles once the page has finished loading. The extras (the video, the
+// banners a swipe away) wait for it, so what is read first arrives first.
+const pageLoaded = new Promise((resolve) => {
+    if (document.readyState === "complete") {
+        resolve();
+    } else {
+        window.addEventListener("load", resolve, { once: true });
+    }
+});
 
 // The passage popup, loaded on the first tap. Its ?v= token is not stamped by
 // the deploy, so bump it here when verse-popup.js changes.
@@ -138,6 +150,8 @@ const STYLES = /* css */ `
     display: flex;
     align-items: center;
     gap: 4px;
+    /* The book symbol's height, held until the verse brings the symbol. */
+    min-height: 36px;
     margin: 18px 8px 6px;
     color: var(--banner-slider-heading-ink);
     font: 400 clamp(1.0625rem, .95rem + .5vw, 1.25rem)/1.3 'Strait', 'Roboto', Arial, sans-serif;
@@ -274,7 +288,8 @@ const STYLES = /* css */ `
     outline: 2px solid var(--banner-slider-focus);
     outline-offset: -2px;
   }
-  .reflection:disabled { cursor: default; }
+  /* While the reflection loads, hold the three lines it will fill. */
+  .reflection:disabled { min-height: 4.2em; cursor: default; }
   .reflection[aria-expanded="false"] .reflection-text {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -683,7 +698,7 @@ export class BannerSlider extends HTMLElement {
     #showVideo(day) {
         const video = this.#video;
         video.classList.remove("playing");
-        if (this.#reducedMotion.matches) {
+        if (this.#reducedMotion.matches || navigator.connection?.saveData) {
             if (video.hasAttribute("src")) {
                 video.removeAttribute("src");
                 video.load();
@@ -692,6 +707,15 @@ export class BannerSlider extends HTMLElement {
         }
         if (video.getAttribute("src") === day.video) {
             video.play().catch(() => {});
+            return;
+        }
+        if (document.readyState !== "complete") {
+            video.pause();
+            pageLoaded.then(() => {
+                if (this.#day === day) {
+                    this.#showVideo(day);
+                }
+            });
             return;
         }
         video.src = day.video;
@@ -767,19 +791,19 @@ export class BannerSlider extends HTMLElement {
     }
 
     // Warm the cache for the banners one swipe away, so they are ready to slide
-    // in. They wait for the banner on show, and then ask for little, so they
-    // never hold up the day being read or the poster below it.
+    // in. They wait for the banner on show and for the page to finish loading,
+    // and then ask for little, so they never hold up the day being read or the
+    // poster below it.
     #preloadAround(banner, daysAgo) {
-        this.#banner
-            .decode()
-            .catch(() => {})
-            .then(() => {
+        Promise.all([this.#banner.decode().catch(() => {}), pageLoaded]).then(
+            () => {
                 if (this.#day?.banner !== banner) {
                     return;
                 } // the reader has moved on
                 this.#preload(daysAgo + 1);
                 this.#preload(daysAgo - 1);
-            });
+            },
+        );
     }
 
     #preload(daysAgo) {
@@ -946,6 +970,12 @@ export class BannerSlider extends HTMLElement {
         }
         if (document.hidden || this.#covered()) {
             this.#hintTimer = setTimeout(() => this.#playHint(), HINT_RETRY);
+            return;
+        }
+        // The hint fetches yesterday's banner, so it waits for the page to
+        // finish loading rather than slow today's banner and poster.
+        if (document.readyState !== "complete") {
+            pageLoaded.then(() => this.#playHint());
             return;
         }
         this.#hint = "playing";

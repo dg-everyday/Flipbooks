@@ -1051,7 +1051,7 @@ export class DailyMoment extends HTMLElement {
           </div>
           <button class="poster${this.#comic ? " comic" : ""}" type="button"
             aria-label="${this.#comic ? "Show the regular poster" : "Show the comic version of this poster"}">
-            <img alt="The Daily Grace ${this.#comic ? "comic" : "poster"} for ${escapeHtml(day.name)}" src="${escapeHtml(this.#posterUrl(this.#comic))}" />
+            <img alt="The Daily Grace ${this.#comic ? "comic" : "poster"} for ${escapeHtml(day.name)}" src="${escapeHtml(this.#posterUrl(this.#comic))}" crossorigin="anonymous" />
             <video class="poster-video" width="941" height="1672" muted loop playsinline preload="auto"
               disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1"></video>
           </button>
@@ -1310,8 +1310,10 @@ export class DailyMoment extends HTMLElement {
 
         const flipId = ++this.#flipId;
         const nextSrc = this.#posterUrl(this.#comic);
-        // Start loading now so the swap does not show a half-loaded image.
+        // Start loading now so the swap does not show a half-loaded image. With
+        // CORS, as <poster-card> asks, so the two share the one download.
         const preload = new Image();
+        preload.crossOrigin = "anonymous";
         preload.src = nextSrc;
         const ready = preload.decode().catch(() => {});
 

@@ -841,7 +841,7 @@ const guideItem = ({ page, icon, title, text }) => `
             <li>
                 <a class="menu-item" href="${asset(PAGES + page)}">
                     <span class="help-icon">
-                        <img class="menu-icon" src="${asset(ICONS + icon)}" alt="" width="36" height="36" />
+                        <img class="menu-icon" src="${asset(ICONS + icon)}" alt="" width="36" height="36" loading="lazy" />
                     </span>
                     <span class="menu-text">
                         <strong>${escapeHtml(title)}</strong>
@@ -853,7 +853,7 @@ const guideItem = ({ page, icon, title, text }) => `
 const MENU_HTML = /* html */ `
 <dialog class="menu-dialog" aria-labelledby="menu-title">
     <header class="menu-header">
-        <img class="help-emblem" src="${EMBLEM_URL}" alt="" width="40" height="40" />
+        <img class="help-emblem" src="${EMBLEM_URL}" alt="" width="40" height="40" loading="lazy" />
         <div class="help-heading">
             <h2 id="menu-title">Daily Grace</h2>
             <p class="help-eyebrow">Bible Study Guides</p>
@@ -866,7 +866,7 @@ const MENU_HTML = /* html */ `
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="help">
                     <span class="help-icon">
-                        <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="36" height="36" />
+                        <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="36" height="36" loading="lazy" />
                     </span>
                     <span class="menu-text"><strong>Help</strong></span>
                 </button>
@@ -874,7 +874,7 @@ const MENU_HTML = /* html */ `
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="about">
                     <span class="help-icon">
-                        <img src="${EMBLEM_URL}" alt="" width="26" height="26" />
+                        <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
                     </span>
                     <span class="menu-text"><strong>About</strong></span>
                 </button>
@@ -895,6 +895,7 @@ const HELP_HTML = /* html */ `
                 alt=""
                 width="40"
                 height="40"
+                loading="lazy"
             />
             <div class="help-heading">
                 <p class="help-eyebrow">Guide</p>
@@ -1039,7 +1040,7 @@ const HELP_HTML = /* html */ `
             </li>
             <li>
                 <span class="help-icon">
-                    <img src="${EMBLEM_URL}" alt="" width="26" height="26" />
+                    <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
                 </span>
                 <p><strong>Your own things.</strong> Tap the DG emblem beside the three lines for My Bookmarks, My Sticker Album, Bookmarking 101 (a short guide to keeping verses and cards) and How to earn stickers. Tap outside the little menu or press Escape to close it.</p>
             </li>
@@ -1189,6 +1190,7 @@ const ABOUT_HTML = /* html */ `
                 alt=""
                 width="40"
                 height="40"
+                loading="lazy"
             />
             <div>
                 <p class="help-eyebrow">About</p>
@@ -1215,6 +1217,7 @@ const ABOUT_HTML = /* html */ `
             alt=""
             width="84"
             height="84"
+            loading="lazy"
         />
         <p class="about-eyebrow">About</p>
         <h2 id="about-title">Daily Grace</h2>

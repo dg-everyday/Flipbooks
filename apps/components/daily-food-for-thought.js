@@ -459,6 +459,7 @@ export class DailyFoodForThought extends HTMLElement {
                 img.alt = "";
                 img.width = 40;
                 img.height = 40;
+                img.loading = "lazy";
                 return img;
             }),
         );

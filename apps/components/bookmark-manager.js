@@ -333,7 +333,7 @@ const STYLES = /* css */ `
 const TEMPLATE = /* html */ `
 <dialog class="bookmarks-dialog" aria-labelledby="bookmarks-title">
     <header class="bookmarks-bar">
-        <img class="help-emblem" src="${EMBLEM_URL}" alt="" width="40" height="40" />
+        <img class="help-emblem" src="${EMBLEM_URL}" alt="" width="40" height="40" loading="lazy" />
         <div class="help-heading">
             <p class="help-eyebrow">Saved on this device</p>
             <div class="bookmarks-title">

@@ -55,6 +55,8 @@
  *              pageCount (read-only), zoom (get/set, 1–3.5)
  * Events       ready       detail: { pageCount }
  *              pagechange  detail: { index, pageCount, id }
+ *              finish      the last page is on show, once each time pages is
+ *                          set, detail: { pageCount } (without the end leaf)
  *              error       detail: { message }
  *
  * Sizing: the host fills its parent (flex: 1 in a column flex container).
@@ -478,6 +480,7 @@ export class Flipbook extends HTMLElement {
     #animating = false;
     #activePointers = new Map();
     #lastReported = null;
+    #finished = false; // the last page has been on show
 
     #audio = new Audio();
     #flipSound = new Audio(DEFAULT_FLIP_SOUND);
@@ -618,6 +621,7 @@ export class Flipbook extends HTMLElement {
 
         this.#current = 0;
         this.#lastReported = null;
+        this.#finished = false;
         this.#book.replaceChildren();
         this.#desktopSpread.replaceChildren();
         this.#resizeObserver?.disconnect();
@@ -948,6 +952,17 @@ export class Flipbook extends HTMLElement {
                 pageCount: this.#pages.length,
                 id: this.#pages[this.#current]?.id ?? null,
             });
+        }
+
+        // The last of the caller's pages is on show, once per page list. A
+        // spread shows the page at #current and the one after it.
+        const last = this.#pages.length - this.#endLeaves - 1;
+        const lastShown = this.#isSinglePage()
+            ? this.#current === last
+            : this.#current <= last && last <= this.#current + 1;
+        if (!this.#finished && last >= 0 && lastShown) {
+            this.#finished = true;
+            this.#emit("finish", { pageCount: last + 1 });
         }
     }
 

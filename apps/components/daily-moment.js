@@ -56,7 +56,8 @@
  *
  * Methods      open(), close()
  * Properties   date (read-only, YYYY-MM-DD), done (read-only)
- * Events       momentcomplete  the reader reached Amen, detail: { date }
+ * Events       momentcomplete  the reader reached Amen, detail: { date, verse }
+ *                              (verse is the day's reference, "Psalm 23:1")
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
@@ -1197,7 +1198,7 @@ export class DailyMoment extends HTMLElement {
         }
         this.dispatchEvent(
             new CustomEvent("momentcomplete", {
-                detail: { date: this.#day.iso },
+                detail: { date: this.#day.iso, verse: this.#entry.verse },
             }),
         );
     }

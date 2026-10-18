@@ -51,7 +51,7 @@ import {
     DEFAULT_VERSES_BASE,
     loadVerses,
 } from "./daily-verses.js?v=20261004-1";
-import { parseReference } from "./scripture-refs.js?v=20261002-1";
+import { parseReference } from "./scripture-refs.js?v=20261018-1";
 import {
     BOOK_THUMB_BOUNDS,
     DEFAULT_THUMB_BOUNDS,

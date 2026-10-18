@@ -1,0 +1,393 @@
+/* The Sticker Album (stickers.html), on top of study-page.css: the count and
+   the next gifts, then a shelf for each series, and one sticker opened in a
+   dialog. Earned stickers sit on the paper as they are, die-cut with their
+   white border; places still to fill are dashed gold outlines. */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ---------------------------------------------------------------- the count */
+
+.tally {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+    margin-top: 16px;
+    color: var(--cream);
+    font-size: 1.05rem;
+}
+.tally strong {
+    color: var(--gold-light);
+    font: 400 2.2rem/1 var(--display);
+}
+.tally-bar,
+.goal-bar {
+    display: block;
+    height: 8px;
+    border-radius: 4px;
+    background: rgb(255 255 255 / 16%);
+    overflow: hidden;
+}
+.tally-bar {
+    flex: 1 1 100%;
+    max-width: 420px;
+}
+.tally-bar span,
+.goal-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--gold-light);
+}
+
+/* ---------------------------------------------------------------- next gifts */
+
+.goal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.goal-list a {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+}
+.goal-list a:hover {
+    border-color: var(--gold);
+}
+.goal-name {
+    color: var(--navy);
+    font: 400 1.15rem/1.1 var(--display);
+}
+.goal-text {
+    flex: 1;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+.goal-bar {
+    height: 6px;
+    background: rgb(198 146 46 / 18%);
+}
+.goal-bar span {
+    background: var(--gold);
+}
+
+/* ---------------------------------------------------------------- shelves */
+
+.shelf {
+    scroll-margin-top: calc(var(--topbar) + 12px);
+}
+.shelf-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+.shelf-head h2 {
+    color: var(--navy);
+    font: 400 1.65rem/1.1 var(--display);
+}
+.shelf-count {
+    flex: none;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgb(198 146 46 / 14%);
+    color: #7d5a12;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.shelf-how {
+    margin: 6px 0 14px;
+    color: var(--muted);
+}
+
+/* The six firsts for the Armour of God, ticked off as they are done. */
+.firsts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+}
+.firsts li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px 6px 6px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    font-size: 0.92rem;
+}
+.firsts .tick {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid #c9b78f;
+    border-radius: 50%;
+    color: #fff;
+}
+.firsts .done {
+    color: var(--muted);
+}
+.firsts .done .tick {
+    border: 0;
+    background: var(--gold);
+}
+.firsts svg {
+    width: 13px;
+    height: 13px;
+}
+
+.slots {
+    display: grid;
+    /* Three across on a phone, more as the screen widens. */
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+    gap: 14px 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.slot {
+    position: relative;
+    min-width: 0;
+}
+.slot button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    font: inherit;
+    cursor: pointer;
+    scroll-margin-top: calc(var(--topbar) + 40px);
+}
+.slot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgb(16 37 59 / 22%));
+    transition: transform 0.15s ease;
+}
+.slot button:hover img {
+    transform: scale(1.04) rotate(-2deg);
+}
+.slot-title {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    text-align: center;
+}
+.slot-new {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #c62828;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 25%);
+}
+.slot.empty {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    margin-bottom: 22px;
+    padding: 8px;
+    border: 2px dashed rgb(198 146 46 / 45%);
+    border-radius: 18px;
+    background: rgb(255 255 255 / 45%);
+    text-align: center;
+}
+.slot-number {
+    color: rgb(198 146 46 / 70%);
+    font: 400 1.8rem/1 var(--display);
+}
+.slot-book {
+    color: rgb(16 37 59 / 55%);
+    font: 400 0.95rem/1.1 var(--display);
+    overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------------- one sticker */
+
+.sticker-dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: var(--paper);
+    color: var(--ink);
+}
+.sticker-dialog::backdrop {
+    background: rgb(0 27 52 / 72%);
+}
+@media (min-width: 600px) {
+    .sticker-dialog {
+        width: 480px;
+        /* A modal dialog is pinned to every edge, so auto would fill the screen. */
+        height: fit-content;
+        max-height: calc(100% - 48px);
+        margin: auto;
+        border-radius: 24px;
+        box-shadow: 0 30px 80px rgb(0 0 0 / 45%);
+    }
+}
+.sticker-frame {
+    position: relative;
+    height: 100%;
+}
+.sticker-close {
+    position: absolute;
+    top: max(8px, env(safe-area-inset-top));
+    right: 8px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(255 250 241 / 85%);
+    color: var(--navy);
+    cursor: pointer;
+}
+.sticker-close svg {
+    width: 22px;
+    height: 22px;
+}
+.sticker-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: max(28px, env(safe-area-inset-top)) 26px
+        max(26px, env(safe-area-inset-bottom));
+    text-align: center;
+}
+@media (min-width: 600px) {
+    .sticker-body {
+        max-height: calc(100vh - 48px);
+    }
+}
+.sticker-image {
+    width: min(76vw, 340px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 18px rgb(16 37 59 / 30%));
+}
+.sticker-body h2 {
+    color: var(--navy);
+    font: 400 2rem/1.1 var(--display);
+}
+.sticker-why {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    color: #7d5a12;
+    font-weight: 700;
+}
+.sticker-why span {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.sticker-verse {
+    margin: 4px 0 0;
+    color: var(--navy);
+    font: 400 1.15rem/1.5 Georgia, "Times New Roman", serif;
+    text-wrap: pretty;
+}
+.sticker-verse cite {
+    display: block;
+    margin-top: 6px;
+    color: #7d5a12;
+    font: 700 1rem Georgia, serif;
+}
+.sticker-reflection {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.05rem;
+    text-wrap: pretty;
+}
+.sticker-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 6px;
+}
+.sticker-save,
+.sticker-done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font: 700 1.02rem var(--body);
+    text-decoration: none;
+    cursor: pointer;
+}
+.sticker-save[aria-busy="true"] {
+    opacity: 0.7;
+    cursor: progress;
+}
+.sticker-save {
+    flex: 1 1 220px;
+    border: 0;
+    background: var(--navy);
+    color: #fff;
+}
+.sticker-done {
+    flex: 0 1 auto;
+    border: 1.5px solid #c9b78f;
+    background: none;
+    color: var(--navy);
+}
+
+.sticker-note {
+    min-height: 1.3em;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slot img {
+        transition: none;
+    }
+}

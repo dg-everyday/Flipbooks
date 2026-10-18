@@ -64,7 +64,7 @@ const TIME_ZONE = "Asia/Manila";
 // How often an open page checks whether midnight has passed.
 const DATE_CHECK_INTERVAL = 60_000;
 
-// The same half-second hold the verse cards and the DG emblem use.
+// The same half-second hold the verse cards use.
 const HOLD_MS = 500;
 const HOLD_SLOP = 10;
 const COPY_NOTES = { copied: "Link copied", failed: "Couldn't copy the link" };

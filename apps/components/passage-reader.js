@@ -30,7 +30,7 @@
  * outside the panel close it.
  */
 
-import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261018-1";
 import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;

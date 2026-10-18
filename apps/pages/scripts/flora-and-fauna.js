@@ -16,7 +16,7 @@ import {
     followHash,
     filterMenu,
     titleWithInfo,
-} from "./study-utils.js?v=20261016-5";
+} from "./study-utils.js?v=20261018-1";
 
 const DATA = "assets/flora-and-fauna.json";
 

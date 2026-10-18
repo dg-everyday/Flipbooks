@@ -411,8 +411,40 @@ html:has(bible-search-results[explaining]) {
     overflow: hidden;
 }
 
-/* The DG icon at the top opens the menu (apps/components/study-guide-menu.js);
-   About grows out of it. */
+/* The hamburger at the top left opens the study guides
+   (apps/components/study-guide-menu.js); About grows out of it. */
+.hero-menu {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 40px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: none;
+    color: var(--navy);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.hero-menu svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+.hero-menu:hover {
+    background: rgb(0 27 52 / 6%);
+}
+.hero-menu:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+
+/* The DG emblem beside it opens My Bookmarks, My Sticker Album and How to
+   earn stickers (apps/components/dg-menu.js). */
 .hero-about {
     position: relative;
     display: grid;
@@ -424,11 +456,6 @@ html:has(bible-search-results[explaining]) {
     background: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    /* Holding the emblem opens the bookmarks: keep the phone's image menu and
-     text selection out of the way. */
-    -webkit-touch-callout: none;
-    user-select: none;
-    transition: box-shadow 0.25s ease;
 }
 .hero-about:focus-visible {
     outline: 2px solid var(--navy);
@@ -437,22 +464,14 @@ html:has(bible-search-results[explaining]) {
 .hero-about img {
     -webkit-user-drag: none;
 }
-/* It glows gold as the half-second hold builds (the timing lives in
-   assets/scripts/script.js). */
-.hero-about.holding {
-    box-shadow:
-        0 0 0 3px rgb(168 129 12 / 60%),
-        0 0 22px 6px rgb(214 170 40 / 55%);
-    transition: box-shadow 0.5s cubic-bezier(0.25, 0.7, 0.35, 1);
-}
 
 @media (max-width: 650px) {
     .hero {
         padding: 10px 0 0;
     }
     .hero-toolbar {
-        padding-inline: 8px;
-        gap: 8px;
+        padding-inline: 4px 8px;
+        gap: 6px;
     }
     .hero-icon {
         width: 40px;
@@ -463,16 +482,18 @@ html:has(bible-search-results[explaining]) {
     }
 }
 
-/* Menu: the DG icon opens <study-guide-menu>, which carries its own styles
+/* Menu: the hamburger opens <study-guide-menu>, which carries its own styles
    (apps/components/study-guide-menu.js). While the menu, Help or About is
    open, the page behind does not scroll. */
 html:has(study-guide-menu[open]) {
     overflow: hidden;
 }
 
-/* Bookmarks: holding the DG icon opens <bookmark-manager>, which carries its
-   own styles (apps/components/bookmark-manager.js). While it is open, the page
-   behind does not scroll. */
+/* The DG emblem's menu, <dg-menu>, and the bookmarks it opens,
+   <bookmark-manager>, carry their own styles (apps/components/dg-menu.js and
+   bookmark-manager.js). While either is open, the page behind does not
+   scroll. */
+html:has(dg-menu[open]),
 html:has(bookmark-manager[open]) {
     overflow: hidden;
 }

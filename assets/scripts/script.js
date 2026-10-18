@@ -433,97 +433,20 @@ document.getElementById("splash").addEventListener("doubletap", () => {
 // database the search opens.
 
 // Bookmarks: holding a verse, a fact or a saying saves it (each component keeps
-// its own list), and holding the DG emblem opens them all in <bookmark-manager>
-// (apps/components/bookmark-manager.js). Its verses come from the database the
-// search opens.
+// its own list), and "My Bookmarks" in the DG emblem's menu (<dg-menu>) opens
+// them all in <bookmark-manager> (apps/components/bookmark-manager.js). Its
+// verses come from the database the search opens.
 const bookmarkManager = document.getElementById("bookmarks");
 bookmarkManager.loadVerses = async (ids) => {
     await loadBibleBookSuggestions();
     return getVersesByIds(ids);
 };
 
-// The DG emblem: a tap opens the menu (<study-guide-menu>, which wires the tap
-// itself and holds Help and About), a hold opens the bookmarks.
-const dgButton = document.getElementById("menu-open");
-// About's closing call to action takes the reader to today.
+// The hamburger opens the study guides (<study-guide-menu>, which wires the
+// tap itself and holds Help and About). About's closing call to action takes
+// the reader to today.
 document.getElementById("site-menu").addEventListener("begin", () => {
     document
         .getElementById("daily-devotional")
         .scrollIntoView({ behavior: "smooth" });
 });
-
-// Holding the DG emblem for half a second opens the bookmarks instead of the
-// menu: the same half-second hold the verse cards use, with the emblem glowing
-// gold while it builds. (This used to be on the search field, but a long press
-// there belongs to the phone's own menu, so a verse copied elsewhere can be
-// pasted in.)
-const HOLD_MS = 500;
-const HOLD_SLOP = 10;
-let dgHold = null;
-// The hold ends with the finger lifting, and the click that follows would open
-// the menu, or land on the bookmarks popup that has just opened and close it.
-let swallowClick = false;
-
-function cancelDgHold() {
-    if (!dgHold) {
-        return;
-    }
-    clearTimeout(dgHold.timer);
-    dgHold = null;
-    dgButton.classList.remove("holding");
-}
-
-dgButton.addEventListener("pointerdown", (event) => {
-    if (!event.isPrimary || event.button !== 0) {
-        return;
-    }
-    cancelDgHold();
-    dgButton.classList.add("holding");
-    dgHold = {
-        x: event.clientX,
-        y: event.clientY,
-        timer: setTimeout(() => {
-            cancelDgHold();
-            swallowClick = true;
-            navigator.vibrate?.(15);
-            bookmarkManager.open();
-        }, HOLD_MS),
-    };
-});
-dgButton.addEventListener("pointermove", (event) => {
-    if (
-        dgHold &&
-        Math.hypot(event.clientX - dgHold.x, event.clientY - dgHold.y) >
-            HOLD_SLOP
-    ) {
-        cancelDgHold();
-    }
-});
-for (const type of ["pointerup", "pointercancel", "pointerleave"]) {
-    dgButton.addEventListener(type, cancelDgHold);
-}
-// A long press would otherwise open the phone's menu for the emblem's image.
-dgButton.addEventListener("contextmenu", (event) => {
-    if (dgHold || swallowClick) {
-        event.preventDefault();
-    }
-});
-addEventListener(
-    "pointerdown",
-    () => {
-        swallowClick = false;
-    },
-    true,
-);
-addEventListener(
-    "click",
-    (event) => {
-        if (!swallowClick) {
-            return;
-        }
-        swallowClick = false;
-        event.preventDefault();
-        event.stopPropagation();
-    },
-    true,
-);

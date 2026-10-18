@@ -93,8 +93,8 @@
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
-import { bookmarkNote, keepBookmarks } from "./card-bookmarks.js?v=20260927-1";
-import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261002-1";
+import { bookmarkNote, keepBookmarks } from "./card-bookmarks.js?v=20261018-1";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261018-1";
 import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 

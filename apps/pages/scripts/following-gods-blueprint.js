@@ -27,14 +27,14 @@ import {
     followHash,
     filterMenu,
     titleWithInfo,
-} from "./study-utils.js?v=20261016-5";
+} from "./study-utils.js?v=20261018-1";
 import {
     BOOKMARK_STYLES,
     CardHold,
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20260927-1";
+} from "../../components/card-bookmarks.js?v=20261018-1";
 
 const DATA = "assets/following-gods-blueprint.json";
 const TEST_ID = "blueprint-test";

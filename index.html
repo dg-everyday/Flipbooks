@@ -26,7 +26,7 @@
         <!-- Today's banner: assets/scripts/update-social-image.mjs sets it on each deploy, so keep this one og:image tag. -->
         <meta
             property="og:image"
-            content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-17.webp"
+            content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-18.webp"
         />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:width" content="1920" />
@@ -45,7 +45,7 @@
             rel="apple-touch-icon"
             href="assets/images/apple-touch-icon.png"
         />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20261010-4" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20261018-1" />
         <link
             rel="preload"
             href="assets/fonts/Roboto-Variable.woff2"
@@ -129,15 +129,31 @@
         <div class="page">
             <header class="hero">
                 <div class="hero-toolbar">
+                    <!-- The hamburger opens the study guides, Help and About
+                         (<study-guide-menu>); the DG emblem opens the reader's
+                         own things: bookmarks and stickers (<dg-menu>). -->
                     <button
                         id="menu-open"
-                        class="hero-about"
+                        class="hero-menu"
                         type="button"
                         aria-haspopup="dialog"
                         aria-expanded="false"
                         aria-controls="site-menu"
-                        aria-label="Open the Daily Grace menu"
-                        title="Menu"
+                        aria-label="Open the Bible Study Guides menu"
+                        title="Bible Study Guides"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 6.5h16M4 12h16M4 17.5h16" />
+                        </svg>
+                    </button>
+                    <button
+                        id="dg-open"
+                        class="hero-about"
+                        type="button"
+                        aria-haspopup="menu"
+                        aria-expanded="false"
+                        aria-label="My Bookmarks and Sticker Album"
+                        title="My Bookmarks and Sticker Album"
                     >
                         <img
                             class="hero-icon"
@@ -257,15 +273,19 @@
                         class="card"
                     ></bible-sayings>
                     <gods-blueprint id="gods-blueprint"></gods-blueprint>
+                    <sticker-gifts id="sticker-gifts" card></sticker-gifts>
                 </section>
             </main>
 
             <site-footer splash="splash"></site-footer>
         </div>
-        <!-- The DG emblem at the top opens the Bible Study Guides menu, with
+        <!-- The hamburger at the top opens the Bible Study Guides menu, with
              its Help and About popups (apps/components/study-guide-menu.js). -->
         <study-guide-menu id="site-menu" opener="menu-open"></study-guide-menu>
-        <!-- Holding the DG emblem opens every bookmark
+        <!-- The DG emblem opens My Bookmarks, My Sticker Album and How to
+             earn stickers (apps/components/dg-menu.js). -->
+        <dg-menu id="dg-menu" opener="dg-open" bookmarks="bookmarks"></dg-menu>
+        <!-- Every bookmark, opened from the DG emblem's menu
              (apps/components/bookmark-manager.js). -->
         <bookmark-manager id="bookmarks"></bookmark-manager>
         <!-- The footer's QR code opens the sponsorship splash
@@ -274,54 +294,64 @@
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <!-- sql.js is fetched by sql_script.js when a database is first opened. -->
         <script src="assets/scripts/sql_script.js?v=20261017-1" defer></script>
-        <script src="assets/scripts/script.js?v=20261010-4" defer></script>
+        <script src="assets/scripts/script.js?v=20261018-1" defer></script>
         <script
             type="module"
-            src="apps/components/banner-slider.js?v=20261016-6"
+            src="apps/components/banner-slider.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/poster-card.js?v=20261009-1"
+            src="apps/components/poster-card.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/daily-moment.js?v=20261011-1"
+            src="apps/components/daily-moment.js?v=20261017-1"
         ></script>
         <script
             type="module"
-            src="apps/components/memory-verse.js?v=20261011-1"
+            src="apps/components/memory-verse.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/did-you-know.js?v=20261009-1"
+            src="apps/components/did-you-know.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/daily-guidance.js?v=20261011-2"
+            src="apps/components/daily-guidance.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/daily-food-for-thought.js?v=20261016-7"
+            src="apps/components/daily-food-for-thought.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/gods-blueprint.js?v=20261011-2"
+            src="apps/components/gods-blueprint.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/red-letter-quotes.js?v=20261011-2"
+            src="apps/components/red-letter-quotes.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/bible-sayings.js?v=20261009-1"
+            src="apps/components/bible-sayings.js?v=20261018-1"
         ></script>
         <script
             type="module"
-            src="apps/components/bible-search-results.js?v=20261017-1"
+            src="apps/components/bible-search-results.js?v=20261018-1"
         ></script>
         <script
             type="module"
             src="apps/components/bible-trivia.js?v=20261009-1"
+        ></script>
+        <!-- Records progress toward the stickers, gives them as gifts and
+             shows the album card; it loads sticker-progress.js itself. -->
+        <script
+            type="module"
+            src="apps/components/sticker-gifts.js?v=20261018-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/dg-menu.js?v=20261018-1"
         ></script>
         <script
             type="module"
@@ -329,7 +359,7 @@
         ></script>
         <script
             type="module"
-            src="apps/components/study-guide-menu.js?v=20261017-1"
+            src="apps/components/study-guide-menu.js?v=20261018-1"
         ></script>
         <script
             type="module"

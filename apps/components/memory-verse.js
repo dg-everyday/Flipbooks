@@ -808,6 +808,7 @@ export class MemoryVerse extends HTMLElement {
         }
         const image = document.createElement("img");
         image.alt = "";
+        image.loading = "lazy";
         const [x, y, size, radius] =
             BOOK_THUMB_BOUNDS[book] ?? DEFAULT_THUMB_BOUNDS;
         const side = size * THUMBNAIL_TRIM;

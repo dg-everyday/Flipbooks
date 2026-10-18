@@ -112,6 +112,7 @@ const STYLES = /* css */ `
     --dg-gold-ink: #7d5a12;
     --dg-paper: #fffaf1;
     --dg-cream: #f6eedf;
+    --dg-menu-cream: var(--cream, #f3e7d2);
     --dg-ink: #10253b;
     --dg-muted: #56606e;
     --dg-line: #e2d5bb;
@@ -129,7 +130,10 @@ const STYLES = /* css */ `
     margin: 0; padding: 8px;
     border: 1px solid rgb(198 146 46 / 35%);
     border-radius: 16px;
-    background: var(--dg-paper);
+    /* The study guides' drawer (<study-guide-menu>): cream, lighter at the top left. */
+    background:
+      radial-gradient(120% 60% at 0% 0%, #fffaf0 0%, transparent 60%),
+      var(--dg-menu-cream);
     color: var(--dg-navy);
     box-shadow: 0 18px 44px rgb(0 27 52 / 30%);
     transform-origin: top left;
@@ -154,8 +158,16 @@ const STYLES = /* css */ `
   .item-icon svg { width: 24px; height: 24px; }
   .item-icon img { width: 34px; height: 34px; }
   .item-text { display: grid; gap: 1px; }
-  .item-text small { color: var(--dg-muted); font-weight: 400; font-size: .85rem; }
-  .rule { height: 1px; margin: 6px 10px; background: var(--dg-line); }
+  /* Tight leading, as in the study guides' menu, so a description that wraps
+     reads as one block. */
+  .item-text small { color: var(--dg-muted); font-weight: 400; font-size: .85rem; line-height: 1.2; }
+  /* The rule gives the guides below some room from the reader's own things. */
+  .rule { height: 1px; margin: 12px 10px; background: var(--dg-line); }
+  /* With a line under it, the icon sits beside the title, not halfway down
+     the description, as in the study guides' menu. */
+  .item:has(small) { align-items: flex-start; }
+  /* The two guides are one line each, so they sit closer, as one pair. */
+  .item.guide-item { min-height: 40px; padding-block: 2px; }
 
   /* ----- How to earn stickers ----- */
   .guide {
@@ -279,24 +291,24 @@ export class DgMenu extends HTMLElement {
           <li role="none">
             <button class="item" type="button" role="menuitem" data-action="bookmarks">
               <span class="item-icon">${BOOKMARK_ICON}</span>
-              <span class="item-text">My Bookmarks</span>
+              <span class="item-text">My Bookmarks<small>The verses, facts, sayings and questions you have kept</small></span>
             </button>
           </li>
           <li role="none">
             <a class="item" role="menuitem" data-action="album">
-              <span class="item-icon"><img src="${STICKERS_ICON}" alt="" width="34" height="34" /></span>
+              <span class="item-icon"><img src="${STICKERS_ICON}" alt="" width="34" height="34" loading="lazy" /></span>
               <span class="item-text">My Sticker Album<small class="album-count"></small></span>
             </a>
           </li>
           <li role="separator" class="rule"></li>
           <li role="none">
-            <button class="item" type="button" role="menuitem" data-action="bookmarks-guide" aria-haspopup="dialog">
+            <button class="item guide-item" type="button" role="menuitem" data-action="bookmarks-guide" aria-haspopup="dialog">
               <span class="item-icon">${QUESTION_ICON}</span>
               <span class="item-text">Bookmarking 101</span>
             </button>
           </li>
           <li role="none">
-            <button class="item" type="button" role="menuitem" data-action="guide" aria-haspopup="dialog">
+            <button class="item guide-item" type="button" role="menuitem" data-action="guide" aria-haspopup="dialog">
               <span class="item-icon">${QUESTION_ICON}</span>
               <span class="item-text">How to earn stickers</span>
             </button>
@@ -306,7 +318,7 @@ export class DgMenu extends HTMLElement {
       <dialog class="guide" aria-labelledby="guide-title">
         <div class="guide-frame">
           <header class="guide-head">
-            <span class="guide-icon"><img src="${STICKERS_ICON}" alt="" width="40" height="40" />${BOOKMARK_ICON}</span>
+            <span class="guide-icon"><img src="${STICKERS_ICON}" alt="" width="40" height="40" loading="lazy" />${BOOKMARK_ICON}</span>
             <div>
               <p class="eyebrow"></p>
               <h2 id="guide-title"></h2>

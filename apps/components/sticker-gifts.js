@@ -10,9 +10,13 @@
  * very first time as a welcome to the album.
  *
  * With the `card` attribute it is also a card on the page: the album banner
- * (assets/images/my-sticker-album-banner.webp) with "My Sticker Album" over
- * its plain right-hand side, then the latest stickers, how many of the 188
- * the reader has, and the next one to aim for, linking to the album.
+ * with "My Sticker Album" over its plain right-hand side, then the latest
+ * stickers, how many of the 188 the reader has, and the next one to aim for,
+ * linking to the album. The banner changes with the day of the week in
+ * Asia/Manila, and the card below it takes the banner's own colour:
+ *   Monday–Wednesday   my-sticker-album-banner-emerald.webp     emerald
+ *   Thursday–Friday    my-sticker-album-banner.webp             navy
+ *   Saturday–Sunday    my-sticker-album-banner-apple-red.webp   apple red
  *
  * Usage
  *   <sticker-gifts card></sticker-gifts>
@@ -48,7 +52,42 @@ import { readProgress } from "../../assets/scripts/sticker-progress.js?v=2026101
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const DEFAULT_ALBUM = "apps/pages/stickers.html";
-const BANNER_URL = asset("../../assets/images/my-sticker-album-banner.webp");
+// The banners, each with the colour of its plain right-hand side, which the
+// card below the banner takes so the two read as one piece.
+const BANNERS = {
+    emerald: {
+        src: asset("../../assets/images/my-sticker-album-banner-emerald.webp"),
+        colour: "#004126",
+    },
+    navy: {
+        src: asset("../../assets/images/my-sticker-album-banner.webp"),
+        colour: "#001c34",
+    },
+    appleRed: {
+        src: asset("../../assets/images/my-sticker-album-banner-apple-red.webp"),
+        colour: "#990b12",
+    },
+};
+// The banner for each day of the week, Sunday first.
+const BANNER_BY_DAY = [
+    "appleRed",
+    "emerald",
+    "emerald",
+    "emerald",
+    "navy",
+    "navy",
+    "appleRed",
+];
+const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+/** Today's banner, by the day of the week in Asia/Manila. */
+function todaysBanner() {
+    const weekday = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Manila",
+        weekday: "short",
+    }).format(new Date());
+    return BANNERS[BANNER_BY_DAY[Math.max(0, WEEKDAYS.indexOf(weekday))]];
+}
 // After something is earned, a moment's pause before looking for a quiet
 // moment to show it; then a look every POLL_MS until nothing has been open
 // for QUIET_LOOKS looks in a row (a Moment can hand over to the memory verse).
@@ -67,7 +106,6 @@ const GIFT_ICON = `<svg ${ICON_ATTRS}><rect x="3" y="8" width="18" height="13" r
 const STYLES = /* css */ `
   :host {
     --gift-navy: var(--navy, #001b34);
-    --gift-navy-2: #0a2f52;
     --gift-gold: var(--gold, #c6922e);
     --gift-gold-light: var(--gold-light, #e1b65d);
     display: block;
@@ -80,10 +118,12 @@ const STYLES = /* css */ `
   [hidden] { display: none !important; }
 
   /* ----- The album card -----
-     Navy with a gold edge: the banner across the top, its title on the
-     banner's plain right-hand side, then the latest stickers fanned out on
-     the left of a row with the count and the next goal. */
+     A gold edge, the banner across the top with its title on the banner's
+     plain right-hand side, then the latest stickers fanned out on the left
+     of a row with the count and the next goal. The card is the banner's own
+     colour (--album-colour, set with the banner), with a few sparkles. */
   .card {
+    --album-colour: var(--gift-navy);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -91,11 +131,10 @@ const STYLES = /* css */ `
     border-left: 5px solid var(--gift-gold);
     border-radius: 10px;
     background:
-      radial-gradient(circle at 12% 20%, rgb(225 182 93 / 22%) 0 2px, transparent 3px),
-      radial-gradient(circle at 70% 15%, rgb(255 255 255 / 30%) 0 1.5px, transparent 2.5px),
-      radial-gradient(circle at 88% 80%, rgb(225 182 93 / 25%) 0 2px, transparent 3px),
-      radial-gradient(120% 120% at 0% 0%, rgb(225 182 93 / 16%) 0%, transparent 55%),
-      linear-gradient(180deg, var(--gift-navy-2) 0%, var(--gift-navy) 100%);
+      radial-gradient(circle at 12% 70%, rgb(225 182 93 / 22%) 0 2px, transparent 3px),
+      radial-gradient(circle at 70% 75%, rgb(255 255 255 / 30%) 0 1.5px, transparent 2.5px),
+      radial-gradient(circle at 88% 92%, rgb(225 182 93 / 25%) 0 2px, transparent 3px),
+      var(--album-colour);
     color: #fff;
     text-decoration: none;
     box-shadow: 0 10px 26px rgb(0 27 52 / 26%);
@@ -103,7 +142,7 @@ const STYLES = /* css */ `
   }
   .card:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgb(0 27 52 / 32%); }
   /* The banner's scene fills its left side; the title sits on the plain
-     navy to the right, sized to the banner's width. */
+     colour to the right, sized to the banner's width. */
   .banner { position: relative; display: block; container-type: inline-size; }
   .banner img { display: block; width: 100%; height: auto; aspect-ratio: 1376 / 411; }
   .banner-title {
@@ -150,6 +189,14 @@ const STYLES = /* css */ `
   .bar span { display: block; height: 100%; border-radius: inherit; background: var(--gift-gold-light); }
   .chevron { color: var(--gift-gold-light); }
   .chevron svg { display: block; width: 30px; height: 30px; stroke-width: 3.4; }
+  /* The arrow keeps nudging toward the album, as on the memory verse card,
+     and hurries on hover. */
+  .chevron { animation: nudge 1.8s ease-in-out infinite; }
+  .card:hover .chevron { animation-duration: .9s; }
+  @keyframes nudge {
+    0%, 60%, 100% { transform: translateX(0); }
+    30% { transform: translateX(6px); }
+  }
 
   /* ----- The gift ----- */
   dialog {
@@ -261,7 +308,7 @@ const STYLES = /* css */ `
 
   @media (prefers-reduced-motion: reduce) {
     .card { transition: none; }
-    .burst::before, .burst img, .grid img { animation: none; }
+    .chevron, .burst::before, .burst img, .grid img { animation: none; }
   }
 `;
 
@@ -291,6 +338,12 @@ export class StickerGifts extends HTMLElement {
     #quietLooks = 0;
     #checking = null;
     #onProgress = () => this.#check();
+    // Coming back to the page on another day may bring another banner.
+    #onVisible = () => {
+        if (document.visibilityState === "visible") {
+            this.#showBanner();
+        }
+    };
 
     constructor() {
         super();
@@ -299,7 +352,7 @@ export class StickerGifts extends HTMLElement {
       <style>${STYLES}</style>
       <a class="card" hidden>
         <span class="banner" aria-hidden="true">
-          <img src="${BANNER_URL}" alt="" width="1376" height="411" loading="lazy" decoding="async" />
+          <img alt="" width="1376" height="411" loading="lazy" decoding="async" />
           <span class="banner-title">My Sticker Album</span>
         </span>
         <span class="row">
@@ -339,11 +392,13 @@ export class StickerGifts extends HTMLElement {
     connectedCallback() {
         registerFonts();
         document.addEventListener("stickerprogress", this.#onProgress);
+        document.addEventListener("visibilitychange", this.#onVisible);
         this.#check();
     }
 
     disconnectedCallback() {
         document.removeEventListener("stickerprogress", this.#onProgress);
+        document.removeEventListener("visibilitychange", this.#onVisible);
         clearTimeout(this.#timer);
         this.#timer = 0;
     }
@@ -487,12 +542,23 @@ export class StickerGifts extends HTMLElement {
           <ul class="grid">${items}</ul>`;
     }
 
+    /** Today's banner, with the card in its colour. */
+    #showBanner() {
+        const banner = todaysBanner();
+        const img = this.#root.querySelector(".banner img");
+        if (img.getAttribute("src") !== banner.src) {
+            img.src = banner.src;
+        }
+        this.#card.style.setProperty("--album-colour", banner.colour);
+    }
+
     async #renderCard() {
         const show = this.hasAttribute("card");
         this.#card.hidden = !show;
         if (!show) {
             return;
         }
+        this.#showBanner();
         let stickers;
         try {
             stickers = await loadStickers();

@@ -199,6 +199,28 @@ Stylesheets and scripts are cache-busted with a `?v=YYYYMMDD-N` query string in
 the two HTML files. Bump the version of any file you change, resetting `N` to 1
 on a new date, or returning visitors will keep the cached copy.
 
+## Testing
+
+Browser tests use [Playwright](https://playwright.dev). It is a development
+tool only: `package.json`, `node_modules/` and `tests/` are not part of the
+published site (the deploy copies only `index.html`, `CNAME`, `favicon.ico`,
+`assets/` and `apps/`).
+
+```sh
+npm install                              # once, after cloning
+npx playwright install chromium webkit   # once: the test browsers
+npm test                                 # run every test
+npm run test:ui                          # watch them run in a window
+npx playwright show-report               # the last run's report
+```
+
+The tests start their own copy of the site with `tests/serve.mjs` (also
+`npm run serve`, at http://localhost:4173) and run each one on five screens,
+in Manila time: an iPad (gen 7) and an Android tablet (Galaxy Tab S4), both
+held upright, which is the recommended way to play Daily Grace Kids; desktop
+Chrome; an Android phone (Pixel 7); and an iPhone (iPhone 15, WebKit). `tests/smoke.spec.mjs` checks that the main pages open without
+script errors; new tests go in `tests/` as `*.spec.mjs`.
+
 ## Deployment
 
 `.github/workflows/pages.yml` publishes to GitHub Pages on every push to `main`,

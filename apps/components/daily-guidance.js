@@ -10,11 +10,12 @@
  * topic as a PDF in a new tab, made on the reader's device by
  * assets/scripts/bookmarks-pdf.js, which loads on the first press (as on the
  * Questions We All Ask page). Its Bible references are pills
- * that open the passage (scripture-refs.js). A different topic is picked at
- * random each time the page is opened, and again when the browser brings the
- * page back from its back/forward cache.
- * The last topic shown is remembered in localStorage (when it is available) so
- * the same one never comes up twice in a row.
+ * that open the passage (scripture-refs.js).
+ *
+ * One topic a day, the same for everyone: the topics are shown in the file's
+ * order, one per Asia/Manila calendar day (when each day's devotional goes
+ * live), and start again after the last. A page left open past midnight, or
+ * brought back from the background, moves on to the new day's topic.
  *
  * Holding the card for half a second bookmarks its topic: a gold glow spreads
  * from the finger and the card takes a ribbon. Holding it again removes the
@@ -40,12 +41,12 @@
  * Properties   topic (read-only)  the topic shown, or null until it loads
  *              bookmarks (read-only)  the bookmarked topic ids, newest first
  *              playing (read-only)  whether the narration is playing
- * Methods      next()  show another topic at random
+ * Methods      showToday()  show today's topic (the card does this itself)
  *              play(), pause()  control the narration
  *              showBookmarks()  show the bookmarked topics, newest first
  *              bookmarkedItems()  resolves to the bookmarked topics themselves,
  *                                 newest first, fetching the file if need be
- * Events       ready   a topic is shown, detail: { id }
+ * Events       ready   a topic is shown, detail: { id, date }
  *              bookmarkchange  a hold added or removed a bookmark,
  *                              detail: { id, result: 'added' | 'removed' }
  *              error   detail: { message }
@@ -79,8 +80,10 @@ import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 const DEFAULT_SRC = "assets/guidance-for-life.json";
 const DEFAULT_PAGE = "apps/pages/guidance-for-life.html";
 const DEFAULT_AUDIO_BASE = `${MEDIA_BASE_URL}audio/questions-we-all-ask/`;
-// The id of the topic shown last, so the next visit shows a different one.
-const LAST_KEY = "dailygrace:guidance:last";
+const TIME_ZONE = "Asia/Manila";
+// How often an open page checks whether midnight has passed.
+const DATE_CHECK_INTERVAL = 60_000;
+const DAY_MS = 86400000;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -417,27 +420,29 @@ const STYLES = /* css */ `
 ${BOOKMARK_STYLES}
 ${PILL_STYLES}`;
 
-/** localStorage, which can be missing or throw (private windows, blocked storage). */
-function remember(id) {
-    try {
-        localStorage.setItem(LAST_KEY, id);
-    } catch {
-        /* the pick still works, it may just repeat */
-    }
-}
-function lastShown() {
-    try {
-        return localStorage.getItem(LAST_KEY);
-    } catch {
-        return null;
-    }
+/** Today's calendar date in Asia/Manila, as "YYYY-MM-DD". */
+function manilaToday() {
+    const parts = Object.fromEntries(
+        new Intl.DateTimeFormat("en-US", {
+            timeZone: TIME_ZONE,
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+        })
+            .formatToParts(new Date())
+            .filter(({ type }) => type !== "literal")
+            .map(({ type, value }) => [type, value]),
+    );
+    return `${parts.year}-${parts.month}-${parts.day}`;
 }
 
-/** A topic at random, never the one shown last when there is a choice. */
-function pickTopic(topics, avoid) {
-    const choices =
-        topics.length > 1 ? topics.filter((t) => t.id !== avoid) : topics;
-    return choices[Math.floor(Math.random() * choices.length)];
+/** The topic shown on a date: one a day, in order, starting again after the last. */
+function topicFor(topics, date) {
+    const [year, month, day] = date.split("-").map(Number);
+    const dayNumber = Math.floor(Date.UTC(year, month - 1, day) / DAY_MS);
+    const index =
+        ((dayNumber % topics.length) + topics.length) % topics.length;
+    return topics[index];
 }
 
 const tidy = (text) => (text ?? "").replace(/\s+/g, " ").trim();
@@ -455,11 +460,19 @@ export class DailyGuidance extends HTMLElement {
     #hold;
     #listHold;
     #audio = null;
+    // The Manila date of the topic shown.
+    #date = null;
+    #timer = 0;
     // Coming back with the Back button can restore the page from the
-    // back/forward cache without reloading it; show a new topic then too.
+    // back/forward cache without reloading it; a new day brings a new topic.
     #onPageShow = (event) => {
-        if (event.persisted && !this.hasAttribute("bookmarks")) {
-            this.next();
+        if (event.persisted) {
+            this.#checkDate();
+        }
+    };
+    #onVisible = () => {
+        if (document.visibilityState === "visible") {
+            this.#checkDate();
         }
     };
 
@@ -550,6 +563,9 @@ export class DailyGuidance extends HTMLElement {
     connectedCallback() {
         registerFonts();
         addEventListener("pageshow", this.#onPageShow);
+        document.addEventListener("visibilitychange", this.#onVisible);
+        clearInterval(this.#timer);
+        this.#timer = setInterval(() => this.#checkDate(), DATE_CHECK_INTERVAL);
         bookmarks.addEventListener("change", this.#syncBookmarks);
         this.#syncBookmarks();
         this.#loadWhenNear();
@@ -557,6 +573,8 @@ export class DailyGuidance extends HTMLElement {
 
     disconnectedCallback() {
         removeEventListener("pageshow", this.#onPageShow);
+        document.removeEventListener("visibilitychange", this.#onVisible);
+        clearInterval(this.#timer);
         bookmarks.removeEventListener("change", this.#syncBookmarks);
         this.#hold.cancel();
         this.#listHold.cancel();
@@ -643,15 +661,28 @@ export class DailyGuidance extends HTMLElement {
             .filter(Boolean);
     }
 
-    /** Show another topic at random. */
-    next() {
+    /** Show today's topic: one a day, the same for everyone. */
+    showToday() {
         if (!this.#topics.length) {
             return;
         }
-        this.#show(pickTopic(this.#topics, this.#topic?.id ?? lastShown()));
+        const date = manilaToday();
+        this.#date = date;
+        this.#show(topicFor(this.#topics, date));
         this.dispatchEvent(
-            new CustomEvent("ready", { detail: { id: this.#topic.id } }),
+            new CustomEvent("ready", { detail: { id: this.#topic.id, date } }),
         );
+    }
+
+    // A new day in Manila brings a new topic.
+    #checkDate() {
+        if (
+            !this.hasAttribute("bookmarks") &&
+            this.#date &&
+            manilaToday() !== this.#date
+        ) {
+            this.showToday();
+        }
     }
 
     /**
@@ -906,7 +937,7 @@ export class DailyGuidance extends HTMLElement {
                 if (this.hasAttribute("bookmarks")) {
                     this.showBookmarks();
                 } else {
-                    this.next();
+                    this.showToday();
                 }
             })
             .catch((error) => {
@@ -942,7 +973,6 @@ export class DailyGuidance extends HTMLElement {
             this.#stopAudio();
         }
         this.#topic = topic;
-        remember(topic.id);
         els.section.textContent = topic.section || "";
         els.section.hidden = !topic.section;
         els.question.textContent = topic.question || topic.name;

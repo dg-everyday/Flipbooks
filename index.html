@@ -161,10 +161,13 @@
                         type="button"
                         aria-haspopup="menu"
                         aria-expanded="false"
-                        aria-label="My Bookmarks and Sticker Album"
-                        title="My Bookmarks and Sticker Album"
+                        aria-label="My avatar, bookmarks and sticker album"
+                        title="My avatar, bookmarks and sticker album"
                     >
+                        <!-- The DG emblem until the reader chooses an avatar,
+                             then their avatar (<avatar-picker>). -->
                         <img
+                            id="dg-open-icon"
                             class="hero-icon"
                             src="assets/images/dg-icon-gold-256.webp"
                             alt=""
@@ -297,7 +300,16 @@
         <study-guide-menu id="site-menu" opener="menu-open"></study-guide-menu>
         <!-- The DG emblem opens My Bookmarks, My Sticker Album and How to
              earn stickers (apps/components/dg-menu.js). -->
-        <dg-menu id="dg-menu" opener="dg-open" bookmarks="bookmarks"></dg-menu>
+        <dg-menu
+            id="dg-menu"
+            opener="dg-open"
+            bookmarks="bookmarks"
+            avatar-picker="avatar-picker"
+        ></dg-menu>
+        <!-- Every reader chooses an avatar: the picker opens by itself, and
+             cannot be closed, until they have one; it then shows in place of
+             the DG emblem (apps/components/avatar-picker.js). -->
+        <avatar-picker id="avatar-picker" icon="dg-open-icon"></avatar-picker>
         <!-- Every bookmark, opened from the DG emblem's menu
              (apps/components/bookmark-manager.js). -->
         <bookmark-manager id="bookmarks"></bookmark-manager>
@@ -341,7 +353,7 @@
         ></script>
         <script
             type="module"
-            src="apps/components/daily-guidance.js?v=20261018-2"
+            src="apps/components/daily-guidance.js?v=20261023-1"
         ></script>
         <script
             type="module"
@@ -349,11 +361,11 @@
         ></script>
         <script
             type="module"
-            src="apps/components/gods-blueprint.js?v=20261018-2"
+            src="apps/components/gods-blueprint.js?v=20261023-1"
         ></script>
         <script
             type="module"
-            src="apps/components/red-letter-quotes.js?v=20261018-2"
+            src="apps/components/red-letter-quotes.js?v=20261023-1"
         ></script>
         <script
             type="module"
@@ -365,17 +377,21 @@
         ></script>
         <script
             type="module"
-            src="apps/components/bible-trivia.js?v=20261009-1"
+            src="apps/components/bible-trivia.js?v=20261023-1"
         ></script>
         <!-- Records progress toward the stickers, gives them as gifts and
              shows the album card; it loads sticker-progress.js itself. -->
         <script
             type="module"
-            src="apps/components/sticker-gifts.js?v=20261018-7"
+            src="apps/components/sticker-gifts.js?v=20261023-1"
         ></script>
         <script
             type="module"
-            src="apps/components/dg-menu.js?v=20261018-3"
+            src="apps/components/dg-menu.js?v=20261023-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/avatar-picker.js?v=20261023-1"
         ></script>
         <script
             type="module"
@@ -391,7 +407,7 @@
         ></script>
         <script
             type="module"
-            src="apps/components/site-footer.js?v=20261010-1"
+            src="apps/components/site-footer.js?v=20261023-1"
         ></script>
         <script
             type="module"

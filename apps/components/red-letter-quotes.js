@@ -14,10 +14,10 @@
  * round button beside the heading opens the saying in full as a PDF in a new
  * tab, made on the reader's device by assets/scripts/bookmarks-pdf.js, which
  * loads on the first press.
- * A different saying is picked at random each time the page is opened, and
- * again when the browser brings the page back from its back/forward cache.
- * The last saying shown is remembered in localStorage (when it is available)
- * so the same one never comes up twice in a row.
+ * One saying a day, the same for everyone: the sayings are shown in the
+ * file's order, one per Asia/Manila calendar day (when each day's devotional
+ * goes live), and start again after the last. A page left open past midnight,
+ * or brought back from the background, moves on to the new day's saying.
  *
  * Holding the card for half a second bookmarks its saying: a gold glow
  * spreads from the finger and the card takes a ribbon. Holding it again
@@ -42,12 +42,12 @@
  *
  * Properties   saying (read-only)  the saying shown, or null until it loads
  *              bookmarks (read-only)  the bookmarked saying ids, newest first
- * Methods      next()  show another saying at random
+ * Methods      showToday()  show today's saying (the card does this itself)
  *              showBookmarks()  show the bookmarked sayings, newest first
  *              bookmarkedItems()  resolves to the bookmarked sayings
  *                                 themselves, newest first, fetching the
  *                                 file if need be
- * Events       ready   a saying is shown, detail: { id }
+ * Events       ready   a saying is shown, detail: { id, date }
  *              bookmarkchange  a hold added or removed a bookmark,
  *                              detail: { id, result: 'added' | 'removed' }
  *              error   detail: { message }
@@ -75,8 +75,10 @@ import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261018-1";
 
 const DEFAULT_SRC = "assets/red-letter-quotes.json";
 const DEFAULT_PAGE = "apps/pages/red-lettered-quotes.html";
-// The id of the saying shown last, so the next visit shows a different one.
-const LAST_KEY = "dailygrace:red-letter:last";
+const TIME_ZONE = "Asia/Manila";
+// How often an open page checks whether midnight has passed.
+const DATE_CHECK_INTERVAL = 60_000;
+const DAY_MS = 86400000;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -557,27 +559,29 @@ const STYLES = /* css */ `
 ${BOOKMARK_STYLES}
 ${PILL_STYLES}`;
 
-/** localStorage, which can be missing or throw (private windows, blocked storage). */
-function remember(id) {
-    try {
-        localStorage.setItem(LAST_KEY, id);
-    } catch {
-        /* the pick still works, it may just repeat */
-    }
-}
-function lastShown() {
-    try {
-        return localStorage.getItem(LAST_KEY);
-    } catch {
-        return null;
-    }
+/** Today's calendar date in Asia/Manila, as "YYYY-MM-DD". */
+function manilaToday() {
+    const parts = Object.fromEntries(
+        new Intl.DateTimeFormat("en-US", {
+            timeZone: TIME_ZONE,
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+        })
+            .formatToParts(new Date())
+            .filter(({ type }) => type !== "literal")
+            .map(({ type, value }) => [type, value]),
+    );
+    return `${parts.year}-${parts.month}-${parts.day}`;
 }
 
-/** A saying at random, never the one shown last when there is a choice. */
-function pickSaying(sayings, avoid) {
-    const choices =
-        sayings.length > 1 ? sayings.filter((s) => s.id !== avoid) : sayings;
-    return choices[Math.floor(Math.random() * choices.length)];
+/** The saying shown on a date: one a day, in order, starting again after the last. */
+function sayingFor(sayings, date) {
+    const [year, month, day] = date.split("-").map(Number);
+    const dayNumber = Math.floor(Date.UTC(year, month - 1, day) / DAY_MS);
+    const index =
+        ((dayNumber % sayings.length) + sayings.length) % sayings.length;
+    return sayings[index];
 }
 
 const tidy = (text) => (text ?? "").replace(/\s+/g, " ").trim();
@@ -596,11 +600,19 @@ export class RedLetterQuotes extends HTMLElement {
     #nearObserver = null;
     #hold;
     #listHold;
+    // The Manila date of the saying shown.
+    #date = null;
+    #timer = 0;
     // Coming back with the Back button can restore the page from the
-    // back/forward cache without reloading it; show a new saying then too.
+    // back/forward cache without reloading it; a new day brings a new saying.
     #onPageShow = (event) => {
-        if (event.persisted && !this.hasAttribute("bookmarks")) {
-            this.next();
+        if (event.persisted) {
+            this.#checkDate();
+        }
+    };
+    #onVisible = () => {
+        if (document.visibilityState === "visible") {
+            this.#checkDate();
         }
     };
 
@@ -693,6 +705,9 @@ export class RedLetterQuotes extends HTMLElement {
     connectedCallback() {
         registerFonts();
         addEventListener("pageshow", this.#onPageShow);
+        document.addEventListener("visibilitychange", this.#onVisible);
+        clearInterval(this.#timer);
+        this.#timer = setInterval(() => this.#checkDate(), DATE_CHECK_INTERVAL);
         bookmarks.addEventListener("change", this.#syncBookmarks);
         this.#syncBookmarks();
         this.#loadWhenNear();
@@ -700,6 +715,8 @@ export class RedLetterQuotes extends HTMLElement {
 
     disconnectedCallback() {
         removeEventListener("pageshow", this.#onPageShow);
+        document.removeEventListener("visibilitychange", this.#onVisible);
+        clearInterval(this.#timer);
         bookmarks.removeEventListener("change", this.#syncBookmarks);
         this.#hold.cancel();
         this.#listHold.cancel();
@@ -771,15 +788,28 @@ export class RedLetterQuotes extends HTMLElement {
         this.#status.textContent = `Bookmarked sayings of Jesus. ${this.#bookmarksSummary()}`;
     }
 
-    /** Show another saying at random. */
-    next() {
+    /** Show today's saying: one a day, the same for everyone. */
+    showToday() {
         if (!this.#sayings.length) {
             return;
         }
-        this.#show(pickSaying(this.#sayings, this.#saying?.id ?? lastShown()));
+        const date = manilaToday();
+        this.#date = date;
+        this.#show(sayingFor(this.#sayings, date));
         this.dispatchEvent(
-            new CustomEvent("ready", { detail: { id: this.#saying.id } }),
+            new CustomEvent("ready", { detail: { id: this.#saying.id, date } }),
         );
+    }
+
+    // A new day in Manila brings a new saying.
+    #checkDate() {
+        if (
+            !this.hasAttribute("bookmarks") &&
+            this.#date &&
+            manilaToday() !== this.#date
+        ) {
+            this.showToday();
+        }
     }
 
     get #src() {
@@ -965,7 +995,7 @@ export class RedLetterQuotes extends HTMLElement {
                 if (this.hasAttribute("bookmarks")) {
                     this.showBookmarks();
                 } else {
-                    this.next();
+                    this.showToday();
                 }
             })
             .catch((error) => {
@@ -1008,7 +1038,6 @@ export class RedLetterQuotes extends HTMLElement {
     #show(saying) {
         const els = this.#els;
         this.#saying = saying;
-        remember(saying.id);
         els.loading.hidden = true;
         els.theme.textContent = saying.theme || "";
         els.theme.hidden = !saying.theme;

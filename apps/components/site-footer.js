@@ -1,7 +1,9 @@
 /**
  * <site-footer> — the home page's footer, as a web component.
  *
- * The closing words with a link to this week's Flipbook, and the QR code on a
+ * The DG emblem beside the closing words (it moved here from the top of the
+ * page, where the reader's avatar now shows), a link to this week's
+ * Flipbook, and the QR code on a
  * white tile that keeps it scannable over the photo; a tap on the code opens
  * the sponsorship splash. Under them, the brand and tagline, and a link to
  * Our mission. It sits on the hero photo, faded into the paper on the left so
@@ -30,6 +32,7 @@ const asset = (path) => new URL(path, import.meta.url).href;
 const HOME_URL = asset("../../");
 const PHOTO_URL = asset("../../assets/images/hero-1440.webp");
 const QR_URL = asset("../../assets/images/qr.png");
+const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
 const FLIPBOOK_URL = asset("../pages/flipbook.html");
 const MISSION_URL = asset("../pages/mission-statement.html");
 
@@ -51,7 +54,7 @@ const STYLES = /* css */ `
     gap: 16px;
     padding: 28px 28px 24px;
   }
-  .footer-message { flex: 1 1 auto; min-width: 0; max-width: 330px; }
+  .footer-message { flex: 1 1 auto; min-width: 0; max-width: 420px; }
   /* White tile keeps the code scannable over the footer photo. */
   .footer-qr {
     display: grid;
@@ -84,17 +87,22 @@ const STYLES = /* css */ `
     line-height: 1;
   }
   .footer-message h2 {
+    display: flex;
+    align-items: center;
+    gap: .4em;
     margin: 0;
     font: 700 clamp(1.4rem, 1.15rem + 1vw, 1.75rem)/1.25 Georgia, 'Times New Roman', serif;
     /* Each line stays whole; the <br> is the only break. */
     white-space: nowrap;
   }
+  /* The DG emblem, as tall as the two lines beside it. */
+  .footer-emblem { flex: none; width: 2.5em; height: 2.5em; object-fit: contain; }
   /* "Our Faith Tomorrow." is about 11em wide in Georgia and in Android's Noto
-     Serif, so on a phone, beside the QR tile, the heading shrinks to fit its
-     column instead of wrapping. */
+     Serif, and the emblem and its gap take 2.9em more, so on a phone, beside
+     the QR tile, the heading shrinks to fit its column instead of wrapping. */
   @supports (container-type: inline-size) {
     .footer-message { container-type: inline-size; }
-    .footer-message h2 { font-size: min(clamp(1.4rem, 1.15rem + 1vw, 1.75rem), 100cqi / 11.5); }
+    .footer-message h2 { font-size: min(clamp(1.4rem, 1.15rem + 1vw, 1.75rem), 100cqi / 14.4); }
   }
   .footer-message p {
     margin: 12px 0 16px;
@@ -189,7 +197,10 @@ const TEMPLATE = /* html */ `
 <footer class="site-footer">
     <div class="footer-main">
         <div class="footer-message">
-            <h2>Grace for today.<br />Our Faith Tomorrow.</h2>
+            <h2>
+                <img class="footer-emblem" src="${EMBLEM_URL}" alt="" width="256" height="256" loading="lazy" />
+                <span>Grace for today.<br />Our Faith Tomorrow.</span>
+            </h2>
             <p>
                 A quiet moment in God's Word.<br />Fresh strength
                 for every day.

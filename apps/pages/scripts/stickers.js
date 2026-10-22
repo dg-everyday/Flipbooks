@@ -3,9 +3,10 @@
  * has, the next gift on each path, then a shelf for each series with the
  * stickers earned and an empty place for each still to come. Tapping a
  * sticker opens it with its verse, its reflection and what it was given for,
- * and a button that saves the full-size picture as a file, never opening it
+ * a button that saves the full-size picture as a file, never opening it
  * in a tab: a Save As dialog where the browser has one
- * (showSaveFilePicker), else a download.
+ * (showSaveFilePicker), else a download, and one that shares it through the
+ * phone's share sheet (assets/scripts/sticker-share.js).
  *
  * The stickers come from assets/stickers.json and the rules from
  * assets/scripts/sticker-awards.js; the progress is the reader's own, on this
@@ -30,11 +31,18 @@ import {
     stickerImage,
 } from "../../../assets/scripts/sticker-awards.js?v=20261018-1";
 import { readProgress } from "../../../assets/scripts/sticker-progress.js?v=20261018-1";
+import {
+    SHARE_NOTES,
+    prepareShare,
+    shareSticker,
+} from "../../../assets/scripts/sticker-share.js?v=20261023-1";
 
 const escapeHtml = (text) =>
     String(text ?? "").replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 const CHECK = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg>`;
+// The share icon of the poster's share button (poster-card.js).
+const SHARE_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
 
 /** Renders the album into `view`; `dialog` shows one sticker. */
 export async function start(view, dialog) {
@@ -85,6 +93,15 @@ export async function start(view, dialog) {
         if (save) {
             event.preventDefault();
             saveSticker(save, dialog.querySelector(".sticker-note"));
+            return;
+        }
+        const share = event.target.closest(".sticker-share");
+        if (share) {
+            shareFromAlbum(
+                share,
+                byId.get(dialog.dataset.stickerId),
+                dialog.querySelector(".sticker-note"),
+            );
             return;
         }
         if (event.target === dialog || event.target.closest("[data-close]")) {
@@ -222,13 +239,31 @@ function open(dialog, sticker, entry) {
       <p class="sticker-reflection">${escapeHtml(sticker.reflection)}</p>
       <div class="sticker-actions">
         <a class="sticker-save" href="${escapeHtml(stickerImage(sticker, { full: true }))}" download="${escapeHtml(file)}">Save the full-size sticker</a>
+        <button class="sticker-share" type="button">${SHARE_ICON}Share</button>
         <button class="sticker-done" type="button" data-close>Close</button>
       </div>
       <p class="sticker-note" role="status"></p>`;
+    dialog.dataset.stickerId = sticker.id;
+    // Made while the reader looks, so a tap on Share can send it at once.
+    prepareShare(sticker).catch(() => {});
     if (!dialog.open) {
         dialog.showModal();
     }
     dialog.querySelector(".sticker-body").scrollTop = 0;
+}
+
+/** Shares the sticker on show, saying how it went under the buttons. */
+async function shareFromAlbum(button, sticker, note) {
+    if (!sticker || button.getAttribute("aria-busy") === "true") {
+        return;
+    }
+    note.textContent = "";
+    button.setAttribute("aria-busy", "true");
+    try {
+        note.textContent = SHARE_NOTES[await shareSticker(sticker)];
+    } finally {
+        button.removeAttribute("aria-busy");
+    }
 }
 
 // The full-size pictures fetched so far, by URL, so a second save of the same

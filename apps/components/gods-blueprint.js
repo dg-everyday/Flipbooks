@@ -8,11 +8,12 @@
  * top-right corner opens the item in full as a PDF in a new tab, made on the
  * reader's device by assets/scripts/bookmarks-pdf.js, which loads on the
  * first press (as on "Today's Guiding Question"). Its Bible references are
- * pills that open the passage (scripture-refs.js). A different item is picked
- * at random each time the page is opened, and again when the browser brings
- * the page back from its back/forward cache.
- * The last item shown is remembered in localStorage (when it is available) so
- * the same one never comes up twice in a row.
+ * pills that open the passage (scripture-refs.js).
+ *
+ * One item a day, the same for everyone: the items are shown in the file's
+ * order, one per Asia/Manila calendar day (when each day's devotional goes
+ * live), and start again after the last. A page left open past midnight, or
+ * brought back from the background, moves on to the new day's item.
  *
  * Holding the card for half a second bookmarks its item: a gold glow spreads
  * from the finger and the card takes a ribbon. Holding it again removes the
@@ -35,11 +36,11 @@
  *
  * Properties   item (read-only)  the item shown, or null until it loads
  *              bookmarks (read-only)  the bookmarked item ids, newest first
- * Methods      next()  show another item at random
+ * Methods      showToday()  show today's item (the card does this itself)
  *              showBookmarks()  show the bookmarked items, newest first
  *              bookmarkedItems()  resolves to the bookmarked items themselves,
  *                                 newest first, fetching the file if need be
- * Events       ready   an item is shown, detail: { id }
+ * Events       ready   an item is shown, detail: { id, date }
  *              bookmarkchange  a hold added or removed a bookmark,
  *                              detail: { id, result: 'added' | 'removed' }
  *              error   detail: { message }
@@ -67,8 +68,10 @@ import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261018-1";
 
 const DEFAULT_SRC = "assets/following-gods-blueprint.json";
 const DEFAULT_PAGE = "apps/pages/following-gods-blueprint.html";
-// The id of the item shown last, so the next visit shows a different one.
-const LAST_KEY = "dailygrace:blueprint:last";
+const TIME_ZONE = "Asia/Manila";
+// How often an open page checks whether midnight has passed.
+const DATE_CHECK_INTERVAL = 60_000;
+const DAY_MS = 86400000;
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -434,27 +437,29 @@ const STYLES = /* css */ `
 ${BOOKMARK_STYLES}
 ${PILL_STYLES}`;
 
-/** localStorage, which can be missing or throw (private windows, blocked storage). */
-function remember(id) {
-    try {
-        localStorage.setItem(LAST_KEY, id);
-    } catch {
-        /* the pick still works, it may just repeat */
-    }
-}
-function lastShown() {
-    try {
-        return localStorage.getItem(LAST_KEY);
-    } catch {
-        return null;
-    }
+/** Today's calendar date in Asia/Manila, as "YYYY-MM-DD". */
+function manilaToday() {
+    const parts = Object.fromEntries(
+        new Intl.DateTimeFormat("en-US", {
+            timeZone: TIME_ZONE,
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+        })
+            .formatToParts(new Date())
+            .filter(({ type }) => type !== "literal")
+            .map(({ type, value }) => [type, value]),
+    );
+    return `${parts.year}-${parts.month}-${parts.day}`;
 }
 
-/** An item at random, never the one shown last when there is a choice. */
-function pickItem(items, avoid) {
-    const choices =
-        items.length > 1 ? items.filter((item) => item.id !== avoid) : items;
-    return choices[Math.floor(Math.random() * choices.length)];
+/** The item shown on a date: one a day, in order, starting again after the last. */
+function itemFor(items, date) {
+    const [year, month, day] = date.split("-").map(Number);
+    const dayNumber = Math.floor(Date.UTC(year, month - 1, day) / DAY_MS);
+    const index =
+        ((dayNumber % items.length) + items.length) % items.length;
+    return items[index];
 }
 
 const tidy = (text) => (text ?? "").replace(/\s+/g, " ").trim();
@@ -470,11 +475,19 @@ export class GodsBlueprint extends HTMLElement {
     #nearObserver = null;
     #hold;
     #listHold;
+    // The Manila date of the item shown.
+    #date = null;
+    #timer = 0;
     // Coming back with the Back button can restore the page from the
-    // back/forward cache without reloading it; show a new item then too.
+    // back/forward cache without reloading it; a new day brings a new item.
     #onPageShow = (event) => {
-        if (event.persisted && !this.hasAttribute("bookmarks")) {
-            this.next();
+        if (event.persisted) {
+            this.#checkDate();
+        }
+    };
+    #onVisible = () => {
+        if (document.visibilityState === "visible") {
+            this.#checkDate();
         }
     };
 
@@ -562,6 +575,9 @@ export class GodsBlueprint extends HTMLElement {
     connectedCallback() {
         registerFonts();
         addEventListener("pageshow", this.#onPageShow);
+        document.addEventListener("visibilitychange", this.#onVisible);
+        clearInterval(this.#timer);
+        this.#timer = setInterval(() => this.#checkDate(), DATE_CHECK_INTERVAL);
         bookmarks.addEventListener("change", this.#syncBookmarks);
         this.#syncBookmarks();
         this.#loadWhenNear();
@@ -569,6 +585,8 @@ export class GodsBlueprint extends HTMLElement {
 
     disconnectedCallback() {
         removeEventListener("pageshow", this.#onPageShow);
+        document.removeEventListener("visibilitychange", this.#onVisible);
+        clearInterval(this.#timer);
         bookmarks.removeEventListener("change", this.#syncBookmarks);
         this.#hold.cancel();
         this.#listHold.cancel();
@@ -602,15 +620,28 @@ export class GodsBlueprint extends HTMLElement {
             .filter(Boolean);
     }
 
-    /** Show another item at random. */
-    next() {
+    /** Show today's item: one a day, the same for everyone. */
+    showToday() {
         if (!this.#items.length) {
             return;
         }
-        this.#show(pickItem(this.#items, this.#item?.id ?? lastShown()));
+        const date = manilaToday();
+        this.#date = date;
+        this.#show(itemFor(this.#items, date));
         this.dispatchEvent(
-            new CustomEvent("ready", { detail: { id: this.#item.id } }),
+            new CustomEvent("ready", { detail: { id: this.#item.id, date } }),
         );
+    }
+
+    // A new day in Manila brings a new item.
+    #checkDate() {
+        if (
+            !this.hasAttribute("bookmarks") &&
+            this.#date &&
+            manilaToday() !== this.#date
+        ) {
+            this.showToday();
+        }
     }
 
     /**
@@ -839,7 +870,7 @@ export class GodsBlueprint extends HTMLElement {
                 if (this.hasAttribute("bookmarks")) {
                     this.showBookmarks();
                 } else {
-                    this.next();
+                    this.showToday();
                 }
             })
             .catch((error) => {
@@ -869,7 +900,6 @@ export class GodsBlueprint extends HTMLElement {
     #show(item) {
         const els = this.#els;
         this.#item = item;
-        remember(item.id);
         els.number.textContent = item.number || "";
         els.number.hidden = !item.number;
         els.part.textContent = item.sheet

@@ -28,7 +28,9 @@
  *
  * How often it appears: at most max-per-day times per Manila day, never less
  * than min-gap-minutes apart, and not at all when the reader arrived from
- * another page of this site, such as the flipbook. The tally lives in
+ * another page of this site, such as the flipbook, nor on a visit that began
+ * without an avatar, while <avatar-picker> asks the reader to choose one
+ * (assets/scripts/avatar-store.js). The tally lives in
  * localStorage under 'dailygrace.trivia'; clearing it hands the reader another
  * three goes, which is a trade we are happy with.
  *
@@ -59,6 +61,7 @@ import {
     DEFAULT_THUMB_BOUNDS,
 } from "./book-thumb-bounds.js";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
+import { hasAvatar } from "../../assets/scripts/avatar-store.js?v=20261023-1";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_MAX_PER_DAY = 3;
@@ -305,6 +308,8 @@ export class BibleTrivia extends HTMLElement {
     #verdictTimer = null;
     #opening = null;
     #previousOverflow = "";
+    // The visit began without an avatar: the avatar picker comes first, alone.
+    #avatarMissing = false;
 
     constructor() {
         super();
@@ -336,6 +341,7 @@ export class BibleTrivia extends HTMLElement {
 
     connectedCallback() {
         registerFonts();
+        this.#avatarMissing = !hasAvatar();
         if (this.hasAttribute("auto")) {
             this.#scheduleAutoOpen();
         }
@@ -391,6 +397,9 @@ export class BibleTrivia extends HTMLElement {
     #blockedReason() {
         if (arrivedFromOwnSite()) {
             return "internal-navigation";
+        }
+        if (this.#avatarMissing) {
+            return "avatar-needed";
         }
 
         const tally = readTally();

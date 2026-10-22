@@ -6,8 +6,9 @@
  * what they have earned (sticker-awards.js). New stickers are shown as a
  * gift once nothing else is open: after the Moment's Amen, after the trivia
  * verdict, after "I had it" on the memory verse, at the end of a story. One
- * sticker gets the whole screen; several come together in a grid, and the
- * very first time as a welcome to the album.
+ * sticker gets the whole screen, with a button that shares it through the
+ * phone's share sheet (assets/scripts/sticker-share.js); several come
+ * together in a grid, and the very first time as a welcome to the album.
  *
  * With the `card` attribute it is also a card on the page: the album banner
  * with "My Sticker Album" over its plain right-hand side, then the latest
@@ -58,8 +59,15 @@ import {
     stickerImage,
 } from "../../assets/scripts/sticker-awards.js?v=20261018-1";
 import { readProgress } from "../../assets/scripts/sticker-progress.js?v=20261018-1";
+import {
+    SHARE_NOTES,
+    prepareShare,
+    shareSticker,
+} from "../../assets/scripts/sticker-share.js?v=20261023-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
+// The share icon of the poster's share button (poster-card.js).
+const SHARE_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
 
 const DEFAULT_ALBUM = "apps/pages/stickers.html";
 const STICKERS_ICON = asset("../../assets/images/study-guide-icons/stickers.svg");
@@ -293,6 +301,19 @@ const STYLES = /* css */ `
   }
   .verse { margin: 0; color: #f2f5fa; font: 400 1.15rem/1.5 Georgia, 'Times New Roman', serif; text-wrap: pretty; }
   .ref { margin: -6px 0 0; color: var(--gift-gold-light); font: 700 1rem Georgia, serif; }
+  .share {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 46px; padding: 0 22px;
+    border: 1.5px solid var(--gift-gold-light); border-radius: 999px;
+    background: none; color: var(--gift-gold-light);
+    font: 700 1.02rem 'Strait', 'Roboto', sans-serif;
+    cursor: pointer;
+  }
+  .share svg { width: 18px; height: 18px; }
+  .share:hover { background: rgb(225 182 93 / 14%); }
+  .share:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  .share[aria-busy="true"] { opacity: .7; cursor: progress; }
+  .share-note { min-height: 1.3em; margin: -6px 0 0; color: #cfd8e6; font: 400 .95rem 'Strait', 'Roboto', sans-serif; }
 
   /* Several stickers: a grid of them. */
   .grid {
@@ -391,6 +412,8 @@ export class StickerGifts extends HTMLElement {
     #root;
     #card;
     #dialog;
+    // The sticker given on its own, which the Share button sends.
+    #gift = null;
     #timer = 0;
     #quietLooks = 0;
     #checking = null;
@@ -472,8 +495,28 @@ export class StickerGifts extends HTMLElement {
         this.#dialog.addEventListener("click", (event) => {
             if (event.target === this.#dialog) {
                 this.#dialog.close();
+                return;
+            }
+            const share = event.target.closest(".share");
+            if (share) {
+                this.#share(share);
             }
         });
+    }
+
+    /** Shares the sticker given on its own, saying how it went under the button. */
+    async #share(button) {
+        const note = this.#root.querySelector(".share-note");
+        if (!this.#gift || button.getAttribute("aria-busy") === "true") {
+            return;
+        }
+        note.textContent = "";
+        button.setAttribute("aria-busy", "true");
+        try {
+            note.textContent = SHARE_NOTES[await shareSticker(this.#gift)];
+        } finally {
+            button.removeAttribute("aria-busy");
+        }
     }
 
     connectedCallback() {
@@ -582,10 +625,15 @@ export class StickerGifts extends HTMLElement {
         }
         const welcome = !collection.welcomed;
         const body = this.#root.querySelector(".body");
-        body.innerHTML =
-            gifts.length === 1 && !welcome
-                ? this.#oneHtml(gifts[0])
-                : this.#manyHtml(gifts, welcome);
+        const single = gifts.length === 1 && !welcome;
+        body.innerHTML = single
+            ? this.#oneHtml(gifts[0])
+            : this.#manyHtml(gifts, welcome);
+        this.#gift = single ? gifts[0].sticker : null;
+        if (single) {
+            // Made while the reader looks, so a tap on Share can send it at once.
+            prepareShare(this.#gift).catch(() => {});
+        }
         const main = this.#root.querySelector(".main");
         const album = new URL(this.#albumHref);
         if (gifts.length === 1) {
@@ -616,7 +664,9 @@ export class StickerGifts extends HTMLElement {
           <div class="burst"><img src="${escapeHtml(stickerImage(sticker))}" alt="${escapeHtml(sticker.title)} sticker" width="600" height="600" /></div>
           <h2 class="heading" id="gift-title" tabindex="-1">${escapeHtml(sticker.title)}</h2>
           <p class="why">${escapeHtml(earnedFor(entry, sticker))}</p>
-          ${verse}${ref}`;
+          ${verse}${ref}
+          <button class="share" type="button">${SHARE_ICON}Share my sticker</button>
+          <p class="share-note" role="status"></p>`;
     }
 
     #manyHtml(gifts, welcome) {

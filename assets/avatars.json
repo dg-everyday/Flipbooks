@@ -1,0 +1,410 @@
+[
+  {
+    "id": "AV-00",
+    "hero": "Default (dove)",
+    "known-for": "for readers who haven't picked",
+    "reference": "—",
+    "file": "AV-00-dove.webp",
+    "thumbnail": "AV-00-dove-128.webp"
+  },
+  {
+    "id": "AV-01",
+    "hero": "Noah",
+    "known-for": "found grace",
+    "reference": "Genesis 6:8",
+    "file": "AV-01-noah.webp",
+    "thumbnail": "AV-01-noah-128.webp"
+  },
+  {
+    "id": "AV-02",
+    "hero": "Abraham",
+    "known-for": "believed God's promise",
+    "reference": "Genesis 15:6",
+    "file": "AV-02-abraham.webp",
+    "thumbnail": "AV-02-abraham-128.webp"
+  },
+  {
+    "id": "AV-03",
+    "hero": "Jacob",
+    "known-for": "God was with him",
+    "reference": "Genesis 28:15",
+    "file": "AV-03-jacob.webp",
+    "thumbnail": "AV-03-jacob-128.webp"
+  },
+  {
+    "id": "AV-04",
+    "hero": "Joseph",
+    "known-for": "God meant it unto good",
+    "reference": "Genesis 50:20",
+    "file": "AV-04-joseph.webp",
+    "thumbnail": "AV-04-joseph-128.webp"
+  },
+  {
+    "id": "AV-05",
+    "hero": "Moses",
+    "known-for": "led the people out",
+    "reference": "Exodus 14:13",
+    "file": "AV-05-moses.webp",
+    "thumbnail": "AV-05-moses-128.webp"
+  },
+  {
+    "id": "AV-06",
+    "hero": "Aaron",
+    "known-for": "spoke the blessing",
+    "reference": "Numbers 6:24",
+    "file": "AV-06-aaron.webp",
+    "thumbnail": "AV-06-aaron-128.webp"
+  },
+  {
+    "id": "AV-07",
+    "hero": "Joshua",
+    "known-for": "strong and of a good courage",
+    "reference": "Joshua 1:9",
+    "file": "AV-07-joshua.webp",
+    "thumbnail": "AV-07-joshua-128.webp"
+  },
+  {
+    "id": "AV-08",
+    "hero": "Caleb",
+    "known-for": "trusted God fully",
+    "reference": "Numbers 13:30",
+    "file": "AV-08-caleb.webp",
+    "thumbnail": "AV-08-caleb-128.webp"
+  },
+  {
+    "id": "AV-09",
+    "hero": "Gideon",
+    "known-for": "mighty man of valour",
+    "reference": "Judges 6:12",
+    "file": "AV-09-gideon.webp",
+    "thumbnail": "AV-09-gideon-128.webp"
+  },
+  {
+    "id": "AV-10",
+    "hero": "David",
+    "known-for": "the shepherd who sang",
+    "reference": "Psalm 23:1",
+    "file": "AV-10-david.webp",
+    "thumbnail": "AV-10-david-128.webp"
+  },
+  {
+    "id": "AV-11",
+    "hero": "Elijah",
+    "known-for": "heard the still small voice",
+    "reference": "1 Kings 19:12",
+    "file": "AV-11-elijah.webp",
+    "thumbnail": "AV-11-elijah-128.webp"
+  },
+  {
+    "id": "AV-12",
+    "hero": "Elisha",
+    "known-for": "saw God's help all around",
+    "reference": "2 Kings 6:16",
+    "file": "AV-12-elisha.webp",
+    "thumbnail": "AV-12-elisha-128.webp"
+  },
+  {
+    "id": "AV-13",
+    "hero": "Job",
+    "known-for": "held on in hard times",
+    "reference": "Job 19:25",
+    "file": "AV-13-job.webp",
+    "thumbnail": "AV-13-job-128.webp"
+  },
+  {
+    "id": "AV-14",
+    "hero": "Isaiah",
+    "known-for": "said 'send me'",
+    "reference": "Isaiah 6:8",
+    "file": "AV-14-isaiah.webp",
+    "thumbnail": "AV-14-isaiah-128.webp"
+  },
+  {
+    "id": "AV-15",
+    "hero": "Jeremiah",
+    "known-for": "brought words of hope",
+    "reference": "Jeremiah 29:11",
+    "file": "AV-15-jeremiah.webp",
+    "thumbnail": "AV-15-jeremiah-128.webp"
+  },
+  {
+    "id": "AV-16",
+    "hero": "Daniel",
+    "known-for": "kept on praying",
+    "reference": "Daniel 6:10",
+    "file": "AV-16-daniel.webp",
+    "thumbnail": "AV-16-daniel-128.webp"
+  },
+  {
+    "id": "AV-17",
+    "hero": "Nehemiah",
+    "known-for": "rebuilt the wall",
+    "reference": "Nehemiah 8:10",
+    "file": "AV-17-nehemiah.webp",
+    "thumbnail": "AV-17-nehemiah-128.webp"
+  },
+  {
+    "id": "AV-18",
+    "hero": "Jonah",
+    "known-for": "got a second chance",
+    "reference": "Jonah 2:9",
+    "file": "AV-18-jonah.webp",
+    "thumbnail": "AV-18-jonah-128.webp"
+  },
+  {
+    "id": "AV-19",
+    "hero": "Sarah",
+    "known-for": "laughed for joy",
+    "reference": "Genesis 21:6",
+    "file": "AV-19-sarah.webp",
+    "thumbnail": "AV-19-sarah-128.webp"
+  },
+  {
+    "id": "AV-20",
+    "hero": "Rebekah",
+    "known-for": "watered the camels",
+    "reference": "Genesis 24:19",
+    "file": "AV-20-rebekah.webp",
+    "thumbnail": "AV-20-rebekah-128.webp"
+  },
+  {
+    "id": "AV-21",
+    "hero": "Miriam",
+    "known-for": "sang to the LORD",
+    "reference": "Exodus 15:21",
+    "file": "AV-21-miriam.webp",
+    "thumbnail": "AV-21-miriam-128.webp"
+  },
+  {
+    "id": "AV-22",
+    "hero": "Rahab",
+    "known-for": "hung the scarlet line",
+    "reference": "Joshua 2:21",
+    "file": "AV-22-rahab.webp",
+    "thumbnail": "AV-22-rahab-128.webp"
+  },
+  {
+    "id": "AV-23",
+    "hero": "Deborah",
+    "known-for": "led with courage",
+    "reference": "Judges 4:14",
+    "file": "AV-23-deborah.webp",
+    "thumbnail": "AV-23-deborah-128.webp"
+  },
+  {
+    "id": "AV-24",
+    "hero": "Ruth",
+    "known-for": "stayed loyal",
+    "reference": "Ruth 1:16",
+    "file": "AV-24-ruth.webp",
+    "thumbnail": "AV-24-ruth-128.webp"
+  },
+  {
+    "id": "AV-25",
+    "hero": "Hannah",
+    "known-for": "prayed with all her heart",
+    "reference": "1 Samuel 1:27",
+    "file": "AV-25-hannah.webp",
+    "thumbnail": "AV-25-hannah-128.webp"
+  },
+  {
+    "id": "AV-26",
+    "hero": "Abigail",
+    "known-for": "made peace wisely",
+    "reference": "1 Samuel 25:3",
+    "file": "AV-26-abigail.webp",
+    "thumbnail": "AV-26-abigail-128.webp"
+  },
+  {
+    "id": "AV-27",
+    "hero": "Esther",
+    "known-for": "was brave for her people",
+    "reference": "Esther 4:14",
+    "file": "AV-27-esther.webp",
+    "thumbnail": "AV-27-esther-128.webp"
+  },
+  {
+    "id": "AV-28",
+    "hero": "John the Baptist",
+    "known-for": "prepared the way",
+    "reference": "John 3:30",
+    "file": "AV-28-john-the-baptist.webp",
+    "thumbnail": "AV-28-john-the-baptist-128.webp"
+  },
+  {
+    "id": "AV-29",
+    "hero": "Peter",
+    "known-for": "stepped out onto the water",
+    "reference": "Matthew 14:29",
+    "file": "AV-29-peter.webp",
+    "thumbnail": "AV-29-peter-128.webp"
+  },
+  {
+    "id": "AV-30",
+    "hero": "John",
+    "known-for": "wrote that God is love",
+    "reference": "1 John 4:8",
+    "file": "AV-30-john.webp",
+    "thumbnail": "AV-30-john-128.webp"
+  },
+  {
+    "id": "AV-31",
+    "hero": "Stephen",
+    "known-for": "full of faith and power",
+    "reference": "Acts 6:8",
+    "file": "AV-31-stephen.webp",
+    "thumbnail": "AV-31-stephen-128.webp"
+  },
+  {
+    "id": "AV-32",
+    "hero": "Philip",
+    "known-for": "shared the good news",
+    "reference": "Acts 8:35",
+    "file": "AV-32-philip.webp",
+    "thumbnail": "AV-32-philip-128.webp"
+  },
+  {
+    "id": "AV-33",
+    "hero": "The Ethiopian Treasurer",
+    "known-for": "went on his way rejoicing",
+    "reference": "Acts 8:39",
+    "file": "AV-33-the-ethiopian-treasurer.webp",
+    "thumbnail": "AV-33-the-ethiopian-treasurer-128.webp"
+  },
+  {
+    "id": "AV-34",
+    "hero": "Paul",
+    "known-for": "never gave up",
+    "reference": "Philippians 4:13",
+    "file": "AV-34-paul.webp",
+    "thumbnail": "AV-34-paul-128.webp"
+  },
+  {
+    "id": "AV-35",
+    "hero": "Barnabas",
+    "known-for": "the son of consolation",
+    "reference": "Acts 4:36",
+    "file": "AV-35-barnabas.webp",
+    "thumbnail": "AV-35-barnabas-128.webp"
+  },
+  {
+    "id": "AV-36",
+    "hero": "Timothy",
+    "known-for": "knew the scriptures from a child",
+    "reference": "2 Timothy 3:15",
+    "file": "AV-36-timothy.webp",
+    "thumbnail": "AV-36-timothy-128.webp"
+  },
+  {
+    "id": "AV-37",
+    "hero": "Luke",
+    "known-for": "the beloved physician",
+    "reference": "Colossians 4:14",
+    "file": "AV-37-luke.webp",
+    "thumbnail": "AV-37-luke-128.webp"
+  },
+  {
+    "id": "AV-38",
+    "hero": "Elizabeth",
+    "known-for": "believed God's word",
+    "reference": "Luke 1:45",
+    "file": "AV-38-elizabeth.webp",
+    "thumbnail": "AV-38-elizabeth-128.webp"
+  },
+  {
+    "id": "AV-39",
+    "hero": "Anna",
+    "known-for": "served God night and day",
+    "reference": "Luke 2:37",
+    "file": "AV-39-anna.webp",
+    "thumbnail": "AV-39-anna-128.webp"
+  },
+  {
+    "id": "AV-40",
+    "hero": "Mary Magdalene",
+    "known-for": "saw the empty tomb",
+    "reference": "John 20:18",
+    "file": "AV-40-mary-magdalene.webp",
+    "thumbnail": "AV-40-mary-magdalene-128.webp"
+  },
+  {
+    "id": "AV-41",
+    "hero": "Martha",
+    "known-for": "said 'I believe'",
+    "reference": "John 11:27",
+    "file": "AV-41-martha.webp",
+    "thumbnail": "AV-41-martha-128.webp"
+  },
+  {
+    "id": "AV-42",
+    "hero": "Mary of Bethany",
+    "known-for": "chose that good part",
+    "reference": "Luke 10:42",
+    "file": "AV-42-mary-of-bethany.webp",
+    "thumbnail": "AV-42-mary-of-bethany-128.webp"
+  },
+  {
+    "id": "AV-43",
+    "hero": "Dorcas",
+    "known-for": "full of good works",
+    "reference": "Acts 9:36",
+    "file": "AV-43-dorcas.webp",
+    "thumbnail": "AV-43-dorcas-128.webp"
+  },
+  {
+    "id": "AV-44",
+    "hero": "Lydia",
+    "known-for": "a seller of purple",
+    "reference": "Acts 16:14",
+    "file": "AV-44-lydia.webp",
+    "thumbnail": "AV-44-lydia-128.webp"
+  },
+  {
+    "id": "AV-45",
+    "hero": "Priscilla",
+    "known-for": "a helper in the work",
+    "reference": "Romans 16:3",
+    "file": "AV-45-priscilla.webp",
+    "thumbnail": "AV-45-priscilla-128.webp"
+  },
+  {
+    "id": "AV-46",
+    "hero": "Samuel",
+    "known-for": "listened to God",
+    "reference": "1 Samuel 3:10",
+    "file": "AV-46-samuel.webp",
+    "thumbnail": "AV-46-samuel-128.webp"
+  },
+  {
+    "id": "AV-47",
+    "hero": "Josiah",
+    "known-for": "king at eight",
+    "reference": "2 Kings 22:2",
+    "file": "AV-47-josiah.webp",
+    "thumbnail": "AV-47-josiah-128.webp"
+  },
+  {
+    "id": "AV-48",
+    "hero": "The Servant Girl",
+    "known-for": "spoke up to help",
+    "reference": "2 Kings 5:3",
+    "file": "AV-48-the-servant-girl.webp",
+    "thumbnail": "AV-48-the-servant-girl-128.webp"
+  },
+  {
+    "id": "AV-49",
+    "hero": "The Boy with the Loaves",
+    "known-for": "shared his lunch",
+    "reference": "John 6:9",
+    "file": "AV-49-the-boy-with-the-loaves.webp",
+    "thumbnail": "AV-49-the-boy-with-the-loaves-128.webp"
+  },
+  {
+    "id": "AV-50",
+    "hero": "Rhoda",
+    "known-for": "ran with gladness",
+    "reference": "Acts 12:14",
+    "file": "AV-50-rhoda.webp",
+    "thumbnail": "AV-50-rhoda-128.webp"
+  }
+]

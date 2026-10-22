@@ -2,3 +2,9 @@
 docs/
 tools/concordance/concordance.db
 tools/strongs/kjv_strongs.db
+
+# Testing (npm / Playwright)
+node_modules/
+test-results/
+playwright-report/
+blob-report/

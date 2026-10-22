@@ -1,7 +1,9 @@
 /**
  * <dg-menu> — the menu under the DG emblem at the top of the home page: the
- * reader's own things.
+ * reader's own things. (Once the reader has chosen an avatar, it shows in
+ * place of the emblem; see <avatar-picker>.)
  *
+ *   Change my avatar      opens <avatar-picker>
  *   My Bookmarks          opens <bookmark-manager>
  *   My Sticker Album      goes to the album, with how many stickers so far
  *   ────────────
@@ -25,6 +27,7 @@
  *   opener      id of the button that opens the menu; its aria-expanded
  *               follows the menu, and focus returns to it on close
  *   bookmarks   id of the page's <bookmark-manager>
+ *   avatar-picker  id of the page's <avatar-picker>
  *   album-href  the Sticker Album page, resolved against the page.
  *               Default: apps/pages/stickers.html
  *   open        set by the component while the menu or the guide is open
@@ -100,6 +103,7 @@ const BOOKMARK_KINDS = [
 const ICON_ATTRS =
     'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const BOOKMARK_ICON = `<svg ${ICON_ATTRS}><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>`;
+const AVATAR_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.7 18.4a6 6 0 0 1 10.6 0"/></svg>`;
 const QUESTION_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>`;
 const CLOSE_ICON = `<svg ${ICON_ATTRS}><path d="m6 6 12 12M18 6 6 18"/></svg>`;
 const CHECK_ICON = `<svg ${ICON_ATTRS} stroke-width="3"><polyline points="5 12 10 17 19 7"/></svg>`;
@@ -289,6 +293,12 @@ export class DgMenu extends HTMLElement {
       <dialog class="menu" aria-label="My Daily Grace">
         <ul role="menu">
           <li role="none">
+            <button class="item" type="button" role="menuitem" data-action="avatar" aria-haspopup="dialog">
+              <span class="item-icon">${AVATAR_ICON}</span>
+              <span class="item-text">Change my avatar<small>The Bible hero who is your picture</small></span>
+            </button>
+          </li>
+          <li role="none">
             <button class="item" type="button" role="menuitem" data-action="bookmarks">
               <span class="item-icon">${BOOKMARK_ICON}</span>
               <span class="item-text">My Bookmarks<small>The verses, facts, sayings and questions you have kept</small></span>
@@ -341,7 +351,10 @@ export class DgMenu extends HTMLElement {
                 return;
             }
             const action = event.target.closest("[data-action]")?.dataset.action;
-            if (action === "bookmarks") {
+            if (action === "avatar") {
+                this.close();
+                document.getElementById(this.getAttribute("avatar-picker") ?? "")?.open();
+            } else if (action === "bookmarks") {
                 this.close();
                 document.getElementById(this.getAttribute("bookmarks") ?? "")?.open();
             } else if (action === "guide") {

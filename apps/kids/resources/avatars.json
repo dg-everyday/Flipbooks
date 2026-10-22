@@ -1,0 +1,308 @@
+[
+  {
+    "id": "KA-00",
+    "avatar": "Dove (default)",
+    "known-for": "for children who haven't picked",
+    "reference": "Genesis 8:11",
+    "phase": "P1",
+    "file": "KA-00-dove.webp",
+    "thumbnail": "KA-00-dove-128.webp"
+  },
+  {
+    "id": "KA-01",
+    "avatar": "David",
+    "known-for": "the shepherd boy",
+    "reference": "1 Samuel 16:11",
+    "phase": "P1",
+    "file": "KA-01-david.webp",
+    "thumbnail": "KA-01-david-128.webp"
+  },
+  {
+    "id": "KA-03",
+    "avatar": "Miriam",
+    "known-for": "watched over baby Moses",
+    "reference": "Exodus 2:4",
+    "phase": "P1",
+    "file": "KA-03-miriam.webp",
+    "thumbnail": "KA-03-miriam-128.webp"
+  },
+  {
+    "id": "KA-04",
+    "avatar": "Samuel",
+    "known-for": "listened to God",
+    "reference": "1 Samuel 3:10",
+    "phase": "P1",
+    "file": "KA-04-samuel.webp",
+    "thumbnail": "KA-04-samuel-128.webp"
+  },
+  {
+    "id": "KA-05",
+    "avatar": "Josiah",
+    "known-for": "a king at eight",
+    "reference": "2 Kings 22:1",
+    "phase": "P1",
+    "file": "KA-05-josiah.webp",
+    "thumbnail": "KA-05-josiah-128.webp"
+  },
+  {
+    "id": "KA-06",
+    "avatar": "The Servant Girl",
+    "known-for": "spoke up to help",
+    "reference": "2 Kings 5:3",
+    "phase": "P1",
+    "file": "KA-06-servant-girl.webp",
+    "thumbnail": "KA-06-servant-girl-128.webp"
+  },
+  {
+    "id": "KA-07",
+    "avatar": "Daniel",
+    "known-for": "ate his vegetables",
+    "reference": "Daniel 1:12",
+    "phase": "P1",
+    "file": "KA-07-daniel.webp",
+    "thumbnail": "KA-07-daniel-128.webp"
+  },
+  {
+    "id": "KA-09",
+    "avatar": "The Boy with the Loaves",
+    "known-for": "shared his lunch",
+    "reference": "John 6:9",
+    "phase": "P1",
+    "file": "KA-09-boy-with-loaves.webp",
+    "thumbnail": "KA-09-boy-with-loaves-128.webp"
+  },
+  {
+    "id": "KA-10",
+    "avatar": "Rhoda",
+    "known-for": "ran with gladness",
+    "reference": "Acts 12:14",
+    "phase": "P1",
+    "file": "KA-10-rhoda.webp",
+    "thumbnail": "KA-10-rhoda-128.webp"
+  },
+  {
+    "id": "KA-11",
+    "avatar": "Timothy",
+    "known-for": "knew the scriptures from a child",
+    "reference": "2 Timothy 3:15",
+    "phase": "P1",
+    "file": "KA-11-timothy.webp",
+    "thumbnail": "KA-11-timothy-128.webp"
+  },
+  {
+    "id": "KA-12",
+    "avatar": "Jairus's Daughter",
+    "known-for": "got up and walked",
+    "reference": "Mark 5:42",
+    "phase": "P1",
+    "file": "KA-12-jairus-daughter.webp",
+    "thumbnail": "KA-12-jairus-daughter-128.webp"
+  },
+  {
+    "id": "KA-13",
+    "avatar": "Noah",
+    "known-for": "found grace",
+    "reference": "Genesis 6:8",
+    "phase": "P2",
+    "file": "KA-13-noah.webp",
+    "thumbnail": "KA-13-noah-128.webp"
+  },
+  {
+    "id": "KA-14",
+    "avatar": "Abraham",
+    "known-for": "counted the stars",
+    "reference": "Genesis 15:5",
+    "phase": "P2",
+    "file": "KA-14-abraham.webp",
+    "thumbnail": "KA-14-abraham-128.webp"
+  },
+  {
+    "id": "KA-15",
+    "avatar": "Moses",
+    "known-for": "led the people out",
+    "reference": "Exodus 14:13",
+    "phase": "P2",
+    "file": "KA-15-moses.webp",
+    "thumbnail": "KA-15-moses-128.webp"
+  },
+  {
+    "id": "KA-16",
+    "avatar": "Gideon",
+    "known-for": "mighty man of valour",
+    "reference": "Judges 6:12",
+    "phase": "P2",
+    "file": "KA-16-gideon.webp",
+    "thumbnail": "KA-16-gideon-128.webp"
+  },
+  {
+    "id": "KA-18",
+    "avatar": "Hannah",
+    "known-for": "made a little coat",
+    "reference": "1 Samuel 2:19",
+    "phase": "P2",
+    "file": "KA-18-hannah.webp",
+    "thumbnail": "KA-18-hannah-128.webp"
+  },
+  {
+    "id": "KA-19",
+    "avatar": "Elijah",
+    "known-for": "fed by the ravens",
+    "reference": "1 Kings 17:6",
+    "phase": "P2",
+    "file": "KA-19-elijah.webp",
+    "thumbnail": "KA-19-elijah-128.webp"
+  },
+  {
+    "id": "KA-20",
+    "avatar": "Jonah",
+    "known-for": "got a second chance",
+    "reference": "Jonah 1:17",
+    "phase": "P2",
+    "file": "KA-20-jonah.webp",
+    "thumbnail": "KA-20-jonah-128.webp"
+  },
+  {
+    "id": "KA-21",
+    "avatar": "Zacchaeus",
+    "known-for": "climbed a tree to see Jesus",
+    "reference": "Luke 19:4",
+    "phase": "P2",
+    "file": "KA-21-zacchaeus.webp",
+    "thumbnail": "KA-21-zacchaeus-128.webp"
+  },
+  {
+    "id": "KA-22",
+    "avatar": "Peter",
+    "known-for": "the fisherman",
+    "reference": "Matthew 4:19",
+    "phase": "P2",
+    "file": "KA-22-peter.webp",
+    "thumbnail": "KA-22-peter-128.webp"
+  },
+  {
+    "id": "KA-23",
+    "avatar": "Paul",
+    "known-for": "wrote letters",
+    "reference": "Philippians 4:13",
+    "phase": "P2",
+    "file": "KA-23-paul.webp",
+    "thumbnail": "KA-23-paul-128.webp"
+  },
+  {
+    "id": "KA-24",
+    "avatar": "Lydia",
+    "known-for": "a seller of purple",
+    "reference": "Acts 16:14",
+    "phase": "P2",
+    "file": "KA-24-lydia.webp",
+    "thumbnail": "KA-24-lydia-128.webp"
+  },
+  {
+    "id": "KA-25",
+    "avatar": "Lamb",
+    "known-for": "carried by the shepherd",
+    "reference": "Isaiah 40:11",
+    "phase": "P1",
+    "file": "KA-25-lamb.webp",
+    "thumbnail": "KA-25-lamb-128.webp"
+  },
+  {
+    "id": "KA-26",
+    "avatar": "Donkey",
+    "known-for": "the donkey that talked",
+    "reference": "Numbers 22:28",
+    "phase": "P1",
+    "file": "KA-26-donkey.webp",
+    "thumbnail": "KA-26-donkey-128.webp"
+  },
+  {
+    "id": "KA-27",
+    "avatar": "Camel",
+    "known-for": "watered by Rebekah",
+    "reference": "Genesis 24:19",
+    "phase": "P1",
+    "file": "KA-27-camel.webp",
+    "thumbnail": "KA-27-camel-128.webp"
+  },
+  {
+    "id": "KA-28",
+    "avatar": "Fawn",
+    "known-for": "thirsty for God",
+    "reference": "Psalm 42:1",
+    "phase": "P1",
+    "file": "KA-28-fawn.webp",
+    "thumbnail": "KA-28-fawn-128.webp"
+  },
+  {
+    "id": "KA-29",
+    "avatar": "Little Goat",
+    "known-for": "the kid and the leopard",
+    "reference": "Isaiah 11:6",
+    "phase": "P1",
+    "file": "KA-29-kid-goat.webp",
+    "thumbnail": "KA-29-kid-goat-128.webp"
+  },
+  {
+    "id": "KA-30",
+    "avatar": "Sparrow",
+    "known-for": "God sees the sparrow",
+    "reference": "Matthew 10:29",
+    "phase": "P1",
+    "file": "KA-30-sparrow.webp",
+    "thumbnail": "KA-30-sparrow-128.webp"
+  },
+  {
+    "id": "KA-31",
+    "avatar": "Eagle",
+    "known-for": "wings like eagles",
+    "reference": "Isaiah 40:31",
+    "phase": "P1",
+    "file": "KA-31-eagle.webp",
+    "thumbnail": "KA-31-eagle-128.webp"
+  },
+  {
+    "id": "KA-32",
+    "avatar": "Raven",
+    "known-for": "consider the ravens",
+    "reference": "Luke 12:24",
+    "phase": "P1",
+    "file": "KA-32-raven.webp",
+    "thumbnail": "KA-32-raven-128.webp"
+  },
+  {
+    "id": "KA-33",
+    "avatar": "Fish",
+    "known-for": "a great multitude of fishes",
+    "reference": "Luke 5:6",
+    "phase": "P1",
+    "file": "KA-33-fish.webp",
+    "thumbnail": "KA-33-fish-128.webp"
+  },
+  {
+    "id": "KA-34",
+    "avatar": "Frog",
+    "known-for": "frogs everywhere",
+    "reference": "Exodus 8:6",
+    "phase": "P1",
+    "file": "KA-34-frog.webp",
+    "thumbnail": "KA-34-frog-128.webp"
+  },
+  {
+    "id": "KA-35",
+    "avatar": "Fox Cub",
+    "known-for": "the little foxes",
+    "reference": "Song of Solomon 2:15",
+    "phase": "P1",
+    "file": "KA-35-fox-cub.webp",
+    "thumbnail": "KA-35-fox-cub-128.webp"
+  },
+  {
+    "id": "KA-36",
+    "avatar": "Bee",
+    "known-for": "sweeter than honey",
+    "reference": "Psalm 119:103",
+    "phase": "P1",
+    "file": "KA-36-bee.webp",
+    "thumbnail": "KA-36-bee-128.webp"
+  }
+]

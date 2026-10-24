@@ -162,7 +162,8 @@ const GUIDES = [
         page: "kids.html",
         icon: "daily-grace-kids.webp",
         title: "Daily Grace Kids",
-        text: "Bible stories, games and verses for children aged 3 to 8, with Nari the lion cub",
+        // Shown as its cartoon logo alone, beside Nari, so it stands out.
+        logo: asset("../../assets/images/kids/daily-grace-kids-logo.webp"),
     },
 ];
 
@@ -232,9 +233,12 @@ const STYLES = /* css */ `
   /* Help and About sit at the foot of the drawer, under a rule. */
   .menu-foot {
     margin-top: auto;
-    padding-top: 12px;
+    padding-top: 16px;
     border-top: 1px solid rgb(0 27 52 / 22%);
   }
+  /* Clear room between the last guide (the Daily Grace Kids logo) and the rule
+     above Help, so the two don't read as one group. */
+  .menu-list:not(.menu-foot) { padding-bottom: 28px; }
   .menu-item {
     display: flex;
     /* The icon sits beside the title, not halfway down the description. */
@@ -263,6 +267,15 @@ const STYLES = /* css */ `
   .menu-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
   .menu-text { display: grid; gap: 2px; min-width: 0; }
   .menu-text strong { font-size: 1rem; font-weight: 700; }
+  /* A guide shown by its logo alone (Daily Grace Kids): the logo sits level
+     with the icon beside it. */
+  .menu-item.has-logo { align-items: center; }
+  .menu-logo {
+    display: block;
+    width: min(200px, 100%);
+    height: auto;
+    filter: drop-shadow(0 2px 3px rgb(0 27 52 / 20%));
+  }
   /* Tight leading, so a description that wraps to two or three lines reads as one block. */
   .menu-text small { color: rgb(16 37 59 / 72%); font-size: .8125rem; line-height: 1.15; }
 
@@ -843,15 +856,17 @@ const STYLES = /* css */ `
 const escapeHtml = (text) =>
     text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
-const guideItem = ({ page, icon, title, text }) => `
+const guideItem = ({ page, icon, title, logo, text }) => `
             <li>
-                <a class="menu-item" href="${asset(PAGES + page)}">
+                <a class="menu-item${logo ? " has-logo" : ""}" href="${asset(PAGES + page)}">
                     <span class="help-icon">
                         <img class="menu-icon" src="${asset(ICONS + icon)}" alt="" width="36" height="36" loading="lazy" />
                     </span>
                     <span class="menu-text">
-                        <strong>${escapeHtml(title)}</strong>
-                        <small>${escapeHtml(text)}</small>
+                        ${logo
+                            ? `<img class="menu-logo" src="${logo}" alt="${escapeHtml(title)}" width="720" height="145" loading="lazy" />`
+                            : `<strong>${escapeHtml(title)}</strong>`}
+                        ${text ? `<small>${escapeHtml(text)}</small>` : ""}
                     </span>
                 </a>
             </li>`;

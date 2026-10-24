@@ -15,7 +15,7 @@
 
 import * as store from "../../../assets/scripts/kids/store.js?v=20261024-2";
 import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
-import { ICONS, earnedFor, escapeHtml, gameConfig, toast, treeHtml } from "./kids-ui.js?v=20261024-4";
+import { ICONS, earnedFor, escapeHtml, gameConfig, toast, treeHtml } from "./kids-ui.js?v=20261024-7";
 import "../../components/kids/kids-look-find.js?v=20261024-2";
 import "../../components/kids/kids-story-order.js?v=20261024-2";
 import "../../components/kids/kids-verse-builder.js?v=20261024-2";
@@ -77,13 +77,15 @@ function header(app, story, step) {
     const n = rules.STEPS.indexOf(step);
     return `
       <header class="bar stop-bar">
-        <button class="round-btn" type="button" data-leave aria-label="Leave the story">${ICONS.close}</button>
-        <div class="bar-text center">
-          <h1 class="title small-title">${escapeHtml(story.title)}</h1>
-          <span class="sub">Step ${n + 1} of 5 · ${STEP_NAMES[step]}</span>
+        <button class="round-btn back-btn stop-home" type="button" data-home aria-label="Back to Daily Grace Kids home" title="Home">${ICONS.backCircle}</button>
+        <div class="stop-head">
+          <img class="nari-head nari-react" data-rest="point" src="${escapeHtml(app.nari("point"))}" alt="" />
+          <div class="bar-text center">
+            <h1 class="title small-title">${escapeHtml(story.title)}</h1>
+            <span class="sub">Step ${n + 1} of 5 · ${STEP_NAMES[step]}</span>
+          </div>
         </div>
-        <img class="nari-head nari-react" data-rest="point" src="${escapeHtml(app.nari("point"))}" alt="" />
-        <button class="round-btn" type="button" data-listen aria-label="Hear it again">${ICONS.speaker}</button>
+        <button class="round-btn leave-btn" type="button" data-leave aria-label="Journey Map" title="Journey Map">${ICONS.mapPin}</button>
       </header>
       <ol class="paws" aria-label="Step ${n + 1} of 5">
         ${rules.STEPS.map((s, i) => {
@@ -94,9 +96,40 @@ function header(app, story, step) {
       ${app.settings().readTogether ? `<p class="read-together-bar"><img src="${escapeHtml(app.resolve(app.data.ui.readTogether))}" alt="" />Read Together is on: a grown-up reads, and the child taps the pictures.</p>` : ""}`;
 }
 
-function wireHeader(app, story, listen) {
+function wireHeader(app) {
+    app.root.querySelector("[data-home]").addEventListener("click", () => app.go("#/home"));
     app.root.querySelector("[data-leave]").addEventListener("click", () => app.go("#/map"));
-    app.root.querySelector("[data-listen]").addEventListener("click", () => listen());
+    hugLines(app.root.querySelectorAll(".stop-head .title, .stop-head .sub"));
+}
+
+/**
+ * Keeps the story's name and step line snug, so the group with Nari stays
+ * centred: a line that wraps would otherwise keep its box as wide as the room
+ * it was given. Each box is narrowed to its longest line, again whenever the
+ * screen changes size and once the fonts have loaded.
+ */
+function hugLines(elements) {
+    const lines = [...elements];
+    if (!lines.length) {
+        return;
+    }
+    const observer = new ResizeObserver(() => fit());
+    const fit = () => {
+        if (!lines[0].isConnected) {
+            observer.disconnect();
+            return;
+        }
+        for (const line of lines) {
+            line.style.width = "";
+        }
+        for (const line of lines) {
+            const range = document.createRange();
+            range.selectNodeContents(line);
+            line.style.width = `${Math.ceil(range.getBoundingClientRect().width) + 1}px`;
+        }
+    };
+    observer.observe(lines[0].closest(".stop-bar"));
+    document.fonts?.ready.then(fit);
 }
 
 function nextButton(label, hash) {
@@ -197,7 +230,7 @@ function watchStep(app, story, child) {
         </div>
         <div class="dots" role="img">${panels.map(() => `<span class="dot"></span>`).join("")}</div>
       </section>`;
-    wireHeader(app, story, tell);
+    wireHeader(app);
     const root = app.root;
     root.querySelector("[data-prev]").addEventListener("click", () => go(i - 1));
     root.querySelector("[data-fwd]").addEventListener("click", () => go(i + 1));
@@ -271,7 +304,7 @@ function findStep(app, story, child) {
     const count = child.band === "lions" ? story.find.items.length : story.find.lambsCount;
     game.config = gameConfig(app, { image: story.find.image, items: story.find.items, count });
     game.toggleAttribute("less-motion", app.settings().lessMotion);
-    wireHeader(app, story, () => app.line("step-find"));
+    wireHeader(app);
     game.addEventListener("kids-done", () => {
         store.completeStep(child.id, story.id, "find");
         app.root.querySelector(".done-row").hidden = false;
@@ -311,7 +344,7 @@ function playStep(app, story, child, gameArg) {
     const game = app.root.querySelector("kids-story-order");
     game.config = gameConfig(app, { panels: story.panels.map((p) => ({ image: p.image, text: p[child.band] })) });
     game.toggleAttribute("less-motion", app.settings().lessMotion);
-    wireHeader(app, story, () => app.line("order-intro"));
+    wireHeader(app);
     game.addEventListener("kids-done", () => {
         store.completeStep(child.id, story.id, "play");
         app.root.querySelector(".more-games").hidden = false;
@@ -350,7 +383,7 @@ function extraGame(app, story, child, type) {
     }[type];
     game.config = gameConfig(app, extra);
     game.toggleAttribute("less-motion", app.settings().lessMotion);
-    wireHeader(app, story, () => app.line({ "who-said": "who-intro", gather: "gather-intro", colour: "colour-intro", "right-or-not": "right-or-not-intro" }[type]));
+    wireHeader(app);
     game.addEventListener("kids-done", () => {
         // Any game counts as playing, for the first-time sticker.
         store.setFirst(child.id, "play");
@@ -379,7 +412,7 @@ function verseStep(app, story, child) {
     const game = app.root.querySelector("kids-verse-builder");
     game.config = gameConfig(app, { verse: story.verse });
     game.toggleAttribute("less-motion", app.settings().lessMotion);
-    wireHeader(app, story, () => app.say(story.verse.audio, { force: true }));
+    wireHeader(app);
     const before = Boolean(app.progress().stops[story.id]?.steps?.verse);
     game.addEventListener("kids-done", () => {
         const { wasNew } = store.completeStep(child.id, story.id, "verse");
@@ -427,7 +460,7 @@ function talkStep(app, story, child) {
           <button class="link-btn" type="button" data-later>Maybe later</button>
         </div>
       </section>`;
-    wireHeader(app, story, () => app.line("talk-intro"));
+    wireHeader(app);
     app.root.querySelector("[data-pray]").addEventListener("click", () => app.say(t.prayAudio, { force: true }));
     // A second tap before the reward shows would count the story twice and
     // hide what the first tap earned.

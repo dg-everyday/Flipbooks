@@ -246,6 +246,28 @@ h2 {
     width: 24px;
     height: 24px;
 }
+/* Every "go back" button: the arrow in its own circle is the whole button,
+   with no paper disc behind it; the tap area stays the round button's size. */
+.round-btn.back-btn {
+    background: transparent;
+    box-shadow: none;
+    color: var(--kids-ink);
+    transition: background-color .15s ease, transform .15s ease;
+}
+.round-btn.back-btn svg {
+    width: 40px;
+    height: 40px;
+}
+.round-btn.back-btn:hover {
+    background: rgb(255 255 255 / 55%);
+}
+.round-btn.back-btn:active {
+    transform: scale(.94);
+}
+.round-btn.back-btn:focus-visible {
+    outline: 3px solid var(--kids-green);
+    outline-offset: 2px;
+}
 .pill-btn {
     align-self: center;
     display: inline-flex;
@@ -1149,11 +1171,65 @@ h2 {
         right: calc(50% - 380px + 10px);
     }
 }
+/* A story's header: Nari and the story's name together in the middle, and a
+   small return button at the top right to leave the story. The bar keeps the
+   button's width free on both sides, so the middle stays centred. */
+.stop-bar {
+    position: relative;
+    justify-content: center;
+    min-height: 58px;
+    padding-inline: 52px;
+}
+.stop-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 0;
+}
+/* The name and the step line start right beside Nari, whatever their
+   lengths; the group as a whole is what is centred. */
+.stop-head .bar-text {
+    flex: 0 1 auto;
+    align-items: flex-start;
+    text-align: left;
+}
+.stop-head .sub {
+    text-wrap: balance;
+}
+/* Home on the left, the Journey Map on the right, in the room the bar keeps
+   free on each side. */
+.round-btn.leave-btn,
+.round-btn.stop-home {
+    position: absolute;
+    top: 0;
+    width: 46px;
+    height: 46px;
+}
+.round-btn.leave-btn {
+    right: 0;
+}
+.round-btn.stop-home {
+    left: 0;
+}
+.leave-btn svg {
+    width: 34px;
+    height: 34px;
+}
 .nari-head {
     flex: none;
     width: 58px;
     height: 58px;
     object-fit: contain;
+}
+@media (max-width: 400px) {
+    .stop-bar {
+        padding-inline: 48px;
+    }
+    .nari-head {
+        width: 46px;
+        height: 46px;
+    }
 }
 .bar .nari-corner {
     position: static;

@@ -222,8 +222,14 @@ test("Back and Forward move between screens; leaving a story goes to the map", a
     await expect(page.locator(".screen.map")).toBeVisible();
     await page.goForward();
     await expect(page.locator(".screen.watch")).toBeVisible();
-    await page.locator("[data-leave]").click();
+    // The map button at the top right goes to the Journey Map ...
+    await page.locator('[data-leave][aria-label="Journey Map"]').click();
     await expect.poll(() => hash(page)).toBe("#/map");
+    // ... and the arrow at the top left goes home.
+    await page.locator(`.map-stop[data-story="${FIRST.id}"]`).click();
+    await page.locator('[data-home][aria-label="Back to Daily Grace Kids home"]').click();
+    await expect.poll(() => hash(page)).toBe("#/home");
+    await page.locator(".nav-map").click();
     await page.locator(".map [data-go]").click();
     await expect.poll(() => hash(page)).toBe("#/home");
 });

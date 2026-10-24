@@ -24,9 +24,9 @@ import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
 import { createAudio } from "../../../assets/scripts/kids/audio.js?v=20261024-2";
 import {
     BAND_NAMES, ICONS, brandLink, earnedFor, escapeHtml, gameConfig, gate, groupName, nariSrc, toast, treeHtml,
-} from "./kids-ui.js?v=20261024-4";
-import { renderStop, renderReward } from "./kids-stop.js?v=20261024-5";
-import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261024-4";
+} from "./kids-ui.js?v=20261024-7";
+import { renderStop, renderReward } from "./kids-stop.js?v=20261024-10";
+import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261024-7";
 import "../../components/kids/kids-pairs.js?v=20261024-2";
 import "../../components/kids/kids-colour.js?v=20261024-2";
 
@@ -430,7 +430,7 @@ function homeView(app) {
     app.root.innerHTML = `
       <section class="screen home">
         <header class="bar">
-          <button class="round-btn" type="button" data-who aria-label="Back to Who's exploring?">${ICONS.back}</button>
+          <button class="round-btn back-btn" type="button" data-who aria-label="Back to Who's exploring?">${ICONS.backCircle}</button>
           <button class="avatar-btn" type="button" data-who aria-label="Switch explorer"><img src="${escapeHtml(app.avatarThumb(child.avatar))}" alt="" /></button>
           <div class="bar-text">
             <h1 class="title small-title">Hi, ${escapeHtml(child.name)}!</h1>
@@ -539,7 +539,7 @@ function mapView(app) {
     app.root.innerHTML = `
       <section class="screen map">
         <header class="bar sticky">
-          <button class="round-btn" type="button" data-go="#/home" aria-label="Back home">${ICONS.back}</button>
+          <button class="round-btn back-btn" type="button" data-go="#/home" aria-label="Back home">${ICONS.backCircle}</button>
           <div class="bar-text"><h1 class="title small-title">The Journey</h1><span class="sub">From the Garden to the River of Life</span></div>
           <span class="count-pill">${finished} of ${stories.length}</span>
         </header>
@@ -597,7 +597,7 @@ function stickersView(app) {
     app.root.innerHTML = `
       <section class="screen stickers">
         <header class="bar">
-          <button class="round-btn" type="button" data-go="#/home" aria-label="Back home">${ICONS.back}</button>
+          <button class="round-btn back-btn" type="button" data-go="#/home" aria-label="Back home">${ICONS.backCircle}</button>
           <div class="bar-text"><h1 class="title small-title">My Stickers</h1><span class="sub">${total} ${total === 1 ? "sticker" : "stickers"} so far</span></div>
         </header>
         ${shelves}
@@ -640,7 +640,7 @@ function gamesView(app, args) {
         app.root.innerHTML = `
           <section class="screen game-screen">
             <header class="bar">
-              <button class="round-btn" type="button" data-go="#/games" aria-label="Back to the games">${ICONS.back}</button>
+              <button class="round-btn back-btn" type="button" data-go="#/games" aria-label="Back to the games">${ICONS.backCircle}</button>
               <div class="bar-text"><h1 class="title small-title">Two by Two</h1><span class="sub">Find the animal pairs</span></div>
               <img class="nari-corner nari-react" data-rest="point" src="${escapeHtml(app.nari("point"))}" alt="" />
             </header>
@@ -669,7 +669,7 @@ function gamesView(app, args) {
         app.root.innerHTML = `
           <section class="screen game-screen">
             <header class="bar">
-              <button class="round-btn" type="button" data-go="#/games" aria-label="Back to the games">${ICONS.back}</button>
+              <button class="round-btn back-btn" type="button" data-go="#/games" aria-label="Back to the games">${ICONS.backCircle}</button>
               <div class="bar-text"><h1 class="title small-title">Colour It In</h1><span class="sub">${escapeHtml(story.title)}</span></div>
             </header>
             <kids-colour></kids-colour>
@@ -684,7 +684,7 @@ function gamesView(app, args) {
     app.root.innerHTML = `
       <section class="screen games">
         <header class="bar">
-          <button class="round-btn" type="button" data-go="#/home" aria-label="Back home">${ICONS.back}</button>
+          <button class="round-btn back-btn" type="button" data-go="#/home" aria-label="Back home">${ICONS.backCircle}</button>
           <div class="bar-text"><h1 class="title small-title">Games</h1><span class="sub">Play any time</span></div>
         </header>
         <button class="panel game-card" type="button" data-play="#/games/pairs">

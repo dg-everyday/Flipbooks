@@ -16,6 +16,18 @@ export const ICONS = {
     back: I('<path d="M15 5l-7 7 7 7"/>'),
     next: I('<path d="M9 5l7 7-7 7"/>'),
     close: I('<path d="M6 6l12 12M18 6L6 18"/>'),
+    // Every "go back" button: an arrow in a circle, drawn with a finer line.
+    backCircle: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10.2"/><path d="M17 12H7.5"/><path d="M11.5 7.6 7.1 12l4.4 4.4"/></svg>',
+    // To the Journey Map: a folded map with a red pin, in colour.
+    mapPin: `<svg viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M3 37 15 32l9 5 9-5 12 5-4-15-8 4-9-4-9 4-8-4z" fill="#8fd18a"/>
+      <path d="M15 32l9 5V20.5L16 16.5z" fill="#cfe9f7"/><path d="M33 32l-9 5V20.5l8 4z" fill="#6cc0e8"/>
+      <path d="M3 37l4-15 8 4-0 6z" fill="#5fb85a"/><path d="M45 37l-4-15-8 4v6z" fill="#5fb85a"/>
+      <path d="M3 37 15 32l9 5 9-5 12 5" fill="none" stroke="#3a6b45" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M8 30l7-2 9 4 9-4 7 2" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".85"/>
+      <path d="M24 31c-6-7.5-9-12.4-9-16.5a9 9 0 0 1 18 0c0 4.1-3 9-9 16.5z" fill="#e5322d"/>
+      <path d="M24 31c-6-7.5-9-12.4-9-16.5a9 9 0 0 1 4.5-7.8C18.2 9 18 11 18 14.5c0 4 2.3 9 6 16.5z" fill="#b8211d"/>
+      <circle cx="24" cy="14.5" r="4" fill="#fff"/></svg>`,
     play: I('<path d="M8 5l11 7-11 7z" fill="currentColor"/>'),
     pause: I('<rect x="6" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.5" fill="currentColor"/>'),
     speaker: I('<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/>'),

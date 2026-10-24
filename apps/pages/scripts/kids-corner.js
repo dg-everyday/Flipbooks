@@ -10,7 +10,7 @@
 
 import * as store from "../../../assets/scripts/kids/store.js?v=20261024-2";
 import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
-import { BAND_NAMES, DAILY_GRACE_URL, ICONS, ask, escapeHtml, toast } from "./kids-ui.js?v=20261024-4";
+import { BAND_NAMES, DAILY_GRACE_URL, ICONS, ask, escapeHtml, toast } from "./kids-ui.js?v=20261024-7";
 
 const TIME_LABELS = { 0: "Off", 15: "15 minutes", 30: "30 minutes", 45: "45 minutes" };
 const TOGGLES = [
@@ -77,7 +77,7 @@ export function renderCorner(app) {
     app.root.innerHTML = `
       <section class="screen corner">
         <header class="bar">
-          <button class="round-btn" type="button" data-go="${back}" aria-label="Back">${ICONS.back}</button>
+          <button class="round-btn back-btn" type="button" data-go="${back}" aria-label="Back">${ICONS.backCircle}</button>
           <div class="bar-text"><h1 class="title small-title">Grown-ups' Corner</h1><span class="sub">Settings and progress for this device</span></div>
         </header>
         <section>
@@ -160,7 +160,7 @@ export function renderChildForm(app, id) {
     app.root.innerHTML = `
       <section class="screen corner form-screen">
         <header class="bar">
-          <button class="round-btn" type="button" data-cancel aria-label="Back">${ICONS.back}</button>
+          <button class="round-btn back-btn" type="button" data-cancel aria-label="Back">${ICONS.backCircle}</button>
           <div class="bar-text"><h1 class="title small-title">${child ? `Edit ${escapeHtml(child.name)}` : "Add a child"}</h1>
             <span class="sub">The name stays on this device. Nothing is sent anywhere.</span></div>
         </header>
@@ -285,7 +285,7 @@ export function renderPrint(app, args) {
     app.root.innerHTML = `
       <section class="screen print-screen">
         <header class="bar no-print">
-          <button class="round-btn" type="button" data-go="#/corner" aria-label="Back">${ICONS.back}</button>
+          <button class="round-btn back-btn" type="button" data-go="#/corner" aria-label="Back">${ICONS.backCircle}</button>
           <div class="bar-text"><h1 class="title small-title">Ready to print</h1><span class="sub">Use your device's Print or Share button, or the one below.</span></div>
           <button class="btn" type="button" data-print>${ICONS.print} Print</button>
         </header>

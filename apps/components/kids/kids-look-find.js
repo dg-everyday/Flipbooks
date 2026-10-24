@@ -41,8 +41,11 @@ const STYLES = /* css */ `
   }
   .spot:focus-visible { outline: 4px dashed rgb(255 255 255 / 90%); outline-offset: 2px; }
   .spot.found { pointer-events: none; }
+  /* The ring and the miss mark are centred with translate, not transform:
+     their pop animation sets transform, and would otherwise undo the
+     centring and leave them down and to the right of the tap. */
   .ring {
-    position: absolute; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none;
+    position: absolute; translate: -50% -50%; border-radius: 50%; pointer-events: none;
     border: 5px solid var(--k-gold); box-shadow: 0 0 0 3px rgb(255 255 255 / 85%), 0 4px 10px rgb(0 0 0 / 30%);
     animation: kids-pop .45s ease both;
   }
@@ -50,7 +53,7 @@ const STYLES = /* css */ `
     content: "✓"; position: absolute; right: -6px; top: -6px; width: 26px; height: 26px; border-radius: 50%;
     display: grid; place-items: center; background: var(--k-green); color: #fff; font-weight: 900; font-size: 15px;
   }
-  .miss { position: absolute; width: 36px; height: 36px; transform: translate(-50%, -50%); border-radius: 50%; border: 3px solid rgb(255 255 255 / 80%); pointer-events: none; animation: kids-pop .4s ease both; }
+  .miss { position: absolute; width: 36px; height: 36px; translate: -50% -50%; border-radius: 50%; border: 3px solid rgb(255 255 255 / 80%); pointer-events: none; animation: kids-pop .4s ease both; }
   .glow { position: absolute; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; animation: kids-pulse 1.2s ease 3; }
   .list { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
   .list button {
@@ -119,7 +122,7 @@ export class KidsLookFind extends KidsGame {
         scene.addEventListener("click", (event) => {
             const spot = event.target.closest(".spot");
             if (spot) {
-                this.#find(Number(spot.dataset.i), spot);
+                this.#find(Number(spot.dataset.i), spot, event);
             } else {
                 this.#miss(event, scene);
             }
@@ -134,7 +137,7 @@ export class KidsLookFind extends KidsGame {
         this.#armHint();
     }
 
-    #find(i, spotButton) {
+    #find(i, spotButton, event) {
         if (this.#found.has(i) || this.#finished) {
             return;
         }
@@ -144,10 +147,15 @@ export class KidsLookFind extends KidsGame {
             b.classList.add("found");
             b.setAttribute("aria-disabled", "true");
         }
+        // The ring circles the place the child tapped, which is on the thing
+        // itself (a tap spot is larger than the thing and not always centred
+        // on it). From the keyboard or a screen reader there is no tap: the
+        // ring goes round the spot.
+        const tap = this.#tapPoint(event, scene);
         const ring = document.createElement("span");
         ring.className = "ring";
-        ring.style.left = spotButton.style.left;
-        ring.style.top = spotButton.style.top;
+        ring.style.left = tap ? `${tap.x}%` : spotButton.style.left;
+        ring.style.top = tap ? `${tap.y}%` : spotButton.style.top;
         ring.style.width = spotButton.style.width;
         ring.style.aspectRatio = "1";
         scene.append(ring);
@@ -166,6 +174,21 @@ export class KidsLookFind extends KidsGame {
         } else {
             this.sayOneOf("find-found-");
         }
+    }
+
+    /** Where a tap or click landed, in percent of the scene; null when it wasn't one. */
+    #tapPoint(event, scene) {
+        // A click from the keyboard (or one a script fires) has no position.
+        if (!event || event.detail === 0) {
+            return null;
+        }
+        const box = scene.getBoundingClientRect();
+        const x = ((event.clientX - box.left) / box.width) * 100;
+        const y = ((event.clientY - box.top) / box.height) * 100;
+        if (!(x >= 0 && x <= 100 && y >= 0 && y <= 100)) {
+            return null;
+        }
+        return { x, y };
     }
 
     #miss(event, scene) {

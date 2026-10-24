@@ -119,6 +119,16 @@ export function readStore(page, childId) {
 
 export async function go(page, hash) {
     await page.goto(`${KIDS}#${hash}`);
+    await appStarted(page);
+}
+
+/**
+ * Waits until kids.js has drawn its first screen. kids.html shows "Opening
+ * Daily Grace Kids…" until then, which is a .screen too; on a slow
+ * connection (the live site) a test must not take that for the page.
+ */
+export async function appStarted(page) {
+    await expect(page.locator("#kids-app")).not.toContainText("Opening Daily Grace Kids…", { timeout: 15_000 });
     await expect(page.locator("#kids-app .screen")).toBeVisible();
 }
 

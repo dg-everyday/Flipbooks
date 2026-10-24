@@ -7,7 +7,7 @@
  */
 import { test, expect } from "@playwright/test";
 import {
-    ANNA, BEN, DATA, FIRST, KIDS, STORIES, expectNoErrors, go, hash, playFind, playOrder, playStory, playVerse, playWatch,
+    ANNA, BEN, DATA, FIRST, KIDS, STORIES, appStarted, expectNoErrors, go, hash, playFind, playOrder, playStory, playVerse, playWatch,
     readStore, seed, stop, stubMedia, watchErrors,
 } from "./kids-helpers.mjs";
 
@@ -65,6 +65,9 @@ test("after the first story: home shows the tree, Nari, the next story and one m
 });
 
 test("playing a story again earns nothing twice, and the stickers due still arrive one by one, never doubled", async ({ page }) => {
+    // Two whole stories and ten loads of home: more than the usual 30 s on a
+    // real connection.
+    test.setTimeout(120_000);
     await seed(page, { children: [ANNA], current: ANNA.id });
     await playStory(page, FIRST, "lions");
     await playStory(page, FIRST, "lions");
@@ -73,9 +76,13 @@ test("playing a story again earns nothing twice, and the stickers due still arri
     await expect(reward.locator(".reward-items")).toHaveCount(0);
     let saved = await readStore(page, ANNA.id);
     expect(saved.progress.stops[FIRST.id].times).toBe(2);
-    // The first story earned 9 stickers in all: 6 firsts, a hero, a saying, an animal.
+    // The first story earned 9 stickers in all: 6 firsts, a hero, a saying, an
+    // animal. Each visit home (a fresh load of the page) gives one more.
+    await go(page, "/home");
     for (let i = 0; i < 10; i += 1) {
-        await go(page, "/home");
+        await page.reload();
+        await appStarted(page);
+        await expect(page.locator(".screen.home")).toBeVisible();
     }
     saved = await readStore(page, ANNA.id);
     const ids = Object.keys(saved.stickers.earned);
@@ -269,6 +276,37 @@ test("Watch & Listen: arrows, swipes and the keyboard move through the pictures"
     }, ANNA.id);
     await page.reload();
     await expect(text).toHaveText(FIRST.panels[0].lambs);
+});
+
+test("Look & Find: the ring is drawn where the child tapped; from the keyboard, round the spot", async ({ page }) => {
+    await seed(page, { children: [ANNA], current: ANNA.id, progress: { [ANNA.id]: { stops: { [FIRST.id]: stop(["watch"]) } } } });
+    await go(page, `/stop/${FIRST.id}/find`);
+    const find = page.locator("kids-look-find");
+    await expect(find.locator(".scene.ready")).toBeVisible();
+    const centre = (box) => ({ x: box.x + box.width / 2, y: box.y + box.height / 2 });
+
+    // A tap off the middle of a spot (as on a thing that sits to one side of it).
+    const spot = find.locator('.spot[data-i="0"]').first();
+    const box = await spot.boundingBox();
+    const at = { x: box.x + box.width * 0.3, y: box.y + box.height * 0.7 };
+    await page.mouse.click(at.x, at.y);
+    const ring = find.locator(".ring").first();
+    await expect(ring).toBeVisible();
+    const ringCentre = centre(await ring.boundingBox());
+    expect(Math.abs(ringCentre.x - at.x)).toBeLessThanOrEqual(2);
+    expect(Math.abs(ringCentre.y - at.y)).toBeLessThanOrEqual(2);
+
+    // From the keyboard there is no tap: the ring goes round the spot.
+    const second = find.locator('.spot[data-i="1"]').first();
+    await second.focus();
+    await page.keyboard.press("Enter");
+    const ring2 = find.locator(".ring").nth(1);
+    await expect(ring2).toBeVisible();
+    const spotCentre = centre(await second.boundingBox());
+    const ring2Centre = centre(await ring2.boundingBox());
+    expect(Math.abs(ring2Centre.x - spotCentre.x)).toBeLessThanOrEqual(2);
+    expect(Math.abs(ring2Centre.y - spotCentre.y)).toBeLessThanOrEqual(2);
+    await expect(find.locator(".count .n")).toHaveText("2");
 });
 
 test("quick and repeated taps in the games count once", async ({ page }) => {

@@ -70,7 +70,12 @@ test.describe("on every screen", () => {
         const video = card.locator("video");
         await expect(video).toHaveAttribute("src", /daily-grace-kids-banner\.mp4$/);
         expect(await video.evaluate((v) => v.muted && v.loop && v.playsInline)).toBe(true);
-        await expect.poll(() => video.evaluate((v) => !v.paused && v.currentTime > 0), { timeout: 10_000 }).toBe(true);
+        // The cards above fill in as they come near the screen and can push
+        // this one back below it, where the video rightly pauses: keep it in view.
+        await expect.poll(async () => {
+            await card.scrollIntoViewIfNeeded();
+            return video.evaluate((v) => !v.paused && v.currentTime > 0);
+        }, { timeout: 20_000 }).toBe(true);
         expect(early, "the video was fetched before the page had loaded").toBe(false);
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
         expect(overflow).toBeLessThanOrEqual(1);

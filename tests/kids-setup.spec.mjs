@@ -229,12 +229,14 @@ test("the way back to Daily Grace: the logo and the home button at the top, and 
     await page.addInitScript(() => localStorage.setItem("dailygrace:avatar", "AV-01"));
     const logo = page.locator("a.kids-logo");
     const home = page.locator('a.home-btn[aria-label="Back to Daily Grace"]');
+    // The Daily Grace home page of whichever site is being tested.
+    const site = () => new URL("/", page.url()).href;
     // On the welcome, before any child is set up.
     await seed(page, {});
     await go(page, "/");
     await expect(page.locator(".screen.welcome")).toBeVisible();
-    await expect(logo).toHaveAttribute("href", "http://localhost:4173/");
-    await expect(home).toHaveAttribute("href", "http://localhost:4173/");
+    await expect(logo).toHaveAttribute("href", site());
+    await expect(home).toHaveAttribute("href", site());
     await expect(logo.locator("img")).toHaveJSProperty("complete", true);
     expect(await logo.locator("img").evaluate((i) => i.naturalWidth)).toBe(720);
     // On Who's exploring?, both big enough to tap.
@@ -248,12 +250,12 @@ test("the way back to Daily Grace: the logo and the home button at the top, and 
     // In the Grown-ups' Corner.
     await go(page, "/corner");
     await passGate(page);
-    await expect(page.locator(".back-to-dg")).toHaveAttribute("href", "http://localhost:4173/");
+    await expect(page.locator(".back-to-dg")).toHaveAttribute("href", site());
     // Each lands on the Daily Grace home page.
     for (const link of [home, logo]) {
         await go(page, "/");
         await link.click();
-        await expect(page).toHaveURL("http://localhost:4173/");
+        await expect(page).toHaveURL(site());
         await expect(page.locator("#daily-devotional")).toBeVisible();
     }
 });

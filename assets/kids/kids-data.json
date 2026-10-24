@@ -1,0 +1,4124 @@
+{
+ "version": 1,
+ "built": "2026-10-24",
+ "stories": [
+  {
+   "id": "where-art-thou",
+   "title": "Hiding in the Garden",
+   "refs": "Genesis 2–3",
+   "youngest": "lambs",
+   "section": "map-01",
+   "badge": "media:kids/stops/where-art-thou/badge.webp",
+   "note": "The serpent's trick and the wrong choice are told simply. Death is not mentioned to the youngest; the story ends with God's care.",
+   "grownUpStory": "where-art-thou",
+   "titleAudio": "media:kids/audio/stops/where-art-thou/title.webm",
+   "panels": [
+    {
+     "ref": "Genesis 2:8–10",
+     "image": "media:kids/stops/where-art-thou/panel-01.webp",
+     "lambs": "God made a beautiful garden, and Adam and Eve lived there with all the animals.",
+     "lions": "God planted a garden in Eden, full of trees with good fruit and a river running through it. He put Adam there, and He gave him Eve. Animals of every kind lived there too.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/where-art-thou/lambs-01.webm",
+      "lions": "media:kids/audio/stops/where-art-thou/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Genesis 2:16–17",
+     "image": "media:kids/stops/where-art-thou/panel-02.webp",
+     "lambs": "God told them: you may eat from every tree, but not from this one.",
+     "lions": "In the middle of the garden stood one special tree. God told Adam that they could eat from every tree in the garden, except that one.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/where-art-thou/lambs-02.webm",
+      "lions": "media:kids/audio/stops/where-art-thou/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Genesis 3:1–5",
+     "image": "media:kids/stops/where-art-thou/panel-03.webp",
+     "lambs": "A sneaky serpent tried to trick Eve.",
+     "lions": "One day the serpent, the sneakiest animal of all, came to Eve. “Yea, hath God said, Ye shall not eat of every tree of the garden?” he asked. He wanted her to stop trusting God.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/where-art-thou/lambs-03.webm",
+      "lions": "media:kids/audio/stops/where-art-thou/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Genesis 3:6–7",
+     "image": "media:kids/stops/where-art-thou/panel-04.webp",
+     "lambs": "Eve and Adam ate the fruit. Then they felt sad and afraid.",
+     "lions": "Eve looked at the fruit. It looked so good. She ate some and gave some to Adam, and he ate too. Straight away they knew they had done wrong, and they made coverings out of fig leaves.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/where-art-thou/lambs-04.webm",
+      "lions": "media:kids/audio/stops/where-art-thou/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Genesis 3:8–9",
+     "image": "media:kids/stops/where-art-thou/panel-05.webp",
+     "lambs": "They hid. But God called, “Where art thou?”",
+     "lions": "In the cool of the day they heard God in the garden, and they hid among the trees. But God called to Adam, “Where art thou?” God knew where they were. He came looking for them.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/where-art-thou/lambs-05.webm",
+      "lions": "media:kids/audio/stops/where-art-thou/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Genesis 3:21",
+     "image": "media:kids/stops/where-art-thou/panel-06.webp",
+     "lambs": "God still cared for them. He made them warm coats to wear.",
+     "lions": "Adam and Eve had to leave the garden. But God did not stop caring for them. He made them coats of skins and dressed them Himself.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/where-art-thou/lambs-06.webm",
+      "lions": "media:kids/audio/stops/where-art-thou/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Genesis 3:9",
+    "text": "And the LORD God called unto Adam, and said unto him, Where art thou?",
+    "plain": "God always comes looking for us, even when we hide.",
+    "audio": "media:kids/audio/stops/where-art-thou/verse.webm",
+    "plainAudio": "media:kids/audio/stops/where-art-thou/verse-plain.webm",
+    "blank": "Adam",
+    "choices": [
+     "Adam",
+     "Noah",
+     "Moses"
+    ],
+    "chunks": [
+     "And the LORD God",
+     "called unto Adam,",
+     "and said unto him,",
+     "Where art thou?"
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/where-art-thou/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "Adam",
+      "spots": [
+       [
+        0.33,
+        0.5,
+        0.13
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-01.webm"
+     },
+     {
+      "label": "Eve",
+      "spots": [
+       [
+        0.57,
+        0.48,
+        0.12
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-02.webm"
+     },
+     {
+      "label": "the serpent",
+      "spots": [
+       [
+        0.83,
+        0.15,
+        0.11
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-03.webm"
+     },
+     {
+      "label": "the special tree with golden fruit",
+      "spots": [
+       [
+        0.57,
+        0.08,
+        0.12
+       ],
+       [
+        0.88,
+        0.32,
+        0.06
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-04.webm"
+     },
+     {
+      "label": "a fig leaf",
+      "spots": [
+       [
+        0.36,
+        0.62,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-05.webm"
+     },
+     {
+      "label": "a rabbit",
+      "spots": [
+       [
+        0.14,
+        0.7,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-06.webm"
+     },
+     {
+      "label": "a deer",
+      "spots": [
+       [
+        0.09,
+        0.48,
+        0.09
+       ],
+       [
+        0.11,
+        0.27,
+        0.07
+       ],
+       [
+        0.93,
+        0.48,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-07.webm"
+     },
+     {
+      "label": "a bluebird",
+      "spots": [
+       [
+        0.1,
+        0.13,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/where-art-thou/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "Why do you think Adam and Eve hid?",
+     "What can you do when you have done something wrong?"
+    ],
+    "do": "Play hide-and-seek. Whoever finds the other says, “Where art thou?”",
+    "pray": "Dear God, thank You that You always find me. When I do wrong, help me come to You and say sorry.",
+    "prayAudio": "media:kids/audio/stops/where-art-thou/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/where-art-thou/colouring.webp",
+    "print": "media:kids/stops/where-art-thou/colouring.png"
+   },
+   "whoSaid": [
+    {
+     "id": "adam",
+     "name": "Adam",
+     "quote": "I heard thy voice in the garden, and I was afraid",
+     "reference": "Genesis 3:10",
+     "audio": "media:kids/audio/games/who-said-it/adam.webm",
+     "portraits": [
+      "media:kids/games/portraits/adam.webp"
+     ]
+    },
+    {
+     "id": "eve",
+     "name": "Eve",
+     "quote": "The serpent beguiled me, and I did eat",
+     "reference": "Genesis 3:13",
+     "audio": "media:kids/audio/games/who-said-it/eve.webm",
+     "portraits": [
+      "media:kids/games/portraits/eve.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "God made a garden full of trees and animals.",
+     "right": true,
+     "why": "God planted a beautiful garden in Eden.",
+     "audio": "media:kids/audio/games/right-or-not/where-art-thou-01.webm"
+    },
+    {
+     "text": "God said they could eat from every tree, even the special one.",
+     "right": false,
+     "why": "They could eat from every tree except the special one.",
+     "audio": "media:kids/audio/games/right-or-not/where-art-thou-02.webm"
+    },
+    {
+     "text": "A sneaky serpent tried to trick Eve.",
+     "right": true,
+     "why": "The serpent wanted her to stop trusting God.",
+     "audio": "media:kids/audio/games/right-or-not/where-art-thou-03.webm"
+    },
+    {
+     "text": "Adam and Eve made coverings out of banana leaves.",
+     "right": false,
+     "why": "They used fig leaves.",
+     "audio": "media:kids/audio/games/right-or-not/where-art-thou-04.webm"
+    },
+    {
+     "text": "When they hid, God came looking for them.",
+     "right": true,
+     "why": "God called, “Where art thou?”",
+     "audio": "media:kids/audio/games/right-or-not/where-art-thou-05.webm"
+    },
+    {
+     "text": "God stopped caring for Adam and Eve.",
+     "right": false,
+     "why": "God made them warm coats to wear.",
+     "audio": "media:kids/audio/games/right-or-not/where-art-thou-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "who-said"
+    }
+   ]
+  },
+  {
+   "id": "too-many-for-me",
+   "title": "Gideon's Three Hundred Men",
+   "refs": "Judges 6–7",
+   "youngest": "lambs",
+   "section": "map-04",
+   "badge": "media:kids/stops/too-many-for-me/badge.webp",
+   "note": "The enemy simply run away. The fighting in Judges 7:22 is left out.",
+   "grownUpStory": "too-many-for-me",
+   "titleAudio": "media:kids/audio/stops/too-many-for-me/title.webm",
+   "panels": [
+    {
+     "ref": "Judges 6:11",
+     "image": "media:kids/stops/too-many-for-me/panel-01.webp",
+     "lambs": "Gideon was hiding while he worked. He was afraid.",
+     "lions": "The Midianites kept coming to take Israel's food. Gideon was so afraid of them that he beat out his wheat inside a winepress, where nobody would see him.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/too-many-for-me/lambs-01.webm",
+      "lions": "media:kids/audio/stops/too-many-for-me/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Judges 6:11–14",
+     "image": "media:kids/stops/too-many-for-me/panel-02.webp",
+     "lambs": "A messenger from God said, “The LORD is with thee.”",
+     "lions": "Then the angel of the LORD came and sat under an oak tree. He said to Gideon, “The LORD is with thee, thou mighty man of valour.” Gideon did not feel mighty at all!",
+     "audio": {
+      "lambs": "media:kids/audio/stops/too-many-for-me/lambs-02.webm",
+      "lions": "media:kids/audio/stops/too-many-for-me/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Judges 6:37–38",
+     "image": "media:kids/stops/too-many-for-me/panel-03.webp",
+     "lambs": "Gideon asked for a sign. The fleece was wet, and the ground was dry!",
+     "lions": "Gideon wanted to be sure. He laid a woolly fleece on the ground at night, and asked God to make the fleece wet but the ground dry. In the morning he squeezed a whole bowl of water out of the fleece, and the ground was dry.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/too-many-for-me/lambs-03.webm",
+      "lions": "media:kids/audio/stops/too-many-for-me/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Judges 7:4–7",
+     "image": "media:kids/stops/too-many-for-me/panel-04.webp",
+     "lambs": "God said Gideon had too many men. Only 300 could stay.",
+     "lions": "Gideon gathered a big army. But God said, “The people that are with thee are too many”. God wanted everyone to know that the help came from Him. In the end only 300 men stayed: the ones who lapped up water from their hands.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/too-many-for-me/lambs-04.webm",
+      "lions": "media:kids/audio/stops/too-many-for-me/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Judges 7:16–19",
+     "image": "media:kids/stops/too-many-for-me/panel-05.webp",
+     "lambs": "At night the 300 held trumpets, and jars with lamps inside.",
+     "lions": "In the middle of the night the 300 crept up around the enemy camp. Each man held a trumpet, and a clay jar with a lamp hidden inside.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/too-many-for-me/lambs-05.webm",
+      "lions": "media:kids/audio/stops/too-many-for-me/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Judges 7:20–21",
+     "image": "media:kids/stops/too-many-for-me/panel-06.webp",
+     "lambs": "They blew the trumpets and shone the lamps, and the enemy ran away!",
+     "lions": "Gideon blew his trumpet. All 300 broke their jars, held up their shining lamps, blew their trumpets and shouted, “The sword of the LORD, and of Gideon.” The Midianites were so frightened that they all ran away!",
+     "audio": {
+      "lambs": "media:kids/audio/stops/too-many-for-me/lambs-06.webm",
+      "lions": "media:kids/audio/stops/too-many-for-me/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Judges 6:12",
+    "text": "The LORD is with thee, thou mighty man of valour.",
+    "plain": "Even when you feel small and afraid, God is with you and makes you brave.",
+    "audio": "media:kids/audio/stops/too-many-for-me/verse.webm",
+    "plainAudio": "media:kids/audio/stops/too-many-for-me/verse-plain.webm",
+    "blank": "mighty",
+    "choices": [
+     "mighty",
+     "little",
+     "sleepy"
+    ],
+    "chunks": [
+     "The LORD is",
+     "with thee,",
+     "thou mighty man",
+     "of valour."
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/too-many-for-me/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "Gideon",
+      "spots": [
+       [
+        0.53,
+        0.5,
+        0.14
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-01.webm"
+     },
+     {
+      "label": "a woolly fleece on a rock",
+      "spots": [
+       [
+        0.15,
+        0.66,
+        0.12
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-02.webm"
+     },
+     {
+      "label": "a ram's-horn trumpet",
+      "spots": [
+       [
+        0.27,
+        0.8,
+        0.11
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-03.webm"
+     },
+     {
+      "label": "a clay pitcher",
+      "spots": [
+       [
+        0.92,
+        0.76,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-04.webm"
+     },
+     {
+      "label": "an oil lamp",
+      "spots": [
+       [
+        0.83,
+        0.86,
+        0.06
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-05.webm"
+     },
+     {
+      "label": "a man drinking from his hand",
+      "spots": [
+       [
+        0.13,
+        0.42,
+        0.1
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-06.webm"
+     },
+     {
+      "label": "a camel far away",
+      "spots": [
+       [
+        0.3,
+        0.16,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-07.webm"
+     },
+     {
+      "label": "a sheaf of wheat",
+      "spots": [
+       [
+        0.89,
+        0.55,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/too-many-for-me/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "Gideon felt small and scared. When do you feel scared?",
+     "Why do you think God wanted only 300 men?"
+    ],
+    "do": "Put a torch inside a cup, switch off the light, then lift the cup and let it shine together.",
+    "pray": "Dear God, when I feel small, thank You that You are with me. Help me be brave.",
+    "prayAudio": "media:kids/audio/stops/too-many-for-me/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/too-many-for-me/colouring.webp",
+    "print": "media:kids/stops/too-many-for-me/colouring.png"
+   },
+   "whoSaid": [
+    {
+     "id": "gideon",
+     "name": "Gideon",
+     "quote": "I am the least in my father’s house",
+     "reference": "Judges 6:15",
+     "audio": "media:kids/audio/games/who-said-it/gideon.webm",
+     "portraits": [
+      "media:kids/games/portraits/gideon.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "Gideon hid while he worked, because he was afraid.",
+     "right": true,
+     "why": "He beat out his wheat in a winepress, out of sight.",
+     "audio": "media:kids/audio/games/right-or-not/too-many-for-me-01.webm"
+    },
+    {
+     "text": "God's messenger said, “The LORD is with thee.”",
+     "right": true,
+     "why": "Even though Gideon felt small.",
+     "audio": "media:kids/audio/games/right-or-not/too-many-for-me-02.webm"
+    },
+    {
+     "text": "In the morning the fleece was dry and the ground was wet.",
+     "right": false,
+     "why": "The fleece was wet and the ground was dry.",
+     "audio": "media:kids/audio/games/right-or-not/too-many-for-me-03.webm"
+    },
+    {
+     "text": "God told Gideon he had too few men.",
+     "right": false,
+     "why": "God said he had too many.",
+     "audio": "media:kids/audio/games/right-or-not/too-many-for-me-04.webm"
+    },
+    {
+     "text": "The 300 men held trumpets, and jars with lamps inside.",
+     "right": true,
+     "why": "They broke the jars and the lamps shone.",
+     "audio": "media:kids/audio/games/right-or-not/too-many-for-me-05.webm"
+    },
+    {
+     "text": "The enemy ran away.",
+     "right": true,
+     "why": "God gave Gideon's little army the victory.",
+     "audio": "media:kids/audio/games/right-or-not/too-many-for-me-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "gather",
+     "item": "lamp",
+     "lambs": 3,
+     "lions": 6,
+     "others": [
+      "trumpet",
+      "pitcher"
+     ],
+     "name": "oil lamp",
+     "plural": "oil lamps",
+     "image": "media:kids/games/gather/lamp.webp",
+     "basket": "media:kids/games/gather/basket.webp",
+     "otherImages": [
+      "media:kids/games/gather/trumpet.webp",
+      "media:kids/games/gather/pitcher.webp"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "and-ruth-with-her",
+   "title": "Where You Go, I Will Go",
+   "refs": "Ruth 1–4",
+   "youngest": "lambs",
+   "section": "map-04",
+   "badge": "media:kids/stops/and-ruth-with-her/badge.webp",
+   "note": "Naomi's husband and sons have died; the story says so once, gently, for the older children only.",
+   "grownUpStory": "and-ruth-with-her",
+   "titleAudio": "media:kids/audio/stops/and-ruth-with-her/title.webm",
+   "panels": [
+    {
+     "ref": "Ruth 1:7–14",
+     "image": "media:kids/stops/and-ruth-with-her/panel-01.webp",
+     "lambs": "Naomi was going home. Orpah said goodbye, but Ruth stayed.",
+     "lions": "Naomi's husband and her two sons had died in the land of Moab, and she decided to go home to Bethlehem. Her sons' wives, Orpah and Ruth, set out with her. Orpah kissed Naomi goodbye and went back. But Ruth held on tight.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/and-ruth-with-her/lambs-01.webm",
+      "lions": "media:kids/audio/stops/and-ruth-with-her/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Ruth 1:16–17",
+     "image": "media:kids/stops/and-ruth-with-her/panel-02.webp",
+     "lambs": "Ruth hugged Naomi and said, “whither thou goest, I will go.”",
+     "lions": "Ruth said to Naomi, “whither thou goest, I will go; and where thou lodgest, I will lodge.” She loved Naomi, and she would trust Naomi's God too.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/and-ruth-with-her/lambs-02.webm",
+      "lions": "media:kids/audio/stops/and-ruth-with-her/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Ruth 1:19–22",
+     "image": "media:kids/stops/and-ruth-with-her/panel-03.webp",
+     "lambs": "They walked all the way to Bethlehem.",
+     "lions": "So the two of them walked all the way to Bethlehem. They arrived just as the barley harvest was beginning.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/and-ruth-with-her/lambs-03.webm",
+      "lions": "media:kids/audio/stops/and-ruth-with-her/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Ruth 2:2–3",
+     "image": "media:kids/stops/and-ruth-with-her/panel-04.webp",
+     "lambs": "Ruth picked up barley in the field to make bread.",
+     "lions": "They needed food, so Ruth went to glean: to pick up the stalks of barley the reapers left behind. The field she came to belonged to a man named Boaz.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/and-ruth-with-her/lambs-04.webm",
+      "lions": "media:kids/audio/stops/and-ruth-with-her/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Ruth 2:14–16",
+     "image": "media:kids/stops/and-ruth-with-her/panel-05.webp",
+     "lambs": "Kind Boaz shared his food and left extra barley for Ruth.",
+     "lions": "Boaz was kind. At mealtime he gave Ruth bread and roasted grain, and he told his workers to drop extra handfuls of barley on purpose, just for her.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/and-ruth-with-her/lambs-05.webm",
+      "lions": "media:kids/audio/stops/and-ruth-with-her/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Ruth 4:13–16",
+     "image": "media:kids/stops/and-ruth-with-her/panel-06.webp",
+     "lambs": "Ruth and Boaz married and had a baby boy. Naomi was so happy!",
+     "lions": "Later Boaz married Ruth, and God gave them a baby boy called Obed. Naomi held him on her lap. Her empty home was full of love again.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/and-ruth-with-her/lambs-06.webm",
+      "lions": "media:kids/audio/stops/and-ruth-with-her/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Ruth 1:16",
+    "text": "whither thou goest, I will go; and where thou lodgest, I will lodge",
+    "plain": "Ruth promised to stay with Naomi and to trust Naomi's God. Real friends stick together.",
+    "audio": "media:kids/audio/stops/and-ruth-with-her/verse.webm",
+    "plainAudio": "media:kids/audio/stops/and-ruth-with-her/verse-plain.webm",
+    "blank": "go",
+    "choices": [
+     "go",
+     "stay",
+     "sing"
+    ],
+    "chunks": [
+     "whither thou goest,",
+     "I will go;",
+     "and where thou lodgest,",
+     "I will lodge"
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/and-ruth-with-her/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "Ruth",
+      "spots": [
+       [
+        0.65,
+        0.47,
+        0.12
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-01.webm"
+     },
+     {
+      "label": "Boaz",
+      "spots": [
+       [
+        0.37,
+        0.4,
+        0.14
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-02.webm"
+     },
+     {
+      "label": "a sickle",
+      "spots": [
+       [
+        0.61,
+        0.81,
+        0.08
+       ],
+       [
+        0.15,
+        0.36,
+        0.04
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-03.webm"
+     },
+     {
+      "label": "a sheaf of barley",
+      "spots": [
+       [
+        0.07,
+        0.45,
+        0.08
+       ],
+       [
+        0.88,
+        0.72,
+        0.1
+       ],
+       [
+        0.79,
+        0.41,
+        0.06
+       ],
+       [
+        0.54,
+        0.4,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-04.webm"
+     },
+     {
+      "label": "a water jar",
+      "spots": [
+       [
+        0.15,
+        0.6,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-05.webm"
+     },
+     {
+      "label": "a basket of bread",
+      "spots": [
+       [
+        0.33,
+        0.76,
+        0.11
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-06.webm"
+     },
+     {
+      "label": "a donkey",
+      "spots": [
+       [
+        0.86,
+        0.27,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-07.webm"
+     },
+     {
+      "label": "a sparrow",
+      "spots": [
+       [
+        0.15,
+        0.74,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/and-ruth-with-her/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "How did Ruth show that she loved Naomi?",
+     "Who could you be kind to, the way Boaz was kind to Ruth?"
+    ],
+    "do": "Share a snack with someone today, the way Boaz shared with Ruth.",
+    "pray": "Dear God, help me be a loyal friend like Ruth, and kind like Boaz.",
+    "prayAudio": "media:kids/audio/stops/and-ruth-with-her/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/and-ruth-with-her/colouring.webp",
+    "print": "media:kids/stops/and-ruth-with-her/colouring.png"
+   },
+   "whoSaid": [
+    {
+     "id": "ruth",
+     "name": "Ruth",
+     "quote": "whither thou goest, I will go",
+     "reference": "Ruth 1:16",
+     "audio": "media:kids/audio/games/who-said-it/ruth.webm",
+     "portraits": [
+      "media:kids/games/portraits/ruth.webp"
+     ]
+    },
+    {
+     "id": "naomi",
+     "name": "Naomi",
+     "quote": "the LORD deal kindly with you",
+     "reference": "Ruth 1:8",
+     "audio": "media:kids/audio/games/who-said-it/naomi.webm",
+     "portraits": [
+      "media:kids/games/portraits/naomi.webp"
+     ]
+    },
+    {
+     "id": "boaz",
+     "name": "Boaz",
+     "quote": "The LORD be with you",
+     "reference": "Ruth 2:4",
+     "audio": "media:kids/audio/games/who-said-it/boaz.webm",
+     "portraits": [
+      "media:kids/games/portraits/boaz.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "Ruth said goodbye to Naomi and went back home.",
+     "right": false,
+     "why": "That was Orpah. Ruth stayed with Naomi.",
+     "audio": "media:kids/audio/games/right-or-not/and-ruth-with-her-01.webm"
+    },
+    {
+     "text": "Ruth said, “whither thou goest, I will go.”",
+     "right": true,
+     "why": "She promised to stay with Naomi.",
+     "audio": "media:kids/audio/games/right-or-not/and-ruth-with-her-02.webm"
+    },
+    {
+     "text": "Ruth and Naomi walked all the way to Bethlehem.",
+     "right": true,
+     "why": "They arrived at barley harvest time.",
+     "audio": "media:kids/audio/games/right-or-not/and-ruth-with-her-03.webm"
+    },
+    {
+     "text": "Ruth picked up apples in the field.",
+     "right": false,
+     "why": "She picked up barley.",
+     "audio": "media:kids/audio/games/right-or-not/and-ruth-with-her-04.webm"
+    },
+    {
+     "text": "Boaz was kind and left extra barley for Ruth.",
+     "right": true,
+     "why": "He told his workers to drop some on purpose.",
+     "audio": "media:kids/audio/games/right-or-not/and-ruth-with-her-05.webm"
+    },
+    {
+     "text": "Ruth and Boaz had a baby boy.",
+     "right": true,
+     "why": "His name was Obed.",
+     "audio": "media:kids/audio/games/right-or-not/and-ruth-with-her-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "gather",
+     "item": "barley",
+     "lambs": 5,
+     "lions": 10,
+     "others": [
+      "loaf",
+      "fish"
+     ],
+     "name": "bundle of barley",
+     "plural": "bundles of barley",
+     "image": "media:kids/games/gather/barley.webp",
+     "basket": "media:kids/games/gather/basket.webp",
+     "otherImages": [
+      "media:kids/games/gather/loaf.webp",
+      "media:kids/games/gather/fish.webp"
+     ]
+    },
+    {
+     "type": "who-said"
+    }
+   ]
+  },
+  {
+   "id": "the-fourth-man-in-the-fire",
+   "title": "The Fourth Man in the Fire",
+   "refs": "Daniel 3",
+   "youngest": "lambs",
+   "section": "map-05",
+   "badge": "media:kids/stops/the-fourth-man-in-the-fire/badge.webp",
+   "note": "The soldiers who died at the furnace door (Daniel 3:22) are left out. The fourth man is described as the king saw him, without saying who He was.",
+   "grownUpStory": "the-fourth-man-in-the-fire",
+   "titleAudio": "media:kids/audio/stops/the-fourth-man-in-the-fire/title.webm",
+   "panels": [
+    {
+     "ref": "Daniel 3:1–7",
+     "image": "media:kids/stops/the-fourth-man-in-the-fire/panel-01.webp",
+     "lambs": "King Nebuchadnezzar made a giant gold statue. Everyone had to bow down to it.",
+     "lions": "King Nebuchadnezzar of Babylon set up a giant statue of gold on the plain of Dura. When the music played, everyone had to fall down and worship it.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/the-fourth-man-in-the-fire/lambs-01.webm",
+      "lions": "media:kids/audio/stops/the-fourth-man-in-the-fire/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Daniel 3:8–12",
+     "image": "media:kids/stops/the-fourth-man-in-the-fire/panel-02.webp",
+     "lambs": "But three friends would not bow. They only worshipped God.",
+     "lions": "The music played and everybody bowed, except three young men: Shadrach, Meshach and Abed-nego. They would only worship God.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/the-fourth-man-in-the-fire/lambs-02.webm",
+      "lions": "media:kids/audio/stops/the-fourth-man-in-the-fire/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Daniel 3:13–18",
+     "image": "media:kids/stops/the-fourth-man-in-the-fire/panel-03.webp",
+     "lambs": "The king was cross. The friends said, “our God whom we serve is able to deliver us.”",
+     "lions": "The king was very cross. He said he would throw them into a burning furnace. But the friends answered bravely, “our God whom we serve is able to deliver us.”",
+     "audio": {
+      "lambs": "media:kids/audio/stops/the-fourth-man-in-the-fire/lambs-03.webm",
+      "lions": "media:kids/audio/stops/the-fourth-man-in-the-fire/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Daniel 3:19–21",
+     "image": "media:kids/stops/the-fourth-man-in-the-fire/panel-04.webp",
+     "lambs": "So the king's soldiers took them to a big, hot furnace.",
+     "lions": "The king had the furnace made seven times hotter than usual. His soldiers tied up the three friends and put them into the fire.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/the-fourth-man-in-the-fire/lambs-04.webm",
+      "lions": "media:kids/audio/stops/the-fourth-man-in-the-fire/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Daniel 3:24–25",
+     "image": "media:kids/stops/the-fourth-man-in-the-fire/panel-05.webp",
+     "lambs": "But in the fire there were four men, walking, and not hurt!",
+     "lions": "Then the king jumped up in surprise. “Lo, I see four men loose, walking in the midst of the fire, and they have no hurt,” he said. Someone was in the fire with them!",
+     "audio": {
+      "lambs": "media:kids/audio/stops/the-fourth-man-in-the-fire/lambs-05.webm",
+      "lions": "media:kids/audio/stops/the-fourth-man-in-the-fire/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Daniel 3:26–28",
+     "image": "media:kids/stops/the-fourth-man-in-the-fire/panel-06.webp",
+     "lambs": "The friends came out safe. Not one hair was burnt!",
+     "lions": "The king called them out, and out they came. Their hair was not burnt, their coats were not scorched, and they did not even smell of smoke! The king said, “Blessed be the God of Shadrach, Meshach, and Abed-nego.”",
+     "audio": {
+      "lambs": "media:kids/audio/stops/the-fourth-man-in-the-fire/lambs-06.webm",
+      "lions": "media:kids/audio/stops/the-fourth-man-in-the-fire/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Daniel 3:17",
+    "text": "our God whom we serve is able to deliver us",
+    "plain": "God is strong enough to save the people who trust Him, even in a fire.",
+    "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/verse.webm",
+    "plainAudio": "media:kids/audio/stops/the-fourth-man-in-the-fire/verse-plain.webm",
+    "blank": "God",
+    "choices": [
+     "God",
+     "king",
+     "fire"
+    ],
+    "chunks": [
+     "our God whom we",
+     "serve is able",
+     "to deliver us"
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/the-fourth-man-in-the-fire/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "the three friends standing up",
+      "spots": [
+       [
+        0.28,
+        0.56,
+        0.12
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-01.webm"
+     },
+     {
+      "label": "the king",
+      "spots": [
+       [
+        0.78,
+        0.47,
+        0.11
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-02.webm"
+     },
+     {
+      "label": "a horn",
+      "spots": [
+       [
+        0.47,
+        0.6,
+        0.06
+       ],
+       [
+        0.54,
+        0.58,
+        0.06
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-03.webm"
+     },
+     {
+      "label": "a flute",
+      "spots": [
+       [
+        0.73,
+        0.66,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-04.webm"
+     },
+     {
+      "label": "a harp",
+      "spots": [
+       [
+        0.84,
+        0.67,
+        0.07
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-05.webm"
+     },
+     {
+      "label": "a camel",
+      "spots": [
+       [
+        0.08,
+        0.54,
+        0.1
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-06.webm"
+     },
+     {
+      "label": "a guard's shield",
+      "spots": [
+       [
+        0.96,
+        0.52,
+        0.06
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-07.webm"
+     },
+     {
+      "label": "a dog",
+      "spots": [
+       [
+        0.5,
+        0.87,
+        0.07
+       ]
+      ],
+      "audio": "media:kids/audio/stops/the-fourth-man-in-the-fire/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "How do you think the three friends felt when they said no to the king?",
+     "When is it hard for you to do what is right?"
+    ],
+    "do": "Hold hands and name one person who needs to be brave this week.",
+    "pray": "Dear God, You are with me even when things are hard. Help me be brave and do what is right.",
+    "prayAudio": "media:kids/audio/stops/the-fourth-man-in-the-fire/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/the-fourth-man-in-the-fire/colouring.webp",
+    "print": "media:kids/stops/the-fourth-man-in-the-fire/colouring.png"
+   },
+   "whoSaid": [
+    {
+     "id": "nebuchadnezzar",
+     "name": "King Nebuchadnezzar",
+     "quote": "Lo, I see four men loose, walking in the midst of the fire",
+     "reference": "Daniel 3:25",
+     "audio": "media:kids/audio/games/who-said-it/nebuchadnezzar.webm",
+     "portraits": [
+      "media:kids/games/portraits/nebuchadnezzar.webp"
+     ]
+    },
+    {
+     "id": "the-three-friends",
+     "name": "Shadrach, Meshach and Abed-nego",
+     "quote": "our God whom we serve is able to deliver us",
+     "reference": "Daniel 3:17",
+     "audio": "media:kids/audio/games/who-said-it/the-three-friends.webm",
+     "portraits": [
+      "media:kids/games/portraits/shadrach.webp",
+      "media:kids/games/portraits/meshach.webp",
+      "media:kids/games/portraits/abednego.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "The king made a giant statue of gold.",
+     "right": true,
+     "why": "Everyone had to bow down to it.",
+     "audio": "media:kids/audio/games/right-or-not/the-fourth-man-in-the-fire-01.webm"
+    },
+    {
+     "text": "The three friends bowed down to the statue.",
+     "right": false,
+     "why": "They would only worship God.",
+     "audio": "media:kids/audio/games/right-or-not/the-fourth-man-in-the-fire-02.webm"
+    },
+    {
+     "text": "The friends said, “our God whom we serve is able to deliver us.”",
+     "right": true,
+     "why": "They trusted God.",
+     "audio": "media:kids/audio/games/right-or-not/the-fourth-man-in-the-fire-03.webm"
+    },
+    {
+     "text": "The king made the furnace cooler.",
+     "right": false,
+     "why": "He made it seven times hotter.",
+     "audio": "media:kids/audio/games/right-or-not/the-fourth-man-in-the-fire-04.webm"
+    },
+    {
+     "text": "The king saw four men walking in the fire.",
+     "right": true,
+     "why": "Someone was in the fire with them!",
+     "audio": "media:kids/audio/games/right-or-not/the-fourth-man-in-the-fire-05.webm"
+    },
+    {
+     "text": "When the friends came out, their hair was burnt.",
+     "right": false,
+     "why": "Not one hair was burnt.",
+     "audio": "media:kids/audio/games/right-or-not/the-fourth-man-in-the-fire-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "who-said"
+    }
+   ]
+  },
+  {
+   "id": "how-much-more",
+   "title": "Teach Us to Pray",
+   "refs": "Luke 11:1–13",
+   "youngest": "lambs",
+   "section": "map-06",
+   "badge": "media:kids/stops/how-much-more/badge.webp",
+   "note": "Jesus' picture-stories are told as stories He told. The Lord's Prayer is quoted in the KJV words of Luke 11.",
+   "grownUpStory": "how-much-more",
+   "titleAudio": "media:kids/audio/stops/how-much-more/title.webm",
+   "panels": [
+    {
+     "ref": "Luke 11:1",
+     "image": "media:kids/stops/how-much-more/panel-01.webp",
+     "lambs": "Jesus was praying. His friends watched Him.",
+     "lions": "One day Jesus was praying. When He finished, His disciples came to Him.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/how-much-more/lambs-01.webm",
+      "lions": "media:kids/audio/stops/how-much-more/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Luke 11:1–4",
+     "image": "media:kids/stops/how-much-more/panel-02.webp",
+     "lambs": "One said, “Lord, teach us to pray.”",
+     "lions": "One of them said, “Lord, teach us to pray.” So Jesus taught them a prayer that begins, “Our Father which art in heaven, Hallowed be thy name.”",
+     "audio": {
+      "lambs": "media:kids/audio/stops/how-much-more/lambs-02.webm",
+      "lions": "media:kids/audio/stops/how-much-more/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Luke 11:5–6",
+     "image": "media:kids/stops/how-much-more/panel-03.webp",
+     "lambs": "Jesus told a story: a man knocked on his friend's door at midnight.",
+     "lions": "Then Jesus told a story. A man had a visitor arrive late at night, and he had no food to give him. So at midnight he went to his friend's house and knocked: “Friend, lend me three loaves”.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/how-much-more/lambs-03.webm",
+      "lions": "media:kids/audio/stops/how-much-more/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Luke 11:7–8",
+     "image": "media:kids/stops/how-much-more/panel-04.webp",
+     "lambs": "He kept on asking, and his friend gave him the bread.",
+     "lions": "His friend called from inside, “Trouble me not”. The door was shut and the children were in bed. But the man kept on knocking and asking, until his friend got up and gave him as much as he needed.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/how-much-more/lambs-04.webm",
+      "lions": "media:kids/audio/stops/how-much-more/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Luke 11:9–10",
+     "image": "media:kids/stops/how-much-more/panel-05.webp",
+     "lambs": "Jesus said, “Ask, and it shall be given you.”",
+     "lions": "Jesus said, “Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.”",
+     "audio": {
+      "lambs": "media:kids/audio/stops/how-much-more/lambs-05.webm",
+      "lions": "media:kids/audio/stops/how-much-more/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Luke 11:11–13",
+     "image": "media:kids/stops/how-much-more/panel-06.webp",
+     "lambs": "God is a good Father. He loves to give good things to His children.",
+     "lions": "If a child asks his father for a fish, will he give him a snake? If he asks for an egg, will he give him a scorpion? Of course not! Jesus said, “how much more shall your heavenly Father give the Holy Spirit to them that ask him?”",
+     "audio": {
+      "lambs": "media:kids/audio/stops/how-much-more/lambs-06.webm",
+      "lions": "media:kids/audio/stops/how-much-more/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Luke 11:9",
+    "text": "Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.",
+    "plain": "God wants us to keep talking to Him and asking Him, because He is a good Father.",
+    "audio": "media:kids/audio/stops/how-much-more/verse.webm",
+    "plainAudio": "media:kids/audio/stops/how-much-more/verse-plain.webm",
+    "blank": "knock",
+    "choices": [
+     "knock",
+     "jump",
+     "sleep"
+    ],
+    "chunks": [
+     "Ask,",
+     "and it shall",
+     "be given you;",
+     "seek,",
+     "and ye shall find;",
+     "knock,",
+     "and it shall be",
+     "opened unto you."
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/how-much-more/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "the man knocking",
+      "spots": [
+       [
+        0.65,
+        0.52,
+        0.13
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-01.webm"
+     },
+     {
+      "label": "three loaves",
+      "spots": [
+       [
+        0.12,
+        0.67,
+        0.1
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-02.webm"
+     },
+     {
+      "label": "the moon",
+      "spots": [
+       [
+        0.31,
+        0.1,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-03.webm"
+     },
+     {
+      "label": "an oil lamp",
+      "spots": [
+       [
+        0.94,
+        0.23,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-04.webm"
+     },
+     {
+      "label": "a sleeping cat",
+      "spots": [
+       [
+        0.22,
+        0.8,
+        0.1
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-05.webm"
+     },
+     {
+      "label": "a donkey",
+      "spots": [
+       [
+        0.15,
+        0.5,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-06.webm"
+     },
+     {
+      "label": "an owl",
+      "spots": [
+       [
+        0.1,
+        0.13,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-07.webm"
+     },
+     {
+      "label": "a well",
+      "spots": [
+       [
+        0.38,
+        0.53,
+        0.08
+       ]
+      ],
+      "audio": "media:kids/audio/stops/how-much-more/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "What would you like to ask God for today?",
+     "Who could you pray for?"
+    ],
+    "do": "Knock on a door three times together. With each knock, say one thing to God: ask, seek, knock.",
+    "pray": "Our Father which art in heaven, Hallowed be thy name. Thank You for always hearing me.",
+    "prayAudio": "media:kids/audio/stops/how-much-more/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/how-much-more/colouring.webp",
+    "print": "media:kids/stops/how-much-more/colouring.png"
+   },
+   "whoSaid": [],
+   "rightOrNot": [
+    {
+     "text": "Jesus' friends asked Him, “Lord, teach us to pray.”",
+     "right": true,
+     "why": "So Jesus taught them a prayer.",
+     "audio": "media:kids/audio/games/right-or-not/how-much-more-01.webm"
+    },
+    {
+     "text": "In Jesus' story, a man knocked on his friend's door at midnight.",
+     "right": true,
+     "why": "He needed bread for a visitor.",
+     "audio": "media:kids/audio/games/right-or-not/how-much-more-02.webm"
+    },
+    {
+     "text": "He gave up after asking once.",
+     "right": false,
+     "why": "He kept on knocking and asking.",
+     "audio": "media:kids/audio/games/right-or-not/how-much-more-04.webm"
+    },
+    {
+     "text": "He asked his friend for three loaves.",
+     "right": true,
+     "why": "“Friend, lend me three loaves.”",
+     "audio": "media:kids/audio/games/right-or-not/how-much-more-03.webm"
+    },
+    {
+     "text": "Jesus said, “Ask, and it shall be given you.”",
+     "right": true,
+     "why": "God loves us to ask Him.",
+     "audio": "media:kids/audio/games/right-or-not/how-much-more-05.webm"
+    },
+    {
+     "text": "A good father would give his child a snake instead of a fish.",
+     "right": false,
+     "why": "A good father gives good things, and God is the best Father.",
+     "audio": "media:kids/audio/games/right-or-not/how-much-more-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "gather",
+     "item": "loaf",
+     "lambs": 3,
+     "lions": 3,
+     "others": [
+      "fish",
+      "lamp"
+     ],
+     "name": "loaf",
+     "plural": "loaves",
+     "image": "media:kids/games/gather/loaf.webp",
+     "basket": "media:kids/games/gather/basket.webp",
+     "otherImages": [
+      "media:kids/games/gather/fish.webp",
+      "media:kids/games/gather/lamp.webp"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a-great-way-off",
+   "title": "The Father Who Ran",
+   "refs": "Luke 15:11–32",
+   "youngest": "lambs",
+   "section": "map-06",
+   "badge": "media:kids/stops/a-great-way-off/badge.webp",
+   "note": "The far country is shown by an empty purse and loneliness, not by the son's wild living.",
+   "grownUpStory": "a-great-way-off",
+   "titleAudio": "media:kids/audio/stops/a-great-way-off/title.webm",
+   "panels": [
+    {
+     "ref": "Luke 15:12–13",
+     "image": "media:kids/stops/a-great-way-off/panel-01.webp",
+     "lambs": "Jesus told a story. A young man took his money and left home.",
+     "lions": "Jesus told a story about a father and his two sons. The younger son asked his father for his share of the family's money, and went far away to another country.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/a-great-way-off/lambs-01.webm",
+      "lions": "media:kids/audio/stops/a-great-way-off/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Luke 15:13–14",
+     "image": "media:kids/stops/a-great-way-off/panel-02.webp",
+     "lambs": "He spent all his money. Soon he had nothing left.",
+     "lions": "There he wasted his money until it was all gone. Then there was a famine, with no food in the land, and he had nothing to eat.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/a-great-way-off/lambs-02.webm",
+      "lions": "media:kids/audio/stops/a-great-way-off/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Luke 15:15–16",
+     "image": "media:kids/stops/a-great-way-off/panel-03.webp",
+     "lambs": "He had to feed pigs, and he was very hungry.",
+     "lions": "The only job he could find was feeding pigs. He was so hungry that he wished he could eat the pigs' food, and nobody gave him anything.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/a-great-way-off/lambs-03.webm",
+      "lions": "media:kids/audio/stops/a-great-way-off/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Luke 15:17–20",
+     "image": "media:kids/stops/a-great-way-off/panel-04.webp",
+     "lambs": "He said, “I will arise and go to my father.”",
+     "lions": "At last he thought of home. “I will arise and go to my father,” he said. He would say sorry, and ask to be one of his father's workers.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/a-great-way-off/lambs-04.webm",
+      "lions": "media:kids/audio/stops/a-great-way-off/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Luke 15:20",
+     "image": "media:kids/stops/a-great-way-off/panel-05.webp",
+     "lambs": "His father saw him far away, and ran to hug him!",
+     "lions": "But when he was still a great way off, his father saw him, and ran to him, and hugged him and kissed him. His father was so glad to see him.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/a-great-way-off/lambs-05.webm",
+      "lions": "media:kids/audio/stops/a-great-way-off/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Luke 15:22–28",
+     "image": "media:kids/stops/a-great-way-off/panel-06.webp",
+     "lambs": "The father had a party. “he was lost, and is found!”",
+     "lions": "The father called for the best robe, a ring and new shoes, and had a party. “For this my son was dead, and is alive again; he was lost, and is found.” Only the older brother stayed outside, so the father went out to ask him in too.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/a-great-way-off/lambs-06.webm",
+      "lions": "media:kids/audio/stops/a-great-way-off/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Luke 15:20",
+    "text": "his father saw him, and had compassion, and ran",
+    "plain": "Jesus told this story to show that God is like this father: always glad when we come back to Him.",
+    "audio": "media:kids/audio/stops/a-great-way-off/verse.webm",
+    "plainAudio": "media:kids/audio/stops/a-great-way-off/verse-plain.webm",
+    "blank": "ran",
+    "choices": [
+     "ran",
+     "sat",
+     "slept"
+    ],
+    "chunks": [
+     "his father saw him,",
+     "and had compassion,",
+     "and ran"
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/a-great-way-off/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "the son in his new robe",
+      "spots": [
+       [
+        0.52,
+        0.47,
+        0.12
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-01.webm"
+     },
+     {
+      "label": "the ring",
+      "spots": [
+       [
+        0.71,
+        0.25,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-02.webm"
+     },
+     {
+      "label": "the new sandals",
+      "spots": [
+       [
+        0.58,
+        0.69,
+        0.05
+       ],
+       [
+        0.48,
+        0.77,
+        0.04
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-03.webm"
+     },
+     {
+      "label": "the father",
+      "spots": [
+       [
+        0.33,
+        0.42,
+        0.12
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-04.webm"
+     },
+     {
+      "label": "the older brother at the gate",
+      "spots": [
+       [
+        0.87,
+        0.33,
+        0.08
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-05.webm"
+     },
+     {
+      "label": "a drum",
+      "spots": [
+       [
+        0.15,
+        0.51,
+        0.08
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-06.webm"
+     },
+     {
+      "label": "a flute",
+      "spots": [
+       [
+        0.17,
+        0.24,
+        0.06
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-07.webm"
+     },
+     {
+      "label": "a basket of bread",
+      "spots": [
+       [
+        0.73,
+        0.74,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/a-great-way-off/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "How do you think the son felt when his father ran to him?",
+     "How does it feel when someone forgives you?"
+    ],
+    "do": "Give each other a big welcome-home hug.",
+    "pray": "Dear God, thank You that You always welcome me back. Help me say sorry, and help me forgive others.",
+    "prayAudio": "media:kids/audio/stops/a-great-way-off/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/a-great-way-off/colouring.webp",
+    "print": "media:kids/stops/a-great-way-off/colouring.png"
+   },
+   "whoSaid": [
+    {
+     "id": "younger-son",
+     "name": "The younger son",
+     "quote": "I will arise and go to my father",
+     "reference": "Luke 15:18",
+     "audio": "media:kids/audio/games/who-said-it/younger-son.webm",
+     "portraits": [
+      "media:kids/games/portraits/younger-son.webp"
+     ]
+    },
+    {
+     "id": "father",
+     "name": "The father",
+     "quote": "he was lost, and is found",
+     "reference": "Luke 15:24",
+     "audio": "media:kids/audio/games/who-said-it/father.webm",
+     "portraits": [
+      "media:kids/games/portraits/father.webp"
+     ]
+    },
+    {
+     "id": "older-brother",
+     "name": "The older brother",
+     "quote": "Lo, these many years do I serve thee",
+     "reference": "Luke 15:29",
+     "audio": "media:kids/audio/games/who-said-it/older-brother.webm",
+     "portraits": [
+      "media:kids/games/portraits/older-brother.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "The younger son took his money and went far away.",
+     "right": true,
+     "why": "He went to another country.",
+     "audio": "media:kids/audio/games/right-or-not/a-great-way-off-01.webm"
+    },
+    {
+     "text": "He saved all his money.",
+     "right": false,
+     "why": "He wasted it until it was all gone.",
+     "audio": "media:kids/audio/games/right-or-not/a-great-way-off-02.webm"
+    },
+    {
+     "text": "He had to feed pigs, and he was very hungry.",
+     "right": true,
+     "why": "Nobody gave him anything.",
+     "audio": "media:kids/audio/games/right-or-not/a-great-way-off-03.webm"
+    },
+    {
+     "text": "He decided to go home to his father.",
+     "right": true,
+     "why": "He said, “I will arise and go to my father.”",
+     "audio": "media:kids/audio/games/right-or-not/a-great-way-off-04.webm"
+    },
+    {
+     "text": "The father was cross and sent him away.",
+     "right": false,
+     "why": "The father ran to him and hugged him.",
+     "audio": "media:kids/audio/games/right-or-not/a-great-way-off-05.webm"
+    },
+    {
+     "text": "The father had a party for him.",
+     "right": true,
+     "why": "He was so glad his son was home.",
+     "audio": "media:kids/audio/games/right-or-not/a-great-way-off-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "who-said"
+    }
+   ]
+  },
+  {
+   "id": "forbid-them-not",
+   "title": "Let the Children Come",
+   "refs": "Mark 10:13–16",
+   "youngest": "lambs",
+   "section": "map-06",
+   "badge": "media:kids/stops/forbid-them-not/badge.webp",
+   "note": "A gentle story throughout. “Suffer” is explained as an old word for “let”.",
+   "grownUpStory": "forbid-them-not",
+   "titleAudio": "media:kids/audio/stops/forbid-them-not/title.webm",
+   "panels": [
+    {
+     "ref": "Mark 10:13",
+     "image": "media:kids/stops/forbid-them-not/panel-01.webp",
+     "lambs": "Mothers and fathers brought their children to see Jesus.",
+     "lions": "One day mothers and fathers brought their young children to Jesus, so that He would touch them and bless them.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/forbid-them-not/lambs-01.webm",
+      "lions": "media:kids/audio/stops/forbid-them-not/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Mark 10:13",
+     "image": "media:kids/stops/forbid-them-not/panel-02.webp",
+     "lambs": "But the disciples told them to go away.",
+     "lions": "But the disciples told them off, and tried to send them away.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/forbid-them-not/lambs-02.webm",
+      "lions": "media:kids/audio/stops/forbid-them-not/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Mark 10:14",
+     "image": "media:kids/stops/forbid-them-not/panel-03.webp",
+     "lambs": "Jesus was not pleased with the disciples.",
+     "lions": "When Jesus saw it, He was much displeased with His disciples.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/forbid-them-not/lambs-03.webm",
+      "lions": "media:kids/audio/stops/forbid-them-not/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Mark 10:14",
+     "image": "media:kids/stops/forbid-them-not/panel-04.webp",
+     "lambs": "Jesus said, “Suffer the little children to come unto me.” That means: let them come!",
+     "lions": "He said, “Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.” “Suffer” is an old word that means “let”.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/forbid-them-not/lambs-04.webm",
+      "lions": "media:kids/audio/stops/forbid-them-not/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Mark 10:16",
+     "image": "media:kids/stops/forbid-them-not/panel-05.webp",
+     "lambs": "Jesus took the children up in His arms.",
+     "lions": "Then He took the children up in His arms.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/forbid-them-not/lambs-05.webm",
+      "lions": "media:kids/audio/stops/forbid-them-not/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Mark 10:16",
+     "image": "media:kids/stops/forbid-them-not/panel-06.webp",
+     "lambs": "He put His hands on them and blessed them.",
+     "lions": "He put His hands on them, and blessed them. No child is too small for Jesus.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/forbid-them-not/lambs-06.webm",
+      "lions": "media:kids/audio/stops/forbid-them-not/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Mark 10:14",
+    "text": "Suffer the little children to come unto me, and forbid them not",
+    "plain": "Jesus wants children to come to Him. You are never too small for Jesus.",
+    "audio": "media:kids/audio/stops/forbid-them-not/verse.webm",
+    "plainAudio": "media:kids/audio/stops/forbid-them-not/verse-plain.webm",
+    "blank": "children",
+    "choices": [
+     "children",
+     "lions",
+     "camels"
+    ],
+    "chunks": [
+     "Suffer the little children",
+     "to come unto me,",
+     "and forbid them not"
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/forbid-them-not/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "a baby in a sling",
+      "spots": [
+       [
+        0.18,
+        0.32,
+        0.07
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-01.webm"
+     },
+     {
+      "label": "a wooden toy donkey",
+      "spots": [
+       [
+        0.85,
+        0.78,
+        0.07
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-02.webm"
+     },
+     {
+      "label": "a lamb",
+      "spots": [
+       [
+        0.2,
+        0.65,
+        0.08
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-03.webm"
+     },
+     {
+      "label": "a disciple",
+      "spots": [
+       [
+        0.36,
+        0.31,
+        0.07
+       ],
+       [
+        0.66,
+        0.32,
+        0.05
+       ],
+       [
+        0.96,
+        0.27,
+        0.05
+       ],
+       [
+        0.54,
+        0.29,
+        0.04
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-04.webm"
+     },
+     {
+      "label": "a basket of figs",
+      "spots": [
+       [
+        0.3,
+        0.93,
+        0.1
+       ],
+       [
+        0.13,
+        0.53,
+        0.07
+       ],
+       [
+        0.05,
+        0.22,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-05.webm"
+     },
+     {
+      "label": "a water jar",
+      "spots": [
+       [
+        0.11,
+        0.67,
+        0.07
+       ],
+       [
+        0.95,
+        0.36,
+        0.05
+       ],
+       [
+        0.03,
+        0.6,
+        0.04
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-06.webm"
+     },
+     {
+      "label": "a dog",
+      "spots": [
+       [
+        0.29,
+        0.78,
+        0.09
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-07.webm"
+     },
+     {
+      "label": "a sleeping toddler",
+      "spots": [
+       [
+        0.86,
+        0.39,
+        0.06
+       ]
+      ],
+      "audio": "media:kids/audio/stops/forbid-them-not/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "How do you think the children felt when Jesus hugged them?",
+     "What would you like to tell Jesus today?"
+    ],
+    "do": "Tell each other one thing you love about each other.",
+    "pray": "Dear Jesus, thank You that You love children. I want to come to You every day.",
+    "prayAudio": "media:kids/audio/stops/forbid-them-not/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/forbid-them-not/colouring.webp",
+    "print": "media:kids/stops/forbid-them-not/colouring.png"
+   },
+   "whoSaid": [],
+   "rightOrNot": [
+    {
+     "text": "Mothers and fathers brought their children to Jesus.",
+     "right": true,
+     "why": "They wanted Jesus to bless them.",
+     "audio": "media:kids/audio/games/right-or-not/forbid-them-not-01.webm"
+    },
+    {
+     "text": "The disciples were happy to see the children.",
+     "right": false,
+     "why": "The disciples tried to send them away.",
+     "audio": "media:kids/audio/games/right-or-not/forbid-them-not-02.webm"
+    },
+    {
+     "text": "Jesus said, “Suffer the little children to come unto me.”",
+     "right": true,
+     "why": "That means: let them come!",
+     "audio": "media:kids/audio/games/right-or-not/forbid-them-not-03.webm"
+    },
+    {
+     "text": "“Suffer” is an old word that means “let”.",
+     "right": true,
+     "why": "Jesus was saying, let the children come.",
+     "audio": "media:kids/audio/games/right-or-not/forbid-them-not-04.webm"
+    },
+    {
+     "text": "Jesus said the children were too small to come.",
+     "right": false,
+     "why": "No child is too small for Jesus.",
+     "audio": "media:kids/audio/games/right-or-not/forbid-them-not-05.webm"
+    },
+    {
+     "text": "Jesus took the children in His arms and blessed them.",
+     "right": true,
+     "why": "He put His hands on them.",
+     "audio": "media:kids/audio/games/right-or-not/forbid-them-not-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "colour"
+    }
+   ]
+  },
+  {
+   "id": "all-things-new",
+   "title": "When God Makes Everything New",
+   "refs": "Revelation 21–22",
+   "youngest": "lambs",
+   "section": "map-07",
+   "badge": "media:kids/stops/all-things-new/badge.webp",
+   "note": "Told as a promise about the future, as Revelation tells it. No dates and no pictures of God.",
+   "grownUpStory": "all-things-new",
+   "titleAudio": "media:kids/audio/stops/all-things-new/title.webm",
+   "panels": [
+    {
+     "ref": "Revelation 21:1",
+     "image": "media:kids/stops/all-things-new/panel-01.webp",
+     "lambs": "One day God will make everything new: a new heaven and a new earth.",
+     "lions": "God showed John, in a vision, what will happen one day. John saw “a new heaven and a new earth”. Everything old and broken had passed away.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/all-things-new/lambs-01.webm",
+      "lions": "media:kids/audio/stops/all-things-new/lions-01.webm"
+     }
+    },
+    {
+     "ref": "Revelation 21:2",
+     "image": "media:kids/stops/all-things-new/panel-02.webp",
+     "lambs": "A shining city will come down from heaven.",
+     "lions": "He saw the holy city, new Jerusalem, coming down from God out of heaven, shining like a precious jewel.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/all-things-new/lambs-02.webm",
+      "lions": "media:kids/audio/stops/all-things-new/lions-02.webm"
+     }
+    },
+    {
+     "ref": "Revelation 21:4",
+     "image": "media:kids/stops/all-things-new/panel-03.webp",
+     "lambs": "No more crying, and no more hurting.",
+     "lions": "God will wipe away every tear. There will be no more crying and no more pain. God said, “Behold, I make all things new.”",
+     "audio": {
+      "lambs": "media:kids/audio/stops/all-things-new/lambs-03.webm",
+      "lions": "media:kids/audio/stops/all-things-new/lions-03.webm"
+     }
+    },
+    {
+     "ref": "Revelation 21:18–21",
+     "image": "media:kids/stops/all-things-new/panel-04.webp",
+     "lambs": "The city has gates of pearl and streets of gold.",
+     "lions": "Each of the city's twelve gates is made of one pearl, and its street is pure gold, as clear as glass.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/all-things-new/lambs-04.webm",
+      "lions": "media:kids/audio/stops/all-things-new/lions-04.webm"
+     }
+    },
+    {
+     "ref": "Revelation 22:1",
+     "image": "media:kids/stops/all-things-new/panel-05.webp",
+     "lambs": "A river, “clear as crystal”, flows through the city.",
+     "lions": "“a pure river of water of life, clear as crystal” flows from the throne of God.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/all-things-new/lambs-05.webm",
+      "lions": "media:kids/audio/stops/all-things-new/lions-05.webm"
+     }
+    },
+    {
+     "ref": "Revelation 22:2",
+     "image": "media:kids/stops/all-things-new/panel-06.webp",
+     "lambs": "The tree of life grows by the river, full of fruit.",
+     "lions": "On both sides of the river grows the tree of life, with twelve kinds of fruit, a new crop every month. God's people will live there with Him, happy for ever.",
+     "audio": {
+      "lambs": "media:kids/audio/stops/all-things-new/lambs-06.webm",
+      "lions": "media:kids/audio/stops/all-things-new/lions-06.webm"
+     }
+    }
+   ],
+   "verse": {
+    "ref": "Revelation 21:4",
+    "text": "God shall wipe away all tears from their eyes",
+    "plain": "One day God will make everything new, and there will be no more sadness.",
+    "audio": "media:kids/audio/stops/all-things-new/verse.webm",
+    "plainAudio": "media:kids/audio/stops/all-things-new/verse-plain.webm",
+    "blank": "tears",
+    "choices": [
+     "tears",
+     "toys",
+     "shoes"
+    ],
+    "chunks": [
+     "God shall wipe",
+     "away all tears",
+     "from their eyes"
+    ]
+   },
+   "find": {
+    "image": "media:kids/stops/all-things-new/seek.webp",
+    "lambsCount": 5,
+    "items": [
+     {
+      "label": "a pearl gate",
+      "spots": [
+       [
+        0.59,
+        0.26,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-01.webm"
+     },
+     {
+      "label": "the tree of life",
+      "spots": [
+       [
+        0.8,
+        0.13,
+        0.12
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-02.webm"
+     },
+     {
+      "label": "a child picking fruit",
+      "spots": [
+       [
+        0.12,
+        0.35,
+        0.07
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-03.webm"
+     },
+     {
+      "label": "the crystal river",
+      "spots": [
+       [
+        0.6,
+        0.54,
+        0.08
+       ],
+       [
+        0.7,
+        0.48,
+        0.05
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-04.webm"
+     },
+     {
+      "label": "a jewel in the wall",
+      "spots": [
+       [
+        0.94,
+        0.39,
+        0.04
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-05.webm"
+     },
+     {
+      "label": "a bird",
+      "spots": [
+       [
+        0.17,
+        0.11,
+        0.05
+       ],
+       [
+        0.585,
+        0.515,
+        0.03
+       ],
+       [
+        0.63,
+        0.52,
+        0.03
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-06.webm"
+     },
+     {
+      "label": "a family having a picnic",
+      "spots": [
+       [
+        0.32,
+        0.6,
+        0.15
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-07.webm"
+     },
+     {
+      "label": "a grandfather laughing",
+      "spots": [
+       [
+        0.79,
+        0.55,
+        0.11
+       ]
+      ],
+      "audio": "media:kids/audio/stops/all-things-new/find-08.webm"
+     }
+    ]
+   },
+   "talk": {
+    "ask": [
+     "What do you think will be the best thing about the new world God makes?",
+     "What makes you sad now, that God will take away one day?"
+    ],
+    "do": "Draw the tree of life with twelve different fruits.",
+    "pray": "Dear God, thank You that one day You will make everything new. Help me look forward to that day with joy.",
+    "prayAudio": "media:kids/audio/stops/all-things-new/pray.webm"
+   },
+   "colouring": {
+    "image": "media:kids/stops/all-things-new/colouring.webp",
+    "print": "media:kids/stops/all-things-new/colouring.png"
+   },
+   "whoSaid": [],
+   "rightOrNot": [
+    {
+     "text": "One day God will make everything new.",
+     "right": true,
+     "why": "A new heaven and a new earth.",
+     "audio": "media:kids/audio/games/right-or-not/all-things-new-01.webm"
+    },
+    {
+     "text": "The new city has gates made of pearl.",
+     "right": true,
+     "why": "Each gate is one pearl.",
+     "audio": "media:kids/audio/games/right-or-not/all-things-new-02.webm"
+    },
+    {
+     "text": "The city's street is made of mud.",
+     "right": false,
+     "why": "It is pure gold, as clear as glass.",
+     "audio": "media:kids/audio/games/right-or-not/all-things-new-03.webm"
+    },
+    {
+     "text": "In the new world there will be more crying.",
+     "right": false,
+     "why": "God will wipe away every tear.",
+     "audio": "media:kids/audio/games/right-or-not/all-things-new-04.webm"
+    },
+    {
+     "text": "A river as clear as crystal flows through the city.",
+     "right": true,
+     "why": "The river of water of life.",
+     "audio": "media:kids/audio/games/right-or-not/all-things-new-05.webm"
+    },
+    {
+     "text": "The tree of life grows by the river.",
+     "right": true,
+     "why": "With twelve kinds of fruit.",
+     "audio": "media:kids/audio/games/right-or-not/all-things-new-06.webm"
+    }
+   ],
+   "games": [
+    {
+     "type": "colour"
+    }
+   ]
+  }
+ ],
+ "map": {
+  "sections": [
+   {
+    "id": "map-01",
+    "name": "The Beginning",
+    "line": "God makes a beautiful world.",
+    "image": "media:kids/map/map-01-beginning.webp",
+    "clearings": [
+     [
+      0.32,
+      0.115
+     ],
+     [
+      0.63,
+      0.27
+     ],
+     [
+      0.33,
+      0.47
+     ],
+     [
+      0.67,
+      0.635
+     ],
+     [
+      0.35,
+      0.8
+     ]
+    ]
+   },
+   {
+    "id": "map-02",
+    "name": "The Promise",
+    "line": "God makes a promise to Abraham's family.",
+    "image": "media:kids/map/map-02-promise.webp",
+    "clearings": [
+     [
+      0.31,
+      0.12
+     ],
+     [
+      0.62,
+      0.28
+     ],
+     [
+      0.36,
+      0.41
+     ],
+     [
+      0.64,
+      0.67
+     ],
+     [
+      0.35,
+      0.78
+     ]
+    ]
+   },
+   {
+    "id": "map-03",
+    "name": "The Wilderness",
+    "line": "God leads His people through the desert.",
+    "image": "media:kids/map/map-03-wilderness.webp",
+    "clearings": [
+     [
+      0.33,
+      0.12
+     ],
+     [
+      0.625,
+      0.27
+     ],
+     [
+      0.33,
+      0.46
+     ],
+     [
+      0.665,
+      0.66
+     ],
+     [
+      0.38,
+      0.78
+     ]
+    ]
+   },
+   {
+    "id": "map-04",
+    "name": "The Promised Land",
+    "line": "God brings His people home.",
+    "image": "media:kids/map/map-04-promised-land.webp",
+    "clearings": [
+     [
+      0.37,
+      0.11
+     ],
+     [
+      0.61,
+      0.27
+     ],
+     [
+      0.35,
+      0.47
+     ],
+     [
+      0.72,
+      0.715
+     ]
+    ]
+   },
+   {
+    "id": "map-05",
+    "name": "Far from Home",
+    "line": "God is with His people, even far away.",
+    "image": "media:kids/map/map-05-exile.webp",
+    "clearings": [
+     [
+      0.33,
+      0.105
+     ],
+     [
+      0.62,
+      0.28
+     ],
+     [
+      0.36,
+      0.48
+     ],
+     [
+      0.715,
+      0.635
+     ],
+     [
+      0.6,
+      0.8
+     ]
+    ]
+   },
+   {
+    "id": "map-06",
+    "name": "By the Sea of Galilee",
+    "line": "Jesus teaches, heals and welcomes everyone.",
+    "image": "media:kids/map/map-06-galilee.webp",
+    "clearings": [
+     [
+      0.33,
+      0.13
+     ],
+     [
+      0.63,
+      0.275
+     ],
+     [
+      0.64,
+      0.445
+     ],
+     [
+      0.33,
+      0.55
+     ],
+     [
+      0.45,
+      0.79
+     ]
+    ]
+   },
+   {
+    "id": "map-07",
+    "name": "The River of Life",
+    "line": "God's promise for the future.",
+    "image": "media:kids/map/map-07-river-of-life.webp",
+    "clearings": [
+     [
+      0.42,
+      0.135
+     ],
+     [
+      0.62,
+      0.3
+     ],
+     [
+      0.29,
+      0.53
+     ],
+     [
+      0.63,
+      0.745
+     ]
+    ]
+   }
+  ],
+  "road": [
+   {
+    "section": "map-01",
+    "clearing": 0,
+    "soon": "God Makes the World"
+   },
+   {
+    "section": "map-01",
+    "clearing": 1,
+    "story": "where-art-thou"
+   },
+   {
+    "section": "map-01",
+    "clearing": 2,
+    "soon": "Noah's Big Boat"
+   },
+   {
+    "section": "map-01",
+    "clearing": 3,
+    "soon": "The Rainbow Promise"
+   },
+   {
+    "section": "map-02",
+    "clearing": 0,
+    "soon": "Abraham Counts the Stars"
+   },
+   {
+    "section": "map-02",
+    "clearing": 2,
+    "soon": "Joseph's Coat"
+   },
+   {
+    "section": "map-02",
+    "clearing": 3,
+    "soon": "Joseph Forgives"
+   },
+   {
+    "section": "map-03",
+    "clearing": 0,
+    "soon": "Baby Moses"
+   },
+   {
+    "section": "map-03",
+    "clearing": 1,
+    "soon": "Through the Sea"
+   },
+   {
+    "section": "map-03",
+    "clearing": 3,
+    "soon": "Bread from Heaven"
+   },
+   {
+    "section": "map-04",
+    "clearing": 0,
+    "soon": "The Walls Fall Down"
+   },
+   {
+    "section": "map-04",
+    "clearing": 1,
+    "story": "too-many-for-me"
+   },
+   {
+    "section": "map-04",
+    "clearing": 2,
+    "story": "and-ruth-with-her"
+   },
+   {
+    "section": "map-04",
+    "clearing": 3,
+    "soon": "David and the Giant"
+   },
+   {
+    "section": "map-05",
+    "clearing": 1,
+    "story": "the-fourth-man-in-the-fire"
+   },
+   {
+    "section": "map-05",
+    "clearing": 3,
+    "soon": "Daniel and the Lions"
+   },
+   {
+    "section": "map-05",
+    "clearing": 4,
+    "soon": "Jonah and the Big Fish"
+   },
+   {
+    "section": "map-06",
+    "clearing": 0,
+    "soon": "The Boy's Lunch"
+   },
+   {
+    "section": "map-06",
+    "clearing": 1,
+    "story": "how-much-more"
+   },
+   {
+    "section": "map-06",
+    "clearing": 2,
+    "story": "a-great-way-off"
+   },
+   {
+    "section": "map-06",
+    "clearing": 3,
+    "story": "forbid-them-not"
+   },
+   {
+    "section": "map-06",
+    "clearing": 4,
+    "soon": "Jesus Calms the Storm"
+   },
+   {
+    "section": "map-07",
+    "clearing": 0,
+    "soon": "Paul's Shipwreck"
+   },
+   {
+    "section": "map-07",
+    "clearing": 1,
+    "soon": "Peter and Rhoda"
+   },
+   {
+    "section": "map-07",
+    "clearing": 3,
+    "story": "all-things-new"
+   }
+  ],
+  "comingSoon": "media:kids/map/coming-soon.webp"
+ },
+ "tree": {
+  "stages": [
+   {
+    "key": "seedling",
+    "name": "Seedling",
+    "min": 0,
+    "image": "media:kids/tree/tree-1-seedling.webp",
+    "spots": [
+     [
+      0.43,
+      0.47
+     ],
+     [
+      0.62,
+      0.5
+     ],
+     [
+      0.52,
+      0.4
+     ],
+     [
+      0.4,
+      0.6
+     ],
+     [
+      0.65,
+      0.62
+     ],
+     [
+      0.56,
+      0.33
+     ],
+     [
+      0.46,
+      0.7
+     ],
+     [
+      0.6,
+      0.72
+     ]
+    ],
+    "perches": [
+     [
+      0.3,
+      0.73
+     ],
+     [
+      0.72,
+      0.74
+     ],
+     [
+      0.22,
+      0.8
+     ],
+     [
+      0.8,
+      0.8
+     ],
+     [
+      0.5,
+      0.3
+     ]
+    ],
+    "nest": [
+     0.36,
+     0.78
+    ]
+   },
+   {
+    "key": "sapling",
+    "name": "Sapling",
+    "min": 2,
+    "image": "media:kids/tree/tree-2-sapling.webp",
+    "spots": [
+     [
+      0.4,
+      0.38
+     ],
+     [
+      0.47,
+      0.22
+     ],
+     [
+      0.55,
+      0.2
+     ],
+     [
+      0.62,
+      0.3
+     ],
+     [
+      0.63,
+      0.45
+     ],
+     [
+      0.45,
+      0.48
+     ],
+     [
+      0.52,
+      0.33
+     ],
+     [
+      0.58,
+      0.4
+     ],
+     [
+      0.38,
+      0.5
+     ],
+     [
+      0.6,
+      0.55
+     ]
+    ],
+    "perches": [
+     [
+      0.36,
+      0.4
+     ],
+     [
+      0.65,
+      0.36
+     ],
+     [
+      0.48,
+      0.17
+     ],
+     [
+      0.3,
+      0.74
+     ],
+     [
+      0.72,
+      0.74
+     ]
+    ],
+    "nest": [
+     0.52,
+     0.48
+    ]
+   },
+   {
+    "key": "young",
+    "name": "Young tree",
+    "min": 5,
+    "image": "media:kids/tree/tree-3-young.webp",
+    "spots": [
+     [
+      0.35,
+      0.38
+     ],
+     [
+      0.4,
+      0.27
+     ],
+     [
+      0.46,
+      0.17
+     ],
+     [
+      0.52,
+      0.11
+     ],
+     [
+      0.58,
+      0.16
+     ],
+     [
+      0.64,
+      0.22
+     ],
+     [
+      0.7,
+      0.32
+     ],
+     [
+      0.66,
+      0.44
+     ],
+     [
+      0.59,
+      0.3
+     ],
+     [
+      0.52,
+      0.24
+     ],
+     [
+      0.45,
+      0.33
+     ],
+     [
+      0.38,
+      0.45
+     ],
+     [
+      0.55,
+      0.4
+     ],
+     [
+      0.48,
+      0.44
+     ]
+    ],
+    "perches": [
+     [
+      0.4,
+      0.21
+     ],
+     [
+      0.62,
+      0.14
+     ],
+     [
+      0.72,
+      0.3
+     ],
+     [
+      0.33,
+      0.32
+     ],
+     [
+      0.55,
+      0.08
+     ]
+    ],
+    "nest": [
+     0.53,
+     0.37
+    ]
+   },
+   {
+    "key": "great",
+    "name": "Great tree",
+    "min": 8,
+    "image": "media:kids/tree/tree-4-great.webp",
+    "spots": [
+     [
+      0.25,
+      0.33
+     ],
+     [
+      0.3,
+      0.24
+     ],
+     [
+      0.36,
+      0.16
+     ],
+     [
+      0.42,
+      0.09
+     ],
+     [
+      0.5,
+      0.07
+     ],
+     [
+      0.58,
+      0.08
+     ],
+     [
+      0.65,
+      0.13
+     ],
+     [
+      0.72,
+      0.19
+     ],
+     [
+      0.8,
+      0.26
+     ],
+     [
+      0.86,
+      0.33
+     ],
+     [
+      0.78,
+      0.4
+     ],
+     [
+      0.7,
+      0.3
+     ],
+     [
+      0.62,
+      0.22
+     ],
+     [
+      0.55,
+      0.17
+     ],
+     [
+      0.47,
+      0.18
+     ],
+     [
+      0.4,
+      0.26
+     ],
+     [
+      0.33,
+      0.32
+     ],
+     [
+      0.22,
+      0.4
+     ],
+     [
+      0.3,
+      0.42
+     ],
+     [
+      0.62,
+      0.4
+     ],
+     [
+      0.7,
+      0.45
+     ],
+     [
+      0.5,
+      0.28
+     ],
+     [
+      0.45,
+      0.36
+     ],
+     [
+      0.78,
+      0.47
+     ]
+    ],
+    "perches": [
+     [
+      0.35,
+      0.12
+     ],
+     [
+      0.62,
+      0.06
+     ],
+     [
+      0.85,
+      0.3
+     ],
+     [
+      0.2,
+      0.36
+     ],
+     [
+      0.7,
+      0.1
+     ]
+    ],
+    "nest": [
+     0.66,
+     0.33
+    ]
+   }
+  ],
+  "pieces": {
+   "leaf": [
+    "media:kids/tree/piece-leaf-a.webp",
+    "media:kids/tree/piece-leaf-b.webp",
+    "media:kids/tree/piece-leaf-c.webp"
+   ],
+   "fruit": [
+    "media:kids/tree/piece-fruit.webp"
+   ],
+   "flower": [
+    "media:kids/tree/piece-flower-blossom.webp",
+    "media:kids/tree/piece-flower-pink.webp"
+   ],
+   "bird": [
+    "media:kids/tree/piece-bird-sitting.webp"
+   ],
+   "nest": [
+    "media:kids/tree/piece-nest.webp"
+   ]
+  }
+ },
+ "nari": {
+  "stages": [
+   {
+    "stage": 1,
+    "name": "Tiny cub",
+    "min": 0,
+    "images": {
+     "idle": "media:kids/cub/stage-1-idle.webp",
+     "cheer": "media:kids/cub/stage-1-cheer.webp",
+     "think": "media:kids/cub/stage-1-think.webp",
+     "point": "media:kids/cub/stage-1-point.webp",
+     "sleep": "media:kids/cub/stage-1-sleep.webp",
+     "avatar": "media:kids/cub/stage-1-avatar.webp"
+    }
+   },
+   {
+    "stage": 2,
+    "name": "Cub",
+    "min": 3,
+    "images": {
+     "idle": "media:kids/cub/stage-2-idle.webp",
+     "cheer": "media:kids/cub/stage-2-cheer.webp",
+     "think": "media:kids/cub/stage-2-think.webp",
+     "point": "media:kids/cub/stage-2-point.webp",
+     "sleep": "media:kids/cub/stage-2-sleep.webp",
+     "avatar": "media:kids/cub/stage-2-avatar.webp"
+    }
+   },
+   {
+    "stage": 3,
+    "name": "Young lion",
+    "min": 8,
+    "images": {
+     "idle": "media:kids/cub/stage-3-idle.webp",
+     "cheer": "media:kids/cub/stage-3-cheer.webp",
+     "think": "media:kids/cub/stage-3-think.webp",
+     "point": "media:kids/cub/stage-3-point.webp",
+     "sleep": "media:kids/cub/stage-3-sleep.webp",
+     "avatar": "media:kids/cub/stage-3-avatar.webp"
+    }
+   },
+   {
+    "stage": 4,
+    "name": "Lion",
+    "min": 16,
+    "images": {
+     "idle": "media:kids/cub/stage-4-idle.webp",
+     "cheer": "media:kids/cub/stage-4-cheer.webp",
+     "think": "media:kids/cub/stage-4-think.webp",
+     "point": "media:kids/cub/stage-4-point.webp",
+     "sleep": "media:kids/cub/stage-4-sleep.webp",
+     "avatar": "media:kids/cub/stage-4-avatar.webp"
+    }
+   }
+  ],
+  "lines": {
+   "hello-first": "media:kids/audio/nari/hello-first.webm",
+   "who-is-exploring": "media:kids/audio/nari/who-is-exploring.webm",
+   "welcome-back": "media:kids/audio/nari/welcome-back.webm",
+   "home-tree": "media:kids/audio/nari/home-tree.webm",
+   "home-keep-going": "media:kids/audio/nari/home-keep-going.webm",
+   "map-intro": "media:kids/audio/nari/map-intro.webm",
+   "map-coming-soon": "media:kids/audio/nari/map-coming-soon.webm",
+   "map-part-done": "media:kids/audio/nari/map-part-done.webm",
+   "step-watch": "media:kids/audio/nari/step-watch.webm",
+   "step-find": "media:kids/audio/nari/step-find.webm",
+   "step-play": "media:kids/audio/nari/step-play.webm",
+   "step-verse": "media:kids/audio/nari/step-verse.webm",
+   "step-talk": "media:kids/audio/nari/step-talk.webm",
+   "find-found-1": "media:kids/audio/nari/find-found-1.webm",
+   "find-found-2": "media:kids/audio/nari/find-found-2.webm",
+   "find-found-3": "media:kids/audio/nari/find-found-3.webm",
+   "find-hint": "media:kids/audio/nari/find-hint.webm",
+   "find-all": "media:kids/audio/nari/find-all.webm",
+   "order-intro": "media:kids/audio/nari/order-intro.webm",
+   "order-hint": "media:kids/audio/nari/order-hint.webm",
+   "order-right": "media:kids/audio/nari/order-right.webm",
+   "verse-intro": "media:kids/audio/nari/verse-intro.webm",
+   "verse-missing": "media:kids/audio/nari/verse-missing.webm",
+   "verse-done": "media:kids/audio/nari/verse-done.webm",
+   "verse-fruit": "media:kids/audio/nari/verse-fruit.webm",
+   "talk-intro": "media:kids/audio/nari/talk-intro.webm",
+   "talk-flower": "media:kids/audio/nari/talk-flower.webm",
+   "right-1": "media:kids/audio/nari/right-1.webm",
+   "right-2": "media:kids/audio/nari/right-2.webm",
+   "right-3": "media:kids/audio/nari/right-3.webm",
+   "try-1": "media:kids/audio/nari/try-1.webm",
+   "try-2": "media:kids/audio/nari/try-2.webm",
+   "try-3": "media:kids/audio/nari/try-3.webm",
+   "show-answer": "media:kids/audio/nari/show-answer.webm",
+   "stop-done": "media:kids/audio/nari/stop-done.webm",
+   "leaf": "media:kids/audio/nari/leaf.webm",
+   "tree-grows": "media:kids/audio/nari/tree-grows.webm",
+   "nari-grows": "media:kids/audio/nari/nari-grows.webm",
+   "sticker": "media:kids/audio/nari/sticker.webm",
+   "rest": "media:kids/audio/nari/rest.webm",
+   "read-together": "media:kids/audio/nari/read-together.webm",
+   "gather-intro": "media:kids/audio/nari/gather-intro.webm",
+   "gather-done": "media:kids/audio/nari/gather-done.webm",
+   "pairs-intro": "media:kids/audio/nari/pairs-intro.webm",
+   "pairs-match": "media:kids/audio/nari/pairs-match.webm",
+   "who-intro": "media:kids/audio/nari/who-intro.webm",
+   "colour-intro": "media:kids/audio/nari/colour-intro.webm",
+   "colour-done": "media:kids/audio/nari/colour-done.webm",
+   "right-or-not-intro": "media:kids/audio/nari/right-or-not-intro.webm",
+   "dress-intro": "media:kids/audio/nari/dress-intro.webm",
+   "train-intro": "media:kids/audio/nari/train-intro.webm"
+  }
+ },
+ "count": [
+  "media:kids/audio/count/01.webm",
+  "media:kids/audio/count/02.webm",
+  "media:kids/audio/count/03.webm",
+  "media:kids/audio/count/04.webm",
+  "media:kids/audio/count/05.webm",
+  "media:kids/audio/count/06.webm",
+  "media:kids/audio/count/07.webm",
+  "media:kids/audio/count/08.webm",
+  "media:kids/audio/count/09.webm",
+  "media:kids/audio/count/10.webm",
+  "media:kids/audio/count/11.webm",
+  "media:kids/audio/count/12.webm"
+ ],
+ "sfx": {
+  "tap": "media:kids/audio/sfx/tap.webm",
+  "lift": "media:kids/audio/sfx/lift.webm",
+  "drop": "media:kids/audio/sfx/drop.webm",
+  "page": "media:kids/audio/sfx/page.webm",
+  "sparkle": "media:kids/audio/sfx/sparkle.webm",
+  "right": "media:kids/audio/sfx/right.webm",
+  "try-again": "media:kids/audio/sfx/try-again.webm",
+  "hint": "media:kids/audio/sfx/hint.webm",
+  "paw": "media:kids/audio/sfx/paw.webm",
+  "celebrate": "media:kids/audio/sfx/celebrate.webm",
+  "confetti": "media:kids/audio/sfx/confetti.webm",
+  "leaf": "media:kids/audio/sfx/leaf.webm",
+  "fruit": "media:kids/audio/sfx/fruit.webm",
+  "flower": "media:kids/audio/sfx/flower.webm",
+  "bird": "media:kids/audio/sfx/bird.webm",
+  "tree-grow": "media:kids/audio/sfx/tree-grow.webm",
+  "nari-grow": "media:kids/audio/sfx/nari-grow.webm",
+  "sticker": "media:kids/audio/sfx/sticker.webm",
+  "bounce": "media:kids/audio/sfx/bounce.webm",
+  "soon": "media:kids/audio/sfx/soon.webm",
+  "card-flip": "media:kids/audio/sfx/card-flip.webm",
+  "card-match": "media:kids/audio/sfx/card-match.webm",
+  "catch": "media:kids/audio/sfx/catch.webm",
+  "paint": "media:kids/audio/sfx/paint.webm",
+  "train-toot": "media:kids/audio/sfx/train-toot.webm",
+  "train-link": "media:kids/audio/sfx/train-link.webm"
+ },
+ "pairs": {
+  "back": "media:kids/games/two-by-two/card-back.webp",
+  "cards": [
+   {
+    "id": "sheep-and-lambs",
+    "name": "Sheep",
+    "image": "media:kids/games/two-by-two/sheep-and-lambs.webp"
+   },
+   {
+    "id": "goat",
+    "name": "Goat",
+    "image": "media:kids/games/two-by-two/goat.webp"
+   },
+   {
+    "id": "oxen-and-cattle",
+    "name": "Ox",
+    "image": "media:kids/games/two-by-two/oxen-and-cattle.webp"
+   },
+   {
+    "id": "donkey",
+    "name": "Donkey",
+    "image": "media:kids/games/two-by-two/donkey.webp"
+   },
+   {
+    "id": "camel",
+    "name": "Camel",
+    "image": "media:kids/games/two-by-two/camel.webp"
+   },
+   {
+    "id": "horse",
+    "name": "Horse",
+    "image": "media:kids/games/two-by-two/horse.webp"
+   },
+   {
+    "id": "lion",
+    "name": "Lion",
+    "image": "media:kids/games/two-by-two/lion.webp"
+   },
+   {
+    "id": "bear",
+    "name": "Bear",
+    "image": "media:kids/games/two-by-two/bear.webp"
+   },
+   {
+    "id": "deer",
+    "name": "Deer",
+    "image": "media:kids/games/two-by-two/deer.webp"
+   },
+   {
+    "id": "dove",
+    "name": "Dove",
+    "image": "media:kids/games/two-by-two/dove.webp"
+   },
+   {
+    "id": "raven",
+    "name": "Raven",
+    "image": "media:kids/games/two-by-two/raven.webp"
+   },
+   {
+    "id": "eagle",
+    "name": "Eagle",
+    "image": "media:kids/games/two-by-two/eagle.webp"
+   }
+  ]
+ },
+ "ui": {
+  "welcome": "media:kids/ui/welcome.webp",
+  "talk": "media:kids/ui/talk-together.webp",
+  "readTogether": "media:kids/ui/read-together.webp",
+  "rest": "media:kids/ui/rest-night.webp",
+  "certificate": "media:kids/print/certificate.png",
+  "verseCard": "media:kids/print/verse-card.png"
+ },
+ "stickers": {
+  "paths": [
+   {
+    "group": "AG",
+    "path": "firsts",
+    "how": "Trying each step for the first time",
+    "firsts": [
+     "watch",
+     "find",
+     "play",
+     "verse",
+     "talk",
+     "map"
+    ]
+   },
+   {
+    "group": "HB",
+    "path": "stops",
+    "how": "Finishing stories: the first, then every third",
+    "first": 1,
+    "every": 3
+   },
+   {
+    "group": "BS",
+    "path": "verses",
+    "how": "Learning verses: the first, then every third",
+    "first": 1,
+    "every": 3
+   },
+   {
+    "group": "FS",
+    "path": "talks",
+    "how": "Talking together: every fourth time",
+    "first": 4,
+    "every": 4
+   },
+   {
+    "group": "AN",
+    "path": "animals",
+    "how": "Finishing a Look & Find, or a game of Two by Two",
+    "first": 1,
+    "every": 1
+   }
+  ],
+  "firsts": {
+   "watch": "watching your first story",
+   "find": "your first Look & Find",
+   "play": "playing your first game",
+   "verse": "learning your first verse",
+   "talk": "your first Talk Together",
+   "map": "finishing your first part of the map"
+  },
+  "list": [
+   {
+    "id": "AG-01",
+    "group": "AG",
+    "title": "Belt of Truth",
+    "reference": "Ephesians 6:14",
+    "verse": "Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness;",
+    "image": "media:stickers/armour-of-god/AG-01-belt-of-truth.webp",
+    "full": "media:stickers/armour-of-god/AG-01-belt-of-truth.png"
+   },
+   {
+    "id": "AG-02",
+    "group": "AG",
+    "title": "Breastplate of Righteousness",
+    "reference": "Ephesians 6:14",
+    "verse": "Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness;",
+    "image": "media:stickers/armour-of-god/AG-02-breastplate-of-righteousness.webp",
+    "full": "media:stickers/armour-of-god/AG-02-breastplate-of-righteousness.png"
+   },
+   {
+    "id": "AG-03",
+    "group": "AG",
+    "title": "Shoes of Peace",
+    "reference": "Ephesians 6:15",
+    "verse": "And your feet shod with the preparation of the gospel of peace;",
+    "image": "media:stickers/armour-of-god/AG-03-shoes-of-peace.webp",
+    "full": "media:stickers/armour-of-god/AG-03-shoes-of-peace.png"
+   },
+   {
+    "id": "AG-04",
+    "group": "AG",
+    "title": "Shield of Faith",
+    "reference": "Ephesians 6:16",
+    "verse": "Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked.",
+    "image": "media:stickers/armour-of-god/AG-04-shield-of-faith.webp",
+    "full": "media:stickers/armour-of-god/AG-04-shield-of-faith.png"
+   },
+   {
+    "id": "AG-05",
+    "group": "AG",
+    "title": "Helmet of Salvation",
+    "reference": "Ephesians 6:17",
+    "verse": "And take the helmet of salvation, and the sword of the Spirit, which is the word of God:",
+    "image": "media:stickers/armour-of-god/AG-05-helmet-of-salvation.webp",
+    "full": "media:stickers/armour-of-god/AG-05-helmet-of-salvation.png"
+   },
+   {
+    "id": "AG-06",
+    "group": "AG",
+    "title": "Sword of the Spirit",
+    "reference": "Ephesians 6:17",
+    "verse": "And take the helmet of salvation, and the sword of the Spirit, which is the word of God:",
+    "image": "media:stickers/armour-of-god/AG-06-sword-of-the-spirit.webp",
+    "full": "media:stickers/armour-of-god/AG-06-sword-of-the-spirit.png"
+   },
+   {
+    "id": "AN-01",
+    "group": "AN",
+    "title": "God Carries the Lambs",
+    "reference": "Isaiah 40:11",
+    "verse": "He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom, and shall gently lead those that are with young.",
+    "image": "media:stickers/animals-of-the-bible/AN-01-god-carries-the-lambs.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-01-god-carries-the-lambs.png"
+   },
+   {
+    "id": "AN-02",
+    "group": "AN",
+    "title": "Goats' Milk for All",
+    "reference": "Proverbs 27:27",
+    "verse": "And thou shalt have goats' milk enough for thy food, for the food of thy household, and for the maintenance for thy maidens.",
+    "image": "media:stickers/animals-of-the-bible/AN-02-goats-milk-for-all.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-02-goats-milk-for-all.png"
+   },
+   {
+    "id": "AN-03",
+    "group": "AN",
+    "title": "Cattle on a Thousand Hills",
+    "reference": "Psalm 50:10",
+    "verse": "For every beast of the forest is mine, and the cattle upon a thousand hills.",
+    "image": "media:stickers/animals-of-the-bible/AN-03-cattle-on-a-thousand-hills.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-03-cattle-on-a-thousand-hills.png"
+   },
+   {
+    "id": "AN-04",
+    "group": "AN",
+    "title": "The Donkey That Talked",
+    "reference": "Numbers 22:28",
+    "verse": "And the LORD opened the mouth of the ass, and she said unto Balaam, What have I done unto thee, that thou hast smitten me these three times?",
+    "image": "media:stickers/animals-of-the-bible/AN-04-the-donkey-that-talked.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-04-the-donkey-that-talked.png"
+   },
+   {
+    "id": "AN-05",
+    "group": "AN",
+    "title": "Water for the Camels",
+    "reference": "Genesis 24:19",
+    "verse": "And when she had done giving him drink, she said, I will draw water for thy camels also, until they have done drinking.",
+    "image": "media:stickers/animals-of-the-bible/AN-05-water-for-the-camels.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-05-water-for-the-camels.png"
+   },
+   {
+    "id": "AN-06",
+    "group": "AN",
+    "title": "Horses of Fire",
+    "reference": "2 Kings 2:11",
+    "verse": "behold, there appeared a chariot of fire, and horses of fire",
+    "image": "media:stickers/animals-of-the-bible/AN-06-horses-of-fire.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-06-horses-of-fire.png"
+   },
+   {
+    "id": "AN-07",
+    "group": "AN",
+    "title": "The Son Who Fed the Pigs",
+    "reference": "Luke 15:16",
+    "verse": "And he would fain have filled his belly with the husks that the swine did eat: and no man gave unto him.",
+    "image": "media:stickers/animals-of-the-bible/AN-07-the-son-who-fed-the-pigs.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-07-the-son-who-fed-the-pigs.png"
+   },
+   {
+    "id": "AN-08",
+    "group": "AN",
+    "title": "Bold as a Lion",
+    "reference": "Proverbs 28:1",
+    "verse": "The wicked flee when no man pursueth: but the righteous are bold as a lion.",
+    "image": "media:stickers/animals-of-the-bible/AN-08-bold-as-a-lion.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-08-bold-as-a-lion.png"
+   },
+   {
+    "id": "AN-09",
+    "group": "AN",
+    "title": "The Wolf and the Lamb",
+    "reference": "Isaiah 11:6",
+    "verse": "The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them.",
+    "image": "media:stickers/animals-of-the-bible/AN-09-the-wolf-and-the-lamb.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-09-the-wolf-and-the-lamb.png"
+   },
+   {
+    "id": "AN-10",
+    "group": "AN",
+    "title": "Safe from the Bear",
+    "reference": "1 Samuel 17:37",
+    "verse": "The LORD that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me",
+    "image": "media:stickers/animals-of-the-bible/AN-10-safe-from-the-bear.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-10-safe-from-the-bear.png"
+   },
+   {
+    "id": "AN-11",
+    "group": "AN",
+    "title": "The Little Foxes",
+    "reference": "Song of Solomon 2:15",
+    "verse": "Take us the foxes, the little foxes, that spoil the vines: for our vines have tender grapes.",
+    "image": "media:stickers/animals-of-the-bible/AN-11-the-little-foxes.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-11-the-little-foxes.png"
+   },
+   {
+    "id": "AN-12",
+    "group": "AN",
+    "title": "Thirsty for God",
+    "reference": "Psalm 42:1",
+    "verse": "As the hart panteth after the water brooks, so panteth my soul after thee, O God.",
+    "image": "media:stickers/animals-of-the-bible/AN-12-thirsty-for-god.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-12-thirsty-for-god.png"
+   },
+   {
+    "id": "AN-13",
+    "group": "AN",
+    "title": "Crumbs for the Puppies",
+    "reference": "Matthew 15:27",
+    "verse": "And she said, Truth, Lord: yet the dogs eat of the crumbs which fall from their masters' table.",
+    "image": "media:stickers/animals-of-the-bible/AN-13-crumbs-for-the-puppies.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-13-crumbs-for-the-puppies.png"
+   },
+   {
+    "id": "AN-14",
+    "group": "AN",
+    "title": "The Dove's Olive Leaf",
+    "reference": "Genesis 8:11",
+    "verse": "And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth.",
+    "image": "media:stickers/animals-of-the-bible/AN-14-the-doves-olive-leaf.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-14-the-doves-olive-leaf.png"
+   },
+   {
+    "id": "AN-15",
+    "group": "AN",
+    "title": "Ravens Brought Bread",
+    "reference": "1 Kings 17:6",
+    "verse": "And the ravens brought him bread and flesh in the morning, and bread and flesh in the evening; and he drank of the brook.",
+    "image": "media:stickers/animals-of-the-bible/AN-15-ravens-brought-bread.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-15-ravens-brought-bread.png"
+   },
+   {
+    "id": "AN-16",
+    "group": "AN",
+    "title": "Wings Like Eagles",
+    "reference": "Isaiah 40:31",
+    "verse": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.",
+    "image": "media:stickers/animals-of-the-bible/AN-16-wings-like-eagles.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-16-wings-like-eagles.png"
+   },
+   {
+    "id": "AN-17",
+    "group": "AN",
+    "title": "God Sees the Sparrow",
+    "reference": "Matthew 10:29",
+    "verse": "Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father.",
+    "image": "media:stickers/animals-of-the-bible/AN-17-god-sees-the-sparrow.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-17-god-sees-the-sparrow.png"
+   },
+   {
+    "id": "AN-18",
+    "group": "AN",
+    "title": "Quails for Supper",
+    "reference": "Exodus 16:13",
+    "verse": "And it came to pass, that at even the quails came up, and covered the camp",
+    "image": "media:stickers/animals-of-the-bible/AN-18-quails-for-supper.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-18-quails-for-supper.png"
+   },
+   {
+    "id": "AN-19",
+    "group": "AN",
+    "title": "The Rooster Crowed",
+    "reference": "Mark 14:72",
+    "verse": "And the second time the cock crew.",
+    "image": "media:stickers/animals-of-the-bible/AN-19-the-rooster-crowed.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-19-the-rooster-crowed.png"
+   },
+   {
+    "id": "AN-20",
+    "group": "AN",
+    "title": "Two Small Fishes",
+    "reference": "John 6:9",
+    "verse": "There is a lad here, which hath five barley loaves, and two small fishes: but what are they among so many?",
+    "image": "media:stickers/animals-of-the-bible/AN-20-two-small-fishes.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-20-two-small-fishes.png"
+   },
+   {
+    "id": "AN-21",
+    "group": "AN",
+    "title": "Frogs Everywhere!",
+    "reference": "Exodus 8:6",
+    "verse": "And Aaron stretched out his hand over the waters of Egypt; and the frogs came up, and covered the land of Egypt.",
+    "image": "media:stickers/animals-of-the-bible/AN-21-frogs-everywhere.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-21-frogs-everywhere.png"
+   },
+   {
+    "id": "AN-22",
+    "group": "AN",
+    "title": "The Brass Serpent",
+    "reference": "Numbers 21:9",
+    "verse": "And Moses made a serpent of brass, and put it upon a pole, and it came to pass, that if a serpent had bitten any man, when he beheld the serpent of brass, he lived.",
+    "image": "media:stickers/animals-of-the-bible/AN-22-the-brass-serpent.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-22-the-brass-serpent.png"
+   },
+   {
+    "id": "AN-23",
+    "group": "AN",
+    "title": "Locusts and Wild Honey",
+    "reference": "Matthew 3:4",
+    "verse": "and his meat was locusts and wild honey.",
+    "image": "media:stickers/animals-of-the-bible/AN-23-locusts-and-wild-honey.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-23-locusts-and-wild-honey.png"
+   },
+   {
+    "id": "AN-24",
+    "group": "AN",
+    "title": "Sweeter Than Honey",
+    "reference": "Psalm 119:103",
+    "verse": "How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!",
+    "image": "media:stickers/animals-of-the-bible/AN-24-sweeter-than-honey.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-24-sweeter-than-honey.png"
+   },
+   {
+    "id": "AN-25",
+    "group": "AN",
+    "title": "Wise Like the Ant",
+    "reference": "Proverbs 6:6",
+    "verse": "Go to the ant, thou sluggard; consider her ways, and be wise:",
+    "image": "media:stickers/animals-of-the-bible/AN-25-wise-like-the-ant.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-25-wise-like-the-ant.png"
+   },
+   {
+    "id": "AN-26",
+    "group": "AN",
+    "title": "An Egg, Not a Scorpion",
+    "reference": "Luke 11:12",
+    "verse": "Or if he shall ask an egg, will he offer him a scorpion?",
+    "image": "media:stickers/animals-of-the-bible/AN-26-an-egg-not-a-scorpion.webp",
+    "full": "media:stickers/animals-of-the-bible/AN-26-an-egg-not-a-scorpion.png"
+   },
+   {
+    "id": "BS-01",
+    "group": "BS",
+    "title": "God Takes Care of Me",
+    "reference": "Psalm 23:1",
+    "verse": "The LORD is my shepherd; I shall not want.",
+    "image": "media:stickers/bible-sayings/BS-01-god-takes-care-of-me.webp",
+    "full": "media:stickers/bible-sayings/BS-01-god-takes-care-of-me.png"
+   },
+   {
+    "id": "BS-02",
+    "group": "BS",
+    "title": "Be Strong and Brave",
+    "reference": "Joshua 1:9",
+    "verse": "Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.",
+    "image": "media:stickers/bible-sayings/BS-02-be-strong-and-brave.webp",
+    "full": "media:stickers/bible-sayings/BS-02-be-strong-and-brave.png"
+   },
+   {
+    "id": "BS-03",
+    "group": "BS",
+    "title": "Be Still and Trust God",
+    "reference": "Psalm 46:10",
+    "verse": "Be still, and know that I am God.",
+    "image": "media:stickers/bible-sayings/BS-03-be-still-and-trust-god.webp",
+    "full": "media:stickers/bible-sayings/BS-03-be-still-and-trust-god.png"
+   },
+   {
+    "id": "BS-04",
+    "group": "BS",
+    "title": "God Is Love",
+    "reference": "1 John 4:8",
+    "verse": "He that loveth not knoweth not God; for God is love.",
+    "image": "media:stickers/bible-sayings/BS-04-god-is-love.webp",
+    "full": "media:stickers/bible-sayings/BS-04-god-is-love.png"
+   },
+   {
+    "id": "BS-05",
+    "group": "BS",
+    "title": "Don't Be Afraid, God Is With You",
+    "reference": "Isaiah 41:10",
+    "verse": "Fear thou not; for I am with thee: be not dismayed; for I am thy God.",
+    "image": "media:stickers/bible-sayings/BS-05-dont-be-afraid-god-is-with-you.webp",
+    "full": "media:stickers/bible-sayings/BS-05-dont-be-afraid-god-is-with-you.png"
+   },
+   {
+    "id": "BS-06",
+    "group": "BS",
+    "title": "This Is the Day God Made",
+    "reference": "Psalm 118:24",
+    "verse": "This is the day which the LORD hath made; we will rejoice and be glad in it.",
+    "image": "media:stickers/bible-sayings/BS-06-this-is-the-day-god-made.webp",
+    "full": "media:stickers/bible-sayings/BS-06-this-is-the-day-god-made.png"
+   },
+   {
+    "id": "BS-07",
+    "group": "BS",
+    "title": "God's Word Lights My Way",
+    "reference": "Psalm 119:105",
+    "verse": "Thy word is a lamp unto my feet, and a light unto my path.",
+    "image": "media:stickers/bible-sayings/BS-07-gods-word-lights-my-way.webp",
+    "full": "media:stickers/bible-sayings/BS-07-gods-word-lights-my-way.png"
+   },
+   {
+    "id": "BS-08",
+    "group": "BS",
+    "title": "I Can Do All Things Through Christ",
+    "reference": "Philippians 4:13",
+    "verse": "I can do all things through Christ which strengtheneth me.",
+    "image": "media:stickers/bible-sayings/BS-08-i-can-do-all-things-through-christ.webp",
+    "full": "media:stickers/bible-sayings/BS-08-i-can-do-all-things-through-christ.png"
+   },
+   {
+    "id": "BS-09",
+    "group": "BS",
+    "title": "Always Be Joyful in the Lord",
+    "reference": "Philippians 4:4",
+    "verse": "Rejoice in the Lord alway: and again I say, Rejoice.",
+    "image": "media:stickers/bible-sayings/BS-09-always-be-joyful-in-the-lord.webp",
+    "full": "media:stickers/bible-sayings/BS-09-always-be-joyful-in-the-lord.png"
+   },
+   {
+    "id": "BS-10",
+    "group": "BS",
+    "title": "Keep On Praying",
+    "reference": "1 Thessalonians 5:17",
+    "verse": "Pray without ceasing.",
+    "image": "media:stickers/bible-sayings/BS-10-keep-on-praying.webp",
+    "full": "media:stickers/bible-sayings/BS-10-keep-on-praying.png"
+   },
+   {
+    "id": "BS-11",
+    "group": "BS",
+    "title": "Love One Another",
+    "reference": "John 13:34",
+    "verse": "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.",
+    "image": "media:stickers/bible-sayings/BS-11-love-one-another.webp",
+    "full": "media:stickers/bible-sayings/BS-11-love-one-another.png"
+   },
+   {
+    "id": "BS-12",
+    "group": "BS",
+    "title": "Be Kind to One Another",
+    "reference": "Ephesians 4:32",
+    "verse": "And be ye kind one to another, tenderhearted, forgiving one another.",
+    "image": "media:stickers/bible-sayings/BS-12-be-kind-to-one-another.webp",
+    "full": "media:stickers/bible-sayings/BS-12-be-kind-to-one-another.png"
+   },
+   {
+    "id": "BS-13",
+    "group": "BS",
+    "title": "With God All Things Are Possible",
+    "reference": "Matthew 19:26",
+    "verse": "With men this is impossible; but with God all things are possible.",
+    "image": "media:stickers/bible-sayings/BS-13-with-god-all-things-are-possible.webp",
+    "full": "media:stickers/bible-sayings/BS-13-with-god-all-things-are-possible.png"
+   },
+   {
+    "id": "BS-14",
+    "group": "BS",
+    "title": "God's Joy Makes Me Strong",
+    "reference": "Nehemiah 8:10",
+    "verse": "for the joy of the LORD is your strength.",
+    "image": "media:stickers/bible-sayings/BS-14-gods-joy-makes-me-strong.webp",
+    "full": "media:stickers/bible-sayings/BS-14-gods-joy-makes-me-strong.png"
+   },
+   {
+    "id": "BS-15",
+    "group": "BS",
+    "title": "Trust God with All Your Heart",
+    "reference": "Proverbs 3:5",
+    "verse": "Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+    "image": "media:stickers/bible-sayings/BS-15-trust-god-with-all-your-heart.webp",
+    "full": "media:stickers/bible-sayings/BS-15-trust-god-with-all-your-heart.png"
+   },
+   {
+    "id": "BS-16",
+    "group": "BS",
+    "title": "Let Your Light Shine",
+    "reference": "Matthew 5:16",
+    "verse": "Let your light so shine before men, that they may see your good works.",
+    "image": "media:stickers/bible-sayings/BS-16-let-your-light-shine.webp",
+    "full": "media:stickers/bible-sayings/BS-16-let-your-light-shine.png"
+   },
+   {
+    "id": "BS-17",
+    "group": "BS",
+    "title": "Taste and See That God Is Good",
+    "reference": "Psalm 34:8",
+    "verse": "O taste and see that the LORD is good: blessed is the man that trusteth in him.",
+    "image": "media:stickers/bible-sayings/BS-17-taste-and-see-that-god-is-good.webp",
+    "full": "media:stickers/bible-sayings/BS-17-taste-and-see-that-god-is-good.png"
+   },
+   {
+    "id": "BS-18",
+    "group": "BS",
+    "title": "Walk by Faith, Not by Sight",
+    "reference": "2 Corinthians 5:7",
+    "verse": "(For we walk by faith, not by sight:)",
+    "image": "media:stickers/bible-sayings/BS-18-walk-by-faith-not-by-sight.webp",
+    "full": "media:stickers/bible-sayings/BS-18-walk-by-faith-not-by-sight.png"
+   },
+   {
+    "id": "BS-19",
+    "group": "BS",
+    "title": "God's Mercy Is New Every Morning",
+    "reference": "Lamentations 3:22–23",
+    "verse": "his compassions fail not. They are new every morning: great is thy faithfulness.",
+    "image": "media:stickers/bible-sayings/BS-19-gods-mercy-is-new-every-morning.webp",
+    "full": "media:stickers/bible-sayings/BS-19-gods-mercy-is-new-every-morning.png"
+   },
+   {
+    "id": "BS-20",
+    "group": "BS",
+    "title": "God Will Never Leave You",
+    "reference": "Hebrews 13:5",
+    "verse": "I will never leave thee, nor forsake thee.",
+    "image": "media:stickers/bible-sayings/BS-20-god-will-never-leave-you.webp",
+    "full": "media:stickers/bible-sayings/BS-20-god-will-never-leave-you.png"
+   },
+   {
+    "id": "BS-21",
+    "group": "BS",
+    "title": "Give All Your Worries to God",
+    "reference": "1 Peter 5:7",
+    "verse": "Casting all your care upon him; for he careth for you.",
+    "image": "media:stickers/bible-sayings/BS-21-give-all-your-worries-to-god.webp",
+    "full": "media:stickers/bible-sayings/BS-21-give-all-your-worries-to-god.png"
+   },
+   {
+    "id": "BS-22",
+    "group": "BS",
+    "title": "Give Thanks, God Is Good",
+    "reference": "Psalm 107:1",
+    "verse": "O give thanks unto the LORD, for he is good: for his mercy endureth for ever.",
+    "image": "media:stickers/bible-sayings/BS-22-give-thanks-god-is-good.webp",
+    "full": "media:stickers/bible-sayings/BS-22-give-thanks-god-is-good.png"
+   },
+   {
+    "id": "BS-23",
+    "group": "BS",
+    "title": "A Happy Heart Is Good Medicine",
+    "reference": "Proverbs 17:22",
+    "verse": "A merry heart doeth good like a medicine: but a broken spirit drieth the bones.",
+    "image": "media:stickers/bible-sayings/BS-23-a-happy-heart-is-good-medicine.webp",
+    "full": "media:stickers/bible-sayings/BS-23-a-happy-heart-is-good-medicine.png"
+   },
+   {
+    "id": "BS-24",
+    "group": "BS",
+    "title": "God Is My Light",
+    "reference": "Psalm 27:1",
+    "verse": "The LORD is my light and my salvation; whom shall I fear?",
+    "image": "media:stickers/bible-sayings/BS-24-god-is-my-light.webp",
+    "full": "media:stickers/bible-sayings/BS-24-god-is-my-light.png"
+   },
+   {
+    "id": "BS-25",
+    "group": "BS",
+    "title": "God Made Me Wonderfully",
+    "reference": "Psalm 139:14",
+    "verse": "I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works",
+    "image": "media:stickers/bible-sayings/BS-25-god-made-me-wonderfully.webp",
+    "full": "media:stickers/bible-sayings/BS-25-god-made-me-wonderfully.png"
+   },
+   {
+    "id": "BS-26",
+    "group": "BS",
+    "title": "Put God First",
+    "reference": "Matthew 6:33",
+    "verse": "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.",
+    "image": "media:stickers/bible-sayings/BS-26-put-god-first.webp",
+    "full": "media:stickers/bible-sayings/BS-26-put-god-first.png"
+   },
+   {
+    "id": "BS-27",
+    "group": "BS",
+    "title": "God Is My Safe Place",
+    "reference": "Psalm 46:1",
+    "verse": "God is our refuge and strength, a very present help in trouble.",
+    "image": "media:stickers/bible-sayings/BS-27-god-is-my-safe-place.webp",
+    "full": "media:stickers/bible-sayings/BS-27-god-is-my-safe-place.png"
+   },
+   {
+    "id": "BS-28",
+    "group": "BS",
+    "title": "Be a Peacemaker",
+    "reference": "Matthew 5:9",
+    "verse": "Blessed are the peacemakers: for they shall be called the children of God.",
+    "image": "media:stickers/bible-sayings/BS-28-be-a-peacemaker.webp",
+    "full": "media:stickers/bible-sayings/BS-28-be-a-peacemaker.png"
+   },
+   {
+    "id": "BS-29",
+    "group": "BS",
+    "title": "A Gentle Answer Calms Anger",
+    "reference": "Proverbs 15:1",
+    "verse": "A soft answer turneth away wrath: but grievous words stir up anger.",
+    "image": "media:stickers/bible-sayings/BS-29-a-gentle-answer-calms-anger.webp",
+    "full": "media:stickers/bible-sayings/BS-29-a-gentle-answer-calms-anger.png"
+   },
+   {
+    "id": "BS-30",
+    "group": "BS",
+    "title": "Love Your Neighbour",
+    "reference": "Matthew 22:39",
+    "verse": "And the second is like unto it, Thou shalt love thy neighbour as thyself.",
+    "image": "media:stickers/bible-sayings/BS-30-love-your-neighbour.webp",
+    "full": "media:stickers/bible-sayings/BS-30-love-your-neighbour.png"
+   },
+   {
+    "id": "FS-01",
+    "group": "FS",
+    "title": "Love",
+    "reference": "Galatians 5:22",
+    "verse": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+    "image": "media:stickers/fruit-of-the-spirit/FS-01-love.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-01-love.png"
+   },
+   {
+    "id": "FS-02",
+    "group": "FS",
+    "title": "Joy",
+    "reference": "Galatians 5:22",
+    "verse": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+    "image": "media:stickers/fruit-of-the-spirit/FS-02-joy.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-02-joy.png"
+   },
+   {
+    "id": "FS-03",
+    "group": "FS",
+    "title": "Peace",
+    "reference": "Galatians 5:22",
+    "verse": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+    "image": "media:stickers/fruit-of-the-spirit/FS-03-peace.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-03-peace.png"
+   },
+   {
+    "id": "FS-04",
+    "group": "FS",
+    "title": "Patience",
+    "reference": "Galatians 5:22",
+    "verse": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+    "image": "media:stickers/fruit-of-the-spirit/FS-04-patience.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-04-patience.png"
+   },
+   {
+    "id": "FS-05",
+    "group": "FS",
+    "title": "Kindness",
+    "reference": "Galatians 5:22",
+    "verse": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+    "image": "media:stickers/fruit-of-the-spirit/FS-05-kindness.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-05-kindness.png"
+   },
+   {
+    "id": "FS-06",
+    "group": "FS",
+    "title": "Goodness",
+    "reference": "Galatians 5:22",
+    "verse": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+    "image": "media:stickers/fruit-of-the-spirit/FS-06-goodness.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-06-goodness.png"
+   },
+   {
+    "id": "FS-07",
+    "group": "FS",
+    "title": "Faithfulness",
+    "reference": "Galatians 5:22",
+    "verse": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
+    "image": "media:stickers/fruit-of-the-spirit/FS-07-faithfulness.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-07-faithfulness.png"
+   },
+   {
+    "id": "FS-08",
+    "group": "FS",
+    "title": "Gentleness",
+    "reference": "Galatians 5:23",
+    "verse": "Meekness, temperance: against such there is no law.",
+    "image": "media:stickers/fruit-of-the-spirit/FS-08-gentleness.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-08-gentleness.png"
+   },
+   {
+    "id": "FS-09",
+    "group": "FS",
+    "title": "Self-Control",
+    "reference": "Galatians 5:23",
+    "verse": "Meekness, temperance: against such there is no law.",
+    "image": "media:stickers/fruit-of-the-spirit/FS-09-self-control.webp",
+    "full": "media:stickers/fruit-of-the-spirit/FS-09-self-control.png"
+   },
+   {
+    "id": "HB-01",
+    "group": "HB",
+    "title": "Noah Built the Ark",
+    "reference": "Genesis 6:8",
+    "verse": "But Noah found grace in the eyes of the LORD.",
+    "image": "media:stickers/heroes-of-the-bible/HB-01-noah-built-the-ark.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-01-noah-built-the-ark.png"
+   },
+   {
+    "id": "HB-02",
+    "group": "HB",
+    "title": "Abraham Trusted God's Promise",
+    "reference": "Genesis 15:5",
+    "verse": "Look now toward heaven, and tell the stars, if thou be able to number them.",
+    "image": "media:stickers/heroes-of-the-bible/HB-02-abraham-trusted-gods-promise.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-02-abraham-trusted-gods-promise.png"
+   },
+   {
+    "id": "HB-03",
+    "group": "HB",
+    "title": "Joseph Forgave His Brothers",
+    "reference": "Genesis 50:20",
+    "verse": "But as for you, ye thought evil against me; but God meant it unto good.",
+    "image": "media:stickers/heroes-of-the-bible/HB-03-joseph-forgave-his-brothers.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-03-joseph-forgave-his-brothers.png"
+   },
+   {
+    "id": "HB-04",
+    "group": "HB",
+    "title": "Moses Led the Way Through the Sea",
+    "reference": "Exodus 14:13",
+    "verse": "Fear ye not, stand still, and see the salvation of the LORD.",
+    "image": "media:stickers/heroes-of-the-bible/HB-04-moses-led-the-way-through-the-sea.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-04-moses-led-the-way-through-the-sea.png"
+   },
+   {
+    "id": "HB-05",
+    "group": "HB",
+    "title": "Miriam Sang for Joy",
+    "reference": "Exodus 15:20–21",
+    "verse": "And Miriam the prophetess … took a timbrel in her hand … And Miriam answered them, Sing ye to the LORD, for he hath triumphed gloriously.",
+    "image": "media:stickers/heroes-of-the-bible/HB-05-miriam-sang-for-joy.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-05-miriam-sang-for-joy.png"
+   },
+   {
+    "id": "HB-06",
+    "group": "HB",
+    "title": "Joshua Chose to Serve God",
+    "reference": "Joshua 24:15",
+    "verse": "but as for me and my house, we will serve the LORD.",
+    "image": "media:stickers/heroes-of-the-bible/HB-06-joshua-chose-to-serve-god.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-06-joshua-chose-to-serve-god.png"
+   },
+   {
+    "id": "HB-07",
+    "group": "HB",
+    "title": "Caleb Trusted God Fully",
+    "reference": "Numbers 13:30",
+    "verse": "Let us go up at once, and possess it; for we are well able to overcome it.",
+    "image": "media:stickers/heroes-of-the-bible/HB-07-caleb-trusted-god-fully.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-07-caleb-trusted-god-fully.png"
+   },
+   {
+    "id": "HB-08",
+    "group": "HB",
+    "title": "Deborah Led with Courage",
+    "reference": "Judges 4:5, 14",
+    "verse": "And she dwelt under the palm tree of Deborah … And Deborah said unto Barak, Up; for this is the day.",
+    "image": "media:stickers/heroes-of-the-bible/HB-08-deborah-led-with-courage.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-08-deborah-led-with-courage.png"
+   },
+   {
+    "id": "HB-09",
+    "group": "HB",
+    "title": "Gideon Won with 300",
+    "reference": "Judges 7:20",
+    "verse": "and they cried, The sword of the LORD, and of Gideon.",
+    "image": "media:stickers/heroes-of-the-bible/HB-09-gideon-won-with-300.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-09-gideon-won-with-300.png"
+   },
+   {
+    "id": "HB-10",
+    "group": "HB",
+    "title": "Ruth Stayed Loyal",
+    "reference": "Ruth 1:16",
+    "verse": "for whither thou goest, I will go.",
+    "image": "media:stickers/heroes-of-the-bible/HB-10-ruth-stayed-loyal.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-10-ruth-stayed-loyal.png"
+   },
+   {
+    "id": "HB-11",
+    "group": "HB",
+    "title": "Hannah Prayed with All Her Heart",
+    "reference": "1 Samuel 1:27; 2:19",
+    "verse": "For this child I prayed. … his mother made him a little coat.",
+    "image": "media:stickers/heroes-of-the-bible/HB-11-hannah-prayed-with-all-her-heart.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-11-hannah-prayed-with-all-her-heart.png"
+   },
+   {
+    "id": "HB-12",
+    "group": "HB",
+    "title": "Samuel Listened to God",
+    "reference": "1 Samuel 3:10",
+    "verse": "Then Samuel answered, Speak; for thy servant heareth.",
+    "image": "media:stickers/heroes-of-the-bible/HB-12-samuel-listened-to-god.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-12-samuel-listened-to-god.png"
+   },
+   {
+    "id": "HB-13",
+    "group": "HB",
+    "title": "David Faced the Giant",
+    "reference": "1 Samuel 17:40, 47",
+    "verse": "and chose him five smooth stones out of the brook … for the battle is the LORD's.",
+    "image": "media:stickers/heroes-of-the-bible/HB-13-david-faced-the-giant.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-13-david-faced-the-giant.png"
+   },
+   {
+    "id": "HB-14",
+    "group": "HB",
+    "title": "Elijah Stood Up for God",
+    "reference": "1 Kings 18:38–39",
+    "verse": "Then the fire of the LORD fell … they said, The LORD, he is the God.",
+    "image": "media:stickers/heroes-of-the-bible/HB-14-elijah-stood-up-for-god.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-14-elijah-stood-up-for-god.png"
+   },
+   {
+    "id": "HB-15",
+    "group": "HB",
+    "title": "Esther Was Brave for Her People",
+    "reference": "Esther 4:14",
+    "verse": "and who knoweth whether thou art come to the kingdom for such a time as this?",
+    "image": "media:stickers/heroes-of-the-bible/HB-15-esther-was-brave-for-her-people.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-15-esther-was-brave-for-her-people.png"
+   },
+   {
+    "id": "HB-16",
+    "group": "HB",
+    "title": "Nehemiah Rebuilt the Wall",
+    "reference": "Nehemiah 2:18",
+    "verse": "And they said, Let us rise up and build.",
+    "image": "media:stickers/heroes-of-the-bible/HB-16-nehemiah-rebuilt-the-wall.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-16-nehemiah-rebuilt-the-wall.png"
+   },
+   {
+    "id": "HB-17",
+    "group": "HB",
+    "title": "Daniel Kept On Praying",
+    "reference": "Daniel 6:23",
+    "verse": "no manner of hurt was found upon him, because he believed in his God.",
+    "image": "media:stickers/heroes-of-the-bible/HB-17-daniel-kept-on-praying.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-17-daniel-kept-on-praying.png"
+   },
+   {
+    "id": "HB-18",
+    "group": "HB",
+    "title": "Three Friends Would Not Bow Down",
+    "reference": "Daniel 3:17, 25",
+    "verse": "our God whom we serve is able to deliver us. … walking in the midst of the fire, and they have no hurt.",
+    "image": "media:stickers/heroes-of-the-bible/HB-18-three-friends-would-not-bow-down.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-18-three-friends-would-not-bow-down.png"
+   },
+   {
+    "id": "HB-19",
+    "group": "HB",
+    "title": "Jonah Got a Second Chance",
+    "reference": "Jonah 1:17; 2:9",
+    "verse": "Now the LORD had prepared a great fish to swallow up Jonah. … Salvation is of the LORD.",
+    "image": "media:stickers/heroes-of-the-bible/HB-19-jonah-got-a-second-chance.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-19-jonah-got-a-second-chance.png"
+   },
+   {
+    "id": "HB-20",
+    "group": "HB",
+    "title": "Zacchaeus Climbed Up to See Jesus",
+    "reference": "Luke 19:4–5",
+    "verse": "and climbed up into a sycomore tree to see him … Zacchaeus, make haste, and come down.",
+    "image": "media:stickers/heroes-of-the-bible/HB-20-zacchaeus-climbed-up-to-see-jesus.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-20-zacchaeus-climbed-up-to-see-jesus.png"
+   },
+   {
+    "id": "HB-21",
+    "group": "HB",
+    "title": "Peter Walked on Water",
+    "reference": "Matthew 14:29–31",
+    "verse": "he walked on the water … he cried, saying, Lord, save me. And immediately Jesus stretched forth his hand, and caught him.",
+    "image": "media:stickers/heroes-of-the-bible/HB-21-peter-walked-on-water.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-21-peter-walked-on-water.png"
+   },
+   {
+    "id": "HB-22",
+    "group": "HB",
+    "title": "Paul Never Gave Up",
+    "reference": "2 Timothy 4:7",
+    "verse": "I have fought a good fight, I have finished my course, I have kept the faith.",
+    "image": "media:stickers/heroes-of-the-bible/HB-22-paul-never-gave-up.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-22-paul-never-gave-up.png"
+   },
+   {
+    "id": "HB-23",
+    "group": "HB",
+    "title": "Sarah Laughed for Joy",
+    "reference": "Genesis 21:6",
+    "verse": "And Sarah said, God hath made me to laugh, so that all that hear will laugh with me.",
+    "image": "media:stickers/heroes-of-the-bible/HB-23-sarah-laughed-for-joy.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-23-sarah-laughed-for-joy.png"
+   },
+   {
+    "id": "HB-24",
+    "group": "HB",
+    "title": "Rebekah Watered the Camels",
+    "reference": "Genesis 24:19",
+    "verse": "I will draw water for thy camels also, until they have done drinking.",
+    "image": "media:stickers/heroes-of-the-bible/HB-24-rebekah-watered-the-camels.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-24-rebekah-watered-the-camels.png"
+   },
+   {
+    "id": "HB-25",
+    "group": "HB",
+    "title": "Jacob Dreamed of a Ladder to Heaven",
+    "reference": "Genesis 28:15",
+    "verse": "And, behold, I am with thee, and will keep thee in all places whither thou goest",
+    "image": "media:stickers/heroes-of-the-bible/HB-25-jacob-dreamed-of-a-ladder-to-heaven.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-25-jacob-dreamed-of-a-ladder-to-heaven.png"
+   },
+   {
+    "id": "HB-26",
+    "group": "HB",
+    "title": "Elisha Carried On God's Work",
+    "reference": "2 Kings 2:9",
+    "verse": "I pray thee, let a double portion of thy spirit be upon me.",
+    "image": "media:stickers/heroes-of-the-bible/HB-26-elisha-carried-on-gods-work.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-26-elisha-carried-on-gods-work.png"
+   },
+   {
+    "id": "HB-27",
+    "group": "HB",
+    "title": "The Servant Girl Who Spoke Up",
+    "reference": "2 Kings 5:2–3",
+    "verse": "a little maid; and she waited on Naaman's wife. And she said unto her mistress, Would God my lord were with the prophet that is in Samaria! for he would recover him of his leprosy.",
+    "image": "media:stickers/heroes-of-the-bible/HB-27-the-servant-girl-who-spoke-up.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-27-the-servant-girl-who-spoke-up.png"
+   },
+   {
+    "id": "HB-28",
+    "group": "HB",
+    "title": "Josiah Became King at Eight",
+    "reference": "2 Kings 22:1–2",
+    "verse": "Josiah was eight years old when he began to reign … And he did that which was right in the sight of the LORD",
+    "image": "media:stickers/heroes-of-the-bible/HB-28-josiah-became-king-at-eight.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-28-josiah-became-king-at-eight.png"
+   },
+   {
+    "id": "HB-29",
+    "group": "HB",
+    "title": "Dorcas Sewed Coats for Others",
+    "reference": "Acts 9:36",
+    "verse": "this woman was full of good works and almsdeeds which she did.",
+    "image": "media:stickers/heroes-of-the-bible/HB-29-dorcas-sewed-coats-for-others.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-29-dorcas-sewed-coats-for-others.png"
+   },
+   {
+    "id": "HB-30",
+    "group": "HB",
+    "title": "Lydia Listened with an Open Heart",
+    "reference": "Acts 16:14",
+    "verse": "a seller of purple … whose heart the Lord opened",
+    "image": "media:stickers/heroes-of-the-bible/HB-30-lydia-listened-with-an-open-heart.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-30-lydia-listened-with-an-open-heart.png"
+   },
+   {
+    "id": "HB-31",
+    "group": "HB",
+    "title": "Barnabas Cheered Others On",
+    "reference": "Acts 4:36",
+    "verse": "Barnabas, (which is, being interpreted, The son of consolation,)",
+    "image": "media:stickers/heroes-of-the-bible/HB-31-barnabas-cheered-others-on.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-31-barnabas-cheered-others-on.png"
+   },
+   {
+    "id": "HB-32",
+    "group": "HB",
+    "title": "Timothy Learned God's Word as a Child",
+    "reference": "2 Timothy 3:15",
+    "verse": "And that from a child thou hast known the holy scriptures",
+    "image": "media:stickers/heroes-of-the-bible/HB-32-timothy-learned-gods-word-as-a-child.webp",
+    "full": "media:stickers/heroes-of-the-bible/HB-32-timothy-learned-gods-word-as-a-child.png"
+   }
+  ]
+ },
+ "avatars": {
+  "list": "assets/avatars-kids.json",
+  "base": "media:images/avatars/kids/"
+ }
+}

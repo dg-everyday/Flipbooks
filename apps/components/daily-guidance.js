@@ -74,7 +74,7 @@ import {
     PILL_STYLES,
     linkScripture,
     refPill,
-} from "./scripture-refs.js?v=20261018-1";
+} from "./scripture-refs.js?v=20261024-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
 const DEFAULT_SRC = "assets/guidance-for-life.json";

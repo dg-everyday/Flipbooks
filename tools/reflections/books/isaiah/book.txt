@@ -1,0 +1,10 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Isaiah
+1-12 | Judgment and the Promised Child
+13-23 | Burdens upon the Nations
+24-27 | The LORD Reigns over All the Earth
+28-35 | Woes and the Way of Holiness
+36-39 | Hezekiah's Deliverance
+40-48 | Comfort Ye My People
+49-57 | The Servant of the LORD
+58-66 | New Heavens and a New Earth

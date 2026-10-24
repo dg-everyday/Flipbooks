@@ -24,7 +24,7 @@ import {
     filterMenu,
     titleWithInfo,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261018-1";
+} from "./study-utils.js?v=20261024-1";
 import { openDatabase, query } from "../../../assets/scripts/sqlite-db.js";
 import {
     BOOKMARK_STYLES,

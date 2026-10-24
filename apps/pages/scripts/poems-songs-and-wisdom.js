@@ -22,7 +22,7 @@ import {
     followHash,
     filterMenu,
     titleWithInfo,
-} from "./study-utils.js?v=20261018-1";
+} from "./study-utils.js?v=20261024-1";
 
 const DATA = "assets/poems-songs-and-wisdom.json";
 

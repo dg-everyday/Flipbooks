@@ -45,7 +45,7 @@
 import { registerFonts } from "../../assets/scripts/fonts.js";
 // The same ?v= token as the other components' imports, so the page loads one
 // copy of the module.
-import { PILL_STYLES, refPill } from "./scripture-refs.js?v=20261018-1";
+import { PILL_STYLES, refPill } from "./scripture-refs.js?v=20261024-1";
 
 const DEFAULT_SRC = "assets/food-for-thought.json";
 const DEFAULT_PAGE = "apps/pages/food-for-thought.html";

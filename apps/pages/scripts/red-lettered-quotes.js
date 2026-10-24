@@ -31,7 +31,7 @@ import {
     filterMenu,
     titleWithInfo,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261018-1";
+} from "./study-utils.js?v=20261024-1";
 // The same ?v= token as the components' imports, so one copy of the module
 // holds the bookmarks for the whole page.
 import {

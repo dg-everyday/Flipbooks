@@ -1,0 +1,277 @@
+/**
+ * Daily Grace Kids: small pieces the kids page's screens share — icons,
+ * escaping, Nari's picture, the Growing Tree, the gentle "toast", and the
+ * grown-up gate. Used by kids.js, kids-stop.js and kids-corner.js.
+ */
+
+import { piecesFor, treeStage } from "../../../assets/scripts/kids/rules.js?v=20261024-2";
+
+export const escapeHtml = (text) =>
+    String(text ?? "").replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+
+const I = (body, extra = "") =>
+    `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"${extra}>${body}</svg>`;
+
+export const ICONS = {
+    back: I('<path d="M15 5l-7 7 7 7"/>'),
+    next: I('<path d="M9 5l7 7-7 7"/>'),
+    close: I('<path d="M6 6l12 12M18 6L6 18"/>'),
+    play: I('<path d="M8 5l11 7-11 7z" fill="currentColor"/>'),
+    pause: I('<rect x="6" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.5" fill="currentColor"/>'),
+    speaker: I('<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/>'),
+    lock: I('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'),
+    map: I('<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>'),
+    star: I('<path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>'),
+    games: I('<rect x="3" y="7" width="18" height="11" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1" fill="currentColor"/><circle cx="18" cy="13.5" r="1" fill="currentColor"/>'),
+    plus: I('<path d="M12 5v14M5 12h14"/>'),
+    check: I('<path d="M5 12.5l4.5 4.5L19 7"/>', ' stroke-width="3.4"'),
+    home: I('<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-8h6v8"/>'),
+    paw: '<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><ellipse cx="12" cy="16" rx="5.5" ry="4.5"/><circle cx="5.5" cy="10" r="2.3"/><circle cx="9.5" cy="6" r="2.3"/><circle cx="14.5" cy="6" r="2.3"/><circle cx="18.5" cy="10" r="2.3"/></g></svg>',
+    print: I('<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/>'),
+    leaf: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 C5 9 11 4 20 4 C20 13 15 19 5 19 Z" fill="#3e9b5f"/><path d="M5 19 L13 11" stroke="#1e6b46" stroke-width="1.6" stroke-linecap="round"/></svg>',
+};
+
+export const BAND_NAMES = { lambs: "Little Lambs · 3–5", lions: "Young Lions · 6–8" };
+
+/** The main Daily Grace site: the home page at the site's root. */
+export const DAILY_GRACE_URL = new URL("../../../", import.meta.url).href;
+
+/** "‹ Daily Grace · Kids" at the top of a screen, leading back to Daily Grace. */
+export function brandLink() {
+    return `<a class="brand" href="${DAILY_GRACE_URL}" aria-label="Back to Daily Grace">
+      <span class="brand-back">${ICONS.back}</span><span class="brand-name">Daily Grace</span><span class="brand-pill">Kids</span></a>`;
+}
+
+/** The config every game component takes (kids-common.js), plus its own keys. */
+export function gameConfig(app, extra) {
+    const child = app.child();
+    return {
+        band: child?.band ?? "lambs",
+        audio: app.audio,
+        resolve: app.resolve,
+        sfx: app.data.sfx,
+        lines: app.data.nari.lines,
+        ...extra,
+    };
+}
+
+export function groupName(group) {
+    return {
+        AG: "The Whole Armour of God", HB: "Heroes of the Bible", BS: "Bible Sayings",
+        FS: "Fruit of the Spirit", AN: "Animals of the Bible",
+    }[group] ?? group;
+}
+
+/** What a sticker was given for: "your first Look & Find", "finishing stories"… */
+export function earnedFor(app, sticker, entry) {
+    const path = entry?.path;
+    if (path === "firsts") {
+        const keys = app.data.stickers.paths.find((p) => p.path === "firsts").firsts;
+        const series = app.data.stickers.list.filter((s) => s.group === "AG").map((s) => s.id);
+        const key = keys[series.indexOf(sticker.id)];
+        return app.data.stickers.firsts[key] ?? "trying something new";
+    }
+    return {
+        stops: "finishing stories", verses: "learning verses", talks: "talking together",
+        animals: "finding and matching animals",
+    }[path] ?? "what you did in Daily Grace Kids";
+}
+
+/** Nari's picture for a stage and pose ("idle", "cheer", "think", "point", "sleep", "avatar"). */
+export function nariSrc(app, stage, pose = "idle") {
+    const s = app.data.nari.stages.find((n) => n.stage === stage.stage) ?? app.data.nari.stages[0];
+    return app.resolve(s.images[pose] ?? s.images.idle);
+}
+
+/** The Growing Tree as HTML: the stage picture with its pieces on it. */
+export function treeHtml(app, counts, { label = true } = {}) {
+    const stage = treeStage(counts.leaves, app.data);
+    const pieces = piecesFor(counts, stage);
+    const art = app.data.tree.pieces;
+    const description = `A ${stage.name.toLowerCase()} with ${counts.leaves} ${counts.leaves === 1 ? "leaf" : "leaves"}, ${counts.fruit} fruit, ${counts.flowers} ${counts.flowers === 1 ? "flower" : "flowers"} and ${counts.birds} ${counts.birds === 1 ? "bird" : "birds"}`;
+    return `
+      <figure class="tree" role="img" aria-label="${escapeHtml(description)}">
+        <img class="tree-art" src="${escapeHtml(app.resolve(stage.image))}" alt="" width="1536" height="1024" />
+        ${pieces.map((p) => {
+            const list = art[p.kind] ?? [];
+            const src = list[(p.n - 1) % Math.max(1, list.length)];
+            return src ? `<img class="tree-piece is-${p.kind}" src="${escapeHtml(app.resolve(src))}" alt="" style="left:${p.x * 100}%;top:${p.y * 100}%" />` : "";
+        }).join("")}
+        ${label ? `<figcaption class="tree-stage">${escapeHtml(stage.name)}</figcaption>` : ""}
+      </figure>`;
+}
+
+/** A short message at the foot of the screen, read out by screen readers. */
+export function toast(message) {
+    let box = document.getElementById("kids-toast");
+    if (!box) {
+        box = document.createElement("div");
+        box.id = "kids-toast";
+        box.className = "toast";
+        box.setAttribute("role", "status");
+        document.body.append(box);
+    }
+    box.textContent = message;
+    box.classList.add("show");
+    clearTimeout(box.timer);
+    box.timer = setTimeout(() => box.classList.remove("show"), 3200);
+}
+
+// --------------------------------------------------------------- grown-up gate
+const NUMBERS = [
+    ["twenty-three", "23"], ["forty-one", "41"], ["thirty-six", "36"],
+    ["fifty-two", "52"], ["seventeen", "17"], ["sixty-four", "64"],
+];
+const HOLD_MS = 3000;
+
+/**
+ * The grown-up gate: press and hold for three seconds, then type the number
+ * shown in words. Resolves true when passed, false when closed. A small child
+ * can't read "forty-one" or hold still for three seconds; a grown-up can.
+ */
+export function gate(reason = "For grown-ups") {
+    return new Promise((resolve) => {
+        const [words, digits] = NUMBERS[Math.floor(Math.random() * NUMBERS.length)];
+        const dialog = document.createElement("dialog");
+        dialog.className = "gate";
+        dialog.setAttribute("aria-labelledby", "gate-title");
+        dialog.innerHTML = `
+          <div class="gate-card">
+            <button class="round-btn gate-close" type="button" aria-label="Close" data-close>${ICONS.close}</button>
+            <span class="gate-lock">${ICONS.lock}</span>
+            <h2 id="gate-title">${escapeHtml(reason)}</h2>
+            <div class="gate-hold-step">
+              <p>Press and hold the button for three seconds.</p>
+              <button class="hold" type="button"><span class="hold-fill"></span><span class="hold-text">Press and hold</span></button>
+            </div>
+            <div class="gate-type-step" hidden>
+              <p>Now type this number:</p>
+              <p class="gate-words">${escapeHtml(words)}</p>
+              <p class="gate-entry" aria-live="polite"><span></span><span></span></p>
+              <div class="keypad">
+                ${["1", "2", "3", "4", "5", "6", "7", "8", "9", "clear", "0", "back"].map((k) => {
+                    const label = k === "clear" ? "Clear" : k === "back" ? "Delete" : k;
+                    return `<button type="button" class="key" data-key="${k}" aria-label="${label}">${k === "back" ? "⌫" : k === "clear" ? "C" : k}</button>`;
+                }).join("")}
+              </div>
+              <p class="gate-message" aria-live="assertive"></p>
+            </div>
+            <p class="gate-note">Children: ask a grown-up to help you here.</p>
+          </div>`;
+        document.body.append(dialog);
+        let entry = "";
+        let timer = 0;
+        let start = 0;
+        let frame = 0;
+        const fill = dialog.querySelector(".hold-fill");
+        const hold = dialog.querySelector(".hold");
+        const finish = (ok) => {
+            cancelAnimationFrame(frame);
+            clearTimeout(timer);
+            dialog.close();
+            dialog.remove();
+            resolve(ok);
+        };
+        const stopHold = () => {
+            cancelAnimationFrame(frame);
+            clearTimeout(timer);
+            fill.style.width = "0%";
+            hold.classList.remove("holding");
+        };
+        const step = () => {
+            fill.style.width = `${Math.min(100, ((performance.now() - start) / HOLD_MS) * 100)}%`;
+            frame = requestAnimationFrame(step);
+        };
+        const beginHold = (event) => {
+            event.preventDefault();
+            start = performance.now();
+            hold.classList.add("holding");
+            frame = requestAnimationFrame(step);
+            timer = setTimeout(() => {
+                stopHold();
+                dialog.querySelector(".gate-hold-step").hidden = true;
+                dialog.querySelector(".gate-type-step").hidden = false;
+                dialog.querySelector('.key[data-key="1"]').focus();
+            }, HOLD_MS);
+        };
+        hold.addEventListener("pointerdown", beginHold);
+        for (const type of ["pointerup", "pointerleave", "pointercancel"]) {
+            hold.addEventListener(type, stopHold);
+        }
+        // Keyboard: hold Space or Enter.
+        hold.addEventListener("keydown", (event) => {
+            if ((event.key === " " || event.key === "Enter") && !event.repeat) {
+                beginHold(event);
+            }
+        });
+        hold.addEventListener("keyup", stopHold);
+        hold.addEventListener("contextmenu", (event) => event.preventDefault());
+        const show = () => {
+            const cells = dialog.querySelectorAll(".gate-entry span");
+            cells[0].textContent = entry[0] ?? "";
+            cells[1].textContent = entry[1] ?? "";
+        };
+        dialog.querySelector(".keypad").addEventListener("click", (event) => {
+            const key = event.target.closest(".key")?.dataset.key;
+            if (!key) {
+                return;
+            }
+            const message = dialog.querySelector(".gate-message");
+            message.textContent = "";
+            if (key === "clear") {
+                entry = "";
+            } else if (key === "back") {
+                entry = entry.slice(0, -1);
+            } else if (entry.length < 2) {
+                entry += key;
+            }
+            show();
+            if (entry.length === 2) {
+                if (entry === digits) {
+                    finish(true);
+                } else {
+                    message.textContent = "That's not quite it. Ask a grown-up to try again.";
+                    entry = "";
+                    setTimeout(show, 400);
+                }
+            }
+        });
+        dialog.querySelector("[data-close]").addEventListener("click", () => finish(false));
+        dialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            finish(false);
+        });
+        dialog.showModal();
+        hold.focus();
+    });
+}
+
+/** A two-button question in a dialog (the page can't use confirm()). Resolves true for yes. */
+export function ask(question, { yes = "Yes", no = "Cancel", danger = false } = {}) {
+    return new Promise((resolve) => {
+        const dialog = document.createElement("dialog");
+        dialog.className = "ask";
+        dialog.innerHTML = `
+          <div class="ask-card">
+            <p>${escapeHtml(question)}</p>
+            <div class="row">
+              <button type="button" class="btn quiet" data-no>${escapeHtml(no)}</button>
+              <button type="button" class="btn${danger ? " danger" : ""}" data-yes>${escapeHtml(yes)}</button>
+            </div>
+          </div>`;
+        document.body.append(dialog);
+        const end = (value) => {
+            dialog.close();
+            dialog.remove();
+            resolve(value);
+        };
+        dialog.querySelector("[data-yes]").addEventListener("click", () => end(true));
+        dialog.querySelector("[data-no]").addEventListener("click", () => end(false));
+        dialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            end(false);
+        });
+        dialog.showModal();
+        dialog.querySelector("[data-no]").focus();
+    });
+}

@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Build docs/Daily_Grace_Reflections_2027.pdf: one page per day of 2027.
+Build docs/Daily_Grace_Reflections_YYYY.pdf: one page per day of the year.
 
-Each page carries the date, weekday and theme from calendar_2027.txt, the verse
+Each page carries the date, weekday and theme from calendar_YYYY.txt, the verse
 text pulled from the KJV in assets/db/dailygrace.db, and the hand-written
-reflection, short description and social-media post from content/2027-MM.txt.
+reflection, short description and social-media post from content/YYYY-MM.txt.
 
-    python tools/reflections/build_reflections.py --dry-run   # validate only
-    python tools/reflections/build_reflections.py
+    python tools/reflections/build_reflections.py --year 2028 --dry-run   # validate only
+    python tools/reflections/build_reflections.py --year 2028
+
+A verse already used by another year's calendar is refused, so each year's
+book stays new, and so are holiday and church-rite words (non-sectarian rule).
 
 Content files hold one block per day:
 
@@ -28,23 +31,28 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.dirname(HERE))
 from kjv_quotes import QUOTE, Quotes  # noqa: E402
 
-YEAR = 2027
-CALENDAR = os.path.join(HERE, "calendar_%d.txt" % YEAR)
+YEAR = 2027  # set from --year in main()
+CALENDAR = os.path.join(HERE, "calendar_%d.txt")
 CONTENT = os.path.join(HERE, "content")
 BIBLE_DB = os.path.join(ROOT, "assets", "db", "dailygrace.db")
-OUTPUT = os.path.join(ROOT, "docs", "Daily_Grace_Reflections_%d.pdf" % YEAR)
+OUTPUT = os.path.join(ROOT, "docs", "Daily_Grace_Reflections_%d.pdf")
 FONTS = r"C:\Windows\Fonts"
 
 REFLECTION_WORDS = (130, 175)
 POST_WORDS = (25, 95)
 HASHTAGS = (5, 10)
+# Observances and church practices kept out of the reflections (see the 2027 changes list).
+SECTARIAN = re.compile(r"\b(easter|christmas|advent|lenten|good friday|holy week|pentecost sunday|"
+                       r"epiphany|valentine|thanksgiving day|mother's day|father's day|trinity|"
+                       r"eucharist|holy communion|liturgy|liturgical|carols?|nativity|sunday|"
+                       r"lord's supper|sacraments?)\b", re.I)
 
 
 # ---------------------------------------------------------------- data
 
 def read_calendar():
     months, days = [], []
-    for line in open(CALENDAR, encoding="utf-8"):
+    for line in open(CALENDAR % YEAR, encoding="utf-8"):
         line = line.strip()
         if not line or line.startswith("#"):
             continue
@@ -61,7 +69,7 @@ def read_calendar():
 def read_content():
     entries, current = {}, None
     for name in sorted(os.listdir(CONTENT)):
-        if not name.endswith(".txt"):
+        if not name.startswith("%d-" % YEAR) or not name.endswith(".txt"):
             continue
         for n, line in enumerate(open(os.path.join(CONTENT, name), encoding="utf-8"), 1):
             line = line.strip()
@@ -104,8 +112,31 @@ def sentences(text):
     return len(re.findall(r"[.!?](?:['’”)]*)(?=\s|$)", text))
 
 
+def earlier_verses():
+    """Verse references used by every other year's calendar, with the year that used them."""
+    used = {}
+    for name in sorted(os.listdir(HERE)):
+        m = re.match(r"^calendar_(\d{4})\.txt$", name)
+        if not m or int(m.group(1)) == YEAR:
+            continue
+        for line in open(os.path.join(HERE, name), encoding="utf-8"):
+            parts = [p.strip() for p in line.split("|")]
+            if len(parts) == 4 and not line.startswith(("#", "@")):
+                used.setdefault(parts[2].replace("Psalms ", "Psalm "), m.group(1))
+    return used
+
+
 def validate(days, entries, quotes):
     problems = []
+    used = earlier_verses()
+    seen = {}
+    for d in days:
+        ref = d["ref"].replace("Psalms ", "Psalm ")
+        if ref in used:
+            problems.append("%s: %s was already used in %s" % (d["key"], d["ref"], used[ref]))
+        if ref in seen:
+            problems.append("%s: %s is also on %s" % (d["key"], d["ref"], seen[ref]))
+        seen[ref] = d["key"]
     for d in days:
         e = entries.get(d["key"])
         if not e:
@@ -133,6 +164,8 @@ def validate(days, entries, quotes):
         problems += ["%s: %s" % (where, p) for p in tags if not re.match(r"^#[A-Za-z0-9]+$", p)]
         for k in "RSP":
             problems += ["%s %s: %s" % (where, k, p) for p in quotes.problems(e[k])]
+        for k in "RSPH":
+            problems += ["%s %s: avoid %r" % (where, k, w) for w in SECTARIAN.findall(e[k])]
     extra = set(entries) - {d["key"] for d in days}
     problems += ["%s: not a calendar date" % k for k in sorted(extra)]
     return problems
@@ -184,7 +217,7 @@ def build_pdf(months, days, entries, bible, path):
     c = canvas.Canvas(path, pagesize=letter)
     c.setTitle("Daily Grace Reflections %d" % YEAR)
     c.setAuthor("Daily Grace")
-    c.setSubject("365 daily KJV verses with reflections, short descriptions and social media posts")
+    c.setSubject("%d daily KJV verses with reflections, short descriptions and social media posts" % len(days))
 
     # ---- cover
     c.setFillColor(NAVY); c.rect(0, 0, W, H, stroke=0, fill=1)
@@ -193,7 +226,7 @@ def build_pdf(months, days, entries, bible, path):
     c.setFillColor(colors.white); c.setFont("Georgia", 40)
     c.drawCentredString(W / 2, H - 205, "Reflections %d" % YEAR)
     c.setFillColor(GOLD); c.setFont("Arial-Bold", 12.5)
-    c.drawCentredString(W / 2, H - 238, "365 DAILY KJV DEVOTIONAL REFLECTIONS")
+    c.drawCentredString(W / 2, H - 238, "%d DAILY KJV DEVOTIONAL REFLECTIONS" % len(days))
     c.setLineWidth(2); c.line(W / 2 - 200, H - 258, W / 2 + 200, H - 258)
     intro = style("intro", "Arial", 11, 17, colors.white, TA_CENTER)
     for i, line in enumerate((
@@ -323,11 +356,14 @@ def build_pdf(months, days, entries, bible, path):
 
 
 def main():
+    global YEAR
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", help="validate only; write nothing")
     ap.add_argument("--allow-missing", action="store_true", help="build a draft from the days written so far")
-    ap.add_argument("--out", default=OUTPUT)
+    ap.add_argument("--year", type=int, default=YEAR)
+    ap.add_argument("--out")
     args = ap.parse_args()
+    YEAR = args.year
 
     months, days = read_calendar()
     entries = read_content()
@@ -343,9 +379,10 @@ def main():
     print("%d days validated." % len(days))
     if args.dry_run:
         return 0
-    os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    build_pdf(months, days, entries, bible, args.out)
-    print("wrote", args.out)
+    out = args.out or OUTPUT % YEAR
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    build_pdf(months, days, entries, bible, out)
+    print("wrote", out)
     return 0
 
 

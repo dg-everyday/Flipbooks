@@ -1,0 +1,380 @@
+# Daily Grace Verse Calendar 2028: date | day | KJV reference | theme
+# Written for Reflections 2028; no verse repeats calendar_2027.txt. "@" lines open a month: name | emphasis.
+@ January | Seeking God First
+Jan 01 | Saturday | Lamentations 3:23 | Mercies new every morning
+Jan 02 | Sunday | Matthew 6:33 | Seeking the kingdom first
+Jan 03 | Monday | Jeremiah 29:13 | Seeking God with your whole heart
+Jan 04 | Tuesday | Psalm 27:4 | The one thing worth desiring
+Jan 05 | Wednesday | Psalm 63:1 | A soul that thirsts for God
+Jan 06 | Thursday | Deuteronomy 4:29 | Found by those who seek
+Jan 07 | Friday | Psalm 42:1 | A heart that longs for God
+Jan 08 | Saturday | Isaiah 26:3 | A mind stayed on God
+Jan 09 | Sunday | Philippians 3:13 | Leaving the past behind
+Jan 10 | Monday | Philippians 3:14 | Pressing toward the mark
+Jan 11 | Tuesday | Isaiah 43:19 | God does a new thing
+Jan 12 | Wednesday | Psalm 90:12 | Numbering our days wisely
+Jan 13 | Thursday | Proverbs 16:3 | Committing your work to God
+Jan 14 | Friday | Psalm 37:5 | Committing your way to the Lord
+Jan 15 | Saturday | Psalm 37:4 | Delighting in the Lord
+Jan 16 | Sunday | Mark 1:35 | Rising early to pray
+Jan 17 | Monday | Psalm 5:3 | Morning prayer
+Jan 18 | Tuesday | Hosea 6:3 | Pressing on to know the Lord
+Jan 19 | Wednesday | Hosea 10:12 | Time to seek the Lord
+Jan 20 | Thursday | Amos 5:4 | Seek God and live
+Jan 21 | Friday | Zephaniah 2:3 | Seeking meekness and righteousness
+Jan 22 | Saturday | 1 Chronicles 16:11 | Seeking His face continually
+Jan 23 | Sunday | 2 Chronicles 7:14 | Humble hearts that seek His face
+Jan 24 | Monday | Psalm 9:10 | Never forsaken by God
+Jan 25 | Tuesday | Psalm 34:10 | No good thing lacking
+Jan 26 | Wednesday | Luke 10:42 | Choosing the good part
+Jan 27 | Thursday | Luke 11:9 | Ask, seek and knock
+Jan 28 | Friday | Colossians 3:1 | Seeking things above
+Jan 29 | Saturday | Colossians 3:2 | Setting your mind on heaven
+Jan 30 | Sunday | Psalm 119:10 | Seeking with the whole heart
+Jan 31 | Monday | Psalm 16:8 | The Lord always before me
+@ February | Kindness, Friendship & Family
+Feb 01 | Tuesday | Proverbs 17:17 | A friend who loves at all times
+Feb 02 | Wednesday | Proverbs 18:24 | A friend closer than a brother
+Feb 03 | Thursday | Ecclesiastes 4:9 | Two are better than one
+Feb 04 | Friday | Ecclesiastes 4:10 | Lifting a fallen friend
+Feb 05 | Saturday | Ruth 1:16 | Loyal love that stays
+Feb 06 | Sunday | 1 Samuel 18:1 | Hearts knit in friendship
+Feb 07 | Monday | Proverbs 27:17 | Iron sharpens iron
+Feb 08 | Tuesday | Proverbs 27:6 | The honest words of a friend
+Feb 09 | Wednesday | John 15:15 | Called friends of Jesus
+Feb 10 | Thursday | Romans 12:10 | Kindly affection for one another
+Feb 11 | Friday | Romans 12:15 | Rejoicing and weeping together
+Feb 12 | Saturday | Galatians 6:2 | Bearing one another's burdens
+Feb 13 | Sunday | 1 Corinthians 13:4 | Love that is patient and kind
+Feb 14 | Monday | Proverbs 15:1 | The power of a soft answer
+Feb 15 | Tuesday | 1 Corinthians 13:5 | Love that keeps no score
+Feb 16 | Wednesday | Ephesians 4:2 | Bearing with one another in love
+Feb 17 | Thursday | Colossians 3:14 | Love that binds us together
+Feb 18 | Friday | Proverbs 22:6 | Training up a child
+Feb 19 | Saturday | Exodus 20:12 | Honouring father and mother
+Feb 20 | Sunday | Ephesians 6:4 | Parents who build up
+Feb 21 | Monday | Psalm 127:3 | Children are a gift from God
+Feb 22 | Tuesday | Psalm 133:1 | The goodness of unity
+Feb 23 | Wednesday | Joshua 24:15 | As for me and my house
+Feb 24 | Thursday | Proverbs 31:26 | The law of kindness
+Feb 25 | Friday | 2 Samuel 9:7 | Kindness for a friend's sake
+Feb 26 | Saturday | 1 Thessalonians 5:11 | Building one another up
+Feb 27 | Sunday | Hebrews 10:24 | Stirring one another to love
+Feb 28 | Monday | Hebrews 13:2 | Kindness to strangers
+Feb 29 | Tuesday | 1 John 4:7 | Love comes from God
+@ March | Trusting God in Every Storm
+Mar 01 | Wednesday | Proverbs 3:5 | Trusting with all your heart
+Mar 02 | Thursday | Psalm 46:1 | A very present help
+Mar 03 | Friday | Psalm 46:10 | Be still and know
+Mar 04 | Saturday | Isaiah 43:2 | Through the waters and the fire
+Mar 05 | Sunday | Mark 4:40 | Faith in the middle of the storm
+Mar 06 | Monday | Matthew 14:27 | Be of good cheer, it is I
+Mar 07 | Tuesday | Matthew 14:31 | The hand that catches us
+Mar 08 | Wednesday | Psalm 56:3 | When I am afraid
+Mar 09 | Thursday | Psalm 23:4 | Through the dark valley
+Mar 10 | Friday | Psalm 91:1 | Under the shadow of the Almighty
+Mar 11 | Saturday | Psalm 91:2 | My refuge and my fortress
+Mar 12 | Sunday | Nahum 1:7 | A stronghold in the day of trouble
+Mar 13 | Monday | Psalm 107:29 | He makes the storm a calm
+Mar 14 | Tuesday | Isaiah 41:10 | Fear not, I am with thee
+Mar 15 | Wednesday | Daniel 3:17 | Our God is able
+Mar 16 | Thursday | Daniel 3:18 | Faithful even if not
+Mar 17 | Friday | Habakkuk 3:18 | Joy when the fields fail
+Mar 18 | Saturday | Job 13:15 | Trust that holds on
+Mar 19 | Sunday | 2 Chronicles 20:12 | Our eyes are upon thee
+Mar 20 | Monday | 2 Chronicles 20:15 | The battle belongs to God
+Mar 21 | Tuesday | Exodus 14:13 | Stand still and see
+Mar 22 | Wednesday | Exodus 14:14 | The Lord fights for you
+Mar 23 | Thursday | Psalm 118:6 | The Lord is on my side
+Mar 24 | Friday | Romans 8:28 | All things working together
+Mar 25 | Saturday | Romans 8:31 | If God be for us
+Mar 26 | Sunday | 2 Kings 6:16 | More with us than against us
+Mar 27 | Monday | Psalm 121:2 | My help comes from the Lord
+Mar 28 | Tuesday | Jeremiah 17:7 | Blessed is the one who trusts
+Mar 29 | Wednesday | Jeremiah 17:8 | Roots by the river
+Mar 30 | Thursday | John 14:1 | A heart that is not troubled
+Mar 31 | Friday | Psalm 20:7 | Trusting in the name of the Lord
+@ April | Forgiveness & Reconciliation
+Apr 01 | Saturday | Psalm 103:12 | As far as the east from the west
+Apr 02 | Sunday | Psalm 32:1 | The joy of being forgiven
+Apr 03 | Monday | Psalm 32:5 | Confession that brings freedom
+Apr 04 | Tuesday | Isaiah 1:18 | White as snow
+Apr 05 | Wednesday | Micah 7:18 | God delights in mercy
+Apr 06 | Thursday | Micah 7:19 | Sins cast into the sea
+Apr 07 | Friday | Matthew 6:12 | Forgiven and forgiving
+Apr 08 | Saturday | Matthew 6:14 | A forgiving heart
+Apr 09 | Sunday | Matthew 18:21 | How often should I forgive
+Apr 10 | Monday | Matthew 18:22 | Seventy times seven
+Apr 11 | Tuesday | Luke 6:37 | Judge not, forgive freely
+Apr 12 | Wednesday | Luke 15:20 | The father who runs
+Apr 13 | Thursday | Luke 15:24 | Lost and found again
+Apr 14 | Friday | Genesis 50:20 | God meant it for good
+Apr 15 | Saturday | Genesis 45:5 | Joseph forgives his brothers
+Apr 16 | Sunday | Genesis 33:4 | Brothers embrace again
+Apr 17 | Monday | Matthew 5:24 | First be reconciled
+Apr 18 | Tuesday | Ephesians 4:31 | Putting away bitterness
+Apr 19 | Wednesday | Colossians 3:13 | Forgiving as Christ forgave
+Apr 20 | Thursday | Romans 12:17 | Repaying no one evil for evil
+Apr 21 | Friday | Romans 12:18 | Living peaceably with all
+Apr 22 | Saturday | Romans 12:21 | Overcoming evil with good
+Apr 23 | Sunday | Proverbs 19:11 | The glory of overlooking an offence
+Apr 24 | Monday | Proverbs 10:12 | Love covers wrongs
+Apr 25 | Tuesday | 2 Corinthians 5:18 | The ministry of reconciliation
+Apr 26 | Wednesday | 2 Corinthians 5:19 | God reconciling the world
+Apr 27 | Thursday | Romans 5:8 | Loved while still sinners
+Apr 28 | Friday | Romans 5:10 | Reconciled to God
+Apr 29 | Saturday | Philemon 1:17 | Welcoming back a brother
+Apr 30 | Sunday | Hebrews 8:12 | Sins remembered no more
+@ May | God's Word & Obedience
+May 01 | Monday | Psalm 119:105 | A lamp unto my feet
+May 02 | Tuesday | Psalm 119:11 | The Word hidden in the heart
+May 03 | Wednesday | Joshua 1:8 | Meditating day and night
+May 04 | Thursday | Psalm 1:2 | Delight in God's law
+May 05 | Friday | Psalm 1:3 | A tree planted by the rivers
+May 06 | Saturday | 2 Timothy 3:16 | All Scripture given by God
+May 07 | Sunday | Hebrews 4:12 | The living and powerful Word
+May 08 | Monday | Isaiah 40:8 | The Word that stands for ever
+May 09 | Tuesday | Matthew 4:4 | Living by every word
+May 10 | Wednesday | James 1:22 | Doers of the Word
+May 11 | Thursday | Luke 6:46 | Why call Him Lord
+May 12 | Friday | Matthew 7:24 | Building on the rock
+May 13 | Saturday | John 14:15 | Love that obeys
+May 14 | Sunday | 1 Samuel 15:22 | To obey is better
+May 15 | Monday | Deuteronomy 6:6 | God's words upon your heart
+May 16 | Tuesday | Deuteronomy 6:7 | Teaching the Word at home
+May 17 | Wednesday | Psalm 19:7 | The Word that restores the soul
+May 18 | Thursday | Psalm 19:10 | Sweeter than honey
+May 19 | Friday | Psalm 119:18 | Eyes opened to wonders
+May 20 | Saturday | Psalm 119:130 | Light from God's words
+May 21 | Sunday | Jeremiah 15:16 | Words found and eaten
+May 22 | Monday | Acts 17:11 | Searching the Scriptures daily
+May 23 | Tuesday | John 5:39 | Scriptures that point to Jesus
+May 24 | Wednesday | Romans 10:17 | Faith comes by hearing
+May 25 | Thursday | 2 Timothy 2:15 | Rightly handling the Word
+May 26 | Friday | Ezra 7:10 | A heart prepared to learn and teach
+May 27 | Saturday | Nehemiah 8:8 | Reading with understanding
+May 28 | Sunday | Genesis 12:4 | Abram goes as God said
+May 29 | Monday | Hebrews 11:8 | Obeying without seeing the road
+May 30 | Tuesday | John 2:5 | Whatsoever He says
+May 31 | Wednesday | Luke 5:5 | Nevertheless at thy word
+@ June | Standing Firm in Trials
+Jun 01 | Thursday | James 1:2 | Joy in the middle of trials
+Jun 02 | Friday | James 1:3 | Trials that build endurance
+Jun 03 | Saturday | James 1:12 | The crown of life
+Jun 04 | Sunday | 1 Corinthians 10:13 | A way of escape
+Jun 05 | Monday | Ephesians 6:11 | The whole armour of God
+Jun 06 | Tuesday | Ephesians 6:13 | Having done all, stand
+Jun 07 | Wednesday | 1 Corinthians 16:13 | Standing fast in the faith
+Jun 08 | Thursday | Romans 5:3 | Glory in tribulation
+Jun 09 | Friday | Romans 5:5 | Hope that does not disappoint
+Jun 10 | Saturday | 2 Corinthians 4:8 | Pressed but not crushed
+Jun 11 | Sunday | 2 Corinthians 4:17 | Light affliction, lasting glory
+Jun 12 | Monday | 2 Corinthians 12:9 | Grace that is sufficient
+Jun 13 | Tuesday | 1 Peter 4:12 | Not surprised by trials
+Jun 14 | Wednesday | 1 Peter 1:7 | Faith tried by fire
+Jun 15 | Thursday | Job 23:10 | Coming forth as gold
+Jun 16 | Friday | Psalm 34:19 | Many troubles, one Deliverer
+Jun 17 | Saturday | Psalm 119:71 | Lessons learned in affliction
+Jun 18 | Sunday | John 16:33 | Jesus has overcome the world
+Jun 19 | Monday | Hebrews 12:1 | Running the race with patience
+Jun 20 | Tuesday | Hebrews 12:2 | Looking unto Jesus
+Jun 21 | Wednesday | Hebrews 12:3 | Strength for the weary mind
+Jun 22 | Thursday | Galatians 6:9 | Not weary in well doing
+Jun 23 | Friday | Isaiah 40:31 | Rising up on wings
+Jun 24 | Saturday | Joshua 1:9 | Strong and of good courage
+Jun 25 | Sunday | Deuteronomy 31:6 | He will not fail you
+Jun 26 | Monday | Psalm 31:24 | Courage for those who hope
+Jun 27 | Tuesday | 1 Samuel 17:45 | In the name of the Lord
+Jun 28 | Wednesday | 1 Samuel 30:6 | Encouraged in the Lord
+Jun 29 | Thursday | Daniel 6:10 | Faithful as before
+Jun 30 | Friday | 2 Timothy 4:7 | Finishing the course
+@ July | Joy, Praise & Worship
+Jul 01 | Saturday | Nehemiah 8:10 | The joy of the Lord is strength
+Jul 02 | Sunday | Psalm 16:11 | Fulness of joy
+Jul 03 | Monday | Psalm 100:2 | Serving with gladness
+Jul 04 | Tuesday | Psalm 100:4 | Entering His gates with praise
+Jul 05 | Wednesday | Psalm 118:24 | This is the day
+Jul 06 | Thursday | Philippians 4:4 | Rejoice in the Lord always
+Jul 07 | Friday | 1 Thessalonians 5:16 | Rejoice evermore
+Jul 08 | Saturday | Psalm 34:1 | Praise that never stops
+Jul 09 | Sunday | Psalm 34:3 | Magnifying the Lord together
+Jul 10 | Monday | Psalm 95:1 | A joyful noise
+Jul 11 | Tuesday | Psalm 95:6 | Kneeling before our Maker
+Jul 12 | Wednesday | Psalm 96:9 | The beauty of holiness
+Jul 13 | Thursday | Psalm 103:1 | Bless the Lord, O my soul
+Jul 14 | Friday | Psalm 103:2 | Forget not His benefits
+Jul 15 | Saturday | Psalm 150:6 | Everything that has breath
+Jul 16 | Sunday | John 4:24 | Worship in spirit and truth
+Jul 17 | Monday | John 15:11 | Joy that is full
+Jul 18 | Tuesday | Romans 15:13 | Filled with joy and peace
+Jul 19 | Wednesday | Psalm 30:5 | Joy comes in the morning
+Jul 20 | Thursday | Psalm 126:3 | Great things God has done
+Jul 21 | Friday | Psalm 126:5 | Sowing in tears, reaping in joy
+Jul 22 | Saturday | Isaiah 61:3 | The garment of praise
+Jul 23 | Sunday | Isaiah 12:2 | God my strength and my song
+Jul 24 | Monday | Exodus 15:2 | A song of deliverance
+Jul 25 | Tuesday | 2 Samuel 6:14 | Worship with all your might
+Jul 26 | Wednesday | Psalm 40:3 | A new song
+Jul 27 | Thursday | Psalm 63:3 | Lovingkindness better than life
+Jul 28 | Friday | Luke 15:10 | Joy in heaven
+Jul 29 | Saturday | Zephaniah 3:17 | God rejoices over you
+Jul 30 | Sunday | Psalm 92:1 | A good thing to give thanks
+Jul 31 | Monday | Revelation 4:11 | Thou art worthy
+@ August | Generosity & Good Works
+Aug 01 | Tuesday | Acts 20:35 | More blessed to give
+Aug 02 | Wednesday | 2 Corinthians 9:7 | A cheerful giver
+Aug 03 | Thursday | 2 Corinthians 9:6 | Sowing generously
+Aug 04 | Friday | Luke 6:38 | Give, and it shall be given
+Aug 05 | Saturday | Proverbs 11:25 | The generous soul refreshed
+Aug 06 | Sunday | Proverbs 19:17 | Lending to the Lord
+Aug 07 | Monday | Proverbs 3:9 | Honouring God with what you have
+Aug 08 | Tuesday | Proverbs 3:27 | Withholding no good thing
+Aug 09 | Wednesday | Malachi 3:10 | The windows of heaven
+Aug 10 | Thursday | Mark 12:43 | The widow's two mites
+Aug 11 | Friday | Matthew 6:3 | Giving in secret
+Aug 12 | Saturday | Matthew 5:16 | Let your light shine
+Aug 13 | Sunday | Matthew 25:40 | Unto the least of these
+Aug 14 | Monday | Matthew 10:42 | A cup of cold water
+Aug 15 | Tuesday | Ephesians 2:10 | Created for good works
+Aug 16 | Wednesday | Titus 3:8 | Careful to do good
+Aug 17 | Thursday | Titus 2:7 | A pattern of good works
+Aug 18 | Friday | Galatians 6:10 | Doing good to all
+Aug 19 | Saturday | Hebrews 13:16 | Sacrifices that please God
+Aug 20 | Sunday | 1 Timothy 6:17 | Hope not in riches
+Aug 21 | Monday | 1 Timothy 6:18 | Rich in good works
+Aug 22 | Tuesday | Isaiah 58:10 | Light rising in the darkness
+Aug 23 | Wednesday | Deuteronomy 15:11 | An open hand to the poor
+Aug 24 | Thursday | Luke 10:37 | Go and do likewise
+Aug 25 | Friday | Acts 9:36 | Dorcas, full of good works
+Aug 26 | Saturday | Acts 4:32 | One heart and open hands
+Aug 27 | Sunday | 2 Corinthians 8:9 | He became poor for us
+Aug 28 | Monday | 1 Kings 17:15 | The widow's flour that lasted
+Aug 29 | Tuesday | Proverbs 22:9 | A bountiful eye
+Aug 30 | Wednesday | Luke 12:15 | Life is more than possessions
+Aug 31 | Thursday | Luke 12:34 | Where your treasure is
+@ September | Patience & Waiting on God
+Sep 01 | Friday | Psalm 27:14 | Wait on the Lord
+Sep 02 | Saturday | Psalm 37:7 | Resting and waiting patiently
+Sep 03 | Sunday | Psalm 40:1 | God bends down to hear
+Sep 04 | Monday | Lamentations 3:25 | Good to those who wait
+Sep 05 | Tuesday | Lamentations 3:26 | Hoping quietly
+Sep 06 | Wednesday | Isaiah 64:4 | Prepared for those who wait
+Sep 07 | Thursday | Habakkuk 2:3 | The vision will surely come
+Sep 08 | Friday | Ecclesiastes 3:1 | A time for everything
+Sep 09 | Saturday | Ecclesiastes 3:11 | Beautiful in His time
+Sep 10 | Sunday | James 5:7 | The patient farmer
+Sep 11 | Monday | James 5:8 | Establishing your heart
+Sep 12 | Tuesday | Romans 12:12 | Patient in tribulation
+Sep 13 | Wednesday | Galatians 5:22 | The fruit of the Spirit
+Sep 14 | Thursday | Ecclesiastes 7:8 | Patience better than pride
+Sep 15 | Friday | Proverbs 14:29 | Slow to wrath
+Sep 16 | Saturday | Proverbs 16:32 | Ruling your own spirit
+Sep 17 | Sunday | James 1:19 | Swift to hear, slow to speak
+Sep 18 | Monday | 2 Peter 3:9 | The Lord is not slow
+Sep 19 | Tuesday | 2 Peter 3:8 | God's view of time
+Sep 20 | Wednesday | Genesis 21:2 | A promise kept at the set time
+Sep 21 | Thursday | Genesis 29:20 | Years that seemed like days
+Sep 22 | Friday | 1 Samuel 1:27 | The child Hannah prayed for
+Sep 23 | Saturday | Psalm 130:6 | Watching for the morning
+Sep 24 | Sunday | Micah 7:7 | Looking to the Lord
+Sep 25 | Monday | Isaiah 30:18 | The Lord waits to be gracious
+Sep 26 | Tuesday | Luke 2:25 | Simeon waits in faith
+Sep 27 | Wednesday | Hebrews 6:15 | Abraham patiently endured
+Sep 28 | Thursday | Hebrews 10:36 | The need for patience
+Sep 29 | Friday | Colossians 1:11 | Strengthened unto patience
+Sep 30 | Saturday | Psalm 31:15 | My times are in His hand
+@ October | Integrity & Holy Living
+Oct 01 | Sunday | Micah 6:8 | Justice, mercy and humility
+Oct 02 | Monday | Proverbs 10:9 | Walking securely in uprightness
+Oct 03 | Tuesday | Proverbs 11:3 | Integrity that guides
+Oct 04 | Wednesday | Proverbs 20:7 | A legacy of integrity
+Oct 05 | Thursday | Psalm 15:2 | Truth spoken from the heart
+Oct 06 | Friday | Psalm 24:4 | Clean hands and a pure heart
+Oct 07 | Saturday | Psalm 51:10 | A clean heart created
+Oct 08 | Sunday | Psalm 139:23 | Search me, O God
+Oct 09 | Monday | Psalm 139:24 | The way everlasting
+Oct 10 | Tuesday | Psalm 19:14 | Words that please God
+Oct 11 | Wednesday | Matthew 5:8 | The pure in heart
+Oct 12 | Thursday | Matthew 5:37 | Let your yes be yes
+Oct 13 | Friday | 1 Peter 1:15 | Holy in all you do
+Oct 14 | Saturday | Romans 12:1 | A living sacrifice
+Oct 15 | Sunday | Romans 12:2 | Transformed, not conformed
+Oct 16 | Monday | Philippians 4:8 | Think on these things
+Oct 17 | Tuesday | Daniel 1:8 | Daniel's settled purpose
+Oct 18 | Wednesday | Genesis 39:9 | Joseph says no to sin
+Oct 19 | Thursday | Job 27:5 | Holding fast to integrity
+Oct 20 | Friday | Job 31:1 | A covenant with the eyes
+Oct 21 | Saturday | Proverbs 4:23 | Guarding your heart
+Oct 22 | Sunday | Proverbs 22:1 | A good name
+Oct 23 | Monday | Proverbs 12:22 | Lips that deal truly
+Oct 24 | Tuesday | Ephesians 4:25 | Speaking truth with one another
+Oct 25 | Wednesday | Ephesians 4:29 | Words that build up
+Oct 26 | Thursday | Colossians 3:23 | Working heartily for the Lord
+Oct 27 | Friday | Luke 16:10 | Faithful in little things
+Oct 28 | Saturday | 1 Timothy 4:12 | An example to others
+Oct 29 | Sunday | 2 Timothy 2:22 | Fleeing and following
+Oct 30 | Monday | 1 John 1:7 | Walking in the light
+Oct 31 | Tuesday | Psalm 101:2 | Integrity at home
+@ November | The Character of God
+Nov 01 | Wednesday | Exodus 34:6 | Merciful and gracious
+Nov 02 | Thursday | Exodus 3:14 | I AM THAT I AM
+Nov 03 | Friday | Malachi 3:6 | The God who does not change
+Nov 04 | Saturday | Numbers 23:19 | God cannot lie
+Nov 05 | Sunday | Deuteronomy 32:4 | He is the Rock
+Nov 06 | Monday | Isaiah 6:3 | Holy, holy, holy
+Nov 07 | Tuesday | Isaiah 40:28 | The God who never tires
+Nov 08 | Wednesday | Isaiah 55:8 | Thoughts higher than ours
+Nov 09 | Thursday | Isaiah 55:9 | Ways higher than ours
+Nov 10 | Friday | Jeremiah 32:17 | Nothing too hard for God
+Nov 11 | Saturday | Jeremiah 31:3 | Everlasting love
+Nov 12 | Sunday | Psalm 139:7 | God is everywhere
+Nov 13 | Monday | Psalm 139:14 | Fearfully and wonderfully made
+Nov 14 | Tuesday | Psalm 147:4 | He counts the stars
+Nov 15 | Wednesday | Psalm 147:3 | He heals the brokenhearted
+Nov 16 | Thursday | Psalm 103:13 | A Father's compassion
+Nov 17 | Friday | Psalm 90:2 | From everlasting to everlasting
+Nov 18 | Saturday | Psalm 33:11 | Plans that stand for ever
+Nov 19 | Sunday | Genesis 16:13 | The God who sees
+Nov 20 | Monday | Genesis 22:14 | The Lord will provide
+Nov 21 | Tuesday | Exodus 15:26 | The Lord who heals
+Nov 22 | Wednesday | Judges 6:24 | The Lord is peace
+Nov 23 | Thursday | 1 John 4:8 | God is love
+Nov 24 | Friday | 1 John 1:5 | God is light
+Nov 25 | Saturday | 1 Samuel 2:2 | None holy like the Lord
+Nov 26 | Sunday | Job 38:4 | The God of creation
+Nov 27 | Monday | Romans 11:36 | All things from Him and for Him
+Nov 28 | Tuesday | James 1:17 | The Father of lights
+Nov 29 | Wednesday | Hebrews 13:8 | The same yesterday, today and for ever
+Nov 30 | Thursday | Psalm 145:9 | Good to all
+@ December | Eternal Hope & Heaven's Promise
+Dec 01 | Friday | John 14:2 | A place prepared for you
+Dec 02 | Saturday | John 14:3 | I will come again
+Dec 03 | Sunday | John 3:16 | Everlasting life
+Dec 04 | Monday | John 10:28 | Held in His hand
+Dec 05 | Tuesday | Romans 8:18 | Glory yet to be revealed
+Dec 06 | Wednesday | Romans 8:39 | Nothing can separate us
+Dec 07 | Thursday | 1 Corinthians 2:9 | Eye hath not seen
+Dec 08 | Friday | 1 Corinthians 15:55 | Death has lost its sting
+Dec 09 | Saturday | 2 Corinthians 5:1 | A house not made with hands
+Dec 10 | Sunday | 2 Corinthians 4:18 | The things that are eternal
+Dec 11 | Monday | Philippians 1:21 | To live is Christ
+Dec 12 | Tuesday | Philippians 3:20 | Citizens of heaven
+Dec 13 | Wednesday | Colossians 3:4 | Appearing with Him in glory
+Dec 14 | Thursday | 1 Thessalonians 4:17 | Ever with the Lord
+Dec 15 | Friday | 1 Thessalonians 4:18 | Comfort for one another
+Dec 16 | Saturday | Titus 2:13 | The blessed hope
+Dec 17 | Sunday | 1 Peter 1:3 | A living hope
+Dec 18 | Monday | 1 Peter 1:4 | An inheritance kept for you
+Dec 19 | Tuesday | 1 John 3:2 | We shall be like Him
+Dec 20 | Wednesday | Hebrews 11:16 | A better country
+Dec 21 | Thursday | Hebrews 13:14 | A city to come
+Dec 22 | Friday | Psalm 23:6 | Dwelling in the house of the Lord
+Dec 23 | Saturday | Psalm 17:15 | Satisfied in His likeness
+Dec 24 | Sunday | Daniel 12:3 | Shining as the stars
+Dec 25 | Monday | Isaiah 25:8 | Every tear wiped away
+Dec 26 | Tuesday | Revelation 21:4 | No more sorrow
+Dec 27 | Wednesday | Revelation 21:5 | All things made new
+Dec 28 | Thursday | Revelation 22:5 | No night there
+Dec 29 | Friday | Matthew 6:20 | Treasures in heaven
+Dec 30 | Saturday | 2 Timothy 4:8 | A crown of righteousness
+Dec 31 | Sunday | Revelation 22:21 | Grace to the end

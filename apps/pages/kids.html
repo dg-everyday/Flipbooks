@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="Daily Grace Kids: Bible stories, games and memory verses for children aged 3 to 8, with Nari the lion cub. Free, with no ads, and everything stays on your device."
+        />
+        <link rel="canonical" href="https://dailygrace.faith/apps/pages/kids.html" />
+        <meta name="theme-color" content="#e4f2fb" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Daily Grace Kids" />
+        <meta
+            property="og:description"
+            content="Bible stories, games and memory verses for children, with Nari the lion cub."
+        />
+        <meta property="og:url" content="https://dailygrace.faith/apps/pages/kids.html" />
+        <meta
+            property="og:image"
+            content="https://dailygrace.faith/assets/images/share/daily-grace-kids.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <title>Daily Grace Kids</title>
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+        <link rel="apple-touch-icon" href="../../assets/images/kids/apple-touch-icon.png" />
+        <link rel="manifest" href="../../assets/kids/kids.webmanifest" />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Baloo2-Variable-Latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Nunito-Variable-Latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="stylesheet" href="../../assets/styles/kids-page.css?v=20261024-4" />
+    </head>
+    <body>
+        <!-- kids.js renders every screen into this element: Who's exploring?,
+             each child's home, the Journey Map, the Story Stops, the games, the
+             stickers and the Grown-ups' Corner. -->
+        <main id="kids-app" class="kids-app">
+            <section class="screen center">
+                <p class="lede">Opening Daily Grace Kids…</p>
+            </section>
+        </main>
+        <noscript>
+            <p class="noscript">Daily Grace Kids needs JavaScript to run. Please turn it on in your browser.</p>
+        </noscript>
+
+        <script type="module">
+            import { start } from "./scripts/kids.js?v=20261024-5";
+            start(document.getElementById("kids-app"));
+        </script>
+    </body>
+</html>

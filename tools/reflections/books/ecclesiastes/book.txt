@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Ecclesiastes
+1-2 | Vanity of Vanities
+3-5 | A Time to Every Purpose
+6-8 | Consider the Work of God
+9-10 | Time and Chance
+11-12 | Remember Now Thy Creator

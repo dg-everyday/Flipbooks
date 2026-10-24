@@ -94,7 +94,7 @@
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
 import { bookmarkNote, keepBookmarks } from "./card-bookmarks.js?v=20261018-1";
-import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261018-1";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261024-1";
 import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
@@ -169,7 +169,7 @@ const STYLES = /* css */ `
     padding: 18px 0;
     border: 1px solid rgb(0 27 52 / 20%);
     border-radius: 8px;
-    background: rgb(255 255 255 / 24%);
+    background: rgb(128 91 24 / 8%);
   }
   .book-symbol {
     grid-column: 1;

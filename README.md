@@ -41,11 +41,40 @@ few images that must work even when the media host does not.
   one for the whole entry; hold one to bookmark it.
 - **`<bible-trivia>`** — a modal quiz that pops up once the page has loaded,
   asking which book a fact came from. Up to three a day, an hour apart.
+- **`<kids-card>`** — the way into Daily Grace Kids, after the Sticker Album
+  card: the Daily Grace Kids banner video and "Let's go".
 - **Reflection card**, footer with a QR code that enlarges on click, and a
   thank-you splash that appears once you scroll to the very bottom.
 
 **`apps/pages/flipbook.html`** — the weekly reader. It hosts `<flip-book>` and a
 home button; everything else belongs to the component.
+
+**`apps/pages/kids.html`** — Daily Grace Kids, for children aged 3 to 8 (Little
+Lambs 3–5, Young Lions 6–8), made for a tablet held upright. Up to four
+children per device, each with a picture, a Growing Tree (a leaf per story, a
+fruit per verse, a flower per Talk Together, a bird per finished part of the
+map), Nari the lion cub who grows with the stories, and a shelf of stickers.
+The Journey Map leads to eight story stops of five steps each: Watch & Listen,
+Look & Find, Play (Story in Order, then Who Said It?, Gather & Count, Colour It
+In and Right or Not?), My Verse (KJV) and Talk Together. Games has Two by Two
+and colouring. The Grown-ups' Corner, behind a gate (hold for three seconds,
+then type a number written in words), holds the children, a daily time limit,
+seven settings, printables (verse cards, certificates, colouring pages) and the
+privacy note. "‹ Daily Grace Kids" at the top of the welcome and Who's
+exploring? screens, and a button in the Corner, lead back to the Daily Grace
+home page. Everything is kept in `localStorage` (`dailygrace:kids:*`) on the
+device. The page is hash-routed, so Back and bookmarks work:
+
+| File | Role |
+| --- | --- |
+| `apps/pages/scripts/kids.js` | The shell and routes (time limit and "no child yet" guards), welcome, Who's exploring?, home, map, stickers, games, rest |
+| `apps/pages/scripts/kids-stop.js` | A story stop's five steps and the reward screen |
+| `apps/pages/scripts/kids-corner.js` | The Grown-ups' Corner, the child form, printables |
+| `apps/pages/scripts/kids-ui.js` | Shared pieces: icons, the tree, Nari's picture, the gate, the ask dialog, toasts |
+| `assets/scripts/kids/store.js` | Everything kept on the device, checked and cleaned on every read; falls back to memory when storage is blocked or full |
+| `assets/scripts/kids/rules.js` | Pure functions: what a child has (counted from their record, so nothing counts twice), Nari's and the tree's stage, the map lock, which stickers are due |
+| `assets/scripts/kids/audio.js` | One voice line at a time, overlapping sound effects; nothing waits on a sound that can't play |
+| `assets/styles/kids-page.css` | The page's look, with self-hosted Baloo 2, Nunito and Andika (`assets/fonts/`, OFL) |
 
 ## Components
 
@@ -64,6 +93,8 @@ documented in a header comment at the top of its file.
 | `<daily-food-for-thought>` | `apps/components/daily-food-for-thought.js` | Today's serving from the Food for Thought guide, on a parchment card under its banner (`assets/images/food-for-thought-assets/fft-banner.webp`): the topic's section and areas (with their badges), its name, what it guards against, its verse, the serving for today and a question to chew on, and a link to the topic on `apps/pages/food-for-thought.html`. One topic per Asia/Manila day, the same for everyone, in the guide's order, starting again after the last; `show("YYYY-MM-DD")` shows another day's. |
 | `<passage-reader>` | `apps/components/passage-reader.js` | A passage in three tabs: the King James Bible (with the words of Jesus in red, from `assets/red-letter.json` as in the search results), the BSB (with its section headings, whose parallel references open as pills) and the Interlinear (each word's Strong's number, transliteration, original, gloss and grammar, right to left for Hebrew). `showPassageReader({ book, range, title })` opens it; `range` is an outline range such as `"1-11"` or `"10:1-22:16"`. Tapping a word in the Interlinear tab turns it faint yellow and opens its Strong's dictionary entry under the verse, as in the explanation popup; both use `apps/components/strongs-entry.js` (the dictionary loader and the entry card). Chapters load as the reader scrolls. Opened by the outline rows on `apps/pages/bible-books.html`. |
 | `<flip-book>` | `apps/components/flip-book.js` | The reader: swipe, tap edges, arrow keys, pinch and wheel zoom. One page in portrait, a two-page spread in landscape. |
+| `<kids-card>` | `apps/components/kids-card.js` | The home page's card for Daily Grace Kids: `assets/images/daily-grace-kids-banner.mp4` looping muted, over its still `daily-grace-kids-banner.webp`. The video is fetched only as the card nears the screen and pauses off screen; with reduced motion, Save-Data, or a file that can't play, the still picture stays. `href` overrides the link (default `apps/pages/kids.html`). |
+| Kids games | `apps/components/kids/*.js` | `<kids-look-find>`, `<kids-story-order>`, `<kids-verse-builder>`, `<kids-who-said>`, `<kids-gather>`, `<kids-colour>`, `<kids-right-or-not>` and `<kids-pairs>`. Each takes a `config` (its data, the age band, the audio player, the media resolver) and fires `kids-done` when finished; no game can be lost. Shared pieces are in `kids-common.js`. |
 
 The hold-to-bookmark gesture, glow and ribbon for facts and sayings live in
 `apps/components/card-bookmarks.js`, which also asks the browser to keep the
@@ -140,6 +171,8 @@ components.
 | `assets/did-you-know.json` | The original 501 facts, superseded by `didyouknow.db` and no longer read by anything. |
 | `assets/book-metadata.json` | Fallback `title` / `description` for all 66 books — see below. |
 | `assets/food-for-thought.json` | The Food for Thought guide: 81 topics in seven sections, each tagged Mind, Body and/or Spirit, with its verse (exact KJV text), what it guards against, how it feeds you, a serving for today, signs of hunger, a question and links to related entries in other guides. Built and verse-checked by `tools/food-for-thought/build_food_for_thought.py`; read by `apps/pages/food-for-thought.html` and `<daily-food-for-thought>`. |
+| `assets/kids/kids-data.json` | Everything Daily Grace Kids shows: the eight stories (panels told for both ages, verse with its missing word and pieces, Look & Find spots, Talk Together, games), the map's sections and road, the tree and Nari stages, Nari's lines, sound effects, the Two by Two cards and the sticker paths. Generated by `docs/kids/prompt-scripts/gen_app_data.py` (local only) from the kids stories and resources; don't edit it by hand. `tests/kids-rules.spec.mjs` checks it. |
+| `assets/avatars-kids.json` | The kids avatars (`KA-NN`), shown from `media:images/avatars/kids/`. |
 | `assets/guide-info.json` | The "About this guide" popup of each study guide (the ⓘ beside the funnel), keyed by page file (`bible-books.html`): `title`, `summary`, `inside`, `use` and `why` (lists of paragraphs or steps) and a KJV `verse` (`ref`, `text`, word for word as in `dailygrace.db`). Fetched on the first tap by `guideInfoButton()` in `apps/pages/scripts/study-utils.js`. Update it when a guide gains or loses a feature. |
 
 Book symbols load from `<media-base>images/symbols/<Book name>-symbol.svg`. The
@@ -163,6 +196,8 @@ images/thumbnails/<Book name>_square.webp                    66 book tiles, for 
 images/coverpages/<YYYY>/<YYYY>-WEEK<n>.webp                 flipbook cover, per week
 images/coverpages/<YYYY>/<YYYY>-404.webp                     cover fallback
 audio/<YYYY>/<Month>/webm/<Month D, YYYY>.webm               narration
+kids/…                                                       Daily Grace Kids: cub, tree, map, stops, games, ui, print, stickers, audio
+images/avatars/kids/                                         kids avatars
 ```
 
 The gold frame inside each thumbnail is not the same size or quite in the same
@@ -220,6 +255,17 @@ in Manila time: an iPad (gen 7) and an Android tablet (Galaxy Tab S4), both
 held upright, which is the recommended way to play Daily Grace Kids; desktop
 Chrome; an Android phone (Pixel 7); and an iPhone (iPhone 15, WebKit). `tests/smoke.spec.mjs` checks that the main pages open without
 script errors; new tests go in `tests/` as `*.spec.mjs`.
+
+Daily Grace Kids has its own: `kids-rules.spec.mjs` (the story data and the
+rules, without a browser), `kids-store.spec.mjs` (the store: cleaning, limits,
+damaged and blocked storage), `kids-setup.spec.mjs` (welcome, the gate,
+children), `kids-story.spec.mjs` (every story at both ages, rewards never
+twice, links, the map lock, quick taps, the games) and `kids-device.spec.mjs`
+(the time limit, failures, two tabs, settings, printables, layout on every
+screen, the home card). They stand in a local picture for the media host's
+images and refuse its sounds (`tests/kids-helpers.mjs`), so they run offline
+and prove the page carries on without sound. The flows run on the iPad; the
+layout checks on all five screens.
 
 ## Deployment
 

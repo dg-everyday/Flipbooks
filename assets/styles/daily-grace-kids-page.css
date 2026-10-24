@@ -1,0 +1,24 @@
+/* The Daily Grace Kids page (daily-grace-kids.html), on top of study-page.css:
+   the kids logo in the topbar, then the way into the kids app (<kids-card>)
+   and the row of kids stories (<kids-stories>), in a column as wide as the
+   home page's. */
+
+/* The stories' titles and descriptions are set in Roboto, as on the home page;
+   only its small Latin subset is needed here. */
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Variable-Latin.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* The kids logo is wider than the Daily Grace one, so a little shorter. */
+.brand-logo {
+    height: 36px;
+}
+
+main.kids-hub {
+    max-width: 720px;
+    padding: 18px 0 32px;
+}

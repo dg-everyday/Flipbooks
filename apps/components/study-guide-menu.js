@@ -159,7 +159,7 @@ const GUIDES = [
         text: "Bible verses to feed our mind, body and spirit",
     },
     {
-        page: "kids.html",
+        page: "daily-grace-kids.html",
         icon: "daily-grace-kids.webp",
         title: "Daily Grace Kids",
         // Shown as its cartoon logo alone, beside Nari, so it stands out.
@@ -1159,7 +1159,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21h14M12 21v-6" /><path d="M12 15c-4 0-7-2.5-7-6a7 7 0 0 1 14 0c0 3.5-3 6-7 6z" /></svg>
                 </span>
-                <p><strong>Daily Grace Kids.</strong> A picture map of Bible stories for children aged 3 to 8, with Nari the lion cub. Each story stop has five steps: watch the story, look and find, a game, a verse to learn and a talk together with a grown-up. Each child gets a profile, a tree that grows and a shelf of stickers. Grown-ups' settings, such as a daily time limit, sit behind a grown-up check. It opens from the menu or from the "Daily Grace Kids" card at the bottom of the home page. Everything stays on this device.</p>
+                <p><strong>Daily Grace Kids.</strong> A picture map of Bible stories for children aged 3 to 8, with Nari the lion cub. Each story stop has five steps: watch the story, look and find, a game, a verse to learn and a talk together with a grown-up. Each child gets a profile, a tree that grows and a shelf of stickers. Grown-ups' settings, such as a daily time limit, sit behind a grown-up check. It opens from the "Daily Grace Kids" card at the bottom of the home page, or from the menu's Daily Grace Kids page, which also has Kids Stories: Bible stories retold for children, to read as a flipbook, listen to or download as a storybook. Everything stays on this device.</p>
             </li>
             <li>
                 <span class="help-icon">

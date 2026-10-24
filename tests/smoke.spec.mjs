@@ -9,6 +9,7 @@ const PAGES = [
     { path: "/", title: /Grace for Today/ },
     { path: "/apps/pages/stickers.html" },
     { path: "/apps/pages/stories.html" },
+    { path: "/apps/pages/daily-grace-kids.html", title: "Daily Grace Kids" },
     { path: "/apps/pages/flipbook.html" },
 ];
 

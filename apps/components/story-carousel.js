@@ -30,6 +30,9 @@
  * Properties   stories (read-only)
  * Events       storiesload  detail: { stories }
  *
+ * A subclass can change what the attributes default to, and where the current
+ * story is remembered, with its own static `defaults` (see kids-stories.js).
+ *
  * The element hides itself when the list is empty or cannot be loaded.
  * It remembers the story it is on for the tab (sessionStorage) and opens on it
  * again, so coming back from a flipbook lands on the same card.
@@ -251,6 +254,14 @@ function escapeHtml(value) {
 
 export class StoryCarousel extends HTMLElement {
     static observedAttributes = ["src", "reader", "heading"];
+    // What the attributes fall back to, and where the current story is kept.
+    // A row of other stories (<kids-stories>) brings its own.
+    static defaults = {
+        src: DEFAULT_SRC,
+        reader: DEFAULT_READER,
+        heading: "Stories",
+        storageKey: CURRENT_KEY,
+    };
 
     #root;
     #heading;
@@ -400,7 +411,8 @@ export class StoryCarousel extends HTMLElement {
     }
 
     #syncHeading() {
-        const text = this.getAttribute("heading") || "Stories";
+        const text =
+            this.getAttribute("heading") || this.constructor.defaults.heading;
         this.#heading.textContent = text;
         this.#track.setAttribute("aria-label", text);
     }
@@ -421,7 +433,7 @@ export class StoryCarousel extends HTMLElement {
     async #load() {
         const loadId = ++this.#loadId;
         const src = new URL(
-            this.getAttribute("src") || DEFAULT_SRC,
+            this.getAttribute("src") || this.constructor.defaults.src,
             document.baseURI,
         );
         let stories = [];
@@ -461,7 +473,7 @@ export class StoryCarousel extends HTMLElement {
 
     #cardHtml(story, index, isCopy) {
         const reader = new URL(
-            this.getAttribute("reader") || DEFAULT_READER,
+            this.getAttribute("reader") || this.constructor.defaults.reader,
             document.baseURI,
         );
         reader.searchParams.set("story", story.id);
@@ -546,7 +558,7 @@ export class StoryCarousel extends HTMLElement {
             this.#pinned = true;
         }
         try {
-            sessionStorage.setItem(CURRENT_KEY, id);
+            sessionStorage.setItem(this.constructor.defaults.storageKey, id);
         } catch {
             /* private browsing */
         }
@@ -556,7 +568,7 @@ export class StoryCarousel extends HTMLElement {
     #savedStory() {
         let id = null;
         try {
-            id = sessionStorage.getItem(CURRENT_KEY);
+            id = sessionStorage.getItem(this.constructor.defaults.storageKey);
         } catch {
             /* private browsing */
         }

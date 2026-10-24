@@ -24,9 +24,9 @@ import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
 import { createAudio } from "../../../assets/scripts/kids/audio.js?v=20261024-2";
 import {
     BAND_NAMES, ICONS, brandLink, earnedFor, escapeHtml, gameConfig, gate, groupName, nariSrc, toast, treeHtml,
-} from "./kids-ui.js?v=20261024-7";
-import { renderStop, renderReward } from "./kids-stop.js?v=20261024-11";
-import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261024-7";
+} from "./kids-ui.js?v=20261024-8";
+import { renderStop, renderReward } from "./kids-stop.js?v=20261024-12";
+import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261024-8";
 import "../../components/kids/kids-pairs.js?v=20261024-2";
 import "../../components/kids/kids-colour.js?v=20261024-2";
 

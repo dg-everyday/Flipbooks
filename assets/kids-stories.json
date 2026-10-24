@@ -1,0 +1,119 @@
+[
+    {
+        "id": "a-great-way-off",
+        "sequence": 3,
+        "cover_page": "media:kids/stories/a-great-way-off/_00.webp",
+        "title": "The Father Who Ran",
+        "description": "A son goes far from home. His loving father runs to welcome him back.",
+        "audio": "media:stories/a-great-way-off/a-great-way-off.webm",
+        "story-book": "media:kids/stories/a-great-way-off/a-great-way-off-kids-storybook.pdf"
+    },
+    {
+        "id": "all-things-new",
+        "sequence": 8,
+        "cover_page": "media:kids/stories/all-things-new/_00.webp",
+        "title": "When God Makes Everything New",
+        "description": "John sees God's wonderful promise: a new heaven and earth, with no more tears or pain.",
+        "audio": "media:stories/all-things-new/all-things-new.webm",
+        "story-book": "media:kids/stories/all-things-new/all-things-new-kids-storybook.pdf"
+    },
+    {
+        "id": "and-ruth-with-her",
+        "sequence": 13,
+        "cover_page": "media:kids/stories/and-ruth-with-her/_00.webp",
+        "title": "Where You Go, I Will Go",
+        "description": "Ruth stays with Naomi, gathers grain, and receives kindness from Boaz.",
+        "audio": "media:stories/and-ruth-with-her/and-ruth-with-her.webm",
+        "story-book": "media:kids/stories/and-ruth-with-her/and-ruth-with-her-kids-storybook.pdf"
+    },
+    {
+        "id": "forbid-them-not",
+        "sequence": 9,
+        "cover_page": "media:kids/stories/forbid-them-not/_00.webp",
+        "title": "Let the Children Come",
+        "description": "Jesus welcomes the little children, holds them in his arms, and blesses them.",
+        "audio": "media:stories/forbid-them-not/forbid-them-not.webm",
+        "story-book": "media:kids/stories/forbid-them-not/forbid-them-not-kids-storybook.pdf"
+    },
+    {
+        "id": "the-fourth-man-in-the-fire",
+        "sequence": 11,
+        "cover_page": "media:kids/stories/the-fourth-man-in-the-fire/_00.webp",
+        "title": "The Fourth Man in the Fire",
+        "description": "Three men trust God. The king sees four men walking safely in the fire!",
+        "audio": "media:stories/the-fourth-man-in-the-fire/the-fourth-man-in-the-fire.webm",
+        "story-book": "media:kids/stories/the-fourth-man-in-the-fire/the-fourth-man-in-the-fire-kids-storybook.pdf"
+    },
+    {
+        "id": "where-art-thou",
+        "sequence": 12,
+        "cover_page": "media:kids/stories/where-art-thou/_00.webp",
+        "title": "Hiding in the Garden",
+        "description": "Adam and Eve eat the fruit God told them not to eat, then hide in the garden.",
+        "audio": "media:stories/where-art-thou/where-art-thou.webm",
+        "story-book": "media:kids/stories/where-art-thou/where-art-thou-kids-storybook.pdf"
+    },
+    {
+        "id": "for-his-oaths-sake",
+        "sequence": 7,
+        "cover_page": "media:kids/stories/for-his-oaths-sake/_00.webp",
+        "title": "The King Who Kept the Wrong Promise",
+        "description": "Herod makes a wrong promise. John speaks the truth, and his followers care for him after his death.",
+        "audio": "media:stories/for-his-oaths-sake/for-his-oaths-sake.webm",
+        "story-book": "media:kids/stories/for-his-oaths-sake/for-his-oaths-sake-kids-storybook.pdf"
+    },
+    {
+        "id": "help-thou-mine-unbelief",
+        "sequence": 5,
+        "cover_page": "media:kids/stories/help-thou-mine-unbelief/_00.webp",
+        "title": "Help Me Believe!",
+        "description": "Three disciples see Jesus on a mountain. A father asks for help, and Jesus lifts his boy by the hand.",
+        "audio": "media:stories/help-thou-mine-unbelief/help-thou-mine-unbelief.webm",
+        "story-book": "media:kids/stories/help-thou-mine-unbelief/help-thou-mine-unbelief-kids-storybook.pdf"
+    },
+    {
+        "id": "how-much-more",
+        "sequence": 2,
+        "cover_page": "media:kids/stories/how-much-more/_00.webp",
+        "title": "Teach Us to Pray",
+        "description": "Jesus teaches his disciples to pray and tells them about a friend asking for bread and a father giving good gifts.",
+        "audio": "media:stories/how-much-more/how-much-more.webm",
+        "story-book": "media:kids/stories/how-much-more/how-much-more-kids-storybook.pdf"
+    },
+    {
+        "id": "into-his-hand",
+        "sequence": 4,
+        "cover_page": "media:kids/stories/into-his-hand/_00.webp",
+        "title": "Trusted, Framed, and Trusted Again",
+        "description": "Joseph chooses to do right. Even when he is unfairly put in prison, God is with him.",
+        "audio": "media:stories/into-his-hand/into-his-hand.webm",
+        "story-book": "media:kids/stories/into-his-hand/into-his-hand-kids-storybook.pdf"
+    },
+    {
+        "id": "one-thing-thou-lackest",
+        "sequence": 1,
+        "cover_page": "media:kids/stories/one-thing-thou-lackest/_00.webp",
+        "title": "The Rich Man Who Walked Away",
+        "description": "A rich man asks Jesus about eternal life. Jesus loves him and invites him to follow.",
+        "audio": "media:stories/one-thing-thou-lackest/one-thing-thou-lackest.webm",
+        "story-book": "media:kids/stories/one-thing-thou-lackest/one-thing-thou-lackest-kids-storybook.pdf"
+    },
+    {
+        "id": "too-many-for-me",
+        "sequence": 10,
+        "cover_page": "media:kids/stories/too-many-for-me/_00.webp",
+        "title": "Gideon and the Army That Was Too Big",
+        "description": "God helps Gideon and three hundred men face a great army with trumpets, jars, and lights.",
+        "audio": "media:stories/too-many-for-me/too-many-for-me.webm",
+        "story-book": "media:kids/stories/too-many-for-me/too-many-for-me-kids-storybook.pdf"
+    },
+    {
+        "id": "while-he-lingered",
+        "sequence": 6,
+        "cover_page": "media:kids/stories/while-he-lingered/_00.webp",
+        "title": "Pulled Out of Sodom",
+        "description": "Two messengers lead Lot and his family out of Sodom. The Lord shows Lot mercy.",
+        "audio": "media:stories/while-he-lingered/while-he-lingered.webm",
+        "story-book": "media:kids/stories/while-he-lingered/while-he-lingered-kids-storybook.pdf"
+    }
+]

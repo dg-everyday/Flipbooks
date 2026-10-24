@@ -1,0 +1,71 @@
+{
+    "title": "Hiding in the Garden",
+    "aspect": "9/16",
+    "pages": [
+        {
+            "id": "id-00",
+            "image": "media:kids/stories/where-art-thou/00.webp",
+            "caption": "Adam and Eve hide among the trees after eating the fruit God told them not to eat."
+        },
+        {
+            "id": "id-01",
+            "image": "media:kids/stories/where-art-thou/01.webp",
+            "caption": "Adam and his wife live in Eden. God tells Adam not to eat from one tree."
+        },
+        {
+            "id": "id-02",
+            "image": "media:kids/stories/where-art-thou/02.webp",
+            "caption": "A clever snake asks the woman about God's command."
+        },
+        {
+            "id": "id-03",
+            "image": "media:kids/stories/where-art-thou/03.webp",
+            "caption": "The woman answers, and the snake tells her she will not die."
+        },
+        {
+            "id": "id-04",
+            "image": "media:kids/stories/where-art-thou/04.webp",
+            "caption": "The woman eats the fruit and gives some to her husband, who eats too."
+        },
+        {
+            "id": "id-05",
+            "image": "media:kids/stories/where-art-thou/05.webp",
+            "caption": "They know they have no clothes and sew fig leaves together to cover themselves."
+        },
+        {
+            "id": "id-06",
+            "image": "media:kids/stories/where-art-thou/06.webp",
+            "caption": "They hide among the trees, and God calls to Adam, asking where he is."
+        },
+        {
+            "id": "id-07",
+            "image": "media:kids/stories/where-art-thou/07.webp",
+            "caption": "Adam says he hid because he was afraid, then admits he ate the fruit."
+        },
+        {
+            "id": "id-08",
+            "image": "media:kids/stories/where-art-thou/08.webp",
+            "caption": "The woman says the snake tricked her and she ate."
+        },
+        {
+            "id": "id-09",
+            "image": "media:kids/stories/where-art-thou/09.webp",
+            "caption": "God speaks to the snake about its future and the woman and her children."
+        },
+        {
+            "id": "id-10",
+            "image": "media:kids/stories/where-art-thou/10.webp",
+            "caption": "God tells the woman and Adam that life will bring pain, hard work, and death."
+        },
+        {
+            "id": "id-11",
+            "image": "media:kids/stories/where-art-thou/11.webp",
+            "caption": "Adam names his wife Eve. God makes clothes from animal skins and dresses them."
+        },
+        {
+            "id": "id-12",
+            "image": "media:kids/stories/where-art-thou/12.webp",
+            "caption": "Adam and Eve leave Eden. God places special guards and a flaming sword by the way to the tree of life."
+        }
+    ]
+}

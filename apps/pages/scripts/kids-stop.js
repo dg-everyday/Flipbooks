@@ -15,7 +15,7 @@
 
 import * as store from "../../../assets/scripts/kids/store.js?v=20261024-2";
 import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
-import { ICONS, earnedFor, escapeHtml, gameConfig, toast, treeHtml } from "./kids-ui.js?v=20261024-2";
+import { ICONS, earnedFor, escapeHtml, gameConfig, toast, treeHtml } from "./kids-ui.js?v=20261024-4";
 import "../../components/kids/kids-look-find.js?v=20261024-2";
 import "../../components/kids/kids-story-order.js?v=20261024-2";
 import "../../components/kids/kids-verse-builder.js?v=20261024-2";

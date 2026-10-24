@@ -20,6 +20,8 @@ export const ICONS = {
     pause: I('<rect x="6" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.5" fill="currentColor"/>'),
     speaker: I('<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/>'),
     lock: I('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'),
+    // The Grown-ups' Corner: the settings.
+    gear: I('<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>'),
     map: I('<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>'),
     star: I('<path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>'),
     games: I('<rect x="3" y="7" width="18" height="11" rx="4"/><path d="M7 12h4M9 10v4"/><circle cx="16" cy="11" r="1" fill="currentColor"/><circle cx="18" cy="13.5" r="1" fill="currentColor"/>'),
@@ -36,10 +38,21 @@ export const BAND_NAMES = { lambs: "Little Lambs · 3–5", lions: "Young Lions 
 /** The main Daily Grace site: the home page at the site's root. */
 export const DAILY_GRACE_URL = new URL("../../../", import.meta.url).href;
 
-/** "‹ Daily Grace · Kids" at the top of a screen, leading back to Daily Grace. */
+// The Daily Grace Kids logo: assets/images/daily-grace-kids-cartoon-banner.webp,
+// trimmed of its clear margin and made smaller.
+const LOGO_URL = new URL("../../../assets/images/kids/daily-grace-kids-logo.webp", import.meta.url).href;
+
+/**
+ * The top of the welcome and Who's exploring? screens: the Daily Grace Kids
+ * logo on the left and a home button on the right, both leading back to
+ * Daily Grace.
+ */
 export function brandLink() {
-    return `<a class="brand" href="${DAILY_GRACE_URL}" aria-label="Back to Daily Grace">
-      <span class="brand-back">${ICONS.back}</span><span class="brand-name">Daily Grace</span><span class="brand-pill">Kids</span></a>`;
+    return `<div class="top-row">
+      <a class="kids-logo" href="${DAILY_GRACE_URL}" aria-label="Daily Grace Kids: back to Daily Grace">
+        <img src="${LOGO_URL}" alt="" width="720" height="145" /></a>
+      <a class="home-btn" href="${DAILY_GRACE_URL}" aria-label="Back to Daily Grace" title="Back to Daily Grace">${ICONS.home}</a>
+    </div>`;
 }
 
 /** The config every game component takes (kids-common.js), plus its own keys. */

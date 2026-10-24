@@ -225,28 +225,37 @@ test("removing a child asks first, then deletes everything kept for them", async
     await expect(page.locator(".child-card[data-child]")).toHaveCount(1);
 });
 
-test("the way back to Daily Grace: the name at the top, and a button in the Corner", async ({ page }) => {
+test("the way back to Daily Grace: the logo and the home button at the top, and a button in the Corner", async ({ page }) => {
     await page.addInitScript(() => localStorage.setItem("dailygrace:avatar", "AV-01"));
-    const back = page.locator('a.brand[aria-label="Back to Daily Grace"]');
+    const logo = page.locator("a.kids-logo");
+    const home = page.locator('a.home-btn[aria-label="Back to Daily Grace"]');
     // On the welcome, before any child is set up.
     await seed(page, {});
     await go(page, "/");
     await expect(page.locator(".screen.welcome")).toBeVisible();
-    await expect(back).toHaveAttribute("href", "http://localhost:4173/");
-    // On Who's exploring?, big enough to tap.
+    await expect(logo).toHaveAttribute("href", "http://localhost:4173/");
+    await expect(home).toHaveAttribute("href", "http://localhost:4173/");
+    await expect(logo.locator("img")).toHaveJSProperty("complete", true);
+    expect(await logo.locator("img").evaluate((i) => i.naturalWidth)).toBe(720);
+    // On Who's exploring?, both big enough to tap.
     await page.evaluate((c) => localStorage.setItem("dailygrace:kids:profiles", JSON.stringify({ children: [c], current: c.id })), ANNA);
     await page.reload();
     await expect(page.locator(".screen.who")).toBeVisible();
-    expect((await back.boundingBox()).height).toBeGreaterThanOrEqual(44);
+    for (const link of [logo, home]) {
+        const box = await link.boundingBox();
+        expect(Math.min(box.width, box.height)).toBeGreaterThanOrEqual(44);
+    }
     // In the Grown-ups' Corner.
     await go(page, "/corner");
     await passGate(page);
     await expect(page.locator(".back-to-dg")).toHaveAttribute("href", "http://localhost:4173/");
-    // And it lands on the Daily Grace home page.
-    await go(page, "/");
-    await back.click();
-    await expect(page).toHaveURL("http://localhost:4173/");
-    await expect(page.locator("#daily-devotional")).toBeVisible();
+    // Each lands on the Daily Grace home page.
+    for (const link of [home, logo]) {
+        await go(page, "/");
+        await link.click();
+        await expect(page).toHaveURL("http://localhost:4173/");
+        await expect(page.locator("#daily-devotional")).toBeVisible();
+    }
 });
 
 test("Who's exploring? switches between children, each with their own tree", async ({ page }) => {
@@ -261,8 +270,13 @@ test("Who's exploring? switches between children, each with their own tree", asy
     await page.locator(`[data-child="${BEN.id}"]`).click();
     await expect(page.locator(".home h1")).toHaveText("Hi, Ben!");
     await expect(page.locator(".tally .c-leaf")).toHaveText("1");
-    await page.locator("[data-who]").click();
+    // The back arrow at the top left leads back to Who's exploring?
+    await page.locator('.home [aria-label="Back to Who\'s exploring?"]').click();
+    await expect(page.locator(".screen.who")).toBeVisible();
     await page.locator(`[data-child="${ANNA.id}"]`).click();
     await expect(page.locator(".home h1")).toHaveText("Hi, Anna!");
     await expect(page.locator(".tally .c-leaf")).toHaveText("0");
+    // So does the explorer's picture.
+    await page.locator(".home .avatar-btn").click();
+    await expect(page.locator(".screen.who")).toBeVisible();
 });

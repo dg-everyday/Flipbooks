@@ -19,7 +19,10 @@
  *   <script type="module" src="./apps/components/kids-card.js"></script>
  *
  * Attributes
- *   href   the kids page, resolved against the page. Default: apps/pages/kids.html
+ *   href      the kids page, resolved against the page. Default: apps/pages/kids.html
+ *   heading   a title above the card, beside a compass, set like the heading
+ *             of the story rows (daily-grace-kids.html: "Explorer"). Default:
+ *             none, as on the home page.
  */
 
 const asset = (path) => new URL(path, import.meta.url).href;
@@ -28,6 +31,13 @@ const VIDEO_URL = asset("../../assets/images/daily-grace-kids-banner.mp4");
 const POSTER_URL = asset("../../assets/images/daily-grace-kids-banner.webp");
 const DEFAULT_HREF = "apps/pages/kids.html";
 
+// A compass rose in a ring, filled like the heading text.
+const COMPASS = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+  <path fill-rule="evenodd" d="M12 1a11 11 0 1 1 0 22 11 11 0 0 1 0-22Zm0 1.6a9.4 9.4 0 1 0 0 18.8 9.4 9.4 0 0 0 0-18.8Z"/>
+  <path d="m12 4.2 1.9 5.9 5.9 1.9-5.9 1.9-1.9 5.9-1.9-5.9L4.2 12l5.9-1.9L12 4.2Zm-4.3 3.5 3 1.6-1.4 1.4-1.6-3Zm8.6 0-1.6 3-1.4-1.4 3-1.6Zm0 8.6-3-1.6 1.4-1.4 1.6 3Zm-8.6 0 1.6-3 1.4 1.4-3 1.6Z"/>
+  <circle cx="12" cy="12" r="1.3" fill="#fff"/>
+</svg>`;
+
 const ARROW = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>`;
 
 const STYLES = /* css */ `
@@ -35,6 +45,17 @@ const STYLES = /* css */ `
   :host { display: block; padding-inline: 10px; }
   :host([hidden]) { display: none; }
   * { box-sizing: border-box; }
+  /* Same type as the heading of the story rows (story-carousel.js). */
+  .heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    color: #111;
+    font: 400 clamp(1.0625rem, .95rem + .5vw, 1.25rem)/1.3 'Strait', 'Roboto', Arial, sans-serif;
+  }
+  .heading[hidden] { display: none; }
+  .heading svg { flex: none; width: 1.3em; height: 1.3em; }
   .card {
     display: flex;
     flex-direction: column;
@@ -121,7 +142,7 @@ const STYLES = /* css */ `
 `;
 
 export class KidsCard extends HTMLElement {
-    static observedAttributes = ["href"];
+    static observedAttributes = ["href", "heading"];
 
     #root;
     #video = null;
@@ -132,6 +153,7 @@ export class KidsCard extends HTMLElement {
         this.#root = this.attachShadow({ mode: "open" });
         this.#root.innerHTML = `
           <style>${STYLES}</style>
+          <h2 class="heading" hidden>${COMPASS}<span></span></h2>
           <a class="card" aria-label="Daily Grace Kids: Bible stories, games and verses for children">
             <span class="banner">
               <img src="${POSTER_URL}" alt="" width="1920" height="1024" loading="lazy" decoding="async" />
@@ -142,6 +164,7 @@ export class KidsCard extends HTMLElement {
 
     connectedCallback() {
         this.#setHref();
+        this.#setHeading();
         if (!this.#mayPlay()) {
             return;
         }
@@ -165,8 +188,19 @@ export class KidsCard extends HTMLElement {
         this.#video?.pause();
     }
 
-    attributeChangedCallback() {
-        this.#setHref();
+    attributeChangedCallback(name) {
+        if (name === "heading") {
+            this.#setHeading();
+        } else {
+            this.#setHref();
+        }
+    }
+
+    #setHeading() {
+        const text = this.getAttribute("heading") || "";
+        const heading = this.#root.querySelector(".heading");
+        heading.querySelector("span").textContent = text;
+        heading.hidden = !text;
     }
 
     #setHref() {

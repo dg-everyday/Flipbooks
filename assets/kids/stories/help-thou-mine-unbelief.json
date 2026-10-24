@@ -1,0 +1,66 @@
+{
+  "title": "Help Me Believe!",
+  "aspect": "9/16",
+  "pages": [
+    {
+      "id": "id-00",
+      "image": "media:kids/stories/help-thou-mine-unbelief/00.webp",
+      "caption": "Help Me Believe! A father asks Jesus for help."
+    },
+    {
+      "id": "id-01",
+      "image": "media:kids/stories/help-thou-mine-unbelief/01.webp",
+      "caption": "Up the mountain."
+    },
+    {
+      "id": "id-02",
+      "image": "media:kids/stories/help-thou-mine-unbelief/02.webp",
+      "caption": "Two men appear."
+    },
+    {
+      "id": "id-03",
+      "image": "media:kids/stories/help-thou-mine-unbelief/03.webp",
+      "caption": "Listen to him!."
+    },
+    {
+      "id": "id-04",
+      "image": "media:kids/stories/help-thou-mine-unbelief/04.webp",
+      "caption": "On the way down."
+    },
+    {
+      "id": "id-05",
+      "image": "media:kids/stories/help-thou-mine-unbelief/05.webp",
+      "caption": "A father asks for help."
+    },
+    {
+      "id": "id-06",
+      "image": "media:kids/stories/help-thou-mine-unbelief/06.webp",
+      "caption": "Bring him to me."
+    },
+    {
+      "id": "id-07",
+      "image": "media:kids/stories/help-thou-mine-unbelief/07.webp",
+      "caption": "If you can believe."
+    },
+    {
+      "id": "id-08",
+      "image": "media:kids/stories/help-thou-mine-unbelief/08.webp",
+      "caption": "Help me believe!."
+    },
+    {
+      "id": "id-09",
+      "image": "media:kids/stories/help-thou-mine-unbelief/09.webp",
+      "caption": "Jesus gives the command."
+    },
+    {
+      "id": "id-10",
+      "image": "media:kids/stories/help-thou-mine-unbelief/10.webp",
+      "caption": "Jesus lifts him up."
+    },
+    {
+      "id": "id-11",
+      "image": "media:kids/stories/help-thou-mine-unbelief/11.webp",
+      "caption": "A quiet question."
+    }
+  ]
+}

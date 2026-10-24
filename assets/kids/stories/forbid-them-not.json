@@ -1,0 +1,51 @@
+{
+    "title": "Let the Children Come",
+    "aspect": "9/16",
+    "pages": [
+        {
+            "id": "id-00",
+            "image": "media:kids/stories/forbid-them-not/00.webp",
+            "caption": "Jesus welcomes the little children, holds them, and blesses them."
+        },
+        {
+            "id": "id-01",
+            "image": "media:kids/stories/forbid-them-not/01.webp",
+            "caption": "People bring young children to Jesus so that he will place his hands on them."
+        },
+        {
+            "id": "id-02",
+            "image": "media:kids/stories/forbid-them-not/02.webp",
+            "caption": "Jesus' followers scold the people and stop the children from coming."
+        },
+        {
+            "id": "id-03",
+            "image": "media:kids/stories/forbid-them-not/03.webp",
+            "caption": "Jesus sees what is happening and is very upset with his followers."
+        },
+        {
+            "id": "id-04",
+            "image": "media:kids/stories/forbid-them-not/04.webp",
+            "caption": "Jesus tells his followers to let the little children come and not stop them."
+        },
+        {
+            "id": "id-05",
+            "image": "media:kids/stories/forbid-them-not/05.webp",
+            "caption": "Jesus says God's kingdom belongs to people like these children."
+        },
+        {
+            "id": "id-06",
+            "image": "media:kids/stories/forbid-them-not/06.webp",
+            "caption": "Jesus says anyone who does not receive God's kingdom like a little child will not enter it."
+        },
+        {
+            "id": "id-07",
+            "image": "media:kids/stories/forbid-them-not/07.webp",
+            "caption": "Jesus takes the children in his arms and places his hands on them."
+        },
+        {
+            "id": "id-08",
+            "image": "media:kids/stories/forbid-them-not/08.webp",
+            "caption": "Jesus holds the children, places his hands on them, and blesses them."
+        }
+    ]
+}

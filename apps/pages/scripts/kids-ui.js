@@ -50,20 +50,23 @@ export const BAND_NAMES = { lambs: "Little Lambs · 3–5", lions: "Young Lions 
 /** The main Daily Grace site: the home page at the site's root. */
 export const DAILY_GRACE_URL = new URL("../../../", import.meta.url).href;
 
+/** The Daily Grace Kids page: the kids app's card and the Kids Stories. */
+export const KIDS_MAIN_URL = new URL("../daily-grace-kids.html", import.meta.url).href;
+
 // The Daily Grace Kids logo: assets/images/daily-grace-kids-cartoon-banner.webp,
 // trimmed of its clear margin and made smaller.
 const LOGO_URL = new URL("../../../assets/images/kids/daily-grace-kids-logo.webp", import.meta.url).href;
 
 /**
  * The top of the welcome and Who's exploring? screens: the Daily Grace Kids
- * logo on the left and a home button on the right, both leading back to
- * Daily Grace.
+ * logo on the left and a home button on the right, both leading back to the
+ * Daily Grace Kids page (whose own home button goes on to Daily Grace).
  */
 export function brandLink() {
     return `<div class="top-row">
-      <a class="kids-logo" href="${DAILY_GRACE_URL}" aria-label="Daily Grace Kids: back to Daily Grace">
+      <a class="kids-logo" href="${KIDS_MAIN_URL}" aria-label="Daily Grace Kids: back to the Daily Grace Kids page">
         <img src="${LOGO_URL}" alt="" width="720" height="145" /></a>
-      <a class="home-btn" href="${DAILY_GRACE_URL}" aria-label="Back to Daily Grace" title="Back to Daily Grace">${ICONS.home}</a>
+      <a class="home-btn" href="${KIDS_MAIN_URL}" aria-label="Back to Daily Grace Kids" title="Back to Daily Grace Kids">${ICONS.home}</a>
     </div>`;
 }
 

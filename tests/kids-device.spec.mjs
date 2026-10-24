@@ -66,6 +66,8 @@ test.describe("on every screen", () => {
         await page.waitForLoadState("load");
         const card = page.locator("kids-card");
         await expect(card.locator("img")).toHaveAttribute("src", /daily-grace-kids-banner\.webp$/);
+        // Only the Daily Grace Kids page gives the card a title.
+        await expect(card.locator(".heading")).toBeHidden();
         await card.scrollIntoViewIfNeeded();
         const video = card.locator("video");
         await expect(video).toHaveAttribute("src", /daily-grace-kids-banner\.mp4$/);
@@ -129,7 +131,7 @@ test("the menu offers Daily Grace Kids", async ({ page }) => {
     });
     await page.goto("/");
     await page.locator("#menu-open").click();
-    const item = page.locator('study-guide-menu a.menu-item[href$="apps/pages/kids.html"]');
+    const item = page.locator('study-guide-menu a.menu-item[href$="apps/pages/daily-grace-kids.html"]');
     // Nari's icon and, level with it, the Daily Grace Kids logo alone.
     const icon = item.locator("img.menu-icon");
     const logo = item.locator("img.menu-logo");

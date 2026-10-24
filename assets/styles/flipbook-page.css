@@ -67,8 +67,14 @@ body {
     width: auto;
     height: 44px;
 }
+.brand-logo-kids {
+    /* The Daily Grace Kids logo (a kids story) is wider: a little shorter. */
+    height: 36px;
+}
+/* A long title wraps rather than run under the buttons on the right. */
 .brand-pill {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    min-width: 0;
     padding: 4px 12px;
     border-radius: 999px;
     background: #d9a020;
@@ -139,6 +145,9 @@ flip-book {
     .brand-logo {
         height: 38px;
     }
+    .brand-logo-kids {
+        height: 32px;
+    }
     button {
         min-width: 35px;
         height: 34px;
@@ -148,6 +157,9 @@ flip-book {
 @media (max-width: 600px) {
     .brand-logo {
         height: 32px;
+    }
+    .brand-logo-kids {
+        height: 26px;
     }
     .brand-pill {
         padding: 3px 10px;

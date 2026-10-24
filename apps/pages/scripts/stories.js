@@ -2,6 +2,7 @@
  * Loads one story for stories.html.
  *
  *   stories.html?story=daniel3  ->  assets/stories/daniel3.json
+ *   stories.html?set=kids&story=daniel3  ->  assets/kids/stories/daniel3.json
  *
  * A manifest is either a bare array of entries, or an object carrying a title
  * and an optional aspect ratio alongside its pages:
@@ -17,7 +18,12 @@
 
 import { resolveMedia } from "../../settings/settings.js?v=20261009-1";
 
-const STORY_DIR = "assets/stories/";
+// The sets of stories, by their ?set= name: the children's retellings
+// (Daily Grace Kids) sit apart from the stories for everyone.
+const STORY_DIRS = {
+    "": "assets/stories/",
+    kids: "assets/kids/stories/",
+};
 
 // The slug becomes part of a fetched path, so it is checked against a strict
 // allowlist rather than escaped: anything carrying a slash, dot or colon is
@@ -36,6 +42,12 @@ export function storySlug(search = window.location.search) {
         return { slug: null, reason: "invalid" };
     }
     return { slug: raw, reason: null };
+}
+
+/** The ?set= of stories asked for: "kids", or "" for the stories for everyone. */
+export function storySet(search = window.location.search) {
+    const set = new URLSearchParams(search).get("set") || "";
+    return Object.hasOwn(STORY_DIRS, set) ? set : "";
 }
 
 // stories.html sits at apps/pages/, so the site root is two levels up. Keeping
@@ -63,8 +75,8 @@ function normalizeStory(data) {
 /**
  * @throws when the manifest is missing or unreadable; the caller reports it.
  */
-export async function loadStory(slug) {
-    const url = new URL(`${STORY_DIR}${slug}.json`, siteRoot());
+export async function loadStory(slug, set = "") {
+    const url = new URL(`${STORY_DIRS[set]}${slug}.json`, siteRoot());
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);

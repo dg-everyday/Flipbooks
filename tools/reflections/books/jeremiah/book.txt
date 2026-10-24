@@ -1,0 +1,8 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Jeremiah
+1-10 | The Call and the Broken Cisterns
+11-20 | The Broken Covenant and the Weeping Prophet
+21-29 | Kings, False Prophets and Seventy Years
+30-33 | The Book of Comfort and the New Covenant
+34-45 | The Fall of Jerusalem
+46-52 | Words to the Nations and the Fall of Babylon

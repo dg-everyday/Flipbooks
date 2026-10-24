@@ -51,7 +51,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/flipbook-page.css?v=20260923-3"
+            href="../../assets/styles/flipbook-page.css?v=20261024-1"
         />
     </head>
     <body>
@@ -85,6 +85,26 @@
                     </button>
                 </div>
             </div>
+            <script>
+                // A Daily Grace Kids story (?set=kids) wears the kids logo, with
+                // no title pill (its comic cover already carries the title), and
+                // its home button goes back to the Daily Grace Kids page it was
+                // opened from. Done here, before the page is first drawn, so the
+                // Daily Grace logo never shows for a moment first.
+                if (new URLSearchParams(location.search).get("set") === "kids") {
+                    document.getElementById("storyName").hidden = true;
+                    const logo = document.querySelector(".brand-logo");
+                    logo.src = "../../assets/images/kids/daily-grace-kids-logo.webp";
+                    logo.alt = "Daily Grace Kids";
+                    logo.width = 720;
+                    logo.height = 145;
+                    logo.classList.add("brand-logo-kids");
+                    const home = document.getElementById("home");
+                    home.dataset.href = "daily-grace-kids.html";
+                    home.setAttribute("aria-label", "Back to Daily Grace Kids");
+                    home.title = "Back to Daily Grace Kids";
+                }
+            </script>
 
             <flip-book
                 id="reader"
@@ -98,13 +118,15 @@
         <script type="module">
             // Same component as the flipbook, different content entirely. Which
             // story to show comes from the query string: ?story=daniel3 reads
-            // assets/stories/daniel3.json.
+            // assets/stories/daniel3.json, and ?set=kids&story=daniel3 reads the
+            // children's retelling, assets/kids/stories/daniel3.json.
             import "../../apps/components/flip-book.js?v=20261017-1";
             import {
                 storySlug,
+                storySet,
                 loadStory,
                 toFlipPages,
-            } from "./scripts/stories.js?v=20261009-1";
+            } from "./scripts/stories.js?v=20261024-1";
             import { recordStory } from "../../assets/scripts/sticker-progress.js?v=20261018-1";
             // A sticker earned here is shown as a gift on this page.
             import "../../apps/components/sticker-gifts.js?v=20261023-1";
@@ -119,6 +141,7 @@
             }
 
             const { slug, reason } = storySlug();
+            const set = storySet();
 
             if (reason === "missing") {
                 showNothing("No story chosen. Try stories.html?story=daniel3");
@@ -126,7 +149,7 @@
                 showNothing("That story name is not a valid one.");
             } else {
                 try {
-                    const story = await loadStory(slug);
+                    const story = await loadStory(slug, set);
 
                     if (story.title) {
                         document.title = `Daily Grace — ${story.title}`;
@@ -151,8 +174,9 @@
             }
         </script>
         <script>
-            document.getElementById("home").addEventListener("click", () => {
-                window.location.href = "../../index.html";
+            const home = document.getElementById("home");
+            home.addEventListener("click", () => {
+                window.location.href = home.dataset.href || "../../index.html";
             });
         </script>
     </body>

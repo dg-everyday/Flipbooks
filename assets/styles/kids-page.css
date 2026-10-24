@@ -335,33 +335,66 @@ h2 {
     height: 100%;
     object-fit: cover;
 }
-.brand {
+/* The top of the welcome and Who's exploring? screens: the Daily Grace Kids
+   logo and a home button, both the way back to Daily Grace. */
+.top-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 12px;
 }
-/* The name at the top of the welcome and Who's exploring? screens is also the
-   way back to Daily Grace. */
-a.brand {
-    align-self: flex-start;
-    min-height: 44px;
-    padding: 4px 14px 4px 6px;
-    margin-left: -6px;
-    border-radius: 999px;
-    color: var(--kids-green);
-    text-decoration: none;
-}
-a.brand:hover {
-    background: rgb(255 255 255 / 60%);
-}
-a.brand:focus-visible {
-    outline: 3px solid var(--kids-green);
-    outline-offset: 2px;
-}
-.brand-back svg {
+.kids-logo {
     display: block;
-    width: 24px;
-    height: 24px;
+    flex: 0 1 auto;
+    min-width: 0;
+    border-radius: 14px;
+    transition: transform .15s ease;
+}
+.kids-logo img {
+    display: block;
+    width: min(260px, 100%);
+    height: auto;
+    filter: drop-shadow(0 3px 4px rgb(0 27 52 / 22%));
+}
+.kids-logo:hover {
+    transform: scale(1.03);
+}
+.home-btn {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    /* Just the house, in the logo's navy (gold alone would fade into the
+       pale sky). */
+    color: #102a4c;
+    transition: transform .15s ease;
+}
+.home-btn svg {
+    width: 36px;
+    height: 36px;
+}
+.home-btn:hover {
+    transform: translateY(-1px);
+}
+.kids-logo:focus-visible,
+.home-btn:focus-visible {
+    outline: 3px solid var(--kids-green);
+    outline-offset: 3px;
+}
+/* Grown-ups' Corner on Who's exploring?: black on sunny yellow, in the
+   rounded display font. */
+.pill-btn.corner-btn {
+    background: #ffd23f;
+    color: #141414;
+    font: 800 calc(1.15rem * var(--kids-scale)) / 1 var(--kids-display);
+    letter-spacing: .01em;
+    box-shadow: 0 4px 0 #c99a10;
+}
+.pill-btn.corner-btn svg {
+    width: 22px;
+    height: 22px;
 }
 .back-to-dg {
     display: flex;
@@ -379,17 +412,6 @@ a.brand:focus-visible {
 .back-to-dg svg {
     width: 22px;
     height: 22px;
-}
-.brand-name {
-    font: 800 1.4rem var(--kids-display);
-    color: var(--kids-green);
-}
-.brand-pill {
-    font: 800 0.95rem var(--kids-display);
-    background: var(--kids-green);
-    color: #fff;
-    padding: 2px 12px;
-    border-radius: 999px;
 }
 
 .panel {
@@ -416,10 +438,11 @@ a.brand:focus-visible {
     background: var(--bg) center / cover no-repeat;
     border-radius: 0 0 28px 28px;
 }
-.welcome .brand {
+.welcome .top-row {
     position: absolute;
     top: max(20px, env(safe-area-inset-top));
     left: 18px;
+    right: 18px;
 }
 .welcome-nari {
     width: min(58vw, 340px);

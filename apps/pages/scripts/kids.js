@@ -24,9 +24,9 @@ import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
 import { createAudio } from "../../../assets/scripts/kids/audio.js?v=20261024-2";
 import {
     BAND_NAMES, ICONS, brandLink, earnedFor, escapeHtml, gameConfig, gate, groupName, nariSrc, toast, treeHtml,
-} from "./kids-ui.js?v=20261024-2";
-import { renderStop, renderReward } from "./kids-stop.js?v=20261024-3";
-import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261024-2";
+} from "./kids-ui.js?v=20261024-4";
+import { renderStop, renderReward } from "./kids-stop.js?v=20261024-5";
+import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261024-4";
 import "../../components/kids/kids-pairs.js?v=20261024-2";
 import "../../components/kids/kids-colour.js?v=20261024-2";
 
@@ -399,7 +399,7 @@ function whoView(app) {
           }).join("")}
           ${p.children.length < store.MAX_CHILDREN ? `<button class="child-card add" type="button" data-add>${ICONS.plus}<span>Add a child</span></button>` : ""}
         </div>
-        <button class="pill-btn" type="button" data-corner>${ICONS.lock} Grown-ups' Corner</button>
+        <button class="pill-btn corner-btn" type="button" data-corner>${ICONS.gear} Grown-ups' Corner</button>
         <p class="small footnote">Best enjoyed together · Everything stays on this device</p>
       </section>`;
     app.root.querySelector(".children").addEventListener("click", (event) => {
@@ -430,12 +430,13 @@ function homeView(app) {
     app.root.innerHTML = `
       <section class="screen home">
         <header class="bar">
+          <button class="round-btn" type="button" data-who aria-label="Back to Who's exploring?">${ICONS.back}</button>
           <button class="avatar-btn" type="button" data-who aria-label="Switch explorer"><img src="${escapeHtml(app.avatarThumb(child.avatar))}" alt="" /></button>
           <div class="bar-text">
             <h1 class="title small-title">Hi, ${escapeHtml(child.name)}!</h1>
             <span class="sub">Nari is happy to see you.</span>
           </div>
-          <button class="round-btn" type="button" data-corner aria-label="Grown-ups' Corner">${ICONS.lock}</button>
+          <button class="round-btn" type="button" data-corner aria-label="Grown-ups' Corner: settings">${ICONS.gear}</button>
         </header>
         <div class="panel tree-panel">
           <div class="panel-head"><h2>My Growing Tree</h2></div>
@@ -471,7 +472,10 @@ function homeView(app) {
         </nav>
       </section>`;
     const root = app.root;
-    root.querySelector("[data-who]").addEventListener("click", () => app.go("#/"));
+    // The back arrow and the explorer's picture both lead to Who's exploring?
+    for (const b of root.querySelectorAll("[data-who]")) {
+        b.addEventListener("click", () => app.go("#/"));
+    }
     root.querySelector("[data-corner]").addEventListener("click", () => app.grownUp(() => app.go("#/corner"), "Grown-ups' Corner"));
     root.querySelector("[data-tree]").addEventListener("click", () => {
         app.react("cheer");

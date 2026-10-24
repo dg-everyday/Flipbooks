@@ -10,7 +10,7 @@
 
 import * as store from "../../../assets/scripts/kids/store.js?v=20261024-2";
 import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
-import { BAND_NAMES, DAILY_GRACE_URL, ICONS, ask, escapeHtml, toast } from "./kids-ui.js?v=20261024-2";
+import { BAND_NAMES, DAILY_GRACE_URL, ICONS, ask, escapeHtml, toast } from "./kids-ui.js?v=20261024-4";
 
 const TIME_LABELS = { 0: "Off", 15: "15 minutes", 30: "30 minutes", 45: "45 minutes" };
 const TOGGLES = [

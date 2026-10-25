@@ -1,0 +1,100 @@
+[
+    {
+        "id": "young-explorers,",
+        "sequence": 0,
+        "cover_page": "media:kids/stories/young/00.webp",
+        "title": "Bible Stories for Young Explorers",
+        "description": "Compilation of Bible stories for young explorer 3-8 years old."
+    },
+    {
+        "id": "a-great-way-off",
+        "sequence": 1,
+        "cover_page": "media:kids/stories/young/a-great-way-off-01.webp",
+        "title": "The Father Who Ran",
+        "description": "A son goes far from home. His loving father runs to welcome him back."
+    },
+    {
+        "id": "all-things-new",
+        "sequence": 2,
+        "cover_page": "media:kids/stories/young/all-things-new-01.webp",
+        "title": "When God Makes Everything New",
+        "description": "John sees God's wonderful promise: a new heaven and earth, with no more tears or pain.",
+    },
+    {
+        "id": "and-ruth-with-her",
+        "sequence": 3,
+        "cover_page": "media:kids/stories/young/and-ruth-with-her-01.webp",
+        "title": "Where You Go, I Will Go",
+        "description": "Ruth stays with Naomi, gathers grain, and receives kindness from Boaz."
+    },
+    {
+        "id": "forbid-them-not",
+        "sequence": 4,
+        "cover_page": "media:kids/stories/young/forbid-them-not-01.webp",
+        "title": "Let the Children Come",
+        "description": "Jesus welcomes the little children, holds them in his arms, and blesses them."
+    },
+    {
+        "id": "the-fourth-man-in-the-fire",
+        "sequence": 5,
+        "cover_page": "media:kids/stories/young/the-fourth-man-in-the-fire-01.webp",
+        "title": "The Fourth Man in the Fire",
+        "description": "Three men trust God. The king sees four men walking safely in the fire!"
+    },
+    {
+        "id": "where-art-thou",
+        "sequence": 6,
+        "cover_page": "media:kids/stories/young/where-art-thou-01.webp",
+        "title": "Hiding in the Garden",
+        "description": "Adam and Eve eat the fruit God told them not to eat, then hide in the garden."
+    },
+    {
+        "id": "for-his-oaths-sake",
+        "sequence": 7,
+        "cover_page": "media:kids/stories/young/for-his-oaths-sake-01.webp",
+        "title": "The King Who Kept the Wrong Promise",
+        "description": "Herod makes a wrong promise. John speaks the truth, and his followers care for him after his death."
+    },
+    {
+        "id": "help-thou-mine-unbelief",
+        "sequence": 8,
+        "cover_page": "media:kids/stories/young/help-thou-mine-unbelief-01.webp",
+        "title": "Help Me Believe!",
+        "description": "Three disciples see Jesus on a mountain. A father asks for help, and Jesus lifts his boy by the hand."
+    },
+    {
+        "id": "how-much-more",
+        "sequence": 9,
+        "cover_page": "media:kids/stories/young/how-much-more-01.webp",
+        "title": "Teach Us to Pray",
+        "description": "Jesus teaches his disciples to pray and tells them about a friend asking for bread and a father giving good gifts."
+    },
+    {
+        "id": "into-his-hand",
+        "sequence": 10,
+        "cover_page": "media:kids/stories/young/into-his-hand-01.webp",
+        "title": "Trusted, Framed, and Trusted Again",
+        "description": "Joseph chooses to do right. Even when he is unfairly put in prison, God is with him."
+    },
+    {
+        "id": "one-thing-thou-lackest",
+        "sequence": 11,
+        "cover_page": "media:kids/stories/young/one-thing-thou-lackest-01.webp",
+        "title": "The Rich Man Who Walked Away",
+        "description": "A rich man asks Jesus about eternal life. Jesus loves him and invites him to follow."
+    },
+    {
+        "id": "too-many-for-me",
+        "sequence": 12,
+        "cover_page": "media:kids/stories/young/too-many-for-me-01.webp",
+        "title": "Gideon and the Army That Was Too Big",
+        "description": "God helps Gideon and three hundred men face a great army with trumpets, jars, and lights."
+    },
+    {
+        "id": "while-he-lingered",
+        "sequence": 13,
+        "cover_page": "media:kids/stories/young/while-he-lingered-01.webp",
+        "title": "Pulled Out of Sodom",
+        "description": "Two messengers lead Lot and his family out of Sodom. The Lord shows Lot mercy."
+    }
+]

@@ -353,7 +353,7 @@ export function explorerGameCards(app) {
     const pinned = Object.keys(record.quest).length;
     return `
       <button class="panel game-card" type="button" data-play="#/games/map-quest">
-        <span class="game-icon">${ICONS.compass}</span>
+        <img class="map-thumb" src="${escapeHtml(app.resolve(app.xdata.mapQuest.image))}" alt="" />
         <span><b>Map Quest</b><span>Put the Bible's places on the map · ${pinned} of ${app.xdata.mapQuest.places.length} pinned</span></span>
       </button>
       <button class="panel game-card" type="button" data-play="#/games/book-train">

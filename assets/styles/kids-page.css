@@ -2324,11 +2324,23 @@ h2 {
     background: #e3efe2;
     color: #2a5b33;
 }
+/* A white pill, so it reads on any part of the journal picture behind it. */
 .tree-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     align-self: center;
+    min-height: 48px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--kids-navy);
+    text-decoration: none;
+    box-shadow: 0 4px 0 var(--kids-shadow), 0 2px 10px rgb(0 0 0 / 12%);
+}
+.tree-link:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--kids-shadow);
 }
 .tree-link svg {
     width: 20px;
@@ -2605,19 +2617,10 @@ h2 {
 .field-card .label {
     margin-top: 4px;
 }
-.game-icon {
-    display: grid;
-    place-items: center;
+/* Map Quest's card: the middle of the map, where the Jordan runs. */
+.game-card > img.map-thumb {
     flex: none;
-    width: 80px;
-    height: 80px;
-    border-radius: 16px;
-    background: #e8eef6;
-    color: var(--kids-navy);
-}
-.game-icon svg {
-    width: 44px;
-    height: 44px;
+    object-position: 50% 35%;
 }
 .journal-shared .shared-answer {
     padding: 8px 0;

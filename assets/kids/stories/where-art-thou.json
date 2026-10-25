@@ -35,12 +35,28 @@
         {
             "id": "id-06",
             "image": "media:kids/stories/where-art-thou/06.webp",
-            "caption": "They hide among the trees, and God calls to Adam, asking where he is."
+            "caption": "They hide among the trees, and God calls to Adam, asking where he is.",
+            "kjv": [
+                {
+                    "who": "God",
+                    "ref": "Genesis 3:9",
+                    "text": "And the LORD God called unto Adam, and said unto him, Where art thou?",
+                    "quote": "Where art thou?"
+                }
+            ]
         },
         {
             "id": "id-07",
             "image": "media:kids/stories/where-art-thou/07.webp",
-            "caption": "Adam says he hid because he was afraid, then admits he ate the fruit."
+            "caption": "Adam says he hid because he was afraid, then admits he ate the fruit.",
+            "kjv": [
+                {
+                    "who": "God",
+                    "ref": "Genesis 3:11",
+                    "text": "And he said, Who told thee that thou wast naked? Hast thou eaten of the tree, whereof I commanded thee that thou shouldest not eat?",
+                    "quote": "Who told thee that thou wast naked? Hast thou eaten of the tree, whereof I commanded thee that thou shouldest not eat?"
+                }
+            ]
         },
         {
             "id": "id-08",
@@ -55,7 +71,15 @@
         {
             "id": "id-10",
             "image": "media:kids/stories/where-art-thou/10.webp",
-            "caption": "God tells the woman and Adam that life will bring pain, hard work, and death."
+            "caption": "God tells the woman and Adam that life will bring pain, hard work, and death.",
+            "kjv": [
+                {
+                    "who": "God",
+                    "ref": "Genesis 3:19",
+                    "text": "In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.",
+                    "quote": "for dust thou art, and unto dust shalt thou return."
+                }
+            ]
         },
         {
             "id": "id-11",

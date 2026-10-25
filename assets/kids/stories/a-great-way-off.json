@@ -10,7 +10,15 @@
         {
             "id": "id-01",
             "image": "media:kids/stories/a-great-way-off/01.webp",
-            "caption": "A father has two sons. The younger asks for his share, and the father divides what he owns."
+            "caption": "A father has two sons. The younger asks for his share, and the father divides what he owns.",
+            "kjv": [
+                {
+                    "who": "In Jesus’ story",
+                    "ref": "Luke 15:12",
+                    "text": "And the younger of them said to his father, Father, give me the portion of goods that falleth to me. And he divided unto them his living.",
+                    "quote": "Father, give me the portion of goods that falleth to me."
+                }
+            ]
         },
         {
             "id": "id-02",
@@ -25,7 +33,15 @@
         {
             "id": "id-04",
             "image": "media:kids/stories/a-great-way-off/04.webp",
-            "caption": "The son decides to go home and tell his father that he has done wrong."
+            "caption": "The son decides to go home and tell his father that he has done wrong.",
+            "kjv": [
+                {
+                    "who": "In Jesus’ story",
+                    "ref": "Luke 15:17-19",
+                    "text": "And when he came to himself, he said, How many hired servants of my father’s have bread enough and to spare, and I perish with hunger! I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee, And am no more worthy to be called thy son: make me as one of thy hired servants.",
+                    "quote": "I will arise and go to my father"
+                }
+            ]
         },
         {
             "id": "id-05",
@@ -40,17 +56,41 @@
         {
             "id": "id-07",
             "image": "media:kids/stories/a-great-way-off/07.webp",
-            "caption": "The son admits he has sinned. His father asks for the best robe, a ring, and shoes."
+            "caption": "The son admits he has sinned. His father asks for the best robe, a ring, and shoes.",
+            "kjv": [
+                {
+                    "who": "In Jesus’ story",
+                    "ref": "Luke 15:21-22",
+                    "text": "And the son said unto him, Father, I have sinned against heaven, and in thy sight, and am no more worthy to be called thy son. But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:",
+                    "quote": "Bring forth the best robe, and put it on him"
+                }
+            ]
         },
         {
             "id": "id-08",
             "image": "media:kids/stories/a-great-way-off/08.webp",
-            "caption": "The father welcomes his son with a special meal, and the celebration begins."
+            "caption": "The father welcomes his son with a special meal, and the celebration begins.",
+            "kjv": [
+                {
+                    "who": "In Jesus’ story",
+                    "ref": "Luke 15:23-24",
+                    "text": "And bring hither the fatted calf, and kill it; and let us eat, and be merry: For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry.",
+                    "quote": "For this my son was dead, and is alive again; he was lost, and is found."
+                }
+            ]
         },
         {
             "id": "id-09",
             "image": "media:kids/stories/a-great-way-off/09.webp",
-            "caption": "The older brother returns from the field and hears that his brother is home."
+            "caption": "The older brother returns from the field and hears that his brother is home.",
+            "kjv": [
+                {
+                    "who": "In Jesus’ story",
+                    "ref": "Luke 15:27",
+                    "text": "And he said unto him, Thy brother is come; and thy father hath killed the fatted calf, because he hath received him safe and sound.",
+                    "quote": "Thy brother is come"
+                }
+            ]
         },
         {
             "id": "id-10",
@@ -60,12 +100,28 @@
         {
             "id": "id-11",
             "image": "media:kids/stories/a-great-way-off/11.webp",
-            "caption": "The older son complains, and the father reminds him that everything he has is his."
+            "caption": "The older son complains, and the father reminds him that everything he has is his.",
+            "kjv": [
+                {
+                    "who": "In Jesus’ story",
+                    "ref": "Luke 15:29-31",
+                    "text": "And he answering said to his father, Lo, these many years do I serve thee, neither transgressed I at any time thy commandment: and yet thou never gavest me a kid, that I might make merry with my friends: But as soon as this thy son was come, which hath devoured thy living with harlots, thou hast killed for him the fatted calf. And he said unto him, Son, thou art ever with me, and all that I have is thine.",
+                    "quote": "Son, thou art ever with me, and all that I have is thine."
+                }
+            ]
         },
         {
             "id": "id-12",
             "image": "media:kids/stories/a-great-way-off/12.webp",
-            "caption": "The father says they should celebrate his brother's return. Jesus' story does not say whether the older brother goes inside."
+            "caption": "The father says they should celebrate his brother's return. Jesus' story does not say whether the older brother goes inside.",
+            "kjv": [
+                {
+                    "who": "In Jesus’ story",
+                    "ref": "Luke 15:32",
+                    "text": "It was meet that we should make merry, and be glad: for this thy brother was dead, and is alive again; and was lost, and is found.",
+                    "quote": "for this thy brother was dead, and is alive again; and was lost, and is found."
+                }
+            ]
         }
     ]
 }

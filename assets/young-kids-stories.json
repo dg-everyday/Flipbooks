@@ -1,6 +1,6 @@
 [
     {
-        "id": "young-explorers,",
+        "id": "young-explorers",
         "sequence": 0,
         "cover_page": "media:kids/stories/young/00.webp",
         "title": "Bible Stories for Young Explorers",
@@ -18,7 +18,7 @@
         "sequence": 2,
         "cover_page": "media:kids/stories/young/all-things-new-01.webp",
         "title": "When God Makes Everything New",
-        "description": "John sees God's wonderful promise: a new heaven and earth, with no more tears or pain.",
+        "description": "John sees God's wonderful promise: a new heaven and earth, with no more tears or pain."
     },
     {
         "id": "and-ruth-with-her",

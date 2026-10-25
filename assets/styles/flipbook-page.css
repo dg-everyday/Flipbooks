@@ -128,26 +128,11 @@ button:disabled {
     color: #f0c66c;
 }
 
-/* The KJV button and its card (apps/pages/scripts/story-kjv.js): on a page
-   where God, Jesus or an angel speaks, the same words in the King James
-   Bible. Gold, so it is easy to see beside the home button. */
-.kjv-btn {
-    height: 34px;
-    padding: 0 12px;
-    border: 0;
-    border-radius: 999px;
-    background: var(--gold);
-    color: #102b46;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-}
-.kjv-btn:hover {
-    background: #f0c66c;
-}
-.kjv-btn:focus-visible,
+/* The KJV card (apps/pages/scripts/story-kjv.js): on a page where God, Jesus
+   or an angel speaks, the same words in the King James Bible. It opens from
+   the page's own KJV pill, which <flip-book> draws. */
 .kjv-close:focus-visible {
-    outline: 3px solid #fff;
+    outline: 3px solid #10253b;
     outline-offset: 2px;
 }
 .kjv-dialog {

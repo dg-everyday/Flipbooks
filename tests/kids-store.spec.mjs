@@ -46,7 +46,7 @@ test("children: up to four, an empty name refused, the avatar and age checked", 
         } catch (e) {
             out.empty = e.message;
         }
-        const odd = store.addChild({ name: "<b>Bo</b>", band: "explorers", avatar: "../../x" });
+        const odd = store.addChild({ name: "<b>Bo</b>", band: "pirates", avatar: "../../x" });
         out.odd = { name: odd.name, band: odd.band, avatar: odd.avatar };
         store.addChild({ name: "Cy", band: "lambs", avatar: "KA-05" });
         store.addChild({ name: "Di", band: "lambs", avatar: "KA-06" });
@@ -147,7 +147,7 @@ test("damaged values read back as defaults, and bad entries are dropped", async 
         ["cgood04", "Di", "lambs", "KA-00"],
     ]);
     expect(result.profiles.current).toBeNull();
-    expect(result.settings).toEqual({ timeLimit: 0, narration: true, sound: true, readTogether: false, bigText: false, readingFont: false, lessMotion: false, mapInOrder: false });
+    expect(result.settings).toEqual({ timeLimit: 0, narration: true, sound: true, readTogether: false, bigText: false, readingFont: false, lessMotion: false, mapInOrder: false, harderStories: false });
     expect(Object.keys(result.progress.stops)).toEqual(["where-art-thou"]);
     expect(result.progress.stops["where-art-thou"]).toEqual({
         steps: { watch: false, find: true, play: false, verse: false, talk: false }, talkLater: false, finishedOn: null, times: 0,

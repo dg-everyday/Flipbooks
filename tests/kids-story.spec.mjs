@@ -394,7 +394,7 @@ test("Play's other games: each can be played, and Next waits for Story in Order"
         await expect(who.locator(".step")).toHaveText(`${round + 1} of ${story.whoSaid.length}`);
         const quote = (await who.locator(".quote p").textContent()).replace(/^“|”$/g, "");
         const index = story.whoSaid.findIndex((w) => w.quote === quote);
-        await who.locator(`[data-person="${index}"]`).click();
+        await who.locator(`[data-person="${story.whoSaid[index].id}"]`).click();
         await expect(who.locator(".feedback")).toContainText("said it");
     }
 

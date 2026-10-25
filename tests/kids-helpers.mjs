@@ -63,7 +63,7 @@ export const BEN = child("c0002bb", "Ben", "lambs", "KA-25");
  * a reload keeps whatever the page has saved since. `raw` writes strings as
  * they are (for damaged values); everything else is written as JSON.
  */
-export async function seed(page, { children, current, settings, progress, stickers, usage, raw } = {}) {
+export async function seed(page, { children, current, settings, progress, stickers, explorer, journal, usage, raw } = {}) {
     await page.addInitScript((s) => {
         if (sessionStorage.getItem("kids-test-seeded")) {
             return;
@@ -82,6 +82,12 @@ export async function seed(page, { children, current, settings, progress, sticke
         for (const [id, value] of Object.entries(s.stickers ?? {})) {
             put(`${id}:stickers`, value);
         }
+        for (const [id, value] of Object.entries(s.explorer ?? {})) {
+            put(`${id}:explorer`, value);
+        }
+        for (const [id, value] of Object.entries(s.journal ?? {})) {
+            put(`${id}:journal`, value);
+        }
         if (s.usage) {
             const d = new Date();
             const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -92,7 +98,7 @@ export async function seed(page, { children, current, settings, progress, sticke
         }
         // The landscape tip would sit over the foot of the screen.
         sessionStorage.setItem("dailygrace:kids:landscape-hint", "1");
-    }, { children, current, settings, progress, stickers, usage, raw });
+    }, { children, current, settings, progress, stickers, explorer, journal, usage, raw });
 }
 
 /** A story's record with the given steps done (and finished when all five are). */
@@ -112,6 +118,8 @@ export function readStore(page, childId) {
             settings: get("settings"),
             progress: id ? get(`${id}:progress`) : null,
             stickers: id ? get(`${id}:stickers`) : null,
+            explorer: id ? get(`${id}:explorer`) : null,
+            journal: id ? get(`${id}:journal`) : null,
             usage: get("usage"),
         };
     }, childId);

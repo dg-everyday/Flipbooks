@@ -13,16 +13,16 @@
  * Five paw prints at the top show the way.
  */
 
-import * as store from "../../../assets/scripts/kids/store.js?v=20261024-2";
-import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
-import { ICONS, earnedFor, escapeHtml, gameConfig, toast, treeHtml } from "./kids-ui.js?v=20261024-8";
+import * as store from "../../../assets/scripts/kids/store.js?v=20261025-1";
+import * as rules from "../../../assets/scripts/kids/rules.js?v=20261025-1";
+import { ICONS, earnedFor, escapeHtml, gameConfig, toast, treeHtml } from "./kids-ui.js?v=20261025-1";
 import "../../components/kids/kids-look-find.js?v=20261024-3";
-import "../../components/kids/kids-story-order.js?v=20261024-2";
+import "../../components/kids/kids-story-order.js?v=20261025-1";
 import "../../components/kids/kids-verse-builder.js?v=20261024-2";
-import "../../components/kids/kids-who-said.js?v=20261024-2";
+import "../../components/kids/kids-who-said.js?v=20261025-1";
 import "../../components/kids/kids-gather.js?v=20261024-2";
 import "../../components/kids/kids-colour.js?v=20261024-2";
-import "../../components/kids/kids-right-or-not.js?v=20261024-2";
+import "../../components/kids/kids-right-or-not.js?v=20261025-1";
 
 const STEP_NAMES = { watch: "Watch & Listen", find: "Look & Find", play: "Play", verse: "My Verse", talk: "Talk Together" };
 const GAME_NAMES = {
@@ -36,9 +36,9 @@ const GAME_LINES = { "who-said": "Hear a saying, then tap who said it", gather: 
  * page and in sessionStorage, so a reload of the reward screen still shows
  * it; it is forgotten once the child leaves the reward screen.
  */
-const freshKey = (child, story) => `${child.id}:${story.id}`;
+export const freshKey = (child, story) => `${child.id}:${story.id}`;
 
-function loadFresh(key) {
+export function loadFresh(key) {
     try {
         return JSON.parse(sessionStorage.getItem(`dailygrace:kids:fresh:${key}`));
     } catch {
@@ -46,7 +46,7 @@ function loadFresh(key) {
     }
 }
 
-function saveFresh(app, key) {
+export function saveFresh(app, key) {
     try {
         sessionStorage.setItem(`dailygrace:kids:fresh:${key}`, JSON.stringify(app.fresh[key]));
     } catch {
@@ -54,7 +54,7 @@ function saveFresh(app, key) {
     }
 }
 
-function forgetFresh(app, key) {
+export function forgetFresh(app, key) {
     delete app.fresh[key];
     try {
         sessionStorage.removeItem(`dailygrace:kids:fresh:${key}`);
@@ -64,16 +64,19 @@ function forgetFresh(app, key) {
 }
 
 /** The first step of the story not done yet (the first step again once finished). */
-function firstOpenStep(stop) {
+export function firstOpenStep(stop) {
     if (rules.isFinished(stop)) {
         return "watch";
     }
     return rules.STEPS.find((s) => !(stop?.steps?.[s] || (s === "talk" && stop?.talkLater))) ?? "watch";
 }
 
-function header(app, story, step) {
-    const progress = app.progress();
-    const stop = progress.stops[story.id];
+/**
+ * The top of a Story Stop: home, Nari with the story's name and step, the map,
+ * then the five paw prints. The Explorers' stop (kids-explore.js) passes its
+ * own step names and record.
+ */
+export function header(app, story, step, { names = STEP_NAMES, stop = app.progress().stops[story.id] } = {}) {
     const n = rules.STEPS.indexOf(step);
     return `
       <header class="bar stop-bar">
@@ -82,7 +85,7 @@ function header(app, story, step) {
           <img class="nari-head nari-react" data-rest="point" src="${escapeHtml(app.nari("point"))}" alt="" />
           <div class="bar-text center">
             <h1 class="title small-title">${escapeHtml(story.title)}</h1>
-            <span class="sub">Step ${n + 1} of 5 · ${STEP_NAMES[step]}</span>
+            <span class="sub">Step ${n + 1} of 5 · ${names[step]}</span>
           </div>
         </div>
         <button class="round-btn leave-btn" type="button" data-leave aria-label="Journey Map" title="Journey Map">${ICONS.mapPin}</button>
@@ -90,13 +93,13 @@ function header(app, story, step) {
       <ol class="paws" aria-label="Step ${n + 1} of 5">
         ${rules.STEPS.map((s, i) => {
             const done = stop?.steps?.[s] || (s === "talk" && stop?.talkLater);
-            return `<li class="paw${done ? " done" : ""}${i === n ? " here" : ""}" aria-label="${STEP_NAMES[s]}${done ? ", done" : ""}">${ICONS.paw}</li>`;
+            return `<li class="paw${done ? " done" : ""}${i === n ? " here" : ""}" aria-label="${names[s]}${done ? ", done" : ""}">${ICONS.paw}</li>`;
         }).join("")}
       </ol>
       ${app.settings().readTogether ? `<p class="read-together-bar"><img src="${escapeHtml(app.resolve(app.data.ui.readTogether))}" alt="" />Read Together is on: a grown-up reads, and the child taps the pictures.</p>` : ""}`;
 }
 
-function wireHeader(app) {
+export function wireHeader(app) {
     app.root.querySelector("[data-home]").addEventListener("click", () => app.go("#/home"));
     app.root.querySelector("[data-leave]").addEventListener("click", () => app.go("#/map"));
     hugLines(app.root.querySelectorAll(".stop-head .title, .stop-head .sub"));
@@ -132,11 +135,11 @@ function hugLines(elements) {
     document.fonts?.ready.then(fit);
 }
 
-function nextButton(label, hash) {
+export function nextButton(label, hash) {
     return `<div class="next-row"><button class="btn next-btn" type="button" data-next="${escapeHtml(hash)}">${escapeHtml(label)} ${ICONS.next}</button></div>`;
 }
 
-function wireNext(app) {
+export function wireNext(app) {
     for (const b of app.root.querySelectorAll("[data-next]")) {
         b.addEventListener("click", () => {
             app.sfx("paw");

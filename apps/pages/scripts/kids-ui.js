@@ -4,7 +4,7 @@
  * grown-up gate. Used by kids.js, kids-stop.js and kids-corner.js.
  */
 
-import { piecesFor, treeStage } from "../../../assets/scripts/kids/rules.js?v=20261024-2";
+import { piecesFor, treeStage } from "../../../assets/scripts/kids/rules.js?v=20261025-1";
 
 export const escapeHtml = (text) =>
     String(text ?? "").replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -43,9 +43,19 @@ export const ICONS = {
     paw: '<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><ellipse cx="12" cy="16" rx="5.5" ry="4.5"/><circle cx="5.5" cy="10" r="2.3"/><circle cx="9.5" cy="6" r="2.3"/><circle cx="14.5" cy="6" r="2.3"/><circle cx="18.5" cy="10" r="2.3"/></g></svg>',
     print: I('<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/>'),
     leaf: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 C5 9 11 4 20 4 C20 13 15 19 5 19 Z" fill="#3e9b5f"/><path d="M5 19 L13 11" stroke="#1e6b46" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    // Explorers: the Field Guide, the journal, the chapter to read, a compass.
+    guide: I('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 3v18"/><circle cx="14" cy="10" r="2.5"/><path d="M11 16h6"/>'),
+    book: I('<path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/>'),
+    pen: I('<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/>'),
+    compass: I('<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'),
+    tree: I('<path d="M12 21v-6"/><path d="M12 3a6 6 0 0 0-6 6 4 4 0 0 0 1 7h10a4 4 0 0 0 1-7 6 6 0 0 0-6-6z"/>'),
+    train: I('<rect x="4" y="5" width="16" height="11" rx="2"/><path d="M4 11h16"/><circle cx="8" cy="19" r="1.6"/><circle cx="16" cy="19" r="1.6"/>'),
 };
 
-export const BAND_NAMES = { lambs: "Little Lambs · 3–5", lions: "Young Lions · 6–8" };
+export const BAND_NAMES = { lambs: "Little Lambs · 3–5", lions: "Young Lions · 6–8", explorers: "Explorers · 9–12" };
+
+/** Whether a child is an Explorer (ages 9 to 12). */
+export const isExplorer = (child) => child?.band === "explorers";
 
 /** The main Daily Grace site: the home page at the site's root. */
 export const DAILY_GRACE_URL = new URL("../../../", import.meta.url).href;
@@ -70,15 +80,21 @@ export function brandLink() {
     </div>`;
 }
 
-/** The config every game component takes (kids-common.js), plus its own keys. */
+/**
+ * The config every game component takes (kids-common.js), plus its own keys.
+ * Explorers play the games as the oldest band does, with `explorer` set for
+ * the harder versions, Nari's Explorer lines and the Explorer sounds.
+ */
 export function gameConfig(app, extra) {
     const child = app.child();
+    const explorer = isExplorer(child);
     return {
-        band: child?.band ?? "lambs",
+        band: explorer ? "lions" : child?.band ?? "lambs",
+        explorer,
         audio: app.audio,
         resolve: app.resolve,
-        sfx: app.data.sfx,
-        lines: app.data.nari.lines,
+        sfx: explorer && app.xdata ? { ...app.data.sfx, ...app.xdata.sfx } : app.data.sfx,
+        lines: explorer && app.xdata ? { ...app.data.nari.lines, ...app.xdata.nari.lines } : app.data.nari.lines,
         ...extra,
     };
 }

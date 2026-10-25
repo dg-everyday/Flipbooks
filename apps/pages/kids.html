@@ -8,7 +8,7 @@
         />
         <meta
             name="description"
-            content="Daily Grace Kids: Bible stories, games and memory verses for children aged 3 to 8, with Nari the lion cub. Free, with no ads, and everything stays on your device."
+            content="Daily Grace Kids: Bible stories, games and memory verses for children aged 3 to 12, with Nari the lion. Free, with no ads, and everything stays on your device."
         />
         <link rel="canonical" href="https://dailygrace.faith/apps/pages/kids.html" />
         <meta name="theme-color" content="#e4f2fb" />
@@ -43,7 +43,9 @@
             type="font/woff2"
             crossorigin
         />
-        <link rel="stylesheet" href="../../assets/styles/kids-page.css?v=20261024-11" />
+        <link rel="stylesheet" href="../../assets/styles/kids-page.css?v=20261025-1" />
+        <!-- The KJV card of the flipbooks, for the Explorers' Read step. -->
+        <link rel="stylesheet" href="../../assets/styles/story-kjv.css?v=20261025-1" />
     </head>
     <body>
         <!-- kids.js renders every screen into this element: Who's exploring?,
@@ -59,7 +61,7 @@
         </noscript>
 
         <script type="module">
-            import { start } from "./scripts/kids.js?v=20261024-15";
+            import { start } from "./scripts/kids.js?v=20261025-1";
             start(document.getElementById("kids-app"));
         </script>
     </body>

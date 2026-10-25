@@ -1,0 +1,4482 @@
+{
+ "version": 1,
+ "built": "2026-10-25",
+ "road": [
+  "where-art-thou",
+  "while-he-lingered",
+  "into-his-hand",
+  "too-many-for-me",
+  "and-ruth-with-her",
+  "the-fourth-man-in-the-fire",
+  "how-much-more",
+  "a-great-way-off",
+  "for-his-oaths-sake",
+  "help-thou-mine-unbelief",
+  "forbid-them-not",
+  "one-thing-thou-lackest",
+  "all-things-new"
+ ],
+ "stories": [
+  {
+   "id": "where-art-thou",
+   "title": "Hiding in the Garden",
+   "refs": "Genesis 2–3",
+   "section": "map-01",
+   "badge": "media:kids/stops/where-art-thou/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "The serpent's trick and the wrong choice are told simply. Death is not mentioned to the youngest; the story ends with God's care.",
+   "chapter": {
+    "book": "Genesis",
+    "range": "3"
+   },
+   "flipbook": "assets/kids/stories/where-art-thou.json",
+   "pages": [
+    "media:kids/stories/where-art-thou/00.webp",
+    "media:kids/stories/where-art-thou/01.webp",
+    "media:kids/stories/where-art-thou/02.webp",
+    "media:kids/stories/where-art-thou/03.webp",
+    "media:kids/stories/where-art-thou/04.webp",
+    "media:kids/stories/where-art-thou/05.webp",
+    "media:kids/stories/where-art-thou/06.webp",
+    "media:kids/stories/where-art-thou/07.webp",
+    "media:kids/stories/where-art-thou/08.webp",
+    "media:kids/stories/where-art-thou/09.webp",
+    "media:kids/stories/where-art-thou/10.webp",
+    "media:kids/stories/where-art-thou/11.webp",
+    "media:kids/stories/where-art-thou/12.webp"
+   ],
+   "narration": "media:stories/where-art-thou/where-art-thou.webm",
+   "verse": {
+    "ref": "Genesis 3:9",
+    "text": "And the LORD God called unto Adam, and said unto him, Where art thou?",
+    "audio": "media:kids/audio/explorers/verses/where-art-thou.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/where-art-thou/seek.webp",
+    "questions": [
+     {
+      "q": "Who was more subtil (more crafty) than any beast of the field?",
+      "a": "The serpent. It tricked the woman with a question.",
+      "ref": "Genesis 3:1",
+      "text": "Now the serpent was more subtil than any beast of the field which the LORD God had made. And he said unto the woman, Yea, hath God said, Ye shall not eat of every tree of the garden?",
+      "spots": [
+       [
+        0.83,
+        0.15,
+        0.11
+       ]
+      ]
+     },
+     {
+      "q": "God said not to eat from one tree. Find it.",
+      "a": "The tree of the knowledge of good and evil.",
+      "ref": "Genesis 2:17",
+      "text": "But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.",
+      "spots": [
+       [
+        0.57,
+        0.08,
+        0.12
+       ],
+       [
+        0.88,
+        0.32,
+        0.06
+       ]
+      ]
+     },
+     {
+      "q": "What did Adam and Eve sew together to cover themselves?",
+      "a": "Fig leaves.",
+      "ref": "Genesis 3:7",
+      "text": "And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.",
+      "spots": [
+       [
+        0.36,
+        0.62,
+        0.05
+       ]
+      ]
+     },
+     {
+      "q": "God called, “Where art thou?” Who was He calling?",
+      "a": "Adam, who was hiding among the trees.",
+      "ref": "Genesis 3:9",
+      "text": "And the LORD God called unto Adam, and said unto him, Where art thou?",
+      "spots": [
+       [
+        0.33,
+        0.5,
+        0.13
+       ]
+      ]
+     },
+     {
+      "q": "Who said, “The serpent beguiled me, and I did eat”?",
+      "a": "Eve. “Beguiled” means tricked.",
+      "ref": "Genesis 3:13",
+      "text": "And the LORD God said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.",
+      "spots": [
+       [
+        0.57,
+        0.48,
+        0.12
+       ]
+      ]
+     },
+     {
+      "q": "Adam gave names to the animals. Find one he might have named.",
+      "a": "Adam named every beast of the field and every bird.",
+      "ref": "Genesis 2:20",
+      "text": "And Adam gave names to all cattle, and to the fowl of the air, and to every beast of the field; but for Adam there was not found an help meet for him.",
+      "spots": [
+       [
+        0.14,
+        0.7,
+        0.09
+       ],
+       [
+        0.09,
+        0.48,
+        0.09
+       ],
+       [
+        0.11,
+        0.27,
+        0.07
+       ],
+       [
+        0.93,
+        0.48,
+        0.05
+       ],
+       [
+        0.1,
+        0.13,
+        0.05
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     8,
+     10,
+     12
+    ],
+    "odd": {
+     "story": "the-fourth-man-in-the-fire",
+     "image": "media:kids/stories/the-fourth-man-in-the-fire/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "adam",
+     "name": "Adam",
+     "quote": "I heard thy voice in the garden, and I was afraid",
+     "reference": "Genesis 3:10",
+     "text": "And he said, I heard thy voice in the garden, and I was afraid, because I was naked; and I hid myself.",
+     "audio": "media:kids/audio/games/who-said-it/adam.webm",
+     "portraits": [
+      "media:kids/games/portraits/adam.webp"
+     ]
+    },
+    {
+     "id": "eve",
+     "name": "Eve",
+     "quote": "The serpent beguiled me, and I did eat",
+     "reference": "Genesis 3:13",
+     "text": "And the LORD God said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.",
+     "audio": "media:kids/audio/games/who-said-it/eve.webm",
+     "portraits": [
+      "media:kids/games/portraits/eve.webp"
+     ]
+    },
+    {
+     "id": "adam",
+     "name": "Adam",
+     "quote": "The woman whom thou gavest to be with me, she gave me of the tree, and I did eat.",
+     "reference": "Genesis 3:12",
+     "text": "And the man said, The woman whom thou gavest to be with me, she gave me of the tree, and I did eat.",
+     "audio": "media:kids/audio/explorers/who-said-it/where-art-thou-adam-genesis-3-12.webm",
+     "portraits": [
+      "media:kids/games/portraits/adam.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "God told Adam he could eat from every tree except one.",
+     "right": true,
+     "why": "Every tree but the tree of the knowledge of good and evil.",
+     "ref": "Genesis 2:16",
+     "verse": "And the LORD God commanded the man, saying, Of every tree of the garden thou mayest freely eat:"
+    },
+    {
+     "text": "The serpent told the woman the truth.",
+     "right": false,
+     "why": "It said, “Ye shall not surely die,” which was a lie.",
+     "ref": "Genesis 3:4",
+     "verse": "And the serpent said unto the woman, Ye shall not surely die:"
+    },
+    {
+     "text": "Adam ate the fruit too.",
+     "right": true,
+     "why": "She gave some to her husband, and he did eat.",
+     "ref": "Genesis 3:6",
+     "verse": "And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat."
+    },
+    {
+     "text": "Adam and Eve ran to meet God when they heard Him.",
+     "right": false,
+     "why": "They hid themselves among the trees.",
+     "ref": "Genesis 3:8",
+     "verse": "And they heard the voice of the LORD God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the LORD God amongst the trees of the garden."
+    },
+    {
+     "text": "Adam said he hid because he was afraid.",
+     "right": true,
+     "why": "“I was afraid, because I was naked; and I hid myself.”",
+     "ref": "Genesis 3:10",
+     "verse": "And he said, I heard thy voice in the garden, and I was afraid, because I was naked; and I hid myself."
+    },
+    {
+     "text": "Adam said it was all his own fault.",
+     "right": false,
+     "why": "He said, “The woman whom thou gavest to be with me, she gave me of the tree.”",
+     "ref": "Genesis 3:12",
+     "verse": "And the man said, The woman whom thou gavest to be with me, she gave me of the tree, and I did eat."
+    },
+    {
+     "text": "God made coats of skins for Adam and Eve.",
+     "right": true,
+     "why": "God cared for them even then.",
+     "ref": "Genesis 3:21",
+     "verse": "Unto Adam also and to his wife did the LORD God make coats of skins, and clothed them."
+    },
+    {
+     "text": "After they left, anyone could walk back to the tree of life.",
+     "right": false,
+     "why": "God placed cherubims and a flaming sword to keep the way.",
+     "ref": "Genesis 3:24",
+     "verse": "So he drove out the man; and he placed at the east of the garden of Eden Cherubim, and a flaming sword which turned every way, to keep the way of the tree of life."
+    }
+   ],
+   "think": {
+    "think": "What does this story show about God?",
+    "journal": "God came looking for Adam, even after he disobeyed. What does that tell you about God?",
+    "talk": [
+     "Why do you think Adam and Eve hid?",
+     "What should we do when we have done something wrong?"
+    ],
+    "do": "Think of one thing you need to say sorry for this week, and say it.",
+    "pray": "Dear God, thank You that You always find me. When I do wrong, help me come to You and say sorry.",
+    "prayAudio": "media:kids/audio/stops/where-art-thou/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "adam",
+    "eve",
+    "eden",
+    "deer"
+   ]
+  },
+  {
+   "id": "while-he-lingered",
+   "title": "Pulled Out of Sodom",
+   "refs": "Genesis 19:1-29",
+   "section": "map-02",
+   "badge": "media:kids/explorers/badges/while-he-lingered.webp",
+   "side": true,
+   "harder": true,
+   "note": "One of the harder stories: the men of Sodom threaten Lot's guests, and God destroys the cities. The flipbook shows a crowd at the door, fire far away and Lot's wife as a pillar of salt, with no one hurt on the page. It ends on God's mercy to Lot. Read it with your child.",
+   "chapter": {
+    "book": "Genesis",
+    "range": "19:1-29"
+   },
+   "flipbook": "assets/kids/stories/while-he-lingered.json",
+   "pages": [
+    "media:kids/stories/while-he-lingered/00.webp",
+    "media:kids/stories/while-he-lingered/01.webp",
+    "media:kids/stories/while-he-lingered/02.webp",
+    "media:kids/stories/while-he-lingered/03.webp",
+    "media:kids/stories/while-he-lingered/04.webp",
+    "media:kids/stories/while-he-lingered/05.webp",
+    "media:kids/stories/while-he-lingered/06.webp",
+    "media:kids/stories/while-he-lingered/07.webp",
+    "media:kids/stories/while-he-lingered/08.webp",
+    "media:kids/stories/while-he-lingered/09.webp",
+    "media:kids/stories/while-he-lingered/10.webp",
+    "media:kids/stories/while-he-lingered/11.webp",
+    "media:kids/stories/while-he-lingered/12.webp"
+   ],
+   "narration": "media:stories/while-he-lingered/while-he-lingered.webm",
+   "verse": {
+    "ref": "Genesis 19:16",
+    "text": "And while he lingered, the men laid hold upon his hand, and upon the hand of his wife, and upon the hand of his two daughters; the LORD being merciful unto him: and they brought him forth, and set him without the city.",
+    "audio": "media:kids/audio/explorers/verses/while-he-lingered.webm"
+   },
+   "investigate": {
+    "mode": "pages",
+    "questions": [
+     {
+      "q": "Find the page where two visitors come to Sodom and Lot meets them at the gate.",
+      "a": "Lot was sitting in the gate of Sodom.",
+      "ref": "Genesis 19:1",
+      "text": "And there came two angels to Sodom at even; and Lot sat in the gate of Sodom: and Lot seeing them rose up to meet them; and he bowed himself with his face toward the ground;",
+      "page": 1,
+      "choices": [
+       1,
+       4,
+       6
+      ]
+     },
+     {
+      "q": "Find the page where Lot makes a meal and bakes bread without yeast.",
+      "a": "He baked unleavened bread.",
+      "ref": "Genesis 19:3",
+      "text": "And he pressed upon them greatly; and they turned in unto him, and entered into his house; and he made them a feast, and did bake unleavened bread, and they did eat.",
+      "page": 2,
+      "choices": [
+       2,
+       5,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where Lot warns his sons-in-law.",
+      "a": "But they thought he was joking.",
+      "ref": "Genesis 19:14",
+      "text": "And Lot went out, and spake unto his sons in law, which married his daughters, and said, Up, get you out of this place; for the LORD will destroy this city. But he seemed as one that mocked unto his sons in law.",
+      "page": 5,
+      "choices": [
+       5,
+       2,
+       8
+      ]
+     },
+     {
+      "q": "Find the page where the visitors take Lot and his family by the hand.",
+      "a": "“The LORD being merciful unto him.”",
+      "ref": "Genesis 19:16",
+      "text": "And while he lingered, the men laid hold upon his hand, and upon the hand of his wife, and upon the hand of his two daughters; the LORD being merciful unto him: and they brought him forth, and set him without the city.",
+      "page": 7,
+      "choices": [
+       7,
+       4,
+       10
+      ]
+     },
+     {
+      "q": "Find the page where Lot's wife looks back.",
+      "a": "She became a pillar of salt.",
+      "ref": "Genesis 19:26",
+      "text": "But his wife looked back from behind him, and she became a pillar of salt.",
+      "page": 10,
+      "choices": [
+       10,
+       7,
+       5
+      ]
+     },
+     {
+      "q": "Find the page where Abraham sees the smoke.",
+      "a": "The smoke went up like the smoke of a furnace.",
+      "ref": "Genesis 19:28",
+      "text": "And he looked toward Sodom and Gomorrah, and toward all the land of the plain, and beheld, and, lo, the smoke of the country went up as the smoke of a furnace.",
+      "page": 11,
+      "choices": [
+       11,
+       8,
+       6
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     8,
+     10,
+     12
+    ],
+    "odd": {
+     "story": "how-much-more",
+     "image": "media:kids/stories/how-much-more/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "lot",
+     "name": "Lot",
+     "quote": "I pray you, brethren, do not so wickedly.",
+     "reference": "Genesis 19:7",
+     "text": "And said, I pray you, brethren, do not so wickedly.",
+     "audio": "media:kids/audio/explorers/who-said-it/while-he-lingered-lot-genesis-19-7.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/lot.webp"
+     ]
+    },
+    {
+     "id": "lot",
+     "name": "Lot",
+     "quote": "Up, get you out of this place; for the LORD will destroy this city.",
+     "reference": "Genesis 19:14",
+     "text": "And Lot went out, and spake unto his sons in law, which married his daughters, and said, Up, get you out of this place; for the LORD will destroy this city. But he seemed as one that mocked unto his sons in law.",
+     "audio": "media:kids/audio/explorers/who-said-it/while-he-lingered-lot-genesis-19-14.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/lot.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "Two angels came to Sodom in the evening.",
+     "right": true,
+     "why": "Lot was sitting in the gate.",
+     "ref": "Genesis 19:1",
+     "verse": "And there came two angels to Sodom at even; and Lot sat in the gate of Sodom: and Lot seeing them rose up to meet them; and he bowed himself with his face toward the ground;"
+    },
+    {
+     "text": "Lot let the visitors sleep in the street.",
+     "right": false,
+     "why": "He urged them, and they came into his house.",
+     "ref": "Genesis 19:3",
+     "verse": "And he pressed upon them greatly; and they turned in unto him, and entered into his house; and he made them a feast, and did bake unleavened bread, and they did eat."
+    },
+    {
+     "text": "Lot asked the men outside not to do wickedly.",
+     "right": true,
+     "why": "“I pray you, brethren, do not so wickedly.”",
+     "ref": "Genesis 19:7",
+     "verse": "And said, I pray you, brethren, do not so wickedly."
+    },
+    {
+     "text": "The angels pulled Lot back into the house.",
+     "right": true,
+     "why": "And shut the door.",
+     "ref": "Genesis 19:10",
+     "verse": "But the men put forth their hand, and pulled Lot into the house to them, and shut to the door."
+    },
+    {
+     "text": "Lot's sons-in-law believed him at once.",
+     "right": false,
+     "why": "He seemed to them as one that mocked (joked).",
+     "ref": "Genesis 19:14",
+     "verse": "And Lot went out, and spake unto his sons in law, which married his daughters, and said, Up, get you out of this place; for the LORD will destroy this city. But he seemed as one that mocked unto his sons in law."
+    },
+    {
+     "text": "Lot hurried out as soon as he was told.",
+     "right": false,
+     "why": "He lingered, and the angels took him by the hand.",
+     "ref": "Genesis 19:16",
+     "verse": "And while he lingered, the men laid hold upon his hand, and upon the hand of his wife, and upon the hand of his two daughters; the LORD being merciful unto him: and they brought him forth, and set him without the city."
+    },
+    {
+     "text": "The angels said, “Look not behind thee.”",
+     "right": true,
+     "why": "“Escape for thy life.”",
+     "ref": "Genesis 19:17",
+     "verse": "And it came to pass, when they had brought them forth abroad, that he said, Escape for thy life; look not behind thee, neither stay thou in all the plain; escape to the mountain, lest thou be consumed."
+    },
+    {
+     "text": "God saved Lot because He remembered Abraham.",
+     "right": true,
+     "why": "“God remembered Abraham, and sent Lot out.”",
+     "ref": "Genesis 19:29",
+     "verse": "And it came to pass, when God destroyed the cities of the plain, that God remembered Abraham, and sent Lot out of the midst of the overthrow, when he overthrew the cities in the which Lot dwelt."
+    }
+   ],
+   "think": {
+    "think": "Why did God take Lot by the hand when he was slow to leave?",
+    "journal": "The angels told Lot, “Look not behind thee.” Is there something wrong you need to walk away from, and not look back?",
+    "talk": [
+     "Why do you think Lot lingered?",
+     "How did God show mercy in this story?"
+    ],
+    "do": "When you are told to do something right this week, do it straight away.",
+    "pray": "Dear God, thank You for Your mercy. When You call me away from what is wrong, help me not to wait, but to go.",
+    "prayAudio": "media:kids/audio/explorers/stops/while-he-lingered/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "lot",
+    "abraham",
+    "sodom"
+   ]
+  },
+  {
+   "id": "into-his-hand",
+   "title": "Trusted, Framed, and Trusted Again",
+   "refs": "Genesis 39",
+   "section": "map-02",
+   "badge": "media:kids/explorers/badges/into-his-hand.webp",
+   "side": true,
+   "harder": false,
+   "note": "Joseph is wrongly accused by Potiphar's wife and put in prison. The flipbook says only that she wanted him to be with her “in a way that was only right for a husband and wife”; nothing more is shown. It ends with the LORD with Joseph in the prison.",
+   "chapter": {
+    "book": "Genesis",
+    "range": "39"
+   },
+   "flipbook": "assets/kids/stories/into-his-hand.json",
+   "pages": [
+    "media:kids/stories/into-his-hand/00.webp",
+    "media:kids/stories/into-his-hand/01.webp",
+    "media:kids/stories/into-his-hand/02.webp",
+    "media:kids/stories/into-his-hand/03.webp",
+    "media:kids/stories/into-his-hand/04.webp",
+    "media:kids/stories/into-his-hand/05.webp",
+    "media:kids/stories/into-his-hand/06.webp",
+    "media:kids/stories/into-his-hand/07.webp",
+    "media:kids/stories/into-his-hand/08.webp",
+    "media:kids/stories/into-his-hand/09.webp",
+    "media:kids/stories/into-his-hand/10.webp"
+   ],
+   "narration": "media:stories/into-his-hand/into-his-hand.webm",
+   "verse": {
+    "ref": "Genesis 39:2",
+    "text": "And the LORD was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian.",
+    "audio": "media:kids/audio/explorers/verses/into-his-hand.webm"
+   },
+   "investigate": {
+    "mode": "pages",
+    "questions": [
+     {
+      "q": "Find the page where Joseph is brought to Egypt and bought by Potiphar.",
+      "a": "Potiphar was an officer of Pharaoh.",
+      "ref": "Genesis 39:1",
+      "text": "And Joseph was brought down to Egypt; and Potiphar, an officer of Pharaoh, captain of the guard, an Egyptian, bought him of the hands of the Ishmeelites, which had brought him down thither.",
+      "page": 1,
+      "choices": [
+       1,
+       4,
+       6
+      ]
+     },
+     {
+      "q": "Find the page where Potiphar puts Joseph in charge of everything.",
+      "a": "He put all that he had into Joseph's hand.",
+      "ref": "Genesis 39:4",
+      "text": "And Joseph found grace in his sight, and he served him: and he made him overseer over his house, and all that he had he put into his hand.",
+      "page": 2,
+      "choices": [
+       2,
+       5,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where Joseph says no to doing wrong.",
+      "a": "“How then can I do this great wickedness, and sin against God?”",
+      "ref": "Genesis 39:9",
+      "text": "There is none greater in this house than I; neither hath he kept back any thing from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?",
+      "page": 4,
+      "choices": [
+       4,
+       1,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where Joseph runs outside and leaves his garment behind.",
+      "a": "He left his garment in her hand and ran.",
+      "ref": "Genesis 39:12",
+      "text": "And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.",
+      "page": 6,
+      "choices": [
+       6,
+       3,
+       9
+      ]
+     },
+     {
+      "q": "Find the page where Joseph is put into prison.",
+      "a": "He was put where the king's prisoners were kept.",
+      "ref": "Genesis 39:20",
+      "text": "And Joseph’s master took him, and put him into the prison, a place where the king’s prisoners were bound: and he was there in the prison.",
+      "page": 8,
+      "choices": [
+       8,
+       5,
+       3
+      ]
+     },
+     {
+      "q": "Find the page where the keeper of the prison puts Joseph in charge.",
+      "a": "The keeper trusted Joseph with all the prisoners.",
+      "ref": "Genesis 39:22",
+      "text": "And the keeper of the prison committed to Joseph’s hand all the prisoners that were in the prison; and whatsoever they did there, he was the doer of it.",
+      "page": 10,
+      "choices": [
+       10,
+       7,
+       5
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     6,
+     8,
+     10
+    ],
+    "odd": {
+     "story": "a-great-way-off",
+     "image": "media:kids/stories/a-great-way-off/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "joseph",
+     "name": "Joseph",
+     "quote": "how then can I do this great wickedness, and sin against God?",
+     "reference": "Genesis 39:9",
+     "text": "There is none greater in this house than I; neither hath he kept back any thing from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?",
+     "audio": "media:kids/audio/explorers/who-said-it/into-his-hand-joseph-genesis-39-9.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/joseph.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "The LORD was with Joseph in Potiphar's house.",
+     "right": true,
+     "why": "And he was a prosperous man.",
+     "ref": "Genesis 39:2",
+     "verse": "And the LORD was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian."
+    },
+    {
+     "text": "Potiphar did not trust Joseph with anything.",
+     "right": false,
+     "why": "He left all that he had in Joseph's hand.",
+     "ref": "Genesis 39:6",
+     "verse": "And he left all that he had in Joseph’s hand; and he knew not ought he had, save the bread which he did eat. And Joseph was a goodly person, and well favoured."
+    },
+    {
+     "text": "God blessed Potiphar's house because of Joseph.",
+     "right": true,
+     "why": "“The LORD blessed the Egyptian's house for Joseph's sake.”",
+     "ref": "Genesis 39:5",
+     "verse": "And it came to pass from the time that he had made him overseer in his house, and over all that he had, that the LORD blessed the Egyptian’s house for Joseph’s sake; and the blessing of the LORD was upon all that he had in the house, and in the field."
+    },
+    {
+     "text": "Joseph said doing wrong would be a sin against God.",
+     "right": true,
+     "why": "“How then can I do this great wickedness, and sin against God?”",
+     "ref": "Genesis 39:9",
+     "verse": "There is none greater in this house than I; neither hath he kept back any thing from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?"
+    },
+    {
+     "text": "She asked Joseph only once.",
+     "right": false,
+     "why": "She spoke to Joseph day by day.",
+     "ref": "Genesis 39:10",
+     "verse": "And it came to pass, as she spake to Joseph day by day, that he hearkened not unto her, to lie by her, or to be with her."
+    },
+    {
+     "text": "Potiphar's wife told the truth about Joseph.",
+     "right": false,
+     "why": "She told a false story, keeping his garment as “proof”.",
+     "ref": "Genesis 39:16",
+     "verse": "And she laid up his garment by her, until his lord came home."
+    },
+    {
+     "text": "Joseph was put in prison even though he did nothing wrong.",
+     "right": true,
+     "why": "It was unfair, but God did not leave him.",
+     "ref": "Genesis 39:20",
+     "verse": "And Joseph’s master took him, and put him into the prison, a place where the king’s prisoners were bound: and he was there in the prison."
+    },
+    {
+     "text": "God was with Joseph in prison too.",
+     "right": true,
+     "why": "“The LORD was with Joseph, and shewed him mercy.”",
+     "ref": "Genesis 39:21",
+     "verse": "But the LORD was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison."
+    }
+   ],
+   "think": {
+    "think": "Why did Joseph say no, even when no one would have known?",
+    "journal": "Joseph did right, and still things went badly for a while. Was God still with him? How do you know?",
+    "talk": [
+     "How can we be trustworthy, like Joseph?",
+     "What can we do when something unfair happens to us?"
+    ],
+    "do": "Do your jobs this week as well as Joseph did his, even when no one is watching.",
+    "pray": "Dear God, thank You that You are with me, even when things are unfair. Help me to do what is right, like Joseph did.",
+    "prayAudio": "media:kids/audio/explorers/stops/into-his-hand/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "joseph",
+    "potiphar",
+    "pharaoh",
+    "egypt"
+   ]
+  },
+  {
+   "id": "too-many-for-me",
+   "title": "Gideon's Three Hundred Men",
+   "refs": "Judges 6–7",
+   "section": "map-04",
+   "badge": "media:kids/stops/too-many-for-me/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "The enemy simply run away. The fighting in Judges 7:22 is left out.",
+   "chapter": {
+    "book": "Judges",
+    "range": "7"
+   },
+   "flipbook": "assets/kids/stories/too-many-for-me.json",
+   "pages": [
+    "media:kids/stories/too-many-for-me/00.webp",
+    "media:kids/stories/too-many-for-me/01.webp",
+    "media:kids/stories/too-many-for-me/02.webp",
+    "media:kids/stories/too-many-for-me/03.webp",
+    "media:kids/stories/too-many-for-me/04.webp",
+    "media:kids/stories/too-many-for-me/05.webp",
+    "media:kids/stories/too-many-for-me/06.webp",
+    "media:kids/stories/too-many-for-me/07.webp",
+    "media:kids/stories/too-many-for-me/08.webp",
+    "media:kids/stories/too-many-for-me/09.webp",
+    "media:kids/stories/too-many-for-me/10.webp",
+    "media:kids/stories/too-many-for-me/11.webp",
+    "media:kids/stories/too-many-for-me/12.webp"
+   ],
+   "narration": "media:stories/too-many-for-me/too-many-for-me.webm",
+   "verse": {
+    "ref": "Judges 6:12",
+    "text": "And the angel of the LORD appeared unto him, and said unto him, The LORD is with thee, thou mighty man of valour.",
+    "audio": "media:kids/audio/explorers/verses/too-many-for-me.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/too-many-for-me/seek.webp",
+    "questions": [
+     {
+      "q": "Gideon was threshing grain in secret, hiding it from the Midianites. Find the grain.",
+      "a": "Wheat. Gideon threshed it by the winepress.",
+      "ref": "Judges 6:11",
+      "text": "And there came an angel of the LORD, and sat under an oak which was in Ophrah, that pertained unto Joash the Abi-ezrite: and his son Gideon threshed wheat by the winepress, to hide it from the Midianites.",
+      "spots": [
+       [
+        0.89,
+        0.55,
+        0.09
+       ]
+      ]
+     },
+     {
+      "q": "What did Gideon put on the floor when he asked God for a sign?",
+      "a": "A fleece of wool.",
+      "ref": "Judges 6:37",
+      "text": "Behold, I will put a fleece of wool in the floor; and if the dew be on the fleece only, and it be dry upon all the earth beside, then shall I know that thou wilt save Israel by mine hand, as thou hast said.",
+      "spots": [
+       [
+        0.15,
+        0.66,
+        0.12
+       ]
+      ]
+     },
+     {
+      "q": "God chose the men who lapped water from their hand. Find one of them.",
+      "a": "Three hundred men drank this way, and God chose them.",
+      "ref": "Judges 7:6",
+      "text": "And the number of them that lapped, putting their hand to their mouth, were three hundred men: but all the rest of the people bowed down upon their knees to drink water.",
+      "spots": [
+       [
+        0.13,
+        0.42,
+        0.1
+       ]
+      ]
+     },
+     {
+      "q": "The Midianites' camels were too many to count. Find a camel.",
+      "a": "Their camels were “without number, as the sand by the sea side”.",
+      "ref": "Judges 7:12",
+      "text": "And the Midianites and the Amalekites and all the children of the east lay along in the valley like grasshoppers for multitude; and their camels were without number, as the sand by the sea side for multitude.",
+      "spots": [
+       [
+        0.3,
+        0.16,
+        0.05
+       ]
+      ]
+     },
+     {
+      "q": "Gideon put something into every man's hand. Find it.",
+      "a": "A trumpet, with an empty pitcher and a lamp inside it.",
+      "ref": "Judges 7:16",
+      "text": "And he divided the three hundred men into three companies, and he put a trumpet in every man’s hand, with empty pitchers, and lamps within the pitchers.",
+      "spots": [
+       [
+        0.27,
+        0.8,
+        0.11
+       ]
+      ]
+     },
+     {
+      "q": "What did the men break, so their lamps could shine?",
+      "a": "Their pitchers.",
+      "ref": "Judges 7:20",
+      "text": "And the three companies blew the trumpets, and brake the pitchers, and held the lamps in their left hands, and the trumpets in their right hands to blow withal: and they cried, The sword of the LORD, and of Gideon.",
+      "spots": [
+       [
+        0.92,
+        0.76,
+        0.09
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     8,
+     10,
+     12
+    ],
+    "odd": {
+     "story": "for-his-oaths-sake",
+     "image": "media:kids/stories/for-his-oaths-sake/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "gideon",
+     "name": "Gideon",
+     "quote": "I am the least in my father’s house",
+     "reference": "Judges 6:15",
+     "text": "And he said unto him, Oh my Lord, wherewith shall I save Israel? behold, my family is poor in Manasseh, and I am the least in my father’s house.",
+     "audio": "media:kids/audio/games/who-said-it/gideon.webm",
+     "portraits": [
+      "media:kids/games/portraits/gideon.webp"
+     ]
+    },
+    {
+     "id": "gideon",
+     "name": "Gideon",
+     "quote": "Arise; for the LORD hath delivered into your hand the host of Midian.",
+     "reference": "Judges 7:15",
+     "text": "And it was so, when Gideon heard the telling of the dream, and the interpretation thereof, that he worshipped, and returned into the host of Israel, and said, Arise; for the LORD hath delivered into your hand the host of Midian.",
+     "audio": "media:kids/audio/explorers/who-said-it/too-many-for-me-gideon-judges-7-15.webm",
+     "portraits": [
+      "media:kids/games/portraits/gideon.webp"
+     ]
+    },
+    {
+     "id": "midianite-soldier",
+     "name": "A Midianite soldier",
+     "quote": "Behold, I dreamed a dream, and, lo, a cake of barley bread tumbled into the host of Midian",
+     "reference": "Judges 7:13",
+     "text": "And when Gideon was come, behold, there was a man that told a dream unto his fellow, and said, Behold, I dreamed a dream, and, lo, a cake of barley bread tumbled into the host of Midian, and came unto a tent, and smote it that it fell, and overturned it, that the tent lay along.",
+     "audio": "media:kids/audio/explorers/who-said-it/too-many-for-me-midianite-soldier-judges-7-13.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/midianite-soldier.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "The angel called Gideon a mighty man of valour.",
+     "right": true,
+     "why": "“The LORD is with thee, thou mighty man of valour.”",
+     "ref": "Judges 6:12",
+     "verse": "And the angel of the LORD appeared unto him, and said unto him, The LORD is with thee, thou mighty man of valour."
+    },
+    {
+     "text": "Gideon started with three hundred men.",
+     "right": false,
+     "why": "He started with thirty-two thousand.",
+     "ref": "Judges 7:3",
+     "verse": "Now therefore go to, proclaim in the ears of the people, saying, Whosoever is fearful and afraid, let him return and depart early from mount Gilead. And there returned of the people twenty and two thousand; and there remained ten thousand."
+    },
+    {
+     "text": "God said Gideon had too many men.",
+     "right": true,
+     "why": "So Israel could not boast that they saved themselves.",
+     "ref": "Judges 7:2",
+     "verse": "And the LORD said unto Gideon, The people that are with thee are too many for me to give the Midianites into their hands, lest Israel vaunt themselves against me, saying, Mine own hand hath saved me."
+    },
+    {
+     "text": "Everyone who was afraid could go home.",
+     "right": true,
+     "why": "Twenty-two thousand went home.",
+     "ref": "Judges 7:3",
+     "verse": "Now therefore go to, proclaim in the ears of the people, saying, Whosoever is fearful and afraid, let him return and depart early from mount Gilead. And there returned of the people twenty and two thousand; and there remained ten thousand."
+    },
+    {
+     "text": "God chose the men who knelt down to drink.",
+     "right": false,
+     "why": "He chose the three hundred who lapped from their hands.",
+     "ref": "Judges 7:7",
+     "verse": "And the LORD said unto Gideon, By the three hundred men that lapped will I save you, and deliver the Midianites into thine hand: and let all the other people go every man unto his place."
+    },
+    {
+     "text": "Gideon heard a soldier tell a dream about a barley loaf.",
+     "right": true,
+     "why": "The loaf tumbled into the camp of Midian.",
+     "ref": "Judges 7:13",
+     "verse": "And when Gideon was come, behold, there was a man that told a dream unto his fellow, and said, Behold, I dreamed a dream, and, lo, a cake of barley bread tumbled into the host of Midian, and came unto a tent, and smote it that it fell, and overturned it, that the tent lay along."
+    },
+    {
+     "text": "Gideon's men fought with swords all night.",
+     "right": false,
+     "why": "They blew trumpets, broke pitchers and held up lamps.",
+     "ref": "Judges 7:20",
+     "verse": "And the three companies blew the trumpets, and brake the pitchers, and held the lamps in their left hands, and the trumpets in their right hands to blow withal: and they cried, The sword of the LORD, and of Gideon."
+    },
+    {
+     "text": "The men shouted, “The sword of the LORD, and of Gideon.”",
+     "right": true,
+     "why": "And God gave them the victory.",
+     "ref": "Judges 7:20",
+     "verse": "And the three companies blew the trumpets, and brake the pitchers, and held the lamps in their left hands, and the trumpets in their right hands to blow withal: and they cried, The sword of the LORD, and of Gideon."
+    }
+   ],
+   "think": {
+    "think": "Why did God make Gideon's army so small?",
+    "journal": "When have you felt small or weak? How could God help you then?",
+    "talk": [
+     "Why might God want us to know that He is the one who helps us?",
+     "What helps you to be brave?"
+    ],
+    "do": "Do one brave, kind thing this week, and remember who helps you.",
+    "pray": "Dear God, when I feel small, thank You that You are with me. Help me be brave.",
+    "prayAudio": "media:kids/audio/stops/too-many-for-me/pray.webm"
+   },
+   "game": {
+    "type": "gather",
+    "item": "lamp",
+    "lambs": 3,
+    "lions": 6,
+    "others": [
+     "trumpet",
+     "pitcher"
+    ],
+    "name": "oil lamp",
+    "plural": "oil lamps",
+    "image": "media:kids/games/gather/lamp.webp",
+    "basket": "media:kids/games/gather/basket.webp",
+    "otherImages": [
+     "media:kids/games/gather/trumpet.webp",
+     "media:kids/games/gather/pitcher.webp"
+    ]
+   },
+   "cards": [
+    "gideon",
+    "phurah",
+    "midianite-soldier",
+    "spring-of-harod",
+    "camel",
+    "trumpet",
+    "lamp"
+   ]
+  },
+  {
+   "id": "and-ruth-with-her",
+   "title": "Where You Go, I Will Go",
+   "refs": "Ruth 1–4",
+   "section": "map-04",
+   "badge": "media:kids/stops/and-ruth-with-her/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "Naomi's husband and sons have died; the story says so once, gently, for the older children only.",
+   "chapter": {
+    "book": "Ruth",
+    "range": "1-2"
+   },
+   "flipbook": "assets/kids/stories/and-ruth-with-her.json",
+   "pages": [
+    "media:kids/stories/and-ruth-with-her/00.webp",
+    "media:kids/stories/and-ruth-with-her/01.webp",
+    "media:kids/stories/and-ruth-with-her/02.webp",
+    "media:kids/stories/and-ruth-with-her/03.webp",
+    "media:kids/stories/and-ruth-with-her/04.webp",
+    "media:kids/stories/and-ruth-with-her/05.webp",
+    "media:kids/stories/and-ruth-with-her/06.webp",
+    "media:kids/stories/and-ruth-with-her/07.webp",
+    "media:kids/stories/and-ruth-with-her/08.webp",
+    "media:kids/stories/and-ruth-with-her/09.webp",
+    "media:kids/stories/and-ruth-with-her/10.webp",
+    "media:kids/stories/and-ruth-with-her/11.webp",
+    "media:kids/stories/and-ruth-with-her/12.webp"
+   ],
+   "narration": "media:stories/and-ruth-with-her/and-ruth-with-her.webm",
+   "verse": {
+    "ref": "Ruth 1:16",
+    "text": "And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God:",
+    "audio": "media:kids/audio/explorers/verses/and-ruth-with-her.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/and-ruth-with-her/seek.webp",
+    "questions": [
+     {
+      "q": "Who said, “Whither thou goest, I will go”?",
+      "a": "Ruth, to Naomi.",
+      "ref": "Ruth 1:16",
+      "text": "And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God:",
+      "spots": [
+       [
+        0.65,
+        0.47,
+        0.12
+       ]
+      ]
+     },
+     {
+      "q": "Ruth came to the field of a kind, rich man. Find him.",
+      "a": "Boaz, from the family of Naomi's husband.",
+      "ref": "Ruth 2:3",
+      "text": "And she went, and came, and gleaned in the field after the reapers: and her hap was to light on a part of the field belonging unto Boaz, who was of the kindred of Elimelech.",
+      "spots": [
+       [
+        0.37,
+        0.4,
+        0.14
+       ]
+      ]
+     },
+     {
+      "q": "They came to Bethlehem at the beginning of a harvest. Find that grain.",
+      "a": "Barley.",
+      "ref": "Ruth 1:22",
+      "text": "So Naomi returned, and Ruth the Moabitess, her daughter in law, with her, which returned out of the country of Moab: and they came to Bethlehem in the beginning of barley harvest.",
+      "spots": [
+       [
+        0.07,
+        0.45,
+        0.08
+       ],
+       [
+        0.88,
+        0.72,
+        0.1
+       ],
+       [
+        0.79,
+        0.41,
+        0.06
+       ],
+       [
+        0.54,
+        0.4,
+        0.05
+       ]
+      ]
+     },
+     {
+      "q": "Boaz told Ruth to drink from what the young men had drawn. Find something to drink from.",
+      "a": "The vessels (jars) of water.",
+      "ref": "Ruth 2:9",
+      "text": "Let thine eyes be on the field that they do reap, and go thou after them: have I not charged the young men that they shall not touch thee? and when thou art athirst, go unto the vessels, and drink of that which the young men have drawn.",
+      "spots": [
+       [
+        0.15,
+        0.6,
+        0.09
+       ]
+      ]
+     },
+     {
+      "q": "At mealtime Boaz said, “Come thou hither, and eat.” Find the food.",
+      "a": "Bread.",
+      "ref": "Ruth 2:14",
+      "text": "And Boaz said unto her, At mealtime come thou hither, and eat of the bread, and dip thy morsel in the vinegar. And she sat beside the reapers: and he reached her parched corn, and she did eat, and was sufficed, and left.",
+      "spots": [
+       [
+        0.33,
+        0.76,
+        0.11
+       ]
+      ]
+     },
+     {
+      "q": "Ruth gleaned behind the reapers. Find the tool a reaper cuts grain with.",
+      "a": "A sickle.",
+      "ref": "Ruth 2:3",
+      "text": "And she went, and came, and gleaned in the field after the reapers: and her hap was to light on a part of the field belonging unto Boaz, who was of the kindred of Elimelech.",
+      "spots": [
+       [
+        0.61,
+        0.81,
+        0.08
+       ],
+       [
+        0.15,
+        0.36,
+        0.04
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     8,
+     10,
+     12
+    ],
+    "odd": {
+     "story": "help-thou-mine-unbelief",
+     "image": "media:kids/stories/help-thou-mine-unbelief/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "ruth",
+     "name": "Ruth",
+     "quote": "whither thou goest, I will go",
+     "reference": "Ruth 1:16",
+     "text": "And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God:",
+     "audio": "media:kids/audio/games/who-said-it/ruth.webm",
+     "portraits": [
+      "media:kids/games/portraits/ruth.webp"
+     ]
+    },
+    {
+     "id": "naomi",
+     "name": "Naomi",
+     "quote": "the LORD deal kindly with you",
+     "reference": "Ruth 1:8",
+     "text": "And Naomi said unto her two daughters in law, Go, return each to her mother’s house: the LORD deal kindly with you, as ye have dealt with the dead, and with me.",
+     "audio": "media:kids/audio/games/who-said-it/naomi.webm",
+     "portraits": [
+      "media:kids/games/portraits/naomi.webp"
+     ]
+    },
+    {
+     "id": "boaz",
+     "name": "Boaz",
+     "quote": "The LORD be with you",
+     "reference": "Ruth 2:4",
+     "text": "And behold, Boaz came from Bethlehem, and said unto the reapers, The LORD be with you. And they answered him, The LORD bless thee.",
+     "audio": "media:kids/audio/games/who-said-it/boaz.webm",
+     "portraits": [
+      "media:kids/games/portraits/boaz.webp"
+     ]
+    },
+    {
+     "id": "ruth",
+     "name": "Ruth",
+     "quote": "Why have I found grace in thine eyes, that thou shouldest take knowledge of me, seeing I am a stranger?",
+     "reference": "Ruth 2:10",
+     "text": "Then she fell on her face, and bowed herself to the ground, and said unto him, Why have I found grace in thine eyes, that thou shouldest take knowledge of me, seeing I am a stranger?",
+     "audio": "media:kids/audio/explorers/who-said-it/and-ruth-with-her-ruth-ruth-2-10.webm",
+     "portraits": [
+      "media:kids/games/portraits/ruth.webp"
+     ]
+    },
+    {
+     "id": "naomi",
+     "name": "Naomi",
+     "quote": "Call me not Naomi, call me Mara",
+     "reference": "Ruth 1:20",
+     "text": "And she said unto them, Call me not Naomi, call me Mara: for the Almighty hath dealt very bitterly with me.",
+     "audio": "media:kids/audio/explorers/who-said-it/and-ruth-with-her-naomi-ruth-1-20.webm",
+     "portraits": [
+      "media:kids/games/portraits/naomi.webp"
+     ]
+    },
+    {
+     "id": "boaz",
+     "name": "Boaz",
+     "quote": "The LORD recompense thy work",
+     "reference": "Ruth 2:12",
+     "text": "The LORD recompense thy work, and a full reward be given thee of the LORD God of Israel, under whose wings thou art come to trust.",
+     "audio": "media:kids/audio/explorers/who-said-it/and-ruth-with-her-boaz-ruth-2-12.webm",
+     "portraits": [
+      "media:kids/games/portraits/boaz.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "Naomi lived in Moab for a while with her family.",
+     "right": true,
+     "why": "There was a famine, so they went to Moab.",
+     "ref": "Ruth 1:1",
+     "verse": "Now it came to pass in the days when the judges ruled, that there was a famine in the land. And a certain man of Bethlehemjudah went to sojourn in the country of Moab, he, and his wife, and his two sons."
+    },
+    {
+     "text": "Ruth went back to her own people.",
+     "right": false,
+     "why": "Orpah went back; Ruth stayed with Naomi.",
+     "ref": "Ruth 1:14",
+     "verse": "And they lifted up their voice, and wept again: and Orpah kissed her mother in law; but Ruth clave unto her."
+    },
+    {
+     "text": "Ruth said, “Thy God shall be my God.”",
+     "right": true,
+     "why": "She chose to follow the God of Israel.",
+     "ref": "Ruth 1:16",
+     "verse": "And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God:"
+    },
+    {
+     "text": "Naomi wanted to be called Mara, which means bitter.",
+     "right": true,
+     "why": "She was very sad after losing her husband and sons.",
+     "ref": "Ruth 1:20",
+     "verse": "And she said unto them, Call me not Naomi, call me Mara: for the Almighty hath dealt very bitterly with me."
+    },
+    {
+     "text": "Ruth gleaned in the field of a stranger who did not know Naomi.",
+     "right": false,
+     "why": "It was Boaz, of the family of Elimelech, Naomi's husband.",
+     "ref": "Ruth 2:1",
+     "verse": "And Naomi had a kinsman of her husband’s, a mighty man of wealth, of the family of Elimelech; and his name was Boaz."
+    },
+    {
+     "text": "Boaz had heard how kind Ruth had been to Naomi.",
+     "right": true,
+     "why": "“It hath fully been shewed me, all that thou hast done.”",
+     "ref": "Ruth 2:11",
+     "verse": "And Boaz answered and said unto her, It hath fully been shewed me, all that thou hast done unto thy mother in law since the death of thine husband: and how thou hast left thy father and thy mother, and the land of thy nativity, and art come unto a people which thou knewest not heretofore."
+    },
+    {
+     "text": "Boaz told his young men to send Ruth away.",
+     "right": false,
+     "why": "He told them to let some handfuls fall on purpose for her.",
+     "ref": "Ruth 2:16",
+     "verse": "And let fall also some of the handfuls of purpose for her, and leave them, that she may glean them, and rebuke her not."
+    },
+    {
+     "text": "Ruth took some of her food home to Naomi.",
+     "right": true,
+     "why": "She brought what she had left over.",
+     "ref": "Ruth 2:18",
+     "verse": "And she took it up, and went into the city: and her mother in law saw what she had gleaned: and she brought forth, and gave to her that she had reserved after she was sufficed."
+    }
+   ],
+   "think": {
+    "think": "What made Ruth such a good friend to Naomi?",
+    "journal": "Write about someone you could be loyal and kind to, like Ruth.",
+    "talk": [
+     "How did God look after Ruth and Naomi?",
+     "Who has been kind to our family? How can we thank them?"
+    ],
+    "do": "Help someone at home without being asked.",
+    "pray": "Dear God, help me be a loyal friend like Ruth, and kind like Boaz.",
+    "prayAudio": "media:kids/audio/stops/and-ruth-with-her/pray.webm"
+   },
+   "game": {
+    "type": "gather",
+    "item": "barley",
+    "lambs": 5,
+    "lions": 10,
+    "others": [
+     "loaf",
+     "fish"
+    ],
+    "name": "bundle of barley",
+    "plural": "bundles of barley",
+    "image": "media:kids/games/gather/barley.webp",
+    "basket": "media:kids/games/gather/basket.webp",
+    "otherImages": [
+     "media:kids/games/gather/loaf.webp",
+     "media:kids/games/gather/fish.webp"
+    ]
+   },
+   "cards": [
+    "ruth",
+    "naomi",
+    "boaz",
+    "bethlehem",
+    "fields-of-boaz"
+   ]
+  },
+  {
+   "id": "the-fourth-man-in-the-fire",
+   "title": "The Fourth Man in the Fire",
+   "refs": "Daniel 3",
+   "section": "map-05",
+   "badge": "media:kids/stops/the-fourth-man-in-the-fire/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "The soldiers who died at the furnace door (Daniel 3:22) are left out. The fourth man is described as the king saw him, without saying who He was.",
+   "chapter": {
+    "book": "Daniel",
+    "range": "3"
+   },
+   "flipbook": "assets/kids/stories/the-fourth-man-in-the-fire.json",
+   "pages": [
+    "media:kids/stories/the-fourth-man-in-the-fire/00.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/01.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/02.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/03.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/04.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/05.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/06.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/07.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/08.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/09.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/10.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/11.webp",
+    "media:kids/stories/the-fourth-man-in-the-fire/12.webp"
+   ],
+   "narration": "media:stories/the-fourth-man-in-the-fire/the-fourth-man-in-the-fire.webm",
+   "verse": {
+    "ref": "Daniel 3:17",
+    "text": "If it be so, our God whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king.",
+    "audio": "media:kids/audio/explorers/verses/the-fourth-man-in-the-fire.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/the-fourth-man-in-the-fire/seek.webp",
+    "questions": [
+     {
+      "q": "Who made an image of gold and set it up on the plain of Dura?",
+      "a": "Nebuchadnezzar the king.",
+      "ref": "Daniel 3:1",
+      "text": "Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon.",
+      "spots": [
+       [
+        0.78,
+        0.47,
+        0.11
+       ]
+      ]
+     },
+     {
+      "q": "When the music played, everyone had to bow. Find one of the instruments.",
+      "a": "The cornet (horn), flute, harp and more.",
+      "ref": "Daniel 3:5",
+      "text": "That at what time ye hear the sound of the cornet, flute, harp, sackbut, psaltery, dulcimer, and all kinds of musick, ye fall down and worship the golden image that Nebuchadnezzar the king hath set up:",
+      "spots": [
+       [
+        0.47,
+        0.6,
+        0.06
+       ],
+       [
+        0.54,
+        0.58,
+        0.06
+       ],
+       [
+        0.73,
+        0.66,
+        0.05
+       ],
+       [
+        0.84,
+        0.67,
+        0.07
+       ]
+      ]
+     },
+     {
+      "q": "Who would not bow down to the golden image?",
+      "a": "Shadrach, Meshach and Abed-nego.",
+      "ref": "Daniel 3:12",
+      "text": "There are certain Jews whom thou hast set over the affairs of the province of Babylon, Shadrach, Meshach, and Abed-nego; these men, O king, have not regarded thee: they serve not thy gods, nor worship the golden image which thou hast set up.",
+      "spots": [
+       [
+        0.28,
+        0.56,
+        0.12
+       ]
+      ]
+     },
+     {
+      "q": "The king's strongest soldiers tied up the three friends. Find a soldier's shield.",
+      "a": "The most mighty men in his army.",
+      "ref": "Daniel 3:20",
+      "text": "And he commanded the most mighty men that were in his army to bind Shadrach, Meshach, and Abed-nego, and to cast them into the burning fiery furnace.",
+      "spots": [
+       [
+        0.96,
+        0.52,
+        0.06
+       ]
+      ]
+     },
+     {
+      "q": "Who looked into the fire and saw four men walking?",
+      "a": "The king. He said the fourth looked “like the Son of God”.",
+      "ref": "Daniel 3:25",
+      "text": "He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of God.",
+      "spots": [
+       [
+        0.78,
+        0.47,
+        0.11
+       ]
+      ]
+     },
+     {
+      "q": "Who came out of the fire with not one hair singed?",
+      "a": "The three friends. They did not even smell of smoke.",
+      "ref": "Daniel 3:27",
+      "text": "And the princes, governors, and captains, and the king’s counsellors, being gathered together, saw these men, upon whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them.",
+      "spots": [
+       [
+        0.28,
+        0.56,
+        0.12
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     8,
+     10,
+     12
+    ],
+    "odd": {
+     "story": "forbid-them-not",
+     "image": "media:kids/stories/forbid-them-not/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "nebuchadnezzar",
+     "name": "King Nebuchadnezzar",
+     "quote": "Lo, I see four men loose, walking in the midst of the fire",
+     "reference": "Daniel 3:25",
+     "text": "He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of God.",
+     "audio": "media:kids/audio/games/who-said-it/nebuchadnezzar.webm",
+     "portraits": [
+      "media:kids/games/portraits/nebuchadnezzar.webp"
+     ]
+    },
+    {
+     "id": "the-three-friends",
+     "name": "Shadrach, Meshach and Abed-nego",
+     "quote": "our God whom we serve is able to deliver us",
+     "reference": "Daniel 3:17",
+     "text": "If it be so, our God whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king.",
+     "audio": "media:kids/audio/games/who-said-it/the-three-friends.webm",
+     "portraits": [
+      "media:kids/games/portraits/shadrach.webp",
+      "media:kids/games/portraits/meshach.webp",
+      "media:kids/games/portraits/abednego.webp"
+     ]
+    },
+    {
+     "id": "nebuchadnezzar",
+     "name": "King Nebuchadnezzar",
+     "quote": "Blessed be the God of Shadrach, Meshach, and Abed-nego",
+     "reference": "Daniel 3:28",
+     "text": "Then Nebuchadnezzar spake, and said, Blessed be the God of Shadrach, Meshach, and Abed-nego, who hath sent his angel, and delivered his servants that trusted in him, and have changed the king’s word, and yielded their bodies, that they might not serve nor worship any god, except their own God.",
+     "audio": "media:kids/audio/explorers/who-said-it/the-fourth-man-in-the-fire-nebuchadnezzar-daniel-3-28.webm",
+     "portraits": [
+      "media:kids/games/portraits/nebuchadnezzar.webp"
+     ]
+    },
+    {
+     "id": "the-three-friends",
+     "name": "Shadrach, Meshach and Abed-nego",
+     "quote": "be it known unto thee, O king, that we will not serve thy gods",
+     "reference": "Daniel 3:18",
+     "text": "But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up.",
+     "audio": "media:kids/audio/explorers/who-said-it/the-fourth-man-in-the-fire-three-friends-daniel-3-18.webm",
+     "portraits": [
+      "media:kids/games/portraits/shadrach.webp",
+      "media:kids/games/portraits/meshach.webp",
+      "media:kids/games/portraits/abednego.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "The golden image was very tall.",
+     "right": true,
+     "why": "Threescore cubits high: about 27 metres.",
+     "ref": "Daniel 3:1",
+     "verse": "Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon."
+    },
+    {
+     "text": "Everyone in Babylon refused to bow.",
+     "right": false,
+     "why": "All the people bowed, except the three friends.",
+     "ref": "Daniel 3:7",
+     "verse": "Therefore at that time, when all the people heard the sound of the cornet, flute, harp, sackbut, psaltery, and all kinds of musick, all the people, the nations, and the languages, fell down and worshipped the golden image that Nebuchadnezzar the king had set up."
+    },
+    {
+     "text": "The friends said God was able to save them.",
+     "right": true,
+     "why": "“Our God whom we serve is able to deliver us.”",
+     "ref": "Daniel 3:17",
+     "verse": "If it be so, our God whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king."
+    },
+    {
+     "text": "The friends said they would bow if God did not save them.",
+     "right": false,
+     "why": "“But if not … we will not serve thy gods.”",
+     "ref": "Daniel 3:18",
+     "verse": "But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up."
+    },
+    {
+     "text": "The furnace was heated seven times hotter than usual.",
+     "right": true,
+     "why": "The king was very angry.",
+     "ref": "Daniel 3:19",
+     "verse": "Then was Nebuchadnezzar full of fury, and the form of his visage was changed against Shadrach, Meshach, and Abed-nego: therefore he spake, and commanded that they should heat the furnace one seven times more than it was wont to be heated."
+    },
+    {
+     "text": "The king saw three men in the fire.",
+     "right": false,
+     "why": "He saw four, and the fourth was like the Son of God.",
+     "ref": "Daniel 3:25",
+     "verse": "He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of God."
+    },
+    {
+     "text": "The friends' coats were burned.",
+     "right": false,
+     "why": "Their coats were not changed, and they did not smell of fire.",
+     "ref": "Daniel 3:27",
+     "verse": "And the princes, governors, and captains, and the king’s counsellors, being gathered together, saw these men, upon whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them."
+    },
+    {
+     "text": "The king praised the God of Shadrach, Meshach and Abed-nego.",
+     "right": true,
+     "why": "“Blessed be the God of Shadrach, Meshach, and Abed-nego.”",
+     "ref": "Daniel 3:28",
+     "verse": "Then Nebuchadnezzar spake, and said, Blessed be the God of Shadrach, Meshach, and Abed-nego, who hath sent his angel, and delivered his servants that trusted in him, and have changed the king’s word, and yielded their bodies, that they might not serve nor worship any god, except their own God."
+    }
+   ],
+   "think": {
+    "think": "Why would the three friends not bow down?",
+    "journal": "The friends said, “But if not…”. What does it mean to trust God even when you don't know what will happen?",
+    "talk": [
+     "When is it hard to do the right thing when everyone else is doing wrong?",
+     "Who was the fourth man, do you think?"
+    ],
+    "do": "This week, choose the right thing once, even if no one else does.",
+    "pray": "Dear God, You are with me even when things are hard. Help me be brave and do what is right.",
+    "prayAudio": "media:kids/audio/stops/the-fourth-man-in-the-fire/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "nebuchadnezzar",
+    "shadrach",
+    "meshach",
+    "abednego",
+    "babylon",
+    "furnace"
+   ]
+  },
+  {
+   "id": "how-much-more",
+   "title": "Teach Us to Pray",
+   "refs": "Luke 11:1–13",
+   "section": "map-06",
+   "badge": "media:kids/stops/how-much-more/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "Jesus' picture-stories are told as stories He told. The Lord's Prayer is quoted in the KJV words of Luke 11.",
+   "chapter": {
+    "book": "Luke",
+    "range": "11:1-13"
+   },
+   "flipbook": "assets/kids/stories/how-much-more.json",
+   "pages": [
+    "media:kids/stories/how-much-more/00.webp",
+    "media:kids/stories/how-much-more/01.webp",
+    "media:kids/stories/how-much-more/02.webp",
+    "media:kids/stories/how-much-more/03.webp",
+    "media:kids/stories/how-much-more/04.webp",
+    "media:kids/stories/how-much-more/05.webp",
+    "media:kids/stories/how-much-more/06.webp",
+    "media:kids/stories/how-much-more/07.webp",
+    "media:kids/stories/how-much-more/08.webp",
+    "media:kids/stories/how-much-more/09.webp",
+    "media:kids/stories/how-much-more/10.webp",
+    "media:kids/stories/how-much-more/11.webp"
+   ],
+   "narration": "media:stories/how-much-more/how-much-more.webm",
+   "verse": {
+    "ref": "Luke 11:9",
+    "text": "And I say unto you, Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.",
+    "audio": "media:kids/audio/explorers/verses/how-much-more.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/how-much-more/seek.webp",
+    "questions": [
+     {
+      "q": "When did the man go to his friend's house? Find a clue in the sky.",
+      "a": "At midnight.",
+      "ref": "Luke 11:5",
+      "text": "And he said unto them, Which of you shall have a friend, and shall go unto him at midnight, and say unto him, Friend, lend me three loaves;",
+      "spots": [
+       [
+        0.31,
+        0.1,
+        0.05
+       ]
+      ]
+     },
+     {
+      "q": "What did he ask to borrow?",
+      "a": "Three loaves of bread.",
+      "ref": "Luke 11:5",
+      "text": "And he said unto them, Which of you shall have a friend, and shall go unto him at midnight, and say unto him, Friend, lend me three loaves;",
+      "spots": [
+       [
+        0.12,
+        0.67,
+        0.1
+       ]
+      ]
+     },
+     {
+      "q": "Who kept on asking until his friend got up?",
+      "a": "The man at the door. His friend got up because he kept on asking.",
+      "ref": "Luke 11:8",
+      "text": "I say unto you, Though he will not rise and give him, because he is his friend, yet because of his importunity he will rise and give him as many as he needeth.",
+      "spots": [
+       [
+        0.65,
+        0.52,
+        0.13
+       ]
+      ]
+     },
+     {
+      "q": "The friend inside said his children were in bed. Find someone else asleep.",
+      "a": "Everyone was asleep. It was the middle of the night.",
+      "ref": "Luke 11:7",
+      "text": "And he from within shall answer and say, Trouble me not: the door is now shut, and my children are with me in bed; I cannot rise and give thee.",
+      "spots": [
+       [
+        0.22,
+        0.8,
+        0.1
+       ]
+      ]
+     },
+     {
+      "q": "A visitor had come from a journey. Find an animal people rode on a journey.",
+      "a": "A donkey.",
+      "ref": "Luke 11:6",
+      "text": "For a friend of mine in his journey is come to me, and I have nothing to set before him?",
+      "spots": [
+       [
+        0.15,
+        0.5,
+        0.09
+       ]
+      ]
+     },
+     {
+      "q": "The house was dark. Find something that would give light.",
+      "a": "An oil lamp.",
+      "ref": "Luke 11:7",
+      "text": "And he from within shall answer and say, Trouble me not: the door is now shut, and my children are with me in bed; I cannot rise and give thee.",
+      "spots": [
+       [
+        0.94,
+        0.23,
+        0.05
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     7,
+     9,
+     11
+    ],
+    "odd": {
+     "story": "one-thing-thou-lackest",
+     "image": "media:kids/stories/one-thing-thou-lackest/04.webp"
+    }
+   },
+   "whoSaid": [],
+   "rightOrNot": [
+    {
+     "text": "A disciple asked Jesus to teach them to pray.",
+     "right": true,
+     "why": "“Lord, teach us to pray.”",
+     "ref": "Luke 11:1",
+     "verse": "And it came to pass, that, as he was praying in a certain place, when he ceased, one of his disciples said unto him, Lord, teach us to pray, as John also taught his disciples."
+    },
+    {
+     "text": "Jesus' prayer begins, “Our Father which art in heaven.”",
+     "right": true,
+     "why": "That is how Luke 11 begins it.",
+     "ref": "Luke 11:2",
+     "verse": "And he said unto them, When ye pray, say, Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done, as in heaven, so in earth."
+    },
+    {
+     "text": "The man asked his friend for money.",
+     "right": false,
+     "why": "He asked for three loaves of bread.",
+     "ref": "Luke 11:5",
+     "verse": "And he said unto them, Which of you shall have a friend, and shall go unto him at midnight, and say unto him, Friend, lend me three loaves;"
+    },
+    {
+     "text": "The friend got up at once, happy to help.",
+     "right": false,
+     "why": "At first he said, “Trouble me not.”",
+     "ref": "Luke 11:7",
+     "verse": "And he from within shall answer and say, Trouble me not: the door is now shut, and my children are with me in bed; I cannot rise and give thee."
+    },
+    {
+     "text": "Jesus said, “Ask, and it shall be given you.”",
+     "right": true,
+     "why": "Seek, and ye shall find; knock, and it shall be opened.",
+     "ref": "Luke 11:9",
+     "verse": "And I say unto you, Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."
+    },
+    {
+     "text": "Jesus said a father would give his son a snake if he asked for a fish.",
+     "right": false,
+     "why": "No good father would do that.",
+     "ref": "Luke 11:11",
+     "verse": "If a son shall ask bread of any of you that is a father, will he give him a stone? or if he ask a fish, will he for a fish give him a serpent?"
+    },
+    {
+     "text": "Everyone who asks receives.",
+     "right": true,
+     "why": "“For every one that asketh receiveth.”",
+     "ref": "Luke 11:10",
+     "verse": "For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened."
+    },
+    {
+     "text": "God gives the Holy Spirit to those who ask Him.",
+     "right": true,
+     "why": "“How much more shall your heavenly Father give the Holy Spirit.”",
+     "ref": "Luke 11:13",
+     "verse": "If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?"
+    }
+   ],
+   "think": {
+    "think": "What did Jesus teach about asking God?",
+    "journal": "What would you like to ask God for? Write a short prayer.",
+    "talk": [
+     "Why did the man keep knocking?",
+     "How is God a better Father than any father on earth?"
+    ],
+    "do": "Pray for one thing every day this week, and see how God answers.",
+    "pray": "Our Father which art in heaven, Hallowed be thy name. Thank You for always hearing me.",
+    "prayAudio": "media:kids/audio/stops/how-much-more/pray.webm"
+   },
+   "game": {
+    "type": "gather",
+    "item": "loaf",
+    "lambs": 3,
+    "lions": 3,
+    "others": [
+     "fish",
+     "lamp"
+    ],
+    "name": "loaf",
+    "plural": "loaves",
+    "image": "media:kids/games/gather/loaf.webp",
+    "basket": "media:kids/games/gather/basket.webp",
+    "otherImages": [
+     "media:kids/games/gather/fish.webp",
+     "media:kids/games/gather/lamp.webp"
+    ]
+   },
+   "cards": [
+    "donkey",
+    "loaf"
+   ]
+  },
+  {
+   "id": "a-great-way-off",
+   "title": "The Father Who Ran",
+   "refs": "Luke 15:11–32",
+   "section": "map-06",
+   "badge": "media:kids/stops/a-great-way-off/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "The far country is shown by an empty purse and loneliness, not by the son's wild living.",
+   "chapter": {
+    "book": "Luke",
+    "range": "15:11-32"
+   },
+   "flipbook": "assets/kids/stories/a-great-way-off.json",
+   "pages": [
+    "media:kids/stories/a-great-way-off/00.webp",
+    "media:kids/stories/a-great-way-off/01.webp",
+    "media:kids/stories/a-great-way-off/02.webp",
+    "media:kids/stories/a-great-way-off/03.webp",
+    "media:kids/stories/a-great-way-off/04.webp",
+    "media:kids/stories/a-great-way-off/05.webp",
+    "media:kids/stories/a-great-way-off/06.webp",
+    "media:kids/stories/a-great-way-off/07.webp",
+    "media:kids/stories/a-great-way-off/08.webp",
+    "media:kids/stories/a-great-way-off/09.webp",
+    "media:kids/stories/a-great-way-off/10.webp",
+    "media:kids/stories/a-great-way-off/11.webp",
+    "media:kids/stories/a-great-way-off/12.webp"
+   ],
+   "narration": "media:stories/a-great-way-off/a-great-way-off.webm",
+   "verse": {
+    "ref": "Luke 15:20",
+    "text": "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.",
+    "audio": "media:kids/audio/explorers/verses/a-great-way-off.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/a-great-way-off/seek.webp",
+    "questions": [
+     {
+      "q": "Who saw his son a great way off, and ran to him?",
+      "a": "The father.",
+      "ref": "Luke 15:20",
+      "text": "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.",
+      "spots": [
+       [
+        0.33,
+        0.42,
+        0.12
+       ]
+      ]
+     },
+     {
+      "q": "The father said, “Bring forth the best robe.” Who is wearing it?",
+      "a": "The son who came home.",
+      "ref": "Luke 15:22",
+      "text": "But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:",
+      "spots": [
+       [
+        0.52,
+        0.47,
+        0.12
+       ]
+      ]
+     },
+     {
+      "q": "What did the father put on his son's hand?",
+      "a": "A ring.",
+      "ref": "Luke 15:22",
+      "text": "But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:",
+      "spots": [
+       [
+        0.71,
+        0.25,
+        0.05
+       ]
+      ]
+     },
+     {
+      "q": "And what did he put on his feet?",
+      "a": "Shoes (sandals).",
+      "ref": "Luke 15:22",
+      "text": "But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:",
+      "spots": [
+       [
+        0.58,
+        0.69,
+        0.05
+       ],
+       [
+        0.48,
+        0.77,
+        0.04
+       ]
+      ]
+     },
+     {
+      "q": "The older brother heard music and dancing. Find something that makes music.",
+      "a": "A drum or a flute.",
+      "ref": "Luke 15:25",
+      "text": "Now his elder son was in the field: and as he came and drew nigh to the house, he heard musick and dancing.",
+      "spots": [
+       [
+        0.15,
+        0.51,
+        0.08
+       ],
+       [
+        0.17,
+        0.24,
+        0.06
+       ]
+      ]
+     },
+     {
+      "q": "Who was angry and would not go in?",
+      "a": "The older brother. His father came out to him too.",
+      "ref": "Luke 15:28",
+      "text": "And he was angry, and would not go in: therefore came his father out, and intreated him.",
+      "spots": [
+       [
+        0.87,
+        0.33,
+        0.08
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     8,
+     10,
+     12
+    ],
+    "odd": {
+     "story": "all-things-new",
+     "image": "media:kids/stories/all-things-new/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "younger-son",
+     "name": "The younger son",
+     "quote": "I will arise and go to my father",
+     "reference": "Luke 15:18",
+     "text": "I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee,",
+     "audio": "media:kids/audio/games/who-said-it/younger-son.webm",
+     "portraits": [
+      "media:kids/games/portraits/younger-son.webp"
+     ]
+    },
+    {
+     "id": "father",
+     "name": "The father",
+     "quote": "he was lost, and is found",
+     "reference": "Luke 15:24",
+     "text": "For this my son was dead, and is alive again; he was lost, and is found. And they began to be merry.",
+     "audio": "media:kids/audio/games/who-said-it/father.webm",
+     "portraits": [
+      "media:kids/games/portraits/father.webp"
+     ]
+    },
+    {
+     "id": "older-brother",
+     "name": "The older brother",
+     "quote": "Lo, these many years do I serve thee",
+     "reference": "Luke 15:29",
+     "text": "And he answering said to his father, Lo, these many years do I serve thee, neither transgressed I at any time thy commandment: and yet thou never gavest me a kid, that I might make merry with my friends:",
+     "audio": "media:kids/audio/games/who-said-it/older-brother.webm",
+     "portraits": [
+      "media:kids/games/portraits/older-brother.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "The younger son asked for his share of the money.",
+     "right": true,
+     "why": "“Give me the portion of goods that falleth to me.”",
+     "ref": "Luke 15:12",
+     "verse": "And the younger of them said to his father, Father, give me the portion of goods that falleth to me. And he divided unto them his living."
+    },
+    {
+     "text": "He saved his money carefully.",
+     "right": false,
+     "why": "He wasted it with riotous living.",
+     "ref": "Luke 15:13",
+     "verse": "And not many days after the younger son gathered all together, and took his journey into a far country, and there wasted his substance with riotous living."
+    },
+    {
+     "text": "He ended up feeding pigs.",
+     "right": true,
+     "why": "A man sent him into his fields to feed swine.",
+     "ref": "Luke 15:15",
+     "verse": "And he went and joined himself to a citizen of that country; and he sent him into his fields to feed swine."
+    },
+    {
+     "text": "He planned to say, “I have sinned.”",
+     "right": true,
+     "why": "“Father, I have sinned against heaven, and before thee.”",
+     "ref": "Luke 15:18",
+     "verse": "I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee,"
+    },
+    {
+     "text": "The father waited for his son to come all the way to the door.",
+     "right": false,
+     "why": "He saw him a great way off and ran to him.",
+     "ref": "Luke 15:20",
+     "verse": "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him."
+    },
+    {
+     "text": "The father had a party with the fatted calf.",
+     "right": true,
+     "why": "“Let us eat, and be merry.”",
+     "ref": "Luke 15:23",
+     "verse": "And bring hither the fatted calf, and kill it; and let us eat, and be merry:"
+    },
+    {
+     "text": "The older brother was happy and ran in to the party.",
+     "right": false,
+     "why": "He was angry and would not go in.",
+     "ref": "Luke 15:28",
+     "verse": "And he was angry, and would not go in: therefore came his father out, and intreated him."
+    },
+    {
+     "text": "The father said, “This thy brother was dead, and is alive again.”",
+     "right": true,
+     "why": "“He was lost, and is found.”",
+     "ref": "Luke 15:32",
+     "verse": "It was meet that we should make merry, and be glad: for this thy brother was dead, and is alive again; and was lost, and is found."
+    }
+   ],
+   "think": {
+    "think": "What does the father in the story show us about God?",
+    "journal": "The father ran to his son. How does it feel to know God welcomes you like that?",
+    "talk": [
+     "Why was the older brother angry?",
+     "Is there anyone we need to welcome or forgive?"
+    ],
+    "do": "Forgive someone this week, even if it is hard.",
+    "pray": "Dear God, thank You that You always welcome me back. Help me say sorry, and help me forgive others.",
+    "prayAudio": "media:kids/audio/stops/a-great-way-off/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "far-country",
+    "calf",
+    "robe-and-ring"
+   ]
+  },
+  {
+   "id": "for-his-oaths-sake",
+   "title": "The King Who Kept the Wrong Promise",
+   "refs": "Mark 6:14-29",
+   "section": "map-06",
+   "badge": "media:kids/explorers/badges/for-his-oaths-sake.webp",
+   "side": true,
+   "harder": true,
+   "note": "One of the harder stories: King Herod has John the Baptist killed to keep a foolish promise. The death is told over a closed prison door; nothing is shown. Read it with your child, and talk about keeping promises that are right.",
+   "chapter": {
+    "book": "Mark",
+    "range": "6:14-29"
+   },
+   "flipbook": "assets/kids/stories/for-his-oaths-sake.json",
+   "pages": [
+    "media:kids/stories/for-his-oaths-sake/00.webp",
+    "media:kids/stories/for-his-oaths-sake/01.webp",
+    "media:kids/stories/for-his-oaths-sake/02.webp",
+    "media:kids/stories/for-his-oaths-sake/03.webp",
+    "media:kids/stories/for-his-oaths-sake/04.webp",
+    "media:kids/stories/for-his-oaths-sake/05.webp",
+    "media:kids/stories/for-his-oaths-sake/06.webp",
+    "media:kids/stories/for-his-oaths-sake/07.webp",
+    "media:kids/stories/for-his-oaths-sake/08.webp",
+    "media:kids/stories/for-his-oaths-sake/09.webp"
+   ],
+   "narration": "media:stories/for-his-oaths-sake/for-his-oaths-sake.webm",
+   "verse": {
+    "ref": "Mark 6:20",
+    "text": "For Herod feared John, knowing that he was a just man and an holy, and observed him; and when he heard him, he did many things, and heard him gladly.",
+    "audio": "media:kids/audio/explorers/verses/for-his-oaths-sake.webm"
+   },
+   "investigate": {
+    "mode": "pages",
+    "questions": [
+     {
+      "q": "Find the page where Herod thinks Jesus is John the Baptist, back from the dead.",
+      "a": "Herod said, “It is John, whom I beheaded.”",
+      "ref": "Mark 6:16",
+      "text": "But when Herod heard thereof, he said, It is John, whom I beheaded: he is risen from the dead.",
+      "page": 1,
+      "choices": [
+       1,
+       4,
+       6
+      ]
+     },
+     {
+      "q": "Find the page where John tells Herod the truth.",
+      "a": "“It is not lawful for thee to have thy brother's wife.”",
+      "ref": "Mark 6:18",
+      "text": "For John had said unto Herod, It is not lawful for thee to have thy brother’s wife.",
+      "page": 2,
+      "choices": [
+       2,
+       5,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where Herod keeps John safe and likes to listen to him.",
+      "a": "Herod knew John was a just man and a holy one.",
+      "ref": "Mark 6:20",
+      "text": "For Herod feared John, knowing that he was a just man and an holy, and observed him; and when he heard him, he did many things, and heard him gladly.",
+      "page": 3,
+      "choices": [
+       3,
+       6,
+       8
+      ]
+     },
+     {
+      "q": "Find the page where Herod gives a supper on his birthday.",
+      "a": "For his lords, high captains and the chief men of Galilee.",
+      "ref": "Mark 6:21",
+      "text": "And when a convenient day was come, that Herod on his birthday made a supper to his lords, high captains, and chief estates of Galilee;",
+      "page": 4,
+      "choices": [
+       4,
+       1,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where Herod promises up to half his kingdom.",
+      "a": "He swore to give her whatever she asked.",
+      "ref": "Mark 6:23",
+      "text": "And he sware unto her, Whatsoever thou shalt ask of me, I will give it thee, unto the half of my kingdom.",
+      "page": 5,
+      "choices": [
+       5,
+       2,
+       8
+      ]
+     },
+     {
+      "q": "Find the page where Herod is very sad, but will not say no.",
+      "a": "He kept his promise because of his oath and his guests.",
+      "ref": "Mark 6:26",
+      "text": "And the king was exceeding sorry; yet for his oath’s sake, and for their sakes which sat with him, he would not reject her.",
+      "page": 7,
+      "choices": [
+       7,
+       4,
+       2
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     4,
+     6,
+     7,
+     9
+    ],
+    "odd": {
+     "story": "where-art-thou",
+     "image": "media:kids/stories/where-art-thou/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "john-the-baptist",
+     "name": "John the Baptist",
+     "quote": "It is not lawful for thee to have thy brother’s wife.",
+     "reference": "Mark 6:18",
+     "text": "For John had said unto Herod, It is not lawful for thee to have thy brother’s wife.",
+     "audio": "media:kids/audio/explorers/who-said-it/for-his-oaths-sake-john-the-baptist-mark-6-18.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/john-the-baptist.webp"
+     ]
+    },
+    {
+     "id": "herod",
+     "name": "King Herod",
+     "quote": "Ask of me whatsoever thou wilt, and I will give it thee.",
+     "reference": "Mark 6:22",
+     "text": "And when the daughter of the said Herodias came in, and danced, and pleased Herod and them that sat with him, the king said unto the damsel, Ask of me whatsoever thou wilt, and I will give it thee.",
+     "audio": "media:kids/audio/explorers/who-said-it/for-his-oaths-sake-herod-mark-6-22.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/herod.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "King Herod heard about the things Jesus did.",
+     "right": true,
+     "why": "His name was spread abroad.",
+     "ref": "Mark 6:14",
+     "verse": "And king Herod heard of him; (for his name was spread abroad:) and he said, That John the Baptist was risen from the dead, and therefore mighty works do shew forth themselves in him."
+    },
+    {
+     "text": "John told Herod it was fine to marry his brother's wife.",
+     "right": false,
+     "why": "He said, “It is not lawful.”",
+     "ref": "Mark 6:18",
+     "verse": "For John had said unto Herod, It is not lawful for thee to have thy brother’s wife."
+    },
+    {
+     "text": "Herod knew John was a just and holy man.",
+     "right": true,
+     "why": "He feared John and kept him safe.",
+     "ref": "Mark 6:20",
+     "verse": "For Herod feared John, knowing that he was a just man and an holy, and observed him; and when he heard him, he did many things, and heard him gladly."
+    },
+    {
+     "text": "Herod liked listening to John.",
+     "right": true,
+     "why": "“He heard him gladly.”",
+     "ref": "Mark 6:20",
+     "verse": "For Herod feared John, knowing that he was a just man and an holy, and observed him; and when he heard him, he did many things, and heard him gladly."
+    },
+    {
+     "text": "Herod promised the girl up to half his kingdom.",
+     "right": true,
+     "why": "He even swore an oath.",
+     "ref": "Mark 6:23",
+     "verse": "And he sware unto her, Whatsoever thou shalt ask of me, I will give it thee, unto the half of my kingdom."
+    },
+    {
+     "text": "The girl decided what to ask for all by herself.",
+     "right": false,
+     "why": "She went and asked her mother.",
+     "ref": "Mark 6:24",
+     "verse": "And she went forth, and said unto her mother, What shall I ask? And she said, The head of John the Baptist."
+    },
+    {
+     "text": "Herod was very sorry about the request.",
+     "right": true,
+     "why": "“The king was exceeding sorry.”",
+     "ref": "Mark 6:26",
+     "verse": "And the king was exceeding sorry; yet for his oath’s sake, and for their sakes which sat with him, he would not reject her."
+    },
+    {
+     "text": "John's disciples took his body and laid it in a tomb.",
+     "right": true,
+     "why": "They came when they heard.",
+     "ref": "Mark 6:29",
+     "verse": "And when his disciples heard of it, they came and took up his corpse, and laid it in a tomb."
+    }
+   ],
+   "think": {
+    "think": "Herod kept a promise, but it was a wrong one. What should he have done?",
+    "journal": "John told the truth even to a king. When is it hard for you to tell the truth?",
+    "talk": [
+     "Is it ever right to break a promise to do something wrong?",
+     "Why did Herod care so much about his guests?"
+    ],
+    "do": "Be careful this week to promise only what is good.",
+    "pray": "Dear God, help me to keep my word, and never to promise something that is wrong. Help me always to choose what pleases You.",
+    "prayAudio": "media:kids/audio/explorers/stops/for-his-oaths-sake/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "herod",
+    "herodias",
+    "john-the-baptist"
+   ]
+  },
+  {
+   "id": "help-thou-mine-unbelief",
+   "title": "Help Me Believe!",
+   "refs": "Mark 9:2-29",
+   "section": "map-06",
+   "badge": "media:kids/explorers/badges/help-thou-mine-unbelief.webp",
+   "side": true,
+   "harder": false,
+   "note": "A boy troubled by an evil spirit is healed. The spirit is never pictured; the boy falls and lies still, and Jesus lifts him up.",
+   "chapter": {
+    "book": "Mark",
+    "range": "9:2-29"
+   },
+   "flipbook": "assets/kids/stories/help-thou-mine-unbelief.json",
+   "pages": [
+    "media:kids/stories/help-thou-mine-unbelief/00.webp",
+    "media:kids/stories/help-thou-mine-unbelief/01.webp",
+    "media:kids/stories/help-thou-mine-unbelief/02.webp",
+    "media:kids/stories/help-thou-mine-unbelief/03.webp",
+    "media:kids/stories/help-thou-mine-unbelief/04.webp",
+    "media:kids/stories/help-thou-mine-unbelief/05.webp",
+    "media:kids/stories/help-thou-mine-unbelief/06.webp",
+    "media:kids/stories/help-thou-mine-unbelief/07.webp",
+    "media:kids/stories/help-thou-mine-unbelief/08.webp",
+    "media:kids/stories/help-thou-mine-unbelief/09.webp",
+    "media:kids/stories/help-thou-mine-unbelief/10.webp",
+    "media:kids/stories/help-thou-mine-unbelief/11.webp"
+   ],
+   "narration": "media:stories/help-thou-mine-unbelief/help-thou-mine-unbelief.webm",
+   "verse": {
+    "ref": "Mark 9:23",
+    "text": "Jesus said unto him, If thou canst believe, all things are possible to him that believeth.",
+    "audio": "media:kids/audio/explorers/verses/help-thou-mine-unbelief.webm"
+   },
+   "investigate": {
+    "mode": "pages",
+    "questions": [
+     {
+      "q": "Find the page where Jesus' clothes shine whiter than snow.",
+      "a": "No one on earth could make clothes so white.",
+      "ref": "Mark 9:3",
+      "text": "And his raiment became shining, exceeding white as snow; so as no fuller on earth can white them.",
+      "page": 1,
+      "choices": [
+       1,
+       4,
+       6
+      ]
+     },
+     {
+      "q": "Find the page where Moses and Elijah appear.",
+      "a": "They were talking with Jesus.",
+      "ref": "Mark 9:4",
+      "text": "And there appeared unto them Elias with Moses: and they were talking with Jesus.",
+      "page": 2,
+      "choices": [
+       2,
+       5,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where a voice speaks from the cloud.",
+      "a": "“This is my beloved Son: hear him.”",
+      "ref": "Mark 9:7",
+      "text": "And there was a cloud that overshadowed them: and a voice came out of the cloud, saying, This is my beloved Son: hear him.",
+      "page": 3,
+      "choices": [
+       3,
+       6,
+       8
+      ]
+     },
+     {
+      "q": "Find the page where the father says, “Lord, I believe.”",
+      "a": "He cried out with tears.",
+      "ref": "Mark 9:24",
+      "text": "And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief.",
+      "page": 8,
+      "choices": [
+       8,
+       5,
+       11
+      ]
+     },
+     {
+      "q": "Find the page where Jesus takes the boy by the hand and lifts him up.",
+      "a": "And the boy arose.",
+      "ref": "Mark 9:27",
+      "text": "But Jesus took him by the hand, and lifted him up; and he arose.",
+      "page": 10,
+      "choices": [
+       10,
+       7,
+       5
+      ]
+     },
+     {
+      "q": "Find the page where the disciples ask Jesus a question in private.",
+      "a": "“Why could not we cast him out?”",
+      "ref": "Mark 9:28",
+      "text": "And when he was come into the house, his disciples asked him privately, Why could not we cast him out?",
+      "page": 11,
+      "choices": [
+       11,
+       8,
+       6
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     7,
+     9,
+     11
+    ],
+    "odd": {
+     "story": "while-he-lingered",
+     "image": "media:kids/stories/while-he-lingered/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "peter",
+     "name": "Peter",
+     "quote": "Master, it is good for us to be here",
+     "reference": "Mark 9:5",
+     "text": "And Peter answered and said to Jesus, Master, it is good for us to be here: and let us make three tabernacles; one for thee, and one for Moses, and one for Elias.",
+     "audio": "media:kids/audio/explorers/who-said-it/help-thou-mine-unbelief-peter-mark-9-5.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/peter.webp"
+     ]
+    },
+    {
+     "id": "boys-father",
+     "name": "The boy's father",
+     "quote": "Lord, I believe; help thou mine unbelief.",
+     "reference": "Mark 9:24",
+     "text": "And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief.",
+     "audio": "media:kids/audio/explorers/who-said-it/help-thou-mine-unbelief-boys-father-mark-9-24.webm",
+     "portraits": [
+      "media:kids/explorers/portraits/boys-father.webp"
+     ]
+    },
+    {
+     "id": "disciple",
+     "name": "A disciple",
+     "quote": "Why could not we cast him out?",
+     "reference": "Mark 9:28",
+     "text": "And when he was come into the house, his disciples asked him privately, Why could not we cast him out?",
+     "audio": "media:kids/audio/explorers/who-said-it/help-thou-mine-unbelief-disciple-mark-9-28.webm",
+     "portraits": [
+      "media:kids/explorers/portraits/disciple.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "Jesus took Peter, James and John up a high mountain.",
+     "right": true,
+     "why": "They were by themselves.",
+     "ref": "Mark 9:2",
+     "verse": "And after six days Jesus taketh with him Peter, and James, and John, and leadeth them up into an high mountain apart by themselves: and he was transfigured before them."
+    },
+    {
+     "text": "Jesus' clothes became dull and dark.",
+     "right": false,
+     "why": "They became shining, exceeding white as snow.",
+     "ref": "Mark 9:3",
+     "verse": "And his raiment became shining, exceeding white as snow; so as no fuller on earth can white them."
+    },
+    {
+     "text": "Peter wanted to make three tabernacles (shelters).",
+     "right": true,
+     "why": "One for Jesus, one for Moses, one for Elias (Elijah).",
+     "ref": "Mark 9:5",
+     "verse": "And Peter answered and said to Jesus, Master, it is good for us to be here: and let us make three tabernacles; one for thee, and one for Moses, and one for Elias."
+    },
+    {
+     "text": "The voice from the cloud said, “Hear him.”",
+     "right": true,
+     "why": "“This is my beloved Son: hear him.”",
+     "ref": "Mark 9:7",
+     "verse": "And there was a cloud that overshadowed them: and a voice came out of the cloud, saying, This is my beloved Son: hear him."
+    },
+    {
+     "text": "The disciples at the bottom had healed the boy already.",
+     "right": false,
+     "why": "They could not.",
+     "ref": "Mark 9:18",
+     "verse": "And wheresoever he taketh him, he teareth him: and he foameth, and gnasheth with his teeth, and pineth away: and I spake to thy disciples that they should cast him out; and they could not."
+    },
+    {
+     "text": "Jesus said, “All things are possible to him that believeth.”",
+     "right": true,
+     "why": "That is why the father cried out.",
+     "ref": "Mark 9:23",
+     "verse": "Jesus said unto him, If thou canst believe, all things are possible to him that believeth."
+    },
+    {
+     "text": "The father said, “Lord, I believe; help thou mine unbelief.”",
+     "right": true,
+     "why": "He was honest about his doubts.",
+     "ref": "Mark 9:24",
+     "verse": "And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief."
+    },
+    {
+     "text": "Jesus said this kind comes out only by shouting.",
+     "right": false,
+     "why": "“By nothing, but by prayer and fasting.”",
+     "ref": "Mark 9:29",
+     "verse": "And he said unto them, This kind can come forth by nothing, but by prayer and fasting."
+    }
+   ],
+   "think": {
+    "think": "What did the father mean by “help thou mine unbelief”?",
+    "journal": "Is it all right to tell God when you find it hard to believe? What would you say to Him?",
+    "talk": [
+     "Why did the disciples ask Jesus in private?",
+     "When is it hard for us to trust God?"
+    ],
+    "do": "Tell God honestly how you feel when you pray this week.",
+    "pray": "Dear God, I believe. When I find it hard to trust You, please help me, like You helped the father in the story.",
+    "prayAudio": "media:kids/audio/explorers/stops/help-thou-mine-unbelief/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "peter",
+    "moses",
+    "elijah",
+    "high-mountain"
+   ]
+  },
+  {
+   "id": "forbid-them-not",
+   "title": "Let the Children Come",
+   "refs": "Mark 10:13–16",
+   "section": "map-06",
+   "badge": "media:kids/stops/forbid-them-not/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "A gentle story throughout. “Suffer” is explained as an old word for “let”.",
+   "chapter": {
+    "book": "Mark",
+    "range": "10:13-16"
+   },
+   "flipbook": "assets/kids/stories/forbid-them-not.json",
+   "pages": [
+    "media:kids/stories/forbid-them-not/00.webp",
+    "media:kids/stories/forbid-them-not/01.webp",
+    "media:kids/stories/forbid-them-not/02.webp",
+    "media:kids/stories/forbid-them-not/03.webp",
+    "media:kids/stories/forbid-them-not/04.webp",
+    "media:kids/stories/forbid-them-not/05.webp",
+    "media:kids/stories/forbid-them-not/06.webp",
+    "media:kids/stories/forbid-them-not/07.webp",
+    "media:kids/stories/forbid-them-not/08.webp"
+   ],
+   "narration": "media:stories/forbid-them-not/forbid-them-not.webm",
+   "verse": {
+    "ref": "Mark 10:14",
+    "text": "But when Jesus saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.",
+    "audio": "media:kids/audio/explorers/verses/forbid-them-not.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/forbid-them-not/seek.webp",
+    "questions": [
+     {
+      "q": "Who told off the people who brought children to Jesus?",
+      "a": "The disciples.",
+      "ref": "Mark 10:13",
+      "text": "And they brought young children to him, that he should touch them: and his disciples rebuked those that brought them.",
+      "spots": [
+       [
+        0.36,
+        0.31,
+        0.07
+       ],
+       [
+        0.66,
+        0.32,
+        0.05
+       ],
+       [
+        0.96,
+        0.27,
+        0.05
+       ],
+       [
+        0.54,
+        0.29,
+        0.04
+       ]
+      ]
+     },
+     {
+      "q": "People even brought babies to Jesus. Find the littlest one.",
+      "a": "A baby. Luke calls them “infants”.",
+      "ref": "Luke 18:15",
+      "text": "And they brought unto him also infants, that he would touch them: but when his disciples saw it, they rebuked them.",
+      "spots": [
+       [
+        0.18,
+        0.32,
+        0.07
+       ]
+      ]
+     },
+     {
+      "q": "Jesus took the children up in his arms. Find a child who could be carried.",
+      "a": "A sleeping toddler.",
+      "ref": "Mark 10:16",
+      "text": "And he took them up in his arms, put his hands upon them, and blessed them.",
+      "spots": [
+       [
+        0.86,
+        0.39,
+        0.06
+       ]
+      ]
+     },
+     {
+      "q": "Jesus said we must receive God's kingdom like a little child. Find a child's toy.",
+      "a": "A wooden toy donkey.",
+      "ref": "Mark 10:15",
+      "text": "Verily I say unto you, Whosoever shall not receive the kingdom of God as a little child, he shall not enter therein.",
+      "spots": [
+       [
+        0.85,
+        0.78,
+        0.07
+       ]
+      ]
+     },
+     {
+      "q": "Later Jesus told Peter, “Feed my lambs.” Find a lamb.",
+      "a": "A lamb.",
+      "ref": "John 21:15",
+      "text": "So when they had dined, Jesus saith to Simon Peter, Simon, son of Jonas, lovest thou me more than these? He saith unto him, Yea, Lord; thou knowest that I love thee. He saith unto him, Feed my lambs.",
+      "spots": [
+       [
+        0.2,
+        0.65,
+        0.08
+       ]
+      ]
+     },
+     {
+      "q": "Jesus said even a cup of water given in his name matters. Find a water jar.",
+      "a": "A water jar.",
+      "ref": "Mark 9:41",
+      "text": "For whosoever shall give you a cup of water to drink in my name, because ye belong to Christ, verily I say unto you, he shall not lose his reward.",
+      "spots": [
+       [
+        0.11,
+        0.67,
+        0.07
+       ],
+       [
+        0.95,
+        0.36,
+        0.05
+       ],
+       [
+        0.03,
+        0.6,
+        0.04
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     2,
+     4,
+     5,
+     7,
+     8
+    ],
+    "odd": {
+     "story": "into-his-hand",
+     "image": "media:kids/stories/into-his-hand/04.webp"
+    }
+   },
+   "whoSaid": [],
+   "rightOrNot": [
+    {
+     "text": "People brought young children so that Jesus would touch them.",
+     "right": true,
+     "why": "They wanted Jesus to bless them.",
+     "ref": "Mark 10:13",
+     "verse": "And they brought young children to him, that he should touch them: and his disciples rebuked those that brought them."
+    },
+    {
+     "text": "The disciples were glad to see the children.",
+     "right": false,
+     "why": "They rebuked those who brought them.",
+     "ref": "Mark 10:13",
+     "verse": "And they brought young children to him, that he should touch them: and his disciples rebuked those that brought them."
+    },
+    {
+     "text": "Jesus was much displeased with the disciples.",
+     "right": true,
+     "why": "He did not want the children sent away.",
+     "ref": "Mark 10:14",
+     "verse": "But when Jesus saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God."
+    },
+    {
+     "text": "Jesus said, “Suffer the little children to come unto me.”",
+     "right": true,
+     "why": "“Suffer” here means “let”.",
+     "ref": "Mark 10:14",
+     "verse": "But when Jesus saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God."
+    },
+    {
+     "text": "Jesus said God's kingdom is only for grown-ups.",
+     "right": false,
+     "why": "“Of such is the kingdom of God.”",
+     "ref": "Mark 10:14",
+     "verse": "But when Jesus saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God."
+    },
+    {
+     "text": "Jesus said we must receive God's kingdom like a little child.",
+     "right": true,
+     "why": "Trusting, like a child.",
+     "ref": "Mark 10:15",
+     "verse": "Verily I say unto you, Whosoever shall not receive the kingdom of God as a little child, he shall not enter therein."
+    },
+    {
+     "text": "Jesus was too busy to hold the children.",
+     "right": false,
+     "why": "He took them up in his arms.",
+     "ref": "Mark 10:16",
+     "verse": "And he took them up in his arms, put his hands upon them, and blessed them."
+    },
+    {
+     "text": "Jesus blessed the children.",
+     "right": true,
+     "why": "He put his hands upon them, and blessed them.",
+     "ref": "Mark 10:16",
+     "verse": "And he took them up in his arms, put his hands upon them, and blessed them."
+    }
+   ],
+   "think": {
+    "think": "Why did Jesus want the children to come to him?",
+    "journal": "Jesus said God's kingdom belongs to people like children. What do children do that grown-ups can learn from?",
+    "talk": [
+     "Why do you think the disciples sent the children away?",
+     "How can we make younger children feel welcome?"
+    ],
+    "do": "Be kind to a younger child this week.",
+    "pray": "Dear Jesus, thank You that You love children. I want to come to You every day.",
+    "prayAudio": "media:kids/audio/stops/forbid-them-not/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "jordan-river",
+    "sheep"
+   ]
+  },
+  {
+   "id": "one-thing-thou-lackest",
+   "title": "The Rich Man Who Walked Away",
+   "refs": "Mark 10:17-31",
+   "section": "map-06",
+   "badge": "media:kids/explorers/badges/one-thing-thou-lackest.webp",
+   "side": true,
+   "harder": false,
+   "note": "A rich man asks Jesus about eternal life and goes away sad. A good story for talking about what we love most.",
+   "chapter": {
+    "book": "Mark",
+    "range": "10:17-31"
+   },
+   "flipbook": "assets/kids/stories/one-thing-thou-lackest.json",
+   "pages": [
+    "media:kids/stories/one-thing-thou-lackest/00.webp",
+    "media:kids/stories/one-thing-thou-lackest/01.webp",
+    "media:kids/stories/one-thing-thou-lackest/02.webp",
+    "media:kids/stories/one-thing-thou-lackest/03.webp",
+    "media:kids/stories/one-thing-thou-lackest/04.webp",
+    "media:kids/stories/one-thing-thou-lackest/05.webp",
+    "media:kids/stories/one-thing-thou-lackest/06.webp",
+    "media:kids/stories/one-thing-thou-lackest/07.webp",
+    "media:kids/stories/one-thing-thou-lackest/08.webp",
+    "media:kids/stories/one-thing-thou-lackest/09.webp",
+    "media:kids/stories/one-thing-thou-lackest/10.webp",
+    "media:kids/stories/one-thing-thou-lackest/11.webp"
+   ],
+   "narration": "media:stories/one-thing-thou-lackest/one-thing-thou-lackest.webm",
+   "verse": {
+    "ref": "Mark 10:27",
+    "text": "And Jesus looking upon them saith, With men it is impossible, but not with God: for with God all things are possible.",
+    "audio": "media:kids/audio/explorers/verses/one-thing-thou-lackest.webm"
+   },
+   "investigate": {
+    "mode": "pages",
+    "questions": [
+     {
+      "q": "Find the page where a man runs to Jesus and kneels.",
+      "a": "He asked, “What shall I do that I may inherit eternal life?”",
+      "ref": "Mark 10:17",
+      "text": "And when he was gone forth into the way, there came one running, and kneeled to him, and asked him, Good Master, what shall I do that I may inherit eternal life?",
+      "page": 1,
+      "choices": [
+       1,
+       4,
+       6
+      ]
+     },
+     {
+      "q": "Find the page where Jesus says only God is truly good.",
+      "a": "“There is none good but one, that is, God.”",
+      "ref": "Mark 10:18",
+      "text": "And Jesus said unto him, Why callest thou me good? there is none good but one, that is, God.",
+      "page": 2,
+      "choices": [
+       2,
+       5,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where Jesus looks at the man and loves him.",
+      "a": "“Jesus beholding him loved him.”",
+      "ref": "Mark 10:21",
+      "text": "Then Jesus beholding him loved him, and said unto him, One thing thou lackest: go thy way, sell whatsoever thou hast, and give to the poor, and thou shalt have treasure in heaven: and come, take up the cross, and follow me.",
+      "page": 4,
+      "choices": [
+       4,
+       1,
+       7
+      ]
+     },
+     {
+      "q": "Find the page where the man goes away sad.",
+      "a": "He went away grieved, for he had great possessions.",
+      "ref": "Mark 10:22",
+      "text": "And he was sad at that saying, and went away grieved: for he had great possessions.",
+      "page": 5,
+      "choices": [
+       5,
+       2,
+       8
+      ]
+     },
+     {
+      "q": "Find the page with a camel and a needle.",
+      "a": "It is easier for a camel to go through the eye of a needle.",
+      "ref": "Mark 10:25",
+      "text": "It is easier for a camel to go through the eye of a needle, than for a rich man to enter into the kingdom of God.",
+      "page": 7,
+      "choices": [
+       7,
+       4,
+       10
+      ]
+     },
+     {
+      "q": "Find the page where Jesus says all things are possible with God.",
+      "a": "“With God all things are possible.”",
+      "ref": "Mark 10:27",
+      "text": "And Jesus looking upon them saith, With men it is impossible, but not with God: for with God all things are possible.",
+      "page": 8,
+      "choices": [
+       8,
+       5,
+       11
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     7,
+     9,
+     11
+    ],
+    "odd": {
+     "story": "too-many-for-me",
+     "image": "media:kids/stories/too-many-for-me/04.webp"
+    }
+   },
+   "whoSaid": [
+    {
+     "id": "rich-young-man",
+     "name": "The rich young man",
+     "quote": "Good Master, what shall I do that I may inherit eternal life?",
+     "reference": "Mark 10:17",
+     "text": "And when he was gone forth into the way, there came one running, and kneeled to him, and asked him, Good Master, what shall I do that I may inherit eternal life?",
+     "audio": "media:kids/audio/explorers/who-said-it/one-thing-thou-lackest-rich-young-man-mark-10-17.webm",
+     "portraits": [
+      "media:kids/explorers/portraits/rich-young-man.webp"
+     ]
+    },
+    {
+     "id": "rich-young-man",
+     "name": "The rich young man",
+     "quote": "Master, all these have I observed from my youth.",
+     "reference": "Mark 10:20",
+     "text": "And he answered and said unto him, Master, all these have I observed from my youth.",
+     "audio": "media:kids/audio/explorers/who-said-it/one-thing-thou-lackest-rich-young-man-mark-10-20.webm",
+     "portraits": [
+      "media:kids/explorers/portraits/rich-young-man.webp"
+     ]
+    },
+    {
+     "id": "disciple",
+     "name": "A disciple",
+     "quote": "Who then can be saved?",
+     "reference": "Mark 10:26",
+     "text": "And they were astonished out of measure, saying among themselves, Who then can be saved?",
+     "audio": "media:kids/audio/explorers/who-said-it/one-thing-thou-lackest-disciple-mark-10-26.webm",
+     "portraits": [
+      "media:kids/explorers/portraits/disciple.webp"
+     ]
+    },
+    {
+     "id": "peter",
+     "name": "Peter",
+     "quote": "Lo, we have left all, and have followed thee.",
+     "reference": "Mark 10:28",
+     "text": "Then Peter began to say unto him, Lo, we have left all, and have followed thee.",
+     "audio": "media:kids/audio/explorers/who-said-it/one-thing-thou-lackest-peter-mark-10-28.webm",
+     "portraits": [
+      "media:kids/explorers/field-guide/peter.webp"
+     ]
+    }
+   ],
+   "rightOrNot": [
+    {
+     "text": "The man ran to Jesus and kneeled.",
+     "right": true,
+     "why": "He came running.",
+     "ref": "Mark 10:17",
+     "verse": "And when he was gone forth into the way, there came one running, and kneeled to him, and asked him, Good Master, what shall I do that I may inherit eternal life?"
+    },
+    {
+     "text": "The man asked how to become rich.",
+     "right": false,
+     "why": "He asked how to inherit eternal life.",
+     "ref": "Mark 10:17",
+     "verse": "And when he was gone forth into the way, there came one running, and kneeled to him, and asked him, Good Master, what shall I do that I may inherit eternal life?"
+    },
+    {
+     "text": "Jesus reminded him of the commandments.",
+     "right": true,
+     "why": "Do not kill, do not steal, honour thy father and mother.",
+     "ref": "Mark 10:19",
+     "verse": "Thou knowest the commandments, Do not commit adultery, Do not kill, Do not steal, Do not bear false witness, Defraud not, Honour thy father and mother."
+    },
+    {
+     "text": "Jesus loved the man.",
+     "right": true,
+     "why": "“Then Jesus beholding him loved him.”",
+     "ref": "Mark 10:21",
+     "verse": "Then Jesus beholding him loved him, and said unto him, One thing thou lackest: go thy way, sell whatsoever thou hast, and give to the poor, and thou shalt have treasure in heaven: and come, take up the cross, and follow me."
+    },
+    {
+     "text": "The man was glad to give his riches away.",
+     "right": false,
+     "why": "He was sad and went away grieved.",
+     "ref": "Mark 10:22",
+     "verse": "And he was sad at that saying, and went away grieved: for he had great possessions."
+    },
+    {
+     "text": "Jesus said it is hard for those who trust in riches to enter God's kingdom.",
+     "right": true,
+     "why": "“How hard is it for them that trust in riches.”",
+     "ref": "Mark 10:24",
+     "verse": "And the disciples were astonished at his words. But Jesus answereth again, and saith unto them, Children, how hard is it for them that trust in riches to enter into the kingdom of God!"
+    },
+    {
+     "text": "Jesus said some things are impossible even for God.",
+     "right": false,
+     "why": "“With God all things are possible.”",
+     "ref": "Mark 10:27",
+     "verse": "And Jesus looking upon them saith, With men it is impossible, but not with God: for with God all things are possible."
+    },
+    {
+     "text": "Peter said, “We have left all, and have followed thee.”",
+     "right": true,
+     "why": "And Jesus made them a promise.",
+     "ref": "Mark 10:28",
+     "verse": "Then Peter began to say unto him, Lo, we have left all, and have followed thee."
+    }
+   ],
+   "think": {
+    "think": "Why did the rich man go away sad?",
+    "journal": "Is there anything you love so much that it might come before God? Write about it.",
+    "talk": [
+     "Jesus loved the man. Why did He ask such a hard thing?",
+     "What does “with God all things are possible” mean for us?"
+    ],
+    "do": "Give away or share something you like this week.",
+    "pray": "Dear God, help me to love You more than anything I own. Thank You that with You, all things are possible.",
+    "prayAudio": "media:kids/audio/explorers/stops/one-thing-thou-lackest/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "peter",
+    "jordan-river",
+    "camel"
+   ]
+  },
+  {
+   "id": "all-things-new",
+   "title": "When God Makes Everything New",
+   "refs": "Revelation 21–22",
+   "section": "map-07",
+   "badge": "media:kids/stops/all-things-new/badge.webp",
+   "side": false,
+   "harder": false,
+   "note": "Told as a promise about the future, as Revelation tells it. No dates and no pictures of God.",
+   "chapter": {
+    "book": "Revelation",
+    "range": "21-22:5"
+   },
+   "flipbook": "assets/kids/stories/all-things-new.json",
+   "pages": [
+    "media:kids/stories/all-things-new/00.webp",
+    "media:kids/stories/all-things-new/01.webp",
+    "media:kids/stories/all-things-new/02.webp",
+    "media:kids/stories/all-things-new/03.webp",
+    "media:kids/stories/all-things-new/04.webp",
+    "media:kids/stories/all-things-new/05.webp",
+    "media:kids/stories/all-things-new/06.webp",
+    "media:kids/stories/all-things-new/07.webp",
+    "media:kids/stories/all-things-new/08.webp",
+    "media:kids/stories/all-things-new/09.webp",
+    "media:kids/stories/all-things-new/10.webp",
+    "media:kids/stories/all-things-new/11.webp",
+    "media:kids/stories/all-things-new/12.webp"
+   ],
+   "narration": "media:stories/all-things-new/all-things-new.webm",
+   "verse": {
+    "ref": "Revelation 21:4",
+    "text": "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.",
+    "audio": "media:kids/audio/explorers/verses/all-things-new.webm"
+   },
+   "investigate": {
+    "mode": "scene",
+    "image": "media:kids/stops/all-things-new/seek.webp",
+    "questions": [
+     {
+      "q": "Every gate of the city was made of one what?",
+      "a": "One pearl.",
+      "ref": "Revelation 21:21",
+      "text": "And the twelve gates were twelve pearls; every several gate was of one pearl: and the street of the city was pure gold, as it were transparent glass.",
+      "spots": [
+       [
+        0.59,
+        0.26,
+        0.05
+       ]
+      ]
+     },
+     {
+      "q": "Find the river of water of life, clear as crystal.",
+      "a": "It flows from the throne of God.",
+      "ref": "Revelation 22:1",
+      "text": "And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb.",
+      "spots": [
+       [
+        0.6,
+        0.54,
+        0.08
+       ],
+       [
+        0.7,
+        0.48,
+        0.05
+       ]
+      ]
+     },
+     {
+      "q": "Find the tree of life. It bare twelve kinds of fruit.",
+      "a": "The tree of life, on both sides of the river.",
+      "ref": "Revelation 22:2",
+      "text": "In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.",
+      "spots": [
+       [
+        0.8,
+        0.13,
+        0.12
+       ]
+      ]
+     },
+     {
+      "q": "The city wall was decorated with precious stones. Find a jewel.",
+      "a": "Jasper, sapphire, emerald and more.",
+      "ref": "Revelation 21:19",
+      "text": "And the foundations of the wall of the city were garnished with all manner of precious stones. The first foundation was jasper; the second, sapphire; the third, a chalcedony; the fourth, an emerald;",
+      "spots": [
+       [
+        0.94,
+        0.39,
+        0.04
+       ]
+      ]
+     },
+     {
+      "q": "God shall wipe away all tears. Find someone who is not sad any more.",
+      "a": "No more death, sorrow, crying or pain.",
+      "ref": "Revelation 21:4",
+      "text": "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.",
+      "spots": [
+       [
+        0.79,
+        0.55,
+        0.11
+       ],
+       [
+        0.32,
+        0.6,
+        0.15
+       ],
+       [
+        0.12,
+        0.35,
+        0.07
+       ]
+      ]
+     },
+     {
+      "q": "The tree of life gives its fruit every month. Find someone picking fruit.",
+      "a": "A child picking fruit.",
+      "ref": "Revelation 22:2",
+      "text": "In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.",
+      "spots": [
+       [
+        0.12,
+        0.35,
+        0.07
+       ]
+      ]
+     }
+    ]
+   },
+   "order": {
+    "pages": [
+     1,
+     3,
+     5,
+     8,
+     10,
+     12
+    ],
+    "odd": {
+     "story": "and-ruth-with-her",
+     "image": "media:kids/stories/and-ruth-with-her/04.webp"
+    }
+   },
+   "whoSaid": [],
+   "rightOrNot": [
+    {
+     "text": "John saw a new heaven and a new earth.",
+     "right": true,
+     "why": "The first heaven and earth were passed away.",
+     "ref": "Revelation 21:1",
+     "verse": "And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea."
+    },
+    {
+     "text": "In the new earth there is a big sea.",
+     "right": false,
+     "why": "“There was no more sea.”",
+     "ref": "Revelation 21:1",
+     "verse": "And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea."
+    },
+    {
+     "text": "God will live with His people.",
+     "right": true,
+     "why": "“The tabernacle of God is with men.”",
+     "ref": "Revelation 21:3",
+     "verse": "And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God."
+    },
+    {
+     "text": "There will still be crying and pain.",
+     "right": false,
+     "why": "“Neither shall there be any more pain.”",
+     "ref": "Revelation 21:4",
+     "verse": "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."
+    },
+    {
+     "text": "God said, “Behold, I make all things new.”",
+     "right": true,
+     "why": "And He told John to write it down.",
+     "ref": "Revelation 21:5",
+     "verse": "And he that sat upon the throne said, Behold, I make all things new. And he said unto me, Write: for these words are true and faithful."
+    },
+    {
+     "text": "The street of the city was pure gold.",
+     "right": true,
+     "why": "“As it were transparent glass.”",
+     "ref": "Revelation 21:21",
+     "verse": "And the twelve gates were twelve pearls; every several gate was of one pearl: and the street of the city was pure gold, as it were transparent glass."
+    },
+    {
+     "text": "The city needs the sun to light it.",
+     "right": false,
+     "why": "The glory of God lights it.",
+     "ref": "Revelation 21:23",
+     "verse": "And the city had no need of the sun, neither of the moon, to shine in it: for the glory of God did lighten it, and the Lamb is the light thereof."
+    },
+    {
+     "text": "The gates of the city are shut every night.",
+     "right": false,
+     "why": "“There shall be no night there.”",
+     "ref": "Revelation 21:25",
+     "verse": "And the gates of it shall not be shut at all by day: for there shall be no night there."
+    }
+   ],
+   "think": {
+    "think": "What will be different when God makes everything new?",
+    "journal": "What are you most looking forward to in God's new world?",
+    "talk": [
+     "Why will there be no more tears?",
+     "How can we bring a little of God's kindness to people who are sad now?"
+    ],
+    "do": "Cheer up someone who is sad this week.",
+    "pray": "Dear God, thank You that one day You will make everything new. Help me look forward to that day with joy.",
+    "prayAudio": "media:kids/audio/stops/all-things-new/pray.webm"
+   },
+   "game": null,
+   "cards": [
+    "john-on-patmos",
+    "patmos",
+    "new-jerusalem",
+    "lion"
+   ]
+  }
+ ],
+ "trail": [
+  {
+   "story": "while-he-lingered",
+   "section": "map-02",
+   "x": 0.62,
+   "y": 0.28
+  },
+  {
+   "story": "into-his-hand",
+   "section": "map-02",
+   "x": 0.35,
+   "y": 0.78
+  },
+  {
+   "story": "for-his-oaths-sake",
+   "section": "map-06",
+   "x": 0.84,
+   "y": 0.11
+  },
+  {
+   "story": "help-thou-mine-unbelief",
+   "section": "map-06",
+   "x": 0.15,
+   "y": 0.33
+  },
+  {
+   "story": "one-thing-thou-lackest",
+   "section": "map-06",
+   "x": 0.86,
+   "y": 0.62
+  }
+ ],
+ "ranks": [
+  {
+   "id": "scout",
+   "name": "Scout",
+   "min": 0,
+   "line": "Starting out on the trail",
+   "badge": "media:kids/explorers/ranks/scout.webp",
+   "line_audio": null
+  },
+  {
+   "id": "tracker",
+   "name": "Tracker",
+   "min": 4,
+   "line": "Four stories finished",
+   "badge": "media:kids/explorers/ranks/tracker.webp",
+   "line_audio": "media:kids/audio/explorers/nari/rank-tracker.webm"
+  },
+  {
+   "id": "navigator",
+   "name": "Navigator",
+   "min": 8,
+   "line": "Eight stories finished",
+   "badge": "media:kids/explorers/ranks/navigator.webp",
+   "line_audio": "media:kids/audio/explorers/nari/rank-navigator.webm"
+  },
+  {
+   "id": "trailblazer",
+   "name": "Trailblazer",
+   "min": 11,
+   "line": "The whole first trail finished",
+   "badge": "media:kids/explorers/ranks/trailblazer.webp",
+   "line_audio": "media:kids/audio/explorers/nari/rank-trailblazer.webm",
+   "verse": {
+    "ref": "Psalm 119:105",
+    "text": "Thy word is a lamp unto my feet, and a light unto my path."
+   }
+  }
+ ],
+ "fieldGuide": {
+  "shelves": [
+   {
+    "id": "people",
+    "name": "People"
+   },
+   {
+    "id": "places",
+    "name": "Places"
+   },
+   {
+    "id": "creatures",
+    "name": "Creatures and plants"
+   },
+   {
+    "id": "things",
+    "name": "Things"
+   }
+  ],
+  "cards": [
+   {
+    "id": "adam",
+    "shelf": "people",
+    "name": "Adam",
+    "image": "media:kids/games/portraits/adam.webp",
+    "facts": [
+     "The first man. God formed him from the dust of the ground.",
+     "He named all the animals.",
+     "He lived 930 years."
+    ],
+    "ref": "Genesis 2:7",
+    "text": "And the LORD God formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.",
+    "stories": [
+     "where-art-thou"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "eve",
+    "shelf": "people",
+    "name": "Eve",
+    "image": "media:kids/games/portraits/eve.webp",
+    "facts": [
+     "The first woman, made by God to be Adam's helper.",
+     "Adam named her Eve, which means “living”.",
+     "She was the mother of Cain, Abel and Seth."
+    ],
+    "ref": "Genesis 3:20",
+    "text": "And Adam called his wife’s name Eve; because she was the mother of all living.",
+    "stories": [
+     "where-art-thou"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "gideon",
+    "shelf": "people",
+    "name": "Gideon",
+    "image": "media:kids/games/portraits/gideon.webp",
+    "facts": [
+     "A judge of Israel from the tribe of Manasseh.",
+     "He felt he was the least in his family.",
+     "God won a battle through him with only 300 men."
+    ],
+    "ref": "Judges 6:15",
+    "text": "And he said unto him, Oh my Lord, wherewith shall I save Israel? behold, my family is poor in Manasseh, and I am the least in my father’s house.",
+    "stories": [
+     "too-many-for-me"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "phurah",
+    "shelf": "people",
+    "name": "Phurah",
+    "image": "media:kids/explorers/field-guide/phurah.webp",
+    "facts": [
+     "Gideon's servant.",
+     "He went with Gideon down to the enemy camp at night.",
+     "Together they heard a soldier tell his dream."
+    ],
+    "ref": "Judges 7:11",
+    "text": "And thou shalt hear what they say; and afterward shall thine hands be strengthened to go down unto the host. Then went he down with Phurah his servant unto the outside of the armed men that were in the host.",
+    "stories": [
+     "too-many-for-me"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "midianite-soldier",
+    "shelf": "people",
+    "name": "The soldier who dreamed",
+    "image": "media:kids/explorers/field-guide/midianite-soldier.webp",
+    "facts": [
+     "A soldier in the army of Midian.",
+     "He dreamed a barley loaf knocked over a tent.",
+     "His friend said it meant God would give Gideon the victory."
+    ],
+    "ref": "Judges 7:13",
+    "text": "And when Gideon was come, behold, there was a man that told a dream unto his fellow, and said, Behold, I dreamed a dream, and, lo, a cake of barley bread tumbled into the host of Midian, and came unto a tent, and smote it that it fell, and overturned it, that the tent lay along.",
+    "stories": [
+     "too-many-for-me"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "ruth",
+    "shelf": "people",
+    "name": "Ruth",
+    "image": "media:kids/games/portraits/ruth.webp",
+    "facts": [
+     "A young woman from Moab.",
+     "She stayed with Naomi and chose Naomi's God.",
+     "She became the great-grandmother of King David."
+    ],
+    "ref": "Ruth 4:17",
+    "text": "And the women her neighbours gave it a name, saying, There is a son born to Naomi; and they called his name Obed: he is the father of Jesse, the father of David.",
+    "stories": [
+     "and-ruth-with-her"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "naomi",
+    "shelf": "people",
+    "name": "Naomi",
+    "image": "media:kids/games/portraits/naomi.webp",
+    "facts": [
+     "She came from Bethlehem.",
+     "Her husband and two sons died in Moab.",
+     "God gave her joy again through Ruth and Boaz."
+    ],
+    "ref": "Ruth 1:2",
+    "text": "And the name of the man was Elimelech, and the name of his wife Naomi, and the name of his two sons Mahlon and Chilion, Ephrathites of Bethlehemjudah. And they came into the country of Moab, and continued there.",
+    "stories": [
+     "and-ruth-with-her"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "boaz",
+    "shelf": "people",
+    "name": "Boaz",
+    "image": "media:kids/games/portraits/boaz.webp",
+    "facts": [
+     "A rich farmer from Bethlehem.",
+     "He was kind to Ruth and let her glean in his field.",
+     "He married Ruth and became King David's great-grandfather."
+    ],
+    "ref": "Ruth 2:1",
+    "text": "And Naomi had a kinsman of her husband’s, a mighty man of wealth, of the family of Elimelech; and his name was Boaz.",
+    "stories": [
+     "and-ruth-with-her"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "nebuchadnezzar",
+    "shelf": "people",
+    "name": "Nebuchadnezzar",
+    "image": "media:kids/games/portraits/nebuchadnezzar.webp",
+    "facts": [
+     "The great king of Babylon.",
+     "He set up a golden image and told everyone to worship it.",
+     "He praised God after the three friends were saved."
+    ],
+    "ref": "Daniel 3:28",
+    "text": "Then Nebuchadnezzar spake, and said, Blessed be the God of Shadrach, Meshach, and Abed-nego, who hath sent his angel, and delivered his servants that trusted in him, and have changed the king’s word, and yielded their bodies, that they might not serve nor worship any god, except their own God.",
+    "stories": [
+     "the-fourth-man-in-the-fire"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "heroes-and-villains.html"
+   },
+   {
+    "id": "shadrach",
+    "shelf": "people",
+    "name": "Shadrach",
+    "image": "media:kids/games/portraits/shadrach.webp",
+    "facts": [
+     "His Hebrew name was Hananiah.",
+     "He was taken to Babylon as a young man with Daniel.",
+     "He would not bow to the golden image."
+    ],
+    "ref": "Daniel 1:7",
+    "text": "Unto whom the prince of the eunuchs gave names: for he gave unto Daniel the name of Belteshazzar; and to Hananiah, of Shadrach; and to Mishael, of Meshach; and to Azariah, of Abed-nego.",
+    "stories": [
+     "the-fourth-man-in-the-fire"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "meshach",
+    "shelf": "people",
+    "name": "Meshach",
+    "image": "media:kids/games/portraits/meshach.webp",
+    "facts": [
+     "His Hebrew name was Mishael.",
+     "He was one of Daniel's three friends.",
+     "He walked in the fire and was not burned."
+    ],
+    "ref": "Daniel 1:7",
+    "text": "Unto whom the prince of the eunuchs gave names: for he gave unto Daniel the name of Belteshazzar; and to Hananiah, of Shadrach; and to Mishael, of Meshach; and to Azariah, of Abed-nego.",
+    "stories": [
+     "the-fourth-man-in-the-fire"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "abednego",
+    "shelf": "people",
+    "name": "Abed-nego",
+    "image": "media:kids/games/portraits/abednego.webp",
+    "facts": [
+     "His Hebrew name was Azariah.",
+     "The king made him a ruler in Babylon.",
+     "He trusted God, even if God did not save him."
+    ],
+    "ref": "Daniel 2:49",
+    "text": "Then Daniel requested of the king, and he set Shadrach, Meshach, and Abed-nego, over the affairs of the province of Babylon: but Daniel sat in the gate of the king.",
+    "stories": [
+     "the-fourth-man-in-the-fire"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "joseph",
+    "shelf": "people",
+    "name": "Joseph",
+    "image": "media:kids/explorers/field-guide/joseph.webp",
+    "facts": [
+     "Jacob's son, sold by his brothers.",
+     "He served Potiphar and later became ruler of Egypt under Pharaoh.",
+     "“The LORD was with Joseph”, the Bible says again and again."
+    ],
+    "ref": "Genesis 39:2",
+    "text": "And the LORD was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian.",
+    "stories": [
+     "into-his-hand"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "potiphar",
+    "shelf": "people",
+    "name": "Potiphar",
+    "image": "media:kids/explorers/field-guide/potiphar.webp",
+    "facts": [
+     "An officer of Pharaoh and captain of the guard.",
+     "He bought Joseph as a servant.",
+     "He trusted Joseph with everything in his house."
+    ],
+    "ref": "Genesis 39:1",
+    "text": "And Joseph was brought down to Egypt; and Potiphar, an officer of Pharaoh, captain of the guard, an Egyptian, bought him of the hands of the Ishmeelites, which had brought him down thither.",
+    "stories": [
+     "into-his-hand"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "pharaoh",
+    "shelf": "people",
+    "name": "Pharaoh",
+    "image": "media:kids/explorers/field-guide/pharaoh.webp",
+    "facts": [
+     "“Pharaoh” was the title of the king of Egypt.",
+     "Potiphar served him.",
+     "Later, a Pharaoh made Joseph ruler over all Egypt."
+    ],
+    "ref": "Genesis 41:41",
+    "text": "And Pharaoh said unto Joseph, See, I have set thee over all the land of Egypt.",
+    "stories": [
+     "into-his-hand"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "herod",
+    "shelf": "people",
+    "name": "King Herod",
+    "image": "media:kids/explorers/field-guide/herod.webp",
+    "facts": [
+     "Herod Antipas, ruler of Galilee in Jesus' time.",
+     "He liked listening to John, but did not change.",
+     "He made a foolish promise and kept it."
+    ],
+    "ref": "Mark 6:26",
+    "text": "And the king was exceeding sorry; yet for his oath’s sake, and for their sakes which sat with him, he would not reject her.",
+    "stories": [
+     "for-his-oaths-sake"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "heroes-and-villains.html"
+   },
+   {
+    "id": "herodias",
+    "shelf": "people",
+    "name": "Herodias",
+    "image": "media:kids/explorers/field-guide/herodias.webp",
+    "facts": [
+     "She had been the wife of Herod's brother Philip.",
+     "She was angry with John for telling the truth.",
+     "She told her daughter what to ask for."
+    ],
+    "ref": "Mark 6:19",
+    "text": "Therefore Herodias had a quarrel against him, and would have killed him; but she could not:",
+    "stories": [
+     "for-his-oaths-sake"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "heroes-and-villains.html"
+   },
+   {
+    "id": "john-the-baptist",
+    "shelf": "people",
+    "name": "John the Baptist",
+    "image": "media:kids/explorers/field-guide/john-the-baptist.webp",
+    "facts": [
+     "He got people ready for Jesus.",
+     "He baptized people in the river Jordan.",
+     "Jesus said there was no greater prophet."
+    ],
+    "ref": "Mark 1:4",
+    "text": "John did baptize in the wilderness, and preach the baptism of repentance for the remission of sins.",
+    "stories": [
+     "for-his-oaths-sake"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "lot",
+    "shelf": "people",
+    "name": "Lot",
+    "image": "media:kids/explorers/field-guide/lot.webp",
+    "facts": [
+     "Abraham's nephew.",
+     "He chose to live near the city of Sodom.",
+     "God rescued him because He remembered Abraham."
+    ],
+    "ref": "Genesis 19:29",
+    "text": "And it came to pass, when God destroyed the cities of the plain, that God remembered Abraham, and sent Lot out of the midst of the overthrow, when he overthrew the cities in the which Lot dwelt.",
+    "stories": [
+     "while-he-lingered"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "abraham",
+    "shelf": "people",
+    "name": "Abraham",
+    "image": "media:kids/explorers/field-guide/abraham.webp",
+    "facts": [
+     "God promised him a family as many as the stars.",
+     "He prayed for the people of Sodom.",
+     "He is called the Friend of God."
+    ],
+    "ref": "Genesis 15:5",
+    "text": "And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.",
+    "stories": [
+     "while-he-lingered"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "peter",
+    "shelf": "people",
+    "name": "Peter",
+    "image": "media:kids/explorers/field-guide/peter.webp",
+    "facts": [
+     "A fisherman Jesus called to follow Him.",
+     "He was often the first to speak.",
+     "Jesus called him Peter, which means “rock”."
+    ],
+    "ref": "Mark 10:28",
+    "text": "Then Peter began to say unto him, Lo, we have left all, and have followed thee.",
+    "stories": [
+     "one-thing-thou-lackest",
+     "help-thou-mine-unbelief"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "moses",
+    "shelf": "people",
+    "name": "Moses",
+    "image": "media:kids/explorers/field-guide/moses.webp",
+    "facts": [
+     "He led Israel out of Egypt.",
+     "God gave him the Ten Commandments.",
+     "He appeared with Jesus on the high mountain."
+    ],
+    "ref": "Mark 9:4",
+    "text": "And there appeared unto them Elias with Moses: and they were talking with Jesus.",
+    "stories": [
+     "help-thou-mine-unbelief"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "elijah",
+    "shelf": "people",
+    "name": "Elijah",
+    "image": "media:kids/explorers/field-guide/elijah.webp",
+    "facts": [
+     "A great prophet of Israel. The KJV of Mark calls him “Elias”.",
+     "God took him up to heaven in a whirlwind.",
+     "He appeared with Jesus on the high mountain."
+    ],
+    "ref": "2 Kings 2:11",
+    "text": "And it came to pass, as they still went on, and talked, that, behold, there appeared a chariot of fire, and horses of fire, and parted them both asunder; and Elijah went up by a whirlwind into heaven.",
+    "stories": [
+     "help-thou-mine-unbelief"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "john-on-patmos",
+    "shelf": "people",
+    "name": "John, who wrote Revelation",
+    "image": "media:kids/explorers/field-guide/john-on-patmos.webp",
+    "facts": [
+     "One of Jesus' twelve disciples.",
+     "He was sent to the island of Patmos.",
+     "God showed him the new heaven and new earth."
+    ],
+    "ref": "Revelation 1:9",
+    "text": "I John, who also am your brother, and companion in tribulation, and in the kingdom and patience of Jesus Christ, was in the isle that is called Patmos, for the word of God, and for the testimony of Jesus Christ.",
+    "stories": [
+     "all-things-new"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "bible-characters.html"
+   },
+   {
+    "id": "eden",
+    "shelf": "places",
+    "name": "The garden of Eden",
+    "image": "media:kids/explorers/field-guide/eden.webp",
+    "facts": [
+     "The garden God planted for Adam and Eve.",
+     "A river went out of Eden to water it.",
+     "The tree of life grew in the middle."
+    ],
+    "ref": "Genesis 2:8",
+    "text": "And the LORD God planted a garden eastward in Eden; and there he put the man whom he had formed.",
+    "stories": [
+     "where-art-thou"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "spring-of-harod",
+    "shelf": "places",
+    "name": "The well of Harod",
+    "image": "media:kids/explorers/field-guide/spring-of-harod.webp",
+    "facts": [
+     "Gideon's army camped beside it.",
+     "The Midianites were in the valley below.",
+     "Here God chose the 300 men."
+    ],
+    "ref": "Judges 7:1",
+    "text": "Then Jerubbaal, who is Gideon, and all the people that were with him, rose up early, and pitched beside the well of Harod: so that the host of the Midianites were on the north side of them, by the hill of Moreh, in the valley.",
+    "stories": [
+     "too-many-for-me"
+    ],
+    "quest": true,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "bethlehem",
+    "shelf": "places",
+    "name": "Bethlehem",
+    "image": "media:kids/explorers/field-guide/bethlehem.webp",
+    "facts": [
+     "A small town in Judah. Its name means “house of bread”.",
+     "Naomi and Ruth came here at the barley harvest.",
+     "King David, and later Jesus, were born here."
+    ],
+    "ref": "Ruth 1:19",
+    "text": "So they two went until they came to Bethlehem. And it came to pass, when they were come to Bethlehem, that all the city was moved about them, and they said, Is this Naomi?",
+    "stories": [
+     "and-ruth-with-her"
+    ],
+    "quest": true,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "fields-of-boaz",
+    "shelf": "places",
+    "name": "The fields of Boaz",
+    "image": "media:kids/explorers/field-guide/fields-of-boaz.webp",
+    "facts": [
+     "Barley fields near Bethlehem.",
+     "Ruth gleaned there after the reapers.",
+     "Boaz told his men to leave extra grain for her."
+    ],
+    "ref": "Ruth 2:3",
+    "text": "And she went, and came, and gleaned in the field after the reapers: and her hap was to light on a part of the field belonging unto Boaz, who was of the kindred of Elimelech.",
+    "stories": [
+     "and-ruth-with-her"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "babylon",
+    "shelf": "places",
+    "name": "Babylon",
+    "image": "media:kids/explorers/field-guide/babylon.webp",
+    "facts": [
+     "A great city on the river Euphrates.",
+     "The golden image stood on its plain of Dura.",
+     "Daniel and his friends were taken there."
+    ],
+    "ref": "Daniel 3:1",
+    "text": "Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon.",
+    "stories": [
+     "the-fourth-man-in-the-fire"
+    ],
+    "quest": true,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "egypt",
+    "shelf": "places",
+    "name": "Egypt",
+    "image": "media:kids/explorers/field-guide/egypt.webp",
+    "facts": [
+     "A rich land beside the river Nile.",
+     "Joseph was sold there as a servant.",
+     "Its kings were called Pharaoh."
+    ],
+    "ref": "Genesis 39:1",
+    "text": "And Joseph was brought down to Egypt; and Potiphar, an officer of Pharaoh, captain of the guard, an Egyptian, bought him of the hands of the Ishmeelites, which had brought him down thither.",
+    "stories": [
+     "into-his-hand"
+    ],
+    "quest": true,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "sodom",
+    "shelf": "places",
+    "name": "Sodom",
+    "image": "media:kids/explorers/field-guide/sodom.webp",
+    "facts": [
+     "A city in the plain of Jordan.",
+     "Its people were very wicked.",
+     "God destroyed it, but rescued Lot."
+    ],
+    "ref": "Genesis 19:1",
+    "text": "And there came two angels to Sodom at even; and Lot sat in the gate of Sodom: and Lot seeing them rose up to meet them; and he bowed himself with his face toward the ground;",
+    "stories": [
+     "while-he-lingered"
+    ],
+    "quest": true,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "far-country",
+    "shelf": "places",
+    "name": "The far country",
+    "image": "media:kids/explorers/field-guide/far-country.webp",
+    "facts": [
+     "Where the younger son went with his money.",
+     "A great famine came there.",
+     "He fed pigs there before he came home."
+    ],
+    "ref": "Luke 15:13",
+    "text": "And not many days after the younger son gathered all together, and took his journey into a far country, and there wasted his substance with riotous living.",
+    "stories": [
+     "a-great-way-off"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "jordan-river",
+    "shelf": "places",
+    "name": "The river Jordan",
+    "image": "media:kids/explorers/field-guide/jordan-river.webp",
+    "facts": [
+     "The longest river in Israel.",
+     "It runs from the Sea of Galilee to the Salt Sea.",
+     "Jesus taught on its far side when the children were brought."
+    ],
+    "ref": "Mark 10:1",
+    "text": "And he arose from thence, and cometh into the coasts of Judaea by the farther side of Jordan: and the people resort unto him again; and, as he was wont, he taught them again.",
+    "stories": [
+     "forbid-them-not",
+     "one-thing-thou-lackest"
+    ],
+    "quest": true,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "high-mountain",
+    "shelf": "places",
+    "name": "The high mountain",
+    "image": "media:kids/explorers/field-guide/high-mountain.webp",
+    "facts": [
+     "Jesus went up with Peter, James and John.",
+     "There His clothes shone white as snow.",
+     "The Bible does not tell us its name."
+    ],
+    "ref": "Mark 9:2",
+    "text": "And after six days Jesus taketh with him Peter, and James, and John, and leadeth them up into an high mountain apart by themselves: and he was transfigured before them.",
+    "stories": [
+     "help-thou-mine-unbelief"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "patmos",
+    "shelf": "places",
+    "name": "Patmos",
+    "image": "media:kids/explorers/field-guide/patmos.webp",
+    "facts": [
+     "A small rocky island in the sea.",
+     "John was sent there because of God's word.",
+     "There he saw the visions of Revelation."
+    ],
+    "ref": "Revelation 1:9",
+    "text": "I John, who also am your brother, and companion in tribulation, and in the kingdom and patience of Jesus Christ, was in the isle that is called Patmos, for the word of God, and for the testimony of Jesus Christ.",
+    "stories": [
+     "all-things-new"
+    ],
+    "quest": true,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "new-jerusalem",
+    "shelf": "places",
+    "name": "The New Jerusalem",
+    "image": "media:kids/explorers/field-guide/new-jerusalem.webp",
+    "facts": [
+     "The holy city John saw coming down from God.",
+     "Its gates are pearls and its street is gold.",
+     "God and His people will live there together."
+    ],
+    "ref": "Revelation 21:2",
+    "text": "And I John saw the holy city, new Jerusalem, coming down from God out of heaven, prepared as a bride adorned for her husband.",
+    "stories": [
+     "all-things-new"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "peoples.html"
+   },
+   {
+    "id": "deer",
+    "shelf": "creatures",
+    "name": "The deer (hart)",
+    "image": "media:kids/games/two-by-two/deer.webp",
+    "facts": [
+     "The KJV calls a male deer a “hart”.",
+     "Deer are fast and sure-footed.",
+     "A psalm says we long for God as a deer longs for water."
+    ],
+    "ref": "Psalm 42:1",
+    "text": "As the hart panteth after the water brooks, so panteth my soul after thee, O God.",
+    "stories": [
+     "where-art-thou"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "flora-and-fauna.html"
+   },
+   {
+    "id": "camel",
+    "shelf": "creatures",
+    "name": "The camel",
+    "image": "media:kids/games/two-by-two/camel.webp",
+    "facts": [
+     "Camels can travel far in the desert.",
+     "The Midianites had too many to count.",
+     "Jesus said it is easier for a camel to go through a needle's eye than for a rich man to enter God's kingdom."
+    ],
+    "ref": "Mark 10:25",
+    "text": "It is easier for a camel to go through the eye of a needle, than for a rich man to enter into the kingdom of God.",
+    "stories": [
+     "too-many-for-me",
+     "one-thing-thou-lackest"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "flora-and-fauna.html"
+   },
+   {
+    "id": "donkey",
+    "shelf": "creatures",
+    "name": "The donkey (ass)",
+    "image": "media:kids/games/two-by-two/donkey.webp",
+    "facts": [
+     "The KJV calls a donkey an “ass”.",
+     "Donkeys carried people and loads on journeys.",
+     "The prophet Zechariah said the King would come riding on one."
+    ],
+    "ref": "Zechariah 9:9",
+    "text": "Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass.",
+    "stories": [
+     "how-much-more"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "flora-and-fauna.html"
+   },
+   {
+    "id": "calf",
+    "shelf": "creatures",
+    "name": "The fatted calf",
+    "image": "media:kids/games/two-by-two/oxen-and-cattle.webp",
+    "facts": [
+     "A young cow fed well for a special feast.",
+     "The father had it made ready when his son came home.",
+     "A feast meant great joy."
+    ],
+    "ref": "Luke 15:23",
+    "text": "And bring hither the fatted calf, and kill it; and let us eat, and be merry:",
+    "stories": [
+     "a-great-way-off"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "flora-and-fauna.html"
+   },
+   {
+    "id": "sheep",
+    "shelf": "creatures",
+    "name": "Sheep and lambs",
+    "image": "media:kids/games/two-by-two/sheep-and-lambs.webp",
+    "facts": [
+     "Sheep need a shepherd to lead and protect them.",
+     "Jesus called Himself the good shepherd.",
+     "He told Peter, “Feed my lambs.”"
+    ],
+    "ref": "John 10:11",
+    "text": "I am the good shepherd: the good shepherd giveth his life for the sheep.",
+    "stories": [
+     "forbid-them-not"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "flora-and-fauna.html"
+   },
+   {
+    "id": "lion",
+    "shelf": "creatures",
+    "name": "The lion",
+    "image": "media:kids/games/two-by-two/lion.webp",
+    "facts": [
+     "The strongest of the animals, the Bible says.",
+     "Jesus is called “the Lion of the tribe of Juda”.",
+     "Nari is a lion too!"
+    ],
+    "ref": "Revelation 5:5",
+    "text": "And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.",
+    "stories": [
+     "all-things-new"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "flora-and-fauna.html"
+   },
+   {
+    "id": "furnace",
+    "shelf": "things",
+    "name": "The fiery furnace",
+    "image": "media:kids/explorers/field-guide/furnace.webp",
+    "facts": [
+     "A huge oven, heated seven times hotter than usual.",
+     "The friends were thrown in, tied up.",
+     "They walked out free, not even smelling of smoke."
+    ],
+    "ref": "Daniel 3:19",
+    "text": "Then was Nebuchadnezzar full of fury, and the form of his visage was changed against Shadrach, Meshach, and Abed-nego: therefore he spake, and commanded that they should heat the furnace one seven times more than it was wont to be heated.",
+    "stories": [
+     "the-fourth-man-in-the-fire"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "supernaturals.html"
+   },
+   {
+    "id": "trumpet",
+    "shelf": "things",
+    "name": "The trumpet",
+    "image": "media:kids/games/gather/trumpet.webp",
+    "facts": [
+     "Trumpets were often made from a ram's horn.",
+     "They called people together or sounded an alarm.",
+     "Gideon's 300 men blew them all at once."
+    ],
+    "ref": "Judges 7:22",
+    "text": "And the three hundred blew the trumpets, and the LORD set every man’s sword against his fellow, even throughout all the host: and the host fled to Beth-shittah in Zererath, and to the border of Abel- meholah, unto Tabbath.",
+    "stories": [
+     "too-many-for-me"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "supernaturals.html"
+   },
+   {
+    "id": "lamp",
+    "shelf": "things",
+    "name": "The oil lamp",
+    "image": "media:kids/games/gather/lamp.webp",
+    "facts": [
+     "A small clay lamp that burned olive oil.",
+     "Gideon's men hid them in pitchers.",
+     "God's word is called a lamp unto our feet."
+    ],
+    "ref": "Psalm 119:105",
+    "text": "Thy word is a lamp unto my feet, and a light unto my path.",
+    "stories": [
+     "too-many-for-me"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "supernaturals.html"
+   },
+   {
+    "id": "loaf",
+    "shelf": "things",
+    "name": "Loaves of bread",
+    "image": "media:kids/games/gather/loaf.webp",
+    "facts": [
+     "Bread was baked fresh every day.",
+     "The man at midnight asked to borrow three loaves.",
+     "Jesus called Himself the bread of life."
+    ],
+    "ref": "John 6:35",
+    "text": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.",
+    "stories": [
+     "how-much-more"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "supernaturals.html"
+   },
+   {
+    "id": "robe-and-ring",
+    "shelf": "things",
+    "name": "The best robe and a ring",
+    "image": "media:kids/explorers/field-guide/robe-and-ring.webp",
+    "facts": [
+     "The father gave them to his son who came home.",
+     "A robe and ring showed he was a son, not a servant.",
+     "They are a picture of how God welcomes us."
+    ],
+    "ref": "Luke 15:22",
+    "text": "But the father said to his servants, Bring forth the best robe, and put it on him; and put a ring on his hand, and shoes on his feet:",
+    "stories": [
+     "a-great-way-off"
+    ],
+    "quest": false,
+    "train": false,
+    "guide": "supernaturals.html"
+   },
+   {
+    "id": "scroll",
+    "shelf": "things",
+    "name": "A scroll",
+    "image": "media:kids/explorers/field-guide/scroll.webp",
+    "facts": [
+     "Bible books were first written on scrolls.",
+     "A scroll was rolled up on wooden rollers.",
+     "Jesus read from the scroll of Isaiah."
+    ],
+    "ref": "Luke 4:17",
+    "text": "And there was delivered unto him the book of the prophet Esaias. And when he had opened the book, he found the place where it was written,",
+    "stories": [],
+    "quest": false,
+    "train": true,
+    "guide": "bible-books.html"
+   }
+  ]
+ },
+ "mapQuest": {
+  "image": "media:kids/explorers/games/bible-lands-map.webp?v=20261025",
+  "ratio": 1.7778,
+  "places": [
+   {
+    "card": "spring-of-harod",
+    "name": "The well of Harod",
+    "x": 0.417,
+    "y": 0.2,
+    "r": 0.083
+   },
+   {
+    "card": "jordan-river",
+    "name": "The river Jordan",
+    "x": 0.541,
+    "y": 0.3,
+    "r": 0.071
+   },
+   {
+    "card": "bethlehem",
+    "name": "Bethlehem",
+    "x": 0.287,
+    "y": 0.55,
+    "r": 0.083
+   },
+   {
+    "card": "sodom",
+    "name": "Sodom",
+    "x": 0.524,
+    "y": 0.765,
+    "r": 0.083
+   },
+   {
+    "card": "egypt",
+    "name": "Egypt",
+    "x": 0.121,
+    "y": 0.86,
+    "r": 0.13
+   },
+   {
+    "card": "babylon",
+    "name": "Babylon",
+    "x": 0.89,
+    "y": 0.22,
+    "r": 0.095
+   },
+   {
+    "card": "patmos",
+    "name": "Patmos",
+    "x": 0.192,
+    "y": 0.31,
+    "r": 0.083
+   }
+  ]
+ },
+ "bookTrain": {
+  "engine": "media:kids/games/book-train/engine.webp",
+  "groups": [
+   {
+    "id": "law",
+    "name": "The Law or the Pentateuch",
+    "car": "media:kids/games/book-train/car-law.webp",
+    "books": [
+     "Genesis",
+     "Exodus",
+     "Leviticus",
+     "Numbers",
+     "Deuteronomy"
+    ]
+   },
+   {
+    "id": "history",
+    "name": "History Books",
+    "car": "media:kids/games/book-train/car-history.webp",
+    "books": [
+     "Joshua",
+     "Judges",
+     "Ruth",
+     "1 Samuel",
+     "2 Samuel",
+     "1 Kings",
+     "2 Kings",
+     "1 Chronicles",
+     "2 Chronicles",
+     "Ezra",
+     "Nehemiah",
+     "Esther"
+    ]
+   },
+   {
+    "id": "poetry",
+    "name": "Poetry and Wisdom",
+    "car": "media:kids/games/book-train/car-poetry.webp",
+    "books": [
+     "Job",
+     "Psalms",
+     "Proverbs",
+     "Ecclesiastes",
+     "Song of Solomon"
+    ]
+   },
+   {
+    "id": "major-prophets",
+    "name": "Major Prophets",
+    "car": "media:kids/games/book-train/car-major-prophets.webp",
+    "books": [
+     "Isaiah",
+     "Jeremiah",
+     "Lamentations",
+     "Ezekiel",
+     "Daniel"
+    ]
+   },
+   {
+    "id": "minor-prophets",
+    "name": "Minor Prophets",
+    "car": "media:kids/games/book-train/car-minor-prophets.webp",
+    "books": [
+     "Hosea",
+     "Joel",
+     "Amos",
+     "Obadiah",
+     "Jonah",
+     "Micah",
+     "Nahum",
+     "Habakkuk",
+     "Zephaniah",
+     "Haggai",
+     "Zechariah",
+     "Malachi"
+    ]
+   },
+   {
+    "id": "gospels",
+    "name": "The Gospels",
+    "car": "media:kids/games/book-train/car-gospels.webp",
+    "books": [
+     "Matthew",
+     "Mark",
+     "Luke",
+     "John"
+    ]
+   },
+   {
+    "id": "church-history",
+    "name": "Church History",
+    "car": "media:kids/games/book-train/car-church-history.webp",
+    "books": [
+     "Acts"
+    ]
+   },
+   {
+    "id": "pauline-epistles",
+    "name": "Paul's Letters",
+    "car": "media:kids/games/book-train/car-pauls-letters.webp",
+    "books": [
+     "Romans",
+     "1 Corinthians",
+     "2 Corinthians",
+     "Galatians",
+     "Ephesians",
+     "Philippians",
+     "Colossians",
+     "1 Thessalonians",
+     "2 Thessalonians",
+     "1 Timothy",
+     "2 Timothy",
+     "Titus",
+     "Philemon"
+    ]
+   },
+   {
+    "id": "general-epistles",
+    "name": "General Letters",
+    "car": "media:kids/games/book-train/car-general-letters.webp",
+    "books": [
+     "Hebrews",
+     "James",
+     "1 Peter",
+     "2 Peter",
+     "1 John",
+     "2 John",
+     "3 John",
+     "Jude"
+    ]
+   },
+   {
+    "id": "prophecy",
+    "name": "Prophecy",
+    "car": "media:kids/games/book-train/car-prophecy.webp",
+    "books": [
+     "Revelation"
+    ]
+   }
+  ]
+ },
+ "nari": {
+  "lines": {
+   "explorer-welcome": "media:kids/audio/explorers/nari/explorer-welcome.webm",
+   "explorer-welcome-back": "media:kids/audio/explorers/nari/explorer-welcome-back.webm",
+   "read-intro": "media:kids/audio/explorers/nari/read-intro.webm",
+   "read-listen": "media:kids/audio/explorers/nari/read-listen.webm",
+   "read-chapter": "media:kids/audio/explorers/nari/read-chapter.webm",
+   "investigate-intro": "media:kids/audio/explorers/nari/investigate-intro.webm",
+   "investigate-found": "media:kids/audio/explorers/nari/investigate-found.webm",
+   "investigate-try": "media:kids/audio/explorers/nari/investigate-try.webm",
+   "investigate-done": "media:kids/audio/explorers/nari/investigate-done.webm",
+   "order-intro": "media:kids/audio/explorers/nari/order-intro.webm",
+   "order-odd": "media:kids/audio/explorers/nari/order-odd.webm",
+   "who-intro": "media:kids/audio/explorers/nari/who-intro.webm",
+   "right-or-not-intro": "media:kids/audio/explorers/nari/right-or-not-intro.webm",
+   "verse-intro": "media:kids/audio/explorers/nari/verse-intro.webm",
+   "verse-practice-done": "media:kids/audio/explorers/nari/verse-practice-done.webm",
+   "verse-learned": "media:kids/audio/explorers/nari/verse-learned.webm",
+   "think-intro": "media:kids/audio/explorers/nari/think-intro.webm",
+   "talk-intro": "media:kids/audio/explorers/nari/talk-intro.webm",
+   "field-guide-new": "media:kids/audio/explorers/nari/field-guide-new.webm",
+   "field-guide-shelf": "media:kids/audio/explorers/nari/field-guide-shelf.webm",
+   "rank-tracker": "media:kids/audio/explorers/nari/rank-tracker.webm",
+   "rank-navigator": "media:kids/audio/explorers/nari/rank-navigator.webm",
+   "rank-trailblazer": "media:kids/audio/explorers/nari/rank-trailblazer.webm",
+   "side-trail": "media:kids/audio/explorers/nari/side-trail.webm",
+   "harder-story": "media:kids/audio/explorers/nari/harder-story.webm",
+   "map-quest-intro": "media:kids/audio/explorers/nari/map-quest-intro.webm",
+   "book-train-intro": "media:kids/audio/explorers/nari/book-train-intro.webm",
+   "stop-done": "media:kids/audio/explorers/nari/stop-done.webm",
+   "grown-up-bridge": "media:kids/audio/explorers/nari/grown-up-bridge.webm",
+   "rest": "media:kids/audio/explorers/nari/rest.webm"
+  },
+  "poses": {
+   "reading": "media:kids/cub/stage-3-reading.webp",
+   "compass": "media:kids/cub/stage-3-compass.webp"
+  }
+ },
+ "sfx": {
+  "page-stamp": "media:kids/audio/explorers/sfx/page-stamp.webm",
+  "compass": "media:kids/audio/explorers/sfx/compass.webm",
+  "map-unfold": "media:kids/audio/explorers/sfx/map-unfold.webm",
+  "pen": "media:kids/audio/explorers/sfx/pen.webm"
+ },
+ "ui": {
+  "journal": "media:kids/explorers/ui/field-journal.webp?v=20261025",
+  "paper": "media:kids/explorers/ui/journal-paper.webp",
+  "certificate": "media:kids/explorers/print/certificate.png",
+  "verseCard": "media:kids/explorers/print/verse-card.png"
+ }
+}

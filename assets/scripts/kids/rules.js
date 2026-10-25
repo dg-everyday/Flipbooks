@@ -23,8 +23,19 @@
  *   isOpen(id, progress, data, inOrder)  whether a story may be opened
  *   sectionsDone(progress, data)  the parts of the map whose stories are all finished
  *   isFinished(stop)              whether a story's record counts as finished
- *   dueStickers(progress, earned, data)  sticker ids now due, in order
+ *   dueStickers(progress, earned, data, extra)  sticker ids now due, in order
  *   piecesFor(counts, stage)      which tree piece sits on which spot
+ *
+ * Explorers (ages 9 to 12) keep their own record (store.explorer) and story
+ * data (assets/kids/explorers-data.json, "xdata" here):
+ *   explorerRoad(xdata, settings)          the trail's stories, the harder two only when allowed
+ *   explorerTally(record, xdata)           { finished, verses, practised, talks, cards, read }
+ *   rankFor(finished, xdata)               the rank earned; nextRank(finished, xdata)
+ *   nextExplorerStory(record, xdata, settings)
+ *   isExplorerOpen(id, record, xdata, settings)
+ *   dueCards(record, xdata)                Field Guide cards earned but not yet in the guide
+ *   explorerSectionsDone(record, xdata, settings)  map parts whose trail stories are all finished
+ *   thisWeek(record, today)                stories read and verses learned in the last seven days
  */
 
 export const STEPS = ["watch", "find", "play", "verse", "talk"];
@@ -165,8 +176,14 @@ function giftsAt(count, first, every) {
  * (STICKERS_PER_STORY), so the first story's many "firsts" don't arrive as a
  * pile: what is due waits, and is never lost.
  */
-export function dueStickers(progress, earned, data) {
+export function dueStickers(progress, earned, data, extra = null) {
     const counts = tally(progress, data);
+    // An Explorer's stories, verses and talks count toward the same series.
+    if (extra) {
+        counts.finished += extra.finished ?? 0;
+        counts.fruit += extra.verses ?? 0;
+        counts.flowers += extra.talks ?? 0;
+    }
     const firsts = progress?.firsts ?? {};
     const have = earned ?? {};
     const byGroup = new Map();
@@ -207,6 +224,131 @@ export function dueStickers(progress, earned, data) {
         .map((item, order) => ({ ...item, order }))
         .sort((a, b) => a.turn - b.turn || a.order - b.order)
         .map(({ id, path }) => ({ id, path }));
+}
+
+// ------------------------------------------------------------------ explorers
+/** The Explorers' trail, in order; the harder stories only when a grown-up allows them. */
+export function explorerRoad(xdata, settings) {
+    const byId = new Map(xdata.stories.map((s) => [s.id, s]));
+    return xdata.road
+        .map((id) => byId.get(id))
+        .filter((story) => story && (!story.harder || settings?.harderStories === true));
+}
+
+export function explorerTally(record, xdata) {
+    const stops = record?.stops ?? {};
+    let finished = 0;
+    let verses = 0;
+    let practised = 0;
+    let talks = 0;
+    let read = 0;
+    for (const story of xdata.stories) {
+        const stop = stops[story.id];
+        if (!stop?.steps) {
+            continue;
+        }
+        if (isFinished(stop)) {
+            finished += 1;
+        }
+        if (stop.verse?.learned) {
+            verses += 1;
+        }
+        if (stop.steps.verse) {
+            practised += 1;
+        }
+        if (stop.steps.talk) {
+            talks += 1;
+        }
+        if (stop.steps.watch) {
+            read += 1;
+        }
+    }
+    const cards = Object.keys(record?.cards ?? {}).filter((id) => xdata.fieldGuide.cards.some((c) => c.id === id)).length;
+    return { finished, verses, practised, talks, cards, read };
+}
+
+export function rankFor(finished, xdata) {
+    return stageFor(finished, xdata.ranks);
+}
+
+/** The next rank and how many more stories it takes, or null at the last. */
+export function nextRank(finished, xdata) {
+    const next = xdata.ranks.find((rank) => rank.min > finished);
+    return next ? { rank: next, more: next.min - finished } : null;
+}
+
+export function nextExplorerStory(record, xdata, settings) {
+    const stops = record?.stops ?? {};
+    return explorerRoad(xdata, settings).find((story) => !isFinished(stops[story.id])) ?? null;
+}
+
+/**
+ * Whether an Explorer story may be opened: it is on the trail (a harder story
+ * only when allowed), and, with "Stories in order", every story before it is
+ * finished. A finished story always stays open.
+ */
+export function isExplorerOpen(id, record, xdata, settings) {
+    const stories = explorerRoad(xdata, settings);
+    const index = stories.findIndex((s) => s.id === id);
+    if (index < 0) {
+        return false;
+    }
+    if (!settings?.mapInOrder) {
+        return true;
+    }
+    const stops = record?.stops ?? {};
+    if (isFinished(stops[id])) {
+        return true;
+    }
+    return stories.slice(0, index).every((s) => isFinished(stops[s.id]));
+}
+
+/**
+ * The Field Guide cards a child has earned but not yet been given, in the
+ * guide's order: a card comes with finishing any of its stories, a place with
+ * pinning it in Map Quest, and the scroll with finishing the Book Train.
+ */
+export function dueCards(record, xdata) {
+    const stops = record?.stops ?? {};
+    const have = record?.cards ?? {};
+    return xdata.fieldGuide.cards
+        .filter((card) => !have[card.id])
+        .filter((card) => card.stories.some((id) => isFinished(stops[id]))
+            || (card.quest && record?.quest?.[card.id] === true)
+            || (card.train && (record?.trainWins ?? 0) > 0))
+        .map((card) => card.id);
+}
+
+export function explorerSectionsDone(record, xdata, settings) {
+    const stops = record?.stops ?? {};
+    const bySection = new Map();
+    for (const story of explorerRoad(xdata, settings)) {
+        if (!bySection.has(story.section)) {
+            bySection.set(story.section, []);
+        }
+        bySection.get(story.section).push(story.id);
+    }
+    return [...bySection].filter(([, ids]) => ids.every((id) => isFinished(stops[id]))).map(([section]) => section);
+}
+
+/** What an Explorer did in the seven days up to `today` (YYYY-MM-DD): stories read, verses practised. */
+export function thisWeek(record, today) {
+    const end = Date.parse(`${today}T00:00:00Z`);
+    const inWeek = (day) => {
+        const t = Date.parse(`${day}T00:00:00Z`);
+        return Number.isFinite(t) && end - t >= 0 && end - t < 7 * 86400000;
+    };
+    let read = 0;
+    let verses = 0;
+    for (const stop of Object.values(record?.stops ?? {})) {
+        if (stop.days?.watch && inWeek(stop.days.watch)) {
+            read += 1;
+        }
+        if (stop.days?.verse && inWeek(stop.days.verse)) {
+            verses += 1;
+        }
+    }
+    return { read, verses };
 }
 
 /**

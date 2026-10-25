@@ -9,28 +9,38 @@
  *   #/home  #/map  #/stickers  #/games  #/games/pairs  #/games/colour/<story>
  *   #/stop/<story>[/<step>][/<game>]   the five steps; Play's extra games
  *   #/reward/<story>       after a story
+ *   #/guide[/<card>]       the Field Guide (Explorers)
+ *   #/games/map-quest  #/games/book-train   the Explorers' games
  *   #/rest                 the time limit was reached
  *   #/corner  #/corner/add  #/corner/child/<id>   behind the grown-up gate
  *   #/print/verse/<story>  #/print/certificate/<child>/<section>
+ *   #/print/explorer-verse/<story>  #/print/explorer-certificate/<child>/<section>
  *
  * Everything a child does is kept on this device (assets/scripts/kids/store.js);
  * the rules that turn it into leaves, birds, Nari's stage and stickers are in
  * assets/scripts/kids/rules.js; the story data is assets/kids/kids-data.json.
+ *
+ * Explorers (ages 9 to 12) see their own home (the Field Journal), map, Story
+ * Stop and Field Guide (kids-journal.js, kids-explore.js), from their own data,
+ * assets/kids/explorers-data.json, fetched only when an Explorer needs it.
  */
 
 import { resolveMedia } from "../../settings/settings.js?v=20261009-1";
-import * as store from "../../../assets/scripts/kids/store.js?v=20261024-2";
-import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
+import * as store from "../../../assets/scripts/kids/store.js?v=20261025-1";
+import * as rules from "../../../assets/scripts/kids/rules.js?v=20261025-1";
 import { createAudio } from "../../../assets/scripts/kids/audio.js?v=20261024-2";
 import {
-    BAND_NAMES, ICONS, brandLink, earnedFor, escapeHtml, gameConfig, gate, groupName, nariSrc, toast, treeHtml,
-} from "./kids-ui.js?v=20261024-8";
-import { renderStop, renderReward } from "./kids-stop.js?v=20261024-12";
-import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261024-8";
+    BAND_NAMES, ICONS, brandLink, earnedFor, escapeHtml, gameConfig, gate, groupName, isExplorer, nariSrc, toast, treeHtml,
+} from "./kids-ui.js?v=20261025-1";
+import { renderStop, renderReward } from "./kids-stop.js?v=20261025-1";
+import { renderExplorerStop, renderExplorerReward } from "./kids-explore.js?v=20261025-1";
+import { explorerGame, explorerGameCards, explorerMapView, guideView, journalView } from "./kids-journal.js?v=20261025-1";
+import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261025-1";
 import "../../components/kids/kids-pairs.js?v=20261024-2";
 import "../../components/kids/kids-colour.js?v=20261024-2";
 
 const DATA_URL = new URL("../../../assets/kids/kids-data.json?v=20261024-2", import.meta.url).href;
+const EXPLORERS_URL = new URL("../../../assets/kids/explorers-data.json?v=20261025-1", import.meta.url).href;
 const AVATARS_URL = new URL("../../../assets/avatars-kids.json?v=20261024-2", import.meta.url).href;
 // How often the time limit counts the minutes the page has been in use.
 const USAGE_TICK_MS = 15_000;
@@ -40,7 +50,7 @@ const STICKERS_ON_HOME = 1;
 // The grown-up gate stays open this long once passed.
 const GATE_OPEN_MS = 10 * 60_000;
 // Screens a child can't reach once the time limit is up.
-const CHILD_ROUTES = new Set(["home", "map", "stop", "reward", "stickers", "games"]);
+const CHILD_ROUTES = new Set(["home", "map", "stop", "reward", "stickers", "games", "guide"]);
 // The coming-soon badge (kids/map/coming-soon.webp) was replaced on the media
 // host on 2026-10-24; the token makes browsers fetch the new picture, not a
 // copy they kept of the old one.
@@ -50,6 +60,7 @@ export async function start(root) {
     const app = {
         root,
         data: null,
+        xdata: null,         // the Explorers' data, once an Explorer needs it
         avatars: [],
         resolve: resolveMedia,
         audio: createAudio(resolveMedia),
@@ -61,8 +72,13 @@ export async function start(root) {
         route: null,
     };
     try {
-        const [data, avatars] = await Promise.all([fetchJson(DATA_URL), fetchJson(AVATARS_URL)]);
+        // With an Explorer on this device, their data comes at once too.
+        const explorers = store.profiles().children.some(isExplorer);
+        const [data, avatars, xdata] = await Promise.all([
+            fetchJson(DATA_URL), fetchJson(AVATARS_URL), explorers ? fetchJson(EXPLORERS_URL) : null,
+        ]);
         app.data = data;
+        app.xdata = xdata;
         app.avatars = Array.isArray(avatars) ? avatars : [];
     } catch (error) {
         console.error("Daily Grace Kids could not start:", error);
@@ -117,7 +133,24 @@ export async function start(root) {
     showOrientationHint();
     route(app);
     // Sound effects are fetched once the first tap has unlocked sound.
-    document.addEventListener("pointerdown", () => app.audio.preload(Object.values(app.data.sfx)), { once: true });
+    document.addEventListener("pointerdown", () => {
+        app.audio.preload([...Object.values(app.data.sfx), ...Object.values(app.xdata?.sfx ?? {})]);
+    }, { once: true });
+}
+
+/** Fetches the Explorers' data (once); resolves false when it can't be had. */
+async function loadExplorers(app) {
+    if (app.xdata) {
+        return true;
+    }
+    try {
+        app.xdata = await fetchJson(EXPLORERS_URL);
+        app.audio.preload(Object.values(app.xdata.sfx));
+        return true;
+    } catch (error) {
+        console.error("Daily Grace Kids: the Explorers' stories could not be loaded:", error);
+        return false;
+    }
 }
 
 async function fetchJson(url) {
@@ -152,8 +185,29 @@ function helpers(app) {
             const p = app.progress();
             return p ? rules.tally(p, app.data) : rules.tally(null, app.data);
         },
+        /** The current Explorer's record, and what it adds up to. */
+        xrecord() {
+            const child = store.currentChild();
+            return child ? store.explorer(child.id) : store.explorer("");
+        },
+        xcounts() {
+            return rules.explorerTally(app.xrecord(), app.xdata);
+        },
+        xstory(id) {
+            return app.xdata?.stories.find((s) => s.id === id) ?? null;
+        },
+        /**
+         * Nari's stage. For an Explorer he is grown: a young lion (stage 3),
+         * and a lion (stage 4) once they are a Trailblazer or grew him that far.
+         */
         nariStage() {
-            return rules.nariStage(app.counts().finished, app.data);
+            const young = rules.nariStage(app.counts().finished, app.data);
+            if (!isExplorer(store.currentChild()) || !app.xdata) {
+                return young;
+            }
+            const trailblazer = rules.rankFor(app.xcounts().finished, app.xdata).id === "trailblazer";
+            const stage = Math.max(young.stage, trailblazer ? 4 : 3);
+            return app.data.nari.stages.find((s) => s.stage === stage) ?? young;
         },
         nari(pose = "idle") {
             return nariSrc(app, app.nariStage(), pose);
@@ -162,10 +216,12 @@ function helpers(app) {
             return app.data.stories.find((s) => s.id === id) ?? null;
         },
         sfx(key) {
-            app.audio.sfx(app.data.sfx[key]);
+            app.audio.sfx(app.data.sfx[key] ?? app.xdata?.sfx[key]);
         },
+        /** One of Nari's lines; an Explorer hears his Explorer line where there is one. */
         line(key) {
-            return app.audio.say(app.data.nari.lines[key]);
+            const explorerLine = isExplorer(store.currentChild()) ? app.xdata?.nari.lines[key] : null;
+            return app.audio.say(explorerLine ?? app.data.nari.lines[key]);
         },
         say(url, options) {
             return app.audio.say(url, options);
@@ -213,7 +269,9 @@ function helpers(app) {
             if (!child) {
                 return [];
             }
-            const due = rules.dueStickers(store.progress(child.id), store.stickers(child.id).earned, app.data);
+            // An Explorer's stories, verses and talks count toward the same series.
+            const extra = isExplorer(child) && app.xdata ? app.xcounts() : null;
+            const due = rules.dueStickers(store.progress(child.id), store.stickers(child.id).earned, app.data, extra);
             return store.giveStickers(child.id, due.slice(0, limit));
         },
         sticker(id) {
@@ -224,12 +282,17 @@ function helpers(app) {
 
 function applySettings(app) {
     const s = store.settings();
+    const child = store.currentChild();
+    const explorer = isExplorer(child);
     const html = document.documentElement;
     html.classList.toggle("kids-big-text", s.bigText);
     html.classList.toggle("kids-reading-font", s.readingFont);
     html.classList.toggle("kids-less-motion", s.lessMotion);
     html.classList.toggle("kids-read-together", s.readTogether);
-    app.audio.configure({ sound: s.sound, narration: s.narration });
+    html.classList.toggle("kids-explorer", explorer);
+    // Explorers read for themselves: Nari and the verses speak on their own
+    // only when "Read aloud" is on for the child (a tap always plays them).
+    app.audio.configure({ sound: s.sound, narration: s.narration && (!explorer || child.readAloud) });
 }
 
 function showStorageWarning() {
@@ -310,15 +373,37 @@ function route(app) {
         location.replace("#/");
         return;
     }
+    const explorer = isExplorer(child) && CHILD_ROUTES.has(r.name);
+    // An Explorer's screens, and the grown-ups' screens and Who's exploring?
+    // when there is an Explorer on this device, wait for the Explorers' data.
+    const needsExplorers = explorer || (!CHILD_ROUTES.has(r.name) && p.children.some(isExplorer));
+    if (needsExplorers && !app.xdata) {
+        app.root.innerHTML = `<section class="screen center"><p class="lede">Opening your Field Journal…</p></section>`;
+        loadExplorers(app).then((ok) => {
+            if (ok) {
+                route(app);
+            } else {
+                app.root.innerHTML = `
+                  <section class="screen center">
+                    <p class="lede">The Explorers' stories couldn't be loaded. Please check the connection and try again.</p>
+                    <button class="btn" type="button" data-retry>Try again</button>
+                  </section>`;
+                app.root.querySelector("[data-retry]").addEventListener("click", () => route(app));
+            }
+        });
+        return;
+    }
+    applySettings(app);
     app.route = r;
     window.scrollTo(0, 0);
     const views = {
         "": () => (p.children.length ? whoView(app) : welcomeView(app)),
         who: () => (p.children.length ? whoView(app) : welcomeView(app)),
-        home: () => homeView(app),
-        map: () => mapView(app),
-        stop: () => renderStop(app, r.args),
-        reward: () => renderReward(app, r.args[0]),
+        home: () => (explorer ? journalView(app, STICKERS_ON_HOME) : homeView(app)),
+        map: () => (explorer ? explorerMapView(app) : mapView(app)),
+        stop: () => (explorer ? renderExplorerStop(app, r.args) : renderStop(app, r.args)),
+        reward: () => (explorer ? renderExplorerReward(app, r.args[0]) : renderReward(app, r.args[0])),
+        guide: () => (explorer ? guideView(app, r.args) : location.replace("#/home")),
         stickers: () => stickersView(app),
         games: () => gamesView(app, r.args),
         rest: () => restView(app),
@@ -389,12 +474,17 @@ function whoView(app) {
         <div class="children">
           ${p.children.map((c) => {
               const counts = rules.tally(store.progress(c.id), app.data);
+              // An Explorer's card shows their rank instead of their leaves.
+              const rank = isExplorer(c) && app.xdata
+                  ? rules.rankFor(rules.explorerTally(store.explorer(c.id), app.xdata).finished, app.xdata)
+                  : null;
               return `
                 <button class="child-card" type="button" data-child="${escapeHtml(c.id)}">
                   <img src="${escapeHtml(app.avatarSrc(c.avatar))}" alt="" width="512" height="512" />
                   <span class="child-name">${escapeHtml(c.name)}</span>
                   <span class="band band-${c.band}">${escapeHtml(BAND_NAMES[c.band])}</span>
-                  <span class="leaves">${ICONS.leaf} ${counts.leaves} ${counts.leaves === 1 ? "leaf" : "leaves"}</span>
+                  ${rank ? `<span class="leaves">${ICONS.compass} ${escapeHtml(rank.name)}</span>`
+                      : `<span class="leaves">${ICONS.leaf} ${counts.leaves} ${counts.leaves === 1 ? "leaf" : "leaves"}</span>`}
                 </button>`;
           }).join("")}
           ${p.children.length < store.MAX_CHILDREN ? `<button class="child-card add" type="button" data-add>${ICONS.plus}<span>Add a child</span></button>` : ""}
@@ -636,6 +726,10 @@ function stickersView(app) {
 function gamesView(app, args) {
     const child = app.child();
     const progress = app.progress();
+    const explorer = isExplorer(child);
+    if (explorer && explorerGame(app, args)) {
+        return null;
+    }
     if (args[0] === "pairs") {
         app.root.innerHTML = `
           <section class="screen game-screen">
@@ -680,13 +774,16 @@ function gamesView(app, args) {
         app.root.querySelector("[data-go]").addEventListener("click", () => app.go("#/games"));
         return null;
     }
-    const watched = app.data.stories.filter((s) => progress.stops[s.id]?.steps?.watch);
+    // A story read as an Explorer counts too.
+    const read = explorer ? app.xrecord().stops : {};
+    const watched = app.data.stories.filter((s) => progress.stops[s.id]?.steps?.watch || read[s.id]?.steps?.watch);
     app.root.innerHTML = `
       <section class="screen games">
         <header class="bar">
           <button class="round-btn back-btn" type="button" data-go="#/home" aria-label="Back home">${ICONS.backCircle}</button>
           <div class="bar-text"><h1 class="title small-title">Games</h1><span class="sub">Play any time</span></div>
         </header>
+        ${explorer ? explorerGameCards(app) : ""}
         <button class="panel game-card" type="button" data-play="#/games/pairs">
           <img src="${escapeHtml(app.resolve(app.data.pairs.cards[0].image))}" alt="" />
           <span><b>Two by Two</b><span>Find the pairs of Bible animals</span></span>
@@ -696,7 +793,7 @@ function gamesView(app, args) {
           ${watched.length ? `<div class="colour-list">
             ${watched.map((s) => `<button type="button" data-play="#/games/colour/${escapeHtml(s.id)}">
               <img src="${escapeHtml(app.resolve(s.badge))}" alt="" /><span>${escapeHtml(s.title)}</span></button>`).join("")}
-          </div>` : `<p class="empty">Watch a story first, then you can colour its picture here.</p>`}
+          </div>` : `<p class="empty">${explorer ? "Read" : "Watch"} a story first, then you can colour its picture here.</p>`}
         </section>
       </section>`;
     app.root.querySelector("[data-go]").addEventListener("click", () => app.go("#/home"));

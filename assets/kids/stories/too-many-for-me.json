@@ -10,17 +10,41 @@
     {
       "id": "id-01",
       "image": "media:kids/stories/too-many-for-me/01.webp",
-      "caption": "A great big army."
+      "caption": "A great big army.",
+      "kjv": [
+        {
+          "who": "God",
+          "ref": "Judges 7:2",
+          "text": "And the LORD said unto Gideon, The people that are with thee are too many for me to give the Midianites into their hands, lest Israel vaunt themselves against me, saying, Mine own hand hath saved me.",
+          "quote": "The people that are with thee are too many for me to give the Midianites into their hands, lest Israel vaunt themselves against me, saying, Mine own hand hath saved me."
+        }
+      ]
     },
     {
       "id": "id-02",
       "image": "media:kids/stories/too-many-for-me/02.webp",
-      "caption": "Some men go home."
+      "caption": "Some men go home.",
+      "kjv": [
+        {
+          "who": "God",
+          "ref": "Judges 7:4",
+          "text": "And the LORD said unto Gideon, The people are yet too many; bring them down unto the water, and I will try them for thee there: and it shall be, that of whom I say unto thee, This shall go with thee, the same shall go with thee; and of whomsoever I say unto thee, This shall not go with thee, the same shall not go.",
+          "quote": "The people are yet too many; bring them down unto the water, and I will try them for thee there"
+        }
+      ]
     },
     {
       "id": "id-03",
       "image": "media:kids/stories/too-many-for-me/03.webp",
-      "caption": "Down to the water."
+      "caption": "Down to the water.",
+      "kjv": [
+        {
+          "who": "God",
+          "ref": "Judges 7:7",
+          "text": "And the LORD said unto Gideon, By the three hundred men that lapped will I save you, and deliver the Midianites into thine hand: and let all the other people go every man unto his place.",
+          "quote": "By the three hundred men that lapped will I save you, and deliver the Midianites into thine hand: and let all the other people go every man unto his place."
+        }
+      ]
     },
     {
       "id": "id-04",
@@ -30,7 +54,15 @@
     {
       "id": "id-05",
       "image": "media:kids/stories/too-many-for-me/05.webp",
-      "caption": "A companion in the dark."
+      "caption": "A companion in the dark.",
+      "kjv": [
+        {
+          "who": "God",
+          "ref": "Judges 7:10-11",
+          "text": "But if thou fear to go down, go thou with Phurah thy servant down to the host: And thou shalt hear what they say; and afterward shall thine hands be strengthened to go down unto the host. Then went he down with Phurah his servant unto the outside of the armed men that were in the host.",
+          "quote": "But if thou fear to go down, go thou with Phurah thy servant down to the host"
+        }
+      ]
     },
     {
       "id": "id-06",

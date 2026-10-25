@@ -25,17 +25,41 @@
         {
             "id": "id-04",
             "image": "media:kids/stories/forbid-them-not/04.webp",
-            "caption": "Jesus tells his followers to let the little children come and not stop them."
+            "caption": "Jesus tells his followers to let the little children come and not stop them.",
+            "kjv": [
+                {
+                    "who": "Jesus",
+                    "ref": "Mark 10:14",
+                    "text": "But when Jesus saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.",
+                    "quote": "Suffer the little children to come unto me, and forbid them not"
+                }
+            ]
         },
         {
             "id": "id-05",
             "image": "media:kids/stories/forbid-them-not/05.webp",
-            "caption": "Jesus says God's kingdom belongs to people like these children."
+            "caption": "Jesus says God's kingdom belongs to people like these children.",
+            "kjv": [
+                {
+                    "who": "Jesus",
+                    "ref": "Mark 10:14",
+                    "text": "But when Jesus saw it, he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.",
+                    "quote": "for of such is the kingdom of God."
+                }
+            ]
         },
         {
             "id": "id-06",
             "image": "media:kids/stories/forbid-them-not/06.webp",
-            "caption": "Jesus says anyone who does not receive God's kingdom like a little child will not enter it."
+            "caption": "Jesus says anyone who does not receive God's kingdom like a little child will not enter it.",
+            "kjv": [
+                {
+                    "who": "Jesus",
+                    "ref": "Mark 10:15",
+                    "text": "Verily I say unto you, Whosoever shall not receive the kingdom of God as a little child, he shall not enter therein.",
+                    "quote": "Verily I say unto you, Whosoever shall not receive the kingdom of God as a little child, he shall not enter therein."
+                }
+            ]
         },
         {
             "id": "id-07",

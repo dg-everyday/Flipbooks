@@ -15,7 +15,15 @@
     {
       "id": "id-02",
       "image": "media:kids/stories/while-he-lingered/02.webp",
-      "caption": "A meal and a place to stay."
+      "caption": "A meal and a place to stay.",
+      "kjv": [
+        {
+          "who": "The angels sent by the LORD",
+          "ref": "Genesis 19:2",
+          "text": "And he said, Behold now, my lords, turn in, I pray you, into your servant’s house, and tarry all night, and wash your feet, and ye shall rise up early, and go on your ways. And they said, Nay; but we will abide in the street all night.",
+          "quote": "Nay; but we will abide in the street all night."
+        }
+      ]
     },
     {
       "id": "id-03",
@@ -30,12 +38,28 @@
     {
       "id": "id-05",
       "image": "media:kids/stories/while-he-lingered/05.webp",
-      "caption": "A warning for the family."
+      "caption": "A warning for the family.",
+      "kjv": [
+        {
+          "who": "The angels sent by the LORD",
+          "ref": "Genesis 19:12-13",
+          "text": "And the men said unto Lot, Hast thou here any besides? son in law, and thy sons, and thy daughters, and whatsoever thou hast in the city, bring them out of this place: For we will destroy this place, because the cry of them is waxen great before the face of the LORD; and the LORD hath sent us to destroy it.",
+          "quote": "For we will destroy this place"
+        }
+      ]
     },
     {
       "id": "id-06",
       "image": "media:kids/stories/while-he-lingered/06.webp",
-      "caption": "Hurry, Lot!."
+      "caption": "Hurry, Lot!.",
+      "kjv": [
+        {
+          "who": "The angels sent by the LORD",
+          "ref": "Genesis 19:15",
+          "text": "And when the morning arose, then the angels hastened Lot, saying, Arise, take thy wife, and thy two daughters, which are here; lest thou be consumed in the iniquity of the city.",
+          "quote": "Arise, take thy wife, and thy two daughters, which are here; lest thou be consumed in the iniquity of the city."
+        }
+      ]
     },
     {
       "id": "id-07",
@@ -45,12 +69,28 @@
     {
       "id": "id-08",
       "image": "media:kids/stories/while-he-lingered/08.webp",
-      "caption": "Keep going."
+      "caption": "Keep going.",
+      "kjv": [
+        {
+          "who": "The angels sent by the LORD",
+          "ref": "Genesis 19:17",
+          "text": "And it came to pass, when they had brought them forth abroad, that he said, Escape for thy life; look not behind thee, neither stay thou in all the plain; escape to the mountain, lest thou be consumed.",
+          "quote": "Escape for thy life; look not behind thee, neither stay thou in all the plain; escape to the mountain, lest thou be consumed."
+        }
+      ]
     },
     {
       "id": "id-09",
       "image": "media:kids/stories/while-he-lingered/09.webp",
-      "caption": "The little town."
+      "caption": "The little town.",
+      "kjv": [
+        {
+          "who": "The angels sent by the LORD",
+          "ref": "Genesis 19:21-22",
+          "text": "And he said unto him, See, I have accepted thee concerning this thing also, that I will not overthrow this city, for the which thou hast spoken. Haste thee, escape thither; for I cannot do any thing till thou be come thither. Therefore the name of the city was called Zoar.",
+          "quote": "See, I have accepted thee concerning this thing also"
+        }
+      ]
     },
     {
       "id": "id-10",

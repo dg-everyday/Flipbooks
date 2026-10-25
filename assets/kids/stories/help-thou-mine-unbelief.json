@@ -20,7 +20,15 @@
     {
       "id": "id-03",
       "image": "media:kids/stories/help-thou-mine-unbelief/03.webp",
-      "caption": "Listen to him!."
+      "caption": "Listen to him!.",
+      "kjv": [
+        {
+          "who": "The voice from heaven",
+          "ref": "Mark 9:7",
+          "text": "And there was a cloud that overshadowed them: and a voice came out of the cloud, saying, This is my beloved Son: hear him.",
+          "quote": "This is my beloved Son: hear him."
+        }
+      ]
     },
     {
       "id": "id-04",
@@ -30,27 +38,73 @@
     {
       "id": "id-05",
       "image": "media:kids/stories/help-thou-mine-unbelief/05.webp",
-      "caption": "A father asks for help."
+      "caption": "A father asks for help.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Mark 9:16",
+          "text": "And he asked the scribes, What question ye with them?",
+          "quote": "What question ye with them?"
+        }
+      ]
     },
     {
       "id": "id-06",
       "image": "media:kids/stories/help-thou-mine-unbelief/06.webp",
-      "caption": "Bring him to me."
+      "caption": "Bring him to me.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Mark 9:19",
+          "text": "He answereth him, and saith, O faithless generation, how long shall I be with you? how long shall I suffer you? bring him unto me.",
+          "quote": "bring him unto me."
+        },
+        {
+          "who": "Jesus",
+          "ref": "Mark 9:21",
+          "text": "And he asked his father, How long is it ago since this came unto him? And he said, Of a child.",
+          "quote": "How long is it ago since this came unto him?"
+        }
+      ]
     },
     {
       "id": "id-07",
       "image": "media:kids/stories/help-thou-mine-unbelief/07.webp",
-      "caption": "If you can believe."
+      "caption": "If you can believe.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Mark 9:23",
+          "text": "Jesus said unto him, If thou canst believe, all things are possible to him that believeth.",
+          "quote": "If thou canst believe, all things are possible to him that believeth."
+        }
+      ]
     },
     {
       "id": "id-08",
       "image": "media:kids/stories/help-thou-mine-unbelief/08.webp",
-      "caption": "Help me believe!."
+      "caption": "Help me believe!.",
+      "kjv": [
+        {
+          "who": "The boy’s father",
+          "ref": "Mark 9:24",
+          "text": "And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief.",
+          "quote": "Lord, I believe; help thou mine unbelief."
+        }
+      ]
     },
     {
       "id": "id-09",
       "image": "media:kids/stories/help-thou-mine-unbelief/09.webp",
-      "caption": "Jesus gives the command."
+      "caption": "Jesus gives the command.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Mark 9:25",
+          "text": "When Jesus saw that the people came running together, he rebuked the foul spirit, saying unto him, Thou dumb and deaf spirit, I charge thee, come out of him, and enter no more into him.",
+          "quote": "Thou dumb and deaf spirit, I charge thee, come out of him, and enter no more into him."
+        }
+      ]
     },
     {
       "id": "id-10",
@@ -60,7 +114,15 @@
     {
       "id": "id-11",
       "image": "media:kids/stories/help-thou-mine-unbelief/11.webp",
-      "caption": "A quiet question."
+      "caption": "A quiet question.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Mark 9:29",
+          "text": "And he said unto them, This kind can come forth by nothing, but by prayer and fasting.",
+          "quote": "This kind can come forth by nothing, but by prayer and fasting."
+        }
+      ]
     }
   ]
 }

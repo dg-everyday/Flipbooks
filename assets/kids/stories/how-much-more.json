@@ -15,52 +15,132 @@
     {
       "id": "id-02",
       "image": "media:kids/stories/how-much-more/02.webp",
-      "caption": "Our Father in heaven."
+      "caption": "Our Father in heaven.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:2",
+          "text": "And he said unto them, When ye pray, say, Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done, as in heaven, so in earth.",
+          "quote": "Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done, as in heaven, so in earth."
+        }
+      ]
     },
     {
       "id": "id-03",
       "image": "media:kids/stories/how-much-more/03.webp",
-      "caption": "Bread and forgiveness."
+      "caption": "Bread and forgiveness.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:3-4",
+          "text": "Give us day by day our daily bread. And forgive us our sins; for we also forgive every one that is indebted to us. And lead us not into temptation; but deliver us from evil.",
+          "quote": "Give us day by day our daily bread."
+        }
+      ]
     },
     {
       "id": "id-04",
       "image": "media:kids/stories/how-much-more/04.webp",
-      "caption": "Rescue us from evil."
+      "caption": "Rescue us from evil.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:4",
+          "text": "And forgive us our sins; for we also forgive every one that is indebted to us. And lead us not into temptation; but deliver us from evil.",
+          "quote": "And lead us not into temptation; but deliver us from evil."
+        }
+      ]
     },
     {
       "id": "id-05",
       "image": "media:kids/stories/how-much-more/05.webp",
-      "caption": "A friend at midnight."
+      "caption": "A friend at midnight.",
+      "kjv": [
+        {
+          "who": "In Jesus’ story",
+          "ref": "Luke 11:5-6",
+          "text": "And he said unto them, Which of you shall have a friend, and shall go unto him at midnight, and say unto him, Friend, lend me three loaves; For a friend of mine in his journey is come to me, and I have nothing to set before him?",
+          "quote": "Friend, lend me three loaves"
+        }
+      ]
     },
     {
       "id": "id-06",
       "image": "media:kids/stories/how-much-more/06.webp",
-      "caption": "A closed door."
+      "caption": "A closed door.",
+      "kjv": [
+        {
+          "who": "In Jesus’ story",
+          "ref": "Luke 11:7-8",
+          "text": "And he from within shall answer and say, Trouble me not: the door is now shut, and my children are with me in bed; I cannot rise and give thee. I say unto you, Though he will not rise and give him, because he is his friend, yet because of his importunity he will rise and give him as many as he needeth.",
+          "quote": "Trouble me not: the door is now shut, and my children are with me in bed; I cannot rise and give thee."
+        }
+      ]
     },
     {
       "id": "id-07",
       "image": "media:kids/stories/how-much-more/07.webp",
-      "caption": "The bread he needs."
+      "caption": "The bread he needs.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:8",
+          "text": "I say unto you, Though he will not rise and give him, because he is his friend, yet because of his importunity he will rise and give him as many as he needeth.",
+          "quote": "he will rise and give him as many as he needeth."
+        }
+      ]
     },
     {
       "id": "id-08",
       "image": "media:kids/stories/how-much-more/08.webp",
-      "caption": "Ask, look, knock."
+      "caption": "Ask, look, knock.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:9-10",
+          "text": "And I say unto you, Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you. For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened.",
+          "quote": "Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."
+        }
+      ]
     },
     {
       "id": "id-09",
       "image": "media:kids/stories/how-much-more/09.webp",
-      "caption": "Good things to give."
+      "caption": "Good things to give.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:11",
+          "text": "If a son shall ask bread of any of you that is a father, will he give him a stone? or if he ask a fish, will he for a fish give him a serpent?",
+          "quote": "If a son shall ask bread of any of you that is a father, will he give him a stone?"
+        }
+      ]
     },
     {
       "id": "id-10",
       "image": "media:kids/stories/how-much-more/10.webp",
-      "caption": "An egg, not a scorpion."
+      "caption": "An egg, not a scorpion.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:12",
+          "text": "Or if he shall ask an egg, will he offer him a scorpion?",
+          "quote": "Or if he shall ask an egg, will he offer him a scorpion?"
+        }
+      ]
     },
     {
       "id": "id-11",
       "image": "media:kids/stories/how-much-more/11.webp",
-      "caption": "How much more!."
+      "caption": "How much more!.",
+      "kjv": [
+        {
+          "who": "Jesus",
+          "ref": "Luke 11:13",
+          "text": "If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?",
+          "quote": "how much more shall your heavenly Father give the Holy Spirit to them that ask him?"
+        }
+      ]
     }
   ]
 }

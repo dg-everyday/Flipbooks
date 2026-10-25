@@ -6,7 +6,11 @@
  * shows the right one with its reason.
  *
  * config (see kids-common.js for the shared keys):
- *   statements   [{ text, right, why, audio }]
+ *   statements   [{ text, right, why, audio, ref, verse }]
+ *                Explorers' statements have no audio (they read them), and a
+ *                ref and its KJV verse: the verse that settles it shows with
+ *                the answer, with "Read it", which fires kids-read { ref }
+ *                for the page to open the passage.
  * The youngest (lambs) get the first three; the older children all of them.
  * Fires kids-done { game, right, total } after the last statement.
  */
@@ -29,6 +33,9 @@ const STYLES = /* css */ `
   .answer:disabled { opacity: .55; cursor: default; }
   .answer.chosen { border-color: var(--k-ink); opacity: 1; }
   .why { margin: 14px auto 0; max-width: 34em; text-align: center; font-size: 1.05rem; }
+  .verse { margin: 12px auto 0; max-width: 34em; padding: 12px 16px; border-left: 4px solid var(--k-gold); background: rgb(255 255 255 / 70%); border-radius: 0 14px 14px 0; }
+  .verse p { margin: 0; font: 400 1.05rem/1.5 Georgia, "Times New Roman", serif; }
+  .verse cite { display: block; margin-top: 4px; font-style: normal; font-weight: 800; font-size: .85rem; color: var(--k-muted); }
 `;
 
 const THUMB = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
@@ -69,12 +76,17 @@ export class KidsRightOrNot extends KidsGame {
           </div>
           <p class="feedback" aria-live="polite"></p>
           <p class="why" hidden></p>
+          ${s.ref ? `<blockquote class="verse" hidden><p>${escapeHtml(s.verse)}</p><cite>${escapeHtml(s.ref)}</cite></blockquote>` : ""}
           <div class="actions">
-            <button class="btn quiet" type="button" data-listen>${SPEAKER_ICON} Hear it again</button>
+            ${s.audio ? `<button class="btn quiet" type="button" data-listen>${SPEAKER_ICON} Hear it again</button>` : ""}
+            ${s.ref ? `<button class="btn quiet" type="button" data-read hidden>Read it in the Bible</button>` : ""}
             <button class="btn" type="button" data-next hidden>${this.#i + 1 < list.length ? "Next" : "All done"}</button>
           </div>`;
         const root = this.shadowRoot;
-        root.querySelector("[data-listen]").addEventListener("click", () => this.say(s.audio, { force: true }));
+        root.querySelector("[data-listen]")?.addEventListener("click", () => this.say(s.audio, { force: true }));
+        root.querySelector("[data-read]")?.addEventListener("click", () => {
+            this.dispatchEvent(new CustomEvent("kids-read", { bubbles: true, composed: true, detail: { ref: s.ref } }));
+        });
         root.querySelector(".answers").addEventListener("click", (event) => {
             const answer = event.target.closest(".answer");
             if (answer && !answer.disabled) {
@@ -110,6 +122,9 @@ export class KidsRightOrNot extends KidsGame {
         const why = this.shadowRoot.querySelector(".why");
         why.textContent = s.why;
         why.hidden = false;
+        for (const el of this.shadowRoot.querySelectorAll(".verse, [data-read]")) {
+            el.hidden = false;
+        }
         const next = this.shadowRoot.querySelector("[data-next]");
         next.hidden = false;
         next.focus();

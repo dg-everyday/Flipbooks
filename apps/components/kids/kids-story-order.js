@@ -9,9 +9,14 @@
  *
  * config (see kids-common.js for the shared keys):
  *   panels   [{ image, text }]   the story's panels, in order
+ *   odd      { image, text }     optional (Explorers): a page from another
+ *                                story, mixed in; tapping it leaves it out
+ *   aspect   "9/16"              optional: the pictures' shape (default square)
  * The youngest (lambs) get three: the first, a middle one and the last; the
  * older children (lions) get all six.
- * Fires kids-done { game, tries } when the story is in order.
+ * Fires kids-done { game, tries } when the story is in order (and the odd
+ * page, if any, left out). For Explorers, the right picture glows only after
+ * the third wrong try.
  */
 
 import { BASE_STYLES, KidsGame, escapeHtml, shuffle } from "./kids-common.js?v=20261024-2";
@@ -35,6 +40,8 @@ const STYLES = /* css */ `
   .tile.used { visibility: hidden; }
   .tile.glow { animation: kids-pulse 1.1s ease infinite; border-color: var(--k-gold); }
   .n { position: absolute; left: 6px; top: 6px; min-width: 26px; height: 26px; border-radius: 13px; background: var(--k-green); color: #fff; font-weight: 900; display: grid; place-items: center; font-size: .9rem; }
+  .slot, .tile { aspect-ratio: var(--shape, 1); }
+  .tile.odd-out { visibility: hidden; }
 `;
 
 export class KidsStoryOrder extends KidsGame {
@@ -42,6 +49,7 @@ export class KidsStoryOrder extends KidsGame {
     #placed = 0;
     #wrong = 0;      // wrong tries for the current slot
     #tries = 0;
+    #oddOut = true;  // the page from another story has been left out (or there is none)
 
     panelsToUse() {
         const panels = this.config?.panels ?? [];
@@ -57,19 +65,25 @@ export class KidsStoryOrder extends KidsGame {
         this.#placed = 0;
         this.#wrong = 0;
         this.#tries = 0;
-        const shown = shuffle(this.#order);
-        // Three across: one row for the youngest, two rows of three for six.
-        const columns = 3;
+        const odd = this.config.odd ?? null;
+        this.#oddOut = !odd;
+        // The odd page, if any, is mixed in as panel -1.
+        const shown = shuffle(odd ? [...this.#order, -1] : this.#order);
+        const picture = (p) => (p < 0 ? odd : panels[p]);
+        // Three across: one row for the youngest, two rows of three for six;
+        // four across for the Explorers' seven pages.
+        const columns = shown.length > 6 ? 4 : 3;
+        this.style.setProperty("--shape", this.config.aspect ?? "1");
         this.shadowRoot.innerHTML = `
           <style>${STYLES}</style>
-          <p class="prompt">What happened first? Tap the pictures in order.</p>
+          <p class="prompt">${odd ? "Tap the pages in order. One page is from a different story: tap it to leave it out." : "What happened first? Tap the pictures in order."}</p>
           <div class="slots" style="grid-template-columns: repeat(${this.#order.length}, minmax(0, 1fr))">
             ${this.#order.map((_, n) => `<div class="slot" data-slot="${n}" aria-label="Place ${n + 1}">${n + 1}</div>`).join("")}
           </div>
           <div class="tiles" style="grid-template-columns: repeat(${columns}, minmax(0, 1fr))">
             ${shown.map((p) => `
-              <button class="tile" type="button" data-panel="${p}" aria-label="${escapeHtml(panels[p].text)}">
-                <img src="${escapeHtml(this.url(panels[p].image))}" alt="" draggable="false" />
+              <button class="tile" type="button" data-panel="${p}" aria-label="${escapeHtml(picture(p).text)}">
+                <img src="${escapeHtml(this.url(picture(p).image))}" alt="" draggable="false" />
               </button>`).join("")}
           </div>
           <p class="feedback" aria-live="polite"></p>
@@ -84,12 +98,51 @@ export class KidsStoryOrder extends KidsGame {
         this.say("order-intro");
     }
 
+    /** The page from another story, tapped: it is left out. */
+    #leaveOut(tile) {
+        const feedback = this.shadowRoot.querySelector(".feedback");
+        this.#oddOut = true;
+        tile.classList.remove("glow");
+        tile.classList.add("odd-out");
+        tile.disabled = true;
+        feedback.className = "feedback good";
+        feedback.textContent = "Well spotted! That page is from a different story.";
+        this.sfx("sparkle");
+        this.say("order-odd");
+        this.#finishIfDone();
+    }
+
+    #finishIfDone() {
+        if (this.#placed < this.#order.length) {
+            return;
+        }
+        const feedback = this.shadowRoot.querySelector(".feedback");
+        if (!this.#oddOut) {
+            // Every page is in its place: only the odd one is left to tap.
+            feedback.className = "feedback hint";
+            feedback.textContent = "One page is left. It's from a different story: tap it to leave it out.";
+            this.shadowRoot.querySelector('.tile[data-panel="-1"]')?.classList.add("glow");
+            return;
+        }
+        feedback.className = "feedback good";
+        feedback.textContent = "You put the whole story in order!";
+        this.shadowRoot.querySelector(".tiles").hidden = true;
+        this.sfx("right");
+        this.mood("cheer");
+        this.say("order-right");
+        this.done({ tries: this.#tries });
+    }
+
     #choose(tile) {
-        if (this.#placed >= this.#order.length) {
+        if (this.#placed >= this.#order.length && this.#oddOut) {
             return;
         }
         const panel = Number(tile.dataset.panel);
         const feedback = this.shadowRoot.querySelector(".feedback");
+        if (panel < 0) {
+            this.#leaveOut(tile);
+            return;
+        }
         this.#tries += 1;
         if (panel !== this.#order[this.#placed]) {
             this.#wrong += 1;
@@ -100,7 +153,8 @@ export class KidsStoryOrder extends KidsGame {
             feedback.textContent = "Not yet! What happened just before that?";
             this.sfx("try-again");
             this.mood("think");
-            if (this.#wrong >= 2) {
+            // Explorers get no glow until the third wrong try.
+            if (this.#wrong >= (this.config.explorer ? 3 : 2)) {
                 this.shadowRoot.querySelector(`.tile[data-panel="${this.#order[this.#placed]}"]`)?.classList.add("glow");
                 this.say("order-hint");
             } else {
@@ -119,12 +173,7 @@ export class KidsStoryOrder extends KidsGame {
         feedback.className = "feedback good";
         this.sfx("drop");
         if (this.#placed === this.#order.length) {
-            feedback.textContent = "You put the whole story in order!";
-            this.shadowRoot.querySelector(".tiles").hidden = true;
-            this.sfx("right");
-            this.mood("cheer");
-            this.say("order-right");
-            this.done({ tries: this.#tries });
+            this.#finishIfDone();
         } else {
             feedback.textContent = "Yes! What happened next?";
         }

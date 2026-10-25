@@ -1081,7 +1081,8 @@ h2 {
     user-select: none;
     -webkit-user-drag: none;
 }
-.screen.stop.fit kids-look-find {
+.screen.stop.fit kids-look-find,
+.screen.stop.fit kids-investigate {
     flex: 1 1 0;
     min-height: 0;
 }
@@ -2144,4 +2145,515 @@ h2 {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
+}
+
+/* ================================================================ Explorers
+   Ages 9 to 12 (kids-explore.js, kids-journal.js): an explorer's journal.
+   Warm parchment, navy and gold, a chart grid on the map; fewer cartoons,
+   more words, the same big targets. The <html> wears .kids-explorer while an
+   Explorer is exploring. */
+.kids-explorer {
+    --kids-sky: #f3ead7;
+    --kids-shadow: #dccba6;
+    --kids-navy: #18324f;
+}
+.kids-explorer body {
+    background:
+        radial-gradient(120% 60% at 15% 108%, #d9c9a2 0 40%, transparent 41%),
+        radial-gradient(110% 55% at 95% 112%, #cdb98a 0 42%, transparent 43%),
+        #f3ead7;
+    background-attachment: fixed;
+}
+.kids-explorer .title {
+    color: var(--kids-navy);
+}
+.kids-explorer .panel {
+    background: #fffdf7;
+}
+.label {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--kids-gold-dark);
+}
+
+/* ---------------------------------------------------------------- Field Journal */
+.explorer-home {
+    background: var(--journal) center top / cover no-repeat;
+}
+.rank-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    overflow: hidden;
+}
+.rank-badge {
+    flex: none;
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+}
+.rank-text {
+    flex: 1;
+    min-width: 0;
+}
+.rank-text h2 {
+    margin: 0;
+    font: 800 calc(1.6rem * var(--kids-scale)) / 1.1 var(--kids-display);
+    color: var(--kids-navy);
+}
+.rank-text .small {
+    margin: 2px 0 8px;
+}
+.rank-steps {
+    display: flex;
+    gap: 4px;
+}
+.rank-steps span {
+    flex: 1;
+    padding: 2px 4px;
+    border-radius: 999px;
+    background: #efe4cc;
+    color: var(--kids-muted);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.rank-steps span.done {
+    background: var(--kids-navy);
+    color: #fff;
+}
+.nari-compass {
+    flex: none;
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+}
+.explorer-home .keep-going {
+    background: var(--kids-navy);
+    box-shadow: 0 6px 0 #0c1d31;
+}
+.explorer-home .kg-text span {
+    color: #c9d8ea;
+}
+.guide-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+.guide-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.guide-head > b {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font: 800 1.2rem var(--kids-display);
+    color: var(--kids-navy);
+}
+.guide-head svg {
+    width: 24px;
+    height: 24px;
+}
+.guide-head .new-badge {
+    position: static;
+    display: inline-grid;
+}
+.card-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+.mini-card {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 96px;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-align: center;
+}
+.mini-card img {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+}
+.mini-card.stamp {
+    animation: stamp 0.5s ease both;
+}
+@keyframes stamp {
+    0% {
+        transform: scale(1.6) rotate(-8deg);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(0.95) rotate(2deg);
+        opacity: 1;
+    }
+    100% {
+        transform: none;
+    }
+}
+.week {
+    margin: 0;
+    text-align: center;
+    font-weight: 700;
+    color: var(--kids-muted);
+}
+.home-nav.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.nav-guide {
+    background: #e3efe2;
+    color: #2a5b33;
+}
+.tree-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: center;
+}
+.tree-link svg {
+    width: 20px;
+    height: 20px;
+}
+.tree-dialog .tree {
+    margin: 10px 0;
+}
+.bridge {
+    border: 3px solid var(--kids-gold);
+    text-align: center;
+}
+.bridge h2 {
+    margin: 0 0 6px;
+    color: var(--kids-navy);
+}
+.bridge .btn {
+    margin-top: 8px;
+}
+
+/* ---------------------------------------------------------------- the map as a chart */
+.explorer-map .map-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgb(24 50 79 / 9%) 0 1px, transparent 1px 8%),
+        repeating-linear-gradient(90deg, rgb(24 50 79 / 9%) 0 1px, transparent 1px 12%);
+    mix-blend-mode: multiply;
+}
+.explorer-map .map-stop {
+    z-index: 1;
+}
+/* Side trails: diamond markers. */
+.map-stop.side {
+    width: 24%;
+}
+.map-stop.side .stop-badge {
+    width: 70%;
+    border-radius: 18%;
+    rotate: 45deg;
+    overflow: hidden;
+    border-color: var(--kids-navy);
+}
+.map-stop.side .stop-badge > img {
+    rotate: -45deg;
+    scale: 1.42;
+    border-radius: 0;
+}
+/* The tick or lock sits on the diamond's right-hand point (the square's
+   top-right corner, turned), clear of the label below. */
+.map-stop.side .stop-check,
+.map-stop.side .stop-lock {
+    top: -4px;
+    right: -4px;
+    bottom: auto;
+    rotate: -45deg;
+}
+.map-stop.side .stop-label {
+    /* The turned square reaches below its box: the label starts below its point. */
+    margin-top: 15%;
+    background: var(--kids-navy);
+    color: #fff;
+}
+
+/* ---------------------------------------------------------------- the Explorer Story Stop */
+.trail-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 8px 14px;
+    border-radius: 14px;
+    background: #e8eef6;
+    color: var(--kids-navy);
+    font-weight: 800;
+}
+.trail-note svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+}
+.grown-up-note {
+    padding: 8px 14px;
+    border-radius: 14px;
+    background: #fff6df;
+    border: 2px solid #ecd9a8;
+}
+.grown-up-note summary {
+    font-weight: 800;
+    cursor: pointer;
+}
+.grown-up-note p {
+    margin: 8px 0 0;
+}
+.read flip-book {
+    --flipbook-wire: url("/assets/images/wire-binding.svg?v=3");
+    flex: 1 1 0;
+    min-height: 320px;
+    border-radius: 18px;
+}
+.read-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.read-tools .btn svg {
+    width: 22px;
+    height: 22px;
+}
+.narration {
+    width: 100%;
+}
+.read-hint {
+    margin: 0;
+    text-align: center;
+}
+.journal-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--paper) center / cover, #fffaf0;
+}
+.journal-card h2 {
+    margin: 0;
+    color: var(--kids-navy);
+    font: 800 calc(1.35rem * var(--kids-scale)) / 1.2 var(--kids-display);
+}
+.journal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 700;
+}
+.journal-field textarea {
+    width: 100%;
+    min-height: 7.5em;
+    padding: 12px 14px;
+    border: 2px solid #d8c7a0;
+    border-radius: 14px;
+    background: rgb(255 255 255 / 85%);
+    font: 400 calc(1.1rem * var(--kids-scale)) / 1.5 var(--kids-text);
+    color: var(--kids-ink);
+    resize: vertical;
+}
+.journal-field textarea:focus-visible {
+    outline: 3px solid var(--kids-navy);
+    border-color: transparent;
+}
+.share {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+.share input {
+    width: 22px;
+    height: 22px;
+    accent-color: var(--kids-green);
+}
+.journal-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.private {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    flex: 1 1 240px;
+}
+.private svg,
+.journal-row .btn svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+}
+.think .talk-card ul {
+    margin: 0;
+    padding-left: 1.2em;
+}
+
+/* ---------------------------------------------------------------- reward and Field Guide */
+.rank-up {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    border: 3px solid var(--kids-gold);
+    animation: kids-pop-in 0.5s ease both;
+}
+.rank-up h2 {
+    margin: 0;
+    color: var(--kids-navy);
+}
+.rank-verse {
+    margin: 6px 0 0;
+    font: italic 400 0.95rem/1.4 Georgia, "Times New Roman", serif;
+}
+.rank-verse cite {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: var(--kids-muted);
+}
+@keyframes kids-pop-in {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+.new-cards .card-row {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+}
+.guide-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px;
+    border: 0;
+    border-radius: 18px;
+    background: #fbf5e6;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-align: center;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+.guide-card img {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+}
+.guide-card.locked {
+    cursor: default;
+    color: var(--kids-muted);
+}
+.silhouette {
+    display: grid;
+    place-items: center;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: #e7dcc3;
+    font: 800 2.2rem var(--kids-display);
+    color: #b9a77e;
+}
+.guide-card .hint {
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+.field-card .facts {
+    margin: 6px 0;
+    padding-left: 1.2em;
+    text-align: left;
+}
+.field-card .label {
+    margin-top: 4px;
+}
+.game-icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    background: #e8eef6;
+    color: var(--kids-navy);
+}
+.game-icon svg {
+    width: 44px;
+    height: 44px;
+}
+.journal-shared .shared-answer {
+    padding: 8px 0;
+    border-top: 1px solid #eadfca;
+}
+.journal-shared h4 {
+    margin: 0;
+}
+.answer-text {
+    margin: 4px 0 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.band-explorers {
+    background: #e3ebf5;
+    color: #18324f;
+}
+.band-note {
+    margin: 4px 0 0;
+}
+.explorer-print .print-verse {
+    font-family: Georgia, "Times New Roman", serif;
+}
+@media (max-width: 520px) {
+    .home-nav.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .rank-badge {
+        width: 72px;
+        height: 72px;
+    }
+    .nari-compass {
+        display: none;
+    }
+}
+.kids-less-motion .mini-card.stamp,
+.kids-less-motion .rank-up {
+    animation: none;
 }

@@ -8,9 +8,9 @@
  * change is kept at once.
  */
 
-import * as store from "../../../assets/scripts/kids/store.js?v=20261024-2";
-import * as rules from "../../../assets/scripts/kids/rules.js?v=20261024-2";
-import { BAND_NAMES, DAILY_GRACE_URL, ICONS, ask, escapeHtml, toast } from "./kids-ui.js?v=20261024-8";
+import * as store from "../../../assets/scripts/kids/store.js?v=20261025-1";
+import * as rules from "../../../assets/scripts/kids/rules.js?v=20261025-1";
+import { BAND_NAMES, DAILY_GRACE_URL, ICONS, ask, escapeHtml, isExplorer, toast } from "./kids-ui.js?v=20261025-1";
 
 const TIME_LABELS = { 0: "Off", 15: "15 minutes", 30: "30 minutes", 45: "45 minutes" };
 const TOGGLES = [
@@ -21,7 +21,45 @@ const TOGGLES = [
     ["readingFont", "Reading-friendly font", "Letters shaped for beginning readers"],
     ["lessMotion", "Less motion", "Fewer moving and bouncing things"],
     ["mapInOrder", "Stories in order", "The map opens each story once the one before it is finished"],
+    ["harderStories", "Show the harder stories (Explorers)", "Two side trails: Pulled Out of Sodom, and The King Who Kept the Wrong Promise. Each starts with a note for you."],
 ];
+
+/** An Explorer's panel: rank, stories, verses, the Field Guide, the last question, and the answers they shared. */
+function explorerChild(app, c) {
+    const record = store.explorer(c.id);
+    const counts = rules.explorerTally(record, app.xdata);
+    const rank = rules.rankFor(counts.finished, app.xdata);
+    const answers = store.journal(c.id).answers;
+    const shared = Object.entries(answers).filter(([, a]) => a.shared);
+    const privateCount = Object.keys(answers).length - shared.length;
+    const think = record.lastThink ? app.xstory(record.lastThink.story) : null;
+    const learned = app.xdata.stories.filter((st) => record.stops[st.id]?.verse?.learned);
+    const sections = rules.explorerSectionsDone(record, app.xdata, store.settings());
+    return `
+      <div class="tally">
+        <div><b>${escapeHtml(rank.name)}</b><span>rank</span></div>
+        <div><b>${counts.finished}</b><span>${counts.finished === 1 ? "story" : "stories"}</span></div>
+        <div><b>${counts.verses}</b><span>${counts.verses === 1 ? "verse" : "verses"} learned</span></div>
+        <div><b>${counts.cards}</b><span>of ${app.xdata.fieldGuide.cards.length} cards</span></div>
+      </div>
+      ${think ? `<p class="dinner"><b>Pick up the conversation at dinner.</b> From ${escapeHtml(think.title)}: “${escapeHtml(record.lastThink.question)}”</p>` : ""}
+      <details class="prints journal-shared">
+        <summary>${ICONS.book} ${escapeHtml(c.name)}'s journal</summary>
+        ${shared.length ? shared.map(([sid, a]) => `
+          <article class="shared-answer"><h4>${escapeHtml(app.xstory(sid)?.title ?? sid)}</h4>
+            <p class="small">${escapeHtml(app.xstory(sid)?.think.journal ?? "")}</p>
+            <p class="answer-text">${escapeHtml(a.text)}</p></article>`).join("") : `<p class="small">No answers shared yet.</p>`}
+        ${privateCount ? `<p class="small">${privateCount} more ${privateCount === 1 ? "answer is" : "answers are"} private: answered, and kept for ${escapeHtml(c.name)}.</p>` : ""}
+      </details>
+      ${learned.length || sections.length ? `
+        <details class="prints">
+          <summary>${ICONS.print} Print for ${escapeHtml(c.name)}</summary>
+          <ul>
+            ${learned.map((st) => `<li><a href="#/print/explorer-verse/${escapeHtml(st.id)}">Verse card: ${escapeHtml(st.verse.ref)}</a></li>`).join("")}
+            ${sections.map((sec) => `<li><a href="#/print/explorer-certificate/${escapeHtml(c.id)}/${escapeHtml(sec)}">Explorer certificate: ${escapeHtml(app.data.map.sections.find((x) => x.id === sec)?.name ?? sec)}</a></li>`).join("")}
+          </ul>
+        </details>` : ""}`;
+}
 
 function storyDates(app, progress) {
     return app.data.stories
@@ -56,6 +94,7 @@ export function renderCorner(app) {
               <div><h3>${escapeHtml(c.name)}</h3><span class="band band-${c.band}">${escapeHtml(BAND_NAMES[c.band])}</span></div>
               <button class="btn quiet small-btn" type="button" data-edit="${escapeHtml(c.id)}">Edit</button>
             </header>
+            ${isExplorer(c) && app.xdata ? explorerChild(app, c) : `
             <div class="tally">
               <div><b>${counts.finished}</b><span>${counts.finished === 1 ? "story" : "stories"}</span></div>
               <div><b>${counts.fruit}</b><span>${counts.fruit === 1 ? "verse" : "verses"}</span></div>
@@ -71,7 +110,7 @@ export function renderCorner(app) {
                   ${finished.map((st) => `<li><a href="#/print/verse/${escapeHtml(st.id)}">Verse card: ${escapeHtml(st.verse.ref)}</a></li>`).join("")}
                   ${done.map((sec) => `<li><a href="#/print/certificate/${escapeHtml(c.id)}/${escapeHtml(sec)}">Certificate: ${escapeHtml(app.data.map.sections.find((x) => x.id === sec)?.name ?? sec)}</a></li>`).join("")}
                 </ul>
-              </details>` : ""}
+              </details>` : ""}`}
           </article>`;
     }).join("");
     app.root.innerHTML = `
@@ -110,7 +149,7 @@ export function renderCorner(app) {
         </section>
         <section class="panel privacy">
           <h2>Privacy</h2>
-          <p>Everything stays on this device: names, progress and stickers. Daily Grace Kids has no accounts, no ads, no chat and no outside links, and sends nothing anywhere.</p>
+          <p>Everything stays on this device: names, progress, stickers and an Explorer's journal. Daily Grace Kids has no accounts, no ads, no chat and no outside links, and sends nothing anywhere. An Explorer's journal answers are private unless the child chooses to share one with you.</p>
         </section>
         <a class="back-to-dg" href="${DAILY_GRACE_URL}">${ICONS.home} Back to Daily Grace</a>
       </section>`;
@@ -173,10 +212,16 @@ export function renderChildForm(app, id) {
           </label>
           <fieldset class="field">
             <legend><b>Age</b></legend>
-            <label class="radio"><input type="radio" name="band" value="lambs" ${child?.band !== "lions" ? "checked" : ""} /><span>3 to 5 · Little Lambs</span></label>
+            <label class="radio"><input type="radio" name="band" value="lambs" ${!child || child.band === "lambs" ? "checked" : ""} /><span>3 to 5 · Little Lambs</span></label>
             <label class="radio"><input type="radio" name="band" value="lions" ${child?.band === "lions" ? "checked" : ""} /><span>6 to 8 · Young Lions</span></label>
-            <label class="radio disabled"><input type="radio" name="band" value="explorers" disabled /><span>9 to 12 · Explorers (coming later)</span></label>
+            <label class="radio"><input type="radio" name="band" value="explorers" ${child?.band === "explorers" ? "checked" : ""} /><span>9 to 12 · Explorers</span></label>
+            <p class="small band-note">A child who moves up keeps everything they have earned.</p>
           </fieldset>
+          <label class="toggle read-aloud"${child?.band === "explorers" ? "" : " hidden"}>
+            <span><b>Read aloud</b><span>Explorers read for themselves. Turn this on to have Nari and the verses read aloud on their own.</span></span>
+            <input type="checkbox" name="readAloud" ${child?.readAloud ? "checked" : ""} />
+            <span class="switch" aria-hidden="true"></span>
+          </label>
           <fieldset class="field">
             <legend><b>Choose a picture</b></legend>
             <div class="avatar-grid">
@@ -201,6 +246,12 @@ export function renderChildForm(app, id) {
     for (const b of root.querySelectorAll("[data-cancel]")) {
         b.addEventListener("click", cancel);
     }
+    // "Read aloud" is an Explorer's choice: shown only when 9 to 12 is chosen.
+    form.addEventListener("change", (event) => {
+        if (event.target.name === "band") {
+            root.querySelector(".read-aloud").hidden = event.target.value !== "explorers";
+        }
+    });
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const data = new FormData(form);
@@ -210,7 +261,8 @@ export function renderChildForm(app, id) {
             root.querySelector("#child-name").focus();
             return;
         }
-        const values = { name, band: data.get("band") === "lions" ? "lions" : "lambs", avatar: String(data.get("avatar") || "KA-00") };
+        const band = store.BANDS.includes(data.get("band")) ? data.get("band") : "lambs";
+        const values = { name, band, avatar: String(data.get("avatar") || "KA-00"), readAloud: band === "explorers" && data.get("readAloud") === "on" };
         try {
             if (child) {
                 store.updateChild(child.id, values);
@@ -229,7 +281,7 @@ export function renderChildForm(app, id) {
         }
     });
     root.querySelector("[data-remove]")?.addEventListener("click", async () => {
-        const yes = await ask(`Remove ${child.name}? Their stories, tree and stickers on this device will be deleted. This can't be undone.`,
+        const yes = await ask(`Remove ${child.name}? Their stories, tree, stickers and journal on this device will be deleted. This can't be undone.`,
             { yes: `Remove ${child.name}`, no: "Keep", danger: true });
         if (yes) {
             store.removeChild(child.id);
@@ -243,11 +295,42 @@ export function renderChildForm(app, id) {
     return null;
 }
 
-/** The printables: a verse card, or a certificate for a part of the map. */
+/** The printables: a verse card, or a certificate for a part of the map (each also in the Explorer design). */
 export function renderPrint(app, args) {
     const [kind, a, b] = args;
     let body = "";
-    if (kind === "verse") {
+    if (kind === "explorer-verse") {
+        const story = app.xstory(a);
+        if (!story) {
+            location.replace("#/corner");
+            return null;
+        }
+        body = `
+          <div class="print-page verse-card explorer-print" style="--frame:url('${escapeHtml(app.resolve(app.xdata.ui.verseCard))}')">
+            <div class="print-text">
+              <p class="print-verse">${escapeHtml(story.verse.text)}</p>
+              <p class="print-ref">${escapeHtml(story.verse.ref)}</p>
+              <p class="print-brand">Daily Grace Kids · Explorers</p>
+            </div>
+          </div>`;
+    } else if (kind === "explorer-certificate") {
+        const child = store.profiles().children.find((c) => c.id === a);
+        const section = app.data.map.sections.find((s) => s.id === b);
+        if (!child || !section || !app.xdata || !rules.explorerSectionsDone(store.explorer(child.id), app.xdata, store.settings()).includes(section.id)) {
+            location.replace("#/corner");
+            return null;
+        }
+        body = `
+          <div class="print-page certificate explorer-print" style="--frame:url('${escapeHtml(app.resolve(app.xdata.ui.certificate))}')">
+            <div class="print-text">
+              <p class="print-title">Explorer's Certificate</p>
+              <p class="print-name">${escapeHtml(child.name)}</p>
+              <p class="print-line">explored every story of <b>${escapeHtml(section.name)}</b> on the Daily Grace Kids Explorers trail.</p>
+              <p class="print-date">${escapeHtml(new Date().toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" }))}</p>
+              <p class="print-brand">Daily Grace</p>
+            </div>
+          </div>`;
+    } else if (kind === "verse") {
         const story = app.story(a);
         if (!story) {
             location.replace("#/corner");

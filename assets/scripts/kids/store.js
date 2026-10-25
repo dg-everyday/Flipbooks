@@ -3,13 +3,18 @@
  * name or progress ever leaves it.
  *
  * localStorage keys:
- *   dailygrace:kids:profiles          { children: [{ id, name, band, avatar, created }], current }
+ *   dailygrace:kids:profiles          { children: [{ id, name, band, avatar, created, readAloud }], current }
  *   dailygrace:kids:settings          { timeLimit, narration, sound, readTogether, bigText,
- *                                       readingFont, lessMotion, mapInOrder }
+ *                                       readingFont, lessMotion, mapInOrder, harderStories }
  *   dailygrace:kids:<child>:progress  { stops: { <story>: { steps: { watch, find, play, verse, talk },
  *                                       talkLater, finishedOn, times } }, firsts: { … },
  *                                       pairsWins, lastStory, lastTalk }
  *   dailygrace:kids:<child>:stickers  { earned: { <id>: { path, day, seen } } }
+ *   dailygrace:kids:<child>:explorer  Explorers (ages 9 to 12): { stops: { <story>: { steps, talkLater,
+ *                                       finishedOn, times, days: { <step>: day }, verse: { level, learned } } },
+ *                                       cards: { <card>: { day, seen } }, quest: { <card>: true },
+ *                                       trainWins, lastThink: { story, question, day } }
+ *   dailygrace:kids:<child>:journal   { answers: { <story>: { text, shared, day } } }, private by default
  *   dailygrace:kids:usage             { day, minutes, extra }
  *
  * Everything read back is checked and cleaned, so a value damaged by hand, by
@@ -24,7 +29,8 @@
 const PREFIX = "dailygrace:kids:";
 export const MAX_CHILDREN = 4;
 export const MAX_NAME = 20;
-export const BANDS = ["lambs", "lions"];
+export const BANDS = ["lambs", "lions", "explorers"];
+export const MAX_JOURNAL = 600;
 export const TIME_LIMITS = [0, 15, 30, 45];
 export const DEFAULT_SETTINGS = Object.freeze({
     timeLimit: 0,
@@ -35,6 +41,8 @@ export const DEFAULT_SETTINGS = Object.freeze({
     readingFont: false,
     lessMotion: false,
     mapInOrder: false,
+    // Explorers: the two heaviest side trails show only when a grown-up turns this on.
+    harderStories: false,
 });
 const STEP_KEYS = ["watch", "find", "play", "verse", "talk"];
 const FIRST_KEYS = ["watch", "find", "play", "verse", "talk", "map"];
@@ -121,6 +129,9 @@ function cleanChild(child) {
         band: BANDS.includes(child.band) ? child.band : "lambs",
         avatar: typeof child.avatar === "string" && /^KA-\d{2}$/.test(child.avatar) ? child.avatar : "KA-00",
         created: typeof child.created === "string" ? child.created : today(),
+        // Explorers read for themselves: Nari and the verses are read aloud on
+        // their own only when this is on (a tap always plays them).
+        readAloud: child.readAloud === true,
     };
 }
 
@@ -152,12 +163,12 @@ function newId() {
 }
 
 /** Adds a child; resolves to the child, or throws when four are already here or the name is empty. */
-export function addChild({ name, band, avatar }) {
+export function addChild({ name, band, avatar, readAloud }) {
     const p = profiles();
     if (p.children.length >= MAX_CHILDREN) {
         throw new Error("full");
     }
-    const child = cleanChild({ id: newId(), name, band, avatar, created: today() });
+    const child = cleanChild({ id: newId(), name, band, avatar, readAloud, created: today() });
     if (!child) {
         throw new Error("name");
     }
@@ -191,6 +202,8 @@ export function removeChild(id) {
     saveProfiles(p);
     remove(`${id}:progress`);
     remove(`${id}:stickers`);
+    remove(`${id}:explorer`);
+    remove(`${id}:journal`);
 }
 
 export function setCurrent(id) {
@@ -372,6 +385,228 @@ export function markStickersSeen(childId) {
     if (changed) {
         write(`${childId}:stickers`, s);
     }
+}
+
+// ------------------------------------------------------------------ explorers
+const VERSE_LEVELS = 7;
+const DAY = /^\d{4}-\d{2}-\d{2}$/;
+const ID = /^[a-z0-9-]{1,60}$/;
+
+function cleanExplorerStop(stop) {
+    const days = {};
+    for (const key of STEP_KEYS) {
+        if (typeof stop?.days?.[key] === "string" && DAY.test(stop.days[key])) {
+            days[key] = stop.days[key];
+        }
+    }
+    const level = Math.floor(Number(stop?.verse?.level) || 0);
+    return {
+        ...cleanStop(stop),
+        days,
+        verse: { level: Math.max(0, Math.min(VERSE_LEVELS - 1, level)), learned: stop?.verse?.learned === true },
+    };
+}
+
+/** A child's Explorer record (ages 9 to 12), checked and cleaned. */
+export function explorer(childId) {
+    const raw = read(`${childId}:explorer`);
+    const stops = {};
+    if (isObject(raw?.stops)) {
+        for (const [id, stop] of Object.entries(raw.stops)) {
+            if (ID.test(id) && isObject(stop)) {
+                stops[id] = cleanExplorerStop(stop);
+            }
+        }
+    }
+    const cards = {};
+    if (isObject(raw?.cards)) {
+        for (const [id, card] of Object.entries(raw.cards)) {
+            if (ID.test(id) && isObject(card)) {
+                cards[id] = { day: typeof card.day === "string" && DAY.test(card.day) ? card.day : today(), seen: card.seen === true };
+            }
+        }
+    }
+    const quest = {};
+    if (isObject(raw?.quest)) {
+        for (const [id, done] of Object.entries(raw.quest)) {
+            if (ID.test(id) && done === true) {
+                quest[id] = true;
+            }
+        }
+    }
+    const think = raw?.lastThink;
+    return {
+        stops,
+        cards,
+        quest,
+        trainWins: Math.max(0, Math.floor(Number(raw?.trainWins) || 0)),
+        lastThink: isObject(think) && typeof think.story === "string" && typeof think.question === "string"
+            ? { story: think.story, question: think.question.slice(0, 300), day: typeof think.day === "string" ? think.day : today() }
+            : null,
+    };
+}
+
+function saveExplorer(childId, record) {
+    write(`${childId}:explorer`, record);
+    events.dispatchEvent(new CustomEvent("progresschange", { detail: { child: childId } }));
+}
+
+/**
+ * Marks a step of an Explorer story done (steps never turn off), noting the
+ * day. The first time a step is done counts as a "first" for the stickers, as
+ * for the younger children. Returns the record and whether the step was new.
+ */
+export function completeExplorerStep(childId, storyId, step, extra = {}) {
+    if (!STEP_KEYS.includes(step)) {
+        throw new Error(`unknown step ${step}`);
+    }
+    const record = explorer(childId);
+    const stop = record.stops[storyId] ?? cleanExplorerStop(null);
+    // "Later" on Think & Talk: the step was reached, so the story can finish,
+    // but nobody talked, so it counts no talk.
+    const later = step === "talk" && extra.later === true;
+    let wasNew = false;
+    if (later) {
+        stop.talkLater = true;
+    } else {
+        wasNew = !stop.steps[step];
+        stop.steps[step] = true;
+        stop.days[step] = stop.days[step] ?? today();
+    }
+    record.stops[storyId] = stop;
+    if (step === "talk" && !later && extra.question) {
+        record.lastThink = { story: storyId, question: String(extra.question).slice(0, 300), day: today() };
+    }
+    saveExplorer(childId, record);
+    if (!later) {
+        setFirst(childId, step);
+    }
+    return { record, wasNew };
+}
+
+/** Records that an Explorer story was finished (again): its date and how many times. */
+export function finishExplorerStory(childId, storyId) {
+    const record = explorer(childId);
+    const stop = record.stops[storyId] ?? cleanExplorerStop(null);
+    const first = !stop.finishedOn;
+    stop.finishedOn = stop.finishedOn ?? today();
+    stop.times += 1;
+    record.stops[storyId] = stop;
+    saveExplorer(childId, record);
+    return { record, first };
+}
+
+/**
+ * One verse practice done: the next one opens the next practice (seven in
+ * all, the last one again once reached). `had` on the last ("I had it")
+ * marks the verse learned. Returns the verse's state and whether it was just
+ * learned.
+ */
+export function practiseVerse(childId, storyId, { had = false } = {}) {
+    const record = explorer(childId);
+    const stop = record.stops[storyId] ?? cleanExplorerStop(null);
+    const verse = stop.verse;
+    const wasLearned = verse.learned;
+    if (verse.level === VERSE_LEVELS - 1) {
+        verse.learned = verse.learned || had === true;
+    } else {
+        verse.level += 1;
+    }
+    record.stops[storyId] = stop;
+    saveExplorer(childId, record);
+    return { verse, learnedNow: verse.learned && !wasLearned };
+}
+
+/** Puts Field Guide cards in the child's guide; returns the ones that are new. */
+export function unlockCards(childId, ids) {
+    const record = explorer(childId);
+    const added = [];
+    for (const id of ids) {
+        if (ID.test(id) && !record.cards[id]) {
+            record.cards[id] = { day: today(), seen: false };
+            added.push(id);
+        }
+    }
+    if (added.length) {
+        saveExplorer(childId, record);
+    }
+    return added;
+}
+
+export function markCardsSeen(childId) {
+    const record = explorer(childId);
+    let changed = false;
+    for (const card of Object.values(record.cards)) {
+        if (!card.seen) {
+            card.seen = true;
+            changed = true;
+        }
+    }
+    if (changed) {
+        saveExplorer(childId, record);
+    }
+}
+
+/** A place pinned on the map in Map Quest. */
+export function pinPlace(childId, cardId) {
+    const record = explorer(childId);
+    if (ID.test(cardId) && !record.quest[cardId]) {
+        record.quest[cardId] = true;
+        saveExplorer(childId, record);
+    }
+    return record;
+}
+
+export function addTrainWin(childId) {
+    const record = explorer(childId);
+    record.trainWins += 1;
+    saveExplorer(childId, record);
+    return record;
+}
+
+// ------------------------------------------------------------------ the journal
+/**
+ * A child's Field Journal: their own answers to Think & Talk, plain text,
+ * private unless the child shares one with their grown-up. Never sent
+ * anywhere, and removed with the child.
+ */
+export function journal(childId) {
+    const raw = read(`${childId}:journal`);
+    const answers = {};
+    if (isObject(raw?.answers)) {
+        for (const [id, answer] of Object.entries(raw.answers)) {
+            if (ID.test(id) && isObject(answer) && typeof answer.text === "string") {
+                const text = cleanJournalText(answer.text);
+                if (text) {
+                    answers[id] = { text, shared: answer.shared === true, day: typeof answer.day === "string" ? answer.day : today() };
+                }
+            }
+        }
+    }
+    return { answers };
+}
+
+/** Journal text as it may be kept: line breaks but no other control characters, at most MAX_JOURNAL characters. */
+export function cleanJournalText(text) {
+    const clean = String(text ?? "")
+        .replace(/\r\n?/g, "\n")
+        .replace(/[\u0000-\u0009\u000b-\u001f\u007f]/g, "")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+    return Array.from(clean).slice(0, MAX_JOURNAL).join("");
+}
+
+/** Saves the child's answer for a story (empty text removes it). */
+export function saveJournal(childId, storyId, text, shared) {
+    const j = journal(childId);
+    const clean = cleanJournalText(text);
+    if (clean) {
+        j.answers[storyId] = { text: clean, shared: shared === true, day: today() };
+    } else {
+        delete j.answers[storyId];
+    }
+    write(`${childId}:journal`, j);
+    return j;
 }
 
 // ------------------------------------------------------------------ time used today

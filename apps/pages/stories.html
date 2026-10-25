@@ -51,7 +51,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/flipbook-page.css?v=20261025-1"
+            href="../../assets/styles/flipbook-page.css?v=20261025-2"
         />
     </head>
     <body>
@@ -120,14 +120,14 @@
             // story to show comes from the query string: ?story=daniel3 reads
             // assets/stories/daniel3.json, and ?set=kids&story=daniel3 reads the
             // children's retelling, assets/kids/stories/daniel3.json.
-            import "../../apps/components/flip-book.js?v=20261017-1";
+            import "../../apps/components/flip-book.js?v=20261025-1";
             import {
                 storySlug,
                 storySet,
                 loadStory,
                 toFlipPages,
             } from "./scripts/stories.js?v=20261024-1";
-            import { kjvNotes } from "./scripts/story-kjv.js?v=20261025-1";
+            import { kjvNotes, withKjvPills } from "./scripts/story-kjv.js?v=20261025-2";
             import { recordStory } from "../../assets/scripts/sticker-progress.js?v=20261018-1";
             // A sticker earned here is shown as a gift on this page.
             import "../../apps/components/sticker-gifts.js?v=20261023-1";
@@ -167,9 +167,9 @@
                         // Reading to the last page counts toward the stickers.
                         reader.addEventListener("finish", () => recordStory(slug));
                         // Pages whose pictures put God's, Jesus' or an angel's
-                        // words simply get a KJV button with the exact verses.
-                        kjvNotes(reader, story, document.querySelector(".tools"));
-                        reader.pages = toFlipPages(story);
+                        // words simply wear a KJV pill with the exact verses.
+                        kjvNotes(reader, story);
+                        reader.pages = withKjvPills(toFlipPages(story), story);
                     }
                 } catch (error) {
                     console.error(`Unable to load story "${slug}":`, error);

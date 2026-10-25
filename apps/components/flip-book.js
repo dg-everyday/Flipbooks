@@ -25,8 +25,15 @@
  *   @property {string}  [src]          Image URL, already resolved. Omit for a blank leaf.
  *   @property {string}  [alt]          Alt text. Falls back to `Page {n}`.
  *   @property {string}  [audio]        Narration URL. Present → a play button is drawn.
+ *   @property {FlipAction} [action]    A small pill drawn at the page's top right
+ *                                      (left of the play button when there is one);
+ *                                      a tap fires `pageaction`.
  *   @property {string}  [id]           Opaque caller key, echoed back on `pagechange`.
  *   @property {FlipPlaceholder} [placeholder]  Render this instead of the image.
+ *
+ *   @typedef {Object} FlipAction
+ *   @property {string}  label          The pill's text, kept short ("KJV").
+ *   @property {string}  [title]        Its accessible name and tooltip.
  *
  *   @typedef {Object} FlipPlaceholder
  *   @property {boolean} [logo]         Show the circular logo mark.
@@ -55,6 +62,7 @@
  *              pageCount (read-only), zoom (get/set, 1–3.5)
  * Events       ready       detail: { pageCount }
  *              pagechange  detail: { index, pageCount, id }
+ *              pageaction  a page's action pill was tapped, detail: { index, id }
  *              finish      the last page is on show, once each time pages is
  *                          set, detail: { pageCount } (without the end leaf)
  *              error       detail: { message }
@@ -319,6 +327,27 @@ const STYLES = /* css */ `
   .audio-play:focus-visible { background: #a91f1f; color: #fff; }
   .audio-play:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
   .audio-play.is-playing { background: #c62828; color: #fff; border-color: #f0c66c; }
+
+  /* A page's action pill (FlipAction): small and white on red, at the page's
+     top right. Its tap area reaches 44px beyond the pill itself. */
+  .page-action {
+    appearance: none;
+    position: absolute; top: 0; left: 0; z-index: 6;
+    min-width: 0; height: 26px; padding: 0 10px;
+    border: 0; border-radius: 999px;
+    background: #c62828; color: #fff;
+    font: 800 12px/26px system-ui, -apple-system, "Segoe UI", sans-serif;
+    letter-spacing: .06em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+    cursor: pointer;
+    touch-action: manipulation;
+    opacity: 0; pointer-events: none;
+  }
+  .page-action::before { content: ""; position: absolute; inset: -9px -6px; }
+  .page-action.is-placed { opacity: 1; pointer-events: auto; }
+  .page-action:hover { background: #a91f1f; }
+  .page-action:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .future-page .page-action { visibility: hidden; pointer-events: none; }
 `;
 
 const TEMPLATE = /* html */ `
@@ -338,13 +367,14 @@ const TEMPLATE = /* html */ `
 // rather than carried, so a typo fails loudly instead of silently doing nothing.
 function normalizePage(entry) {
     if (entry == null) {
-        return { src: null, alt: "", audio: null, id: null, placeholder: null };
+        return { src: null, alt: "", audio: null, action: null, id: null, placeholder: null };
     }
     if (typeof entry === "string") {
         return {
             src: entry || null,
             alt: "",
             audio: null,
+            action: null,
             id: null,
             placeholder: null,
         };
@@ -364,6 +394,10 @@ function normalizePage(entry) {
         src: entry.src || null,
         alt: typeof entry.alt === "string" ? entry.alt : "",
         audio: entry.audio || null,
+        action:
+            entry.action && typeof entry.action.label === "string" && entry.action.label
+                ? { label: entry.action.label, title: entry.action.title || entry.action.label }
+                : null,
         id: entry.id ?? null,
         placeholder,
     };
@@ -811,6 +845,26 @@ export class Flipbook extends HTMLElement {
         return btn;
     }
 
+    #createActionButton(action, index, id) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "page-action";
+        btn.dataset.index = String(index);
+        btn.textContent = action.label;
+        btn.title = action.title;
+        btn.setAttribute("aria-label", action.title);
+        btn.setAttribute("aria-haspopup", "dialog");
+        const stopStageGesture = (e) => e.stopPropagation();
+        btn.addEventListener("pointerdown", stopStageGesture);
+        btn.addEventListener("pointerup", stopStageGesture);
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.#emit("pageaction", { index, id });
+        });
+        return btn;
+    }
+
     #positionPlayButton(btn) {
         const img = btn.parentElement && btn.parentElement.querySelector("img");
         if (!img || !img.naturalWidth) {
@@ -819,14 +873,24 @@ export class Flipbook extends HTMLElement {
         const box = containedImageBox(img);
         const size = btn.offsetWidth || 44;
         const inset = 12;
-        btn.style.top = `${box.top + inset}px`;
-        btn.style.left = `${box.left + box.width - inset - size}px`;
+        let right = box.left + box.width - inset;
+        // An action pill sits left of the play button when the page has both.
+        if (btn.classList.contains("page-action")) {
+            const play = btn.parentElement.querySelector(".audio-play");
+            if (play) {
+                right -= (play.offsetWidth || 44) + 8;
+            }
+            btn.style.top = `${box.top + inset + 9}px`;
+        } else {
+            btn.style.top = `${box.top + inset}px`;
+        }
+        btn.style.left = `${right - size}px`;
         btn.classList.add("is-placed");
     }
 
     #positionPlayButtons() {
         this.#root
-            .querySelectorAll(".audio-play")
+            .querySelectorAll(".audio-play, .page-action")
             .forEach((btn) => this.#positionPlayButton(btn));
     }
 
@@ -903,6 +967,9 @@ export class Flipbook extends HTMLElement {
             page.appendChild(img);
             if (entry.audio) {
                 page.appendChild(this.#createPlayButton(entry.audio));
+            }
+            if (entry.action) {
+                page.appendChild(this.#createActionButton(entry.action, i, entry.id));
             }
             img.addEventListener("load", () => this.#positionPlayButtons());
             this.#book.appendChild(page);
@@ -995,6 +1062,9 @@ export class Flipbook extends HTMLElement {
             wrap.appendChild(img);
             if (entry.audio) {
                 wrap.appendChild(this.#createPlayButton(entry.audio));
+            }
+            if (entry.action) {
+                wrap.appendChild(this.#createActionButton(entry.action, index, entry.id));
             }
             img.addEventListener("load", () => this.#positionPlayButtons());
         });
@@ -1135,7 +1205,7 @@ export class Flipbook extends HTMLElement {
 
     #handlePageTap(x, y) {
         const el = this.#root.elementFromPoint(x, y);
-        if (!el || el.closest(".audio-play")) {
+        if (!el || el.closest(".audio-play, .page-action")) {
             return;
         }
         if (!el.closest(".page, .spread-page")) {

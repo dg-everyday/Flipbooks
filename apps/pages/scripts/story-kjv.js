@@ -1,5 +1,5 @@
 /**
- * The "KJV" button of the story reader (stories.html).
+ * The "KJV" pills of the story reader (stories.html).
  *
  * The Daily Grace Kids flipbooks tell each story in simple words, and the
  * words God, Jesus or an angel speak are drawn into the pictures in those
@@ -11,20 +11,26 @@
  *               "quote": "<the spoken words, found in text>" }] }
  *
  * (written by docs/kids/prompt-scripts/kjv_notes.py, which checks every quote
- * against the KJV database). While such a page is on show, a gold "KJV"
- * button appears in the top bar; it opens the verses, with the spoken words
- * marked. On a wide screen the reader shows two pages, and the notes of both
- * are offered.
+ * against the KJV database). Such a page wears a small white-on-red "KJV"
+ * pill at its top right, drawn by <flip-book> as the page's action; a tap
+ * opens that page's verses, with the spoken words marked.
  *
  * Usage
- *   import { kjvNotes } from "./scripts/story-kjv.js";
- *   kjvNotes(reader, story, document.querySelector(".tools"));
+ *   import { withKjvPills, kjvNotes } from "./scripts/story-kjv.js";
+ *   kjvNotes(reader, story);
+ *   reader.pages = withKjvPills(toFlipPages(story), story);
  */
 
-// The same rule <flip-book> uses for one page at a time (flip-book.js).
-const SINGLE_PAGE = "(max-width: 600px), (orientation: portrait)";
-
 const CLOSE_ICON = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+const notesOf = (page) => (Array.isArray(page?.kjv) ? page.kjv : []);
+
+/** The reader's pages, with a KJV pill on each page that has notes. */
+export function withKjvPills(flipPages, story) {
+    return flipPages.map((page, i) => (notesOf(story.pages?.[i]).length
+        ? { ...page, action: { label: "KJV", title: "These words in the King James Bible" } }
+        : page));
+}
 
 /** Builds a verse with its spoken words marked, as DOM nodes (never as HTML). */
 function verseNodes(note) {
@@ -42,23 +48,14 @@ function verseNodes(note) {
 }
 
 /**
- * Wires the KJV button and dialog to a reader showing `story`. Does nothing
- * when no page of the story has notes.
+ * Opens a page's verses when its KJV pill is tapped. Does nothing when no
+ * page of the story has notes.
  */
-export function kjvNotes(reader, story, tools) {
+export function kjvNotes(reader, story) {
     const pages = story.pages ?? [];
-    if (!pages.some((page) => Array.isArray(page.kjv) && page.kjv.length)) {
+    if (!pages.some((page) => notesOf(page).length)) {
         return;
     }
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "kjv-btn";
-    button.textContent = "KJV";
-    button.title = "In the King James Bible";
-    button.setAttribute("aria-haspopup", "dialog");
-    button.hidden = true;
-    tools.prepend(button);
-
     const dialog = document.createElement("dialog");
     dialog.className = "kjv-dialog";
     dialog.setAttribute("aria-labelledby", "kjv-title");
@@ -72,44 +69,14 @@ export function kjvNotes(reader, story, tools) {
       </div>`;
     document.body.append(dialog);
     const list = dialog.querySelector(".kjv-list");
-    const single = window.matchMedia(SINGLE_PAGE);
-    let index = 0;
+    let opener = null;
 
-    const notesOnShow = () => {
-        const shown = single.matches ? [index] : [index, index + 1];
-        const seen = new Set();
-        const notes = [];
-        for (const i of shown) {
-            for (const note of pages[i]?.kjv ?? []) {
-                // A verse that two pages share is shown once.
-                const key = `${note.ref}|${note.quote}`;
-                if (!seen.has(key)) {
-                    seen.add(key);
-                    notes.push(note);
-                }
-            }
+    reader.addEventListener("pageaction", (event) => {
+        const notes = notesOf(pages[event.detail.index]);
+        if (!notes.length) {
+            return;
         }
-        return notes;
-    };
-    const update = () => {
-        const count = notesOnShow().length;
-        button.hidden = count === 0;
-        button.setAttribute("aria-label", count === 1
-            ? "The words on this page in the King James Bible"
-            : "The words on these pages in the King James Bible");
-    };
-
-    reader.addEventListener("pagechange", (event) => {
-        index = event.detail.index;
-        update();
-        if (dialog.open) {
-            dialog.close();
-        }
-    });
-    single.addEventListener("change", update);
-
-    button.addEventListener("click", () => {
-        list.replaceChildren(...notesOnShow().map((note) => {
+        list.replaceChildren(...notes.map((note) => {
             const item = document.createElement("section");
             item.className = "kjv-note";
             const who = document.createElement("p");
@@ -121,8 +88,16 @@ export function kjvNotes(reader, story, tools) {
             item.append(who, verseNodes(note), ref);
             return item;
         }));
+        // Focus goes back to that page's pill (inside the reader) when the card closes.
+        const pills = reader.shadowRoot ? [...reader.shadowRoot.querySelectorAll(".page-action")] : [];
+        opener = pills.find((pill) => pill.offsetParent && pill.dataset.index === String(event.detail.index)) ?? null;
         dialog.showModal();
         dialog.querySelector(".kjv-close").focus();
+    });
+    reader.addEventListener("pagechange", () => {
+        if (dialog.open) {
+            dialog.close();
+        }
     });
     dialog.querySelector(".kjv-close").addEventListener("click", () => dialog.close());
     // A tap on the dimmed page around the card closes it too.
@@ -131,6 +106,9 @@ export function kjvNotes(reader, story, tools) {
             dialog.close();
         }
     });
-    dialog.addEventListener("close", () => button.focus());
-    update();
+    dialog.addEventListener("close", () => {
+        if (opener?.isConnected) {
+            opener.focus();
+        }
+    });
 }

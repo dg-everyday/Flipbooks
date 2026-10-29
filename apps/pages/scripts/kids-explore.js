@@ -107,7 +107,7 @@ function readStep(app, story, child) {
     const done = Boolean(stopOf(app, story)?.steps?.watch);
     const firstTime = !stopOf(app, story);
     app.root.innerHTML = `
-      <section class="screen stop explorer read fit">
+      <section class="screen stop explorer read">
         ${explorerHeader(app, story, "watch")}
         ${story.side ? `<p class="trail-note">${ICONS.compass} A side trail: a story just for Explorers${story.harder ? ". One of the harder stories: read it with a grown-up nearby." : "."}</p>` : ""}
         ${story.harder && story.note ? `<details class="grown-up-note"><summary>For the grown-up</summary><p>${escapeHtml(story.note)}</p></details>` : ""}

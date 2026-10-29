@@ -489,3 +489,37 @@ test.describe("screens", () => {
         await expect(page.locator(".tree-dialog .tree")).toHaveAttribute("aria-label", /1 leaf/);
     });
 });
+
+test.describe("the Read step on every screen", () => {
+    // A 9:16 stand-in, the shape of the story pages (the shared one is square).
+    const PAGE = '<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640"><rect width="360" height="640" fill="#2b6e48"/></svg>';
+
+    test.beforeEach(async ({ page }) => {
+        await stubMedia(page);
+        await page.route(/\/media\/.*\.webp$/, (route) =>
+            route.fulfill({ status: 200, contentType: "image/svg+xml", headers: { "Access-Control-Allow-Origin": "*" }, body: PAGE }),
+        );
+    });
+
+    test("the flipbook is bound at the top and nearly as wide as the screen; the buttons follow below it", async ({ page }) => {
+        const errors = watchErrors(page);
+        await seed(page, { children: [MIA], current: MIA.id });
+        await go(page, "/stop/where-art-thou/watch");
+        const book = page.locator("flip-book");
+        await expect(book).toHaveAttribute("flip", "up");
+        await expect.poll(() => book.evaluate((b) => b.shadowRoot.getElementById("book").getBoundingClientRect().width)).toBeGreaterThan(0);
+        // Wide enough to read: the page takes the width, not the height left over.
+        const { pageWidth, room } = await book.evaluate((b) => ({
+            pageWidth: b.shadowRoot.getElementById("book").getBoundingClientRect().width,
+            room: b.closest(".read").clientWidth,
+        }));
+        expect(pageWidth / room).toBeGreaterThan(0.85);
+        // The screen scrolls to the buttons instead of squeezing the book.
+        const bookBottom = await book.evaluate((b) => b.getBoundingClientRect().bottom);
+        const toolsTop = await page.locator(".read-tools").evaluate((t) => t.getBoundingClientRect().top);
+        expect(toolsTop).toBeGreaterThanOrEqual(bookBottom);
+        await page.locator("[data-listen]").scrollIntoViewIfNeeded();
+        await expect(page.locator("[data-listen]")).toBeInViewport();
+        expectNoErrors(errors);
+    });
+});

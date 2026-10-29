@@ -2437,9 +2437,20 @@ h2 {
 .grown-up-note p {
     margin: 8px 0 0;
 }
+/* The Read step scrolls like an ordinary page: the book is as wide as the
+   screen allows, so its words are big enough to read, and the buttons follow
+   below it. The book's height comes from that width: flip-book keeps 3px either
+   side of a 9:16 page and 23px above and below it (the rings' room and
+   padding), and 16px more leaves room for the page's shadow. */
+.read {
+    container-type: inline-size;
+}
 .read flip-book {
     --flipbook-wire: url("/assets/images/wire-binding.svg?v=3");
-    flex: 1 1 0;
+    flex: none;
+    /* Older browsers without container units: a screen-high book. */
+    height: 90vh;
+    height: calc((100cqw - 6px) * 16 / 9 + 39px);
     min-height: 320px;
     border-radius: 18px;
 }

@@ -17,7 +17,7 @@
  * resolved against this file, so the element works from any page.
  *   src       Default: assets/kids-stories.json
  *   reader    Default: apps/pages/stories.html?set=kids
- *   heading   Default: Kids Stories
+ *   heading   Default: Kids Stories for Rascals
  */
 
 // Same ?v= token as the home page's import, so a page never loads two copies.
@@ -29,7 +29,7 @@ export class KidsStories extends StoryCarousel {
     static defaults = {
         src: asset("../../assets/kids-stories.json"),
         reader: asset("../pages/stories.html?set=kids"),
-        heading: "Kids Stories",
+        heading: "Kids Stories for Rascals",
         storageKey: "dailygrace:kids-stories",
     };
 }

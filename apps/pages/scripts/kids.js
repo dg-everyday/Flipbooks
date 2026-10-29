@@ -33,7 +33,7 @@ import {
     BAND_NAMES, ICONS, brandLink, earnedFor, escapeHtml, gameConfig, gate, groupName, isExplorer, nariSrc, toast, treeHtml,
 } from "./kids-ui.js?v=20261025-1";
 import { renderStop, renderReward } from "./kids-stop.js?v=20261025-1";
-import { renderExplorerStop, renderExplorerReward } from "./kids-explore.js?v=20261025-1";
+import { renderExplorerStop, renderExplorerReward } from "./kids-explore.js?v=20261030-1";
 import { explorerGame, explorerGameCards, explorerMapView, guideView, journalView } from "./kids-journal.js?v=20261025-2";
 import { renderCorner, renderChildForm, renderPrint } from "./kids-corner.js?v=20261025-1";
 import "../../components/kids/kids-pairs.js?v=20261024-2";

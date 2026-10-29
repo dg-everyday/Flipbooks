@@ -27,7 +27,7 @@ test("the page fits the width, with the kids card and the Kids Stories row in se
     expect(await card.evaluate((a) => a.href)).toMatch(/\/apps\/pages\/kids\.html$/);
 
     const row = page.locator("kids-stories");
-    await expect(row.locator(".heading")).toHaveText("Kids Stories");
+    await expect(row.locator(".heading")).toHaveText("Kids Stories for Rascals");
     await expect.poll(() => row.evaluate((r) => r.stories.length)).toBe(LIST.length);
     const ids = await row.evaluate((r) => r.stories.map((s) => s.id));
     expect(ids).toEqual(LIST.toSorted((a, b) => a.sequence - b.sequence).map((s) => s.id));

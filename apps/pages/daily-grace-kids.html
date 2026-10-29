@@ -63,7 +63,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/daily-grace-kids-page.css?v=20261024-1"
+            href="../../assets/styles/daily-grace-kids-page.css?v=20261026-1"
         />
     </head>
     <body>
@@ -111,6 +111,9 @@
                 href="kids.html"
                 heading="Explorer"
             ></kids-card>
+            <!-- The young explorers' stories, as a notebook that flips upward,
+                 from assets/young-kids-stories.json. -->
+            <young-kids-stories id="young-kids-stories"></young-kids-stories>
             <!-- The children's retellings, from assets/kids-stories.json; each
                  opens in stories.html?set=kids. -->
             <kids-stories id="kids-stories"></kids-stories>
@@ -122,7 +125,11 @@
         ></script>
         <script
             type="module"
-            src="../components/kids-stories.js?v=20261024-1"
+            src="../components/young-kids-stories.js?v=20261030-2"
+        ></script>
+        <script
+            type="module"
+            src="../components/kids-stories.js?v=20261026-1"
         ></script>
     </body>
 </html>

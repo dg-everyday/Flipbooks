@@ -22,3 +22,8 @@ main.kids-hub {
     max-width: 720px;
     padding: 18px 0 32px;
 }
+
+/* A breather between the way into the app and the stories below it. */
+kids-card {
+    margin-bottom: 28px;
+}

@@ -3,7 +3,8 @@
  * reward after it. The same five steps and paw prints as for the younger
  * children (kids-stop.js), grown up:
  *
- *   1 Read          the story's kids flipbook in <flip-book>, with its KJV
+ *   1 Read          the story's kids flipbook in <flip-book flip="up">, bound
+ *                   at the top like a steno pad and turned upward, with its KJV
  *                   pills (story-kjv.js), "Listen to the whole story" (the
  *                   recorded narration) and "Read the chapter" (passage-reader)
  *   2 Investigate   <kids-investigate>: questions answered on the Look & Find
@@ -28,7 +29,7 @@ import {
 } from "./kids-stop.js?v=20261025-1";
 import { loadStory, toFlipPages } from "./stories.js?v=20261024-1";
 import { kjvNotes, withKjvPills } from "./story-kjv.js?v=20261025-2";
-import "../../components/flip-book.js?v=20261025-1";
+import "../../components/flip-book.js?v=20261026-3";
 import "../../components/kids/kids-investigate.js?v=20261025-1";
 import "../../components/kids/kids-story-order.js?v=20261025-1";
 import "../../components/kids/kids-who-said.js?v=20261025-1";
@@ -110,7 +111,7 @@ function readStep(app, story, child) {
         ${explorerHeader(app, story, "watch")}
         ${story.side ? `<p class="trail-note">${ICONS.compass} A side trail: a story just for Explorers${story.harder ? ". One of the harder stories: read it with a grown-up nearby." : "."}</p>` : ""}
         ${story.harder && story.note ? `<details class="grown-up-note"><summary>For the grown-up</summary><p>${escapeHtml(story.note)}</p></details>` : ""}
-        <flip-book class="reader" aspect="9/16" label="${escapeHtml(story.title)}"></flip-book>
+        <flip-book class="reader" flip="up" aspect="9/16" label="${escapeHtml(story.title)}"></flip-book>
         <div class="read-tools">
           <button class="btn quiet" type="button" data-listen>${ICONS.speaker} Listen to the whole story</button>
           <button class="btn quiet" type="button" data-chapter>${ICONS.book} Read ${escapeHtml(story.chapter.book)} ${escapeHtml(story.chapter.range)}</button>

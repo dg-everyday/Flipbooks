@@ -54,6 +54,10 @@
  *                message. Default "flipbook".
  *   empty-text   Message shown when `pages` is set to an empty list.
  *   end-page     "off" suppresses the trailing blank endpaper. Default on.
+ *   flip         "up" binds the book along its top edge, like a steno notebook:
+ *                pages flip upward (swipe up or tap the lower half to go on, swipe
+ *                down or tap the upper half to go back), in a single page at any
+ *                screen size. Default: bound at the left, turning sideways.
  *   flip-sound   Page-turn sound. A URL (resolved against the page) replaces the
  *                default ../../assets/audio/page_flip.webm; "off" disables it.
  *
@@ -68,12 +72,15 @@
  *              error       detail: { message }
  *
  * Sizing: the host fills its parent (flex: 1 in a column flex container).
+ * In flip="up" the wheel scrolls the page; it only zooms with Ctrl held (a
+ * trackpad pinch), so a book embedded in a page does not trap the scrolling.
  *
  * CSS custom properties
  *   --flipbook-navy, --flipbook-shadow
  *   --flipbook-future-paper   url() for placeholder pages
  *   --flipbook-end-paper      url() for blank/end pages
  *   --flipbook-wire           url() list for the wire binding (later entries are fallbacks)
+ *   --flipbook-wire-top       url() for the rings along the top edge of a flip="up" book
  *   --flipbook-logo           url() for the logo on placeholder pages
  */
 
@@ -82,6 +89,7 @@ const DEFAULT_FLIP_SOUND = new URL(
     import.meta.url,
 ).href;
 const DEFAULT_ASPECT = 9 / 16;
+const TURN_MS = 340; // one half of a page turn
 
 // Single-page (portrait) geometry. The book sits against the left edge with the
 // spring touching it, so the stage reserves the spring's overhang on the left
@@ -90,6 +98,11 @@ const WIRE_WIDTH = 40; // drawn width of the spring
 const WIRE_OVERHANG = 28; // how far it reaches past the page edge
 const STAGE_PAD = 3; // .stage padding on every side but the left
 const RIGHT_GUTTER = 14; // paper showing to the right of the page
+
+// Top-bound (flip="up") geometry: a short row of straight rings along the edge.
+const UP_WIRE_HEIGHT = 24; // drawn height of the ring tile
+const UP_WIRE_WIDTH = 28; // drawn width of the ring tile (one ring)
+const UP_OVERHANG = 14; // how far the rings reach above the page edge
 
 // Artwork is fetched for the pages around the one on show, not all at once,
 // so the first page is up as soon as its own image arrives and the rest
@@ -109,6 +122,7 @@ const STYLES = /* css */ `
     --flipbook-future-paper: url('../../assets/images/specialty-paper.svg');
     --flipbook-end-paper: url('../../assets/images/end-paper.svg');
     --flipbook-wire: url('../../assets/images/wire-binding.svg?v=3');
+    --flipbook-wire-top: url('../../assets/images/wire-binding-top.svg');
     --flipbook-logo: url('../../assets/images/dg-icon-02-flat-256.webp');
 
 
@@ -307,6 +321,38 @@ const STYLES = /* css */ `
     .desktop-spread .spread-page:last-child { cursor: e-resize; }
   }
 
+  /* Upward flip (flip="up"): the book hangs from a row of short, straight
+     rings along its top edge, in a single page at any size. Placed after the
+     media blocks to win over both of them. */
+  :host([flip="up"]) .stage {
+    padding: 0 ${STAGE_PAD}px ${STAGE_PAD}px;
+    justify-content: center; align-items: flex-start;
+  }
+  :host([flip="up"]) .book-shadow,
+  :host([flip="up"]) .desktop-spread { display: none; }
+  :host([flip="up"]) .book { display: block; margin: ${UP_OVERHANG}px 0 0; }
+  :host([flip="up"]) .page { border-radius: 5px 5px 9px 9px; }
+  /* A soft shadow under the whole book, as the side-bound one has. */
+  :host([flip="up"]) .book::before {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: 12px; background: rgba(0, 0, 0, .32); filter: blur(24px);
+    transform: translateY(20px) scale(.96);
+    pointer-events: none; z-index: -1;
+  }
+  :host([flip="up"]) .book::after {
+    content: "";
+    position: absolute; top: -${UP_OVERHANG}px; left: 0; right: 0; bottom: auto;
+    width: auto; height: ${UP_WIRE_HEIGHT}px;
+    background-image: var(--flipbook-wire-top);
+    background-position: center top;
+    background-size: ${UP_WIRE_WIDTH}px ${UP_WIRE_HEIGHT}px;
+    background-repeat: repeat-x;
+    transform: none;
+    pointer-events: none;
+    z-index: 100;
+  }
+
   /* Narration button */
   .audio-play {
     appearance: none;
@@ -460,23 +506,24 @@ function spreadStart(index) {
     return Math.floor((index + 1) / 2) * 2 - 1;
 }
 
-async function animateSpreadHalf(page, from, to, origin) {
+// `axis` is "Y" for a page hinged at its left edge, "X" for one hinged at the top.
+async function animateSpreadHalf(page, from, to, origin, axis = "Y") {
     if (!page) {
         return;
     }
     const animation = page.animate(
         [
             {
-                transform: `perspective(1600px) rotateY(${from}deg)`,
+                transform: `perspective(1600px) rotate${axis}(${from}deg)`,
                 filter: "brightness(1)",
             },
             {
-                transform: `perspective(1600px) rotateY(${to}deg)`,
+                transform: `perspective(1600px) rotate${axis}(${to}deg)`,
                 filter: to === 0 ? "brightness(1)" : "brightness(.65)",
             },
         ],
         {
-            duration: 340,
+            duration: TURN_MS,
             easing: "cubic-bezier(.4, 0, .2, 1)",
             fill: "forwards",
         },
@@ -484,7 +531,12 @@ async function animateSpreadHalf(page, from, to, origin) {
     page.style.transformOrigin = origin;
     page.style.zIndex = "2";
     try {
-        await animation.finished;
+        // A book scrolled out of view can leave `finished` unsettled; the turn
+        // must still complete, so it never waits longer than the turn itself.
+        await Promise.race([
+            animation.finished,
+            new Promise((resolve) => setTimeout(resolve, TURN_MS + 160)),
+        ]);
     } finally {
         animation.cancel();
         page.style.transformOrigin = "";
@@ -617,8 +669,11 @@ export class Flipbook extends HTMLElement {
 
     /* ----- Helpers ----- */
 
+    #isUp() {
+        return this.getAttribute("flip") === "up";
+    }
     #isSinglePage() {
-        return this.#singlePageQuery.matches;
+        return this.#isUp() || this.#singlePageQuery.matches;
     }
     #visibleBook() {
         return this.#isSinglePage() ? this.#book : this.#desktopSpread;
@@ -901,15 +956,19 @@ export class Flipbook extends HTMLElement {
         // In single-page mode the page gives up the spring's overhang on the left
         // and the gutter on the right, and keeps the rest of the viewport width.
         const single = this.#isSinglePage();
-        const availableW = Math.max(
-            1,
-            stageRect.width -
-                (single ? WIRE_OVERHANG + RIGHT_GUTTER + STAGE_PAD : 16),
-        );
-        const availableH = Math.max(
-            1,
-            stageRect.height - (single ? STAGE_PAD * 2 + 6 : 16),
-        );
+        const up = this.#isUp();
+        let availableW = stageRect.width - 16;
+        let availableH = stageRect.height - 16;
+        if (up) {
+            // The rings hang above the page, so the height gives up their overhang.
+            availableW = stageRect.width - STAGE_PAD * 2;
+            availableH = stageRect.height - UP_OVERHANG - STAGE_PAD - 6;
+        } else if (single) {
+            availableW = stageRect.width - (WIRE_OVERHANG + RIGHT_GUTTER + STAGE_PAD);
+            availableH = stageRect.height - (STAGE_PAD * 2 + 6);
+        }
+        availableW = Math.max(1, availableW);
+        availableH = Math.max(1, availableH);
 
         // Use the actual first image ratio once loaded; the attribute is the
         // stand-in that keeps the first paint from jumping.
@@ -1096,20 +1155,17 @@ export class Flipbook extends HTMLElement {
                 // the previous page swings over the current page from the left.
                 incoming.hidden = false;
                 try {
+                    // A page hinged at its left edge swings to -90 degrees; one
+                    // hinged at the top swings up to +90, its lower edge coming
+                    // toward the reader.
+                    const up = this.#isUp();
+                    const open = up ? 90 : -90;
+                    const hinge = up ? "center top" : "left center";
+                    const axis = up ? "X" : "Y";
                     if (direction > 0) {
-                        await animateSpreadHalf(
-                            outgoing,
-                            0,
-                            -90,
-                            "left center",
-                        );
+                        await animateSpreadHalf(outgoing, 0, open, hinge, axis);
                     } else {
-                        await animateSpreadHalf(
-                            incoming,
-                            -90,
-                            0,
-                            "left center",
-                        );
+                        await animateSpreadHalf(incoming, open, 0, hinge, axis);
                     }
                     this.#current = next;
                 } finally {
@@ -1164,7 +1220,7 @@ export class Flipbook extends HTMLElement {
         const bookRect = this.#visibleBook().getBoundingClientRect();
         const maxX = Math.max(0, (bookRect.width - stageRect.width) / 2);
         const maxY = Math.max(0, (bookRect.height - stageRect.height) / 2);
-        const binderWidth = this.#isSinglePage()
+        const binderWidth = this.#isSinglePage() && !this.#isUp()
             ? WIRE_OVERHANG * this.#zoom
             : 0;
         const maxRight = Math.max(
@@ -1212,7 +1268,10 @@ export class Flipbook extends HTMLElement {
             return;
         }
         const rect = this.#visibleBook().getBoundingClientRect();
-        if (x < rect.left + rect.width / 2) {
+        const before = this.#isUp()
+            ? y < rect.top + rect.height / 2
+            : x < rect.left + rect.width / 2;
+        if (before) {
             this.prev();
         } else {
             this.next();
@@ -1250,6 +1309,10 @@ export class Flipbook extends HTMLElement {
         stage.addEventListener(
             "wheel",
             (e) => {
+                // Hung from the top, the book sits inside a scrolling page.
+                if (this.#isUp() && !e.ctrlKey) {
+                    return;
+                }
                 e.preventDefault();
                 const rect = stage.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
@@ -1340,15 +1403,17 @@ export class Flipbook extends HTMLElement {
                 const dt = performance.now() - start.t;
                 this.#pointerStart = null;
 
+                // Along the axis the pages turn on: up for the top-bound book.
+                const [along, across] = this.#isUp() ? [dy, dx] : [dx, dy];
                 const isSwipe =
-                    Math.abs(dx) > 55 &&
-                    Math.abs(dx) > Math.abs(dy) * 1.25 &&
+                    Math.abs(along) > 55 &&
+                    Math.abs(along) > Math.abs(across) * 1.25 &&
                     dt < 700;
                 if (this.#gesturePinched || this.#zoom > 1) {
                     return;
                 }
                 if (isSwipe) {
-                    if (dx < 0) {
+                    if (along < 0) {
                         this.next();
                     } else {
                         this.prev();

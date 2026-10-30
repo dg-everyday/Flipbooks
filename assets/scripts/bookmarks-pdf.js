@@ -23,7 +23,8 @@
  *              (<gods-blueprint>.bookmarkedItems(): items of following-gods-blueprint.json)
  *     redLetter [{ name, theme, context, text, verses, reference, meaning, today, also_in }]
  *              (<red-letter-quotes>.bookmarkedItems(): sayings of red-letter-quotes.json)
- * Each list is newest first, as the popup shows it. Rejects if jsPDF or the
+ * Each list is newest first, as the popup shows it. An item may carry the
+ * reader's note on it as note, printed under it. Rejects if jsPDF or the
  * fonts cannot be loaded.
  *
  * makeGuidancePdf(topic) lays out one question of guidance-for-life.json the
@@ -324,11 +325,26 @@ function drawHeader(writer, { emblem, eyebrow, title, subtitle }) {
     writer.y += 8;
 }
 
-/** A section: its heading stays with the first item under it. */
-function drawSection(writer, title, items, toRuns) {
+// The fonts have no emoji, which a note typed on a phone may hold.
+const EMOJI = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu;
+
+// The reader's own note on a bookmark, under it, kept with its last part.
+const noteRuns = (note) => [
+    {
+        size: 10.5,
+        color: GOLD_DARK,
+        indent: 4,
+        text: note ? `My note: ${clean(String(note).replace(EMOJI, ""))}` : "",
+        gap: 1,
+    },
+];
+
+/** A section: its heading stays with the first item under it, and each item with its note. */
+function drawSection(writer, title, items, itemRuns) {
     if (!items.length) {
         return;
     }
+    const toRuns = (item) => [...itemRuns(item), ...noteRuns(item.note)];
     const heading = [
         {
             font: "GermaniaOne",

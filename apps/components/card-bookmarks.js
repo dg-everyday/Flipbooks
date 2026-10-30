@@ -9,6 +9,11 @@
  * instance on the page and kept in step across tabs. The page lists them all,
  * with the bookmarked verses, in the popup the DG emblem's My Bookmarks opens.
  *
+ * A new bookmark asks for a note on it (bookmark-notes.js), and taking a
+ * bookmark off takes its note too. A list of bookmarks puts noteBox() on each
+ * card, for the note and its Edit and Share buttons; a hold that starts there
+ * is not a hold on the card.
+ *
  * Usage (inside a component)
  *   const bookmarks = bookmarkStore('dailygrace:bookmarks:facts',
  *     { isId: Number.isSafeInteger, limit: 50 });
@@ -17,20 +22,29 @@
  *   new CardHold(list, {
  *     selector: '.fact',
  *     exclude: 'button',          // parts of a card that are not held
- *     onHold: (card) => showBookmarkResult(card, bookmarks.toggle(id), bookmarks.limit),
+ *     onHold: (card) => showBookmarkResult(card, bookmarks.toggle(id, { title }), bookmarks.limit),
  *   });
+ *   // In a bookmarks list:
+ *   card.append(noteBox(bookmarks.key, id, { title, text, reference, url }));
  *   bookmarks.addEventListener('change', syncRibbons);
  *
  * The components import this file with a ?v= token, since the deploy only
- * stamps the tokens in the HTML. When it changes, bump the token in all three
- * imports (did-you-know, bible-sayings, bible-search-results) to the same
- * value: a different URL would load a second copy of the module.
+ * stamps the tokens in the HTML. When it changes, bump the token in every
+ * import (the bookmark lists and the study pages' scripts) to the same value:
+ * a different URL would load a second copy of the module.
  */
+
+import { askForNote, deleteNote } from "./bookmark-notes.js?v=20261030-1";
+
+export { askForNote, deleteNote, noteBox } from "./bookmark-notes.js?v=20261030-1";
 
 // How long a card is held to bookmark it, and how far the finger may drift
 // before the hold counts as a scroll instead. The same as the verse cards.
 export const HOLD_MS = 500;
 const HOLD_SLOP = 10;
+
+// A bookmark's note and its buttons, on a card in a bookmarks list.
+const NOTE_BOX = "bookmark-note-box";
 
 /** What a hold did, in words: result is what toggle() returned. */
 export function bookmarkNote(result, limit) {
@@ -124,6 +138,8 @@ export const BOOKMARK_STYLES = /* css */ `
     pointer-events: none;
   }
   .bookmarkable[data-flash="added"]::after { animation: ribbon-drop .35s ease-out; }
+  /* A card whose bookmark was just taken off has no note left to show. */
+  .bookmarkable:not(.bookmarked) bookmark-note-box { display: none; }
   @keyframes ribbon-drop { from { transform: translateY(-100%); } }
   /* The note wraps onto a second line on a narrow card rather than spill out
      of it, and the longer "full" note stays up long enough to read. */
@@ -179,6 +195,11 @@ class BookmarkStore extends EventTarget {
         });
     }
 
+    /** Where the ids are kept: the key a note on one of them is kept under. */
+    get key() {
+        return this.#key;
+    }
+
     /** How many ids the store keeps. */
     get limit() {
         return this.#limit;
@@ -211,8 +232,12 @@ class BookmarkStore extends EventTarget {
         return this.#saved().includes(id);
     }
 
-    /** Adds or removes a bookmark. Returns 'added', 'removed', 'full' or 'failed'. */
-    toggle(id) {
+    /**
+     * Adds or removes a bookmark. Returns 'added', 'removed', 'full' or
+     * 'failed'. An added bookmark asks for a note on title; a removed one
+     * loses its note.
+     */
+    toggle(id, { title = "" } = {}) {
         const ids = this.#saved();
         const removing = ids.includes(id);
         if (!removing && ids.length >= this.#limit) {
@@ -227,8 +252,11 @@ class BookmarkStore extends EventTarget {
             return "failed";
         }
         this.#ids = next;
-        if (!removing) {
+        if (removing) {
+            deleteNote(this.#key, id);
+        } else {
             keepBookmarks();
+            askForNote(this.#key, id, title);
         }
         this.dispatchEvent(new Event("change"));
         return removing ? "removed" : "added";
@@ -337,7 +365,11 @@ export class CardHold {
             return;
         }
         const card = event.target.closest(this.#selector);
-        if (!card || (this.#exclude && event.target.closest(this.#exclude))) {
+        if (
+            !card ||
+            event.target.closest(NOTE_BOX) ||
+            (this.#exclude && event.target.closest(this.#exclude))
+        ) {
             return;
         }
         this.cancel();

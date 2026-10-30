@@ -35,7 +35,7 @@ import {
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20261018-1";
+} from "../../components/card-bookmarks.js?v=20261030-1";
 import {
     PULL_TAB_ICON,
     PULL_TAB_STYLES,
@@ -310,7 +310,7 @@ export async function start(view) {
     });
 
     function toggleBookmark(s, card = document.getElementById(`tile-${s.id}`)) {
-        const result = bookmarks.toggle(s.id);
+        const result = bookmarks.toggle(s.id, { title: s.saying });
         if (card) {
             showBookmarkResult(card, result, bookmarks.limit);
         }

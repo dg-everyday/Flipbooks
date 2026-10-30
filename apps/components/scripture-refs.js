@@ -37,7 +37,7 @@
  * module (and of the popup it opens); bump them all together.
  */
 
-const POPUP_MODULE = "./verse-popup.js?v=20261030-1";
+const POPUP_MODULE = "./verse-popup.js?v=20261030-2";
 
 // [name, chapters, ...abbreviations]. The names, "Psalm" and "Song of Songs"
 // may be cited by chapter alone ("Psalm 23"); an abbreviation only counts with

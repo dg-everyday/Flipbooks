@@ -69,8 +69,9 @@ import {
     CardHold,
     bookmarkNote,
     bookmarkStore,
+    noteBox,
     showBookmarkResult,
-} from "./card-bookmarks.js?v=20261018-1";
+} from "./card-bookmarks.js?v=20261030-1";
 import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261024-1";
 
 const DEFAULT_SRC = "assets/red-letter-quotes.json";
@@ -92,7 +93,7 @@ const PLACE_ICON = `<svg ${ICON_ATTRS}><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8
 const TODAY_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>`;
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261011-2");
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261030-1");
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab
@@ -836,7 +837,7 @@ export class RedLetterQuotes extends HTMLElement {
     }
 
     #toggle(saying, card) {
-        const result = bookmarks.toggle(saying.id);
+        const result = bookmarks.toggle(saying.id, { title: saying.name });
         showBookmarkResult(card, result, bookmarks.limit);
         this.#status.textContent = `${saying.name}: ${bookmarkNote(result, bookmarks.limit)}`;
         if (result === "added" || result === "removed") {
@@ -893,6 +894,15 @@ export class RedLetterQuotes extends HTMLElement {
         link.href = this.#pageHref(saying.id);
         link.setAttribute("aria-label", `What it means: ${saying.name}`);
         card.append(link);
+        // A card of the bookmarks list: the reader's note goes with it.
+        card.append(
+            noteBox(bookmarks.key, saying.id, {
+                title: saying.name,
+                text: `“${tidy(saying.text)}”`,
+                reference: saying.reference,
+                url: link.href,
+            }),
+        );
         return card;
     }
 

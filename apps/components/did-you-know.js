@@ -79,8 +79,9 @@ import {
     CardHold,
     bookmarkNote,
     bookmarkStore,
+    noteBox,
     showBookmarkResult,
-} from "./card-bookmarks.js?v=20261018-1";
+} from "./card-bookmarks.js?v=20261030-1";
 import {
     PULL_TAB_ICON,
     PULL_TAB_STYLES,
@@ -411,11 +412,15 @@ export class DidYouKnow extends HTMLElement {
         });
 
         // Tapping a card opens or closes it. A reference pill is a button of its
-        // own, its link goes to the Did You Know page and a hold swallows its
-        // click, so none of those toggles the card.
+        // own, its link goes to the Did You Know page, a bookmark's note has
+        // buttons of its own and a hold swallows its click, so none of those
+        // toggles the card.
         this.#list.addEventListener("click", (event) => {
             const card = event.target.closest(".fact");
-            if (!card || event.target.closest(".scripture-ref, a")) {
+            if (
+                !card ||
+                event.target.closest(".scripture-ref, a, bookmark-note-box")
+            ) {
                 return;
             }
             // Selecting text in an open card should not fold it away.
@@ -434,9 +439,10 @@ export class DidYouKnow extends HTMLElement {
             exclude: ".scripture-ref, a",
             onHold: (card) => {
                 const id = Number(card.dataset.id);
-                const result = bookmarks.toggle(id);
+                const title = card.querySelector(".title").textContent;
+                const result = bookmarks.toggle(id, { title });
                 showBookmarkResult(card, result, bookmarks.limit);
-                this.#status.textContent = `${card.querySelector(".title").textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
+                this.#status.textContent = `${title}: ${bookmarkNote(result, bookmarks.limit)}`;
                 if (result === "added" || result === "removed") {
                     this.dispatchEvent(
                         new CustomEvent("bookmarkchange", {
@@ -629,7 +635,8 @@ export class DidYouKnow extends HTMLElement {
         }
     }
 
-    #createFact(fact, { open = false } = {}) {
+    // In a bookmarks list (withNote), the card carries the reader's note on it.
+    #createFact(fact, { open = false, withNote = false } = {}) {
         const card = document.createElement("article");
         card.className = "fact bookmarkable";
         card.dataset.id = fact.id;
@@ -702,6 +709,16 @@ export class DidYouKnow extends HTMLElement {
         foot.append(more);
         inner.append(foot);
 
+        if (withNote) {
+            body.append(
+                noteBox(bookmarks.key, fact.id, {
+                    title: fact.title,
+                    text: fact.text,
+                    reference: fact.reference,
+                    url: this.#pageHref(`fact-${fact.id}`),
+                }),
+            );
+        }
         card.append(symbol, body);
         this.#setOpen(card, open);
         return card;
@@ -765,7 +782,9 @@ export class DidYouKnow extends HTMLElement {
             this.#bookmarksSummary();
         // Saved facts are there to be reread, so they open already answered.
         this.#list.replaceChildren(
-            ...facts.map((fact) => this.#createFact(fact, { open: true })),
+            ...facts.map((fact) =>
+                this.#createFact(fact, { open: true, withNote: true }),
+            ),
         );
         this.#status.textContent = `Bookmarked facts. ${this.#bookmarksSummary()}`;
     }

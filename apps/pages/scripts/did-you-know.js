@@ -32,7 +32,7 @@ import {
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20261018-1";
+} from "../../components/card-bookmarks.js?v=20261030-1";
 import {
     BOOK_THUMB_BOUNDS,
     DEFAULT_THUMB_BOUNDS,
@@ -344,7 +344,7 @@ export async function start(view) {
         fact,
         card = document.getElementById(`fact-${fact.id}`),
     ) {
-        const result = bookmarks.toggle(fact.id);
+        const result = bookmarks.toggle(fact.id, { title: fact.title });
         if (card) {
             showBookmarkResult(card, result, bookmarks.limit);
         }

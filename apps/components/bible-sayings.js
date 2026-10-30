@@ -87,8 +87,9 @@ import {
     CardHold,
     bookmarkNote,
     bookmarkStore,
+    noteBox,
     showBookmarkResult,
-} from "./card-bookmarks.js?v=20261018-1";
+} from "./card-bookmarks.js?v=20261030-1";
 import {
     PULL_TAB_ICON,
     PULL_TAB_STYLES,
@@ -304,6 +305,7 @@ const STYLES = /* css */ `
   .saying, dialog { --scripture-ref-color: var(--bs-reference); }
   /* Above the saying's button, which stretches over the whole card. */
   .saying .scripture-ref { z-index: 1; }
+  .saying bookmark-note-box { position: relative; z-index: 1; }
 
   .pull-tab { margin-top: 2px; }
   :host([bookmarks]) .pull-tab { display: none; }
@@ -515,9 +517,10 @@ export class BibleSayings extends HTMLElement {
             exclude: ".scripture-ref",
             onHold: (card) => {
                 const { id } = card.dataset;
-                const result = bookmarks.toggle(id);
+                const title = card.querySelector(".open").textContent;
+                const result = bookmarks.toggle(id, { title });
                 showBookmarkResult(card, result, bookmarks.limit);
-                this.#status.textContent = `${card.querySelector(".open").textContent}: ${bookmarkNote(result, bookmarks.limit)}`;
+                this.#status.textContent = `${title}: ${bookmarkNote(result, bookmarks.limit)}`;
                 if (result === "added" || result === "removed") {
                     this.dispatchEvent(
                         new CustomEvent("bookmarkchange", {
@@ -768,7 +771,8 @@ export class BibleSayings extends HTMLElement {
         return symbol;
     }
 
-    #createSaying(saying) {
+    // In a bookmarks list (withNote), the card carries the reader's note on it.
+    #createSaying(saying, { withNote = false } = {}) {
         const card = document.createElement("article");
         card.className = "saying bookmarkable";
         card.dataset.id = saying.id;
@@ -797,6 +801,16 @@ export class BibleSayings extends HTMLElement {
             reference.className = "card-reference";
             reference.append(refPill(saying.reference));
             body.append(reference);
+        }
+        if (withNote) {
+            body.append(
+                noteBox(bookmarks.key, saying.id, {
+                    title: saying.saying,
+                    text: saying.meaning,
+                    reference: saying.reference,
+                    url: this.#pageHref(saying.id),
+                }),
+            );
         }
 
         card.append(this.#createSymbol(saying.book), body);
@@ -1030,7 +1044,9 @@ export class BibleSayings extends HTMLElement {
         this.#bookmarksHeader.querySelector(".bookmarks-summary").textContent =
             this.#bookmarksSummary();
         this.#list.replaceChildren(
-            ...sayings.map((saying) => this.#createSaying(saying)),
+            ...sayings.map((saying) =>
+                this.#createSaying(saying, { withNote: true }),
+            ),
         );
         this.#status.textContent = `Bookmarked sayings. ${this.#bookmarksSummary()}`;
     }

@@ -40,7 +40,7 @@ import {
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20261018-1";
+} from "../../components/card-bookmarks.js?v=20261030-1";
 
 const DATA = "assets/red-letter-quotes.json";
 // Each verse's { explanation, translations } (see tools/annotations).
@@ -422,7 +422,7 @@ export async function start(view) {
     });
 
     function toggleBookmark(s, card = document.getElementById(`tile-${s.id}`)) {
-        const result = bookmarks.toggle(s.id);
+        const result = bookmarks.toggle(s.id, { title: s.name });
         if (card) {
             showBookmarkResult(card, result, bookmarks.limit);
         }

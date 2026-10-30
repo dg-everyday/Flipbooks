@@ -67,7 +67,7 @@ export const SERIES = [
         name: "The Whole Armour of God",
         one: "piece of the Armour of God",
         how: "One piece for each thing you try for the first time.",
-        guide: "Each time you try a part of Daily Grace for the first time, the lion cub puts on another piece of armour. There are six firsts: finish a Daily Moment, practise this week's memory verse, read a Bible story to the last page, get a Bible Trivia question right, write an answer in a Daily Moment, and learn a memory verse.",
+        guide: "Each time you try a part of Daily Grace for the first time, the lion cub puts on another piece of armour. There are six firsts: finish a Daily Moment, practise this week's memory verse, read a Bible story to the last page (from the Stories row on the home page, or Kids Stories for Rascals on the Daily Grace Kids page), get a Bible Trivia question right, write an answer in a Daily Moment, and learn a memory verse.",
     },
     {
         group: "BS",

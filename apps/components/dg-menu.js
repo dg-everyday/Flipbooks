@@ -8,8 +8,8 @@
  *   My Sticker Album      goes to the album, with how many stickers so far
  *   ────────────
  *   Bookmarking 101       a guide to bookmarks: what can be kept and where,
- *                         how to add and remove them, and how many the
- *                         reader has of each kind
+ *                         how to add and remove them, notes and sharing,
+ *                         and how many the reader has of each kind
  *   How to earn stickers  a guide to every series: what earns it, and how
  *                         far the reader has got toward the next one
  *
@@ -50,7 +50,7 @@ import {
     loadStickers,
     readCollection,
     stickerImage,
-} from "../../assets/scripts/sticker-awards.js?v=20261018-1";
+} from "../../assets/scripts/sticker-awards.js?v=20261030-1";
 import { readProgress } from "../../assets/scripts/sticker-progress.js?v=20261018-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
@@ -96,7 +96,7 @@ const BOOKMARK_KINDS = [
         name: "Jesus’ Words",
         key: "dailygrace:bookmarks:red-letter",
         limit: 50,
-        how: "Hold the red-lettered words of Jesus card on the home page, or a saying on the Red-Lettered Quotes page.",
+        how: "Hold “Jesus’ Spoken Words” on the home page, or a saying on the Red-Lettered Quotes page.",
     },
 ];
 
@@ -301,7 +301,7 @@ export class DgMenu extends HTMLElement {
           <li role="none">
             <button class="item" type="button" role="menuitem" data-action="bookmarks">
               <span class="item-icon">${BOOKMARK_ICON}</span>
-              <span class="item-text">My Bookmarks<small>The verses, facts, sayings and questions you have kept</small></span>
+              <span class="item-text">My Bookmarks<small>The verses, facts, sayings and more you have kept, with your notes</small></span>
             </button>
           </li>
           <li role="none">
@@ -575,13 +575,14 @@ function bookmarksGuideHtml() {
           </li>`;
     }).join("");
     return `
-      <p class="intro">Bookmarks keep the verses and lessons you want to come back to, all in one place.</p>
+      <p class="intro">Bookmarks keep the verses and lessons you want to come back to, all in one place, each with a note of your own if you like.</p>
       <section class="series">
         <div class="series-head"><h3>Add a bookmark</h3></div>
         <ol class="steps">
           <li>Press and hold a verse or a card for half a second.</li>
           <li>It glows gold, then a ribbon appears on it: it is bookmarked.</li>
-          <li>Hold it again the same way to remove the bookmark.</li>
+          <li>A box asks for a note: a few words on why it matters to you. Save it, or Skip.</li>
+          <li>Hold it again the same way to remove the bookmark, and its note with it.</li>
         </ol>
       </section>
       <section class="series">
@@ -590,14 +591,19 @@ function bookmarksGuideHtml() {
       </section>
       <section class="series">
         <div class="series-head"><h3>See your bookmarks</h3></div>
-        <p>Tap the DG emblem at the top of the home page, then My Bookmarks. Tap a kind at the top (Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint or Jesus’ Words) to switch between them.</p>
-        <p class="next">Tap the red PDF button beside the title to open them all as one PDF, ready to save, print or share.</p>
+        <p>Tap the DG emblem (or your avatar) at the top of the home page, then My Bookmarks. Tap a kind at the top (Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint or Jesus’ Words) to switch between them.</p>
+        <p class="next">Tap the red PDF button beside the title to open them all as one PDF, with your notes, ready to save, print or share.</p>
+      </section>
+      <section class="series">
+        <div class="series-head"><h3>Notes and sharing</h3></div>
+        <p>A note can be up to 280 characters: a sentence or two on why it matters, a prayer, or a name to remember. Under each bookmark in My Bookmarks, tap Add note or Edit note to write, change or remove it.</p>
+        <p class="next">Tap Share to send the bookmark, with your note and a link to Daily Grace, to a friend, a group chat or a post. Where your browser can’t share, it is copied for you to paste.</p>
       </section>
       <section class="series">
         <div class="series-head"><h3>When a list is full</h3></div>
         <p>Each kind keeps up to its limit: 100 verses, and 50 of everything else. To make room, open My Bookmarks and hold one there to remove it.</p>
       </section>
-      <p class="note">Bookmarks are kept on this device. Clearing this browser’s data for Daily Grace removes them.</p>`;
+      <p class="note">Bookmarks and notes are kept on this device. Clearing this browser’s data for Daily Grace removes them.</p>`;
 }
 
 if (!customElements.get("dg-menu")) {

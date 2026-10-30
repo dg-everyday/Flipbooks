@@ -93,7 +93,13 @@
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
-import { bookmarkNote, keepBookmarks } from "./card-bookmarks.js?v=20261018-1";
+import {
+    askForNote,
+    bookmarkNote,
+    deleteNote,
+    keepBookmarks,
+    noteBox,
+} from "./card-bookmarks.js?v=20261030-1";
 import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261024-1";
 import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
@@ -300,6 +306,12 @@ const STYLES = /* css */ `
     font: 400 clamp(1rem, .96rem + .3vw, 1.125rem)/1.35 'Strait', 'Roboto', sans-serif;
   }
   .chapter-start .bsb { border-left-color: rgb(168 129 12 / 55%); }
+  /* A bookmarked verse's note, under its text. */
+  .verse-card bookmark-note-box {
+    grid-column: 2;
+    margin: 0; padding: 12px 18px 0;
+    border-left: 1px solid rgb(128 91 24 / 35%);
+  }
   .bsb-toggle { position: relative; padding-right: 3px; cursor: pointer; }
   /* A bigger tap target than the pill shows. */
   .bsb-toggle::after { content: ''; position: absolute; inset: -9px -8px; }
@@ -385,6 +397,8 @@ const STYLES = /* css */ `
   }
   .verse-card[data-flash="added"]::after { animation: ribbon-drop .35s ease-out; }
   @keyframes ribbon-drop { from { transform: translateY(-100%); } }
+  /* A verse whose bookmark was just taken off has no note left to show. */
+  .verse-card:not(.bookmarked) bookmark-note-box { display: none; }
   /* The note wraps onto a second line on a narrow card rather than spill out
      of it, and the longer "full" note stays up long enough to read. */
   .bookmark-note {
@@ -635,7 +649,7 @@ ${STRONGS_ENTRY_STYLES}
   @media (max-width: 420px) {
     :host { --reference-width: 5.25rem; }
     .book-symbol { width: 52px; height: 52px; }
-    .book-details, .verse-text, .bsb { padding-inline: 12px; }
+    .book-details, .verse-text, .bsb, .verse-card bookmark-note-box { padding-inline: 12px; }
     .book-hebrew { font-size: 1.125rem; }
     .chapter-number { font-size: .8125rem; }
     .verse-number { font-size: 1.875rem; }
@@ -844,8 +858,11 @@ window.addEventListener("storage", (event) => {
     }
 });
 
-/** Adds or removes a bookmark. Returns 'added', 'removed', 'full' or 'failed'. */
-function toggleBookmark(docid) {
+/**
+ * Adds or removes a bookmark. Returns 'added', 'removed', 'full' or 'failed'.
+ * An added verse asks for a note on reference; a removed one loses its note.
+ */
+function toggleBookmark(docid, reference) {
     const ids = readBookmarks();
     const removing = ids.includes(docid);
     if (!removing && ids.length >= BOOKMARK_LIMIT) {
@@ -857,8 +874,11 @@ function toggleBookmark(docid) {
     } catch {
         return "failed";
     }
-    if (!removing) {
+    if (removing) {
+        deleteNote(BOOKMARKS_KEY, docid);
+    } else {
         keepBookmarks();
+        askForNote(BOOKMARKS_KEY, docid, reference);
     }
     bookmarkChanges.dispatchEvent(new Event("change"));
     return removing ? "removed" : "added";
@@ -1167,8 +1187,9 @@ export class BibleSearchResults extends HTMLElement {
             return;
         }
         const card = event.target.closest(".verse-card[data-docid]");
-        // The explanation corner is a button of its own.
-        if (!card || event.target.closest("button")) {
+        // The explanation corner is a button of its own, and a bookmark's note
+        // has buttons of its own.
+        if (!card || event.target.closest("button, bookmark-note-box")) {
             return;
         }
         this.#cancelHold();
@@ -1200,7 +1221,7 @@ export class BibleSearchResults extends HTMLElement {
         card.classList.remove("holding");
         this.#swallowClick = true;
         const docid = Number(card.dataset.docid);
-        const result = toggleBookmark(docid);
+        const result = toggleBookmark(docid, card.dataset.reference);
         if (result === "added" || result === "removed") {
             navigator.vibrate?.(15);
             this.dispatchEvent(
@@ -1397,6 +1418,7 @@ export class BibleSearchResults extends HTMLElement {
             mixed = false,
             redLetters = {},
             saved = new Set(),
+            withNote = false,
         } = {},
     ) {
         const item = document.createElement("div");
@@ -1477,6 +1499,15 @@ export class BibleSearchResults extends HTMLElement {
             if (this.hasAttribute("bsb-open")) {
                 this.#toggleBsb(card, row, true);
             }
+        }
+        // In the bookmarks list, the reader's note goes with the verse.
+        if (withNote && card.dataset.docid) {
+            card.append(
+                noteBox(BOOKMARKS_KEY, docid, {
+                    title: `${card.dataset.reference} (KJV)`,
+                    text: row.text,
+                }),
+            );
         }
         item.append(card);
         return item;
@@ -1843,6 +1874,7 @@ export class BibleSearchResults extends HTMLElement {
                         mixed,
                         redLetters,
                         saved,
+                        withNote: Boolean(view.bookmarks),
                     }),
                 );
             }

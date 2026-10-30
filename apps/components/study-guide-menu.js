@@ -953,7 +953,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" /></svg>
                 </span>
-                <p><strong>Collect stickers.</strong> Stickers are gifts for what you do in Daily Grace: your first Daily Moment and then every tenth, each memory verse you learn, faithful weeks, right answers in Bible Trivia, Food for Thought, Bible stories read to the end, and each book of the Bible you meet. A new sticker pops up when you finish. Tap the DG emblem at the top of the page for My Sticker Album, or for How to earn stickers, a guide to every series with how close you are to the next one. The "My Sticker Album" card, near the bottom of the page after "Following Today's God Blueprint", opens the album too. Tap a sticker there to read its verse or save it full size. Your stickers stay on this device.</p>
+                <p><strong>Collect stickers.</strong> Stickers are gifts for what you do in Daily Grace: your first Daily Moment and then every tenth, each memory verse you learn, faithful weeks, right answers in Bible Trivia, Food for Thought, Bible stories read to the end, and each book of the Bible you meet. A new sticker pops up when you finish. Tap the DG emblem (or your avatar) at the top of the page for My Sticker Album, or for How to earn stickers, a guide to every series with how close you are to the next one. The "My Sticker Album" card, near the bottom of the page after "Following Today's God Blueprint", opens the album too. Tap a sticker there to read its verse or save it full size. Your stickers stay on this device.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -989,13 +989,19 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2 5-5 2 2-5z" /></svg>
                 </span>
-                <p><strong>Today's guiding question.</strong> Further down the page, "Today's Guiding Question" answers one of life's questions from Scripture, with a verse and one thing to try. A different one appears each time you open the page. Tap the play button in its corner to hear it read aloud, tap "Read the full answer" to open it on the Questions We All Ask page, or press and hold the card to bookmark it.</p>
+                <p><strong>Today's guiding question.</strong> Further down the page, "Today's Guiding Question" answers one of life's questions from Scripture, with a verse and one thing to try. There is a new one each day, the same for everyone. Tap the play button in its corner to hear it read aloud, tap "Read the full answer" to open it on the Questions We All Ask page, or press and hold the card to bookmark it.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9h8M8 12h5" /></svg>
+                </span>
+                <p><strong>Jesus' Spoken Words.</strong> A red-letter card with one of Jesus' best-known sayings each day, the same for everyone: where and when he said it, his words in red, and one thing to carry into today. Tap "What it means" to read about it on the Red-Lettered Quotes page, or the red download button at the top right to open it in full as a PDF. Press and hold the card to bookmark it.</p>
             </li>
             <li>
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21 21 3v18z" /><path d="M8 21v-2M12 21v-3M16 21v-2M21 16h-2M21 12h-3M21 8h-2" /></svg>
                 </span>
-                <p><strong>Following Today's God Blueprint.</strong> Near the bottom of the page, "Following Today's God Blueprint" shows one part of God's plan from Following God's Blueprint, with a verse, one step to build it and a question to ask yourself. A different one appears each time you open the page. Tap "Open the full plan" to read it on the Following God's Blueprint page, or the red download button at the top right to open it in full as a PDF, ready to save, print or share. Press and hold the card to bookmark it.</p>
+                <p><strong>Following Today's God Blueprint.</strong> Near the bottom of the page, "Following Today's God Blueprint" shows one part of God's plan from Following God's Blueprint, with a verse, one step to build it and a question to ask yourself. There is a new one each day, the same for everyone. Tap "Open the full plan" to read it on the Following God's Blueprint page, or the red download button at the top right to open it in full as a PDF, ready to save, print or share. Press and hold the card to bookmark it.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1035,13 +1041,19 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon gold">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
                 </span>
-                <p><strong>Bookmark a verse.</strong> Press and hold a verse for half a second. It glows gold and gets a ribbon. Hold it again to remove the bookmark. You can keep up to 100.</p>
+                <p><strong>Bookmark a verse.</strong> Press and hold a verse for half a second. It glows gold and gets a ribbon, and a box asks for a note: a few words on why it matters to you. Save it, or Skip. Hold the verse again to remove the bookmark and its note. You can keep up to 100.</p>
             </li>
             <li>
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5" /><circle class="help-fill" cx="8" cy="12" r="1.8" /></svg>
                 </span>
-                <p><strong>Show your bookmarks.</strong> Tap the DG emblem at the top of the page, then My Bookmarks. Tap Bible Verses, Did You Know, Bible Sayings, Questions or Blueprint at the top to switch between them. Hold a bookmark there to remove it, which makes room when a list is full. Bookmarks are saved on this device. Tap the red PDF button beside the title to open all of them as one PDF, ready to save, print or share.</p>
+                <p><strong>Show your bookmarks.</strong> Tap the DG emblem (or your avatar) at the top of the page, then My Bookmarks. Tap Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint or Jesus' Words at the top to switch between them. Hold a bookmark there to remove it, which makes room when a list is full. Bookmarks and notes are saved on this device. Tap the red PDF button beside the title to open all of them, with your notes, as one PDF, ready to save, print or share.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z" /><path d="m13.5 6.5 4 4" /></svg>
+                </span>
+                <p><strong>Notes and sharing.</strong> Under each bookmark in My Bookmarks, tap Add note or Edit note to write, change or remove your note. Tap Share to send the bookmark, with your note and a link to Daily Grace, to a friend, a group chat or a post. Where your browser can't share, it is copied for you to paste.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1063,7 +1075,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
                 </span>
-                <p><strong>Your own things.</strong> Tap the DG emblem beside the three lines for My Bookmarks, My Sticker Album, Bookmarking 101 (a short guide to keeping verses and cards) and How to earn stickers. Tap outside the little menu or press Escape to close it.</p>
+                <p><strong>Your own things.</strong> On your first visit you choose an avatar, a Bible hero who becomes your picture in place of the DG emblem beside the three lines. Tap it for Change my avatar, My Bookmarks, My Sticker Album, Bookmarking 101 (a short guide to keeping verses and cards, with notes) and How to earn stickers. Tap outside the little menu or press Escape to close it.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1159,7 +1171,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21h14M12 21v-6" /><path d="M12 15c-4 0-7-2.5-7-6a7 7 0 0 1 14 0c0 3.5-3 6-7 6z" /></svg>
                 </span>
-                <p><strong>Daily Grace Kids.</strong> A picture map of Bible stories for children aged 3 to 8, with Nari the lion cub. Each story stop has five steps: watch the story, look and find, a game, a verse to learn and a talk together with a grown-up. Each child gets a profile, a tree that grows and a shelf of stickers. Grown-ups' settings, such as a daily time limit, sit behind a grown-up check. It opens from the "Daily Grace Kids" card at the bottom of the home page, or from the menu's Daily Grace Kids page, which also has Kids Stories: Bible stories retold for children, to read as a flipbook, listen to or download as a storybook. Everything stays on this device.</p>
+                <p><strong>Daily Grace Kids.</strong> A picture map of Bible stories for children aged 3 to 8, with Nari the lion cub. Each story stop has five steps: watch the story, look and find, a game, a verse to learn and a talk together with a grown-up. Each child gets a profile, a tree that grows and a shelf of stickers. Grown-ups' settings, such as a daily time limit, sit behind a grown-up check. It opens from the "Daily Grace Kids" card at the bottom of the home page, or from the menu's Daily Grace Kids page. That page also has two shelves of stories: Kids Stories for Rugrats, a notebook for the youngest that turns upward (swipe up or tap the bottom half for the next story, swipe down or tap the top half to go back), and Kids Stories for Rascals, Bible stories retold for children to read as a flipbook, listen to or download as a storybook. Everything stays on this device.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1181,7 +1193,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon gold">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
                 </span>
-                <p><strong>Bookmark facts, sayings, questions and blueprints.</strong> Press and hold a fact, a saying, "Today's Guiding Question" or "Following Today's God Blueprint" for half a second to bookmark it; on the Questions We All Ask and Following God's Blueprint pages, hold a tile or tap its Bookmark button. They are kept with your verses: tap the DG emblem, then My Bookmarks, to see them. You can keep up to 50 of each.</p>
+                <p><strong>Bookmark facts, sayings, questions, blueprints and Jesus' words.</strong> Press and hold a fact, a saying, "Today's Guiding Question", "Jesus' Spoken Words" or "Following Today's God Blueprint" for half a second to bookmark it; on the Questions We All Ask and Following God's Blueprint pages, hold a tile or tap its Bookmark button. Each asks for a note, as a verse does. They are kept with your verses: tap the DG emblem (or your avatar), then My Bookmarks, to see them. You can keep up to 50 of each.</p>
             </li>
             <li>
                 <span class="help-icon gold">
@@ -1189,14 +1201,12 @@ const HELP_HTML = /* html */ `
                 </span>
                 <p><strong>Bible trivia.</strong> Now and then, up to three times a day, a quiz pops up with a Bible fact. Pick the book it comes from and see if you are right.</p>
             </li>
-            <!-- Stories are hidden on the homepage for now; bring this back with the carousel.
             <li>
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="18" rx="2" /><path d="M19 6v12M2 6v12" /></svg>
                 </span>
-                <p><strong>Stories.</strong> Swipe the row of covers and tap one to start reading.</p>
+                <p><strong>Stories.</strong> Swipe the row of story covers, after "Did you know?", to move from one to the next. Tap the folded corner at the bottom right of a cover to read the story as a flipbook. The play button reads it aloud right there, and the download button opens it as a book to keep. Your first story read to the last page earns a sticker.</p>
             </li>
-            -->
             <li>
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><path d="M14 14h3v3h-3zM21 14v.01M21 21h-4M14 21v.01" /></svg>
@@ -1293,9 +1303,9 @@ const ABOUT_HTML = /* html */ `
                 <li>
                     <strong>Hold onto what you learn.</strong>
                     The fascinating Bible facts, the old sayings that turn
-                    out to come from Scripture, and the thoughts that come
-                    to you while reading can all be kept and come back to
-                    later.
+                    out to come from Scripture, and the words of Jesus can
+                    all be kept, each with a note of your own on what it
+                    meant to you, to come back to later.
                 </li>
                 <li>
                     <strong>Look anything up in seconds.</strong>
@@ -1329,6 +1339,24 @@ const ABOUT_HTML = /* html */ `
                 </li>
                 <li>
                     <span class="help-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+                    </span>
+                    <p><strong>A Moment with God</strong>: about five quiet minutes, one screen at a time, from the verse to a question to think over and a prayer.</p>
+                </li>
+                <li>
+                    <span class="help-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z" /></svg>
+                    </span>
+                    <p><strong>A verse to learn by heart</strong> each week, a minute a day, until you can say it from memory.</p>
+                </li>
+                <li>
+                    <span class="help-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9h8M8 12h5" /></svg>
+                    </span>
+                    <p><strong>A word for everyday life</strong>: one of Jesus' sayings, a question we all ask answered from Scripture, a part of God's blueprint, and some food for thought.</p>
+                </li>
+                <li>
+                    <span class="help-icon">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v6" /><circle class="help-fill" cx="12" cy="7.6" r="1.15" /></svg>
                     </span>
                     <p><strong>"Did you know?"</strong>: surprising facts from the Bible that you can share over dinner.</p>
@@ -1344,6 +1372,12 @@ const ABOUT_HTML = /* html */ `
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                     </span>
                     <p><strong>A weekly flipbook</strong> to page through, like a little magazine for your faith.</p>
+                </li>
+                <li>
+                    <span class="help-icon gold">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" /></svg>
+                    </span>
+                    <p><strong>Stickers to collect</strong> as little gifts along the way, and <strong>Daily Grace Kids</strong>, Bible stories and games for the children in your life.</p>
                 </li>
             </ul>
         </section>
@@ -1376,9 +1410,9 @@ const ABOUT_HTML = /* html */ `
                 </li>
                 <li>
                     <strong>You'll have something to share.</strong>
-                    A verse for a friend who's struggling, a fun fact for
-                    your kids, or a comic for the family group chat. Faith
-                    grows when it's shared.
+                    A verse for a friend who's struggling, with a note on
+                    why it helped you; a fun fact for your kids; or a comic
+                    for the family group chat. Faith grows when it's shared.
                 </li>
                 <li>
                     <strong>You'll build a habit that lasts.</strong>
@@ -1389,7 +1423,7 @@ const ABOUT_HTML = /* html */ `
         </section>
 
         <blockquote class="about-verse about-reveal">
-            <p>Your word is a lamp to my feet and a light to my path.</p>
+            <p>Thy word is a lamp unto my feet, and a light unto my path.</p>
             <cite>Psalm 119:105</cite>
         </blockquote>
 

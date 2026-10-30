@@ -68,8 +68,9 @@ import {
     CardHold,
     bookmarkNote,
     bookmarkStore,
+    noteBox,
     showBookmarkResult,
-} from "./card-bookmarks.js?v=20261018-1";
+} from "./card-bookmarks.js?v=20261030-1";
 import {
     PILL_STYLES,
     linkScripture,
@@ -96,7 +97,7 @@ const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261011-2");
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261030-1");
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab
@@ -820,7 +821,7 @@ export class DailyGuidance extends HTMLElement {
     }
 
     #toggle(topic, card) {
-        const result = bookmarks.toggle(topic.id);
+        const result = bookmarks.toggle(topic.id, { title: topic.name });
         showBookmarkResult(card, result, bookmarks.limit);
         this.#status.textContent = `${topic.name}: ${bookmarkNote(result, bookmarks.limit)}`;
         if (result === "added" || result === "removed") {
@@ -883,6 +884,14 @@ export class DailyGuidance extends HTMLElement {
         link.href = this.#pageHref(topic.id);
         link.setAttribute("aria-label", `Read the full answer: ${topic.name}`);
         card.append(link);
+        // A card of the bookmarks list: the reader's note goes with it.
+        card.append(
+            noteBox(bookmarks.key, topic.id, {
+                title: topic.name,
+                text: topic.question,
+                url: link.href,
+            }),
+        );
         return card;
     }
 

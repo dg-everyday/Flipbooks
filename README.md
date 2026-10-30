@@ -99,9 +99,20 @@ documented in a header comment at the top of its file.
 The hold-to-bookmark gesture, glow and ribbon for facts and sayings live in
 `apps/components/card-bookmarks.js`, which also asks the browser to keep the
 bookmarks (persistent storage) the first time one is saved. The components
-import it with a `?v=` token; bump it in all three imports when it changes.
+and the study pages' scripts import it with a `?v=` token; bump it in every
+import, to the same value, when it changes.
 The homepage's bookmarks popup (`#bookmarks-dialog`) holds a compact
-`<bible-search-results>` and a `bookmarks` copy of the other two.
+`<bible-search-results>` and a `bookmarks` copy of the other five.
+
+**Notes on bookmarks** live in `apps/components/bookmark-notes.js`. A new
+bookmark, of any kind, opens a small box asking for a note (up to 280
+characters); Skip leaves it without one, and taking the bookmark off takes the
+note too. In My Bookmarks each card carries a `<bookmark-note-box>`: the note,
+**Add note** / **Edit note** (to change or remove it) and **Share**, which hands
+the item, the note and a link to the phone's share sheet, or copies them where
+there is none. Notes are kept on the device under
+`dailygrace:bookmarks:notes`, keyed by each list's own storage key and id, and
+are printed under their bookmarks in the bookmarks PDF.
 
 The media host is set once, as `media_base_url` in
 `apps/settings/appsettings.json`. `apps/settings/settings.js` loads it and

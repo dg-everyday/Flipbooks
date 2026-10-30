@@ -11,8 +11,12 @@
  * backdrop or Escape do. It grows in with a little overshoot, as the splash
  * and the verse popup do.
  *
- * The PDF button opens every bookmark, all six kinds, as one PDF in a new tab
- * (assets/scripts/bookmarks-pdf.js, loaded on the first tap). The tab is
+ * Each bookmark shows the reader's note on it, with buttons to add or edit
+ * the note and to share the bookmark (bookmark-notes.js).
+ *
+ * The PDF button opens every bookmark, all six kinds, with their notes, as
+ * one PDF in a new tab (assets/scripts/bookmarks-pdf.js, loaded on the first
+ * tap). The tab is
  * opened inside the tap, since browsers block one opened later; with the tab
  * blocked, the PDF is downloaded instead. A note under the title says how it
  * went.
@@ -49,45 +53,62 @@
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
+import { readNote } from "./bookmark-notes.js?v=20261030-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
-const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261011-2");
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261030-1");
 
-// The segments, in order: the list component behind each and its tab label.
+// The segments, in order: the list component behind each, its tab label, and
+// where its bookmarks are kept (the key their notes are kept under).
 const KINDS = [
     {
         key: "verses",
         label: "Bible Verses",
         list: '<bible-search-results id="bookmark-verses" compact></bible-search-results>',
+        store: "dailygrace:bookmarks",
     },
     {
         key: "facts",
         label: "Did You Know",
         list: '<did-you-know id="bookmark-facts" bookmarks></did-you-know>',
+        store: "dailygrace:bookmarks:facts",
     },
     {
         key: "sayings",
         label: "Bible Sayings",
         list: '<bible-sayings id="bookmark-sayings" bookmarks></bible-sayings>',
+        store: "dailygrace:bookmarks:sayings",
     },
     {
         key: "guidance",
         label: "Questions",
         list: '<daily-guidance id="bookmark-guidance" bookmarks></daily-guidance>',
+        store: "dailygrace:bookmarks:guidance",
     },
     {
         key: "blueprint",
         label: "Blueprint",
         list: '<gods-blueprint id="bookmark-blueprint" bookmarks></gods-blueprint>',
+        store: "dailygrace:bookmarks:blueprint",
     },
     {
         key: "redLetter",
         label: "Jesus' Words",
         list: '<red-letter-quotes id="bookmark-redLetter" bookmarks></red-letter-quotes>',
+        store: "dailygrace:bookmarks:red-letter",
     },
 ];
+
+/** Each item with the reader's note on it, if any, for the PDF. */
+function withNotes(kind, items) {
+    const { store } = KINDS.find(({ key }) => key === kind);
+    return items.map((item) => ({
+        ...item,
+        note: readNote(store, kind === "verses" ? item.docid : item.id),
+    }));
+}
 
 const STYLES = /* css */ `
   :host { display: contents; }
@@ -690,12 +711,12 @@ export class BookmarkManager extends HTMLElement {
                 return;
             }
             const { blob, filename } = await makeBookmarksPdf({
-                verses,
-                facts,
-                sayings,
-                guidance,
-                blueprint,
-                redLetter,
+                verses: withNotes("verses", verses),
+                facts: withNotes("facts", facts),
+                sayings: withNotes("sayings", sayings),
+                guidance: withNotes("guidance", guidance),
+                blueprint: withNotes("blueprint", blueprint),
+                redLetter: withNotes("redLetter", redLetter),
             });
             const url = URL.createObjectURL(blob);
             // Kept long enough for the tab to load it, and to reload it for a while.

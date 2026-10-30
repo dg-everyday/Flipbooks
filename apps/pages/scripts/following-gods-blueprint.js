@@ -34,7 +34,7 @@ import {
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20261018-1";
+} from "../../components/card-bookmarks.js?v=20261030-1";
 
 const DATA = "assets/following-gods-blueprint.json";
 const TEST_ID = "blueprint-test";
@@ -609,7 +609,7 @@ export async function start(view) {
         item,
         card = document.getElementById(`tile-${item.id}`),
     ) {
-        const result = bookmarks.toggle(item.id);
+        const result = bookmarks.toggle(item.id, { title: item.name });
         if (card) {
             showBookmarkResult(card, result, bookmarks.limit);
         }

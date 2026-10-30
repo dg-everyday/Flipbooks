@@ -62,8 +62,9 @@ import {
     CardHold,
     bookmarkNote,
     bookmarkStore,
+    noteBox,
     showBookmarkResult,
-} from "./card-bookmarks.js?v=20261018-1";
+} from "./card-bookmarks.js?v=20261030-1";
 import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261024-1";
 
 const DEFAULT_SRC = "assets/following-gods-blueprint.json";
@@ -83,7 +84,7 @@ const ICON_ATTRS =
     'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const PDF_ICON = `<svg ${ICON_ATTRS}><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>`;
 // The same URL as script.js's bookmarks PDF, so the page loads the module once.
-const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261011-2");
+const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261030-1");
 
 /**
  * A new tab for a PDF, opened at once, inside the press: browsers block a tab
@@ -748,7 +749,7 @@ export class GodsBlueprint extends HTMLElement {
     }
 
     #toggle(item, card) {
-        const result = bookmarks.toggle(item.id);
+        const result = bookmarks.toggle(item.id, { title: item.name });
         showBookmarkResult(card, result, bookmarks.limit);
         this.#status.textContent = `${item.name}: ${bookmarkNote(result, bookmarks.limit)}`;
         if (result === "added" || result === "removed") {
@@ -816,6 +817,14 @@ export class GodsBlueprint extends HTMLElement {
         link.href = this.#pageHref(item.id);
         link.setAttribute("aria-label", `Open the full plan: ${item.name}`);
         card.append(link);
+        // A card of the bookmarks list: the reader's note goes with it.
+        card.append(
+            noteBox(bookmarks.key, item.id, {
+                title: item.name,
+                text: tidy(item.summary ?? ""),
+                url: link.href,
+            }),
+        );
         return card;
     }
 

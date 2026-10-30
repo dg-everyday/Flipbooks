@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Daniel
+1-1 | Daniel Purposed in His Heart
+2-6 | The God of Heaven Rules
+7-12 | Visions of the Everlasting Kingdom

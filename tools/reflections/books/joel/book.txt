@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Joel
+1-1 | Hear This, Ye Old Men
+2-2 | Rend Your Heart
+3-3 | The LORD Will Be the Hope of His People

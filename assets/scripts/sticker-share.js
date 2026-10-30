@@ -30,7 +30,7 @@
  *   copy-failed  no share sheet, and the link could not be copied
  */
 
-import { stickerImage } from "./sticker-awards.js?v=20261018-1";
+import { stickerImage } from "./sticker-awards.js?v=20261030-1";
 
 const SITE_URL = "https://dailygrace.faith/";
 const SHARE_TYPE = "image/jpeg";

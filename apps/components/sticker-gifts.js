@@ -57,13 +57,13 @@ import {
     pendingGifts,
     readCollection,
     stickerImage,
-} from "../../assets/scripts/sticker-awards.js?v=20261018-1";
+} from "../../assets/scripts/sticker-awards.js?v=20261030-1";
 import { readProgress } from "../../assets/scripts/sticker-progress.js?v=20261018-1";
 import {
     SHARE_NOTES,
     prepareShare,
     shareSticker,
-} from "../../assets/scripts/sticker-share.js?v=20261023-1";
+} from "../../assets/scripts/sticker-share.js?v=20261030-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 // The share icon of the poster's share button (poster-card.js).

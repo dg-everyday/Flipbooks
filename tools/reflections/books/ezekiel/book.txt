@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Ezekiel
+1-3 | The Vision of Glory and the Watchman's Call
+4-24 | Judgment upon Jerusalem
+25-32 | Words to the Nations
+33-39 | Dry Bones and a New Heart
+40-48 | The New Temple and the River of Life

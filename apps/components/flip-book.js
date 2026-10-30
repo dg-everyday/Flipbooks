@@ -1335,7 +1335,6 @@ export class Flipbook extends HTMLElement {
                     y: e.clientY,
                     lastX: e.clientX,
                     lastY: e.clientY,
-                    t: performance.now(),
                 };
                 stage.classList.add("dragging");
 
@@ -1400,15 +1399,14 @@ export class Flipbook extends HTMLElement {
                 }
                 const dx = e.clientX - start.x;
                 const dy = e.clientY - start.y;
-                const dt = performance.now() - start.t;
                 this.#pointerStart = null;
 
                 // Along the axis the pages turn on: up for the top-bound book.
+                // A slow swipe is still a swipe: children often drag slowly.
                 const [along, across] = this.#isUp() ? [dy, dx] : [dx, dy];
                 const isSwipe =
                     Math.abs(along) > 55 &&
-                    Math.abs(along) > Math.abs(across) * 1.25 &&
-                    dt < 700;
+                    Math.abs(along) > Math.abs(across) * 1.25;
                 if (this.#gesturePinched || this.#zoom > 1) {
                     return;
                 }
@@ -1418,6 +1416,11 @@ export class Flipbook extends HTMLElement {
                     } else {
                         this.prev();
                     }
+                    return;
+                }
+                // A drag that was not a swipe is not a tap either: read as a
+                // tap where the finger lifted, it could turn the wrong way.
+                if (Math.hypot(dx, dy) > 10) {
                     return;
                 }
                 this.#handlePageTap(e.clientX, e.clientY);

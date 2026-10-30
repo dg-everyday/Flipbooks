@@ -29,7 +29,7 @@ import {
 } from "./kids-stop.js?v=20261025-1";
 import { loadStory, toFlipPages } from "./stories.js?v=20261024-1";
 import { kjvNotes, withKjvPills } from "./story-kjv.js?v=20261025-2";
-import "../../components/flip-book.js?v=20261026-3";
+import "../../components/flip-book.js?v=20261030-1";
 import "../../components/kids/kids-investigate.js?v=20261025-1";
 import "../../components/kids/kids-story-order.js?v=20261025-1";
 import "../../components/kids/kids-who-said.js?v=20261025-1";

@@ -92,7 +92,7 @@ const pageLoaded = new Promise((resolve) => {
 
 // The passage popup, loaded on the first tap. Its ?v= token is not stamped by
 // the deploy, so bump it here when verse-popup.js changes.
-const POPUP_MODULE = "./verse-popup.js?v=20261024-1";
+const POPUP_MODULE = "./verse-popup.js?v=20261030-1";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";
@@ -403,6 +403,9 @@ export class BannerSlider extends HTMLElement {
     #sliding = false;
     #suppressClick = false;
     #reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // The video plays only while the banner is on screen and the tab showing.
+    #visible = true;
+    #viewObserver = null;
 
     // The swipe hint: 'idle' until connected, 'armed' while it waits to play,
     // 'playing', then 'done' for the rest of the page's life.
@@ -525,12 +528,22 @@ export class BannerSlider extends HTMLElement {
         this.#armHint();
         this.#dateTimer = setInterval(this.#checkDate, DATE_CHECK_INTERVAL);
         document.addEventListener("visibilitychange", this.#checkDate);
+        document.addEventListener("visibilitychange", this.#syncVideo);
+        this.#viewObserver = new IntersectionObserver(([entry]) => {
+            this.#visible = entry.isIntersecting;
+            this.#syncVideo();
+        });
+        this.#viewObserver.observe(this.#stage);
     }
 
     disconnectedCallback() {
         this.#stopHint();
         clearInterval(this.#dateTimer);
         document.removeEventListener("visibilitychange", this.#checkDate);
+        document.removeEventListener("visibilitychange", this.#syncVideo);
+        this.#viewObserver?.disconnect();
+        this.#viewObserver = null;
+        this.#video.pause();
     }
 
     // Past midnight in Manila, today's banner gives way to the new day's. An
@@ -706,7 +719,7 @@ export class BannerSlider extends HTMLElement {
             return;
         }
         if (video.getAttribute("src") === day.video) {
-            video.play().catch(() => {});
+            this.#syncVideo();
             return;
         }
         if (document.readyState !== "complete") {
@@ -719,8 +732,21 @@ export class BannerSlider extends HTMLElement {
             return;
         }
         video.src = day.video;
-        video.play().catch(() => {});
+        this.#syncVideo();
     }
+
+    // Plays the day's video while the banner can be seen; pauses it otherwise.
+    #syncVideo = () => {
+        const video = this.#video;
+        if (!video.getAttribute("src") || video.error) {
+            return;
+        }
+        if (this.#visible && !document.hidden) {
+            video.play().catch(() => {});
+        } else {
+            video.pause();
+        }
+    };
 
     #verseFor(day) {
         return this.#verses ? (this.#verses.get(day.name) ?? null) : null;

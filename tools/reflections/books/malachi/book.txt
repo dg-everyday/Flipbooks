@@ -1,0 +1,4 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Malachi
+1-2 | I Have Loved You, Saith the LORD
+3-4 | The Sun of Righteousness

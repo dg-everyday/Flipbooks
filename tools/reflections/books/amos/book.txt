@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Amos
+1-2 | The LORD Will Roar from Zion
+3-6 | Seek Ye Me, and Ye Shall Live
+7-9 | I Will Raise Up the Tabernacle of David

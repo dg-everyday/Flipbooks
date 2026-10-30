@@ -1,0 +1,4 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Nahum
+1-1 | The LORD Is Good, a Strong Hold
+2-3 | Behold, I Am Against Thee

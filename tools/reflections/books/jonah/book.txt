@@ -1,0 +1,4 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Jonah
+1-2 | Salvation Is of the LORD
+3-4 | A Gracious God, and Merciful

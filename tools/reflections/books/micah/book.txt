@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Micah
+1-3 | Hear, All Ye People
+4-5 | Out of Thee Shall He Come Forth
+6-7 | Who Is a God Like unto Thee

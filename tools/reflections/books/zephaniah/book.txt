@@ -1,0 +1,4 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Zephaniah
+1-2 | Seek Ye the LORD, All Ye Meek
+3-3 | He Will Rejoice over Thee with Joy

@@ -1,0 +1,4 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Habakkuk
+1-2 | The Just Shall Live by His Faith
+3-3 | Yet I Will Rejoice in the LORD

@@ -32,7 +32,7 @@ import { parseReference } from "./scripture-refs.js?v=20261024-1";
 
 // Loaded only where the page does not load them itself: the home page has the
 // results panel and the database script already, with its own ?v= tokens.
-const RESULTS_MODULE = "./bible-search-results.js?v=20261030-1";
+const RESULTS_MODULE = "./bible-search-results.js?v=20261031-2";
 const SQL_SCRIPT = new URL(
     "../../assets/scripts/sql_script.js?v=20261017-1",
     import.meta.url,

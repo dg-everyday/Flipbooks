@@ -32,6 +32,10 @@ const SEARCH_MODES = {
 };
 let keywordSearch = false;
 
+// Book names as people write them that the Bible's own list spells another
+// way, as the reference pills read them too (scripture-refs.js).
+const BOOK_ALIASES = { psalm: "Psalms", "song of songs": "Song of Solomon" };
+
 function setSearchMode(keywords) {
     keywordSearch = keywords;
     const mode = SEARCH_MODES[keywords ? "keywords" : "reference"];
@@ -211,10 +215,10 @@ async function searchBibleVerses() {
             return;
         }
         closeBookSuggestions();
+        const typed = reference.bookName.toLocaleLowerCase();
+        const wanted = (BOOK_ALIASES[typed] ?? typed).toLocaleLowerCase();
         const bookName = bibleBooks.find(
-            (book) =>
-                book.toLocaleLowerCase() ===
-                reference.bookName.toLocaleLowerCase(),
+            (book) => book.toLocaleLowerCase() === wanted,
         );
         if (!bookName) {
             searchResults.showMessage(
@@ -408,8 +412,75 @@ function restoreScroll(target) {
     attempt();
 }
 
+// A Daily Grace day under a verse leads to the Grace Library. Coming back,
+// with Back or by closing the day there, finds the same results at the same
+// verse: the search is kept for the tab as the link is followed, and run again
+// when the page is returned to. Read once, and only on a return.
+const SEARCH_RETURN_KEY = "dailygrace:search-return";
+
+searchResults.addEventListener("click", (event) => {
+    const path = event.composedPath();
+    if (!path.some((node) => node.classList?.contains("daily-grace-day"))) {
+        return;
+    }
+    const card = path.find((node) => node.classList?.contains("verse-card"));
+    try {
+        sessionStorage.setItem(
+            SEARCH_RETURN_KEY,
+            JSON.stringify({
+                query: searchQuery.value.trim(),
+                keywords: keywordSearch,
+                place: card?.dataset.place ?? null,
+            }),
+        );
+    } catch {}
+});
+
+function takeSearchReturn() {
+    try {
+        const saved = JSON.parse(sessionStorage.getItem(SEARCH_RETURN_KEY));
+        sessionStorage.removeItem(SEARCH_RETURN_KEY);
+        return saved;
+    } catch {
+        return null;
+    }
+}
+
+const arrivedBack =
+    performance.getEntriesByType?.("navigation")[0]?.type === "back_forward";
+const searchReturn = takeSearchReturn();
+const returnToSearch = arrivedBack && searchReturn?.query ? searchReturn : null;
+// A page kept whole by the browser comes back as it was; nothing to redo.
+addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        takeSearchReturn();
+    }
+});
+
+async function runSearchAgain({ query, keywords, place }) {
+    // This script runs before the results panel's own module has loaded.
+    await customElements.whenDefined("bible-search-results");
+    if (Boolean(keywords) !== keywordSearch) {
+        setSearchMode(Boolean(keywords));
+    }
+    searchQuery.value = query;
+    searchClear.hidden = false;
+    await searchBibleVerses();
+    if (place) {
+        await searchResults.revealVerse(place);
+    }
+}
+
+if (returnToSearch) {
+    // The verse is the place to come back to, not the old scroll position.
+    if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+    }
+    runSearchAgain(returnToSearch);
+}
+
 // A link to a particular section is a destination of its own; leave it alone.
-if (!location.hash) {
+if (!location.hash && !returnToSearch) {
     const savedScroll = readSavedScroll();
     // Ours is the position that knows the full page height, so keep the browser
     // from also restoring a stale one and landing the reader between the two.

@@ -214,6 +214,85 @@ test.describe("ways into the Grace Library", () => {
         );
     });
 
+    test("Bible search shows a verse's Daily Grace day under it", async ({ page }) => {
+        await page.goto("/");
+        const results = page.locator("bible-search-results#search-results");
+        // The rows the search would give for Psalm 23:1-2 and 6.
+        await results.evaluate((panel) =>
+            panel.showVerses([
+                { docid: 14659, book_name: "Psalms", chapter: 23, verse: 1, text: "The LORD is my shepherd; I shall not want." },
+                { docid: 14660, book_name: "Psalms", chapter: 23, verse: 2, text: "He maketh me to lie down in green pastures: he leadeth me beside the still waters." },
+                { docid: 14664, book_name: "Psalms", chapter: 23, verse: 6, text: "Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever." },
+            ]),
+        );
+        const strips = results.locator(".daily-grace-day");
+        await expect(strips).toHaveCount(1);
+        await expect(strips).toHaveAttribute("href", /apps\/pages\/library\.html#day\/2026-09-13$/);
+        await expect(strips).toContainText("The Lord provides");
+        await expect(results.locator('.verse-card[data-place="Psalms|23|1"] .daily-grace')).toHaveCount(1);
+        // Verse 6 is November 28's verse: not until that day.
+        await expect(results.locator('.verse-card[data-place="Psalms|23|6"] .daily-grace')).toHaveCount(0);
+    });
+
+    test("a verse's Daily Grace day shows once its day has come", async ({ page }) => {
+        await page.clock.setFixedTime(new Date("2026-11-28T09:00:00+08:00"));
+        await page.goto("/");
+        const results = page.locator("bible-search-results#search-results");
+        await results.evaluate((panel) =>
+            panel.showVerses([
+                { docid: 14664, book_name: "Psalms", chapter: 23, verse: 6, text: "Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the LORD for ever." },
+            ]),
+        );
+        await expect(results.locator(".daily-grace-day")).toHaveAttribute("href", /#day\/2026-11-28$/);
+    });
+
+    test("the results can be brought back to a verse further down", async ({ page }) => {
+        await page.goto("/");
+        const results = page.locator("bible-search-results#search-results");
+        // Psalm 119:1-60: three batches of 24, of which only the first is drawn.
+        const found = await results.evaluate(async (panel) => {
+            const rows = Array.from({ length: 60 }, (_, i) => ({
+                docid: 15000 + i,
+                book_name: "Psalms",
+                chapter: 119,
+                verse: i + 1,
+                text: `Verse ${i + 1}.`,
+            }));
+            panel.showVerses(rows);
+            return panel.revealVerse("Psalms|119|50");
+        });
+        expect(found).toBe(true);
+        await expect(results.locator('.verse-card[data-place="Psalms|119|50"]')).toBeInViewport();
+    });
+
+    test("closing a day opened from another page goes back to it", async ({ page }) => {
+        await page.goto("/apps/pages/did-you-know.html");
+        // As a link from that page would: the Library knows where it came from.
+        await page.evaluate(() => {
+            location.href = "/apps/pages/library.html#day/2026-10-01";
+        });
+        await expect(sheet(page)).toBeVisible();
+        await sheet(page).getByRole("button", { name: "Close this day" }).click();
+        await expect(page).toHaveURL(/did-you-know\.html$/);
+    });
+
+    test("the search finds Psalm 23 as well as Psalms 23", async ({ page, isMobile }) => {
+        test.skip(isMobile, "one screen is enough; it loads sql.js from the CDN");
+        test.setTimeout(60_000);
+        await page.addInitScript(() => {
+            localStorage.setItem("dailygrace:avatar", "AV-01");
+            const day = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Manila" }).format(new Date());
+            localStorage.setItem("dailygrace.trivia", JSON.stringify({ day, count: 99, last: Date.now() }));
+        });
+        await page.goto("/");
+        const results = page.locator("bible-search-results#search-results");
+        for (const query of ["Psalm 23", "Psalms 23"]) {
+            await page.locator("#search-query").fill(query);
+            await page.locator("#search-query").press("Enter");
+            await expect(results.locator(".verse-card")).toHaveCount(6, { timeout: 45_000 });
+        }
+    });
+
     test("the Flipbook links to its week's month", async ({ page }) => {
         await page.goto("/apps/pages/flipbook.html?date=2026-10-01", { waitUntil: "domcontentloaded" });
         await expect(page.locator("#library")).toHaveAttribute("href", "library.html#month/2026-10");

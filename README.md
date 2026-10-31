@@ -491,7 +491,7 @@ press lands.
 `.github/workflows/pages.yml` publishes to GitHub Pages on every push to `main`,
 manually, and daily at 00:07 Philippine time (GitHub can delay scheduled runs,
 so midnight is not guaranteed). Day to day, work happens on the
-`dailyfrace.faith.v2` branch, which is merged into `main` (`git merge --no-ff`)
+`dailygrace.faith.v2` branch, which is merged into `main` (`git merge --no-ff`)
 to publish. The workflow:
 
 1. checks every asset reference with `check-assets.mjs` (a missing local file

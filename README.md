@@ -35,7 +35,7 @@ From the top:
 - **`<banner-slider>`** — today's banner (or its video), swipeable back
   through the past week, with the day's flipbook button and the reflection
   strip under it (clamped to three lines until tapped). While it shows an
-  earlier day, a link under it opens the Grace Library.
+  earlier day, a link under it opens the Daily Grace Archives.
 - **`<poster-card>`** — today's poster, playing the day's video in its place
   when there is one; tap it to flip to the comic version, press the red play
   button for narration, or the share button beside it to send the poster or
@@ -106,9 +106,9 @@ their bookmarks with the homepage's cards.
 ### Other pages
 
 - **`apps/pages/flipbook.html`** — the weekly reader. It hosts `<flip-book>`,
-  a home button and a link to the Grace Library at the week's month;
+  a home button and a link to the Daily Grace Archives at the week's month;
   `apps/pages/scripts/daily-grace-week.js` builds the week.
-- **`apps/pages/library.html`** — the Grace Library, in the menu just before Daily Grace Kids: every
+- **`apps/pages/library.html`** — the Daily Grace Archives, in the menu just before Daily Grace Kids: every
   complete Daily Grace day from September 11, 2026 (the first day with
   poster, comic, narration, banner and title) up to today, as poster tiles.
   Months (each folded to its three newest days, with the home page's pull
@@ -184,7 +184,7 @@ documented in a header comment at the top of its file in `apps/components/`.
 | --- | --- | --- |
 | `<banner-slider>` | `banner-slider.js` | Today's banner, swipeable back through the past week, with the flipbook button and the reflection strip. The day's video plays over the banner while it is on screen and the tab is showing (not for reduced motion or Save-Data); tapping the banner opens the day's verse. Moves on at midnight in Manila. |
 | `<poster-card>` | `poster-card.js` | Poster ↔ comic page-turn animation and per-day narration, resolved from the date. The turn waits until the other side has loaded (fetched with CORS, like the poster itself, so the two share a download), with a ring on the poster if that takes a moment, so it never stops edge-on or swings back on the old side. When `images/sources/<YYYY>/<month>/<Month D, YYYY>.mp4` exists it loops muted over the poster while the card is on screen, once the page has loaded (not on the comic side, nor for reduced motion or Save-Data); without it the poster image shows. The share button sends the image on show as a JPEG through the Web Share API, prepared when it loads so the tap can share at once; it falls back to sharing, then copying, the link. The poster is loaded with CORS (`crossorigin="anonymous"`) so the share file is drawn from it rather than downloaded again. |
-| `<daily-moment>` | `daily-moment.js` | The guided Moment: a 16:9 card playing the day of the week's clip, `assets/images/moment/moment_<day>.mp4` (e.g. `moment_monday.mp4`; first frame `moment_<day>.webp`; it loops only while in view, and not for reduced motion or Save-Data), with its status in a see-through green band, that opens a full-screen walk through the day from its month's file under `assets/verses/`. The Listen screen plays the day's poster video over the poster when there is one, as `<poster-card>` does. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. When an earlier day this week (from September 11, 2026) has no Moment, today's Amen screen links to it in the Grace Library (`library-href`). |
+| `<daily-moment>` | `daily-moment.js` | The guided Moment: a 16:9 card playing the day of the week's clip, `assets/images/moment/moment_<day>.mp4` (e.g. `moment_monday.mp4`; first frame `moment_<day>.webp`; it loops only while in view, and not for reduced motion or Save-Data), with its status in a see-through green band, that opens a full-screen walk through the day from its month's file under `assets/verses/`. The Listen screen plays the day's poster video over the poster when there is one, as `<poster-card>` does. A long reflection paragraph is split into screens at sentence ends, and a closing "Let us pray." paragraph moves to the Pray screen. Reaching Amen marks the day done; finished days and the reader's answers stay in `localStorage` on the device. `poster` names the `<poster-card>` whose `share()` the Amen screen uses. When an earlier day this week (from September 11, 2026) has no Moment, today's Amen screen links to it in the Daily Grace Archives (`library-href`). |
 | `<memory-verse>` | `memory-verse.js` | The week's verse (Sunday to Saturday, Asia/Manila): the entry marked `"memory": true` among that week's days in `assets/verses/`, else Sunday's. Seven practices, one step on per day practised (not per calendar day); "I had it" on the last marks it learned and turns the card gold. Days practised and verses learned stay in `localStorage`. `<daily-moment memory-verse="<id>">` adds a button for it on today's Amen screen. |
 | `<daily-food-for-thought>` | `daily-food-for-thought.js` | Today's serving from the Food for Thought guide, on a parchment card under its banner (`assets/images/food-for-thought-assets/fft-banner.webp`): the topic's section and areas (with their badges), its name, what it guards against, its verse, the serving for today and a question to chew on, and a link to the topic on `apps/pages/food-for-thought.html`. One topic per Asia/Manila day, the same for everyone, in the guide's order, starting again after the last; `show("YYYY-MM-DD")` shows another day's. |
 | `<daily-guidance>` | `daily-guidance.js` | "Today's Guiding Question" from Questions We All Ask, on a navy card: one topic a day, the same for everyone, with narration (`audio-base`) and a PDF button. |
@@ -205,7 +205,7 @@ documented in a header comment at the top of its file in `apps/components/`.
 
 | Element | File | Notes |
 | --- | --- | --- |
-| `<bible-search-results>` | `bible-search-results.js` | A verse that began a Daily Grace day gets a gold strip under it (the day's thumbnail, date and title) linking to the day in the Grace Library; the Library's index is fetched with the first results, and only its days up to today show. Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. Each verse's folded corner opens its explanation, the BSB and the Interlinear (see `assets/annotations/`). Holding a verse bookmarks it (up to 100 verse docids in `localStorage`); `showBookmarks(rows)` lists them. |
+| `<bible-search-results>` | `bible-search-results.js` | A verse that began a Daily Grace day gets a gold strip under it (the day's thumbnail, date and title) linking to the day in the Daily Grace Archives; the Library's index is fetched with the first results, and only its days up to today show. Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. Each verse's folded corner opens its explanation, the BSB and the Interlinear (see `assets/annotations/`). Holding a verse bookmarks it (up to 100 verse docids in `localStorage`); `showBookmarks(rows)` lists them. |
 | `<verse-popup>` | `verse-popup.js` | The passage a Bible reference pill opens (`scripture-refs.js`), with popups opened from popups up to six deep. Loads `sql_script.js` itself on pages that don't. |
 | `<passage-reader>` | `passage-reader.js` | A passage in three tabs: the King James Bible (with the words of Jesus in red, from `assets/red-letter.json` as in the search results), the BSB (with its section headings, whose parallel references open as pills) and the Interlinear (each word's Strong's number, transliteration, original, gloss and grammar, right to left for Hebrew). `showPassageReader({ book, range, title })` opens it; `range` is an outline range such as `"1-11"` or `"10:1-22:16"`. Tapping a word in the Interlinear tab turns it faint yellow and opens its Strong's dictionary entry under the verse, as in the explanation popup; both use `strongs-entry.js` (the dictionary loader and the entry card). Chapters load as the reader scrolls. Opened by the outline rows on `apps/pages/bible-books.html` and by the Explorers' "Read the chapter". |
 | `<bookmark-manager>` | `bookmark-manager.js` | My Bookmarks: every bookmark on the device, one kind at a time under a segmented switch (Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint, Jesus' Words), each a `bookmarks` copy of its own component. The red PDF button opens them all, with their notes, as one PDF (`assets/scripts/bookmarks-pdf.js`, which loads jsPDF from cdnjs on the first tap). |
@@ -311,7 +311,7 @@ components.
   PDFs of the Questions, Blueprint and Jesus' Words cards, made on the
   reader's device with jsPDF and the site's own fonts.
 - **`assets/scripts/avatar-store.js`** — the chosen avatar.
-- **`assets/scripts/library-index.js`** — the Grace Library's days:
+- **`assets/scripts/library-index.js`** — the Daily Grace Archives' days:
   `loadLibrary()` (the index files up to this year, only complete days up to
   today in Manila), `daysForReference()` (the days whose verse falls in
   "Psalm 23"), and the thumbnail and book-symbol URLs.
@@ -339,7 +339,7 @@ components.
 | `assets/stickers.json` | The 188 stickers: `id`, `group` (the series), `title`, `reference`, `verse`, `reflection` and `filename`. |
 | `assets/avatars.json`, `assets/avatars-kids.json` | The readers' avatars (51) and the kids' (`KA-NN`), shown from `media:images/avatars/adults/` and `media:images/avatars/kids/`. |
 | `assets/kids/kids-data.json`, `assets/kids/explorers-data.json` | Everything Daily Grace Kids shows: the eight stories (panels told for both ages, verse with its missing word and pieces, Look & Find spots, Talk Together, games), the map's sections and road, the tree and Nari stages, Nari's lines, sound effects, the Two by Two cards and the sticker paths; and the Explorers' stops, trails, Field Guide and ranks. Generated by `docs/kids/prompt-scripts/gen_app_data.py` (local only) from the kids stories and resources; don't edit them by hand. `tests/kids-rules.spec.mjs` checks them. |
-| `assets/library/index.json`, `assets/library/<YYYY>.json` | The Grace Library's index: `{ start, years }`, and per year the months' emphases and each day's `date`, `ref`, `book`, `title` (the poster's headline, which is the calendar's theme), `summary` and `video` (has a poster video), with `missing` on a day the media audit found incomplete, which stays out. Generated, never edited by hand: `python tools/library/audit_library_media.py` checks the media host day by day (writes `tools/library/media.json`), then `python tools/library/build_library_index.py` writes the index from `assets/verses/`, the calendars (`tools/library/calendar_2026.txt`, `tools/reflections/calendar_<YYYY>.txt`) and the reflections' `S:` lines. Its `LIBRARY_START` (2026-09-11) is the first day kept. Run both after each month's verses or media go up; `tests/library.spec.mjs` fails if the index falls out of step with `assets/verses/`. |
+| `assets/library/index.json`, `assets/library/<YYYY>.json` | The Daily Grace Archives' index: `{ start, years }`, and per year the months' emphases and each day's `date`, `ref`, `book`, `title` (the poster's headline, which is the calendar's theme), `summary` and `video` (has a poster video), with `missing` on a day the media audit found incomplete, which stays out. Generated, never edited by hand: `python tools/library/audit_library_media.py` checks the media host day by day (writes `tools/library/media.json`), then `python tools/library/build_library_index.py` writes the index from `assets/verses/`, the calendars (`tools/library/calendar_2026.txt`, `tools/reflections/calendar_<YYYY>.txt`) and the reflections' `S:` lines. Its `LIBRARY_START` (2026-09-11) is the first day kept. Run both after each month's verses or media go up; `tests/library.spec.mjs` fails if the index falls out of step with `assets/verses/`. |
 | `assets/book-metadata.json` | Fallback `title` / `description` for all 66 books — see below. |
 
 Book symbols load from `<media-base>images/symbols/<Book name>-symbol.svg`. The
@@ -368,7 +368,7 @@ remembered.
 | `dailygrace:kids:*` | Daily Grace Kids: children, records, settings, time used |
 
 A few more remember small conveniences: the banner's swipe hint, the scroll
-position, the story rows' place and the Grace Library's last view
+position, the story rows' place and the Daily Grace Archives' last view
 (`dailygrace:library:view`).
 
 ## Media layout
@@ -383,7 +383,7 @@ images/sources/<YYYY>/<month>/<Month D, YYYY> - Comic.webp
 images/sources/<YYYY>/<month>/<Month D, YYYY>.mp4            the poster's video, when there is one
 images/symbols/<Book name>-symbol.svg                        66 book symbols
 images/thumbnails/<Book name>_square.webp                    66 book tiles, for the trivia
-images/thumbs/<YYYY>/<month>/<Month D, YYYY>.webp           the poster at 240 x 427, for the Grace Library (tools/library/make_thumbs.py)
+images/thumbs/<YYYY>/<month>/<Month D, YYYY>.webp           the poster at 240 x 427, for the Daily Grace Archives (tools/library/make_thumbs.py)
 images/coverpages/<YYYY>/<YYYY>-WEEK<n>.webp                 flipbook cover, per week
 images/coverpages/<YYYY>/<YYYY>-404.webp                     cover fallback
 images/avatars/adults/                                       readers' avatars
@@ -491,7 +491,7 @@ press lands.
 `.github/workflows/pages.yml` publishes to GitHub Pages on every push to `main`,
 manually, and daily at 00:07 Philippine time (GitHub can delay scheduled runs,
 so midnight is not guaranteed). Day to day, work happens on the
-`dailyfrace.faith.v2` branch, which is merged into `main` (`git merge --no-ff`)
+`dailygrace.faith.v2` branch, which is merged into `main` (`git merge --no-ff`)
 to publish. The workflow:
 
 1. checks every asset reference with `check-assets.mjs` (a missing local file

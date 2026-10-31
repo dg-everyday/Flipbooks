@@ -1,5 +1,5 @@
 /**
- * The Grace Library's index: every complete Daily Grace day from the
+ * The Daily Grace Archives' index: every complete Daily Grace day from the
  * Library's first day (September 11, 2026) up to today in Manila.
  *
  * Reads assets/library/index.json ({ start, years }) and one file per year,

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Make the Grace Library's thumbnails: each day's poster at 240 x 427 (WebP,
+Make the Daily Grace Archives' thumbnails: each day's poster at 240 x 427 (WebP,
 quality 70, about 20 KB against the poster's 200-450 KB).
 
 Reads the posters from the media host and writes, laid out as on the host,

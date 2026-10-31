@@ -290,7 +290,7 @@ searchClear.addEventListener("click", () => {
 
 // <daily-moment> walks through the day on the banner: today's Moment, or an
 // earlier day's while the reader has swiped back to it.
-// Looking back, the Grace Library link under the banner offers every older day.
+// Looking back, the Daily Grace Archives link under the banner offers every older day.
 const dailyMoment = document.getElementById("daily-moment");
 const libraryLink = document.getElementById("library-link");
 document
@@ -412,7 +412,7 @@ function restoreScroll(target) {
     attempt();
 }
 
-// A Daily Grace day under a verse leads to the Grace Library. Coming back,
+// A Daily Grace day under a verse leads to the Daily Grace Archives. Coming back,
 // with Back or by closing the day there, finds the same results at the same
 // verse: the search is kept for the tab as the link is followed, and run again
 // when the page is returned to. Read once, and only on a return.

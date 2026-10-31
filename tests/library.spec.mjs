@@ -1,5 +1,5 @@
 /**
- * The Grace Library (apps/pages/library.html): every complete day from
+ * The Daily Grace Archives (apps/pages/library.html): every complete day from
  * September 11, 2026 up to today in Manila, by month, book or the reader's own
  * days; a day opens in a sheet that Back closes. The media host is stubbed
  * out (every file missing), so tiles show their text and nothing waits on R2.
@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
     await page.route(/dailygrace\.faith\/media\//, (route) => route.fulfill({ status: 404 }));
 });
 
-test.describe("Grace Library", () => {
+test.describe("Daily Grace Archives", () => {
     test("shows the days from September 11 to today, and no others", async ({ page }) => {
         await page.goto(PAGE);
         await expect(page.locator("#lib-content .lib-tile")).toHaveCount(51);
@@ -105,7 +105,7 @@ test.describe("Grace Library", () => {
 
     test("turns away days before the Library and days to come", async ({ page }) => {
         await page.goto(`${PAGE}#day/2026-09-10`);
-        await expect(page.locator(".lib-toast")).toHaveText("The Grace Library begins on September 11, 2026.");
+        await expect(page.locator(".lib-toast")).toHaveText("The Daily Grace Archives begin on September 11, 2026.");
         await expect(sheet(page)).toBeHidden();
 
         await page.goto(`${PAGE}#day/2026-11-01`);
@@ -129,7 +129,7 @@ test.describe("Grace Library", () => {
 
     test("finds days by verse and by word", async ({ page }) => {
         await page.goto(PAGE);
-        const search = page.getByRole("searchbox", { name: "Search the Grace Library" });
+        const search = page.getByRole("searchbox", { name: "Search the Daily Grace Archives" });
         await search.fill("Psalm 23");
         const refs = await page.locator("#lib-content .lib-ref").allTextContents();
         expect(refs.length).toBeGreaterThan(0);
@@ -166,7 +166,7 @@ test.describe("Grace Library", () => {
     });
 });
 
-test.describe("ways into the Grace Library", () => {
+test.describe("ways into the Daily Grace Archives", () => {
     test("the menu lists it just before Daily Grace Kids", async ({ page }) => {
         await page.goto("/");
         const hrefs = await page
@@ -208,7 +208,7 @@ test.describe("ways into the Grace Library", () => {
             await moment.locator("button.next").evaluate((button) => button.click());
         }
         // Sunday the 25th is the first day this week without a Moment.
-        await expect(moment.getByRole("link", { name: /Catch up in the Grace Library/ })).toHaveAttribute(
+        await expect(moment.getByRole("link", { name: /Catch up in the Daily Grace Archives/ })).toHaveAttribute(
             "href",
             /apps\/pages\/library\.html#day\/2026-10-25$/,
         );

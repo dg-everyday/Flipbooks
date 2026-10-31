@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Write the Grace Library's index: assets/library/index.json and one
+Write the Daily Grace Archives' index: assets/library/index.json and one
 assets/library/<YYYY>.json per year.
 
 The Library (apps/pages/library.html) lists every complete Daily Grace day

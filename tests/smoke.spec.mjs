@@ -11,7 +11,7 @@ const PAGES = [
     { path: "/apps/pages/stories.html" },
     { path: "/apps/pages/daily-grace-kids.html", title: "Daily Grace Kids" },
     { path: "/apps/pages/flipbook.html" },
-    { path: "/apps/pages/library.html", title: "Daily Grace — Grace Library" },
+    { path: "/apps/pages/library.html", title: "Daily Grace Archives" },
 ];
 
 for (const { path, title } of PAGES) {

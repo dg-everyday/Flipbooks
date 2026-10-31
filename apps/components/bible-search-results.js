@@ -27,7 +27,7 @@
  * verses the BSB leaves out lose their pill once their chapter loads.
  *
  * A verse that began a Daily Grace day gets a strip under it: the day's
- * poster, date and title, a link to that day in the Grace Library
+ * poster, date and title, a link to that day in the Daily Grace Archives
  * (apps/pages/library.html). Only days in the Library show, from its first day
  * up to today; its index (assets/scripts/library-index.js) is fetched with the
  * first results, never before.
@@ -137,7 +137,7 @@ const DEFAULT_RED_LETTER_SRC = new URL(
     import.meta.url,
 ).href;
 
-// The Grace Library: its index, loaded with the first results, and its page,
+// The Daily Grace Archives: its index, loaded with the first results, and its page,
 // where a verse's Daily Grace day opens. Keep the token as the Library's own.
 const LIBRARY_MODULE = "../../assets/scripts/library-index.js?v=20261031-1";
 const LIBRARY_PAGE = new URL("../pages/library.html", import.meta.url).href;
@@ -835,7 +835,7 @@ function highlightedText(text, pattern) {
 }
 
 // The Daily Grace days by the verse they start on, "Psalms|23|1" → [days],
-// shared by every instance. Only days in the Grace Library: complete, from
+// shared by every instance. Only days in the Daily Grace Archives: complete, from
 // its first day up to today. Fetched once, with the first results; when the
 // index cannot load there are simply none, and the next search tries again.
 let dailyGraceDays = null;
@@ -1525,7 +1525,7 @@ export class BibleSearchResults extends HTMLElement {
      */
     /**
      * Under each card whose verse began a Daily Grace day, a strip to that day
-     * in the Grace Library. Added once the Library's index has arrived, if
+     * in the Daily Grace Archives. Added once the Library's index has arrived, if
      * these results are still on show.
      */
     async #addDailyGrace(cards, generation) {
@@ -1559,7 +1559,7 @@ export class BibleSearchResults extends HTMLElement {
             link.href = `${LIBRARY_PAGE}#day/${day.date}`;
             link.setAttribute(
                 "aria-label",
-                `Daily Grace for ${when({ weekday: "long", month: "long", day: "numeric", year: "numeric" })}: ${day.title}. Open it in the Grace Library`,
+                `Daily Grace for ${when({ weekday: "long", month: "long", day: "numeric", year: "numeric" })}: ${day.title}. Open it in the Daily Grace Archives`,
             );
             const thumb = document.createElement("img");
             thumb.className = "daily-grace-thumb";

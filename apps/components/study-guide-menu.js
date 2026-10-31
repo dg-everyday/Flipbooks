@@ -161,7 +161,7 @@ const GUIDES = [
     {
         page: "library.html",
         icon: "grace-library.svg",
-        title: "Grace Library",
+        title: "Daily Grace Archives",
         text: "Every Daily Grace day, to read, hear and pray again",
     },
     {
@@ -965,13 +965,13 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 2 12l5 5M17 7l5 5-5 5M2 12h20" /></svg>
                 </span>
-                <p><strong>Swipe through the week.</strong> Swipe the banner right to go back a day, up to a week. Swipe left to come forward again. While you look back, a link under the banner opens the Grace Library, with every earlier day.</p>
+                <p><strong>Swipe through the week.</strong> Swipe the banner right to go back a day, up to a week. Swipe left to come forward again. While you look back, a link under the banner opens the Daily Grace Archives, with every earlier day.</p>
             </li>
             <li>
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="9" height="15" rx="1.5" /><path d="M15 6.5l3.5.8a1.5 1.5 0 0 1 1.1 1.8l-2.4 10.2M8.5 9v4M6.8 10.8h3.4" /></svg>
                 </span>
-                <p><strong>Catch up on an earlier day.</strong> The Grace Library, in the menu just before Daily Grace Kids, keeps every Daily Grace day since September 11, 2026: by month, by book of the Bible, or the days you have prayed. Tap a day to open its poster and comic, the narration, the verse, the reflection, the question and the prayer, and to pray its Moment. "This week" at the top shows which days you have prayed and which you can still catch up on. A Moment prayed there is marked done, but only today's Moment counts toward stickers.</p>
+                <p><strong>Catch up on an earlier day.</strong> The Daily Grace Archives, in the menu just before Daily Grace Kids, keep every Daily Grace day since September 11, 2026: by month, by book of the Bible, or the days you have prayed. Tap a day to open its poster and comic, the narration, the verse, the reflection, the question and the prayer, and to pray its Moment. "This week" at the top shows which days you have prayed and which you can still catch up on. A Moment prayed there is marked done, but only today's Moment counts toward stickers.</p>
             </li>
             <li>
                 <span class="help-icon action">
@@ -1077,7 +1077,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <img src="${asset(ICONS + "grace-library.svg")}" alt="" width="26" height="26" loading="lazy" />
                 </span>
-                <p><strong>Daily Grace on this verse.</strong> When a verse you find was the verse of a Daily Grace day, a gold strip under it shows that day's poster, date and title. Tap it to open the day in the Grace Library, with its narration, reflection, prayer and Moment. Close the day, or go back, to return to your search at the same verse.</p>
+                <p><strong>Daily Grace on this verse.</strong> When a verse you find was the verse of a Daily Grace day, a gold strip under it shows that day's poster, date and title. Tap it to open the day in the Daily Grace Archives, with its narration, reflection, prayer and Moment. Close the day, or go back, to return to your search at the same verse.</p>
             </li>
         </ul>
 
@@ -1189,7 +1189,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <img src="${asset(ICONS + "grace-library.svg")}" alt="" width="26" height="26" loading="lazy" />
                 </span>
-                <p><strong>Grace Library.</strong> Every Daily Grace day since September 11, 2026, as poster tiles. Browse by month, each showing its three newest days until you pull, or tap, the chevrons under it for the whole month (a calendar on a wide screen) and tap them again, turned up, to fold it, by book of the Bible, or My days, the Moments you have prayed and the answers you wrote. Search by a theme, a word or a verse such as Psalm 23. Tap a day to open its poster and comic, narration, verse, reflection, question and prayer, its Moment and that week's Flipbook. Step to the day before or after with the buttons at the bottom, a swipe or the arrow keys, and share a link to the day with the button at the top.</p>
+                <p><strong>Daily Grace Archives.</strong> Every Daily Grace day since September 11, 2026, as poster tiles. Browse by month, each showing its three newest days until you pull, or tap, the chevrons under it for the whole month (a calendar on a wide screen) and tap them again, turned up, to fold it, by book of the Bible, or My days, the Moments you have prayed and the answers you wrote. Search by a theme, a word or a verse such as Psalm 23. Tap a day to open its poster and comic, narration, verse, reflection, question and prayer, its Moment and that week's Flipbook. Step to the day before or after with the buttons at the bottom, a swipe or the arrow keys, and share a link to the day with the button at the top.</p>
             </li>
             <li>
                 <span class="help-icon">

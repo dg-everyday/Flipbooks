@@ -1,5 +1,5 @@
 /**
- * The Grace Library — drives library.html.
+ * The Daily Grace Archives — drives library.html.
  *
  * Every complete Daily Grace day from September 11, 2026 up to today, from
  * the index in assets/library/ (assets/scripts/library-index.js, built by
@@ -157,12 +157,12 @@ export async function start(view) {
             fetchJson(BOOKS).then((meta) => Object.keys(meta)),
         ]);
     } catch (error) {
-        console.error("The Grace Library could not be loaded:", error);
+        console.error("The Daily Grace Archives could not be loaded:", error);
         view.replaceChildren(
             h(
                 "p",
                 { class: "status" },
-                "The Grace Library needs a connection to open. Your finished days are safe on this device.",
+                "The Daily Grace Archives need a connection to open. Your finished days are safe on this device.",
             ),
         );
         return;
@@ -243,7 +243,7 @@ export async function start(view) {
         class: "search",
         autocomplete: "off",
         placeholder: "Search a theme, a word or a verse…",
-        "aria-label": "Search the Grace Library",
+        "aria-label": "Search the Daily Grace Archives",
     });
     search.addEventListener("input", () => {
         state.query = search.value;
@@ -305,7 +305,7 @@ export async function start(view) {
         "section",
         { class: "hero" },
         h("p", { class: "eyebrow" }, "Every Daily Grace day"),
-        h("h1", {}, titleWithInfo("Grace Library", guideInfoButton())),
+        h("h1", {}, titleWithInfo("Daily Grace Archives", guideInfoButton())),
         h(
             "p",
             { class: "lede" },
@@ -330,7 +330,7 @@ export async function start(view) {
             const name = format(iso, { weekday: "long" });
             const day = byDate.get(iso);
             if (!day) {
-                const why = iso > lib.today ? "still to come" : "not in the Library";
+                const why = iso > lib.today ? "still to come" : "not in the Archives";
                 return h(
                     "li",
                     { class: `lib-week-day ${iso > lib.today ? "is-later" : "is-none"}` },
@@ -358,7 +358,7 @@ export async function start(view) {
         });
         const note =
             released === 0
-                ? "The Library's first days are coming."
+                ? "The Archives' first days are coming."
                 : prayed === released
                   ? "All caught up. Well done."
                   : `${prayed} of ${released} done. Tap a day to catch up.`;
@@ -629,7 +629,7 @@ export async function start(view) {
         const query = state.query.trim();
         count.textContent = "";
         if (!lib.days.length) {
-            content.replaceChildren(h("p", { class: "status" }, "The Library's first days are coming soon."));
+            content.replaceChildren(h("p", { class: "status" }, "The Archives' first days are coming soon."));
             return;
         }
         if (query) {
@@ -842,10 +842,10 @@ export async function start(view) {
         if (!day) {
             say(
                 iso < lib.start
-                    ? `The Grace Library begins on ${format(lib.start, { month: "long", day: "numeric", year: "numeric" })}.`
+                    ? `The Daily Grace Archives begin on ${format(lib.start, { month: "long", day: "numeric", year: "numeric" })}.`
                     : iso > lib.today
                       ? "That day isn't here yet."
-                      : "That day isn't in the Library.",
+                      : "That day isn't in the Archives.",
             );
             history.replaceState(null, "", location.pathname + location.search + viewHash());
             hideSheet();

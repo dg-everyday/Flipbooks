@@ -30,7 +30,7 @@
  *                  share() sends the poster on; without one, there is no
  *                  share button.
  *   flipbook-href  The Flipbook page. Default: apps/pages/flipbook.html
- *   library-href   The Grace Library page. When an earlier day this week
+ *   library-href   The Daily Grace Archives page. When an earlier day this week
  *                  has no Moment yet, today's Amen screen offers to catch
  *                  up there, on the first such day.
  *                  Default: apps/pages/library.html
@@ -91,7 +91,7 @@ const momentPosterUrl = (weekday) =>
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";
 const DEFAULT_LIBRARY_HREF = "apps/pages/library.html";
-// The Grace Library's first day: a missed day before it has nowhere to go.
+// The Daily Grace Archives' first day: a missed day before it has nowhere to go.
 const LIBRARY_START = "2026-09-11";
 const TIME_ZONE = "Asia/Manila";
 const DAY_MS = 86400000;
@@ -1109,7 +1109,7 @@ export class DailyMoment extends HTMLElement {
             ${this.#posterCard() ? `<button class="action share" type="button">${SHARE_ICON} Share today's poster</button>` : ""}
             ${this.#memoryVerse() ? `<button class="action memory" type="button">Practice this week's Memory-Verse challenge</button>` : ""}
             <a class="action" href="${escapeHtml(this.#flipbookUrl())}">Open this week's Flipbook</a>
-            ${this.#catchUpUrl() ? `<a class="action" href="${escapeHtml(this.#catchUpUrl())}">Missed a day this week? Catch up in the Grace Library</a>` : ""}
+            ${this.#catchUpUrl() ? `<a class="action" href="${escapeHtml(this.#catchUpUrl())}">Missed a day this week? Catch up in the Daily Grace Archives</a>` : ""}
             <button class="action finish" type="button">Done</button>
           </div>`;
             default:

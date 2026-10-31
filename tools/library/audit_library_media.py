@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Check, day by day, which of the Grace Library's files are on the media host.
+Check, day by day, which of the Daily Grace Archives' files are on the media host.
 
 For every day from LIBRARY_START to the last day in assets/verses/, asks the
 host (HEAD requests, no keys needed) for the day's

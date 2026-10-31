@@ -329,7 +329,7 @@
         }
     },
     "library.html": {
-        "title": "Grace Library",
+        "title": "Daily Grace Archives",
         "summary": "Every Daily Grace day since September 11, 2026, ready to read, hear and pray again.",
         "inside": [
             "Each day as it first came: the poster and its comic, the narration, the King James verse, the reflection, the day's question and its prayer, with the Moment with God and that week's Flipbook a tap away.",
@@ -345,7 +345,7 @@
         ],
         "why": [
             "A word from God is not meant for one day only. Coming back to a verse you read last week, or one you missed, lets it take root.",
-            "Only today's Moment counts toward stickers; the Library is for going back, not for catching up on the count."
+            "Only today's Moment counts toward stickers; the Archives are for going back, not for catching up on the count."
         ],
         "verse": {
             "ref": "Lamentations 3:22-23",

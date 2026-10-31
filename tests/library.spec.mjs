@@ -5,7 +5,11 @@
  * out (every file missing), so tiles show their text and nothing waits on R2.
  */
 import { test, expect } from "@playwright/test";
-import { readFileSync, readdirSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { copyFileSync, existsSync, mkdtempSync, readFileSync, readdirSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const PAGE = "/apps/pages/library.html";
 // 10 a.m. in Manila on Saturday, October 31, 2026: 51 days in the Library.
@@ -329,6 +333,60 @@ test.describe("ways into the Daily Grace Archives", () => {
     test("the Flipbook links to its week's month", async ({ page }) => {
         await page.goto("/apps/pages/flipbook.html?date=2026-10-01", { waitUntil: "domcontentloaded" });
         await expect(page.locator("#library")).toHaveAttribute("href", "library.html#month/2026-10");
+    });
+});
+
+test.describe("a page for each day, for link previews", () => {
+    test.skip(({ isMobile, browserName }) => isMobile || browserName !== "chromium", "one screen is enough");
+
+    // What the deploy writes, made here into a folder of its own.
+    function buildDayPages(today) {
+        const folder = mkdtempSync(join(tmpdir(), "day-pages-"));
+        copyFileSync(new URL("../sitemap.xml", import.meta.url), join(folder, "sitemap.xml"));
+        execFileSync(process.execPath, [
+            fileURLToPath(new URL("../assets/scripts/build-day-pages.mjs", import.meta.url)),
+            folder,
+            "--today",
+            today,
+        ]);
+        return folder;
+    }
+
+    test("are written for the released days only, with the day's banner", async () => {
+        const folder = buildDayPages("2026-10-31");
+        const page = readFileSync(join(folder, "d", "2026-10-01.html"), "utf8");
+        expect(page).toContain('<meta property="og:image" content="https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-01.webp" />');
+        expect(page).toContain('<meta property="og:url" content="https://dailygrace.faith/d/2026-10-01.html" />');
+        expect(page).toContain("<title>Grace is sufficient — Daily Grace for October 1, 2026</title>");
+        expect(page).toContain("My grace is sufficient for thee");
+        expect(existsSync(join(folder, "d", "2026-09-11.html"))).toBe(true);
+        expect(existsSync(join(folder, "d", "2026-09-10.html"))).toBe(false);
+        expect(existsSync(join(folder, "d", "2026-11-01.html"))).toBe(false);
+        const sitemap = readFileSync(join(folder, "sitemap.xml"), "utf8");
+        expect(sitemap).toContain("<loc>https://dailygrace.faith/d/2026-10-31.html</loc>");
+        expect(sitemap.trim().endsWith("</urlset>")).toBe(true);
+    });
+
+    test("send a reader on to the day in the Archives", async ({ page }) => {
+        const folder = buildDayPages("2026-10-31");
+        await page.route("**/d/2026-10-01.html", (route) =>
+            route.fulfill({ path: join(folder, "d", "2026-10-01.html"), contentType: "text/html" }),
+        );
+        await page.goto("/d/2026-10-01.html");
+        await expect(page).toHaveURL(/apps\/pages\/library\.html#day\/2026-10-01$/);
+        await expect(page.locator("#day-title")).toHaveText("Grace is sufficient");
+    });
+
+    test("are what the Archives' share button sends", async ({ page }) => {
+        await page.addInitScript(() => {
+            navigator.share = async (data) => {
+                window.sharedData = data;
+            };
+        });
+        await page.goto(`${PAGE}#day/2026-10-01`);
+        await sheet(page).getByRole("button", { name: "Share a link to this day" }).click();
+        const shared = await page.evaluate(() => window.sharedData);
+        expect(shared.url).toMatch(/\/d\/2026-10-01\.html$/);
     });
 });
 

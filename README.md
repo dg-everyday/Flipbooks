@@ -34,8 +34,8 @@ From the top:
   `<bible-search-results>`.
 - **`<banner-slider>`** — today's banner (or its video), swipeable back
   through the past week, with the day's flipbook button and the reflection
-  strip under it (clamped to three lines until tapped). While it shows an
-  earlier day, a link under it opens the Daily Grace Archives.
+  strip under it (clamped to three lines until tapped). Swiping on past the
+  oldest day uncovers a panel leading to the Daily Grace Archives.
 - **`<poster-card>`** — today's poster, playing the day's video in its place
   when there is one; tap it to flip to the comic version, press the red play
   button for narration, or the share button beside it to send the poster or

@@ -961,7 +961,9 @@ export async function start(view) {
     });
 
     async function shareDay(day) {
-        const url = `${location.origin}${location.pathname}#day/${day.date}`;
+        // The day's own page (written on deploy by build-day-pages.mjs), which
+        // previews with the day's banner and opens the day here.
+        const url = `${location.origin}/d/${day.date}.html`;
         const title = `Daily Grace — ${day.title}`;
         if (navigator.share) {
             try {

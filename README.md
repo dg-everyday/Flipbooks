@@ -505,7 +505,14 @@ to publish. The workflow:
    `assets/` and `apps/` into the artifact, and stamps every `?v=` in its HTML
    with the commit, since Pages serves HTML for 10 minutes but scripts for 4
    hours;
-5. compacts every `.json` file, and minifies the JS and CSS with esbuild, file
+5. runs `build-day-pages.mjs`, which writes a page for each day in the Daily
+   Grace Archives up to today in Manila, `d/<YYYY-MM-DD>.html`, and adds them
+   to the published `sitemap.xml` (a failure only warns). Each carries the
+   day's banner as its `og:image`, with its title and verse, so a shared day
+   previews as that day; it holds the day's verse, reflection, question and
+   prayer as text, and sends a reader on to the day in the Archives. The
+   Archives' share button links these pages;
+6. compacts every `.json` file, and minifies the JS and CSS with esbuild, file
    by file and without bundling, so every file and import keeps its place.
 
 Only the published copy is rewritten; nothing is committed back. A JSON, JS or
@@ -515,7 +522,7 @@ log, and if esbuild cannot be installed the site ships unminified.
 `robots.txt` allows everything and points to `sitemap.xml`, which lists the
 homepage and the pages in `apps/pages/` worth finding in a search: all but the
 `songs-in-the-bible.html` redirect and the reader's own sticker album. Add new
-pages to it.
+pages to it. The day pages are added on deploy, never to the repo's copy.
 
 One-time setup: **Settings → Pages → Build and deployment → GitHub Actions**, and
 keep the custom domain set to `dailygrace.faith`. Social platforms cache previews

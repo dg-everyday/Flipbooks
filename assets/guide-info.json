@@ -327,5 +327,29 @@
             "ref": "Jeremiah 15:16",
             "text": "Thy words were found, and I did eat them; and thy word was unto me the joy and rejoicing of mine heart: for I am called by thy name, O LORD God of hosts."
         }
+    },
+    "library.html": {
+        "title": "Grace Library",
+        "summary": "Every Daily Grace day since September 11, 2026, ready to read, hear and pray again.",
+        "inside": [
+            "Each day as it first came: the poster and its comic, the narration, the King James verse, the reflection, the day's question and its prayer, with the Moment with God and that week's Flipbook a tap away.",
+            "Three ways to look: Months (as a calendar on a wide screen), Books of the Bible, and My days, the Moments you have prayed and the answers you wrote, kept on this device."
+        ],
+        "use": [
+            "Tap a day to open it. Tap the poster to see the comic, and the red play button to listen.",
+            "Each month shows its three newest days: pull the chevrons under it down, or tap them, to see the whole month, and tap them again, turned up, to fold it.",
+            "Use This week to catch up on a day you missed; a filled circle means its Moment is done.",
+            "Search for a theme, a word, or a verse such as Psalm 23 or John 3:16.",
+            "Step to the day before or after with the buttons at the bottom of a day, a swipe, or the arrow keys.",
+            "Share a link to a day with the button at its top right."
+        ],
+        "why": [
+            "A word from God is not meant for one day only. Coming back to a verse you read last week, or one you missed, lets it take root.",
+            "Only today's Moment counts toward stickers; the Library is for going back, not for catching up on the count."
+        ],
+        "verse": {
+            "ref": "Lamentations 3:22-23",
+            "text": "It is of the LORD’S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness."
+        }
     }
 }

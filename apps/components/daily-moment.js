@@ -30,6 +30,10 @@
  *                  share() sends the poster on; without one, there is no
  *                  share button.
  *   flipbook-href  The Flipbook page. Default: apps/pages/flipbook.html
+ *   library-href   The Grace Library page. When an earlier day this week
+ *                  has no Moment yet, today's Amen screen offers to catch
+ *                  up there, on the first such day.
+ *                  Default: apps/pages/library.html
  *   memory-verse   id of the page's <memory-verse>. Today's Amen screen then
  *                  offers this week's verse, opening its practice once the
  *                  Moment has closed.
@@ -86,6 +90,9 @@ const momentPosterUrl = (weekday) =>
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";
+const DEFAULT_LIBRARY_HREF = "apps/pages/library.html";
+// The Grace Library's first day: a missed day before it has nowhere to go.
+const LIBRARY_START = "2026-09-11";
 const TIME_ZONE = "Asia/Manila";
 const DAY_MS = 86400000;
 
@@ -1102,6 +1109,7 @@ export class DailyMoment extends HTMLElement {
             ${this.#posterCard() ? `<button class="action share" type="button">${SHARE_ICON} Share today's poster</button>` : ""}
             ${this.#memoryVerse() ? `<button class="action memory" type="button">Practice this week's Memory-Verse challenge</button>` : ""}
             <a class="action" href="${escapeHtml(this.#flipbookUrl())}">Open this week's Flipbook</a>
+            ${this.#catchUpUrl() ? `<a class="action" href="${escapeHtml(this.#catchUpUrl())}">Missed a day this week? Catch up in the Grace Library</a>` : ""}
             <button class="action finish" type="button">Done</button>
           </div>`;
             default:
@@ -1441,6 +1449,31 @@ export class DailyMoment extends HTMLElement {
             url.searchParams.set("date", this.#day.iso);
         }
         return url.href;
+    }
+
+    /**
+     * The first earlier day of this week without a Moment, in the Grace
+     * Library; null on another day's Moment, or when the week is all done.
+     */
+    #catchUpUrl() {
+        if (!this.#isToday) {
+            return null;
+        }
+        const done = new Set(readStore(DONE_KEY, []));
+        const sunday =
+            this.#day.date.getTime() - this.#day.date.getUTCDay() * DAY_MS;
+        for (let i = 0; i < this.#day.date.getUTCDay(); i++) {
+            const iso = isoOf(new Date(sunday + i * DAY_MS));
+            if (iso >= LIBRARY_START && !done.has(iso)) {
+                const url = new URL(
+                    this.getAttribute("library-href") || DEFAULT_LIBRARY_HREF,
+                    document.baseURI,
+                );
+                url.hash = `day/${iso}`;
+                return url.href;
+            }
+        }
+        return null;
     }
 }
 

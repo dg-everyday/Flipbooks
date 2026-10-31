@@ -53,7 +53,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/flipbook-page.css?v=20261025-3"
+            href="../../assets/styles/flipbook-page.css?v=20261031-1"
         />
     </head>
     <body>
@@ -70,6 +70,29 @@
                     <span class="brand-pill">Flipbook</span>
                 </div>
                 <div class="tools">
+                    <!-- More weeks: the Grace Library, at this week's month. -->
+                    <a
+                        id="library"
+                        href="library.html"
+                        aria-label="More weeks in the Grace Library"
+                        title="More weeks in the Grace Library"
+                    >
+                        <svg
+                            width="28"
+                            height="28"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="5" width="10" height="16" rx="1.5"></rect>
+                            <path d="M15.5 6.3l3.6.9a1.5 1.5 0 0 1 1.1 1.8l-2.6 10.7"></path>
+                            <path d="M8 9v5M5.6 11.2h4.8"></path>
+                        </svg>
+                    </a>
                     <button id="home" aria-label="Home" title="Home">
                         <svg
                             width="30"
@@ -111,6 +134,17 @@
             const date = new URLSearchParams(window.location.search).get(
                 "date",
             );
+
+            // The Library opens on the month of the week on show.
+            const today = new Intl.DateTimeFormat("en-CA", {
+                timeZone: "Asia/Manila",
+            }).format(new Date());
+            const shown =
+                /^\d{4}-\d{2}-\d{2}$/.test(date ?? "") && date <= today
+                    ? date
+                    : today;
+            document.getElementById("library").href =
+                `library.html#month/${shown.slice(0, 7)}`;
 
             const reader = document.getElementById("reader");
             try {

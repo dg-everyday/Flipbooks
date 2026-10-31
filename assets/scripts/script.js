@@ -286,7 +286,9 @@ searchClear.addEventListener("click", () => {
 
 // <daily-moment> walks through the day on the banner: today's Moment, or an
 // earlier day's while the reader has swiped back to it.
+// Looking back, the Grace Library link under the banner offers every older day.
 const dailyMoment = document.getElementById("daily-moment");
+const libraryLink = document.getElementById("library-link");
 document
     .getElementById("banner-slider")
     .addEventListener("daychange", (event) => {
@@ -295,6 +297,7 @@ document
         } else {
             dailyMoment.removeAttribute("date");
         }
+        libraryLink.hidden = !event.detail.daysAgo;
     });
 
 // Leaving for another page and coming back — the Flipbook's home button, the

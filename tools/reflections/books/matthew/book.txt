@@ -1,0 +1,8 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Matthew
+1-4 | Thou Shalt Call His Name JESUS
+5-7 | Blessed Are the Poor in Spirit
+8-12 | Follow Me
+13-18 | The Kingdom of Heaven Is Like
+19-25 | Behold, Thy King Cometh
+26-28 | He Is Risen, as He Said

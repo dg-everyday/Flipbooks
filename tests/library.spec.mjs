@@ -178,14 +178,47 @@ test.describe("ways into the Daily Grace Archives", () => {
         expect(hrefs[library + 1]).toMatch(/apps\/pages\/daily-grace-kids\.html$/);
     });
 
-    test("the banner offers it while showing an earlier day", async ({ page }) => {
+    test("the banner uncovers it past its oldest day", async ({ page }) => {
+        await page.addInitScript(() => {
+            // An avatar, and today's trivia already shown, so neither popup
+            // covers the banner.
+            localStorage.setItem("dailygrace:avatar", "AV-01");
+            const day = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Manila" }).format(new Date());
+            localStorage.setItem("dailygrace.trivia", JSON.stringify({ day, count: 99, last: Date.now() }));
+        });
         await page.goto("/");
-        const link = page.locator("#library-link");
-        await expect(link).toBeHidden();
-        await page.locator("banner-slider").evaluate((banner) => banner.previous());
-        await expect(link).toBeVisible();
-        await page.locator("banner-slider").evaluate((banner) => banner.next());
-        await expect(link).toBeHidden();
+        const banner = page.locator("banner-slider");
+        const panel = banner.locator("a.archives");
+        // One day back is the oldest, to keep the test short.
+        await banner.evaluate((el) => el.setAttribute("past-days", "1"));
+        await expect(panel).toBeHidden();
+
+        // A step back reaches the oldest day; the next one uncovers the panel.
+        await banner.evaluate((el) => el.previous());
+        await expect.poll(() => banner.evaluate((el) => el.daysAgo)).toBe(1);
+        await expect(panel).toBeHidden();
+        await banner.evaluate((el) => el.previous());
+        await expect(panel).toBeVisible();
+        await expect(panel).toHaveAttribute("href", /apps\/pages\/library\.html#month\/2026-10$/);
+        await expect(panel).toContainText("Daily Grace Archives");
+        // The Flipbook button stays on top of the banner, over its own layer.
+        const flipbookOnTop = await banner.evaluate((el) => {
+            const button = el.shadowRoot.querySelector(".flipbook");
+            const box = button.getBoundingClientRect();
+            const hit = el.shadowRoot.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+            return Boolean(hit?.closest(".flipbook"));
+        });
+        expect(flipbookOnTop).toBe(true);
+        // The day stays the oldest; forward closes the panel first.
+        expect(await banner.evaluate((el) => el.daysAgo)).toBe(1);
+        await banner.evaluate((el) => el.next());
+        await expect(panel).toBeHidden();
+        expect(await banner.evaluate((el) => el.daysAgo)).toBe(1);
+    });
+
+    test("the homepage has no link under the banner any more", async ({ page }) => {
+        await page.goto("/");
+        await expect(page.locator("#library-link")).toHaveCount(0);
     });
 
     test("today's Amen offers a missed day this week", async ({ page }) => {

@@ -30,6 +30,10 @@
  *                   day adds ?date=YYYY-MM-DD so it opens on that day's week.
  *                   Default: apps/pages/flipbook.html
  *   past-days       How many days back the banner can be swiped. Default: 7
+ *   archives-href   The Daily Grace Archives page, resolved against the page.
+ *                   Swiping on past the oldest day uncovers a panel leading
+ *                   there, opened at the month before that day.
+ *                   Default: apps/pages/library.html
  *
  * "Today" is the Asia/Manila date, when each day's devotional goes live. A
  * page left open past midnight moves on to the new day by itself.
@@ -54,6 +58,12 @@
  *                loaded or when it has none. Fires once for today on
  *                connect, on every change of day, and again for the day shown
  *                once the verses arrive.
+ *
+ * The Archives: on the oldest day, a swipe on to the right (or the left arrow
+ * key) slides the banner partly aside to uncover a panel, "More you missed
+ * on... Daily Grace Archives", that links to the Archives. Let go past half of
+ * it and it stays open; a swipe back, a tap on the banner or the right arrow
+ * key closes it.
  *
  * Swipe hint: about a second after today's banner is on screen, it nudges
  * right to show the edge of yesterday's, then springs back, so readers learn
@@ -96,6 +106,12 @@ const POPUP_MODULE = "./verse-popup.js?v=20261030-2";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";
+const DEFAULT_ARCHIVES_HREF = "apps/pages/library.html";
+// The Daily Grace Archives' icon, as in the menu.
+const ARCHIVES_ICON = new URL(
+    "../../assets/images/study-guide-icons/grace-library.svg",
+    import.meta.url,
+).href;
 const DEFAULT_PAST_DAYS = 7;
 const TIME_ZONE = "Asia/Manila";
 // How often an open page checks whether midnight has passed.
@@ -192,7 +208,63 @@ const STYLES = /* css */ `
     -webkit-user-drag: none;
   }
   /* The banner and its video, which slide together. */
-  .slide { position: relative; }
+  .slide { position: relative; z-index: 1; }
+  /* Past the oldest day, under the banner: the way to the Daily Grace
+     Archives, uncovered as the banner slides aside (--archives-width). */
+  .archives {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--banner-slider-gutter);
+    width: var(--archives-width, 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    /* A cream a shade darker than the page, so the panel shows against it. */
+    background: #eadcc0;
+    color: var(--navy, #001b34);
+    text-align: center;
+    text-decoration: none;
+    visibility: hidden;
+  }
+  .stage.archives-showing .archives { visibility: visible; }
+  .archives:focus-visible { outline: 2px solid var(--navy, #001b34); outline-offset: -5px; }
+  .archives-lead {
+    color: #7a5a1c;
+    font: 400 clamp(.9rem, .8rem + .5vw, 1.1rem)/1.15 'Germania One', Georgia, serif;
+  }
+  /* Under the words, the pull tab's double chevrons, bobbing: it can be tapped. */
+  .archives-arrow {
+    display: block;
+    width: clamp(24px, 5cqw, 32px);
+    height: auto;
+    overflow: visible;
+  }
+  .archives-arrow .chevron {
+    fill: none;
+    stroke: var(--navy, #001b34);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: archives-bob 1.8s ease-in-out infinite;
+  }
+  .archives-arrow .chevron-top { stroke: #c6922e; }
+  .archives-arrow .chevron-bottom { animation-delay: .12s; }
+  @keyframes archives-bob {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(3px); }
+  }
+  .archives-icon {
+    width: clamp(40px, 9cqw, 58px);
+    height: auto;
+  }
+  .archives-name {
+    color: var(--navy, #001b34);
+    font: 400 clamp(1.15rem, .95rem + 1vw, 1.7rem)/1.05 'Germania One', Georgia, serif;
+  }
   /* The day's video, over its banner, fading in once it is playing. */
   .video {
     position: absolute;
@@ -219,6 +291,8 @@ const STYLES = /* css */ `
 
   .flipbook {
     position: absolute;
+    /* Over the banner, which has its own layer above the Archives panel. */
+    z-index: 2;
     top: 14px;
     right: calc(var(--banner-slider-gutter) + 9px);
     display: grid;
@@ -266,6 +340,7 @@ const STYLES = /* css */ `
     50% { box-shadow: 0 0 0 3px rgb(255 214 140 / 55%), 0 0 16px 6px rgb(255 214 140 / 45%); }
   }
   @media (prefers-reduced-motion: reduce) {
+    .archives-arrow .chevron { animation: none; }
     .flipbook::after {
       animation: none;
       box-shadow: 0 0 0 2px rgb(255 214 140 / 45%), 0 0 10px 3px rgb(255 214 140 / 30%);
@@ -373,6 +448,7 @@ export class BannerSlider extends HTMLElement {
         "verses-base",
         "flipbook-href",
         "past-days",
+        "archives-href",
     ];
 
     #root;
@@ -384,6 +460,9 @@ export class BannerSlider extends HTMLElement {
     #video;
     #peek;
     #flipbook;
+    #archives;
+    // Whether the Archives panel is held open beside the oldest day.
+    #archivesOpen = false;
     #reflection;
     #reflectionText;
     #reflectionAction;
@@ -426,6 +505,12 @@ export class BannerSlider extends HTMLElement {
       <div class="stage" role="group" aria-roledescription="carousel" tabindex="0"
         aria-label="Daily Grace for the past week. Swipe, or use the arrow keys, to change the day. Tap the banner, or press Enter, to read the day's verse.">
         <img class="peek" alt="" width="1920" height="1024" draggable="false" />
+        <a class="archives" tabindex="-1" aria-hidden="true" draggable="false">
+          <span class="archives-lead">More you missed on…</span>
+          <svg class="archives-arrow" viewBox="0 0 24 24" aria-hidden="true"><path class="chevron chevron-top" d="M5 4.5l7 7 7-7"/><path class="chevron chevron-bottom" d="M5 11.5l7 7 7-7"/></svg>
+          <img class="archives-icon" src="${ARCHIVES_ICON}" alt="" width="64" height="64" draggable="false" />
+          <span class="archives-name">Daily Grace Archives</span>
+        </a>
         <div class="slide">
           <img class="banner" alt="" width="1920" height="1024" fetchpriority="high" draggable="false" />
           <video class="video" width="1920" height="1024" muted loop playsinline preload="auto"
@@ -445,6 +530,7 @@ export class BannerSlider extends HTMLElement {
         this.#video = this.#root.querySelector(".video");
         this.#peek = this.#root.querySelector(".peek");
         this.#flipbook = this.#root.querySelector(".flipbook");
+        this.#archives = this.#root.querySelector(".archives");
         this.#reflection = this.#root.querySelector(".reflection");
         this.#reflectionText = this.#root.querySelector(".reflection-text");
         this.#reflectionAction = this.#root.querySelector(".reflection-action");
@@ -497,10 +583,16 @@ export class BannerSlider extends HTMLElement {
         );
         // A tap on the banner, not a swipe and not the Flipbook button, opens the verse.
         this.#stage.addEventListener("click", (event) => {
+            const path = event.composedPath();
             if (
                 this.#suppressClick ||
-                event.composedPath().includes(this.#flipbook)
+                path.includes(this.#flipbook) ||
+                path.includes(this.#archives)
             ) {
+                return;
+            }
+            if (this.#archivesOpen) {
+                this.#closeArchives(this.#archivesWidth());
                 return;
             }
             this.#openVerse();
@@ -594,11 +686,19 @@ export class BannerSlider extends HTMLElement {
 
     /** Step back a day, sliding the earlier one in from the left. */
     previous() {
+        if (this.#atOldest && !this.#archivesOpen) {
+            this.#openArchives(0);
+            return Promise.resolve();
+        }
         return this.#step(-1);
     }
 
-    /** Step forward a day, toward today. */
+    /** Step forward a day, toward today; with the Archives open, close them. */
     next() {
+        if (this.#archivesOpen) {
+            this.#closeArchives(this.#archivesWidth());
+            return Promise.resolve();
+        }
         return this.#step(1);
     }
 
@@ -676,6 +776,7 @@ export class BannerSlider extends HTMLElement {
     }
 
     #show(daysAgo) {
+        this.#resetArchives();
         const day = devotionalDay(this.#today, daysAgo, this.#mediaBase);
         this.#day = day;
         this.#banner.src = day.banner;
@@ -913,6 +1014,101 @@ export class BannerSlider extends HTMLElement {
         this.#sliding = false;
     }
 
+    /* ----- The Archives, past the oldest day ----- */
+
+    get #atOldest() {
+        return this.#pastDays > 0 && this.daysAgo === this.#pastDays;
+    }
+
+    // As wide as the panel's words need, in step with the banner's size.
+    #archivesWidth() {
+        return Math.round(
+            Math.min(Math.max(this.#banner.offsetWidth * 0.3, 150), 230),
+        );
+    }
+
+    // Shows the panel under the banner (or hides it), leading to the Archives
+    // at the month of the last day before the oldest one here.
+    #showArchives(show) {
+        this.#stage.classList.toggle("archives-showing", show);
+        this.#archives.tabIndex = show ? 0 : -1;
+        this.#archives.setAttribute("aria-hidden", String(!show));
+        if (!show) {
+            return;
+        }
+        this.#stage.style.setProperty(
+            "--archives-width",
+            `${this.#archivesWidth()}px`,
+        );
+        const before = new Date(Date.parse(`${this.date}T00:00:00Z`) - DAY_MS)
+            .toISOString()
+            .slice(0, 7);
+        const url = new URL(
+            this.getAttribute("archives-href") || DEFAULT_ARCHIVES_HREF,
+            document.baseURI,
+        );
+        url.hash = `month/${before}`;
+        this.#archives.href = url.href;
+        this.#archives.setAttribute(
+            "aria-label",
+            "More days you missed: open the Daily Grace Archives",
+        );
+    }
+
+    #openArchives(fromOffset) {
+        const width = this.#archivesWidth();
+        this.#stopHint();
+        this.#showArchives(true);
+        this.#archivesOpen = true;
+        this.#setOffset(width);
+        if (!this.#reducedMotion.matches && fromOffset !== width) {
+            this.#slide.animate(
+                [
+                    { transform: `translateX(${fromOffset}px)` },
+                    { transform: `translateX(${width}px)` },
+                ],
+                { duration: 260, easing: "cubic-bezier(.2, .9, .25, 1)" },
+            );
+        }
+    }
+
+    #closeArchives(fromOffset) {
+        this.#archivesOpen = false;
+        this.#archives.tabIndex = -1;
+        this.#archives.setAttribute("aria-hidden", "true");
+        this.#setOffset(0);
+        if (this.#reducedMotion.matches || !fromOffset) {
+            this.#showArchives(false);
+            return;
+        }
+        this.#slide
+            .animate(
+                [
+                    { transform: `translateX(${fromOffset}px)` },
+                    { transform: "none" },
+                ],
+                { duration: 220, easing: "cubic-bezier(.2, .9, .25, 1)" },
+            )
+            .finished.then(() => {
+                if (!this.#archivesOpen) {
+                    this.#showArchives(false);
+                }
+            })
+            .catch(() => {});
+    }
+
+    // A new day on show (or a new date at midnight) starts with it closed.
+    #resetArchives() {
+        if (
+            this.#archivesOpen ||
+            this.#stage.classList.contains("archives-showing")
+        ) {
+            this.#archivesOpen = false;
+            this.#setOffset(0);
+            this.#showArchives(false);
+        }
+    }
+
     #snapBack(fromOffset) {
         this.#setOffset(0);
         if (!fromOffset || this.#reducedMotion.matches) {
@@ -1077,6 +1273,9 @@ export class BannerSlider extends HTMLElement {
             y: event.clientY,
             offset: 0,
             active: false,
+            // Dragging the banner while the Archives are open starts from there.
+            base: this.#archivesOpen ? this.#archivesWidth() : 0,
+            archives: false,
         };
     }
 
@@ -1099,6 +1298,22 @@ export class BannerSlider extends HTMLElement {
             this.#stage.setPointerCapture(event.pointerId);
             this.#stage.classList.add("dragging");
         }
+        // Past the oldest day the banner uncovers the Archives: it follows the
+        // finger as far as the panel is wide, then resists.
+        if (drag.base || (dx > 0 && this.#atOldest)) {
+            const width = this.#archivesWidth();
+            let offset = drag.base + dx;
+            if (offset > width) {
+                offset = width + (offset - width) / 4;
+            } else if (offset < 0) {
+                offset /= 4;
+            }
+            drag.archives = true;
+            drag.offset = offset;
+            this.#showArchives(true);
+            this.#setOffset(offset);
+            return;
+        }
         // Pulling toward a day that is not there gives a little, then resists.
         const step = dx > 0 ? -1 : 1;
         drag.offset = this.#canStep(step) ? dx : dx / 4;
@@ -1119,6 +1334,18 @@ export class BannerSlider extends HTMLElement {
         setTimeout(() => {
             this.#suppressClick = false;
         });
+        if (drag.archives) {
+            const keep =
+                event.type === "pointerup"
+                    ? drag.offset >= this.#archivesWidth() / 2
+                    : Boolean(drag.base);
+            if (keep) {
+                this.#openArchives(drag.offset);
+            } else {
+                this.#closeArchives(drag.offset);
+            }
+            return;
+        }
         const step = drag.offset > 0 ? -1 : 1;
         const far =
             Math.abs(drag.offset) >= this.#stage.clientWidth * SWIPE_SHARE;

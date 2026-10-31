@@ -965,7 +965,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 2 12l5 5M17 7l5 5-5 5M2 12h20" /></svg>
                 </span>
-                <p><strong>Swipe through the week.</strong> Swipe the banner right to go back a day, up to a week. Swipe left to come forward again. While you look back, a link under the banner opens the Daily Grace Archives, with every earlier day.</p>
+                <p><strong>Swipe through the week.</strong> Swipe the banner right to go back a day, up to a week. Swipe left to come forward again. On the oldest day, swipe right once more: the banner slides aside to show the Daily Grace Archives, with every earlier day. Tap it to go there.</p>
             </li>
             <li>
                 <span class="help-icon">

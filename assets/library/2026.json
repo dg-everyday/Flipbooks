@@ -1,0 +1,880 @@
+{
+    "year": 2026,
+    "months": {
+        "2026-09": "Trust, Guidance & New Beginnings",
+        "2026-10": "Strength, Faith & Perseverance",
+        "2026-11": "Gratitude, Contentment & God's Goodness",
+        "2026-12": "Hope & God's Promises"
+    },
+    "days": [
+        {
+            "date": "2026-09-11",
+            "ref": "Psalm 32:8",
+            "book": "Psalms",
+            "title": "God will guide you",
+            "summary": "You do not need the whole map. Listen for God's wisdom, follow the light He gives, and trust Him with the next step."
+        },
+        {
+            "date": "2026-09-12",
+            "ref": "Matthew 11:28",
+            "book": "Matthew",
+            "title": "Rest for the weary",
+            "summary": "Bring your tired heart to Jesus. His grace offers a deeper rest than the world can give and strength for what remains."
+        },
+        {
+            "date": "2026-09-13",
+            "ref": "Psalm 23:1",
+            "book": "Psalms",
+            "title": "The Lord provides",
+            "summary": "Your Shepherd knows every need. Follow His voice, notice His provision, and rest in care that never runs dry."
+        },
+        {
+            "date": "2026-09-14",
+            "ref": "Proverbs 16:9",
+            "book": "Proverbs",
+            "title": "God directs our steps",
+            "summary": "Plan with wisdom, but hold the details loosely. God sees farther and faithfully directs the steps of a willing heart."
+        },
+        {
+            "date": "2026-09-15",
+            "ref": "Deuteronomy 31:8",
+            "book": "Deuteronomy",
+            "title": "God goes before you",
+            "summary": "God is already present in what lies ahead. Move forward without fear, held by the One who will never fail or forsake you."
+        },
+        {
+            "date": "2026-09-16",
+            "ref": "Psalm 119:105",
+            "book": "Psalms",
+            "title": "Light for your path",
+            "summary": "God's Word gives enough light for the next faithful step. Stay close to Scripture and let truth guide today's choices."
+        },
+        {
+            "date": "2026-09-17",
+            "ref": "Romans 8:28",
+            "book": "Romans",
+            "title": "God works through everything",
+            "summary": "The unfinished pieces are not wasted in God's hands. Trust Him to weave every season into His good and redemptive purpose."
+        },
+        {
+            "date": "2026-09-18",
+            "ref": "Psalm 55:22",
+            "book": "Psalms",
+            "title": "Give God your burdens",
+            "summary": "You were never meant to carry every weight alone. Release the burden in prayer and receive God's sustaining strength."
+        },
+        {
+            "date": "2026-09-19",
+            "ref": "Exodus 14:14",
+            "book": "Exodus",
+            "title": "Let God fight for you",
+            "summary": "Release the battle you cannot win by striving. Stand in faith and let God's power guard your peace and carry the outcome."
+        },
+        {
+            "date": "2026-09-20",
+            "ref": "Psalm 84:11",
+            "book": "Psalms",
+            "title": "Grace and goodness",
+            "summary": "God is your light and protection. Walk faithfully and trust His generous heart, even when His timing looks different from yours."
+        },
+        {
+            "date": "2026-09-21",
+            "ref": "Isaiah 30:21",
+            "book": "Isaiah",
+            "title": "Listen for His direction",
+            "summary": "Guidance is difficult to hear when every voice is loud and the heart is rushing. Isaiah offers the image of God's steady direction meeting us at the point of decision: This is the way, walk in it."
+        },
+        {
+            "date": "2026-09-22",
+            "ref": "Proverbs 4:23",
+            "book": "Proverbs",
+            "title": "Guard your heart",
+            "summary": "Guard what shapes your inner life. Fill your heart with truth, grace, and influences that lead your thoughts and choices toward God."
+        },
+        {
+            "date": "2026-09-23",
+            "ref": "Psalm 143:8",
+            "book": "Psalms",
+            "title": "Trust Him each morning",
+            "summary": "Begin the morning listening for God's lovingkindness. Trust at the start of the day prepares your heart for every step ahead."
+        },
+        {
+            "date": "2026-09-24",
+            "ref": "Isaiah 26:3",
+            "book": "Isaiah",
+            "title": "Perfect peace",
+            "summary": "Fix your thoughts on God instead of the storm. Trust steadies the mind and welcomes His perfect peace into anxious places."
+        },
+        {
+            "date": "2026-09-25",
+            "ref": "Psalm 34:8",
+            "book": "Psalms",
+            "title": "Taste and see His goodness",
+            "summary": "Notice the quiet gifts around you today. Gratitude opens your eyes to God's goodness and teaches the heart to trust Him."
+        },
+        {
+            "date": "2026-09-26",
+            "ref": "Matthew 6:34",
+            "book": "Matthew",
+            "title": "Live one day at a time",
+            "summary": "Do not carry tomorrow with today's strength. Receive this day as God's grace-filled portion and live one faithful moment at a time."
+        },
+        {
+            "date": "2026-09-27",
+            "ref": "Psalm 100:5",
+            "book": "Psalms",
+            "title": "His love endures",
+            "summary": "Circumstances change, but God's goodness, mercy, and truth endure. Praise Him for faithful love that will never run out."
+        },
+        {
+            "date": "2026-09-28",
+            "ref": "Proverbs 19:21",
+            "book": "Proverbs",
+            "title": "God's purpose prevails",
+            "summary": "Plans may shift, but God's purpose remains steady. Surrender the details and trust His wisdom to guide the route."
+        },
+        {
+            "date": "2026-09-29",
+            "ref": "Psalm 121:1-2",
+            "book": "Psalms",
+            "title": "Help comes from the Lord",
+            "summary": "Look higher than the problem before you. Your help comes from the Creator, whose wisdom and strength have no limit."
+        },
+        {
+            "date": "2026-09-30",
+            "ref": "Isaiah 40:31",
+            "book": "Isaiah",
+            "title": "Renewed strength",
+            "summary": "Waiting on God is never wasted. He renews weary hearts and gives strength to rise, continue, and hope again."
+        },
+        {
+            "date": "2026-10-01",
+            "ref": "2 Corinthians 12:9",
+            "book": "2 Corinthians",
+            "title": "Grace is sufficient",
+            "summary": "Weakness is not something we need to hide from God. It is often where Christ's grace and strength become clearest. We do not need to ignore our struggles or pretend everything is fine."
+        },
+        {
+            "date": "2026-10-02",
+            "ref": "Psalm 27:1",
+            "book": "Psalms",
+            "title": "Whom shall I fear?",
+            "summary": "Fear may describe what we feel. But it does not define our future. The Lord is our light, our rescue, and our strength. Faith does not mean having no questions or emotions."
+        },
+        {
+            "date": "2026-10-03",
+            "ref": "Hebrews 11:1",
+            "book": "Hebrews",
+            "title": "Walk by faith",
+            "summary": "Faith takes the next faithful step. It does so before every answer appears. It trusts God's character and looks beyond what we can see. We do not need to pretend that life is easy. We can remember that God is present, wise, and trustworthy."
+        },
+        {
+            "date": "2026-10-04",
+            "ref": "Psalm 91:1-2",
+            "book": "Psalms",
+            "title": "Rest under God's protection",
+            "summary": "Find refuge in God's presence. Dwelling close to Him provides protection and peace amidst life's challenges."
+        },
+        {
+            "date": "2026-10-05",
+            "ref": "Romans 12:12",
+            "book": "Romans",
+            "title": "Hope, patience and prayer",
+            "summary": "Paul gives three short instructions that belong together. Hope lifts our eyes beyond what we can see today. Patience steadies us when trouble lasts longer than we expected. Prayer keeps our hearts close to God through every challenge.",
+            "video": true
+        },
+        {
+            "date": "2026-10-06",
+            "ref": "Nehemiah 8:10",
+            "book": "Nehemiah",
+            "title": "The joy of the Lord",
+            "summary": "Today's verse reminds us that God's joy is deeper than a passing mood. His joy is rooted in His goodness, presence, and restoring love. We do not need to ignore difficulties or pretend everything is fine.",
+            "video": true
+        },
+        {
+            "date": "2026-10-07",
+            "ref": "Psalm 56:3-4",
+            "book": "Psalms",
+            "title": "Trust instead of fear",
+            "summary": "Fear may knock at your heart. But trust decides whether it will take control. God's Word gives you a firm place to stand. Scripture meets you in real life. It speaks to your questions, limits, and emotions.",
+            "video": true
+        },
+        {
+            "date": "2026-10-08",
+            "ref": "1 Peter 5:7",
+            "book": "1 Peter",
+            "title": "Give Him your anxiety",
+            "summary": "God's care is personal, attentive, and constant. We can give our worries to Him. Our burdens matter to the One who loves us. We do not need to pretend that life is easy. God remains present, wise, and trustworthy.",
+            "video": true
+        },
+        {
+            "date": "2026-10-09",
+            "ref": "Isaiah 43:2",
+            "book": "Isaiah",
+            "title": "God is with you in trials",
+            "summary": "Deep waters and fire are honest pictures of painful trials. Hardship is real. Yet God promises to remain with us through it. His presence can change how we respond. Instead of rushing, we can remain anchored in Him.",
+            "video": true
+        },
+        {
+            "date": "2026-10-10",
+            "ref": "Psalm 62:1-2",
+            "book": "Psalms",
+            "title": "Rest in God",
+            "summary": "Today's Scripture gives us strong and practical hope. Our soul finds peace when we stop striving to save ourselves. We can rest in God as our rescue, rock, and safe defense. This does not mean we should become passive.",
+            "video": true
+        },
+        {
+            "date": "2026-10-11",
+            "ref": "John 10:10",
+            "book": "John",
+            "title": "Abundant life",
+            "summary": "Today's verse reminds us that Jesus offers more than survival. He offers a full and purposeful life. His way is shaped by truth, love, freedom, and fellowship with God. This does not mean ignoring life's difficulties.",
+            "video": true
+        },
+        {
+            "date": "2026-10-12",
+            "ref": "Galatians 6:9",
+            "book": "Galatians",
+            "title": "Don't grow weary",
+            "summary": "Faithful work can feel slow, unseen, and unrewarded. Yet no seed of goodness is wasted in God's hands. He knows the right time for the harvest. Trust His character more than your circumstances.",
+            "video": true
+        },
+        {
+            "date": "2026-10-13",
+            "ref": "Psalm 18:2",
+            "book": "Psalms",
+            "title": "God is your fortress",
+            "summary": "The Lord is not a fragile shelter. He is our rock, fortress, deliverer, shield, and stronghold. We do not need to pretend that life is easy. We can remember that God remains present, wise, and trustworthy.",
+            "video": true
+        },
+        {
+            "date": "2026-10-14",
+            "ref": "James 1:2-4",
+            "book": "James",
+            "title": "Growth through trials",
+            "summary": "Trials are not pleasant, but God can use them to build endurance. They can develop a mature and resilient faith. Such growth may not come through comfort alone. God can use pressure to shape our character.",
+            "video": true
+        },
+        {
+            "date": "2026-10-15",
+            "ref": "Romans 15:13",
+            "book": "Romans",
+            "title": "Overflow with hope",
+            "summary": "God is the source of hope, joy, and peace. Trust Him to fill you with these qualities as you rely on the power of the Holy Spirit. Let your life overflow with hope, even in challenging circumstances.",
+            "video": true
+        },
+        {
+            "date": "2026-10-16",
+            "ref": "Psalm 73:26",
+            "book": "Psalms",
+            "title": "God is your strength",
+            "summary": "Bodies grow tired, and courage can fail. Yet weakness is not the end of faith. God remains the strength of our hearts and our lasting treasure. His presence is faithful in every season.",
+            "video": true
+        },
+        {
+            "date": "2026-10-17",
+            "ref": "Micah 6:8",
+            "book": "Micah",
+            "title": "Walk humbly with God",
+            "summary": "God's will is not hidden behind grand gestures. He calls us to do what is right, love mercy, and walk humbly with Him. Faith means trusting God's character above our circumstances. Today, choose one act of justice, mercy, or humility.",
+            "video": true
+        },
+        {
+            "date": "2026-10-18",
+            "ref": "John 15:5",
+            "book": "John",
+            "title": "Remain in Christ",
+            "summary": "A branch bears fruit through connection, not striving. Stay close to Jesus through His Word, prayer, obedience, and love. Spend quiet time with Christ. Ask which tasks bear fruit and which are only busyness.",
+            "video": true
+        },
+        {
+            "date": "2026-10-19",
+            "ref": "Ephesians 6:10",
+            "book": "Ephesians",
+            "title": "Be strong in the Lord",
+            "summary": "Biblical strength is not pretending to be fearless. It means trusting the Lord for courage and power. We can face pressure with hearts anchored in God. Today, face each challenge prayerfully. Stand firm in what is right.",
+            "video": true
+        },
+        {
+            "date": "2026-10-20",
+            "ref": "Psalm 28:7",
+            "book": "Psalms",
+            "title": "My strength and shield",
+            "summary": "God is our shield in every battle. He does not promise a life without trouble. He promises to strengthen and guard us through it. Remember how God helped you before. Thank Him for His faithfulness.",
+            "video": true
+        },
+        {
+            "date": "2026-10-21",
+            "ref": "2 Timothy 1:7",
+            "book": "2 Timothy",
+            "title": "Power, love and self-control",
+            "summary": "Fear is not the spirit God gives us. His Spirit gives us courage, love, and sound judgment. We can face difficulty with trust in His care. Pause before fear makes your next decision.",
+            "video": true
+        },
+        {
+            "date": "2026-10-22",
+            "ref": "Nahum 1:7",
+            "book": "Nahum",
+            "title": "Refuge in difficult times",
+            "summary": "Trust in the Lord's goodness and strength, especially in times of trouble. He watches over those who place their confidence in Him."
+        },
+        {
+            "date": "2026-10-23",
+            "ref": "Psalm 31:24",
+            "book": "Psalms",
+            "title": "Be strong and take heart",
+            "summary": "Take courage and place your hope in the Lord. He will strengthen your heart and sustain you through challenges."
+        },
+        {
+            "date": "2026-10-24",
+            "ref": "Hebrews 13:5",
+            "book": "Hebrews",
+            "title": "He will never leave you",
+            "summary": "Be content with what you have and trust in God's promise to never leave or forsake you.",
+            "video": true
+        },
+        {
+            "date": "2026-10-25",
+            "ref": "John 14:27",
+            "book": "John",
+            "title": "Christ's peace",
+            "summary": "Receive the peace that Jesus offers, which surpasses worldly understanding. Let go of fear and allow His peace to calm your heart.",
+            "video": true
+        },
+        {
+            "date": "2026-10-26",
+            "ref": "Psalm 138:3",
+            "book": "Psalms",
+            "title": "God gives strength",
+            "summary": "Call upon the Lord in times of need, and He will answer and strengthen you from within.",
+            "video": true
+        },
+        {
+            "date": "2026-10-27",
+            "ref": "1 Corinthians 16:13-14",
+            "book": "1 Corinthians",
+            "title": "Courage with love",
+            "summary": "Stay vigilant and steadfast in your faith. Be courageous and strong, and let love guide all your actions.",
+            "video": true
+        },
+        {
+            "date": "2026-10-28",
+            "ref": "Habakkuk 3:19",
+            "book": "Habakkuk",
+            "title": "God makes you strong",
+            "summary": "Rely on the Lord for strength and guidance. He will enable you to overcome obstacles and rise above challenges.",
+            "video": true
+        },
+        {
+            "date": "2026-10-29",
+            "ref": "Psalm 112:7",
+            "book": "Psalms",
+            "title": "A steadfast heart",
+            "summary": "Keep your heart steadfast and trust in the Lord, even when faced with troubling news.",
+            "video": true
+        },
+        {
+            "date": "2026-10-30",
+            "ref": "Romans 5:3-5",
+            "book": "Romans",
+            "title": "Suffering produces hope",
+            "summary": "Embrace challenges as opportunities for growth. Through trials, develop patience and experience, which lead to a hopeful and steadfast heart filled with God's love."
+        },
+        {
+            "date": "2026-10-31",
+            "ref": "Psalm 16:8",
+            "book": "Psalms",
+            "title": "God is always before you",
+            "summary": "Keep your focus on the Lord, and trust that His presence will provide stability and guidance in all circumstances.",
+            "video": true
+        },
+        {
+            "date": "2026-11-01",
+            "ref": "Psalm 103:1-2",
+            "book": "Psalms",
+            "title": "Remember His blessings",
+            "summary": "Remember to continually bless and thank the Lord for all His benefits and goodness in your life.",
+            "video": true
+        },
+        {
+            "date": "2026-11-02",
+            "ref": "Colossians 3:15",
+            "book": "Colossians",
+            "title": "Be thankful",
+            "summary": "Allow the peace of God to govern your heart and be grateful for His presence and blessings in your life.",
+            "video": true
+        },
+        {
+            "date": "2026-11-03",
+            "ref": "1 Thessalonians 5:16-18",
+            "book": "1 Thessalonians",
+            "title": "Rejoice, pray, give thanks",
+            "summary": "Maintain a joyful heart, stay persistent in prayer, and give thanks in all circumstances, trusting in God's will for your life.",
+            "video": true
+        },
+        {
+            "date": "2026-11-04",
+            "ref": "Psalm 107:1",
+            "book": "Psalms",
+            "title": "Give thanks for His goodness",
+            "summary": "Always give thanks to the Lord for His enduring goodness and mercy.",
+            "video": true
+        },
+        {
+            "date": "2026-11-05",
+            "ref": "Philippians 4:6-7",
+            "book": "Philippians",
+            "title": "Pray instead of worrying",
+            "summary": "Bring all your concerns to God through prayer and thanksgiving, and trust that His peace will guard your heart and mind.",
+            "video": true
+        },
+        {
+            "date": "2026-11-06",
+            "ref": "James 1:17",
+            "book": "James",
+            "title": "Every good gift",
+            "summary": "Recognize that all good things in your life come from God, who is unchanging and faithful.",
+            "video": true
+        },
+        {
+            "date": "2026-11-07",
+            "ref": "Psalm 95:1-2",
+            "book": "Psalms",
+            "title": "Come with thanksgiving",
+            "summary": "Approach the Lord with a heart full of gratitude and joy, expressing your thankfulness through song and praise.",
+            "video": true
+        },
+        {
+            "date": "2026-11-08",
+            "ref": "Colossians 3:17",
+            "book": "Colossians",
+            "title": "Give thanks in everything",
+            "summary": "In everything you do, whether in words or actions, do it in the name of Jesus and give thanks to God through Him.",
+            "video": true
+        },
+        {
+            "date": "2026-11-09",
+            "ref": "Psalm 9:1",
+            "book": "Psalms",
+            "title": "Praise wholeheartedly",
+            "summary": "Commit to praising the Lord wholeheartedly and acknowledging all His marvelous works in your life.",
+            "video": true
+        },
+        {
+            "date": "2026-11-10",
+            "ref": "Hebrews 12:28",
+            "book": "Hebrews",
+            "title": "A grateful heart",
+            "summary": "Embrace the unshakable kingdom of God with gratitude, serving Him with reverence and a heart full of thanksgiving.",
+            "video": true
+        },
+        {
+            "date": "2026-11-11",
+            "ref": "Psalm 136:1",
+            "book": "Psalms",
+            "title": "His love endures forever",
+            "summary": "God's goodness is not a passing feeling or a season that fades. His covenant mercy runs through generation after generation, carrying stories of His faithfulness far beyond the span of a single life.",
+            "video": true
+        },
+        {
+            "date": "2026-11-12",
+            "ref": "Philippians 4:11-12",
+            "book": "Philippians",
+            "title": "Learn contentment",
+            "summary": "Paul did not stumble into contentment; he learned it, in seasons of plenty and in seasons of need. It was a freedom he practiced, rooted in Christ, not a comfort that depended on everything going right.",
+            "video": true
+        },
+        {
+            "date": "2026-11-13",
+            "ref": "1 Chronicles 16:34",
+            "book": "1 Chronicles",
+            "title": "His steadfast love",
+            "summary": "Giving thanks again and again is never empty when the reason behind it stays eternally true. God is good, and His mercy never reaches an expiration date. We are not asked to pretend that life is easy.",
+            "video": true
+        },
+        {
+            "date": "2026-11-14",
+            "ref": "Psalm 92:1-2",
+            "book": "Psalms",
+            "title": "It is good to give thanks",
+            "summary": "This psalm frames each day with God's character: His lovingkindness declared in the morning and His faithfulness recalled at night. Gratitude can become the rhythm that holds all our hours together.",
+            "video": true
+        },
+        {
+            "date": "2026-11-15",
+            "ref": "Ephesians 5:20",
+            "book": "Ephesians",
+            "title": "Always giving thanks",
+            "summary": "Giving thanks always does not mean calling every event good. It means recognizing that God remains present and worthy of praise in every season, including the painful ones. This promise is not an excuse to sit still.",
+            "video": true
+        },
+        {
+            "date": "2026-11-16",
+            "ref": "Psalm 30:11-12",
+            "book": "Psalms",
+            "title": "Mourning turned to joy",
+            "summary": "Restoration does not pretend that mourning never happened. God meets us in our sorrow, loosens its grip, and gives the wounded heart a reason to move, to sing, and to testify again.",
+            "video": true
+        },
+        {
+            "date": "2026-11-17",
+            "ref": "Colossians 2:6-7",
+            "book": "Colossians",
+            "title": "Overflowing with thankfulness",
+            "summary": "We never outgrow our need for Christ. The same grace by which we first received Him becomes our soil, our foundation, our strength, and the source of a thanksgiving that overflows.",
+            "video": true
+        },
+        {
+            "date": "2026-11-18",
+            "ref": "Psalm 69:30",
+            "book": "Psalms",
+            "title": "Praise with thanksgiving",
+            "summary": "Praise magnifies God by bringing His faithful name into clearer focus. Thanksgiving draws our attention away from ourselves and toward the One who alone is worthy of worship. Life is not always easy, and we are not asked to pretend it is.",
+            "video": true
+        },
+        {
+            "date": "2026-11-19",
+            "ref": "2 Corinthians 9:8",
+            "book": "2 Corinthians",
+            "title": "Abounding in grace",
+            "summary": "God's sufficiency was never meant to be a comfort we keep to ourselves. He pours out abundant grace so that His people can be generous, prepared, and active in every good work. Seeing it this way changes more than how we feel.",
+            "video": true
+        },
+        {
+            "date": "2026-11-20",
+            "ref": "Psalm 126:3",
+            "book": "Psalms",
+            "title": "The Lord has done great things",
+            "summary": "Gladness grows when God's works are remembered together. A private memory of how He helped you can become a public testimony that restores hope in someone else. This promise is not an invitation to passivity.",
+            "video": true
+        },
+        {
+            "date": "2026-11-21",
+            "ref": "1 Timothy 6:6",
+            "book": "1 Timothy",
+            "title": "Contentment is great gain",
+            "summary": "Paul measures gain very differently from a culture of endless wanting. Godliness gives life its direction, and contentment sets us free from the constant pull of comparison.",
+            "video": true
+        },
+        {
+            "date": "2026-11-22",
+            "ref": "Psalm 145:9",
+            "book": "Psalms",
+            "title": "God is good to all",
+            "summary": "God's goodness is wide, and His mercy is tender. All of creation lives beneath His compassionate care, and that care invites us to reflect the same gentleness.",
+            "video": true
+        },
+        {
+            "date": "2026-11-23",
+            "ref": "Colossians 4:2",
+            "book": "Colossians",
+            "title": "Devoted and thankful prayer",
+            "summary": "Faithful prayer is both persistent and attentive. We keep returning to God, we watch for His activity, and we give thanks, so that our requests never harden into anxious attempts at control. We are not asked to pretend that life is easy.",
+            "video": true
+        },
+        {
+            "date": "2026-11-24",
+            "ref": "Psalm 116:12",
+            "book": "Psalms",
+            "title": "Remember what God has done",
+            "summary": "Grace is not a debt we could ever repay. Yet mercy awakens a grateful question in us: how can my life answer God's benefits with love? This perspective changes more than our emotions.",
+            "video": true
+        },
+        {
+            "date": "2026-11-25",
+            "ref": "2 Corinthians 4:15",
+            "book": "2 Corinthians",
+            "title": "Grace produces thanksgiving",
+            "summary": "Grace rarely stops with one person. As God's help reaches more lives, gratitude spreads through the community and rises beyond the gift itself to the glory of the Giver. This promise does not excuse passivity.",
+            "video": true
+        },
+        {
+            "date": "2026-11-26",
+            "ref": "Psalm 100:4",
+            "book": "Psalms",
+            "title": "Enter with thanksgiving",
+            "summary": "Worship begins with the posture we carry across the threshold. Thanksgiving remembers God's gifts, while praise turns from those gifts to bless the gracious name of the Giver Himself.",
+            "video": true
+        },
+        {
+            "date": "2026-11-27",
+            "ref": "Philippians 4:19",
+            "book": "Philippians",
+            "title": "God supplies every need",
+            "summary": "Paul's promise grew out of a community marked by sacrificial generosity. God's supply is not a guarantee of every desire; it is confidence that His riches in Christ are enough for every faithful need.",
+            "video": true
+        },
+        {
+            "date": "2026-11-28",
+            "ref": "Psalm 23:6",
+            "book": "Psalms",
+            "title": "Goodness and mercy follow",
+            "summary": "David does not promise a painless road. He trusts that God's covenant goodness and mercy actively pursue him through every valley and will finally lead him home. We are not invited to pretend that life is easy.",
+            "video": true
+        },
+        {
+            "date": "2026-11-29",
+            "ref": "1 Corinthians 1:4",
+            "book": "1 Corinthians",
+            "title": "Thankful for God's grace",
+            "summary": "Paul gave thanks for God's grace in a community that was far from perfect. Gratitude trains our eyes to notice what Christ is forming in people before frustration reduces them to their weaknesses.",
+            "video": true
+        },
+        {
+            "date": "2026-11-30",
+            "ref": "Psalm 40:5",
+            "book": "Psalms",
+            "title": "His wonders are many",
+            "summary": "God's works exceed our ability to catalogue them, and His caring thoughts toward His people are more attentive than we could ever measure. This promise is not an excuse for passivity.",
+            "video": true
+        },
+        {
+            "date": "2026-12-01",
+            "ref": "Isaiah 9:2",
+            "book": "Isaiah",
+            "title": "Light in the darkness",
+            "summary": "Isaiah speaks hope to people who have known deep darkness. God's light is not a reward for pretending that all is well; it is His gracious answer to a world that needs rescue.",
+            "video": true
+        },
+        {
+            "date": "2026-12-02",
+            "ref": "Isaiah 9:6",
+            "book": "Isaiah",
+            "title": "The promised Savior",
+            "summary": "The promised child carries names no ordinary ruler could ever live up to. Jesus brings wise counsel, divine strength, enduring care, and true peace.",
+            "video": true
+        },
+        {
+            "date": "2026-12-03",
+            "ref": "Micah 5:2",
+            "book": "Micah",
+            "title": "God's promised King",
+            "summary": "Bethlehem seemed small among the towns of Judah, yet God chose it as the birthplace of the promised ruler. His purposes are never limited by impressive places or human status.",
+            "video": true
+        },
+        {
+            "date": "2026-12-04",
+            "ref": "Isaiah 7:14",
+            "book": "Isaiah",
+            "title": "Immanuel - God with us",
+            "summary": "The sign of Immanuel points to God's presence with His people, and Christians see its fulfillment in Jesus, whose coming makes divine love tangible. We need more than distant reassurance; we need the God who draws near.",
+            "video": true
+        },
+        {
+            "date": "2026-12-05",
+            "ref": "Luke 1:37",
+            "book": "Luke",
+            "title": "Nothing is impossible with God",
+            "summary": "The angel meets Mary's question with confidence in God's power. This is not a promise that every wish will come true. It means God is able to accomplish what He has spoken, even when human resources cannot explain the way.",
+            "video": true
+        },
+        {
+            "date": "2026-12-06",
+            "ref": "Luke 1:38",
+            "book": "Luke",
+            "title": "Surrender to God's will",
+            "summary": "Mary's yes was an act of willing trust, not proof that she understood every detail. She placed herself at God's service while the road ahead remained costly and unknown.",
+            "video": true
+        },
+        {
+            "date": "2026-12-07",
+            "ref": "Luke 1:45",
+            "book": "Luke",
+            "title": "Believe God's promises",
+            "summary": "Elizabeth honors Mary's trust in the Lord's message. Biblical faith is more than optimism about the future we prefer; it rests on what God has actually said. His faithfulness gives us reason to wait, to obey, and to hope.",
+            "video": true
+        },
+        {
+            "date": "2026-12-08",
+            "ref": "Luke 1:46-47",
+            "book": "Luke",
+            "title": "Rejoice in God",
+            "summary": "Mary's song turns attention toward God her Savior. To magnify the Lord is not to make Him greater than He is, but to see His greatness more clearly.",
+            "video": true
+        },
+        {
+            "date": "2026-12-09",
+            "ref": "Luke 1:49",
+            "book": "Luke",
+            "title": "The Mighty One has done great things",
+            "summary": "Mary remembers the Mighty One's work and responds with reverence for His holy name. Gratitude grows deeper when it honors both what God gives and who He is.",
+            "video": true
+        },
+        {
+            "date": "2026-12-10",
+            "ref": "Luke 1:50",
+            "book": "Luke",
+            "title": "His mercy continues",
+            "summary": "Mary celebrates a mercy that reaches from generation to generation. Reverence is not panic before a distant God; it is humble honor for the One who is holy and faithful.",
+            "video": true
+        },
+        {
+            "date": "2026-12-11",
+            "ref": "Luke 1:78-79",
+            "book": "Luke",
+            "title": "Light and peace",
+            "summary": "Zechariah describes God's salvation as a sunrise of tender mercy. Its light reaches people shadowed by death and guides their feet into the way of peace.",
+            "video": true
+        },
+        {
+            "date": "2026-12-12",
+            "ref": "Matthew 1:21",
+            "book": "Matthew",
+            "title": "Jesus saves",
+            "summary": "The name Jesus announces His mission: He will save His people from their sins. Our deepest need is not simply better circumstances, but forgiveness and a changed heart.",
+            "video": true
+        },
+        {
+            "date": "2026-12-13",
+            "ref": "Matthew 1:23",
+            "book": "Matthew",
+            "title": "God is with us",
+            "summary": "Matthew presents Jesus as Immanuel, God with us. The promise is not that we will never feel lonely or face loss.",
+            "video": true
+        },
+        {
+            "date": "2026-12-14",
+            "ref": "John 1:4-5",
+            "book": "John",
+            "title": "Light conquers darkness",
+            "summary": "John identifies the Word as the source of life and light, and darkness cannot extinguish the life that comes from Christ. This does not make evil harmless, but it gives our hope a firm foundation.",
+            "video": true
+        },
+        {
+            "date": "2026-12-15",
+            "ref": "John 1:9",
+            "book": "John",
+            "title": "The true Light",
+            "summary": "John points beyond every human witness to the true Light, Jesus Christ. We are not asked to become our own source of truth and life; we are invited to receive His light and let it reveal what is real.",
+            "video": true
+        },
+        {
+            "date": "2026-12-16",
+            "ref": "John 1:14",
+            "book": "John",
+            "title": "The Word became flesh",
+            "summary": "The eternal Word did not remain distant from human life. In Jesus, God came among us in real flesh, revealing His glory through grace and truth.",
+            "video": true
+        },
+        {
+            "date": "2026-12-17",
+            "ref": "Luke 2:10",
+            "book": "Luke",
+            "title": "Good news of great joy",
+            "summary": "The angel spoke to shepherds whose ordinary night was interrupted by fear. God's first message was not that they must become important enough to approach Him, but that good news had arrived.",
+            "video": true
+        },
+        {
+            "date": "2026-12-18",
+            "ref": "Luke 2:11",
+            "book": "Luke",
+            "title": "A Savior is born",
+            "summary": "The angel names the child as Savior, Christ, and Lord. Jesus is not simply a comforting symbol of the season; He is God's promised Messiah, who rescues and reigns. His birth calls for more than festive admiration.",
+            "video": true
+        },
+        {
+            "date": "2026-12-19",
+            "ref": "Luke 2:13-14",
+            "book": "Luke",
+            "title": "Glory to God",
+            "summary": "Heaven's praise turns our attention first to God's glory. The peace announced at Jesus' birth is rooted in God's saving work, not in a promise that every disagreement will disappear.",
+            "video": true
+        },
+        {
+            "date": "2026-12-20",
+            "ref": "Matthew 2:10",
+            "book": "Matthew",
+            "title": "Rejoice exceedingly",
+            "summary": "The wise men rejoiced when the star guided them toward Jesus. Their joy was not merely delight in a sign; it was part of a journey of seeking the King. We do not need to manufacture constant excitement in order to have faith.",
+            "video": true
+        },
+        {
+            "date": "2026-12-21",
+            "ref": "Matthew 2:11",
+            "book": "Matthew",
+            "title": "Worship the King",
+            "summary": "The wise men bowed before the child before presenting their treasures, and their gifts expressed the worship already rising in their hearts. Jesus deserves more than whatever attention is left over after our plans are finished.",
+            "video": true
+        },
+        {
+            "date": "2026-12-22",
+            "ref": "Galatians 4:4-5",
+            "book": "Galatians",
+            "title": "God sent His Son",
+            "summary": "Paul describes God's purposeful timing: the Son came to redeem those under the law so that they could receive adoption. Our welcome with God is not a prize earned by flawless performance; it rests on what Christ has done.",
+            "video": true
+        },
+        {
+            "date": "2026-12-23",
+            "ref": "2 Corinthians 9:15",
+            "book": "2 Corinthians",
+            "title": "God's indescribable gift",
+            "summary": "Paul's thanksgiving rises in the middle of a passage about generous giving. Beneath every act of Christian generosity stands God's gift, greater than our words can contain.",
+            "video": true
+        },
+        {
+            "date": "2026-12-24",
+            "ref": "Luke 2:6-7",
+            "book": "Luke",
+            "title": "The birth of Jesus",
+            "summary": "Luke tells of Jesus' birth with ordinary human details: a mother, swaddling clothes, and a manger. God's Son entered the world without the comfort or recognition we might expect.",
+            "video": true
+        },
+        {
+            "date": "2026-12-25",
+            "ref": "Luke 2:11-12",
+            "book": "Luke",
+            "title": "Christ is born",
+            "summary": "The shepherds received both wonderful news and a humble sign: their Savior would be found as a baby lying in a manger. God's greatness came close enough to be encountered, not merely imagined.",
+            "video": true
+        },
+        {
+            "date": "2026-12-26",
+            "ref": "John 3:16",
+            "book": "John",
+            "title": "God's greatest gift",
+            "summary": "God's love is revealed in His giving of the Son. This verse invites us beyond admiration into belief: entrusting ourselves to Jesus and receiving the eternal life He offers, a life we could never buy or deserve.",
+            "video": true
+        },
+        {
+            "date": "2026-12-27",
+            "ref": "Titus 3:4-5",
+            "book": "Titus",
+            "title": "God's kindness and mercy",
+            "summary": "Paul places our hope in God's mercy, not in a record of righteous achievements. Salvation comes through His kindness and the renewing work of the Holy Spirit.",
+            "video": true
+        },
+        {
+            "date": "2026-12-28",
+            "ref": "Psalm 90:12",
+            "book": "Psalms",
+            "title": "Number our days wisely",
+            "summary": "Psalm 90 faces the shortness of human life in the presence of the eternal God. Numbering our days is not an invitation to panic or to cram more into every hour.",
+            "video": true
+        },
+        {
+            "date": "2026-12-29",
+            "ref": "Isaiah 43:18-19",
+            "book": "Isaiah",
+            "title": "God is doing something new",
+            "summary": "God spoke hope to His people by promising a way through the wilderness and water in dry places. They were not to limit His saving work to what they had already known.",
+            "video": true
+        },
+        {
+            "date": "2026-12-30",
+            "ref": "Psalm 65:11",
+            "book": "Psalms",
+            "title": "God crowns the year with goodness",
+            "summary": "Psalm 65 praises God for sustaining the earth and blessing its harvest, and its picture of abundance invites grateful attention to His care. Looking back honestly does not mean calling every painful event good.",
+            "video": true
+        },
+        {
+            "date": "2026-12-31",
+            "ref": "Philippians 3:13-14",
+            "book": "Philippians",
+            "title": "Leave the past and press forward",
+            "summary": "Paul does not claim that he has already arrived. He presses forward because Christ has taken hold of him.",
+            "video": true
+        }
+    ]
+}

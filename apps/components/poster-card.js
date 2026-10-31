@@ -252,6 +252,22 @@ const STYLES = /* css */ `
   }
   /* Out of the way while the page turns. */
   .wrap.turning .dog-ear { opacity: 0; transition-duration: .1s; }
+  /* Fetching the other side before the turn: after a moment (so a side
+     already loaded shows nothing), the poster dims under a turning ring. */
+  .wrap.loading .face { opacity: .8; transition: opacity .2s ease .2s; }
+  .wrap.loading .toggle::after {
+    content: "";
+    position: absolute; top: 50%; left: 50%; z-index: 5;
+    width: 44px; height: 44px; margin: -22px 0 0 -22px;
+    border: 4px solid rgb(255 255 255 / 70%);
+    border-top-color: rgb(214 170 40);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 30%);
+    opacity: 0;
+    animation: poster-spin .8s linear infinite, poster-wait 0s linear .2s forwards;
+  }
+  @keyframes poster-spin { to { transform: rotate(360deg); } }
+  @keyframes poster-wait { to { opacity: 1; } }
   @keyframes ear-lift {
     0%, 62%, 100% { width: var(--ear); height: var(--ear); }
     74% { width: calc(var(--ear) * 1.6); height: calc(var(--ear) * 1.6); }
@@ -271,6 +287,7 @@ const STYLES = /* css */ `
     .audio svg,
     .share svg { transition: none; }
     .dog-ear { animation: none; }
+    .wrap.loading .toggle::after { animation: poster-wait 0s linear .2s forwards; }
     .copy-note { animation-name: copy-note-fade; }
     @keyframes copy-note-fade { 0%, 78% { opacity: 1; } 100% { opacity: 0; } }
   }
@@ -802,7 +819,7 @@ export class PosterCard extends HTMLElement {
         this.#shareFiles.clear();
         this.#flipId++;
         this.#face.getAnimations().forEach((animation) => animation.cancel());
-        this.#wrap.classList.remove("turning");
+        this.#wrap.classList.remove("turning", "loading");
         this.#comic = false;
         this.#poster.src = `${this.#posterPath}.webp`;
         this.#video.classList.remove("playing");
@@ -869,8 +886,9 @@ export class PosterCard extends HTMLElement {
     }
 
     /**
-     * Turn the poster like a page: it swings edge-on, the image swaps while it is
-     * invisible, then the other side swings back in.
+     * Turn the poster like a page: once the other side has loaded (a ring
+     * shows if that takes a moment), it swings edge-on, the image swaps while
+     * it is invisible, then the other side swings back in.
      */
     async toggle() {
         this.#comic = !this.#comic;
@@ -882,16 +900,25 @@ export class PosterCard extends HTMLElement {
         const flipId = ++this.#flipId;
         const nextSrc = `${this.#posterPath}${this.#comic ? " - Comic" : ""}.webp`;
         const face = this.#face;
-        // Start loading now so the swap does not show a half-loaded image.
+        // Start loading now so the swap does not show a half-loaded image. With
+        // CORS, as the card's own <img> asks for it: the host answers with
+        // Vary: Origin, so a plain request would be cached apart and the
+        // <img> would fetch the other side all over again at the swap.
         const preload = new Image();
+        preload.crossOrigin = "anonymous";
         preload.src = nextSrc;
-        const ready = preload.decode().catch(() => {});
+        // The turn waits for the other side, so it plays through in one go
+        // instead of stopping edge-on, blank, while the image downloads.
+        this.#wrap.classList.add("loading");
+        await preload.decode().catch(() => {});
+        // A newer toggle, or a new day, owns the card now.
+        if (flipId !== this.#flipId) {
+            return;
+        }
+        this.#wrap.classList.remove("loading");
 
         if (this.#reducedMotion.matches || !face.animate) {
-            await ready;
-            if (flipId === this.#flipId) {
-                this.#showSide(nextSrc);
-            }
+            this.#showSide(nextSrc);
             return;
         }
 
@@ -905,13 +932,19 @@ export class PosterCard extends HTMLElement {
             ],
             { duration: 240, easing: "ease-in", fill: "forwards" },
         );
-        await Promise.all([out.finished.catch(() => {}), ready]);
+        await out.finished.catch(() => {});
         // A newer toggle owns the image now; it has already cancelled this flip.
         if (flipId !== this.#flipId) {
             return;
         }
 
         this.#showSide(nextSrc);
+        // Stay edge-on until the new side is ready to draw, or the old one
+        // would swing back into view and only then change.
+        await this.#poster.decode().catch(() => {});
+        if (flipId !== this.#flipId) {
+            return;
+        }
         const back = face.animate(
             [
                 { transform: turn(90), opacity: 0.55 },

@@ -1,0 +1,662 @@
+/* The Grace Library (library.html), on top of study-page.css: the views of
+   past days as poster tiles, This week's catch-up row, the books shelf, and
+   the sheet a day opens in. */
+
+#lib-content > * + *,
+.lib-week {
+    margin-top: 18px;
+}
+.lib-note {
+    color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- tabs */
+
+.lib-tabs {
+    display: inline-flex;
+    gap: 4px;
+    margin-top: 4px;
+    padding: 4px;
+    border: 1px solid rgb(225 182 93 / 45%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 6%);
+}
+.lib-tabs button {
+    padding: 8px 18px;
+    border: 0;
+    border-radius: 999px;
+    font: 600 0.95rem/1.2 var(--body);
+    color: var(--cream);
+    background: none;
+    cursor: pointer;
+}
+.lib-tabs button:hover {
+    background: rgb(255 255 255 / 12%);
+}
+.lib-tabs button[aria-selected="true"] {
+    background: var(--gold-light);
+    color: var(--navy);
+}
+
+/* ---------------------------------------------------------------- this week */
+
+.lib-week {
+    padding: 16px 20px;
+}
+.lib-week-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 16px;
+    margin-bottom: 12px;
+}
+.lib-week-head h2 {
+    font: 400 1.5rem/1.1 var(--display);
+    color: var(--navy);
+}
+.lib-week-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+.lib-week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: 520px;
+}
+.lib-week-day > * {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    max-width: 56px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 50%;
+    font: 700 1rem/1 var(--body);
+    text-decoration: none;
+    color: var(--navy);
+    border: 2px solid var(--gold);
+    background: #fffdf8;
+}
+.lib-week-day a:hover {
+    background: #fff3d9;
+}
+.lib-week-day.is-done > * {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--gold-light);
+}
+.lib-week-day.is-today > * {
+    box-shadow: 0 0 0 3px rgb(198 146 46 / 35%);
+}
+.lib-week-day.is-later > *,
+.lib-week-day.is-none > * {
+    border-style: dashed;
+    border-color: rgb(91 104 120 / 40%);
+    color: rgb(91 104 120 / 60%);
+    background: none;
+}
+.lib-week-day i {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font: 700 0.7rem/1 var(--body);
+    font-style: normal;
+    color: var(--navy);
+    background: var(--gold-light);
+}
+.lib-week-day i:empty {
+    display: none;
+}
+
+/* ---------------------------------------------------------------- months */
+
+.lib-month-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 14px;
+    margin-bottom: 14px;
+}
+.lib-month-head h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font: 400 1.65rem/1.1 var(--display);
+    color: var(--navy);
+}
+.lib-month-theme {
+    flex: 1 1 auto;
+    margin: 0;
+    color: #7a5a1c;
+    font-weight: 600;
+}
+.lib-month-count {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+.lib-weekdays {
+    display: none;
+}
+
+/* ---------------------------------------------------------------- tiles */
+
+.lib-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 10px;
+}
+/* Phones put the newest day first; the calendar below keeps the dates' order. */
+.lib-calendar > .lib-tile {
+    order: var(--o, 0);
+}
+@media (min-width: 560px) {
+    .lib-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+@media (min-width: 760px) {
+    .lib-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+/* Wide screens: each month as a calendar, Sunday to Saturday. */
+@media (min-width: 900px) {
+    .lib-grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+    .lib-calendar > .lib-tile {
+        order: 0;
+    }
+    .lib-calendar > .lib-tile:first-child {
+        grid-column-start: var(--first, 1);
+    }
+    .lib-weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 6px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+}
+
+/* A folded month: its three newest days, newest first on every screen, and
+   the pull tab under them (library.js). The folded tiles load nothing. */
+.lib-month.is-collapsed .lib-calendar > .lib-tile:not(:nth-last-child(-n + 3)) {
+    display: none;
+}
+.lib-month.is-collapsed .lib-weekdays {
+    display: none;
+}
+.lib-month.is-collapsed .lib-calendar > .lib-tile {
+    order: var(--o, 0);
+    grid-column-start: auto;
+}
+.lib-month .pull-tab {
+    --pull-tab-ink: var(--navy);
+    --pull-tab-lead: var(--gold);
+    margin: 10px auto -8px;
+}
+/* An opened month: the same chevrons, turned up, fold it again. A button,
+   not a pull: a tap, and the page scrolls under the finger as usual. */
+.lib-month .lib-fold {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+.lib-fold svg {
+    rotate: 180deg;
+}
+
+.lib-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    color: var(--ink);
+    text-decoration: none;
+}
+.lib-thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 240 / 427;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(160deg, var(--navy), var(--navy-2));
+    box-shadow: 0 4px 12px rgb(16 37 59 / 18%);
+    margin-bottom: 6px;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.lib-tile:hover .lib-thumb {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgb(16 37 59 / 26%);
+}
+.lib-tile:focus-visible {
+    outline: none;
+}
+.lib-tile:focus-visible .lib-thumb {
+    outline: 3px solid var(--gold-light);
+    outline-offset: 2px;
+}
+.lib-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* No thumbnail: the day's title on navy, like the poster's own colours. */
+.lib-thumb-text {
+    display: none;
+}
+.lib-tile.no-thumb .lib-thumb img {
+    display: none;
+}
+.lib-tile.no-thumb .lib-thumb-text {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    text-align: center;
+    font: 400 clamp(0.95rem, 0.8rem + 0.6vw, 1.25rem) / 1.15 var(--display);
+    color: var(--gold-light);
+}
+.lib-badges {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: flex;
+    gap: 4px;
+}
+.lib-badge {
+    display: grid;
+    place-items: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 999px;
+    font: 700 0.72rem/1 var(--body);
+    color: var(--navy);
+    background: var(--gold-light);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+}
+.lib-badge.is-today {
+    color: #fff;
+    background: var(--navy);
+    border: 1px solid var(--gold-light);
+}
+.lib-date {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #7a5a1c;
+}
+.lib-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.lib-ref {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- books */
+
+.lib-shelf h2 {
+    font: 400 1.5rem/1.1 var(--display);
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+.lib-books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.lib-book {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 52px;
+    padding: 6px 10px 6px 6px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: var(--navy);
+    background: #fffdf8;
+    text-decoration: none;
+    font-weight: 700;
+}
+a.lib-book:hover {
+    border-color: var(--gold);
+    background: #fff3d9;
+}
+.lib-book-name {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.15;
+}
+.lib-book .chip-count {
+    background: var(--gold-light);
+    color: var(--navy);
+}
+.lib-book.is-empty {
+    opacity: 0.45;
+    font-weight: 400;
+}
+.lib-book.is-empty .chip-count {
+    background: rgb(0 0 0 / 8%);
+}
+.lib-book-symbol {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+.lib-back {
+    flex-basis: 100%;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------- my days */
+
+.lib-mine h2,
+.lib-empty h2 {
+    font: 400 1.5rem/1.1 var(--display);
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+.lib-answers {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.lib-answers a {
+    display: grid;
+    gap: 4px;
+    padding: 12px 14px;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    background: #fffdf8;
+    color: var(--ink);
+    text-decoration: none;
+}
+.lib-answers a:hover {
+    background: #fff3d9;
+}
+.lib-answer-when {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #7a5a1c;
+}
+.lib-answer-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.lib-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--gold-light);
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgb(16 37 59 / 18%);
+}
+.lib-button:hover {
+    background: #f0c66c;
+}
+.lib-icon {
+    display: inline-grid;
+}
+.lib-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ---------------------------------------------------------------- the day sheet */
+
+html.day-sheet-open {
+    overflow: hidden;
+}
+.day-sheet {
+    width: min(720px, 100%);
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    color: var(--ink);
+    background: linear-gradient(160deg, #f7eddb, #eee0c7);
+}
+.day-sheet::backdrop {
+    background: rgb(0 27 52 / 72%);
+}
+.day-sheet[open] {
+    animation: day-in 0.25s ease-out;
+}
+@keyframes day-in {
+    from {
+        transform: translateY(24px);
+        opacity: 0;
+    }
+}
+@media (min-width: 760px) {
+    .day-sheet {
+        height: calc(100% - 32px);
+        max-height: calc(100% - 32px);
+        margin-top: 16px;
+        border-radius: 18px;
+        box-shadow: 0 20px 60px rgb(0 0 0 / 40%);
+    }
+}
+.day-frame {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.day-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    color: var(--cream);
+    background: var(--navy);
+    border-bottom: 1px solid rgb(217 168 79 / 35%);
+}
+.day-when {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+.day-close,
+.day-share {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    color: var(--gold-light);
+    background: none;
+    font: 400 2rem/1 var(--body);
+    cursor: pointer;
+}
+.day-close:hover,
+.day-share:hover {
+    background: rgb(255 255 255 / 10%);
+}
+.day-share svg {
+    width: 22px;
+    height: 22px;
+}
+.day-body {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 16px 16px 28px;
+    touch-action: pan-y;
+}
+.day-body > * {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.day-body poster-card {
+    display: block;
+    max-width: 420px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgb(16 37 59 / 22%);
+}
+.day-body .eyebrow {
+    margin-top: 20px;
+    color: #7a5a1c;
+}
+.day-body h2 {
+    font: 400 clamp(1.8rem, 1.4rem + 2vw, 2.4rem) / 1.05 var(--display);
+    color: var(--navy);
+    margin-bottom: 14px;
+}
+.day-body h2:focus {
+    outline: none;
+}
+.day-verse {
+    margin: 0 auto 18px;
+    padding: 16px 18px;
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+}
+.day-verse blockquote {
+    margin: 0 0 8px;
+    font-size: 1.12rem;
+    line-height: 1.45;
+}
+.day-verse figcaption {
+    text-align: right;
+    font-weight: 700;
+    --scripture-ref-color: #7a5a1c;
+}
+.day-block {
+    margin-bottom: 18px;
+}
+.day-block h3 {
+    margin-bottom: 6px;
+    font: 400 1.3rem/1.1 var(--display);
+    color: var(--navy);
+}
+.day-block p {
+    line-height: 1.5;
+}
+.day-answer > p:first-of-type {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #fffdf8;
+    border-left: 4px solid var(--navy);
+    white-space: pre-line;
+}
+.day-question-small {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+.day-prayer p {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: rgb(0 27 52 / 6%);
+}
+.day-body daily-moment {
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+.day-flipbook {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+.day-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+}
+.day-step {
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--navy);
+    text-decoration: none;
+}
+a.day-step:hover {
+    background: #fff3d9;
+}
+.day-step.is-end {
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------------------- toast */
+
+.lib-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    z-index: 2000;
+    transform: translateX(-50%);
+    max-width: calc(100% - 32px);
+    margin: 0;
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--navy);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 30%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lib-thumb,
+    .day-sheet[open] {
+        transition: none;
+        animation: none;
+    }
+    .lib-tile:hover .lib-thumb {
+        transform: none;
+    }
+}

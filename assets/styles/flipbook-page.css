@@ -127,6 +127,16 @@ button:disabled {
     background: transparent;
     color: #f0c66c;
 }
+#library {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 42px;
+    color: var(--gold);
+}
+#library:hover {
+    color: #f0c66c;
+}
 
 /* Wire binding: remote first, local copy as fallback. Root-relative so the
    URL resolves the same way wherever it is used. */

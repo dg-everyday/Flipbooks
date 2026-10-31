@@ -398,6 +398,22 @@ button:focus-visible {
     align-items: stretch;
 }
 
+/* Under the banner while it shows an earlier day: the way to every older day. */
+.library-link {
+    justify-self: center;
+    padding: 9px 18px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    color: var(--navy);
+    background: #fff8ea;
+    font: 600 1.05rem/1.2 "Strait", Arial, sans-serif;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+.library-link:hover {
+    background: #fff0cf;
+}
+
 .card {
     position: relative;
     padding: 34px;

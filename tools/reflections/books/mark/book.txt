@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Mark
+1-3 | The Beginning of the Gospel
+4-8 | What Manner of Man Is This
+9-13 | The Son of Man Came to Minister
+14-16 | He Is Risen; He Is Not Here

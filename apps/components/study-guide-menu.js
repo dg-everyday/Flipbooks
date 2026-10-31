@@ -1073,6 +1073,12 @@ const HELP_HTML = /* html */ `
                 </span>
                 <p><strong>Understand a verse.</strong> Tap the folded corner of a verse to read its explanation. The words of Jesus are printed in red. Under the explanation, the Interlinear shows the verse word by word in the Hebrew or Greek it was written in, with each word in English; tap a word to read about it in Strong's dictionary.</p>
             </li>
+            <li>
+                <span class="help-icon">
+                    <img src="${asset(ICONS + "grace-library.svg")}" alt="" width="26" height="26" loading="lazy" />
+                </span>
+                <p><strong>Daily Grace on this verse.</strong> When a verse you find was the verse of a Daily Grace day, a gold strip under it shows that day's poster, date and title. Tap it to open the day in the Grace Library, with its narration, reflection, prayer and Moment. Close the day, or go back, to return to your search at the same verse.</p>
+            </li>
         </ul>
 
         <h3>The menu</h3>

@@ -26,6 +26,12 @@
  * the text; the BSB is there to help read it, and is always labelled. The few
  * verses the BSB leaves out lose their pill once their chapter loads.
  *
+ * A verse that began a Daily Grace day gets a strip under it: the day's
+ * poster, date and title, a link to that day in the Grace Library
+ * (apps/pages/library.html). Only days in the Library show, from its first day
+ * up to today; its index (assets/scripts/library-index.js) is fetched with the
+ * first results, never before.
+ *
  * Holding a verse card for half a second bookmarks it: a gold glow spreads
  * from the finger and the card takes a ribbon. Holding it again removes the
  * bookmark. Up to 100 verse docids are kept in localStorage, newest first, and
@@ -76,7 +82,10 @@
  *                   so the page can lock its own scrolling.
  *
  * Methods      reset(), loading(message), showMessage(message), showVerses(rows),
- *              showKeywordResults(rows, words), showBookmarks(rows)
+ *              showKeywordResults(rows, words), showBookmarks(rows),
+ *              revealVerse(place)  bring the verse at place ("Psalms|23|1")
+ *                into view, drawing batches up to it; resolves to whether
+ *                it was found
  * Properties   busy (read-only)
  *              bookmarks (read-only): the bookmarked verse docids, newest first
  * Events       bookmarkchange  a hold added or removed a bookmark,
@@ -100,7 +109,7 @@ import {
     keepBookmarks,
     noteBox,
 } from "./card-bookmarks.js?v=20261030-1";
-import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261024-1";
+import { PILL_STYLES, linkScripture, parseReference } from "./scripture-refs.js?v=20261024-1";
 import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
@@ -127,6 +136,11 @@ const DEFAULT_RED_LETTER_SRC = new URL(
     "../../assets/red-letter.json",
     import.meta.url,
 ).href;
+
+// The Grace Library: its index, loaded with the first results, and its page,
+// where a verse's Daily Grace day opens. Keep the token as the Library's own.
+const LIBRARY_MODULE = "../../assets/scripts/library-index.js?v=20261031-1";
+const LIBRARY_PAGE = new URL("../pages/library.html", import.meta.url).href;
 
 const BOOKMARKS_KEY = "dailygrace:bookmarks";
 const BOOKMARK_LIMIT = 100;
@@ -312,6 +326,41 @@ const STYLES = /* css */ `
     margin: 0; padding: 12px 18px 0;
     border-left: 1px solid rgb(128 91 24 / 35%);
   }
+  /* The Daily Grace days that used this verse, under its text, clear of the
+     dog-eared corner. */
+  .daily-grace {
+    grid-column: 2;
+    display: grid; gap: 6px;
+    margin: 0; padding: 10px 30px 0 18px;
+    border-left: 1px solid rgb(128 91 24 / 35%);
+  }
+  .daily-grace-day {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 10px 6px 6px;
+    border: 1px solid rgb(198 146 46 / 55%);
+    border-radius: 10px;
+    background: #fff8ea;
+    color: var(--search-navy);
+    text-decoration: none;
+  }
+  .daily-grace-day:hover { background: #fff0cf; }
+  .daily-grace-day:focus-visible { outline: 2px solid var(--search-navy); outline-offset: 2px; }
+  .daily-grace-thumb {
+    flex: none;
+    width: 36px; height: 64px;
+    border-radius: 4px;
+    object-fit: cover;
+    background: var(--search-navy);
+  }
+  .daily-grace-words { flex: 1; min-width: 0; display: grid; gap: 2px; }
+  .daily-grace-when {
+    color: #7a5a1c;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    font: 700 .6875rem/1.2 'Roboto', Arial, sans-serif;
+  }
+  .daily-grace-title { font: 600 1.0625rem/1.2 'Strait', 'Roboto', sans-serif; }
+  .daily-grace-go { font: 400 1.5rem/1 'Roboto', Arial, sans-serif; color: #c6922e; }
   .bsb-toggle { position: relative; padding-right: 3px; cursor: pointer; }
   /* A bigger tap target than the pill shows. */
   .bsb-toggle::after { content: ''; position: absolute; inset: -9px -8px; }
@@ -650,6 +699,7 @@ ${STRONGS_ENTRY_STYLES}
     :host { --reference-width: 5.25rem; }
     .book-symbol { width: 52px; height: 52px; }
     .book-details, .verse-text, .bsb, .verse-card bookmark-note-box { padding-inline: 12px; }
+    .daily-grace { padding-inline: 12px 30px; }
     .book-hebrew { font-size: 1.125rem; }
     .chapter-number { font-size: .8125rem; }
     .verse-number { font-size: 1.875rem; }
@@ -784,6 +834,42 @@ function highlightedText(text, pattern) {
     return parts;
 }
 
+// The Daily Grace days by the verse they start on, "Psalms|23|1" → [days],
+// shared by every instance. Only days in the Grace Library: complete, from
+// its first day up to today. Fetched once, with the first results; when the
+// index cannot load there are simply none, and the next search tries again.
+let dailyGraceDays = null;
+
+function loadDailyGraceDays() {
+    if (!dailyGraceDays) {
+        dailyGraceDays = import(LIBRARY_MODULE)
+            .then(async ({ loadLibrary, thumbUrl }) => {
+                const { days } = await loadLibrary();
+                const byVerse = new Map();
+                for (const day of days) {
+                    const place = parseReference(day.ref);
+                    if (!place) {
+                        continue;
+                    }
+                    for (const [chapter, verse] of place.ranges) {
+                        const key = `${place.book}|${chapter}|${verse}`;
+                        if (!byVerse.has(key)) {
+                            byVerse.set(key, []);
+                        }
+                        byVerse.get(key).push({ ...day, thumb: thumbUrl(day.date) });
+                    }
+                }
+                return byVerse;
+            })
+            .catch((error) => {
+                console.warn("The Daily Grace days could not be loaded:", error);
+                dailyGraceDays = null;
+                return new Map();
+            });
+    }
+    return dailyGraceDays;
+}
+
 // Red-letter ranges are shared by every instance: one fetch per file. A file
 // that fails to load resolves to no ranges, so verses still show, in black.
 const redLetterCache = new Map();
@@ -915,6 +1001,10 @@ export class BibleSearchResults extends HTMLElement {
     #status;
     #generation = 0;
     #observer = null;
+    // The rows on show, once drawn: resolves true, or false if replaced first.
+    #rendering = Promise.resolve(false);
+    // Draws batches until the verse at a place is on the list (revealVerse).
+    #drawUntil = null;
     #explanation;
     #explanationRequest = 0;
     #explanationClosing = false;
@@ -1095,6 +1185,7 @@ export class BibleSearchResults extends HTMLElement {
     /** Clear the panel and hide it. Also cancels any pending overview lookups. */
     reset() {
         this.#generation++;
+        this.#drawUntil = null;
         this.#explanationRequest++;
         this.#cancelHold();
         if (this.#explanation.open) {
@@ -1167,18 +1258,40 @@ export class BibleSearchResults extends HTMLElement {
     }
 
     /** view: { words } for keyword results, { bookmarks: true } for bookmarks. */
-    async #showRows(rows, view = {}) {
+    #showRows(rows, view = {}) {
         const generation = ++this.#generation;
         this.#observer?.disconnect();
         this.#observer = null;
-        // Normally already here: the file is requested when the panel connects.
-        const redLetters = await loadRedLetters(this.#redLetterSrc);
-        if (generation !== this.#generation) {
-            return;
+        this.#drawUntil = null;
+        this.#rendering = (async () => {
+            // Normally already here: the file is requested when the panel connects.
+            const redLetters = await loadRedLetters(this.#redLetterSrc);
+            if (generation !== this.#generation) {
+                return false;
+            }
+            this.#content.removeAttribute("aria-busy");
+            this.hidden = false;
+            this.#renderVerses(rows, generation, view, redLetters);
+            return true;
+        })();
+    }
+
+    /**
+     * Brings the verse at place ("Psalms|23|1", a card's data-place) into view
+     * in the results on show, drawing batches up to it: how the page returns a
+     * reader to the verse they left from. Resolves to whether it was found.
+     */
+    async revealVerse(place) {
+        const generation = this.#generation;
+        if (!(await this.#rendering) || generation !== this.#generation) {
+            return false;
         }
-        this.#content.removeAttribute("aria-busy");
-        this.hidden = false;
-        this.#renderVerses(rows, generation, view, redLetters);
+        const card = this.#drawUntil?.(place);
+        if (!card) {
+            return false;
+        }
+        card.scrollIntoView({ block: "center", behavior: "instant" });
+        return true;
     }
 
     #startHold(event) {
@@ -1189,7 +1302,7 @@ export class BibleSearchResults extends HTMLElement {
         const card = event.target.closest(".verse-card[data-docid]");
         // The explanation corner is a button of its own, and a bookmark's note
         // has buttons of its own.
-        if (!card || event.target.closest("button, bookmark-note-box")) {
+        if (!card || event.target.closest("button, a, bookmark-note-box")) {
             return;
         }
         this.#cancelHold();
@@ -1410,6 +1523,72 @@ export class BibleSearchResults extends HTMLElement {
      * redLetters: { book_id: { "chapter:verse": [[start, end], …] } }, the words of Jesus.
      * saved: the bookmarked docids, which get a ribbon.
      */
+    /**
+     * Under each card whose verse began a Daily Grace day, a strip to that day
+     * in the Grace Library. Added once the Library's index has arrived, if
+     * these results are still on show.
+     */
+    async #addDailyGrace(cards, generation) {
+        const byVerse = await loadDailyGraceDays();
+        if (generation !== this.#generation || !byVerse.size) {
+            return;
+        }
+        for (const card of cards) {
+            const days = byVerse.get(card.dataset.place);
+            if (!days || card.querySelector(".daily-grace")) {
+                continue;
+            }
+            // Above a bookmark's note, which stays last.
+            card.insertBefore(
+                this.#createDailyGrace(days),
+                card.querySelector("bookmark-note-box"),
+            );
+        }
+    }
+
+    /** Links to the days, newest first: thumbnail, date and the day's title. */
+    #createDailyGrace(days) {
+        const strip = document.createElement("div");
+        strip.className = "daily-grace";
+        for (const day of [...days].reverse()) {
+            const date = new Date(`${day.date}T00:00:00Z`);
+            const when = (options) =>
+                date.toLocaleDateString("en-US", { timeZone: "UTC", ...options });
+            const link = document.createElement("a");
+            link.className = "daily-grace-day";
+            link.href = `${LIBRARY_PAGE}#day/${day.date}`;
+            link.setAttribute(
+                "aria-label",
+                `Daily Grace for ${when({ weekday: "long", month: "long", day: "numeric", year: "numeric" })}: ${day.title}. Open it in the Grace Library`,
+            );
+            const thumb = document.createElement("img");
+            thumb.className = "daily-grace-thumb";
+            thumb.width = 36;
+            thumb.height = 64;
+            thumb.alt = "";
+            thumb.loading = "lazy";
+            thumb.onerror = () => thumb.remove();
+            thumb.src = day.thumb;
+            const words = document.createElement("span");
+            words.className = "daily-grace-words";
+            words.setAttribute("aria-hidden", "true");
+            const label = document.createElement("span");
+            label.className = "daily-grace-when";
+            label.textContent = `Daily Grace · ${when({ weekday: "short", month: "short", day: "numeric", year: "numeric" })}`;
+            const title = document.createElement("span");
+            title.className = "daily-grace-title";
+            title.textContent = day.title;
+            words.append(label, title);
+            const go = document.createElement("span");
+            go.className = "daily-grace-go";
+            go.setAttribute("aria-hidden", "true");
+            go.textContent = "›";
+            link.append(thumb, words, go);
+            strip.append(link);
+        }
+        return strip;
+    }
+
     #createVerseCard(
         bookName,
         row,
@@ -1485,6 +1664,7 @@ export class BibleSearchResults extends HTMLElement {
         kjv.textContent = "KJV";
         text.append(kjv, ...verseTextNodes(row.text, ranges, highlight));
         card.append(reference, text);
+        card.dataset.place = `${bookName}|${row.chapter}|${row.verse}`;
         const { docid } = row;
         if (Number.isSafeInteger(docid)) {
             card.dataset.docid = docid;
@@ -1878,7 +2058,9 @@ export class BibleSearchResults extends HTMLElement {
                     }),
                 );
             }
+            const cards = [...fragment.querySelectorAll(".verse-card")];
             list.append(fragment);
+            this.#addDailyGrace(cards, generation);
             shown = next;
             summary.textContent = `${rows.length.toLocaleString()} verse${rows.length === 1 ? "" : "s"} found · ${shown.toLocaleString()} shown`;
             this.#status.textContent = `${heading}. ${summary.textContent}`;
@@ -1907,6 +2089,14 @@ export class BibleSearchResults extends HTMLElement {
         };
 
         more.addEventListener("click", appendBatch);
+        this.#drawUntil = (place) => {
+            const find = () =>
+                list.querySelector(`.verse-card[data-place="${CSS.escape(place)}"]`);
+            while (!find() && shown < rows.length && generation === this.#generation) {
+                appendBatch();
+            }
+            return find();
+        };
         appendBatch();
         if (shown < rows.length && "IntersectionObserver" in window) {
             this.#observer = new IntersectionObserver(

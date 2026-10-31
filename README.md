@@ -119,7 +119,8 @@ their bookmarks with the homepage's cards.
   the days to catch up on. A day opens in a sheet: its `<poster-card>`, the
   verse, reflection, the reader's answer or the question, the prayer, its
   `<daily-moment>` and that week's Flipbook, with the day before and after a
-  tap, swipe or arrow key away. `#day/2026-10-01` opens a day (Back closes
+  tap, swipe or arrow key away. A day opened from another Daily Grace page
+  closes back to that page. `#day/2026-10-01` opens a day (Back closes
   it); `#books`, `#book/Psalms`, `#mine` and `#month/2026-10` pick the view.
   Script `apps/pages/scripts/library.js`, look `assets/styles/library-page.css`,
   data from `assets/scripts/library-index.js` (see [Data](#data)). Only
@@ -204,7 +205,7 @@ documented in a header comment at the top of its file in `apps/components/`.
 
 | Element | File | Notes |
 | --- | --- | --- |
-| `<bible-search-results>` | `bible-search-results.js` | Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. Each verse's folded corner opens its explanation, the BSB and the Interlinear (see `assets/annotations/`). Holding a verse bookmarks it (up to 100 verse docids in `localStorage`); `showBookmarks(rows)` lists them. |
+| `<bible-search-results>` | `bible-search-results.js` | A verse that began a Daily Grace day gets a gold strip under it (the day's thumbnail, date and title) linking to the day in the Grace Library; the Library's index is fetched with the first results, and only its days up to today show. Book header plus a scrolling reader that adds 24 verses per batch, on scroll or via **Load more verses**. `compact` hides the counts for popups. Each verse's folded corner opens its explanation, the BSB and the Interlinear (see `assets/annotations/`). Holding a verse bookmarks it (up to 100 verse docids in `localStorage`); `showBookmarks(rows)` lists them. |
 | `<verse-popup>` | `verse-popup.js` | The passage a Bible reference pill opens (`scripture-refs.js`), with popups opened from popups up to six deep. Loads `sql_script.js` itself on pages that don't. |
 | `<passage-reader>` | `passage-reader.js` | A passage in three tabs: the King James Bible (with the words of Jesus in red, from `assets/red-letter.json` as in the search results), the BSB (with its section headings, whose parallel references open as pills) and the Interlinear (each word's Strong's number, transliteration, original, gloss and grammar, right to left for Hebrew). `showPassageReader({ book, range, title })` opens it; `range` is an outline range such as `"1-11"` or `"10:1-22:16"`. Tapping a word in the Interlinear tab turns it faint yellow and opens its Strong's dictionary entry under the verse, as in the explanation popup; both use `strongs-entry.js` (the dictionary loader and the entry card). Chapters load as the reader scrolls. Opened by the outline rows on `apps/pages/bible-books.html` and by the Explorers' "Read the chapter". |
 | `<bookmark-manager>` | `bookmark-manager.js` | My Bookmarks: every bookmark on the device, one kind at a time under a segmented switch (Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint, Jesus' Words), each a `bookmarks` copy of its own component. The red PDF button opens them all, with their notes, as one PDF (`assets/scripts/bookmarks-pdf.js`, which loads jsPDF from cdnjs on the first tap). |
@@ -288,7 +289,10 @@ components.
 ## Scripts
 
 - **`assets/scripts/script.js`** — homepage wiring: search form and book
-  suggestions, the search mode padlock, the reflection toggle, the QR, verse
+  suggestions ("Psalm" and "Song of Songs" are taken for Psalms and Song of
+  Solomon), the way back to a search after a verse's Daily Grace strip (the
+  search is kept for the tab, `dailygrace:search-return`, and run again on
+  Back, at the same verse), the search mode padlock, the reflection toggle, the QR, verse
   and splash dialogs, restoring the scroll position, and the bookmarks popup's
   verse loader.
 - **`assets/scripts/sql_script.js`** — loads sql.js (1.14.2, from cdnjs) and the

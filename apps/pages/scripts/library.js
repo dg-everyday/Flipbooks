@@ -882,9 +882,25 @@ export async function start(view) {
         content.querySelector(`.lib-tile[data-date="${was}"]`)?.focus({ preventScroll: true });
     });
 
+    // A day opened straight from another Daily Grace page (a verse's strip in
+    // the Bible search, the Moment's catch-up link) closes back to that page,
+    // which picks up where the reader left it. Only the first time: after
+    // that the reader is browsing the Library.
+    let cameFromSite = false;
+    try {
+        const from = new URL(document.referrer);
+        cameFromSite =
+            from.origin === location.origin &&
+            from.pathname !== location.pathname &&
+            history.length > 1;
+    } catch {
+        cameFromSite = false;
+    }
+
     function closeDay() {
-        if (openedInPage) {
+        if (openedInPage || cameFromSite) {
             openedInPage = false;
+            cameFromSite = false;
             history.back();
             return;
         }
@@ -988,6 +1004,7 @@ export async function start(view) {
             return;
         }
         openedInPage = false;
+        cameFromSite = false;
         hideSheet();
         const bookMatch = /^book\/(.+)$/.exec(hash);
         const monthMatch = /^month\/(\d{4}-\d{2})$/.exec(hash);

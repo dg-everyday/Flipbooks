@@ -50,6 +50,24 @@ const STYLES = /* css */ `
     font: 400 1.0625rem/1.5 'Strait', 'Roboto', Arial, sans-serif;
   }
   dialog::backdrop { background: rgb(0 27 52 / 70%); }
+  /* The slim gold scrollbar of Help and About (study-guide-menu.js): a thin
+     pill on a clear track, held off the rounded corners. */
+  dialog::-webkit-scrollbar { width: 10px; }
+  dialog::-webkit-scrollbar-track { margin-block: 20px; background: transparent; }
+  dialog::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background: rgb(198 146 46 / 40%) padding-box;
+  }
+  dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
+  /* Firefox has no ::-webkit-scrollbar; Chrome would drop the rules above if it
+     saw these, so only browsers without them get the standard properties. */
+  @supports not selector(::-webkit-scrollbar) {
+    dialog {
+      scrollbar-width: thin;
+      scrollbar-color: rgb(198 146 46 / 50%) transparent;
+    }
+  }
   dialog[open] { animation: support-in .28s cubic-bezier(.2, .9, .25, 1); }
   @keyframes support-in { from { opacity: 0; transform: translateY(18px) scale(.98); } }
 

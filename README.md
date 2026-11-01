@@ -203,6 +203,7 @@ documented in a header comment at the top of its file in `apps/components/`.
 | `<dg-menu>` | `dg-menu.js` | The reader's own menu under the DG emblem, with the Bookmarking 101 and How to earn stickers guides (each with the reader's counts). |
 | `<avatar-picker>` | `avatar-picker.js` | Choosing an avatar, a Bible hero from `assets/avatars.json`, shown from `media:images/avatars/adults/`. Required on the homepage: it cannot be closed until one is chosen. |
 | `<site-footer>`, `<sponsor-splash>` | `site-footer.js`, `sponsor-splash.js` | The footer with its QR code, and the sponsorship splash at the very bottom. |
+| `<support-dialog>` | `support-dialog.js` | "Help keep Daily Grace free": how to give, with no amount asked (a PayPal.Me button, the GCash number with a copy button), other ways to help (sharing, telling a friend, prayer) and 2 Corinthians 9:7. Opened from the menu's Support Daily Grace and the footer's link, whose `support` attribute names it. Change the PayPal and GCash details at the top of the file. |
 
 ### Bible text, bookmarks and readers
 

@@ -296,11 +296,11 @@
                 </section>
             </main>
 
-            <site-footer splash="splash"></site-footer>
+            <site-footer splash="splash" support="support"></site-footer>
         </div>
         <!-- The hamburger at the top opens the Bible Study Guides menu, with
              its Help and About popups (apps/components/study-guide-menu.js). -->
-        <study-guide-menu id="site-menu" opener="menu-open"></study-guide-menu>
+        <study-guide-menu id="site-menu" opener="menu-open" support="support"></study-guide-menu>
         <!-- The DG emblem opens My Bookmarks, My Sticker Album and How to
              earn stickers (apps/components/dg-menu.js). -->
         <dg-menu
@@ -319,6 +319,8 @@
         <!-- The footer's QR code opens the sponsorship splash
              (apps/components/sponsor-splash.js). -->
         <sponsor-splash id="splash"></sponsor-splash>
+        <!-- "Help keep Daily Grace free": opened from the menu and the footer. -->
+        <support-dialog id="support"></support-dialog>
         <bible-trivia id="bible-trivia" auto></bible-trivia>
         <!-- sql.js is fetched by sql_script.js when a database is first opened.
              The modules below run only after these two, in order, so they are
@@ -411,7 +413,7 @@
         ></script>
         <script
             type="module"
-            src="apps/components/study-guide-menu.js?v=20261101-3"
+            src="apps/components/study-guide-menu.js?v=20261101-5"
         ></script>
         <script
             type="module"
@@ -419,11 +421,15 @@
         ></script>
         <script
             type="module"
-            src="apps/components/site-footer.js?v=20261023-1"
+            src="apps/components/site-footer.js?v=20261101-3"
         ></script>
         <script
             type="module"
             src="apps/components/sponsor-splash.js?v=20261010-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/support-dialog.js?v=20261101-3"
         ></script>
     </body>
 </html>

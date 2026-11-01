@@ -810,25 +810,31 @@ const STYLES = /* css */ `
   }
 
   /* Help and About are read and scrolled, and share their edges with the
-     page's Bookmarks and verse popups. A slim gold scrollbar on a clear track,
+     page's Bookmarks and verse popups; the menu's drawer scrolls too. A slim
+     gold scrollbar on a clear track,
      held off the rounded corners, in place of the grey system bar that
      squared off the dialog's right edge. The thumb's transparent border leaves
      a thin pill floating inside the gutter. */
+  .menu-dialog::-webkit-scrollbar,
   .about-dialog::-webkit-scrollbar,
   .help-dialog::-webkit-scrollbar { width: 10px; }
+  .menu-dialog::-webkit-scrollbar-track,
   .about-dialog::-webkit-scrollbar-track,
   .help-dialog::-webkit-scrollbar-track { margin-block: 20px; background: transparent; }
+  .menu-dialog::-webkit-scrollbar-thumb,
   .about-dialog::-webkit-scrollbar-thumb,
   .help-dialog::-webkit-scrollbar-thumb {
     border: 3px solid transparent;
     border-radius: 999px;
     background: rgb(198 146 46 / 40%) padding-box;
   }
+  .menu-dialog::-webkit-scrollbar-thumb:hover,
   .about-dialog::-webkit-scrollbar-thumb:hover,
   .help-dialog::-webkit-scrollbar-thumb:hover { background-color: rgb(198 146 46 / 75%); }
   /* Firefox has no ::-webkit-scrollbar. Chrome would drop the rules above if it
      saw these, so only browsers without them get the standard properties. */
   @supports not selector(::-webkit-scrollbar) {
+    .menu-dialog,
     .about-dialog,
     .help-dialog {
       scrollbar-width: thin;

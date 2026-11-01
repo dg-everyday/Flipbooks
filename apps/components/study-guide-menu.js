@@ -438,6 +438,8 @@ const STYLES = /* css */ `
   .help-icon.gold svg { fill: var(--gold-light); }
   .help-icon .help-fill { fill: currentColor; stroke: none; }
   .help-icon img { width: 26px; height: 26px; object-fit: contain; }
+  /* In the menu, the Support heart is drawn as large as the icons beside it. */
+  .menu-item .help-icon svg { width: 28px; height: 28px; stroke-width: 1.8; color: #b3261e; }
 
   /* --------------------------------------------------------------- about */
 
@@ -906,6 +908,14 @@ const MENU_HTML = /* html */ `
                     <span class="menu-text"><strong>About</strong></span>
                 </button>
             </li>
+            <li>
+                <button class="menu-item" type="button" aria-haspopup="dialog" data-show="support">
+                    <span class="help-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
+                    </span>
+                    <span class="menu-text"><strong>Support Daily Grace</strong></span>
+                </button>
+            </li>
         </ul>
     </nav>
 </dialog>`;
@@ -1242,6 +1252,12 @@ const HELP_HTML = /* html */ `
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><path d="M14 14h3v3h-3zM21 14v.01M21 21h-4M14 21v.01" /></svg>
                 </span>
                 <p><strong>Get in touch.</strong> Tap the QR code to see a bigger one to scan, and how to sponsor or donate.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
+                </span>
+                <p><strong>Support Daily Grace.</strong> Daily Grace is free and stays free. If you would like to help it continue, Support Daily Grace in this menu, or at the bottom of the home page, shows how to give through PayPal or GCash, in any amount, and other ways to help.</p>
             </li>
         </ul>
     </div>
@@ -1673,6 +1689,11 @@ export class StudyGuideMenu extends HTMLElement {
                 await this.close();
                 if (button.dataset.show === "help") {
                     this.showHelp();
+                } else if (button.dataset.show === "support") {
+                    // Its own dialog, <support-dialog>, named by the support attribute.
+                    document
+                        .getElementById(this.getAttribute("support") ?? "")
+                        ?.open?.();
                 } else {
                     this.showAbout();
                 }

@@ -2,8 +2,8 @@
  * <site-footer> — the home page's footer, as a web component.
  *
  * The DG emblem beside the closing words (it moved here from the top of the
- * page, where the reader's avatar now shows), a link to this week's
- * Flipbook, and the QR code on a
+ * page, where the reader's avatar now shows), the way to Support Daily
+ * Grace, and the QR code on a
  * white tile that keeps it scannable over the photo; a tap on the code opens
  * the sponsorship splash. Under them, the brand and tagline, and a link to
  * Our mission. It sits on the hero photo, faded into the paper on the left so
@@ -16,6 +16,8 @@
  *
  * Attributes
  *   splash   id of the <sponsor-splash> the QR code opens.
+ *   support  id of the <support-dialog> that "Support Daily Grace" opens;
+ *            without one, that link is not shown.
  *
  * Fonts: Roboto (text) is registered on the document by
  * assets/scripts/fonts.js, because browsers do not reliably load @font-face
@@ -33,7 +35,6 @@ const HOME_URL = asset("../../");
 const PHOTO_URL = asset("../../assets/images/hero-1440.webp");
 const QR_URL = asset("../../assets/images/qr.png");
 const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
-const FLIPBOOK_URL = asset("../pages/flipbook.html");
 const MISSION_URL = asset("../pages/mission-statement.html");
 
 const STYLES = /* css */ `
@@ -122,6 +123,23 @@ const STYLES = /* css */ `
     text-decoration-color: rgba(0,27,52,.35);
   }
   .footer-link:hover { text-decoration-color: currentColor; }
+  /* "Support Daily Grace" is a button that reads as the link above it. */
+  button.footer-link {
+    /* On a line of its own, under the closing words, at any width. */
+    display: flex;
+    width: fit-content;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  button.footer-link[hidden] { display: none; }
+  button.footer-link:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
   .site-footer a:focus-visible {
     outline: 2px solid var(--navy);
     outline-offset: 4px;
@@ -205,9 +223,9 @@ const TEMPLATE = /* html */ `
                 A quiet moment in God's Word.<br />Fresh strength
                 for every day.
             </p>
-            <a class="footer-link" href="${FLIPBOOK_URL}"
-                >Explore this week's Flipbook
-                <span aria-hidden="true">→</span></a
+            <button class="footer-link footer-support" type="button" aria-haspopup="dialog" hidden
+                >Support Daily Grace
+                <span aria-hidden="true">→</span></button
             >
         </div>
         <figure class="footer-qr">
@@ -265,6 +283,16 @@ export class SiteFooter extends HTMLElement {
 
     connectedCallback() {
         registerFonts();
+        const support = this.shadowRoot.querySelector(".footer-support");
+        support.hidden = !this.getAttribute("support");
+        if (!support.dataset.wired) {
+            support.dataset.wired = "true";
+            support.addEventListener("click", () => {
+                document
+                    .getElementById(this.getAttribute("support") ?? "")
+                    ?.open?.();
+            });
+        }
     }
 }
 

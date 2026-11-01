@@ -39,6 +39,8 @@ import {
     daysForReference,
 } from "../../../assets/scripts/library-index.js?v=20261031-1";
 import { loadVerses } from "../../components/daily-verses.js?v=20261004-1";
+import { journeyYear, readJourney, hasJourney } from "../../../assets/scripts/journey.js?v=20261101-1";
+import { createJourney } from "./journey-view.js?v=20261101-2";
 import {
     PullTab,
     PULL_TAB_ICON,
@@ -580,6 +582,29 @@ export async function start(view) {
         ];
     }
 
+    /** The way into the year's journey, when there is a year to look back on. */
+    function journeyEntry() {
+        const year = journeyYear(lib.today);
+        const yours = readJourney(year);
+        if (!hasJourney(yours)) {
+            return null;
+        }
+        const count = yours.prayed.length;
+        return h(
+            "a",
+            { class: "panel lib-journey", href: `#journey/${year}` },
+            h("span", { class: "eyebrow" }, String(year)),
+            h("span", { class: "lib-journey-title" }, "Your Year's Journey in Grace"),
+            h(
+                "span",
+                { class: "lib-journey-text" },
+                count
+                    ? `Look back on the ${count === 1 ? "Moment" : `${count} Moments`} you prayed this year ›`
+                    : "Look back on your year ›",
+            ),
+        );
+    }
+
     function mineView() {
         const prayed = lib.days.filter((day) => done.has(day.date)).reverse();
         const written = lib.days
@@ -587,6 +612,7 @@ export async function start(view) {
             .reverse();
         if (!prayed.length && !written.length) {
             return [
+                journeyEntry(),
                 h(
                     "section",
                     { class: "panel lib-empty" },
@@ -601,6 +627,7 @@ export async function start(view) {
             ];
         }
         return [
+            journeyEntry(),
             h(
                 "section",
                 { class: "panel lib-mine", "aria-labelledby": "lib-prayed" },
@@ -714,7 +741,8 @@ export async function start(view) {
     let toastTimer = 0;
     function say(message) {
         // Over an open sheet, the toast has to be in it to be seen.
-        (sheet.open ? sheet : document.body).append(toast);
+        // Over an open dialog (a day, the journey), the toast has to be in it to be seen.
+        ([...document.querySelectorAll("dialog[open]")].at(-1) ?? document.body).append(toast);
         toast.textContent = message;
         toast.hidden = false;
         clearTimeout(toastTimer);
@@ -1042,21 +1070,63 @@ export async function start(view) {
 
     let rendered = false;
 
+    // ---------------------------------------------------------------- the journey
+
+    // Opened by a tap here (so Back closes it), or straight from a link.
+    let journeyOpenedInPage = false;
+    const journey = createJourney({
+        h,
+        byDate,
+        fetchJson,
+        thumbUrl,
+        symbolUrl,
+        format,
+        say,
+        onClose: () => {
+            if (journeyOpenedInPage || cameFromSite) {
+                journeyOpenedInPage = false;
+                cameFromSite = false;
+                history.back();
+                return;
+            }
+            history.replaceState(null, "", location.pathname + location.search + viewHash());
+        },
+    });
+
+    // Arriving straight on a day or the journey, the Archives are drawn behind it.
+    function drawBehind(month) {
+        if (rendered) {
+            return;
+        }
+        if (month) {
+            expanded.add(month);
+        }
+        const saved = readStore(VIEW_KEY, "months");
+        Object.assign(state, { tab: TABS.some((t) => t.key === saved) ? saved : "months", book: null });
+        renderContent();
+        rendered = true;
+    }
+
     function route({ fromNavigation }) {
         const hash = decodeURIComponent(location.hash.slice(1));
+        const journeyMatch = /^journey(?:\/(\d{4}))?$/.exec(hash);
+        if (journeyMatch) {
+            if (fromNavigation && !journey.isOpen) {
+                journeyOpenedInPage = true;
+            }
+            drawBehind(null);
+            hideSheet();
+            journey.open(journeyMatch[1] ? Number(journeyMatch[1]) : journeyYear(lib.today));
+            return;
+        }
+        journey.dismiss();
+        journeyOpenedInPage = false;
         const dayMatch = /^day\/(\d{4}-\d{2}-\d{2})$/.exec(hash);
         if (dayMatch) {
             if (fromNavigation && !sheet.open) {
                 openedInPage = true;
             }
-            // Arriving straight on a day, the Library is drawn behind it too.
-            if (!rendered) {
-                expanded.add(dayMatch[1].slice(0, 7));
-                const saved = readStore(VIEW_KEY, "months");
-                Object.assign(state, { tab: TABS.some((t) => t.key === saved) ? saved : "months", book: null });
-                renderContent();
-                rendered = true;
-            }
+            drawBehind(dayMatch[1].slice(0, 7));
             openDay(dayMatch[1]);
             return;
         }

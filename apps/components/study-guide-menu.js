@@ -974,6 +974,12 @@ const HELP_HTML = /* html */ `
                 <p><strong>Catch up on an earlier day.</strong> The Daily Grace Archives, in the menu just before Daily Grace Kids, keep every Daily Grace day since September 11, 2026: by month, by book of the Bible, or the days you have prayed. Tap a day to open its poster and comic, the narration, the verse, the reflection, the question and the prayer, and to pray its Moment. "This week" at the top shows which days you have prayed and which you can still catch up on. A Moment prayed there is marked done, but only today's Moment counts toward stickers.</p>
             </li>
             <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c4-1 6-4 8-8s4-7 8-8" /><circle cx="4" cy="20" r="1.5" /><circle cx="20" cy="4" r="1.5" /></svg>
+                </span>
+                <p><strong>Your Year's Journey in Grace.</strong> From December 29 to January 10, a card on the home page looks back on your year: the posters of the days you prayed, your faithful weeks, the memory verses you learned, the books of the Bible you met and the stickers you were given. At the end you can save or share it as one picture. It is made from what is kept on this device and stays there. After January 10 you will find it in the Daily Grace Archives, under My days.</p>
+            </li>
+            <li>
                 <span class="help-icon action">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                 </span>

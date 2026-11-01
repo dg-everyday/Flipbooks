@@ -714,3 +714,275 @@ a.day-step:hover {
         transform: none;
     }
 }
+
+/* ---------------------------------------------------------------- the journey
+   "Your Year's Journey in Grace" (journey-view.js): one card at a time, on
+   navy, with the year's posters, numbers and words. */
+
+.lib-journey {
+    display: grid;
+    gap: 4px;
+    color: var(--cream);
+    background:
+        radial-gradient(circle at 90% -10%, rgb(225 182 93 / 30%), transparent 45%),
+        linear-gradient(135deg, var(--navy), var(--navy-2));
+    border: 0;
+    text-decoration: none;
+}
+.lib-journey .eyebrow {
+    margin: 0;
+}
+.lib-journey-title {
+    font: 400 1.7rem/1.1 var(--display);
+    color: var(--gold-light);
+}
+.lib-journey-text {
+    color: rgb(243 231 210 / 88%);
+}
+.lib-journey:hover .lib-journey-title {
+    color: #f0c66c;
+}
+
+.journey {
+    width: min(560px, 100%);
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    color: var(--cream);
+    background:
+        radial-gradient(circle at 85% -5%, rgb(225 182 93 / 22%), transparent 40%),
+        linear-gradient(170deg, var(--navy), var(--navy-2));
+}
+.journey::backdrop {
+    background: rgb(0 27 52 / 80%);
+}
+@media (min-width: 760px) {
+    .journey {
+        height: calc(100% - 32px);
+        max-height: calc(100% - 32px);
+        margin-top: 16px;
+        border-radius: 18px;
+        box-shadow: 0 20px 60px rgb(0 0 0 / 45%);
+    }
+}
+.journey-frame {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.journey-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+}
+.journey-close {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    color: var(--gold-light);
+    background: none;
+    font: 400 2rem/1 var(--body);
+    cursor: pointer;
+}
+.journey-close:hover {
+    background: rgb(255 255 255 / 10%);
+}
+.journey-dots {
+    flex: 1;
+    display: flex;
+    gap: 6px;
+}
+.journey-dots span {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: rgb(255 255 255 / 20%);
+}
+.journey-dots span.is-on {
+    background: var(--gold-light);
+}
+.journey-count {
+    min-width: 2.5em;
+    text-align: right;
+    font-size: 0.85rem;
+    color: rgb(243 231 210 / 70%);
+}
+.journey-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 22px 24px;
+    touch-action: pan-y;
+}
+.journey-card {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+    min-height: 100%;
+}
+.journey-card h2,
+.journey-year {
+    font-family: var(--display);
+    font-weight: 400;
+    color: var(--gold-light);
+    line-height: 1.05;
+    margin: 0;
+}
+.journey-card h2 {
+    font-size: clamp(2rem, 1.6rem + 2vw, 2.6rem);
+}
+.journey-card h2:focus,
+.journey-verse blockquote:focus {
+    outline: none;
+}
+.journey-year {
+    font-size: clamp(3.5rem, 2.8rem + 4vw, 5rem);
+}
+.journey-eyebrow {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+}
+.journey-lead {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.45;
+}
+.journey-note {
+    margin: 0;
+    color: rgb(243 231 210 / 75%);
+}
+.journey-collage {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+.journey-collage img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 240 / 427;
+    object-fit: cover;
+    border-radius: 6px;
+    background: rgb(255 255 255 / 8%);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 35%);
+}
+.journey-stats {
+    display: grid;
+    gap: 18px;
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.journey-stats li {
+    display: grid;
+    gap: 2px;
+}
+.journey-stats b {
+    font: 400 clamp(2.4rem, 2rem + 2vw, 3.2rem) / 1 var(--display);
+    color: var(--gold-light);
+}
+.journey-stats span {
+    color: rgb(243 231 210 / 85%);
+}
+.journey-verses {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    --scripture-ref-color: var(--gold-light);
+}
+.journey-books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.journey-books li {
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.journey-books img {
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+    border-radius: 50%;
+    background: #fff;
+    object-fit: contain;
+}
+.journey-stickers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.journey-stickers img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.journey-card .lib-button {
+    justify-self: start;
+}
+.journey-verse {
+    margin: 12px 0 4px;
+}
+.journey-verse blockquote {
+    margin: 0 0 8px;
+    font: 400 clamp(1.7rem, 1.4rem + 1.6vw, 2.3rem) / 1.2 var(--display);
+    color: var(--cream);
+}
+.journey-verse figcaption {
+    color: var(--gold-light);
+    font-weight: 700;
+}
+.journey-done {
+    justify-self: start;
+    padding: 8px 4px;
+    border: 0;
+    background: none;
+    color: rgb(243 231 210 / 85%);
+    font: 600 1rem/1.2 var(--body);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.journey-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 16px 16px;
+}
+.journey-back,
+.journey-next {
+    padding: 11px 22px;
+    border-radius: 999px;
+    font: 700 1rem/1 var(--body);
+    cursor: pointer;
+}
+.journey-back {
+    border: 1px solid rgb(225 182 93 / 60%);
+    background: none;
+    color: var(--gold-light);
+}
+.journey-next {
+    margin-left: auto;
+    border: 0;
+    background: var(--gold-light);
+    color: var(--navy);
+}

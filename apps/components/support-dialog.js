@@ -21,8 +21,8 @@
 import { registerFonts } from "../../assets/scripts/fonts.js";
 
 const asset = (path) => new URL(path, import.meta.url).href;
-// The white Daily Grace logo, as in the study pages' top bar: it reads on navy.
-const LOGO_URL = asset("../../assets/images/daily-grace-white-480.webp");
+// The Daily Grace banner logo (navy, with the lighthouse), on the cream header.
+const LOGO_URL = asset("../../assets/images/daily-grace-banner-02.webp");
 
 // Where a gift goes. The GCash number is shown and copied in the form the
 // GCash app takes at home; from abroad it is the +63 one.
@@ -53,34 +53,38 @@ const STYLES = /* css */ `
   dialog[open] { animation: support-in .28s cubic-bezier(.2, .9, .25, 1); }
   @keyframes support-in { from { opacity: 0; transform: translateY(18px) scale(.98); } }
 
-  /* Over the navy header's corner, which then runs the full width. */
+  /* Over the header's corner, which then runs the full width. */
   .close {
     position: absolute; top: 10px; right: 10px; z-index: 1;
     width: 44px; height: 44px;
     border: 0; border-radius: 50%;
-    background: rgb(255 255 255 / 10%);
-    color: #f3e7d2;
+    background: rgb(255 255 255 / 35%);
+    color: #001b34;
     cursor: pointer;
   }
-  .close:hover { background: rgb(255 255 255 / 20%); }
+  .close:hover { background: rgb(255 255 255 / 55%); }
   .close svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
 
   header {
     display: grid; justify-items: center; gap: 6px;
     padding: 26px 24px 18px;
     text-align: center;
-    background: linear-gradient(160deg, #001b34, #062944);
-    color: #f3e7d2;
+    /* Burnished gold, as on the home page's gold bands: deep at the edges,
+       pale where the light catches it. The navy logo reads on it. */
+    background: linear-gradient(90deg, #e1aa37 0%, #dda742 20%, #fed86e 35%,
+      #fdecae 50%, #f9d06e 65%, #f3c364 80%, #c5861d 100%);
+    border-bottom: 2px solid #b07a1c;
+    color: #001b34;
   }
-  header img { width: 168px; height: auto; }
+  header img { width: min(230px, 70%); height: auto; }
   .eyebrow {
     margin: 0;
-    color: #e1b65d;
+    color: #4a3006;
     font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
   }
   h2 {
     margin: 0;
-    color: #e1b65d;
+    color: #001b34;
     font: 400 clamp(1.8rem, 1.5rem + 1.6vw, 2.3rem)/1.1 'Germania One', Georgia, serif;
     text-wrap: balance;
   }
@@ -116,7 +120,7 @@ const STYLES = /* css */ `
   }
   .button:hover { background: #f0c66c; }
   .button:focus-visible { outline: 2px solid #001b34; outline-offset: 2px; }
-  .close:focus-visible { outline: 2px solid #e1b65d; outline-offset: 2px; }
+  .close:focus-visible { outline: 2px solid #001b34; outline-offset: 2px; }
   .other { display: grid; gap: 8px; margin: 0; padding-left: 1.2em; }
   blockquote {
     margin: 6px 0 0;
@@ -138,7 +142,7 @@ const TEMPLATE = /* html */ `
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
   </button>
   <header>
-    <img src="${LOGO_URL}" alt="Daily Grace" width="480" height="160" loading="lazy" />
+    <img src="${LOGO_URL}" alt="Daily Grace" width="1200" height="400" loading="lazy" />
     <p class="eyebrow">Support Daily Grace</p>
     <h2 id="support-title">Help keep Daily Grace free</h2>
   </header>

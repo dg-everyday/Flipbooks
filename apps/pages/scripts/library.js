@@ -62,8 +62,9 @@ const CALENDAR = window.matchMedia("(min-width: 900px)");
 const REVEAL_STEP = 25;
 const REVEAL_MAX = 450;
 
-const SHARE_ICON =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>';
+// A chain link: the day's link, unlike the poster's own share, which sends the picture.
+const LINK_ICON =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></svg>';
 const FLIPBOOK_ICON =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>';
 
@@ -722,8 +723,13 @@ export async function start(view) {
 
         const close = h("button", { type: "button", class: "day-close", "aria-label": "Close this day" }, "×");
         close.addEventListener("click", closeDay);
-        const share = h("button", { type: "button", class: "day-share", "aria-label": "Share a link to this day", title: "Share a link to this day" });
-        share.append(svg(SHARE_ICON));
+        // Labelled, so it is not taken for the poster's share, which sends the picture.
+        const share = h(
+            "button",
+            { type: "button", class: "day-share", "aria-label": "Share a link to this day", title: "Share a link to this day" },
+            svg(LINK_ICON),
+            h("span", { "aria-hidden": "true" }, "Share link"),
+        );
         share.addEventListener("click", () => shareDay(day));
 
         let currentEntry = null;
@@ -769,7 +775,17 @@ export async function start(view) {
                     "header",
                     { class: "day-bar" },
                     close,
-                    h("p", { class: "day-when" }, longDate(day.date)),
+                    h(
+                        "p",
+                        { class: "day-when" },
+                        h("span", { class: "day-when-long" }, longDate(day.date)),
+                        // Narrow phones: short enough to sit on one line beside "Share link".
+                        h(
+                            "span",
+                            { class: "day-when-short", "aria-hidden": "true" },
+                            format(day.date, { weekday: "short", month: "short", day: "numeric", year: "numeric" }),
+                        ),
+                    ),
                     share,
                 ),
                 h(

@@ -510,8 +510,10 @@ to publish. The workflow:
    to the published `sitemap.xml` (a failure only warns). Each carries the
    day's banner as its `og:image`, with its title and verse, so a shared day
    previews as that day; it holds the day's verse, reflection, question and
-   prayer as text, and sends a reader on to the day in the Archives. The
-   Archives' share button links these pages;
+   prayer as text, and sends a reader on to the day in the Archives with
+   `?from=link`, so a first visit (no avatar yet) gets a word of welcome and
+   closing the day stays in the Archives. The Archives' share button links
+   these pages;
 6. compacts every `.json` file, and minifies the JS and CSS with esbuild, file
    by file and without bundling, so every file and import keeps its place.
 

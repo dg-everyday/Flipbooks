@@ -4,7 +4,7 @@
         "2026-09": "Trust, Guidance & New Beginnings",
         "2026-10": "Strength, Faith & Perseverance",
         "2026-11": "Gratitude, Contentment & God's Goodness",
-        "2026-12": "Hope & God's Promises"
+        "2026-12": "Hope, Advent, Christmas & God's Promises"
     },
     "days": [
         {
@@ -824,7 +824,7 @@
             "date": "2026-12-25",
             "ref": "Luke 2:11-12",
             "book": "Luke",
-            "title": "Christ is born",
+            "title": "Christmas - Christ is born",
             "summary": "The shepherds received both wonderful news and a humble sign: their Savior would be found as a baby lying in a manger. God's greatness came close enough to be encountered, not merely imagined.",
             "video": true
         },

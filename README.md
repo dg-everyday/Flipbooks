@@ -44,6 +44,9 @@ From the top:
   one screen at a time (pause, verse, poster and narration, reflection,
   question, prayer, Amen), about five minutes. Follows the day shown on the
   banner.
+- **`<journey-card>`** — from December 29 to January 10 (Manila) only, and
+  only for a reader who prayed a Moment that year: "Your Year's Journey in
+  Grace", leading to the journey in the Daily Grace Archives.
 - **`<memory-verse>`** — "This Week’s Memory Verse Challenge": one verse a week
   to learn by heart, a minute a day, each day's practice a little harder. The
   Moment's Amen screen links to it too.
@@ -311,6 +314,14 @@ components.
   PDFs of the Questions, Blueprint and Jesus' Words cards, made on the
   reader's device with jsPDF and the site's own fonts.
 - **`assets/scripts/avatar-store.js`** — the chosen avatar.
+- **`assets/scripts/journey.js`** — "Your Year's Journey in Grace": the
+  window it is offered in (December 29 to January 10), the year it looks back
+  on, and `readJourney(year)`, the reader's year read from `localStorage`
+  (Moments done and answered, faithful weeks, best month, memory verses
+  learned, books met and stickers earned). It only reads. The journey itself is
+  `apps/pages/scripts/journey-view.js`, in the Archives at `#journey/<year>`
+  (and under My days): a few cards, and a 1080 × 1920 picture drawn on the
+  device to save or share.
 - **`assets/scripts/library-index.js`** — the Daily Grace Archives' days:
   `loadLibrary()` (the index files up to this year, only complete days up to
   today in Manila), `daysForReference()` (the days whose verse falls in

@@ -520,9 +520,38 @@ html.day-sheet-open {
 .day-share:hover {
     background: rgb(255 255 255 / 10%);
 }
+.day-when-short {
+    display: none;
+}
+@media (max-width: 420px) {
+    .day-when-long {
+        /* Kept for screen readers, which read the date in full. */
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+    .day-when-short {
+        display: inline;
+    }
+}
+/* "Share link", in words: the poster's own round share button sends the
+   picture, and the two must not be mistaken for each other. */
+.day-share {
+    display: inline-flex;
+    gap: 6px;
+    width: auto;
+    padding: 0 14px;
+    border: 1px solid rgb(225 182 93 / 60%);
+    border-radius: 999px;
+    font: 700 0.95rem/1 var(--body);
+    white-space: nowrap;
+}
 .day-share svg {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
 }
 .day-body {
     flex: 1;

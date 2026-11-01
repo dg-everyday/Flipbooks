@@ -101,7 +101,7 @@ test.describe("Daily Grace Archives", () => {
         await expect(sheet(page).locator(".day-step.is-after")).toHaveText("Today is the newest");
         await sheet(page).locator("a.day-step.is-before").click();
         await expect(page).toHaveURL(/#day\/2026-10-30$/);
-        await expect(page.locator(".day-when")).toHaveText("Friday, October 30, 2026");
+        await expect(page.locator(".day-when-long")).toHaveText("Friday, October 30, 2026");
 
         await page.goto(`${PAGE}#day/2026-09-11`);
         await expect(sheet(page).locator(".day-step.is-before")).toHaveText("The first day");

@@ -375,9 +375,13 @@ test.describe("a page for each day, for link previews", () => {
         expect(page).toContain("My grace is sufficient for thee");
         expect(existsSync(join(folder, "d", "2026-09-11.html"))).toBe(true);
         expect(existsSync(join(folder, "d", "2026-09-10.html"))).toBe(false);
-        expect(existsSync(join(folder, "d", "2026-11-01.html"))).toBe(false);
+        // Tomorrow's page is written ahead, for a day shared before the deploy
+        // that follows its midnight, but only the released days are in the sitemap.
+        expect(existsSync(join(folder, "d", "2026-11-01.html"))).toBe(true);
+        expect(existsSync(join(folder, "d", "2026-11-02.html"))).toBe(false);
         const sitemap = readFileSync(join(folder, "sitemap.xml"), "utf8");
         expect(sitemap).toContain("<loc>https://dailygrace.faith/d/2026-10-31.html</loc>");
+        expect(sitemap).not.toContain("2026-11-01.html");
         expect(sitemap.trim().endsWith("</urlset>")).toBe(true);
     });
 
@@ -385,6 +389,20 @@ test.describe("a page for each day, for link previews", () => {
         const folder = buildDayPages("2026-10-31");
         await page.route("**/d/2026-10-01.html", (route) =>
             route.fulfill({ path: join(folder, "d", "2026-10-01.html"), contentType: "text/html" }),
+        );
+        await page.goto("/d/2026-10-01.html");
+        await expect(page).toHaveURL(/apps\/pages\/library\.html#day\/2026-10-01$/);
+        await expect(page.locator("#day-title")).toHaveText("Grace is sufficient");
+    });
+
+    test("still open the day when its page is missing", async ({ page }) => {
+        // GitHub Pages answers an address it doesn't have with 404.html.
+        await page.route("**/d/2026-10-01.html", (route) =>
+            route.fulfill({
+                status: 404,
+                path: fileURLToPath(new URL("../404.html", import.meta.url)),
+                contentType: "text/html",
+            }),
         );
         await page.goto("/d/2026-10-01.html");
         await expect(page).toHaveURL(/apps\/pages\/library\.html#day\/2026-10-01$/);

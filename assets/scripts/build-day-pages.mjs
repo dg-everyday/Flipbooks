@@ -10,8 +10,11 @@
 //   node assets/scripts/build-day-pages.mjs <dir> --today 2026-10-31  for tests
 //
 // Only the days in the Archives get a page: complete ones, from its first day
-// (assets/library/index.json) up to today in Manila, so the daily deploy adds
-// each new day as it comes. Their addresses are added to <dir>/sitemap.xml.
+// (assets/library/index.json) up to tomorrow in Manila. The Archives show a
+// day, and its Share link, from midnight, but the scheduled deploy runs hours
+// later, so each deploy writes the next day's page ahead of it; opened early,
+// it lands on the Archives, which say the day isn't here yet. The addresses up
+// to today are added to <dir>/sitemap.xml.
 // The pages are never committed; only the published copy has them. Nothing
 // here may stop the day's devotional from going out: a failure is a warning.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -48,6 +51,8 @@ const escapeHtml = (text) =>
     );
 
 const dateOf = (iso) => new Date(`${iso}T00:00:00Z`);
+const addDays = (iso, n) =>
+    new Date(dateOf(iso).getTime() + n * 86_400_000).toISOString().slice(0, 10);
 const format = (iso, options) =>
     dateOf(iso).toLocaleDateString("en-US", { timeZone: "UTC", ...options });
 
@@ -152,11 +157,12 @@ function build() {
         throw new Error("Give the folder to write into, e.g. _site.");
     }
     const today = todayArg ?? manilaToday();
+    const tomorrow = addDays(today, 1);
     const { start, years } = readJson("assets/library/index.json");
     const days = years
-        .filter((year) => year <= Number(today.slice(0, 4)))
+        .filter((year) => year <= Number(tomorrow.slice(0, 4)))
         .flatMap((year) => readJson(`assets/library/${year}.json`).days)
-        .filter((day) => day.date >= start && day.date <= today && !day.missing?.length);
+        .filter((day) => day.date >= start && day.date <= tomorrow && !day.missing?.length);
 
     const folder = resolve(out, "d");
     mkdirSync(folder, { recursive: true });
@@ -175,6 +181,7 @@ function build() {
     if (existsSync(sitemap)) {
         const xml = readFileSync(sitemap, "utf8");
         const urls = written
+            .filter((iso) => iso <= today)
             .map((iso) => `    <url><loc>${SITE}/d/${iso}.html</loc></url>`)
             .join("\n");
         writeFileSync(sitemap, xml.replace("</urlset>", `${urls}\n</urlset>`));

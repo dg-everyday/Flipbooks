@@ -513,13 +513,17 @@ to publish. The workflow:
    without care: the daily deploy depends on it);
 3. runs `update-stories-sequence.mjs`, which reshuffles the story cards' order,
    seeded by the Manila date, so it changes daily;
-4. copies `index.html`, `CNAME`, `favicon.ico`, `robots.txt`, `sitemap.xml`,
-   `assets/` and `apps/` into the artifact, and stamps every `?v=` in its HTML
-   with the commit, since Pages serves HTML for 10 minutes but scripts for 4
-   hours;
+4. copies `index.html`, `404.html`, `CNAME`, `favicon.ico`, `robots.txt`,
+   `sitemap.xml`, `assets/` and `apps/` into the artifact, and stamps every
+   `?v=` in its HTML with the commit, since Pages serves HTML for 10 minutes
+   but scripts for 4 hours;
 5. runs `build-day-pages.mjs`, which writes a page for each day in the Daily
-   Grace Archives up to today in Manila, `d/<YYYY-MM-DD>.html`, and adds them
-   to the published `sitemap.xml` (a failure only warns). Each carries the
+   Grace Archives up to tomorrow in Manila, `d/<YYYY-MM-DD>.html`, and adds
+   those up to today to the published `sitemap.xml` (a failure only warns).
+   The day ahead is there because the Archives show a new day, and its Share
+   link, from midnight, while the scheduled deploy runs hours later; should a
+   day page still be missing, `404.html` sends `/d/<date>.html` on to that day
+   in the Archives. Each carries the
    day's banner as its `og:image`, with its title and verse, so a shared day
    previews as that day; it holds the day's verse, reflection, question and
    prayer as text, and sends a reader on to the day in the Archives with

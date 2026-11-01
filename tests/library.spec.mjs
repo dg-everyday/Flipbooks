@@ -330,6 +330,20 @@ test.describe("ways into the Daily Grace Archives", () => {
         }
     });
 
+    test("a past day's Amen says catch-ups earn no sticker", async ({ page }) => {
+        await page.goto(`${PAGE}#day/2026-10-28`);
+        const moment = sheet(page).locator("daily-moment");
+        await expect(moment).toBeVisible();
+        await moment.evaluate((el) => el.open());
+        const amen = moment.locator("h2.amen");
+        for (let step = 0; step < 20 && !(await amen.isVisible()); step++) {
+            await moment.locator("button.next").evaluate((button) => button.click());
+        }
+        await expect(moment.locator(".amen-note")).toHaveText(
+            "October 28 is marked done. Only a day's own Moment, prayed on that day, counts toward stickers.",
+        );
+    });
+
     test("the Flipbook links to its week's month", async ({ page }) => {
         await page.goto("/apps/pages/flipbook.html?date=2026-10-01", { waitUntil: "domcontentloaded" });
         await expect(page.locator("#library")).toHaveAttribute("href", "library.html#month/2026-10");
@@ -375,6 +389,32 @@ test.describe("a page for each day, for link previews", () => {
         await page.goto("/d/2026-10-01.html");
         await expect(page).toHaveURL(/apps\/pages\/library\.html#day\/2026-10-01$/);
         await expect(page.locator("#day-title")).toHaveText("Grace is sufficient");
+    });
+
+    test("welcome a first visit and keep it in the Archives", async ({ page }) => {
+        // As the day page forwards: from Messenger, say, to here with ?from=link.
+        await page.goto(`${PAGE}?from=link#day/2026-10-01`, { referer: "http://localhost:4173/d/2026-10-01.html" });
+        await expect(sheet(page)).toBeVisible();
+        await expect(page).toHaveURL(/library\.html#day\/2026-10-01$/);
+        const welcome = sheet(page).locator(".lib-welcome");
+        await expect(welcome).toContainText("Someone shared this day with you");
+        await expect(welcome.getByRole("link", { name: "Start with today ›" })).toHaveAttribute("href", "../../index.html");
+        // The next day has no welcome; it went with the shared one.
+        await sheet(page).locator("a.day-step.is-after").click();
+        await expect(sheet(page).locator(".lib-welcome")).toHaveCount(0);
+
+        // Closing stays in the Archives, which greet them too.
+        await sheet(page).getByRole("button", { name: "Close this day" }).click();
+        await expect(sheet(page)).toBeHidden();
+        await expect(page).toHaveURL(/library\.html$/);
+        await expect(page.locator("#view > .lib-welcome")).toBeVisible();
+    });
+
+    test("say nothing new to a reader who knows Daily Grace", async ({ page }) => {
+        await page.addInitScript(() => localStorage.setItem("dailygrace:avatar", "AV-01"));
+        await page.goto(`${PAGE}?from=link#day/2026-10-01`);
+        await expect(sheet(page)).toBeVisible();
+        await expect(page.locator(".lib-welcome")).toHaveCount(0);
     });
 
     test("are what the Archives' share button sends", async ({ page }) => {

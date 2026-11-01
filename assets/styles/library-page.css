@@ -445,6 +445,31 @@ a.lib-book:hover {
     height: 20px;
 }
 
+/* ---------------------------------------------------------------- welcome
+   For a first visit from a shared link: what Daily Grace is, and today. */
+
+.lib-welcome {
+    display: grid;
+    gap: 10px;
+    justify-items: start;
+    margin-bottom: 18px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+}
+.lib-welcome-title {
+    margin: 0;
+    font: 400 1.45rem/1.1 var(--display);
+    color: var(--navy);
+}
+.lib-welcome p {
+    margin: 0;
+    line-height: 1.45;
+}
+
 /* ---------------------------------------------------------------- the day sheet */
 
 html.day-sheet-open {

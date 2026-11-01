@@ -81,6 +81,9 @@ function page(day, entry) {
     const iso = day.date;
     const url = `${SITE}/d/${iso}.html`;
     const archives = `/apps/pages/library.html#day/${iso}`;
+    // "from=link" tells the Archives a shared link brought the reader: a first
+    // visit gets a word of welcome, and closing the day stays in the Archives.
+    const arriving = `/apps/pages/library.html?from=link#day/${iso}`;
     const dateLong = format(iso, { weekday: "long", month: "long", day: "numeric", year: "numeric" });
     const dateShort = format(iso, { month: "long", day: "numeric", year: "numeric" });
     const title = `${day.title} — Daily Grace for ${dateShort}`;
@@ -116,7 +119,7 @@ function page(day, entry) {
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <!-- Readers go on to the day in the Daily Grace Archives; crawlers, which
          run no scripts, read the tags above and the day below. -->
-    <script>location.replace(${JSON.stringify(archives)});</script>
+    <script>location.replace(${JSON.stringify(arriving)});</script>
     <style>
       body { margin: 0; padding: 24px 16px 40px; background: #f3ead7; color: #10253b;
              font: 17px/1.5 Georgia, serif; }

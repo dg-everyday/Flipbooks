@@ -1,7 +1,7 @@
 # Daily Grace Verse Calendar 2026: date | day | KJV reference | theme
 # Transcribed from D:\DailyGrace\ChatGPT\Daily_Grace_Verse_Calendar_Sep7-Dec31_2026.pdf. "@" lines open a month: name | emphasis.
-# Holiday words are left out (Daily Grace is non-sectarian): December's emphasis was
-# "Hope, Advent, Christmas & God's Promises" and Dec 25 "Christmas - Christ is born".
+# December keeps the calendar's own wording, as its posters and reflections do
+# (the user's choice, 2026-11-01, for the 2026 content already made).
 # The series began September 1; this calendar starts September 7, the Daily Grace Archives September 11.
 @ September | Trust, Guidance & New Beginnings
 Sep 07 | Monday | Psalm 37:5 | Commit your way to God
@@ -91,7 +91,7 @@ Nov 27 | Friday | Philippians 4:19 | God supplies every need
 Nov 28 | Saturday | Psalm 23:6 | Goodness and mercy follow
 Nov 29 | Sunday | 1 Corinthians 1:4 | Thankful for God's grace
 Nov 30 | Monday | Psalm 40:5 | His wonders are many
-@ December | Hope & God's Promises
+@ December | Hope, Advent, Christmas & God's Promises
 Dec 01 | Tuesday | Isaiah 9:2 | Light in the darkness
 Dec 02 | Wednesday | Isaiah 9:6 | The promised Savior
 Dec 03 | Thursday | Micah 5:2 | God's promised King
@@ -116,7 +116,7 @@ Dec 21 | Monday | Matthew 2:11 | Worship the King
 Dec 22 | Tuesday | Galatians 4:4-5 | God sent His Son
 Dec 23 | Wednesday | 2 Corinthians 9:15 | God's indescribable gift
 Dec 24 | Thursday | Luke 2:6-7 | The birth of Jesus
-Dec 25 | Friday | Luke 2:11-12 | Christ is born
+Dec 25 | Friday | Luke 2:11-12 | Christmas - Christ is born
 Dec 26 | Saturday | John 3:16 | God's greatest gift
 Dec 27 | Sunday | Titus 3:4-5 | God's kindness and mercy
 Dec 28 | Monday | Psalm 90:12 | Number our days wisely

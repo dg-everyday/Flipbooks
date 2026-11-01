@@ -170,6 +170,40 @@ export async function start(view) {
     }
 
     const byDate = new Map(lib.days.map((day) => [day.date, day]));
+
+    // A shared link brings readers here through its day page, which says so
+    // with ?from=link (assets/scripts/build-day-pages.mjs). Taken off the
+    // address at once, so it is not shared on or kept in a bookmark.
+    const fromLink = new URLSearchParams(location.search).get("from") === "link";
+    if (fromLink) {
+        history.replaceState(null, "", location.pathname + location.hash);
+    }
+    // Someone who has never chosen an avatar has not used Daily Grace on this
+    // device: a shared link is their first sight of it, so it says hello.
+    let hasAvatar = false;
+    try {
+        hasAvatar = Boolean(localStorage.getItem("dailygrace:avatar"));
+    } catch {
+        hasAvatar = false;
+    }
+    const newcomer = fromLink && !hasAvatar;
+    let welcomeInSheet = newcomer;
+
+    /** What Daily Grace is, and the way to today, for a first visit. */
+    function welcome() {
+        return h(
+            "aside",
+            { class: "lib-welcome", "aria-label": "Welcome to Daily Grace" },
+            h("p", { class: "lib-welcome-title" }, "Welcome to Daily Grace"),
+            h(
+                "p",
+                {},
+                "Someone shared this day with you. Daily Grace is a free daily devotional from the King James Bible: " +
+                    "a verse, a reflection, a poster with narration, and a short prayer, new every day.",
+            ),
+            h("a", { class: "lib-button", href: "../../index.html" }, "Start with today ›"),
+        );
+    }
     // The months pulled open, kept while the page is open.
     const expanded = new Set();
     // The pull tab's look, written for a shadow root, serves the page as well.
@@ -791,6 +825,7 @@ export async function start(view) {
                 h(
                     "div",
                     { class: "day-body" },
+                    welcomeInSheet && welcome(),
                     element("poster-card", { date: day.date }),
                     h("p", { class: "eyebrow" }, lib.months.get(day.date.slice(0, 7)) || "The day's theme"),
                     h("h2", { id: "day-title", tabindex: "-1" }, day.title),
@@ -810,6 +845,8 @@ export async function start(view) {
             ),
         );
         sheet.querySelector(".day-body").scrollTop = 0;
+        // The welcome goes with the shared day only, not every day after it.
+        welcomeInSheet = false;
 
         loadVerses(VERSES_BASE, [dayName(day.date)])
             .then((entries) => {
@@ -908,6 +945,8 @@ export async function start(view) {
         cameFromSite =
             from.origin === location.origin &&
             from.pathname !== location.pathname &&
+            // A shared link's day page forwards here; going back would leave Daily Grace.
+            !fromLink &&
             history.length > 1;
     } catch {
         cameFromSite = false;
@@ -1057,7 +1096,7 @@ export async function start(view) {
 
     renderStats();
     renderWeek();
-    view.replaceChildren(hero, week, count, content);
+    view.replaceChildren(...(newcomer ? [welcome()] : []), hero, week, count, content);
     document.body.append(sheet, toast);
     window.addEventListener("hashchange", () => route({ fromNavigation: true }));
     route({ fromNavigation: false });

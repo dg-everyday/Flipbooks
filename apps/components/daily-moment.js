@@ -1103,6 +1103,7 @@ export class DailyMoment extends HTMLElement {
           <div>
             <h2 class="amen" id="step-title" tabindex="-1">Amen.</h2>
             <p class="lead">You've spent time with God today.</p>
+            ${this.#isToday ? "" : `<p class="note amen-note">${escapeHtml(this.#day.name.replace(/, \d+$/, ""))} is marked done. Only a day's own Moment, prayed on that day, counts toward stickers.</p>`}
           </div>
           ${this.#weekHtml()}
           <div class="actions">

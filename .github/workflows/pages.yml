@@ -41,7 +41,7 @@ jobs:
       - name: Prepare website
         run: |
           mkdir _site
-          cp index.html CNAME favicon.ico robots.txt sitemap.xml _site/
+          cp index.html 404.html CNAME favicon.ico robots.txt sitemap.xml _site/
           cp -R assets apps _site/
           # Stamp every ?v=... in the shipped HTML with this commit. Pages
           # serves HTML for 10 minutes but scripts for 4 hours, so without
@@ -54,7 +54,8 @@ jobs:
           echo "Stamped asset URLs with $VERSION"
       # A page for each day in the Daily Grace Archives (/d/2026-10-01.html),
       # so a shared day shows that day's banner. Only the copy in _site gets
-      # them, up to today in Manila; a failure only warns.
+      # them, up to tomorrow in Manila, since the Archives share a day from
+      # midnight and this run comes hours later; a failure only warns.
       - name: Write the Archives' day pages
         run: node assets/scripts/build-day-pages.mjs _site
       # The repo keeps JSON pretty for reading and diffs; the site gets it

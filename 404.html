@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Daily Grace — Page not found</title>
+        <meta name="robots" content="noindex" />
+        <meta name="theme-color" content="#001b34" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <!-- GitHub Pages serves this for any address it doesn't have, so it
+             must use addresses from the site's root. A shared day whose page
+             wasn't written (assets/scripts/build-day-pages.mjs) still opens
+             that day in the Daily Grace Archives, as its page would. -->
+        <script>
+            (function () {
+                var match = /^\/d\/(\d{4}-\d{2}-\d{2})\.html$/.exec(location.pathname);
+                if (match) {
+                    location.replace("/apps/pages/library.html?from=link#day/" + match[1]);
+                }
+            })();
+        </script>
+        <style>
+            body {
+                margin: 0;
+                padding: 48px 16px;
+                background: #f3ead7;
+                color: #10253b;
+                font: 17px/1.5 Georgia, serif;
+                text-align: center;
+            }
+            main { max-width: 560px; margin: 0 auto; }
+            h1 { color: #001b34; line-height: 1.2; }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>This page isn't here</h1>
+            <p>The address may have changed, or it was typed a little differently.</p>
+        </main>
+    </body>
+</html>

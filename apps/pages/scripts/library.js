@@ -56,10 +56,16 @@ const OLD_TESTAMENT = 39;
 const TOAST_MS = 3200;
 // A swipe in the day sheet: this far across, and more across than down.
 const SWIPE_PX = 60;
-// A month shows its newest days until its pull tab is pulled.
-const MONTH_PREVIEW = 3;
 // Wide screens lay a month out as a calendar (library-page.css).
 const CALENDAR = window.matchMedia("(min-width: 900px)");
+// A month shows its newest days until its pull tab is pulled: one full row,
+// as many as the grid has columns at this width (library-page.css).
+const ROW_SIZES = [
+    [CALENDAR, 7],
+    [window.matchMedia("(min-width: 760px)"), 5],
+    [window.matchMedia("(min-width: 560px)"), 4],
+];
+const PHONE_ROW = 3;
 // Tiles slide in one after another, this far apart, all within REVEAL_MAX.
 const REVEAL_STEP = 25;
 const REVEAL_MAX = 450;
@@ -87,6 +93,16 @@ function writeStore(key, value) {
     } catch {
         // Unsaved, the Library simply opens on Months next time.
     }
+}
+
+/** How many of a folded month's newest days fill one row at this width. */
+function monthPreview() {
+    for (const [query, size] of ROW_SIZES) {
+        if (query.matches) {
+            return size;
+        }
+    }
+    return PHONE_ROW;
 }
 
 const format = (iso, options) =>
@@ -429,10 +445,11 @@ export async function start(view) {
             Array.from({ length: 7 }, (_, i) =>
                 h("span", {}, format(addDays("2026-09-13", i), { weekday: "short" })),
             );
+        const preview = monthPreview();
         return [...groups].reverse().map(([month, days]) => {
             const prayed = days.filter((day) => done.has(day.date)).length;
             const firstColumn = dateOf(days[0].date).getUTCDay() + 1;
-            const collapsed = days.length > MONTH_PREVIEW && !expanded.has(month);
+            const collapsed = days.length > preview && !expanded.has(month);
             const tiles = days.map((day, i) => tile(day, `--o:${-i}`));
             const section = h(
                 "section",
@@ -457,21 +474,21 @@ export async function start(view) {
                     tiles,
                 ),
             );
-            if (days.length > MONTH_PREVIEW) {
-                section.append(...monthToggles(section, month, tiles, collapsed));
+            if (days.length > preview) {
+                section.append(...monthToggles(section, month, tiles, collapsed, preview));
             }
             return section;
         });
     }
 
     /**
-     * Under a month of more than MONTH_PREVIEW days: folded, the pull tab of
+     * Under a month of more days than one row holds: folded, the pull tab of
      * the home page's fact cards, which a pull or a tap opens; opened, the
      * same chevrons turned up, which fold it back to its newest days.
      */
-    function monthToggles(section, month, tiles, collapsed) {
+    function monthToggles(section, month, tiles, collapsed, preview) {
         const name = monthLabel(month);
-        const more = tiles.length - MONTH_PREVIEW;
+        const more = tiles.length - preview;
         const pull = h("button", {
             type: "button",
             class: "pull-tab",
@@ -482,7 +499,7 @@ export async function start(view) {
         const fold = h("button", {
             type: "button",
             class: "pull-tab lib-fold",
-            "aria-label": `Fold ${name} back to its ${MONTH_PREVIEW} newest days`,
+            "aria-label": `Fold ${name} back to its ${preview} newest days`,
             title: "Show fewer days",
             hidden: collapsed,
         });
@@ -495,7 +512,7 @@ export async function start(view) {
                 expanded.add(month);
                 // The tiles that were folded away, in the order they show:
                 // newest first on a phone, the calendar's order on a wide screen.
-                const folded = tiles.slice(0, -MONTH_PREVIEW);
+                const folded = tiles.slice(0, -preview);
                 const shown = CALENDAR.matches ? folded : folded.reverse();
                 section.classList.remove("is-collapsed");
                 revealTiles(CALENDAR.matches ? tiles : shown);
@@ -1169,5 +1186,15 @@ export async function start(view) {
     view.replaceChildren(...(newcomer ? [welcome()] : []), hero, week, count, content);
     document.body.append(sheet, toast);
     window.addEventListener("hashchange", () => route({ fromNavigation: true }));
+    // Turned or resized to another row size: fold the months to the new row.
+    for (const [query] of ROW_SIZES) {
+        query.addEventListener("change", () => {
+            if (state.tab === "months" && !state.query.trim()) {
+                const top = window.scrollY;
+                renderContent();
+                window.scrollTo({ top, behavior: "instant" });
+            }
+        });
+    }
     route({ fromNavigation: false });
 }

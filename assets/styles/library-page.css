@@ -196,10 +196,26 @@
     }
 }
 
-/* A folded month: its three newest days, newest first on every screen, and
-   the pull tab under them (library.js). The folded tiles load nothing. */
+/* A folded month: one full row of its newest days (as many as .lib-grid has
+   columns, matching ROW_SIZES in library.js), newest first on every screen,
+   and the pull tab under them. The folded tiles load nothing. */
 .lib-month.is-collapsed .lib-calendar > .lib-tile:not(:nth-last-child(-n + 3)) {
     display: none;
+}
+@media (min-width: 560px) {
+    .lib-month.is-collapsed .lib-calendar > .lib-tile:nth-last-child(-n + 4) {
+        display: flex;
+    }
+}
+@media (min-width: 760px) {
+    .lib-month.is-collapsed .lib-calendar > .lib-tile:nth-last-child(-n + 5) {
+        display: flex;
+    }
+}
+@media (min-width: 900px) {
+    .lib-month.is-collapsed .lib-calendar > .lib-tile:nth-last-child(-n + 7) {
+        display: flex;
+    }
 }
 .lib-month.is-collapsed .lib-weekdays {
     display: none;

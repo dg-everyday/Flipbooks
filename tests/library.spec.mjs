@@ -17,6 +17,11 @@ const TODAY = new Date("2026-10-31T10:00:00+08:00");
 
 const tile = (page, date) => page.locator(`#lib-content .lib-tile[data-date="${date}"]`);
 const sheet = (page) => page.locator("dialog.day-sheet");
+// The columns a month's grid has at this device's width: a folded month's row.
+const rowSize = (page) =>
+    page
+        .locator("#month-2026-10 .lib-grid")
+        .evaluate((grid) => getComputedStyle(grid).gridTemplateColumns.split(" ").length);
 
 test.beforeEach(async ({ page }) => {
     await page.clock.setFixedTime(TODAY);
@@ -35,34 +40,49 @@ test.describe("Daily Grace Archives", () => {
         await expect(page.locator(".lib-week-day a")).toHaveCount(7);
     });
 
-    test("folds each month to its three newest days, and the pull tab opens it", async ({ page }) => {
+    test("folds each month to one full row of its newest days, and the pull tab opens it", async ({ page }) => {
         await page.goto(PAGE);
         const october = page.locator("#month-2026-10");
-        await expect(october.locator(".lib-tile:visible")).toHaveCount(3);
-        for (const date of ["2026-10-31", "2026-10-30", "2026-10-29"]) {
-            await expect(tile(page, date)).toBeVisible();
+        const row = await rowSize(page);
+        await expect(october.locator(".lib-tile:visible")).toHaveCount(row);
+        for (let i = 0; i < row; i++) {
+            await expect(tile(page, `2026-10-${31 - i}`)).toBeVisible();
         }
-        await expect(tile(page, "2026-10-28")).toBeHidden();
-        await expect(page.locator("#month-2026-09 .lib-tile:visible")).toHaveCount(3);
+        await expect(tile(page, `2026-10-${31 - row}`)).toBeHidden();
+        await expect(page.locator("#month-2026-09 .lib-tile:visible")).toHaveCount(row);
 
         await october.getByRole("button", { name: "Show all 31 days of October 2026" }).click();
         await expect(october.locator(".lib-tile:visible")).toHaveCount(31);
         await expect(october.getByRole("button", { name: "Show all 31 days of October 2026" })).toBeHidden();
         // September stays folded.
-        await expect(page.locator("#month-2026-09 .lib-tile:visible")).toHaveCount(3);
+        await expect(page.locator("#month-2026-09 .lib-tile:visible")).toHaveCount(row);
 
         // The chevrons, turned up, fold October back.
-        await october.getByRole("button", { name: "Fold October 2026 back to its 3 newest days" }).click();
-        await expect(october.locator(".lib-tile:visible")).toHaveCount(3);
+        await october.getByRole("button", { name: `Fold October 2026 back to its ${row} newest days` }).click();
+        await expect(october.locator(".lib-tile:visible")).toHaveCount(row);
         await expect(october.getByRole("button", { name: "Show all 31 days of October 2026" })).toBeVisible();
         await expect(october.getByRole("button", { name: /^Fold October/ })).toBeHidden();
+    });
+
+    test("refolds a month to the new row when the screen turns or resizes", async ({ page }) => {
+        await page.setViewportSize({ width: 400, height: 800 });
+        await page.goto(PAGE);
+        const october = page.locator("#month-2026-10");
+        await expect(october.locator(".lib-tile:visible")).toHaveCount(3);
+        for (const [width, row] of [[600, 4], [800, 5], [1000, 7]]) {
+            await page.setViewportSize({ width, height: 800 });
+            await expect(october.locator(".lib-tile:visible")).toHaveCount(row);
+            await expect(
+                october.getByRole("button", { name: `Fold October 2026 back to its ${row} newest days`, includeHidden: true }),
+            ).toBeAttached();
+        }
     });
 
     test("a link to a month opens it whole", async ({ page }) => {
         await page.goto(`${PAGE}#month/2026-09`);
         await expect(page.locator("#month-2026-09 .lib-tile:visible")).toHaveCount(20);
         await expect(page.getByRole("button", { name: /^Fold September 2026/ })).toBeVisible();
-        await expect(page.locator("#month-2026-10 .lib-tile:visible")).toHaveCount(3);
+        await expect(page.locator("#month-2026-10 .lib-tile:visible")).toHaveCount(await rowSize(page));
         // Every month has its own weekday names for the calendar.
         for (const month of ["2026-09", "2026-10"]) {
             await expect(page.locator(`#month-${month} .lib-weekdays span`)).toHaveCount(7);

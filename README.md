@@ -114,7 +114,7 @@ their bookmarks with the homepage's cards.
 - **`apps/pages/library.html`** — the Daily Grace Archives, in the menu just before Daily Grace Kids: every
   complete Daily Grace day from September 11, 2026 (the first day with
   poster, comic, narration, banner and title) up to today, as poster tiles.
-  Months (each folded to its three newest days, with the home page's pull
+  Months (each folded to one full row of its newest days, with the home page's pull
   tab for the rest, and the chevrons turned up to fold it again; a calendar
   on wide screens), Books (the 66, those with days to
   open) and My days (Moments prayed and answers written, from

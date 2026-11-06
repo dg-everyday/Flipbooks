@@ -356,21 +356,22 @@ function journalGuideHtml() {
       </section>
       <section class="series">
         <div class="series-head"><h3>Five kinds of entry</h3></div>
+        <p>Each kind has its own few parts to fill in. Every part is optional: write in one, some or all.</p>
         <ul class="kinds">
-          <li><strong>Daily Log</strong><span>The day: what happened, what you learned, what you are thankful for. Your answer to the Daily Moment’s question is kept here by itself.</span></li>
-          <li><strong>Discoveries</strong><span>What you found in Scripture: a verse, a fact, a person, a place, often with a bookmark in it.</span></li>
-          <li><strong>My Diary</strong><span>What is on your heart. It is left out of the Word book unless you choose to put it in.</span></li>
-          <li><strong>Notebook</strong><span>Quotes, ideas, verses to remember, a letter to your future self.</span></li>
-          <li><strong>Prayer List</strong><span>Prayers you are bringing to God. Mark one Answered, with a line on how, when the answer comes.</span></li>
+          <li><strong>Daily Log</strong><span>Your captain’s log: what happened today, what you’re thankful for, what you learned, and tomorrow, with God’s help. With the day’s question, your answer comes first; your answer in the Daily Moment is kept here by itself.</span></li>
+          <li><strong>Discoveries</strong><span>Your explorer’s notes: what you found (a bookmark, or a verse or place in Scripture), what it means, and where it fits in your life.</span></li>
+          <li><strong>My Diary</strong><span>How you feel (glad, thankful, peaceful, worried or sad), then an open page for what is on your heart. It is left out of the Word book unless you choose to put it in.</span></li>
+          <li><strong>Notebook</strong><span>Your writer’s notebook: a quote worth keeping and its source, then your notes, ideas, verses to remember or a letter to your future self.</span></li>
+          <li><strong>Prayer List</strong><span>For whom, or what about, then your prayer. Mark it Answered, with a line on how, when the answer comes.</span></li>
         </ul>
       </section>
       <section class="series">
         <div class="series-head"><h3>Write</h3></div>
         <ol class="steps">
           <li>Tap Write today’s log, a pill, or New in a folder.</li>
-          <li>Write as little or as much as you like. B makes words bold, List makes a list, and Quote sets words apart. A title is up to you.</li>
+          <li>Fill in as many of its parts as you like. In the main part, B makes words bold, List makes a list, and Quote sets words apart. A title is up to you.</li>
           <li>Add a bookmark puts one in as a card, with its exact words.</li>
-          <li>Choose the kind and the day at the top, flag an entry to come back to, and give it categories, such as Family or Work.</li>
+          <li>Choose the kind and the day at the top, flag an entry to come back to, and give it categories, such as Family or Work. Changing the kind keeps everything you wrote.</li>
           <li>It saves itself each time you pause; Saved shows at the top. Tap Done to read it back. Edit and Delete are under it.</li>
         </ol>
       </section>
@@ -496,7 +497,7 @@ function bookmarksGuideHtml() {
         <div class="series-head"><h3>Put a bookmark in your journal</h3></div>
         <ol class="steps">
           <li>In a Bookmarks folder, tap Add to journal. It starts a Discovery with the bookmark in it, or goes into the entry you are writing.</li>
-          <li>While writing an entry, tap Add a bookmark to choose one. On a wide screen you can also drag a bookmark onto the entry.</li>
+          <li>While writing an entry, tap Add a bookmark to choose one.</li>
           <li>It shows as a card with its exact words, which cannot be changed. The card stays in the entry even if you later remove the bookmark.</li>
         </ol>
       </section>

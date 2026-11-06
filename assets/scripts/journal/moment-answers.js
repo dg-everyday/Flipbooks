@@ -28,7 +28,7 @@ import {
     textToBody,
     updateEntry,
     wasRemoved,
-} from "./store.js?v=20261106-1";
+} from "./store.js?v=20261106-3";
 
 const ANSWERS_KEY = "dailygrace:moment:answers";
 const SOURCE = "moment";

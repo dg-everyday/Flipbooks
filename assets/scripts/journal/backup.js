@@ -29,7 +29,7 @@
  *                                              "wrong-password", "damaged"
  */
 
-import { dumpJournal, loadJournal } from "./store.js?v=20261106-1";
+import { dumpJournal, loadJournal } from "./store.js?v=20261106-3";
 
 export const BACKUP_FORMAT = "dailygrace-journal-backup";
 export const BACKUP_VERSION = 1;

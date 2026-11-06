@@ -5,9 +5,9 @@
  * unless the reader ticks it.
  */
 
-import { entriesForYear } from "../../../assets/scripts/journal/store.js?v=20261106-1";
-import { makeWordBook } from "../../../assets/scripts/journal/word-book.js?v=20261106-1";
-import { deliver } from "./journal-backup.js?v=20261106-2";
+import { entriesForYear } from "../../../assets/scripts/journal/store.js?v=20261106-3";
+import { makeWordBook } from "../../../assets/scripts/journal/word-book.js?v=20261106-3";
+import { deliver } from "./journal-backup.js?v=20261106-3";
 import { BOOKMARK_LABELS, ICONS, KIND_ONE } from "./journal-ui.js?v=20261106-2";
 
 export async function openWordDialog(dialog, year) {

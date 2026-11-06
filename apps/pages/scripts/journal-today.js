@@ -25,9 +25,10 @@
  * Nothing here is a streak: nothing is lost by missing a day.
  */
 
-import * as store from "../../../assets/scripts/journal/store.js?v=20261106-1";
+import * as store from "../../../assets/scripts/journal/store.js?v=20261106-3";
 import { loadVerses } from "../../components/daily-verses.js?v=20261004-1";
-import { lastBackup } from "./journal-backup.js?v=20261106-2";
+import { fieldsText } from "../../../assets/scripts/journal/kinds.js?v=20261106-1";
+import { lastBackup } from "./journal-backup.js?v=20261106-3";
 import {
     ICONS,
     KIND_LABELS,
@@ -209,7 +210,11 @@ function blanksHtml(text) {
 }
 
 function rowHtml(entry, hashFor) {
-    const text = store.bodyText(entry.body).replace(/\s+/g, " ") || entry.cards[0]?.title || entry.prompt || "";
+    const text =
+        `${store.bodyText(entry.body)} ${fieldsText(entry)}`.replace(/\s+/g, " ").trim() ||
+        entry.cards[0]?.title ||
+        entry.prompt ||
+        "";
     return `<a class="row" href="${hashFor("today", { id: entry.id, edit: false })}">
       <span class="row-top"><span class="row-title">${escapeHtml(entry.title || KIND_LABELS[entry.kind])}</span>
       <span class="row-day">${escapeHtml(formatDay(entry.day, { weekday: false }))}</span></span>

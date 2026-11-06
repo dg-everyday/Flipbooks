@@ -7,9 +7,9 @@
  */
 import { test, expect } from "@playwright/test";
 
-const STORE = "/assets/scripts/journal/store.js?v=20261106-1";
-const MOMENTS = "/assets/scripts/journal/moment-answers.js?v=20261106-1";
-const BACKUP = "/assets/scripts/journal/backup.js?v=20261106-1";
+const STORE = "/assets/scripts/journal/store.js?v=20261106-3";
+const MOMENTS = "/assets/scripts/journal/moment-answers.js?v=20261106-3";
+const BACKUP = "/assets/scripts/journal/backup.js?v=20261106-3";
 
 test.beforeEach(async ({ page }) => {
     await page.goto("/404.html");

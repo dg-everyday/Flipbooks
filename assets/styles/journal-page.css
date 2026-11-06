@@ -734,16 +734,14 @@ main.journal > .status {
     border: 2px dashed transparent;
     border-radius: 14px;
 }
+/* No bookmarks yet: no room kept, only the Add a bookmark button. */
+.drop-zone:empty {
+    padding: 0;
+}
 .dropping .drop-zone,
 .dropping .edit-body {
     border-color: var(--gold);
     background: rgb(225 182 93 / 10%);
-}
-.drop-hint {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.85rem;
-    text-align: center;
 }
 .edit-prayer {
     display: flex;
@@ -775,6 +773,89 @@ main.journal > .status {
     margin-top: 14px;
     color: var(--muted);
     font-size: 0.9rem;
+}
+
+/* Each kind's parts (kinds.js), on the page and while writing: a small gold
+   label over each, as in the Word book. */
+.entry-part {
+    margin: 14px 0 0;
+}
+.part-label {
+    display: block;
+    margin: 0 0 4px;
+    color: var(--gold);
+    font: 700 0.75rem/1.2 var(--body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.part-text {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+.entry-mood {
+    display: inline-block;
+    margin: 0;
+    padding: 2px 12px;
+    border-radius: 999px;
+    background: rgb(225 182 93 / 18%);
+    color: var(--navy);
+    font-weight: 700;
+}
+.edit-part {
+    margin: 14px 0 0;
+}
+.edit-part .cards {
+    margin-top: 0;
+}
+.edit-field {
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-size: 1.02rem;
+    line-height: 1.45;
+    resize: vertical;
+}
+textarea.edit-field {
+    min-height: 64px;
+    overflow: hidden;
+}
+.edit-field:focus {
+    border-color: var(--gold);
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(225 182 93 / 30%);
+}
+.edit-part .edit-body {
+    min-height: 140px;
+}
+.add-card {
+    margin-top: 6px;
+}
+.moods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.mood {
+    min-height: 34px;
+    padding: 4px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+.mood[aria-pressed="true"] {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: #000;
 }
 
 /* ---------------------------------------------------------------- today */

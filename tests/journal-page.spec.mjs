@@ -16,6 +16,9 @@ test.beforeEach(async ({ page }) => {
         }
         sessionStorage.setItem("seeded", "1");
         localStorage.setItem("dailygrace:avatar", "AV-01");
+        // Today's trivia already played, so no quiz opens over the home page.
+        const day = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Manila" }).format(new Date());
+        localStorage.setItem("dailygrace.trivia", JSON.stringify({ day, count: 99, last: Date.now() }));
         localStorage.setItem("dailygrace:bookmarks:sayings", JSON.stringify(["let-there-be-light"]));
         localStorage.setItem(
             "dailygrace:bookmarks:notes",
@@ -47,7 +50,7 @@ test.describe("on a wide screen", () => {
         const write = page.locator(".page-bar.with-actions").getByRole("button", { name: "Write today's log" });
         await expect(write).toBeVisible();
         // Its right edge lines up with the Home button's.
-        const [writeBox, homeBox] = await Promise.all([write.boundingBox(), page.locator(".topbar .home").boundingBox()]);
+        const [writeBox, homeBox] = await Promise.all([write.boundingBox(), page.locator(".topbar a.home").boundingBox()]);
         expect(Math.abs(writeBox.x + writeBox.width - (homeBox.x + homeBox.width))).toBeLessThanOrEqual(2);
         await write.click();
 
@@ -208,14 +211,71 @@ test.describe("on a wide screen", () => {
         await expect(link).toHaveAttribute("href", new RegExp(`/apps/pages/journal\\.html#today/write/${today}$`));
     });
 
-    test("the avatar's menu leads to My Faith Journal, which holds the bookmarks and the album", async ({ page }) => {
+    test("only the panes scroll: the page has no scrollbar of its own", async ({ page }) => {
+        await page.goto(JOURNAL);
+        await expect(page.locator("section.today poster-card")).toBeVisible();
+        const overflow = await page.evaluate(() => ({
+            page: document.documentElement.scrollHeight - document.documentElement.clientHeight,
+            body: document.body.scrollHeight - document.body.clientHeight,
+            footer: Math.round(document.querySelector(".page-footer").getBoundingClientRect().bottom) - innerHeight,
+        }));
+        expect(overflow).toEqual({ page: 0, body: 0, footer: 0 });
+    });
+
+    test("the avatar's menu holds My Faith Journal and its guide", async ({ page }) => {
         await page.goto("/");
         const menu = page.locator("dg-menu");
+        await expect(menu.locator(".item")).toHaveCount(3);
+        await expect(menu.locator('[data-action="avatar"]')).toHaveCount(1);
         await expect(menu.locator('[data-action="journal"]')).toHaveAttribute("href", /apps\/pages\/journal\.html$/);
-        await expect(menu.locator('[data-action="bookmarks"]')).toHaveCount(0);
-        await expect(menu.locator('[data-action="album"]')).toHaveCount(0);
-        // Bookmarking 101 still opens My Bookmarks itself.
-        await expect(menu.locator(".open-bookmarks")).toHaveCount(1);
+
+        // How My Faith Journal works, from the avatar's menu.
+        const guide = page.locator("dg-guide");
+        await page.evaluate(() => document.getElementById("dg-menu").open());
+        await menu.getByRole("menuitem", { name: "How My Faith Journal works" }).click();
+        await expect(guide.locator("#guide-title")).toHaveText("How it works");
+        await expect(guide.locator(".journal-link")).toHaveAttribute("href", /journal\.html#today$/);
+        await guide.locator(".close").click();
+        await expect(guide.locator("dialog")).toBeHidden();
+
+        // Help, from the three lines, says where the guides are; it opens none itself.
+        await page.evaluate(() => document.getElementById("site-menu").showHelp());
+        const help = page.locator("study-guide-menu .help-dialog");
+        await expect(help).toContainText("the ? beside the Bookmarks and Stickers headings");
+        await expect(help.locator("[data-guide]")).toHaveCount(0);
+    });
+
+    test("the journal opens its guides beside what they explain", async ({ page }) => {
+        await page.goto(JOURNAL);
+        const guide = page.locator("dg-guide");
+
+        // No ? at the top: the guide is at the foot of the folders.
+        await expect(page.locator(".topbar button")).toHaveCount(0);
+        // How My Faith Journal works, which leads to the others.
+        await page.locator(".folders-pane").getByRole("button", { name: "How My Faith Journal works" }).click();
+        await expect(guide.locator("#guide-title")).toHaveText("How it works");
+        await expect(guide.locator(".guide-body")).toContainText("Five kinds of entry");
+        await guide.locator(".guide-body").getByRole("button", { name: "How to earn stickers" }).click();
+        await expect(guide.locator("#guide-title")).toHaveText("How to earn stickers");
+        await guide.locator(".close").click();
+
+        // An empty Bookmarks folder shows how to bookmark.
+        await page.locator('a.folder[data-folder="bookmarks:facts"]').click();
+        await expect(page.locator(".list-pane .empty-help")).toContainText("press and hold a verse or a card");
+
+        // The ? beside the Bookmarks heading: Bookmarking 101.
+        const folders = page.locator(".folders-pane");
+        await folders.getByRole("button", { name: "Bookmarking 101" }).click();
+        await expect(guide.locator("#guide-title")).toHaveText("Bookmarking 101");
+        // Its way into the journal closes the guide and opens the folder.
+        await guide.locator(".journal-link").click();
+        await expect(guide.locator("dialog")).toBeHidden();
+        await expect(page).toHaveURL(/#bookmarks:verses$/);
+
+        // The ? beside the Stickers heading: How to earn stickers.
+        await folders.getByRole("button", { name: "How to earn stickers" }).click();
+        await expect(guide.locator("#guide-title")).toHaveText("How to earn stickers");
+        await expect(guide.locator(".guide-body .tally")).toBeVisible({ timeout: 15_000 });
     });
 });
 

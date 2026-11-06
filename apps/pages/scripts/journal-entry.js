@@ -32,7 +32,7 @@ import {
     cardHtml,
     escapeHtml,
     formatDay,
-} from "./journal-ui.js?v=20261106-1";
+} from "./journal-ui.js?v=20261106-2";
 
 // What a dragged bookmark carries (journal.js sets it).
 export const BOOKMARK_TYPE = "application/x-dailygrace-bookmark";

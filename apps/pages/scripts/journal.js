@@ -9,7 +9,10 @@
  *   Folders   Today · All entries · Daily Log · Discoveries · My Diary ·
  *             Notebook · Prayer List · Flagged; the six kinds of bookmark;
  *             My Sticker Album; the years of the journal; the year as a
- *             Word book (journal-word.js); Backup & restore.
+ *             Word book (journal-word.js); Backup & restore; How My Faith
+ *             Journal works (<dg-guide>). A ? beside
+ *             the Bookmarks and Stickers headings opens Bookmarking 101 and
+ *             How to earn stickers.
  *             An entry dragged onto a kind's folder moves to that kind.
  *   List      the folder's entries, newest first, grouped Today / Yesterday /
  *             This week / by month, with a search; in a bookmark folder, the
@@ -36,10 +39,10 @@ import * as store from "../../../assets/scripts/journal/store.js?v=20261106-1";
 import { importMomentAnswers } from "../../../assets/scripts/journal/moment-answers.js?v=20261106-1";
 import { BOOKMARK_KINDS } from "../../components/bookmark-manager.js?v=20261106-1";
 import { start as startAlbum } from "./stickers.js?v=20261030-1";
-import { BOOKMARK_TYPE, EntryEditor, readHtml } from "./journal-entry.js?v=20261106-1";
-import { openBackupDialog } from "./journal-backup.js?v=20261106-1";
-import { openWordDialog } from "./journal-word.js?v=20261106-1";
-import { dayVerse, noteVisit, todayAction, todayHtml } from "./journal-today.js?v=20261106-1";
+import { BOOKMARK_TYPE, EntryEditor, readHtml } from "./journal-entry.js?v=20261106-2";
+import { openBackupDialog } from "./journal-backup.js?v=20261106-2";
+import { openWordDialog } from "./journal-word.js?v=20261106-2";
+import { dayVerse, noteVisit, todayAction, todayHtml } from "./journal-today.js?v=20261106-2";
 import {
     BOOKMARK_LABELS,
     ICONS,
@@ -50,7 +53,7 @@ import {
     escapeHtml,
     monthName,
     shortDay,
-} from "./journal-ui.js?v=20261106-1";
+} from "./journal-ui.js?v=20261106-2";
 
 const ENTRY_TYPE = "application/x-dailygrace-entry";
 const STICKERS_KEY = "dailygrace:stickers";
@@ -275,6 +278,11 @@ function matches(entry, search) {
 
 /* ---------- Folders ---------- */
 
+/** The ? at the right of a folder heading, opening that part's guide. */
+function groupHelp(guide, title) {
+    return `<button class="group-help" type="button" data-action="guide" data-guide="${guide}" aria-label="${escapeHtml(title)}" title="${escapeHtml(title)}">${ICONS.help}</button>`;
+}
+
 function renderFolders() {
     const current = state.folder;
     const link = (folder, label, icon, count = null) => `
@@ -293,11 +301,11 @@ function renderFolders() {
         ${link("all", "All entries", ICONS.all, count("all"))}
         ${KIND_ORDER.map((kind) => link(kind, KIND_LABELS[kind], ICONS[kind], count(kind))).join("")}
         ${link("flagged", "Flagged", ICONS.flag, count("flagged"))}
-        <h3 class="folder-group">Bookmarks</h3>
+        <h3 class="folder-group">Bookmarks${groupHelp("bookmarks", "Bookmarking 101")}</h3>
         ${BOOKMARK_KINDS.map(({ key, label, store: storeKey }) =>
             link(`bookmarks:${key}`, label, ICONS.bookmark, readList(storeKey).length),
         ).join("")}
-        <h3 class="folder-group">Stickers</h3>
+        <h3 class="folder-group">Stickers${groupHelp("stickers", "How to earn stickers")}</h3>
         ${link("stickers", "My Sticker Album", ICONS.stickers, stickerCount())}
         <h3 class="folder-group">Years</h3>
         <div class="years"></div>
@@ -306,6 +314,9 @@ function renderFolders() {
         </button>
         <button class="folder" type="button" data-action="backup">
           <span class="folder-icon">${ICONS.backup}</span><span class="folder-label">Backup &amp; restore</span>
+        </button>
+        <button class="folder help-button" type="button" data-action="guide" data-guide="journal">
+          <span class="folder-icon">${ICONS.help}</span><span class="folder-label">How My Faith Journal works</span>
         </button>
       </nav>`;
 
@@ -397,6 +408,20 @@ function bookmarkRowsHtml(kind, items) {
         .join("");
 }
 
+/** An empty bookmark folder: how to bookmark, from Bookmarking 101. */
+function emptyBookmarksHtml() {
+    return `
+      <div class="empty-help">
+        <p><strong>Nothing bookmarked here yet.</strong></p>
+        <ol>
+          <li>On the home page or a study page, press and hold a verse or a card for half a second.</li>
+          <li>It glows gold and a ribbon appears: it is bookmarked.</li>
+          <li>Add a note on why it matters, or Skip. It then shows here, ready to put into an entry.</li>
+        </ol>
+        <button class="link-button" type="button" data-action="guide" data-guide="bookmarks">${ICONS.help} The whole of Bookmarking 101</button>
+      </div>`;
+}
+
 function emptyText(folder) {
     if (state.search) {
         return "Nothing matches your search.";
@@ -449,6 +474,13 @@ async function renderRows() {
     const folder = state.folder;
     if (folder.startsWith("bookmarks:")) {
         const kind = folder.slice("bookmarks:".length);
+        // Nothing kept of this kind: say how to bookmark at once, without
+        // waiting for the Bible or the facts to load.
+        const storeKey = BOOKMARK_KINDS.find(({ key }) => key === kind)?.store;
+        if (!readList(storeKey).length) {
+            rows.innerHTML = emptyBookmarksHtml();
+            return;
+        }
         rows.innerHTML = `<p class="status">Opening your bookmarks…</p>`;
         try {
             const items = await loadBookmarkKind(kind);
@@ -462,7 +494,11 @@ async function renderRows() {
                     state.search,
                 );
             });
-            rows.innerHTML = shown.length ? bookmarkRowsHtml(kind, shown) : `<p class="status">${escapeHtml(emptyText(folder))}</p>`;
+            rows.innerHTML = shown.length
+                ? bookmarkRowsHtml(kind, shown)
+                : state.search
+                  ? `<p class="status">${escapeHtml(emptyText(folder))}</p>`
+                  : emptyBookmarksHtml();
         } catch (error) {
             console.warn("The bookmarks could not be read:", error);
             rows.innerHTML = `<p class="status">Your bookmarks could not be opened. Check your connection and try again.</p>`;
@@ -651,9 +687,10 @@ function refresh() {
 
 /**
  * Draws the journal into `root`. `bookmarks` is the page's
- * <bookmark-manager>; `sticker`, `picker`, `backup` and `word` are its dialogs.
+ * <bookmark-manager>; `sticker`, `picker`, `backup` and `word` are its
+ * dialogs, and `guide` its <dg-guide>.
  */
-export async function start({ root, bookmarks, sticker, picker, backup, word }) {
+export async function start({ root, bookmarks, sticker, picker, backup, word, guide }) {
     root.innerHTML = `
       <section class="pane folders-pane" aria-label="Folders"></section>
       <section class="pane list-pane" aria-label="List"></section>
@@ -735,6 +772,9 @@ export async function start({ root, bookmarks, sticker, picker, backup, word }) 
                 break;
             case "backup":
                 openBackupDialog(backup);
+                break;
+            case "guide":
+                guide?.show(button.dataset.guide);
                 break;
             case "word":
                 if (editor) {

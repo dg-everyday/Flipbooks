@@ -13,15 +13,22 @@
     --action-shadow: 0 5px 14px rgb(0 0 0 / 35%);
 }
 
+/* No page scrolling behind an open guide (<dg-guide>). */
+html:has(dg-guide[open]) {
+    overflow: hidden;
+}
+
 main.journal {
     display: grid;
     grid-template-columns: 250px minmax(260px, 340px) minmax(0, 1fr);
     gap: 0;
-    max-width: 1320px;
+    /* The whole width of the screen: the folders and the list keep their
+       widths, and the page takes the rest. */
+    max-width: none;
+    width: 100%;
     height: calc(100vh - var(--topbar));
     height: calc(100dvh - var(--topbar));
     padding: 0;
-    border-inline: 1px solid var(--line);
     background: var(--paper);
 }
 main.journal > .status {
@@ -35,6 +42,9 @@ main.journal > .status {
 }
 
 .pane {
+    /* Positioned, so anything placed absolutely inside (the screen-reader
+       labels) scrolls with its pane. */
+    position: relative;
     min-width: 0;
     overflow: auto;
     overscroll-behavior: contain;
@@ -200,15 +210,21 @@ main.journal > .status {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+/* The folders' counts: black on a yellow label. */
 .count {
     min-width: 24px;
     padding: 1px 7px;
     border-radius: 999px;
-    background: rgb(255 255 255 / 10%);
+    background: var(--gold-light);
+    color: #000;
     font-size: 0.8rem;
+    font-weight: 700;
     text-align: center;
 }
 .folder-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 18px 10px 6px;
     color: rgb(243 231 210 / 60%);
     font: 700 0.75rem/1 var(--body);
@@ -242,16 +258,51 @@ main.journal > .status {
     border-color: var(--gold);
     color: var(--navy);
 }
-/* The Word book and Backup & restore, at the foot of the folders. */
+/* The Word book, Backup & restore and the guide, at the foot of the
+   folders: plain items like the rest, set a little apart from the years. */
 .backup-button {
-    margin-top: 18px;
+    margin-top: 14px;
 }
-.backup-button,
-.backup-button + .folder {
-    border: 1px solid rgb(225 182 93 / 40%);
+/* The ? beside the Bookmarks and Stickers headings: their guides. */
+.group-help {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    margin: -6px -2px -6px 0;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: rgb(255 255 255 / 6%);
+    color: var(--gold-light);
+    cursor: pointer;
 }
-.backup-button + .folder {
-    margin-top: 6px;
+.group-help:hover {
+    background: rgb(255 255 255 / 14%);
+}
+.group-help svg {
+    width: 20px;
+    height: 20px;
+}
+/* An empty Bookmarks folder: how to bookmark. */
+.empty-help svg {
+    width: 16px;
+    height: 16px;
+    vertical-align: -3px;
+}
+.empty-help {
+    margin: 16px 8px;
+    padding: 14px 16px;
+    border: 1px dashed var(--gold);
+    border-radius: 14px;
+    background: #fff;
+}
+.empty-help ol {
+    margin: 8px 0 10px;
+    padding-left: 1.3em;
+}
+.empty-help li + li {
+    margin-top: 4px;
 }
 
 /* ---------------------------------------------------------------- the list */
@@ -765,19 +816,20 @@ main.journal > .status {
 .kind-pill {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
 }
 .kind-pill button {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    min-height: 40px;
-    padding: 6px 16px;
+    gap: 5px;
+    min-height: 32px;
+    padding: 3px 12px;
+    font-size: 0.9rem;
     border: 1px solid var(--gold);
     border-radius: 999px;
     background: #fff;
     color: var(--navy);
-    font: inherit;
+    font-family: inherit;
     font-weight: 700;
     cursor: pointer;
 }
@@ -785,8 +837,8 @@ main.journal > .status {
     background: rgb(225 182 93 / 16%);
 }
 .kind-pill svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     color: var(--gold);
 }
 .today .rows {
@@ -1028,6 +1080,40 @@ a.button {
     transform: translateX(-50%);
 }
 
+/* ---------------------------------------------------------------- wide screens */
+
+/* The top bar, the journal and the footer fit the window exactly, so only
+   the panes scroll, each on its own: the page itself never does, and there
+   is no second scrollbar beside the page pane's. */
+@media (min-width: 900px) {
+    html {
+        overflow: hidden;
+    }
+    /* Positioned, so the screen-reader labels deep in the panes (placed
+       absolutely) stay inside it rather than stretching the page. */
+    body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+    }
+    .topbar,
+    .page-footer {
+        flex: none;
+    }
+    main.journal {
+        flex: 1 1 auto;
+        height: auto;
+        min-height: 0;
+    }
+    .page-footer {
+        padding: 6px 16px 8px;
+    }
+}
+
 /* ---------------------------------------------------------------- phones */
 
 @media (max-width: 899px) {
@@ -1081,6 +1167,15 @@ a.button {
     .album {
         padding: 16px;
     }
+    /* All four kinds on one line on a phone. */
+    .kind-pill {
+        gap: 5px;
+    }
+    .kind-pill button {
+        gap: 4px;
+        padding: 3px 9px;
+        font-size: 0.85rem;
+    }
     .today-poster {
         width: calc(100% + 32px);
         margin: 0 -16px;
@@ -1089,5 +1184,13 @@ a.button {
     }
     .entry-title {
         font-size: 1.6rem;
+    }
+}
+
+/* A narrow phone: the kinds' pills without their icons, so all four fit on
+   one line. */
+@media (max-width: 480px) {
+    .kind-pill svg {
+        display: none;
     }
 }

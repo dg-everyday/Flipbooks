@@ -524,11 +524,12 @@ html:has(study-guide-menu[open]) {
     overflow: hidden;
 }
 
-/* The DG emblem's menu, <dg-menu>, and the bookmarks it opens,
-   <bookmark-manager>, carry their own styles (apps/components/dg-menu.js and
-   bookmark-manager.js). While either is open, the page behind does not
-   scroll. */
+/* The DG emblem's menu, <dg-menu>, the guides Help opens, <dg-guide>, and
+   <bookmark-manager> carry their own styles (apps/components/dg-menu.js,
+   dg-guide.js and bookmark-manager.js). While one is open, the page behind
+   does not scroll. */
 html:has(dg-menu[open]),
+html:has(dg-guide[open]),
 html:has(bookmark-manager[open]) {
     overflow: hidden;
 }

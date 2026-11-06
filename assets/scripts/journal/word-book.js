@@ -10,9 +10,10 @@
  *   a cover (My Faith Journal, the year, how many entries on how many days),
  *   then a chapter for each month (Heading 1, so Word's navigation pane lists
  *   them), each day under it (Heading 2), and each entry (Heading 3: its kind
- *   and title) with the day's verse and question, the reader's words (bold,
- *   lists and quotes kept), the bookmarks put into it with their exact text,
- *   a prayer's answer, and its categories.
+ *   and title) with the day's verse and question, then each part of its kind
+ *   that has something in it, under a small label (kinds.js): the main words
+ *   with bold, lists and quotes kept, the other parts, the bookmarks put into
+ *   it with their exact text, a mood, a prayer's answer; and its categories.
  *
  * My Diary entries are left out unless `includeDiary` is set.
  *
@@ -22,7 +23,8 @@
  *     kindLabels  { log: "Daily Log", … }   cardLabels  { verses: "Bible Verse", … }
  */
 
-import { cleanBody } from "./store.js?v=20261106-1";
+import { cleanBody } from "./store.js?v=20261106-3";
+import { moodLabel, sections } from "./kinds.js?v=20261106-1";
 
 const WORD_TYPE = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 const NS_W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
@@ -202,6 +204,32 @@ const monthOf = (iso) => new Intl.DateTimeFormat("en-US", { timeZone: "UTC", mon
 
 /* ---------- The book ---------- */
 
+/** Plain words as paragraphs: blank lines part them, single line breaks stay. */
+function textParagraphs(text, style = "BodyText") {
+    return String(text)
+        .replace(/\r\n?/g, "\n")
+        .split(/\n\s*\n/)
+        .map((block) => block.trim())
+        .filter(Boolean)
+        .map((block) =>
+            para(
+                block.split("\n").flatMap((line, i) => (i ? ["<w:r><w:br/></w:r>", run(line)] : [run(line)])),
+                style,
+            ),
+        );
+}
+
+function cardParagraphs(card, cardLabels) {
+    const out = [para([run(`${cardLabels[card.kind] ?? "Bookmark"}: `, { bold: true }), run(card.title, { bold: true })], "Card")];
+    if (card.text) {
+        out.push(para(run(card.text), "Card"));
+    }
+    if (card.reference && card.reference !== card.title) {
+        out.push(para(run(card.reference), "CardReference"));
+    }
+    return out;
+}
+
 function entryParagraphs(entry, { kindLabels, cardLabels }) {
     const out = [];
     const kind = kindLabels[entry.kind] ?? "Entry";
@@ -212,21 +240,26 @@ function entryParagraphs(entry, { kindLabels, cardLabels }) {
     if (entry.prompt) {
         out.push(para(run(entry.prompt), "Prompt"));
     }
-    out.push(...bodyParagraphs(entry.body));
-    for (const card of entry.cards ?? []) {
-        out.push(para([run(`${cardLabels[card.kind] ?? "Bookmark"}: `, { bold: true }), run(card.title, { bold: true })], "Card"));
-        if (card.text) {
-            out.push(para(run(card.text), "Card"));
+    // Each part of the kind that has something in it, under its label.
+    for (const section of sections(entry)) {
+        let parts = [];
+        if (section.body) {
+            parts = bodyParagraphs(entry.body);
+        } else if (section.key) {
+            parts = textParagraphs(entry.fields?.[section.key] ?? "");
+        } else if (section.cards) {
+            parts = (entry.cards ?? []).flatMap((card) => cardParagraphs(card, cardLabels));
+        } else if (section.mood && entry.mood) {
+            parts = [para(run(moodLabel(entry.mood)), "BodyText")];
+        } else if (section.answer && entry.kind === "prayer" && entry.prayer) {
+            const answered = entry.prayer.answered
+                ? `Answered${entry.prayer.answeredOn ? ` on ${plainDay(entry.prayer.answeredOn)}` : ""}${entry.prayer.note ? `: ${entry.prayer.note}` : ""}`
+                : "Still praying";
+            parts = [para(run(answered, { bold: true }), "BodyText")];
         }
-        if (card.reference && card.reference !== card.title) {
-            out.push(para(run(card.reference), "CardReference"));
+        if (parts.length) {
+            out.push(para(run(section.label), "PartLabel"), ...parts);
         }
-    }
-    if (entry.kind === "prayer" && entry.prayer) {
-        const answered = entry.prayer.answered
-            ? `Answered${entry.prayer.answeredOn ? ` on ${plainDay(entry.prayer.answeredOn)}` : ""}${entry.prayer.note ? `: ${entry.prayer.note}` : ""}`
-            : "Still praying";
-        out.push(para(run(answered, { bold: true }), "Meta"));
     }
     if (entry.categories?.length) {
         out.push(para(run(entry.categories.join(" · ")), "Meta"));
@@ -286,6 +319,7 @@ ${style("Heading1", "heading 1", { next: "Heading2", outline: 0, paragraph: '<w:
 ${style("Heading2", "heading 2", { next: "Heading3", outline: 1, paragraph: '<w:keepNext/><w:spacing w:before="360" w:after="80"/>', run: `${HEADING_FONT}<w:color w:val="${GOLD}"/><w:sz w:val="28"/>` })}
 ${style("Heading3", "heading 3", { next: "BodyText", outline: 2, paragraph: '<w:keepNext/><w:spacing w:before="160" w:after="60"/>', run: `<w:b/><w:color w:val="${NAVY}"/><w:sz w:val="24"/>` })}
 ${style("BodyText", "Body Text")}
+${style("PartLabel", "Entry Part", { next: "BodyText", paragraph: '<w:keepNext/><w:spacing w:before="120" w:after="20"/>', run: `<w:b/><w:caps/><w:color w:val="${GOLD}"/><w:sz w:val="17"/>` })}
 ${style("Verse", "Verse", { paragraph: '<w:keepNext/><w:spacing w:after="20"/>', run: `${HEADING_FONT}<w:color w:val="${NAVY}"/>` })}
 ${style("Prompt", "Prompt", { paragraph: '<w:keepNext/>', run: `<w:color w:val="${MUTED}"/>` })}
 ${style("Quote", "Quote", { paragraph: '<w:pBdr><w:left w:val="single" w:sz="12" w:space="8" w:color="E1B65D"/></w:pBdr><w:ind w:left="567"/>', run: '<w:color w:val="062944"/>' })}

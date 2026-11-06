@@ -9,7 +9,7 @@
 import { test, expect } from "@playwright/test";
 
 const JOURNAL = "/apps/pages/journal.html";
-const STORE = "/assets/scripts/journal/store.js?v=20261106-1";
+const STORE = "/assets/scripts/journal/store.js?v=20261106-3";
 const at = (iso) => new Date(`${iso}T09:00:00+08:00`);
 
 /** Opens the journal and waits for Today, so nothing is written while it is still being drawn. */

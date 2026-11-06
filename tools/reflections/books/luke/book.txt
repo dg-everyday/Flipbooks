@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Luke
+1-4 | Good Tidings of Great Joy
+5-9 | Thy Faith Hath Saved Thee
+10-15 | He Was Lost, and Is Found
+16-19 | To Seek and to Save That Which Was Lost
+20-24 | Did Not Our Heart Burn Within Us

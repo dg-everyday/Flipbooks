@@ -7,9 +7,9 @@
  * docs/faith-journal/plan.md, "Does a year of My Faith Journal fit?").
  *
  * Database "dailygrace-journal", version 1:
- *   entries   { id, year, day, kind, title, body, verse, prompt, cards, mood,
- *               categories, flag, prayer, source, sourceKey, edited,
- *               created, updated, original, versions }
+ *   entries   { id, year, day, kind, title, body, fields, verse, prompt,
+ *               cards, mood, categories, flag, prayer, source, sourceKey,
+ *               edited, created, updated, original, versions }
  *             indexes: year, day, sourceKey (unique; only entries the app
  *             wrote from somewhere else, such as a Moment's answer, have one)
  *   volumes   { year, opened, closed }   one for each year the journal has
@@ -18,6 +18,8 @@
  * An entry belongs to the year of its day (YYYY-MM-DD, Asia/Manila like the
  * rest of the app). Its body is a small, cleaned piece of HTML: paragraphs,
  * line breaks, bold, italic, lists and quotes, nothing else (cleanBody).
+ * Its other parts, which differ by kind (what I'm thankful for, a quote and
+ * its source, for whom a prayer is…; kinds.js), are plain text in `fields`.
  * Changing an entry's title or body keeps the one before it: `original` is
  * the entry as first written, `versions` the last MAX_VERSIONS before now.
  * A closed volume's entries can be read but not changed.
@@ -38,6 +40,8 @@
  *              cleanBody(html), textToBody(text), bodyText(html)
  * Events       JOURNAL_CHANGE on window, detail: { action, id }
  */
+
+import { FIELD_KEYS, FIELD_LIMIT, MOODS } from "./kinds.js?v=20261106-1";
 
 const DB_NAME = "dailygrace-journal";
 const DB_VERSION = 1;
@@ -257,6 +261,21 @@ function cleanCards(value) {
         : [];
 }
 
+/** The plain parts of an entry (kinds.js), each a string; empty ones dropped. */
+function cleanFields(value) {
+    const fields = {};
+    if (value && typeof value === "object") {
+        for (const key of FIELD_KEYS) {
+            if (typeof value[key] === "string" && value[key].trim()) {
+                fields[key] = value[key].slice(0, FIELD_LIMIT);
+            }
+        }
+    }
+    return fields;
+}
+
+const cleanMood = (value) => (MOODS.some((mood) => mood.key === value) ? value : null);
+
 function cleanPrayer(value) {
     if (!value || typeof value !== "object") {
         return null;
@@ -283,7 +302,8 @@ export async function addEntry(fields = {}) {
         verse: typeof fields.verse === "string" ? fields.verse : "",
         prompt: typeof fields.prompt === "string" ? fields.prompt : "",
         cards: cleanCards(fields.cards),
-        mood: typeof fields.mood === "string" ? fields.mood : null,
+        fields: cleanFields(fields.fields),
+        mood: cleanMood(fields.mood),
         categories: cleanList(fields.categories),
         flag: Boolean(fields.flag),
         prayer: kind === "prayer" ? (cleanPrayer(fields.prayer) ?? cleanPrayer({})) : null,
@@ -370,7 +390,10 @@ export async function updateEntry(id, changes = {}, { fromSource = false, newVer
             next.cards = cleanCards(changes.cards);
         }
         if ("mood" in changes) {
-            next.mood = typeof changes.mood === "string" ? changes.mood : null;
+            next.mood = cleanMood(changes.mood);
+        }
+        if ("fields" in changes) {
+            next.fields = cleanFields(changes.fields);
         }
         if ("categories" in changes) {
             next.categories = cleanList(changes.categories);
@@ -387,9 +410,12 @@ export async function updateEntry(id, changes = {}, { fromSource = false, newVer
         if ("prompt" in changes) {
             next.prompt = typeof changes.prompt === "string" ? changes.prompt : "";
         }
-        const rewritten = next.title !== entry.title || next.body !== entry.body;
+        const rewritten =
+            next.title !== entry.title ||
+            next.body !== entry.body ||
+            JSON.stringify(next.fields ?? {}) !== JSON.stringify(entry.fields ?? {});
         if (rewritten && !fromSource && newVersion) {
-            next.versions = [...entry.versions, { title: entry.title, body: entry.body, updated: entry.updated }].slice(
+            next.versions = [...entry.versions, { title: entry.title, body: entry.body, fields: entry.fields ?? {}, updated: entry.updated }].slice(
                 -MAX_VERSIONS,
             );
         }

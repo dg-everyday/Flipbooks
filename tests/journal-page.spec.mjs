@@ -137,7 +137,7 @@ test.describe("on a wide screen", () => {
         await page.goto(JOURNAL);
         // A diary entry and a Discovery with a bookmark in it.
         await page.evaluate(async () => {
-            const store = await import("/assets/scripts/journal/store.js?v=20261106-1");
+            const store = await import("/assets/scripts/journal/store.js?v=20261106-3");
             await store.addEntry({ day: "2026-10-05", kind: "diary", title: "Only mine", body: "<p>Private words</p>" });
             await store.addEntry({
                 day: "2026-10-06",

@@ -116,7 +116,7 @@ const HINT_MS = 3600;
 const MAX_DONE = 400;
 const MAX_ANSWERS = 60;
 const JOURNAL_MOMENTS = new URL(
-    "../../assets/scripts/journal/moment-answers.js?v=20261106-1",
+    "../../assets/scripts/journal/moment-answers.js?v=20261106-3",
     import.meta.url,
 ).href;
 

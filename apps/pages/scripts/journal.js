@@ -35,14 +35,15 @@
  * notebook, prayer, flagged, stickers, bookmarks:<kind>.
  */
 
-import * as store from "../../../assets/scripts/journal/store.js?v=20261106-1";
-import { importMomentAnswers } from "../../../assets/scripts/journal/moment-answers.js?v=20261106-1";
+import * as store from "../../../assets/scripts/journal/store.js?v=20261106-3";
+import { importMomentAnswers } from "../../../assets/scripts/journal/moment-answers.js?v=20261106-3";
+import { fieldsText, moodLabel } from "../../../assets/scripts/journal/kinds.js?v=20261106-1";
 import { BOOKMARK_KINDS } from "../../components/bookmark-manager.js?v=20261106-1";
 import { start as startAlbum } from "./stickers.js?v=20261030-1";
-import { BOOKMARK_TYPE, EntryEditor, readHtml } from "./journal-entry.js?v=20261106-2";
-import { openBackupDialog } from "./journal-backup.js?v=20261106-2";
-import { openWordDialog } from "./journal-word.js?v=20261106-2";
-import { dayVerse, noteVisit, todayAction, todayHtml } from "./journal-today.js?v=20261106-2";
+import { BOOKMARK_TYPE, EntryEditor, readHtml } from "./journal-entry.js?v=20261106-3";
+import { openBackupDialog } from "./journal-backup.js?v=20261106-3";
+import { openWordDialog } from "./journal-word.js?v=20261106-3";
+import { dayVerse, noteVisit, todayAction, todayHtml } from "./journal-today.js?v=20261106-3";
 import {
     BOOKMARK_LABELS,
     ICONS,
@@ -262,6 +263,8 @@ function matches(entry, search) {
     const haystack = [
         entry.title,
         store.bodyText(entry.body),
+        fieldsText(entry),
+        moodLabel(entry.mood),
         entry.verse,
         entry.prompt,
         entry.categories.join(" "),
@@ -355,8 +358,9 @@ function groupName(day, today) {
     return monthName(day);
 }
 
+/** An entry's first words: its main words, else its other parts, a bookmark or the day's question. */
 function preview(entry) {
-    const text = store.bodyText(entry.body).replace(/\s+/g, " ");
+    const text = `${store.bodyText(entry.body)} ${fieldsText(entry)}`.replace(/\s+/g, " ").trim();
     return text || entry.cards[0]?.title || entry.prompt || "";
 }
 

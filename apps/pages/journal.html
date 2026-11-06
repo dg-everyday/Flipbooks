@@ -50,7 +50,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/journal-page.css?v=20261106-16"
+            href="../../assets/styles/journal-page.css?v=20261106-17"
         />
     </head>
     <body>
@@ -151,11 +151,11 @@
         <script type="module" src="../components/gods-blueprint.js?v=20261106-1"></script>
         <script type="module" src="../components/red-letter-quotes.js?v=20261106-1"></script>
         <script type="module" src="../components/bookmark-manager.js?v=20261106-1"></script>
-        <script type="module" src="../components/dg-guide.js?v=20261106-1"></script>
+        <script type="module" src="../components/dg-guide.js?v=20261106-3"></script>
         <!-- Today's poster, animated as on the home page. -->
         <script type="module" src="../components/poster-card.js?v=20261031-1"></script>
         <script type="module">
-            import { start } from "./scripts/journal.js?v=20261106-4";
+            import { start } from "./scripts/journal.js?v=20261106-5";
             const bookmarks = document.getElementById("bookmarks");
             bookmarks.loadVerses = async (ids) => {
                 await initDatabase();

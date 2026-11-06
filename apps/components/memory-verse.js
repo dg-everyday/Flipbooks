@@ -19,7 +19,12 @@
  *   7 Say it         only the reference; say it, then check
  * The practice follows the days practised, not the calendar, so a missed day
  * picks up where the reader left off. One practice a day moves it on; opening
- * it again the same day repeats that day's practice. Saying it with "I had it"
+ * it again the same day repeats that day's practice. Once the week's first
+ * practice is done, each day of the week missed so far (up to two) moves it
+ * one step further, so five days practised in any week reach "Say it", as
+ * five Moments make a faithful week: a missed day or a start after Sunday no
+ * longer puts the verse out of reach. A reader who comes every day still
+ * takes all seven steps. Saying it with "I had it"
  * on the last one marks the verse learned, and the card turns gold.
  *
  * Usage
@@ -51,7 +56,7 @@ import {
     DEFAULT_VERSES_BASE,
     loadVerses,
 } from "./daily-verses.js?v=20261004-1";
-import { parseReference } from "./scripture-refs.js?v=20261024-1";
+import { parseReference } from "./scripture-refs.js?v=20261106-1";
 import {
     BOOK_THUMB_BOUNDS,
     DEFAULT_THUMB_BOUNDS,
@@ -73,6 +78,8 @@ const LEARNED_KEY = "dailygrace:memory:learned";
 // About two months of weeks, and a few years of learned verses.
 const MAX_WEEKS = 8;
 const MAX_LEARNED = 200;
+// Days missed in a week that the practice makes up for: 5 of 7 reach "Say it".
+const MAKE_UP_DAYS = 2;
 // Phrases longer than this are cut into pieces of about this many words.
 const PHRASE_WORDS = 5;
 const READS = 3;
@@ -715,12 +722,24 @@ export class MemoryVerse extends HTMLElement {
         return this.#practised.includes(this.#today);
     }
 
-    /** Today's practice: one step on for each earlier day practised this week. */
+    /**
+     * Today's practice: one step on for each earlier day practised this
+     * week, and, once the reader has begun, one more for each day of the
+     * week missed before today, up to MAKE_UP_DAYS.
+     */
     get #todaysLevel() {
-        const before = this.#practised.filter(
-            (iso) => iso !== this.#today,
+        const practised = this.#practised;
+        const before = practised.filter((iso) => iso !== this.#today).length;
+        if (before === 0) {
+            return 0;
+        }
+        const missed = this.#week.days.filter(
+            (iso) => iso < this.#today && !practised.includes(iso),
         ).length;
-        return Math.min(before, PRACTICES.length - 1);
+        return Math.min(
+            before + Math.min(missed, MAKE_UP_DAYS),
+            PRACTICES.length - 1,
+        );
     }
 
     get #learned() {

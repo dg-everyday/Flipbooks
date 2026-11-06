@@ -30,14 +30,14 @@ import {
     followHash,
     filterMenu,
     titleWithInfo,
-} from "./study-utils.js?v=20261024-1";
+} from "./study-utils.js?v=20261106-1";
 import {
     BOOKMARK_STYLES,
     CardHold,
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20261030-1";
+} from "../../components/card-bookmarks.js?v=20261106-1";
 import { MEDIA_BASE_URL } from "../../settings/settings.js?v=20261009-1";
 
 const DATA = "assets/guidance-for-life.json";

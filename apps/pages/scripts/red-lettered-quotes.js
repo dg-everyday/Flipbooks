@@ -31,7 +31,7 @@ import {
     filterMenu,
     titleWithInfo,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261024-1";
+} from "./study-utils.js?v=20261106-1";
 // The same ?v= token as the components' imports, so one copy of the module
 // holds the bookmarks for the whole page.
 import {
@@ -40,7 +40,7 @@ import {
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20261030-1";
+} from "../../components/card-bookmarks.js?v=20261106-1";
 
 const DATA = "assets/red-letter-quotes.json";
 // Each verse's { explanation, translations } (see tools/annotations).

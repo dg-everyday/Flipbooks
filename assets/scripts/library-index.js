@@ -18,7 +18,7 @@
  * Import it with the same ?v= token everywhere.
  */
 
-import { parseReference } from "../../apps/components/scripture-refs.js?v=20261024-1";
+import { parseReference } from "../../apps/components/scripture-refs.js?v=20261106-1";
 import { MEDIA_BASE_URL } from "../../apps/settings/settings.js?v=20261009-1";
 
 const INDEX_BASE = new URL("../library/", import.meta.url);

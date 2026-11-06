@@ -1,0 +1,1093 @@
+/* My Faith Journal (journal.html), on top of study-page.css and
+   stickers-page.css (the album opens inside it). Three panes as in a mail
+   program — folders, list, page — side by side from 900px, and one at a
+   time on a phone, chosen by data-show on the journal (journal.js). Same
+   palette as the rest of Daily Grace: navy, gold and cream paper. */
+
+/* The page's own colours for the round buttons on today's poster
+   (<poster-card>), as in styles.css on the home page. */
+:root {
+    --action: #c62828;
+    --action-hover: #a91f1f;
+    --action-ink: #fff;
+    --action-shadow: 0 5px 14px rgb(0 0 0 / 35%);
+}
+
+main.journal {
+    display: grid;
+    grid-template-columns: 250px minmax(260px, 340px) minmax(0, 1fr);
+    gap: 0;
+    max-width: 1320px;
+    height: calc(100vh - var(--topbar));
+    height: calc(100dvh - var(--topbar));
+    padding: 0;
+    border-inline: 1px solid var(--line);
+    background: var(--paper);
+}
+main.journal > .status {
+    grid-column: 1 / -1;
+}
+.journal[data-wide="true"] {
+    grid-template-columns: 250px minmax(0, 1fr);
+}
+.journal[data-wide="true"] .list-pane {
+    display: none;
+}
+
+.pane {
+    min-width: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+.folders-pane {
+    padding: 14px 10px 24px;
+    background: var(--navy);
+    color: var(--cream);
+}
+.list-pane {
+    border-right: 1px solid var(--line);
+    background: #fffdf8;
+}
+.page-pane {
+    padding: 0 0 32px;
+}
+
+.phone-only {
+    display: none !important;
+}
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- buttons */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+.button svg,
+.icon-button svg,
+.link-button svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+}
+.button.primary {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+}
+.button.primary:hover {
+    background: var(--navy-2);
+}
+.button.quiet {
+    border-color: var(--line);
+    color: var(--muted);
+}
+.button.small {
+    min-height: 34px;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+}
+.button.big {
+    min-height: 50px;
+    padding: 12px 22px;
+    font-size: 1.1rem;
+}
+.button:disabled {
+    opacity: 0.55;
+    cursor: default;
+}
+.icon-button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.icon-button:hover {
+    background: rgb(198 146 46 / 14%);
+}
+.link-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--navy-2);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------- folders */
+
+.folders-pane .pane-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 8px 14px;
+    color: var(--gold-light);
+    font-size: 1.45rem;
+}
+.year-badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgb(225 182 93 / 18%);
+    color: var(--cream);
+    font: 700 0.8rem/1.4 var(--body);
+}
+.folder {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 40px;
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 10px;
+    background: none;
+    color: var(--cream);
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+.folder:hover {
+    background: rgb(255 255 255 / 8%);
+}
+.folder[aria-current="page"] {
+    background: rgb(225 182 93 / 22%);
+    color: #fff;
+}
+.folder.drop-target {
+    outline: 2px dashed var(--gold-light);
+    background: rgb(225 182 93 / 18%);
+}
+.folder-icon {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    color: var(--gold-light);
+}
+.folder-icon svg {
+    width: 20px;
+    height: 20px;
+}
+.folder-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.count {
+    min-width: 24px;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 10%);
+    font-size: 0.8rem;
+    text-align: center;
+}
+.folder-group {
+    margin: 18px 10px 6px;
+    color: rgb(243 231 210 / 60%);
+    font: 700 0.75rem/1 var(--body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.years {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 8px;
+}
+.year {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: 1px solid rgb(225 182 93 / 40%);
+    border-radius: 999px;
+    background: none;
+    color: var(--cream);
+    font: inherit;
+    cursor: pointer;
+}
+.year svg {
+    width: 16px;
+    height: 16px;
+}
+.year[aria-pressed="true"] {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+}
+/* The Word book and Backup & restore, at the foot of the folders. */
+.backup-button {
+    margin-top: 18px;
+}
+.backup-button,
+.backup-button + .folder {
+    border: 1px solid rgb(225 182 93 / 40%);
+}
+.backup-button + .folder {
+    margin-top: 6px;
+}
+
+/* ---------------------------------------------------------------- the list */
+
+.pane-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 56px;
+    padding: 8px 12px;
+    background: inherit;
+    border-bottom: 1px solid var(--line);
+}
+.list-pane .pane-bar {
+    background: #fffdf8;
+}
+.pane-bar .pane-title {
+    flex: 1;
+    min-width: 0;
+    color: var(--navy);
+    font-size: 1.3rem;
+}
+.page-bar {
+    background: var(--paper);
+    border-bottom: 0;
+    min-height: 0;
+    padding: 0;
+}
+/* A bar with buttons (Today's "Write today's log"): the buttons sit at its
+   right, their edge in line with the Home button above (the topbar's 14px). */
+.page-bar.with-actions {
+    min-height: 56px;
+    padding: 8px 14px 8px 22px;
+    border-bottom: 1px solid var(--line);
+}
+.bar-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+.search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* study-page.css gives .search a full width of its own. */
+    width: auto;
+    margin: 10px 12px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--muted);
+}
+.search svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+}
+.search input {
+    flex: 1;
+    min-width: 0;
+    min-height: 38px;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: var(--ink);
+    outline: none;
+}
+.list-group {
+    margin: 14px 14px 4px;
+    color: var(--gold);
+    font: 700 0.75rem/1 var(--body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.rows {
+    padding: 0 8px 16px;
+}
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+    margin: 4px 0;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: none;
+    color: var(--ink);
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+.row:hover {
+    border-color: var(--line);
+    background: #fff;
+}
+.row[aria-current="true"] {
+    border-color: var(--gold);
+    background: #fff;
+    box-shadow: var(--shadow);
+}
+.bookmark-row {
+    cursor: grab;
+}
+.row-top {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.row-title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    color: var(--navy);
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.row-day {
+    flex: none;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+.row-text {
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 0.92rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.row-note {
+    padding-left: 8px;
+    border-left: 3px solid var(--gold-light);
+    color: var(--ink);
+    font-size: 0.9rem;
+}
+.row-meta,
+.row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+.row-actions {
+    margin-top: 4px;
+}
+.tag,
+.chips li {
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: rgb(198 146 46 / 14%);
+    color: var(--navy-2);
+    font-size: 0.78rem;
+}
+.tag.verse {
+    background: rgb(0 27 52 / 8%);
+}
+.tag.answered {
+    background: #e3f1e0;
+    color: #24572a;
+}
+.row-flag svg {
+    width: 16px;
+    height: 16px;
+    color: #b5452f;
+}
+
+/* ---------------------------------------------------------------- the page */
+
+.page-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 22px;
+}
+.page-empty {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--muted);
+}
+.eyebrow {
+    margin: 0 0 6px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.entry-title {
+    color: var(--navy);
+    font-size: 2rem;
+}
+.entry-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+    color: #b5452f;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.entry-flag svg {
+    width: 16px;
+    height: 16px;
+}
+.entry-context {
+    margin: 14px 0;
+    padding: 12px 16px;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    background: rgb(198 146 46 / 9%);
+}
+.entry-verse {
+    margin: 0 0 4px;
+    color: var(--navy);
+    font: 400 1.2rem/1.2 var(--display);
+}
+.entry-prompt {
+    margin: 0;
+    color: var(--ink);
+}
+.entry-body,
+.edit-body {
+    font-size: 1.08rem;
+    line-height: 1.5;
+}
+.entry-body blockquote,
+.edit-body blockquote {
+    margin: 0.6em 0;
+    padding: 4px 14px;
+    border-left: 3px solid var(--gold-light);
+    color: var(--navy-2);
+}
+.entry-body ul,
+.entry-body ol,
+.edit-body ul,
+.edit-body ol {
+    padding-left: 1.4em;
+}
+.entry-empty {
+    color: var(--muted);
+}
+.entry-prayer {
+    margin-top: 14px;
+    color: var(--muted);
+    font-weight: 700;
+}
+.entry-prayer.answered {
+    color: #24572a;
+}
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.entry-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+/* A bookmark in an entry: its words are Scripture or study text, never edited. */
+.cards {
+    display: grid;
+    gap: 10px;
+    margin: 16px 0 0;
+}
+.card {
+    position: relative;
+    margin: 0;
+    padding: 12px 44px 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: var(--shadow);
+}
+.card figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--navy);
+}
+.card-kind {
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.card p {
+    margin: 6px 0 0;
+}
+.card cite {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-style: normal;
+    font-size: 0.9rem;
+}
+.card-remove {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+}
+.card-remove svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ---------------------------------------------------------------- writing */
+
+.edit-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: -18px -22px 12px;
+    padding: 10px 22px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+}
+.edit-bar select,
+.edit-bar input,
+.edit-title,
+.edit-categories input,
+.edit-prayer input[type="text"],
+.journal-dialog input[type="password"],
+.journal-dialog input[type="file"] {
+    min-height: 38px;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+}
+.flag-toggle[aria-pressed="true"] {
+    color: #b5452f;
+    background: rgb(181 69 47 / 10%);
+}
+.edit-status {
+    flex: 1;
+    min-width: 60px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: right;
+}
+.edit-status.error,
+.dialog-note.error {
+    color: #b5452f;
+    font-weight: 700;
+}
+.edit-title {
+    width: 100%;
+    margin: 6px 0 10px;
+    border-color: transparent;
+    background: none;
+    color: var(--navy);
+    font: 400 1.7rem/1.2 var(--display);
+}
+.edit-title:focus {
+    border-color: var(--line);
+    background: #fff;
+}
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+.toolbar button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 34px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--navy);
+    font: inherit;
+    cursor: pointer;
+}
+.toolbar svg {
+    width: 16px;
+    height: 16px;
+}
+.edit-body {
+    min-height: 200px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
+}
+.edit-body:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgb(225 182 93 / 30%);
+}
+.edit-body:empty::before {
+    content: attr(data-placeholder);
+    color: var(--muted);
+}
+.drop-zone {
+    padding: 6px;
+    border: 2px dashed transparent;
+    border-radius: 14px;
+}
+.dropping .drop-zone,
+.dropping .edit-body {
+    border-color: var(--gold);
+    background: rgb(225 182 93 / 10%);
+}
+.drop-hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+.edit-prayer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 0;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+}
+.edit-prayer legend {
+    color: var(--navy);
+    font-weight: 700;
+}
+.edit-prayer input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+}
+.check {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.edit-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------------------- today */
+
+.today {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+/* Today's poster: its 941 x 1672 picture in the card's 8px frame, as wide
+   as the page; on a phone, from edge to edge of the screen. */
+.today-poster {
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.today-poster:not(:defined) {
+    box-sizing: content-box;
+    padding: 8px;
+    aspect-ratio: 941 / 1672;
+    background: #f2f2f2;
+}
+.today-question {
+    color: var(--navy);
+    font-size: 1.6rem;
+}
+/* The other kinds of entry, each in a pill of its own. */
+.today-more {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    color: var(--muted);
+}
+.kind-pill {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.kind-pill button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 6px 16px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+.kind-pill button:hover {
+    background: rgb(225 182 93 / 16%);
+}
+.kind-pill svg {
+    width: 16px;
+    height: 16px;
+    color: var(--gold);
+}
+.today .rows {
+    align-self: stretch;
+    padding: 0;
+}
+.quiet {
+    color: var(--muted);
+}
+
+/* Welcome back, a closed year, a milestone, a verse learned, a backup:
+   cards on Today, all quiet and none of them counting days missed. */
+.welcome {
+    margin: 0;
+    color: var(--navy);
+    font: 400 1.35rem/1.2 var(--display);
+}
+.today-card {
+    align-self: stretch;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: var(--shadow);
+}
+.today-card h3 {
+    margin: 2px 0 6px;
+    color: var(--navy);
+    font-size: 1.4rem;
+}
+.today-card p {
+    margin: 0 0 8px;
+}
+.today-card .eyebrow svg,
+.today-card > p > svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: -3px;
+}
+.today-card.closing {
+    border-color: var(--gold);
+    background: linear-gradient(160deg, #fffaf0, #f7eddb);
+}
+.today-card.milestone {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-color: var(--gold-light);
+}
+.today-card.milestone p {
+    margin: 0;
+    color: var(--navy);
+    font-weight: 700;
+}
+.today-card.milestone svg {
+    color: var(--gold);
+}
+.today-card.reminder {
+    border-color: rgb(181 69 47 / 30%);
+    background: #fff8f4;
+}
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+a.button {
+    text-decoration: none;
+}
+.memories {
+    align-self: stretch;
+}
+.memories .rows {
+    padding: 0;
+}
+.memory-label {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.list-group svg {
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+}
+.recall-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+.recall cite {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--gold);
+    font: 400 1.05rem/1 var(--display);
+    font-style: normal;
+}
+.blank {
+    padding: 0 4px;
+    border: 0;
+    border-bottom: 2px solid var(--gold);
+    background: rgb(225 182 93 / 16%);
+    color: var(--muted);
+    font: inherit;
+    cursor: pointer;
+}
+.blank.shown {
+    background: none;
+    color: var(--navy);
+    font-weight: 700;
+    cursor: default;
+}
+.so-far {
+    margin: 0;
+    color: var(--navy-2);
+}
+.closed-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------------------- album */
+
+.album {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 22px;
+}
+
+/* ---------------------------------------------------------------- dialogs */
+
+.journal-dialog {
+    width: min(560px, 94vw);
+    max-height: 90vh;
+    max-height: 90dvh;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    background: var(--cream);
+    color: var(--ink);
+    box-shadow: 0 28px 70px rgb(0 27 52 / 45%);
+}
+.journal-dialog::backdrop {
+    background: rgb(0 27 52 / 62%);
+    backdrop-filter: blur(4px);
+}
+.dialog-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 0 18px;
+}
+.dialog-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px 12px 20px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+}
+.dialog-head h2 {
+    color: var(--navy);
+    font-size: 1.5rem;
+}
+.backup-part {
+    padding: 8px 20px;
+}
+.backup-part h3 {
+    margin-bottom: 6px;
+    color: var(--navy);
+    font-size: 1.2rem;
+}
+.backup-part form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.backup-part label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    font-weight: 700;
+}
+.warning {
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgb(181 69 47 / 10%);
+    color: #8a3221;
+    font-size: 0.92rem;
+}
+.dialog-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+.restore-choice {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--paper);
+}
+.choice-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.picker-list {
+    padding: 0 10px;
+}
+.journal-dialog .search {
+    margin: 10px 20px;
+}
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    z-index: 2000;
+    max-width: min(420px, 92vw);
+    margin: 0;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--navy);
+    color: #fff;
+    box-shadow: var(--shadow);
+    transform: translateX(-50%);
+}
+
+/* ---------------------------------------------------------------- phones */
+
+@media (max-width: 899px) {
+    main.journal {
+        display: block;
+        height: auto;
+        min-height: calc(100dvh - var(--topbar));
+        border: 0;
+    }
+    .pane {
+        display: none;
+        overflow: visible;
+    }
+    .journal[data-show="folders"] .folders-pane,
+    .journal[data-show="list"] .list-pane,
+    .journal[data-show="page"] .page-pane {
+        display: block;
+    }
+    .folders-pane {
+        min-height: calc(100dvh - var(--topbar));
+    }
+    .phone-only {
+        display: grid !important;
+    }
+    h2.phone-only {
+        display: block !important;
+    }
+    .page-bar,
+    .page-bar.with-actions {
+        position: sticky;
+        top: var(--topbar);
+        min-height: 52px;
+        padding: 6px 14px 6px 10px;
+        border-bottom: 1px solid var(--line);
+    }
+    /* Only the navy folders on show: no footer below them. */
+    body:has(.journal[data-show="folders"]) .page-footer {
+        display: none;
+    }
+    .list-pane .pane-bar {
+        top: var(--topbar);
+    }
+    .page-body {
+        padding: 16px;
+    }
+    .edit-bar {
+        top: calc(var(--topbar) + 52px);
+        margin: -16px -16px 12px;
+        padding: 8px 16px;
+    }
+    .album {
+        padding: 16px;
+    }
+    .today-poster {
+        width: calc(100% + 32px);
+        margin: 0 -16px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .entry-title {
+        font-size: 1.6rem;
+    }
+}

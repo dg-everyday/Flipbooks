@@ -28,7 +28,7 @@ import {
     guideInfoButton,
     titleWithInfo,
     scrollUnderTopbar,
-} from "./study-utils.js?v=20261024-1";
+} from "./study-utils.js?v=20261106-1";
 import {
     loadLibrary,
     dateOf,
@@ -37,7 +37,7 @@ import {
     thumbUrl,
     symbolUrl,
     daysForReference,
-} from "../../../assets/scripts/library-index.js?v=20261031-1";
+} from "../../../assets/scripts/library-index.js?v=20261106-1";
 import { loadVerses } from "../../components/daily-verses.js?v=20261004-1";
 import { journeyYear, readJourney, hasJourney } from "../../../assets/scripts/journey.js?v=20261101-1";
 import { createJourney } from "./journey-view.js?v=20261101-2";

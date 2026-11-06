@@ -55,7 +55,7 @@
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
-import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261024-1";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261106-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -1081,7 +1081,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5" /><circle class="help-fill" cx="8" cy="12" r="1.8" /></svg>
                 </span>
-                <p><strong>Show your bookmarks.</strong> Tap the DG emblem (or your avatar) at the top of the page, then My Bookmarks. Tap Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint or Jesus' Words at the top to switch between them. Hold a bookmark there to remove it, which makes room when a list is full. Bookmarks and notes are saved on this device. Tap the red PDF button beside the title to open all of them, with your notes, as one PDF, ready to save, print or share.</p>
+                <p><strong>Show your bookmarks.</strong> Tap your avatar (or the DG emblem) at the top of the page, then My Faith Journal: each kind has a Bookmarks folder there, and its My Bookmarks button opens them all. Tap Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint or Jesus' Words at the top to switch between them. Hold a bookmark there to remove it, which makes room when a list is full. Bookmarks and notes are saved on this device. Tap the red PDF button beside the title to open all of them, with your notes, as one PDF, ready to save, print or share.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1115,7 +1115,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
                 </span>
-                <p><strong>Your own things.</strong> On your first visit you choose an avatar, a Bible hero who becomes your picture in place of the DG emblem beside the three lines. Tap it for Change my avatar, My Bookmarks, My Sticker Album, Bookmarking 101 (a short guide to keeping verses and cards, with notes) and How to earn stickers. Tap outside the little menu or press Escape to close it.</p>
+                <p><strong>Your own things.</strong> On your first visit you choose an avatar, a Bible hero who becomes your picture in place of the DG emblem beside the three lines. Tap it for Change my avatar, My Faith Journal (your daily log, prayers, bookmarks and Sticker Album), Bookmarking 101 (a short guide to keeping verses and cards, with notes) and How to earn stickers. Tap outside the little menu or press Escape to close it.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1239,7 +1239,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon gold">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
                 </span>
-                <p><strong>Bookmark facts, sayings, questions, blueprints and Jesus' words.</strong> Press and hold a fact, a saying, "Today's Guiding Question", "Jesus' Spoken Words" or "Following Today's God Blueprint" for half a second to bookmark it; on the Questions We All Ask and Following God's Blueprint pages, hold a tile or tap its Bookmark button. Each asks for a note, as a verse does. They are kept with your verses: tap the DG emblem (or your avatar), then My Bookmarks, to see them. You can keep up to 50 of each.</p>
+                <p><strong>Bookmark facts, sayings, questions, blueprints and Jesus' words.</strong> Press and hold a fact, a saying, "Today's Guiding Question", "Jesus' Spoken Words" or "Following Today's God Blueprint" for half a second to bookmark it; on the Questions We All Ask and Following God's Blueprint pages, hold a tile or tap its Bookmark button. Each asks for a note, as a verse does. They are kept with your verses: tap your avatar (or the DG emblem), then My Faith Journal, to see them. You can keep up to 50 of each.</p>
             </li>
             <li>
                 <span class="help-icon gold">

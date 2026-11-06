@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="My Faith Journal — your own logbook of your walk with God: each day's verse and your words about it, your bookmarks and notes, your prayers and your stickers, kept on your device."
+        />
+        <link
+            rel="canonical"
+            href="https://dailygrace.faith/apps/pages/journal.html"
+        />
+        <!-- The journal is the reader's own, kept on their device: nothing
+             here to index or share. -->
+        <meta name="robots" content="noindex" />
+        <meta name="theme-color" content="#001b34" />
+
+        <title>Daily Grace — My Faith Journal</title>
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            href="../../assets/images/apple-touch-icon.png"
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/GermaniaOne-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="../../assets/fonts/Strait-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/study-page.css?v=20261016-6"
+        />
+        <!-- The Sticker Album opens inside the journal (stickers.js). -->
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/stickers-page.css?v=20261023-1"
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/journal-page.css?v=20261106-4"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <a class="brand" href="journal.html" aria-label="My Faith Journal">
+                <img
+                    class="brand-logo"
+                    src="../../assets/images/daily-grace-white-480.webp"
+                    alt="Daily Grace"
+                    width="480"
+                    height="160"
+                />
+                <span class="brand-pill">My Faith Journal</span>
+            </a>
+            <a
+                class="home"
+                href="../../index.html"
+                aria-label="Home"
+                title="Home"
+            >
+                <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="m3 10 9-7 9 7"></path>
+                    <path d="M5 9v12h14V9M9 21v-8h6v8"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- journal.js draws the journal into this element: the folders, the
+             list and the open page, side by side on a wide screen and one at
+             a time on a phone. #today, #all, #log, #bookmarks/facts,
+             #stickers, #entry/<id> … in the address open that place. -->
+        <main id="journal" class="journal">
+            <p class="status">Opening your journal…</p>
+        </main>
+
+        <!-- My Bookmarks, as on the home page: the journal opens it, and reads
+             the bookmarks from it (apps/components/bookmark-manager.js). -->
+        <bookmark-manager id="bookmarks"></bookmark-manager>
+
+        <!-- One sticker, opened from the album. -->
+        <dialog id="sticker" class="sticker-dialog" aria-labelledby="sticker-title">
+            <div class="sticker-frame">
+                <button
+                    class="sticker-close"
+                    type="button"
+                    aria-label="Close"
+                    data-close
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 6l12 12M18 6 6 18"></path>
+                    </svg>
+                </button>
+                <div class="sticker-body"></div>
+            </div>
+        </dialog>
+
+        <!-- Choosing a bookmark to put into an entry, backups and the Word book. -->
+        <dialog id="picker" class="journal-dialog" aria-labelledby="picker-title"></dialog>
+        <dialog id="backup" class="journal-dialog" aria-labelledby="backup-title"></dialog>
+        <dialog id="word" class="journal-dialog" aria-labelledby="word-title"></dialog>
+
+        <footer class="page-footer">
+            Your journal is kept on this device. Make a backup now and then.
+            Scripture quotations from the King James Version.
+        </footer>
+
+        <!-- The Bible database, for bookmarked verses (sql_script.js fetches
+             sql.js when it is first opened). -->
+        <script
+            src="../../assets/scripts/sql_script.js?v=20261017-1"
+            defer
+        ></script>
+        <script type="module" src="../components/bible-search-results.js?v=20261106-1"></script>
+        <script type="module" src="../components/did-you-know.js?v=20261106-1"></script>
+        <script type="module" src="../components/bible-sayings.js?v=20261106-1"></script>
+        <script type="module" src="../components/daily-guidance.js?v=20261106-1"></script>
+        <script type="module" src="../components/gods-blueprint.js?v=20261106-1"></script>
+        <script type="module" src="../components/red-letter-quotes.js?v=20261106-1"></script>
+        <script type="module" src="../components/bookmark-manager.js?v=20261106-1"></script>
+        <!-- Today's poster, animated as on the home page. -->
+        <script type="module" src="../components/poster-card.js?v=20261031-1"></script>
+        <script type="module">
+            import { start } from "./scripts/journal.js?v=20261106-1";
+            const bookmarks = document.getElementById("bookmarks");
+            bookmarks.loadVerses = async (ids) => {
+                await initDatabase();
+                return getVersesByIds(ids);
+            };
+            start({
+                root: document.getElementById("journal"),
+                bookmarks,
+                sticker: document.getElementById("sticker"),
+                picker: document.getElementById("picker"),
+                backup: document.getElementById("backup"),
+                word: document.getElementById("word"),
+            });
+        </script>
+    </body>
+</html>

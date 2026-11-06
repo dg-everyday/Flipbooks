@@ -37,6 +37,10 @@
  *   memory-verse   id of the page's <memory-verse>. Today's Amen screen then
  *                  offers this week's verse, opening its practice once the
  *                  Moment has closed.
+ *   journal-href   My Faith Journal. The Amen screen offers to add a line
+ *                  there, on the day's Daily Log entry (its answer, if one
+ *                  was written). Default: apps/pages/journal.html, beside
+ *                  this component
  *
  * Each day's entry in its month's verse file gives the verse, text and reflection, and
  * optionally a `question` and a `prayer`; a day without them gets a general
@@ -57,6 +61,9 @@
  * Kept in localStorage (when it is available), on this device only:
  *   dailygrace:moment:done      the days whose Moment reached Amen
  *   dailygrace:moment:answers   the reader's answers to the questions, by day
+ *                               (the last 60 days)
+ * Each saved answer is also written into My Faith Journal, which keeps them
+ * all (assets/scripts/journal/moment-answers.js).
  *
  * Methods      open(), close()
  * Properties   date (read-only, YYYY-MM-DD), done (read-only)
@@ -91,6 +98,8 @@ const momentPosterUrl = (weekday) =>
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";
 const DEFAULT_LIBRARY_HREF = "apps/pages/library.html";
+// Resolved here rather than against the page: the Moment is also on the Archives page.
+const DEFAULT_JOURNAL_HREF = new URL("../pages/journal.html", import.meta.url).href;
 // The Daily Grace Archives' first day: a missed day before it has nowhere to go.
 const LIBRARY_START = "2026-09-11";
 const TIME_ZONE = "Asia/Manila";
@@ -106,6 +115,28 @@ const HINT_MS = 3600;
 // About a year of finished days, and two months of answers.
 const MAX_DONE = 400;
 const MAX_ANSWERS = 60;
+const JOURNAL_MOMENTS = new URL(
+    "../../assets/scripts/journal/moment-answers.js?v=20261106-1",
+    import.meta.url,
+).href;
+
+let journalMomentsRequest = null;
+
+/**
+ * My Faith Journal's Moment answers (moment-answers.js), loaded once on the
+ * first answer. One shared request keeps every keystroke's save in the order
+ * typed: separate import() calls made while the module is still loading can
+ * resolve in any order, and an older answer would be written last.
+ */
+function journalMoments() {
+    if (!journalMomentsRequest) {
+        journalMomentsRequest = import(JOURNAL_MOMENTS).catch((error) => {
+            journalMomentsRequest = null;
+            throw error;
+        });
+    }
+    return journalMomentsRequest;
+}
 // A longer paragraph is split at sentence ends into screens of about this many words.
 const SCREEN_WORDS = 70;
 
@@ -130,6 +161,7 @@ const ICON_ATTRS =
 const CLOSE_ICON = `<svg ${ICON_ATTRS}><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>`;
 const NEXT_ICON = `<svg ${ICON_ATTRS}><polyline points="9 6 15 12 9 18"/></svg>`;
 const DOUBLE_NEXT_ICON = `<svg ${ICON_ATTRS}><polyline points="5 6 11 12 5 18"/><polyline points="13 6 19 12 13 18"/></svg>`;
+const JOURNAL_ICON = `<svg ${ICON_ATTRS}><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2z"/><path d="M5 19a2 2 0 0 1 2-2h12"/><path d="M9 7h6M9 11h4"/></svg>`;
 const PLAY_ICON = `<svg ${ICON_ATTRS}><polygon points="6 4 19 12 6 20" fill="currentColor"/></svg>`;
 const PAUSE_ICON = `<svg ${ICON_ATTRS}><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>`;
 const CHECK_ICON = `<svg ${ICON_ATTRS}><polyline points="5 12 10 17 19 7"/></svg>`;
@@ -1109,6 +1141,7 @@ export class DailyMoment extends HTMLElement {
           <div class="actions">
             ${this.#posterCard() ? `<button class="action share" type="button">${SHARE_ICON} Share today's poster</button>` : ""}
             ${this.#memoryVerse() ? `<button class="action memory" type="button">Practice this week's Memory-Verse challenge</button>` : ""}
+            <a class="action journal" href="${escapeHtml(this.#journalUrl())}">${JOURNAL_ICON} Add a line to My Faith Journal</a>
             <a class="action" href="${escapeHtml(this.#flipbookUrl())}">Open this week's Flipbook</a>
             ${this.#catchUpUrl() ? `<a class="action" href="${escapeHtml(this.#catchUpUrl())}">Missed a day this week? Catch up in the Daily Grace Archives</a>` : ""}
             <button class="action finish" type="button">Done</button>
@@ -1197,6 +1230,17 @@ export class DailyMoment extends HTMLElement {
             ANSWERS_KEY,
             Object.fromEntries(kept.map((iso) => [iso, answers[iso]])),
         );
+        // My Faith Journal keeps every answer, past the last 60 kept here.
+        journalMoments()
+            .then((journal) =>
+                journal.captureMomentAnswer(this.#day.iso, text, {
+                    verse: this.#entry?.verse ?? "",
+                    question: this.#entry?.question || GENERAL_QUESTION,
+                }),
+            )
+            .catch(() => {
+                // No IndexedDB (a private window): the answer is still kept above.
+            });
     }
 
     #complete() {
@@ -1439,6 +1483,16 @@ export class DailyMoment extends HTMLElement {
         }
         const card = document.getElementById(this.getAttribute("poster") ?? "");
         return typeof card?.share === "function" ? card : null;
+    }
+
+    /** The day's Daily Log entry in My Faith Journal, ready to write in. */
+    #journalUrl() {
+        const url = new URL(
+            this.getAttribute("journal-href") || DEFAULT_JOURNAL_HREF,
+            document.baseURI,
+        );
+        url.hash = `today/write/${this.#day.iso}`;
+        return url.href;
     }
 
     #flipbookUrl() {

@@ -18,7 +18,7 @@ import {
     followHash,
     filterMenu,
     titleWithInfo,
-} from "./study-utils.js?v=20261024-1";
+} from "./study-utils.js?v=20261106-1";
 
 const DATA = "assets/bible-prayers.json";
 

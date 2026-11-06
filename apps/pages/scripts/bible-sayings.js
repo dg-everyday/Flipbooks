@@ -28,14 +28,14 @@ import {
     followHash,
     filterMenu,
     titleWithInfo,
-} from "./study-utils.js?v=20261024-1";
+} from "./study-utils.js?v=20261106-1";
 import {
     BOOKMARK_STYLES,
     CardHold,
     bookmarkNote,
     bookmarkStore,
     showBookmarkResult,
-} from "../../components/card-bookmarks.js?v=20261030-1";
+} from "../../components/card-bookmarks.js?v=20261106-1";
 import {
     PULL_TAB_ICON,
     PULL_TAB_STYLES,

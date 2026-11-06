@@ -71,8 +71,8 @@ import {
     bookmarkStore,
     noteBox,
     showBookmarkResult,
-} from "./card-bookmarks.js?v=20261030-1";
-import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261024-1";
+} from "./card-bookmarks.js?v=20261106-1";
+import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261106-1";
 
 const DEFAULT_SRC = "assets/red-letter-quotes.json";
 const DEFAULT_PAGE = "apps/pages/red-lettered-quotes.html";

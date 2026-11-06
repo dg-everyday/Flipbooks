@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+John
+1-4 | The Word Was Made Flesh
+5-8 | The Truth Shall Make You Free
+9-12 | I Am the Resurrection, and the Life
+13-17 | As I Have Loved You
+18-21 | That Ye Might Believe

@@ -143,6 +143,7 @@ export const ICONS = {
     book: ICON('<path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2z"/><path d="M5 19a2 2 0 0 1 2-2h12"/><path d="M9 7h6M9 11h4"/>'),
     backup: ICON('<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>'),
     year: ICON('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'),
+    help: ICON('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7"/><path d="M12 17h.01"/>'),
     plus: ICON('<path d="M12 5v14M5 12h14"/>'),
     back: ICON('<path d="m15 6-6 6 6 6"/>'),
     close: ICON('<path d="M6 6l12 12M18 6 6 18"/>'),

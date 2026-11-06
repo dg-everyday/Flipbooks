@@ -50,7 +50,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/journal-page.css?v=20261106-4"
+            href="../../assets/styles/journal-page.css?v=20261106-16"
         />
     </head>
     <body>
@@ -100,6 +100,10 @@
              the bookmarks from it (apps/components/bookmark-manager.js). -->
         <bookmark-manager id="bookmarks"></bookmark-manager>
 
+        <!-- The guides: How My Faith Journal works, Bookmarking 101 and How
+             to earn stickers (apps/components/dg-guide.js). -->
+        <dg-guide id="guide"></dg-guide>
+
         <!-- One sticker, opened from the album. -->
         <dialog id="sticker" class="sticker-dialog" aria-labelledby="sticker-title">
             <div class="sticker-frame">
@@ -147,10 +151,11 @@
         <script type="module" src="../components/gods-blueprint.js?v=20261106-1"></script>
         <script type="module" src="../components/red-letter-quotes.js?v=20261106-1"></script>
         <script type="module" src="../components/bookmark-manager.js?v=20261106-1"></script>
+        <script type="module" src="../components/dg-guide.js?v=20261106-1"></script>
         <!-- Today's poster, animated as on the home page. -->
         <script type="module" src="../components/poster-card.js?v=20261031-1"></script>
         <script type="module">
-            import { start } from "./scripts/journal.js?v=20261106-1";
+            import { start } from "./scripts/journal.js?v=20261106-4";
             const bookmarks = document.getElementById("bookmarks");
             bookmarks.loadVerses = async (ids) => {
                 await initDatabase();
@@ -163,6 +168,7 @@
                 picker: document.getElementById("picker"),
                 backup: document.getElementById("backup"),
                 word: document.getElementById("word"),
+                guide: document.getElementById("guide"),
             });
         </script>
     </body>

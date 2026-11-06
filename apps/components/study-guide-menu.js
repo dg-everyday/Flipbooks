@@ -31,6 +31,7 @@
  *            menu, its aria-expanded follows the menu, focus returns to it on
  *            close, and About grows out of it. Its focus ring is kept only
  *            when the menu was opened from the keyboard.
+ *   support  id of the page's <support-dialog>, opened by Support Daily Grace
  *   open     Set by the component while the menu, Help or About is open
  *            (read-only); the page uses it to stop the page behind scrolling.
  *
@@ -1103,6 +1104,22 @@ const HELP_HTML = /* html */ `
             </li>
         </ul>
 
+        <h3>My Faith Journal</h3>
+        <ul class="help-list">
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2z" /><path d="M5 19a2 2 0 0 1 2-2h12" /><path d="M9 7h6M9 11h4" /></svg>
+                </span>
+                <p><strong>Keep a journal.</strong> Tap your avatar (or the DG emblem), then My Faith Journal: your own logbook of each day's verse and your words about it, your prayers, your bookmarks and your Sticker Album, kept on this device. After today's Moment, Add a line to My Faith Journal on the Amen screen opens the day's entry. A single line is a whole entry.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7" /></svg>
+                </span>
+                <p><strong>The guides.</strong> How My Faith Journal works is in your avatar's menu, and at the foot of the journal's folders. In the journal, the ? beside the Bookmarks and Stickers headings opens Bookmarking 101 and How to earn stickers.</p>
+            </li>
+        </ul>
+
         <h3>The menu</h3>
         <ul class="help-list">
             <li>
@@ -1115,7 +1132,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
                 </span>
-                <p><strong>Your own things.</strong> On your first visit you choose an avatar, a Bible hero who becomes your picture in place of the DG emblem beside the three lines. Tap it for Change my avatar, My Faith Journal (your daily log, prayers, bookmarks and Sticker Album), Bookmarking 101 (a short guide to keeping verses and cards, with notes) and How to earn stickers. Tap outside the little menu or press Escape to close it.</p>
+                <p><strong>Your own things.</strong> On your first visit you choose an avatar, a Bible hero who becomes your picture in place of the DG emblem beside the three lines. Tap it for Change my avatar, My Faith Journal (your daily log, prayers, bookmarks and Sticker Album) and How My Faith Journal works. Tap outside the little menu or press Escape to close it.</p>
             </li>
             <li>
                 <span class="help-icon">

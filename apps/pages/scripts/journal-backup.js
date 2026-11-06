@@ -22,7 +22,7 @@ import {
     restoreBackup,
 } from "../../../assets/scripts/journal/backup.js?v=20261106-1";
 import { getMeta, setMeta } from "../../../assets/scripts/journal/store.js?v=20261106-1";
-import { ICONS, escapeHtml, formatDay } from "./journal-ui.js?v=20261106-1";
+import { ICONS, escapeHtml, formatDay } from "./journal-ui.js?v=20261106-2";
 
 const LAST_BACKUP = "lastBackup";
 

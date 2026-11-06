@@ -27,7 +27,7 @@
 
 import * as store from "../../../assets/scripts/journal/store.js?v=20261106-1";
 import { loadVerses } from "../../components/daily-verses.js?v=20261004-1";
-import { lastBackup } from "./journal-backup.js?v=20261106-1";
+import { lastBackup } from "./journal-backup.js?v=20261106-2";
 import {
     ICONS,
     KIND_LABELS,
@@ -36,7 +36,7 @@ import {
     escapeHtml,
     formatDay,
     verseFileName,
-} from "./journal-ui.js?v=20261106-1";
+} from "./journal-ui.js?v=20261106-2";
 
 const VERSES_BASE = new URL("../../../assets/verses/", import.meta.url).href;
 const LEARNED_KEY = "dailygrace:memory:learned";

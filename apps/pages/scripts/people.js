@@ -20,7 +20,7 @@ import {
     para,
     filterMenu,
     titleWithInfo,
-} from "./study-utils.js?v=20261024-1";
+} from "./study-utils.js?v=20261106-1";
 
 const PEOPLE_DIR = "assets/peoples/";
 

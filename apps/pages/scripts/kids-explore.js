@@ -51,7 +51,7 @@ export async function openPassage(ref) {
     if (!m) {
         return;
     }
-    const { showPassageReader } = await import("../../components/passage-reader.js?v=20261024-1");
+    const { showPassageReader } = await import("../../components/passage-reader.js?v=20261106-1");
     showPassageReader({ book: m[1], range: m[2], title: ref });
 }
 

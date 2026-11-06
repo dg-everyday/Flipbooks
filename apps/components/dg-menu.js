@@ -4,8 +4,9 @@
  * place of the emblem; see <avatar-picker>.)
  *
  *   Change my avatar      opens <avatar-picker>
- *   My Bookmarks          opens <bookmark-manager>
- *   My Sticker Album      goes to the album, with how many stickers so far
+ *   My Faith Journal      goes to the journal: the reader's daily log,
+ *                         prayers, bookmarks and Sticker Album in one place
+ *                         (My Bookmarks and My Sticker Album open from there)
  *   ────────────
  *   Bookmarking 101       a guide to bookmarks: what can be kept and where,
  *                         how to add and remove them, notes and sharing,
@@ -30,6 +31,8 @@
  *   avatar-picker  id of the page's <avatar-picker>
  *   album-href  the Sticker Album page, resolved against the page.
  *               Default: apps/pages/stickers.html
+ *   journal-href  My Faith Journal, resolved against the page.
+ *               Default: apps/pages/journal.html
  *   open        set by the component while the menu or the guide is open
  *               (read-only); the page uses it to stop the page behind scrolling
  *
@@ -57,6 +60,7 @@ const asset = (path) => new URL(path, import.meta.url).href;
 
 const STICKERS_ICON = asset("../../assets/images/study-guide-icons/stickers.svg");
 const DEFAULT_ALBUM = "apps/pages/stickers.html";
+const DEFAULT_JOURNAL = "apps/pages/journal.html";
 
 // The kinds of bookmark, as <bookmark-manager> shows them: where each is kept
 // (card-bookmarks.js and bible-search-results.js), how many fit, and how to
@@ -103,6 +107,7 @@ const BOOKMARK_KINDS = [
 const ICON_ATTRS =
     'viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 const BOOKMARK_ICON = `<svg ${ICON_ATTRS}><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>`;
+const JOURNAL_ICON = `<svg ${ICON_ATTRS}><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2z"/><path d="M5 19a2 2 0 0 1 2-2h12"/><path d="M9 7h6M9 11h4"/></svg>`;
 const AVATAR_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.7 18.4a6 6 0 0 1 10.6 0"/></svg>`;
 const QUESTION_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>`;
 const CLOSE_ICON = `<svg ${ICON_ATTRS}><path d="m6 6 12 12M18 6 6 18"/></svg>`;
@@ -271,7 +276,7 @@ const escapeHtml = (text) =>
     String(text ?? "").replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 export class DgMenu extends HTMLElement {
-    static observedAttributes = ["opener", "album-href"];
+    static observedAttributes = ["opener", "album-href", "journal-href"];
 
     #root;
     #menu;
@@ -299,15 +304,9 @@ export class DgMenu extends HTMLElement {
             </button>
           </li>
           <li role="none">
-            <button class="item" type="button" role="menuitem" data-action="bookmarks">
-              <span class="item-icon">${BOOKMARK_ICON}</span>
-              <span class="item-text">My Bookmarks<small>The verses, facts, sayings and more you have kept, with your notes</small></span>
-            </button>
-          </li>
-          <li role="none">
-            <a class="item" role="menuitem" data-action="album">
-              <span class="item-icon"><img src="${STICKERS_ICON}" alt="" width="34" height="34" loading="lazy" /></span>
-              <span class="item-text">My Sticker Album<small class="album-count"></small></span>
+            <a class="item" role="menuitem" data-action="journal">
+              <span class="item-icon">${JOURNAL_ICON}</span>
+              <span class="item-text">My Faith Journal<small>Your daily log, prayers, bookmarks and stickers, kept on this phone</small></span>
             </a>
           </li>
           <li role="separator" class="rule"></li>
@@ -354,9 +353,6 @@ export class DgMenu extends HTMLElement {
             if (action === "avatar") {
                 this.close();
                 document.getElementById(this.getAttribute("avatar-picker") ?? "")?.open();
-            } else if (action === "bookmarks") {
-                this.close();
-                document.getElementById(this.getAttribute("bookmarks") ?? "")?.open();
             } else if (action === "guide") {
                 this.close();
                 this.showGuide();
@@ -416,8 +412,11 @@ export class DgMenu extends HTMLElement {
             this.getAttribute("album-href") || DEFAULT_ALBUM,
             document.baseURI,
         ).href;
-        this.#root.querySelector('[data-action="album"]').href = href;
         this.#root.querySelector(".album").href = href;
+        this.#root.querySelector('[data-action="journal"]').href = new URL(
+            this.getAttribute("journal-href") || DEFAULT_JOURNAL,
+            document.baseURI,
+        ).href;
     }
 
     /** Opens the menu below the emblem. */
@@ -432,16 +431,6 @@ export class DgMenu extends HTMLElement {
         this.toggleAttribute("open", true);
         this.#opener?.setAttribute("aria-expanded", "true");
         this.#root.querySelector(".item").focus();
-
-        // The album's count, once the stickers are known.
-        try {
-            const stickers = await loadStickers();
-            const have = Object.keys(readCollection().earned).length;
-            this.#root.querySelector(".album-count").textContent =
-                `${have} of ${stickers.length} stickers`;
-        } catch {
-            // Without the list the item still opens the album.
-        }
     }
 
     close() {
@@ -591,7 +580,7 @@ function bookmarksGuideHtml() {
       </section>
       <section class="series">
         <div class="series-head"><h3>See your bookmarks</h3></div>
-        <p>Tap the DG emblem (or your avatar) at the top of the home page, then My Bookmarks. Tap a kind at the top (Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint or Jesus’ Words) to switch between them.</p>
+        <p>Tap your avatar (or the DG emblem) at the top of the home page, then My Faith Journal. Your bookmarks are in its Bookmarks folders, one for each kind (Bible Verses, Did You Know, Bible Sayings, Questions, Blueprint and Jesus’ Words), ready to add to an entry. The My Bookmarks button there opens them all, as before.</p>
         <p class="next">Tap the red PDF button beside the title to open them all as one PDF, with your notes, ready to save, print or share.</p>
       </section>
       <section class="series">

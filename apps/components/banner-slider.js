@@ -102,7 +102,7 @@ const pageLoaded = new Promise((resolve) => {
 
 // The passage popup, loaded on the first tap. Its ?v= token is not stamped by
 // the deploy, so bump it here when verse-popup.js changes.
-const POPUP_MODULE = "./verse-popup.js?v=20261030-2";
+const POPUP_MODULE = "./verse-popup.js?v=20261106-1";
 
 const DEFAULT_MEDIA_BASE = MEDIA_BASE_URL;
 const DEFAULT_FLIPBOOK_HREF = "apps/pages/flipbook.html";

@@ -108,8 +108,8 @@ import {
     deleteNote,
     keepBookmarks,
     noteBox,
-} from "./card-bookmarks.js?v=20261030-1";
-import { PILL_STYLES, linkScripture, parseReference } from "./scripture-refs.js?v=20261024-1";
+} from "./card-bookmarks.js?v=20261106-1";
+import { PILL_STYLES, linkScripture, parseReference } from "./scripture-refs.js?v=20261106-1";
 import { STRONGS_ENTRY_STYLES, loadStrongsEntry, strongsEntryNode } from "./strongs-entry.js?v=20261016-1";
 import { MEDIA_BASE_URL } from "../settings/settings.js?v=20261009-1";
 
@@ -139,7 +139,7 @@ const DEFAULT_RED_LETTER_SRC = new URL(
 
 // The Daily Grace Archives: its index, loaded with the first results, and its page,
 // where a verse's Daily Grace day opens. Keep the token as the Library's own.
-const LIBRARY_MODULE = "../../assets/scripts/library-index.js?v=20261031-1";
+const LIBRARY_MODULE = "../../assets/scripts/library-index.js?v=20261106-1";
 const LIBRARY_PAGE = new URL("../pages/library.html", import.meta.url).href;
 
 const BOOKMARKS_KEY = "dailygrace:bookmarks";

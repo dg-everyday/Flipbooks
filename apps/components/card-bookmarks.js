@@ -7,7 +7,7 @@
  * removes the bookmark. Each kind of card keeps its ids in localStorage,
  * newest first, under its own key and up to its own limit, shared by every
  * instance on the page and kept in step across tabs. The page lists them all,
- * with the bookmarked verses, in the popup the DG emblem's My Bookmarks opens.
+ * with the bookmarked verses, in My Bookmarks (opened from My Faith Journal).
  *
  * A new bookmark asks for a note on it (bookmark-notes.js), and taking a
  * bookmark off takes its note too. A list of bookmarks puts noteBox() on each
@@ -52,7 +52,7 @@ export function bookmarkNote(result, limit) {
         added: "Bookmarked",
         removed: "Bookmark removed",
         // Say how to make room, since the list to tidy is somewhere else.
-        full: `Bookmarks full (${limit}). Tap the DG emblem, then My Bookmarks, to remove some.`,
+        full: `Bookmarks full (${limit}). Tap your avatar, then My Faith Journal, to remove some.`,
         failed: "Bookmark not saved",
     }[result];
 }

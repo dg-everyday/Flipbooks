@@ -42,6 +42,16 @@
  *                           so the page supplies this.
  * Methods      open()       open the popup, with every list brought up to date
  *              close()      close it; resolves once it has closed
+ *              items(kinds) the bookmarks, without opening the popup:
+ *                           { verses, facts, sayings, guidance, blueprint,
+ *                           redLetter }, each newest first, each item with
+ *                           the reader's note as `note`; `kinds` (keys) reads
+ *                           only those, every kind by default (the PDF and My
+ *                           Faith Journal read them from here)
+ *
+ * Exports      BOOKMARK_KINDS   [{ key, label, store }] in the popup's order:
+ *                               the six kinds, and the localStorage key each
+ *                               keeps its bookmarks (and its notes) under
  *
  * Fonts: Germania One (title) and Roboto (text) are registered on the
  * document by assets/scripts/fonts.js, because browsers do not reliably load
@@ -62,6 +72,8 @@ const PDF_MODULE = asset("../../assets/scripts/bookmarks-pdf.js?v=20261030-1");
 
 // The segments, in order: the list component behind each, its tab label, and
 // where its bookmarks are kept (the key their notes are kept under).
+// Each list is given its data and page addresses from this module's place,
+// so the popup works on any page (the home page, My Faith Journal).
 const KINDS = [
     {
         key: "verses",
@@ -72,34 +84,36 @@ const KINDS = [
     {
         key: "facts",
         label: "Did You Know",
-        list: '<did-you-know id="bookmark-facts" bookmarks></did-you-know>',
+        list: `<did-you-know id="bookmark-facts" bookmarks page-href="${asset("../pages/did-you-know.html")}"></did-you-know>`,
         store: "dailygrace:bookmarks:facts",
     },
     {
         key: "sayings",
         label: "Bible Sayings",
-        list: '<bible-sayings id="bookmark-sayings" bookmarks></bible-sayings>',
+        list: `<bible-sayings id="bookmark-sayings" bookmarks page-href="${asset("../pages/bible-sayings.html")}"></bible-sayings>`,
         store: "dailygrace:bookmarks:sayings",
     },
     {
         key: "guidance",
         label: "Questions",
-        list: '<daily-guidance id="bookmark-guidance" bookmarks></daily-guidance>',
+        list: `<daily-guidance id="bookmark-guidance" bookmarks guidance-src="${asset("../../assets/guidance-for-life.json")}" page-href="${asset("../pages/guidance-for-life.html")}"></daily-guidance>`,
         store: "dailygrace:bookmarks:guidance",
     },
     {
         key: "blueprint",
         label: "Blueprint",
-        list: '<gods-blueprint id="bookmark-blueprint" bookmarks></gods-blueprint>',
+        list: `<gods-blueprint id="bookmark-blueprint" bookmarks blueprint-src="${asset("../../assets/following-gods-blueprint.json")}" page-href="${asset("../pages/following-gods-blueprint.html")}"></gods-blueprint>`,
         store: "dailygrace:bookmarks:blueprint",
     },
     {
         key: "redLetter",
         label: "Jesus' Words",
-        list: '<red-letter-quotes id="bookmark-redLetter" bookmarks></red-letter-quotes>',
+        list: `<red-letter-quotes id="bookmark-redLetter" bookmarks quotes-src="${asset("../../assets/red-letter-quotes.json")}" page-href="${asset("../pages/red-lettered-quotes.html")}"></red-letter-quotes>`,
         store: "dailygrace:bookmarks:red-letter",
     },
 ];
+
+export const BOOKMARK_KINDS = KINDS.map(({ key, label, store }) => ({ key, label, store }));
 
 /** Each item with the reader's note on it, if any, for the PDF. */
 function withNotes(kind, items) {
@@ -615,6 +629,24 @@ export class BookmarkManager extends HTMLElement {
         this.#closing = false;
     }
 
+    async items(kinds = KINDS.map(({ key }) => key)) {
+        const lists = Object.fromEntries(
+            KINDS.map(({ key }, i) => [key, this.#lists.get(this.#tabs[i])]),
+        );
+        const read = (key) => {
+            if (key === "verses") {
+                const ids = lists.verses.bookmarks ?? [];
+                return ids.length ? this.#versesFor(ids) : [];
+            }
+            return lists[key].bookmarkedItems();
+        };
+        const wanted = KINDS.map(({ key }) => key).filter((key) => kinds.includes(key));
+        const found = await Promise.all(wanted.map(read));
+        return Object.fromEntries(
+            wanted.map((key, i) => [key, withNotes(key, found[i])]),
+        );
+    }
+
     async #versesFor(ids) {
         if (typeof this.#loadVerses !== "function") {
             throw new Error("No loadVerses was given.");
@@ -674,50 +706,16 @@ export class BookmarkManager extends HTMLElement {
         pdf.setAttribute("aria-busy", "true");
         this.#showNote("Preparing your PDF…");
         try {
-            const lists = Object.fromEntries(
-                KINDS.map(({ key }, i) => [
-                    key,
-                    this.#lists.get(this.#tabs[i]),
-                ]),
-            );
-            const verseIds = lists.verses.bookmarks;
-            const [
-                verses,
-                facts,
-                sayings,
-                guidance,
-                blueprint,
-                redLetter,
-                { makeBookmarksPdf },
-            ] = await Promise.all([
-                verseIds.length ? this.#versesFor(verseIds) : [],
-                lists.facts.bookmarkedItems(),
-                lists.sayings.bookmarkedItems(),
-                lists.guidance.bookmarkedItems(),
-                lists.blueprint.bookmarkedItems(),
-                lists.redLetter.bookmarkedItems(),
+            const [items, { makeBookmarksPdf }] = await Promise.all([
+                this.items(),
                 import(PDF_MODULE),
             ]);
-            if (
-                !verses.length &&
-                !facts.length &&
-                !sayings.length &&
-                !guidance.length &&
-                !blueprint.length &&
-                !redLetter.length
-            ) {
+            if (Object.values(items).every((list) => !list.length)) {
                 tab?.close();
                 this.#showNote("Nothing is bookmarked yet.", { linger: 4000 });
                 return;
             }
-            const { blob, filename } = await makeBookmarksPdf({
-                verses: withNotes("verses", verses),
-                facts: withNotes("facts", facts),
-                sayings: withNotes("sayings", sayings),
-                guidance: withNotes("guidance", guidance),
-                blueprint: withNotes("blueprint", blueprint),
-                redLetter: withNotes("redLetter", redLetter),
-            });
+            const { blob, filename } = await makeBookmarksPdf(items);
             const url = URL.createObjectURL(blob);
             // Kept long enough for the tab to load it, and to reload it for a while.
             setTimeout(() => URL.revokeObjectURL(url), 10 * 60 * 1000);

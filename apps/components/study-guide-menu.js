@@ -69,6 +69,31 @@ const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
 const PAGES = "../pages/";
 const ICONS = "../../assets/images/study-guide-icons/";
 
+// Support's heart, in the menu and in Help: a full red heart, embossed, with a
+// dark rim, a lit upper left, a bevel just inside the rim and a gloss on the
+// left lobe. Each copy names its own gradients (id), as both sit in one shadow
+// root. Its colours are set here, not by .help-icon's navy line style.
+const HEART_PATH =
+    "M12 21.2C6.2 16.8 2.5 13.4 2.5 8.9 2.5 5.9 4.8 3.6 7.6 3.6c1.8 0 3.4.9 4.4 2.4 " +
+    "1-1.5 2.6-2.4 4.4-2.4 2.8 0 5.1 2.3 5.1 5.3 0 4.5-3.7 7.9-9.5 12.3z";
+const supportHeart = (id) => `<svg class="support-heart" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="${id}-face" cx=".36" cy=".3" r=".85">
+                                <stop offset="0" stop-color="#ff6b5e" />
+                                <stop offset=".45" stop-color="#d7261e" />
+                                <stop offset="1" stop-color="#8f0f0c" />
+                            </radialGradient>
+                            <linearGradient id="${id}-bevel" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#ffb3aa" />
+                                <stop offset=".5" stop-color="#c41f18" stop-opacity="0" />
+                                <stop offset="1" stop-color="#5e0806" />
+                            </linearGradient>
+                        </defs>
+                        <path d="${HEART_PATH}" fill="url(#${id}-face)" stroke="#7a0b08" stroke-width=".7" />
+                        <path d="${HEART_PATH}" transform="translate(12 12.4) scale(.86) translate(-12 -12.4)" fill="none" stroke="url(#${id}-bevel)" stroke-width="1" />
+                        <path d="M5.3 9.2c-.1-1.9 1.2-3.3 2.9-3.4" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>`;
+
 // The study guides, in menu order: page in apps/pages, icon in
 // assets/images/study-guide-icons. The title is the label under the icon; the
 // text is what a hold on the icon shows, and what a screen reader reads with it.
@@ -532,8 +557,15 @@ const STYLES = /* css */ `
   .help-icon.gold svg { fill: var(--gold-light); }
   .help-icon .help-fill { fill: currentColor; stroke: none; }
   .help-icon img { width: 26px; height: 26px; object-fit: contain; }
-  /* In the menu, the Support heart is drawn as large as the icons beside it. */
-  .menu-item .help-icon svg { width: 24px; height: 24px; stroke-width: 1.8; color: #b3261e; }
+  /* Support's full red heart (supportHeart) keeps its own colours, raised off
+     its circle by a soft shadow. In the menu it is drawn as large as the icons
+     beside it. */
+  .help-icon svg.support-heart {
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 1.2px 1px rgb(80 0 0 / 35%));
+  }
+  .menu-item .help-icon svg.support-heart { width: 26px; height: 26px; }
 
   /* --------------------------------------------------------------- about */
 
@@ -991,7 +1023,7 @@ const MENU_HTML = /* html */ `
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" aria-label="Support Daily Grace" data-show="support">
                     <span class="help-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
+                        ${supportHeart("menu-heart")}
                     </span>
                     Support
                 </button>
@@ -1380,7 +1412,7 @@ const HELP_HTML = /* html */ `
             </li>
             <li>
                 <span class="help-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
+                    ${supportHeart("help-heart")}
                 </span>
                 <p><strong>Support Daily Grace.</strong> Daily Grace is free and stays free. If you would like to help it continue, Support at the foot of this menu, or Support Daily Grace at the bottom of the home page, shows how to give through PayPal or GCash, in any amount, and other ways to help.</p>
             </li>

@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+1 Timothy
+1-1 | Christ Jesus Came to Save Sinners
+2-3 | Great Is the Mystery of Godliness
+4-4 | Be Thou an Example of the Believers
+5-6 | Fight the Good Fight of Faith

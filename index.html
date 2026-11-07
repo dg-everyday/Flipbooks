@@ -45,7 +45,7 @@
             rel="apple-touch-icon"
             href="assets/images/apple-touch-icon.png"
         />
-        <link rel="stylesheet" href="assets/styles/styles.css?v=20261106-1" />
+        <link rel="stylesheet" href="assets/styles/styles.css?v=20261107-2" />
         <!-- Roboto's Latin subset; the full font loads only for other scripts. -->
         <link
             rel="preload"
@@ -264,37 +264,134 @@
             </header>
 
             <main class="daily-section" id="daily-devotional">
-                <section class="devotional-stack">
-                    <banner-slider id="banner-slider"></banner-slider>
-                    <poster-card id="poster-card"></poster-card>
+                <!-- The cards, in their usual order. The reader can put all
+                     but the first two (data-fixed) in their own order with
+                     <card-arranger>; data-card-name is each card's name there. -->
+                <section class="devotional-stack" id="devotional-stack">
+                    <banner-slider
+                        id="banner-slider"
+                        data-fixed
+                        data-card-name="Today's banner"
+                    ></banner-slider>
+                    <poster-card
+                        id="poster-card"
+                        data-fixed
+                        data-card-name="today's poster"
+                    ></poster-card>
                     <daily-moment
                         id="daily-moment"
                         poster="poster-card"
                         memory-verse="memory-verse"
+                        data-card-name="Moment With the LORD"
                         hidden
                     ></daily-moment>
                     <!-- December 29 to January 10 only: the year's journey (journey-card.js). -->
-                    <journey-card id="journey-card" hidden></journey-card>
-                    <memory-verse id="memory-verse" hidden></memory-verse>
-                    <daily-food-for-thought id="daily-food-for-thought"></daily-food-for-thought>
-                    <daily-guidance id="daily-guidance"></daily-guidance>
-                    
-                    <did-you-know id="did-you-know" class="card"></did-you-know>
-                    <story-carousel id="story-carousel"></story-carousel>
-                    <red-letter-quotes id="red-letter"></red-letter-quotes>
+                    <journey-card
+                        id="journey-card"
+                        data-card-name="Your Year's Journey in Grace"
+                        hidden
+                    ></journey-card>
+                    <memory-verse
+                        id="memory-verse"
+                        data-card-name="Memory Verse Challenge"
+                        hidden
+                    ></memory-verse>
+                    <daily-food-for-thought
+                        id="daily-food-for-thought"
+                        data-card-name="Today's Food for Thought"
+                    ></daily-food-for-thought>
+                    <daily-guidance
+                        id="daily-guidance"
+                        data-card-name="Today's Guiding Question"
+                    ></daily-guidance>
+                    <did-you-know
+                        id="did-you-know"
+                        class="card"
+                        data-card-name="Did You Know?"
+                    ></did-you-know>
+                    <story-carousel
+                        id="story-carousel"
+                        data-card-name="Stories"
+                    ></story-carousel>
+                    <red-letter-quotes
+                        id="red-letter"
+                        data-card-name="Jesus' Spoken Words"
+                    ></red-letter-quotes>
                     <bible-sayings
                         id="bible-sayings"
                         class="card"
+                        data-card-name="Bible Sayings"
                     ></bible-sayings>
-                    <gods-blueprint id="gods-blueprint"></gods-blueprint>
+                    <gods-blueprint
+                        id="gods-blueprint"
+                        data-card-name="Following God's Blueprint"
+                    ></gods-blueprint>
                     <sticker-gifts
                         id="sticker-gifts"
                         card
                         invite-after="5"
+                        data-card-name="My Sticker Album"
                     ></sticker-gifts>
-                    <kids-card id="kids-card"></kids-card>
-                    <my-faith-journal id="my-faith-journal"></my-faith-journal>
+                    <kids-card
+                        id="kids-card"
+                        data-card-name="Daily Grace Kids"
+                    ></kids-card>
+                    <my-faith-journal
+                        id="my-faith-journal"
+                        data-card-name="My Faith Journal"
+                    ></my-faith-journal>
                 </section>
+                <script>
+                    // Put the cards in the reader's order (<card-arranger>,
+                    // apps/components/card-arranger.js) now, before any of them
+                    // starts: moving a running card would start it again. The
+                    // first two (data-fixed) always stay first. A card the
+                    // saved order doesn't know, one added since, goes after
+                    // the card it follows in the usual order. The key is
+                    // ORDER_KEY in card-arranger.js.
+                    (() => {
+                        const stack = document.getElementById("devotional-stack");
+                        const cards = [...stack.children].filter(
+                            (card) => !card.hasAttribute("data-fixed"),
+                        );
+                        stack.dataset.defaultOrder = cards
+                            .map((card) => card.id)
+                            .join(" ");
+                        let saved = null;
+                        try {
+                            saved = JSON.parse(
+                                localStorage.getItem("dailygrace:card-order"),
+                            );
+                        } catch {
+                            // Storage is off, or the value is broken: the usual order.
+                        }
+                        if (!Array.isArray(saved)) {
+                            return;
+                        }
+                        const byId = new Map(cards.map((card) => [card.id, card]));
+                        const order = [];
+                        for (const id of new Set(saved)) {
+                            if (byId.has(id)) {
+                                order.push(byId.get(id));
+                            }
+                        }
+                        cards.forEach((card, index) => {
+                            if (order.includes(card)) {
+                                return;
+                            }
+                            const before = cards
+                                .slice(0, index)
+                                .reverse()
+                                .find((other) => order.includes(other));
+                            order.splice(
+                                before ? order.indexOf(before) + 1 : 0,
+                                0,
+                                card,
+                            );
+                        });
+                        stack.append(...order);
+                    })();
+                </script>
             </main>
 
             <site-footer splash="splash" support="support"></site-footer>
@@ -313,7 +410,11 @@
             opener="dg-open"
             avatar-picker="avatar-picker"
             guide="guide"
+            arranger="card-arranger"
         ></dg-menu>
+        <!-- "Arrange my home page": the reader's own order for the cards,
+             opened from the DG emblem's menu (apps/components/card-arranger.js). -->
+        <card-arranger id="card-arranger" for="devotional-stack"></card-arranger>
         <!-- Every reader chooses an avatar: the picker opens by itself, and
              cannot be closed, until they have one; it then shows in place of
              the DG emblem (apps/components/avatar-picker.js). -->
@@ -411,7 +512,11 @@
         ></script>
         <script
             type="module"
-            src="apps/components/dg-menu.js?v=20261106-4"
+            src="apps/components/dg-menu.js?v=20261107-1"
+        ></script>
+        <script
+            type="module"
+            src="apps/components/card-arranger.js?v=20261107-2"
         ></script>
         <script
             type="module"
@@ -427,7 +532,7 @@
         ></script>
         <script
             type="module"
-            src="apps/components/study-guide-menu.js?v=20261106-5"
+            src="apps/components/study-guide-menu.js?v=20261107-3"
         ></script>
         <script
             type="module"

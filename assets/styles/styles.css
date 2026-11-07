@@ -534,6 +534,13 @@ html:has(bookmark-manager[open]) {
     overflow: hidden;
 }
 
+/* "Arrange my home page" (<card-arranger>, apps/components/card-arranger.js),
+   opened from the DG emblem's menu, carries its own styles. While it is open,
+   the page behind does not scroll. */
+html:has(card-arranger[open]) {
+    overflow: hidden;
+}
+
 /* Splash: the footer's QR code opens <sponsor-splash>, which carries its own
    styles (apps/components/sponsor-splash.js), as <site-footer> does
    (apps/components/site-footer.js). While it is open, the page behind does

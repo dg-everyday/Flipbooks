@@ -225,8 +225,9 @@ test.describe("on a wide screen", () => {
     test("the avatar's menu holds My Faith Journal and its guide", async ({ page }) => {
         await page.goto("/");
         const menu = page.locator("dg-menu");
-        await expect(menu.locator(".item")).toHaveCount(3);
+        await expect(menu.locator(".item")).toHaveCount(4);
         await expect(menu.locator('[data-action="avatar"]')).toHaveCount(1);
+        await expect(menu.locator('[data-action="arrange"]')).toHaveCount(1);
         await expect(menu.locator('[data-action="journal"]')).toHaveAttribute("href", /apps\/pages\/journal\.html$/);
 
         // How My Faith Journal works, from the avatar's menu.

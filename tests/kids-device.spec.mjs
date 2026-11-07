@@ -132,19 +132,10 @@ test("the menu offers Daily Grace Kids", async ({ page }) => {
     await page.goto("/");
     await page.locator("#menu-open").click();
     const item = page.locator('study-guide-menu a.menu-item[href$="apps/pages/daily-grace-kids.html"]');
-    // Nari's icon and, level with it, the Daily Grace Kids logo alone.
+    // Nari on a tile, with the guide's name under it.
     const icon = item.locator("img.menu-icon");
-    const logo = item.locator("img.menu-logo");
-    await expect(logo).toHaveAttribute("alt", "Daily Grace Kids");
-    await expect(item.locator("small")).toHaveCount(0);
-    for (const img of [icon, logo]) {
-        await expect.poll(() => img.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
-    }
-    const middle = async (l) => {
-        const b = await l.boundingBox();
-        return b.y + b.height / 2;
-    };
-    expect(Math.abs((await middle(icon)) - (await middle(logo)))).toBeLessThanOrEqual(2);
+    await expect(item.locator(".menu-label")).toHaveText("Daily Grace Kids");
+    await expect.poll(() => icon.evaluate((i) => i.complete && i.naturalWidth > 0)).toBe(true);
 });
 
 // ------------------------------------------------------------------ time limit

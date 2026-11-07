@@ -7,6 +7,8 @@
  *   My Faith Journal      goes to the journal: the reader's daily log,
  *                         prayers, bookmarks and Sticker Album in one place
  *                         (My Bookmarks and My Sticker Album open from there)
+ *   Arrange my home page  opens <card-arranger>, to put the cards in the
+ *                         reader's own order
  *   ────────────
  *   How My Faith Journal works   opens that guide in the page's <dg-guide>
  *
@@ -25,6 +27,7 @@
  *               follows the menu, and focus returns to it on close
  *   avatar-picker  id of the page's <avatar-picker>
  *   guide       id of the page's <dg-guide>
+ *   arranger    id of the page's <card-arranger>
  *   journal-href  My Faith Journal, resolved against the page.
  *               Default: apps/pages/journal.html
  *   open        set by the component while the menu is open (read-only); the
@@ -46,6 +49,7 @@ const ICON_ATTRS =
 const JOURNAL_ICON = `<svg ${ICON_ATTRS}><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2z"/><path d="M5 19a2 2 0 0 1 2-2h12"/><path d="M9 7h6M9 11h4"/></svg>`;
 const HELP_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7"/><path d="M12 17h.01"/></svg>`;
 const AVATAR_ICON = `<svg ${ICON_ATTRS}><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.7 18.4a6 6 0 0 1 10.6 0"/></svg>`;
+const ARRANGE_ICON = `<svg ${ICON_ATTRS}><path d="M8 6h13M8 12h13M8 18h13"/><path d="m3 9 2-3 2 3M3 15l2 3 2-3"/></svg>`;
 
 const STYLES = /* css */ `
   :host {
@@ -148,6 +152,12 @@ export class DgMenu extends HTMLElement {
               <span class="item-text">My Faith Journal<small>Your daily log, prayers, bookmarks and stickers, kept on this phone</small></span>
             </a>
           </li>
+          <li role="none">
+            <button class="item" type="button" role="menuitem" data-action="arrange" aria-haspopup="dialog">
+              <span class="item-icon">${ARRANGE_ICON}</span>
+              <span class="item-text">Arrange my home page<small>Put the cards in the order you like</small></span>
+            </button>
+          </li>
           <li role="separator" class="rule"></li>
           <li role="none">
             <button class="item" type="button" role="menuitem" data-action="journal-help" aria-haspopup="dialog">
@@ -168,6 +178,9 @@ export class DgMenu extends HTMLElement {
             if (action === "avatar") {
                 this.close();
                 document.getElementById(this.getAttribute("avatar-picker") ?? "")?.open();
+            } else if (action === "arrange") {
+                this.close();
+                document.getElementById(this.getAttribute("arranger") ?? "")?.open?.();
             } else if (action === "journal-help") {
                 this.close();
                 document.getElementById(this.getAttribute("guide") ?? "")?.show?.("journal");

@@ -4,9 +4,12 @@
  *
  * The menu is a drawer that slides in from the left edge of the page column:
  * the screen's edge on a phone, the top left of the centred page on a desktop
- * or wide tablet. The study guide pages sit at the top; Help and About sit at
- * the foot, under a rule. It has no close button: a swipe to the left, a tap
- * on the page beside it, or Escape closes it.
+ * or wide tablet. The study guide pages sit at the top as a grid of icons, as
+ * on a phone's home screen: a tap opens a guide, and a hold of half a second
+ * shows what it covers in a bubble beside its icon (a tap on the bubble opens
+ * the guide; a tap anywhere else, or Escape, puts it away). Support, Help and
+ * About sit at the foot, under a rule, in that order. It has no close button:
+ * a swipe to the left, a tap on the page beside it, or Escape closes it.
  *
  * Help and About replace the menu rather than stacking on top of it.
  *   Help     A guide to the page's taps, holds and swipes. It slides in from
@@ -67,7 +70,8 @@ const PAGES = "../pages/";
 const ICONS = "../../assets/images/study-guide-icons/";
 
 // The study guides, in menu order: page in apps/pages, icon in
-// assets/images/study-guide-icons.
+// assets/images/study-guide-icons. The title is the label under the icon; the
+// text is what a hold on the icon shows, and what a screen reader reads with it.
 const GUIDES = [
     {
         page: "bible-books.html",
@@ -169,8 +173,7 @@ const GUIDES = [
         page: "daily-grace-kids.html",
         icon: "daily-grace-kids.webp",
         title: "Daily Grace Kids",
-        // Shown as its cartoon logo alone, beside Nari, so it stands out.
-        logo: asset("../../assets/images/kids/daily-grace-kids-logo.webp"),
+        text: "Bible stories for children aged 3 to 8, with Nari the lion cub",
     },
 ];
 
@@ -229,62 +232,146 @@ const STYLES = /* css */ `
   }
   /* In the menu the eyebrow sits under the title, so it needs space above, not below. */
   .menu-header .help-eyebrow { margin: 6px 0 0; }
+  /* The description bubble is placed against the nav, so it scrolls with the
+     icon it belongs to. */
   .menu-nav {
+    position: relative;
     display: flex;
     flex: 1;
     flex-direction: column;
     padding: 14px 12px calc(18px + env(safe-area-inset-bottom));
   }
-  /* Items sit close, so the list reads as one menu; each stays a comfortable tap target. */
   .menu-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
-  /* Help and About sit at the foot of the drawer, under a rule. */
-  .menu-foot {
-    margin-top: auto;
-    padding-top: 16px;
-    border-top: 1px solid rgb(0 27 52 / 22%);
-  }
-  /* Clear room between the last guide (the Daily Grace Kids logo) and the rule
-     above Help, so the two don't read as one group. */
-  .menu-list:not(.menu-foot) { padding-bottom: 28px; }
   .menu-item {
     display: flex;
-    /* The icon sits beside the title, not halfway down the description. */
-    align-items: flex-start;
-    gap: 14px;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding: 7px 12px;
     border: 0;
-    border-radius: 12px;
     background: transparent;
     color: var(--navy);
     font: inherit;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     transition: background-color .15s ease;
   }
-  /* Help and About are a single line, so they stay centred on the icon. */
-  .menu-foot .menu-item { align-items: center; }
-  /* Menu icons are pictures of their own (assets/images/study-guide-icons),
-     so they sit straight on the drawer without the white circle; About keeps
-     the DG emblem at its own size. */
-  .menu-item .help-icon { border: 0; background: none; }
-  .help-icon .menu-icon { width: 36px; height: 36px; }
   .menu-item:hover { background: rgb(255 255 255 / 70%); }
   .menu-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
-  .menu-text { display: grid; gap: 2px; min-width: 0; }
-  .menu-text strong { font-size: 1rem; font-weight: 700; }
-  /* A guide shown by its logo alone (Daily Grace Kids): the logo sits level
-     with the icon beside it. */
-  .menu-item.has-logo { align-items: center; }
-  .menu-logo {
-    display: block;
-    width: min(200px, 100%);
-    height: auto;
-    filter: drop-shadow(0 2px 3px rgb(0 27 52 / 20%));
+
+  /* The guides: three to a row, like the icons on a phone's home screen. A
+     hold must show the description, not select the label or bring up the
+     browser's link menu. */
+  .menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px 0;
+    /* Clear room above the rule over the foot, so the two don't read as one group. */
+    padding-bottom: 22px;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
   }
-  /* Tight leading, so a description that wraps to two or three lines reads as one block. */
-  .menu-text small { color: rgb(16 37 59 / 72%); font-size: .8125rem; line-height: 1.15; }
+  .menu-grid li { display: flex; min-width: 0; }
+  .menu-grid .menu-item { gap: 6px; padding: 6px 2px 8px; border-radius: 14px; }
+  /* Each icon on a "Paper" tile: white, a gold hairline and a soft shadow.
+     60 px, as an iPhone's home-screen icon; the art fills two thirds of it. */
+  .menu-tile {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(198 146 46 / 38%);
+    border-radius: 14px;
+    background: #fffdf8;
+    box-shadow: 0 1px 2px rgb(0 27 52 / 10%), 0 6px 14px -6px rgb(0 27 52 / 22%);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  /* The picture never takes the press, so it can't be dragged or saved. */
+  .menu-tile .menu-icon { width: 40px; height: 40px; object-fit: contain; pointer-events: none; }
+  .menu-label { max-width: 100%; font-size: .75rem; font-weight: 500; line-height: 1.2; overflow-wrap: break-word; }
+  /* The tile dips under the finger, and lifts once the hold shows its description. */
+  .menu-item.is-pressed .menu-tile { transform: scale(.94); }
+  .menu-item.is-held .menu-tile {
+    border-color: var(--gold);
+    box-shadow: 0 2px 4px rgb(0 27 52 / 12%), 0 12px 24px -8px rgb(0 27 52 / 35%);
+    transform: scale(1.06);
+  }
+  /* The description is read out with the title, and shown by a hold. */
+  .menu-desc {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* The bubble a hold opens: the guide's title, what it covers, and a way in.
+     Its arrow points at the icon (--arrow-x); it sits under the icon, or over
+     it (.above) when there is no room below. */
+  .menu-peek {
+    position: absolute;
+    right: 12px;
+    left: 12px;
+    z-index: 3;
+    display: grid;
+    gap: 6px;
+    padding: 14px 16px;
+    border: 1px solid rgb(225 182 93 / 45%);
+    border-radius: 14px;
+    background: var(--navy);
+    color: var(--cream);
+    box-shadow: 0 16px 36px rgb(0 27 52 / 40%);
+    text-decoration: none;
+    transform-origin: var(--arrow-x, 50%) 0;
+    -webkit-touch-callout: none;
+  }
+  .menu-peek[hidden] { display: none; }
+  .menu-peek.above { transform-origin: var(--arrow-x, 50%) 100%; }
+  .menu-peek::before {
+    position: absolute;
+    top: -7px;
+    left: calc(var(--arrow-x, 50%) - 7px);
+    width: 14px;
+    height: 14px;
+    border: inherit;
+    border-width: 1px 0 0 1px;
+    border-radius: 3px 0 0;
+    background: inherit;
+    transform: rotate(45deg);
+    content: "";
+  }
+  .menu-peek.above::before {
+    top: auto;
+    bottom: -7px;
+    border-width: 0 1px 1px 0;
+    border-radius: 0 0 3px;
+  }
+  .menu-peek-title { color: var(--gold-light); font-size: 1rem; font-weight: 700; }
+  .menu-peek-text { font-size: .875rem; line-height: 1.4; }
+  .menu-peek-go {
+    margin-top: 2px;
+    color: var(--gold-light);
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  /* Support, Help and About sit at the foot of the drawer, under a rule, side
+     by side, each a round icon over its name. */
+  .menu-foot {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgb(0 27 52 / 22%);
+  }
+  .menu-foot .menu-item { gap: 5px; padding: 6px 2px; border-radius: 12px; font-size: .75rem; font-weight: 500; }
+  .menu-item .help-icon { width: 40px; height: 40px; border: 1px solid rgb(198 146 46 / 40%); background: #fffdf8; }
+  .help-icon .menu-icon { width: 28px; height: 28px; }
 
   /* ---------------------------------------------------------------- help */
 
@@ -440,7 +527,7 @@ const STYLES = /* css */ `
   .help-icon .help-fill { fill: currentColor; stroke: none; }
   .help-icon img { width: 26px; height: 26px; object-fit: contain; }
   /* In the menu, the Support heart is drawn as large as the icons beside it. */
-  .menu-item .help-icon svg { width: 28px; height: 28px; stroke-width: 1.8; color: #b3261e; }
+  .menu-item .help-icon svg { width: 24px; height: 24px; stroke-width: 1.8; color: #b3261e; }
 
   /* --------------------------------------------------------------- about */
 
@@ -863,7 +950,7 @@ const STYLES = /* css */ `
     .about-hero { padding-top: 34px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .menu-item { transition: none; }
+    .menu-item, .menu-tile { transition: none; }
     .about-close, .about-begin, .about-begin span, .help-close { transition: none; }
   }
 `;
@@ -871,18 +958,14 @@ const STYLES = /* css */ `
 const escapeHtml = (text) =>
     text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
-const guideItem = ({ page, icon, title, logo, text }) => `
+const guideItem = ({ page, icon, title, text }) => `
             <li>
-                <a class="menu-item${logo ? " has-logo" : ""}" href="${asset(PAGES + page)}">
-                    <span class="help-icon">
-                        <img class="menu-icon" src="${asset(ICONS + icon)}" alt="" width="36" height="36" loading="lazy" />
+                <a class="menu-item" href="${asset(PAGES + page)}" draggable="false">
+                    <span class="menu-tile">
+                        <img class="menu-icon" src="${asset(ICONS + icon)}" alt="" width="40" height="40" loading="lazy" />
                     </span>
-                    <span class="menu-text">
-                        ${logo
-                            ? `<img class="menu-logo" src="${logo}" alt="${escapeHtml(title)}" width="720" height="145" loading="lazy" />`
-                            : `<strong>${escapeHtml(title)}</strong>`}
-                        ${text ? `<small>${escapeHtml(text)}</small>` : ""}
-                    </span>
+                    <span class="menu-label">${escapeHtml(title)}</span>
+                    <span class="menu-desc">${escapeHtml(text)}</span>
                 </a>
             </li>`;
 
@@ -896,15 +979,23 @@ const MENU_HTML = /* html */ `
         </div>
     </header>
     <nav class="menu-nav" aria-label="Daily Grace">
-        <ul class="menu-list">${GUIDES.map(guideItem).join("")}
+        <ul class="menu-list menu-grid">${GUIDES.map(guideItem).join("")}
         </ul>
         <ul class="menu-list menu-foot">
             <li>
+                <button class="menu-item" type="button" aria-haspopup="dialog" aria-label="Support Daily Grace" data-show="support">
+                    <span class="help-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
+                    </span>
+                    Support
+                </button>
+            </li>
+            <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="help">
                     <span class="help-icon">
-                        <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="36" height="36" loading="lazy" />
+                        <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="28" height="28" loading="lazy" />
                     </span>
-                    <span class="menu-text"><strong>Help</strong></span>
+                    Help
                 </button>
             </li>
             <li>
@@ -912,18 +1003,17 @@ const MENU_HTML = /* html */ `
                     <span class="help-icon">
                         <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
                     </span>
-                    <span class="menu-text"><strong>About</strong></span>
-                </button>
-            </li>
-            <li>
-                <button class="menu-item" type="button" aria-haspopup="dialog" data-show="support">
-                    <span class="help-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
-                    </span>
-                    <span class="menu-text"><strong>Support Daily Grace</strong></span>
+                    About
                 </button>
             </li>
         </ul>
+        <!-- What a held guide covers. It is for the eye only: each guide's
+             description is already read out with its title. -->
+        <a class="menu-peek" hidden tabindex="-1" aria-hidden="true" draggable="false">
+            <span class="menu-peek-title"></span>
+            <span class="menu-peek-text"></span>
+            <span class="menu-peek-go">Open the guide ›</span>
+        </a>
     </nav>
 </dialog>`;
 
@@ -1126,13 +1216,19 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16" /></svg>
                 </span>
-                <p><strong>Open the menu.</strong> Tap the three lines at the top left of the page to open the Bible Study Guides, with Help and About. The menu slides in from the left. To close it, swipe it to the left, tap the page beside it or press Escape.</p>
+                <p><strong>Open the menu.</strong> Tap the three lines at the top left of the page to open the Bible Study Guides, with Support, Help and About. The menu slides in from the left. Each guide is an icon: tap it to open the guide, or hold it for half a second to read what the guide covers, then tap the note to open it or tap anywhere else to put it away. To close the menu, swipe it to the left, tap the page beside it or press Escape.</p>
             </li>
             <li>
                 <span class="help-icon">
                     <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
                 </span>
-                <p><strong>Your own things.</strong> On your first visit you choose an avatar, a Bible hero who becomes your picture in place of the DG emblem beside the three lines. Tap it for Change my avatar, My Faith Journal (your daily log, prayers, bookmarks and Sticker Album) and How My Faith Journal works. Tap outside the little menu or press Escape to close it.</p>
+                <p><strong>Your own things.</strong> On your first visit you choose an avatar, a Bible hero who becomes your picture in place of the DG emblem beside the three lines. Tap it for Change my avatar, My Faith Journal (your daily log, prayers, bookmarks and Sticker Album), Arrange my home page and How My Faith Journal works. Tap outside the little menu or press Escape to close it.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13" /><path d="m3 9 2-3 2 3M3 15l2 3 2-3" /></svg>
+                </span>
+                <p><strong>Arrange the cards.</strong> Put the cards on the home page in the order you like: tap your avatar, then Arrange my home page. Drag a card by its handle, or tap its arrows, and the page follows at once. Today's banner and poster always stay at the top. Your order is kept on this device and is there each time you come back; Back to the usual order undoes it.</p>
             </li>
             <li>
                 <span class="help-icon">
@@ -1240,7 +1336,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.7" /><circle class="help-fill" cx="12" cy="17" r="1.1" /></svg>
                 </span>
-                <p><strong>Help and About.</strong> At the foot of the menu. Help opens this guide; About tells what Daily Grace is and how it can help you each day.</p>
+                <p><strong>Support, Help and About.</strong> At the foot of the menu. Support shows how you can help Daily Grace continue; Help opens this guide; About tells what Daily Grace is and how it can help you each day.</p>
             </li>
         </ul>
 
@@ -1280,7 +1376,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
                 </span>
-                <p><strong>Support Daily Grace.</strong> Daily Grace is free and stays free. If you would like to help it continue, Support Daily Grace in this menu, or at the bottom of the home page, shows how to give through PayPal or GCash, in any amount, and other ways to help.</p>
+                <p><strong>Support Daily Grace.</strong> Daily Grace is free and stays free. If you would like to help it continue, Support at the foot of this menu, or Support Daily Grace at the bottom of the home page, shows how to give through PayPal or GCash, in any amount, and other ways to help.</p>
             </li>
         </ul>
     </div>
@@ -1552,6 +1648,12 @@ const SWIPE_DISTANCE = 1 / 3; // of the drawer's width
 const SWIPE_FLICK = 0.5; // px/ms leftward
 const SWIPE_SETTLE = 240; // ms for a full width, as in drawerDialog()
 
+// Hold a guide's icon to read what it covers: the same half-second hold, and
+// the same give before a move cancels it, as bookmarking on the home page.
+const HOLD_MS = 500;
+const HOLD_SLOP = 10; // px
+const PEEK_GAP = 8; // px between the icon and its bubble, and the bubble and the screen's edge
+
 const ABOUT_TIMING = { open: 560, close: 300 };
 
 /** Fades the backdrop with the dialog's own animation; resolves when both end. */
@@ -1651,6 +1753,11 @@ export class StudyGuideMenu extends HTMLElement {
     #openedByKeyboard = false;
     #swipe = null;
     #swallowClick = false;
+    // A press on a guide that may become a hold, and the guide whose
+    // description bubble (#peek) is showing.
+    #hold = null;
+    #peek;
+    #peekItem = null;
     #aboutObserver;
 
     constructor() {
@@ -1665,8 +1772,11 @@ export class StudyGuideMenu extends HTMLElement {
         this.#help = help;
         this.#about = about;
 
+        this.#peek = menu.querySelector(".menu-peek");
+
         const closers = [
-            [menu, () => this.close()],
+            // Escape, or a tap beside the drawer, puts a description away first.
+            [menu, () => this.#dismissMenu()],
             [help, () => this.#closeHelp()],
             [about, () => this.#closeAbout()],
         ];
@@ -1706,6 +1816,21 @@ export class StudyGuideMenu extends HTMLElement {
         menu.addEventListener("pointercancel", (event) =>
             this.#swipeEnd(event),
         );
+        // Added after the swipe's, which clears #swallowClick on each press.
+        menu.addEventListener("pointerdown", (event) => this.#holdStart(event));
+        menu.addEventListener("pointermove", (event) => this.#holdMove(event));
+        menu.addEventListener("pointerup", () => this.#holdEnd());
+        menu.addEventListener("pointercancel", () => this.#holdEnd());
+        // A scroll is not a hold; the bubble scrolls with its icon.
+        menu.addEventListener("scroll", () => this.#holdEnd(), {
+            passive: true,
+        });
+        // A held guide shows its description, not the browser's link menu.
+        menu.addEventListener("contextmenu", (event) => {
+            if (event.target.closest(".menu-grid .menu-item, .menu-peek")) {
+                event.preventDefault();
+            }
+        });
         // Help and About replace the menu rather than stacking on top of it.
         for (const button of menu.querySelectorAll("[data-show]")) {
             button.addEventListener("click", async () => {
@@ -1831,7 +1956,17 @@ export class StudyGuideMenu extends HTMLElement {
         }
     }
 
+    #dismissMenu() {
+        if (this.#peekItem) {
+            this.#hidePeek();
+            return;
+        }
+        this.close();
+    }
+
     #menuClosed() {
+        this.#holdEnd();
+        this.#hidePeek();
         if (!this.#openedByKeyboard) {
             this.#opener?.blur();
         }
@@ -1952,6 +2087,115 @@ export class StudyGuideMenu extends HTMLElement {
         if (closed) {
             this.#menuClosed();
         }
+    }
+
+    // ------------------------------------------------------------------ hold
+
+    #holdStart(event) {
+        this.#holdEnd();
+        if (this.#peekItem) {
+            // The first tap away from the bubble only puts it away; a tap on
+            // it opens the guide.
+            if (!this.#peek.contains(event.target)) {
+                this.#hidePeek();
+                this.#swallowClick = true;
+            }
+            return;
+        }
+        const item = event.target.closest(".menu-grid .menu-item");
+        if (!item || !event.isPrimary || event.button !== 0) {
+            return;
+        }
+        this.#hold = {
+            id: event.pointerId,
+            x: event.clientX,
+            y: event.clientY,
+            item,
+            timer: setTimeout(() => this.#holdFire(), HOLD_MS),
+        };
+        item.classList.add("is-pressed");
+    }
+
+    #holdMove(event) {
+        const hold = this.#hold;
+        if (!hold || event.pointerId !== hold.id) {
+            return;
+        }
+        if (
+            Math.abs(event.clientX - hold.x) > HOLD_SLOP ||
+            Math.abs(event.clientY - hold.y) > HOLD_SLOP
+        ) {
+            this.#holdEnd();
+        }
+    }
+
+    #holdEnd() {
+        if (!this.#hold) {
+            return;
+        }
+        clearTimeout(this.#hold.timer);
+        this.#hold.item.classList.remove("is-pressed");
+        this.#hold = null;
+    }
+
+    #holdFire() {
+        const { item } = this.#hold;
+        this.#holdEnd();
+        // The finger lifting off the guide must not also open it.
+        this.#swallowClick = true;
+        navigator.vibrate?.(15);
+        this.#showPeek(item);
+    }
+
+    /**
+     * Shows what a guide covers, in a bubble under its icon, or over it when
+     * there is no room below.
+     */
+    #showPeek(item) {
+        const peek = this.#peek;
+        this.#peekItem = item;
+        item.classList.add("is-held");
+        peek.href = item.href;
+        peek.querySelector(".menu-peek-title").textContent =
+            item.querySelector(".menu-label").textContent;
+        peek.querySelector(".menu-peek-text").textContent =
+            item.querySelector(".menu-desc").textContent;
+        peek.hidden = false;
+
+        const nav = peek.offsetParent.getBoundingClientRect();
+        const view = this.#menu.getBoundingClientRect();
+        const tile = item.querySelector(".menu-tile").getBoundingClientRect();
+        const height = peek.offsetHeight;
+        const roomBelow =
+            tile.bottom + PEEK_GAP + height <= view.bottom - PEEK_GAP;
+        const roomAbove = tile.top - PEEK_GAP - height >= view.top + PEEK_GAP;
+        const above = !roomBelow && roomAbove;
+        const top = above
+            ? tile.top - nav.top - PEEK_GAP - height
+            : tile.bottom - nav.top + PEEK_GAP;
+        peek.style.top = `${top}px`;
+        peek.classList.toggle("above", above);
+        const arrow =
+            tile.left + tile.width / 2 - peek.getBoundingClientRect().left;
+        peek.style.setProperty("--arrow-x", `${arrow}px`);
+        if (!reducedMotion.matches) {
+            peek.animate(
+                [
+                    { opacity: 0, transform: "scale(.92)" },
+                    { opacity: 1, transform: "none" },
+                ],
+                { duration: 180, easing: "cubic-bezier(.2, .9, .25, 1)" },
+            );
+        }
+    }
+
+    #hidePeek() {
+        if (!this.#peekItem) {
+            return;
+        }
+        this.#peekItem.classList.remove("is-held");
+        this.#peekItem = null;
+        this.#peek.hidden = true;
     }
 
     // ------------------------------------------------------------------ help

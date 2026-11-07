@@ -1,0 +1,7 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Romans
+1-3 | All Have Sinned, and Come Short of the Glory of God
+4-5 | Being Justified by Faith, We Have Peace with God
+6-8 | There Is Therefore Now No Condemnation
+9-11 | O the Depth of the Riches of the Wisdom of God
+12-16 | Present Your Bodies a Living Sacrifice

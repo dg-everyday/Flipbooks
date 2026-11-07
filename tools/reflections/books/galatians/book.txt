@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Galatians
+1-2 | I Am Crucified with Christ
+3-4 | Ye Are All the Children of God by Faith
+5-6 | Stand Fast in the Liberty

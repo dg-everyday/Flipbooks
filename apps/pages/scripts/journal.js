@@ -31,7 +31,10 @@
  * #<folder>/edit/<id> (writing), #<folder>/new/<kind>, #<folder>/write/<day>
  * (that day's Daily Log entry, ready to write in: the Moment's answer if one
  * was written, else a new entry with the day's verse and question; the
- * Moment's Amen screen links here), and #folders (a phone's folder pane). Folders: today, all, log, discovery, diary,
+ * Moment's Amen screen links here), #<folder>/walk/<episode id> (the answer
+ * to a Bible Walk episode's question: the one written before, else a new
+ * Daily Log entry with the question; "Write my answer" on bible-walk.html
+ * links here), and #folders (a phone's folder pane). Folders: today, all, log, discovery, diary,
  * notebook, prayer, flagged, stickers, bookmarks:<kind>.
  */
 
@@ -117,6 +120,9 @@ function parseHash() {
     if (what === "write") {
         return { folder, open: { write: /^\d{4}-\d{2}-\d{2}$/.test(id ?? "") ? id : store.todayIso() }, phoneFolders: false };
     }
+    if (what === "walk" && /^[a-z0-9-]+$/.test(id ?? "")) {
+        return { folder, open: { walk: id }, phoneFolders: false };
+    }
     return { folder, open: null, phoneFolders: false };
 }
 
@@ -154,6 +160,34 @@ async function resolveWrite(day) {
     return { kind: "log" };
 }
 
+/**
+ * Where #…/walk/<episode id> leads: the answer to that Bible Walk episode's
+ * question written before, else a new Daily Log entry with the question.
+ */
+async function resolveWalk(id) {
+    const sourceKey = `walk:${id}`;
+    const answered = await store.entryBySource(sourceKey);
+    if (answered) {
+        return { id: answered.id, edit: true };
+    }
+    let episode = null;
+    try {
+        const { loadWalk } = await import("../../../assets/scripts/bible-walk/progress.js?v=20261107-1");
+        episode = (await loadWalk()).episodes[id] ?? null;
+    } catch {
+        // Offline or no such episode: an empty Daily Log entry still opens.
+    }
+    state.draft = episode
+        ? {
+              verse: `Bible Walk · ${episode.chapter ? `${episode.label}: ${episode.title}` : episode.title}`,
+              prompt: episode.question,
+              source: "walk",
+              sourceKey,
+          }
+        : null;
+    return { kind: "log" };
+}
+
 async function route() {
     const target = parseHash();
     if (!target) {
@@ -161,6 +195,10 @@ async function route() {
     }
     if (target.open?.write) {
         target.open = await resolveWrite(target.open.write);
+        history.replaceState(null, "", hashFor(target.folder, target.open));
+    }
+    if (target.open?.walk) {
+        target.open = await resolveWalk(target.open.walk);
         history.replaceState(null, "", hashFor(target.folder, target.open));
     }
     // Today and the album are pages of their own; elsewhere an open entry

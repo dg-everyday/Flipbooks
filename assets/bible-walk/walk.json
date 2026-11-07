@@ -1,0 +1,257 @@
+{
+ "plans": [
+  {
+   "id": "first-steps",
+   "title": "First Steps",
+   "subtitle": "Meet Jesus in the book of Mark",
+   "about": "Start here. How to walk through a chapter, then the shortest and fastest Gospel, one chapter at a time.",
+   "cover": "media:images/symbols/Mark-symbol.svg",
+   "episodes": [
+    {
+     "id": "walk-00",
+     "label": "Start here"
+    },
+    {
+     "id": "mark-00",
+     "label": "Meet Mark"
+    },
+    {
+     "id": "mark-01",
+     "label": "Mark 1"
+    },
+    {
+     "id": "mark-02",
+     "label": "Mark 2"
+    },
+    {
+     "id": "mark-03",
+     "label": "Mark 3"
+    },
+    {
+     "id": "mark-04",
+     "label": "Mark 4"
+    },
+    {
+     "id": "mark-05",
+     "label": "Mark 5"
+    },
+    {
+     "id": "mark-06",
+     "label": "Mark 6"
+    },
+    {
+     "id": "mark-07",
+     "label": "Mark 7"
+    },
+    {
+     "id": "mark-08",
+     "label": "Mark 8"
+    },
+    {
+     "id": "mark-09",
+     "label": "Mark 9"
+    },
+    {
+     "id": "mark-10",
+     "label": "Mark 10"
+    },
+    {
+     "id": "mark-11",
+     "label": "Mark 11"
+    },
+    {
+     "id": "mark-12",
+     "label": "Mark 12"
+    },
+    {
+     "id": "mark-13",
+     "label": "Mark 13"
+    },
+    {
+     "id": "mark-14",
+     "label": "Mark 14"
+    },
+    {
+     "id": "mark-15",
+     "label": "Mark 15"
+    },
+    {
+     "id": "mark-16",
+     "label": "Mark 16"
+    }
+   ]
+  },
+  {
+   "id": "big-picture",
+   "title": "The Big Picture",
+   "subtitle": "The whole Bible in 30 chapters",
+   "about": "From the first chapter of Genesis to the last chapters of Revelation: the one story every book belongs to.",
+   "cover": "media:images/bible-walk/big-picture-cover.webp",
+   "episodes": [
+    {
+     "id": "big-picture-00",
+     "label": "The Big Picture"
+    },
+    {
+     "id": "genesis-01",
+     "label": "Genesis 1"
+    },
+    {
+     "id": "genesis-03",
+     "label": "Genesis 3"
+    },
+    {
+     "id": "genesis-06",
+     "label": "Genesis 6"
+    },
+    {
+     "id": "genesis-12",
+     "label": "Genesis 12"
+    },
+    {
+     "id": "genesis-22",
+     "label": "Genesis 22"
+    },
+    {
+     "id": "genesis-45",
+     "label": "Genesis 45"
+    },
+    {
+     "id": "exodus-03",
+     "label": "Exodus 3"
+    },
+    {
+     "id": "exodus-14",
+     "label": "Exodus 14"
+    },
+    {
+     "id": "exodus-20",
+     "label": "Exodus 20"
+    },
+    {
+     "id": "deuteronomy-06",
+     "label": "Deuteronomy 6"
+    },
+    {
+     "id": "joshua-06",
+     "label": "Joshua 6"
+    },
+    {
+     "id": "ruth-01",
+     "label": "Ruth 1"
+    },
+    {
+     "id": "1samuel-17",
+     "label": "1 Samuel 17"
+    },
+    {
+     "id": "2samuel-07",
+     "label": "2 Samuel 7"
+    },
+    {
+     "id": "1kings-18",
+     "label": "1 Kings 18"
+    },
+    {
+     "id": "2kings-25",
+     "label": "2 Kings 25"
+    },
+    {
+     "id": "psalms-23",
+     "label": "Psalm 23"
+    },
+    {
+     "id": "proverbs-03",
+     "label": "Proverbs 3"
+    },
+    {
+     "id": "isaiah-53",
+     "label": "Isaiah 53"
+    },
+    {
+     "id": "jeremiah-31",
+     "label": "Jeremiah 31"
+    },
+    {
+     "id": "daniel-06",
+     "label": "Daniel 6"
+    },
+    {
+     "id": "nehemiah-02",
+     "label": "Nehemiah 2"
+    },
+    {
+     "id": "luke-02",
+     "label": "Luke 2"
+    },
+    {
+     "id": "matthew-05",
+     "label": "Matthew 5"
+    },
+    {
+     "id": "luke-15",
+     "label": "Luke 15"
+    },
+    {
+     "id": "john-11",
+     "label": "John 11"
+    },
+    {
+     "id": "mark-15",
+     "label": "Mark 15"
+    },
+    {
+     "id": "luke-24",
+     "label": "Luke 24"
+    },
+    {
+     "id": "acts-02",
+     "label": "Acts 2"
+    },
+    {
+     "id": "revelation-21",
+     "label": "Revelation 21"
+    }
+   ]
+  }
+ ],
+ "episodes": {
+  "mark-00": {
+   "title": "Meet the Book of Mark",
+   "label": "Meet Mark",
+   "book": "Mark",
+   "chapter": null,
+   "art": "media:images/symbols/Mark-symbol.svg",
+   "audio": "media:audio/bible-walk/mark/mark-00.webm",
+   "seconds": 228.4,
+   "question": "If someone asked you right now who Jesus is, what would you say? Hold on to your answer, and see how it grows over these sixteen chapters.",
+   "keys": []
+  },
+  "mark-01": {
+   "title": "Prepare Ye the Way",
+   "label": "Mark 1",
+   "book": "Mark",
+   "chapter": 1,
+   "art": "media:images/symbols/Mark-symbol.svg",
+   "audio": "media:audio/bible-walk/mark/mark-01.webm",
+   "seconds": 456.6,
+   "question": "Simon and Andrew left their nets straightway. What is one thing you will lay down today to follow Jesus?",
+   "keys": [
+    "1:15",
+    "1:17",
+    "1:41"
+   ]
+  },
+  "walk-00": {
+   "title": "How to Walk Through a Chapter",
+   "label": "Start here",
+   "book": null,
+   "chapter": null,
+   "art": "media:images/bible-walk/walk-00-cover.webp",
+   "audio": "media:audio/bible-walk/walk/walk-00.webm",
+   "seconds": 248.2,
+   "question": "As you begin this walk through the Bible, what do you hope to find?",
+   "keys": []
+  }
+ }
+}

@@ -10,6 +10,7 @@ const USUAL = [
     "daily-moment",
     "journey-card",
     "memory-verse",
+    "bible-walk-card",
     "daily-food-for-thought",
     "daily-guidance",
     "did-you-know",
@@ -89,7 +90,7 @@ test("the arrows move a card, on the page at once, and the order is remembered",
     moved.splice(moved.indexOf("kids-card"), 1);
     moved.splice(moved.indexOf("gods-blueprint"), 0, "kids-card");
     expect(await listedOrder(page)).toEqual(moved);
-    await expect(page.locator("card-arranger [role=status]")).toHaveText("Daily Grace Kids, 10 of 13.");
+    await expect(page.locator("card-arranger [role=status]")).toHaveText("Daily Grace Kids, 11 of 14.");
 
     await page.locator("card-arranger .done").click();
     await expect(sheet(page)).toBeHidden();

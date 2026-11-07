@@ -80,6 +80,12 @@ const GUIDES = [
         text: "All 66 books: who wrote them, when, and why",
     },
     {
+        page: "bible-walk.html",
+        icon: "bible-walk.svg",
+        title: "Bible Walk",
+        text: "A chapter a day, told as a story and explained, in about eight minutes",
+    },
+    {
         page: "bible-characters.html",
         icon: "bible-characters.webp",
         title: "Bible Characters",

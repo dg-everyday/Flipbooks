@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Build Bible Walk: the narration texts for text-to-speech, and the data the app reads.
+"""Build The Living Voice (worked on as "Bible Walk", the name its files keep): the narration texts for text-to-speech, and the data the app reads.
 
 Reads every episode script in tools/bible-walk/scripts/<folder>/<id>.txt and the plans
 in plans.py, and writes:
@@ -80,7 +80,8 @@ INTRO_WORDS = (500, 850)
 CHAPTER_FIELDS = ["TITLE", "HOOK", "WHERE", "STORY", "THREAD", "TODAY", "QUESTION", "PRAYER", "NEXT"]
 INTRO_FIELDS = ["TITLE", "HOOK", "BODY", "QUESTION", "PRAYER", "NEXT"]
 KEYS_PER_CHAPTER = 3
-CLOSING = "This has been Bible Walk, in Daily Grace. Grace for Today. Our Faith Tomorrow."
+NAME = "The Living Voice"  # the module's name, spoken first and last in every episode
+CLOSING = f"This has been {NAME}, in Daily Grace. Grace for Today. Our Faith Tomorrow."
 
 TIME_WORDS = re.compile(
     r"\b(morning|mornings|evening|evenings|tonight|night|nights|noon|midnight|afternoon|"
@@ -167,12 +168,12 @@ def assemble(kind, fields, keys, book_name, chapter):
     p = lambda name: paragraphs(fields[name])
     if kind == "chapter":
         heading = f"Psalm {chapter}" if book_name == "Psalms" else f"{book_name}, chapter {chapter}"
-        parts = [f"Bible Walk. {heading}. {fields['TITLE']}.", p("HOOK"), p("WHERE"), p("STORY"),
+        parts = [f"{NAME}. {heading}. {fields['TITLE']}.", p("HOOK"), p("WHERE"), p("STORY"),
                  "Now, three verses to hold on to."]
         parts += [f"Verse {k['verse']}. {paragraphs(k['text'])}" for k in keys]
         parts += [p("THREAD"), p("TODAY"), f"Here is today’s question. {p('QUESTION')}"]
     else:
-        parts = [f"Bible Walk. {fields['TITLE']}.", p("HOOK"), p("BODY"),
+        parts = [f"{NAME}. {fields['TITLE']}.", p("HOOK"), p("BODY"),
                  f"Here is a question to carry with you. {p('QUESTION')}"]
     parts += [f"Let us pray. {p('PRAYER')}", p("NEXT"), CLOSING]
     return "\n\n".join(parts) + "\n"
@@ -382,9 +383,9 @@ def main():
         if args.ids and e["id"] not in args.ids:
             continue
         words = len(e["spoken"].split())
-        minutes = words / WORDS_PER_MINUTE
+        mins, secs = divmod(round(words / WORDS_PER_MINUTE * 60), 60)
         state = "recorded" if e["id"] in recorded else "to record"
-        print(f"{e['id']:<12} {words:>5} words  ~{int(minutes)}:{round(minutes % 1 * 60):02d}  {state:<9}  {e['title']}")
+        print(f"{e['id']:<12} {words:>5} words  ~{mins}:{secs:02d}  {state:<9}  {e['title']}")
     if args.dry_run:
         print("Checked.")
     else:

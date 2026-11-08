@@ -32,9 +32,9 @@
  * (that day's Daily Log entry, ready to write in: the Moment's answer if one
  * was written, else a new entry with the day's verse and question; the
  * Moment's Amen screen links here), #<folder>/walk/<episode id> (the answer
- * to a Bible Walk episode's question: the one written before, else a new
- * Daily Log entry with the question; "Write my answer" on bible-walk.html
- * links here), and #folders (a phone's folder pane). Folders: today, all, log, discovery, diary,
+ * to a chapter of The Living Voice: the one written before, else a new
+ * Daily Log entry with its question; "Write my answer" on living-voice.html
+ * links here; "walk" is from its working name, Bible Walk), and #folders (a phone's folder pane). Folders: today, all, log, discovery, diary,
  * notebook, prayer, flagged, stickers, bookmarks:<kind>.
  */
 
@@ -161,8 +161,8 @@ async function resolveWrite(day) {
 }
 
 /**
- * Where #…/walk/<episode id> leads: the answer to that Bible Walk episode's
- * question written before, else a new Daily Log entry with the question.
+ * Where #…/walk/<episode id> leads: the answer to that chapter of The Living
+ * Voice written before, else a new Daily Log entry with its question.
  */
 async function resolveWalk(id) {
     const sourceKey = `walk:${id}`;
@@ -179,7 +179,7 @@ async function resolveWalk(id) {
     }
     state.draft = episode
         ? {
-              verse: `Bible Walk · ${episode.chapter ? `${episode.label}: ${episode.title}` : episode.title}`,
+              verse: `The Living Voice · ${episode.chapter ? `${episode.label}: ${episode.title}` : episode.title}`,
               prompt: episode.question,
               source: "walk",
               sourceKey,

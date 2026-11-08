@@ -10,7 +10,7 @@ const USUAL = [
     "daily-moment",
     "journey-card",
     "memory-verse",
-    "bible-walk-card",
+    "living-voice-card",
     "daily-food-for-thought",
     "daily-guidance",
     "did-you-know",

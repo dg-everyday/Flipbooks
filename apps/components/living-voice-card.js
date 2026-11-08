@@ -1,34 +1,36 @@
 /**
- * <bible-walk-card> — the home page's way into Bible Walk
- * (apps/pages/bible-walk.html): a chapter of the Bible a day, told and
- * explained.
+ * <living-voice-card> — the home page's way into The Living Voice
+ * (apps/pages/living-voice.html): a chapter of the Bible a day, told and
+ * explained, to listen to.
  *
- * The Bible Walk banner (on R2, images/bible-walk/bible-walk-banner.webp) with
- * the name over its sky, and beneath it a navy strip naming the next step of
- * this reader's walk, from assets/scripts/bible-walk/progress.js, the same as
- * the page's own "Up next": "Start here", "Continue" an episode part-heard,
+ * The banner (on R2, images/bible-walk/bible-walk-banner.webp, from the
+ * module's working name) with a headphones mark and the name over its sky, and beneath it a navy strip naming the next step of
+ * this reader's walk, from assets/scripts/bible-walk/progress.js, the same chapter
+ * the page's player opens on: "Start here", "Continue" an episode part-heard,
  * "Up next", or the next chapter coming soon. The whole card is the link,
- * straight to that episode.
+ * straight to that chapter on the player.
  *
  * The strip is filled again when the reader comes back to the home page
- * (pageshow), since they may have walked on meanwhile.
+ * (pageshow), since they may have listened on meanwhile.
  *
  * Usage
- *   <bible-walk-card></bible-walk-card>
- *   <script type="module" src="./apps/components/bible-walk-card.js"></script>
+ *   <living-voice-card></living-voice-card>
+ *   <script type="module" src="./apps/components/living-voice-card.js"></script>
  *
  * Attributes
- *   href      the Bible Walk page, resolved against the page.
- *             Default: apps/pages/bible-walk.html
+ *   href      The Living Voice page, resolved against the page.
+ *             Default: apps/pages/living-voice.html
  */
 
 import { resolveMedia } from "../settings/settings.js?v=20261009-1";
 import { loadWalk, nextStep, readProgress } from "../../assets/scripts/bible-walk/progress.js?v=20261107-1";
 
 const BANNER_URL = resolveMedia("media:images/bible-walk/bible-walk-banner.webp");
-const DEFAULT_HREF = "apps/pages/bible-walk.html";
+const DEFAULT_HREF = "apps/pages/living-voice.html";
+const NAME = "The Living Voice";
 const TAGLINE = "A chapter a day, told and explained";
 
+const HEADPHONES = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>`;
 const PLAY = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2Z"/></svg>`;
 const ARROWS = `<svg viewBox="0 0 32 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5l7 7-7 7"/><path d="M17 5l7 7-7 7"/></svg>`;
 
@@ -65,11 +67,12 @@ const STYLES = /* css */ `
     background: linear-gradient(180deg, rgb(0 27 52 / 55%), rgb(0 27 52 / 0%));
   }
   .title {
-    display: block;
+    display: flex; align-items: center; gap: 10px;
     font: 400 clamp(1.9rem, 1.4rem + 2.6vw, 2.9rem)/1 'Germania One', Georgia, serif;
     color: #f2c531;
     text-shadow: 0 2px 8px rgb(0 0 0 / 40%);
   }
+  .title svg { flex: none; width: .85em; height: .85em; }
   .tagline {
     display: block;
     margin-top: 4px;
@@ -132,7 +135,7 @@ const escapeHtml = (value) =>
 
 const minutes = (seconds) => `${Math.max(1, Math.round(seconds / 60))} min`;
 
-export class BibleWalkCard extends HTMLElement {
+export class LivingVoiceCard extends HTMLElement {
     static observedAttributes = ["href"];
 
     #root;
@@ -146,7 +149,7 @@ export class BibleWalkCard extends HTMLElement {
           <a class="card">
             <span class="banner">
               <img src="${escapeHtml(BANNER_URL)}" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
-              <span class="name"><span class="title">Bible Walk</span><span class="tagline">${TAGLINE}</span></span>
+              <span class="name"><span class="title">${HEADPHONES}<span>${NAME}</span></span><span class="tagline">${TAGLINE}</span></span>
             </span>
             <span class="strip">
               <span class="words"><span class="dot">${PLAY}</span><span class="step">${TAGLINE}</span></span>
@@ -170,7 +173,7 @@ export class BibleWalkCard extends HTMLElement {
     }
 
     #onShow = (event) => {
-        // Back from the Bible Walk page, kept in the back/forward cache.
+        // Back from The Living Voice, kept in the back/forward cache.
         if (event.persisted) {
             this.#fill();
         }
@@ -216,12 +219,12 @@ export class BibleWalkCard extends HTMLElement {
     #show(html, id) {
         this.#root.querySelector(".step").innerHTML = html;
         const text = this.#root.querySelector(".step").textContent;
-        this.#root.querySelector(".card").setAttribute("aria-label", `Bible Walk: ${text}`);
+        this.#root.querySelector(".card").setAttribute("aria-label", `${NAME}: ${text}`);
         this.#hash = id ? encodeURIComponent(id) : "";
         this.#setHref();
     }
 }
 
-if (!customElements.get("bible-walk-card")) {
-    customElements.define("bible-walk-card", BibleWalkCard);
+if (!customElements.get("living-voice-card")) {
+    customElements.define("living-voice-card", LivingVoiceCard);
 }

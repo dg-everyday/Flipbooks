@@ -61,7 +61,7 @@ test("a guide's description is read out with its title", async ({ page }) => {
 });
 
 test("holding a guide shows what it covers, and doesn't open it", async ({ page }) => {
-    const item = guides(page).nth(2); // Bible Characters, after Books of the Bible and Bible Walk
+    const item = guides(page).nth(2); // Bible Characters, after Books of the Bible and The Living Voice
     await hold(page, item);
     await expect(peek(page)).toBeVisible();
     await expect(peek(page).locator(".menu-peek-title")).toHaveText("Bible Characters");

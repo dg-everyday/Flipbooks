@@ -1,16 +1,17 @@
 /**
- * Bible Walk (apps/pages/bible-walk.html, apps/components/bible-walk-card.js):
- * the plans with what is ready and what is coming, one episode with its player,
- * the chapter to read along, its words and its question, the walk picking up
- * where the reader left off on the page and on the home card, playing on while
- * the plans are open, and "Write my answer" in My Faith Journal.
+ * The Living Voice (apps/pages/living-voice.html, apps/components/living-voice-card.js):
+ * the pocket player opening on the next chapter, its Albums, Tracks and Now
+ * playing screens, the chapter beside it (read along, its words, its question),
+ * picking up where the reader left off on the page and on the home card,
+ * auto-play into the next chapter, speed, sleep timer and auto-play settings,
+ * previous and next, and "Write my answer" in My Faith Journal.
  *
  * The recordings are replaced by a three-second silence
  * (tests/fixtures/bible-walk-silence.webm), so nothing waits on R2.
  */
 import { test, expect } from "@playwright/test";
 
-const PAGE = "/apps/pages/bible-walk.html";
+const PAGE = "/apps/pages/living-voice.html";
 const KEY = "dailygrace:bible-walk";
 const desktopOnly = () => test.skip(test.info().project.name !== "desktop", "runs on the desktop");
 
@@ -20,7 +21,7 @@ async function silence(page) {
     );
 }
 
-/** The home page without its first-visit popups, and the reader's walk so far. */
+/** The home page without its first-visit popups, and the reader's listening so far. */
 async function seed(page, progress = null) {
     await page.addInitScript(
         ([key, saved]) => {
@@ -39,124 +40,159 @@ async function seed(page, progress = null) {
     );
 }
 
+const lcd = (page) => page.locator(".device .lcd");
+const button = (page, name) => page.locator(`.device [data-btn="${name}"]`);
 const noSideways = (page) => page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 
-test("the plans show where to start, what is ready, and what is coming", async ({ page }) => {
+test("a new listener's player opens on the first chapter, with the chapter beside it", async ({ page }) => {
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto(PAGE);
 
-    const next = page.locator(".up-next");
-    await expect(next.locator(".eyebrow")).toHaveText("Start here · First Steps");
-    await expect(next.locator(".up-next-title")).toHaveText("How to Walk Through a Chapter");
+    await expect(page.locator(".dev-brand")).toHaveText("The Living Voice");
+    await expect(lcd(page).locator(".lcd-title")).toHaveText("Now playing");
+    await expect(lcd(page).locator(".now-title")).toHaveText("How to Walk Through a Chapter");
+    await expect(lcd(page).locator(".now-meta")).toContainText("Track 1 of 18");
+    await expect(lcd(page).locator(".upnext")).toContainText("Meet Mark · Meet the Book of Mark");
+    await expect(lcd(page).locator(".t-left")).toHaveText("-4:08");
+    await expect(button(page, "play")).toHaveAttribute("aria-label", "Play");
+    await expect(page).toHaveURL(/#walk-00$/);
 
-    const plan = page.locator("#plan-first-steps");
-    await expect(plan.locator("h2")).toHaveText("First Steps");
-    await expect(plan.locator(".ep-link")).toHaveCount(3);
-    // The next chapter to come has its own row; the rest share one.
-    await expect(plan.locator(".ep.is-soon .ep-label")).toHaveText(["Mark 2", "Mark 3 to Mark 16"]);
-    await expect(plan.locator(".ep-link").nth(2)).toContainText("Mark 1");
-    await expect(plan.locator(".ep-link").nth(2)).toContainText("Prepare Ye the Way");
-    await expect(plan).toContainText("0 of 18 heard");
-
-    const later = page.locator("#plan-big-picture");
-    await expect(later).toHaveClass(/is-soon/);
-    await expect(later).toContainText("Coming soon · 31 episodes");
+    const chapter = page.locator(".chapter");
+    await expect(chapter.locator("h2")).toHaveText("How to Walk Through a Chapter");
+    await expect(chapter.locator(".question")).toContainText("what do you hope to find?");
+    await expect(chapter.getByRole("button", { name: /^Read / })).toHaveCount(0);
 
     expect(await noSideways(page)).toBeLessThanOrEqual(1);
     expect(errors).toEqual([]);
 });
 
-test("an episode has its player, the chapter to read, its words and its question", async ({ page }) => {
-    await page.goto(`${PAGE}#mark-01`);
-    const episode = page.locator(".episode");
-    await expect(episode.locator("h1")).toHaveText("Prepare Ye the Way");
-    await expect(episode.locator(".episode-label")).toHaveText("Mark 1 · 8 min");
-    await expect(episode.locator(".t-total")).toHaveText("7:36");
-    await expect(episode.locator(".big-play")).toHaveAttribute("aria-label", "Play");
-    await expect(episode.locator(".question")).toContainText("What is one thing you will lay down today to follow Jesus?");
-    await expect(episode.getByRole("link", { name: "Write my answer" })).toHaveAttribute("href", "journal.html#log/walk/mark-01");
+test("List steps back to the tracks and the albums, and a track opens on Now playing", async ({ page }) => {
+    await page.goto(PAGE);
+    await button(page, "list").click();
+    await expect(lcd(page).locator(".lcd-title")).toHaveText("First Steps");
+    const tracks = lcd(page).locator(".row.track");
+    await expect(tracks).toHaveCount(18);
+    await expect(lcd(page).locator(".row.track:not([disabled])")).toHaveCount(3);
+    await expect(tracks.nth(3)).toContainText("Mark 2");
+    await expect(tracks.nth(3)).toContainText("Coming soon");
 
-    await episode.locator(".transcript summary").click();
-    await expect(episode.locator(".transcript-body")).toContainText("A man with leprosy kneels in the dust");
-    await expect(episode.locator(".transcript-body")).toContainText("Verse 15.");
+    await button(page, "list").click();
+    await expect(lcd(page).locator(".lcd-title")).toHaveText("The Living Voice");
+    const albums = lcd(page).locator(".row.album");
+    await expect(albums.nth(0)).toContainText("First Steps");
+    await expect(albums.nth(0)).toContainText("18 tracks · 0 heard");
+    await expect(albums.nth(1)).toBeDisabled();
+    await expect(albums.nth(1)).toContainText("Coming soon · 31 episodes");
 
-    await expect(episode.locator(".nav-prev")).toContainText("Meet the Book of Mark");
-    await expect(episode.locator(".nav-next")).toContainText("Mark 2 · coming soon");
-    expect(await noSideways(page)).toBeLessThanOrEqual(1);
-
-    await episode.getByRole("button", { name: "Read Mark 1" }).click();
-    await expect(page.locator("passage-reader")).toBeAttached();
-
-    // An intro has no chapter to read.
-    await page.goto(`${PAGE}#walk-00`);
-    await expect(page.locator(".episode h1")).toHaveText("How to Walk Through a Chapter");
-    await expect(page.locator(".episode").getByRole("button", { name: /^Read / })).toHaveCount(0);
+    await albums.nth(0).click();
+    await lcd(page).locator('[data-track="mark-01"]').click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("Prepare Ye the Way");
+    await expect(lcd(page).locator(".now-meta")).toContainText("Track 3 of 18");
+    await expect(lcd(page).locator(".upnext")).toContainText("Mark 2 · coming soon");
+    await expect(page).toHaveURL(/#mark-01$/);
 });
 
-test("the walk picks up where it was left, on the page and on the home card", async ({ page }) => {
+test("a chapter beside the player: read along, its words, and Write my answer", async ({ page }) => {
+    await page.goto(`${PAGE}#mark-01`);
+    const chapter = page.locator(".chapter");
+    await expect(chapter.locator("h2")).toHaveText("Mark 1: Prepare Ye the Way");
+    await expect(chapter.locator(".question")).toContainText("What is one thing you will lay down today to follow Jesus?");
+    await expect(chapter.getByRole("link", { name: "Write my answer" })).toHaveAttribute("href", "journal.html#log/walk/mark-01");
+    await chapter.locator(".transcript summary").click();
+    await expect(chapter.locator(".transcript-body")).toContainText("A man with leprosy kneels in the dust");
+    await chapter.getByRole("button", { name: "Read Mark 1" }).click();
+    await expect(page.locator("passage-reader")).toBeAttached();
+});
+
+test("the player picks up where the reader left off, and so does the home card", async ({ page }) => {
     await seed(page, { done: { "walk-00": "2026-11-07", "mark-00": "2026-11-07" }, pos: { "mark-01": 120 }, last: "mark-01", speed: 1 });
     await page.goto(PAGE);
-    const next = page.locator(".up-next");
-    await expect(next).toContainText("Continue · First Steps");
-    await expect(next).toContainText("6 min left");
-    const plan = page.locator("#plan-first-steps");
-    await expect(plan.locator(".ep.is-heard")).toHaveCount(2);
-    await expect(plan).toContainText("2 of 18 heard");
-    await expect(plan.locator(".ep-link").nth(2)).toContainText("6 min left");
+    await expect(lcd(page).locator(".now-title")).toHaveText("Prepare Ye the Way");
+    await expect(lcd(page).locator(".t-now")).toHaveText("2:00");
 
-    // The episode's slider starts where the reader stopped.
-    await page.goto(`${PAGE}#mark-01`);
-    await expect(page.locator(".t-now")).toHaveText("2:00");
+    await button(page, "list").click();
+    await expect(lcd(page).locator('[data-track="walk-00"] .num.heard')).toBeVisible();
+    await expect(lcd(page).locator('[data-track="mark-00"] .num.heard')).toBeVisible();
+    await button(page, "list").click();
+    await expect(lcd(page).locator(".row.album").nth(0)).toContainText("2 heard");
 
     await page.goto("/");
     const order = await page.locator(".devotional-stack > *").evaluateAll((els) => els.map((e) => e.id));
-    expect(order.indexOf("bible-walk-card")).toBe(order.indexOf("memory-verse") + 1);
-    const card = page.locator("bible-walk-card");
+    expect(order.indexOf("living-voice-card")).toBe(order.indexOf("memory-verse") + 1);
+    const card = page.locator("living-voice-card");
+    await expect(card.locator(".title")).toHaveText("The Living Voice");
     await expect(card.locator(".step")).toHaveText("Continue: Mark 1, Prepare Ye the Way · 6 min left");
-    await expect(card.locator("a.card")).toHaveAttribute("href", /apps\/pages\/bible-walk\.html#mark-01$/);
+    await expect(card.locator("a.card")).toHaveAttribute("href", /apps\/pages\/living-voice\.html#mark-01$/);
     expect(await noSideways(page)).toBeLessThanOrEqual(1);
     await card.locator("a.card").click();
-    await expect(page.locator(".episode h1")).toHaveText("Prepare Ye the Way");
+    await expect(page.locator(".now-title")).toHaveText("Prepare Ye the Way");
 });
 
-test("a new reader's home card starts the walk", async ({ page }) => {
+test("a new listener's home card starts with the first chapter", async ({ page }) => {
     await seed(page);
     await page.goto("/");
-    const card = page.locator("bible-walk-card");
+    const card = page.locator("living-voice-card");
     await expect(card.locator(".step")).toHaveText("Start here: How to Walk Through a Chapter · 4 min");
-    await expect(card.locator("a.card")).toHaveAttribute("href", /bible-walk\.html#walk-00$/);
+    await expect(card.locator("a.card")).toHaveAttribute("href", /living-voice\.html#walk-00$/);
 });
 
-test("an episode plays on while the plans are open, and is ticked off once heard", async ({ page }) => {
+test("a chapter that ends is ticked off and the next one plays by itself", async ({ page }) => {
     desktopOnly();
     await silence(page);
     await page.goto(`${PAGE}#walk-00`);
-    const play = page.locator(".big-play");
-    await play.click();
-    await expect(play).toHaveAttribute("aria-label", "Pause");
+    await button(page, "play").click();
+    await expect(button(page, "play")).toHaveAttribute("aria-label", "Pause");
+    await expect(page.locator(".device")).toHaveClass(/is-playing/);
 
-    // Back to the plans while it plays: the bar at the foot keeps it.
-    await page.locator(".back-link").click();
-    const mini = page.locator("#mini-player");
-    await expect(mini).toBeVisible();
-    await expect(mini).toContainText("How to Walk Through a Chapter");
-
-    // The silence ends: heard, ticked, and the walk moves on.
-    await expect(page.locator("#plan-first-steps .ep.is-heard")).toHaveCount(1, { timeout: 10_000 });
-    await expect(mini).toBeHidden();
-    await expect(page.locator(".up-next")).toContainText("Up next · First Steps");
-    await expect(page.locator(".up-next")).toContainText("Meet the Book of Mark");
+    // The silence ends: heard, and auto-play moves on to Meet the Book of Mark.
+    await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark", { timeout: 10_000 });
+    await expect(page).toHaveURL(/#mark-00$/);
+    await expect(button(page, "play")).toHaveAttribute("aria-label", "Pause");
     const saved = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)), KEY);
-    expect(Object.keys(saved.done)).toEqual(["walk-00"]);
-    expect(saved.last).toBe("walk-00");
+    expect(Object.keys(saved.done)).toContain("walk-00");
 
-    // The speed is remembered.
-    await page.goto(`${PAGE}#mark-00`);
-    await page.locator("[data-speed]").click();
-    await expect(page.locator("[data-speed]")).toHaveText("1.25×");
+    // With auto-play off, the next chapter waits.
+    await lcd(page).locator('[data-act="auto"]').click();
+    await expect(lcd(page).locator('[data-act="auto"]')).toHaveText("Auto-play off");
+    await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
+    await expect(button(page, "play")).toHaveAttribute("aria-label", "Play", { timeout: 10_000 });
+    await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
+});
+
+test("next, previous, speed and the sleep timer", async ({ page }) => {
+    desktopOnly();
+    await page.goto(`${PAGE}#walk-00`);
+    await button(page, "next").click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
+    await button(page, "next").click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("Prepare Ye the Way");
+    // Mark 2 is not recorded yet: next stays on Mark 1.
+    await button(page, "next").click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("Prepare Ye the Way");
+    await button(page, "prev").click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
+
+    // Forward 30 seconds, then Previous goes back to the start of the chapter.
+    await button(page, "forward").click();
+    await expect(lcd(page).locator(".t-now")).toHaveText("0:30");
+    await button(page, "prev").click();
+    await expect(lcd(page).locator(".t-now")).toHaveText("0:00");
+    await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
+
+    const speed = lcd(page).locator('[data-act="speed"]');
+    await speed.click();
+    await expect(speed).toHaveText("1.25×");
+    const sleep = lcd(page).locator('[data-act="sleep"]');
+    await expect(sleep).toHaveText("Sleep off");
+    await sleep.click();
+    await expect(sleep).toHaveText("Sleep 15:00");
+    await sleep.click();
+    await expect(sleep).toHaveText("Sleep 30:00");
+    await sleep.click();
+    await expect(sleep).toHaveText("Sleep: end of chapter");
     await page.reload();
-    await expect(page.locator("[data-speed]")).toHaveText("1.25×");
+    await expect(lcd(page).locator('[data-act="speed"]')).toHaveText("1.25×");
 });
 
 test("Write my answer opens a Daily Log entry with the question, and opens it again later", async ({ page, isMobile }) => {
@@ -166,7 +202,7 @@ test("Write my answer opens a Daily Log entry with the question, and opens it ag
     const editor = page.locator(".entry-edit");
     await expect(editor).toBeVisible();
     await expect(editor.locator("#edit-kind")).toHaveValue("log");
-    await expect(editor).toContainText("Bible Walk · Mark 1: Prepare Ye the Way");
+    await expect(editor).toContainText("The Living Voice · Mark 1: Prepare Ye the Way");
     await expect(editor).toContainText("What is one thing you will lay down today to follow Jesus?");
     await editor.locator(".edit-body").click();
     await page.keyboard.type("My worry about work.");
@@ -175,7 +211,7 @@ test("Write my answer opens a Daily Log entry with the question, and opens it ag
     await expect(page.locator(".entry-read .entry-body")).toHaveText("My worry about work.");
 
     // The same link later opens that answer, not a second entry.
-    await page.goto("/apps/pages/bible-walk.html");
+    await page.goto(PAGE);
     await page.goto(`/apps/pages/journal.html#log/walk/mark-01`);
     await expect(page.locator(".entry-edit .edit-body")).toHaveText("My worry about work.");
     await page.locator('a.folder[data-folder="log"]').click();

@@ -1,16 +1,17 @@
 /**
- * Bible Walk: the plans and episodes (assets/bible-walk/walk.json, built by
+ * The Living Voice (worked on as "Bible Walk", the name its data and files
+ * keep): the plans and episodes (assets/bible-walk/walk.json, built by
  * tools/bible-walk/build_bible_walk.py) and how far this reader has walked.
- * Shared by the Bible Walk page (apps/pages/scripts/bible-walk.js) and its
- * home card (apps/components/bible-walk-card.js), so both name the same next
- * chapter.
+ * Shared by the page (apps/pages/scripts/living-voice.js) and its home card
+ * (apps/components/living-voice-card.js), so both name the same next chapter.
  *
  * Progress is kept on this device only, in localStorage under PROGRESS_KEY:
  *   {
  *     pos:   { "<episode id>": seconds listened to, while not finished },
  *     done:  { "<episode id>": "YYYY-MM-DD" (Manila) the day it was finished },
  *     last:  the episode last played,
- *     speed: the playback speed chosen
+ *     speed: the playback speed chosen,
+ *     auto:  whether the next chapter plays by itself when one ends (default on)
  *   }
  * Nothing is counted as a streak, and a missed day loses nothing: the walk
  * always picks up at the next chapter not heard yet.
@@ -32,7 +33,7 @@ export function loadWalk() {
     if (!walkRequest) {
         walkRequest = fetch(WALK_URL).then((response) => {
             if (!response.ok) {
-                throw new Error(`Bible Walk data: HTTP ${response.status}`);
+                throw new Error(`The Living Voice data: HTTP ${response.status}`);
             }
             return response.json();
         });
@@ -60,6 +61,7 @@ export function readProgress() {
         done: isObject(progress.done) ? progress.done : {},
         last: typeof progress.last === "string" ? progress.last : null,
         speed: typeof progress.speed === "number" ? progress.speed : 1,
+        auto: typeof progress.auto === "boolean" ? progress.auto : true,
     };
 }
 

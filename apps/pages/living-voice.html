@@ -8,11 +8,11 @@
         />
         <meta
             name="description"
-            content="Bible Walk — a chapter of the Bible a day, told as a story and explained in about eight minutes, in the King James words. Press play and walk through the Bible one chapter at a time."
+            content="The Living Voice — a chapter of the Bible a day, told as a story and explained in about eight minutes, in the King James words. Press play and listen your way through the Bible."
         />
         <link
             rel="canonical"
-            href="https://dailygrace.faith/apps/pages/bible-walk.html"
+            href="https://dailygrace.faith/apps/pages/living-voice.html"
         />
 
         <!-- Open Graph: how a link to this page looks when it is shared -->
@@ -21,29 +21,29 @@
         <meta property="og:locale" content="en_US" />
         <meta
             property="og:url"
-            content="https://dailygrace.faith/apps/pages/bible-walk.html"
+            content="https://dailygrace.faith/apps/pages/living-voice.html"
         />
-        <meta property="og:title" content="Bible Walk — Daily Grace" />
+        <meta property="og:title" content="The Living Voice — Daily Grace" />
         <meta
             property="og:description"
             content="A chapter of the Bible a day, told as a story and explained in about eight minutes, in the King James words."
         />
         <meta
             property="og:image"
-            content="https://dailygrace.faith/assets/images/share/bible-walk.jpg"
+            content="https://dailygrace.faith/assets/images/share/living-voice.jpg"
         />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
             property="og:image:alt"
-            content="Bible Walk, the Daily Grace audio guide through the Bible"
+            content="The Living Voice, the Daily Grace audio guide through the Bible"
         />
         <!-- X uses og:image for its large card. -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="theme-color" content="#001b34" />
 
-        <title>Daily Grace — Bible Walk</title>
+        <title>Daily Grace — The Living Voice</title>
         <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
         <link
             rel="apple-touch-icon"
@@ -69,12 +69,16 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/bible-walk-page.css?v=20261107-1"
+            href="../../assets/styles/living-voice-page.css?v=20261108-1"
         />
     </head>
     <body>
         <div class="topbar">
-            <a class="brand" href="bible-walk.html" aria-label="Bible Walk">
+            <a
+                class="brand"
+                href="living-voice.html"
+                aria-label="The Living Voice"
+            >
                 <img
                     class="brand-logo"
                     src="../../assets/images/daily-grace-white-480.webp"
@@ -82,7 +86,7 @@
                     width="480"
                     height="160"
                 />
-                <span class="brand-pill">Bible Walk</span>
+                <span class="brand-pill">The Living Voice</span>
             </a>
             <a
                 class="home"
@@ -107,14 +111,14 @@
             </a>
         </div>
 
-        <!-- bible-walk.js renders the plans into this element; #<episode id>
-             (#mark-01) opens that episode with its player. -->
+        <!-- living-voice.js renders the player and the chapter beside it into
+             this element; #<episode id> (#mark-01) opens that chapter. -->
         <main id="view">
-            <p class="status">Loading Bible Walk…</p>
+            <p class="status">Loading The Living Voice…</p>
         </main>
 
-        <!-- While an episode plays and another view is open: its title and
-             a play/pause button, back to the episode with a tap. -->
+        <!-- While an episode plays and the player is scrolled out of view: its
+             title and a play/pause button, back to the player with a tap. -->
         <div class="mini-player" id="mini-player" hidden></div>
 
         <footer class="page-footer">
@@ -123,7 +127,7 @@
         </footer>
 
         <script type="module">
-            import { start } from "./scripts/bible-walk.js?v=20261107-1";
+            import { start } from "./scripts/living-voice.js?v=20261108-2";
             start(
                 document.getElementById("view"),
                 document.getElementById("mini-player"),

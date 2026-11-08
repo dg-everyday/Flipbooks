@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""The Bible Walk plans, in the order the page shows them.
+"""The plans of The Living Voice (files and paths keep its working name, Bible Walk),
+in the order the page shows them.
 
 Each plan lists its episodes by id (docs/bible-walk/where-to-start.md). A chapter is
 recorded once and used by every plan that walks through it. An episode with no script

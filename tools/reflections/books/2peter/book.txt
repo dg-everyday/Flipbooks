@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+2 Peter
+1-1 | Exceeding Great and Precious Promises
+2-2 | The Lord Knoweth How to Deliver the Godly
+3-3 | Grow in Grace

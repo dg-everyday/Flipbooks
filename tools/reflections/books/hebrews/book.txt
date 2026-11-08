@@ -1,0 +1,8 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Hebrews
+1-2 | Spoken unto Us by His Son
+3-4 | There Remaineth Therefore a Rest
+5-7 | A Forerunner Is for Us Entered
+8-10 | A New and Living Way
+11-11 | By Faith
+12-13 | Looking unto Jesus

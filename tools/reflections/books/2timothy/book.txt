@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+2 Timothy
+1-1 | Not the Spirit of Fear
+2-2 | A Good Soldier of Jesus Christ
+3-3 | All Scripture Is Given by Inspiration of God
+4-4 | I Have Kept the Faith

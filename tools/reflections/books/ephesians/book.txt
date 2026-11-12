@@ -1,0 +1,5 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Ephesians
+1-2 | By Grace Are Ye Saved Through Faith
+3-4 | Walk Worthy of the Vocation
+5-6 | Put On the Whole Armour of God

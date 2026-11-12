@@ -64,10 +64,37 @@ import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261106-1";
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
+// The same emblem with its navy letters drawn cream, for About's navy tile.
+const EMBLEM_LIGHT_URL = asset("../../assets/images/dg-icon-light-256.webp");
 // GUIDES' pages and icons sit under these. assets/scripts/check-assets.mjs reads
 // both lines to check every guide's files, so keep their form.
 const PAGES = "../pages/";
 const ICONS = "../../assets/images/study-guide-icons/";
+
+// Support's heart, in the menu and in Help: a full red heart, embossed, with a
+// dark rim, a lit upper left, a bevel just inside the rim and a gloss on the
+// left lobe. Each copy names its own gradients (id), as both sit in one shadow
+// root. Its colours are set here, not by .help-icon's navy line style.
+const HEART_PATH =
+    "M12 21.2C6.2 16.8 2.5 13.4 2.5 8.9 2.5 5.9 4.8 3.6 7.6 3.6c1.8 0 3.4.9 4.4 2.4 " +
+    "1-1.5 2.6-2.4 4.4-2.4 2.8 0 5.1 2.3 5.1 5.3 0 4.5-3.7 7.9-9.5 12.3z";
+const supportHeart = (id) => `<svg class="support-heart" viewBox="0 0 24 24" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="${id}-face" cx=".36" cy=".3" r=".85">
+                                <stop offset="0" stop-color="#ff6b5e" />
+                                <stop offset=".45" stop-color="#d7261e" />
+                                <stop offset="1" stop-color="#8f0f0c" />
+                            </radialGradient>
+                            <linearGradient id="${id}-bevel" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#ffb3aa" />
+                                <stop offset=".5" stop-color="#c41f18" stop-opacity="0" />
+                                <stop offset="1" stop-color="#5e0806" />
+                            </linearGradient>
+                        </defs>
+                        <path d="${HEART_PATH}" fill="url(#${id}-face)" stroke="#7a0b08" stroke-width=".7" />
+                        <path d="${HEART_PATH}" transform="translate(12 12.4) scale(.86) translate(-12 -12.4)" fill="none" stroke="url(#${id}-bevel)" stroke-width="1" />
+                        <path d="M5.3 9.2c-.1-1.9 1.2-3.3 2.9-3.4" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>`;
 
 // The study guides, in menu order: page in apps/pages, icon in
 // assets/images/study-guide-icons. The title is the label under the icon; the
@@ -78,6 +105,12 @@ const GUIDES = [
         icon: "books-of-the-bible.webp",
         title: "Books of the Bible",
         text: "All 66 books: who wrote them, when, and why",
+    },
+    {
+        page: "living-voice.html",
+        icon: "living-voice.svg",
+        title: "The Living Voice",
+        text: "A chapter a day to listen to, told as a story and explained, in about eight minutes",
     },
     {
         page: "bible-characters.html",
@@ -172,6 +205,8 @@ const GUIDES = [
     {
         page: "daily-grace-kids.html",
         icon: "daily-grace-kids.webp",
+        // A picture in full colour, shown as it is; the line icons are drawn gold.
+        colour: true,
         title: "Daily Grace Kids",
         text: "Bible stories for children aged 3 to 8, with Nari the lion cub",
     },
@@ -201,11 +236,15 @@ const STYLES = /* css */ `
     padding: 0;
     border: 0;
     border-radius: 0 20px 20px 0;
+    /* Aurora: deep navy lit by soft glows of gold (top left), violet (right)
+       and teal (bottom right). Cream until 2026-11-12. */
     background:
-      radial-gradient(120% 60% at 0% 0%, #fffaf0 0%, transparent 60%),
-      var(--cream);
-    color: var(--ink);
-    box-shadow: 18px 0 50px rgb(0 27 52 / 35%);
+      radial-gradient(90% 45% at 0% 0%, rgb(225 182 93 / 30%), transparent 65%),
+      radial-gradient(80% 55% at 100% 100%, rgb(32 150 170 / 38%), transparent 65%),
+      radial-gradient(60% 40% at 100% 20%, rgb(90 80 190 / 28%), transparent 70%),
+      linear-gradient(165deg, #12345a 0%, #0a1f3a 55%, #06142a 100%);
+    color: var(--cream);
+    box-shadow: 18px 0 50px rgb(0 27 52 / 45%);
     font-family: 'Roboto', Arial, sans-serif;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -226,12 +265,25 @@ const STYLES = /* css */ `
   }
   .menu-header h2 {
     margin: 0;
-    color: var(--navy);
+    color: var(--cream);
     font: 400 1.75rem/1.05 'Germania One', Georgia, serif;
     letter-spacing: .02em;
   }
   /* In the menu the eyebrow sits under the title, so it needs space above, not below. */
-  .menu-header .help-eyebrow { margin: 6px 0 0; }
+  .menu-header .help-eyebrow { margin: 6px 0 0; color: var(--gold-light); }
+  /* The DG emblem on a white rounded square with a gold hairline, like an app icon. */
+  .menu-emblem {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border: 1px solid rgb(198 146 46 / 60%);
+    border-radius: 14px;
+    background: #fffdf8;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 25%), 0 6px 14px -6px rgb(0 0 0 / 45%);
+  }
+  .menu-emblem .help-emblem { width: 42px; height: 42px; filter: none; }
   /* The description bubble is placed against the nav, so it scrolls with the
      icon it belongs to. */
   .menu-nav {
@@ -250,7 +302,7 @@ const STYLES = /* css */ `
     width: 100%;
     border: 0;
     background: transparent;
-    color: var(--navy);
+    color: var(--cream);
     font: inherit;
     text-align: center;
     text-decoration: none;
@@ -258,8 +310,8 @@ const STYLES = /* css */ `
     -webkit-tap-highlight-color: transparent;
     transition: background-color .15s ease;
   }
-  .menu-item:hover { background: rgb(255 255 255 / 70%); }
-  .menu-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
+  .menu-item:hover { background: rgb(255 255 255 / 8%); }
+  .menu-item:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 1px; }
 
   /* The guides: three to a row, like the icons on a phone's home screen. A
      hold must show the description, not select the label or bring up the
@@ -275,22 +327,33 @@ const STYLES = /* css */ `
   }
   .menu-grid li { display: flex; min-width: 0; }
   .menu-grid .menu-item { gap: 6px; padding: 6px 2px 8px; border-radius: 14px; }
-  /* Each icon on a "Paper" tile: white, a gold hairline and a soft shadow.
-     60 px, as an iPhone's home-screen icon; the art fills two thirds of it. */
+  /* Each icon on a frosted tile, a little lighter than the drawer and letting
+     its glow through, with a gold hairline, a lit top edge and a soft shadow. 60 px, as an iPhone's
+     home-screen icon; the art fills two thirds of it. (The tiles were white
+     "Paper" until 2026-11-12.) */
   .menu-tile {
     display: grid;
     flex: 0 0 auto;
     place-items: center;
     width: 60px;
     height: 60px;
-    border: 1px solid rgb(198 146 46 / 38%);
+    border: 1px solid rgb(225 182 93 / 55%);
     border-radius: 14px;
-    background: #fffdf8;
-    box-shadow: 0 1px 2px rgb(0 27 52 / 10%), 0 6px 14px -6px rgb(0 27 52 / 22%);
+    background: linear-gradient(160deg, rgb(255 255 255 / 14%), rgb(255 255 255 / 4%));
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 18%), 0 8px 18px -8px rgb(0 0 0 / 55%);
     transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
   }
-  /* The picture never takes the press, so it can't be dragged or saved. */
-  .menu-tile .menu-icon { width: 40px; height: 40px; object-fit: contain; pointer-events: none; }
+  /* The picture never takes the press, so it can't be dragged or saved. The
+     icons are drawn in dark lines; on navy they are turned Daily Grace gold.
+     A picture in full colour (.is-colour) keeps its own colours. */
+  .menu-tile .menu-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+    filter: brightness(0) saturate(100%) invert(79%) sepia(42%) saturate(600%) hue-rotate(352deg) brightness(95%) contrast(90%);
+  }
+  .menu-tile .menu-icon.is-colour { filter: none; }
   .menu-label { max-width: 100%; font-size: .75rem; font-weight: 500; line-height: 1.2; overflow-wrap: break-word; }
   /* The tile dips under the finger, and lifts once the hold shows its description. */
   .menu-item.is-pressed .menu-tile { transform: scale(.94); }
@@ -311,7 +374,8 @@ const STYLES = /* css */ `
 
   /* The bubble a hold opens: the guide's title, what it covers, and a way in.
      Its arrow points at the icon (--arrow-x); it sits under the icon, or over
-     it (.above) when there is no room below. */
+     it (.above) when there is no room below. Cream, so it stands out on the
+     navy drawer. */
   .menu-peek {
     position: absolute;
     right: 12px;
@@ -320,11 +384,11 @@ const STYLES = /* css */ `
     display: grid;
     gap: 6px;
     padding: 14px 16px;
-    border: 1px solid rgb(225 182 93 / 45%);
+    border: 1px solid rgb(198 146 46 / 60%);
     border-radius: 14px;
-    background: var(--navy);
-    color: var(--cream);
-    box-shadow: 0 16px 36px rgb(0 27 52 / 40%);
+    background: var(--cream);
+    color: var(--ink);
+    box-shadow: 0 16px 36px rgb(0 0 0 / 45%);
     text-decoration: none;
     transform-origin: var(--arrow-x, 50%) 0;
     -webkit-touch-callout: none;
@@ -350,11 +414,11 @@ const STYLES = /* css */ `
     border-width: 0 1px 1px 0;
     border-radius: 0 0 3px;
   }
-  .menu-peek-title { color: var(--gold-light); font-size: 1rem; font-weight: 700; }
+  .menu-peek-title { color: var(--navy); font-size: 1rem; font-weight: 700; }
   .menu-peek-text { font-size: .875rem; line-height: 1.4; }
   .menu-peek-go {
     margin-top: 2px;
-    color: var(--gold-light);
+    color: #8a6420;
     font-size: .6875rem;
     font-weight: 700;
     letter-spacing: .12em;
@@ -367,11 +431,16 @@ const STYLES = /* css */ `
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: auto;
     padding-top: 10px;
-    border-top: 1px solid rgb(0 27 52 / 22%);
+    border-top: 1px solid rgb(225 182 93 / 30%);
   }
   .menu-foot .menu-item { gap: 5px; padding: 6px 2px; border-radius: 12px; font-size: .75rem; font-weight: 500; }
-  .menu-item .help-icon { width: 40px; height: 40px; border: 1px solid rgb(198 146 46 / 40%); background: #fffdf8; }
-  .help-icon .menu-icon { width: 28px; height: 28px; }
+  /* Their icons sit on smaller navy tiles like the guides': Help's line icon is
+     drawn gold (.menu-tile .menu-icon), Support's red heart and About's emblem
+     keep their own colours. */
+  .menu-tile.foot-tile { width: 46px; height: 46px; border-radius: 12px; }
+  .foot-tile .menu-icon { width: 28px; height: 28px; }
+  .foot-tile .foot-emblem { width: 32px; height: 32px; object-fit: contain; pointer-events: none; }
+  .foot-tile svg.support-heart { width: 26px; height: 26px; filter: drop-shadow(0 1.2px 1px rgb(0 0 0 / 45%)); }
 
   /* ---------------------------------------------------------------- help */
 
@@ -526,8 +595,14 @@ const STYLES = /* css */ `
   .help-icon.gold svg { fill: var(--gold-light); }
   .help-icon .help-fill { fill: currentColor; stroke: none; }
   .help-icon img { width: 26px; height: 26px; object-fit: contain; }
-  /* In the menu, the Support heart is drawn as large as the icons beside it. */
-  .menu-item .help-icon svg { width: 24px; height: 24px; stroke-width: 1.8; color: #b3261e; }
+  /* Support's full red heart (supportHeart) keeps its own colours, raised off
+     its circle by a soft shadow. (In the menu's foot it sits on a navy tile;
+     see .foot-tile.) */
+  .help-icon svg.support-heart {
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 1.2px 1px rgb(80 0 0 / 35%));
+  }
 
   /* --------------------------------------------------------------- about */
 
@@ -958,11 +1033,11 @@ const STYLES = /* css */ `
 const escapeHtml = (text) =>
     text.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
-const guideItem = ({ page, icon, title, text }) => `
+const guideItem = ({ page, icon, colour, title, text }) => `
             <li>
                 <a class="menu-item" href="${asset(PAGES + page)}" draggable="false">
                     <span class="menu-tile">
-                        <img class="menu-icon" src="${asset(ICONS + icon)}" alt="" width="40" height="40" loading="lazy" />
+                        <img class="menu-icon${colour ? " is-colour" : ""}" src="${asset(ICONS + icon)}" alt="" width="40" height="40" loading="lazy" />
                     </span>
                     <span class="menu-label">${escapeHtml(title)}</span>
                     <span class="menu-desc">${escapeHtml(text)}</span>
@@ -972,7 +1047,9 @@ const guideItem = ({ page, icon, title, text }) => `
 const MENU_HTML = /* html */ `
 <dialog class="menu-dialog" aria-labelledby="menu-title">
     <header class="menu-header">
-        <img class="help-emblem" src="${EMBLEM_URL}" alt="" width="40" height="40" loading="lazy" />
+        <span class="menu-emblem">
+            <img class="help-emblem" src="${EMBLEM_URL}" alt="" width="42" height="42" loading="lazy" />
+        </span>
         <div class="help-heading">
             <h2 id="menu-title">Daily Grace</h2>
             <p class="help-eyebrow">Bible Study Guides</p>
@@ -984,15 +1061,15 @@ const MENU_HTML = /* html */ `
         <ul class="menu-list menu-foot">
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" aria-label="Support Daily Grace" data-show="support">
-                    <span class="help-icon">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
+                    <span class="menu-tile foot-tile">
+                        ${supportHeart("menu-heart")}
                     </span>
                     Support
                 </button>
             </li>
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="help">
-                    <span class="help-icon">
+                    <span class="menu-tile foot-tile">
                         <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="28" height="28" loading="lazy" />
                     </span>
                     Help
@@ -1000,8 +1077,8 @@ const MENU_HTML = /* html */ `
             </li>
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="about">
-                    <span class="help-icon">
-                        <img src="${EMBLEM_URL}" alt="" width="26" height="26" loading="lazy" />
+                    <span class="menu-tile foot-tile">
+                        <img class="foot-emblem" src="${EMBLEM_LIGHT_URL}" alt="" width="32" height="32" loading="lazy" />
                     </span>
                     About
                 </button>
@@ -1374,7 +1451,7 @@ const HELP_HTML = /* html */ `
             </li>
             <li>
                 <span class="help-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" /></svg>
+                    ${supportHeart("help-heart")}
                 </span>
                 <p><strong>Support Daily Grace.</strong> Daily Grace is free and stays free. If you would like to help it continue, Support at the foot of this menu, or Support Daily Grace at the bottom of the home page, shows how to give through PayPal or GCash, in any amount, and other ways to help.</p>
             </li>

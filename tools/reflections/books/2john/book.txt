@@ -1,0 +1,3 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+2 John
+1-1 | Walking in Truth and Love

@@ -4,7 +4,7 @@
  *
  * Daily Grace asks no one for anything to use it; this only says how a gift
  * can be given, with no amount set: PayPal (a link to the PayPal.Me page) and
- * GCash (the number, with a copy button), then sharing and prayer as ways to
+ * GCash (its QR code, assets/images/ecv-gcash-qr.png), then sharing and prayer as ways to
  * help without money, and 2 Corinthians 9:7. Opened from the menu's "Support
  * Daily Grace" and the footer's link (their `support` attribute names it).
  *
@@ -23,14 +23,13 @@ import { registerFonts } from "../../assets/scripts/fonts.js";
 const asset = (path) => new URL(path, import.meta.url).href;
 // The Daily Grace banner logo (navy, with the lighthouse), on the cream header.
 const LOGO_URL = asset("../../assets/images/daily-grace-banner-02.webp");
+// The GCash QR code to scan (an InstaPay QR, so other Philippine banks and
+// e-wallets can scan it too).
+const GCASH_QR_URL = asset("../../assets/images/ecv-gcash-qr.png");
 
-// Where a gift goes. The GCash number is shown and copied in the form the
-// GCash app takes at home; from abroad it is the +63 one.
+// Where a gift goes.
 const PAYPAL_URL = "https://www.paypal.com/paypalme/edwinvillapando";
 const PAYPAL_NAME = "@edwinvillapando";
-const GCASH_LOCAL = "0998 560 3624";
-const GCASH_COPY = "09985603624";
-const GCASH_INTERNATIONAL = "+63 998 560 3624";
 
 const STYLES = /* css */ `
   :host { display: contents; }
@@ -125,6 +124,15 @@ const STYLES = /* css */ `
   .way-name { font-weight: 700; color: #001b34; }
   .way-detail { font-size: 1.15rem; font-weight: 700; letter-spacing: .02em; }
   .way-note { color: #5b6878; font-size: .95rem; }
+  /* The QR code keeps its white quiet zone, so any scanner reads it. */
+  .qr {
+    justify-self: center;
+    width: min(380px, 100%);
+    height: auto;
+    border: 1px solid rgb(198 146 46 / 30%);
+    border-radius: 10px;
+    background: #fff;
+  }
   .button {
     justify-self: start;
     display: inline-flex; align-items: center; gap: 8px;
@@ -178,9 +186,8 @@ const TEMPLATE = /* html */ `
       </div>
       <div class="way">
         <span class="way-name">GCash</span>
-        <span class="way-detail">${GCASH_LOCAL}</span>
-        <span class="way-note">From abroad: ${GCASH_INTERNATIONAL}</span>
-        <button class="button copy" type="button">Copy the number</button>
+        <img class="qr" src="${GCASH_QR_URL}" alt="GCash QR code for giving to Daily Grace" width="1524" height="1524" loading="lazy" decoding="async" />
+        <span class="way-note">Scan it with the GCash app to donate.</span>
       </div>
     </div>
 
@@ -201,14 +208,12 @@ const TEMPLATE = /* html */ `
 
 export class SupportDialog extends HTMLElement {
     #dialog;
-    #copy;
 
     constructor() {
         super();
         const root = this.attachShadow({ mode: "open" });
         root.innerHTML = `<style>${STYLES}</style>${TEMPLATE}`;
         this.#dialog = root.querySelector("dialog");
-        this.#copy = root.querySelector(".copy");
         root.querySelector(".close").addEventListener("click", () => this.close());
         // A tap on the dimmed page around the card closes it too.
         this.#dialog.addEventListener("click", (event) => {
@@ -218,9 +223,7 @@ export class SupportDialog extends HTMLElement {
         });
         this.#dialog.addEventListener("close", () => {
             document.documentElement.style.overflow = "";
-            this.#copy.textContent = "Copy the number";
         });
-        this.#copy.addEventListener("click", () => this.#copyNumber());
     }
 
     connectedCallback() {
@@ -240,15 +243,6 @@ export class SupportDialog extends HTMLElement {
     close() {
         if (this.#dialog.open) {
             this.#dialog.close();
-        }
-    }
-
-    async #copyNumber() {
-        try {
-            await navigator.clipboard.writeText(GCASH_COPY);
-            this.#copy.textContent = "Copied: open GCash and paste it";
-        } catch {
-            this.#copy.textContent = `The number is ${GCASH_COPY}`;
         }
     }
 }

@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+James
+1-1 | Count It All Joy
+2-2 | Faith Without Works Is Dead
+3-3 | The Wisdom That Is from Above
+4-5 | Draw Nigh to God

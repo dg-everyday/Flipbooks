@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Philippians
+1-1 | For to Me to Live Is Christ
+2-2 | Let This Mind Be in You
+3-3 | I Press Toward the Mark
+4-4 | Rejoice in the Lord Alway

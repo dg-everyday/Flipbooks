@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+1 John
+1-2 | God Is Light
+3-3 | Behold, What Manner of Love
+4-4 | God Is Love
+5-5 | That Ye May Know

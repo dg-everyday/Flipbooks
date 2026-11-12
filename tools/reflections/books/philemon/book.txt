@@ -1,0 +1,3 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Philemon
+1-1 | Not Now as a Servant, but a Brother Beloved

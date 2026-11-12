@@ -1,0 +1,6 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+1 Peter
+1-1 | A Lively Hope
+2-2 | A Chosen Generation
+3-3 | Ready Always to Give an Answer
+4-5 | Casting All Your Care upon Him

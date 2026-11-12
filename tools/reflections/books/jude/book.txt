@@ -1,0 +1,3 @@
+# Book name, then its sections: first-last chapter | name (shown on the cover and in the footer)
+Jude
+1-1 | Contend for the Faith

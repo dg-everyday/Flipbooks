@@ -1,0 +1,7 @@
+# Respellings for the text-to-speech voice. Applied to narration/text only; the scripts keep
+# the King James spelling. One per line:  Word as written = how the voice should say it
+# Add a line only when a recording gets a word wrong, then rebuild and re-record that episode.
+# Prefer a plain respelling the voice reads naturally (Judea); avoid capitals and hyphens,
+# which some voices spell out letter by letter.
+
+Judaea = Judea

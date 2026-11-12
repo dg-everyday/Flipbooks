@@ -216,6 +216,467 @@
   }
  ],
  "episodes": {
+  "big-picture-00": {
+   "title": "The One Great Story",
+   "label": "The Big Picture",
+   "book": null,
+   "chapter": null,
+   "art": "media:images/bible-walk/big-picture-cover.webp",
+   "audio": "media:audio/bible-walk/big-picture/big-picture-00.webm?v=2288",
+   "seconds": 228.8,
+   "question": "Before we begin, where do you see yourself in God’s great story today?",
+   "keys": []
+  },
+  "bp-1kings-18": {
+   "title": "The LORD, He Is the God",
+   "label": "1 Kings 18",
+   "book": "1 Kings",
+   "chapter": 18,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-1kings-18.webm?v=4207",
+   "seconds": 420.7,
+   "question": "Elijah asked, how long halt ye between two opinions? What is competing with God for first place in your heart, that you will give up today?",
+   "keys": [
+    "18:21",
+    "18:37",
+    "18:39"
+   ]
+  },
+  "bp-1samuel-17": {
+   "title": "The Battle Is the LORD’s",
+   "label": "1 Samuel 17",
+   "book": "1 Samuel",
+   "chapter": 17,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-1samuel-17.webm?v=4246",
+   "seconds": 424.6,
+   "question": "David remembered the lion and the bear before he faced the giant. What has God already done for you that will give you courage today?",
+   "keys": [
+    "17:37",
+    "17:45",
+    "17:47"
+   ]
+  },
+  "bp-2kings-25": {
+   "title": "The City Was Broken Up",
+   "label": "2 Kings 25",
+   "book": "2 Kings",
+   "chapter": 25,
+   "art": "media:images/symbols/2%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-2kings-25.webm?v=3688",
+   "seconds": 368.8,
+   "question": "Even after Jerusalem fell, God kept a light burning for David’s family. Where do you need to hold on to God’s faithfulness today?",
+   "keys": [
+    "25:9",
+    "25:21",
+    "25:29"
+   ]
+  },
+  "bp-2samuel-07": {
+   "title": "Thy Throne Shall Be Established for Ever",
+   "label": "2 Samuel 7",
+   "book": "2 Samuel",
+   "chapter": 7,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-2samuel-07.webm?v=3605",
+   "seconds": 360.5,
+   "question": "David asked, who am I, that thou hast brought me hitherto? What has God brought you through, that you will thank him for today?",
+   "keys": [
+    "7:12",
+    "7:16",
+    "7:18"
+   ]
+  },
+  "bp-acts-02": {
+   "title": "They Were All Filled with the Holy Ghost",
+   "label": "Acts 2",
+   "book": "Acts",
+   "chapter": 2,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-acts-02.webm?v=4854",
+   "seconds": 485.4,
+   "question": "The first believers continued in God’s Word, fellowship, breaking bread and prayer. Which of these will you give yourself to today?",
+   "keys": [
+    "2:4",
+    "2:36",
+    "2:42"
+   ]
+  },
+  "bp-daniel-06": {
+   "title": "My God Hath Sent His Angel",
+   "label": "Daniel 6",
+   "book": "Daniel",
+   "chapter": 6,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-daniel-06.webm?v=4059",
+   "seconds": 405.9,
+   "question": "Daniel prayed three times a day, as he did aforetime. What daily habit of prayer will you keep, or begin, today?",
+   "keys": [
+    "6:10",
+    "6:22",
+    "6:26"
+   ]
+  },
+  "bp-deuteronomy-06": {
+   "title": "Hear, O Israel",
+   "label": "Deuteronomy 6",
+   "book": "Deuteronomy",
+   "chapter": 6,
+   "art": "media:images/symbols/Deuteronomy-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-deuteronomy-06.webm?v=3621",
+   "seconds": 362.1,
+   "question": "Moses said, talk of them when thou sittest in thine house, and when thou walkest by the way. In what ordinary moment will you speak of God today?",
+   "keys": [
+    "6:4",
+    "6:5",
+    "6:7"
+   ]
+  },
+  "bp-exodus-03": {
+   "title": "I AM THAT I AM",
+   "label": "Exodus 3",
+   "book": "Exodus",
+   "chapter": 3,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-exodus-03.webm?v=3636",
+   "seconds": 363.6,
+   "question": "Moses asked, who am I? and God answered, I will be with thee. What task feels too big for you, that you will trust God to be with you in today?",
+   "keys": [
+    "3:5",
+    "3:7",
+    "3:14"
+   ]
+  },
+  "bp-exodus-14": {
+   "title": "Stand Still, and See",
+   "label": "Exodus 14",
+   "book": "Exodus",
+   "chapter": 14,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-exodus-14.webm?v=3669",
+   "seconds": 366.9,
+   "question": "Moses said, fear ye not, stand still, and see the salvation of the LORD. What fear will you hand over to God today, and let him fight for you?",
+   "keys": [
+    "14:13",
+    "14:14",
+    "14:31"
+   ]
+  },
+  "bp-exodus-20": {
+   "title": "I Am the LORD Thy God",
+   "label": "Exodus 20",
+   "book": "Exodus",
+   "chapter": 20,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-exodus-20.webm?v=3540",
+   "seconds": 354.0,
+   "question": "God said, I am the LORD thy God, which have brought thee out. Remembering what God has done for you, which commandment will you ask him to help you keep today?",
+   "keys": [
+    "20:2",
+    "20:3",
+    "20:20"
+   ]
+  },
+  "bp-genesis-01": {
+   "title": "In the Beginning",
+   "label": "Genesis 1",
+   "book": "Genesis",
+   "chapter": 1,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-genesis-01.webm?v=3824",
+   "seconds": 382.4,
+   "question": "God made you in his own image. How will that change the way you see yourself, or someone else, today?",
+   "keys": [
+    "1:1",
+    "1:27",
+    "1:31"
+   ]
+  },
+  "bp-genesis-03": {
+   "title": "Where Art Thou?",
+   "label": "Genesis 3",
+   "book": "Genesis",
+   "chapter": 3,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-genesis-03.webm?v=3581",
+   "seconds": 358.1,
+   "question": "God called, where art thou? Is there something you have been hiding from God that you will bring to him today?",
+   "keys": [
+    "3:6",
+    "3:9",
+    "3:15"
+   ]
+  },
+  "bp-genesis-06": {
+   "title": "Noah Found Grace",
+   "label": "Genesis 6",
+   "book": "Genesis",
+   "chapter": 6,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-genesis-06.webm?v=3611",
+   "seconds": 361.1,
+   "question": "Noah did all that God commanded him, even before he saw any rain. What is one thing God has asked of you that you will do today, by faith?",
+   "keys": [
+    "6:5",
+    "6:8",
+    "6:22"
+   ]
+  },
+  "bp-genesis-12": {
+   "title": "Get Thee Out of Thy Country",
+   "label": "Genesis 12",
+   "book": "Genesis",
+   "chapter": 12,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-genesis-12.webm?v=3722",
+   "seconds": 372.2,
+   "question": "Abram went out not knowing where he was going, only trusting the God who called him. What next step is God asking you to take today?",
+   "keys": [
+    "12:1",
+    "12:3",
+    "12:4"
+   ]
+  },
+  "bp-genesis-22": {
+   "title": "God Will Provide Himself a Lamb",
+   "label": "Genesis 22",
+   "book": "Genesis",
+   "chapter": 22,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-genesis-22.webm?v=3946",
+   "seconds": 394.6,
+   "question": "Abraham trusted that God would provide, even when he could not see how. Where do you need to trust God to provide today?",
+   "keys": [
+    "22:2",
+    "22:8",
+    "22:14"
+   ]
+  },
+  "bp-genesis-45": {
+   "title": "God Did Send Me Before You",
+   "label": "Genesis 45",
+   "book": "Genesis",
+   "chapter": 45,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-genesis-45.webm?v=3989",
+   "seconds": 398.9,
+   "question": "Joseph saw God’s hand even in the wrong done to him. Where in your own story do you need to trust that God means it for good?",
+   "keys": [
+    "45:4",
+    "45:5",
+    "45:8"
+   ]
+  },
+  "bp-isaiah-53": {
+   "title": "Wounded for Our Transgressions",
+   "label": "Isaiah 53",
+   "book": "Isaiah",
+   "chapter": 53,
+   "art": "media:images/symbols/Isaiah-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-isaiah-53.webm?v=3852",
+   "seconds": 385.2,
+   "question": "Isaiah says the LORD laid on him the iniquity of us all. What will you say to Jesus today, knowing that he carried your sins?",
+   "keys": [
+    "53:5",
+    "53:6",
+    "53:11"
+   ]
+  },
+  "bp-jeremiah-31": {
+   "title": "A New Covenant",
+   "label": "Jeremiah 31",
+   "book": "Jeremiah",
+   "chapter": 31,
+   "art": "media:images/symbols/Jeremiah-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-jeremiah-31.webm?v=3574",
+   "seconds": 357.4,
+   "question": "God said, I have loved thee with an everlasting love. What would change today if you truly believed that God loves you like that?",
+   "keys": [
+    "31:3",
+    "31:33",
+    "31:34"
+   ]
+  },
+  "bp-john-11": {
+   "title": "I Am the Resurrection, and the Life",
+   "label": "John 11",
+   "book": "John",
+   "chapter": 11,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-john-11.webm?v=4142",
+   "seconds": 414.2,
+   "question": "Jesus asked Martha, believest thou this? How will you answer him today?",
+   "keys": [
+    "11:25",
+    "11:35",
+    "11:43"
+   ]
+  },
+  "bp-joshua-06": {
+   "title": "The Wall Fell Down Flat",
+   "label": "Joshua 6",
+   "book": "Joshua",
+   "chapter": 6,
+   "art": "media:images/symbols/Joshua-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-joshua-06.webm?v=3762",
+   "seconds": 376.2,
+   "question": "God said, I have given, before the walls fell. What promise of God will you act on today, even before you see it?",
+   "keys": [
+    "6:2",
+    "6:20",
+    "6:25"
+   ]
+  },
+  "bp-luke-02": {
+   "title": "Good Tidings of Great Joy",
+   "label": "Luke 2",
+   "book": "Luke",
+   "chapter": 2,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-luke-02.webm?v=3952",
+   "seconds": 395.2,
+   "question": "The angel said, unto you is born a Saviour. What does it mean to you today that Jesus came for you?",
+   "keys": [
+    "2:10",
+    "2:11",
+    "2:52"
+   ]
+  },
+  "bp-luke-15": {
+   "title": "Was Lost, and Is Found",
+   "label": "Luke 15",
+   "book": "Luke",
+   "chapter": 15,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-luke-15.webm?v=4178",
+   "seconds": 417.8,
+   "question": "The father ran to his son while he was still a great way off. Which son are you most like today, and what will you do about it?",
+   "keys": [
+    "15:7",
+    "15:20",
+    "15:32"
+   ]
+  },
+  "bp-luke-24": {
+   "title": "He Is Not Here, but Is Risen",
+   "label": "Luke 24",
+   "book": "Luke",
+   "chapter": 24,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-luke-24.webm?v=4185",
+   "seconds": 418.5,
+   "question": "The two disciples said, did not our heart burn within us? How has Jesus spoken to you through his Word on this walk?",
+   "keys": [
+    "24:6",
+    "24:32",
+    "24:47"
+   ]
+  },
+  "bp-mark-15": {
+   "title": "Truly This Man Was the Son of God",
+   "label": "Mark 15",
+   "book": "Mark",
+   "chapter": 15,
+   "art": "media:images/symbols/Mark-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-mark-15.webm?v=4065",
+   "seconds": 406.5,
+   "question": "Barabbas went free because Jesus took his place. What will you say to God today, knowing that Jesus took yours?",
+   "keys": [
+    "15:15",
+    "15:34",
+    "15:38"
+   ]
+  },
+  "bp-matthew-05": {
+   "title": "Ye Are the Light of the World",
+   "label": "Matthew 5",
+   "book": "Matthew",
+   "chapter": 5,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-matthew-05.webm?v=3704",
+   "seconds": 370.4,
+   "question": "Jesus said, love your enemies and pray for them. Who is one person you find hard to love, that you will pray for today?",
+   "keys": [
+    "5:3",
+    "5:14",
+    "5:44"
+   ]
+  },
+  "bp-nehemiah-02": {
+   "title": "Let Us Rise Up and Build",
+   "label": "Nehemiah 2",
+   "book": "Nehemiah",
+   "chapter": 2,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-nehemiah-02.webm?v=3886",
+   "seconds": 388.6,
+   "question": "Nehemiah prayed a quick prayer before he answered the king. In what moment today will you stop and pray before you speak or act?",
+   "keys": [
+    "2:4",
+    "2:18",
+    "2:20"
+   ]
+  },
+  "bp-proverbs-03": {
+   "title": "Trust in the LORD with All Thine Heart",
+   "label": "Proverbs 3",
+   "book": "Proverbs",
+   "chapter": 3,
+   "art": "media:images/symbols/Proverbs-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-proverbs-03.webm?v=3853",
+   "seconds": 385.3,
+   "question": "Proverbs says, in all thy ways acknowledge him. What part of your life will you bring to God and trust him with fully today?",
+   "keys": [
+    "3:5",
+    "3:6",
+    "3:11"
+   ]
+  },
+  "bp-psalms-23": {
+   "title": "The LORD Is My Shepherd",
+   "label": "Psalm 23",
+   "book": "Psalms",
+   "chapter": 23,
+   "art": "media:images/symbols/Psalms-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-psalms-23.webm?v=3561",
+   "seconds": 356.1,
+   "question": "David said, the LORD is my shepherd. In what part of your life will you let him lead you today?",
+   "keys": [
+    "23:1",
+    "23:4",
+    "23:6"
+   ]
+  },
+  "bp-revelation-21": {
+   "title": "Behold, I Make All Things New",
+   "label": "Revelation 21",
+   "book": "Revelation",
+   "chapter": 21,
+   "art": "media:images/symbols/Revelation-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-revelation-21.webm?v=3874",
+   "seconds": 387.4,
+   "question": "God says, behold, I make all things new. What would it mean for you to live today in the hope of that promise?",
+   "keys": [
+    "21:3",
+    "21:4",
+    "21:5"
+   ]
+  },
+  "bp-ruth-01": {
+   "title": "Whither Thou Goest",
+   "label": "Ruth 1",
+   "book": "Ruth",
+   "chapter": 1,
+   "art": "media:images/symbols/Ruth-symbol.svg",
+   "audio": "media:audio/bible-walk/big-picture/bp-ruth-01.webm?v=3765",
+   "seconds": 376.5,
+   "question": "Ruth said, whither thou goest, I will go. Who is someone you will stand beside in faithful love today?",
+   "keys": [
+    "1:16",
+    "1:20",
+    "1:22"
+   ]
+  },
   "mark-00": {
    "title": "Meet the Book of Mark",
    "label": "Meet Mark",

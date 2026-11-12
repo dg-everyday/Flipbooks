@@ -4,11 +4,13 @@
 Reads every episode script in tools/bible-walk/scripts/<folder>/<id>.txt and the plans
 in plans.py, and writes:
 
-  tools/bible-walk/narration/text/<id>.txt   the words exactly as they are to be spoken
+  tools/bible-walk/narration/text/<folder>/<id>.txt
+                                             the words exactly as they are to be spoken
                                              (pronounce.txt respellings applied), to paste
-                                             into the TTS tool;
+                                             into the TTS tool, in the same folder as the
+                                             script (walk, mark, big-picture, luke…);
   assets/bible-walk/walk.json                the plans and episodes for the page and the
-                                             home card (apps/pages/bible-walk.html);
+                                             home card (apps/pages/living-voice.html);
   assets/bible-walk/transcripts/<id>.txt     each episode's words, as the reader sees them.
 
     python tools/bible-walk/build_bible_walk.py            # all scripts
@@ -377,12 +379,14 @@ def main():
                 recorded.pop(e["id"], None)
 
     if not args.dry_run:
-        os.makedirs(OUT_DIR, exist_ok=True)
         os.makedirs(TRANSCRIPTS, exist_ok=True)
         for e in built:
             if args.ids and e["id"] not in args.ids:
                 continue
-            with open(os.path.join(OUT_DIR, f"{e['id']}.txt"), "w", encoding="utf-8", newline="\n") as f:
+            # One folder per plan or book, like the scripts.
+            out_dir = os.path.join(OUT_DIR, e["folder"])
+            os.makedirs(out_dir, exist_ok=True)
+            with open(os.path.join(out_dir, f"{e['id']}.txt"), "w", encoding="utf-8", newline="\n") as f:
                 f.write(e["spoken"])
             with open(os.path.join(TRANSCRIPTS, f"{e['id']}.txt"), "w", encoding="utf-8", newline="\n") as f:
                 f.write(transcript(e["text"]))

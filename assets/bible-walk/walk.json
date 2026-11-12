@@ -213,6 +213,115 @@
      "label": "Revelation 21"
     }
    ]
+  },
+  {
+   "id": "luke",
+   "title": "Luke",
+   "subtitle": "Good Tidings of Great Joy",
+   "about": "The whole Gospel of Luke, chapter by chapter: an orderly account of Jesus, from the angel’s good tidings to the road to Emmaus.",
+   "cover": "media:images/symbols/Luke-symbol.svg",
+   "episodes": [
+    {
+     "id": "luke-00",
+     "label": "Meet Luke"
+    },
+    {
+     "id": "luke-01",
+     "label": "Luke 1"
+    },
+    {
+     "id": "luke-02",
+     "label": "Luke 2"
+    },
+    {
+     "id": "luke-03",
+     "label": "Luke 3"
+    },
+    {
+     "id": "luke-04",
+     "label": "Luke 4"
+    },
+    {
+     "id": "luke-05",
+     "label": "Luke 5"
+    },
+    {
+     "id": "luke-06",
+     "label": "Luke 6"
+    },
+    {
+     "id": "luke-07",
+     "label": "Luke 7"
+    },
+    {
+     "id": "luke-08",
+     "label": "Luke 8"
+    },
+    {
+     "id": "luke-09",
+     "label": "Luke 9"
+    },
+    {
+     "id": "luke-10",
+     "label": "Luke 10"
+    },
+    {
+     "id": "luke-11",
+     "label": "Luke 11"
+    },
+    {
+     "id": "luke-12",
+     "label": "Luke 12"
+    },
+    {
+     "id": "luke-13",
+     "label": "Luke 13"
+    },
+    {
+     "id": "luke-14",
+     "label": "Luke 14"
+    },
+    {
+     "id": "luke-15",
+     "label": "Luke 15"
+    },
+    {
+     "id": "luke-16",
+     "label": "Luke 16"
+    },
+    {
+     "id": "luke-17",
+     "label": "Luke 17"
+    },
+    {
+     "id": "luke-18",
+     "label": "Luke 18"
+    },
+    {
+     "id": "luke-19",
+     "label": "Luke 19"
+    },
+    {
+     "id": "luke-20",
+     "label": "Luke 20"
+    },
+    {
+     "id": "luke-21",
+     "label": "Luke 21"
+    },
+    {
+     "id": "luke-22",
+     "label": "Luke 22"
+    },
+    {
+     "id": "luke-23",
+     "label": "Luke 23"
+    },
+    {
+     "id": "luke-24",
+     "label": "Luke 24"
+    }
+   ]
   }
  ],
  "episodes": {

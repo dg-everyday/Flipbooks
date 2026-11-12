@@ -5,7 +5,7 @@
 // as library.html. A page of its own, /d/2026-10-01.html, carries the day's
 // banner, title and verse in its meta tags, and is a page to read in its own
 // right: the day's banner and words, and a button on to the day in the
-// Archives. It does not forward by script. Search engines run scripts, and
+// Archives. It does not forward by script; its one script tag is data. Search engines run scripts, and
 // took a page that forwarded for a redirect, so none of the days were indexed.
 //
 //   node assets/scripts/build-day-pages.mjs _site                     on deploy
@@ -95,6 +95,27 @@ function page(day, entry) {
     const title = `${day.title} — Daily Grace for ${dateShort}`;
     // The reference first, so a long verse cut short still says where it is.
     const description = clip(`${day.ref} (KJV): “${entry.text}”`, DESCRIPTION_MAX);
+    // The day as an article, for search engines: its title, date and banner.
+    const publisher = {
+        "@type": "Organization",
+        name: "Daily Grace",
+        url: `${SITE}/`,
+        logo: `${SITE}/assets/images/apple-touch-icon.png`,
+    };
+    const article = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: day.title,
+        description,
+        datePublished: `${iso}T00:00:00+08:00`,
+        image: [bannerUrl(iso)],
+        mainEntityOfPage: url,
+        inLanguage: "en",
+        author: publisher,
+        publisher,
+    };
+    // "<" written as its escape, so no text can close the script tag early.
+    const articleJson = JSON.stringify(article).replace(/</g, "\\u003c");
     const paragraphs = (text) =>
         String(text ?? "")
             .split(/\n\s*\n/)
@@ -123,6 +144,7 @@ function page(day, entry) {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#001b34" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script type="application/ld+json">${articleJson}</script>
     <style>
       body { margin: 0; padding: 24px 16px 40px; background: #f3ead7; color: #10253b;
              font: 17px/1.5 Georgia, serif; }
@@ -190,7 +212,8 @@ function build() {
         const xml = readFileSync(sitemap, "utf8");
         const urls = written
             .filter((iso) => iso <= today)
-            .map((iso) => `    <url><loc>${SITE}/d/${iso}.html</loc></url>`)
+            // A day's page holds that day's words, so its date is the day.
+            .map((iso) => `    <url><loc>${SITE}/d/${iso}.html</loc><lastmod>${iso}</lastmod></url>`)
             .join("\n");
         writeFileSync(sitemap, xml.replace("</urlset>", `${urls}\n</urlset>`));
     }

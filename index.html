@@ -39,7 +39,31 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="theme-color" content="#001b34" />
 
-        <title>Grace for Today • Our Faith Tomorrow</title>
+        <title>Daily Grace — Grace for Today • Our Faith Tomorrow</title>
+        <!-- What the site is, for search engines: its name, address and logo. -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://dailygrace.faith/#website",
+                        "name": "Daily Grace",
+                        "url": "https://dailygrace.faith/",
+                        "description": "A Bible verse, a short reflection and an encouraging word each day: grace for today, and hope for tomorrow.",
+                        "inLanguage": "en",
+                        "publisher": { "@id": "https://dailygrace.faith/#organization" }
+                    },
+                    {
+                        "@type": "Organization",
+                        "@id": "https://dailygrace.faith/#organization",
+                        "name": "Daily Grace",
+                        "url": "https://dailygrace.faith/",
+                        "logo": "https://dailygrace.faith/assets/images/apple-touch-icon.png"
+                    }
+                ]
+            }
+        </script>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link
             rel="apple-touch-icon"

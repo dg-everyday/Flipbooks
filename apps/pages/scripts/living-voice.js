@@ -283,7 +283,9 @@ function renderAlbums() {
     els.body.innerHTML = walk.plans
         .map((plan, index) => {
             const counts = planCounts(plan, walk, progress);
-            const ready = counts.ready > 0;
+            // A plan is walked in order, so it opens once its first episode is
+            // recorded; a chapter it shares with another plan does not open it.
+            const ready = Boolean(episodeOf(plan.episodes[0].id));
             const sub = ready ? `${counts.total} tracks · ${counts.heard} heard` : `Coming soon · ${counts.total} episodes`;
             return `
               <button class="row album" type="button" data-album="${index}" ${ready ? "" : "disabled"}>

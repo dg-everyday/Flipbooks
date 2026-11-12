@@ -23,7 +23,8 @@ those episodes again, after a re-recording). recorded.json is kept by hand other
 
 There are two kinds of episode.
 
-A chapter episode (mark-01) walks through one chapter in seven parts:
+A chapter episode (mark-01, or bp-genesis-01 for a plan's own telling of a
+chapter; the book comes from the id) walks through one chapter in seven parts:
 
     # Mark 1: notes for the writer (ignored)
     TITLE: Prepare Ye the Way
@@ -93,6 +94,17 @@ TIME_WORDS = re.compile(
 WRITTEN_REF = re.compile(r"\b\d+:\d+")
 FIELD = re.compile(r"^(KEY (\d+):(\d+)|[A-Z]+):\s?(.*)$")
 EPISODE_ID = re.compile(r"(.+)-(\d+)")
+# A plan's own version of a chapter carries the plan's prefix: bp-genesis-01 is
+# Genesis 1 as told in The Big Picture, apart from the genesis-01 of a Genesis plan.
+PLAN_PREFIXES = ("bp-",)
+
+
+def book_slug(slug):
+    """genesis for genesis or bp-genesis."""
+    for prefix in PLAN_PREFIXES:
+        if slug.startswith(prefix):
+            return slug[len(prefix):]
+    return slug
 
 
 # ---------------------------------------------------------------- reading
@@ -231,7 +243,7 @@ def label_for(eid, books):
     if eid in EPISODE_LABELS:
         return EPISODE_LABELS[eid]
     m = EPISODE_ID.fullmatch(eid)
-    _, book_name = book_for(m.group(1), books) if m else (None, None)
+    _, book_name = book_for(book_slug(m.group(1)), books) if m else (None, None)
     if not book_name:
         return eid
     chapter = int(m.group(2))
@@ -242,7 +254,7 @@ def art_for(eid, books):
     if eid in EPISODE_ART:
         return EPISODE_ART[eid]
     m = EPISODE_ID.fullmatch(eid)
-    _, book_name = book_for(m.group(1), books) if m else (None, None)
+    _, book_name = book_for(book_slug(m.group(1)), books) if m else (None, None)
     return symbol_art(book_name) if book_name else None
 
 
@@ -262,7 +274,9 @@ def app_data(built, recorded, books):
             "book": e["book"],
             "chapter": e["chapter"] or None,
             "art": art_for(e["id"], books),
-            "audio": f"media:audio/bible-walk/{e['folder']}/{e['id']}.webm",
+            # R2 lets browsers keep a file for a day: a recording made again under
+            # the same name gets a new link from its new length (tenths of a second).
+            "audio": f"media:audio/bible-walk/{e['folder']}/{e['id']}.webm?v={round(seconds * 10)}",
             "seconds": seconds,
             "question": paragraphs(e["fields"]["QUESTION"]),
             "keys": [f"{k['chapter']}:{k['verse']}" for k in e["keys"]],
@@ -320,9 +334,9 @@ def main():
         chapter = int(m.group(2))
         kind = "intro" if chapter == 0 else "chapter"
         fields, keys, problems = read_script(path)
-        book_id, book_name = book_for(folder, books)
+        book_id, book_name = book_for(book_slug(m.group(1)), books)
         if kind == "chapter" and not book_id:
-            problems.append(f"folder '{folder}' is not a book of the Bible")
+            problems.append(f"'{m.group(1)}' is not a book of the Bible")
         if eid not in plan_ids:
             problems.append("no plan in plans.py includes this episode")
         missing = [f for f in (CHAPTER_FIELDS if kind == "chapter" else INTRO_FIELDS) if not fields.get(f)]

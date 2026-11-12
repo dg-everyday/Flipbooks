@@ -27,14 +27,15 @@ PLANS = [
         "about": "From the first chapter of Genesis to the last chapters of Revelation: the "
                  "one story every book belongs to.",
         "cover": {"image": "media:images/bible-walk/big-picture-cover.webp"},
-        "episodes": [
-            "big-picture-00",
+        # Its own telling of each chapter (bp-…): where it stands in the whole
+        # story, and what comes next in this plan. In the story's order.
+        "episodes": ["big-picture-00"] + [f"bp-{c}" for c in [
             "genesis-01", "genesis-03", "genesis-06", "genesis-12", "genesis-22", "genesis-45",
             "exodus-03", "exodus-14", "exodus-20", "deuteronomy-06", "joshua-06", "ruth-01",
-            "1samuel-17", "2samuel-07", "1kings-18", "2kings-25", "psalms-23", "proverbs-03",
-            "isaiah-53", "jeremiah-31", "daniel-06", "nehemiah-02", "luke-02", "matthew-05",
+            "1samuel-17", "2samuel-07", "psalms-23", "proverbs-03", "1kings-18", "isaiah-53",
+            "2kings-25", "jeremiah-31", "daniel-06", "nehemiah-02", "luke-02", "matthew-05",
             "luke-15", "john-11", "mark-15", "luke-24", "acts-02", "revelation-21",
-        ],
+        ]],
     },
 ]
 

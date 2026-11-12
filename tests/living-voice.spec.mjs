@@ -54,7 +54,7 @@ test("a new listener's player opens on the first chapter, with the chapter besid
     await expect(lcd(page).locator(".now-title")).toHaveText("How to Walk Through a Chapter");
     await expect(lcd(page).locator(".now-meta")).toContainText("Track 1 of 18");
     await expect(lcd(page).locator(".upnext")).toContainText("Meet Mark · Meet the Book of Mark");
-    await expect(lcd(page).locator(".t-left")).toHaveText("-4:08");
+    await expect(lcd(page).locator(".t-left")).toHaveText("-4:12");
     await expect(button(page, "play")).toHaveAttribute("aria-label", "Play");
     await expect(page).toHaveURL(/#walk-00$/);
 
@@ -73,9 +73,10 @@ test("List steps back to the tracks and the albums, and a track opens on Now pla
     await expect(lcd(page).locator(".lcd-title")).toHaveText("First Steps");
     const tracks = lcd(page).locator(".row.track");
     await expect(tracks).toHaveCount(18);
-    await expect(lcd(page).locator(".row.track:not([disabled])")).toHaveCount(3);
+    await expect(lcd(page).locator(".row.track:not([disabled])")).toHaveCount(18);
     await expect(tracks.nth(3)).toContainText("Mark 2");
-    await expect(tracks.nth(3)).toContainText("Coming soon");
+    await expect(tracks.nth(3)).toContainText("Thy Sins Be Forgiven Thee");
+    await expect(tracks.nth(17)).toContainText("He Is Risen; He Is Not Here");
 
     await button(page, "list").click();
     await expect(lcd(page).locator(".lcd-title")).toHaveText("The Living Voice");
@@ -89,7 +90,7 @@ test("List steps back to the tracks and the albums, and a track opens on Now pla
     await lcd(page).locator('[data-track="mark-01"]').click();
     await expect(lcd(page).locator(".now-title")).toHaveText("Prepare Ye the Way");
     await expect(lcd(page).locator(".now-meta")).toContainText("Track 3 of 18");
-    await expect(lcd(page).locator(".upnext")).toContainText("Mark 2 · coming soon");
+    await expect(lcd(page).locator(".upnext")).toContainText("Mark 2 · Thy Sins Be Forgiven Thee");
     await expect(page).toHaveURL(/#mark-01$/);
 });
 
@@ -167,8 +168,9 @@ test("next, previous, speed and the sleep timer", async ({ page }) => {
     await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
     await button(page, "next").click();
     await expect(lcd(page).locator(".now-title")).toHaveText("Prepare Ye the Way");
-    // Mark 2 is not recorded yet: next stays on Mark 1.
     await button(page, "next").click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("Thy Sins Be Forgiven Thee");
+    await button(page, "prev").click();
     await expect(lcd(page).locator(".now-title")).toHaveText("Prepare Ye the Way");
     await button(page, "prev").click();
     await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
@@ -179,6 +181,13 @@ test("next, previous, speed and the sleep timer", async ({ page }) => {
     await button(page, "prev").click();
     await expect(lcd(page).locator(".t-now")).toHaveText("0:00");
     await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
+
+    // The last chapter of the album: next stays, and nothing is up next.
+    await page.goto(`${PAGE}#mark-16`);
+    await expect(lcd(page).locator(".now-title")).toHaveText("He Is Risen; He Is Not Here");
+    await expect(lcd(page).locator(".upnext")).toContainText("End of the album");
+    await button(page, "next").click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("He Is Risen; He Is Not Here");
 
     const speed = lcd(page).locator('[data-act="speed"]');
     await speed.click();

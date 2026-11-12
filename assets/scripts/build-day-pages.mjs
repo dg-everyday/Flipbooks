@@ -3,8 +3,10 @@
 // is shared. Crawlers do not run scripts, and the Archives keep the day after
 // a "#", which they never read: library.html#day/2026-10-01 previews the same
 // as library.html. A page of its own, /d/2026-10-01.html, carries the day's
-// banner, title and verse in its meta tags, and the day's words in its body,
-// and sends a reader on to the day in the Archives.
+// banner, title and verse in its meta tags, and is a page to read in its own
+// right: the day's banner and words, and a button on to the day in the
+// Archives. It does not forward by script. Search engines run scripts, and
+// took a page that forwarded for a redirect, so none of the days were indexed.
 //
 //   node assets/scripts/build-day-pages.mjs _site                     on deploy
 //   node assets/scripts/build-day-pages.mjs <dir> --today 2026-10-31  for tests
@@ -85,7 +87,6 @@ function entryFor(iso) {
 function page(day, entry) {
     const iso = day.date;
     const url = `${SITE}/d/${iso}.html`;
-    const archives = `/apps/pages/library.html#day/${iso}`;
     // "from=link" tells the Archives a shared link brought the reader: a first
     // visit gets a word of welcome, and closing the day stays in the Archives.
     const arriving = `/apps/pages/library.html?from=link#day/${iso}`;
@@ -122,9 +123,6 @@ function page(day, entry) {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#001b34" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <!-- Readers go on to the day in the Daily Grace Archives; crawlers, which
-         run no scripts, read the tags above and the day below. -->
-    <script>location.replace(${JSON.stringify(arriving)});</script>
     <style>
       body { margin: 0; padding: 24px 16px 40px; background: #f3ead7; color: #10253b;
              font: 17px/1.5 Georgia, serif; }
@@ -133,10 +131,19 @@ function page(day, entry) {
       .when { color: #7a5a1c; font-weight: bold; }
       blockquote { margin: 0; padding: 12px 16px; border-left: 4px solid #c6922e; background: #fffaf1; }
       a { color: #001b34; font-weight: bold; }
+      .banner { display: block; margin: 0 0 20px; }
+      .banner img { display: block; width: 100%; height: auto; border-radius: 10px; }
+      .open { display: block; margin: 28px 0 8px; padding: 14px 18px; border-radius: 10px;
+              background: #001b34; color: #fff; text-align: center; text-decoration: none; }
+      .more { margin: 0; text-align: center; font-size: 15px; }
     </style>
   </head>
   <body>
     <main>
+      <a class="banner" href="${arriving}">
+        <img src="${bannerUrl(iso)}" width="${BANNER_WIDTH}" height="${BANNER_HEIGHT}"
+             alt="${escapeHtml(`The Daily Grace banner for ${dateShort}: ${day.ref}`)}" />
+      </a>
       <p class="when">Daily Grace · ${escapeHtml(dateLong)}</p>
       <h1>${escapeHtml(day.title)}</h1>
       <blockquote>
@@ -145,7 +152,8 @@ function page(day, entry) {
       </blockquote>
       <h2>Reflection</h2>
 ${paragraphs(entry.reflection)}
-${entry.question ? `      <h2>To consider</h2>\n      <p>${escapeHtml(entry.question)}</p>\n` : ""}${entry.prayer ? `      <h2>Prayer</h2>\n      <p>${escapeHtml(entry.prayer)}</p>\n` : ""}      <p><a href="${archives}">Open this day in the Daily Grace Archives</a>, with its poster, comic and narration.</p>
+${entry.question ? `      <h2>To consider</h2>\n      <p>${escapeHtml(entry.question)}</p>\n` : ""}${entry.prayer ? `      <h2>Prayer</h2>\n      <p>${escapeHtml(entry.prayer)}</p>\n` : ""}      <a class="open" href="${arriving}">Open this day in the Daily Grace Archives</a>
+      <p class="more">With its poster, comic and narration.</p>
     </main>
   </body>
 </html>

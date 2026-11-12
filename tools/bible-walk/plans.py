@@ -37,6 +37,15 @@ PLANS = [
             "luke-15", "john-11", "mark-15", "luke-24", "acts-02", "revelation-21",
         ]],
     },
+    {
+        "id": "luke",
+        "title": "Luke",
+        "subtitle": "Good Tidings of Great Joy",
+        "about": "The whole Gospel of Luke, chapter by chapter: an orderly account of Jesus, "
+                 "from the angel’s good tidings to the road to Emmaus.",
+        "cover": {"symbol": "Luke"},
+        "episodes": [f"luke-{n:02d}" for n in range(0, 25)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

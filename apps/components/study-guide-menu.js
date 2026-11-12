@@ -434,13 +434,11 @@ const STYLES = /* css */ `
     border-top: 1px solid rgb(225 182 93 / 30%);
   }
   .menu-foot .menu-item { gap: 5px; padding: 6px 2px; border-radius: 12px; font-size: .75rem; font-weight: 500; }
-  /* Their icons sit on smaller navy tiles like the guides': Help's line icon is
+  /* Their icons sit on tiles the same size as the guides': Help's line icon is
      drawn gold (.menu-tile .menu-icon), Support's red heart and About's emblem
      keep their own colours. */
-  .menu-tile.foot-tile { width: 46px; height: 46px; border-radius: 12px; }
-  .foot-tile .menu-icon { width: 28px; height: 28px; }
-  .foot-tile .foot-emblem { width: 32px; height: 32px; object-fit: contain; pointer-events: none; }
-  .foot-tile svg.support-heart { width: 26px; height: 26px; filter: drop-shadow(0 1.2px 1px rgb(0 0 0 / 45%)); }
+  .foot-tile .foot-emblem { width: 40px; height: 40px; object-fit: contain; pointer-events: none; }
+  .foot-tile svg.support-heart { width: 36px; height: 36px; filter: drop-shadow(0 1.2px 1px rgb(0 0 0 / 45%)); }
 
   /* ---------------------------------------------------------------- help */
 
@@ -1070,7 +1068,7 @@ const MENU_HTML = /* html */ `
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="help">
                     <span class="menu-tile foot-tile">
-                        <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="28" height="28" loading="lazy" />
+                        <img class="menu-icon" src="${asset("../../assets/images/study-guide-icons/help.webp")}" alt="" width="40" height="40" loading="lazy" />
                     </span>
                     Help
                 </button>
@@ -1078,7 +1076,7 @@ const MENU_HTML = /* html */ `
             <li>
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="about">
                     <span class="menu-tile foot-tile">
-                        <img class="foot-emblem" src="${EMBLEM_LIGHT_URL}" alt="" width="32" height="32" loading="lazy" />
+                        <img class="foot-emblem" src="${EMBLEM_LIGHT_URL}" alt="" width="40" height="40" loading="lazy" />
                     </span>
                     About
                 </button>

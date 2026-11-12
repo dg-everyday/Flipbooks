@@ -400,7 +400,9 @@ test.describe("a page for each day, for link previews", () => {
         expect(existsSync(join(folder, "d", "2026-11-01.html"))).toBe(true);
         expect(existsSync(join(folder, "d", "2026-11-02.html"))).toBe(false);
         const sitemap = readFileSync(join(folder, "sitemap.xml"), "utf8");
-        expect(sitemap).toContain("<loc>https://dailygrace.faith/d/2026-10-31.html</loc>");
+        expect(sitemap).toContain(
+            "<url><loc>https://dailygrace.faith/d/2026-10-31.html</loc><lastmod>2026-10-31</lastmod></url>",
+        );
         expect(sitemap).not.toContain("2026-11-01.html");
         expect(sitemap.trim().endsWith("</urlset>")).toBe(true);
     });
@@ -409,7 +411,19 @@ test.describe("a page for each day, for link previews", () => {
         const folder = buildDayPages("2026-10-31");
         // A page that forwards by script is a redirect to a search engine,
         // which then leaves it out of its index.
-        expect(readFileSync(join(folder, "d", "2026-10-01.html"), "utf8")).not.toContain("<script");
+        // Its one script tag is data: the day described as an article.
+        const html = readFileSync(join(folder, "d", "2026-10-01.html"), "utf8");
+        expect(html).not.toContain("location.");
+        const scripts = [...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)];
+        expect(scripts).toHaveLength(1);
+        expect(scripts[0][1]).toBe(' type="application/ld+json"');
+        const article = JSON.parse(scripts[0][2]);
+        expect(article["@type"]).toBe("Article");
+        expect(article.headline).toBe("Grace is sufficient");
+        expect(article.datePublished).toBe("2026-10-01T00:00:00+08:00");
+        expect(article.image).toEqual([
+            "https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-01.webp",
+        ]);
         await page.route("**/d/2026-10-01.html", (route) =>
             route.fulfill({ path: join(folder, "d", "2026-10-01.html"), contentType: "text/html" }),
         );

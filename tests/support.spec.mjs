@@ -34,8 +34,10 @@ test("the footer's link opens it, with both ways to give", async ({ page }) => {
         "href",
         "https://www.paypal.com/paypalme/edwinvillapando",
     );
-    await expect(dialog(page)).toContainText("0998 560 3624");
-    await expect(dialog(page)).toContainText("+63 998 560 3624");
+    await expect(dialog(page).getByRole("img", { name: "GCash QR code for giving to Daily Grace" })).toHaveAttribute(
+        "src",
+        /assets\/images\/ecv-gcash-qr\.png$/,
+    );
     await expect(dialog(page)).toContainText("There is no set amount");
     await expect(dialog(page).locator("cite")).toHaveText("2 Corinthians 9:7 (KJV)");
 
@@ -49,13 +51,14 @@ test("asks for no amount", async ({ page }) => {
     expect(text).not.toMatch(/₱\s?\d|\$\s?\d|PHP\s?\d/);
 });
 
-test("copies the GCash number", async ({ page, browserName, context }) => {
-    test.skip(browserName !== "chromium", "only Chromium lets a test read the clipboard");
-    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+test("shows the GCash QR code, loaded and whole, with no number to copy", async ({ page }) => {
     await page.locator("support-dialog").evaluate((el) => el.open());
-    const copy = dialog(page).locator("button.copy");
-    await expect(copy).toHaveText("Copy the number");
-    await copy.click();
-    await expect(copy).toHaveText("Copied: open GCash and paste it");
-    expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("09985603624");
+    const qr = dialog(page).locator("img.qr");
+    await qr.scrollIntoViewIfNeeded();
+    await expect.poll(() => qr.evaluate((img) => img.complete && img.naturalWidth)).toBe(1524);
+    const box = await qr.boundingBox();
+    expect(box.width).toBeGreaterThan(150);
+    expect(Math.abs(box.width - box.height)).toBeLessThanOrEqual(1);
+    await expect(dialog(page).locator("button.copy")).toHaveCount(0);
+    await expect(dialog(page)).not.toContainText("0998");
 });

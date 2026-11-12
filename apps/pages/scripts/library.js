@@ -189,7 +189,7 @@ export async function start(view) {
 
     const byDate = new Map(lib.days.map((day) => [day.date, day]));
 
-    // A shared link brings readers here through its day page, which says so
+    // A shared link brings readers here from its day page, whose button says so
     // with ?from=link (assets/scripts/build-day-pages.mjs). Taken off the
     // address at once, so it is not shared on or kept in a bookmark.
     const fromLink = new URLSearchParams(location.search).get("from") === "link";

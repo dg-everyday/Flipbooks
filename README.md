@@ -525,11 +525,13 @@ to publish. The workflow:
    day page still be missing, `404.html` sends `/d/<date>.html` on to that day
    in the Archives. Each carries the
    day's banner as its `og:image`, with its title and verse, so a shared day
-   previews as that day; it holds the day's verse, reflection, question and
-   prayer as text, and sends a reader on to the day in the Archives with
-   `?from=link`, so a first visit (no avatar yet) gets a word of welcome and
-   closing the day stays in the Archives. The Archives' share button links
-   these pages;
+   previews as that day; it is a page to read, with the day's banner, verse,
+   reflection, question and prayer, and a button on to the day in the
+   Archives with `?from=link`, so a first visit (no avatar yet) gets a word
+   of welcome and closing the day stays in the Archives. It must not forward
+   by script: search engines run scripts and take such a page for a
+   redirect, which keeps it out of their index. The Archives' share button
+   links these pages;
 6. compacts every `.json` file, and minifies the JS and CSS with esbuild, file
    by file and without bundling, so every file and import keeps its place.
 

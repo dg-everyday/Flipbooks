@@ -405,12 +405,22 @@ test.describe("a page for each day, for link previews", () => {
         expect(sitemap.trim().endsWith("</urlset>")).toBe(true);
     });
 
-    test("send a reader on to the day in the Archives", async ({ page }) => {
+    test("are read where they are, with a button on to the day in the Archives", async ({ page }) => {
         const folder = buildDayPages("2026-10-31");
+        // A page that forwards by script is a redirect to a search engine,
+        // which then leaves it out of its index.
+        expect(readFileSync(join(folder, "d", "2026-10-01.html"), "utf8")).not.toContain("<script");
         await page.route("**/d/2026-10-01.html", (route) =>
             route.fulfill({ path: join(folder, "d", "2026-10-01.html"), contentType: "text/html" }),
         );
         await page.goto("/d/2026-10-01.html");
+        await expect(page.getByRole("heading", { level: 1 })).toHaveText("Grace is sufficient");
+        await expect(page).toHaveURL(/\/d\/2026-10-01\.html$/);
+        await expect(page.locator("a.banner img")).toHaveAttribute(
+            "src",
+            "https://dailygrace.faith/media/banner/2026/october/daily-grace-2026-10-01.webp",
+        );
+        await page.getByRole("link", { name: "Open this day in the Daily Grace Archives" }).click();
         await expect(page).toHaveURL(/apps\/pages\/library\.html#day\/2026-10-01$/);
         await expect(page.locator("#day-title")).toHaveText("Grace is sufficient");
     });
@@ -430,7 +440,7 @@ test.describe("a page for each day, for link previews", () => {
     });
 
     test("welcome a first visit and keep it in the Archives", async ({ page }) => {
-        // As the day page forwards: from Messenger, say, to here with ?from=link.
+        // As the day page's button links: from Messenger, say, to here with ?from=link.
         await page.goto(`${PAGE}?from=link#day/2026-10-01`, { referer: "http://localhost:4173/d/2026-10-01.html" });
         await expect(sheet(page)).toBeVisible();
         await expect(page).toHaveURL(/library\.html#day\/2026-10-01$/);

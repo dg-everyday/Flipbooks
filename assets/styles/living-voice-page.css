@@ -159,6 +159,32 @@ main {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
+}
+/* A thin scrollbar in the screen's own ink: a slim pill on a clear track, held
+   off the screen's rounded corners, as in the menu (study-guide-menu.js). */
+.lcd-body::-webkit-scrollbar {
+    width: 8px;
+}
+.lcd-body::-webkit-scrollbar-track {
+    margin-block: 6px 12px;
+    background: transparent;
+}
+.lcd-body::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: rgb(42 35 16 / 35%) padding-box;
+}
+.lcd-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(42 35 16 / 60%);
+}
+/* Firefox has no ::-webkit-scrollbar; Chrome would drop the rules above if it
+   saw these, so only browsers without them get the standard properties. */
+@supports not selector(::-webkit-scrollbar) {
+    .lcd-body {
+        scrollbar-width: thin;
+        scrollbar-color: rgb(42 35 16 / 40%) transparent;
+    }
 }
 
 .row {

@@ -83,8 +83,9 @@ test("List steps back to the tracks and the albums, and a track opens on Now pla
     const albums = lcd(page).locator(".row.album");
     await expect(albums.nth(0)).toContainText("First Steps");
     await expect(albums.nth(0)).toContainText("18 tracks · 0 heard");
-    await expect(albums.nth(1)).toBeDisabled();
-    await expect(albums.nth(1)).toContainText("Coming soon · 31 episodes");
+    await expect(albums.nth(1)).toBeEnabled();
+    await expect(albums.nth(1)).toContainText("The Big Picture");
+    await expect(albums.nth(1)).toContainText("31 tracks · 0 heard");
 
     await albums.nth(0).click();
     await lcd(page).locator('[data-track="mark-01"]').click();
@@ -128,6 +129,28 @@ test("the player picks up where the reader left off, and so does the home card",
     expect(await noSideways(page)).toBeLessThanOrEqual(1);
     await card.locator("a.card").click();
     await expect(page.locator(".now-title")).toHaveText("Prepare Ye the Way");
+});
+
+test("after First Steps, the walk goes on into The Big Picture", async ({ page }) => {
+    const day = "2026-11-12";
+    const done = Object.fromEntries(["walk-00", "mark-00", ...Array.from({ length: 16 }, (_, i) => `mark-${String(i + 1).padStart(2, "0")}`)].map((id) => [id, day]));
+    await seed(page, { done, pos: {}, last: "mark-16", speed: 1 });
+    await page.goto(PAGE);
+    await expect(lcd(page).locator(".now-title")).toHaveText("The One Great Story");
+    await expect(lcd(page).locator(".now-meta")).toContainText("Track 1 of 31");
+    await expect(lcd(page).locator(".now-meta")).toContainText("The Big Picture");
+    await expect(lcd(page).locator(".upnext")).toContainText("Genesis 1 · In the Beginning");
+
+    await button(page, "list").click();
+    await expect(lcd(page).locator(".lcd-title")).toHaveText("The Big Picture");
+    await expect(lcd(page).locator(".row.track:not([disabled])")).toHaveCount(31);
+    await lcd(page).locator('[data-track="bp-psalms-23"]').click();
+    await expect(lcd(page).locator(".now-title")).toHaveText("The LORD Is My Shepherd");
+    await expect(page).toHaveURL(/#bp-psalms-23$/);
+    await expect(page.locator(".chapter").getByRole("button", { name: "Read Psalm 23" })).toBeVisible();
+
+    await page.goto("/");
+    await expect(page.locator("living-voice-card .step")).toHaveText("Up next: The One Great Story · 4 min");
 });
 
 test("a new listener's home card starts with the first chapter", async ({ page }) => {

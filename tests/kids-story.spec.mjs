@@ -7,7 +7,7 @@
  */
 import { test, expect } from "@playwright/test";
 import {
-    ANNA, BEN, DATA, FIRST, KIDS, STORIES, appStarted, expectNoErrors, go, hash, playFind, playOrder, playStory, playVerse, playWatch,
+    ANNA, BEN, DATA, FIRST, KIDS, STORIES, appStarted, expectNoErrors, go, hash, playFind, playOrder, playStory, playVerse,
     readStore, seed, stop, stubMedia, watchErrors,
 } from "./kids-helpers.mjs";
 

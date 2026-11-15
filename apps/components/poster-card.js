@@ -10,7 +10,7 @@
  * poster for half a second copies the link to that image instead.
  *
  * Sharing sends a JPEG, which every chat app accepts; the WebP files are not
- * taken everywhere. A browser that cannot share files shares the image's
+ * taken everywhere. It is at most 2048 pixels on its long side. A browser that cannot share files shares the image's
  * link, and one with no share sheet at all copies it.
  *
  * When the day has a video, it plays over the poster, muted and looping, as
@@ -82,6 +82,8 @@ const SHARE_RETRY_NOTE = "Tap share again";
 const SITE_URL = "https://dailygrace.faith/";
 const SHARE_TYPE = "image/jpeg";
 const SHARE_QUALITY = 0.9;
+// The longest side of a shared picture, in pixels; a larger poster is scaled down.
+const SHARE_MAX_SIDE = 2048;
 // Web Share with files: Chrome on Android and Windows, Safari on iPhone and Mac.
 const CAN_SHARE_FILES = (() => {
     try {
@@ -329,49 +331,21 @@ function dateParts(dateAttr) {
     };
 }
 
-/**
- * The image at `src`, ready to draw. The card's own <img> is used when it
- * already shows `src`: it is loaded with CORS, so a canvas may read it, and
- * the media host's files are not kept in the HTTP cache, so fetching would
- * download the poster a second time. Otherwise it is fetched.
- */
-async function imageBitmap(src, image) {
-    // An <img> loaded without CORS (the retry) would taint the canvas.
-    if (
-        image?.complete &&
-        image.naturalWidth &&
-        image.src === src &&
-        image.crossOrigin !== null
-    ) {
-        try {
-            return await createImageBitmap(image);
-        } catch {
-            // Not readable after all (no CORS): fetch it instead.
-        }
-    }
-    const response = await fetch(src);
-    if (!response.ok) {
-        throw new Error(`Unable to load ${src} (${response.status})`);
-    }
-    return createImageBitmap(await response.blob());
-}
-
-/**
- * The image at `src` as a JPEG file to share, named after it:
- * "Daily Grace - October 3, 2026 - Comic.jpg". `image` is the card's <img>.
- */
-async function shareFile(src, image) {
-    const bitmap = await imageBitmap(src, image);
+/** `source` (an <img> or a bitmap, `width` by `height`) as a JPEG blob to share. */
+function jpegOf(source, width, height) {
+    // No larger than SHARE_MAX_SIDE on its long side: a full-size poster is
+    // some 13 megapixels, and a canvas that size costs a phone 50 MB.
+    const scale = Math.min(1, SHARE_MAX_SIDE / Math.max(width, height));
     const canvas = document.createElement("canvas");
-    canvas.width = bitmap.width;
-    canvas.height = bitmap.height;
+    canvas.width = Math.round(width * scale);
+    canvas.height = Math.round(height * scale);
     const context = canvas.getContext("2d");
     // JPEG has no transparency; anything see-through would turn black.
     context.fillStyle = "#fff";
     context.fillRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(bitmap, 0, 0);
-    bitmap.close();
-    const blob = await new Promise((resolve, reject) => {
+    context.imageSmoothingQuality = "high";
+    context.drawImage(source, 0, 0, canvas.width, canvas.height);
+    return new Promise((resolve, reject) => {
         canvas.toBlob(
             (result) => {
                 if (result) {
@@ -384,6 +358,42 @@ async function shareFile(src, image) {
             SHARE_QUALITY,
         );
     });
+}
+
+/**
+ * The image at `src` as a JPEG file to share, named after it:
+ * "Daily Grace - October 3, 2026 - Comic.jpg". `image` is the card's <img>,
+ * which is drawn as it is when it already shows `src`: it is loaded with
+ * CORS, so a canvas may read it, and that saves a second download and a
+ * second full-size copy in memory. Otherwise the image is fetched.
+ */
+async function shareFile(src, image) {
+    let blob = null;
+    // An <img> loaded without CORS (the retry) would taint the canvas.
+    if (
+        image?.complete &&
+        image.naturalWidth &&
+        image.src === src &&
+        image.crossOrigin !== null
+    ) {
+        try {
+            blob = await jpegOf(image, image.naturalWidth, image.naturalHeight);
+        } catch {
+            // Not readable after all: fetch it instead.
+        }
+    }
+    if (!blob) {
+        const response = await fetch(src);
+        if (!response.ok) {
+            throw new Error(`Unable to load ${src} (${response.status})`);
+        }
+        const bitmap = await createImageBitmap(await response.blob());
+        try {
+            blob = await jpegOf(bitmap, bitmap.width, bitmap.height);
+        } finally {
+            bitmap.close();
+        }
+    }
     const name = decodeURIComponent(
         new URL(src).pathname.split("/").pop(),
     ).replace(/\.[^.]+$/, "");

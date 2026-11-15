@@ -53,7 +53,9 @@
  *
  * The poster is requested with CORS (crossorigin="anonymous"), the way the
  * share button fetches it, so the two share one download; the media host
- * answers with Vary: Origin, which keeps a plain request's copy apart.
+ * answers with Vary: Origin, which keeps a plain request's copy apart. Should
+ * that request fail, the poster is asked for once more as a plain image, so
+ * the card is not left blank; the share button then fetches its own copy.
  *
  * CSS custom properties
  *   --poster-card-padding, --poster-card-bg, --poster-audio-bg,
@@ -334,7 +336,13 @@ function dateParts(dateAttr) {
  * download the poster a second time. Otherwise it is fetched.
  */
 async function imageBitmap(src, image) {
-    if (image?.complete && image.naturalWidth && image.src === src) {
+    // An <img> loaded without CORS (the retry) would taint the canvas.
+    if (
+        image?.complete &&
+        image.naturalWidth &&
+        image.src === src &&
+        image.crossOrigin !== null
+    ) {
         try {
             return await createImageBitmap(image);
         } catch {
@@ -413,6 +421,8 @@ export class PosterCard extends HTMLElement {
     #viewObserver = null;
     #audio = null;
     #comic = false;
+    // The src already asked for again as a plain image, after it failed.
+    #retriedSrc = "";
     #flipId = 0;
     #configurePending = false;
     #reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -487,8 +497,27 @@ export class PosterCard extends HTMLElement {
                 }
             });
         });
+        // A poster that fails to load with CORS is asked for once more as a
+        // plain image, so a browser that stumbles on the first request does
+        // not leave the card blank.
+        this.#poster.addEventListener("error", () => {
+            const src = this.#poster.getAttribute("src");
+            if (!src || this.#retriedSrc === src) {
+                return;
+            }
+            this.#retriedSrc = src;
+            this.#poster.removeAttribute("crossorigin");
+            this.#poster.src = src;
+        });
         this.#syncLabels();
         this.#syncAudioButton();
+    }
+
+    /** Show the image at `src`, asked for with CORS as the share button needs. */
+    #setPoster(src) {
+        this.#retriedSrc = "";
+        this.#poster.crossOrigin = "anonymous";
+        this.#poster.src = src;
     }
 
     connectedCallback() {
@@ -821,7 +850,7 @@ export class PosterCard extends HTMLElement {
         this.#face.getAnimations().forEach((animation) => animation.cancel());
         this.#wrap.classList.remove("turning", "loading");
         this.#comic = false;
-        this.#poster.src = `${this.#posterPath}.webp`;
+        this.#setPoster(`${this.#posterPath}.webp`);
         this.#video.classList.remove("playing");
         this.#video.hidden = false;
         this.#syncVideo();
@@ -962,7 +991,7 @@ export class PosterCard extends HTMLElement {
     // The swap at the middle of a turn: the comic has no video, so it goes with
     // the poster and comes back with it, carrying on where it left off.
     #showSide(src) {
-        this.#poster.src = src;
+        this.#setPoster(src);
         this.#video.hidden = this.#comic;
         this.#syncVideo();
     }

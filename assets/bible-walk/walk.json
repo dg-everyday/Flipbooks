@@ -786,6 +786,377 @@
     "1:22"
    ]
   },
+  "luke-00": {
+   "title": "Meet the Book of Luke",
+   "label": "Meet Luke",
+   "book": "Luke",
+   "chapter": null,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-00.webm?v=2337",
+   "seconds": 233.7,
+   "question": "Luke wrote so that his friend would know the certainty of what he had been taught. What would you like to be more certain of about Jesus by the end of this book?",
+   "keys": []
+  },
+  "luke-01": {
+   "title": "With God Nothing Shall Be Impossible",
+   "label": "Luke 1",
+   "book": "Luke",
+   "chapter": 1,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-01.webm?v=4324",
+   "seconds": 432.4,
+   "question": "Mary said, be it unto me according to thy word. What part of your life will you put into God’s hands today?",
+   "keys": [
+    "1:37",
+    "1:38",
+    "1:46"
+   ]
+  },
+  "luke-02": {
+   "title": "Good Tidings of Great Joy",
+   "label": "Luke 2",
+   "book": "Luke",
+   "chapter": 2,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-02.webm?v=4067",
+   "seconds": 406.7,
+   "question": "Simeon held Jesus and said, mine eyes have seen thy salvation. How have you seen God’s salvation in your own life?",
+   "keys": [
+    "2:11",
+    "2:30",
+    "2:49"
+   ]
+  },
+  "luke-03": {
+   "title": "All Flesh Shall See the Salvation of God",
+   "label": "Luke 3",
+   "book": "Luke",
+   "chapter": 3,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-03.webm?v=3963",
+   "seconds": 396.3,
+   "question": "The crowds asked John, what shall we do then? What is one practical way you will show today that you belong to God?",
+   "keys": [
+    "3:6",
+    "3:11",
+    "3:22"
+   ]
+  },
+  "luke-04": {
+   "title": "The Spirit of the Lord Is upon Me",
+   "label": "Luke 4",
+   "book": "Luke",
+   "chapter": 4,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-04.webm?v=4067",
+   "seconds": 406.7,
+   "question": "Jesus said the Spirit of the Lord was upon him to heal the brokenhearted and set the captives free. Where do you need his freedom or healing today?",
+   "keys": [
+    "4:4",
+    "4:18",
+    "4:43"
+   ]
+  },
+  "luke-05": {
+   "title": "Launch Out into the Deep",
+   "label": "Luke 5",
+   "book": "Luke",
+   "chapter": 5,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-05.webm?v=3870",
+   "seconds": 387.0,
+   "question": "Peter said, nevertheless at thy word I will let down the net. What has Jesus asked of you that you will do today, even if you do not see how it will work?",
+   "keys": [
+    "5:5",
+    "5:8",
+    "5:32"
+   ]
+  },
+  "luke-06": {
+   "title": "Be Ye Therefore Merciful",
+   "label": "Luke 6",
+   "book": "Luke",
+   "chapter": 6,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-06.webm?v=4242",
+   "seconds": 424.2,
+   "question": "Jesus said, be ye therefore merciful, as your Father also is merciful. Who will you show mercy to today?",
+   "keys": [
+    "6:12",
+    "6:36",
+    "6:46"
+   ]
+  },
+  "luke-07": {
+   "title": "She Loved Much",
+   "label": "Luke 7",
+   "book": "Luke",
+   "chapter": 7,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-07.webm?v=4277",
+   "seconds": 427.7,
+   "question": "Jesus said, to whom little is forgiven, the same loveth little. How will you show Jesus your love today, remembering how much he has forgiven you?",
+   "keys": [
+    "7:9",
+    "7:13",
+    "7:47"
+   ]
+  },
+  "luke-08": {
+   "title": "Where Is Your Faith?",
+   "label": "Luke 8",
+   "book": "Luke",
+   "chapter": 8,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-08.webm?v=4547",
+   "seconds": 454.7,
+   "question": "Jesus asked his frightened disciples, where is your faith? Where will you put your trust today, in the storm you are facing?",
+   "keys": [
+    "8:15",
+    "8:25",
+    "8:50"
+   ]
+  },
+  "luke-09": {
+   "title": "He Stedfastly Set His Face",
+   "label": "Luke 9",
+   "book": "Luke",
+   "chapter": 9,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-09.webm?v=4289",
+   "seconds": 428.9,
+   "question": "Jesus said, take up his cross daily, and follow me. What will it mean for you to follow Jesus today, in one specific way?",
+   "keys": [
+    "9:20",
+    "9:23",
+    "9:51"
+   ]
+  },
+  "luke-10": {
+   "title": "Go, and Do Thou Likewise",
+   "label": "Luke 10",
+   "book": "Luke",
+   "chapter": 10,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-10.webm?v=4150",
+   "seconds": 415.0,
+   "question": "Jesus said, go, and do thou likewise. Who is the person in need on your road today, and what will you do for them?",
+   "keys": [
+    "10:27",
+    "10:37",
+    "10:42"
+   ]
+  },
+  "luke-11": {
+   "title": "Lord, Teach Us to Pray",
+   "label": "Luke 11",
+   "book": "Luke",
+   "chapter": 11,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-11.webm?v=3837",
+   "seconds": 383.7,
+   "question": "Jesus said, ask, and it shall be given you; seek, and ye shall find. What will you ask your Father for today, and keep asking?",
+   "keys": [
+    "11:1",
+    "11:9",
+    "11:13"
+   ]
+  },
+  "luke-12": {
+   "title": "Fear Not, Little Flock",
+   "label": "Luke 12",
+   "book": "Luke",
+   "chapter": 12,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-12.webm?v=4503",
+   "seconds": 450.3,
+   "question": "Jesus said, where your treasure is, there will your heart be also. What is one way you will be rich toward God today?",
+   "keys": [
+    "12:7",
+    "12:15",
+    "12:32"
+   ]
+  },
+  "luke-13": {
+   "title": "Woman, Thou Art Loosed",
+   "label": "Luke 13",
+   "book": "Luke",
+   "chapter": 13,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-13.webm?v=4018",
+   "seconds": 401.8,
+   "question": "Jesus longed to gather Jerusalem under his wings, but they would not. What will you bring to Jesus today, to shelter under his care?",
+   "keys": [
+    "13:3",
+    "13:12",
+    "13:34"
+   ]
+  },
+  "luke-14": {
+   "title": "Compel Them to Come In",
+   "label": "Luke 14",
+   "book": "Luke",
+   "chapter": 14,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-14.webm?v=3987",
+   "seconds": 398.7,
+   "question": "Jesus said, he that humbleth himself shall be exalted. Where will you take the lower place today, for someone else’s sake?",
+   "keys": [
+    "14:11",
+    "14:23",
+    "14:28"
+   ]
+  },
+  "luke-15": {
+   "title": "He Was Lost, and Is Found",
+   "label": "Luke 15",
+   "book": "Luke",
+   "chapter": 15,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-15.webm?v=4296",
+   "seconds": 429.6,
+   "question": "The younger son said, I will arise and go to my father. Is there something you need to bring home to your Father today?",
+   "keys": [
+    "15:4",
+    "15:18",
+    "15:31"
+   ]
+  },
+  "luke-16": {
+   "title": "Ye Cannot Serve God and Mammon",
+   "label": "Luke 16",
+   "book": "Luke",
+   "chapter": 16,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-16.webm?v=4455",
+   "seconds": 445.5,
+   "question": "Jesus said, ye cannot serve God and mammon. What is one way you will show today that God, not money, is your master?",
+   "keys": [
+    "16:10",
+    "16:13",
+    "16:31"
+   ]
+  },
+  "luke-17": {
+   "title": "Where Are the Nine?",
+   "label": "Luke 17",
+   "book": "Luke",
+   "chapter": 17,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-17.webm?v=3950",
+   "seconds": 395.0,
+   "question": "Jesus asked, were there not ten cleansed? but where are the nine? What will you turn back and thank God for today?",
+   "keys": [
+    "17:4",
+    "17:5",
+    "17:15"
+   ]
+  },
+  "luke-18": {
+   "title": "God Be Merciful to Me a Sinner",
+   "label": "Luke 18",
+   "book": "Luke",
+   "chapter": 18,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-18.webm?v=4314",
+   "seconds": 431.4,
+   "question": "The tax collector prayed, God be merciful to me a sinner. What do you need God’s mercy for today?",
+   "keys": [
+    "18:1",
+    "18:13",
+    "18:27"
+   ]
+  },
+  "luke-19": {
+   "title": "To Seek and to Save That Which Was Lost",
+   "label": "Luke 19",
+   "book": "Luke",
+   "chapter": 19,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-19.webm?v=4207",
+   "seconds": 420.7,
+   "question": "Jesus said, the Son of man is come to seek and to save that which was lost. How has Jesus found you, and who do you know who still needs to be found?",
+   "keys": [
+    "19:5",
+    "19:10",
+    "19:40"
+   ]
+  },
+  "luke-20": {
+   "title": "Not a God of the Dead, but of the Living",
+   "label": "Luke 20",
+   "book": "Luke",
+   "chapter": 20,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-20.webm?v=4268",
+   "seconds": 426.8,
+   "question": "Jesus said, render unto God the things which be God’s. What part of yourself will you give back to God today?",
+   "keys": [
+    "20:17",
+    "20:25",
+    "20:38"
+   ]
+  },
+  "luke-21": {
+   "title": "Lift Up Your Heads",
+   "label": "Luke 21",
+   "book": "Luke",
+   "chapter": 21,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-21.webm?v=4134",
+   "seconds": 413.4,
+   "question": "Jesus said, look up, and lift up your heads; for your redemption draweth nigh. What fear will you bring to him today, and trade for hope?",
+   "keys": [
+    "21:3",
+    "21:28",
+    "21:33"
+   ]
+  },
+  "luke-22": {
+   "title": "Not My Will, but Thine, Be Done",
+   "label": "Luke 22",
+   "book": "Luke",
+   "chapter": 22,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-22.webm?v=4328",
+   "seconds": 432.8,
+   "question": "Jesus prayed, not my will, but thine, be done. Where in your life will you pray that prayer today?",
+   "keys": [
+    "22:32",
+    "22:42",
+    "22:61"
+   ]
+  },
+  "luke-23": {
+   "title": "Father, Forgive Them",
+   "label": "Luke 23",
+   "book": "Luke",
+   "chapter": 23,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-23.webm?v=4438",
+   "seconds": 443.8,
+   "question": "The criminal said, Lord, remember me, and Jesus promised him paradise. What will you say to Jesus today, as you stand at his cross?",
+   "keys": [
+    "23:34",
+    "23:43",
+    "23:46"
+   ]
+  },
+  "luke-24": {
+   "title": "The Lord Is Risen Indeed",
+   "label": "Luke 24",
+   "book": "Luke",
+   "chapter": 24,
+   "art": "media:images/symbols/Luke-symbol.svg",
+   "audio": "media:audio/bible-walk/luke/luke-24.webm?v=4316",
+   "seconds": 431.6,
+   "question": "Now that you have walked through the whole book of Luke, what has Jesus shown you about himself, and who will you tell?",
+   "keys": [
+    "24:5",
+    "24:27",
+    "24:52"
+   ]
+  },
   "mark-00": {
    "title": "Meet the Book of Mark",
    "label": "Meet Mark",

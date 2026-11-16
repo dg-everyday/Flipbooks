@@ -322,9 +322,778 @@
      "label": "Luke 24"
     }
    ]
+  },
+  {
+   "id": "acts",
+   "title": "Acts",
+   "subtitle": "Ye Shall Be Witnesses unto Me",
+   "about": "The Acts of the Apostles, chapter by chapter: Luke’s second book, from the coming of the Holy Ghost in Jerusalem to Paul preaching in Rome.",
+   "cover": "media:images/symbols/Acts-symbol.svg",
+   "episodes": [
+    {
+     "id": "acts-00",
+     "label": "Meet Acts"
+    },
+    {
+     "id": "acts-01",
+     "label": "Acts 1"
+    },
+    {
+     "id": "acts-02",
+     "label": "Acts 2"
+    },
+    {
+     "id": "acts-03",
+     "label": "Acts 3"
+    },
+    {
+     "id": "acts-04",
+     "label": "Acts 4"
+    },
+    {
+     "id": "acts-05",
+     "label": "Acts 5"
+    },
+    {
+     "id": "acts-06",
+     "label": "Acts 6"
+    },
+    {
+     "id": "acts-07",
+     "label": "Acts 7"
+    },
+    {
+     "id": "acts-08",
+     "label": "Acts 8"
+    },
+    {
+     "id": "acts-09",
+     "label": "Acts 9"
+    },
+    {
+     "id": "acts-10",
+     "label": "Acts 10"
+    },
+    {
+     "id": "acts-11",
+     "label": "Acts 11"
+    },
+    {
+     "id": "acts-12",
+     "label": "Acts 12"
+    },
+    {
+     "id": "acts-13",
+     "label": "Acts 13"
+    },
+    {
+     "id": "acts-14",
+     "label": "Acts 14"
+    },
+    {
+     "id": "acts-15",
+     "label": "Acts 15"
+    },
+    {
+     "id": "acts-16",
+     "label": "Acts 16"
+    },
+    {
+     "id": "acts-17",
+     "label": "Acts 17"
+    },
+    {
+     "id": "acts-18",
+     "label": "Acts 18"
+    },
+    {
+     "id": "acts-19",
+     "label": "Acts 19"
+    },
+    {
+     "id": "acts-20",
+     "label": "Acts 20"
+    },
+    {
+     "id": "acts-21",
+     "label": "Acts 21"
+    },
+    {
+     "id": "acts-22",
+     "label": "Acts 22"
+    },
+    {
+     "id": "acts-23",
+     "label": "Acts 23"
+    },
+    {
+     "id": "acts-24",
+     "label": "Acts 24"
+    },
+    {
+     "id": "acts-25",
+     "label": "Acts 25"
+    },
+    {
+     "id": "acts-26",
+     "label": "Acts 26"
+    },
+    {
+     "id": "acts-27",
+     "label": "Acts 27"
+    },
+    {
+     "id": "acts-28",
+     "label": "Acts 28"
+    }
+   ]
+  },
+  {
+   "id": "genesis",
+   "title": "Genesis",
+   "subtitle": "In the Beginning",
+   "about": "The book of beginnings, chapter by chapter: creation, the fall and the flood, and God’s promise carried through Abraham, Isaac, Jacob and Joseph.",
+   "cover": "media:images/symbols/Genesis-symbol.svg",
+   "episodes": [
+    {
+     "id": "genesis-00",
+     "label": "Meet Genesis"
+    },
+    {
+     "id": "genesis-01",
+     "label": "Genesis 1"
+    },
+    {
+     "id": "genesis-02",
+     "label": "Genesis 2"
+    },
+    {
+     "id": "genesis-03",
+     "label": "Genesis 3"
+    },
+    {
+     "id": "genesis-04",
+     "label": "Genesis 4"
+    },
+    {
+     "id": "genesis-05",
+     "label": "Genesis 5"
+    },
+    {
+     "id": "genesis-06",
+     "label": "Genesis 6"
+    },
+    {
+     "id": "genesis-07",
+     "label": "Genesis 7"
+    },
+    {
+     "id": "genesis-08",
+     "label": "Genesis 8"
+    },
+    {
+     "id": "genesis-09",
+     "label": "Genesis 9"
+    },
+    {
+     "id": "genesis-10",
+     "label": "Genesis 10"
+    },
+    {
+     "id": "genesis-11",
+     "label": "Genesis 11"
+    },
+    {
+     "id": "genesis-12",
+     "label": "Genesis 12"
+    },
+    {
+     "id": "genesis-13",
+     "label": "Genesis 13"
+    },
+    {
+     "id": "genesis-14",
+     "label": "Genesis 14"
+    },
+    {
+     "id": "genesis-15",
+     "label": "Genesis 15"
+    },
+    {
+     "id": "genesis-16",
+     "label": "Genesis 16"
+    },
+    {
+     "id": "genesis-17",
+     "label": "Genesis 17"
+    },
+    {
+     "id": "genesis-18",
+     "label": "Genesis 18"
+    },
+    {
+     "id": "genesis-19",
+     "label": "Genesis 19"
+    },
+    {
+     "id": "genesis-20",
+     "label": "Genesis 20"
+    },
+    {
+     "id": "genesis-21",
+     "label": "Genesis 21"
+    },
+    {
+     "id": "genesis-22",
+     "label": "Genesis 22"
+    },
+    {
+     "id": "genesis-23",
+     "label": "Genesis 23"
+    },
+    {
+     "id": "genesis-24",
+     "label": "Genesis 24"
+    },
+    {
+     "id": "genesis-25",
+     "label": "Genesis 25"
+    },
+    {
+     "id": "genesis-26",
+     "label": "Genesis 26"
+    },
+    {
+     "id": "genesis-27",
+     "label": "Genesis 27"
+    },
+    {
+     "id": "genesis-28",
+     "label": "Genesis 28"
+    },
+    {
+     "id": "genesis-29",
+     "label": "Genesis 29"
+    },
+    {
+     "id": "genesis-30",
+     "label": "Genesis 30"
+    },
+    {
+     "id": "genesis-31",
+     "label": "Genesis 31"
+    },
+    {
+     "id": "genesis-32",
+     "label": "Genesis 32"
+    },
+    {
+     "id": "genesis-33",
+     "label": "Genesis 33"
+    },
+    {
+     "id": "genesis-34",
+     "label": "Genesis 34"
+    },
+    {
+     "id": "genesis-35",
+     "label": "Genesis 35"
+    },
+    {
+     "id": "genesis-36",
+     "label": "Genesis 36"
+    },
+    {
+     "id": "genesis-37",
+     "label": "Genesis 37"
+    },
+    {
+     "id": "genesis-38",
+     "label": "Genesis 38"
+    },
+    {
+     "id": "genesis-39",
+     "label": "Genesis 39"
+    },
+    {
+     "id": "genesis-40",
+     "label": "Genesis 40"
+    },
+    {
+     "id": "genesis-41",
+     "label": "Genesis 41"
+    },
+    {
+     "id": "genesis-42",
+     "label": "Genesis 42"
+    },
+    {
+     "id": "genesis-43",
+     "label": "Genesis 43"
+    },
+    {
+     "id": "genesis-44",
+     "label": "Genesis 44"
+    },
+    {
+     "id": "genesis-45",
+     "label": "Genesis 45"
+    },
+    {
+     "id": "genesis-46",
+     "label": "Genesis 46"
+    },
+    {
+     "id": "genesis-47",
+     "label": "Genesis 47"
+    },
+    {
+     "id": "genesis-48",
+     "label": "Genesis 48"
+    },
+    {
+     "id": "genesis-49",
+     "label": "Genesis 49"
+    },
+    {
+     "id": "genesis-50",
+     "label": "Genesis 50"
+    }
+   ]
   }
  ],
  "episodes": {
+  "acts-00": {
+   "title": "Meet the Book of Acts",
+   "label": "Meet Acts",
+   "book": "Acts",
+   "chapter": null,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-00.webm?v=2483",
+   "seconds": 248.3,
+   "question": "Jesus told his followers, ye shall be witnesses unto me. Who in your life might hear about Jesus from you as we walk through this book?",
+   "keys": []
+  },
+  "acts-01": {
+   "title": "Ye Shall Be Witnesses unto Me",
+   "label": "Acts 1",
+   "book": "Acts",
+   "chapter": 1,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-01.webm?v=3829",
+   "seconds": 382.9,
+   "question": "Jesus said, ye shall be witnesses unto me. What is one thing you have seen Jesus do in your life that you could tell someone?",
+   "keys": [
+    "1:8",
+    "1:11",
+    "1:14"
+   ]
+  },
+  "acts-02": {
+   "title": "Whosoever Shall Call on the Name of the Lord",
+   "label": "Acts 2",
+   "book": "Acts",
+   "chapter": 2,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-02.webm?v=4435",
+   "seconds": 443.5,
+   "question": "The crowd asked, Men and brethren, what shall we do? What is God asking you to do in answer to Peter’s message today?",
+   "keys": [
+    "2:21",
+    "2:38",
+    "2:42"
+   ]
+  },
+  "acts-03": {
+   "title": "Such as I Have Give I Thee",
+   "label": "Acts 3",
+   "book": "Acts",
+   "chapter": 3,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-03.webm?v=4028",
+   "seconds": 402.8,
+   "question": "Peter said, such as I have give I thee. What do you have that you could give to someone in need today?",
+   "keys": [
+    "3:6",
+    "3:16",
+    "3:19"
+   ]
+  },
+  "acts-04": {
+   "title": "Neither Is There Salvation in Any Other",
+   "label": "Acts 4",
+   "book": "Acts",
+   "chapter": 4,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-04.webm?v=4266",
+   "seconds": 426.6,
+   "question": "The council took knowledge of them, that they had been with Jesus. What would help people see that you have been with Jesus today?",
+   "keys": [
+    "4:12",
+    "4:13",
+    "4:31"
+   ]
+  },
+  "acts-05": {
+   "title": "We Ought to Obey God Rather than Men",
+   "label": "Acts 5",
+   "book": "Acts",
+   "chapter": 5,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-05.webm?v=4270",
+   "seconds": 427.0,
+   "question": "The apostles said, we ought to obey God rather than men. Where do you need courage to put God first today?",
+   "keys": [
+    "5:4",
+    "5:29",
+    "5:41"
+   ]
+  },
+  "acts-06": {
+   "title": "A Man Full of Faith and of the Holy Ghost",
+   "label": "Acts 6",
+   "book": "Acts",
+   "chapter": 6,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-06.webm?v=3678",
+   "seconds": 367.8,
+   "question": "Stephen was a man full of faith and of the Holy Ghost, chosen to serve. What is one way God might be asking you to serve someone today?",
+   "keys": [
+    "6:3",
+    "6:7",
+    "6:15"
+   ]
+  },
+  "acts-07": {
+   "title": "Lord Jesus, Receive My Spirit",
+   "label": "Acts 7",
+   "book": "Acts",
+   "chapter": 7,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-07.webm?v=4213",
+   "seconds": 421.3,
+   "question": "Stephen prayed for the people who were stoning him. Who is one person you need to pray for, and forgive, today?",
+   "keys": [
+    "7:55",
+    "7:59",
+    "7:60"
+   ]
+  },
+  "acts-08": {
+   "title": "They Went Every Where Preaching the Word",
+   "label": "Acts 8",
+   "book": "Acts",
+   "chapter": 8,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-08.webm?v=4421",
+   "seconds": 442.1,
+   "question": "Philip asked, understandest thou what thou readest? Is there someone you could help to understand the Bible, or someone who could help you?",
+   "keys": [
+    "8:4",
+    "8:30",
+    "8:35"
+   ]
+  },
+  "acts-09": {
+   "title": "He Is a Chosen Vessel unto Me",
+   "label": "Acts 9",
+   "book": "Acts",
+   "chapter": 9,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-09.webm?v=4557",
+   "seconds": 455.7,
+   "question": "Jesus chose Saul, the enemy of the church, to carry his name. Who is someone you find hard to imagine following Jesus, that you could pray for today?",
+   "keys": [
+    "9:4",
+    "9:15",
+    "9:31"
+   ]
+  },
+  "acts-10": {
+   "title": "God Is No Respecter of Persons",
+   "label": "Acts 10",
+   "book": "Acts",
+   "chapter": 10,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-10.webm?v=4377",
+   "seconds": 437.7,
+   "question": "Peter said, God is no respecter of persons. Who is someone different from you that you could show God’s welcome to today?",
+   "keys": [
+    "10:15",
+    "10:34",
+    "10:43"
+   ]
+  },
+  "acts-11": {
+   "title": "God Also to the Gentiles Granted Repentance unto Life",
+   "label": "Acts 11",
+   "book": "Acts",
+   "chapter": 11,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-11.webm?v=4381",
+   "seconds": 438.1,
+   "question": "Barnabas encouraged the new believers to cleave unto the Lord with purpose of heart. What would it look like for you to hold on to Jesus on purpose today?",
+   "keys": [
+    "11:18",
+    "11:23",
+    "11:26"
+   ]
+  },
+  "acts-12": {
+   "title": "But the Word of God Grew and Multiplied",
+   "label": "Acts 12",
+   "book": "Acts",
+   "chapter": 12,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-12.webm?v=4047",
+   "seconds": 404.7,
+   "question": "The church prayed without ceasing for Peter. Who or what will you pray for earnestly today, and keep on praying for?",
+   "keys": [
+    "12:5",
+    "12:11",
+    "12:24"
+   ]
+  },
+  "acts-13": {
+   "title": "I Have Set Thee to Be a Light of the Gentiles",
+   "label": "Acts 13",
+   "book": "Acts",
+   "chapter": 13,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-13.webm?v=4318",
+   "seconds": 431.8,
+   "question": "Through Jesus is preached unto you the forgiveness of sins. Who in your life most needs to hear that message, and how could you share it?",
+   "keys": [
+    "13:2",
+    "13:38",
+    "13:47"
+   ]
+  },
+  "acts-14": {
+   "title": "He Had Opened the Door of Faith unto the Gentiles",
+   "label": "Acts 14",
+   "book": "Acts",
+   "chapter": 14,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-14.webm?v=3756",
+   "seconds": 375.6,
+   "question": "Paul said, we must through much tribulation enter into the kingdom of God. What hardship are you facing, and how can you keep trusting God through it today?",
+   "keys": [
+    "14:17",
+    "14:22",
+    "14:27"
+   ]
+  },
+  "acts-15": {
+   "title": "Through the Grace of the Lord Jesus Christ We Shall Be Saved",
+   "label": "Acts 15",
+   "book": "Acts",
+   "chapter": 15,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-15.webm?v=4510",
+   "seconds": 451.0,
+   "question": "Peter said, through the grace of the Lord Jesus Christ we shall be saved. What does it mean to you that you cannot earn God’s love, only receive it?",
+   "keys": [
+    "15:9",
+    "15:11",
+    "15:28"
+   ]
+  },
+  "acts-16": {
+   "title": "Believe on the Lord Jesus Christ, and Thou Shalt Be Saved",
+   "label": "Acts 16",
+   "book": "Acts",
+   "chapter": 16,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-16.webm?v=4427",
+   "seconds": 442.7,
+   "question": "The jailer asked, Sirs, what must I do to be saved? How would you answer that question in your own words?",
+   "keys": [
+    "16:14",
+    "16:25",
+    "16:31"
+   ]
+  },
+  "acts-17": {
+   "title": "In Him We Live, and Move, and Have Our Being",
+   "label": "Acts 17",
+   "book": "Acts",
+   "chapter": 17,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-17.webm?v=4429",
+   "seconds": 442.9,
+   "question": "The Bereans searched the scriptures daily, whether those things were so. How could you make searching the Scriptures a daily habit?",
+   "keys": [
+    "17:6",
+    "17:11",
+    "17:28"
+   ]
+  },
+  "acts-18": {
+   "title": "Be Not Afraid, but Speak, and Hold Not Thy Peace",
+   "label": "Acts 18",
+   "book": "Acts",
+   "chapter": 18,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-18.webm?v=3983",
+   "seconds": 398.3,
+   "question": "The Lord told Paul, be not afraid, but speak, for I am with thee. Where is God asking you to speak up for him?",
+   "keys": [
+    "18:9",
+    "18:10",
+    "18:26"
+   ]
+  },
+  "acts-19": {
+   "title": "So Mightily Grew the Word of God and Prevailed",
+   "label": "Acts 19",
+   "book": "Acts",
+   "chapter": 19,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-19.webm?v=4456",
+   "seconds": 445.6,
+   "question": "The believers at Ephesus burned their books of magic to follow Jesus. What is one thing God might be asking you to let go of today?",
+   "keys": [
+    "19:2",
+    "19:19",
+    "19:20"
+   ]
+  },
+  "acts-20": {
+   "title": "That I Might Finish My Course with Joy",
+   "label": "Acts 20",
+   "book": "Acts",
+   "chapter": 20,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-20.webm?v=4216",
+   "seconds": 421.6,
+   "question": "Paul wanted to finish his course with joy. What would it look like for you to run your race faithfully today?",
+   "keys": [
+    "20:24",
+    "20:32",
+    "20:35"
+   ]
+  },
+  "acts-21": {
+   "title": "The Will of the Lord Be Done",
+   "label": "Acts 21",
+   "book": "Acts",
+   "chapter": 21,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-21.webm?v=4426",
+   "seconds": 442.6,
+   "question": "Paul’s friends prayed, the will of the Lord be done. What situation in your life do you need to place in God’s hands with that prayer today?",
+   "keys": [
+    "21:13",
+    "21:14",
+    "21:19"
+   ]
+  },
+  "acts-22": {
+   "title": "Thou Shalt Be His Witness unto All Men",
+   "label": "Acts 22",
+   "book": "Acts",
+   "chapter": 22,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-22.webm?v=4356",
+   "seconds": 435.6,
+   "question": "Paul asked, What shall I do, Lord? What is the next step God is asking you to take today?",
+   "keys": [
+    "22:10",
+    "22:15",
+    "22:16"
+   ]
+  },
+  "acts-23": {
+   "title": "Be of Good Cheer, Paul",
+   "label": "Acts 23",
+   "book": "Acts",
+   "chapter": 23,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-23.webm?v=4283",
+   "seconds": 428.3,
+   "question": "The Lord stood by Paul and said, be of good cheer. Where do you most need to know that the Lord is standing beside you today?",
+   "keys": [
+    "23:1",
+    "23:6",
+    "23:11"
+   ]
+  },
+  "acts-24": {
+   "title": "A Conscience Void of Offence",
+   "label": "Acts 24",
+   "book": "Acts",
+   "chapter": 24,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-24.webm?v=3814",
+   "seconds": 381.4,
+   "question": "Felix said, when I have a convenient season, I will call for thee. What have you been putting off that God is asking you to deal with today?",
+   "keys": [
+    "24:14",
+    "24:16",
+    "24:25"
+   ]
+  },
+  "acts-25": {
+   "title": "I Appeal unto Caesar",
+   "label": "Acts 25",
+   "book": "Acts",
+   "chapter": 25,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-25.webm?v=4210",
+   "seconds": 421.0,
+   "question": "Festus said Paul affirmed that Jesus, who was dead, is alive. What difference does it make in your life today that Jesus is alive?",
+   "keys": [
+    "25:8",
+    "25:11",
+    "25:19"
+   ]
+  },
+  "acts-26": {
+   "title": "I Was Not Disobedient unto the Heavenly Vision",
+   "label": "Acts 26",
+   "book": "Acts",
+   "chapter": 26,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-26.webm?v=4528",
+   "seconds": 452.8,
+   "question": "Agrippa said, almost thou persuadest me to be a Christian. Is there any area of your life where you are almost, but not altogether, following Jesus?",
+   "keys": [
+    "26:18",
+    "26:19",
+    "26:28"
+   ]
+  },
+  "acts-27": {
+   "title": "I Believe God, That It Shall Be Even as It Was Told Me",
+   "label": "Acts 27",
+   "book": "Acts",
+   "chapter": 27,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-27.webm?v=4183",
+   "seconds": 418.3,
+   "question": "Paul said, I believe God, that it shall be even as it was told me. What promise of God will you hold on to in your storm today?",
+   "keys": [
+    "27:23",
+    "27:25",
+    "27:44"
+   ]
+  },
+  "acts-28": {
+   "title": "With All Confidence, No Man Forbidding Him",
+   "label": "Acts 28",
+   "book": "Acts",
+   "chapter": 28,
+   "art": "media:images/symbols/Acts-symbol.svg",
+   "audio": "media:audio/bible-walk/acts/acts-28.webm?v=4293",
+   "seconds": 429.3,
+   "question": "Now that you have walked through the whole book of Acts, how will you carry the story on as Jesus’ witness, and who will you tell?",
+   "keys": [
+    "28:5",
+    "28:15",
+    "28:31"
+   ]
+  },
   "big-picture-00": {
    "title": "The One Great Story",
    "label": "The Big Picture",
@@ -784,6 +1553,767 @@
     "1:16",
     "1:20",
     "1:22"
+   ]
+  },
+  "genesis-00": {
+   "title": "Meet the Book of Genesis",
+   "label": "Meet Genesis",
+   "book": "Genesis",
+   "chapter": null,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-00.webm?v=2311",
+   "seconds": 231.1,
+   "question": "Genesis is the book of beginnings. Where in your own life do you need God to make a new beginning?",
+   "keys": []
+  },
+  "genesis-01": {
+   "title": "And God Saw That It Was Good",
+   "label": "Genesis 1",
+   "book": "Genesis",
+   "chapter": 1,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-01.webm?v=3943",
+   "seconds": 394.3,
+   "question": "God made man and woman in his own image. How should knowing that change the way you see yourself, and the people around you?",
+   "keys": [
+    "1:1",
+    "1:26",
+    "1:31"
+   ]
+  },
+  "genesis-02": {
+   "title": "The Breath of Life",
+   "label": "Genesis 2",
+   "book": "Genesis",
+   "chapter": 2,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-02.webm?v=3859",
+   "seconds": 385.9,
+   "question": "God said, it is not good that the man should be alone. Who has God put in your life, and who might need you to be a friend to them?",
+   "keys": [
+    "2:7",
+    "2:15",
+    "2:18"
+   ]
+  },
+  "genesis-03": {
+   "title": "Where Art Thou?",
+   "label": "Genesis 3",
+   "book": "Genesis",
+   "chapter": 3,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-03.webm?v=3998",
+   "seconds": 399.8,
+   "question": "God called out to Adam, where art thou? If God asked you that question today, how would you answer him?",
+   "keys": [
+    "3:9",
+    "3:15",
+    "3:21"
+   ]
+  },
+  "genesis-04": {
+   "title": "Am I My Brother’s Keeper?",
+   "label": "Genesis 4",
+   "book": "Genesis",
+   "chapter": 4,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-04.webm?v=3806",
+   "seconds": 380.6,
+   "question": "God warned Cain that sin was crouching at the door. What feelings do you need to bring to God before they grow into something worse?",
+   "keys": [
+    "4:7",
+    "4:9",
+    "4:26"
+   ]
+  },
+  "genesis-05": {
+   "title": "Enoch Walked with God",
+   "label": "Genesis 5",
+   "book": "Genesis",
+   "chapter": 5,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-05.webm?v=3912",
+   "seconds": 391.2,
+   "question": "Enoch walked with God through ordinary family life, day after day. What would it look like for you to walk with God this week?",
+   "keys": [
+    "5:22",
+    "5:24",
+    "5:29"
+   ]
+  },
+  "genesis-06": {
+   "title": "Noah Found Grace in the Eyes of the LORD",
+   "label": "Genesis 6",
+   "book": "Genesis",
+   "chapter": 6,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-06.webm?v=4002",
+   "seconds": 400.2,
+   "question": "Noah found grace in the eyes of the LORD, and then he obeyed all that God commanded him. Is there anything God has asked you to do that you have not yet done?",
+   "keys": [
+    "6:5",
+    "6:8",
+    "6:22"
+   ]
+  },
+  "genesis-07": {
+   "title": "The LORD Shut Him In",
+   "label": "Genesis 7",
+   "book": "Genesis",
+   "chapter": 7,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-07.webm?v=3787",
+   "seconds": 378.7,
+   "question": "God shut Noah into the ark and kept him safe through the flood. What does it mean to you that God holds you safe in the storms of life?",
+   "keys": [
+    "7:1",
+    "7:16",
+    "7:23"
+   ]
+  },
+  "genesis-08": {
+   "title": "God Remembered Noah",
+   "label": "Genesis 8",
+   "book": "Genesis",
+   "chapter": 8,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-08.webm?v=3902",
+   "seconds": 390.2,
+   "question": "God remembered Noah, and sent a dove with an olive leaf as a sign of hope. What signs of God’s faithfulness have you seen in your own life?",
+   "keys": [
+    "8:1",
+    "8:11",
+    "8:22"
+   ]
+  },
+  "genesis-09": {
+   "title": "I Do Set My Bow in the Cloud",
+   "label": "Genesis 9",
+   "book": "Genesis",
+   "chapter": 9,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-09.webm?v=3906",
+   "seconds": 390.6,
+   "question": "God set his bow in the cloud as a sign that he would remember his promise. What promise of God do you need to remember today?",
+   "keys": [
+    "9:1",
+    "9:13",
+    "9:15"
+   ]
+  },
+  "genesis-10": {
+   "title": "By These Were the Nations Divided",
+   "label": "Genesis 10",
+   "book": "Genesis",
+   "chapter": 10,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-10.webm?v=4209",
+   "seconds": 420.9,
+   "question": "Genesis ten shows that all nations come from one family. How should that change the way you think about people who are different from you?",
+   "keys": [
+    "10:1",
+    "10:9",
+    "10:32"
+   ]
+  },
+  "genesis-11": {
+   "title": "Let Us Make Us a Name",
+   "label": "Genesis 11",
+   "book": "Genesis",
+   "chapter": 11,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-11.webm?v=3941",
+   "seconds": 394.1,
+   "question": "The builders of Babel wanted to make a name for themselves. Where are you tempted to make your own name great, instead of trusting God?",
+   "keys": [
+    "11:4",
+    "11:9",
+    "11:30"
+   ]
+  },
+  "genesis-12": {
+   "title": "Get Thee Out of Thy Country",
+   "label": "Genesis 12",
+   "book": "Genesis",
+   "chapter": 12,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-12.webm?v=4682",
+   "seconds": 468.2,
+   "question": "God called Abram to leave what was familiar and follow him, not knowing where he was going. What might God be asking you to leave behind, or to step into, in faith?",
+   "keys": [
+    "12:1",
+    "12:3",
+    "12:8"
+   ]
+  },
+  "genesis-13": {
+   "title": "Let There Be No Strife",
+   "label": "Genesis 13",
+   "book": "Genesis",
+   "chapter": 13,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-13.webm?v=3762",
+   "seconds": 376.2,
+   "question": "Abram let Lot choose first, trusting God to provide. Is there a situation where you need to let go of your rights for the sake of peace?",
+   "keys": [
+    "13:8",
+    "13:15",
+    "13:18"
+   ]
+  },
+  "genesis-14": {
+   "title": "Blessed Be Abram of the Most High God",
+   "label": "Genesis 14",
+   "book": "Genesis",
+   "chapter": 14,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-14.webm?v=4346",
+   "seconds": 434.6,
+   "question": "Abram gave thanks to God for the victory, and refused the king of Sodom’s offer. Is there anything you need to turn down, so that God gets the glory in your life?",
+   "keys": [
+    "14:18",
+    "14:20",
+    "14:23"
+   ]
+  },
+  "genesis-15": {
+   "title": "He Believed in the LORD",
+   "label": "Genesis 15",
+   "book": "Genesis",
+   "chapter": 15,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-15.webm?v=4038",
+   "seconds": 403.8,
+   "question": "Abram believed God, and God counted it to him for righteousness. What would it mean for you to trust God’s promise, rather than your own goodness, to make you right with him?",
+   "keys": [
+    "15:1",
+    "15:5",
+    "15:6"
+   ]
+  },
+  "genesis-16": {
+   "title": "Thou God Seest Me",
+   "label": "Genesis 16",
+   "book": "Genesis",
+   "chapter": 16,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-16.webm?v=3765",
+   "seconds": 376.5,
+   "question": "Hagar called God, thou God seest me. What difference does it make to you today that God sees you and hears you?",
+   "keys": [
+    "16:7",
+    "16:11",
+    "16:13"
+   ]
+  },
+  "genesis-17": {
+   "title": "I Am the Almighty God",
+   "label": "Genesis 17",
+   "book": "Genesis",
+   "chapter": 17,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-17.webm?v=4076",
+   "seconds": 407.6,
+   "question": "God revealed himself to Abraham as the Almighty God, when Abraham’s own strength had run out. Where do you need to trust God’s strength instead of your own?",
+   "keys": [
+    "17:1",
+    "17:5",
+    "17:19"
+   ]
+  },
+  "genesis-18": {
+   "title": "Is Any Thing Too Hard for the LORD?",
+   "label": "Genesis 18",
+   "book": "Genesis",
+   "chapter": 18,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-18.webm?v=4354",
+   "seconds": 435.4,
+   "question": "God asked, is any thing too hard for the LORD? What would you bring to God in prayer if you truly believed that nothing is too hard for him?",
+   "keys": [
+    "18:14",
+    "18:19",
+    "18:25"
+   ]
+  },
+  "genesis-19": {
+   "title": "Escape for Thy Life",
+   "label": "Genesis 19",
+   "book": "Genesis",
+   "chapter": 19,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-19.webm?v=4286",
+   "seconds": 428.6,
+   "question": "Lot lingered, and his wife looked back. Is there anything in your life that is pulling your heart back, when God is calling you forward?",
+   "keys": [
+    "19:16",
+    "19:26",
+    "19:29"
+   ]
+  },
+  "genesis-20": {
+   "title": "Surely the Fear of God Is Not in This Place",
+   "label": "Genesis 20",
+   "book": "Genesis",
+   "chapter": 20,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-20.webm?v=4134",
+   "seconds": 413.4,
+   "question": "Abraham repeated an old mistake, but God stayed faithful and still used him to bless others. What old fear or habit do you need God to help you leave behind?",
+   "keys": [
+    "20:6",
+    "20:11",
+    "20:17"
+   ]
+  },
+  "genesis-21": {
+   "title": "God Hath Made Me to Laugh",
+   "label": "Genesis 21",
+   "book": "Genesis",
+   "chapter": 21,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-21.webm?v=4052",
+   "seconds": 405.2,
+   "question": "Sarah said, God hath made me to laugh. When has God turned your sorrow or your doubt into joy?",
+   "keys": [
+    "21:1",
+    "21:6",
+    "21:17"
+   ]
+  },
+  "genesis-22": {
+   "title": "God Will Provide",
+   "label": "Genesis 22",
+   "book": "Genesis",
+   "chapter": 22,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-22.webm?v=4343",
+   "seconds": 434.3,
+   "question": "Abraham told Isaac, God will provide himself a lamb. Where do you need to trust God to provide for you today?",
+   "keys": [
+    "22:8",
+    "22:14",
+    "22:18"
+   ]
+  },
+  "genesis-23": {
+   "title": "I Am a Stranger and a Sojourner",
+   "label": "Genesis 23",
+   "book": "Genesis",
+   "chapter": 23,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-23.webm?v=3978",
+   "seconds": 397.8,
+   "question": "Abraham called himself a stranger and a sojourner, living by God’s promise. What helps you remember that this world is not your final home?",
+   "keys": [
+    "23:2",
+    "23:4",
+    "23:20"
+   ]
+  },
+  "genesis-24": {
+   "title": "I Being in the Way, the LORD Led Me",
+   "label": "Genesis 24",
+   "book": "Genesis",
+   "chapter": 24,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-24.webm?v=4515",
+   "seconds": 451.5,
+   "question": "The servant said, I being in the way, the LORD led me. How have you seen God guide you as you walked in obedience to him?",
+   "keys": [
+    "24:12",
+    "24:27",
+    "24:58"
+   ]
+  },
+  "genesis-25": {
+   "title": "Esau Despised His Birthright",
+   "label": "Genesis 25",
+   "book": "Genesis",
+   "chapter": 25,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-25.webm?v=4007",
+   "seconds": 400.7,
+   "question": "Esau traded his birthright for a bowl of stew. What is one thing you might be tempted to put ahead of what matters most to God?",
+   "keys": [
+    "25:21",
+    "25:23",
+    "25:34"
+   ]
+  },
+  "genesis-26": {
+   "title": "The LORD Hath Made Room for Us",
+   "label": "Genesis 26",
+   "book": "Genesis",
+   "chapter": 26,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-26.webm?v=4333",
+   "seconds": 433.3,
+   "question": "Isaac kept moving and digging new wells until the LORD made room for him. Where do you need to trust God, instead of fighting for your own way?",
+   "keys": [
+    "26:3",
+    "26:22",
+    "26:24"
+   ]
+  },
+  "genesis-27": {
+   "title": "The Voice Is Jacob’s Voice",
+   "label": "Genesis 27",
+   "book": "Genesis",
+   "chapter": 27,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-27.webm?v=5258",
+   "seconds": 525.8,
+   "question": "Jacob grabbed the blessing by deception instead of waiting for God. Where are you tempted to take a shortcut instead of trusting God’s timing?",
+   "keys": [
+    "27:22",
+    "27:28",
+    "27:38"
+   ]
+  },
+  "genesis-28": {
+   "title": "Surely the LORD Is in This Place",
+   "label": "Genesis 28",
+   "book": "Genesis",
+   "chapter": 28,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-28.webm?v=4090",
+   "seconds": 409.0,
+   "question": "Jacob said, surely the LORD is in this place; and I knew it not. Where might God be present in your life right now, in a place you did not expect?",
+   "keys": [
+    "28:12",
+    "28:15",
+    "28:16"
+   ]
+  },
+  "genesis-29": {
+   "title": "They Seemed unto Him but a Few Days",
+   "label": "Genesis 29",
+   "book": "Genesis",
+   "chapter": 29,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-29.webm?v=4410",
+   "seconds": 441.0,
+   "question": "Leah stopped seeking her husband’s love and said, now will I praise the LORD. Where do you need to find your worth in God instead of in other people?",
+   "keys": [
+    "29:20",
+    "29:25",
+    "29:35"
+   ]
+  },
+  "genesis-30": {
+   "title": "God Remembered Rachel",
+   "label": "Genesis 30",
+   "book": "Genesis",
+   "chapter": 30,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-30.webm?v=4322",
+   "seconds": 432.2,
+   "question": "Rachel and Leah were caught up in jealousy and competition. Who are you tempted to compare yourself with, and how could you bring that to God?",
+   "keys": [
+    "30:22",
+    "30:27",
+    "30:30"
+   ]
+  },
+  "genesis-31": {
+   "title": "The LORD Watch Between Me and Thee",
+   "label": "Genesis 31",
+   "book": "Genesis",
+   "chapter": 31,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-31.webm?v=4430",
+   "seconds": 443.0,
+   "question": "Jacob said, God hath seen mine affliction and the labour of my hands. Where do you need to trust that God sees what you are going through?",
+   "keys": [
+    "31:3",
+    "31:42",
+    "31:49"
+   ]
+  },
+  "genesis-32": {
+   "title": "I Will Not Let Thee Go, Except Thou Bless Me",
+   "label": "Genesis 32",
+   "book": "Genesis",
+   "chapter": 32,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-32.webm?v=4186",
+   "seconds": 418.6,
+   "question": "Jacob said, I will not let thee go, except thou bless me. What is one thing you need to keep bringing to God in prayer, without letting go?",
+   "keys": [
+    "32:10",
+    "32:26",
+    "32:28"
+   ]
+  },
+  "genesis-33": {
+   "title": "Esau Ran to Meet Him",
+   "label": "Genesis 33",
+   "book": "Genesis",
+   "chapter": 33,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-33.webm?v=3456",
+   "seconds": 345.6,
+   "question": "Esau ran to meet his brother and embraced him. Is there someone you need to forgive, or ask forgiveness from?",
+   "keys": [
+    "33:4",
+    "33:10",
+    "33:20"
+   ]
+  },
+  "genesis-34": {
+   "title": "Which Thing Ought Not to Be Done",
+   "label": "Genesis 34",
+   "book": "Genesis",
+   "chapter": 34,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-34.webm?v=4429",
+   "seconds": 442.9,
+   "question": "Jacob stayed silent, and his sons took revenge. When you see something wrong, how can you respond in a way that is neither silent nor cruel?",
+   "keys": [
+    "34:7",
+    "34:13",
+    "34:30"
+   ]
+  },
+  "genesis-35": {
+   "title": "Arise, Go Up to Bethel",
+   "label": "Genesis 35",
+   "book": "Genesis",
+   "chapter": 35,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-35.webm?v=4448",
+   "seconds": 444.8,
+   "question": "Jacob told his family to put away their strange gods before going to Bethel. What might God be asking you to put away, so that you can draw closer to him?",
+   "keys": [
+    "35:2",
+    "35:3",
+    "35:10"
+   ]
+  },
+  "genesis-36": {
+   "title": "These Are the Generations of Esau",
+   "label": "Genesis 36",
+   "book": "Genesis",
+   "chapter": 36,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-36.webm?v=3946",
+   "seconds": 394.6,
+   "question": "Esau’s choices shaped the history of his whole family. What choices are you making now that might affect the people who come after you?",
+   "keys": [
+    "36:1",
+    "36:7",
+    "36:8"
+   ]
+  },
+  "genesis-37": {
+   "title": "Behold, This Dreamer Cometh",
+   "label": "Genesis 37",
+   "book": "Genesis",
+   "chapter": 37,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-37.webm?v=4624",
+   "seconds": 462.4,
+   "question": "Joseph’s brothers tried to stop his dreams, but God used even their sin to fulfil his plan. Where do you need to trust that God is still at work in a painful situation?",
+   "keys": [
+    "37:3",
+    "37:19",
+    "37:28"
+   ]
+  },
+  "genesis-38": {
+   "title": "She Hath Been More Righteous Than I",
+   "label": "Genesis 38",
+   "book": "Genesis",
+   "chapter": 38,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-38.webm?v=4243",
+   "seconds": 424.3,
+   "question": "Judah said, she hath been more righteous than I. Is there someone you need to admit you have treated unfairly?",
+   "keys": [
+    "38:25",
+    "38:26",
+    "38:29"
+   ]
+  },
+  "genesis-39": {
+   "title": "The LORD Was with Joseph",
+   "label": "Genesis 39",
+   "book": "Genesis",
+   "chapter": 39,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-39.webm?v=3992",
+   "seconds": 399.2,
+   "question": "Joseph asked, how then can I do this great wickedness, and sin against God? What helps you to say no to temptation, even when no one else would know?",
+   "keys": [
+    "39:2",
+    "39:9",
+    "39:21"
+   ]
+  },
+  "genesis-40": {
+   "title": "Do Not Interpretations Belong to God?",
+   "label": "Genesis 40",
+   "book": "Genesis",
+   "chapter": 40,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-40.webm?v=3830",
+   "seconds": 383.0,
+   "question": "Joseph helped the butler, but the butler forgot him. How do you keep trusting God when people forget you, or when his answer seems slow in coming?",
+   "keys": [
+    "40:8",
+    "40:14",
+    "40:23"
+   ]
+  },
+  "genesis-41": {
+   "title": "God Shall Give Pharaoh an Answer of Peace",
+   "label": "Genesis 41",
+   "book": "Genesis",
+   "chapter": 41,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-41.webm?v=4470",
+   "seconds": 447.0,
+   "question": "Joseph named his son Ephraim, saying, God hath caused me to be fruitful in the land of my affliction. How has God made you fruitful in a hard place?",
+   "keys": [
+    "41:16",
+    "41:38",
+    "41:52"
+   ]
+  },
+  "genesis-42": {
+   "title": "We Are Verily Guilty Concerning Our Brother",
+   "label": "Genesis 42",
+   "book": "Genesis",
+   "chapter": 42,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-42.webm?v=4532",
+   "seconds": 453.2,
+   "question": "Jacob said, all these things are against me, but God was working everything for good. Where do you need to trust that God is working, even when it looks like everything is against you?",
+   "keys": [
+    "42:6",
+    "42:21",
+    "42:36"
+   ]
+  },
+  "genesis-43": {
+   "title": "God Be Gracious unto Thee, My Son",
+   "label": "Genesis 43",
+   "book": "Genesis",
+   "chapter": 43,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-43.webm?v=4426",
+   "seconds": 442.6,
+   "question": "Judah said, I will be surety for him. Who is someone you could take responsibility for, protect, or stand beside this week?",
+   "keys": [
+    "43:9",
+    "43:14",
+    "43:29"
+   ]
+  },
+  "genesis-44": {
+   "title": "How Shall I Go Up to My Father?",
+   "label": "Genesis 44",
+   "book": "Genesis",
+   "chapter": 44,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-44.webm?v=4112",
+   "seconds": 411.2,
+   "question": "Judah offered to take Benjamin’s place. How does his offer help you understand what Jesus has done for you?",
+   "keys": [
+    "44:16",
+    "44:33",
+    "44:34"
+   ]
+  },
+  "genesis-45": {
+   "title": "I Am Joseph Your Brother",
+   "label": "Genesis 45",
+   "book": "Genesis",
+   "chapter": 45,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-45.webm?v=4312",
+   "seconds": 431.2,
+   "question": "Joseph said, it was not you that sent me hither, but God. How might seeing God at work in your story help you to forgive someone who has hurt you?",
+   "keys": [
+    "45:4",
+    "45:5",
+    "45:8"
+   ]
+  },
+  "genesis-46": {
+   "title": "Fear Not to Go Down into Egypt",
+   "label": "Genesis 46",
+   "book": "Genesis",
+   "chapter": 46,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-46.webm?v=4129",
+   "seconds": 412.9,
+   "question": "God told Jacob, I will go down with thee into Egypt. Where do you need the promise that God will go with you?",
+   "keys": [
+    "46:3",
+    "46:4",
+    "46:30"
+   ]
+  },
+  "genesis-47": {
+   "title": "The Days of the Years of My Pilgrimage",
+   "label": "Genesis 47",
+   "book": "Genesis",
+   "chapter": 47,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-47.webm?v=4037",
+   "seconds": 403.7,
+   "question": "Jacob called his life a pilgrimage. How does thinking of your life as a journey toward God change the way you face hard times?",
+   "keys": [
+    "47:7",
+    "47:9",
+    "47:12"
+   ]
+  },
+  "genesis-48": {
+   "title": "The Angel Which Redeemed Me from All Evil",
+   "label": "Genesis 48",
+   "book": "Genesis",
+   "chapter": 48,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-48.webm?v=4247",
+   "seconds": 424.7,
+   "question": "Jacob called God the God which fed me all my life long. Looking back over your own life, where can you see God’s care?",
+   "keys": [
+    "48:11",
+    "48:15",
+    "48:16"
+   ]
+  },
+  "genesis-49": {
+   "title": "Unto Him Shall the Gathering of the People Be",
+   "label": "Genesis 49",
+   "book": "Genesis",
+   "chapter": 49,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-49.webm?v=4694",
+   "seconds": 469.4,
+   "question": "Jacob prayed, I have waited for thy salvation, O LORD. What are you waiting for God to do, and how can you keep trusting him while you wait?",
+   "keys": [
+    "49:10",
+    "49:18",
+    "49:22"
+   ]
+  },
+  "genesis-50": {
+   "title": "God Meant It unto Good",
+   "label": "Genesis 50",
+   "book": "Genesis",
+   "chapter": 50,
+   "art": "media:images/symbols/Genesis-symbol.svg",
+   "audio": "media:audio/bible-walk/genesis/genesis-50.webm?v=4562",
+   "seconds": 456.2,
+   "question": "We have walked through the whole book of Genesis. Joseph said, ye thought evil against me; but God meant it unto good. How has this book helped you trust that God is at work in your story?",
+   "keys": [
+    "50:20",
+    "50:21",
+    "50:24"
    ]
   },
   "luke-00": {

@@ -46,6 +46,24 @@ PLANS = [
         "cover": {"symbol": "Luke"},
         "episodes": [f"luke-{n:02d}" for n in range(0, 25)],
     },
+    {
+        "id": "acts",
+        "title": "Acts",
+        "subtitle": "Ye Shall Be Witnesses unto Me",
+        "about": "The Acts of the Apostles, chapter by chapter: Luke’s second book, from the "
+                 "coming of the Holy Ghost in Jerusalem to Paul preaching in Rome.",
+        "cover": {"symbol": "Acts"},
+        "episodes": [f"acts-{n:02d}" for n in range(0, 29)],
+    },
+    {
+        "id": "genesis",
+        "title": "Genesis",
+        "subtitle": "In the Beginning",
+        "about": "The book of beginnings, chapter by chapter: creation, the fall and the flood, "
+                 "and God’s promise carried through Abraham, Isaac, Jacob and Joseph.",
+        "cover": {"symbol": "Genesis"},
+        "episodes": [f"genesis-{n:02d}" for n in range(0, 51)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

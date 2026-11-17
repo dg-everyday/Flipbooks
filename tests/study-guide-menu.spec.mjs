@@ -108,3 +108,64 @@ test("a quick tap still opens the guide", async ({ page }) => {
     await guides(page).first().click();
     await expect(page).toHaveURL(/apps\/pages\/bible-books\.html$/);
 });
+
+test("the drawer is aluminium Mon–Tue, gold Wed–Fri, navy on Saturday and burgundy on Sunday, by Manila's calendar", async ({ page }) => {
+    const reopenAt = async (time) => {
+        await menu(page).evaluate((element) => element.close());
+        await page.clock.setFixedTime(time);
+        await menu(page).evaluate((element) => element.open());
+    };
+    const title = drawer(page).locator(".menu-header h2");
+    const aboutEmblem = menu(page).locator('[data-show="about"] .foot-emblem:visible');
+    const expectTheme = async (theme) => {
+        await expect(drawer(page)).toHaveAttribute("data-theme", theme);
+        if (theme === "navy" || theme === "burgundy") {
+            await expect(drawer(page)).not.toHaveClass(/\bis-metal\b/);
+            await expect(title).toHaveCSS("color", "rgb(243, 231, 210)");
+            await expect(aboutEmblem).not.toHaveClass(/\bon-metal\b/);
+        } else {
+            await expect(drawer(page)).toHaveClass(/\bis-metal\b/);
+            await expect(title).toHaveCSS("color", "rgb(0, 27, 52)");
+            await expect(aboutEmblem).toHaveClass(/\bon-metal\b/);
+        }
+    };
+
+    // Monday morning, and Tuesday half an hour before midnight in Manila.
+    await reopenAt(new Date("2026-11-23T09:00:00+08:00"));
+    await expectTheme("aluminum");
+    await reopenAt(new Date("2026-11-24T23:30:00+08:00"));
+    await expectTheme("aluminum");
+
+    // Wednesday in Manila, though still Tuesday in UTC.
+    await reopenAt(new Date("2026-11-25T00:30:00+08:00"));
+    await expectTheme("gold");
+
+    // Friday, half an hour before midnight in Manila.
+    await reopenAt(new Date("2026-11-27T23:30:00+08:00"));
+    await expectTheme("gold");
+
+    // Saturday in Manila, though still Friday in UTC.
+    await reopenAt(new Date("2026-11-28T00:30:00+08:00"));
+    await expectTheme("navy");
+
+    // Sunday in Manila, though still Saturday in UTC: burgundy leather, with
+    // its tooled gold line, which the navy drawer doesn't have.
+    await reopenAt(new Date("2026-11-29T00:30:00+08:00"));
+    await expectTheme("burgundy");
+    const leather = await drawer(page).evaluate((dialog) => {
+        const style = getComputedStyle(dialog);
+        return { background: style.backgroundImage, outline: style.outlineStyle };
+    });
+    expect(leather.background).toContain("rgb(122, 29, 39)");
+    expect(leather.outline).toBe("solid");
+    await reopenAt(new Date("2026-11-28T21:00:00+08:00"));
+    expect(await drawer(page).evaluate((dialog) => getComputedStyle(dialog).outlineStyle)).toBe("none");
+
+    // The two metals look different: silver and gold.
+    await reopenAt(new Date("2026-11-30T09:00:00+08:00"));
+    const silver = await drawer(page).evaluate((dialog) => getComputedStyle(dialog).backgroundImage);
+    await reopenAt(new Date("2026-12-02T09:00:00+08:00"));
+    const gold = await drawer(page).evaluate((dialog) => getComputedStyle(dialog).backgroundImage);
+    expect(silver).toContain("rgb(238, 241, 244)");
+    expect(gold).toContain("rgb(237, 205, 124)");
+});

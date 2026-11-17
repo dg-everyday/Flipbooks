@@ -55,7 +55,10 @@
  *
  * Colours: the page's --navy, --ink, --cream, --gold, --gold-light, --action
  * and --action-ink (assets/styles/styles.css), which inherit into the shadow
- * root. The drawer is placed against the page's --page-width.
+ * root. The drawer is placed against the page's --page-width. The drawer is
+ * brushed aluminium on Monday and Tuesday, brushed gold Wednesday to Friday,
+ * navy aurora on Saturday and burgundy leather on Sunday, by the Asia/Manila
+ * calendar (DRAWER_THEMES); Help and About are cream every day.
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
@@ -439,6 +442,101 @@ const STYLES = /* css */ `
      keep their own colours. */
   .foot-tile .foot-emblem { width: 40px; height: 40px; object-fit: contain; pointer-events: none; }
   .foot-tile svg.support-heart { width: 36px; height: 36px; filter: drop-shadow(0 1.2px 1px rgb(0 0 0 / 45%)); }
+  /* About's tile shows the cream-lettered emblem on the navy drawer and the
+     gold one on the brushed metal drawers, where cream would vanish. */
+  .foot-tile .foot-emblem.on-metal { display: none; }
+
+  /* The drawer's dress changes through the week (Asia/Manila, drawerTheme()):
+       Monday, Tuesday            brushed aluminium   data-theme="aluminum"
+       Wednesday to Friday        brushed gold        data-theme="gold"
+       Saturday                   navy aurora         data-theme="navy" (above)
+       Sunday                     burgundy leather    data-theme="burgundy"
+     open() sets data-theme, and .is-metal on the two brushed metals. */
+
+  /* Burgundy leather, like the cover of an old family Bible: a pebbled grain
+     (fine fractal noise, soft-light), a soft light from the top left, and a
+     gold line tooled in just inside the edge. The line is an outline, so it
+     stays put while the guides scroll. Everything else is the navy drawer's:
+     cream text, gold icons and the cream description bubble. */
+  .menu-dialog[data-theme="burgundy"] {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 .5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3C/svg%3E"),
+      radial-gradient(90% 50% at 0% 0%, rgb(255 190 150 / 18%), transparent 65%),
+      radial-gradient(80% 50% at 100% 100%, rgb(0 0 0 / 30%), transparent 70%),
+      linear-gradient(170deg, #7a1d27 0%, #5e141c 50%, #430d14 100%);
+    background-blend-mode: soft-light, normal, normal, normal;
+    outline: 1px solid rgb(225 182 93 / 55%);
+    outline-offset: -8px;
+    box-shadow: 18px 0 50px rgb(40 0 8 / 45%);
+  }
+  .menu-dialog[data-theme="burgundy"] .menu-header { border-bottom-color: rgb(225 182 93 / 40%); }
+
+  /* Brushed metal: a fine horizontal grain (stretched fractal noise,
+     overlaid) and two soft diagonal sheens over the metal's own ramp, set by
+     its data-theme below. The text and line icons turn navy, the tiles pale,
+     and the description bubble navy so it stands out on the metal. */
+  .menu-dialog.is-metal {
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0035 0.85' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 .55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      linear-gradient(105deg, transparent 18%, var(--metal-sheen) 34%, transparent 50%, transparent 68%, var(--metal-sheen-soft) 80%, transparent 92%),
+      var(--metal-ramp);
+    background-blend-mode: overlay, normal, normal;
+    color: var(--navy);
+  }
+  /* Polished gold. */
+  .menu-dialog[data-theme="gold"] {
+    --metal-ramp: linear-gradient(180deg, #edcd7c 0%, #ddb05a 35%, #cc9c43 70%, #bf8f38 100%);
+    --metal-sheen: rgb(255 248 222 / 50%);
+    --metal-sheen-soft: rgb(255 242 205 / 30%);
+    --metal-eyebrow: #5c3f0e;
+    --metal-hover: rgb(255 250 235 / 30%);
+    --metal-tile-border: rgb(110 74 14 / 40%);
+    --metal-tile: linear-gradient(160deg, rgb(255 252 240 / 78%), rgb(255 244 215 / 42%));
+    --metal-tile-shadow: inset 0 1px 0 rgb(255 255 255 / 85%), 0 8px 16px -8px rgb(70 45 5 / 55%);
+  }
+  /* Brushed aluminium: the same grain and sheens in cool silver, on white tiles. */
+  .menu-dialog[data-theme="aluminum"] {
+    --metal-ramp: linear-gradient(180deg, #eef1f4 0%, #d8dce1 35%, #c3c8ce 70%, #b2b8bf 100%);
+    --metal-sheen: rgb(255 255 255 / 60%);
+    --metal-sheen-soft: rgb(255 255 255 / 35%);
+    --metal-eyebrow: #36475a;
+    --metal-hover: rgb(255 255 255 / 30%);
+    --metal-tile-border: rgb(55 70 90 / 30%);
+    --metal-tile: linear-gradient(160deg, rgb(255 255 255 / 80%), rgb(255 255 255 / 42%));
+    --metal-tile-shadow: inset 0 1px 0 #fff, 0 8px 16px -8px rgb(20 35 55 / 50%);
+  }
+  .menu-dialog.is-metal .menu-header { border-bottom-color: rgb(0 27 52 / 22%); }
+  .menu-dialog.is-metal .menu-header h2 { color: var(--navy); }
+  .menu-dialog.is-metal .menu-header .help-eyebrow { color: var(--metal-eyebrow); }
+  .menu-dialog.is-metal .menu-item { color: var(--navy); }
+  .menu-dialog.is-metal .menu-item:hover { background: var(--metal-hover); }
+  .menu-dialog.is-metal .menu-item:focus-visible { outline-color: var(--navy); }
+  .menu-dialog.is-metal .menu-label,
+  .menu-dialog.is-metal .menu-foot .menu-item { font-weight: 600; }
+  .menu-dialog.is-metal .menu-tile {
+    border-color: var(--metal-tile-border);
+    background: var(--metal-tile);
+    box-shadow: var(--metal-tile-shadow);
+  }
+  .menu-dialog.is-metal .menu-tile .menu-icon:not(.is-colour) {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(43%) saturate(3000%) hue-rotate(194deg) brightness(93%) contrast(103%);
+  }
+  .menu-dialog.is-metal .menu-item.is-held .menu-tile { border-color: var(--navy); }
+  .menu-dialog.is-metal .menu-peek {
+    border-color: rgb(225 182 93 / 60%);
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .menu-dialog.is-metal .menu-peek-title,
+  .menu-dialog.is-metal .menu-peek-go { color: var(--gold-light); }
+  .menu-dialog.is-metal .menu-foot { border-top-color: rgb(0 27 52 / 18%); }
+  .menu-dialog.is-metal .foot-tile .foot-emblem { display: none; }
+  .menu-dialog.is-metal .foot-tile .foot-emblem.on-metal { display: block; }
+  .menu-dialog.is-metal::-webkit-scrollbar-thumb { background-color: rgb(0 27 52 / 28%); }
+  .menu-dialog.is-metal::-webkit-scrollbar-thumb:hover { background-color: rgb(0 27 52 / 50%); }
+  @supports not selector(::-webkit-scrollbar) {
+    .menu-dialog.is-metal { scrollbar-color: rgb(0 27 52 / 35%) transparent; }
+  }
 
   /* ---------------------------------------------------------------- help */
 
@@ -1077,6 +1175,7 @@ const MENU_HTML = /* html */ `
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="about">
                     <span class="menu-tile foot-tile">
                         <img class="foot-emblem" src="${EMBLEM_LIGHT_URL}" alt="" width="40" height="40" loading="lazy" />
+                        <img class="foot-emblem on-metal" src="${EMBLEM_URL}" alt="" width="40" height="40" loading="lazy" />
                     </span>
                     About
                 </button>
@@ -1731,6 +1830,29 @@ const PEEK_GAP = 8; // px between the icon and its bubble, and the bubble and th
 
 const ABOUT_TIMING = { open: 560, close: 300 };
 
+// The drawer's dress for each day of the week; see the styles' data-theme.
+const DRAWER_THEMES = {
+    Mon: "aluminum",
+    Tue: "aluminum",
+    Wed: "gold",
+    Thu: "gold",
+    Fri: "gold",
+    Sat: "navy",
+    Sun: "burgundy",
+};
+
+/**
+ * Today's drawer theme, by the day of the week in Asia/Manila, where each
+ * day's devotional goes live.
+ */
+function drawerTheme() {
+    const day = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Manila",
+        weekday: "short",
+    }).format(new Date());
+    return DRAWER_THEMES[day] ?? "navy";
+}
+
 /** Fades the backdrop with the dialog's own animation; resolves when both end. */
 function animateDialog(dialog, opening, frames, options) {
     dialog.animate(opening ? frames : [...frames].reverse(), options);
@@ -2012,6 +2134,11 @@ export class StudyGuideMenu extends HTMLElement {
     // ------------------------------------------------------------------ menu
 
     open() {
+        // Dressed as it opens, so a menu left open past midnight keeps its
+        // colours until it is next opened.
+        const theme = drawerTheme();
+        this.#menu.dataset.theme = theme;
+        this.#menu.classList.toggle("is-metal", theme === "aluminum" || theme === "gold");
         if (!this.#show(this.#menu)) {
             return;
         }

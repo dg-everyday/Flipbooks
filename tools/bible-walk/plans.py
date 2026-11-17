@@ -119,6 +119,16 @@ PLANS = [
         "cover": {"symbol": "Daniel"},
         "episodes": [f"daniel-{n:02d}" for n in range(0, 7)],
     },
+    {
+        "id": "joshua",
+        "title": "Joshua",
+        "subtitle": "Be Strong and of a Good Courage",
+        "about": "Israel crosses the Jordan into the land God promised: Rahab and the scarlet "
+                 "line, the walls of Jericho, the sun standing still, the land shared out by "
+                 "lot, and Joshua’s last call to choose whom we will serve.",
+        "cover": {"symbol": "Joshua"},
+        "episodes": [f"joshua-{n:02d}" for n in range(0, 25)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

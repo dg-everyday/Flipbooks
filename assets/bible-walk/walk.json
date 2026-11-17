@@ -1893,6 +1893,268 @@
     "1:22"
    ]
   },
+  "daniel-00": {
+   "title": "Meet the Book of Daniel",
+   "label": "Meet Daniel",
+   "book": "Daniel",
+   "chapter": null,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/daniel/daniel-00.webm?v=2283",
+   "seconds": 228.3,
+   "question": "Daniel stayed faithful to God in a world that did not know him. Where do you find it hardest to stay faithful to God in your everyday life?",
+   "keys": []
+  },
+  "daniel-01": {
+   "title": "Daniel Purposed in His Heart",
+   "label": "Daniel 1",
+   "book": "Daniel",
+   "chapter": 1,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/daniel/daniel-01.webm?v=4346",
+   "seconds": 434.6,
+   "question": "Daniel accepted a new name and a new language, but he drew a line at the king’s food. Where do you think you need to draw a line to stay faithful to God?",
+   "keys": [
+    "1:12",
+    "1:17",
+    "1:19"
+   ]
+  },
+  "daniel-02": {
+   "title": "There Is a God in Heaven That Revealeth Secrets",
+   "label": "Daniel 2",
+   "book": "Daniel",
+   "chapter": 2,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/daniel/daniel-02.webm?v=4440",
+   "seconds": 444.0,
+   "question": "Daniel said, there is a God in heaven that revealeth secrets. What does it mean to you that God knows everything that is hidden, even in your own heart?",
+   "keys": [
+    "2:22",
+    "2:28",
+    "2:44"
+   ]
+  },
+  "daniel-03": {
+   "title": "Our God Whom We Serve Is Able",
+   "label": "Daniel 3",
+   "book": "Daniel",
+   "chapter": 3,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/daniel/daniel-03.webm?v=4578",
+   "seconds": 457.8,
+   "question": "The three young men said, our God is able to deliver us, but if not, we will not bow. Is your trust in God strong enough to say, but if not? What would help it grow?",
+   "keys": [
+    "3:17",
+    "3:18",
+    "3:25"
+   ]
+  },
+  "daniel-04": {
+   "title": "The Most High Ruleth in the Kingdom of Men",
+   "label": "Daniel 4",
+   "book": "Daniel",
+   "chapter": 4,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/daniel/daniel-04.webm?v=5548",
+   "seconds": 554.8,
+   "question": "Nebuchadnezzar said, is not this great Babylon, that I have built? What helps you to remember that everything good in your life is a gift from God?",
+   "keys": [
+    "4:30",
+    "4:35",
+    "4:37"
+   ]
+  },
+  "daniel-05": {
+   "title": "Thou Art Weighed in the Balances",
+   "label": "Daniel 5",
+   "book": "Daniel",
+   "chapter": 5,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/daniel/daniel-05.webm?v=4784",
+   "seconds": 478.4,
+   "question": "Daniel told Belshazzar, the God in whose hand thy breath is, hast thou not glorified. How can you honour the God who holds your very breath in his hand?",
+   "keys": [
+    "5:5",
+    "5:17",
+    "5:27"
+   ]
+  },
+  "daniel-06": {
+   "title": "Thy God Whom Thou Servest Continually",
+   "label": "Daniel 6",
+   "book": "Daniel",
+   "chapter": 6,
+   "art": "media:images/symbols/Daniel-symbol.svg",
+   "audio": "media:audio/bible-walk/daniel/daniel-06.webm?v=4742",
+   "seconds": 474.2,
+   "question": "We have walked through the stories of Daniel. Even King Darius said, thy God whom thou servest continually. What would it look like for you to serve God continually, in your everyday life?",
+   "keys": [
+    "6:5",
+    "6:16",
+    "6:23"
+   ]
+  },
+  "esther-00": {
+   "title": "Meet the Book of Esther",
+   "label": "Meet Esther",
+   "book": "Esther",
+   "chapter": null,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-00.webm?v=2093",
+   "seconds": 209.3,
+   "question": "In the book of Esther, God is never named, yet he is at work in every turn of the story. Can you think of a time when God was at work in your life, even though you could not see him at the time?",
+   "keys": []
+  },
+  "esther-01": {
+   "title": "Vashti the Queen Refused to Come",
+   "label": "Esther 1",
+   "book": "Esther",
+   "chapter": 1,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-01.webm?v=4258",
+   "seconds": 425.8,
+   "question": "God is not named in this chapter, but he was already preparing to protect his people. Where might God be quietly at work in your life right now, even though you cannot see it yet?",
+   "keys": [
+    "1:1",
+    "1:12",
+    "1:19"
+   ]
+  },
+  "esther-02": {
+   "title": "The King Loved Esther",
+   "label": "Esther 2",
+   "book": "Esther",
+   "chapter": 2,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-02.webm?v=4425",
+   "seconds": 442.5,
+   "question": "Esther did not plan to become queen, but step by step, she was placed where God would need her. Where has God placed you right now, and why might he have put you there?",
+   "keys": [
+    "2:7",
+    "2:20",
+    "2:22"
+   ]
+  },
+  "esther-03": {
+   "title": "But Mordecai Bowed Not",
+   "label": "Esther 3",
+   "book": "Esther",
+   "chapter": 3,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-03.webm?v=4650",
+   "seconds": 465.0,
+   "question": "Haman’s pride grew into hatred that wanted to destroy a whole people. How can we guard our hearts, so that small hurts and pride do not grow into bitterness?",
+   "keys": [
+    "3:2",
+    "3:6",
+    "3:15"
+   ]
+  },
+  "esther-04": {
+   "title": "For Such a Time as This",
+   "label": "Esther 4",
+   "book": "Esther",
+   "chapter": 4,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-04.webm?v=4213",
+   "seconds": 421.3,
+   "question": "Mordecai asked Esther, who knoweth whether thou art come to the kingdom for such a time as this? Where might God have placed you for such a time as this?",
+   "keys": [
+    "4:11",
+    "4:14",
+    "4:16"
+   ]
+  },
+  "esther-05": {
+   "title": "The King Held Out the Golden Sceptre",
+   "label": "Esther 5",
+   "book": "Esther",
+   "chapter": 5,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-05.webm?v=4506",
+   "seconds": 450.6,
+   "question": "Haman had so much, yet he said, all this availeth me nothing. What helps you to be content and thankful, instead of letting one thing spoil all your blessings?",
+   "keys": [
+    "5:2",
+    "5:3",
+    "5:13"
+   ]
+  },
+  "esther-06": {
+   "title": "The Man Whom the King Delighteth to Honour",
+   "label": "Esther 6",
+   "book": "Esther",
+   "chapter": 6,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-06.webm?v=4364",
+   "seconds": 436.4,
+   "question": "The king’s sleepless hours became the turning point of the whole story. What small thing has God used in your life to make a big difference?",
+   "keys": [
+    "6:1",
+    "6:6",
+    "6:13"
+   ]
+  },
+  "esther-07": {
+   "title": "The Adversary and Enemy Is This Wicked Haman",
+   "label": "Esther 7",
+   "book": "Esther",
+   "chapter": 7,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-07.webm?v=4226",
+   "seconds": 422.6,
+   "question": "Esther pleaded for her people before the king. What does it mean to you that Jesus ever lives to make intercession, to plead, for you?",
+   "keys": [
+    "7:3",
+    "7:6",
+    "7:10"
+   ]
+  },
+  "esther-08": {
+   "title": "The Jews Had Light, and Gladness",
+   "label": "Esther 8",
+   "book": "Esther",
+   "chapter": 8,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-08.webm?v=4606",
+   "seconds": 460.6,
+   "question": "Mordecai’s sackcloth was changed for royal robes, and the Jews had light, and gladness, and joy. How has God turned sorrow into joy in your life, or how are you hoping he will?",
+   "keys": [
+    "8:6",
+    "8:16",
+    "8:17"
+   ]
+  },
+  "esther-09": {
+   "title": "Turned unto Them from Sorrow to Joy",
+   "label": "Esther 9",
+   "book": "Esther",
+   "chapter": 9,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-09.webm?v=4378",
+   "seconds": 437.8,
+   "question": "Haman trusted in the lot, but the whole disposing thereof is of the LORD. What does it mean to you that your life is not in the hands of chance, but in the hands of God?",
+   "keys": [
+    "9:4",
+    "9:22",
+    "9:24"
+   ]
+  },
+  "esther-10": {
+   "title": "Seeking the Wealth of His People",
+   "label": "Esther 10",
+   "book": "Esther",
+   "chapter": 10,
+   "art": "media:images/symbols/Esther-symbol.svg",
+   "audio": "media:audio/bible-walk/esther/esther-10.webm?v=4164",
+   "seconds": 416.4,
+   "question": "We have walked through the whole book of Esther. God was never named, yet his hand was in every turn. Where can you look back and see God’s hidden hand in your own story?",
+   "keys": [
+    "10:1",
+    "10:2",
+    "10:3"
+   ]
+  },
   "exodus-00": {
    "title": "Meet the Book of Exodus",
    "label": "Meet Exodus",
@@ -3291,6 +3553,77 @@
     "21:17"
    ]
   },
+  "jonah-00": {
+   "title": "Meet the Book of Jonah",
+   "label": "Meet Jonah",
+   "book": "Jonah",
+   "chapter": null,
+   "art": "media:images/symbols/Jonah-symbol.svg",
+   "audio": "media:audio/bible-walk/jonah/jonah-00.webm?v=2057",
+   "seconds": 205.7,
+   "question": "Jonah ran from what God asked him to do. Have you ever wanted to run from something God was asking of you?",
+   "keys": []
+  },
+  "jonah-01": {
+   "title": "Jonah Rose Up to Flee",
+   "label": "Jonah 1",
+   "book": "Jonah",
+   "chapter": 1,
+   "art": "media:images/symbols/Jonah-symbol.svg",
+   "audio": "media:audio/bible-walk/jonah/jonah-01.webm?v=4406",
+   "seconds": 440.6,
+   "question": "The sailors came to fear the LORD, even while Jonah was running away from him. How has God used you, or someone else, even at a time when you were not following him well?",
+   "keys": [
+    "1:3",
+    "1:9",
+    "1:17"
+   ]
+  },
+  "jonah-02": {
+   "title": "Salvation Is of the LORD",
+   "label": "Jonah 2",
+   "book": "Jonah",
+   "chapter": 2,
+   "art": "media:images/symbols/Jonah-symbol.svg",
+   "audio": "media:audio/bible-walk/jonah/jonah-02.webm?v=4502",
+   "seconds": 450.2,
+   "question": "Jonah remembered the LORD when his soul fainted within him. What has helped you turn back to God when you were at your lowest?",
+   "keys": [
+    "2:4",
+    "2:7",
+    "2:9"
+   ]
+  },
+  "jonah-03": {
+   "title": "The People of Nineveh Believed God",
+   "label": "Jonah 3",
+   "book": "Jonah",
+   "chapter": 3,
+   "art": "media:images/symbols/Jonah-symbol.svg",
+   "audio": "media:audio/bible-walk/jonah/jonah-03.webm?v=4388",
+   "seconds": 438.8,
+   "question": "God came to Jonah the second time, and he spared Nineveh when they turned to him. Where in your life do you need God’s second chance today?",
+   "keys": [
+    "3:1",
+    "3:5",
+    "3:10"
+   ]
+  },
+  "jonah-04": {
+   "title": "A Gracious God, and Merciful",
+   "label": "Jonah 4",
+   "book": "Jonah",
+   "chapter": 4,
+   "art": "media:images/symbols/Jonah-symbol.svg",
+   "audio": "media:audio/bible-walk/jonah/jonah-04.webm?v=4728",
+   "seconds": 472.8,
+   "question": "The book of Jonah ends with God’s question: should not I spare Nineveh? How would you answer God, if he asked you that question about the people you find hardest to love?",
+   "keys": [
+    "4:2",
+    "4:4",
+    "4:11"
+   ]
+  },
   "luke-00": {
    "title": "Meet the Book of Luke",
    "label": "Meet Luke",
@@ -3911,6 +4244,77 @@
     "16:6",
     "16:7",
     "16:15"
+   ]
+  },
+  "ruth-00": {
+   "title": "Meet the Book of Ruth",
+   "label": "Meet Ruth",
+   "book": "Ruth",
+   "chapter": null,
+   "art": "media:images/symbols/Ruth-symbol.svg",
+   "audio": "media:audio/bible-walk/ruth/ruth-00.webm?v=2233",
+   "seconds": 223.3,
+   "question": "Ruth is a story about faithful, loyal love in a hard and dark time. Who in your life has shown you that kind of love?",
+   "keys": []
+  },
+  "ruth-01": {
+   "title": "Whither Thou Goest, I Will Go",
+   "label": "Ruth 1",
+   "book": "Ruth",
+   "chapter": 1,
+   "art": "media:images/symbols/Ruth-symbol.svg",
+   "audio": "media:audio/bible-walk/ruth/ruth-01.webm?v=4265",
+   "seconds": 426.5,
+   "question": "Ruth said to Naomi, thy people shall be my people, and thy God my God. What has it cost you, or what might it cost you, to choose to follow God?",
+   "keys": [
+    "1:8",
+    "1:16",
+    "1:21"
+   ]
+  },
+  "ruth-02": {
+   "title": "Under Whose Wings Thou Art Come to Trust",
+   "label": "Ruth 2",
+   "book": "Ruth",
+   "chapter": 2,
+   "art": "media:images/symbols/Ruth-symbol.svg",
+   "audio": "media:audio/bible-walk/ruth/ruth-02.webm?v=4353",
+   "seconds": 435.3,
+   "question": "It just so happened that Ruth came to the field of Boaz. Can you look back and see a time when something that seemed like chance was really God at work in your life?",
+   "keys": [
+    "2:3",
+    "2:12",
+    "2:20"
+   ]
+  },
+  "ruth-03": {
+   "title": "Thou Art a Virtuous Woman",
+   "label": "Ruth 3",
+   "book": "Ruth",
+   "chapter": 3,
+   "art": "media:images/symbols/Ruth-symbol.svg",
+   "audio": "media:audio/bible-walk/ruth/ruth-03.webm?v=4392",
+   "seconds": 439.2,
+   "question": "Ruth asked Boaz to spread his protection over her, and he answered, fear not. What do you need to ask God for, trusting that he will answer you with the same care?",
+   "keys": [
+    "3:9",
+    "3:11",
+    "3:18"
+   ]
+  },
+  "ruth-04": {
+   "title": "A Restorer of Thy Life",
+   "label": "Ruth 4",
+   "book": "Ruth",
+   "chapter": 4,
+   "art": "media:images/symbols/Ruth-symbol.svg",
+   "audio": "media:audio/bible-walk/ruth/ruth-04.webm?v=4383",
+   "seconds": 438.3,
+   "question": "Boaz redeemed Ruth and Naomi gladly, even though it cost him. What does it mean to you that Jesus has redeemed you, at great cost to himself?",
+   "keys": [
+    "4:10",
+    "4:14",
+    "4:17"
    ]
   },
   "walk-00": {

@@ -998,6 +998,115 @@
      "label": "Daniel 6"
     }
    ]
+  },
+  {
+   "id": "joshua",
+   "title": "Joshua",
+   "subtitle": "Be Strong and of a Good Courage",
+   "about": "Israel crosses the Jordan into the land God promised: Rahab and the scarlet line, the walls of Jericho, the sun standing still, the land shared out by lot, and Joshua’s last call to choose whom we will serve.",
+   "cover": "media:images/symbols/Joshua-symbol.svg",
+   "episodes": [
+    {
+     "id": "joshua-00",
+     "label": "Meet Joshua"
+    },
+    {
+     "id": "joshua-01",
+     "label": "Joshua 1"
+    },
+    {
+     "id": "joshua-02",
+     "label": "Joshua 2"
+    },
+    {
+     "id": "joshua-03",
+     "label": "Joshua 3"
+    },
+    {
+     "id": "joshua-04",
+     "label": "Joshua 4"
+    },
+    {
+     "id": "joshua-05",
+     "label": "Joshua 5"
+    },
+    {
+     "id": "joshua-06",
+     "label": "Joshua 6"
+    },
+    {
+     "id": "joshua-07",
+     "label": "Joshua 7"
+    },
+    {
+     "id": "joshua-08",
+     "label": "Joshua 8"
+    },
+    {
+     "id": "joshua-09",
+     "label": "Joshua 9"
+    },
+    {
+     "id": "joshua-10",
+     "label": "Joshua 10"
+    },
+    {
+     "id": "joshua-11",
+     "label": "Joshua 11"
+    },
+    {
+     "id": "joshua-12",
+     "label": "Joshua 12"
+    },
+    {
+     "id": "joshua-13",
+     "label": "Joshua 13"
+    },
+    {
+     "id": "joshua-14",
+     "label": "Joshua 14"
+    },
+    {
+     "id": "joshua-15",
+     "label": "Joshua 15"
+    },
+    {
+     "id": "joshua-16",
+     "label": "Joshua 16"
+    },
+    {
+     "id": "joshua-17",
+     "label": "Joshua 17"
+    },
+    {
+     "id": "joshua-18",
+     "label": "Joshua 18"
+    },
+    {
+     "id": "joshua-19",
+     "label": "Joshua 19"
+    },
+    {
+     "id": "joshua-20",
+     "label": "Joshua 20"
+    },
+    {
+     "id": "joshua-21",
+     "label": "Joshua 21"
+    },
+    {
+     "id": "joshua-22",
+     "label": "Joshua 22"
+    },
+    {
+     "id": "joshua-23",
+     "label": "Joshua 23"
+    },
+    {
+     "id": "joshua-24",
+     "label": "Joshua 24"
+    }
+   ]
   }
  ],
  "episodes": {
@@ -1955,8 +2064,8 @@
    "book": "Daniel",
    "chapter": 4,
    "art": "media:images/symbols/Daniel-symbol.svg",
-   "audio": "media:audio/bible-walk/daniel/daniel-04.webm?v=5548",
-   "seconds": 554.8,
+   "audio": "media:audio/bible-walk/daniel/daniel-04.webm?v=4486",
+   "seconds": 448.6,
    "question": "Nebuchadnezzar said, is not this great Babylon, that I have built? What helps you to remember that everything good in your life is a gift from God?",
    "keys": [
     "4:30",

@@ -372,7 +372,8 @@ def main():
                 continue
             seconds = probe(f"{media}audio/bible-walk/{e['folder']}/{e['id']}.webm")
             if seconds:
-                print(f"{e['id']}: recorded, {int(seconds // 60)}:{round(seconds % 60):02d}")
+                whole = round(seconds)
+                print(f"{e['id']}: recorded, {whole // 60}:{whole % 60:02d}")
                 recorded[e["id"]] = seconds
             else:
                 print(f"{e['id']}: no recording on R2 yet")

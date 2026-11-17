@@ -82,6 +82,43 @@ PLANS = [
         "cover": {"symbol": "John"},
         "episodes": [f"john-{n:02d}" for n in range(0, 22)],
     },
+    # The short wins: whole stories finished in a week or less, one album each.
+    {
+        "id": "ruth",
+        "title": "Ruth",
+        "subtitle": "Whither Thou Goest",
+        "about": "A whole book in four chapters: Naomi’s loss, Ruth’s loyalty, the kindness of "
+                 "Boaz, and a redeemer in Bethlehem. A short win, finished in a week.",
+        "cover": {"symbol": "Ruth"},
+        "episodes": [f"ruth-{n:02d}" for n in range(0, 5)],
+    },
+    {
+        "id": "jonah",
+        "title": "Jonah",
+        "subtitle": "Salvation Is of the LORD",
+        "about": "A whole book in four chapters: the prophet who ran from God, the storm and "
+                 "the great fish, a city that turned back, and the God who is slow to anger.",
+        "cover": {"symbol": "Jonah"},
+        "episodes": [f"jonah-{n:02d}" for n in range(0, 5)],
+    },
+    {
+        "id": "esther",
+        "title": "Esther",
+        "subtitle": "For Such a Time as This",
+        "about": "A whole book in ten chapters: an orphan who becomes queen, a plot to destroy "
+                 "her people, and a God who is never named, yet is at work in every turn.",
+        "cover": {"symbol": "Esther"},
+        "episodes": [f"esther-{n:02d}" for n in range(0, 11)],
+    },
+    {
+        "id": "daniel",
+        "title": "Daniel",
+        "subtitle": "Our God Whom We Serve Is Able",
+        "about": "The stories of Daniel, chapters 1 to 6: faithful young men in Babylon, a "
+                 "king’s dream, the fiery furnace, the writing on the wall, and the lions’ den.",
+        "cover": {"symbol": "Daniel"},
+        "episodes": [f"daniel-{n:02d}" for n in range(0, 7)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

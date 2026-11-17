@@ -129,6 +129,36 @@ PLANS = [
         "cover": {"symbol": "Joshua"},
         "episodes": [f"joshua-{n:02d}" for n in range(0, 25)],
     },
+    {
+        "id": "judges",
+        "title": "Judges",
+        "subtitle": "The LORD Raised Up Judges",
+        "about": "Israel forgets God again and again, and again and again he raises up a deliverer: "
+                 "Deborah, Gideon, Samson and more. An honest book about a dark time, told gently, "
+                 "that leaves us longing for a true King.",
+        "cover": {"symbol": "Judges"},
+        "episodes": [f"judges-{n:02d}" for n in range(0, 22)],
+    },
+    {
+        "id": "1samuel",
+        "title": "1 Samuel",
+        "subtitle": "The LORD Looketh on the Heart",
+        "about": "Hannah’s prayer, the boy Samuel who heard God’s voice, a nation that asked for a "
+                 "king, Saul’s rise and fall, and a shepherd boy named David, chosen by God and "
+                 "tested on the run.",
+        "cover": {"symbol": "1 Samuel"},
+        "episodes": [f"1samuel-{n:02d}" for n in range(0, 32)],
+    },
+    {
+        "id": "2samuel",
+        "title": "2 Samuel",
+        "subtitle": "A Man After God’s Own Heart",
+        "about": "David becomes king, brings the ark to Jerusalem and receives God’s promise of a "
+                 "throne for ever. Then comes his great sin, his true repentance, and the sorrows "
+                 "that follow in his family, and God’s mercy through it all.",
+        "cover": {"symbol": "2 Samuel"},
+        "episodes": [f"2samuel-{n:02d}" for n in range(0, 25)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

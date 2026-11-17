@@ -56,9 +56,9 @@
  * Colours: the page's --navy, --ink, --cream, --gold, --gold-light, --action
  * and --action-ink (assets/styles/styles.css), which inherit into the shadow
  * root. The drawer is placed against the page's --page-width. The drawer is
- * brushed gold Monday to Wednesday, navy aurora on Thursday and Friday and
- * burgundy leather on Saturday and Sunday, by the Asia/Manila calendar
- * (DRAWER_THEMES); Help and About are cream every day.
+ * brushed gold Monday to Wednesday, brushed aluminium on Thursday and Friday,
+ * navy aurora on Saturday and burgundy leather on Sunday, by the Asia/Manila
+ * calendar (DRAWER_THEMES); Help and About are cream every day.
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
@@ -448,12 +448,13 @@ const STYLES = /* css */ `
 
   /* The drawer's dress changes through the week (Asia/Manila, drawerTheme()):
        Monday to Wednesday        brushed gold        data-theme="gold"
-       Thursday, Friday           navy aurora         data-theme="navy" (above)
-       Saturday, Sunday           burgundy leather    data-theme="burgundy"
-     open() sets data-theme, and .is-light on brushed gold, the one light
-     dress. Burgundy keeps the navy drawer's cream text, gold icons and cream
-     description bubble, and only changes the background. (Aluminium, emerald
-     and metallic green were tried on 2026-11-17 and dropped.) */
+       Thursday, Friday           brushed aluminium   data-theme="aluminum"
+       Saturday                   navy aurora         data-theme="navy" (above)
+       Sunday                     burgundy leather    data-theme="burgundy"
+     open() sets data-theme, and .is-light on the two brushed metals, the light
+     dresses. Burgundy keeps the navy drawer's cream text, gold icons and cream
+     description bubble, and only changes the background. (Emerald and
+     metallic green were tried on 2026-11-17 and dropped.) */
 
   /* Burgundy leather, like the cover of an old family Bible: a pebbled grain
      (fine fractal noise, soft-light), a soft light from the top left, and a
@@ -475,7 +476,7 @@ const STYLES = /* css */ `
 
   /* Light brushed metal: a fine horizontal grain (stretched fractal noise,
      overlaid) and two soft diagonal sheens over the metal's own ramp, set by
-     its data-theme below (only gold for now). The text and line icons turn
+     its data-theme below (gold or aluminium). The text and line icons turn
      navy, the tiles pale, and the description bubble navy so it stands out. */
   .menu-dialog.is-light {
     background:
@@ -495,6 +496,17 @@ const STYLES = /* css */ `
     --metal-tile-border: rgb(110 74 14 / 40%);
     --metal-tile: linear-gradient(160deg, rgb(255 252 240 / 78%), rgb(255 244 215 / 42%));
     --metal-tile-shadow: inset 0 1px 0 rgb(255 255 255 / 85%), 0 8px 16px -8px rgb(70 45 5 / 55%);
+  }
+  /* Brushed aluminium: the same grain and sheens in cool silver, on white tiles. */
+  .menu-dialog[data-theme="aluminum"] {
+    --metal-ramp: linear-gradient(180deg, #eef1f4 0%, #d8dce1 35%, #c3c8ce 70%, #b2b8bf 100%);
+    --metal-sheen: rgb(255 255 255 / 60%);
+    --metal-sheen-soft: rgb(255 255 255 / 35%);
+    --metal-eyebrow: #36475a;
+    --metal-hover: rgb(255 255 255 / 30%);
+    --metal-tile-border: rgb(55 70 90 / 30%);
+    --metal-tile: linear-gradient(160deg, rgb(255 255 255 / 80%), rgb(255 255 255 / 42%));
+    --metal-tile-shadow: inset 0 1px 0 #fff, 0 8px 16px -8px rgb(20 35 55 / 50%);
   }
   .menu-dialog.is-light .menu-header { border-bottom-color: rgb(0 27 52 / 22%); }
   .menu-dialog.is-light .menu-header h2 { color: var(--navy); }
@@ -1826,9 +1838,9 @@ const DRAWER_THEMES = {
     Mon: "gold",
     Tue: "gold",
     Wed: "gold",
-    Thu: "navy",
-    Fri: "navy",
-    Sat: "burgundy",
+    Thu: "aluminum",
+    Fri: "aluminum",
+    Sat: "navy",
     Sun: "burgundy",
 };
 
@@ -2129,7 +2141,7 @@ export class StudyGuideMenu extends HTMLElement {
         // colours until it is next opened.
         const theme = drawerTheme();
         this.#menu.dataset.theme = theme;
-        this.#menu.classList.toggle("is-light", theme === "gold");
+        this.#menu.classList.toggle("is-light", theme === "gold" || theme === "aluminum");
         if (!this.#show(this.#menu)) {
             return;
         }

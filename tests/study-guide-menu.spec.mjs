@@ -109,7 +109,7 @@ test("a quick tap still opens the guide", async ({ page }) => {
     await expect(page).toHaveURL(/apps\/pages\/bible-books\.html$/);
 });
 
-test("the drawer is gold Mon–Wed, navy Thu–Fri and burgundy at the weekend, by Manila's calendar", async ({ page }) => {
+test("the drawer is gold Mon–Wed, aluminium Thu–Fri, navy on Saturday and burgundy on Sunday, by Manila's calendar", async ({ page }) => {
     const reopenAt = async (time) => {
         await menu(page).evaluate((element) => element.close());
         await page.clock.setFixedTime(time);
@@ -120,7 +120,7 @@ test("the drawer is gold Mon–Wed, navy Thu–Fri and burgundy at the weekend, 
     const background = () => drawer(page).evaluate((dialog) => getComputedStyle(dialog).backgroundImage);
     const expectTheme = async (theme) => {
         await expect(drawer(page)).toHaveAttribute("data-theme", theme);
-        if (theme === "gold") {
+        if (theme === "gold" || theme === "aluminum") {
             await expect(drawer(page)).toHaveClass(/\bis-light\b/);
             await expect(title).toHaveCSS("color", "rgb(0, 27, 52)");
             await expect(aboutEmblem).toHaveClass(/\bon-light\b/);
@@ -140,19 +140,25 @@ test("the drawer is gold Mon–Wed, navy Thu–Fri and burgundy at the weekend, 
     await reopenAt(new Date("2026-11-25T23:30:00+08:00"));
     await expectTheme("gold");
 
-    // Thursday in Manila, though still Wednesday in UTC: navy aurora, with no
-    // tooled line.
+    // Thursday in Manila, though still Wednesday in UTC: brushed aluminium,
+    // the same light dress in silver.
     await reopenAt(new Date("2026-11-26T00:30:00+08:00"));
+    await expectTheme("aluminum");
+    expect(await background()).toContain("rgb(238, 241, 244)");
+
+    // Friday, half an hour before midnight in Manila: still aluminium.
+    await reopenAt(new Date("2026-11-27T23:30:00+08:00"));
+    await expectTheme("aluminum");
+
+    // Saturday in Manila, though still Friday in UTC: navy aurora, with no
+    // tooled line.
+    await reopenAt(new Date("2026-11-28T00:30:00+08:00"));
     await expectTheme("navy");
     expect(await drawer(page).evaluate((dialog) => getComputedStyle(dialog).outlineStyle)).toBe("none");
 
-    // Friday, half an hour before midnight in Manila: still navy.
-    await reopenAt(new Date("2026-11-27T23:30:00+08:00"));
-    await expectTheme("navy");
-
-    // Saturday in Manila, though still Friday in UTC: burgundy leather, with
+    // Sunday in Manila, though still Saturday in UTC: burgundy leather, with
     // its tooled gold line.
-    await reopenAt(new Date("2026-11-28T00:30:00+08:00"));
+    await reopenAt(new Date("2026-11-29T00:30:00+08:00"));
     await expectTheme("burgundy");
     const leather = await drawer(page).evaluate((dialog) => {
         const style = getComputedStyle(dialog);
@@ -160,10 +166,6 @@ test("the drawer is gold Mon–Wed, navy Thu–Fri and burgundy at the weekend, 
     });
     expect(leather.background).toContain("rgb(122, 29, 39)");
     expect(leather.outline).toBe("solid");
-
-    // Sunday evening: still burgundy.
-    await reopenAt(new Date("2026-11-29T21:00:00+08:00"));
-    await expectTheme("burgundy");
 
     // Monday in Manila, though still Sunday in UTC: gold again.
     await reopenAt(new Date("2026-11-30T00:30:00+08:00"));

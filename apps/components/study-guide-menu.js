@@ -56,9 +56,9 @@
  * Colours: the page's --navy, --ink, --cream, --gold, --gold-light, --action
  * and --action-ink (assets/styles/styles.css), which inherit into the shadow
  * root. The drawer is placed against the page's --page-width. The drawer is
- * brushed aluminium on Monday and Tuesday, brushed gold Wednesday to Friday,
- * navy aurora on Saturday and burgundy leather on Sunday, by the Asia/Manila
- * calendar (DRAWER_THEMES); Help and About are cream every day.
+ * brushed gold Monday to Wednesday, navy aurora on Thursday and Friday and
+ * burgundy leather on Saturday and Sunday, by the Asia/Manila calendar
+ * (DRAWER_THEMES); Help and About are cream every day.
  */
 
 import { registerFonts } from "../../assets/scripts/fonts.js";
@@ -442,16 +442,18 @@ const STYLES = /* css */ `
      keep their own colours. */
   .foot-tile .foot-emblem { width: 40px; height: 40px; object-fit: contain; pointer-events: none; }
   .foot-tile svg.support-heart { width: 36px; height: 36px; filter: drop-shadow(0 1.2px 1px rgb(0 0 0 / 45%)); }
-  /* About's tile shows the cream-lettered emblem on the navy drawer and the
-     gold one on the brushed metal drawers, where cream would vanish. */
-  .foot-tile .foot-emblem.on-metal { display: none; }
+  /* About's tile shows the cream-lettered emblem on the dark drawers and the
+     gold one on the brushed gold drawer, where cream would vanish. */
+  .foot-tile .foot-emblem.on-light { display: none; }
 
   /* The drawer's dress changes through the week (Asia/Manila, drawerTheme()):
-       Monday, Tuesday            brushed aluminium   data-theme="aluminum"
-       Wednesday to Friday        brushed gold        data-theme="gold"
-       Saturday                   navy aurora         data-theme="navy" (above)
-       Sunday                     burgundy leather    data-theme="burgundy"
-     open() sets data-theme, and .is-metal on the two brushed metals. */
+       Monday to Wednesday        brushed gold        data-theme="gold"
+       Thursday, Friday           navy aurora         data-theme="navy" (above)
+       Saturday, Sunday           burgundy leather    data-theme="burgundy"
+     open() sets data-theme, and .is-light on brushed gold, the one light
+     dress. Burgundy keeps the navy drawer's cream text, gold icons and cream
+     description bubble, and only changes the background. (Aluminium, emerald
+     and metallic green were tried on 2026-11-17 and dropped.) */
 
   /* Burgundy leather, like the cover of an old family Bible: a pebbled grain
      (fine fractal noise, soft-light), a soft light from the top left, and a
@@ -471,11 +473,11 @@ const STYLES = /* css */ `
   }
   .menu-dialog[data-theme="burgundy"] .menu-header { border-bottom-color: rgb(225 182 93 / 40%); }
 
-  /* Brushed metal: a fine horizontal grain (stretched fractal noise,
+  /* Light brushed metal: a fine horizontal grain (stretched fractal noise,
      overlaid) and two soft diagonal sheens over the metal's own ramp, set by
-     its data-theme below. The text and line icons turn navy, the tiles pale,
-     and the description bubble navy so it stands out on the metal. */
-  .menu-dialog.is-metal {
+     its data-theme below (only gold for now). The text and line icons turn
+     navy, the tiles pale, and the description bubble navy so it stands out. */
+  .menu-dialog.is-light {
     background:
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0035 0.85' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 .55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
       linear-gradient(105deg, transparent 18%, var(--metal-sheen) 34%, transparent 50%, transparent 68%, var(--metal-sheen-soft) 80%, transparent 92%),
@@ -494,48 +496,37 @@ const STYLES = /* css */ `
     --metal-tile: linear-gradient(160deg, rgb(255 252 240 / 78%), rgb(255 244 215 / 42%));
     --metal-tile-shadow: inset 0 1px 0 rgb(255 255 255 / 85%), 0 8px 16px -8px rgb(70 45 5 / 55%);
   }
-  /* Brushed aluminium: the same grain and sheens in cool silver, on white tiles. */
-  .menu-dialog[data-theme="aluminum"] {
-    --metal-ramp: linear-gradient(180deg, #eef1f4 0%, #d8dce1 35%, #c3c8ce 70%, #b2b8bf 100%);
-    --metal-sheen: rgb(255 255 255 / 60%);
-    --metal-sheen-soft: rgb(255 255 255 / 35%);
-    --metal-eyebrow: #36475a;
-    --metal-hover: rgb(255 255 255 / 30%);
-    --metal-tile-border: rgb(55 70 90 / 30%);
-    --metal-tile: linear-gradient(160deg, rgb(255 255 255 / 80%), rgb(255 255 255 / 42%));
-    --metal-tile-shadow: inset 0 1px 0 #fff, 0 8px 16px -8px rgb(20 35 55 / 50%);
-  }
-  .menu-dialog.is-metal .menu-header { border-bottom-color: rgb(0 27 52 / 22%); }
-  .menu-dialog.is-metal .menu-header h2 { color: var(--navy); }
-  .menu-dialog.is-metal .menu-header .help-eyebrow { color: var(--metal-eyebrow); }
-  .menu-dialog.is-metal .menu-item { color: var(--navy); }
-  .menu-dialog.is-metal .menu-item:hover { background: var(--metal-hover); }
-  .menu-dialog.is-metal .menu-item:focus-visible { outline-color: var(--navy); }
-  .menu-dialog.is-metal .menu-label,
-  .menu-dialog.is-metal .menu-foot .menu-item { font-weight: 600; }
-  .menu-dialog.is-metal .menu-tile {
+  .menu-dialog.is-light .menu-header { border-bottom-color: rgb(0 27 52 / 22%); }
+  .menu-dialog.is-light .menu-header h2 { color: var(--navy); }
+  .menu-dialog.is-light .menu-header .help-eyebrow { color: var(--metal-eyebrow); }
+  .menu-dialog.is-light .menu-item { color: var(--navy); }
+  .menu-dialog.is-light .menu-item:hover { background: var(--metal-hover); }
+  .menu-dialog.is-light .menu-item:focus-visible { outline-color: var(--navy); }
+  .menu-dialog.is-light .menu-label,
+  .menu-dialog.is-light .menu-foot .menu-item { font-weight: 600; }
+  .menu-dialog.is-light .menu-tile {
     border-color: var(--metal-tile-border);
     background: var(--metal-tile);
     box-shadow: var(--metal-tile-shadow);
   }
-  .menu-dialog.is-metal .menu-tile .menu-icon:not(.is-colour) {
+  .menu-dialog.is-light .menu-tile .menu-icon:not(.is-colour) {
     filter: brightness(0) saturate(100%) invert(8%) sepia(43%) saturate(3000%) hue-rotate(194deg) brightness(93%) contrast(103%);
   }
-  .menu-dialog.is-metal .menu-item.is-held .menu-tile { border-color: var(--navy); }
-  .menu-dialog.is-metal .menu-peek {
+  .menu-dialog.is-light .menu-item.is-held .menu-tile { border-color: var(--navy); }
+  .menu-dialog.is-light .menu-peek {
     border-color: rgb(225 182 93 / 60%);
     background: var(--navy);
     color: var(--cream);
   }
-  .menu-dialog.is-metal .menu-peek-title,
-  .menu-dialog.is-metal .menu-peek-go { color: var(--gold-light); }
-  .menu-dialog.is-metal .menu-foot { border-top-color: rgb(0 27 52 / 18%); }
-  .menu-dialog.is-metal .foot-tile .foot-emblem { display: none; }
-  .menu-dialog.is-metal .foot-tile .foot-emblem.on-metal { display: block; }
-  .menu-dialog.is-metal::-webkit-scrollbar-thumb { background-color: rgb(0 27 52 / 28%); }
-  .menu-dialog.is-metal::-webkit-scrollbar-thumb:hover { background-color: rgb(0 27 52 / 50%); }
+  .menu-dialog.is-light .menu-peek-title,
+  .menu-dialog.is-light .menu-peek-go { color: var(--gold-light); }
+  .menu-dialog.is-light .menu-foot { border-top-color: rgb(0 27 52 / 18%); }
+  .menu-dialog.is-light .foot-tile .foot-emblem { display: none; }
+  .menu-dialog.is-light .foot-tile .foot-emblem.on-light { display: block; }
+  .menu-dialog.is-light::-webkit-scrollbar-thumb { background-color: rgb(0 27 52 / 28%); }
+  .menu-dialog.is-light::-webkit-scrollbar-thumb:hover { background-color: rgb(0 27 52 / 50%); }
   @supports not selector(::-webkit-scrollbar) {
-    .menu-dialog.is-metal { scrollbar-color: rgb(0 27 52 / 35%) transparent; }
+    .menu-dialog.is-light { scrollbar-color: rgb(0 27 52 / 35%) transparent; }
   }
 
   /* ---------------------------------------------------------------- help */
@@ -1175,7 +1166,7 @@ const MENU_HTML = /* html */ `
                 <button class="menu-item" type="button" aria-haspopup="dialog" data-show="about">
                     <span class="menu-tile foot-tile">
                         <img class="foot-emblem" src="${EMBLEM_LIGHT_URL}" alt="" width="40" height="40" loading="lazy" />
-                        <img class="foot-emblem on-metal" src="${EMBLEM_URL}" alt="" width="40" height="40" loading="lazy" />
+                        <img class="foot-emblem on-light" src="${EMBLEM_URL}" alt="" width="40" height="40" loading="lazy" />
                     </span>
                     About
                 </button>
@@ -1832,12 +1823,12 @@ const ABOUT_TIMING = { open: 560, close: 300 };
 
 // The drawer's dress for each day of the week; see the styles' data-theme.
 const DRAWER_THEMES = {
-    Mon: "aluminum",
-    Tue: "aluminum",
+    Mon: "gold",
+    Tue: "gold",
     Wed: "gold",
-    Thu: "gold",
-    Fri: "gold",
-    Sat: "navy",
+    Thu: "navy",
+    Fri: "navy",
+    Sat: "burgundy",
     Sun: "burgundy",
 };
 
@@ -2138,7 +2129,7 @@ export class StudyGuideMenu extends HTMLElement {
         // colours until it is next opened.
         const theme = drawerTheme();
         this.#menu.dataset.theme = theme;
-        this.#menu.classList.toggle("is-metal", theme === "aluminum" || theme === "gold");
+        this.#menu.classList.toggle("is-light", theme === "gold");
         if (!this.#show(this.#menu)) {
             return;
         }

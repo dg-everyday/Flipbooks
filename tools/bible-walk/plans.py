@@ -64,6 +64,24 @@ PLANS = [
         "cover": {"symbol": "Genesis"},
         "episodes": [f"genesis-{n:02d}" for n in range(0, 51)],
     },
+    {
+        "id": "exodus",
+        "title": "Exodus",
+        "subtitle": "Let My People Go",
+        "about": "The great rescue, chapter by chapter: Moses and the burning bush, the plagues "
+                 "and the Passover, the Red Sea, and the commandments at Mount Sinai. Chapters 1 to 20.",
+        "cover": {"symbol": "Exodus"},
+        "episodes": [f"exodus-{n:02d}" for n in range(0, 21)],
+    },
+    {
+        "id": "john",
+        "title": "John",
+        "subtitle": "That Ye Might Believe",
+        "about": "The Gospel of John, chapter by chapter: the Word made flesh, seven signs, "
+                 "the great I AM sayings, the cross, and the empty tomb.",
+        "cover": {"symbol": "John"},
+        "episodes": [f"john-{n:02d}" for n in range(0, 22)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

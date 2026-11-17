@@ -660,6 +660,196 @@
      "label": "Genesis 50"
     }
    ]
+  },
+  {
+   "id": "exodus",
+   "title": "Exodus",
+   "subtitle": "Let My People Go",
+   "about": "The great rescue, chapter by chapter: Moses and the burning bush, the plagues and the Passover, the Red Sea, and the commandments at Mount Sinai. Chapters 1 to 20.",
+   "cover": "media:images/symbols/Exodus-symbol.svg",
+   "episodes": [
+    {
+     "id": "exodus-00",
+     "label": "Meet Exodus"
+    },
+    {
+     "id": "exodus-01",
+     "label": "Exodus 1"
+    },
+    {
+     "id": "exodus-02",
+     "label": "Exodus 2"
+    },
+    {
+     "id": "exodus-03",
+     "label": "Exodus 3"
+    },
+    {
+     "id": "exodus-04",
+     "label": "Exodus 4"
+    },
+    {
+     "id": "exodus-05",
+     "label": "Exodus 5"
+    },
+    {
+     "id": "exodus-06",
+     "label": "Exodus 6"
+    },
+    {
+     "id": "exodus-07",
+     "label": "Exodus 7"
+    },
+    {
+     "id": "exodus-08",
+     "label": "Exodus 8"
+    },
+    {
+     "id": "exodus-09",
+     "label": "Exodus 9"
+    },
+    {
+     "id": "exodus-10",
+     "label": "Exodus 10"
+    },
+    {
+     "id": "exodus-11",
+     "label": "Exodus 11"
+    },
+    {
+     "id": "exodus-12",
+     "label": "Exodus 12"
+    },
+    {
+     "id": "exodus-13",
+     "label": "Exodus 13"
+    },
+    {
+     "id": "exodus-14",
+     "label": "Exodus 14"
+    },
+    {
+     "id": "exodus-15",
+     "label": "Exodus 15"
+    },
+    {
+     "id": "exodus-16",
+     "label": "Exodus 16"
+    },
+    {
+     "id": "exodus-17",
+     "label": "Exodus 17"
+    },
+    {
+     "id": "exodus-18",
+     "label": "Exodus 18"
+    },
+    {
+     "id": "exodus-19",
+     "label": "Exodus 19"
+    },
+    {
+     "id": "exodus-20",
+     "label": "Exodus 20"
+    }
+   ]
+  },
+  {
+   "id": "john",
+   "title": "John",
+   "subtitle": "That Ye Might Believe",
+   "about": "The Gospel of John, chapter by chapter: the Word made flesh, seven signs, the great I AM sayings, the cross, and the empty tomb.",
+   "cover": "media:images/symbols/John-symbol.svg",
+   "episodes": [
+    {
+     "id": "john-00",
+     "label": "Meet John"
+    },
+    {
+     "id": "john-01",
+     "label": "John 1"
+    },
+    {
+     "id": "john-02",
+     "label": "John 2"
+    },
+    {
+     "id": "john-03",
+     "label": "John 3"
+    },
+    {
+     "id": "john-04",
+     "label": "John 4"
+    },
+    {
+     "id": "john-05",
+     "label": "John 5"
+    },
+    {
+     "id": "john-06",
+     "label": "John 6"
+    },
+    {
+     "id": "john-07",
+     "label": "John 7"
+    },
+    {
+     "id": "john-08",
+     "label": "John 8"
+    },
+    {
+     "id": "john-09",
+     "label": "John 9"
+    },
+    {
+     "id": "john-10",
+     "label": "John 10"
+    },
+    {
+     "id": "john-11",
+     "label": "John 11"
+    },
+    {
+     "id": "john-12",
+     "label": "John 12"
+    },
+    {
+     "id": "john-13",
+     "label": "John 13"
+    },
+    {
+     "id": "john-14",
+     "label": "John 14"
+    },
+    {
+     "id": "john-15",
+     "label": "John 15"
+    },
+    {
+     "id": "john-16",
+     "label": "John 16"
+    },
+    {
+     "id": "john-17",
+     "label": "John 17"
+    },
+    {
+     "id": "john-18",
+     "label": "John 18"
+    },
+    {
+     "id": "john-19",
+     "label": "John 19"
+    },
+    {
+     "id": "john-20",
+     "label": "John 20"
+    },
+    {
+     "id": "john-21",
+     "label": "John 21"
+    }
+   ]
   }
  ],
  "episodes": {
@@ -1553,6 +1743,317 @@
     "1:16",
     "1:20",
     "1:22"
+   ]
+  },
+  "exodus-00": {
+   "title": "Meet the Book of Exodus",
+   "label": "Meet Exodus",
+   "book": "Exodus",
+   "chapter": null,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-00.webm?v=2448",
+   "seconds": 244.8,
+   "question": "God heard the cry of his people in Egypt and came down to deliver them. What would you ask God to set you free from as we walk through this book?",
+   "keys": []
+  },
+  "exodus-01": {
+   "title": "The More They Afflicted Them, the More They Multiplied",
+   "label": "Exodus 1",
+   "book": "Exodus",
+   "chapter": 1,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-01.webm?v=4127",
+   "seconds": 412.7,
+   "question": "The midwives feared God more than they feared the king. Where do you need courage to do what is right, even when others want you to do wrong?",
+   "keys": [
+    "1:7",
+    "1:12",
+    "1:17"
+   ]
+  },
+  "exodus-02": {
+   "title": "Because I Drew Him out of the Water",
+   "label": "Exodus 2",
+   "book": "Exodus",
+   "chapter": 2,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-02.webm?v=4519",
+   "seconds": 451.9,
+   "question": "God heard, remembered, looked upon and knew his people. Which of those four do you most need to remember today, and why?",
+   "keys": [
+    "2:10",
+    "2:24",
+    "2:25"
+   ]
+  },
+  "exodus-03": {
+   "title": "I AM THAT I AM",
+   "label": "Exodus 3",
+   "book": "Exodus",
+   "chapter": 3,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-03.webm?v=4252",
+   "seconds": 425.2,
+   "question": "Moses asked, who am I? God answered, certainly I will be with thee. Where do you need to stop looking at your own weakness, and look at who God is?",
+   "keys": [
+    "3:5",
+    "3:7",
+    "3:14"
+   ]
+  },
+  "exodus-04": {
+   "title": "I Will Be with Thy Mouth",
+   "label": "Exodus 4",
+   "book": "Exodus",
+   "chapter": 4,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-04.webm?v=4496",
+   "seconds": 449.6,
+   "question": "God asked Moses, what is that in thine hand? What ordinary gift or ability do you have that you could offer to God?",
+   "keys": [
+    "4:11",
+    "4:12",
+    "4:31"
+   ]
+  },
+  "exodus-05": {
+   "title": "Who Is the LORD, That I Should Obey His Voice?",
+   "label": "Exodus 5",
+   "book": "Exodus",
+   "chapter": 5,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-05.webm?v=4235",
+   "seconds": 423.5,
+   "question": "Moses obeyed God, and things got worse. When has obeying God been hard, and how did you keep trusting him?",
+   "keys": [
+    "5:1",
+    "5:2",
+    "5:22"
+   ]
+  },
+  "exodus-06": {
+   "title": "I Will Take You to Me for a People",
+   "label": "Exodus 6",
+   "book": "Exodus",
+   "chapter": 6,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-06.webm?v=4259",
+   "seconds": 425.9,
+   "question": "God said, I will take you to me for a people, and I will be to you a God. What does it mean to you that God wants you to belong to him?",
+   "keys": [
+    "6:6",
+    "6:7",
+    "6:9"
+   ]
+  },
+  "exodus-07": {
+   "title": "The Egyptians Shall Know That I Am the LORD",
+   "label": "Exodus 7",
+   "book": "Exodus",
+   "chapter": 7,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-07.webm?v=4179",
+   "seconds": 417.9,
+   "question": "Pharaoh’s heart was hardened, and he would not listen. What helps keep your heart soft and open to God?",
+   "keys": [
+    "7:5",
+    "7:12",
+    "7:22"
+   ]
+  },
+  "exodus-08": {
+   "title": "This Is the Finger of God",
+   "label": "Exodus 8",
+   "book": "Exodus",
+   "chapter": 8,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-08.webm?v=4374",
+   "seconds": 437.4,
+   "question": "Pharaoh kept bargaining, offering to obey only part way. Is there an area where you are offering God half-obedience instead of the whole?",
+   "keys": [
+    "8:10",
+    "8:19",
+    "8:23"
+   ]
+  },
+  "exodus-09": {
+   "title": "That Thou Mayest Know That the Earth Is the LORD’S",
+   "label": "Exodus 9",
+   "book": "Exodus",
+   "chapter": 9,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-09.webm?v=4522",
+   "seconds": 452.2,
+   "question": "Some of Pharaoh’s servants feared the word of the LORD and acted on his warning. What would it look like for you to take God at his word this week?",
+   "keys": [
+    "9:16",
+    "9:20",
+    "9:29"
+   ]
+  },
+  "exodus-10": {
+   "title": "All the Children of Israel Had Light in Their Dwellings",
+   "label": "Exodus 10",
+   "book": "Exodus",
+   "chapter": 10,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-10.webm?v=4692",
+   "seconds": 469.2,
+   "question": "Pharaoh kept trying to obey only part way. God said, there shall not an hoof be left behind. Is there anything you are holding back from God?",
+   "keys": [
+    "10:3",
+    "10:16",
+    "10:23"
+   ]
+  },
+  "exodus-11": {
+   "title": "The LORD Doth Put a Difference",
+   "label": "Exodus 11",
+   "book": "Exodus",
+   "chapter": 11,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-11.webm?v=4015",
+   "seconds": 401.5,
+   "question": "Pharaoh refused God again and again, until his heart was hard. What helps you to say yes to God quickly, instead of putting him off?",
+   "keys": [
+    "11:1",
+    "11:3",
+    "11:7"
+   ]
+  },
+  "exodus-12": {
+   "title": "When I See the Blood, I Will Pass over You",
+   "label": "Exodus 12",
+   "book": "Exodus",
+   "chapter": 12,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-12.webm?v=4352",
+   "seconds": 435.2,
+   "question": "God said, when I see the blood, I will pass over you. What does it mean to you that you are saved by what Jesus has done, not by what you have done?",
+   "keys": [
+    "12:13",
+    "12:26",
+    "12:51"
+   ]
+  },
+  "exodus-13": {
+   "title": "The LORD Went Before Them",
+   "label": "Exodus 13",
+   "book": "Exodus",
+   "chapter": 13,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-13.webm?v=3908",
+   "seconds": 390.8,
+   "question": "God led Israel the long way, because he knew they were not ready for war. Where might God be leading you on a longer road for your own good?",
+   "keys": [
+    "13:3",
+    "13:17",
+    "13:21"
+   ]
+  },
+  "exodus-14": {
+   "title": "Stand Still, and See the Salvation of the LORD",
+   "label": "Exodus 14",
+   "book": "Exodus",
+   "chapter": 14,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-14.webm?v=4291",
+   "seconds": 429.1,
+   "question": "Moses said, stand still, and see the salvation of the LORD. What situation do you need to stop panicking about, and trust God to handle?",
+   "keys": [
+    "14:13",
+    "14:14",
+    "14:31"
+   ]
+  },
+  "exodus-15": {
+   "title": "The LORD Is My Strength and Song",
+   "label": "Exodus 15",
+   "book": "Exodus",
+   "chapter": 15,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-15.webm?v=4209",
+   "seconds": 420.9,
+   "question": "Israel sang God’s praise, and then three days later complained at Marah. How can you keep trusting God after the excitement of a blessing has passed?",
+   "keys": [
+    "15:2",
+    "15:11",
+    "15:26"
+   ]
+  },
+  "exodus-16": {
+   "title": "Bread from Heaven",
+   "label": "Exodus 16",
+   "book": "Exodus",
+   "chapter": 16,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-16.webm?v=4476",
+   "seconds": 447.6,
+   "question": "God gave manna one day at a time, so his people had to trust him every day. What would it look like for you to trust God one day at a time?",
+   "keys": [
+    "16:4",
+    "16:15",
+    "16:18"
+   ]
+  },
+  "exodus-17": {
+   "title": "Aaron and Hur Stayed Up His Hands",
+   "label": "Exodus 17",
+   "book": "Exodus",
+   "chapter": 17,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-17.webm?v=3775",
+   "seconds": 377.5,
+   "question": "Aaron and Hur held up Moses’ hands when he grew weary. Who holds up your hands, and whose hands could you hold up?",
+   "keys": [
+    "17:6",
+    "17:12",
+    "17:15"
+   ]
+  },
+  "exodus-18": {
+   "title": "Thou Art Not Able to Perform It Thyself Alone",
+   "label": "Exodus 18",
+   "book": "Exodus",
+   "chapter": 18,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-18.webm?v=4370",
+   "seconds": 437.0,
+   "question": "Jethro told Moses, thou art not able to perform it thyself alone. What burden are you carrying that you need to share with others?",
+   "keys": [
+    "18:11",
+    "18:18",
+    "18:21"
+   ]
+  },
+  "exodus-19": {
+   "title": "I Bare You on Eagles’ Wings",
+   "label": "Exodus 19",
+   "book": "Exodus",
+   "chapter": 19,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-19.webm?v=4209",
+   "seconds": 420.9,
+   "question": "God said, I bare you on eagles’ wings, and brought you unto myself. When have you felt God carrying you through a hard time?",
+   "keys": [
+    "19:4",
+    "19:5",
+    "19:6"
+   ]
+  },
+  "exodus-20": {
+   "title": "Thou Shalt Have No Other Gods Before Me",
+   "label": "Exodus 20",
+   "book": "Exodus",
+   "chapter": 20,
+   "art": "media:images/symbols/Exodus-symbol.svg",
+   "audio": "media:audio/bible-walk/exodus/exodus-20.webm?v=4394",
+   "seconds": 439.4,
+   "question": "We have walked through the first twenty chapters of Exodus. God said, I am the LORD thy God, which have brought thee out. How has this walk helped you understand what God has done for you, and how you can live for him?",
+   "keys": [
+    "20:2",
+    "20:3",
+    "20:20"
    ]
   },
   "genesis-00": {

@@ -1163,7 +1163,7 @@ const MENU_HTML = /* html */ `
                     <span class="menu-tile foot-tile">
                         ${supportHeart("menu-heart")}
                     </span>
-                    Support
+                    Support Us
                 </button>
             </li>
             <li>
@@ -1513,7 +1513,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.7" /><circle class="help-fill" cx="12" cy="17" r="1.1" /></svg>
                 </span>
-                <p><strong>Support, Help and About.</strong> At the foot of the menu. Support shows how you can help Daily Grace continue; Help opens this guide; About tells what Daily Grace is and how it can help you each day.</p>
+                <p><strong>Support, Help and About.</strong> At the foot of the menu. Support Us shows how you can help Daily Grace continue; Help opens this guide; About tells what Daily Grace is and how it can help you each day.</p>
             </li>
         </ul>
 
@@ -1553,7 +1553,7 @@ const HELP_HTML = /* html */ `
                 <span class="help-icon">
                     ${supportHeart("help-heart")}
                 </span>
-                <p><strong>Support Daily Grace.</strong> Daily Grace is free and stays free. If you would like to help it continue, Support at the foot of this menu, or Support Daily Grace at the bottom of the home page, shows how to give through PayPal or GCash, in any amount, and other ways to help.</p>
+                <p><strong>Support Daily Grace.</strong> Daily Grace is free and stays free. If you would like to help it continue, Support Us at the foot of this menu, or Support Daily Grace at the bottom of the home page, shows how to give through PayPal or GCash, in any amount, and other ways to help.</p>
             </li>
         </ul>
     </div>

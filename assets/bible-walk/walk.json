@@ -1107,6 +1107,349 @@
      "label": "Joshua 24"
     }
    ]
+  },
+  {
+   "id": "judges",
+   "title": "Judges",
+   "subtitle": "The LORD Raised Up Judges",
+   "about": "Israel forgets God again and again, and again and again he raises up a deliverer: Deborah, Gideon, Samson and more. An honest book about a dark time, told gently, that leaves us longing for a true King.",
+   "cover": "media:images/symbols/Judges-symbol.svg",
+   "episodes": [
+    {
+     "id": "judges-00",
+     "label": "Meet Judges"
+    },
+    {
+     "id": "judges-01",
+     "label": "Judges 1"
+    },
+    {
+     "id": "judges-02",
+     "label": "Judges 2"
+    },
+    {
+     "id": "judges-03",
+     "label": "Judges 3"
+    },
+    {
+     "id": "judges-04",
+     "label": "Judges 4"
+    },
+    {
+     "id": "judges-05",
+     "label": "Judges 5"
+    },
+    {
+     "id": "judges-06",
+     "label": "Judges 6"
+    },
+    {
+     "id": "judges-07",
+     "label": "Judges 7"
+    },
+    {
+     "id": "judges-08",
+     "label": "Judges 8"
+    },
+    {
+     "id": "judges-09",
+     "label": "Judges 9"
+    },
+    {
+     "id": "judges-10",
+     "label": "Judges 10"
+    },
+    {
+     "id": "judges-11",
+     "label": "Judges 11"
+    },
+    {
+     "id": "judges-12",
+     "label": "Judges 12"
+    },
+    {
+     "id": "judges-13",
+     "label": "Judges 13"
+    },
+    {
+     "id": "judges-14",
+     "label": "Judges 14"
+    },
+    {
+     "id": "judges-15",
+     "label": "Judges 15"
+    },
+    {
+     "id": "judges-16",
+     "label": "Judges 16"
+    },
+    {
+     "id": "judges-17",
+     "label": "Judges 17"
+    },
+    {
+     "id": "judges-18",
+     "label": "Judges 18"
+    },
+    {
+     "id": "judges-19",
+     "label": "Judges 19"
+    },
+    {
+     "id": "judges-20",
+     "label": "Judges 20"
+    },
+    {
+     "id": "judges-21",
+     "label": "Judges 21"
+    }
+   ]
+  },
+  {
+   "id": "1samuel",
+   "title": "1 Samuel",
+   "subtitle": "The LORD Looketh on the Heart",
+   "about": "Hannah’s prayer, the boy Samuel who heard God’s voice, a nation that asked for a king, Saul’s rise and fall, and a shepherd boy named David, chosen by God and tested on the run.",
+   "cover": "media:images/symbols/1%20Samuel-symbol.svg",
+   "episodes": [
+    {
+     "id": "1samuel-00",
+     "label": "Meet 1 Samuel"
+    },
+    {
+     "id": "1samuel-01",
+     "label": "1 Samuel 1"
+    },
+    {
+     "id": "1samuel-02",
+     "label": "1 Samuel 2"
+    },
+    {
+     "id": "1samuel-03",
+     "label": "1 Samuel 3"
+    },
+    {
+     "id": "1samuel-04",
+     "label": "1 Samuel 4"
+    },
+    {
+     "id": "1samuel-05",
+     "label": "1 Samuel 5"
+    },
+    {
+     "id": "1samuel-06",
+     "label": "1 Samuel 6"
+    },
+    {
+     "id": "1samuel-07",
+     "label": "1 Samuel 7"
+    },
+    {
+     "id": "1samuel-08",
+     "label": "1 Samuel 8"
+    },
+    {
+     "id": "1samuel-09",
+     "label": "1 Samuel 9"
+    },
+    {
+     "id": "1samuel-10",
+     "label": "1 Samuel 10"
+    },
+    {
+     "id": "1samuel-11",
+     "label": "1 Samuel 11"
+    },
+    {
+     "id": "1samuel-12",
+     "label": "1 Samuel 12"
+    },
+    {
+     "id": "1samuel-13",
+     "label": "1 Samuel 13"
+    },
+    {
+     "id": "1samuel-14",
+     "label": "1 Samuel 14"
+    },
+    {
+     "id": "1samuel-15",
+     "label": "1 Samuel 15"
+    },
+    {
+     "id": "1samuel-16",
+     "label": "1 Samuel 16"
+    },
+    {
+     "id": "1samuel-17",
+     "label": "1 Samuel 17"
+    },
+    {
+     "id": "1samuel-18",
+     "label": "1 Samuel 18"
+    },
+    {
+     "id": "1samuel-19",
+     "label": "1 Samuel 19"
+    },
+    {
+     "id": "1samuel-20",
+     "label": "1 Samuel 20"
+    },
+    {
+     "id": "1samuel-21",
+     "label": "1 Samuel 21"
+    },
+    {
+     "id": "1samuel-22",
+     "label": "1 Samuel 22"
+    },
+    {
+     "id": "1samuel-23",
+     "label": "1 Samuel 23"
+    },
+    {
+     "id": "1samuel-24",
+     "label": "1 Samuel 24"
+    },
+    {
+     "id": "1samuel-25",
+     "label": "1 Samuel 25"
+    },
+    {
+     "id": "1samuel-26",
+     "label": "1 Samuel 26"
+    },
+    {
+     "id": "1samuel-27",
+     "label": "1 Samuel 27"
+    },
+    {
+     "id": "1samuel-28",
+     "label": "1 Samuel 28"
+    },
+    {
+     "id": "1samuel-29",
+     "label": "1 Samuel 29"
+    },
+    {
+     "id": "1samuel-30",
+     "label": "1 Samuel 30"
+    },
+    {
+     "id": "1samuel-31",
+     "label": "1 Samuel 31"
+    }
+   ]
+  },
+  {
+   "id": "2samuel",
+   "title": "2 Samuel",
+   "subtitle": "A Man After God’s Own Heart",
+   "about": "David becomes king, brings the ark to Jerusalem and receives God’s promise of a throne for ever. Then comes his great sin, his true repentance, and the sorrows that follow in his family, and God’s mercy through it all.",
+   "cover": "media:images/symbols/2%20Samuel-symbol.svg",
+   "episodes": [
+    {
+     "id": "2samuel-00",
+     "label": "Meet 2 Samuel"
+    },
+    {
+     "id": "2samuel-01",
+     "label": "2 Samuel 1"
+    },
+    {
+     "id": "2samuel-02",
+     "label": "2 Samuel 2"
+    },
+    {
+     "id": "2samuel-03",
+     "label": "2 Samuel 3"
+    },
+    {
+     "id": "2samuel-04",
+     "label": "2 Samuel 4"
+    },
+    {
+     "id": "2samuel-05",
+     "label": "2 Samuel 5"
+    },
+    {
+     "id": "2samuel-06",
+     "label": "2 Samuel 6"
+    },
+    {
+     "id": "2samuel-07",
+     "label": "2 Samuel 7"
+    },
+    {
+     "id": "2samuel-08",
+     "label": "2 Samuel 8"
+    },
+    {
+     "id": "2samuel-09",
+     "label": "2 Samuel 9"
+    },
+    {
+     "id": "2samuel-10",
+     "label": "2 Samuel 10"
+    },
+    {
+     "id": "2samuel-11",
+     "label": "2 Samuel 11"
+    },
+    {
+     "id": "2samuel-12",
+     "label": "2 Samuel 12"
+    },
+    {
+     "id": "2samuel-13",
+     "label": "2 Samuel 13"
+    },
+    {
+     "id": "2samuel-14",
+     "label": "2 Samuel 14"
+    },
+    {
+     "id": "2samuel-15",
+     "label": "2 Samuel 15"
+    },
+    {
+     "id": "2samuel-16",
+     "label": "2 Samuel 16"
+    },
+    {
+     "id": "2samuel-17",
+     "label": "2 Samuel 17"
+    },
+    {
+     "id": "2samuel-18",
+     "label": "2 Samuel 18"
+    },
+    {
+     "id": "2samuel-19",
+     "label": "2 Samuel 19"
+    },
+    {
+     "id": "2samuel-20",
+     "label": "2 Samuel 20"
+    },
+    {
+     "id": "2samuel-21",
+     "label": "2 Samuel 21"
+    },
+    {
+     "id": "2samuel-22",
+     "label": "2 Samuel 22"
+    },
+    {
+     "id": "2samuel-23",
+     "label": "2 Samuel 23"
+    },
+    {
+     "id": "2samuel-24",
+     "label": "2 Samuel 24"
+    }
+   ]
   }
  ],
  "episodes": {

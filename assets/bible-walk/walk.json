@@ -850,6 +850,154 @@
      "label": "John 21"
     }
    ]
+  },
+  {
+   "id": "ruth",
+   "title": "Ruth",
+   "subtitle": "Whither Thou Goest",
+   "about": "A whole book in four chapters: Naomi’s loss, Ruth’s loyalty, the kindness of Boaz, and a redeemer in Bethlehem. A short win, finished in a week.",
+   "cover": "media:images/symbols/Ruth-symbol.svg",
+   "episodes": [
+    {
+     "id": "ruth-00",
+     "label": "Meet Ruth"
+    },
+    {
+     "id": "ruth-01",
+     "label": "Ruth 1"
+    },
+    {
+     "id": "ruth-02",
+     "label": "Ruth 2"
+    },
+    {
+     "id": "ruth-03",
+     "label": "Ruth 3"
+    },
+    {
+     "id": "ruth-04",
+     "label": "Ruth 4"
+    }
+   ]
+  },
+  {
+   "id": "jonah",
+   "title": "Jonah",
+   "subtitle": "Salvation Is of the LORD",
+   "about": "A whole book in four chapters: the prophet who ran from God, the storm and the great fish, a city that turned back, and the God who is slow to anger.",
+   "cover": "media:images/symbols/Jonah-symbol.svg",
+   "episodes": [
+    {
+     "id": "jonah-00",
+     "label": "Meet Jonah"
+    },
+    {
+     "id": "jonah-01",
+     "label": "Jonah 1"
+    },
+    {
+     "id": "jonah-02",
+     "label": "Jonah 2"
+    },
+    {
+     "id": "jonah-03",
+     "label": "Jonah 3"
+    },
+    {
+     "id": "jonah-04",
+     "label": "Jonah 4"
+    }
+   ]
+  },
+  {
+   "id": "esther",
+   "title": "Esther",
+   "subtitle": "For Such a Time as This",
+   "about": "A whole book in ten chapters: an orphan who becomes queen, a plot to destroy her people, and a God who is never named, yet is at work in every turn.",
+   "cover": "media:images/symbols/Esther-symbol.svg",
+   "episodes": [
+    {
+     "id": "esther-00",
+     "label": "Meet Esther"
+    },
+    {
+     "id": "esther-01",
+     "label": "Esther 1"
+    },
+    {
+     "id": "esther-02",
+     "label": "Esther 2"
+    },
+    {
+     "id": "esther-03",
+     "label": "Esther 3"
+    },
+    {
+     "id": "esther-04",
+     "label": "Esther 4"
+    },
+    {
+     "id": "esther-05",
+     "label": "Esther 5"
+    },
+    {
+     "id": "esther-06",
+     "label": "Esther 6"
+    },
+    {
+     "id": "esther-07",
+     "label": "Esther 7"
+    },
+    {
+     "id": "esther-08",
+     "label": "Esther 8"
+    },
+    {
+     "id": "esther-09",
+     "label": "Esther 9"
+    },
+    {
+     "id": "esther-10",
+     "label": "Esther 10"
+    }
+   ]
+  },
+  {
+   "id": "daniel",
+   "title": "Daniel",
+   "subtitle": "Our God Whom We Serve Is Able",
+   "about": "The stories of Daniel, chapters 1 to 6: faithful young men in Babylon, a king’s dream, the fiery furnace, the writing on the wall, and the lions’ den.",
+   "cover": "media:images/symbols/Daniel-symbol.svg",
+   "episodes": [
+    {
+     "id": "daniel-00",
+     "label": "Meet Daniel"
+    },
+    {
+     "id": "daniel-01",
+     "label": "Daniel 1"
+    },
+    {
+     "id": "daniel-02",
+     "label": "Daniel 2"
+    },
+    {
+     "id": "daniel-03",
+     "label": "Daniel 3"
+    },
+    {
+     "id": "daniel-04",
+     "label": "Daniel 4"
+    },
+    {
+     "id": "daniel-05",
+     "label": "Daniel 5"
+    },
+    {
+     "id": "daniel-06",
+     "label": "Daniel 6"
+    }
+   ]
   }
  ],
  "episodes": {
@@ -2815,6 +2963,332 @@
     "50:20",
     "50:21",
     "50:24"
+   ]
+  },
+  "john-00": {
+   "title": "Meet the Book of John",
+   "label": "Meet John",
+   "book": "John",
+   "chapter": null,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-00.webm?v=2387",
+   "seconds": 238.7,
+   "question": "John wrote his Gospel so that people might believe that Jesus is the Christ, the Son of God. As we walk through this book, what question about Jesus would you most like to see answered?",
+   "keys": []
+  },
+  "john-01": {
+   "title": "The Word Was Made Flesh",
+   "label": "John 1",
+   "book": "John",
+   "chapter": 1,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-01.webm?v=4790",
+   "seconds": 479.0,
+   "question": "John says that to as many as received him, Jesus gave power to become the sons of God. What does it mean for you to receive Jesus?",
+   "keys": [
+    "1:1",
+    "1:12",
+    "1:14"
+   ]
+  },
+  "john-02": {
+   "title": "Whatsoever He Saith unto You, Do It",
+   "label": "John 2",
+   "book": "John",
+   "chapter": 2,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-02.webm?v=4218",
+   "seconds": 421.8,
+   "question": "Mary said, whatsoever he saith unto you, do it. What is one thing Jesus is asking you to do, that you need to obey even before you understand it?",
+   "keys": [
+    "2:5",
+    "2:11",
+    "2:19"
+   ]
+  },
+  "john-03": {
+   "title": "For God So Loved the World",
+   "label": "John 3",
+   "book": "John",
+   "chapter": 3,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-03.webm?v=4589",
+   "seconds": 458.9,
+   "question": "Jesus said, ye must be born again. What difference has God’s new life made in you, or what difference would you like it to make?",
+   "keys": [
+    "3:3",
+    "3:16",
+    "3:30"
+   ]
+  },
+  "john-04": {
+   "title": "A Well of Water Springing Up into Everlasting Life",
+   "label": "John 4",
+   "book": "John",
+   "chapter": 4,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-04.webm?v=4842",
+   "seconds": 484.2,
+   "question": "Jesus offered the woman living water, so that she would never thirst again. What are you thirsty for, and how could Jesus satisfy that thirst?",
+   "keys": [
+    "4:14",
+    "4:24",
+    "4:42"
+   ]
+  },
+  "john-05": {
+   "title": "Wilt Thou Be Made Whole?",
+   "label": "John 5",
+   "book": "John",
+   "chapter": 5,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-05.webm?v=4478",
+   "seconds": 447.8,
+   "question": "Jesus asked the man, wilt thou be made whole? If Jesus asked you that question today, what would you say?",
+   "keys": [
+    "5:6",
+    "5:24",
+    "5:39"
+   ]
+  },
+  "john-06": {
+   "title": "I Am the Bread of Life",
+   "label": "John 6",
+   "book": "John",
+   "chapter": 6,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-06.webm?v=4538",
+   "seconds": 453.8,
+   "question": "Peter said, Lord, to whom shall we go? thou hast the words of eternal life. When following Jesus feels hard, what keeps you from walking away?",
+   "keys": [
+    "6:35",
+    "6:37",
+    "6:68"
+   ]
+  },
+  "john-07": {
+   "title": "If Any Man Thirst, Let Him Come unto Me",
+   "label": "John 7",
+   "book": "John",
+   "chapter": 7,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-07.webm?v=4578",
+   "seconds": 457.8,
+   "question": "The officers said, never man spake like this man. What words of Jesus have most moved or changed you?",
+   "keys": [
+    "7:37",
+    "7:38",
+    "7:46"
+   ]
+  },
+  "john-08": {
+   "title": "The Truth Shall Make You Free",
+   "label": "John 8",
+   "book": "John",
+   "chapter": 8,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-08.webm?v=4382",
+   "seconds": 438.2,
+   "question": "Jesus said to the woman, neither do I condemn thee: go, and sin no more. How do you need to receive both his mercy and his call today?",
+   "keys": [
+    "8:12",
+    "8:32",
+    "8:36"
+   ]
+  },
+  "john-09": {
+   "title": "Whereas I Was Blind, Now I See",
+   "label": "John 9",
+   "book": "John",
+   "chapter": 9,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-09.webm?v=4757",
+   "seconds": 475.7,
+   "question": "The man said, one thing I know, that, whereas I was blind, now I see. What is one thing you know Jesus has done for you?",
+   "keys": [
+    "9:3",
+    "9:25",
+    "9:38"
+   ]
+  },
+  "john-10": {
+   "title": "I Am the Good Shepherd",
+   "label": "John 10",
+   "book": "John",
+   "chapter": 10,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-10.webm?v=4440",
+   "seconds": 444.0,
+   "question": "Jesus said, my sheep hear my voice, and I know them, and they follow me. How do you listen for the voice of your Shepherd?",
+   "keys": [
+    "10:10",
+    "10:11",
+    "10:28"
+   ]
+  },
+  "john-11": {
+   "title": "Thou Shouldest See the Glory of God",
+   "label": "John 11",
+   "book": "John",
+   "chapter": 11,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-11.webm?v=4708",
+   "seconds": 470.8,
+   "question": "Jesus asked Martha, believest thou this? What does it mean to you that Jesus is the resurrection and the life?",
+   "keys": [
+    "11:5",
+    "11:25",
+    "11:40"
+   ]
+  },
+  "john-12": {
+   "title": "Sir, We Would See Jesus",
+   "label": "John 12",
+   "book": "John",
+   "chapter": 12,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-12.webm?v=4750",
+   "seconds": 475.0,
+   "question": "Jesus said that a corn of wheat must fall into the ground and die to bear much fruit. What might God be asking you to let go of, so that your life can bear fruit?",
+   "keys": [
+    "12:21",
+    "12:24",
+    "12:32"
+   ]
+  },
+  "john-13": {
+   "title": "Love One Another, As I Have Loved You",
+   "label": "John 13",
+   "book": "John",
+   "chapter": 13,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-13.webm?v=4487",
+   "seconds": 448.7,
+   "question": "Jesus washed his disciples’ feet, even the feet of Judas. Who is Jesus asking you to serve or to love, even though it is hard?",
+   "keys": [
+    "13:14",
+    "13:34",
+    "13:35"
+   ]
+  },
+  "john-14": {
+   "title": "I Am the Way, the Truth, and the Life",
+   "label": "John 14",
+   "book": "John",
+   "chapter": 14,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-14.webm?v=4435",
+   "seconds": 443.5,
+   "question": "Jesus said, I am the way, the truth, and the life. What does it mean to you that Jesus is the way to the Father?",
+   "keys": [
+    "14:1",
+    "14:6",
+    "14:27"
+   ]
+  },
+  "john-15": {
+   "title": "I Am the Vine, Ye Are the Branches",
+   "label": "John 15",
+   "book": "John",
+   "chapter": 15,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-15.webm?v=4413",
+   "seconds": 441.3,
+   "question": "Jesus said, without me ye can do nothing. What would it look like for you to abide in Jesus, instead of trying to bear fruit in your own strength?",
+   "keys": [
+    "15:5",
+    "15:9",
+    "15:13"
+   ]
+  },
+  "john-16": {
+   "title": "Be of Good Cheer; I Have Overcome the World",
+   "label": "John 16",
+   "book": "John",
+   "chapter": 16,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-16.webm?v=4432",
+   "seconds": 443.2,
+   "question": "Jesus said, in the world ye shall have tribulation: but be of good cheer; I have overcome the world. How does knowing that Jesus has overcome help you face your troubles?",
+   "keys": [
+    "16:13",
+    "16:24",
+    "16:33"
+   ]
+  },
+  "john-17": {
+   "title": "That They All May Be One",
+   "label": "John 17",
+   "book": "John",
+   "chapter": 17,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-17.webm?v=4502",
+   "seconds": 450.2,
+   "question": "Jesus prayed that all who believe in him would be one. What could you do to help the believers around you live in unity and love?",
+   "keys": [
+    "17:3",
+    "17:17",
+    "17:21"
+   ]
+  },
+  "john-18": {
+   "title": "My Kingdom Is Not of This World",
+   "label": "John 18",
+   "book": "John",
+   "chapter": 18,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-18.webm?v=4838",
+   "seconds": 483.8,
+   "question": "Pilate asked, what is truth? Jesus said, every one that is of the truth heareth my voice. How do you listen for the voice of Jesus?",
+   "keys": [
+    "18:11",
+    "18:36",
+    "18:37"
+   ]
+  },
+  "john-19": {
+   "title": "It Is Finished",
+   "label": "John 19",
+   "book": "John",
+   "chapter": 19,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-19.webm?v=4718",
+   "seconds": 471.8,
+   "question": "Jesus said, it is finished. What does it mean to you that the work of your salvation has been paid in full?",
+   "keys": [
+    "19:5",
+    "19:27",
+    "19:30"
+   ]
+  },
+  "john-20": {
+   "title": "That Ye Might Believe",
+   "label": "John 20",
+   "book": "John",
+   "chapter": 20,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-20.webm?v=4632",
+   "seconds": 463.2,
+   "question": "Jesus said, blessed are they that have not seen, and yet have believed. What helps you to believe in Jesus, even though you have not seen him?",
+   "keys": [
+    "20:16",
+    "20:29",
+    "20:31"
+   ]
+  },
+  "john-21": {
+   "title": "Lovest Thou Me? Feed My Sheep",
+   "label": "John 21",
+   "book": "John",
+   "chapter": 21,
+   "art": "media:images/symbols/John-symbol.svg",
+   "audio": "media:audio/bible-walk/john/john-21.webm?v=4626",
+   "seconds": 462.6,
+   "question": "We have walked through the whole Gospel of John. Jesus asked Peter, lovest thou me? How would you answer Jesus today, and how will you follow him?",
+   "keys": [
+    "21:6",
+    "21:15",
+    "21:17"
    ]
   },
   "luke-00": {

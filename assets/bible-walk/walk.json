@@ -1453,6 +1453,853 @@
   }
  ],
  "episodes": {
+  "1samuel-00": {
+   "title": "Meet the First Book of Samuel",
+   "label": "Meet 1 Samuel",
+   "book": "1 Samuel",
+   "chapter": null,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-00.webm?v=2651",
+   "seconds": 265.1,
+   "question": "God looks on the heart, not the outward appearance. What do you think God sees when he looks at your heart today?",
+   "keys": []
+  },
+  "1samuel-01": {
+   "title": "For This Child I Prayed",
+   "label": "1 Samuel 1",
+   "book": "1 Samuel",
+   "chapter": 1,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-01.webm?v=4250",
+   "seconds": 425.0,
+   "question": "Hannah’s face was no longer sad, even before God answered her prayer. What do you think gave her that peace?",
+   "keys": [
+    "1:11",
+    "1:27",
+    "1:28"
+   ]
+  },
+  "1samuel-02": {
+   "title": "Them That Honour Me I Will Honour",
+   "label": "1 Samuel 2",
+   "book": "1 Samuel",
+   "chapter": 2,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-02.webm?v=4347",
+   "seconds": 434.7,
+   "question": "Samuel grew in favour with God, even though the priests around him were wicked. What helps a young person stay faithful when the people around them are not?",
+   "keys": [
+    "2:2",
+    "2:26",
+    "2:30"
+   ]
+  },
+  "1samuel-03": {
+   "title": "Speak; for Thy Servant Heareth",
+   "label": "1 Samuel 3",
+   "book": "1 Samuel",
+   "chapter": 3,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-03.webm?v=4243",
+   "seconds": 424.3,
+   "question": "Samuel did not recognise God’s voice at first, and needed Eli to help him. Who has helped you to hear God, and how could you help someone else?",
+   "keys": [
+    "3:1",
+    "3:10",
+    "3:19"
+   ]
+  },
+  "1samuel-04": {
+   "title": "The Glory Is Departed from Israel",
+   "label": "1 Samuel 4",
+   "book": "1 Samuel",
+   "chapter": 4,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-04.webm?v=5036",
+   "seconds": 503.6,
+   "question": "Israel trusted the ark to save them, instead of trusting God. What is the difference between trusting God, and trusting religious things?",
+   "keys": [
+    "4:3",
+    "4:13",
+    "4:22"
+   ]
+  },
+  "1samuel-05": {
+   "title": "Dagon Was Fallen upon His Face",
+   "label": "1 Samuel 5",
+   "book": "1 Samuel",
+   "chapter": 5,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-05.webm?v=4145",
+   "seconds": 414.5,
+   "question": "The Philistines thought they had captured the God of Israel, but he showed he was still in control. When has God seemed weak or absent to you, but later showed he was still at work?",
+   "keys": [
+    "5:2",
+    "5:3",
+    "5:7"
+   ]
+  },
+  "1samuel-06": {
+   "title": "Who Is Able to Stand Before This Holy LORD God?",
+   "label": "1 Samuel 6",
+   "book": "1 Samuel",
+   "chapter": 6,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-06.webm?v=4245",
+   "seconds": 424.5,
+   "question": "The men of Beth-shemesh asked, who is able to stand before this holy LORD God? How would you answer that question?",
+   "keys": [
+    "6:6",
+    "6:12",
+    "6:20"
+   ]
+  },
+  "1samuel-07": {
+   "title": "Hitherto Hath the LORD Helped Us",
+   "label": "1 Samuel 7",
+   "book": "1 Samuel",
+   "chapter": 7,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-07.webm?v=4083",
+   "seconds": 408.3,
+   "question": "Samuel looked back and said, hitherto hath the LORD helped us. Looking back over your own life, where can you see that God has helped you?",
+   "keys": [
+    "7:3",
+    "7:8",
+    "7:12"
+   ]
+  },
+  "1samuel-08": {
+   "title": "Make Us a King Like All the Nations",
+   "label": "1 Samuel 8",
+   "book": "1 Samuel",
+   "chapter": 8,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-08.webm?v=4319",
+   "seconds": 431.9,
+   "question": "Israel wanted a king so they could be like all the nations. Why do you think the desire to fit in is so strong, and how can we resist it when it pulls us away from God?",
+   "keys": [
+    "8:5",
+    "8:7",
+    "8:20"
+   ]
+  },
+  "1samuel-09": {
+   "title": "Behold the Man Whom I Spake to Thee Of",
+   "label": "1 Samuel 9",
+   "book": "1 Samuel",
+   "chapter": 9,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-09.webm?v=4425",
+   "seconds": 442.5,
+   "question": "Saul went looking for donkeys and found his calling instead. Has God ever led you somewhere unexpected through ordinary events?",
+   "keys": [
+    "9:16",
+    "9:17",
+    "9:21"
+   ]
+  },
+  "1samuel-10": {
+   "title": "God Gave Him Another Heart",
+   "label": "1 Samuel 10",
+   "book": "1 Samuel",
+   "chapter": 10,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-10.webm?v=4095",
+   "seconds": 409.5,
+   "question": "God gave Saul another heart, and filled him with his Spirit. What do you think it means for God to change someone from the inside?",
+   "keys": [
+    "10:9",
+    "10:22",
+    "10:27"
+   ]
+  },
+  "1samuel-11": {
+   "title": "To Day the LORD Hath Wrought Salvation",
+   "label": "1 Samuel 11",
+   "book": "1 Samuel",
+   "chapter": 11,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-11.webm?v=4146",
+   "seconds": 414.6,
+   "question": "Saul could have punished the men who mocked him, but he said, to day the LORD hath wrought salvation. Why do you think remembering God’s mercy helps us to be merciful?",
+   "keys": [
+    "11:6",
+    "11:13",
+    "11:15"
+   ]
+  },
+  "1samuel-12": {
+   "title": "God Forbid That I Should Cease to Pray for You",
+   "label": "1 Samuel 12",
+   "book": "1 Samuel",
+   "chapter": 12,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-12.webm?v=3958",
+   "seconds": 395.8,
+   "question": "Samuel said it would be a sin against the LORD to stop praying for the people. Who has God placed in your life to pray for faithfully?",
+   "keys": [
+    "12:22",
+    "12:23",
+    "12:24"
+   ]
+  },
+  "1samuel-13": {
+   "title": "The LORD Hath Sought Him a Man After His Own Heart",
+   "label": "1 Samuel 13",
+   "book": "1 Samuel",
+   "chapter": 13,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-13.webm?v=4359",
+   "seconds": 435.9,
+   "question": "Saul blamed the people, Samuel and the Philistines for his choice. Why do you think it is so easy to make excuses instead of admitting we were wrong?",
+   "keys": [
+    "13:8",
+    "13:13",
+    "13:14"
+   ]
+  },
+  "1samuel-14": {
+   "title": "No Restraint to the LORD to Save by Many or by Few",
+   "label": "1 Samuel 14",
+   "book": "1 Samuel",
+   "chapter": 14,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-14.webm?v=4519",
+   "seconds": 451.9,
+   "question": "Jonathan said, it may be that the LORD will work for us. What is the difference between being certain of the outcome, and being certain of God?",
+   "keys": [
+    "14:6",
+    "14:7",
+    "14:45"
+   ]
+  },
+  "1samuel-15": {
+   "title": "To Obey Is Better Than Sacrifice",
+   "label": "1 Samuel 15",
+   "book": "1 Samuel",
+   "chapter": 15,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-15.webm?v=4835",
+   "seconds": 483.5,
+   "question": "Saul said, I feared the people, and obeyed their voice. Whose opinion do you find it hardest to stand against, and how can you put God’s voice first?",
+   "keys": [
+    "15:11",
+    "15:22",
+    "15:24"
+   ]
+  },
+  "1samuel-16": {
+   "title": "The LORD Looketh on the Heart",
+   "label": "1 Samuel 16",
+   "book": "1 Samuel",
+   "chapter": 16,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-16.webm?v=4644",
+   "seconds": 464.4,
+   "question": "Man looketh on the outward appearance, but the LORD looketh on the heart. How does it change the way you see yourself, and others, to know that God looks on the heart?",
+   "keys": [
+    "16:7",
+    "16:11",
+    "16:13"
+   ]
+  },
+  "1samuel-17": {
+   "title": "Five Smooth Stones out of the Brook",
+   "label": "1 Samuel 17",
+   "book": "1 Samuel",
+   "chapter": 17,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-17.webm?v=4597",
+   "seconds": 459.7,
+   "question": "Everyone else saw a giant, but David saw a man defying the living God. How might seeing your problems in the light of who God is change the way you face them?",
+   "keys": [
+    "17:32",
+    "17:40",
+    "17:49"
+   ]
+  },
+  "1samuel-18": {
+   "title": "The Soul of Jonathan Was Knit with the Soul of David",
+   "label": "1 Samuel 18",
+   "book": "1 Samuel",
+   "chapter": 18,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-18.webm?v=4446",
+   "seconds": 444.6,
+   "question": "Jonathan loved David even though David might take his place as king, while Saul was consumed with jealousy. What do you think made the difference between them?",
+   "keys": [
+    "18:1",
+    "18:9",
+    "18:14"
+   ]
+  },
+  "1samuel-19": {
+   "title": "Michal Let David Down Through a Window",
+   "label": "1 Samuel 19",
+   "book": "1 Samuel",
+   "chapter": 19,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-19.webm?v=4408",
+   "seconds": 440.8,
+   "question": "When David was in danger, God protected him through Jonathan, through Michal, and through his Spirit. How have you seen God protect you, or others, through different people and ways?",
+   "keys": [
+    "19:4",
+    "19:12",
+    "19:18"
+   ]
+  },
+  "1samuel-20": {
+   "title": "The LORD Be Between Me and Thee for Ever",
+   "label": "1 Samuel 20",
+   "book": "1 Samuel",
+   "chapter": 20,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-20.webm?v=4238",
+   "seconds": 423.8,
+   "question": "Jonathan and David built their friendship on God. How does sharing faith in God make a friendship stronger?",
+   "keys": [
+    "20:3",
+    "20:17",
+    "20:42"
+   ]
+  },
+  "1samuel-21": {
+   "title": "There Is None Like That; Give It Me",
+   "label": "1 Samuel 21",
+   "book": "1 Samuel",
+   "chapter": 21,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-21.webm?v=4492",
+   "seconds": 449.2,
+   "question": "David went from facing Goliath with confidence to pretending to be mad out of fear. Why do you think even strong believers go through times of fear and weakness?",
+   "keys": [
+    "21:1",
+    "21:6",
+    "21:12"
+   ]
+  },
+  "1samuel-22": {
+   "title": "With Me Thou Shalt Be in Safeguard",
+   "label": "1 Samuel 22",
+   "book": "1 Samuel",
+   "chapter": 22,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-22.webm?v=4425",
+   "seconds": 442.5,
+   "question": "David took responsibility, saying, I have occasioned the death of all the persons of thy father’s house. Why is it important to admit our part when our choices hurt others?",
+   "keys": [
+    "22:2",
+    "22:14",
+    "22:23"
+   ]
+  },
+  "1samuel-23": {
+   "title": "Jonathan Strengthened His Hand in God",
+   "label": "1 Samuel 23",
+   "book": "1 Samuel",
+   "chapter": 23,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-23.webm?v=4448",
+   "seconds": 444.8,
+   "question": "Jonathan strengthened David’s hand in God by reminding him of God’s promises. Who has done that for you, and who could you do it for?",
+   "keys": [
+    "23:2",
+    "23:14",
+    "23:16"
+   ]
+  },
+  "1samuel-24": {
+   "title": "Mine Hand Shall Not Be upon Thee",
+   "label": "1 Samuel 24",
+   "book": "1 Samuel",
+   "chapter": 24,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-24.webm?v=4310",
+   "seconds": 431.0,
+   "question": "David’s men said, this is the day the LORD told you about. How can we tell the difference between an opportunity from God, and a temptation that only looks like one?",
+   "keys": [
+    "24:6",
+    "24:12",
+    "24:17"
+   ]
+  },
+  "1samuel-25": {
+   "title": "Blessed Be Thy Advice",
+   "label": "1 Samuel 25",
+   "book": "1 Samuel",
+   "chapter": 25,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-25.webm?v=4567",
+   "seconds": 456.7,
+   "question": "David was patient with Saul, but lost his temper with Nabal. Why do you think small insults can sometimes make us angrier than big trials?",
+   "keys": [
+    "25:3",
+    "25:29",
+    "25:33"
+   ]
+  },
+  "1samuel-26": {
+   "title": "I Have Played the Fool",
+   "label": "1 Samuel 26",
+   "book": "1 Samuel",
+   "chapter": 26,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-26.webm?v=4288",
+   "seconds": 428.8,
+   "question": "Saul said, I have played the fool, but he never really changed. What is the difference between being sorry for what we have done, and truly turning away from it?",
+   "keys": [
+    "26:9",
+    "26:21",
+    "26:23"
+   ]
+  },
+  "1samuel-27": {
+   "title": "David Said in His Heart",
+   "label": "1 Samuel 27",
+   "book": "1 Samuel",
+   "chapter": 27,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-27.webm?v=4310",
+   "seconds": 431.0,
+   "question": "David had seen God rescue him many times, yet he said, I shall now perish one day by the hand of Saul. Why do you think discouragement can make us forget what God has already done?",
+   "keys": [
+    "27:1",
+    "27:4",
+    "27:12"
+   ]
+  },
+  "1samuel-28": {
+   "title": "The LORD Answered Him Not",
+   "label": "1 Samuel 28",
+   "book": "1 Samuel",
+   "chapter": 28,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-28.webm?v=4694",
+   "seconds": 469.4,
+   "question": "Saul sought answers from a medium when God was silent. What are some ways people today look for guidance outside of God, and why can that be dangerous?",
+   "keys": [
+    "28:6",
+    "28:15",
+    "28:17"
+   ]
+  },
+  "1samuel-29": {
+   "title": "Return, and Go in Peace",
+   "label": "1 Samuel 29",
+   "book": "1 Samuel",
+   "chapter": 29,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-29.webm?v=3868",
+   "seconds": 386.8,
+   "question": "David got himself into a trap, and God got him out through people who did not even know God. Have you ever seen God rescue you from a situation you made for yourself?",
+   "keys": [
+    "29:6",
+    "29:9",
+    "29:11"
+   ]
+  },
+  "1samuel-30": {
+   "title": "David Encouraged Himself in the LORD His God",
+   "label": "1 Samuel 30",
+   "book": "1 Samuel",
+   "chapter": 30,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-30.webm?v=4417",
+   "seconds": 441.7,
+   "question": "David encouraged himself in the LORD when everyone else turned against him. What helps you to find strength in God when you feel alone?",
+   "keys": [
+    "30:6",
+    "30:8",
+    "30:24"
+   ]
+  },
+  "1samuel-31": {
+   "title": "Saul Died, and His Three Sons",
+   "label": "1 Samuel 31",
+   "book": "1 Samuel",
+   "chapter": 31,
+   "art": "media:images/symbols/1%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/1samuel/1samuel-31.webm?v=4240",
+   "seconds": 424.0,
+   "question": "Saul began well, but ended badly, while the men of Jabesh-gilead remembered his kindness. What do you hope people will remember about you, and how can you live that way now?",
+   "keys": [
+    "31:6",
+    "31:11",
+    "31:12"
+   ]
+  },
+  "2samuel-00": {
+   "title": "Meet the Second Book of Samuel",
+   "label": "Meet 2 Samuel",
+   "book": "2 Samuel",
+   "chapter": null,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-00.webm?v=2576",
+   "seconds": 257.6,
+   "question": "David was called a man after God’s own heart, and yet he sinned terribly. What do you think it means to have a heart after God’s heart?",
+   "keys": []
+  },
+  "2samuel-01": {
+   "title": "How Are the Mighty Fallen",
+   "label": "2 Samuel 1",
+   "book": "2 Samuel",
+   "chapter": 1,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-01.webm?v=4057",
+   "seconds": 405.7,
+   "question": "David mourned for Saul instead of celebrating his death. What does it take to grieve for someone who has hurt us?",
+   "keys": [
+    "1:23",
+    "1:26",
+    "1:27"
+   ]
+  },
+  "2samuel-02": {
+   "title": "Shall the Sword Devour for Ever?",
+   "label": "2 Samuel 2",
+   "book": "2 Samuel",
+   "chapter": 2,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-02.webm?v=4591",
+   "seconds": 459.1,
+   "question": "Abner asked, shall the sword devour for ever? Why do you think conflicts between people who should be close, like family or friends, can be so hard to stop?",
+   "keys": [
+    "2:1",
+    "2:5",
+    "2:26"
+   ]
+  },
+  "2samuel-03": {
+   "title": "A Prince and a Great Man Fallen This Day",
+   "label": "2 Samuel 3",
+   "book": "2 Samuel",
+   "chapter": 3,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-03.webm?v=5099",
+   "seconds": 509.9,
+   "question": "Joab took revenge, and broke the peace David had made. Why do you think revenge so often makes things worse, instead of better?",
+   "keys": [
+    "3:1",
+    "3:18",
+    "3:38"
+   ]
+  },
+  "2samuel-04": {
+   "title": "The LORD Hath Redeemed My Soul out of All Adversity",
+   "label": "2 Samuel 4",
+   "book": "2 Samuel",
+   "chapter": 4,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-04.webm?v=4367",
+   "seconds": 436.7,
+   "question": "Mephibosheth seemed unimportant, but God had not forgotten him. Who in your community is easily forgotten, and how could you show them God’s care?",
+   "keys": [
+    "4:1",
+    "4:4",
+    "4:9"
+   ]
+  },
+  "2samuel-05": {
+   "title": "The LORD God of Hosts Was with Him",
+   "label": "2 Samuel 5",
+   "book": "2 Samuel",
+   "chapter": 5,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-05.webm?v=4209",
+   "seconds": 420.9,
+   "question": "David understood that God had made him king for his people’s sake. How might your life change if you saw every gift God has given you as being for the sake of others?",
+   "keys": [
+    "5:3",
+    "5:10",
+    "5:12"
+   ]
+  },
+  "2samuel-06": {
+   "title": "David Danced Before the LORD with All His Might",
+   "label": "2 Samuel 6",
+   "book": "2 Samuel",
+   "chapter": 6,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-06.webm?v=4082",
+   "seconds": 408.2,
+   "question": "David danced before the LORD with all his might, while Michal despised him. What holds you back from worshipping God wholeheartedly?",
+   "keys": [
+    "6:11",
+    "6:14",
+    "6:21"
+   ]
+  },
+  "2samuel-07": {
+   "title": "I Took Thee from the Sheepcote",
+   "label": "2 Samuel 7",
+   "book": "2 Samuel",
+   "chapter": 7,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-07.webm?v=4380",
+   "seconds": 438.0,
+   "question": "David wanted to build a house for God, but God said he would build a house for David. What does this teach us about how God’s grace works?",
+   "keys": [
+    "7:8",
+    "7:13",
+    "7:22"
+   ]
+  },
+  "2samuel-08": {
+   "title": "David Executed Judgment and Justice unto All His People",
+   "label": "2 Samuel 8",
+   "book": "2 Samuel",
+   "chapter": 8,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-08.webm?v=4118",
+   "seconds": 411.8,
+   "question": "David was a great warrior, but the writer says the most important thing was that he executed judgment and justice. Why do you think justice matters so much to God?",
+   "keys": [
+    "8:6",
+    "8:11",
+    "8:15"
+   ]
+  },
+  "2samuel-09": {
+   "title": "Thou Shalt Eat Bread at My Table Continually",
+   "label": "2 Samuel 9",
+   "book": "2 Samuel",
+   "chapter": 9,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-09.webm?v=4296",
+   "seconds": 429.6,
+   "question": "Mephibosheth called himself a dead dog, but David treated him like one of the king’s sons. How does it change you to know that God sees you as his child, not as you see yourself?",
+   "keys": [
+    "9:1",
+    "9:7",
+    "9:8"
+   ]
+  },
+  "2samuel-10": {
+   "title": "Be of Good Courage, and Let Us Play the Men",
+   "label": "2 Samuel 10",
+   "book": "2 Samuel",
+   "chapter": 10,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-10.webm?v=4216",
+   "seconds": 421.6,
+   "question": "Joab said, be of good courage, and the LORD do that which seemeth him good. What does it look like to do our best, and still leave the outcome to God?",
+   "keys": [
+    "10:2",
+    "10:5",
+    "10:12"
+   ]
+  },
+  "2samuel-11": {
+   "title": "But the Thing That David Had Done Displeased the LORD",
+   "label": "2 Samuel 11",
+   "book": "2 Samuel",
+   "chapter": 11,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-11.webm?v=4721",
+   "seconds": 472.1,
+   "question": "David went from one sin to another, trying to cover up the first. Why do you think trying to hide sin so often leads to even worse sin?",
+   "keys": [
+    "11:1",
+    "11:11",
+    "11:27"
+   ]
+  },
+  "2samuel-12": {
+   "title": "Thou Art the Man",
+   "label": "2 Samuel 12",
+   "book": "2 Samuel",
+   "chapter": 12,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-12.webm?v=4588",
+   "seconds": 458.8,
+   "question": "Both Saul and David sinned, but David said, I have sinned against the LORD, without excuses. Why do you think it is so hard to admit our sin without blaming others?",
+   "keys": [
+    "12:7",
+    "12:13",
+    "12:23"
+   ]
+  },
+  "2samuel-13": {
+   "title": "And David Mourned for His Son Every Day",
+   "label": "2 Samuel 13",
+   "book": "2 Samuel",
+   "chapter": 13,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-13.webm?v=4448",
+   "seconds": 444.8,
+   "question": "David was very angry, but did nothing, and it led to more sorrow. Why is it sometimes so hard to confront wrongdoing, especially in our own families?",
+   "keys": [
+    "13:21",
+    "13:37",
+    "13:39"
+   ]
+  },
+  "2samuel-14": {
+   "title": "Yet Doth He Devise Means",
+   "label": "2 Samuel 14",
+   "book": "2 Samuel",
+   "chapter": 14,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-14.webm?v=4224",
+   "seconds": 422.4,
+   "question": "The wise woman said that God devises means, that his banished be not expelled from him. How has God made a way to bring you close to him?",
+   "keys": [
+    "14:14",
+    "14:24",
+    "14:33"
+   ]
+  },
+  "2samuel-15": {
+   "title": "So Absalom Stole the Hearts of the Men of Israel",
+   "label": "2 Samuel 15",
+   "book": "2 Samuel",
+   "chapter": 15,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-15.webm?v=4644",
+   "seconds": 464.4,
+   "question": "Ittai said he would stay with David whether in death or life. What does it mean to follow Jesus with that kind of loyalty?",
+   "keys": [
+    "15:6",
+    "15:21",
+    "15:26"
+   ]
+  },
+  "2samuel-16": {
+   "title": "It May Be That the LORD Will Look on Mine Affliction",
+   "label": "2 Samuel 16",
+   "book": "2 Samuel",
+   "chapter": 16,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-16.webm?v=4469",
+   "seconds": 446.9,
+   "question": "David said of Shimei, let him alone, and let him curse. What do you think helped David to respond to insults without taking revenge?",
+   "keys": [
+    "16:10",
+    "16:12",
+    "16:23"
+   ]
+  },
+  "2samuel-17": {
+   "title": "The LORD Had Appointed to Defeat the Counsel of Ahithophel",
+   "label": "2 Samuel 17",
+   "book": "2 Samuel",
+   "chapter": 17,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-17.webm?v=4760",
+   "seconds": 476.0,
+   "question": "God defeated Ahithophel’s clever plan through Hushai. How does it encourage you to know that no plan can succeed against the LORD?",
+   "keys": [
+    "17:14",
+    "17:22",
+    "17:29"
+   ]
+  },
+  "2samuel-18": {
+   "title": "O My Son Absalom",
+   "label": "2 Samuel 18",
+   "book": "2 Samuel",
+   "chapter": 18,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-18.webm?v=4558",
+   "seconds": 455.8,
+   "question": "David said, would God I had died for thee. How does David’s grief help you understand God’s love for people who have turned away from him?",
+   "keys": [
+    "18:5",
+    "18:32",
+    "18:33"
+   ]
+  },
+  "2samuel-19": {
+   "title": "Yea, Let Him Take All",
+   "label": "2 Samuel 19",
+   "book": "2 Samuel",
+   "chapter": 19,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-19.webm?v=4500",
+   "seconds": 450.0,
+   "question": "Mephibosheth said, let him take all, because the king was home. What would it look like for you to love God more than anything he gives you?",
+   "keys": [
+    "19:4",
+    "19:23",
+    "19:30"
+   ]
+  },
+  "2samuel-20": {
+   "title": "I Am One of Them That Are Peaceable and Faithful",
+   "label": "2 Samuel 20",
+   "book": "2 Samuel",
+   "chapter": 20,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-20.webm?v=4381",
+   "seconds": 438.1,
+   "question": "The wise woman of Abel saved her city with a few wise words. When have you seen a calm, wise word stop a conflict from getting worse?",
+   "keys": [
+    "20:2",
+    "20:16",
+    "20:19"
+   ]
+  },
+  "2samuel-21": {
+   "title": "Because of the LORD’s Oath",
+   "label": "2 Samuel 21",
+   "book": "2 Samuel",
+   "chapter": 21,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-21.webm?v=4439",
+   "seconds": 443.9,
+   "question": "Saul broke his oath and it brought trouble, while David kept his oath to Jonathan. Why do you think God cares so much about the promises we make?",
+   "keys": [
+    "21:7",
+    "21:14",
+    "21:22"
+   ]
+  },
+  "2samuel-22": {
+   "title": "The LORD Is My Rock, and My Fortress",
+   "label": "2 Samuel 22",
+   "book": "2 Samuel",
+   "chapter": 22,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-22.webm?v=4738",
+   "seconds": 473.8,
+   "question": "David said, thy gentleness hath made me great. How has God’s gentleness, his patience and kindness, shaped your life?",
+   "keys": [
+    "22:2",
+    "22:7",
+    "22:31"
+   ]
+  },
+  "2samuel-23": {
+   "title": "The Water of the Well of Bethlehem",
+   "label": "2 Samuel 23",
+   "book": "2 Samuel",
+   "chapter": 23,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-23.webm?v=4475",
+   "seconds": 447.5,
+   "question": "David put his hope in God’s everlasting covenant, even though his own house had failed. Why is it so important that our hope rests on God’s promise, and not on our own goodness?",
+   "keys": [
+    "23:3",
+    "23:5",
+    "23:16"
+   ]
+  },
+  "2samuel-24": {
+   "title": "Let Us Fall Now into the Hand of the LORD",
+   "label": "2 Samuel 24",
+   "book": "2 Samuel",
+   "chapter": 24,
+   "art": "media:images/symbols/2%20Samuel-symbol.svg",
+   "audio": "media:audio/bible-walk/2samuel/2samuel-24.webm?v=4604",
+   "seconds": 460.4,
+   "question": "David said he would not offer to God that which cost him nothing. What does it look like for your worship and service to God to cost you something?",
+   "keys": [
+    "24:10",
+    "24:14",
+    "24:24"
+   ]
+  },
   "acts-00": {
    "title": "Meet the Book of Acts",
    "label": "Meet Acts",
@@ -4445,6 +5292,332 @@
     "24:15",
     "24:24",
     "24:31"
+   ]
+  },
+  "judges-00": {
+   "title": "Meet the Book of Judges",
+   "label": "Meet Judges",
+   "book": "Judges",
+   "chapter": null,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-00.webm?v=2627",
+   "seconds": 262.7,
+   "question": "The people of Israel forgot God within one generation. What helps you to remember what God has done, so that you do not drift away from him?",
+   "keys": []
+  },
+  "judges-01": {
+   "title": "Neither Did They Drive Them Out",
+   "label": "Judges 1",
+   "book": "Judges",
+   "chapter": 1,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-01.webm?v=4354",
+   "seconds": 435.4,
+   "question": "Israel settled for less than God had promised, because it seemed easier. Where are you tempted to settle for half obedience, instead of following God fully?",
+   "keys": [
+    "1:1",
+    "1:19",
+    "1:28"
+   ]
+  },
+  "judges-02": {
+   "title": "Nevertheless the LORD Raised Up Judges",
+   "label": "Judges 2",
+   "book": "Judges",
+   "chapter": 2,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-02.webm?v=4230",
+   "seconds": 423.0,
+   "question": "A whole generation grew up who knew not the LORD. What do you think it takes for faith to be passed on from one generation to the next?",
+   "keys": [
+    "2:10",
+    "2:16",
+    "2:18"
+   ]
+  },
+  "judges-03": {
+   "title": "The LORD Raised Up a Deliverer",
+   "label": "Judges 3",
+   "book": "Judges",
+   "chapter": 3,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-03.webm?v=4519",
+   "seconds": 451.9,
+   "question": "God used Othniel from a family of faith, Ehud who was left-handed, and Shamgar with a farmer’s stick. What ordinary thing in your life might God want to use for his purposes?",
+   "keys": [
+    "3:9",
+    "3:10",
+    "3:15"
+   ]
+  },
+  "judges-04": {
+   "title": "Is Not the LORD Gone Out Before Thee?",
+   "label": "Judges 4",
+   "book": "Judges",
+   "chapter": 4,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-04.webm?v=4592",
+   "seconds": 459.2,
+   "question": "Barak would only go if Deborah went with him. Is it wrong to want others with us when God calls us, or can it be a good thing? What do you think?",
+   "keys": [
+    "4:4",
+    "4:9",
+    "4:14"
+   ]
+  },
+  "judges-05": {
+   "title": "The Stars in Their Courses Fought",
+   "label": "Judges 5",
+   "book": "Judges",
+   "chapter": 5,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-05.webm?v=4480",
+   "seconds": 448.0,
+   "question": "Some tribes came to help, and some stayed at home with great searchings of heart. What helps you to move from thinking about doing good, to actually doing it?",
+   "keys": [
+    "5:3",
+    "5:20",
+    "5:31"
+   ]
+  },
+  "judges-06": {
+   "title": "The LORD Is with Thee, Thou Mighty Man of Valour",
+   "label": "Judges 6",
+   "book": "Judges",
+   "chapter": 6,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-06.webm?v=4624",
+   "seconds": 462.4,
+   "question": "God called Gideon a mighty man of valour while he was hiding in a winepress. What do you think God might see in you that you cannot yet see in yourself?",
+   "keys": [
+    "6:12",
+    "6:15",
+    "6:24"
+   ]
+  },
+  "judges-07": {
+   "title": "The Sword of the LORD, and of Gideon",
+   "label": "Judges 7",
+   "book": "Judges",
+   "chapter": 7,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-07.webm?v=4693",
+   "seconds": 469.3,
+   "question": "God made Gideon’s army smaller so Israel could not boast. Why do you think God sometimes allows us to feel weak or small?",
+   "keys": [
+    "7:2",
+    "7:7",
+    "7:20"
+   ]
+  },
+  "judges-08": {
+   "title": "The LORD Shall Rule over You",
+   "label": "Judges 8",
+   "book": "Judges",
+   "chapter": 8,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-08.webm?v=4255",
+   "seconds": 425.5,
+   "question": "Gideon refused to be king, but then made the golden ephod that became a snare. Why do you think people are often most in danger right after a great success?",
+   "keys": [
+    "8:4",
+    "8:23",
+    "8:34"
+   ]
+  },
+  "judges-09": {
+   "title": "The Trees Went Forth to Anoint a King",
+   "label": "Judges 9",
+   "book": "Judges",
+   "chapter": 9,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-09.webm?v=4576",
+   "seconds": 457.6,
+   "question": "The olive tree, the fig tree and the vine all said no to ruling, because they were busy being fruitful. What fruitful work has God given you to do right where you are?",
+   "keys": [
+    "9:8",
+    "9:15",
+    "9:57"
+   ]
+  },
+  "judges-10": {
+   "title": "His Soul Was Grieved for the Misery of Israel",
+   "label": "Judges 10",
+   "book": "Judges",
+   "chapter": 10,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-10.webm?v=4088",
+   "seconds": 408.8,
+   "question": "When the people put away their strange gods, the Bible says God’s soul was grieved for their misery. What does this tell you about God’s heart toward people who turn back to him?",
+   "keys": [
+    "10:10",
+    "10:14",
+    "10:16"
+   ]
+  },
+  "judges-11": {
+   "title": "I Have Opened My Mouth unto the LORD",
+   "label": "Judges 11",
+   "book": "Judges",
+   "chapter": 11,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-11.webm?v=4625",
+   "seconds": 462.5,
+   "question": "Jephthah tried to bargain with God, when God had already given him his Spirit. Why do you think people try to make deals with God, and what does it show about how we see him?",
+   "keys": [
+    "11:27",
+    "11:30",
+    "11:35"
+   ]
+  },
+  "judges-12": {
+   "title": "Say Now Shibboleth",
+   "label": "Judges 12",
+   "book": "Judges",
+   "chapter": 12,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-12.webm?v=4386",
+   "seconds": 438.6,
+   "question": "The quarrel between Gilead and Ephraim began with pride and insults. What helps you to stop a disagreement from growing into a bigger fight?",
+   "keys": [
+    "12:3",
+    "12:5",
+    "12:7"
+   ]
+  },
+  "judges-13": {
+   "title": "Why Askest Thou After My Name?",
+   "label": "Judges 13",
+   "book": "Judges",
+   "chapter": 13,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-13.webm?v=4369",
+   "seconds": 436.9,
+   "question": "Manoah was afraid, but his wife reasoned from God’s kindness to them. When you are afraid, how can remembering what God has already done help you to trust him?",
+   "keys": [
+    "13:3",
+    "13:18",
+    "13:24"
+   ]
+  },
+  "judges-14": {
+   "title": "Out of the Strong Came Forth Sweetness",
+   "label": "Judges 14",
+   "book": "Judges",
+   "chapter": 14,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-14.webm?v=4540",
+   "seconds": 454.0,
+   "question": "Samson had great strength, but little self control. Which do you think is harder to have, and why does the Bible value self control so highly?",
+   "keys": [
+    "14:4",
+    "14:6",
+    "14:14"
+   ]
+  },
+  "judges-15": {
+   "title": "The Cords Became as Flax Burnt with Fire",
+   "label": "Judges 15",
+   "book": "Judges",
+   "chapter": 15,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-15.webm?v=4453",
+   "seconds": 445.3,
+   "question": "The men of Judah would rather tie up their deliverer than stand up to the Philistines. Why do you think people sometimes prefer a comfortable slavery to the risk of freedom?",
+   "keys": [
+    "15:11",
+    "15:14",
+    "15:18"
+   ]
+  },
+  "judges-16": {
+   "title": "He Wist Not That the LORD Was Departed",
+   "label": "Judges 16",
+   "book": "Judges",
+   "chapter": 16,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-16.webm?v=4307",
+   "seconds": 430.7,
+   "question": "Samson did not know that the LORD had departed from him. What helps you to notice when you are drifting away from God, before it is too late?",
+   "keys": [
+    "16:20",
+    "16:22",
+    "16:28"
+   ]
+  },
+  "judges-17": {
+   "title": "Every Man Did That Which Was Right in His Own Eyes",
+   "label": "Judges 17",
+   "book": "Judges",
+   "chapter": 17,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-17.webm?v=4142",
+   "seconds": 414.2,
+   "question": "Micah used the LORD’s name, but did what was right in his own eyes. How can we tell the difference between truly following God, and making a faith that suits ourselves?",
+   "keys": [
+    "17:6",
+    "17:10",
+    "17:13"
+   ]
+  },
+  "judges-18": {
+   "title": "Ye Have Taken Away My Gods Which I Made",
+   "label": "Judges 18",
+   "book": "Judges",
+   "chapter": 18,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-18.webm?v=4121",
+   "seconds": 412.1,
+   "question": "Micah cried, ye have taken away my gods which I made, and what have I more? What are some things people today depend on, that could be taken away from them?",
+   "keys": [
+    "18:19",
+    "18:24",
+    "18:31"
+   ]
+  },
+  "judges-19": {
+   "title": "Consider of It, Take Advice, and Speak Your Minds",
+   "label": "Judges 19",
+   "book": "Judges",
+   "chapter": 19,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-19.webm?v=4262",
+   "seconds": 426.2,
+   "question": "In this dark chapter, the only kindness came from an old man who was a stranger himself. What does it mean for you to be a light when the people around you are cold?",
+   "keys": [
+    "19:15",
+    "19:20",
+    "19:30"
+   ]
+  },
+  "judges-20": {
+   "title": "Shall I Go Up Against Benjamin My Brother?",
+   "label": "Judges 20",
+   "book": "Judges",
+   "chapter": 20,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-20.webm?v=4749",
+   "seconds": 474.9,
+   "question": "Benjamin chose loyalty to its own people over doing what was right. Why is it sometimes so hard to admit that someone on our side has done wrong?",
+   "keys": [
+    "20:1",
+    "20:13",
+    "20:26"
+   ]
+  },
+  "judges-21": {
+   "title": "In Those Days There Was No King in Israel",
+   "label": "Judges 21",
+   "book": "Judges",
+   "chapter": 21,
+   "art": "media:images/symbols/Judges-symbol.svg",
+   "audio": "media:audio/bible-walk/judges/judges-21.webm?v=4393",
+   "seconds": 439.3,
+   "question": "The book of Judges ends, every man did that which was right in his own eyes. What do you think it looks like in our world today when people do what is right in their own eyes? And what would it look like to let God be King instead?",
+   "keys": [
+    "21:3",
+    "21:6",
+    "21:25"
    ]
   },
   "luke-00": {

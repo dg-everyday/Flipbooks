@@ -5,3 +5,4 @@
 # which some voices spell out letter by letter.
 
 Judaea = Judea
+Michal = Meekal

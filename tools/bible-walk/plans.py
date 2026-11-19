@@ -199,6 +199,36 @@ PLANS = [
         "cover": {"symbol": "1 John"},
         "episodes": [f"1john-{n:02d}" for n in range(0, 6)],
     },
+    {
+        "id": "2kings",
+        "title": "2 Kings",
+        "subtitle": "They That Be with Us Are More",
+        "about": "Elijah is taken up in a chariot of fire, and Elisha brings God’s mercy to widows, "
+                 "children and even a Syrian general. Then Israel falls to Assyria, good kings "
+                 "Hezekiah and Josiah turn Judah back to God, and at last Jerusalem falls to Babylon.",
+        "cover": {"symbol": "2 Kings"},
+        "episodes": [f"2kings-{n:02d}" for n in range(0, 26)],
+    },
+    {
+        "id": "ezra",
+        "title": "Ezra",
+        "subtitle": "The Good Hand of Our God",
+        "about": "God stirs the heart of Cyrus, and the exiles come home to rebuild the house of the "
+                 "LORD. Through opposition and delay the temple is finished with joy, and Ezra the "
+                 "scribe teaches the people to seek God’s Word, and to do it.",
+        "cover": {"symbol": "Ezra"},
+        "episodes": [f"ezra-{n:02d}" for n in range(0, 11)],
+    },
+    {
+        "id": "nehemiah",
+        "title": "Nehemiah",
+        "subtitle": "Let Us Rise Up and Build",
+        "about": "A king’s cupbearer weeps for Jerusalem’s broken walls, prays, and goes home to "
+                 "rebuild them. Through mockery, threats and hardship the wall is finished in "
+                 "fifty two days, and the people gather to hear God’s Word and renew their covenant.",
+        "cover": {"symbol": "Nehemiah"},
+        "episodes": [f"nehemiah-{n:02d}" for n in range(0, 14)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

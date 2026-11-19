@@ -138,6 +138,29 @@ button:disabled {
     color: #f0c66c;
 }
 
+/* The word after sharing the week ("Link copied", "Tap share again"), at the
+   foot of the screen (apps/pages/scripts/flipbook-share.js). */
+.share-note {
+    position: fixed;
+    left: 50%;
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
+    max-width: calc(100vw - 32px);
+    margin: 0;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #04111f;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+.share-note[hidden] {
+    display: none;
+}
+
 /* Wire binding: remote first, local copy as fallback. Root-relative so the
    URL resolves the same way wherever it is used. */
 flip-book {

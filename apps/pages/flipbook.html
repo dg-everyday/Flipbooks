@@ -53,7 +53,7 @@
         />
         <link
             rel="stylesheet"
-            href="../../assets/styles/flipbook-page.css?v=20261031-1"
+            href="../../assets/styles/flipbook-page.css?v=20261120-1"
         />
     </head>
     <body>
@@ -124,8 +124,9 @@
             // upgraded before `pages` is assigned; setting it on a plain
             // HTMLElement would shadow the accessor and the list would never
             // reach the component.
-            import "../../apps/components/flip-book.js?v=20261030-1";
+            import "../../apps/components/flip-book.js?v=20261120-1";
             import { buildWeekPages } from "./scripts/daily-grace-week.js?v=20261009-1";
+            import { setUpShare } from "./scripts/flipbook-share.js?v=20261120-1";
 
             // The main page links here with ?date=YYYY-MM-DD while the reader
             // is looking back at an earlier day, to open that day's week. The
@@ -147,8 +148,16 @@
                 `library.html#month/${shown.slice(0, 7)}`;
 
             const reader = document.getElementById("reader");
+            // The week's cover carries a share button: it sends the cover
+            // picture through the device's share sheet, with a link that names
+            // the day, so it opens on this same week.
+            const share = setUpShare(reader, { date: shown });
             try {
-                reader.pages = await buildWeekPages({ date });
+                const pages = await buildWeekPages({ date });
+                reader.pages = pages.map((page) =>
+                    page.id === "cover" ? { ...page, share: true } : page,
+                );
+                share.prepare(pages.find((page) => page.id === "cover")?.src);
             } catch (error) {
                 console.error("Unable to build this week's pages:", error);
                 reader.pages = [];

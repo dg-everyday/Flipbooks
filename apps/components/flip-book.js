@@ -28,6 +28,9 @@
  *   @property {FlipAction} [action]    A small pill drawn at the page's top right
  *                                      (left of the play button when there is one);
  *                                      a tap fires `pageaction`.
+ *   @property {boolean} [share]        Present → a round share button is drawn at the
+ *                                      page's top right (left of the play button and
+ *                                      the action pill); a tap fires `pageshare`.
  *   @property {string}  [id]           Opaque caller key, echoed back on `pagechange`.
  *   @property {FlipPlaceholder} [placeholder]  Render this instead of the image.
  *
@@ -67,6 +70,8 @@
  * Events       ready       detail: { pageCount }
  *              pagechange  detail: { index, pageCount, id }
  *              pageaction  a page's action pill was tapped, detail: { index, id }
+ *              pageshare   a page's share button was tapped,
+ *                          detail: { index, id, src, button } (button: the one tapped)
  *              finish      the last page is on show, once each time pages is
  *                          set, detail: { pageCount } (without the end leaf)
  *              error       detail: { message }
@@ -110,6 +115,8 @@ const UP_OVERHANG = 14; // how far the rings reach above the page edge
 const LOAD_BEHIND = 2;
 const LOAD_AHEAD = 4;
 
+// The same icon as the share button on the home page's poster (poster-card.js).
+const SHARE_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
 const PLAY_ICON =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
 const PAUSE_ICON =
@@ -191,8 +198,10 @@ const STYLES = /* css */ `
     container-type: inline-size;
   }
   .future-page img,
-  .future-page .audio-play { visibility: hidden; }
-  .future-page .audio-play { pointer-events: none; }
+  .future-page .audio-play,
+  .future-page .page-share { visibility: hidden; }
+  .future-page .audio-play,
+  .future-page .page-share { pointer-events: none; }
 
   .availability-message {
     -webkit-user-select: none; user-select: none;
@@ -394,6 +403,31 @@ const STYLES = /* css */ `
   .page-action:hover { background: #a91f1f; }
   .page-action:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
   .future-page .page-action { visibility: hidden; pointer-events: none; }
+
+  /* A page's share button (FlipPage share): white on red, as the share button
+     on the home page's poster (poster-card.js), at the page's top right. */
+  .page-share {
+    appearance: none;
+    position: absolute; top: 0; left: 0; z-index: 6;
+    width: 42px; height: 42px; min-width: 42px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: #c62828; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    cursor: pointer; line-height: 1;
+    touch-action: manipulation;
+    opacity: 0; pointer-events: none;
+  }
+  .page-share.is-placed { opacity: 1; pointer-events: auto; }
+  .page-share svg { display: block; width: 18px; height: 18px; transition: transform .2s ease; }
+  .page-share:hover,
+  .page-share:focus-visible { background: #a91f1f; }
+  .page-share:hover svg,
+  .page-share:focus-visible svg { transform: scale(1.08); }
+  .page-share:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+  @media (prefers-reduced-motion: reduce) {
+    .page-share svg { transition: none; }
+  }
 `;
 
 const TEMPLATE = /* html */ `
@@ -413,7 +447,7 @@ const TEMPLATE = /* html */ `
 // rather than carried, so a typo fails loudly instead of silently doing nothing.
 function normalizePage(entry) {
     if (entry == null) {
-        return { src: null, alt: "", audio: null, action: null, id: null, placeholder: null };
+        return { src: null, alt: "", audio: null, action: null, share: false, id: null, placeholder: null };
     }
     if (typeof entry === "string") {
         return {
@@ -421,6 +455,7 @@ function normalizePage(entry) {
             alt: "",
             audio: null,
             action: null,
+            share: false,
             id: null,
             placeholder: null,
         };
@@ -444,6 +479,7 @@ function normalizePage(entry) {
             entry.action && typeof entry.action.label === "string" && entry.action.label
                 ? { label: entry.action.label, title: entry.action.title || entry.action.label }
                 : null,
+        share: entry.share === true,
         id: entry.id ?? null,
         placeholder,
     };
@@ -920,6 +956,24 @@ export class Flipbook extends HTMLElement {
         return btn;
     }
 
+    #createShareButton(index, entry) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "page-share";
+        btn.title = "Share";
+        btn.setAttribute("aria-label", "Share this page");
+        btn.innerHTML = SHARE_ICON;
+        const stopStageGesture = (e) => e.stopPropagation();
+        btn.addEventListener("pointerdown", stopStageGesture);
+        btn.addEventListener("pointerup", stopStageGesture);
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.#emit("pageshare", { index, id: entry.id, src: entry.src, button: btn });
+        });
+        return btn;
+    }
+
     #positionPlayButton(btn) {
         const img = btn.parentElement && btn.parentElement.querySelector("img");
         if (!img || !img.naturalWidth) {
@@ -936,6 +990,17 @@ export class Flipbook extends HTMLElement {
                 right -= (play.offsetWidth || 44) + 8;
             }
             btn.style.top = `${box.top + inset + 9}px`;
+        } else if (btn.classList.contains("page-share")) {
+            // The share button sits left of the play button and the pill.
+            const play = btn.parentElement.querySelector(".audio-play");
+            const action = btn.parentElement.querySelector(".page-action");
+            if (play) {
+                right -= (play.offsetWidth || 44) + 8;
+            }
+            if (action) {
+                right -= (action.offsetWidth || 40) + 8;
+            }
+            btn.style.top = `${box.top + inset}px`;
         } else {
             btn.style.top = `${box.top + inset}px`;
         }
@@ -945,7 +1010,7 @@ export class Flipbook extends HTMLElement {
 
     #positionPlayButtons() {
         this.#root
-            .querySelectorAll(".audio-play, .page-action")
+            .querySelectorAll(".audio-play, .page-action, .page-share")
             .forEach((btn) => this.#positionPlayButton(btn));
     }
 
@@ -1029,6 +1094,9 @@ export class Flipbook extends HTMLElement {
             }
             if (entry.action) {
                 page.appendChild(this.#createActionButton(entry.action, i, entry.id));
+            }
+            if (entry.share) {
+                page.appendChild(this.#createShareButton(i, entry));
             }
             img.addEventListener("load", () => this.#positionPlayButtons());
             this.#book.appendChild(page);
@@ -1124,6 +1192,9 @@ export class Flipbook extends HTMLElement {
             }
             if (entry.action) {
                 wrap.appendChild(this.#createActionButton(entry.action, index, entry.id));
+            }
+            if (entry.share) {
+                wrap.appendChild(this.#createShareButton(index, entry));
             }
             img.addEventListener("load", () => this.#positionPlayButtons());
         });
@@ -1261,7 +1332,7 @@ export class Flipbook extends HTMLElement {
 
     #handlePageTap(x, y) {
         const el = this.#root.elementFromPoint(x, y);
-        if (!el || el.closest(".audio-play, .page-action")) {
+        if (!el || el.closest(".audio-play, .page-action, .page-share")) {
             return;
         }
         if (!el.closest(".page, .spread-page")) {

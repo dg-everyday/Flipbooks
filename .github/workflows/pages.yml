@@ -59,6 +59,11 @@ jobs:
       # midnight and this run comes hours later; a failure only warns.
       - name: Write the Archives' day pages
         run: node assets/scripts/build-day-pages.mjs _site
+      # A page for each week of the Flipbook (/w/2026-11-15.html), so a shared
+      # week shows its cover in Messenger and the like, and opens the Flipbook at
+      # that week. Only the copy in _site gets them; a failure only warns.
+      - name: Write the Flipbook's week pages
+        run: node assets/scripts/build-week-pages.mjs _site
       # The repo keeps JSON pretty for reading and diffs; the site gets it
       # compact. Only the copy in _site is rewritten. A file that does not
       # parse ships as it is, with a warning, so it cannot block the daily deploy.

@@ -61,9 +61,21 @@ jobs:
         run: node assets/scripts/build-day-pages.mjs _site
       # A page for each week of the Flipbook (/w/2026-11-15.html), so a shared
       # week shows its cover in Messenger and the like, and opens the Flipbook at
-      # that week. Only the copy in _site gets them; a failure only warns.
+      # that week, with a 1200 x 630 preview card (/w/2026-11-15.jpg) made from
+      # the cover by sharp. The cards are kept between runs in the Actions cache,
+      # so a run makes only the new ones. If sharp cannot be installed, the pages
+      # name the covers instead; a failure of any kind only warns.
+      - name: Install the image tool for the week pages' cards
+        continue-on-error: true
+        run: npm install --prefix "$RUNNER_TEMP/sharp" --no-save --no-audit --no-fund sharp@0.33.5
+      - name: Restore the week pages' cards
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/week-cards
+          key: week-cards-${{ github.run_id }}
+          restore-keys: week-cards-
       - name: Write the Flipbook's week pages
-        run: node assets/scripts/build-week-pages.mjs _site
+        run: SHARP="$RUNNER_TEMP/sharp/node_modules/sharp" node assets/scripts/build-week-pages.mjs _site --cache ~/.cache/week-cards
       # The repo keeps JSON pretty for reading and diffs; the site gets it
       # compact. Only the copy in _site is rewritten. A file that does not
       # parse ships as it is, with a warning, so it cannot block the daily deploy.

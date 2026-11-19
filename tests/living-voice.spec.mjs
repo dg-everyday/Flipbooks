@@ -4,7 +4,8 @@
  * playing screens, the chapter beside it (read along, its words, its question),
  * picking up where the reader left off on the page and on the home card,
  * auto-play into the next chapter, speed, sleep timer and auto-play settings,
- * previous and next, and "Write my answer" in My Faith Journal.
+ * previous and next, the loading ring and ticks while a recording comes,
+ * fetching the next chapter ahead at 75%, and "Write my answer" in My Faith Journal.
  *
  * The recordings are replaced by a three-second silence
  * (tests/fixtures/bible-walk-silence.webm), so nothing waits on R2.
@@ -182,6 +183,91 @@ test("a chapter that ends is ticked off and the next one plays by itself", async
     await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
     await expect(button(page, "play")).toHaveAttribute("aria-label", "Play", { timeout: 10_000 });
     await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark");
+});
+
+test("a recording that is slow to come shows a turning ring, says Loading… and ticks", async ({ page }) => {
+    desktopOnly();
+    // Count the ticks: each is one oscillator note.
+    await page.addInitScript(() => {
+        window.ticks = 0;
+        const Context = window.AudioContext;
+        const create = Context.prototype.createOscillator;
+        Context.prototype.createOscillator = function () {
+            window.ticks += 1;
+            return create.call(this);
+        };
+    });
+    let release;
+    const held = new Promise((resolve) => {
+        release = resolve;
+    });
+    await page.route("**/audio/bible-walk/**", async (route) => {
+        await held;
+        await route.fulfill({ path: "tests/fixtures/bible-walk-silence.webm", contentType: "audio/webm" });
+    });
+    await page.goto(`${PAGE}#walk-00`);
+    await button(page, "play").click();
+
+    const device = page.locator(".device");
+    await expect(device).toHaveClass(/is-loading/);
+    await expect(device).toHaveAttribute("aria-busy", "true");
+    await expect(device.locator(".lcd-status")).toHaveText(/^Loading…/);
+    await expect(button(page, "play")).toHaveAttribute("aria-label", "Pause");
+    await expect.poll(() => page.evaluate(() => window.ticks)).toBeGreaterThanOrEqual(2);
+
+    // The recording arrives: the ring and the ticks stop.
+    release();
+    await expect(device).not.toHaveClass(/is-loading/);
+    await expect(device).toHaveAttribute("aria-busy", "false");
+    await expect(device.locator(".lcd-status")).toHaveText(/^Playing/);
+    const after = await page.evaluate(() => window.ticks);
+    await page.waitForTimeout(1600);
+    expect(await page.evaluate(() => window.ticks)).toBe(after);
+});
+
+/** Chapters as long as the three-second silence, so 75% comes; returns the recordings asked for. */
+async function shortChapters(page) {
+    await page.route("**/bible-walk/walk.json*", async (route) => {
+        const walk = await (await route.fetch()).json();
+        for (const episode of Object.values(walk.episodes)) {
+            episode.seconds = 3;
+        }
+        await route.fulfill({ json: walk });
+    });
+    const asked = [];
+    await page.route("**/audio/bible-walk/**", (route) => {
+        asked.push(new URL(route.request().url()).pathname.split("/").pop());
+        return route.fulfill({ path: "tests/fixtures/bible-walk-silence.webm", contentType: "audio/webm" });
+    });
+    return asked;
+}
+
+test("with auto-play off, the next chapter is not fetched ahead", async ({ page }) => {
+    desktopOnly();
+    await seed(page, { done: {}, pos: {}, last: null, speed: 1, auto: false });
+    const asked = await shortChapters(page);
+    await page.goto(`${PAGE}#walk-00`);
+    await button(page, "play").click();
+    await expect(button(page, "play")).toHaveAttribute("aria-label", "Pause");
+    // The chapter plays to its end and stops; nothing after it was asked for.
+    await expect(button(page, "play")).toHaveAttribute("aria-label", "Play", { timeout: 10_000 });
+    expect(asked.some((name) => name.startsWith("walk-00"))).toBe(true);
+    expect(asked.some((name) => name.startsWith("mark-00"))).toBe(false);
+});
+
+test("at three-quarters of a chapter the next one is fetched ahead, and plays from that", async ({ page }) => {
+    desktopOnly();
+    const asked = await shortChapters(page);
+    await page.goto(`${PAGE}#walk-00`);
+    await button(page, "play").click();
+
+    // Mark's introduction is fetched while How to Walk still plays...
+    await expect.poll(() => asked.filter((name) => name.startsWith("mark-00")).length).toBe(1);
+
+    // ...and plays from what was fetched, not fetched again.
+    await expect(lcd(page).locator(".now-title")).toHaveText("Meet the Book of Mark", { timeout: 10_000 });
+    await expect(page.locator(".device .lcd-status")).toHaveText(/^Playing/);
+    expect(asked.filter((name) => name.startsWith("mark-00")).length).toBe(1);
 });
 
 test("next, previous, speed and the sleep timer", async ({ page }) => {

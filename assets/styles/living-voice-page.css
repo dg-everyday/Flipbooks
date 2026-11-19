@@ -506,6 +506,50 @@ main {
 .device:not(.is-playing) .btn.play svg {
     margin-left: 4px;
 }
+
+/* Loading: a ring turns round the play button (and the foot bar's), and the
+   button breathes, until the recording is heard (living-voice.js, is-loading). */
+.btn.play,
+.mini-play {
+    position: relative;
+}
+.device.is-loading .btn.play::after,
+.mini-player.is-loading .mini-play::after {
+    content: "";
+    position: absolute;
+    inset: -9px;
+    border: 3px solid rgb(225 182 93 / 22%);
+    border-top-color: var(--gold-light);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: lv-spin 0.9s linear infinite;
+}
+.mini-player.is-loading .mini-play::after {
+    inset: -5px;
+    border-width: 2px;
+}
+.device.is-loading .btn.play svg,
+.mini-player.is-loading .mini-play svg {
+    animation: lv-breathe 1.4s ease-in-out infinite;
+}
+.device.is-loading .lcd-status {
+    color: var(--lcd-ink);
+    font-weight: 700;
+}
+@keyframes lv-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes lv-breathe {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.45;
+    }
+}
 .btn.small {
     display: inline-flex;
     align-items: center;
@@ -726,5 +770,15 @@ body.has-mini-player {
     }
     .btn:active {
         transform: none;
+    }
+    /* A still ring, half lit, instead of a turning one. */
+    .device.is-loading .btn.play::after,
+    .mini-player.is-loading .mini-play::after {
+        animation: none;
+        border-right-color: var(--gold-light);
+    }
+    .device.is-loading .btn.play svg,
+    .mini-player.is-loading .mini-play svg {
+        animation: none;
     }
 }

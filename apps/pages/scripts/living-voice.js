@@ -27,6 +27,9 @@
  * the next step of this reader's walk. While a chapter plays and the player
  * is scrolled away, a bar at the foot of the page (#mini-player) shows it.
  * The phone's lock screen and earbuds control it too (Media Session).
+ * While a recording loads, a ring turns round the play button, the screen
+ * says Loading…, and a soft tick sounds now and then. With auto-play on, at 75%
+ * of a chapter the next one is fetched ahead, so it starts without that wait.
  * Progress, speed and auto-play are kept on this device
  * (assets/scripts/bible-walk/progress.js); a chapter counts as heard at 95%.
  *
@@ -55,6 +58,7 @@ const FORWARD_SECONDS = 30;
 const RESTART_AFTER = 3; // seconds in, after which Previous restarts the chapter
 const HEARD_SHARE = 0.95;
 const SAVE_EVERY = 5; // seconds of listening between saves of the position
+const READ_AHEAD_SHARE = 0.75; // share of a chapter heard before the next one is fetched
 
 const ICON = {
     play: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2Z"/></svg>`,
@@ -93,6 +97,27 @@ const player = {
     savedAt: 0, // the position last saved
     lastTime: 0, // the position at the last timeupdate, for the sleep timer
     error: "",
+    waiting: false, // asked to play, but no sound yet (fetching or buffering)
+    loading: false, // waited long enough to say so: the spinner and the ticks
+    waitTimer: 0,
+    blobUrl: null, // the read-ahead blob URL it plays from, to let go of later
+};
+
+// The next chapter, fetched ahead once three-quarters of this one is heard, so
+// it starts at once. R2 answers `Vary: Origin`, so a fetch would not warm the
+// cache the <audio> uses; the recording is kept here instead, as a blob URL.
+const ahead = {
+    id: null, // the episode being or been fetched
+    url: null, // its blob URL, once fetched
+    controller: null, // to stop the fetch
+};
+
+// The soft ticks heard while a recording loads: a quiet note now and then,
+// made on the spot (no file to fetch), stopping once the chapter is heard.
+const cue = {
+    context: null,
+    timer: 0,
+    count: 0,
 };
 
 const escapeHtml = (value) =>
@@ -142,6 +167,9 @@ function upNext(id) {
 }
 
 const isPlaying = () => Boolean(player.audio && !player.audio.paused);
+
+const LOADING_AFTER = 250; // ms without sound before the player says it is loading
+const TICK_EVERY = 1400; // ms between the ticks while it loads
 
 /* ---------- Starting ---------- */
 
@@ -263,10 +291,17 @@ function setCurrent(id, { play: andPlay = false } = {}) {
 function renderScreen() {
     const { els } = state;
     const playing = isPlaying();
+    const loading = playing && player.loading;
     els.play.innerHTML = playing ? ICON.pause : ICON.play;
     els.play.setAttribute("aria-label", playing ? "Pause" : "Play");
     els.device.classList.toggle("is-playing", playing);
-    els.status.textContent = `${playing ? "Playing" : "Paused"} · ${state.progress.speed}×`;
+    els.device.classList.toggle("is-loading", loading);
+    els.device.setAttribute("aria-busy", String(loading));
+    let status = playing ? "Playing" : "Paused";
+    if (loading) {
+        status = "Loading…";
+    }
+    els.status.textContent = `${status} · ${state.progress.speed}×`;
     if (state.screen === "albums") {
         renderAlbums();
     } else if (state.screen === "tracks") {
@@ -506,13 +541,29 @@ function ensureAudio() {
     for (const type of ["play", "pause", "ratechange"]) {
         audio.addEventListener(type, () => {
             if (type === "pause") {
+                stopWaiting();
                 savePosition(true);
             }
             renderScreen();
         });
     }
-    audio.addEventListener("ended", onEnded);
+    // Sound has started (or started again after buffering).
+    audio.addEventListener("playing", () => {
+        stopWaiting();
+        renderScreen();
+    });
+    // Playing, but the next part has not arrived yet: after a seek, or on a slow line.
+    audio.addEventListener("waiting", () => {
+        if (!audio.paused) {
+            startWaiting();
+        }
+    });
+    audio.addEventListener("ended", () => {
+        stopWaiting();
+        onEnded();
+    });
     audio.addEventListener("error", () => {
+        stopWaiting();
         if (!audio.getAttribute("src")) {
             return;
         }
@@ -538,7 +589,21 @@ function load(id) {
     player.seekTo = at < episode.seconds - 10 ? at : 0;
     player.savedAt = player.seekTo;
     player.lastTime = player.seekTo;
-    audio.src = resolveMedia(episode.audio);
+    const before = player.blobUrl;
+    player.blobUrl = null;
+    if (ahead.id === id && ahead.url) {
+        // Fetched ahead: it is the player's now.
+        audio.src = ahead.url;
+        player.blobUrl = ahead.url;
+        ahead.id = null;
+        ahead.url = null;
+    } else {
+        dropAhead();
+        audio.src = resolveMedia(episode.audio);
+    }
+    if (before) {
+        URL.revokeObjectURL(before);
+    }
     audio.defaultPlaybackRate = state.progress.speed;
     audio.playbackRate = state.progress.speed;
     state.progress.last = id;
@@ -550,12 +615,104 @@ function load(id) {
 function play(id) {
     const audio = load(id);
     player.error = "";
+    wakeCue();
+    // Already sounding, no "playing" event will follow to end the wait.
+    if (audio.paused || audio.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+        startWaiting();
+    }
     audio.play().catch((error) => {
+        if (audio.paused) {
+            stopWaiting();
+        }
         if (error?.name !== "AbortError") {
             player.error = "This chapter could not be played. Check your connection and try again.";
-            renderScreen();
         }
+        renderScreen();
     });
+}
+
+/* ---------- While a recording loads ---------- */
+
+/** Asked to play and no sound yet: after a moment, show the spinner and tick. */
+function startWaiting() {
+    if (player.waiting) {
+        return;
+    }
+    player.waiting = true;
+    clearTimeout(player.waitTimer);
+    player.waitTimer = setTimeout(() => {
+        if (!player.waiting || !isPlaying()) {
+            return;
+        }
+        player.loading = true;
+        startTicks();
+        renderScreen();
+    }, LOADING_AFTER);
+}
+
+function stopWaiting() {
+    clearTimeout(player.waitTimer);
+    stopTicks();
+    const wasLoading = player.loading;
+    player.waiting = false;
+    player.loading = false;
+    if (wasLoading) {
+        renderScreen();
+    }
+}
+
+/** Readies the sound for the ticks; browsers allow it only from a press. */
+function wakeCue() {
+    const Context = window.AudioContext ?? window.webkitAudioContext;
+    if (!Context) {
+        return;
+    }
+    try {
+        if (!cue.context) {
+            cue.context = new Context();
+        }
+        if (cue.context.state === "suspended") {
+            cue.context.resume().catch(() => {});
+        }
+    } catch {
+        cue.context = null; // no ticks; the spinner still shows
+    }
+}
+
+function startTicks() {
+    stopTicks();
+    cue.count = 0;
+    tick();
+    cue.timer = setInterval(tick, TICK_EVERY);
+}
+
+function stopTicks() {
+    clearInterval(cue.timer);
+    cue.timer = 0;
+}
+
+/** One soft, short note, rising and falling between two pitches. */
+function tick() {
+    const context = cue.context;
+    if (!context || context.state !== "running") {
+        return;
+    }
+    try {
+        const now = context.currentTime;
+        const tone = context.createOscillator();
+        const gain = context.createGain();
+        tone.type = "sine";
+        tone.frequency.value = cue.count % 2 === 0 ? 660 : 880;
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(0.06, now + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.25);
+        tone.connect(gain).connect(context.destination);
+        tone.start(now);
+        tone.stop(now + 0.3);
+        cue.count += 1;
+    } catch {
+        stopTicks();
+    }
 }
 
 function toggle(id) {
@@ -613,6 +770,10 @@ function onTime() {
     if (!state.progress.done[id] && audio.currentTime >= episodeOf(id).seconds * HEARD_SHARE) {
         markHeard(id);
     }
+    // Only with auto-play on: otherwise the next chapter may never be wanted.
+    if (state.progress.auto && audio.currentTime >= episodeOf(id).seconds * READ_AHEAD_SHARE) {
+        readAhead(id);
+    }
     if (Math.abs(audio.currentTime - player.savedAt) >= SAVE_EVERY) {
         savePosition(false);
     }
@@ -634,6 +795,51 @@ function onEnded() {
         return;
     }
     renderScreen();
+}
+
+/** Fetches the chapter after the episode (once), to start it without waiting. */
+async function readAhead(id) {
+    const next = neighbour(id, 1);
+    if (!next || ahead.id === next) {
+        return;
+    }
+    dropAhead();
+    const controller = new AbortController();
+    ahead.id = next;
+    ahead.controller = controller;
+    try {
+        const response = await fetch(resolveMedia(episodeOf(next).audio), { signal: controller.signal });
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        const blob = await response.blob();
+        if (ahead.controller !== controller) {
+            return; // let go of while it came
+        }
+        ahead.url = URL.createObjectURL(blob);
+        ahead.controller = null;
+    } catch (error) {
+        if (ahead.controller === controller) {
+            // The next chapter streams as usual when it comes.
+            ahead.controller = null;
+            if (error?.name !== "AbortError") {
+                console.warn("Could not fetch the next chapter ahead:", error);
+            }
+        }
+    }
+}
+
+/** Stops and forgets the chapter fetched ahead. */
+function dropAhead() {
+    if (ahead.controller) {
+        ahead.controller.abort();
+    }
+    if (ahead.url) {
+        URL.revokeObjectURL(ahead.url);
+    }
+    ahead.id = null;
+    ahead.url = null;
+    ahead.controller = null;
 }
 
 function savePosition(force) {
@@ -769,6 +975,7 @@ function renderMini() {
     }
     const episode = episodeOf(id);
     const playing = isPlaying();
+    mini.classList.toggle("is-loading", playing && player.loading);
     mini.innerHTML = `
       <span class="mini-bar"><i></i></span>
       <button class="mini-open" type="button" data-mini="open" aria-label="Back to the player">

@@ -961,7 +961,7 @@ export class Flipbook extends HTMLElement {
         btn.type = "button";
         btn.className = "page-share";
         btn.title = "Share";
-        btn.setAttribute("aria-label", "Share this page");
+        btn.setAttribute("aria-label", "Share this Flipbook");
         btn.innerHTML = SHARE_ICON;
         const stopStageGesture = (e) => e.stopPropagation();
         btn.addEventListener("pointerdown", stopStageGesture);

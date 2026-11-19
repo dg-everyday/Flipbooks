@@ -1649,6 +1649,433 @@
   }
  ],
  "episodes": {
+  "1john-00": {
+   "title": "Meet the First Letter of John",
+   "label": "Meet 1 John",
+   "book": "1 John",
+   "chapter": null,
+   "art": "media:images/symbols/1%20John-symbol.svg",
+   "audio": "media:audio/bible-walk/1john/1john-00.webm?v=2574",
+   "seconds": 257.4,
+   "question": "John wrote so that his readers could know they have eternal life. Is there anything that makes you unsure about your relationship with God?",
+   "keys": []
+  },
+  "1john-01": {
+   "title": "God Is Light",
+   "label": "1 John 1",
+   "book": "1 John",
+   "chapter": 1,
+   "art": "media:images/symbols/1%20John-symbol.svg",
+   "audio": "media:audio/bible-walk/1john/1john-01.webm?v=4774",
+   "seconds": 477.4,
+   "question": "John says, if we confess our sins, he is faithful and just to forgive us. What makes it hard to be honest with God about our sin, and what does this verse promise?",
+   "keys": [
+    "1:5",
+    "1:7",
+    "1:9"
+   ]
+  },
+  "1john-02": {
+   "title": "An Advocate with the Father",
+   "label": "1 John 2",
+   "book": "1 John",
+   "chapter": 2,
+   "art": "media:images/symbols/1%20John-symbol.svg",
+   "audio": "media:audio/bible-walk/1john/1john-02.webm?v=4623",
+   "seconds": 462.3,
+   "question": "John says the world passes away, but whoever does the will of God abides for ever. What is one thing you spend time on that will last, and one thing that will not?",
+   "keys": [
+    "2:1",
+    "2:6",
+    "2:17"
+   ]
+  },
+  "1john-03": {
+   "title": "What Manner of Love",
+   "label": "1 John 3",
+   "book": "1 John",
+   "chapter": 3,
+   "art": "media:images/symbols/1%20John-symbol.svg",
+   "audio": "media:audio/bible-walk/1john/1john-03.webm?v=4531",
+   "seconds": 453.1,
+   "question": "John says, behold, what manner of love the Father hath bestowed upon us. How does it change the way you see yourself, to know that God calls you his child?",
+   "keys": [
+    "3:1",
+    "3:16",
+    "3:18"
+   ]
+  },
+  "1john-04": {
+   "title": "God Is Love",
+   "label": "1 John 4",
+   "book": "1 John",
+   "chapter": 4,
+   "art": "media:images/symbols/1%20John-symbol.svg",
+   "audio": "media:audio/bible-walk/1john/1john-04.webm?v=4711",
+   "seconds": 471.1,
+   "question": "John says, we love him, because he first loved us. How does knowing that God loved you first change the way you love him, and the way you love others?",
+   "keys": [
+    "4:4",
+    "4:10",
+    "4:18"
+   ]
+  },
+  "1john-05": {
+   "title": "This Is the Victory",
+   "label": "1 John 5",
+   "book": "1 John",
+   "chapter": 5,
+   "art": "media:images/symbols/1%20John-symbol.svg",
+   "audio": "media:audio/bible-walk/1john/1john-05.webm?v=4707",
+   "seconds": 470.7,
+   "question": "John says, he that hath the Son hath life. What would you say to a friend who asked you how they could know they have eternal life?",
+   "keys": [
+    "5:4",
+    "5:13",
+    "5:14"
+   ]
+  },
+  "1kings-00": {
+   "title": "Meet the First Book of Kings",
+   "label": "Meet 1 Kings",
+   "book": "1 Kings",
+   "chapter": null,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-00.webm?v=2840",
+   "seconds": 284.0,
+   "question": "Solomon asked God for a wise and understanding heart. If God said to you, ask what I shall give thee, what would you ask for, and why?",
+   "keys": []
+  },
+  "1kings-01": {
+   "title": "God Save King Solomon",
+   "label": "1 Kings 1",
+   "book": "1 Kings",
+   "chapter": 1,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-01.webm?v=4593",
+   "seconds": 459.3,
+   "question": "Adonijah decided for himself, I will be king. Where are you tempted to push your own plans, instead of waiting for God’s?",
+   "keys": [
+    "1:6",
+    "1:30",
+    "1:48"
+   ]
+  },
+  "1kings-02": {
+   "title": "Be Thou Strong Therefore",
+   "label": "1 Kings 2",
+   "book": "1 Kings",
+   "chapter": 2,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-02.webm?v=4577",
+   "seconds": 457.7,
+   "question": "David’s last words to Solomon were, be strong, and walk in God’s ways. If you could leave one charge to someone you love, what would it be?",
+   "keys": [
+    "2:2",
+    "2:3",
+    "2:12"
+   ]
+  },
+  "1kings-03": {
+   "title": "An Understanding Heart",
+   "label": "1 Kings 3",
+   "book": "1 Kings",
+   "chapter": 3,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-03.webm?v=4502",
+   "seconds": 450.2,
+   "question": "Solomon said, I am but a little child: I know not how to go out or come in. Where do you feel too small for what is in front of you, and how could you ask God for help?",
+   "keys": [
+    "3:5",
+    "3:9",
+    "3:28"
+   ]
+  },
+  "1kings-04": {
+   "title": "Wisdom and Understanding Exceeding Much",
+   "label": "1 Kings 4",
+   "book": "1 Kings",
+   "chapter": 4,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-04.webm?v=4450",
+   "seconds": 445.0,
+   "question": "Solomon’s wisdom showed itself in peace, in fairness, and in wonder at God’s world. Which of these would you most like God to grow in you, and why?",
+   "keys": [
+    "4:25",
+    "4:29",
+    "4:32"
+   ]
+  },
+  "1kings-05": {
+   "title": "I Purpose to Build an House",
+   "label": "1 Kings 5",
+   "book": "1 Kings",
+   "chapter": 5,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-05.webm?v=3917",
+   "seconds": 391.7,
+   "question": "Solomon said, the LORD my God hath given me rest on every side, so I purpose to build. What good thing could you build for God with the peace and the gifts he has given you?",
+   "keys": [
+    "5:4",
+    "5:5",
+    "5:12"
+   ]
+  },
+  "1kings-06": {
+   "title": "Neither Hammer nor Axe",
+   "label": "1 Kings 6",
+   "book": "1 Kings",
+   "chapter": 6,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-06.webm?v=4551",
+   "seconds": 455.1,
+   "question": "God told Solomon that walking in his ways mattered more than the beautiful building. What matters more to you, how things look on the outside, or what is happening in your heart?",
+   "keys": [
+    "6:7",
+    "6:13",
+    "6:19"
+   ]
+  },
+  "1kings-07": {
+   "title": "Jachin and Boaz",
+   "label": "1 Kings 7",
+   "book": "1 Kings",
+   "chapter": 7,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-07.webm?v=4336",
+   "seconds": 433.6,
+   "question": "The pillars said, he shall establish, and in him is strength. Where do you need to remember today that your strength comes from God?",
+   "keys": [
+    "7:14",
+    "7:21",
+    "7:51"
+   ]
+  },
+  "1kings-08": {
+   "title": "There Is No God Like Thee",
+   "label": "1 Kings 8",
+   "book": "1 Kings",
+   "chapter": 8,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-08.webm?v=4577",
+   "seconds": 457.7,
+   "question": "Solomon prayed for his own people, for strangers from far away, and for those who would one day be far from home. Who could you pray for today, that you do not usually remember?",
+   "keys": [
+    "8:11",
+    "8:27",
+    "8:56"
+   ]
+  },
+  "1kings-09": {
+   "title": "Mine Eyes and Mine Heart Shall Be There",
+   "label": "1 Kings 9",
+   "book": "1 Kings",
+   "chapter": 9,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-09.webm?v=4557",
+   "seconds": 455.7,
+   "question": "God told Solomon that his eyes and his heart would be on his house always. How does it change your day to know that God’s eyes and heart are turned towards you?",
+   "keys": [
+    "9:3",
+    "9:4",
+    "9:9"
+   ]
+  },
+  "1kings-10": {
+   "title": "The Half Was Not Told Me",
+   "label": "1 Kings 10",
+   "book": "1 Kings",
+   "chapter": 10,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-10.webm?v=4384",
+   "seconds": 438.4,
+   "question": "The queen of Sheba said, the half was not told me. In what ways have you found that God is greater and better than you first thought?",
+   "keys": [
+    "10:1",
+    "10:7",
+    "10:9"
+   ]
+  },
+  "1kings-11": {
+   "title": "His Heart Was Not Perfect",
+   "label": "1 Kings 11",
+   "book": "1 Kings",
+   "chapter": 11,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-11.webm?v=4764",
+   "seconds": 476.4,
+   "question": "Solomon’s heart turned away slowly, when he was old. What can you do to guard your heart, so that you stay close to God all your life?",
+   "keys": [
+    "11:4",
+    "11:11",
+    "11:36"
+   ]
+  },
+  "1kings-12": {
+   "title": "To Your Tents, O Israel",
+   "label": "1 Kings 12",
+   "book": "1 Kings",
+   "chapter": 12,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-12.webm?v=4678",
+   "seconds": 467.8,
+   "question": "Rehoboam listened to the advice he wanted to hear, instead of the advice that was wise. Whose advice do you listen to, and how can you tell when it is wise?",
+   "keys": [
+    "12:7",
+    "12:24",
+    "12:28"
+   ]
+  },
+  "1kings-13": {
+   "title": "The Man of God out of Judah",
+   "label": "1 Kings 13",
+   "book": "1 Kings",
+   "chapter": 13,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-13.webm?v=4525",
+   "seconds": 452.5,
+   "question": "The man of God knew what God had told him, but he believed someone who claimed to have a newer message. How can you stay faithful to God’s Word when other voices tell you something different?",
+   "keys": [
+    "13:2",
+    "13:18",
+    "13:33"
+   ]
+  },
+  "1kings-14": {
+   "title": "Thou Hast Cast Me Behind Thy Back",
+   "label": "1 Kings 14",
+   "book": "1 Kings",
+   "chapter": 14,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-14.webm?v=4373",
+   "seconds": 437.3,
+   "question": "Jeroboam’s wife tried to hide who she was, but God knew her before she spoke. How does it feel to know that God sees you as you really are, and still invites you to come to him?",
+   "keys": [
+    "14:9",
+    "14:13",
+    "14:27"
+   ]
+  },
+  "1kings-15": {
+   "title": "Asa Did That Which Was Right",
+   "label": "1 Kings 15",
+   "book": "1 Kings",
+   "chapter": 15,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-15.webm?v=4634",
+   "seconds": 463.4,
+   "question": "Asa removed the idols, even when it meant standing against his own family. What would it look like for you to put God first, even when it is hard?",
+   "keys": [
+    "15:4",
+    "15:11",
+    "15:14"
+   ]
+  },
+  "1kings-16": {
+   "title": "Ahab Did Evil Above All",
+   "label": "1 Kings 16",
+   "book": "1 Kings",
+   "chapter": 16,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-16.webm?v=4370",
+   "seconds": 437.0,
+   "question": "Omri built a great city, but the Bible says he did evil in God’s eyes. When you think about your own life, what do you think matters most to God?",
+   "keys": [
+    "16:2",
+    "16:24",
+    "16:31"
+   ]
+  },
+  "1kings-17": {
+   "title": "The Barrel of Meal Shall Not Waste",
+   "label": "1 Kings 17",
+   "book": "1 Kings",
+   "chapter": 17,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-17.webm?v=4504",
+   "seconds": 450.4,
+   "question": "God fed Elijah through ravens, a brook, and a poor widow. How has God provided for you in ways you did not expect?",
+   "keys": [
+    "17:1",
+    "17:14",
+    "17:24"
+   ]
+  },
+  "1kings-18": {
+   "title": "The God That Answereth by Fire",
+   "label": "1 Kings 18",
+   "book": "1 Kings",
+   "chapter": 18,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-18.webm?v=4754",
+   "seconds": 475.4,
+   "question": "Elijah asked, how long halt ye between two opinions? Where are you tempted to follow God halfway, and what would it look like to follow him fully?",
+   "keys": [
+    "18:24",
+    "18:38",
+    "18:44"
+   ]
+  },
+  "1kings-19": {
+   "title": "A Still Small Voice",
+   "label": "1 Kings 19",
+   "book": "1 Kings",
+   "chapter": 19,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-19.webm?v=4684",
+   "seconds": 468.4,
+   "question": "Elijah thought he was the only faithful one left, but God had seven thousand. When have you felt alone in following God, and how does this story encourage you?",
+   "keys": [
+    "19:7",
+    "19:12",
+    "19:18"
+   ]
+  },
+  "1kings-20": {
+   "title": "The LORD Is God of the Valleys",
+   "label": "1 Kings 20",
+   "book": "1 Kings",
+   "chapter": 20,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-20.webm?v=4669",
+   "seconds": 466.9,
+   "question": "The Syrians thought God was only God of the hills. Where in your life do you find it hardest to believe that God is with you?",
+   "keys": [
+    "20:11",
+    "20:28",
+    "20:43"
+   ]
+  },
+  "1kings-21": {
+   "title": "The Inheritance of My Fathers",
+   "label": "1 Kings 21",
+   "book": "1 Kings",
+   "chapter": 21,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-21.webm?v=3953",
+   "seconds": 395.3,
+   "question": "Ahab got what he wanted, but sold himself to do evil. What things are you tempted to want so much that you might lose something more important?",
+   "keys": [
+    "21:3",
+    "21:20",
+    "21:29"
+   ]
+  },
+  "1kings-22": {
+   "title": "What the LORD Saith unto Me",
+   "label": "1 Kings 22",
+   "book": "1 Kings",
+   "chapter": 22,
+   "art": "media:images/symbols/1%20Kings-symbol.svg",
+   "audio": "media:audio/bible-walk/1kings/1kings-22.webm?v=4633",
+   "seconds": 463.3,
+   "question": "Ahab hated Micaiah because he told the truth. How do you respond when someone tells you something true that you do not want to hear?",
+   "keys": [
+    "22:14",
+    "22:17",
+    "22:34"
+   ]
+  },
   "1samuel-00": {
    "title": "Meet the First Book of Samuel",
    "label": "Meet 1 Samuel",
@@ -4722,6 +5149,92 @@
     "50:24"
    ]
   },
+  "james-00": {
+   "title": "Meet the Book of James",
+   "label": "Meet James",
+   "book": "James",
+   "chapter": null,
+   "art": "media:images/symbols/James-symbol.svg",
+   "audio": "media:audio/bible-walk/james/james-00.webm?v=2509",
+   "seconds": 250.9,
+   "question": "James says that hearing God’s Word without doing it is like looking in a mirror and forgetting what you saw. What is one thing you have heard from God’s Word that you want to start doing?",
+   "keys": []
+  },
+  "james-01": {
+   "title": "Count It All Joy",
+   "label": "James 1",
+   "book": "James",
+   "chapter": 1,
+   "art": "media:images/symbols/James-symbol.svg",
+   "audio": "media:audio/bible-walk/james/james-01.webm?v=4798",
+   "seconds": 479.8,
+   "question": "James says, count it all joy when trials come, because they make our faith stronger. How has God used a hard time in your life to help you grow?",
+   "keys": [
+    "1:2",
+    "1:5",
+    "1:22"
+   ]
+  },
+  "james-02": {
+   "title": "Faith Without Works Is Dead",
+   "label": "James 2",
+   "book": "James",
+   "chapter": 2,
+   "art": "media:images/symbols/James-symbol.svg",
+   "audio": "media:audio/bible-walk/james/james-02.webm?v=4537",
+   "seconds": 453.7,
+   "question": "James says, show me thy faith by thy works. If someone watched your life this week, what would they see that shows you trust God?",
+   "keys": [
+    "2:5",
+    "2:18",
+    "2:26"
+   ]
+  },
+  "james-03": {
+   "title": "The Wisdom That Is from Above",
+   "label": "James 3",
+   "book": "James",
+   "chapter": 3,
+   "art": "media:images/symbols/James-symbol.svg",
+   "audio": "media:audio/bible-walk/james/james-03.webm?v=4424",
+   "seconds": 442.4,
+   "question": "James says our words are like a rudder, a spark, and a spring of water. What would change in your home, your work or your friendships if your words were full of the wisdom from above?",
+   "keys": [
+    "3:5",
+    "3:10",
+    "3:17"
+   ]
+  },
+  "james-04": {
+   "title": "Draw Nigh to God",
+   "label": "James 4",
+   "book": "James",
+   "chapter": 4,
+   "art": "media:images/symbols/James-symbol.svg",
+   "audio": "media:audio/bible-walk/james/james-04.webm?v=4181",
+   "seconds": 418.1,
+   "question": "James promises, draw nigh to God, and he will draw nigh to you. What is one way you can come closer to God this week?",
+   "keys": [
+    "4:6",
+    "4:8",
+    "4:14"
+   ]
+  },
+  "james-05": {
+   "title": "The Effectual Fervent Prayer",
+   "label": "James 5",
+   "book": "James",
+   "chapter": 5,
+   "art": "media:images/symbols/James-symbol.svg",
+   "audio": "media:audio/bible-walk/james/james-05.webm?v=4880",
+   "seconds": 488.0,
+   "question": "James says that the earnest prayer of a righteous person achieves a great deal. Who will you pray for, faithfully, this week, and what will you ask God to do?",
+   "keys": [
+    "5:7",
+    "5:11",
+    "5:16"
+   ]
+  },
   "john-00": {
    "title": "Meet the Book of John",
    "label": "Meet John",
@@ -6436,6 +6949,77 @@
     "16:6",
     "16:7",
     "16:15"
+   ]
+  },
+  "philippians-00": {
+   "title": "Meet the Book of Philippians",
+   "label": "Meet Philippians",
+   "book": "Philippians",
+   "chapter": null,
+   "art": "media:images/symbols/Philippians-symbol.svg",
+   "audio": "media:audio/bible-walk/philippians/philippians-00.webm?v=2323",
+   "seconds": 232.3,
+   "question": "Paul and Silas sang praises in prison, and Paul wrote a letter full of joy while he was in chains. What helps you to find joy in God when things are hard?",
+   "keys": []
+  },
+  "philippians-01": {
+   "title": "To Live Is Christ",
+   "label": "Philippians 1",
+   "book": "Philippians",
+   "chapter": 1,
+   "art": "media:images/symbols/Philippians-symbol.svg",
+   "audio": "media:audio/bible-walk/philippians/philippians-01.webm?v=4226",
+   "seconds": 422.6,
+   "question": "Paul said, for to me to live is Christ. If you finished that sentence honestly, for me to live is, what would you say? And what would you like to say?",
+   "keys": [
+    "1:6",
+    "1:21",
+    "1:27"
+   ]
+  },
+  "philippians-02": {
+   "title": "Let This Mind Be in You",
+   "label": "Philippians 2",
+   "book": "Philippians",
+   "chapter": 2,
+   "art": "media:images/symbols/Philippians-symbol.svg",
+   "audio": "media:audio/bible-walk/philippians/philippians-02.webm?v=4745",
+   "seconds": 474.5,
+   "question": "Jesus humbled himself, and became a servant. Where in your life is it hardest for you to put others first, and what would it look like to have the mind of Christ there?",
+   "keys": [
+    "2:3",
+    "2:8",
+    "2:13"
+   ]
+  },
+  "philippians-03": {
+   "title": "I Press Toward the Mark",
+   "label": "Philippians 3",
+   "book": "Philippians",
+   "chapter": 3,
+   "art": "media:images/symbols/Philippians-symbol.svg",
+   "audio": "media:audio/bible-walk/philippians/philippians-03.webm?v=4432",
+   "seconds": 443.2,
+   "question": "Paul said, this one thing I do: forgetting what is behind, I press toward the mark. What do you need to leave behind, and what will help you keep running toward Jesus?",
+   "keys": [
+    "3:7",
+    "3:10",
+    "3:14"
+   ]
+  },
+  "philippians-04": {
+   "title": "The Peace of God",
+   "label": "Philippians 4",
+   "book": "Philippians",
+   "chapter": 4,
+   "art": "media:images/symbols/Philippians-symbol.svg",
+   "audio": "media:audio/bible-walk/philippians/philippians-04.webm?v=4568",
+   "seconds": 456.8,
+   "question": "Paul learned to be content in every situation, because Christ gave him strength. What is one worry you can turn into a prayer with thanksgiving today?",
+   "keys": [
+    "4:7",
+    "4:13",
+    "4:19"
    ]
   },
   "ruth-00": {

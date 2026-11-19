@@ -5,24 +5,30 @@
  * taps it and the Flipbook opens on the same week: through the device's own
  * share sheet where there is one, and by copying the link where there is not.
  *
- * The link is the public Flipbook address with ?date=; its preview in a chat or
- * a post is the page's own Open Graph card.
+ * The link is the week's own page, /w/<Sunday>.html, which the deploy writes
+ * (assets/scripts/build-week-pages.mjs): its preview in a chat or a post shows
+ * the week's cover, and it opens the Flipbook at that week straight away.
  *
  * Usage   import { setUpShare } from "./scripts/flipbook-share.js";
  *         setUpShare(flipBookElement, { date: "2026-11-20" });
  *         // and give the cover page { share: true }
  */
 
-const SITE_PAGE = "https://dailygrace.faith/apps/pages/flipbook.html";
+const SITE = "https://dailygrace.faith";
+const FLIPBOOK = `${SITE}/apps/pages/flipbook.html`;
 const NOTE_FOR = 1800; // ms a note shows
 
-/** The public link to the week holding `date` (YYYY-MM-DD). */
+/**
+ * The public link to the week holding `date` (YYYY-MM-DD): the week's page,
+ * named for its Sunday, or the Flipbook itself without a date.
+ */
 export function shareUrl(date) {
-    const url = new URL(SITE_PAGE);
-    if (/^\d{4}-\d{2}-\d{2}$/.test(date ?? "")) {
-        url.searchParams.set("date", date);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date ?? "")) {
+        return FLIPBOOK;
     }
-    return url.href;
+    const day = new Date(`${date}T00:00:00Z`);
+    const sunday = new Date(day.getTime() - day.getUTCDay() * 86_400_000);
+    return `${SITE}/w/${sunday.toISOString().slice(0, 10)}.html`;
 }
 
 /** "November 15 – 21, 2026": the Sunday-to-Saturday week holding `date`. */

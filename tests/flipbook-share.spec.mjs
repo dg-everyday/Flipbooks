@@ -3,17 +3,24 @@
  * apps/pages/scripts/flipbook-share.js, <flip-book>'s `share` page option):
  * only the week's cover carries a share button, and a tap shares a link to
  * the Flipbook (never a picture) through the device's share sheet, or copies
- * the link where there is no share sheet. Every picture on the media host is a stand-in, and the
+ * the link where there is no share sheet. The link is the week's own page,
+ * which the deploy writes (assets/scripts/build-week-pages.mjs): it previews
+ * with the week's cover and forwards to the Flipbook at that week. Every picture on the media host is a stand-in, and the
  * rest of it is missing, so nothing waits on R2. The share sheet is stood in
  * for, and records what it was given.
  */
 import { test, expect } from "@playwright/test";
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdtempSync, readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const PAGE = "/apps/pages/flipbook.html";
 // 10 a.m. in Manila on Friday, November 20, 2026: week 47, November 15–21.
 const TODAY = new Date("2026-11-20T10:00:00+08:00");
-const WEEK_LINK = "https://dailygrace.faith/apps/pages/flipbook.html?date=2026-11-03";
-const TODAY_LINK = "https://dailygrace.faith/apps/pages/flipbook.html?date=2026-11-20";
+const WEEK_LINK = "https://dailygrace.faith/w/2026-11-01.html";
+const TODAY_LINK = "https://dailygrace.faith/w/2026-11-15.html";
 const STAND_IN = "assets/images/apple-touch-icon.png";
 
 const shareButtons = (page) => page.locator("flip-book .page-share");
@@ -98,8 +105,46 @@ test("a share sheet that takes only links is sent the same link", async ({ page 
     expect(shared.url).toBe(WEEK_LINK);
 });
 
+// What the deploy writes, made here into a folder of its own, without asking
+// the media host for the covers' sizes.
+function buildWeekPages(today) {
+    const folder = mkdtempSync(join(tmpdir(), "week-pages-"));
+    execFileSync(process.execPath, [
+        fileURLToPath(new URL("../assets/scripts/build-week-pages.mjs", import.meta.url)),
+        folder,
+        "--today",
+        today,
+        "--offline",
+    ]);
+    return folder;
+}
+
+test("a page is written for each week up to tomorrow's, with the week's cover for its preview", async () => {
+    const folder = buildWeekPages("2026-11-20");
+    const html = readFileSync(join(folder, "w", "2026-11-01.html"), "utf8");
+    expect(html).toContain('<meta property="og:image" content="https://dailygrace.faith/media/images/coverpages/2026/2026-WEEK45.webp" />');
+    expect(html).toContain(`<meta property="og:url" content="${WEEK_LINK}" />`);
+    expect(html).toContain("<title>Daily Grace Flipbook for the week of November 1");
+    expect(html).toContain('<meta name="robots" content="noindex" />');
+    // Crawlers follow a refresh and would preview the Flipbook instead.
+    expect(html).not.toContain("http-equiv");
+    // A week that runs into a new year has the new year's first cover.
+    expect(readFileSync(join(folder, "w", "2025-12-28.html"), "utf8")).toContain("coverpages/2026/2026-WEEK1.webp");
+    expect(existsSync(join(folder, "w", "2025-12-21.html"))).toBe(false);
+    expect(existsSync(join(folder, "w", "2026-11-15.html"))).toBe(true);
+    // Saturday's deploy writes the next week's page ahead of it.
+    expect(existsSync(join(folder, "w", "2026-11-22.html"))).toBe(false);
+    expect(existsSync(join(buildWeekPages("2026-11-21"), "w", "2026-11-22.html"))).toBe(true);
+});
+
 test("the shared link opens the Flipbook directly, on the same week", async ({ page }) => {
-    await page.goto(WEEK_LINK.replace("https://dailygrace.faith", ""), { waitUntil: "domcontentloaded" });
+    const folder = buildWeekPages("2026-11-20");
+    // The week pages live only in the published copy, so this one is served by hand.
+    await page.route("**/w/2026-11-01.html", (route) =>
+        route.fulfill({ path: join(folder, "w", "2026-11-01.html"), contentType: "text/html; charset=utf-8" }),
+    );
+    await page.goto("/w/2026-11-01.html", { waitUntil: "commit" });
+    await page.waitForURL("**/apps/pages/flipbook.html?date=2026-11-01", { waitUntil: "domcontentloaded" });
     await expect(page.locator("#library")).toHaveAttribute("href", "library.html#month/2026-11");
     await expect(coverShare(page)).toBeVisible();
 });

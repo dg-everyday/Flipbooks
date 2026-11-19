@@ -260,7 +260,9 @@ const STYLES = /* css */ `
   .close:focus-visible { outline: 2px solid currentColor; outline-offset: -4px; }
   .body {
     display: flex; flex: 1; flex-direction: column; align-items: center; gap: 14px;
-    min-height: 0; overflow-y: auto;
+    /* The sticker's turning rays reach past the sides: clip them rather
+       than letting them add a horizontal scrollbar. */
+    min-height: 0; overflow-x: hidden; overflow-y: auto;
     padding: 0 28px 12px;
     text-align: center;
   }
@@ -361,7 +363,7 @@ const STYLES = /* css */ `
       radial-gradient(90% 60% at 50% 25%, #c21f2a 0%, transparent 70%),
       ${BANNERS.appleRed.colour};
     box-shadow: 0 30px 80px rgb(0 0 0 / 45%);
-    overflow-y: auto;
+    overflow-x: hidden; overflow-y: auto;
   }
   .invite { cursor: pointer; }
   .invite .lead { color: #f7e3e4; }

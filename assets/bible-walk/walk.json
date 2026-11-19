@@ -1450,6 +1450,202 @@
      "label": "2 Samuel 24"
     }
    ]
+  },
+  {
+   "id": "james",
+   "title": "James",
+   "subtitle": "Be Ye Doers of the Word",
+   "about": "A short, practical letter from James, the Lord’s brother: joy in trials, wisdom from God, faith that shows itself in what we do, taming the tongue, drawing near to God, and patient, earnest prayer.",
+   "cover": "media:images/symbols/James-symbol.svg",
+   "episodes": [
+    {
+     "id": "james-00",
+     "label": "Meet James"
+    },
+    {
+     "id": "james-01",
+     "label": "James 1"
+    },
+    {
+     "id": "james-02",
+     "label": "James 2"
+    },
+    {
+     "id": "james-03",
+     "label": "James 3"
+    },
+    {
+     "id": "james-04",
+     "label": "James 4"
+    },
+    {
+     "id": "james-05",
+     "label": "James 5"
+    }
+   ]
+  },
+  {
+   "id": "philippians",
+   "title": "Philippians",
+   "subtitle": "Rejoice in the Lord Alway",
+   "about": "Paul’s letter of joy, written in chains to the church that began with Lydia and a jailer: to live is Christ, the mind of Christ who became a servant, pressing toward the mark, and the peace of God that passeth all understanding.",
+   "cover": "media:images/symbols/Philippians-symbol.svg",
+   "episodes": [
+    {
+     "id": "philippians-00",
+     "label": "Meet Philippians"
+    },
+    {
+     "id": "philippians-01",
+     "label": "Philippians 1"
+    },
+    {
+     "id": "philippians-02",
+     "label": "Philippians 2"
+    },
+    {
+     "id": "philippians-03",
+     "label": "Philippians 3"
+    },
+    {
+     "id": "philippians-04",
+     "label": "Philippians 4"
+    }
+   ]
+  },
+  {
+   "id": "1kings",
+   "title": "1 Kings",
+   "subtitle": "A Wise and an Understanding Heart",
+   "about": "Solomon asks God for wisdom and builds the temple of the LORD. Then his heart turns away, the kingdom is torn in two, and the prophet Elijah stands alone against Ahab, Jezebel and the prophets of Baal.",
+   "cover": "media:images/symbols/1%20Kings-symbol.svg",
+   "episodes": [
+    {
+     "id": "1kings-00",
+     "label": "Meet 1 Kings"
+    },
+    {
+     "id": "1kings-01",
+     "label": "1 Kings 1"
+    },
+    {
+     "id": "1kings-02",
+     "label": "1 Kings 2"
+    },
+    {
+     "id": "1kings-03",
+     "label": "1 Kings 3"
+    },
+    {
+     "id": "1kings-04",
+     "label": "1 Kings 4"
+    },
+    {
+     "id": "1kings-05",
+     "label": "1 Kings 5"
+    },
+    {
+     "id": "1kings-06",
+     "label": "1 Kings 6"
+    },
+    {
+     "id": "1kings-07",
+     "label": "1 Kings 7"
+    },
+    {
+     "id": "1kings-08",
+     "label": "1 Kings 8"
+    },
+    {
+     "id": "1kings-09",
+     "label": "1 Kings 9"
+    },
+    {
+     "id": "1kings-10",
+     "label": "1 Kings 10"
+    },
+    {
+     "id": "1kings-11",
+     "label": "1 Kings 11"
+    },
+    {
+     "id": "1kings-12",
+     "label": "1 Kings 12"
+    },
+    {
+     "id": "1kings-13",
+     "label": "1 Kings 13"
+    },
+    {
+     "id": "1kings-14",
+     "label": "1 Kings 14"
+    },
+    {
+     "id": "1kings-15",
+     "label": "1 Kings 15"
+    },
+    {
+     "id": "1kings-16",
+     "label": "1 Kings 16"
+    },
+    {
+     "id": "1kings-17",
+     "label": "1 Kings 17"
+    },
+    {
+     "id": "1kings-18",
+     "label": "1 Kings 18"
+    },
+    {
+     "id": "1kings-19",
+     "label": "1 Kings 19"
+    },
+    {
+     "id": "1kings-20",
+     "label": "1 Kings 20"
+    },
+    {
+     "id": "1kings-21",
+     "label": "1 Kings 21"
+    },
+    {
+     "id": "1kings-22",
+     "label": "1 Kings 22"
+    }
+   ]
+  },
+  {
+   "id": "1john",
+   "title": "1 John",
+   "subtitle": "Beloved, Let Us Love One Another",
+   "about": "A warm, simple letter from an eyewitness of Jesus to his little children: God is light, so walk in the light; God is love, so love one another; and believe on the Son of God, that ye may know that ye have eternal life.",
+   "cover": "media:images/symbols/1%20John-symbol.svg",
+   "episodes": [
+    {
+     "id": "1john-00",
+     "label": "Meet 1 John"
+    },
+    {
+     "id": "1john-01",
+     "label": "1 John 1"
+    },
+    {
+     "id": "1john-02",
+     "label": "1 John 2"
+    },
+    {
+     "id": "1john-03",
+     "label": "1 John 3"
+    },
+    {
+     "id": "1john-04",
+     "label": "1 John 4"
+    },
+    {
+     "id": "1john-05",
+     "label": "1 John 5"
+    }
+   ]
   }
  ],
  "episodes": {

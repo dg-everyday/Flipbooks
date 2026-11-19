@@ -9,31 +9,46 @@
 // Flipbook instead. It asks search engines not to index it; the Flipbook and the
 // Archives' day pages are the pages to find.
 //
-//   node assets/scripts/build-week-pages.mjs _site                                on deploy
-//   node assets/scripts/build-week-pages.mjs <dir> --today 2026-11-20 --offline   for tests
+//   SHARP=<path to sharp> node assets/scripts/build-week-pages.mjs _site --cache <dir>   on deploy
+//   node assets/scripts/build-week-pages.mjs <dir> --today 2026-11-20 --offline            for tests
 //
 // The weeks run from the one holding January 1 of the Archives' first year
 // (assets/library/index.json) to the one holding tomorrow in Manila: the
 // scheduled deploy runs hours after midnight, so Saturday's deploy writes the
-// next week's page ahead of it. Each cover is looked up on the media host, for
-// its size, which lets the preview show on the first share; a week without its
-// cover gets the year's stand-in, as in the Flipbook (daily-grace-week.js).
-// --offline skips the lookups. The pages are never committed; only the
-// published copy has them. Nothing here may stop the day's devotional from
-// going out: a failure is a warning.
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+// next week's page ahead of it. A week without its cover gets the year's
+// stand-in, as in the Flipbook (daily-grace-week.js).
+//
+// The preview picture. The covers are tall and large (the 2026 ones 5400 x 9600,
+// 1.6 MB), and Messenger shows no picture for them at all. So each week gets a
+// card made for link previews, /w/2026-11-15.jpg: 1200 x 630 JPEG, the cover
+// whole in the middle on a dimmed, blurred spread of itself. The cards are made
+// with sharp (the SHARP variable, else an installed "sharp") and kept in the
+// --cache folder, named for the cover and its ETag, so a deploy makes only the
+// new ones, and a cover replaced on the host gets a new card. Without sharp, or
+// when a card cannot be made, that week's page names the cover itself.
+// --offline skips the media host altogether, and so the cards.
+//
+// The pages and cards are never committed; only the published copy has them.
+// Nothing here may stop the day's devotional from going out: a failure is a
+// warning.
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const SITE = "https://dailygrace.faith";
 const MEDIA = `${SITE}/media/`;
 const DAY_MS = 86_400_000;
-const LOOKUP_TIMEOUT = 8000; // ms for each cover
+const LOOKUP_TIMEOUT = 8000; // ms for each cover's first bytes
+const DOWNLOAD_TIMEOUT = 60_000; // ms for a whole cover
+const CARD = { width: 1200, height: 630, inset: 24, quality: 82 };
+const CARDS_AT_ONCE = 3; // a 2026 cover takes about 200 MB to decode
 
 const args = process.argv.slice(2);
-const out = args.find((arg, i) => !arg.startsWith("--") && args[i - 1] !== "--today");
-const todayArg = args.includes("--today") ? args[args.indexOf("--today") + 1] : null;
+const valueOf = (flag) => (args.includes(flag) ? args[args.indexOf(flag) + 1] : null);
+const out = args.find((arg, i) => !arg.startsWith("--") && !["--today", "--cache"].includes(args[i - 1]));
+const todayArg = valueOf("--today");
+const cacheDir = valueOf("--cache");
 const offline = args.includes("--offline");
 
 function manilaToday() {
@@ -99,12 +114,12 @@ function webpSize(bytes) {
 }
 
 /**
- * The picture at `url`: "missing" when the host says it is not there, else its
- * size, or null when it cannot be told (offline, or a blip on the way).
+ * The picture at `url`: "missing" when the host says it is not there, else
+ * { size, etag } with whatever could be told (nothing, offline or after a blip).
  */
 async function lookUp(url) {
     if (offline) {
-        return null;
+        return { size: null, etag: null };
     }
     try {
         const response = await fetch(url, {
@@ -115,27 +130,94 @@ async function lookUp(url) {
             return "missing";
         }
         if (!response.ok) {
-            return null;
+            return { size: null, etag: null };
         }
-        return webpSize(Buffer.from(await response.arrayBuffer()));
+        return {
+            size: webpSize(Buffer.from(await response.arrayBuffer())),
+            etag: response.headers.get("etag"),
+        };
     } catch {
-        return null;
+        return { size: null, etag: null };
     }
 }
 
-/** The week's cover to preview, with its size when known. */
+/** The week's cover: its address, with its size and ETag when known. */
 async function coverFor(sunday) {
     const [cover, standIn] = coverUrls(sunday);
     const found = await lookUp(cover);
     if (found !== "missing") {
-        return { src: cover, size: found };
+        return { src: cover, ...found };
     }
+    console.log(`::warning::no cover for the week of ${sunday}; its page uses ${standIn}`);
     const fallback = await lookUp(standIn);
-    console.log(`::warning::no cover for the week of ${sunday}; the preview uses ${standIn}`);
-    return { src: standIn, size: fallback === "missing" ? null : fallback };
+    return { src: standIn, ...(fallback === "missing" ? { size: null, etag: null } : fallback) };
 }
 
-function page(sunday, cover) {
+/** sharp, or null when it is not to be had: the pages then name the covers. */
+async function loadSharp() {
+    if (offline) {
+        return null;
+    }
+    try {
+        const where = process.env.SHARP ? pathToFileURL(resolve(process.env.SHARP, "lib/index.js")).href : "sharp";
+        const module = await import(where);
+        return module.default ?? module;
+    } catch (error) {
+        console.log(`::warning::sharp not found (${error.message.split("\n")[0]}); week pages preview with the covers`);
+        return null;
+    }
+}
+
+/** The preview card for `cover`, as JPEG bytes. */
+async function makeCard(sharp, cover) {
+    const response = await fetch(cover.src, { signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT) });
+    if (!response.ok) {
+        throw new Error(`${cover.src}: ${response.status}`);
+    }
+    const original = Buffer.from(await response.arrayBuffer());
+    const height = CARD.height - 2 * CARD.inset;
+    const front = await sharp(original).resize({ height }).toBuffer();
+    const { width } = await sharp(front).metadata();
+    const back = await sharp(original)
+        .resize(CARD.width, CARD.height, { fit: "cover" })
+        .blur(24)
+        .modulate({ brightness: 0.55 })
+        .toBuffer();
+    return sharp(back)
+        .composite([{ input: front, left: Math.round((CARD.width - width) / 2), top: CARD.inset }])
+        .jpeg({ quality: CARD.quality, mozjpeg: true })
+        .toBuffer();
+}
+
+/** A name for `cover`'s card in the cache: the cover's name and its ETag. */
+function cacheName(cover) {
+    const name = cover.src.split("/").pop().replace(/\.webp$/, "");
+    const tag = (cover.etag ?? "").replace(/[^A-Za-z0-9]/g, "").slice(-24);
+    return `${name}-${tag || "untagged"}.jpg`;
+}
+
+/** Writes `sunday`'s card into `folder`; true when it is there. */
+async function writeCard(sharp, sunday, cover, folder) {
+    const target = resolve(folder, `${sunday}.jpg`);
+    const cached = cacheDir && cover.etag ? resolve(cacheDir, cacheName(cover)) : null;
+    try {
+        if (cached && existsSync(cached)) {
+            copyFileSync(cached, target);
+            return "kept";
+        }
+        const card = await makeCard(sharp, cover);
+        writeFileSync(target, card);
+        if (cached) {
+            writeFileSync(cached, card);
+        }
+        return "made";
+    } catch (error) {
+        console.log(`::warning::no preview card for the week of ${sunday}: ${error.message}`);
+        return null;
+    }
+}
+
+function page(sunday, cover, hasCard) {
     const url = `${SITE}/w/${sunday}.html`;
     const flipbook = `/apps/pages/flipbook.html?date=${sunday}`;
     const week = weekName(sunday);
@@ -143,10 +225,14 @@ function page(sunday, cover) {
     const description =
         "A week of Daily Grace, one page a day: the verses, reflections and comics, turned like the pages of a book.";
     const alt = `The Daily Grace Flipbook cover for the week of ${week}`;
-    const size = cover.size
+    // The card where there is one, else the cover with its size when known.
+    const image = hasCard
+        ? { src: `${SITE}/w/${sunday}.jpg`, type: "image/jpeg", size: { width: CARD.width, height: CARD.height } }
+        : { src: cover.src, type: "image/webp", size: cover.size };
+    const size = image.size
         ? `
-    <meta property="og:image:width" content="${cover.size.width}" />
-    <meta property="og:image:height" content="${cover.size.height}" />`
+    <meta property="og:image:width" content="${image.size.width}" />
+    <meta property="og:image:height" content="${image.size.height}" />`
         : "";
     return `<!doctype html>
 <html lang="en">
@@ -162,8 +248,8 @@ function page(sunday, cover) {
     <meta property="og:url" content="${url}" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
-    <meta property="og:image" content="${cover.src}" />
-    <meta property="og:image:type" content="image/webp" />${size}
+    <meta property="og:image" content="${image.src}" />
+    <meta property="og:image:type" content="${image.type}" />${size}
     <meta property="og:image:alt" content="${escapeHtml(alt)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#001b34" />
@@ -210,12 +296,32 @@ async function build() {
 
     const folder = resolve(out, "w");
     mkdirSync(folder, { recursive: true });
+    if (cacheDir) {
+        mkdirSync(cacheDir, { recursive: true });
+    }
+
+    // The cards, a few at a time.
+    const cards = new Array(sundays.length).fill(null);
+    const sharp = await loadSharp();
+    if (sharp) {
+        let next = 0;
+        const worker = async () => {
+            while (next < sundays.length) {
+                const i = next++;
+                cards[i] = await writeCard(sharp, sundays[i], covers[i], folder);
+            }
+        };
+        await Promise.all(Array.from({ length: CARDS_AT_ONCE }, worker));
+    }
+
     sundays.forEach((sunday, i) => {
-        writeFileSync(resolve(folder, `${sunday}.html`), page(sunday, covers[i]));
+        writeFileSync(resolve(folder, `${sunday}.html`), page(sunday, covers[i], Boolean(cards[i])));
     });
-    const sized = covers.filter((cover) => cover.size).length;
+    const made = cards.filter((card) => card === "made").length;
+    const kept = cards.filter((card) => card === "kept").length;
     console.log(
-        `Wrote ${sundays.length} week pages (${first} to ${last}) into ${out}/w/; ${sized} with the cover's size`,
+        `Wrote ${sundays.length} week pages (${first} to ${last}) into ${out}/w/; ` +
+            `preview cards: ${made} made, ${kept} from the cache, ${sundays.length - made - kept} without`,
     );
 }
 

@@ -159,6 +159,46 @@ PLANS = [
         "cover": {"symbol": "2 Samuel"},
         "episodes": [f"2samuel-{n:02d}" for n in range(0, 25)],
     },
+    {
+        "id": "james",
+        "title": "James",
+        "subtitle": "Be Ye Doers of the Word",
+        "about": "A short, practical letter from James, the Lord’s brother: joy in trials, wisdom "
+                 "from God, faith that shows itself in what we do, taming the tongue, drawing near "
+                 "to God, and patient, earnest prayer.",
+        "cover": {"symbol": "James"},
+        "episodes": [f"james-{n:02d}" for n in range(0, 6)],
+    },
+    {
+        "id": "philippians",
+        "title": "Philippians",
+        "subtitle": "Rejoice in the Lord Alway",
+        "about": "Paul’s letter of joy, written in chains to the church that began with Lydia and a "
+                 "jailer: to live is Christ, the mind of Christ who became a servant, pressing toward "
+                 "the mark, and the peace of God that passeth all understanding.",
+        "cover": {"symbol": "Philippians"},
+        "episodes": [f"philippians-{n:02d}" for n in range(0, 5)],
+    },
+    {
+        "id": "1kings",
+        "title": "1 Kings",
+        "subtitle": "A Wise and an Understanding Heart",
+        "about": "Solomon asks God for wisdom and builds the temple of the LORD. Then his heart turns "
+                 "away, the kingdom is torn in two, and the prophet Elijah stands alone against "
+                 "Ahab, Jezebel and the prophets of Baal.",
+        "cover": {"symbol": "1 Kings"},
+        "episodes": [f"1kings-{n:02d}" for n in range(0, 23)],
+    },
+    {
+        "id": "1john",
+        "title": "1 John",
+        "subtitle": "Beloved, Let Us Love One Another",
+        "about": "A warm, simple letter from an eyewitness of Jesus to his little children: God is "
+                 "light, so walk in the light; God is love, so love one another; and believe on the "
+                 "Son of God, that ye may know that ye have eternal life.",
+        "cover": {"symbol": "1 John"},
+        "episodes": [f"1john-{n:02d}" for n in range(0, 6)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

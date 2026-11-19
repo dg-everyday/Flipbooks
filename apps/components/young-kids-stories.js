@@ -24,7 +24,7 @@
  */
 
 import { resolveMedia } from "../settings/settings.js?v=20261009-1";
-import "./flip-book.js?v=20261120-1";
+import "./flip-book.js?v=20261120-2";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 

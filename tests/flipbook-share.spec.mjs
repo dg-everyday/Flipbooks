@@ -1,10 +1,9 @@
 /**
  * Sharing the week from the Flipbook (apps/pages/flipbook.html,
  * apps/pages/scripts/flipbook-share.js, <flip-book>'s `share` page option):
- * only the week's cover carries a share button, and a tap sends the cover
- * picture through the device's share sheet, as the poster's share button
- * does: as a picture where files can be shared, else as a link, else by
- * copying the link. Every picture on the media host is a stand-in, and the
+ * only the week's cover carries a share button, and a tap shares a link to
+ * the Flipbook (never a picture) through the device's share sheet, or copies
+ * the link where there is no share sheet. Every picture on the media host is a stand-in, and the
  * rest of it is missing, so nothing waits on R2. The share sheet is stood in
  * for, and records what it was given.
  */
@@ -60,7 +59,7 @@ test.beforeEach(async ({ page }) => {
     });
 });
 
-test("only the week's cover has a share button, and it sends the cover picture to the share sheet", async ({ page }) => {
+test("only the week's cover has a share button, and it shares a link to the Flipbook, not a picture", async ({ page }) => {
     await shareSheet(page, "files");
     await open(page, `${PAGE}?date=2026-11-03`);
     // One for the cover in each drawing of the book, and none for the days.
@@ -70,11 +69,11 @@ test("only the week's cover has a share button, and it sends the cover picture t
     await expect.poll(() => page.evaluate(() => window.shared.length)).toBe(1);
     const [shared] = await page.evaluate(() => window.shared);
     // November 3, 2026 falls in the week of November 1–7.
-    expect(shared.files).toHaveLength(1);
-    expect(shared.files[0]).toMatchObject({ name: "Daily Grace - Week of November 1 – 7, 2026.jpg", type: "image/jpeg" });
-    expect(shared.files[0].size).toBeGreaterThan(0);
-    expect(shared.title).toBe("Daily Grace for the week of November 1 – 7, 2026");
-    expect(shared.text).toBe(`Daily Grace for the week of November 1 – 7, 2026 · ${WEEK_LINK}`);
+    expect(shared.files).toHaveLength(0);
+    expect(shared.url).toBe(WEEK_LINK);
+    expect(shared.title).toBe("Daily Grace Flipbook for the week of November 1 – 7, 2026");
+    // The link only in `url`, so no app pastes it twice.
+    expect(shared.text).toBe("Daily Grace Flipbook for the week of November 1 – 7, 2026");
     // No menu of its own: the device's share sheet is the menu.
     await expect(page.locator("#share-menu")).toHaveCount(0);
 });
@@ -85,10 +84,11 @@ test("with no date, the link names today, so it opens on this week", async ({ pa
     await coverShare(page).click();
     await expect.poll(() => page.evaluate(() => window.shared.length)).toBe(1);
     const [shared] = await page.evaluate(() => window.shared);
-    expect(shared.text).toBe(`Daily Grace for the week of November 15 – 21, 2026 · ${TODAY_LINK}`);
+    expect(shared.url).toBe(TODAY_LINK);
+    expect(shared.title).toBe("Daily Grace Flipbook for the week of November 15 – 21, 2026");
 });
 
-test("a share sheet that takes only links is sent the link to the week", async ({ page }) => {
+test("a share sheet that takes only links is sent the same link", async ({ page }) => {
     await shareSheet(page, "links");
     await open(page, `${PAGE}?date=2026-11-03`);
     await coverShare(page).click();
@@ -96,6 +96,12 @@ test("a share sheet that takes only links is sent the link to the week", async (
     const [shared] = await page.evaluate(() => window.shared);
     expect(shared.files).toHaveLength(0);
     expect(shared.url).toBe(WEEK_LINK);
+});
+
+test("the shared link opens the Flipbook directly, on the same week", async ({ page }) => {
+    await page.goto(WEEK_LINK.replace("https://dailygrace.faith", ""), { waitUntil: "domcontentloaded" });
+    await expect(page.locator("#library")).toHaveAttribute("href", "library.html#month/2026-11");
+    await expect(coverShare(page)).toBeVisible();
 });
 
 test("with no share sheet, the link is copied, and it says so", async ({ page, context }) => {

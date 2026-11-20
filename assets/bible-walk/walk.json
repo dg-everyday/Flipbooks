@@ -1898,6 +1898,131 @@
      "label": "Haggai 2"
     }
    ]
+  },
+  {
+   "id": "matthew",
+   "title": "Matthew",
+   "subtitle": "The Kingdom of Heaven Is at Hand",
+   "about": "The whole Gospel of Matthew, chapter by chapter: Jesus the promised King, the son of David, in whom the prophets are fulfilled. The Sermon on the Mount, the parables of the kingdom, the cross and the empty tomb, from Emmanuel, God with us, to lo, I am with you alway.",
+   "cover": "media:images/symbols/Matthew-symbol.svg",
+   "episodes": [
+    {
+     "id": "matthew-00",
+     "label": "Meet Matthew"
+    },
+    {
+     "id": "matthew-01",
+     "label": "Matthew 1"
+    },
+    {
+     "id": "matthew-02",
+     "label": "Matthew 2"
+    },
+    {
+     "id": "matthew-03",
+     "label": "Matthew 3"
+    },
+    {
+     "id": "matthew-04",
+     "label": "Matthew 4"
+    },
+    {
+     "id": "matthew-05",
+     "label": "Matthew 5"
+    },
+    {
+     "id": "matthew-06",
+     "label": "Matthew 6"
+    },
+    {
+     "id": "matthew-07",
+     "label": "Matthew 7"
+    },
+    {
+     "id": "matthew-08",
+     "label": "Matthew 8"
+    },
+    {
+     "id": "matthew-09",
+     "label": "Matthew 9"
+    },
+    {
+     "id": "matthew-10",
+     "label": "Matthew 10"
+    },
+    {
+     "id": "matthew-11",
+     "label": "Matthew 11"
+    },
+    {
+     "id": "matthew-12",
+     "label": "Matthew 12"
+    },
+    {
+     "id": "matthew-13",
+     "label": "Matthew 13"
+    },
+    {
+     "id": "matthew-14",
+     "label": "Matthew 14"
+    },
+    {
+     "id": "matthew-15",
+     "label": "Matthew 15"
+    },
+    {
+     "id": "matthew-16",
+     "label": "Matthew 16"
+    },
+    {
+     "id": "matthew-17",
+     "label": "Matthew 17"
+    },
+    {
+     "id": "matthew-18",
+     "label": "Matthew 18"
+    },
+    {
+     "id": "matthew-19",
+     "label": "Matthew 19"
+    },
+    {
+     "id": "matthew-20",
+     "label": "Matthew 20"
+    },
+    {
+     "id": "matthew-21",
+     "label": "Matthew 21"
+    },
+    {
+     "id": "matthew-22",
+     "label": "Matthew 22"
+    },
+    {
+     "id": "matthew-23",
+     "label": "Matthew 23"
+    },
+    {
+     "id": "matthew-24",
+     "label": "Matthew 24"
+    },
+    {
+     "id": "matthew-25",
+     "label": "Matthew 25"
+    },
+    {
+     "id": "matthew-26",
+     "label": "Matthew 26"
+    },
+    {
+     "id": "matthew-27",
+     "label": "Matthew 27"
+    },
+    {
+     "id": "matthew-28",
+     "label": "Matthew 28"
+    }
+   ]
   }
  ],
  "episodes": {
@@ -5948,6 +6073,47 @@
     "50:24"
    ]
   },
+  "haggai-00": {
+   "title": "Meet the Book of Haggai",
+   "label": "Meet Haggai",
+   "book": "Haggai",
+   "chapter": null,
+   "art": "media:images/symbols/Haggai-symbol.svg",
+   "audio": "media:audio/bible-walk/haggai/haggai-00.webm?v=2258",
+   "seconds": 225.8,
+   "question": "Haggai’s people put their own houses first and left God’s house in ruins. What things in your life tend to crowd God out?",
+   "keys": []
+  },
+  "haggai-01": {
+   "title": "Consider Your Ways",
+   "label": "Haggai 1",
+   "book": "Haggai",
+   "chapter": 1,
+   "art": "media:images/symbols/Haggai-symbol.svg",
+   "audio": "media:audio/bible-walk/haggai/haggai-01.webm?v=4368",
+   "seconds": 436.8,
+   "question": "The people said, the time is not come, while they made their own houses beautiful. Is there something you keep putting off, that you know God wants you to do?",
+   "keys": [
+    "1:5",
+    "1:8",
+    "1:13"
+   ]
+  },
+  "haggai-02": {
+   "title": "The Glory of This Latter House",
+   "label": "Haggai 2",
+   "book": "Haggai",
+   "chapter": 2,
+   "art": "media:images/symbols/Haggai-symbol.svg",
+   "audio": "media:audio/bible-walk/haggai/haggai-02.webm?v=4685",
+   "seconds": 468.5,
+   "question": "The old men thought the new temple was nothing compared to the old one. When have you felt that what you could do for God was too small to matter?",
+   "keys": [
+    "2:4",
+    "2:9",
+    "2:19"
+   ]
+  },
   "james-00": {
    "title": "Meet the Book of James",
    "label": "Meet James",
@@ -7748,6 +7914,437 @@
     "16:6",
     "16:7",
     "16:15"
+   ]
+  },
+  "matthew-00": {
+   "title": "Meet the Book of Matthew",
+   "label": "Meet Matthew",
+   "book": "Matthew",
+   "chapter": null,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-00.webm?v=2405",
+   "seconds": 240.5,
+   "question": "Jesus called Matthew, a man many people despised, to follow him. Who might God be calling that others would overlook, and could that person be you?",
+   "keys": []
+  },
+  "matthew-01": {
+   "title": "They Shall Call His Name Emmanuel",
+   "label": "Matthew 1",
+   "book": "Matthew",
+   "chapter": 1,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-01.webm?v=3961",
+   "seconds": 396.1,
+   "question": "Matthew’s family line includes outsiders and people with painful stories. What does that tell you about who is welcome in God’s family?",
+   "keys": [
+    "1:1",
+    "1:21",
+    "1:23"
+   ]
+  },
+  "matthew-02": {
+   "title": "We Have Seen His Star",
+   "label": "Matthew 2",
+   "book": "Matthew",
+   "chapter": 2,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-02.webm?v=4022",
+   "seconds": 402.2,
+   "question": "The wise men gave Jesus gold, frankincense and myrrh. What could you give to Jesus, that would show he is your King?",
+   "keys": [
+    "2:2",
+    "2:6",
+    "2:11"
+   ]
+  },
+  "matthew-03": {
+   "title": "This Is My Beloved Son",
+   "label": "Matthew 3",
+   "book": "Matthew",
+   "chapter": 3,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-03.webm?v=3908",
+   "seconds": 390.8,
+   "question": "John said that real repentance shows in our lives, like fruit on a tree. What fruit would you like to see growing in your life?",
+   "keys": [
+    "3:2",
+    "3:8",
+    "3:17"
+   ]
+  },
+  "matthew-04": {
+   "title": "Follow Me, and I Will Make You Fishers of Men",
+   "label": "Matthew 4",
+   "book": "Matthew",
+   "chapter": 4,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-04.webm?v=4177",
+   "seconds": 417.7,
+   "question": "The fishermen left their nets to follow Jesus. What might Jesus be asking you to leave behind, so you can follow him more closely?",
+   "keys": [
+    "4:4",
+    "4:10",
+    "4:19"
+   ]
+  },
+  "matthew-05": {
+   "title": "Blessed Are the Pure in Heart",
+   "label": "Matthew 5",
+   "book": "Matthew",
+   "chapter": 5,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-05.webm?v=4386",
+   "seconds": 438.6,
+   "question": "Jesus said, love your enemies, and pray for those who treat you badly. Who is one person you find hard to love, that you could pray for this week?",
+   "keys": [
+    "5:8",
+    "5:16",
+    "5:48"
+   ]
+  },
+  "matthew-06": {
+   "title": "Our Father Which Art in Heaven",
+   "label": "Matthew 6",
+   "book": "Matthew",
+   "chapter": 6,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-06.webm?v=4208",
+   "seconds": 420.8,
+   "question": "Jesus said, where your treasure is, there will your heart be also. What do you treasure most, and does it pull your heart towards God or away from him?",
+   "keys": [
+    "6:9",
+    "6:21",
+    "6:33"
+   ]
+  },
+  "matthew-07": {
+   "title": "Ask, and It Shall Be Given You",
+   "label": "Matthew 7",
+   "book": "Matthew",
+   "chapter": 7,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-07.webm?v=4196",
+   "seconds": 419.6,
+   "question": "Jesus said the wise builder hears his words and does them. What is one thing Jesus said in the Sermon on the Mount that you want to start doing?",
+   "keys": [
+    "7:7",
+    "7:12",
+    "7:24"
+   ]
+  },
+  "matthew-08": {
+   "title": "Speak the Word Only",
+   "label": "Matthew 8",
+   "book": "Matthew",
+   "chapter": 8,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-08.webm?v=4554",
+   "seconds": 455.4,
+   "question": "The disciples asked, what manner of man is this? From what you have heard so far in Matthew, how would you answer their question?",
+   "keys": [
+    "8:3",
+    "8:8",
+    "8:27"
+   ]
+  },
+  "matthew-09": {
+   "title": "The Harvest Truly Is Plenteous",
+   "label": "Matthew 9",
+   "book": "Matthew",
+   "chapter": 9,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-09.webm?v=4568",
+   "seconds": 456.8,
+   "question": "Matthew left his tax booth and threw a dinner so his friends could meet Jesus. Who in your life would you like to introduce to Jesus?",
+   "keys": [
+    "9:13",
+    "9:36",
+    "9:38"
+   ]
+  },
+  "matthew-10": {
+   "title": "Freely Ye Have Received, Freely Give",
+   "label": "Matthew 10",
+   "book": "Matthew",
+   "chapter": 10,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-10.webm?v=4307",
+   "seconds": 430.7,
+   "question": "Jesus said, freely ye have received, freely give. What is something God has given you that you could share with someone else?",
+   "keys": [
+    "10:8",
+    "10:31",
+    "10:42"
+   ]
+  },
+  "matthew-11": {
+   "title": "Come unto Me, All Ye That Labour",
+   "label": "Matthew 11",
+   "book": "Matthew",
+   "chapter": 11,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-11.webm?v=3919",
+   "seconds": 391.9,
+   "question": "Jesus said, come unto me, all ye that labour and are heavy laden. What is one heavy thing you could bring to him today?",
+   "keys": [
+    "11:5",
+    "11:28",
+    "11:29"
+   ]
+  },
+  "matthew-12": {
+   "title": "A Bruised Reed Shall He Not Break",
+   "label": "Matthew 12",
+   "book": "Matthew",
+   "chapter": 12,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-12.webm?v=4310",
+   "seconds": 431.0,
+   "question": "Jesus said, out of the abundance of the heart the mouth speaketh. What do your words this week show about what is in your heart?",
+   "keys": [
+    "12:7",
+    "12:20",
+    "12:41"
+   ]
+  },
+  "matthew-13": {
+   "title": "Treasure Hid in a Field",
+   "label": "Matthew 13",
+   "book": "Matthew",
+   "chapter": 13,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-13.webm?v=4463",
+   "seconds": 446.3,
+   "question": "The man sold everything for joy, to buy the field with the treasure. What makes Jesus worth more than anything else to you?",
+   "keys": [
+    "13:23",
+    "13:31",
+    "13:44"
+   ]
+  },
+  "matthew-14": {
+   "title": "Lord, Save Me",
+   "label": "Matthew 14",
+   "book": "Matthew",
+   "chapter": 14,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-14.webm?v=4066",
+   "seconds": 406.6,
+   "question": "Peter began to sink when he looked at the wind instead of Jesus. What are the winds and waves that make you afraid, and how can you keep your eyes on Jesus?",
+   "keys": [
+    "14:16",
+    "14:30",
+    "14:31"
+   ]
+  },
+  "matthew-15": {
+   "title": "O Woman, Great Is Thy Faith",
+   "label": "Matthew 15",
+   "book": "Matthew",
+   "chapter": 15,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-15.webm?v=4372",
+   "seconds": 437.2,
+   "question": "The woman of Canaan kept asking, even when Jesus was silent at first. What helps you keep trusting God when an answer seems slow?",
+   "keys": [
+    "15:8",
+    "15:28",
+    "15:32"
+   ]
+  },
+  "matthew-16": {
+   "title": "Thou Art the Christ, the Son of the Living God",
+   "label": "Matthew 16",
+   "book": "Matthew",
+   "chapter": 16,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-16.webm?v=4092",
+   "seconds": 409.2,
+   "question": "Jesus asked, what shall a man give in exchange for his soul? What things in the world are tempting to chase, even if they might cost you your walk with God?",
+   "keys": [
+    "16:16",
+    "16:24",
+    "16:26"
+   ]
+  },
+  "matthew-17": {
+   "title": "Hear Ye Him",
+   "label": "Matthew 17",
+   "book": "Matthew",
+   "chapter": 17,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-17.webm?v=4007",
+   "seconds": 400.7,
+   "question": "After the shining glory faded, the disciples saw Jesus only. Why do you think it matters that Jesus is enough, even in ordinary days?",
+   "keys": [
+    "17:5",
+    "17:8",
+    "17:20"
+   ]
+  },
+  "matthew-18": {
+   "title": "Except Ye Become as Little Children",
+   "label": "Matthew 18",
+   "book": "Matthew",
+   "chapter": 18,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-18.webm?v=4565",
+   "seconds": 456.5,
+   "question": "The servant was forgiven a huge debt, but would not forgive a small one. Why do you think it is sometimes hard to forgive, even when we have been forgiven so much?",
+   "keys": [
+    "18:3",
+    "18:20",
+    "18:22"
+   ]
+  },
+  "matthew-19": {
+   "title": "Suffer Little Children",
+   "label": "Matthew 19",
+   "book": "Matthew",
+   "chapter": 19,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-19.webm?v=4282",
+   "seconds": 428.2,
+   "question": "The rich young man went away sad because he had great possessions. What do you think Jesus would ask you to let go of, to follow him more fully?",
+   "keys": [
+    "19:6",
+    "19:14",
+    "19:26"
+   ]
+  },
+  "matthew-20": {
+   "title": "So the Last Shall Be First",
+   "label": "Matthew 20",
+   "book": "Matthew",
+   "chapter": 20,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-20.webm?v=4030",
+   "seconds": 403.0,
+   "question": "Jesus said, whoever wants to be great must be a servant. What is one way you could serve someone at home, at school or at work this week?",
+   "keys": [
+    "20:16",
+    "20:26",
+    "20:28"
+   ]
+  },
+  "matthew-21": {
+   "title": "Hosanna to the Son of David",
+   "label": "Matthew 21",
+   "book": "Matthew",
+   "chapter": 21,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-21.webm?v=4473",
+   "seconds": 447.3,
+   "question": "The crowd shouted Hosanna, which means save us now. What would you like Jesus to save you from, or help you with, today?",
+   "keys": [
+    "21:9",
+    "21:13",
+    "21:42"
+   ]
+  },
+  "matthew-22": {
+   "title": "Many Are Called, but Few Are Chosen",
+   "label": "Matthew 22",
+   "book": "Matthew",
+   "chapter": 22,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-22.webm?v=4690",
+   "seconds": 469.0,
+   "question": "Jesus said, give to God the things that are God’s. If you bear God’s image, what does it mean to give yourself to him?",
+   "keys": [
+    "22:14",
+    "22:21",
+    "22:37"
+   ]
+  },
+  "matthew-23": {
+   "title": "As a Hen Gathereth Her Chickens",
+   "label": "Matthew 23",
+   "book": "Matthew",
+   "chapter": 23,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-23.webm?v=4328",
+   "seconds": 432.8,
+   "question": "Jesus said that justice, mercy and faith are the weightier matters. Which of these would you like God to grow in your life?",
+   "keys": [
+    "23:12",
+    "23:23",
+    "23:37"
+   ]
+  },
+  "matthew-24": {
+   "title": "Heaven and Earth Shall Pass Away",
+   "label": "Matthew 24",
+   "book": "Matthew",
+   "chapter": 24,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-24.webm?v=4412",
+   "seconds": 441.2,
+   "question": "Jesus said, blessed is the servant his lord finds faithfully at work when he comes. What would you like Jesus to find you doing when he comes?",
+   "keys": [
+    "24:13",
+    "24:35",
+    "24:42"
+   ]
+  },
+  "matthew-25": {
+   "title": "Well Done, Thou Good and Faithful Servant",
+   "label": "Matthew 25",
+   "book": "Matthew",
+   "chapter": 25,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-25.webm?v=4601",
+   "seconds": 460.1,
+   "question": "Jesus said that when we help the least of these, we help him. Who is someone in need near you that you could help this week?",
+   "keys": [
+    "25:13",
+    "25:21",
+    "25:40"
+   ]
+  },
+  "matthew-26": {
+   "title": "Could Ye Not Watch with Me One Hour?",
+   "label": "Matthew 26",
+   "book": "Matthew",
+   "chapter": 26,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-26.webm?v=4631",
+   "seconds": 463.1,
+   "question": "Jesus asked, could ye not watch with me one hour? What helps you stay close to Jesus when you feel tired or weak?",
+   "keys": [
+    "26:13",
+    "26:41",
+    "26:75"
+   ]
+  },
+  "matthew-27": {
+   "title": "He Saved Others; Himself He Cannot Save",
+   "label": "Matthew 27",
+   "book": "Matthew",
+   "chapter": 27,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-27.webm?v=4779",
+   "seconds": 477.9,
+   "question": "The mockers said, he saved others; himself he cannot save. Why do you think Jesus did not come down from the cross, though he could have?",
+   "keys": [
+    "27:22",
+    "27:46",
+    "27:51"
+   ]
+  },
+  "matthew-28": {
+   "title": "Lo, I Am with You Alway",
+   "label": "Matthew 28",
+   "book": "Matthew",
+   "chapter": 28,
+   "art": "media:images/symbols/Matthew-symbol.svg",
+   "audio": "media:audio/bible-walk/matthew/matthew-28.webm?v=3928",
+   "seconds": 392.8,
+   "question": "Matthew begins with Emmanuel, God with us, and ends with Jesus saying, I am with you alway. How does it change your day to know that Jesus is with you?",
+   "keys": [
+    "28:6",
+    "28:19",
+    "28:20"
    ]
   },
   "nehemiah-00": {

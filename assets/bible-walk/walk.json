@@ -1877,6 +1877,27 @@
      "label": "Nehemiah 13"
     }
    ]
+  },
+  {
+   "id": "haggai",
+   "title": "Haggai",
+   "subtitle": "I Am with You, Saith the LORD",
+   "about": "Four short messages from the prophet Haggai to the people home from Babylon: consider your ways, and build the house of the LORD. When the work feels small, God says be strong, and work, for I am with you, and promises that the glory of this latter house shall be greater than of the former.",
+   "cover": "media:images/symbols/Haggai-symbol.svg",
+   "episodes": [
+    {
+     "id": "haggai-00",
+     "label": "Meet Haggai"
+    },
+    {
+     "id": "haggai-01",
+     "label": "Haggai 1"
+    },
+    {
+     "id": "haggai-02",
+     "label": "Haggai 2"
+    }
+   ]
   }
  ],
  "episodes": {
@@ -5005,6 +5026,167 @@
     "20:20"
    ]
   },
+  "ezra-00": {
+   "title": "Meet the Book of Ezra",
+   "label": "Meet Ezra",
+   "book": "Ezra",
+   "chapter": null,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-00.webm?v=2377",
+   "seconds": 237.7,
+   "question": "The people of Ezra’s day came home to ruins, and began to rebuild. Is there anything in your life that God might want to help you rebuild?",
+   "keys": []
+  },
+  "ezra-01": {
+   "title": "The LORD Stirred Up the Spirit of Cyrus",
+   "label": "Ezra 1",
+   "book": "Ezra",
+   "chapter": 1,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-01.webm?v=4233",
+   "seconds": 423.3,
+   "question": "Cyrus asked, who is there among you, that will go up and build? If God asked you that question today, how would you answer?",
+   "keys": [
+    "1:1",
+    "1:3",
+    "1:5"
+   ]
+  },
+  "ezra-02": {
+   "title": "Every One unto His City",
+   "label": "Ezra 2",
+   "book": "Ezra",
+   "chapter": 2,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-02.webm?v=3984",
+   "seconds": 398.4,
+   "question": "Every family and town was counted and named in Ezra’s list. How does it feel to know that God knows you by name?",
+   "keys": [
+    "2:1",
+    "2:21",
+    "2:68"
+   ]
+  },
+  "ezra-03": {
+   "title": "A Great Shout",
+   "label": "Ezra 3",
+   "book": "Ezra",
+   "chapter": 3,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-03.webm?v=3847",
+   "seconds": 384.7,
+   "question": "Some people wept for what was lost, and some shouted for joy at what was beginning. Which are you more likely to do, and why?",
+   "keys": [
+    "3:3",
+    "3:11",
+    "3:12"
+   ]
+  },
+  "ezra-04": {
+   "title": "They Weakened the Hands",
+   "label": "Ezra 4",
+   "book": "Ezra",
+   "chapter": 4,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-04.webm?v=4167",
+   "seconds": 416.7,
+   "question": "The enemies weakened the hands of the builders until the work stopped. What tends to discourage you from serving God, and how can you resist it?",
+   "keys": [
+    "4:3",
+    "4:4",
+    "4:24"
+   ]
+  },
+  "ezra-05": {
+   "title": "The Eye of Their God Was upon the Elders",
+   "label": "Ezra 5",
+   "book": "Ezra",
+   "chapter": 5,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-05.webm?v=3996",
+   "seconds": 399.6,
+   "question": "The builders said, we are the servants of the God of heaven and earth. How would you describe who you are, if someone asked about your faith?",
+   "keys": [
+    "5:1",
+    "5:5",
+    "5:11"
+   ]
+  },
+  "ezra-06": {
+   "title": "With Joy",
+   "label": "Ezra 6",
+   "book": "Ezra",
+   "chapter": 6,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-06.webm?v=4148",
+   "seconds": 414.8,
+   "question": "Enemies tried to stop the building, but in the end their taxes helped pay for it. When have you seen God turn something bad into something good?",
+   "keys": [
+    "6:14",
+    "6:16",
+    "6:22"
+   ]
+  },
+  "ezra-07": {
+   "title": "Ezra Had Prepared His Heart",
+   "label": "Ezra 7",
+   "book": "Ezra",
+   "chapter": 7,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-07.webm?v=3949",
+   "seconds": 394.9,
+   "question": "Ezra prepared his heart to seek God’s Word, to do it, and to teach it. Which of those three do you find easiest, and which is hardest?",
+   "keys": [
+    "7:6",
+    "7:10",
+    "7:27"
+   ]
+  },
+  "ezra-08": {
+   "title": "The Hand of Our God Is upon All Them for Good",
+   "label": "Ezra 8",
+   "book": "Ezra",
+   "chapter": 8,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-08.webm?v=4227",
+   "seconds": 422.7,
+   "question": "Ezra was ashamed to ask for soldiers, after telling the king that God protects those who seek him. How do your actions show what you really believe about God?",
+   "keys": [
+    "8:21",
+    "8:22",
+    "8:23"
+   ]
+  },
+  "ezra-09": {
+   "title": "Less Than Our Iniquities Deserve",
+   "label": "Ezra 9",
+   "book": "Ezra",
+   "chapter": 9,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-09.webm?v=4545",
+   "seconds": 454.5,
+   "question": "Ezra confessed the people’s sin as if it were his own, saying our iniquities. Why do you think he did that, and what can we learn from it?",
+   "keys": [
+    "9:6",
+    "9:8",
+    "9:13"
+   ]
+  },
+  "ezra-10": {
+   "title": "There Is Hope in Israel",
+   "label": "Ezra 10",
+   "book": "Ezra",
+   "chapter": 10,
+   "art": "media:images/symbols/Ezra-symbol.svg",
+   "audio": "media:audio/bible-walk/ezra/ezra-10.webm?v=4342",
+   "seconds": 434.2,
+   "question": "Shechaniah said, yet now there is hope in Israel. When you have failed, what helps you to remember that there is still hope with God?",
+   "keys": [
+    "10:1",
+    "10:2",
+    "10:11"
+   ]
+  },
   "genesis-00": {
    "title": "Meet the Book of Genesis",
    "label": "Meet Genesis",
@@ -7566,6 +7748,212 @@
     "16:6",
     "16:7",
     "16:15"
+   ]
+  },
+  "nehemiah-00": {
+   "title": "Meet the Book of Nehemiah",
+   "label": "Meet Nehemiah",
+   "book": "Nehemiah",
+   "chapter": null,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-00.webm?v=2416",
+   "seconds": 241.6,
+   "question": "Nehemiah heard about the broken walls of Jerusalem, and it broke his heart. What breaks your heart, and how might God want you to respond?",
+   "keys": []
+  },
+  "nehemiah-01": {
+   "title": "Let Thine Ear Now Be Attentive",
+   "label": "Nehemiah 1",
+   "book": "Nehemiah",
+   "chapter": 1,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-01.webm?v=4281",
+   "seconds": 428.1,
+   "question": "Nehemiah began his prayer with who God is, then confessed sin, then held on to God’s promise, and only then made his request. How could this pattern help your own prayers?",
+   "keys": [
+    "1:4",
+    "1:9",
+    "1:11"
+   ]
+  },
+  "nehemiah-02": {
+   "title": "The Good Hand of My God upon Me",
+   "label": "Nehemiah 2",
+   "book": "Nehemiah",
+   "chapter": 2,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-02.webm?v=4239",
+   "seconds": 423.9,
+   "question": "Nehemiah prayed for months, and then sent up a quick prayer in a moment of need. How could quick prayers fit into your everyday life?",
+   "keys": [
+    "2:8",
+    "2:12",
+    "2:17"
+   ]
+  },
+  "nehemiah-03": {
+   "title": "Every One over Against His House",
+   "label": "Nehemiah 3",
+   "book": "Nehemiah",
+   "chapter": 3,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-03.webm?v=4272",
+   "seconds": 427.2,
+   "question": "In Nehemiah’s list, everyone had a part to play. What part do you think God has given you to play among his people?",
+   "keys": [
+    "3:5",
+    "3:12",
+    "3:20"
+   ]
+  },
+  "nehemiah-04": {
+   "title": "The People Had a Mind to Work",
+   "label": "Nehemiah 4",
+   "book": "Nehemiah",
+   "chapter": 4,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-04.webm?v=4066",
+   "seconds": 406.6,
+   "question": "Nehemiah’s people prayed, and set a guard. How can you both trust God, and act wisely, when you face trouble?",
+   "keys": [
+    "4:6",
+    "4:14",
+    "4:17"
+   ]
+  },
+  "nehemiah-05": {
+   "title": "Because of the Fear of God",
+   "label": "Nehemiah 5",
+   "book": "Nehemiah",
+   "chapter": 5,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-05.webm?v=4168",
+   "seconds": 416.8,
+   "question": "Nehemiah gave up what he was entitled to, because of the fear of God. Is there anything you have a right to that you might give up, for the good of others?",
+   "keys": [
+    "5:9",
+    "5:15",
+    "5:19"
+   ]
+  },
+  "nehemiah-06": {
+   "title": "I Am Doing a Great Work",
+   "label": "Nehemiah 6",
+   "book": "Nehemiah",
+   "chapter": 6,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-06.webm?v=4201",
+   "seconds": 420.1,
+   "question": "The enemies tried mockery, threats, lies and fear to stop Nehemiah. Which of those do you find hardest to stand against, and why?",
+   "keys": [
+    "6:3",
+    "6:9",
+    "6:16"
+   ]
+  },
+  "nehemiah-07": {
+   "title": "He Feared God Above Many",
+   "label": "Nehemiah 7",
+   "book": "Nehemiah",
+   "chapter": 7,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-07.webm?v=4226",
+   "seconds": 422.6,
+   "question": "Nehemiah chose Hananiah because he was faithful, and feared God above many. What do you think it means to fear God above many, and how could you grow in that?",
+   "keys": [
+    "7:2",
+    "7:4",
+    "7:5"
+   ]
+  },
+  "nehemiah-08": {
+   "title": "The Joy of the LORD Is Your Strength",
+   "label": "Nehemiah 8",
+   "book": "Nehemiah",
+   "chapter": 8,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-08.webm?v=4320",
+   "seconds": 432.0,
+   "question": "The people wept when they heard God’s law, and then rejoiced because they understood it. How has God’s Word both humbled you and given you joy?",
+   "keys": [
+    "8:6",
+    "8:8",
+    "8:10"
+   ]
+  },
+  "nehemiah-09": {
+   "title": "Thou Art a God Ready to Pardon",
+   "label": "Nehemiah 9",
+   "book": "Nehemiah",
+   "chapter": 9,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-09.webm?v=4678",
+   "seconds": 467.8,
+   "question": "The prayer tells of Israel’s failures again and again, and each time says, but thou. Where in your own story can you see God’s faithfulness, even when you failed?",
+   "keys": [
+    "9:6",
+    "9:17",
+    "9:31"
+   ]
+  },
+  "nehemiah-10": {
+   "title": "We Will Not Forsake the House of Our God",
+   "label": "Nehemiah 10",
+   "book": "Nehemiah",
+   "chapter": 10,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-10.webm?v=4096",
+   "seconds": 409.6,
+   "question": "The people’s promises were very practical: money, wood, harvests and time. What practical promise could you make to God, to show that he comes first?",
+   "keys": [
+    "10:29",
+    "10:35",
+    "10:39"
+   ]
+  },
+  "nehemiah-11": {
+   "title": "Willingly Offered Themselves",
+   "label": "Nehemiah 11",
+   "book": "Nehemiah",
+   "chapter": 11,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-11.webm?v=3752",
+   "seconds": 375.2,
+   "question": "Some people willingly offered themselves to live in Jerusalem, even though it cost them. What might it look like for you to willingly offer yourself to God?",
+   "keys": [
+    "11:1",
+    "11:2",
+    "11:17"
+   ]
+  },
+  "nehemiah-12": {
+   "title": "The Joy of Jerusalem Was Heard Even Afar Off",
+   "label": "Nehemiah 12",
+   "book": "Nehemiah",
+   "chapter": 12,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-12.webm?v=3744",
+   "seconds": 374.4,
+   "question": "The joy of Jerusalem was heard even afar off. How might your joy in God be noticed by the people around you?",
+   "keys": [
+    "12:27",
+    "12:30",
+    "12:43"
+   ]
+  },
+  "nehemiah-13": {
+   "title": "Remember Me, O My God, for Good",
+   "label": "Nehemiah 13",
+   "book": "Nehemiah",
+   "chapter": 13,
+   "art": "media:images/symbols/Nehemiah-symbol.svg",
+   "audio": "media:audio/bible-walk/nehemiah/nehemiah-13.webm?v=4548",
+   "seconds": 454.8,
+   "question": "The people broke their covenant within a few years. Why do you think it is so hard to keep our promises to God, and what can help us?",
+   "keys": [
+    "13:11",
+    "13:14",
+    "13:31"
    ]
   },
   "philippians-00": {

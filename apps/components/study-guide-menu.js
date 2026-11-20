@@ -67,6 +67,9 @@ import { PILL_STYLES, linkScripture } from "./scripture-refs.js?v=20261106-1";
 const asset = (path) => new URL(path, import.meta.url).href;
 
 const EMBLEM_URL = asset("../../assets/images/dg-icon-gold-256.webp");
+// The Living Voice explainer: why it is not in Bible order, and how each
+// chapter is told and kept to the KJV. Linked from Help.
+const LIVING_VOICE_PDF = asset("../../assets/bible-walk/the-living-voice-how-it-is-made.pdf");
 // The same emblem with its navy letters drawn cream, for About's navy tile.
 const EMBLEM_LIGHT_URL = asset("../../assets/images/dg-icon-light-256.webp");
 // GUIDES' pages and icons sit under these. assets/scripts/check-assets.mjs reads
@@ -662,6 +665,13 @@ const STYLES = /* css */ `
     line-height: 1.5;
   }
   .help-list strong { color: var(--navy); }
+  .help-list a {
+    color: var(--navy);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .help-list a:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; border-radius: 2px; }
   .help-icon {
     display: grid;
     flex: 0 0 auto;
@@ -1384,6 +1394,40 @@ const HELP_HTML = /* html */ `
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7" /></svg>
                 </span>
                 <p><strong>The guides.</strong> How My Faith Journal works is in your avatar's menu, and at the foot of the journal's folders. In the journal, the ? beside the Bookmarks and Stickers headings opens Bookmarking 101 and How to earn stickers.</p>
+            </li>
+        </ul>
+
+        <h3>The Living Voice</h3>
+        <ul class="help-list">
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3" /><path d="M4 15a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2zM20 15a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2z" /></svg>
+                </span>
+                <p><strong>Listen to a chapter a day.</strong> Tap The Living Voice card on the home page, or open it from the menu. The card names your next step, Start here, Continue or Up next, and takes you straight to it. Each episode walks through one chapter of the Bible in about six to eight minutes: the story, three verses explained, a question and a prayer.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1" /><rect x="13" y="4" width="7" height="7" rx="1" /><rect x="4" y="13" width="7" height="7" rx="1" /><rect x="13" y="13" width="7" height="7" rx="1" /></svg>
+                </span>
+                <p><strong>Albums and tracks.</strong> The player has three screens: Albums, the plans such as First Steps and The Big Picture; Tracks, an album's chapters, ticked once heard; and Now playing. List steps back from Now playing to Tracks to Albums. Albums still being recorded say Coming soon. First Steps is the place to begin, but every recorded album is open, so you can start wherever you like.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="9 6 18 12 9 18" /><path d="M5 6v12" /></svg>
+                </span>
+                <p><strong>The buttons.</strong> Play and pause, previous and next, back 15 seconds and forward 30. On Now playing you can set the speed, a sleep timer (15 or 30 minutes, or the end of the chapter) and auto-play, which starts the next chapter when one ends. Scroll away and a small bar at the foot of the page keeps playing; your phone's lock screen and earbuds work too.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z" /></svg>
+                </span>
+                <p><strong>Read along and answer.</strong> Beside the player (below it on a phone) you can read the chapter in the King James text, read every word of the episode, and Write my answer to the day's question in My Faith Journal. Your progress stays on this device, and a chapter counts as heard once you have listened to nearly all of it.</p>
+            </li>
+            <li>
+                <span class="help-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11" /><path d="m7 10 5 5 5-5" /><path d="M5 20h14" /></svg>
+                </span>
+                <p><strong>Why it is not in Bible order.</strong> The Living Voice begins with Jesus in Mark, gives the whole story of the Bible in thirty chapters, and then walks book by book in the order a teacher would choose, so that each book builds on the last. Every word quoted from Scripture is checked against the King James text. To read why we did not begin at Genesis, how each chapter is told, and how it stays faithful to the Bible, <a href="${LIVING_VOICE_PDF}" download target="_blank" rel="noopener">download The Living Voice: How it is made (PDF)</a>.</p>
             </li>
         </ul>
 

@@ -240,6 +240,17 @@ PLANS = [
         "cover": {"symbol": "Haggai"},
         "episodes": [f"haggai-{n:02d}" for n in range(0, 3)],
     },
+    {
+        "id": "matthew",
+        "title": "Matthew",
+        "subtitle": "The Kingdom of Heaven Is at Hand",
+        "about": "The whole Gospel of Matthew, chapter by chapter: Jesus the promised King, the son "
+                 "of David, in whom the prophets are fulfilled. The Sermon on the Mount, the parables "
+                 "of the kingdom, the cross and the empty tomb, from Emmanuel, God with us, to lo, "
+                 "I am with you alway.",
+        "cover": {"symbol": "Matthew"},
+        "episodes": [f"matthew-{n:02d}" for n in range(0, 29)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

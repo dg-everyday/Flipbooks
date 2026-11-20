@@ -229,6 +229,17 @@ PLANS = [
         "cover": {"symbol": "Nehemiah"},
         "episodes": [f"nehemiah-{n:02d}" for n in range(0, 14)],
     },
+    {
+        "id": "haggai",
+        "title": "Haggai",
+        "subtitle": "I Am with You, Saith the LORD",
+        "about": "Four short messages from the prophet Haggai to the people home from Babylon: "
+                 "consider your ways, and build the house of the LORD. When the work feels small, "
+                 "God says be strong, and work, for I am with you, and promises that the glory of "
+                 "this latter house shall be greater than of the former.",
+        "cover": {"symbol": "Haggai"},
+        "episodes": [f"haggai-{n:02d}" for n in range(0, 3)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

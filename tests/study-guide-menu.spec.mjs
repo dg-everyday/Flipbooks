@@ -109,7 +109,7 @@ test("a quick tap still opens the guide", async ({ page }) => {
     await expect(page).toHaveURL(/apps\/pages\/bible-books\.html$/);
 });
 
-test("the drawer is gold Mon–Wed, aluminium Thu–Fri, navy on Saturday and burgundy on Sunday, by Manila's calendar", async ({ page }) => {
+test("the drawer is gold Mon–Wed, aluminium Thu–Fri, navy on Saturday and wet-look red on Sunday, by Manila's calendar", async ({ page }) => {
     const reopenAt = async (time) => {
         await menu(page).evaluate((element) => element.close());
         await page.clock.setFixedTime(time);
@@ -156,16 +156,17 @@ test("the drawer is gold Mon–Wed, aluminium Thu–Fri, navy on Saturday and bu
     await expectTheme("navy");
     expect(await drawer(page).evaluate((dialog) => getComputedStyle(dialog).outlineStyle)).toBe("none");
 
-    // Sunday in Manila, though still Saturday in UTC: burgundy leather, with
-    // its tooled gold line.
+    // Sunday in Manila, though still Saturday in UTC: wet-look red car paint,
+    // with its metallic flake, and no tooled line.
     await reopenAt(new Date("2026-11-29T00:30:00+08:00"));
-    await expectTheme("burgundy");
-    const leather = await drawer(page).evaluate((dialog) => {
+    await expectTheme("red-paint");
+    const paint = await drawer(page).evaluate((dialog) => {
         const style = getComputedStyle(dialog);
         return { background: style.backgroundImage, outline: style.outlineStyle };
     });
-    expect(leather.background).toContain("rgb(122, 29, 39)");
-    expect(leather.outline).toBe("solid");
+    expect(paint.background).toContain("rgb(192, 13, 34)");
+    expect(paint.background).toContain("data:image/svg+xml");
+    expect(paint.outline).toBe("none");
 
     // Monday in Manila, though still Sunday in UTC: gold again.
     await reopenAt(new Date("2026-11-30T00:30:00+08:00"));

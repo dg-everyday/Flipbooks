@@ -26,6 +26,14 @@
  * button while it plays; moving on to another story stops it. The download
  * pill opens the book (a PDF) in a new tab.
  *
+ * A share pill over the cover's top-left corner shares a link to the story
+ * (never a picture), through the device's share sheet, or by copying the link
+ * where there is none. The link is the story's own page, /s/<id>.html, which
+ * the deploy writes (assets/scripts/build-story-pages.mjs): its preview in a
+ * chat or a post shows the story's cover, and it opens the story's flipbook.
+ * Only the home page's row has it; a subclass turns it off with `share: false`
+ * in its defaults, since the deploy writes pages for assets/stories.json alone.
+ *
  * Methods      next(), previous()  scroll one card along
  * Properties   stories (read-only)
  * Events       storiesload  detail: { stories }
@@ -50,6 +58,8 @@ import { resolveMedia } from "../settings/settings.js?v=20261009-1";
 
 const DEFAULT_SRC = "assets/stories.json";
 const DEFAULT_READER = "apps/pages/stories.html";
+const SITE = "https://dailygrace.faith";
+const NOTE_FOR = 1800; // ms the "Link copied" note shows
 // The story the reader was on, so that coming back from its flipbook (or a
 // reload) opens the row on the same card. sessionStorage, like the page's own
 // scroll position: it lasts for the tab, and a new visit starts at the first.
@@ -79,6 +89,8 @@ const STORIES_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentC
 const PLAY_ICON = `<svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z"/></svg>`;
 const PAUSE_ICON = `<svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1.2"/><rect x="14" y="4" width="5" height="16" rx="1.2"/></svg>`;
 // An arrow into a tray, for the book's pill.
+// The same icon as the Flipbook's share button (flip-book.js).
+const SHARE_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
 const DOWNLOAD_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>`;
 
 const STYLES = /* css */ `
@@ -202,6 +214,8 @@ const STYLES = /* css */ `
     display: flex;
     gap: 6px;
   }
+  /* The share pill, over the top-left corner. */
+  .pills.start { right: auto; left: 12px; }
   .pill {
     display: inline-flex;
     align-items: center;
@@ -245,6 +259,11 @@ const STYLES = /* css */ `
   }
 `;
 
+/** The public link to a story: its own page, which previews with its cover. */
+export function storyShareUrl(id) {
+    return `${SITE}/s/${encodeURIComponent(id)}.html`;
+}
+
 function escapeHtml(value) {
     return String(value ?? "").replace(
         /[&<>"']/g,
@@ -261,6 +280,7 @@ export class StoryCarousel extends HTMLElement {
         reader: DEFAULT_READER,
         heading: "Stories",
         storageKey: CURRENT_KEY,
+        share: true,
     };
 
     #root;
@@ -276,6 +296,9 @@ export class StoryCarousel extends HTMLElement {
     #suppressClick = false;
     #audio = null;
     #audioStory = -1;
+    #sharing = false;
+    #note = null;
+    #noteTimer = 0;
     // A flipbook is being opened: its story stays remembered, whatever the row
     // does as the page goes away, until the reader touches the row again.
     #pinned = false;
@@ -353,6 +376,10 @@ export class StoryCarousel extends HTMLElement {
             if (pill) {
                 this.#toggleAudio(Number(pill.dataset.story));
             }
+            const share = event.target.closest(".pill-share");
+            if (share) {
+                this.#share(Number(share.dataset.story));
+            }
             // Opening a flipbook: remember that story, even if its card was only
             // peeking in beside the current one.
             const ear = event.target.closest(".dog-ear");
@@ -384,6 +411,11 @@ export class StoryCarousel extends HTMLElement {
         this.#resizeObserver.disconnect();
         removeEventListener("pageshow", this.#onPageShow);
         clearTimeout(this.#scrollTimer);
+        clearTimeout(this.#noteTimer);
+        if (this.#note) {
+            this.#note.remove();
+            this.#note = null;
+        }
         this.#stopAudio();
     }
 
@@ -491,6 +523,9 @@ export class StoryCarousel extends HTMLElement {
             ? `<a class="pill" href="${escapeHtml(story["story-book"])}" target="_blank" rel="noopener" draggable="false" aria-label="Read ${title} (PDF)" title="Open the book (PDF)"${tabindex}>${DOWNLOAD_ICON}</a>`
             : "";
         const pills = audio + book;
+        const share = this.constructor.defaults.share
+            ? `<button type="button" class="pill pill-share" data-story="${index}" aria-label="Share ${title}" title="Share"${tabindex}>${SHARE_ICON}</button>`
+            : "";
         return `
       <li class="item"${isCopy ? ' aria-hidden="true"' : ""}>
         <div class="cover-wrap">
@@ -501,6 +536,11 @@ export class StoryCarousel extends HTMLElement {
             pills
                 ? `
         <div class="pills">${pills}</div>`
+                : ""
+        }${
+            share
+                ? `
+        <div class="pills start">${share}</div>`
                 : ""
         }
       </li>`;
@@ -698,6 +738,77 @@ export class StoryCarousel extends HTMLElement {
             pill.classList.toggle("playing", on);
             pill.setAttribute("aria-pressed", String(on));
         }
+    }
+
+    /** Share a link to the story: the share sheet, else the clipboard. */
+    async #share(index) {
+        const story = this.#stories[index];
+        if (!story || this.#sharing) {
+            return;
+        }
+        const url = storyShareUrl(story.id);
+        const title = `${story.title} - a Bible story from Daily Grace`;
+        if (!navigator.share) {
+            await this.#copy(url);
+            return;
+        }
+        this.#sharing = true;
+        try {
+            // The link goes in `url` alone; putting it in `text` as well makes
+            // some apps paste it twice.
+            await navigator.share({ title, text: title, url });
+        } catch (error) {
+            // The reader closed the share sheet without choosing anything.
+            if (error.name === "AbortError") {
+                return;
+            }
+            console.warn("The story link could not be shared:", error);
+            await this.#copy(url);
+        } finally {
+            this.#sharing = false;
+        }
+    }
+
+    async #copy(url) {
+        try {
+            await navigator.clipboard.writeText(url);
+            this.#say("Link copied");
+        } catch {
+            this.#say("Couldn't copy the link");
+        }
+    }
+
+    /** A short word at the foot of the screen. It lives on the page, not in
+        the row, so no transformed ancestor can carry it off the screen. */
+    #say(words) {
+        if (!this.#note) {
+            const note = document.createElement("p");
+            note.className = "story-share-note";
+            note.setAttribute("role", "status");
+            Object.assign(note.style, {
+                position: "fixed",
+                left: "50%",
+                bottom: "max(24px, env(safe-area-inset-bottom))",
+                transform: "translateX(-50%)",
+                zIndex: "1000",
+                margin: "0",
+                padding: "10px 18px",
+                borderRadius: "999px",
+                background: "rgb(16 37 59 / 92%)",
+                color: "#fff",
+                font: "500 .9375rem/1.3 Roboto, Arial, sans-serif",
+                boxShadow: "0 4px 14px rgb(0 0 0 / 30%)",
+                pointerEvents: "none",
+            });
+            document.body.append(note);
+            this.#note = note;
+        }
+        clearTimeout(this.#noteTimer);
+        this.#note.textContent = words;
+        this.#note.hidden = false;
+        this.#noteTimer = setTimeout(() => {
+            this.#note.hidden = true;
+        }, NOTE_FOR);
     }
 
     /** Keep the scroll inside the middle lap by jumping one lap, which looks identical. */

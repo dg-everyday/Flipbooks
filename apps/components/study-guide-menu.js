@@ -57,7 +57,7 @@
  * and --action-ink (assets/styles/styles.css), which inherit into the shadow
  * root. The drawer is placed against the page's --page-width. The drawer is
  * brushed gold Monday to Wednesday, brushed aluminium on Thursday and Friday,
- * navy aurora on Saturday and burgundy leather on Sunday, by the Asia/Manila
+ * navy aurora on Saturday and wet-look red car paint on Sunday, by the Asia/Manila
  * calendar (DRAWER_THEMES); Help and About are cream every day.
  */
 
@@ -453,29 +453,35 @@ const STYLES = /* css */ `
        Monday to Wednesday        brushed gold        data-theme="gold"
        Thursday, Friday           brushed aluminium   data-theme="aluminum"
        Saturday                   navy aurora         data-theme="navy" (above)
-       Sunday                     burgundy leather    data-theme="burgundy"
+       Sunday                     wet-look red paint  data-theme="red-paint"
      open() sets data-theme, and .is-light on the two brushed metals, the light
-     dresses. Burgundy keeps the navy drawer's cream text, gold icons and cream
+     dresses. Red paint keeps the navy drawer's cream text, gold icons and cream
      description bubble, and only changes the background. (Emerald and
-     metallic green were tried on 2026-11-17 and dropped.) */
+     metallic green were tried on 2026-11-17 and dropped; burgundy leather was
+     Sunday's until 2026-11-22.) */
 
-  /* Burgundy leather, like the cover of an old family Bible: a pebbled grain
-     (fine fractal noise, soft-light), a soft light from the top left, and a
-     gold line tooled in just inside the edge. The line is an outline, so it
-     stays put while the guides scroll. Everything else is the navy drawer's:
-     cream text, gold icons and the cream description bubble. */
-  .menu-dialog[data-theme="burgundy"] {
+  /* Wet-look red, like a freshly waxed car: one even, deep red from top to
+     bottom under a thick clear coat, which catches two studio lights as long
+     soft-edged streaks across it; a faint metallic flake (fine fractal noise,
+     overlaid) gives the red its depth. No sky or horizon reflection: the upper
+     part looked faded with one (tried on 2026-11-22). Everything else is the
+     navy drawer's: cream text, gold icons and the cream description bubble. */
+  .menu-dialog[data-theme="red-paint"] {
     background:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 .5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3C/svg%3E"),
-      radial-gradient(90% 50% at 0% 0%, rgb(255 190 150 / 18%), transparent 65%),
-      radial-gradient(80% 50% at 100% 100%, rgb(0 0 0 / 30%), transparent 70%),
-      linear-gradient(170deg, #7a1d27 0%, #5e141c 50%, #430d14 100%);
-    background-blend-mode: soft-light, normal, normal, normal;
-    outline: 1px solid rgb(225 182 93 / 55%);
-    outline-offset: -8px;
-    box-shadow: 18px 0 50px rgb(40 0 8 / 45%);
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 .22'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+      linear-gradient(112deg, transparent 22%, rgb(255 255 255 / 26%) 25%, rgb(255 255 255 / 18%) 29%, transparent 32%,
+                              transparent 58%, rgb(255 255 255 / 10%) 60%, rgb(255 255 255 / 6%) 63%, transparent 65%),
+      linear-gradient(180deg, #c00d22 0%, #b80c20 60%, #a00a1b 100%);
+    background-blend-mode: overlay, normal, normal;
+    box-shadow: 18px 0 50px rgb(70 0 8 / 50%);
   }
-  .menu-dialog[data-theme="burgundy"] .menu-header { border-bottom-color: rgb(225 182 93 / 40%); }
+  .menu-dialog[data-theme="red-paint"] .menu-header { border-bottom-color: rgb(255 228 220 / 35%); }
+  /* The usual gold is too close to the red to read: a paler gold, lifted by a
+     soft shadow. */
+  .menu-dialog[data-theme="red-paint"] .menu-header .help-eyebrow {
+    color: #ffe2a0;
+    text-shadow: 0 1px 2px rgb(60 0 6 / 55%);
+  }
 
   /* Light brushed metal: a fine horizontal grain (stretched fractal noise,
      overlaid) and two soft diagonal sheens over the metal's own ramp, set by
@@ -1885,7 +1891,7 @@ const DRAWER_THEMES = {
     Thu: "aluminum",
     Fri: "aluminum",
     Sat: "navy",
-    Sun: "burgundy",
+    Sun: "red-paint",
 };
 
 /**

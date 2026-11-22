@@ -251,6 +251,26 @@ PLANS = [
         "cover": {"symbol": "Matthew"},
         "episodes": [f"matthew-{n:02d}" for n in range(0, 29)],
     },
+    {
+        "id": "proverbs",
+        "title": "Proverbs",
+        "subtitle": "The Fear of the LORD Is the Beginning of Wisdom",
+        "about": "One chapter a day of wise words from Solomon and others: a father’s counsel to his "
+                 "son, Wisdom calling in the streets, and hundreds of short sayings about words, work, "
+                 "money, friends and family, ending with the virtuous woman.",
+        "cover": {"symbol": "Proverbs"},
+        "episodes": [f"proverbs-{n:02d}" for n in range(0, 32)],
+    },
+    {
+        "id": "ephesians",
+        "title": "Ephesians",
+        "subtitle": "Rooted and Grounded in Love",
+        "about": "Paul’s letter about who we are in Christ: chosen, saved by grace, made one family, "
+                 "filled with God’s love, walking in love and light at home and at work, and standing "
+                 "strong in the whole armour of God.",
+        "cover": {"symbol": "Ephesians"},
+        "episodes": [f"ephesians-{n:02d}" for n in range(0, 7)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

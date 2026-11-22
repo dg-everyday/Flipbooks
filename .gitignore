@@ -17,3 +17,8 @@ __pycache__/
 
 # Chrome debug output
 debug.log
+
+# Narration audio and rendered videos: too big for git (GitHub caps files at 100 MB);
+# the audio is served from R2, the videos are posted to YouTube, Facebook and TikTok.
+tools/bible-walk/narration/**/*.wav
+tools/bible-walk/narration/**/*.mp4

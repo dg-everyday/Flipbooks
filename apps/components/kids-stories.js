@@ -21,7 +21,7 @@
  */
 
 // Same ?v= token as the home page's import, so a page never loads two copies.
-import { StoryCarousel } from "./story-carousel.js?v=20261024-1";
+import { StoryCarousel } from "./story-carousel.js?v=20261122-1";
 
 const asset = (path) => new URL(path, import.meta.url).href;
 
@@ -31,6 +31,8 @@ export class KidsStories extends StoryCarousel {
         reader: asset("../pages/stories.html?set=kids"),
         heading: "Kids Stories for Rascals",
         storageKey: "dailygrace:kids-stories",
+        // The deploy writes share pages for the home page's stories only.
+        share: false,
     };
 }
 

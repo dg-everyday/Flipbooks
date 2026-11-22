@@ -76,6 +76,18 @@ jobs:
           restore-keys: week-cards-
       - name: Write the Flipbook's week pages
         run: SHARP="$RUNNER_TEMP/sharp/node_modules/sharp" node assets/scripts/build-week-pages.mjs _site --cache ~/.cache/week-cards
+      # A page for each story on the home page's row (/s/<id>.html), so a shared
+      # story shows its cover and opens its flipbook, with a 1200 x 630 preview
+      # card (/s/<id>.jpg) made the same way, by the sharp installed above. The
+      # cards are kept between runs too; a failure of any kind only warns.
+      - name: Restore the story pages' cards
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/story-cards
+          key: story-cards-${{ github.run_id }}
+          restore-keys: story-cards-
+      - name: Write the stories' share pages
+        run: SHARP="$RUNNER_TEMP/sharp/node_modules/sharp" node assets/scripts/build-story-pages.mjs _site --cache ~/.cache/story-cards
       # The repo keeps JSON pretty for reading and diffs; the site gets it
       # compact. Only the copy in _site is rewritten. A file that does not
       # parse ships as it is, with a warning, so it cannot block the daily deploy.

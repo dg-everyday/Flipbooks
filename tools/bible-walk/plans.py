@@ -271,6 +271,26 @@ PLANS = [
         "cover": {"symbol": "Ephesians"},
         "episodes": [f"ephesians-{n:02d}" for n in range(0, 7)],
     },
+    {
+        "id": "colossians",
+        "title": "Colossians",
+        "subtitle": "Christ Is All, and in All",
+        "about": "Paul’s letter about how great Jesus is: the image of the invisible God, who made "
+                 "all things and holds them together. In him we are complete, our sins are nailed to "
+                 "his cross, and our lives are hid with Christ in God.",
+        "cover": {"symbol": "Colossians"},
+        "episodes": [f"colossians-{n:02d}" for n in range(0, 5)],
+    },
+    {
+        "id": "philemon",
+        "title": "Philemon",
+        "subtitle": "Not Now as a Servant, but a Brother Beloved",
+        "about": "Paul’s shortest letter: a runaway servant named Onesimus has found Christ, and "
+                 "Paul sends him home to his master, asking him to welcome him back as a brother. "
+                 "A one-chapter story of forgiveness and new beginnings.",
+        "cover": {"symbol": "Philemon"},
+        "episodes": [f"philemon-{n:02d}" for n in range(0, 2)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

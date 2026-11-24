@@ -291,6 +291,29 @@ PLANS = [
         "cover": {"symbol": "Philemon"},
         "episodes": [f"philemon-{n:02d}" for n in range(0, 2)],
     },
+    {
+        "id": "psalms",
+        "title": "Psalms",
+        "subtitle": "Let Every Thing That Hath Breath Praise the LORD",
+        "about": "Thirty favourite psalms, arranged by theme: the two ways and God’s Word, God the "
+                 "Creator, trusting God our shepherd and refuge, the God who knows us, songs for "
+                 "sorrow, repentance and forgiveness, and praise. Israel’s song book teaches us to "
+                 "bring every feeling to God.",
+        "cover": {"symbol": "Psalms"},
+        "episodes": [f"psalms-{n:03d}" for n in (
+            0, 1, 2, 19, 119, 8, 104, 23, 121, 91, 46, 27, 62, 139, 13, 42, 22, 32, 51, 130,
+            37, 90, 34, 103, 107, 84, 127, 133, 100, 145, 150)],
+    },
+    {
+        "id": "exodus-tabernacle",
+        "title": "Exodus 21–40",
+        "subtitle": "Let Them Make Me a Sanctuary",
+        "about": "The second half of Exodus: laws for daily life, the covenant sealed at Sinai, "
+                 "the tabernacle where God would dwell among his people, the golden calf, and "
+                 "the glory of the LORD filling the tabernacle. Chapters 21 to 40.",
+        "cover": {"symbol": "Exodus"},
+        "episodes": [f"exodus-{n:02d}" for n in range(21, 41)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

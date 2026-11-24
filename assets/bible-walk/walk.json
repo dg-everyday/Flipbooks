@@ -2243,6 +2243,228 @@
      "label": "Philemon 1"
     }
    ]
+  },
+  {
+   "id": "psalms",
+   "title": "Psalms",
+   "subtitle": "Let Every Thing That Hath Breath Praise the LORD",
+   "about": "Thirty favourite psalms, arranged by theme: the two ways and God’s Word, God the Creator, trusting God our shepherd and refuge, the God who knows us, songs for sorrow, repentance and forgiveness, and praise. Israel’s song book teaches us to bring every feeling to God.",
+   "cover": "media:images/symbols/Psalms-symbol.svg",
+   "episodes": [
+    {
+     "id": "psalms-000",
+     "label": "Meet Psalms"
+    },
+    {
+     "id": "psalms-001",
+     "label": "Psalm 1"
+    },
+    {
+     "id": "psalms-002",
+     "label": "Psalm 2"
+    },
+    {
+     "id": "psalms-019",
+     "label": "Psalm 19"
+    },
+    {
+     "id": "psalms-119",
+     "label": "Psalm 119"
+    },
+    {
+     "id": "psalms-008",
+     "label": "Psalm 8"
+    },
+    {
+     "id": "psalms-104",
+     "label": "Psalm 104"
+    },
+    {
+     "id": "psalms-023",
+     "label": "Psalm 23"
+    },
+    {
+     "id": "psalms-121",
+     "label": "Psalm 121"
+    },
+    {
+     "id": "psalms-091",
+     "label": "Psalm 91"
+    },
+    {
+     "id": "psalms-046",
+     "label": "Psalm 46"
+    },
+    {
+     "id": "psalms-027",
+     "label": "Psalm 27"
+    },
+    {
+     "id": "psalms-062",
+     "label": "Psalm 62"
+    },
+    {
+     "id": "psalms-139",
+     "label": "Psalm 139"
+    },
+    {
+     "id": "psalms-013",
+     "label": "Psalm 13"
+    },
+    {
+     "id": "psalms-042",
+     "label": "Psalm 42"
+    },
+    {
+     "id": "psalms-022",
+     "label": "Psalm 22"
+    },
+    {
+     "id": "psalms-032",
+     "label": "Psalm 32"
+    },
+    {
+     "id": "psalms-051",
+     "label": "Psalm 51"
+    },
+    {
+     "id": "psalms-130",
+     "label": "Psalm 130"
+    },
+    {
+     "id": "psalms-037",
+     "label": "Psalm 37"
+    },
+    {
+     "id": "psalms-090",
+     "label": "Psalm 90"
+    },
+    {
+     "id": "psalms-034",
+     "label": "Psalm 34"
+    },
+    {
+     "id": "psalms-103",
+     "label": "Psalm 103"
+    },
+    {
+     "id": "psalms-107",
+     "label": "Psalm 107"
+    },
+    {
+     "id": "psalms-084",
+     "label": "Psalm 84"
+    },
+    {
+     "id": "psalms-127",
+     "label": "Psalm 127"
+    },
+    {
+     "id": "psalms-133",
+     "label": "Psalm 133"
+    },
+    {
+     "id": "psalms-100",
+     "label": "Psalm 100"
+    },
+    {
+     "id": "psalms-145",
+     "label": "Psalm 145"
+    },
+    {
+     "id": "psalms-150",
+     "label": "Psalm 150"
+    }
+   ]
+  },
+  {
+   "id": "exodus-tabernacle",
+   "title": "Exodus 21–40",
+   "subtitle": "Let Them Make Me a Sanctuary",
+   "about": "The second half of Exodus: laws for daily life, the covenant sealed at Sinai, the tabernacle where God would dwell among his people, the golden calf, and the glory of the LORD filling the tabernacle. Chapters 21 to 40.",
+   "cover": "media:images/symbols/Exodus-symbol.svg",
+   "episodes": [
+    {
+     "id": "exodus-21",
+     "label": "Exodus 21"
+    },
+    {
+     "id": "exodus-22",
+     "label": "Exodus 22"
+    },
+    {
+     "id": "exodus-23",
+     "label": "Exodus 23"
+    },
+    {
+     "id": "exodus-24",
+     "label": "Exodus 24"
+    },
+    {
+     "id": "exodus-25",
+     "label": "Exodus 25"
+    },
+    {
+     "id": "exodus-26",
+     "label": "Exodus 26"
+    },
+    {
+     "id": "exodus-27",
+     "label": "Exodus 27"
+    },
+    {
+     "id": "exodus-28",
+     "label": "Exodus 28"
+    },
+    {
+     "id": "exodus-29",
+     "label": "Exodus 29"
+    },
+    {
+     "id": "exodus-30",
+     "label": "Exodus 30"
+    },
+    {
+     "id": "exodus-31",
+     "label": "Exodus 31"
+    },
+    {
+     "id": "exodus-32",
+     "label": "Exodus 32"
+    },
+    {
+     "id": "exodus-33",
+     "label": "Exodus 33"
+    },
+    {
+     "id": "exodus-34",
+     "label": "Exodus 34"
+    },
+    {
+     "id": "exodus-35",
+     "label": "Exodus 35"
+    },
+    {
+     "id": "exodus-36",
+     "label": "Exodus 36"
+    },
+    {
+     "id": "exodus-37",
+     "label": "Exodus 37"
+    },
+    {
+     "id": "exodus-38",
+     "label": "Exodus 38"
+    },
+    {
+     "id": "exodus-39",
+     "label": "Exodus 39"
+    },
+    {
+     "id": "exodus-40",
+     "label": "Exodus 40"
+    }
+   ]
   }
  ],
  "episodes": {

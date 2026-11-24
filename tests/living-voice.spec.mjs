@@ -132,6 +132,31 @@ test("the player picks up where the reader left off, and so does the home card",
     await expect(page.locator(".now-title")).toHaveText("Prepare Ye the Way");
 });
 
+test("opening another album selects where that album picks up, not the chapter of another album", async ({ page }) => {
+    await seed(page, { done: { "luke-00": "2026-11-07" }, pos: { "luke-01": 100, "acts-03": 60 }, last: "luke-01", speed: 1 });
+    await page.goto(PAGE);
+    await expect(page).toHaveURL(/#luke-01$/);
+    await button(page, "list").click();
+    await button(page, "list").click();
+    const album = (title) => lcd(page).locator(".row.album").filter({ has: page.locator(`b:text-is("${title}")`) });
+
+    // Nothing played in Proverbs: its first chapter.
+    await album("Proverbs").click();
+    await expect(lcd(page).locator(".lcd-title")).toHaveText("Proverbs");
+    await expect(lcd(page).locator(".row.track.on")).toHaveAttribute("data-track", "proverbs-00");
+    await expect(page).toHaveURL(/#proverbs-00$/);
+
+    // Acts was left part-way through chapter 3: there.
+    await button(page, "list").click();
+    await album("Acts").click();
+    await expect(lcd(page).locator(".row.track.on")).toHaveAttribute("data-track", "acts-03");
+
+    // Back in Luke: the chapter last played.
+    await button(page, "list").click();
+    await album("Luke").click();
+    await expect(lcd(page).locator(".row.track.on")).toHaveAttribute("data-track", "luke-01");
+});
+
 test("after First Steps, the walk goes on into The Big Picture", async ({ page }) => {
     const day = "2026-11-12";
     const done = Object.fromEntries(["walk-00", "mark-00", ...Array.from({ length: 16 }, (_, i) => `mark-${String(i + 1).padStart(2, "0")}`)].map((id) => [id, day]));

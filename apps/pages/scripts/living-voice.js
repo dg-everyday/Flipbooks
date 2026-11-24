@@ -286,6 +286,40 @@ function setCurrent(id, { play: andPlay = false } = {}) {
     }
 }
 
+/**
+ * Where a plan picks up: the chapter last played if it is in the plan and part
+ * heard, else the first one part heard, else the first one not heard yet, else
+ * its first chapter. A plan nothing has been played in starts at its first.
+ */
+function albumStart(plan) {
+    const { progress } = state;
+    const recorded = plan.episodes.map((e) => e.id).filter((id) => episodeOf(id));
+    const partHeard = (id) => !progress.done[id] && (progress.pos[id] ?? 0) > 0;
+    if (recorded.includes(progress.last) && partHeard(progress.last)) {
+        return progress.last;
+    }
+    return recorded.find(partHeard) ?? recorded.find((id) => !progress.done[id]) ?? recorded[0] ?? null;
+}
+
+/**
+ * Opening a plan's tracks selects where that plan picks up, so Play starts
+ * there and not on a chapter of another plan. A chapter playing is left alone,
+ * so Play still pauses it.
+ */
+function selectInAlbum(plan) {
+    if (isPlaying() || plan.episodes.some((e) => e.id === state.current)) {
+        return;
+    }
+    const id = albumStart(plan);
+    if (!id) {
+        return;
+    }
+    state.current = id;
+    history.replaceState(null, "", `#${encodeURIComponent(id)}`);
+    document.title = `${NAME} — ${fullName(episodeOf(id))}`;
+    renderChapter();
+}
+
 /* ---------- The screen ---------- */
 
 function renderScreen() {
@@ -883,6 +917,7 @@ function onDeviceClick(event) {
     if (target.dataset.album) {
         state.album = Number(target.dataset.album);
         state.screen = "tracks";
+        selectInAlbum(state.walk.plans[state.album]);
         renderScreen();
         return;
     }

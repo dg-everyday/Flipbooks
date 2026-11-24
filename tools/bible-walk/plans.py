@@ -314,6 +314,16 @@ PLANS = [
         "cover": {"symbol": "Exodus"},
         "episodes": [f"exodus-{n:02d}" for n in range(21, 41)],
     },
+    {
+        "id": "numbers",
+        "title": "Numbers",
+        "subtitle": "The LORD Bless Thee, and Keep Thee",
+        "about": "Israel follows the cloud through the wilderness: the twelve spies, the years of "
+                 "wandering, water from the rock, the bronze serpent, Balaam and his donkey, and a "
+                 "new generation on the edge of the promised land.",
+        "cover": {"symbol": "Numbers"},
+        "episodes": [f"numbers-{n:02d}" for n in range(0, 37)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

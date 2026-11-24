@@ -22,3 +22,6 @@ debug.log
 # the audio is served from R2, the videos are posted to YouTube, Facebook and TikTok.
 tools/bible-walk/narration/**/*.wav
 tools/bible-walk/narration/**/*.mp4
+
+# Vertical microdrama series (plans, images, audio, renders); published to YouTube, Facebook and TikTok
+/microdramas/

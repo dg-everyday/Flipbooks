@@ -1,0 +1,76 @@
+{
+    "series": "Daily Grace Reels",
+    "playlist_id": "",
+    "dramas": [
+        {
+            "id": "framed",
+            "title": "Framed",
+            "passage": "Genesis 39",
+            "description": "Sold by his brothers and bought as a slave, Joseph rises to run an Egyptian officer's house. Then his master's wife wants him, he refuses, and a lie puts him in prison. A four-part vertical drama from Genesis 39, King James Version.",
+            "cover": "media:images/reels/framed/cover.webp",
+            "playlist_id": "",
+            "episodes": [
+                {
+                    "id": "ep1",
+                    "part": 1,
+                    "title": "Sold",
+                    "name": "Framed · Part 1: Sold",
+                    "passage": "Genesis 39:1–7",
+                    "description": "Sold by his own brothers and bought by Potiphar, captain of Pharaoh's guard, Joseph starts at the bottom of the house and ends up running all of it. And his master's wife is watching.",
+                    "youtube_id": "",
+                    "release": "2026-12-07T19:00:00+08:00",
+                    "duration": 85,
+                    "cover": "media:images/reels/framed/ep1.webp"
+                },
+                {
+                    "id": "ep2",
+                    "part": 2,
+                    "title": "The Offer",
+                    "name": "Framed · Part 2: The Offer",
+                    "passage": "Genesis 39:7–12",
+                    "description": "His master's wife gives Joseph an order. He answers with his master's trust and with God, and day after day he refuses. Then comes a day when the house is empty.",
+                    "youtube_id": "",
+                    "release": "2026-12-08T19:00:00+08:00",
+                    "duration": 77,
+                    "cover": "media:images/reels/framed/ep2.webp"
+                },
+                {
+                    "id": "ep3",
+                    "part": 3,
+                    "title": "The Garment",
+                    "name": "Framed · Part 3: The Garment",
+                    "passage": "Genesis 39:12–20",
+                    "description": "Joseph runs and leaves his garment in her hand. She shows it to the men of the house, then to her husband, and Potiphar's wrath is kindled.",
+                    "youtube_id": "",
+                    "release": "2026-12-09T19:00:00+08:00",
+                    "duration": 0,
+                    "cover": "media:images/reels/framed/ep3.webp"
+                },
+                {
+                    "id": "ep4",
+                    "part": 4,
+                    "title": "Trusted Again",
+                    "name": "Framed · Part 4: Trusted Again",
+                    "passage": "Genesis 39:20–23",
+                    "description": "Thrown into the king's prison for a crime he refused to commit, Joseph is put in charge again. \"But the LORD was with Joseph, and shewed him mercy.\"",
+                    "youtube_id": "",
+                    "release": "2026-12-10T19:00:00+08:00",
+                    "duration": 0,
+                    "cover": "media:images/reels/framed/ep4.webp"
+                },
+                {
+                    "id": "full",
+                    "kind": "full",
+                    "title": "The Full Story",
+                    "name": "Framed · The Full Story",
+                    "passage": "Genesis 39",
+                    "description": "All four parts of Framed in one video.",
+                    "youtube_id": "",
+                    "release": "2026-12-12T19:00:00+08:00",
+                    "duration": 0,
+                    "cover": "media:images/reels/framed/cover.webp"
+                }
+            ]
+        }
+    ]
+}

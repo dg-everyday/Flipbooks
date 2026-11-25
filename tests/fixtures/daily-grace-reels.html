@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Daily Grace Reels · test page</title>
+        <!-- <daily-grace-reels> on its own, before it is placed on the home page.
+             Tests: tests/daily-grace-reels.spec.mjs. To look at it with the real
+             data: node tests/serve.mjs, then open
+             http://localhost:4173/tests/fixtures/daily-grace-reels.html?reels-preview -->
+        <style>
+            body { margin: 0; padding: 16px 0; background: #f4f1ea; font-family: Roboto, Arial, sans-serif; }
+            main { max-width: 760px; margin: 0 auto; }
+        </style>
+    </head>
+    <body>
+        <main>
+            <daily-grace-reels
+                id="daily-grace-reels"
+                src="/assets/dg-reels.json"
+                data-card-name="Daily Grace Reels"
+                hidden
+            ></daily-grace-reels>
+        </main>
+        <script type="module" src="/apps/components/daily-grace-reels.js"></script>
+    </body>
+</html>

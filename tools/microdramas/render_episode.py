@@ -159,7 +159,8 @@ class ClipReader:
         self.fps = float(num) / float(den)
         self.duration = float(info["format"]["duration"])
         self.proc = subprocess.Popen(["ffmpeg", "-v", "error", "-i", path, "-f", "rawvideo",
-                                      "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+                                      "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE,
+                                     stderr=subprocess.DEVNULL)
         self.index, self.prev, self.cur, self.ended = -1, None, None, False
 
     def _advance(self):
@@ -332,8 +333,8 @@ def render_layer(assets, layer, lt, l_len, state):
         if "_clip_offset" in layer:          # a lip-sync clip: starts with its voice, real speed
             src = reader.get(max(lt - layer["_clip_offset"], 0.0) * reader.fps)
         else:
-            speed = 1.0                      # slow a short clip to fill its shot (up to ~1.5x)
-            if l_len > reader.duration and reader.duration / l_len >= 0.65:
+            speed = 1.0                      # slow a short clip to fill its shot (up to ~1.67x)
+            if l_len > reader.duration and reader.duration / l_len >= 0.6:
                 speed = reader.duration / l_len
             src = reader.get(lt * reader.fps * speed)
         sharp = cv2.GaussianBlur(src, (0, 0), 1.2)
@@ -547,6 +548,11 @@ def render_shot(job):
             frame += grains[f % len(grains)]
         enc.stdin.write(np.clip(frame, 0, 255).astype(np.uint8).tobytes())
     enc.stdin.close()
+    for key, value in state.items():          # stop clip decoders that still have frames left
+        if key[0] == "clip":
+            value.proc.stdout.close()
+            value.proc.kill()
+            value.proc.wait()
     if enc.wait() != 0:
         raise RuntimeError(f"encode failed for shot {shot['id']}")
     return shot["id"]

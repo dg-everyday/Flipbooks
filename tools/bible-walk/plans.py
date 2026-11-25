@@ -324,6 +324,16 @@ PLANS = [
         "cover": {"symbol": "Numbers"},
         "episodes": [f"numbers-{n:02d}" for n in range(0, 37)],
     },
+    {
+        "id": "deuteronomy",
+        "title": "Deuteronomy",
+        "subtitle": "Hear, O Israel",
+        "about": "Moses speaks to a new generation on the edge of the promised land: the Ten "
+                 "Commandments, “Hear, O Israel”, the words Jesus quoted in the wilderness, "
+                 "the call to choose life, and Moses’ last look at the land.",
+        "cover": {"symbol": "Deuteronomy"},
+        "episodes": [f"deuteronomy-{n:02d}" for n in range(0, 35)],
+    },
 ]
 
 # Pictures for episodes that are not a chapter of a book (an intro to the walk or a plan).

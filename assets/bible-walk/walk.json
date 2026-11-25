@@ -2622,6 +2622,155 @@
      "label": "Numbers 36"
     }
    ]
+  },
+  {
+   "id": "deuteronomy",
+   "title": "Deuteronomy",
+   "subtitle": "Hear, O Israel",
+   "about": "Moses speaks to a new generation on the edge of the promised land: the Ten Commandments, “Hear, O Israel”, the words Jesus quoted in the wilderness, the call to choose life, and Moses’ last look at the land.",
+   "cover": "media:images/symbols/Deuteronomy-symbol.svg",
+   "episodes": [
+    {
+     "id": "deuteronomy-00",
+     "label": "Meet Deuteronomy"
+    },
+    {
+     "id": "deuteronomy-01",
+     "label": "Deuteronomy 1"
+    },
+    {
+     "id": "deuteronomy-02",
+     "label": "Deuteronomy 2"
+    },
+    {
+     "id": "deuteronomy-03",
+     "label": "Deuteronomy 3"
+    },
+    {
+     "id": "deuteronomy-04",
+     "label": "Deuteronomy 4"
+    },
+    {
+     "id": "deuteronomy-05",
+     "label": "Deuteronomy 5"
+    },
+    {
+     "id": "deuteronomy-06",
+     "label": "Deuteronomy 6"
+    },
+    {
+     "id": "deuteronomy-07",
+     "label": "Deuteronomy 7"
+    },
+    {
+     "id": "deuteronomy-08",
+     "label": "Deuteronomy 8"
+    },
+    {
+     "id": "deuteronomy-09",
+     "label": "Deuteronomy 9"
+    },
+    {
+     "id": "deuteronomy-10",
+     "label": "Deuteronomy 10"
+    },
+    {
+     "id": "deuteronomy-11",
+     "label": "Deuteronomy 11"
+    },
+    {
+     "id": "deuteronomy-12",
+     "label": "Deuteronomy 12"
+    },
+    {
+     "id": "deuteronomy-13",
+     "label": "Deuteronomy 13"
+    },
+    {
+     "id": "deuteronomy-14",
+     "label": "Deuteronomy 14"
+    },
+    {
+     "id": "deuteronomy-15",
+     "label": "Deuteronomy 15"
+    },
+    {
+     "id": "deuteronomy-16",
+     "label": "Deuteronomy 16"
+    },
+    {
+     "id": "deuteronomy-17",
+     "label": "Deuteronomy 17"
+    },
+    {
+     "id": "deuteronomy-18",
+     "label": "Deuteronomy 18"
+    },
+    {
+     "id": "deuteronomy-19",
+     "label": "Deuteronomy 19"
+    },
+    {
+     "id": "deuteronomy-20",
+     "label": "Deuteronomy 20"
+    },
+    {
+     "id": "deuteronomy-21",
+     "label": "Deuteronomy 21"
+    },
+    {
+     "id": "deuteronomy-22",
+     "label": "Deuteronomy 22"
+    },
+    {
+     "id": "deuteronomy-23",
+     "label": "Deuteronomy 23"
+    },
+    {
+     "id": "deuteronomy-24",
+     "label": "Deuteronomy 24"
+    },
+    {
+     "id": "deuteronomy-25",
+     "label": "Deuteronomy 25"
+    },
+    {
+     "id": "deuteronomy-26",
+     "label": "Deuteronomy 26"
+    },
+    {
+     "id": "deuteronomy-27",
+     "label": "Deuteronomy 27"
+    },
+    {
+     "id": "deuteronomy-28",
+     "label": "Deuteronomy 28"
+    },
+    {
+     "id": "deuteronomy-29",
+     "label": "Deuteronomy 29"
+    },
+    {
+     "id": "deuteronomy-30",
+     "label": "Deuteronomy 30"
+    },
+    {
+     "id": "deuteronomy-31",
+     "label": "Deuteronomy 31"
+    },
+    {
+     "id": "deuteronomy-32",
+     "label": "Deuteronomy 32"
+    },
+    {
+     "id": "deuteronomy-33",
+     "label": "Deuteronomy 33"
+    },
+    {
+     "id": "deuteronomy-34",
+     "label": "Deuteronomy 34"
+    }
+   ]
   }
  ],
  "episodes": {
@@ -9622,6 +9771,557 @@
     "13:11",
     "13:14",
     "13:31"
+   ]
+  },
+  "numbers-00": {
+   "title": "Meet the Book of Numbers",
+   "label": "Meet Numbers",
+   "book": "Numbers",
+   "chapter": null,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-00.webm?v=2384",
+   "seconds": 238.4,
+   "question": "The people of Israel followed the cloud wherever it led. What would it look like for you to follow God step by step, even when you cannot see far ahead?",
+   "keys": []
+  },
+  "numbers-01": {
+   "title": "Every One Head of the House of His Fathers",
+   "label": "Numbers 1",
+   "book": "Numbers",
+   "chapter": 1,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-01.webm?v=4250",
+   "seconds": 425.0,
+   "question": "God counted his people one by one, with the number of their names. What difference does it make to you that God knows you personally, by name?",
+   "keys": [
+    "1:2",
+    "1:53",
+    "1:54"
+   ]
+  },
+  "numbers-02": {
+   "title": "Every Man by His Own Standard",
+   "label": "Numbers 2",
+   "book": "Numbers",
+   "chapter": 2,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-02.webm?v=3866",
+   "seconds": 386.6,
+   "question": "Every tent in the camp faced the tabernacle, with God at the centre. What would it look like for God to be at the centre of your everyday life?",
+   "keys": [
+    "2:2",
+    "2:17",
+    "2:34"
+   ]
+  },
+  "numbers-03": {
+   "title": "The Levites Shall Be Mine",
+   "label": "Numbers 3",
+   "book": "Numbers",
+   "chapter": 3,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-03.webm?v=4067",
+   "seconds": 406.7,
+   "question": "Every Levite family had a different job, curtains, boards, or holy things, but all of it was service to God. What job has God given you, and how can you do it as service to him?",
+   "keys": [
+    "3:4",
+    "3:13",
+    "3:45"
+   ]
+  },
+  "numbers-04": {
+   "title": "Every One According to His Service",
+   "label": "Numbers 4",
+   "book": "Numbers",
+   "chapter": 4,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-04.webm?v=3976",
+   "seconds": 397.6,
+   "question": "Every Levite knew exactly what he was to carry, and no one had to carry everything. How does it help to know that you do not have to carry everything yourself?",
+   "keys": [
+    "4:5",
+    "4:19",
+    "4:49"
+   ]
+  },
+  "numbers-05": {
+   "title": "Then They Shall Confess Their Sin",
+   "label": "Numbers 5",
+   "book": "Numbers",
+   "chapter": 5,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-05.webm?v=3861",
+   "seconds": 386.1,
+   "question": "God asked his people not only to confess, but to repay and add a fifth. Why do you think putting things right with people matters so much to God?",
+   "keys": [
+    "5:3",
+    "5:6",
+    "5:7"
+   ]
+  },
+  "numbers-06": {
+   "title": "The LORD Bless Thee, and Keep Thee",
+   "label": "Numbers 6",
+   "book": "Numbers",
+   "chapter": 6,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-06.webm?v=3959",
+   "seconds": 395.9,
+   "question": "God himself gave the priests the words to bless his people. What does it tell you about God’s heart, that he wanted his people to hear this blessing again and again?",
+   "keys": [
+    "6:24",
+    "6:25",
+    "6:26"
+   ]
+  },
+  "numbers-07": {
+   "title": "Each Prince on His Day",
+   "label": "Numbers 7",
+   "book": "Numbers",
+   "chapter": 7,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-07.webm?v=4116",
+   "seconds": 411.6,
+   "question": "Every leader brought the same gift, and every gift was written down in full. What does this tell you about how God sees what you give him?",
+   "keys": [
+    "7:9",
+    "7:11",
+    "7:89"
+   ]
+  },
+  "numbers-08": {
+   "title": "The Seven Lamps Shall Give Light",
+   "label": "Numbers 8",
+   "book": "Numbers",
+   "chapter": 8,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-08.webm?v=3747",
+   "seconds": 374.7,
+   "question": "The older Levites stopped the heavy work, but still helped their brothers. How can people of every age serve God, even when their strength changes?",
+   "keys": [
+    "8:2",
+    "8:10",
+    "8:14"
+   ]
+  },
+  "numbers-09": {
+   "title": "At the Commandment of the LORD They Journeyed",
+   "label": "Numbers 9",
+   "book": "Numbers",
+   "chapter": 9,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-09.webm?v=3798",
+   "seconds": 379.8,
+   "question": "Sometimes the cloud stayed a year, and sometimes it moved the next day. Which is harder for you: waiting for God, or moving when he says go?",
+   "keys": [
+    "9:10",
+    "9:18",
+    "9:23"
+   ]
+  },
+  "numbers-10": {
+   "title": "Rise Up, LORD",
+   "label": "Numbers 10",
+   "book": "Numbers",
+   "chapter": 10,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-10.webm?v=4013",
+   "seconds": 401.3,
+   "question": "Moses prayed at the start and at the end of every journey. What difference would it make to begin and end each day with prayer?",
+   "keys": [
+    "10:29",
+    "10:33",
+    "10:35"
+   ]
+  },
+  "numbers-11": {
+   "title": "Is the LORD’s Hand Waxed Short?",
+   "label": "Numbers 11",
+   "book": "Numbers",
+   "chapter": 11,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-11.webm?v=4655",
+   "seconds": 465.5,
+   "question": "The people grew tired of the manna God gave them every day. What gifts of God are you most likely to take for granted?",
+   "keys": [
+    "11:14",
+    "11:23",
+    "11:29"
+   ]
+  },
+  "numbers-12": {
+   "title": "Heal Her Now, O God, I Beseech Thee",
+   "label": "Numbers 12",
+   "book": "Numbers",
+   "chapter": 12,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-12.webm?v=3900",
+   "seconds": 390.0,
+   "question": "Moses did not defend himself when Miriam and Aaron spoke against him, and then prayed for Miriam. What helps you to respond to criticism with meekness instead of anger?",
+   "keys": [
+    "12:3",
+    "12:8",
+    "12:13"
+   ]
+  },
+  "numbers-13": {
+   "title": "We Are Well Able to Overcome It",
+   "label": "Numbers 13",
+   "book": "Numbers",
+   "chapter": 13,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-13.webm?v=4210",
+   "seconds": 421.0,
+   "question": "Ten spies saw giants, and Caleb saw the promise. When you face something hard, what helps you to see God as bigger than the problem?",
+   "keys": [
+    "13:27",
+    "13:30",
+    "13:33"
+   ]
+  },
+  "numbers-14": {
+   "title": "My Servant Caleb Hath Followed Me Fully",
+   "label": "Numbers 14",
+   "book": "Numbers",
+   "chapter": 14,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-14.webm?v=4340",
+   "seconds": 434.0,
+   "question": "Caleb had another spirit, and followed God fully. What do you think it means to follow God fully, and not just halfway?",
+   "keys": [
+    "14:8",
+    "14:20",
+    "14:24"
+   ]
+  },
+  "numbers-15": {
+   "title": "That Ye May Remember, and Do All My Commandments",
+   "label": "Numbers 15",
+   "book": "Numbers",
+   "chapter": 15,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-15.webm?v=4046",
+   "seconds": 404.6,
+   "question": "God gave his people a blue thread so they would remember his commandments. What everyday reminders help you to remember God?",
+   "keys": [
+    "15:16",
+    "15:40",
+    "15:41"
+   ]
+  },
+  "numbers-16": {
+   "title": "He Stood Between the Dead and the Living",
+   "label": "Numbers 16",
+   "book": "Numbers",
+   "chapter": 16,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-16.webm?v=4402",
+   "seconds": 440.2,
+   "question": "Korah was not content with his calling, and wanted more. Why do you think discontent and jealousy are so dangerous?",
+   "keys": [
+    "16:5",
+    "16:22",
+    "16:48"
+   ]
+  },
+  "numbers-17": {
+   "title": "The Rod of Aaron Was Budded",
+   "label": "Numbers 17",
+   "book": "Numbers",
+   "chapter": 17,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-17.webm?v=4039",
+   "seconds": 403.9,
+   "question": "God made a dead stick bud, blossom and bear fruit overnight. Where do you most need God to bring new life today?",
+   "keys": [
+    "17:5",
+    "17:8",
+    "17:10"
+   ]
+  },
+  "numbers-18": {
+   "title": "I Am Thy Part and Thine Inheritance",
+   "label": "Numbers 18",
+   "book": "Numbers",
+   "chapter": 18,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-18.webm?v=3886",
+   "seconds": 388.6,
+   "question": "God told Aaron, I am thy part and thine inheritance. What would it mean for you to see God himself as your greatest treasure?",
+   "keys": [
+    "18:6",
+    "18:20",
+    "18:31"
+   ]
+  },
+  "numbers-19": {
+   "title": "A Water of Separation, a Purification for Sin",
+   "label": "Numbers 19",
+   "book": "Numbers",
+   "chapter": 19,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-19.webm?v=4301",
+   "seconds": 430.1,
+   "question": "The ashes of the heifer were always kept ready, for anyone who needed cleansing. How does it encourage you that God’s cleansing is always available?",
+   "keys": [
+    "19:2",
+    "19:6",
+    "19:9"
+   ]
+  },
+  "numbers-20": {
+   "title": "Speak Ye unto the Rock",
+   "label": "Numbers 20",
+   "book": "Numbers",
+   "chapter": 20,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-20.webm?v=4621",
+   "seconds": 462.1,
+   "question": "Moses struck the rock in anger instead of speaking to it, and it cost him dearly. Why do you think anger is so dangerous, especially for those who lead others?",
+   "keys": [
+    "20:8",
+    "20:12",
+    "20:29"
+   ]
+  },
+  "numbers-21": {
+   "title": "When He Beheld the Serpent of Brass, He Lived",
+   "label": "Numbers 21",
+   "book": "Numbers",
+   "chapter": 21,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-21.webm?v=4313",
+   "seconds": 431.3,
+   "question": "The people were healed simply by looking at the bronze serpent in faith. What does it mean for you to look to Jesus, lifted up on the cross?",
+   "keys": [
+    "21:7",
+    "21:8",
+    "21:9"
+   ]
+  },
+  "numbers-22": {
+   "title": "The LORD Opened the Eyes of Balaam",
+   "label": "Numbers 22",
+   "book": "Numbers",
+   "chapter": 22,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-22.webm?v=4531",
+   "seconds": 453.1,
+   "question": "Balaam said all the right words, but his heart was drawn to Balak’s reward. How can we tell when our hearts are not really following what our mouths say?",
+   "keys": [
+    "22:12",
+    "22:35",
+    "22:31"
+   ]
+  },
+  "numbers-23": {
+   "title": "God Is Not a Man, That He Should Lie",
+   "label": "Numbers 23",
+   "book": "Numbers",
+   "chapter": 23,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-23.webm?v=4002",
+   "seconds": 400.2,
+   "question": "Balak kept moving to new places, hoping God would change his mind. Why is it such a comfort that God does not change, and does not go back on his word?",
+   "keys": [
+    "23:8",
+    "23:19",
+    "23:20"
+   ]
+  },
+  "numbers-24": {
+   "title": "There Shall Come a Star out of Jacob",
+   "label": "Numbers 24",
+   "book": "Numbers",
+   "chapter": 24,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-24.webm?v=4030",
+   "seconds": 403.0,
+   "question": "God promised a Star out of Jacob, hundreds of years before Jesus was born. How does it strengthen your faith to see God’s promises fulfilled across so many years?",
+   "keys": [
+    "24:5",
+    "24:13",
+    "24:17"
+   ]
+  },
+  "numbers-25": {
+   "title": "He Was Zealous for His God",
+   "label": "Numbers 25",
+   "book": "Numbers",
+   "chapter": 25,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-25.webm?v=4214",
+   "seconds": 421.4,
+   "question": "Balaam could not curse Israel, but Israel turned away from God from within. Why do you think the greatest dangers to our faith often come from inside, not outside?",
+   "keys": [
+    "25:2",
+    "25:11",
+    "25:13"
+   ]
+  },
+  "numbers-26": {
+   "title": "Save Caleb the Son of Jephunneh, and Joshua the Son of Nun",
+   "label": "Numbers 26",
+   "book": "Numbers",
+   "chapter": 26,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-26.webm?v=4068",
+   "seconds": 406.8,
+   "question": "Only Caleb and Joshua were left from the first count. What do you think it was about them that made the difference?",
+   "keys": [
+    "26:53",
+    "26:64",
+    "26:65"
+   ]
+  },
+  "numbers-27": {
+   "title": "As Sheep Which Have No Shepherd",
+   "label": "Numbers 27",
+   "book": "Numbers",
+   "chapter": 27,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-27.webm?v=4044",
+   "seconds": 404.4,
+   "question": "At the end of his life, Moses did not pray for himself, but for a shepherd for the people. What does this tell you about the kind of leader Moses was?",
+   "keys": [
+    "27:7",
+    "27:17",
+    "27:18"
+   ]
+  },
+  "numbers-28": {
+   "title": "A Continual Burnt Offering",
+   "label": "Numbers 28",
+   "book": "Numbers",
+   "chapter": 28,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-28.webm?v=3944",
+   "seconds": 394.4,
+   "question": "The daily offering was never forgotten, even on the great feast days. Why do you think everyday faithfulness matters so much to God?",
+   "keys": [
+    "28:2",
+    "28:3",
+    "28:6"
+   ]
+  },
+  "numbers-29": {
+   "title": "Ye Shall Keep a Feast unto the LORD",
+   "label": "Numbers 29",
+   "book": "Numbers",
+   "chapter": 29,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-29.webm?v=4060",
+   "seconds": 406.0,
+   "question": "In Israel’s seventh month, the day of sorrow for sin came before the feast of joy. Why do you think repentance and forgiveness open the way to real joy?",
+   "keys": [
+    "29:1",
+    "29:7",
+    "29:39"
+   ]
+  },
+  "numbers-30": {
+   "title": "He Shall Not Break His Word",
+   "label": "Numbers 30",
+   "book": "Numbers",
+   "chapter": 30,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-30.webm?v=3457",
+   "seconds": 345.7,
+   "question": "Jesus said, let your yes be yes, and your no be no. What would it look like for your everyday words to be so trustworthy that you never needed to make special promises?",
+   "keys": [
+    "30:2",
+    "30:5",
+    "30:9"
+   ]
+  },
+  "numbers-31": {
+   "title": "There Lacketh Not One Man of Us",
+   "label": "Numbers 31",
+   "book": "Numbers",
+   "chapter": 31,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-31.webm?v=4140",
+   "seconds": 414.0,
+   "question": "Balaam said beautiful words about God, but led Israel into sin. How can we be careful about whose advice and teaching we follow?",
+   "keys": [
+    "31:16",
+    "31:49",
+    "31:54"
+   ]
+  },
+  "numbers-32": {
+   "title": "Be Sure Your Sin Will Find You Out",
+   "label": "Numbers 32",
+   "book": "Numbers",
+   "chapter": 32,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-32.webm?v=4174",
+   "seconds": 417.4,
+   "question": "Moses said, be sure your sin will find you out. Why do you think hidden sin so often catches up with us?",
+   "keys": [
+    "32:6",
+    "32:23",
+    "32:31"
+   ]
+  },
+  "numbers-33": {
+   "title": "Moses Wrote Their Goings Out",
+   "label": "Numbers 33",
+   "book": "Numbers",
+   "chapter": 33,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-33.webm?v=3849",
+   "seconds": 384.9,
+   "question": "Moses wrote down every stop of the journey, the good and the bad. Looking back over your own life, where can you see God’s leading, even in the hard places?",
+   "keys": [
+    "33:2",
+    "33:9",
+    "33:53"
+   ]
+  },
+  "numbers-34": {
+   "title": "This Shall Be Your Land",
+   "label": "Numbers 34",
+   "book": "Numbers",
+   "chapter": 34,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-34.webm?v=3906",
+   "seconds": 390.6,
+   "question": "God spoke of the land with certainty: when ye come. Which of God’s promises do you most need to hear spoken with that kind of certainty today?",
+   "keys": [
+    "34:2",
+    "34:17",
+    "34:29"
+   ]
+  },
+  "numbers-35": {
+   "title": "For I the LORD Dwell Among the Children of Israel",
+   "label": "Numbers 35",
+   "book": "Numbers",
+   "chapter": 35,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-35.webm?v=3779",
+   "seconds": 377.9,
+   "question": "God provided cities of refuge so that no one was too far from safety. What does it mean to you that God is your refuge?",
+   "keys": [
+    "35:2",
+    "35:7",
+    "35:34"
+   ]
+  },
+  "numbers-36": {
+   "title": "Even as the LORD Commanded Moses, So Did the Daughters of Zelophehad",
+   "label": "Numbers 36",
+   "book": "Numbers",
+   "chapter": 36,
+   "art": "media:images/symbols/Numbers-symbol.svg",
+   "audio": "media:audio/bible-walk/numbers/numbers-36.webm?v=4249",
+   "seconds": 424.9,
+   "question": "Numbers is full of grumbling and rebellion, but it ends with five sisters obeying God. What does this whole book teach you about God, and about following him?",
+   "keys": [
+    "36:5",
+    "36:10",
+    "36:13"
    ]
   },
   "philemon-00": {

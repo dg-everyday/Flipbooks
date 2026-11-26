@@ -10,6 +10,11 @@
  * with its own data, and YouTube is replaced by an empty page.
  */
 import { test, expect } from "@playwright/test";
+import { execFileSync } from "node:child_process";
+import { mkdtempSync, readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const PAGE = "/tests/fixtures/daily-grace-reels.html";
 const WATCHED = "dailygrace:reels-watched";
@@ -143,6 +148,11 @@ test("a part plays in the player, steps to the next, and is ticked when closed",
     await expect(dialog(page).locator(".yt")).toHaveAttribute("href", "https://www.youtube.com/shorts/FRAMED00001");
     await expect(dialog(page).locator(".back")).toBeHidden();
     await expect(dialog(page).locator(".forward")).toHaveAttribute("aria-label", "Next: Episode 2");
+    // "Ep. 2" with one chevron: Episode 2 is the last one out after this.
+    await expect(dialog(page).locator(".forward")).toHaveText("Ep. 2");
+    await expect(dialog(page).locator(".forward")).not.toHaveClass(/more/);
+    // "Watch on YouTube" is in the top bar, not between the buttons.
+    await expect(dialog(page).locator(".bar .yt")).toBeVisible();
 
     await dialog(page).locator(".forward").click();
     await expect(iframe(page)).toHaveAttribute("src", /embed\/FRAMED00002\?/);
@@ -329,7 +339,8 @@ test("the share button, top right in the share red, shares a link to the card", 
     await share.click();
     const shared = await page.evaluate(() => window.__shared);
     expect(shared).toHaveLength(1);
-    expect(shared[0].url).toMatch(/#daily-grace-reels$/);
+    // The drama's own page, which previews with its picture (assets/scripts/build-reel-pages.mjs).
+    expect(shared[0].url).toBe("https://dailygrace.faith/r/framed.html");
     expect(shared[0].title).toContain("Framed");
 });
 
@@ -347,7 +358,101 @@ test("with no share sheet, the share button copies the link", async ({ page }) =
     await page.goto(PAGE);
     await card(page).locator(".share").click();
     await expect(page.locator(".reels-share-note")).toHaveText("Link copied");
-    expect(await page.evaluate(() => window.__copied)).toEqual([expect.stringMatching(/#daily-grace-reels$/)]);
+    expect(await page.evaluate(() => window.__copied)).toEqual(["https://dailygrace.faith/r/framed.html"]);
+});
+
+test("the card's name is larger than the drama's title, with the film strip", async ({ page }) => {
+    await page.clock.setFixedTime(new Date("2026-12-15T20:00:00+08:00"));
+    await setUp(page);
+    await page.goto(PAGE);
+    await expect(card(page).locator("h2.name")).toHaveText("Daily Grace Reels");
+    const sizes = await card(page).evaluate((el) => ({
+        name: parseFloat(getComputedStyle(el.shadowRoot.querySelector(".name")).fontSize),
+        title: parseFloat(getComputedStyle(el.shadowRoot.querySelector(".title")).fontSize),
+    }));
+    expect(sizes.name).toBeGreaterThan(sizes.title);
+    // The share button sits beside the heading, not in it.
+    await expect(card(page).locator("h2.name .share")).toHaveCount(0);
+});
+
+test("a shared link (?reel=…) opens the card on that drama", async ({ page }) => {
+    await page.clock.setFixedTime(new Date("2026-12-15T20:00:00+08:00"));
+    await setUp(page);
+    await page.goto(`${PAGE}?reel=older#daily-grace-reels`);
+    await expect(card(page).locator(".title")).toHaveText("An Older Reel");
+});
+
+test("each drama gets a share page that previews with its own picture and opens the card", async ({ page }) => {
+    const folder = mkdtempSync(join(tmpdir(), "reel-pages-"));
+    execFileSync(process.execPath, [fileURLToPath(new URL("../assets/scripts/build-reel-pages.mjs", import.meta.url)), folder]);
+    const html = readFileSync(join(folder, "r", "framed.html"), "utf8");
+    expect(html).toContain('<meta property="og:url" content="https://dailygrace.faith/r/framed.html" />');
+    expect(html).toContain('<meta property="og:image" content="https://dailygrace.faith/assets/images/reels/framed/share.jpg" />');
+    expect(html).toContain('<meta property="og:title" content="Framed - a Bible drama from Daily Grace Reels" />');
+    expect(html).toContain('<meta name="robots" content="noindex" />');
+    // Crawlers follow a refresh and would preview the home page instead.
+    expect(html).not.toContain("http-equiv");
+    // The picture it names is in the site.
+    expect(readFileSync("assets/images/reels/framed/share.jpg").length).toBeGreaterThan(10_000);
+
+    await page.route("**/r/framed.html", (route) =>
+        route.fulfill({ path: join(folder, "r", "framed.html"), contentType: "text/html; charset=utf-8" }),
+    );
+    await page.goto("/r/framed.html", { waitUntil: "commit" });
+    await page.waitForURL(/\/\?reel=framed#daily-grace-reels$/);
+});
+
+test("on a phone the video takes the full width, with the episode buttons under it, and asks for fullscreen", async ({ page }) => {
+    test.skip(test.info().project.name !== "android", "a phone's screen");
+    await page.clock.setFixedTime(new Date("2026-12-15T20:00:00+08:00"));
+    await page.addInitScript(() => {
+        window.__fullscreen = [];
+        Element.prototype.requestFullscreen = function () {
+            window.__fullscreen.push(this.localName);
+            return Promise.resolve();
+        };
+    });
+    await setUp(page);
+    await page.goto(PAGE);
+    await chip(page, "ep1").tap();
+    await expect(dialog(page)).toBeVisible();
+    const layout = await dialog(page).evaluate((d) => {
+        const box = (sel) => d.querySelector(sel).getBoundingClientRect();
+        return { width: innerWidth, frame: box(".frame"), yt: box(".yt"), bar: box(".bar"), forward: box(".forward"), back: box(".back") };
+    });
+    expect(Math.round(layout.frame.width)).toBe(layout.width);
+    // "Watch on YouTube" is in the top bar; the episode buttons are in the row under the video.
+    expect(layout.yt.bottom).toBeLessThanOrEqual(layout.bar.bottom + 1);
+    expect(layout.forward.top).toBeGreaterThanOrEqual(layout.frame.bottom - 1);
+    expect(await page.evaluate(() => window.__fullscreen)).toEqual(["dialog"]);
+});
+
+test("the episode buttons read \"‹ Ep. 1\" and \"Ep. 3 »\": two chevrons while more episodes lie that way", async ({ page }) => {
+    await page.clock.setFixedTime(new Date("2026-11-30T12:00:00+08:00"));
+    await setUp(page);
+    // In preview Episodes 1-3 play (Episode 4 and the full story have no video yet).
+    await page.goto(`${PAGE}?reels-preview`);
+    const back = dialog(page).locator(".back");
+    const forward = dialog(page).locator(".forward");
+
+    await chip(page, "ep1").click();
+    await expect(back).toBeHidden();
+    await expect(forward).toHaveText("Ep. 2");
+    await expect(forward).toHaveClass(/more/);
+    await expect(forward.locator("svg path")).toHaveAttribute("d", /M5 5l7 7-7 7M12 5/);
+
+    await forward.click();
+    await expect(dialog(page).locator(".now-part")).toHaveText("Episode 2: The Offer");
+    await expect(back).toHaveText("Ep. 1");
+    await expect(back).not.toHaveClass(/more/);
+    await expect(forward).toHaveText("Ep. 3");
+    await expect(forward).not.toHaveClass(/more/);
+
+    await forward.click();
+    await expect(back).toHaveText("Ep. 2");
+    await expect(back).toHaveClass(/more/);
+    await expect(forward).toBeHidden();
+    await expect(back).toHaveAttribute("aria-label", "Previous: Episode 2");
 });
 
 test.describe("on a 24-hour clock", () => {

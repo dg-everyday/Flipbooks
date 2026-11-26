@@ -36,6 +36,9 @@
  * share sheet, or copies it; opening that link scrolls to the card once it shows.
  *
  * "Watch on YouTube" pauses the part in the player before YouTube opens in a new tab.
+ * On a phone the player goes fullscreen where the browser allows it (not iPhone), so the video
+ * takes the full width. "Watch on YouTube" sits in the player's top bar; its bottom row has the
+ * previous and next episode ("‹ Ep. 1", "Ep. 3 »": two chevrons when more episodes lie that way).
  *
  * Watched parts are kept on this device under dailygrace:reels-watched
  * ({ dramaId: [episodeId, …] }); a part counts as watched once opened.
@@ -56,6 +59,7 @@ import { resolveMedia } from "../settings/settings.js?v=20261009-1";
 
 const DEFAULT_SRC = "assets/dg-reels.json";
 const NAME = "Daily Grace Reels";
+const SITE = "https://dailygrace.faith";
 const WATCHED_KEY = "dailygrace:reels-watched";
 const EMBED = "https://www.youtube-nocookie.com/embed/";
 const EMBED_ORIGIN = "https://www.youtube-nocookie.com";
@@ -63,12 +67,18 @@ const COUNTDOWN = 5;
 const WEEK = 7 * 24 * 60 * 60 * 1000;
 const MAX_TIMER = 2 ** 31 - 1;
 
-const REEL = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path d="M10 9.2v5.6l4.6-2.8z" fill="currentColor"/></svg>`;
+// A film strip: the frame with sprocket holes down both sides.
+const REEL = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="18" height="19" rx="2"/><path d="M7 2.5v19M17 2.5v19M3 7h4M3 12h4M3 17h4M17 7h4M17 12h4M17 17h4"/></svg>`;
 const PLAY = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2Z"/></svg>`;
 const TICK = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`;
 const CLOSE = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
-const PREV = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>`;
-const NEXT = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>`;
+// The player's previous and next episode: one chevron when that is the last episode that way,
+// two («, ») when there are more beyond it.
+const CHEVRON = (path) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="${path}"/></svg>`;
+const PREV_ONE = CHEVRON("M15 5l-7 7 7 7");
+const PREV_MORE = CHEVRON("M12 5l-7 7 7 7M19 5l-7 7 7 7");
+const NEXT_ONE = CHEVRON("M9 5l7 7-7 7");
+const NEXT_MORE = CHEVRON("M5 5l7 7-7 7M12 5l7 7-7 7");
 // The same share icon as the poster's and the stories' share buttons.
 const SHARE = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
 // The YouTube logo: the red play button and the "YouTube" wordmark.
@@ -88,15 +98,15 @@ const STYLES = /* css */ `
     box-shadow: 0 10px 26px rgb(0 27 52 / 20%);
     font: 400 1rem/1.4 'Roboto', Arial, sans-serif;
   }
-  .brand {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 12px 0 14px;
-    font: 700 .78rem/1 'Roboto', Arial, sans-serif;
-    letter-spacing: .12em;
-    text-transform: uppercase;
+  /* The card's name, the same size and font as the other cards' titles (The Living Voice). */
+  .brand { display: flex; align-items: center; gap: 10px; padding: 12px 12px 0 14px; }
+  .name {
+    display: flex; align-items: center; gap: 10px;
+    margin: 0;
+    font: 400 clamp(1.9rem, 1.4rem + 2.6vw, 2.9rem)/1 'Germania One', Georgia, serif;
     color: #f2c531;
   }
-  .brand svg { width: 18px; height: 18px; flex: none; }
+  .name svg { width: .85em; height: .85em; flex: none; }
   /* Share, top right: the same red round button as the poster's share (--action from the page). */
   .share {
     margin-left: auto;
@@ -148,10 +158,12 @@ const STYLES = /* css */ `
   .cover .play svg { width: 20px; height: 20px; margin-left: 3px; }
   .cover:focus-visible, .part:focus-visible, .other:focus-visible { outline: 3px solid #f2c531; outline-offset: 2px; }
   .info { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  /* The drama's own title: smaller than the card's name, and it wraps, so longer titles fit. */
   .title {
     margin: 0;
-    font: 400 clamp(1.6rem, 1.3rem + 1.6vw, 2.3rem)/1 'Germania One', Georgia, serif;
+    font: 400 clamp(1.25rem, 1.1rem + .8vw, 1.6rem)/1.1 'Germania One', Georgia, serif;
     color: #f2c531;
+    overflow-wrap: anywhere;
   }
   .passage { margin: 0; font-size: .9rem; color: rgb(255 255 255 / 75%); }
   .desc {
@@ -302,32 +314,28 @@ const STYLES = /* css */ `
     cursor: pointer;
   }
   .stay { min-height: 44px; padding: 8px 16px; border: 1px solid rgb(255 255 255 / 40%); border-radius: 999px; background: transparent; cursor: pointer; }
-  /* Back, the YouTube link and next on one row; on a narrow phone the link gets its own row
-     above the two buttons, so nothing wraps. */
+  /* The previous and next episode, at the two ends of the bottom row. */
   .controls {
-    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 4px 8px;
-    padding: 8px 12px;
-    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    padding: 6px 10px;
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
     white-space: nowrap;
   }
-  .controls .back { justify-self: start; }
-  .controls .forward { justify-self: end; }
-  @media (max-width: 440px) {
-    .controls { grid-template-columns: 1fr 1fr; }
-    .controls .yt { grid-column: 1 / -1; grid-row: 1; justify-self: center; min-height: 36px; }
-  }
+  /* A label and its chevrons ("Ep. 2 »"), with a background only on hover or focus, like the link. */
   .step {
-    display: inline-flex; align-items: center; gap: 4px;
-    min-width: 96px; min-height: 44px;
-    padding: 8px 12px;
-    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 2px;
+    min-height: 44px;
+    padding: 6px 12px;
     border: 0; border-radius: 999px;
-    background: rgb(255 255 255 / 12%);
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
     cursor: pointer;
   }
+  .step:hover, .step:focus-visible { background: rgb(255 255 255 / 12%); }
+  .step:focus-visible { outline: 3px solid #f2c531; outline-offset: 2px; }
   .step[hidden] { visibility: hidden; display: inline-flex; }
-  .step svg { width: 18px; height: 18px; flex: none; }
-  .step.forward { justify-content: flex-end; }
+  .step svg { width: 22px; height: 22px; flex: none; }
   .yt {
     display: inline-flex; align-items: center; gap: 7px;
     min-height: 44px; padding: 6px 12px;
@@ -339,6 +347,14 @@ const STYLES = /* css */ `
   .yt-logo { display: inline-flex; align-items: center; gap: 3px; color: #fff; }
   .yt-logo svg { width: 26px; height: 18px; flex: none; }
   .yt-word { font: 700 1.05rem/1 'Roboto', Arial, sans-serif; letter-spacing: -.04em; }
+  .bar .yt { margin-left: auto; }
+  /* On a phone, room for the drama's name beside the link and the close button. */
+  @media (max-width: 600px) {
+    .bar { gap: 6px; padding-top: max(6px, env(safe-area-inset-top)); padding-bottom: 4px; }
+    .bar .yt { padding: 6px 8px; gap: 5px; }
+    /* A slim bottom row, so the video keeps the full width. */
+    .controls { padding: 0 6px; padding-bottom: env(safe-area-inset-bottom); }
+  }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 `;
 
@@ -353,6 +369,9 @@ const clock = (seconds) => {
     }
     return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 };
+
+/** "Ep. 2" for a part, "Full story" for the full cut: the player's previous and next buttons. */
+const shortLabel = (episode) => (episode.kind === "full" ? "Full story" : `Ep. ${episode.part}`);
 
 /** "Episode 2" for a part, "Full story" for the full cut. */
 const partLabel = (episode) => (episode.kind === "full" ? "Full story" : `Episode ${episode.part}`);
@@ -453,7 +472,7 @@ export class DailyGraceReels extends HTMLElement {
         this.#root.innerHTML = `
           <style>${STYLES}</style>
           <section class="card" aria-label="${NAME}">
-            <div class="brand">${REEL}<span>${NAME}</span><button class="share" type="button" aria-label="Share" title="Share">${SHARE}</button></div>
+            <div class="brand"><h2 class="name">${REEL}<span>${NAME}</span></h2><button class="share" type="button" aria-label="Share" title="Share">${SHARE}</button></div>
             <div class="body">
               <button class="cover" type="button">
                 <span class="fallback"></span>
@@ -476,6 +495,7 @@ export class DailyGraceReels extends HTMLElement {
             <div class="sheet">
               <header class="bar">
                 <div class="now"><span class="now-drama"></span><span class="now-part"></span></div>
+                <a class="yt" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span>Watch on</span>${YOUTUBE}</a>
                 <button class="icon close" type="button" aria-label="Close">${CLOSE}</button>
               </header>
               <div class="screen">
@@ -488,9 +508,8 @@ export class DailyGraceReels extends HTMLElement {
                 </div>
               </div>
               <footer class="controls">
-                <button class="step back" type="button">${PREV}<span></span></button>
-                <a class="yt" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span>Watch on</span>${YOUTUBE}</a>
-                <button class="step forward" type="button"><span></span>${NEXT}</button>
+                <button class="step back" type="button"></button>
+                <button class="step forward" type="button"></button>
               </footer>
             </div>
           </dialog>`;
@@ -527,7 +546,12 @@ export class DailyGraceReels extends HTMLElement {
     }
 
     connectedCallback() {
-        this.#preview = new URLSearchParams(location.search).has("reels-preview");
+        const params = new URLSearchParams(location.search);
+        this.#preview = params.has("reels-preview");
+        // A shared link (/r/<drama>.html forwards to ?reel=<drama>#daily-grace-reels) opens on that drama.
+        if (params.get("reel")) {
+            this.#dramaId = params.get("reel");
+        }
         this.hidden = true;
         this.#load();
         window.addEventListener("pageshow", this.#onShow);
@@ -679,8 +703,9 @@ export class DailyGraceReels extends HTMLElement {
         if (!drama || this.#sharing) {
             return;
         }
-        const url = new URL(location.pathname, location.origin);
-        url.hash = this.id || "daily-grace-reels";
+        // Its own page (written on deploy by assets/scripts/build-reel-pages.mjs) previews with the
+        // drama's picture and forwards to this card with that drama showing.
+        const url = new URL(`/r/${encodeURIComponent(drama.id)}.html`, SITE);
         const title = `${drama.title} - a Bible drama from Daily Grace Reels`;
         if (!navigator.share) {
             await this.#copy(url.href);
@@ -913,12 +938,17 @@ export class DailyGraceReels extends HTMLElement {
         const index = parts.findIndex((item) => item.id === episode.id);
         const back = root.querySelector(".back");
         const forward = root.querySelector(".forward");
-        back.hidden = index <= 0;
-        forward.hidden = index < 0 || index >= parts.length - 1;
-        back.querySelector("span").textContent = index > 0 ? partLabel(parts[index - 1]) : "";
-        forward.querySelector("span").textContent = index >= 0 && index < parts.length - 1 ? partLabel(parts[index + 1]) : "";
-        back.setAttribute("aria-label", index > 0 ? `Previous: ${partLabel(parts[index - 1])}` : "Previous");
-        forward.setAttribute("aria-label", index >= 0 && index < parts.length - 1 ? `Next: ${partLabel(parts[index + 1])}` : "Next");
+        // "‹ Ep. 1" and "Ep. 3 »": one chevron when it is the last episode that way, two when more follow.
+        const before = index > 0 ? parts[index - 1] : null;
+        const after = index >= 0 && index < parts.length - 1 ? parts[index + 1] : null;
+        back.hidden = !before;
+        forward.hidden = !after;
+        back.classList.toggle("more", index > 1);
+        forward.classList.toggle("more", index >= 0 && index < parts.length - 2);
+        back.innerHTML = before ? `${index > 1 ? PREV_MORE : PREV_ONE}<span>${escapeHtml(shortLabel(before))}</span>` : "";
+        forward.innerHTML = after ? `<span>${escapeHtml(shortLabel(after))}</span>${index < parts.length - 2 ? NEXT_MORE : NEXT_ONE}` : "";
+        back.setAttribute("aria-label", before ? `Previous: ${partLabel(before)}` : "Previous");
+        forward.setAttribute("aria-label", after ? `Next: ${partLabel(after)}` : "Next");
 
         const frame = root.querySelector(".frame");
         const notice = root.querySelector(".notice");
@@ -953,6 +983,13 @@ export class DailyGraceReels extends HTMLElement {
                 document.documentElement.style.overflow = "hidden";
             }
             dialog.showModal();
+            // On a phone, fill the screen: the browser's bars go and the video can take the
+            // whole width. Only where the browser allows it (not iPhone); this tap is the gesture.
+            if (matchMedia("(pointer: coarse) and (max-width: 600px)").matches && document.fullscreenEnabled && !document.fullscreenElement) {
+                dialog.requestFullscreen({ navigationUI: "hide" }).catch(() => {
+                    // Refused: the player stays as it is, inside the browser's bars.
+                });
+            }
         }
         this.#render();
     }
@@ -1026,6 +1063,12 @@ export class DailyGraceReels extends HTMLElement {
     }
 
     #stop() {
+        // The shadow root names its own fullscreen element; the document only sees this card.
+        if (this.#root.fullscreenElement && this.#root.fullscreenElement === this.#root.querySelector("dialog")) {
+            document.exitFullscreen().catch(() => {
+                // Already left (the back gesture, say).
+            });
+        }
         if (this.#pageOverflow !== null) {
             document.documentElement.style.overflow = this.#pageOverflow;
             this.#pageOverflow = null;

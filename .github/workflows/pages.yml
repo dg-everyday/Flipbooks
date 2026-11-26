@@ -88,6 +88,12 @@ jobs:
           restore-keys: story-cards-
       - name: Write the stories' share pages
         run: SHARP="$RUNNER_TEMP/sharp/node_modules/sharp" node assets/scripts/build-story-pages.mjs _site --cache ~/.cache/story-cards
+      # A page for each Daily Grace Reels drama (/r/<id>.html), so a shared drama shows its own
+      # picture (assets/images/reels/<id>/share.jpg, committed) and opens the home page's Reels
+      # card on it. A failure only warns.
+      - name: Write the Daily Grace Reels share pages
+        continue-on-error: true
+        run: node assets/scripts/build-reel-pages.mjs _site
       # The repo keeps JSON pretty for reading and diffs; the site gets it
       # compact. Only the copy in _site is rewritten. A file that does not
       # parse ships as it is, with a warning, so it cannot block the daily deploy.

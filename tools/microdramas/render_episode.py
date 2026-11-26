@@ -32,7 +32,14 @@ Pictures
             automatically (camera move still applies; parallax and fx do not). A short clip is
             slowed to fill its shot. "clip_at": "vo+0" instead starts the clip with the shot's
             voice at real speed (for lip-sync clips made from that voice's recording).
-            "still_only": true keeps the still even when a clip exists.
+            "still_only": true keeps the still even when a clip exists. "clip_speed": 1.4 plays
+            the clip at that speed instead (to fit its action into a shorter shot).
+            "clip_map": [[voice_t, clip_t], ...] retimes a lip-sync clip whose own audio was a
+            different take: at voice_t seconds into the shot's recording, show the clip at clip_t
+            (piecewise linear between anchors, real speed outside them). Anchors come from
+            matching the same words in both recordings.
+  grade     "flashforward" (cold, drained), "lie" (mirrored and washed red: her version of what
+            happened), "title" (blurred and dark, used by title cards).
 """
 import json, math, os, re, subprocess, sys, tempfile, zlib
 from multiprocessing import Pool
@@ -114,7 +121,24 @@ def apply_grade(arr, grade):
         return (grey + (arr - grey) * 0.35) * np.array([0.82, 0.90, 1.0], np.float32) * 0.92
     if grade == "title":
         return cv2.GaussianBlur(arr, (0, 0), 14 * UPSCALE / 2) * 0.45
+    if grade == "lie":                       # mirrored and washed red: the story told backwards
+        arr = np.ascontiguousarray(arr[:, ::-1])
+        grey = arr.mean(axis=2, keepdims=True)
+        washed = grey * np.array([1.25, 0.42, 0.36], np.float32)
+        out = washed * 0.8 + arr * np.array([0.35, 0.12, 0.1], np.float32)
+        return (out - 128) * 1.15 + 128 - 6
     return arr
+
+
+def clip_time(clip_map, vt):
+    """Clip time for voice time vt through the anchors; slope 1 outside them."""
+    xs = [p[0] for p in clip_map]
+    ys = [p[1] for p in clip_map]
+    if vt <= xs[0]:
+        return ys[0] + (vt - xs[0])
+    if vt >= xs[-1]:
+        return ys[-1] + (vt - xs[-1])
+    return float(np.interp(vt, xs, ys))
 
 
 class Assets:
@@ -134,6 +158,8 @@ class Assets:
             if grade != "title" and os.path.exists(dpath):
                 d = np.asarray(Image.open(dpath)).astype(np.float32) / 65535.0
                 d = cv2.resize(d, (img.width, img.height), interpolation=cv2.INTER_CUBIC)
+                if grade == "lie":
+                    d = np.ascontiguousarray(d[:, ::-1])
                 depth = cv2.GaussianBlur(d, (0, 0), 6 * UPSCALE)   # soft edges stretch, not tear
             self.stills[key] = (np.clip(arr, 0, 255).astype(np.uint8), depth,
                                 float(np.median(depth)) if depth is not None else 0.5)
@@ -330,12 +356,16 @@ def render_layer(assets, layer, lt, l_len, state):
         if ("clip", clip_path) not in state:
             state[("clip", clip_path)] = ClipReader(clip_path)
         reader = state[("clip", clip_path)]
-        if "_clip_offset" in layer:          # a lip-sync clip: starts with its voice, real speed
+        if "_clip_vo" in layer:              # a lip-sync clip retimed to the recording
+            src = reader.get(max(clip_time(layer["clip_map"], lt - layer["_clip_vo"]), 0.0) * reader.fps)
+        elif "_clip_offset" in layer:        # a lip-sync clip: starts with its voice, real speed
             src = reader.get(max(lt - layer["_clip_offset"], 0.0) * reader.fps)
         else:
             speed = 1.0                      # slow a short clip to fill its shot (up to ~1.67x)
             if l_len > reader.duration and reader.duration / l_len >= 0.6:
                 speed = reader.duration / l_len
+            if "clip_speed" in layer:        # or play it faster to fit a short shot
+                speed = layer["clip_speed"]
             src = reader.get(lt * reader.fps * speed)
         sharp = cv2.GaussianBlur(src, (0, 0), 1.2)
         src = np.clip(apply_grade(cv2.addWeighted(src, 1.6, sharp, -0.6, 0), layer.get("grade")),
@@ -535,6 +565,8 @@ def render_shot(job):
             l1 = starts[li + 1] if li + 1 < len(layers) else shot["_dur"]
             if "clip_at" in layers[li]:
                 layers[li]["_clip_offset"] = local_time(shot, layers[li]["clip_at"]) - l0
+            if "clip_map" in layers[li]:
+                layers[li]["_clip_vo"] = local_time(shot, "vo+0") - l0
             frame = render_layer(assets, layers[li], lt - l0, l1 - l0, state) * vig
             flash = layers[li].get("flash", 0)
             if flash and lt - l0 < 0.1:

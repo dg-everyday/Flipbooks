@@ -4,7 +4,10 @@
  *
  * The card shows the newest drama that has a part out: its cover, title,
  * passage and description, the reader's next part ("Start here", "New",
- * "Up next", "Continue"), and a chip for every part. Parts that are out play;
+ * "Up next", "Continue"), and a thumbnail for every part on a strip that
+ * slides sideways like the banner (swipe it, drag it with the mouse, or use
+ * the arrow keys; no scrollbar and no buttons), moved along to the reader's
+ * next part. Parts that are out play;
  * a part still to come shows when it arrives ("Wed 7 PM"). Other dramas with
  * parts out are listed under "More reels". The card stays hidden until a part
  * is out, so it never shows empty.
@@ -20,11 +23,19 @@
  *     "description", "cover", "playlist_id", "episodes": [ { "id", "part",
  *     "kind" ("full" for the full cut), "title", "name", "passage",
  *     "description", "youtube_id", "release", "duration", "cover" } ] } ] }
+ * (playlist_id is kept for reference; the card no longer links to the playlist.)
  * A part is out once it has a youtube_id and its release time (ISO 8601 with
  * its time zone) has passed, so a scheduled upload can be listed ahead of
- * time and appears at the moment YouTube makes it public. Covers are
- * "media:" URLs (settings.js). The file is fetched with cache revalidation,
+ * time and appears at the moment YouTube makes it public. Covers are paths
+ * resolved against the page (assets/images/reels/<drama>/) or "media:" URLs
+ * (settings.js); the player fits the largest 9:16 frame in the window. The file is fetched with cache revalidation,
  * so a new youtube_id shows without a new ?v= token here.
+ *
+ * The red share button at the top right (the page's --action colour, like the
+ * poster's) shares a link to the card (<page>#daily-grace-reels) through the
+ * share sheet, or copies it; opening that link scrolls to the card once it shows.
+ *
+ * "Watch on YouTube" pauses the part in the player before YouTube opens in a new tab.
  *
  * Watched parts are kept on this device under dailygrace:reels-watched
  * ({ dramaId: [episodeId, …] }); a part counts as watched once opened.
@@ -58,6 +69,10 @@ const TICK = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="cu
 const CLOSE = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
 const PREV = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>`;
 const NEXT = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>`;
+// The same share icon as the poster's and the stories' share buttons.
+const SHARE = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`;
+// The YouTube logo: the red play button and the "YouTube" wordmark.
+const YOUTUBE = `<span class="yt-logo" aria-hidden="true"><svg viewBox="0 0 28 20"><path fill="#ff0000" d="M27.4 3.1A3.5 3.5 0 0 0 24.9.6C22.7 0 14 0 14 0S5.3 0 3.1.6A3.5 3.5 0 0 0 .6 3.1C0 5.3 0 10 0 10s0 4.7.6 6.9a3.5 3.5 0 0 0 2.5 2.5C5.3 20 14 20 14 20s8.7 0 10.9-.6a3.5 3.5 0 0 0 2.5-2.5c.6-2.2.6-6.9.6-6.9s0-4.7-.6-6.9Z"/><path fill="#fff" d="M11.2 14.3 18.4 10l-7.2-4.3Z"/></svg><span class="yt-word">YouTube</span></span>`;
 
 const STYLES = /* css */ `
   :host { display: block; padding-inline: 10px; }
@@ -75,13 +90,28 @@ const STYLES = /* css */ `
   }
   .brand {
     display: flex; align-items: center; gap: 8px;
-    padding: 12px 14px 0;
+    padding: 10px 12px 0 14px;
     font: 700 .78rem/1 'Roboto', Arial, sans-serif;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: #f2c531;
   }
   .brand svg { width: 18px; height: 18px; flex: none; }
+  /* Share, top right: the same red round button as the poster's share (--action from the page). */
+  .share {
+    margin-left: auto;
+    display: grid; place-items: center;
+    width: 38px; height: 38px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: var(--action, #c62828);
+    color: var(--action-ink, #fff);
+    box-shadow: var(--action-shadow, 0 5px 14px rgb(0 0 0 / 35%));
+    cursor: pointer;
+  }
+  .share svg { width: 17px; height: 17px; transition: transform .2s ease; }
+  .share:hover, .share:focus-visible { background: var(--action-hover, #a91f1f); }
+  .share:hover svg, .share:focus-visible svg { transform: scale(1.08); }
+  .share:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
   .body { display: flex; gap: 14px; padding: 12px 14px; }
   .cover {
     position: relative;
@@ -135,45 +165,74 @@ const STYLES = /* css */ `
   }
   .status { margin: auto 0 0; padding-top: 6px; font-size: .95rem; }
   .status b { color: #f2c531; }
+  /* The parts: a strip of thumbnails that slides sideways, like the banner. Swipe it, drag it
+     with the mouse, or use the arrow keys; it has no scrollbar and no buttons. */
+  .rail { position: relative; padding-bottom: 14px; }
   .parts {
-    display: flex; gap: 8px;
+    display: flex; gap: 10px;
     overflow-x: auto;
-    padding: 0 14px 14px;
-    scrollbar-width: thin;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 14px;
+    padding: 2px 14px;
+    scrollbar-width: none;
   }
+  .parts::-webkit-scrollbar { display: none; }
+  .parts.dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+  .parts.dragging .part { pointer-events: none; }
   .part {
     flex: none;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 8px;
-    align-items: center;
-    min-width: 112px;
-    min-height: 52px;
-    padding: 8px 12px 8px 10px;
-    border: 1px solid rgb(242 197 49 / 45%);
-    border-radius: 10px;
-    background: rgb(255 255 255 / 6%);
+    display: flex; flex-direction: column; gap: 2px;
+    width: clamp(96px, 27vw, 124px);
+    padding: 0;
+    border: 0;
+    background: transparent;
     text-align: left;
     cursor: pointer;
+    scroll-snap-align: start;
+  }
+  .part .thumb {
+    position: relative;
+    margin-bottom: 4px;
+    aspect-ratio: 3 / 4;
+    border: 2px solid rgb(242 197 49 / 35%);
+    border-radius: 9px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #3b2a14, #0b2340 70%);
+  }
+  .part .thumb img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 30%;
+    -webkit-user-drag: none;
   }
   .part .num {
-    grid-row: span 2;
+    position: absolute; left: 6px; top: 6px;
     display: grid; place-items: center;
-    width: 28px; height: 28px;
+    width: 26px; height: 26px;
     border-radius: 50%;
     background: #f2c531;
     color: #001b34;
     font-weight: 700;
-    font-size: .9rem;
+    font-size: .85rem;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 45%);
   }
-  .part .num svg { width: 15px; height: 15px; }
-  .part .label { font-weight: 600; font-size: .9rem; white-space: nowrap; }
-  .part .meta { font-size: .78rem; color: rgb(255 255 255 / 70%); white-space: nowrap; }
-  .part.next { background: rgb(242 197 49 / 18%); border-color: #f2c531; }
-  .part.watched .num { background: rgb(255 255 255 / 85%); }
-  .part[disabled] { cursor: default; border-style: dashed; background: transparent; opacity: .7; }
-  .part[disabled] .num { background: rgb(255 255 255 / 25%); color: #fff; }
+  .part .num svg { width: 14px; height: 14px; }
+  .part .dur {
+    position: absolute; right: 6px; bottom: 6px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgb(0 0 0 / 72%);
+    font-size: .72rem; font-weight: 600;
+  }
+  .part .label { font-weight: 600; font-size: .88rem; white-space: nowrap; }
+  .part .meta { font-size: .76rem; color: rgb(255 255 255 / 70%); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .part.next .thumb { border-color: #f2c531; box-shadow: 0 0 0 2px rgb(242 197 49 / 35%); }
+  .part.watched .num { background: rgb(255 255 255 / 88%); }
+  .part[disabled] { cursor: default; }
+  .part[disabled] .thumb { border-style: dashed; border-color: rgb(255 255 255 / 30%); }
+  .part[disabled] .thumb img { filter: grayscale(.7) brightness(.45); }
+  .part[disabled] .num { background: rgb(255 255 255 / 30%); color: #fff; }
   .more { padding: 0 14px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .85rem; color: rgb(255 255 255 / 75%); }
   .more[hidden] { display: none; }
   .other {
@@ -184,13 +243,15 @@ const STYLES = /* css */ `
     background: transparent;
     cursor: pointer;
   }
-  .playlist { color: #f2c531; font-size: .85rem; margin-left: auto; }
 
   /* The player: a full-screen sheet over the page. */
+  /* Sized to the window (100%, not 100vw, which counts the page's scrollbar and overflows). */
   dialog {
-    width: 100vw; height: 100dvh;
-    max-width: none; max-height: none;
+    inset: 0;
+    width: 100%; height: 100%;
+    max-width: 100%; max-height: 100%;
     margin: 0; padding: 0; border: 0;
+    overflow: hidden;
     background: #000;
     color: #fff;
     font: 400 1rem/1.4 'Roboto', Arial, sans-serif;
@@ -214,8 +275,14 @@ const STYLES = /* css */ `
     cursor: pointer;
   }
   .icon svg { width: 22px; height: 22px; }
-  .screen { position: relative; flex: 1; min-height: 0; display: grid; place-items: center; }
-  .frame { position: relative; height: 100%; max-width: 100%; aspect-ratio: 9 / 16; background: #111; }
+  /* The video is the largest 9:16 box that fits between the bars, on any window shape. */
+  .screen { position: relative; flex: 1; min-height: 0; display: grid; place-items: center; container-type: size; overflow: hidden; }
+  .frame {
+    position: relative;
+    width: min(100cqw, 100cqh * 9 / 16);
+    height: min(100cqh, 100cqw * 16 / 9);
+    background: #111;
+  }
   .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .notice, .ended {
     position: absolute; inset: 0;
@@ -235,15 +302,25 @@ const STYLES = /* css */ `
     cursor: pointer;
   }
   .stay { min-height: 44px; padding: 8px 16px; border: 1px solid rgb(255 255 255 / 40%); border-radius: 999px; background: transparent; cursor: pointer; }
+  /* Back, the YouTube link and next on one row; on a narrow phone the link gets its own row
+     above the two buttons, so nothing wraps. */
   .controls {
-    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 4px 8px;
     padding: 8px 12px;
     padding-bottom: max(8px, env(safe-area-inset-bottom));
+    white-space: nowrap;
+  }
+  .controls .back { justify-self: start; }
+  .controls .forward { justify-self: end; }
+  @media (max-width: 440px) {
+    .controls { grid-template-columns: 1fr 1fr; }
+    .controls .yt { grid-column: 1 / -1; grid-row: 1; justify-self: center; min-height: 36px; }
   }
   .step {
     display: inline-flex; align-items: center; gap: 4px;
     min-width: 96px; min-height: 44px;
     padding: 8px 12px;
+    white-space: nowrap;
     border: 0; border-radius: 999px;
     background: rgb(255 255 255 / 12%);
     cursor: pointer;
@@ -251,7 +328,17 @@ const STYLES = /* css */ `
   .step[hidden] { visibility: hidden; display: inline-flex; }
   .step svg { width: 18px; height: 18px; flex: none; }
   .step.forward { justify-content: flex-end; }
-  .yt { color: rgb(255 255 255 / 80%); font-size: .85rem; text-decoration: underline; text-underline-offset: 3px; }
+  .yt {
+    display: inline-flex; align-items: center; gap: 7px;
+    min-height: 44px; padding: 6px 12px;
+    border-radius: 999px;
+    color: rgb(255 255 255 / 85%); font-size: .85rem; text-decoration: none;
+  }
+  .yt:hover, .yt:focus-visible { background: rgb(255 255 255 / 12%); }
+  .yt:focus-visible { outline: 3px solid #f2c531; outline-offset: 2px; }
+  .yt-logo { display: inline-flex; align-items: center; gap: 3px; color: #fff; }
+  .yt-logo svg { width: 26px; height: 18px; flex: none; }
+  .yt-word { font: 700 1.05rem/1 'Roboto', Arial, sans-serif; letter-spacing: -.04em; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 `;
 
@@ -267,8 +354,8 @@ const clock = (seconds) => {
     return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 };
 
-/** "Part 2" for a part, "Full story" for the full cut. */
-const partLabel = (episode) => (episode.kind === "full" ? "Full story" : `Part ${episode.part}`);
+/** "Episode 2" for a part, "Full story" for the full cut. */
+const partLabel = (episode) => (episode.kind === "full" ? "Full story" : `Episode ${episode.part}`);
 
 /** When a part still to come arrives: "Wed 7 PM" within the week, "Dec 14" after, "Soon" when unknown. */
 function arrives(episode, now) {
@@ -345,7 +432,6 @@ export class DailyGraceReels extends HTMLElement {
 
     #root;
     #dramas = [];
-    #playlist = "";
     #dramaId = "";
     #preview = false;
     #timer = 0;
@@ -353,6 +439,13 @@ export class DailyGraceReels extends HTMLElement {
     // The player: the drama and part open, the countdown into the next part.
     #playing = null;
     #countdown = 0;
+    #sharing = false;
+    #note = null;
+    #noteTimer = 0;
+    // Whether the card has shown itself yet (to answer a #daily-grace-reels link once).
+    #shown = false;
+    // The page's own overflow style while the player holds it still (null when it doesn't).
+    #pageOverflow = null;
 
     constructor() {
         super();
@@ -360,7 +453,7 @@ export class DailyGraceReels extends HTMLElement {
         this.#root.innerHTML = `
           <style>${STYLES}</style>
           <section class="card" aria-label="${NAME}">
-            <div class="brand">${REEL}<span>${NAME}</span></div>
+            <div class="brand">${REEL}<span>${NAME}</span><button class="share" type="button" aria-label="Share" title="Share">${SHARE}</button></div>
             <div class="body">
               <button class="cover" type="button">
                 <span class="fallback"></span>
@@ -374,7 +467,9 @@ export class DailyGraceReels extends HTMLElement {
                 <p class="status"></p>
               </div>
             </div>
-            <div class="parts"></div>
+            <div class="rail">
+              <div class="parts" role="list" aria-label="Episodes"></div>
+            </div>
             <div class="more" hidden></div>
           </section>
           <dialog aria-label="${NAME} player">
@@ -394,7 +489,7 @@ export class DailyGraceReels extends HTMLElement {
               </div>
               <footer class="controls">
                 <button class="step back" type="button">${PREV}<span></span></button>
-                <a class="yt" target="_blank" rel="noopener">Watch on YouTube</a>
+                <a class="yt" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span>Watch on</span>${YOUTUBE}</a>
                 <button class="step forward" type="button"><span></span>${NEXT}</button>
               </footer>
             </div>
@@ -403,12 +498,15 @@ export class DailyGraceReels extends HTMLElement {
         const cover = this.#root.querySelector(".cover");
         cover.querySelector("img").addEventListener("error", () => cover.classList.add("nocover"));
         cover.addEventListener("click", () => this.#playNext());
-        this.#root.querySelector(".parts").addEventListener("click", (event) => {
+        this.#root.querySelector(".share").addEventListener("click", () => this.#share());
+        const parts = this.#root.querySelector(".parts");
+        parts.addEventListener("click", (event) => {
             const chip = event.target.closest(".part");
             if (chip && !chip.disabled) {
                 this.#open(this.#dramaId, chip.dataset.ep);
             }
         });
+        this.#setUpRail(parts);
         this.#root.querySelector(".more").addEventListener("click", (event) => {
             const other = event.target.closest(".other");
             if (other) {
@@ -423,6 +521,9 @@ export class DailyGraceReels extends HTMLElement {
         this.#root.querySelector(".forward").addEventListener("click", () => this.#step(1));
         this.#root.querySelector(".go-next").addEventListener("click", () => this.#step(1));
         this.#root.querySelector(".stay").addEventListener("click", () => this.#cancelCountdown());
+        // Leaving for YouTube pauses the part here first, so it doesn't keep playing behind the new tab;
+        // the player stays open at the same moment for when the reader comes back.
+        this.#root.querySelector(".yt").addEventListener("click", () => this.#pause());
     }
 
     connectedCallback() {
@@ -437,6 +538,11 @@ export class DailyGraceReels extends HTMLElement {
         window.removeEventListener("pageshow", this.#onShow);
         window.removeEventListener("message", this.#onMessage);
         clearTimeout(this.#timer);
+        clearTimeout(this.#noteTimer);
+        if (this.#note) {
+            this.#note.remove();
+            this.#note = null;
+        }
         this.#cancelCountdown();
     }
 
@@ -471,7 +577,6 @@ export class DailyGraceReels extends HTMLElement {
             return;
         }
         this.#dramas = readDramas(data);
-        this.#playlist = String(data?.playlist_id ?? "");
         this.#render();
     }
 
@@ -495,6 +600,14 @@ export class DailyGraceReels extends HTMLElement {
         if (!drama) {
             drama = live[live.length - 1];
             this.#dramaId = drama.id;
+        }
+        this.#root.querySelector(".share").setAttribute("aria-label", `Share ${drama.title}`);
+        if (!this.#shown) {
+            this.#shown = true;
+            // A shared link (…/#daily-grace-reels) lands on the card, which only shows once loaded.
+            if (this.id && location.hash === `#${this.id}`) {
+                requestAnimationFrame(() => this.scrollIntoView({ block: "start" }));
+            }
         }
         const watched = new Set(readWatched()[drama.id] ?? []);
         const out = drama.episodes.filter((episode) => isOut(episode, now, this.#preview));
@@ -529,31 +642,181 @@ export class DailyGraceReels extends HTMLElement {
                 if (seen) {
                     classes.push("watched");
                 }
-                const meta = isPlayable ? clock(episode.duration) || "Watch" : arrives(episode, now);
+                const length = clock(episode.duration);
+                const when = isPlayable ? "" : arrives(episode, now);
                 const num = seen ? TICK : escapeHtml(episode.kind === "full" ? "★" : episode.part);
-                const state = isPlayable ? (seen ? ", watched" : "") : `, arrives ${meta}`;
-                return `<button class="${classes.join(" ")}" type="button" data-ep="${escapeHtml(episode.id)}"
+                const state = isPlayable ? (seen ? ", watched" : "") : `, arrives ${when}`;
+                const picture = episode.cover ? `<img src="${escapeHtml(episode.cover)}" alt="" loading="lazy" decoding="async" draggable="false" />` : "";
+                return `<button class="${classes.join(" ")}" type="button" role="listitem" data-ep="${escapeHtml(episode.id)}"
                     ${isPlayable ? "" : "disabled"}
                     aria-label="${escapeHtml(`${partLabel(episode)}: ${episode.title}${state}`)}">
-                    <span class="num">${num}</span>
+                    <span class="thumb">${picture}<span class="num">${num}</span>${isPlayable && length ? `<span class="dur">${length}</span>` : ""}</span>
                     <span class="label">${escapeHtml(partLabel(episode))}</span>
-                    <span class="meta">${escapeHtml(isPlayable ? episode.title : meta)}${isPlayable && clock(episode.duration) ? ` · ${clock(episode.duration)}` : ""}</span>
+                    <span class="meta">${escapeHtml(isPlayable ? episode.title : when)}</span>
                   </button>`;
             })
             .join("");
+        root.querySelectorAll(".part img").forEach((picture) =>
+            picture.addEventListener("error", () => picture.remove(), { once: true }),
+        );
+        this.#bringIntoView(root.querySelector(".part.next"));
 
         const more = root.querySelector(".more");
         const others = live.filter((item) => item.id !== drama.id);
-        const playlist = drama.playlist_id || this.#playlist;
-        more.hidden = others.length === 0 && !playlist;
+        more.hidden = others.length === 0;
         more.innerHTML =
             (others.length ? `<span>More reels:</span>` : "") +
             others
                 .map((item) => `<button class="other" type="button" data-drama="${escapeHtml(item.id)}">${escapeHtml(item.title)}</button>`)
-                .join("") +
-            (playlist
-                ? `<a class="playlist" href="https://www.youtube.com/playlist?list=${encodeURIComponent(playlist)}" target="_blank" rel="noopener">All parts on YouTube</a>`
-                : "");
+                .join("");
+    }
+
+    // ---------------------------------------------------------------- sharing
+
+    /** Share a link to the card: the share sheet, else the clipboard. */
+    async #share() {
+        const drama = this.#dramas.find((item) => item.id === this.#dramaId);
+        if (!drama || this.#sharing) {
+            return;
+        }
+        const url = new URL(location.pathname, location.origin);
+        url.hash = this.id || "daily-grace-reels";
+        const title = `${drama.title} - a Bible drama from Daily Grace Reels`;
+        if (!navigator.share) {
+            await this.#copy(url.href);
+            return;
+        }
+        this.#sharing = true;
+        try {
+            // The link goes in `url` alone; in `text` as well, some apps paste it twice.
+            await navigator.share({ title, text: title, url: url.href });
+        } catch (error) {
+            // The reader closed the share sheet without choosing anything.
+            if (error.name !== "AbortError") {
+                console.warn(`${NAME} could not be shared:`, error);
+                await this.#copy(url.href);
+            }
+        } finally {
+            this.#sharing = false;
+        }
+    }
+
+    async #copy(url) {
+        try {
+            await navigator.clipboard.writeText(url);
+            this.#say("Link copied");
+        } catch {
+            this.#say("Couldn't copy the link");
+        }
+    }
+
+    /** A short word at the foot of the screen, on the page so nothing in the card can clip it. */
+    #say(words) {
+        if (!this.#note) {
+            const note = document.createElement("p");
+            note.className = "reels-share-note";
+            note.setAttribute("role", "status");
+            Object.assign(note.style, {
+                position: "fixed",
+                left: "50%",
+                bottom: "max(24px, env(safe-area-inset-bottom))",
+                transform: "translateX(-50%)",
+                zIndex: "1000",
+                margin: "0",
+                padding: "10px 18px",
+                borderRadius: "999px",
+                background: "rgb(16 37 59 / 92%)",
+                color: "#fff",
+                font: "500 .9375rem/1.3 Roboto, Arial, sans-serif",
+                boxShadow: "0 4px 14px rgb(0 0 0 / 30%)",
+                pointerEvents: "none",
+            });
+            document.body.append(note);
+            this.#note = note;
+        }
+        this.#note.textContent = words;
+        this.#note.hidden = false;
+        clearTimeout(this.#noteTimer);
+        this.#noteTimer = setTimeout(() => {
+            this.#note.hidden = true;
+        }, 2200);
+    }
+
+    // ---------------------------------------------------------------- the parts strip
+
+    /** Mouse dragging and arrow keys for the strip; touch screens swipe it natively. */
+    #setUpRail(parts) {
+        // The mouse drags the strip; a drag is not a click on the part under it.
+        let drag = null;
+        parts.addEventListener("pointerdown", (event) => {
+            if (event.pointerType !== "mouse" || event.button !== 0) {
+                return;
+            }
+            drag = { x: event.clientX, left: parts.scrollLeft, id: event.pointerId, moved: false };
+        });
+        parts.addEventListener("pointermove", (event) => {
+            if (!drag || event.pointerId !== drag.id) {
+                return;
+            }
+            const dx = event.clientX - drag.x;
+            if (!drag.moved && Math.abs(dx) > 6) {
+                drag.moved = true;
+                parts.classList.add("dragging");
+                parts.setPointerCapture(event.pointerId);
+            }
+            if (drag.moved) {
+                parts.scrollLeft = drag.left - dx;
+            }
+        });
+        const endDrag = (event) => {
+            if (!drag || event.pointerId !== drag.id) {
+                return;
+            }
+            if (drag.moved) {
+                parts.classList.remove("dragging");
+                // Swallow the click that follows the drag (if one does), and only that one.
+                const swallow = (click) => click.stopPropagation();
+                parts.addEventListener("click", swallow, { capture: true, once: true });
+                setTimeout(() => parts.removeEventListener("click", swallow, { capture: true }), 0);
+            }
+            drag = null;
+        };
+        parts.addEventListener("pointerup", endDrag);
+        parts.addEventListener("pointercancel", endDrag);
+
+        // Left and right arrows move between the parts that are out (one still to come can't take focus).
+        parts.addEventListener("keydown", (event) => {
+            if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+                return;
+            }
+            const chips = [...parts.querySelectorAll(".part")];
+            const index = chips.indexOf(event.target.closest(".part"));
+            const step = event.key === "ArrowRight" ? 1 : -1;
+            let target = null;
+            for (let i = index + step; i >= 0 && i < chips.length; i += step) {
+                if (!chips[i].disabled) {
+                    target = chips[i];
+                    break;
+                }
+            }
+            if (target) {
+                event.preventDefault();
+                target.focus({ preventScroll: true });
+                target.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+            }
+        });
+    }
+
+    /** Slide the strip so this part shows (the reader's next one), without moving the page. */
+    #bringIntoView(chip) {
+        const parts = this.#root.querySelector(".parts");
+        if (chip) {
+            const left = chip.offsetLeft - parts.offsetLeft - 14;
+            const right = left + chip.offsetWidth + 28;
+            if (left < parts.scrollLeft || right > parts.scrollLeft + parts.clientWidth) {
+                parts.scrollLeft = Math.max(0, left);
+            }
+        }
     }
 
     /** The reader's next part: the first part out not yet watched, then the full cut, else the first. */
@@ -586,7 +849,7 @@ export class DailyGraceReels extends HTMLElement {
         if (coming) {
             return `<b>${name(coming)}</b> arrives ${escapeHtml(arrives(coming, now))}`;
         }
-        return `<b>All parts watched.</b> Watch again any time`;
+        return `<b>All episodes watched.</b> Watch again any time`;
     }
 
     /** Show a part the moment it comes out, if that is within the week. */
@@ -683,6 +946,12 @@ export class DailyGraceReels extends HTMLElement {
             frame.append(iframe);
         }
         if (!dialog.open) {
+            // The page behind keeps still while the player is open, so its scrollbar goes too.
+            // Taken once: a reopen before the close event arrives must not save our own "hidden".
+            if (this.#pageOverflow === null) {
+                this.#pageOverflow = document.documentElement.style.overflow;
+                document.documentElement.style.overflow = "hidden";
+            }
             dialog.showModal();
         }
         this.#render();
@@ -741,6 +1010,15 @@ export class DailyGraceReels extends HTMLElement {
         }, 1000);
     }
 
+    /** Pause the part playing, through the YouTube player's own command. */
+    #pause() {
+        this.#cancelCountdown();
+        const iframe = this.#root.querySelector(".frame iframe");
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage(JSON.stringify({ event: "command", func: "pauseVideo", args: [] }), EMBED_ORIGIN);
+        }
+    }
+
     #cancelCountdown() {
         clearInterval(this.#countdown);
         this.#countdown = 0;
@@ -748,6 +1026,10 @@ export class DailyGraceReels extends HTMLElement {
     }
 
     #stop() {
+        if (this.#pageOverflow !== null) {
+            document.documentElement.style.overflow = this.#pageOverflow;
+            this.#pageOverflow = null;
+        }
         this.#cancelCountdown();
         this.#root.querySelector(".frame").replaceChildren();
         this.#playing = null;

@@ -302,6 +302,12 @@
                         data-fixed
                         data-card-name="today's poster"
                     ></poster-card>
+                    <!-- Hidden until a part is out (assets/dg-reels.json). -->
+                    <daily-grace-reels
+                        id="daily-grace-reels"
+                        data-card-name="Daily Grace Reels"
+                        hidden
+                    ></daily-grace-reels>
                     <daily-moment
                         id="daily-moment"
                         poster="poster-card"
@@ -477,6 +483,11 @@
         <script
             type="module"
             src="apps/components/poster-card.js?v=20261115-2"
+        ></script>
+        <!-- Daily Grace Reels: short Bible dramas, played from YouTube. -->
+        <script
+            type="module"
+            src="apps/components/daily-grace-reels.js?v=20261126-11"
         ></script>
         <script
             type="module"

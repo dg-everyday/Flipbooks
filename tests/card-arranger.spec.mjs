@@ -7,6 +7,7 @@ import { test, expect } from "@playwright/test";
 
 const KEY = "dailygrace:card-order";
 const USUAL = [
+    "daily-grace-reels",
     "daily-moment",
     "journey-card",
     "memory-verse",
@@ -60,6 +61,12 @@ async function setUp(page, saved) {
     await page.waitForFunction(() => customElements.get("card-arranger"));
 }
 
+/** Waits for the sheet's animations (a row sliding into its new place) to finish. */
+const settle = (page) =>
+    sheet(page).evaluate((dialog) =>
+        Promise.all(dialog.getAnimations({ subtree: true }).map((animation) => animation.finished)),
+    );
+
 /** Opens the sheet the only way the page offers: the avatar's menu. */
 async function openSheet(page) {
     await page.locator("dg-menu").evaluate((menu) => menu.open());
@@ -85,12 +92,14 @@ test("the arrows move a card, on the page at once, and the order is remembered",
     await setUp(page);
     await openSheet(page);
     await row(page, "kids-card").locator(".up").click();
+    await settle(page);
     await row(page, "kids-card").locator(".up").click();
+    await settle(page);
     const moved = [...USUAL];
     moved.splice(moved.indexOf("kids-card"), 1);
     moved.splice(moved.indexOf("gods-blueprint"), 0, "kids-card");
     expect(await listedOrder(page)).toEqual(moved);
-    await expect(page.locator("card-arranger [role=status]")).toHaveText("Daily Grace Kids, 11 of 14.");
+    await expect(page.locator("card-arranger [role=status]")).toHaveText("Daily Grace Kids, 12 of 15.");
 
     await page.locator("card-arranger .done").click();
     await expect(sheet(page)).toBeHidden();
@@ -112,15 +121,16 @@ test("the arrows move a card, on the page at once, and the order is remembered",
 test("a card can be dragged by its handle", async ({ page }) => {
     await setUp(page);
     await openSheet(page);
-    const grip = row(page, "daily-food-for-thought").locator(".grip");
-    const target = await row(page, "did-you-know").boundingBox();
+    // Two rows near the top of the list, so both are on screen even on a phone.
+    const grip = row(page, "daily-moment").locator(".grip");
+    const target = await row(page, "memory-verse").boundingBox();
     const box = await grip.boundingBox();
     await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
     await page.mouse.down();
     await page.mouse.move(box.x + box.width / 2, target.y + target.height * 0.75, { steps: 12 });
     await page.mouse.up();
     const order = await listedOrder(page);
-    expect(order.indexOf("daily-food-for-thought")).toBeGreaterThan(order.indexOf("did-you-know"));
+    expect(order.indexOf("daily-moment")).toBeGreaterThan(order.indexOf("memory-verse"));
     expect([...order].sort()).toEqual([...USUAL].sort());
     const saved = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)), KEY);
     expect(saved).toEqual(order);
